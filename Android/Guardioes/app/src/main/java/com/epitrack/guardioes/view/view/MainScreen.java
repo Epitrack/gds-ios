@@ -1,9 +1,11 @@
-package com.epitrack.guardioes;
+package com.epitrack.guardioes.view.view;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.epitrack.guardioes.R;
 
 
 public class MainScreen extends ActionBarActivity {
