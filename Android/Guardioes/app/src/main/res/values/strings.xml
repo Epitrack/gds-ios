@@ -3,4 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="screen_profile">Perfil</string>
+    <string name="screen_settings">Configurações</string>
+    <string name="screen_about">Sobre</string>
+    <string name="screen_help">Ajuda</string>
+    <string name="screen_exit">Sair</string>
+
 </resources>

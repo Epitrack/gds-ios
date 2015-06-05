@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".view.view.SplashScreen"
+            android:name=".view.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait"
             android:noHistory="true">
@@ -21,13 +21,26 @@
         </activity>
 
         <activity
-            android:name=".view.view.LoginScreen"
+            android:name=".view.LoginActivity"
             android:screenOrientation="portrait"
             android:noHistory="true">
         </activity>
 
         <activity
-            android:name=".view.view.MainScreen"
+            android:name=".view.CreateAccountActivity"
+            android:screenOrientation="portrait"
+            android:noHistory="true">
+        </activity>
+
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".view.MapActivity"
+            android:exported="false"
             android:screenOrientation="portrait">
         </activity>
 

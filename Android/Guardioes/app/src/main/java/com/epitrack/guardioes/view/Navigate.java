@@ -1,4 +1,4 @@
-package com.epitrack.guardioes.view.view;
+package com.epitrack.guardioes.view;
 
 import android.app.Activity;
 import android.os.Bundle;

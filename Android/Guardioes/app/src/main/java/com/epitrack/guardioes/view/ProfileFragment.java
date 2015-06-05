@@ -15,7 +15,7 @@ public class ProfileFragment extends BaseFragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.about_fragment, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
+        return inflater.inflate(R.layout.about_fragment, viewGroup, false);
     }
 }
