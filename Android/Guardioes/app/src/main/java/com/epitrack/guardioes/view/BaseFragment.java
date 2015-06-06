@@ -5,7 +5,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 
-class BaseFragment extends Fragment implements Navigate {
+public class BaseFragment extends Fragment implements Navigate {
 
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass) {
