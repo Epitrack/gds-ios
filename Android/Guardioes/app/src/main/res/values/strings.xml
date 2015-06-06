@@ -10,4 +10,7 @@
     <string name="screen_help">Ajuda</string>
     <string name="screen_exit">Sair</string>
 
+    <string name="register">Cadastrar</string>
+    <string name="enter">Entrar</string>
+
 </resources>

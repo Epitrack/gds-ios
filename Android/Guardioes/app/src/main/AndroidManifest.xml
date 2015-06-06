@@ -27,6 +27,12 @@
         </activity>
 
         <activity
+            android:name=".view.WelcomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
             android:name=".view.CreateAccountActivity"
             android:screenOrientation="portrait"
             android:noHistory="true">
@@ -43,6 +49,7 @@
             android:exported="false"
             android:screenOrientation="portrait">
         </activity>
+
 
     </application>
 
