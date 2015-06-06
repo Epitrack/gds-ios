@@ -93,9 +93,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         listView.setAdapter(new MenuAdapter(this, Screen.values()));
         listView.setOnItemClickListener(this);
 
-//        final String fragmentName = Screen.ITEM.getViewClass().getName();
-//
-//        currentFragment = Fragment.instantiate(this, fragmentName);
+        final String fragmentName = Screen.PROFILE.getViewClass().getName();
+
+        currentFragment = Fragment.instantiate(this, fragmentName);
 //
 //        getFragmentManager().beginTransaction()
 //                .add(R.id.main_screen_relative_layout_fragment, currentFragment, fragmentName).commit();

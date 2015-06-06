@@ -3,12 +3,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="136dp"
-        android:onClick="navigateToMainScreen"
-        android:text="Login"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="225dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/login_activity_edit_text_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/login_activity_edit_text_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/login_activity_button_enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter"/>
+
+        <TextView
+            android:id="@+id/login_activity_text_view_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Esqueceu a senha?"/>
+    </LinearLayout>
+
 </RelativeLayout>

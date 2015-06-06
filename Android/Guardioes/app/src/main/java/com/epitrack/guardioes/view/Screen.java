@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.app.Fragment;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.view.menu.AboutFragment;
+import com.epitrack.guardioes.view.menu.HelpFragment;
+import com.epitrack.guardioes.view.menu.ProfileFragment;
+import com.epitrack.guardioes.view.menu.SettingsFragment;
 
 public enum Screen {
 

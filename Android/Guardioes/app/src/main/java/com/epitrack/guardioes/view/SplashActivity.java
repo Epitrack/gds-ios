@@ -15,6 +15,6 @@ public class SplashActivity extends BaseActivity {
     }
 
     public void onEnter(final View view) {
-        navigateTo(LoginActivity.class);
+        navigateTo(WelcomeActivity.class);
     }
 }

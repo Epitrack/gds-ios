@@ -2,10 +2,21 @@ package com.epitrack.guardioes.view;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import com.epitrack.guardioes.R;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+
 public class LoginActivity extends BaseActivity {
+
+    @InjectView(R.id.login_activity_edit_text_mail)
+    EditText editTextMail;
+
+    @InjectView(R.id.login_activity_edit_text_password)
+    EditText editTextPassword;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -13,13 +24,11 @@ public class LoginActivity extends BaseActivity {
 
         setContentView(R.layout.login_activity);
 
+        ButterKnife.inject(this);
     }
 
-    public void navigateToCreateAccount(final View view) {
-        navigateTo(CreateAccountActivity.class);
-    }
-
-    public void navigateToMainScreen(final View view) {
+    @OnClick(R.id.login_activity_button_enter)
+    public void onEnter(final View view) {
         navigateTo(MainActivity.class);
     }
 }
