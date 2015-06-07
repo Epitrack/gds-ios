@@ -1,4 +1,4 @@
-package com.epitrack.guardioes.view.model;
+package com.epitrack.guardioes.model;
 
 public class User {
 
