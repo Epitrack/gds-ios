@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private Fragment currentFragment;
 
-    private final Map<String, Fragment> fragmentMap = new HashMap<String, Fragment>();
+    private final Map<String, Fragment> fragmentMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem menuItem) {
-        return drawerToggle.onOptionsItemSelected(menuItem) ? true : super.onOptionsItemSelected(menuItem);
+        return drawerToggle.onOptionsItemSelected(menuItem) || super.onOptionsItemSelected(menuItem);
     }
 
     @Override

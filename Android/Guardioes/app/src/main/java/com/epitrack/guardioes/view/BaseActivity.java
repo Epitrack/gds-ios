@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-class BaseActivity extends Activity implements Navigate {
+public class BaseActivity extends Activity implements Navigate {
 
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass) {

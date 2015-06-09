@@ -6,9 +6,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -81,17 +79,12 @@ public abstract class AbstractRequest<T> extends Request<T> {
 
                 final String json = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
 
-                final T entity = getMapper().readValue(json, getTypeReference());
+                final T entity = getMapper().readValue(json, new TypeReference<T>() {
+                });
 
                 return Response.success(entity, HttpHeaderParser.parseCacheHeaders(response));
 
             } catch (final UnsupportedEncodingException e) {
-                return Response.error(new ParseError(e));
-
-            } catch (final JsonMappingException e) {
-                return Response.error(new ParseError(e));
-
-            } catch (final JsonParseException e) {
                 return Response.error(new ParseError(e));
 
             } catch (final IOException e) {
@@ -110,6 +103,4 @@ public abstract class AbstractRequest<T> extends Request<T> {
 
         return mapper;
     }
-
-    public abstract TypeReference<T> getTypeReference();
 }
