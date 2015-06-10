@@ -43,7 +43,7 @@ public final class BitmapUtility {
                           rect,
                           rect,
                           paint);
-        
+
         return round;
     }
 }

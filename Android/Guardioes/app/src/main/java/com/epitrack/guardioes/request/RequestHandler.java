@@ -12,18 +12,21 @@ public class RequestHandler {
     private final RequestQueue queue;
 
     private RequestHandler(final Context context) {
-        queue = Volley.newRequestQueue(context);
+        queue = setupQueue(context.getApplicationContext());
     }
 
     public static RequestHandler getInstance(final Context context) {
 
         if (requestHandler == null) {
-            requestHandler = new RequestHandler(context.getApplicationContext());
+            requestHandler = new RequestHandler(context);
         }
 
         return requestHandler;
     }
 
+    private RequestQueue setupQueue(final Context context) {
+        return Volley.newRequestQueue(context);
+    }
 
     public final RequestQueue getQueue() {
         return queue;

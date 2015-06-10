@@ -2,6 +2,7 @@ package com.epitrack.guardioes.manager;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import com.epitrack.guardioes.utility.Logger;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -36,8 +37,7 @@ public class PrefManager extends BaseManager implements IPref {
     private SharedPreferences getPref() {
 
         if (pref == null) {
-            pref = getContext().getSharedPreferences(NAME,
-                                                     Context.MODE_PRIVATE);
+            pref = PreferenceManager.getDefaultSharedPreferences(getContext());
         }
 
         return pref;
