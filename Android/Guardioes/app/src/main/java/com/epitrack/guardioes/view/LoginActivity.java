@@ -25,6 +25,13 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.login_activity);
 
         ButterKnife.inject(this);
+
+        // TODO: Check play service
+        // TODO: Register to GCM. Review soon..
+        // startService(new Intent(this, RegisterService.class));
+
+//        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+//                new IntentFilter(QuickstartPreferences.REGISTRATION_COMPLETE));
     }
 
     @OnClick(R.id.login_activity_button_enter)
