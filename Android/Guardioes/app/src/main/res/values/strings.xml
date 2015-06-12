@@ -1,14 +1,18 @@
 <resources>
+
     <string name="app_name">Guardiões Da Saúde</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="profile">Perfil</string>
+    <string name="settings">Configurações</string>
+    <string name="about">Sobre</string>
+    <string name="help">Ajuda</string>
+    <string name="exit">Sair</string>
 
-    <string name="screen_profile">Perfil</string>
-    <string name="screen_settings">Configurações</string>
-    <string name="screen_about">Sobre</string>
-    <string name="screen_help">Ajuda</string>
-    <string name="screen_exit">Sair</string>
+    <string name="news">Notícias</string>
+    <string name="map">Mapa da Saúde</string>
+    <string name="tips">Dicas de Saúde</string>
+    <string name="diary">Diário da Saúde</string>
+    <string name="join">Participe agora!</string>
 
     <string name="register">Cadastrar</string>
     <string name="enter">Entrar</string>

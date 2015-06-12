@@ -1,8 +1,6 @@
 package com.epitrack.guardioes.view;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,18 +16,24 @@ import com.epitrack.guardioes.R;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    private ListView listView;
+    private static final Class<? extends Fragment> MAIN_FRAGMENT = MenuFragment.class;
 
-    private LinearLayout layoutContent;
+    @InjectView(R.id.main_screen_list_view_menu)
+    ListView listView;
 
-    private DrawerLayout drawerLayout;
+    @InjectView(R.id.main_screen_linear_layout_content)
+    LinearLayout layoutContent;
+
+    @InjectView(R.id.main_screen_drawer_layout)
+    DrawerLayout drawerLayout;
 
     private ActionBarDrawerToggle drawerToggle;
-
-    private Fragment currentFragment;
 
     private final Map<String, Fragment> fragmentMap = new HashMap<>();
 
@@ -39,18 +43,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         setContentView(R.layout.main_activity);
 
-        findViews();
+        ButterKnife.inject(this);
 
         setupViews();
-    }
-
-    private void findViews() {
-
-        drawerLayout = (DrawerLayout) findViewById(R.id.main_screen_drawer_layout);
-
-        layoutContent = (LinearLayout) findViewById(R.id.main_screen_linear_layout_content);
-
-        listView = (ListView) findViewById(R.id.main_screen_list_view_menu);
     }
 
     private void setupViews() {
@@ -71,19 +66,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onDrawerClosed(final View drawerView) {
                 super.onDrawerClosed(drawerView);
 
-                final String tag = currentFragment.getTag();
+                final String tag = getCurrentFragment().getTag();
 
-                if (tag.equals(Screen.PROFILE.getViewClass().getName())) {
-                    getSupportActionBar().setTitle(R.string.screen_profile);
+                if (tag.equals(Screen.PROFILE.getTag())) {
+                    getSupportActionBar().setTitle(R.string.profile);
 
-                } else if (tag.equals(Screen.SETTINGS.getViewClass().getName())) {
-                    getSupportActionBar().setTitle(R.string.screen_settings);
+                } else if (tag.equals(Screen.SETTINGS.getTag())) {
+                    getSupportActionBar().setTitle(R.string.settings);
 
-                } else if (tag.equals(Screen.ABOUT.getViewClass().getName())) {
-                    getSupportActionBar().setTitle(R.string.screen_about);
+                } else if (tag.equals(Screen.ABOUT.getTag())) {
+                    getSupportActionBar().setTitle(R.string.about);
 
-                } else if (tag.equals(Screen.HELP.getViewClass().getName())) {
-                    getSupportActionBar().setTitle(R.string.screen_help);
+                } else if (tag.equals(Screen.HELP.getTag())) {
+                    getSupportActionBar().setTitle(R.string.help);
                 }
             }
         };
@@ -93,14 +88,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         listView.setAdapter(new MenuAdapter(this, Screen.values()));
         listView.setOnItemClickListener(this);
 
-        final String fragmentName = Screen.PROFILE.getViewClass().getName();
-
-        currentFragment = Fragment.instantiate(this, fragmentName);
-//
-//        getFragmentManager().beginTransaction()
-//                .add(R.id.main_screen_relative_layout_fragment, currentFragment, fragmentName).commit();
-//
-//        fragmentMap.put(fragmentName, currentFragment);
+        addFragment(MAIN_FRAGMENT,
+                    MAIN_FRAGMENT.getSimpleName());
     }
 
     @Override
@@ -122,47 +111,57 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         if (screen.isFragment()) {
 
-            final FragmentManager fragmentManager = getFragmentManager();
+            if (!screen.getTag().equals(getCurrentFragment().getTag())) {
 
-            final String fragmentName = screen.getViewClass().getName();
-
-            final Fragment fragment = fragmentManager.findFragmentByTag(fragmentName);
-
-            if (fragment == null) {
-
-                currentFragment = fragmentMap.get(fragmentName);
-
-                if (currentFragment == null) {
-                    currentFragment = Fragment.instantiate(this, fragmentName);
-
-                    fragmentMap.put(fragmentName, currentFragment);
-                }
-
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.main_screen_relative_layout_fragment, currentFragment, fragmentName).commit();
+                replaceFragment(screen.getViewClass(), screen.getTag());
             }
 
             drawerLayout.closeDrawer(layoutContent);
         }
     }
 
-    public void navigateToNewsActivity(final View view) {
-        startActivity(new Intent(this, MapActivity.class));
+    @Override
+    public void onBackPressed() {
+
+        if (getCurrentFragment().getTag().equals(MAIN_FRAGMENT.getSimpleName())) {
+
+            super.onBackPressed();
+
+        } else {
+
+            replaceFragment(MAIN_FRAGMENT,
+                            MAIN_FRAGMENT.getSimpleName());
+        }
     }
 
-    public void navigateToMapActivity(final View view) {
-        startActivity(new Intent(this, MapActivity.class));
+    private Fragment getCurrentFragment() {
+        return getFragmentManager().findFragmentById(R.id.main_screen_relative_layout_fragment_container);
     }
 
-    public void navigateToHintActivity(final View view) {
-        startActivity(new Intent(this, MapActivity.class));
+    private void addFragment(final Class<? extends Fragment> fragmentClass, final String tag) {
+
+        final Fragment fragment = Fragment.instantiate(this, fragmentClass.getName());
+
+        getFragmentManager().beginTransaction()
+                            .add(R.id.main_screen_relative_layout_fragment_container, fragment, tag)
+                            .commit();
+
+        fragmentMap.put(tag, fragment);
     }
 
-    public void navigateToDiaryActivity(final View view) {
-        startActivity(new Intent(this, MapActivity.class));
-    }
+    private void replaceFragment(final Class<?> fragmentClass, final String tag) {
 
-    public void navigateToSurveyActivity(final View view) {
-        startActivity(new Intent(this, MapActivity.class));
+        Fragment fragment = fragmentMap.get(tag);
+
+        if (fragment == null) {
+
+            fragment = Fragment.instantiate(this, fragmentClass.getName());
+
+            fragmentMap.put(tag, fragment);
+        }
+
+        getFragmentManager().beginTransaction()
+                            .replace(R.id.main_screen_relative_layout_fragment_container, fragment, tag)
+                            .commit();
     }
 }

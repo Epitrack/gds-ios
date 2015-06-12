@@ -9,7 +9,12 @@ public final class Constants {
 
     }
 
-    public static final class Push {
+    public static class Pref {
+
+        public static final String USER = "User";
+    }
+
+    public static class Push {
 
         public static final String SENDER = "1008511817333";
     }

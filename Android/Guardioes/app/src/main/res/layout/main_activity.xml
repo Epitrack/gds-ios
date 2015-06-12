@@ -10,26 +10,16 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:id="@+id/main_screen_relative_layout_fragment"
+            android:id="@+id/main_screen_relative_layout_fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:onClick="navigateToMapActivity"
-                android:text="Map"/>
-
-        </RelativeLayout>
+            android:layout_height="match_parent"/>
 
         <LinearLayout
             android:id="@+id/main_screen_linear_layout_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@android:color/white"
-            android:orientation="vertical">
+            android:background="@android:color/white">
 
             <ListView
                 android:id="@+id/main_screen_list_view_menu"

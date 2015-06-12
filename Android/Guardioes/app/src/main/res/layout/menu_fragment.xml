@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/menu_fragment_button_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/news"/>
+
+    <Button
+        android:id="@+id/menu_fragment_button_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu_fragment_button_news"
+        android:text="@string/map"/>
+
+    <Button
+        android:id="@+id/menu_fragment_button_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu_fragment_button_map"
+        android:text="@string/tips"/>
+
+    <Button
+        android:id="@+id/menu_fragment_button_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu_fragment_button_tip"
+        android:text="@string/diary"/>
+
+    <Button
+        android:id="@+id/menu_fragment_button_join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu_fragment_button_diary"
+        android:text="@string/join"/>
+
+</RelativeLayout>

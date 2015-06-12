@@ -11,11 +11,11 @@ import com.epitrack.guardioes.view.menu.SettingsFragment;
 
 public enum Screen {
 
-    PROFILE     (1, R.string.screen_profile, R.drawable.ic_launcher, ProfileFragment.class),
-    SETTINGS    (2, R.string.screen_settings, R.drawable.ic_launcher, SettingsFragment.class),
-    ABOUT       (3, R.string.screen_about, R.drawable.ic_launcher, AboutFragment.class),
-    HELP        (4, R.string.screen_help, R.drawable.ic_launcher, HelpFragment.class),
-    EXIT        (5, R.string.screen_exit, R.drawable.ic_launcher, AboutFragment.class);
+    PROFILE     (1, R.string.profile, R.drawable.ic_launcher, ProfileFragment.class),
+    SETTINGS    (2, R.string.settings, R.drawable.ic_launcher, SettingsFragment.class),
+    ABOUT       (3, R.string.about, R.drawable.ic_launcher, AboutFragment.class),
+    HELP        (4, R.string.help, R.drawable.ic_launcher, HelpFragment.class),
+    EXIT        (5, R.string.exit, R.drawable.ic_launcher, AboutFragment.class);
 
     private final int id;
     private final int name;
@@ -44,6 +44,10 @@ public enum Screen {
 
     public final Class<?> getViewClass() {
         return viewClass;
+    }
+
+    public final String getTag() {
+        return viewClass.getSimpleName();
     }
 
     public final boolean isFragment() {
