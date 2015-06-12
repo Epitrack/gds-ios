@@ -10,10 +10,10 @@ import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
 
-public class MenuAdapter extends ArrayAdapter<Screen> {
+public class MenuAdapter extends ArrayAdapter<Menu> {
 
-    public MenuAdapter(final Context context, final Screen[] screenArray) {
-        super(context, 0, screenArray);
+    public MenuAdapter(final Context context, final Menu[] menuArray) {
+        super(context, 0, menuArray);
     }
 
     static class ViewHolder {
@@ -46,10 +46,10 @@ public class MenuAdapter extends ArrayAdapter<Screen> {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        final Screen screen = getItem(position);
+        final Menu menu = getItem(position);
 
-        viewHolder.name.setText(getContext().getResources().getString(screen.getName()));
-        viewHolder.icon.setImageResource(screen.getIcon());
+        viewHolder.name.setText(getContext().getResources().getString(menu.getName()));
+        viewHolder.icon.setImageResource(menu.getIcon());
 
         return view;
     }

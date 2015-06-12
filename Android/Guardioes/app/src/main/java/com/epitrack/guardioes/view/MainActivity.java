@@ -68,16 +68,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 final String tag = getCurrentFragment().getTag();
 
-                if (tag.equals(Screen.PROFILE.getTag())) {
+                if (tag.equals(Menu.PROFILE.getTag())) {
                     getSupportActionBar().setTitle(R.string.profile);
 
-                } else if (tag.equals(Screen.SETTINGS.getTag())) {
+                } else if (tag.equals(Menu.SETTINGS.getTag())) {
                     getSupportActionBar().setTitle(R.string.settings);
 
-                } else if (tag.equals(Screen.ABOUT.getTag())) {
+                } else if (tag.equals(Menu.ABOUT.getTag())) {
                     getSupportActionBar().setTitle(R.string.about);
 
-                } else if (tag.equals(Screen.HELP.getTag())) {
+                } else if (tag.equals(Menu.HELP.getTag())) {
                     getSupportActionBar().setTitle(R.string.help);
                 }
             }
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         drawerLayout.setDrawerListener(drawerToggle);
 
-        listView.setAdapter(new MenuAdapter(this, Screen.values()));
+        listView.setAdapter(new MenuAdapter(this, Menu.values()));
         listView.setOnItemClickListener(this);
 
         addFragment(MAIN_FRAGMENT,
@@ -107,13 +107,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(final AdapterView<?> adapterView, final View view, final int position, final long id) {
 
-        final Screen screen = Screen.getBy(position + 1);
+        final Menu menu = Menu.getBy(position + 1);
 
-        if (screen.isFragment()) {
+        if (menu.isFragment()) {
 
-            if (!screen.getTag().equals(getCurrentFragment().getTag())) {
+            if (!menu.getTag().equals(getCurrentFragment().getTag())) {
 
-                replaceFragment(screen.getViewClass(), screen.getTag());
+                replaceFragment(menu.getViewClass(), menu.getTag());
             }
 
             drawerLayout.closeDrawer(layoutContent);

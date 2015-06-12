@@ -9,7 +9,7 @@ import com.epitrack.guardioes.view.menu.HelpFragment;
 import com.epitrack.guardioes.view.menu.ProfileFragment;
 import com.epitrack.guardioes.view.menu.SettingsFragment;
 
-public enum Screen {
+public enum Menu {
 
     PROFILE     (1, R.string.profile, R.drawable.ic_launcher, ProfileFragment.class),
     SETTINGS    (2, R.string.settings, R.drawable.ic_launcher, SettingsFragment.class),
@@ -22,7 +22,7 @@ public enum Screen {
     private final int icon;
     private final Class<?> viewClass;
 
-    Screen(final int id, final int name, final int icon, final Class<?> viewClass) {
+    Menu(final int id, final int name, final int icon, final Class<?> viewClass) {
 
         this.id = id;
         this.name = name;
@@ -58,27 +58,27 @@ public enum Screen {
         return Activity.class.isAssignableFrom(viewClass);
     }
 
-    public static Screen getBy(final int id) {
+    public static Menu getBy(final int id) {
 
-        for (final Screen screen : Screen.values()) {
+        for (final Menu menu : Menu.values()) {
 
-            if (screen.getId() == id) {
-                return screen;
+            if (menu.getId() == id) {
+                return menu;
             }
         }
 
-        throw new IllegalArgumentException("The Screen has not found.");
+        throw new IllegalArgumentException("The Menu has not found.");
     }
 
-    public static Screen getBy(final String name) {
+    public static Menu getBy(final String name) {
 
-        for (final Screen screen : Screen.values()) {
+        for (final Menu menu : Menu.values()) {
 
-            if (screen.name().equals(name)) {
-                return screen;
+            if (menu.name().equals(name)) {
+                return menu;
             }
         }
 
-        throw new IllegalArgumentException("The Screen has not found.");
+        throw new IllegalArgumentException("The Menu has not found.");
     }
 }
