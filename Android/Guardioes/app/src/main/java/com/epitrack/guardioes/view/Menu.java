@@ -20,14 +20,14 @@ public enum Menu {
     private final int id;
     private final int name;
     private final int icon;
-    private final Class<?> viewClass;
+    private final Class<?> menuClass;
 
-    Menu(final int id, final int name, final int icon, final Class<?> viewClass) {
+    Menu(final int id, final int name, final int icon, final Class<?> menuClass) {
 
         this.id = id;
         this.name = name;
         this.icon = icon;
-        this.viewClass = viewClass;
+        this.menuClass = menuClass;
     }
 
     public final int getId() {
@@ -42,20 +42,20 @@ public enum Menu {
         return icon;
     }
 
-    public final Class<?> getViewClass() {
-        return viewClass;
+    public final Class<?> getMenuClass() {
+        return menuClass;
     }
 
     public final String getTag() {
-        return viewClass.getSimpleName();
+        return menuClass.getSimpleName();
     }
 
     public final boolean isFragment() {
-        return Fragment.class.isAssignableFrom(viewClass);
+        return Fragment.class.isAssignableFrom(menuClass);
     }
 
     public final boolean isActivity() {
-        return Activity.class.isAssignableFrom(viewClass);
+        return Activity.class.isAssignableFrom(menuClass);
     }
 
     public static Menu getBy(final int id) {
