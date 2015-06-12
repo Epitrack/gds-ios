@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.epitrack.guardioes"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.epitrack.guardioes"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -33,7 +34,7 @@
             android:name=".view.SplashActivity"
             android:noHistory="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.NoActionBar">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -45,17 +46,20 @@
         <activity
             android:name=".view.LoginActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NoActionBar"/>
 
         <activity
             android:name=".view.WelcomeActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NoActionBar"/>
 
         <activity
             android:name=".view.CreateAccountActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NoActionBar"/>
 
         <activity
             android:name=".view.MainActivity"
@@ -64,6 +68,16 @@
 
         <activity
             android:name=".view.MapActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".view.survey.StateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".view.survey.SymptomsActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
 

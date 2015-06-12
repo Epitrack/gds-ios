@@ -1,5 +1,11 @@
 package com.epitrack.guardioes.view;
 
-public class TipActivity extends BaseActivity {
+import android.os.Bundle;
 
+public class TipActivity extends BaseAppCompatActivity {
+
+    @Override
+    protected void onCreate(final Bundle bundle) {
+        super.onCreate(bundle);
+    }
 }

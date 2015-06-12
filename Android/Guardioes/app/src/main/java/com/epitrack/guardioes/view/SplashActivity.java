@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.manager.PrefManager;
+import com.epitrack.guardioes.utility.Constants;
 
 public class SplashActivity extends BaseActivity {
 
@@ -11,7 +13,12 @@ public class SplashActivity extends BaseActivity {
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.splash_activity);
+        if (new PrefManager(this).get(Constants.Pref.USER) == null) {
+            setContentView(R.layout.splash_activity);
+
+        } else {
+            navigateTo(MainActivity.class);
+        }
     }
 
     public void onEnter(final View view) {

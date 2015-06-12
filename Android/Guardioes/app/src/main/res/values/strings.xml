@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">Guardiões Da Saúde</string>
@@ -16,5 +17,10 @@
 
     <string name="register">Cadastrar</string>
     <string name="enter">Entrar</string>
+
+    # StateActivity
+    <string name="state_activity_message">Como você está\nse sentindo?</string>
+    <string name="state_activity_good">Bem</string>
+    <string name="state_activity_bad">Mal</string>
 
 </resources>

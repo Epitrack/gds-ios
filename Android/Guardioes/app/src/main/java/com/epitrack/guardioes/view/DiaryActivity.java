@@ -1,5 +1,5 @@
 package com.epitrack.guardioes.view;
 
-public class DiaryActivity extends BaseActivity {
+public class DiaryActivity extends BaseAppCompatActivity {
 
 }
