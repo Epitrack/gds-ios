@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
             if (!menu.getTag().equals(getCurrentFragment().getTag())) {
 
-                replaceFragment(menu.getViewClass(), menu.getTag());
+                replaceFragment(menu.getMenuClass(), menu.getTag());
             }
 
             drawerLayout.closeDrawer(layoutContent);
