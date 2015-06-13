@@ -9,7 +9,6 @@ import android.widget.CheckBox;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Symptom;
 
-import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class SymptomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -33,42 +32,34 @@ public class SymptomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         public static final int OTHER = 4;
     }
 
-    public static class HeaderViewHolder extends RecyclerView.ViewHolder {
+    public class HeaderViewHolder extends RecyclerView.ViewHolder {
 
         public HeaderViewHolder(final View view) {
             super(view);
-
-            ButterKnife.inject(this, view);
         }
     }
 
-    public static class ItemViewHolder extends RecyclerView.ViewHolder {
+    public class ItemViewHolder extends RecyclerView.ViewHolder {
 
         @InjectView(R.id.symptom_check_box_symptom)
         CheckBox checkBoxSymptom;
 
         public ItemViewHolder(final View view) {
             super(view);
-
-            ButterKnife.inject(this, view);
         }
     }
 
-    public static class FooterViewHolder extends RecyclerView.ViewHolder {
+    public class FooterViewHolder extends RecyclerView.ViewHolder {
 
         public FooterViewHolder(final View view) {
             super(view);
-
-            ButterKnife.inject(this, view);
         }
     }
 
-    public static class OtherViewHolder extends RecyclerView.ViewHolder {
+    public class OtherViewHolder extends RecyclerView.ViewHolder {
 
         public OtherViewHolder(final View view) {
             super(view);
-
-            ButterKnife.inject(this, view);
         }
     }
 
