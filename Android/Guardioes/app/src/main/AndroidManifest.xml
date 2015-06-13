@@ -44,19 +44,19 @@
         </activity>
 
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".view.account.LoginActivity"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NoActionBar"/>
 
         <activity
-            android:name=".view.WelcomeActivity"
+            android:name=".view.welcome.WelcomeActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NoActionBar"/>
 
         <activity
-            android:name=".view.CreateAccountActivity"
+            android:name=".view.account.CreateAccountActivity"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NoActionBar"/>

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.survey.StateActivity;
+import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -47,7 +47,7 @@ public class MenuFragment extends BaseFragment {
 
     @OnClick(R.id.menu_fragment_button_join)
     public void onJoin() {
-        navigateTo(StateActivity.class);
+        navigateTo(SelectParticipantActivity.class);
     }
 
     @Override
