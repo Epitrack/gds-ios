@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/menu_fragment_button_map"
-        android:text="@string/tips"/>
+        android:text="@string/tip"/>
 
     <Button
         android:id="@+id/menu_fragment_button_diary"
