@@ -1,4 +1,4 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.welcome;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.view.account.CreateAccountActivity;
+import com.epitrack.guardioes.view.account.LoginActivity;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import butterknife.ButterKnife;

@@ -1,10 +1,12 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.account;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.view.BaseActivity;
+import com.epitrack.guardioes.view.MainActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

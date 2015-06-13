@@ -1,4 +1,4 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.welcome;
 
 import android.graphics.Color;
 import android.os.Bundle;
