@@ -9,7 +9,7 @@ public class WelcomePagerAdapter extends FragmentPagerAdapter {
 
     private final Context context;
 
-    public WelcomePagerAdapter(FragmentManager fragmentManager, Context context) {
+    public WelcomePagerAdapter(final FragmentManager fragmentManager, final Context context) {
         super(fragmentManager);
 
         this.context = context;
@@ -21,7 +21,7 @@ public class WelcomePagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public Fragment getItem(int position) {
+    public Fragment getItem(final int position) {
         return Fragment.instantiate(context, WelcomePageFragment.class.getName());
     }
 }
