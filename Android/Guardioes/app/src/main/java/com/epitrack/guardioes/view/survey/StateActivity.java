@@ -21,11 +21,11 @@ public class StateActivity extends BaseActivity {
 
     @OnClick(R.id.state_activity_text_view_state_good)
     public void onStateGood() {
-        navigateTo(SymptomsActivity.class);
+        navigateTo(SymptomActivity.class);
     }
 
     @OnClick(R.id.state_activity_text_view_state_bad)
     public void onStateBad() {
-        navigateTo(SymptomsActivity.class);
+        navigateTo(SymptomActivity.class);
     }
 }

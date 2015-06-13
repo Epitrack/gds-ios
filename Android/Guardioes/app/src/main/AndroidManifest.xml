@@ -77,7 +77,7 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".view.survey.SymptomsActivity"
+            android:name=".view.survey.SymptomActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
 

@@ -11,7 +11,7 @@
 
     <string name="news">Notícias</string>
     <string name="map">Mapa da Saúde</string>
-    <string name="tips">Dicas de Saúde</string>
+    <string name="tip">Dicas de Saúde</string>
     <string name="diary">Diário da Saúde</string>
     <string name="join">Participe agora!</string>
 
@@ -22,5 +22,11 @@
     <string name="state_activity_message">Como você está\nse sentindo?</string>
     <string name="state_activity_good">Bem</string>
     <string name="state_activity_bad">Mal</string>
+
+    # SymptomsActivity
+    <string name="symptom_activity_message">Qual desses sintomas\nvocê está sentindo?</string>
+    <string name="symptom_activity_symptom">Sintomas</string>
+    <string name="symptom_activity_other">Outros</string>
+    <string name="symptom_activity_confirm">Confirmar</string>
 
 </resources>
