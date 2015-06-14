@@ -24,7 +24,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         this.menuArray = menuArray;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @InjectView(R.id.menu_text_view_name)
         public TextView textViewName;
@@ -41,7 +41,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         }
 
         @Override
-        public void onClick(View view) {
+        public void onClick(final View view) {
 
             final Menu menu = menuArray[getAdapterPosition()];
 
@@ -50,7 +50,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
     }
 
     @Override
-    public MenuAdapter.ViewHolder onCreateViewHolder(final ViewGroup viewGroup, final int viewType) {
+    public ViewHolder onCreateViewHolder(final ViewGroup viewGroup, final int viewType) {
 
         final View view = LayoutInflater.from(viewGroup.getContext())
                                         .inflate(R.layout.menu_item, viewGroup, false);
@@ -64,8 +64,8 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         final Menu menu = menuArray[position];
 
         viewHolder.textViewName.setText(viewHolder.textViewName.getContext()
-                .getResources()
-                .getString(menu.getName()));
+                                                               .getResources()
+                                                               .getString(menu.getName()));
 
         viewHolder.imageViewIcon.setImageResource(menu.getIcon());
     }
