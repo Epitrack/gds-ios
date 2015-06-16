@@ -52,11 +52,11 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
 
     @OnClick(R.id.select_participant_activity_image_view_photo)
     public void onUserSelect() {
-        navigateTo(SymptomActivity.class);
+        navigateTo(StateActivity.class);
     }
 
     @Override
     public void onParentSelect() {
-        navigateTo(SymptomActivity.class);
+        navigateTo(StateActivity.class);
     }
 }

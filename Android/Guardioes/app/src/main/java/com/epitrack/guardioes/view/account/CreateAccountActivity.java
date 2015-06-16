@@ -1,5 +1,6 @@
 package com.epitrack.guardioes.view.account;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -40,6 +41,8 @@ public class CreateAccountActivity extends BaseActivity {
 
     @OnClick(R.id.create_account_activity_button_register)
     public void onEnter(final View view) {
-        navigateTo(MainActivity.class);
+
+        navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                       Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 }

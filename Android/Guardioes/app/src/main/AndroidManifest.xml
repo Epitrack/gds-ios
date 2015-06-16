@@ -44,7 +44,7 @@
 
         <activity
             android:name=".view.account.LoginActivity"
-            android:noHistory="true"
+            android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NoActionBar"/>
 
@@ -56,7 +56,7 @@
 
         <activity
             android:name=".view.account.CreateAccountActivity"
-            android:noHistory="true"
+            android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NoActionBar"/>
 
@@ -70,19 +70,24 @@
             android:exported="false"
             android:screenOrientation="portrait"/>
 
-        <activity
-            android:name=".view.survey.StateActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
+        # Survey
 
         <activity
             android:name=".view.survey.SelectParticipantActivity"
             android:exported="false"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".view.survey.StateActivity"
+            android:exported="false"
+            android:parentActivityName=".view.survey.SelectParticipantActivity"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name=".view.survey.SymptomActivity"
             android:exported="false"
+            android:parentActivityName=".view.survey.StateActivity"
             android:screenOrientation="portrait"/>
 
         <receiver
