@@ -48,10 +48,9 @@
         <item name="android:windowBackground">@drawable/background_blue</item>
     </style>
 
-    <style name="Theme.Text.Header" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">25dp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginTop">17dp</item>
+    <style name="TextHeader">
+        <item name="android:textSize">30dp</item>
+        <item name="android:layout_marginTop">25dp</item>
     </style>
 
 </resources>

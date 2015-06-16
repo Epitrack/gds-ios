@@ -8,10 +8,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:gravity="center_horizontal"
         android:text="@string/state_activity_message"
-        android:textSize="27dp"/>
+        style="@style/TextHeader"/>
 
     <TextView
         android:id="@+id/state_activity_text_view_state_good"
