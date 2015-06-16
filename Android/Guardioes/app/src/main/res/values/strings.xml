@@ -18,6 +18,11 @@
     <string name="register">Cadastrar</string>
     <string name="enter">Entrar</string>
 
+    # NewsActivity
+    <string name="news_activity_title">Notícias</string>
+    <string name="news_activity_search">Procurar</string>
+    <string name="news_activity_hyphen">-</string>
+
     # StateActivity
     <string name="state_activity_message">Como você está\nse sentindo?</string>
     <string name="state_activity_good">Bem</string>
