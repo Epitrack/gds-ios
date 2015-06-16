@@ -22,6 +22,11 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
     private List<Parent> parentList = new ArrayList<>();
 
     public ParentAdapter(final OnParentListener listener) {
+
+        if (listener == null) {
+            throw new IllegalArgumentException("The listener cannot be null.");
+        }
+
         this.listener = listener;
 
         // TODO: Remove this.. Stub only

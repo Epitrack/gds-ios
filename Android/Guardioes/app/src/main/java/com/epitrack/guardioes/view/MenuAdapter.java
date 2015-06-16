@@ -20,6 +20,10 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
 
     public MenuAdapter(final OnMenuListener listener, final Menu[] menuArray) {
 
+        if (listener == null) {
+            throw new IllegalArgumentException("The listener cannot be null.");
+        }
+
         this.listener = listener;
         this.menuArray = menuArray;
     }
