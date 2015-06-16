@@ -19,7 +19,7 @@
             android:layout_width="275dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@android:color/white">
+            android:background="@color/primary">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/main_activity_recycler_view_menu"

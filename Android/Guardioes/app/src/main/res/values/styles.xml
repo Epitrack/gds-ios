@@ -12,6 +12,8 @@
         <item name="buttonStyle">@style/Theme.Button</item>
 
         <item name="android:dialogTheme">@style/Theme.Dialog</item>
+
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="Theme.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
@@ -40,6 +42,10 @@
 
     <style name="Theme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
 
+    </style>
+
+    <style name="Theme.Survey" parent="Theme.Main">
+        <item name="android:windowBackground">@drawable/background_blue</item>
     </style>
 
     <style name="Theme.Text.Header" parent="TextAppearance.AppCompat">
