@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseFragment;
 
-/**
- * Created by IgorMorais on 6/4/15.
- */
 public class AboutFragment extends BaseFragment {
 
     @Nullable
