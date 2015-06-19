@@ -4,7 +4,23 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.facebook.appevents.AppEventsLogger;
+
 public class BaseActivity extends Activity implements Navigate {
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        AppEventsLogger.activateApp(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        AppEventsLogger.deactivateApp(this);
+    }
 
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass) {

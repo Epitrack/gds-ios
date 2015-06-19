@@ -5,11 +5,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.facebook.appevents.AppEventsLogger;
+
 /**
  * Created by IgorMorais on 6/18/15.
  */
 public class BaseFragmentActivity extends FragmentActivity implements Navigate {
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        AppEventsLogger.activateApp(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        AppEventsLogger.deactivateApp(this);
+    }
+    
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass) {
         startActivity(new Intent(this, activityClass));
