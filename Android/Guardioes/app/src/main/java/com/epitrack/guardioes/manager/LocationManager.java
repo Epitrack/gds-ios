@@ -25,7 +25,7 @@ public class LocationManager extends BaseManager implements ConnectionCallbacks,
 
         this.listener = listener;
 
-        build();
+        load();
     }
 
     @Override
@@ -46,7 +46,7 @@ public class LocationManager extends BaseManager implements ConnectionCallbacks,
 
     }
 
-    private GoogleApiClient build() {
+    private void load() {
 
         if (locationManager == null) {
 
@@ -55,7 +55,5 @@ public class LocationManager extends BaseManager implements ConnectionCallbacks,
                                                                        .addApi(LocationServices.API)
                                                                        .build();
         }
-
-        return locationManager;
     }
 }
