@@ -1,5 +1,6 @@
 package com.epitrack.guardioes.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -18,7 +19,9 @@ public class SplashActivity extends BaseActivity {
             setContentView(R.layout.splash_activity);
 
         } else {
-            navigateTo(MainActivity.class);
+
+            navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                           Intent.FLAG_ACTIVITY_NEW_TASK);
         }
     }
 
