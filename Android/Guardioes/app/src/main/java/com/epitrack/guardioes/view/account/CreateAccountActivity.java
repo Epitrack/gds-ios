@@ -13,7 +13,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class CreateAccountActivity extends BaseActivity {
+public class CreateAccountActivity extends BaseActivity implements OnAccountListener {
 
     @InjectView(R.id.create_account_activity_edit_text_mail)
     EditText editTextMail;
@@ -41,6 +41,23 @@ public class CreateAccountActivity extends BaseActivity {
 
     @OnClick(R.id.create_account_activity_button_register)
     public void onEnter(final View view) {
+
+        navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                       Intent.FLAG_ACTIVITY_NEW_TASK);
+    }
+
+    @Override
+    public void onError() {
+
+    }
+
+    @Override
+    public void onCancel() {
+
+    }
+
+    @Override
+    public void onSuccess() {
 
         navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                        Intent.FLAG_ACTIVITY_NEW_TASK);

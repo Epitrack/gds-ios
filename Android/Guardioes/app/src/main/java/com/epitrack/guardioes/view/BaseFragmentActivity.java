@@ -25,7 +25,7 @@ public class BaseFragmentActivity extends FragmentActivity implements Navigate {
 
         AppEventsLogger.deactivateApp(this);
     }
-    
+
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass) {
         startActivity(new Intent(this, activityClass));
