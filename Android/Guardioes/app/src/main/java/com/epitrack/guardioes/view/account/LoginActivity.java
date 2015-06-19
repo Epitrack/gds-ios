@@ -6,14 +6,14 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.BaseActivity;
+import com.epitrack.guardioes.view.BaseFragmentActivity;
 import com.epitrack.guardioes.view.MainActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseFragmentActivity {
 
     @InjectView(R.id.login_activity_edit_text_mail)
     EditText editTextMail;
@@ -35,6 +35,7 @@ public class LoginActivity extends BaseActivity {
 
 //        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
 //                new IntentFilter(QuickstartPreferences.REGISTRATION_COMPLETE));
+
     }
 
     @OnClick(R.id.login_activity_button_enter)

@@ -36,7 +36,7 @@
 
     # SelectParticipantActivity
     <string name="select_participant_activity_message">De quem será\no relatório?</string>
-    <string name="select_participant_activity_age"># anos</string>
+    <string name="select_participant_activity_age">{0} anos</string>
     <string name="select_participant_activity_family">Familiares</string>
 
 </resources>
