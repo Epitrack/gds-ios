@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.utility.Constants;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -22,22 +23,32 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.plus.Plus;
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.identity.TwitterAuthClient;
 
 import java.util.Arrays;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.fabric.sdk.android.Fabric;
+
 
 public class SocialFragment extends Fragment {
 
     private static final int REQUEST_CODE_GOOGLE = 6667;
+    private static final int REQUEST_CODE_TWITTER = 0; // TODO: See
     private static final int REQUEST_CODE_FACEBOOK = 64206;
 
     private static final String FACEBOOK_PERMISSION_PUBLIC_PROFILE = "public_profile";
 
-    private boolean inProgress;
-
     private GoogleApiClient accountManager;
+
+    private TwitterAuthClient authManager;
 
     private final CallbackManager listenerManager = CallbackManager.Factory.create();
 
@@ -93,6 +104,11 @@ public class SocialFragment extends Fragment {
     @OnClick(R.id.social_fragment_button_twitter)
     public void onTwitter() {
 
+
+        loadTwitter(getActivity());
+
+        authManager.authorize(getActivity(), new TwitterHandler());
+
     }
 
     @OnClick(R.id.social_fragment_button_facebook)
@@ -113,6 +129,9 @@ public class SocialFragment extends Fragment {
 
         if (requestCode == REQUEST_CODE_GOOGLE) {
             accountManager.connect();
+
+        } else if (requestCode == REQUEST_CODE_TWITTER) {
+            authManager.onActivityResult(requestCode, resultCode, intent);
 
         } else if (requestCode == REQUEST_CODE_FACEBOOK) {
             listenerManager.onActivityResult(requestCode, resultCode, intent);
@@ -150,8 +169,17 @@ public class SocialFragment extends Fragment {
         }
     }
 
-    public class TwitterHandler {
+    public class TwitterHandler extends Callback<TwitterSession> {
 
+        @Override
+        public void success(final Result<TwitterSession> session) {
+            listener.onSuccess();
+        }
+
+        @Override
+        public void failure(final TwitterException e) {
+            listener.onError();
+        }
     }
 
     public class FaceBookHandler implements FacebookCallback<LoginResult> {
@@ -186,8 +214,13 @@ public class SocialFragment extends Fragment {
         }
     }
 
-    private void loadTwitter() {
+    private void loadTwitter(final Context context) {
 
+        Fabric.with(context, new Twitter(new TwitterAuthConfig(Constants.Twitter.KEY,
+                                                               Constants.Twitter.SECRET)));
+
+
+        authManager = new TwitterAuthClient();
     }
 
     private void loadFaceBook(final Context context) {

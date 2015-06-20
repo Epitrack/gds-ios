@@ -9,6 +9,12 @@ public final class Constants {
 
     }
 
+    public static class Twitter {
+
+        public static final String KEY = "";
+        public static final String SECRET = "";
+    }
+
     public static class Pref {
 
         public static final String USER = "User";
