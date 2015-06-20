@@ -6,14 +6,14 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.BaseActivity;
+import com.epitrack.guardioes.view.BaseFragmentActivity;
 import com.epitrack.guardioes.view.MainActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class CreateAccountActivity extends BaseActivity implements OnAccountListener {
+public class CreateAccountActivity extends BaseFragmentActivity implements OnAccountListener {
 
     @InjectView(R.id.create_account_activity_edit_text_mail)
     EditText editTextMail;
