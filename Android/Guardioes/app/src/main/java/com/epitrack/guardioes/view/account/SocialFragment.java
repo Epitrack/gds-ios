@@ -1,5 +1,6 @@
 package com.epitrack.guardioes.view.account;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender.SendIntentException;
@@ -37,7 +38,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
-
 public class SocialFragment extends Fragment {
 
     private static final int REQUEST_CODE_GOOGLE = 6667;
@@ -46,26 +46,24 @@ public class SocialFragment extends Fragment {
 
     private static final String FACEBOOK_PERMISSION_PUBLIC_PROFILE = "public_profile";
 
-    private GoogleApiClient accountManager;
-
-    private TwitterAuthClient authManager;
+    private GoogleApiClient authGoogle;
+    private TwitterAuthClient authTwitter;
 
     private final CallbackManager listenerManager = CallbackManager.Factory.create();
 
     private OnAccountListener listener;
 
     @Override
-    public void onActivityCreated(@Nullable final Bundle bundle) {
-        super.onActivityCreated(bundle);
+    public void onAttach(final Activity activity) {
+        super.onAttach(activity);
 
-        if (getActivity() instanceof OnAccountListener) {
+        if (!(activity instanceof OnAccountListener)) {
 
-            listener = (OnAccountListener) getActivity();
-
-        } else {
-
-            throw new IllegalStateException("The Activity must implement OnAccountListener.");
+            throw new IllegalStateException("The " +
+                    activity.getClass().getSimpleName() + " must implement OnAccountListener.");
         }
+
+        listener = (OnAccountListener) activity;
     }
 
     @Nullable
@@ -80,35 +78,26 @@ public class SocialFragment extends Fragment {
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
-
-
-    }
-
-    @Override
     public void onDestroyView() {
         super.onDestroyView();
 
         ButterKnife.reset(this);
     }
 
-    @OnClick(R.id.social_fragment_button_gmail)
-    public void onGmail() {
+    @OnClick(R.id.social_fragment_button_google)
+    public void onGoogle() {
 
         loadGoogle(getActivity());
 
-        accountManager.connect();
+        authGoogle.connect();
     }
 
     @OnClick(R.id.social_fragment_button_twitter)
     public void onTwitter() {
 
-
         loadTwitter(getActivity());
 
-        authManager.authorize(getActivity(), new TwitterHandler());
-
+        authTwitter.authorize(getActivity(), new TwitterHandler());
     }
 
     @OnClick(R.id.social_fragment_button_facebook)
@@ -128,26 +117,58 @@ public class SocialFragment extends Fragment {
     public void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
 
         if (requestCode == REQUEST_CODE_GOOGLE) {
-            accountManager.connect();
+            authGoogle.connect();
 
         } else if (requestCode == REQUEST_CODE_TWITTER) {
-            authManager.onActivityResult(requestCode, resultCode, intent);
+            authTwitter.onActivityResult(requestCode, resultCode, intent);
 
         } else if (requestCode == REQUEST_CODE_FACEBOOK) {
             listenerManager.onActivityResult(requestCode, resultCode, intent);
         }
     }
 
-    public class GoogleHandler implements ConnectionCallbacks, OnConnectionFailedListener {
+    private void loadGoogle(final Context context) {
+
+        if (authGoogle == null) {
+
+            final GoogleHandler handler = new GoogleHandler();
+
+            authGoogle = new GoogleApiClient.Builder(context).addConnectionCallbacks(handler)
+                                                             .addOnConnectionFailedListener(handler)
+                                                             .addApi(Plus.API)
+                                                             .addScope(Plus.SCOPE_PLUS_LOGIN)
+                                                             .build();
+        }
+    }
+
+    private void loadTwitter(final Context context) {
+
+        if (authTwitter == null) {
+
+            Fabric.with(context, new Twitter(new TwitterAuthConfig(Constants.Twitter.KEY,
+                                                                   Constants.Twitter.SECRET)));
+
+            authTwitter = new TwitterAuthClient();
+        }
+    }
+
+    private void loadFaceBook(final Context context) {
+
+        FacebookSdk.sdkInitialize(context);
+    }
+
+    private class GoogleHandler implements ConnectionCallbacks, OnConnectionFailedListener {
 
         @Override
         public void onConnected(final Bundle bundle) {
             listener.onSuccess();
+
+            // TODO: Disconect..
         }
 
         @Override
         public void onConnectionSuspended(final int i) {
-            accountManager.connect();
+            authGoogle.connect();
         }
 
         @Override
@@ -160,16 +181,17 @@ public class SocialFragment extends Fragment {
                     connectionResult.startResolutionForResult(getActivity(), REQUEST_CODE_GOOGLE);
 
                 } catch (SendIntentException e) {
-                    accountManager.connect();
+                    authGoogle.connect();
                 }
 
             } else {
+
                 // TODO: SHOW dialog
             }
         }
     }
 
-    public class TwitterHandler extends Callback<TwitterSession> {
+    private class TwitterHandler extends Callback<TwitterSession> {
 
         @Override
         public void success(final Result<TwitterSession> session) {
@@ -182,7 +204,7 @@ public class SocialFragment extends Fragment {
         }
     }
 
-    public class FaceBookHandler implements FacebookCallback<LoginResult> {
+    private class FaceBookHandler implements FacebookCallback<LoginResult> {
 
         @Override
         public void onSuccess(final LoginResult loginResult) {
@@ -198,33 +220,5 @@ public class SocialFragment extends Fragment {
         public void onError(FacebookException e) {
             listener.onError();
         }
-    }
-
-    private void loadGoogle(final Context context) {
-
-        if (accountManager == null) {
-
-            final GoogleHandler handler = new GoogleHandler();
-
-            accountManager = new GoogleApiClient.Builder(context).addConnectionCallbacks(handler)
-                                                                 .addOnConnectionFailedListener(handler)
-                                                                 .addApi(Plus.API)
-                                                                 .addScope(Plus.SCOPE_PLUS_LOGIN)
-                                                                 .build();
-        }
-    }
-
-    private void loadTwitter(final Context context) {
-
-        Fabric.with(context, new Twitter(new TwitterAuthConfig(Constants.Twitter.KEY,
-                                                               Constants.Twitter.SECRET)));
-
-
-        authManager = new TwitterAuthClient();
-    }
-
-    private void loadFaceBook(final Context context) {
-
-        FacebookSdk.sdkInitialize(context);
     }
 }

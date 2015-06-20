@@ -5,7 +5,7 @@
               android:orientation="vertical">
 
     <Button
-        android:id="@+id/social_fragment_button_gmail"
+        android:id="@+id/social_fragment_button_google"
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:text="Gmail"/>
