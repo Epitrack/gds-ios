@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseFragmentActivity;
@@ -47,12 +48,12 @@ public class LoginActivity extends BaseFragmentActivity implements OnAccountList
 
     @Override
     public void onError() {
-
+        Toast.makeText(this, "Houston, we have a problem", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onCancel() {
-
+        Toast.makeText(this, "Cancel..", Toast.LENGTH_SHORT).show();
     }
 
     @Override
