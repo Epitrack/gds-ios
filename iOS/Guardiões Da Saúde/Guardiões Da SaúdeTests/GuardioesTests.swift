@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class Guardio_es_Da_Sau_deTests: XCTestCase {
+class GuardioesTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
