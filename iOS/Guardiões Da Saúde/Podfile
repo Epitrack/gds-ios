@@ -1,0 +1,11 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'Guardiões Da Saúde' do
+
+end
+
+target 'Guardiões Da SaúdeTests' do
+
+end
+
