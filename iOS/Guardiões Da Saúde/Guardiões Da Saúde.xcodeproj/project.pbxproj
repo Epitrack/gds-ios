@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA6AC2B41B2E850C00A97879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AC2B31B2E850C00A97879 /* AppDelegate.swift */; };
+		AA6AC2B61B2E850C00A97879 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AC2B51B2E850C00A97879 /* ViewController.swift */; };
+		AA6AC2B91B2E850C00A97879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6AC2B71B2E850C00A97879 /* Main.storyboard */; };
+		AA6AC2BB1B2E850C00A97879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6AC2BA1B2E850C00A97879 /* Images.xcassets */; };
+		AA6AC2BE1B2E850C00A97879 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6AC2BC1B2E850C00A97879 /* LaunchScreen.xib */; };
+		AA6AC2CA1B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AC2C91B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA6AC2C41B2E850C00A97879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6AC2A61B2E850C00A97879 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA6AC2AD1B2E850C00A97879;
+			remoteInfo = "Guardiões Da Saúde";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA6AC2AE1B2E850C00A97879 /* Guardiões Da Saúde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardiões Da Saúde.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6AC2B21B2E850C00A97879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA6AC2B31B2E850C00A97879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA6AC2B51B2E850C00A97879 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA6AC2B81B2E850C00A97879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA6AC2BA1B2E850C00A97879 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AA6AC2BD1B2E850C00A97879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		AA6AC2C31B2E850C00A97879 /* Guardiões Da SaúdeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Guardiões Da SaúdeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6AC2C81B2E850C00A97879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA6AC2C91B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guardio_es_Da_Sau_deTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA6AC2AB1B2E850C00A97879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6AC2C01B2E850C00A97879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA6AC2A51B2E850B00A97879 = {
+			isa = PBXGroup;
+			children = (
+				AA6AC2B01B2E850C00A97879 /* Guardiões Da Saúde */,
+				AA6AC2C61B2E850C00A97879 /* Guardiões Da SaúdeTests */,
+				AA6AC2AF1B2E850C00A97879 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA6AC2AF1B2E850C00A97879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA6AC2AE1B2E850C00A97879 /* Guardiões Da Saúde.app */,
+				AA6AC2C31B2E850C00A97879 /* Guardiões Da SaúdeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA6AC2B01B2E850C00A97879 /* Guardiões Da Saúde */ = {
+			isa = PBXGroup;
+			children = (
+				AA6AC2B31B2E850C00A97879 /* AppDelegate.swift */,
+				AA6AC2B51B2E850C00A97879 /* ViewController.swift */,
+				AA6AC2B71B2E850C00A97879 /* Main.storyboard */,
+				AA6AC2BA1B2E850C00A97879 /* Images.xcassets */,
+				AA6AC2BC1B2E850C00A97879 /* LaunchScreen.xib */,
+				AA6AC2B11B2E850C00A97879 /* Supporting Files */,
+			);
+			path = "Guardiões Da Saúde";
+			sourceTree = "<group>";
+		};
+		AA6AC2B11B2E850C00A97879 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA6AC2B21B2E850C00A97879 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA6AC2C61B2E850C00A97879 /* Guardiões Da SaúdeTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA6AC2C91B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift */,
+				AA6AC2C71B2E850C00A97879 /* Supporting Files */,
+			);
+			path = "Guardiões Da SaúdeTests";
+			sourceTree = "<group>";
+		};
+		AA6AC2C71B2E850C00A97879 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA6AC2C81B2E850C00A97879 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA6AC2AD1B2E850C00A97879 /* Guardiões Da Saúde */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6AC2CD1B2E850C00A97879 /* Build configuration list for PBXNativeTarget "Guardiões Da Saúde" */;
+			buildPhases = (
+				AA6AC2AA1B2E850C00A97879 /* Sources */,
+				AA6AC2AB1B2E850C00A97879 /* Frameworks */,
+				AA6AC2AC1B2E850C00A97879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Guardiões Da Saúde";
+			productName = "Guardiões Da Saúde";
+			productReference = AA6AC2AE1B2E850C00A97879 /* Guardiões Da Saúde.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA6AC2C21B2E850C00A97879 /* Guardiões Da SaúdeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6AC2D01B2E850C00A97879 /* Build configuration list for PBXNativeTarget "Guardiões Da SaúdeTests" */;
+			buildPhases = (
+				AA6AC2BF1B2E850C00A97879 /* Sources */,
+				AA6AC2C01B2E850C00A97879 /* Frameworks */,
+				AA6AC2C11B2E850C00A97879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA6AC2C51B2E850C00A97879 /* PBXTargetDependency */,
+			);
+			name = "Guardiões Da SaúdeTests";
+			productName = "Guardiões Da SaúdeTests";
+			productReference = AA6AC2C31B2E850C00A97879 /* Guardiões Da SaúdeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA6AC2A61B2E850C00A97879 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Epitrack;
+				TargetAttributes = {
+					AA6AC2AD1B2E850C00A97879 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					AA6AC2C21B2E850C00A97879 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = AA6AC2AD1B2E850C00A97879;
+					};
+				};
+			};
+			buildConfigurationList = AA6AC2A91B2E850C00A97879 /* Build configuration list for PBXProject "Guardiões Da Saúde" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA6AC2A51B2E850B00A97879;
+			productRefGroup = AA6AC2AF1B2E850C00A97879 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA6AC2AD1B2E850C00A97879 /* Guardiões Da Saúde */,
+				AA6AC2C21B2E850C00A97879 /* Guardiões Da SaúdeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA6AC2AC1B2E850C00A97879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6AC2B91B2E850C00A97879 /* Main.storyboard in Resources */,
+				AA6AC2BE1B2E850C00A97879 /* LaunchScreen.xib in Resources */,
+				AA6AC2BB1B2E850C00A97879 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6AC2C11B2E850C00A97879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA6AC2AA1B2E850C00A97879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6AC2B61B2E850C00A97879 /* ViewController.swift in Sources */,
+				AA6AC2B41B2E850C00A97879 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6AC2BF1B2E850C00A97879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6AC2CA1B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA6AC2C51B2E850C00A97879 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA6AC2AD1B2E850C00A97879 /* Guardiões Da Saúde */;
+			targetProxy = AA6AC2C41B2E850C00A97879 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA6AC2B71B2E850C00A97879 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA6AC2B81B2E850C00A97879 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AA6AC2BC1B2E850C00A97879 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA6AC2BD1B2E850C00A97879 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA6AC2CB1B2E850C00A97879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA6AC2CC1B2E850C00A97879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA6AC2CE1B2E850C00A97879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Guardiões Da Saúde/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AA6AC2CF1B2E850C00A97879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Guardiões Da Saúde/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AA6AC2D11B2E850C00A97879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Guardiões Da SaúdeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guardiões Da Saúde.app/Guardiões Da Saúde";
+			};
+			name = Debug;
+		};
+		AA6AC2D21B2E850C00A97879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Guardiões Da SaúdeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guardiões Da Saúde.app/Guardiões Da Saúde";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA6AC2A91B2E850C00A97879 /* Build configuration list for PBXProject "Guardiões Da Saúde" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6AC2CB1B2E850C00A97879 /* Debug */,
+				AA6AC2CC1B2E850C00A97879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA6AC2CD1B2E850C00A97879 /* Build configuration list for PBXNativeTarget "Guardiões Da Saúde" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6AC2CE1B2E850C00A97879 /* Debug */,
+				AA6AC2CF1B2E850C00A97879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AA6AC2D01B2E850C00A97879 /* Build configuration list for PBXNativeTarget "Guardiões Da SaúdeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6AC2D11B2E850C00A97879 /* Debug */,
+				AA6AC2D21B2E850C00A97879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA6AC2A61B2E850C00A97879 /* Project object */;
+}
