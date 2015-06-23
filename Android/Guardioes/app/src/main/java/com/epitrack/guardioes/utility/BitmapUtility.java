@@ -28,9 +28,9 @@ public final class BitmapUtility {
         final Canvas canvas = new Canvas(round);
 
         canvas.drawCircle(bitmap.getWidth() / 2 + 0.7f,
-                bitmap.getHeight() / 2 + 0.7f,
-                bitmap.getWidth() / 2 + 0.1f,
-                paint);
+                          bitmap.getHeight() / 2 + 0.7f,
+                          bitmap.getWidth() / 2 + 0.1f,
+                          paint);
 
         final Rect rect = new Rect(0,
                                    0,
