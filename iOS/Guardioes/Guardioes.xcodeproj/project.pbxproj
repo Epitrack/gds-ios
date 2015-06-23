@@ -84,8 +84,7 @@
 				AA6AC2BC1B2E850C00A97879 /* LaunchScreen.xib */,
 				AA6AC2B11B2E850C00A97879 /* Supporting Files */,
 			);
-			name = Guardioes;
-			path = "Guardiões Da Saúde";
+			path = Guardioes;
 			sourceTree = "<group>";
 		};
 		AA6AC2B11B2E850C00A97879 /* Supporting Files */ = {
@@ -102,8 +101,7 @@
 				AA6AC2C91B2E850C00A97879 /* GuardioesTests.swift */,
 				AA6AC2C71B2E850C00A97879 /* Supporting Files */,
 			);
-			name = GuardioesTests;
-			path = "Guardiões Da SaúdeTests";
+			path = GuardioesTests;
 			sourceTree = "<group>";
 		};
 		AA6AC2C71B2E850C00A97879 /* Supporting Files */ = {
