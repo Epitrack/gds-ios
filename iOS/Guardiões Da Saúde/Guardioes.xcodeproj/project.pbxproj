@@ -12,7 +12,7 @@
 		AA6AC2B91B2E850C00A97879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6AC2B71B2E850C00A97879 /* Main.storyboard */; };
 		AA6AC2BB1B2E850C00A97879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6AC2BA1B2E850C00A97879 /* Images.xcassets */; };
 		AA6AC2BE1B2E850C00A97879 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6AC2BC1B2E850C00A97879 /* LaunchScreen.xib */; };
-		AA6AC2CA1B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AC2C91B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift */; };
+		AA6AC2CA1B2E850C00A97879 /* GuardioesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6AC2C91B2E850C00A97879 /* GuardioesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,7 @@
 		AA6AC2BD1B2E850C00A97879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AA6AC2C31B2E850C00A97879 /* GuardioesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuardioesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6AC2C81B2E850C00A97879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA6AC2C91B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guardio_es_Da_Sau_deTests.swift; sourceTree = "<group>"; };
+		AA6AC2C91B2E850C00A97879 /* GuardioesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardioesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 		AA6AC2C61B2E850C00A97879 /* GuardioesTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA6AC2C91B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift */,
+				AA6AC2C91B2E850C00A97879 /* GuardioesTests.swift */,
 				AA6AC2C71B2E850C00A97879 /* Supporting Files */,
 			);
 			name = GuardioesTests;
@@ -223,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA6AC2CA1B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift in Sources */,
+				AA6AC2CA1B2E850C00A97879 /* GuardioesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
