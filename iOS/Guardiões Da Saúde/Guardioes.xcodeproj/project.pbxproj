@@ -26,14 +26,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AA6AC2AE1B2E850C00A97879 /* Guardiões Da Saúde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardiões Da Saúde.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6AC2AE1B2E850C00A97879 /* Guardioes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guardioes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6AC2B21B2E850C00A97879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA6AC2B31B2E850C00A97879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA6AC2B51B2E850C00A97879 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA6AC2B81B2E850C00A97879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA6AC2BA1B2E850C00A97879 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AA6AC2BD1B2E850C00A97879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		AA6AC2C31B2E850C00A97879 /* Guardiões Da SaúdeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Guardiões Da SaúdeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6AC2C31B2E850C00A97879 /* GuardioesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuardioesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6AC2C81B2E850C00A97879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA6AC2C91B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guardio_es_Da_Sau_deTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,8 +68,8 @@
 		AA6AC2AF1B2E850C00A97879 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA6AC2AE1B2E850C00A97879 /* Guardiões Da Saúde.app */,
-				AA6AC2C31B2E850C00A97879 /* Guardiões Da SaúdeTests.xctest */,
+				AA6AC2AE1B2E850C00A97879 /* Guardioes.app */,
+				AA6AC2C31B2E850C00A97879 /* GuardioesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,9 +115,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AA6AC2AD1B2E850C00A97879 /* Guardiões Da Saúde */ = {
+		AA6AC2AD1B2E850C00A97879 /* Guardioes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA6AC2CD1B2E850C00A97879 /* Build configuration list for PBXNativeTarget "Guardiões Da Saúde" */;
+			buildConfigurationList = AA6AC2CD1B2E850C00A97879 /* Build configuration list for PBXNativeTarget "Guardioes" */;
 			buildPhases = (
 				AA6AC2AA1B2E850C00A97879 /* Sources */,
 				AA6AC2AB1B2E850C00A97879 /* Frameworks */,
@@ -127,14 +127,14 @@
 			);
 			dependencies = (
 			);
-			name = "Guardiões Da Saúde";
+			name = Guardioes;
 			productName = "Guardiões Da Saúde";
-			productReference = AA6AC2AE1B2E850C00A97879 /* Guardiões Da Saúde.app */;
+			productReference = AA6AC2AE1B2E850C00A97879 /* Guardioes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AA6AC2C21B2E850C00A97879 /* Guardiões Da SaúdeTests */ = {
+		AA6AC2C21B2E850C00A97879 /* GuardioesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA6AC2D01B2E850C00A97879 /* Build configuration list for PBXNativeTarget "Guardiões Da SaúdeTests" */;
+			buildConfigurationList = AA6AC2D01B2E850C00A97879 /* Build configuration list for PBXNativeTarget "GuardioesTests" */;
 			buildPhases = (
 				AA6AC2BF1B2E850C00A97879 /* Sources */,
 				AA6AC2C01B2E850C00A97879 /* Frameworks */,
@@ -145,9 +145,9 @@
 			dependencies = (
 				AA6AC2C51B2E850C00A97879 /* PBXTargetDependency */,
 			);
-			name = "Guardiões Da SaúdeTests";
+			name = GuardioesTests;
 			productName = "Guardiões Da SaúdeTests";
-			productReference = AA6AC2C31B2E850C00A97879 /* Guardiões Da SaúdeTests.xctest */;
+			productReference = AA6AC2C31B2E850C00A97879 /* GuardioesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -168,7 +168,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AA6AC2A91B2E850C00A97879 /* Build configuration list for PBXProject "Guardiões Da Saúde" */;
+			buildConfigurationList = AA6AC2A91B2E850C00A97879 /* Build configuration list for PBXProject "Guardioes" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -181,8 +181,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AA6AC2AD1B2E850C00A97879 /* Guardiões Da Saúde */,
-				AA6AC2C21B2E850C00A97879 /* Guardiões Da SaúdeTests */,
+				AA6AC2AD1B2E850C00A97879 /* Guardioes */,
+				AA6AC2C21B2E850C00A97879 /* GuardioesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -230,7 +230,7 @@
 /* Begin PBXTargetDependency section */
 		AA6AC2C51B2E850C00A97879 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AA6AC2AD1B2E850C00A97879 /* Guardiões Da Saúde */;
+			target = AA6AC2AD1B2E850C00A97879 /* Guardioes */;
 			targetProxy = AA6AC2C41B2E850C00A97879 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -342,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Guardiões Da Saúde/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Guardioes;
 			};
 			name = Debug;
 		};
@@ -352,7 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Guardiões Da Saúde/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Guardioes;
 			};
 			name = Release;
 		};
@@ -370,7 +370,7 @@
 				);
 				INFOPLIST_FILE = "Guardiões Da SaúdeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GuardioesTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guardiões Da Saúde.app/Guardiões Da Saúde";
 			};
 			name = Debug;
@@ -385,7 +385,7 @@
 				);
 				INFOPLIST_FILE = "Guardiões Da SaúdeTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GuardioesTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guardiões Da Saúde.app/Guardiões Da Saúde";
 			};
 			name = Release;
@@ -393,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AA6AC2A91B2E850C00A97879 /* Build configuration list for PBXProject "Guardiões Da Saúde" */ = {
+		AA6AC2A91B2E850C00A97879 /* Build configuration list for PBXProject "Guardioes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA6AC2CB1B2E850C00A97879 /* Debug */,
@@ -402,21 +402,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA6AC2CD1B2E850C00A97879 /* Build configuration list for PBXNativeTarget "Guardiões Da Saúde" */ = {
+		AA6AC2CD1B2E850C00A97879 /* Build configuration list for PBXNativeTarget "Guardioes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA6AC2CE1B2E850C00A97879 /* Debug */,
 				AA6AC2CF1B2E850C00A97879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		AA6AC2D01B2E850C00A97879 /* Build configuration list for PBXNativeTarget "Guardiões Da SaúdeTests" */ = {
+		AA6AC2D01B2E850C00A97879 /* Build configuration list for PBXNativeTarget "GuardioesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA6AC2D11B2E850C00A97879 /* Debug */,
 				AA6AC2D21B2E850C00A97879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
