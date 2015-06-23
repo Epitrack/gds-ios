@@ -59,8 +59,8 @@
 		AA6AC2A51B2E850B00A97879 = {
 			isa = PBXGroup;
 			children = (
-				AA6AC2B01B2E850C00A97879 /* Guardiões Da Saúde */,
-				AA6AC2C61B2E850C00A97879 /* Guardiões Da SaúdeTests */,
+				AA6AC2B01B2E850C00A97879 /* Guardioes */,
+				AA6AC2C61B2E850C00A97879 /* GuardioesTests */,
 				AA6AC2AF1B2E850C00A97879 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +74,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AA6AC2B01B2E850C00A97879 /* Guardiões Da Saúde */ = {
+		AA6AC2B01B2E850C00A97879 /* Guardioes */ = {
 			isa = PBXGroup;
 			children = (
 				AA6AC2B31B2E850C00A97879 /* AppDelegate.swift */,
@@ -84,6 +84,7 @@
 				AA6AC2BC1B2E850C00A97879 /* LaunchScreen.xib */,
 				AA6AC2B11B2E850C00A97879 /* Supporting Files */,
 			);
+			name = Guardioes;
 			path = "Guardiões Da Saúde";
 			sourceTree = "<group>";
 		};
@@ -95,12 +96,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		AA6AC2C61B2E850C00A97879 /* Guardiões Da SaúdeTests */ = {
+		AA6AC2C61B2E850C00A97879 /* GuardioesTests */ = {
 			isa = PBXGroup;
 			children = (
 				AA6AC2C91B2E850C00A97879 /* Guardio_es_Da_Sau_deTests.swift */,
 				AA6AC2C71B2E850C00A97879 /* Supporting Files */,
 			);
+			name = GuardioesTests;
 			path = "Guardiões Da SaúdeTests";
 			sourceTree = "<group>";
 		};
