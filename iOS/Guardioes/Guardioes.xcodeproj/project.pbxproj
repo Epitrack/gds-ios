@@ -409,6 +409,7 @@
 				AAEB6DB01B3AEBB400DB52F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAEB6DB11B3AEBB400DB52F9 /* Build configuration list for PBXNativeTarget "GuardioesTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				AAEB6DB31B3AEBB400DB52F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
