@@ -12,9 +12,7 @@
 		AACD871C1B3B70AD00BF712E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD871B1B3B70AD00BF712E /* SplashViewController.xib */; };
 		AAEB6D951B3AEBB400DB52F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB6D941B3AEBB400DB52F9 /* AppDelegate.swift */; };
 		AAEB6D971B3AEBB400DB52F9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB6D961B3AEBB400DB52F9 /* MainViewController.swift */; };
-		AAEB6D9A1B3AEBB400DB52F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEB6D981B3AEBB400DB52F9 /* Main.storyboard */; };
 		AAEB6D9C1B3AEBB400DB52F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAEB6D9B1B3AEBB400DB52F9 /* Images.xcassets */; };
-		AAEB6D9F1B3AEBB400DB52F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAEB6D9D1B3AEBB400DB52F9 /* LaunchScreen.xib */; };
 		AAEB6DAB1B3AEBB400DB52F9 /* GuardioesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB6DAA1B3AEBB400DB52F9 /* GuardioesTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,9 +34,7 @@
 		AAEB6D931B3AEBB400DB52F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAEB6D941B3AEBB400DB52F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAEB6D961B3AEBB400DB52F9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		AAEB6D991B3AEBB400DB52F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAEB6D9B1B3AEBB400DB52F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AAEB6D9E1B3AEBB400DB52F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AAEB6DA41B3AEBB400DB52F9 /* GuardioesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuardioesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB6DA91B3AEBB400DB52F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAEB6DAA1B3AEBB400DB52F9 /* GuardioesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardioesTests.swift; sourceTree = "<group>"; };
@@ -120,9 +116,7 @@
 				AACD871E1B3B715700BF712E /* Request */,
 				AACD871D1B3B714E00BF712E /* View */,
 				AAEB6D941B3AEBB400DB52F9 /* AppDelegate.swift */,
-				AAEB6D981B3AEBB400DB52F9 /* Main.storyboard */,
 				AAEB6D9B1B3AEBB400DB52F9 /* Images.xcassets */,
-				AAEB6D9D1B3AEBB400DB52F9 /* LaunchScreen.xib */,
 				AAEB6D921B3AEBB400DB52F9 /* Supporting Files */,
 			);
 			path = Guardioes;
@@ -233,8 +227,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAEB6D9A1B3AEBB400DB52F9 /* Main.storyboard in Resources */,
-				AAEB6D9F1B3AEBB400DB52F9 /* LaunchScreen.xib in Resources */,
 				AAEB6D9C1B3AEBB400DB52F9 /* Images.xcassets in Resources */,
 				AACD871C1B3B70AD00BF712E /* SplashViewController.xib in Resources */,
 			);
@@ -278,25 +270,6 @@
 			targetProxy = AAEB6DA51B3AEBB400DB52F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AAEB6D981B3AEBB400DB52F9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AAEB6D991B3AEBB400DB52F9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AAEB6D9D1B3AEBB400DB52F9 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AAEB6D9E1B3AEBB400DB52F9 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AAEB6DAC1B3AEBB400DB52F9 /* Debug */ = {
