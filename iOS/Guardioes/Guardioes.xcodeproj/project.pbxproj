@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AACD87161B3B6FBC00BF712E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87151B3B6FBC00BF712E /* BaseViewController.swift */; };
+		AACD871A1B3B707800BF712E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87191B3B707800BF712E /* SplashViewController.swift */; };
+		AACD871C1B3B70AD00BF712E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD871B1B3B70AD00BF712E /* SplashViewController.xib */; };
 		AAEB6D951B3AEBB400DB52F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB6D941B3AEBB400DB52F9 /* AppDelegate.swift */; };
 		AAEB6D971B3AEBB400DB52F9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB6D961B3AEBB400DB52F9 /* MainViewController.swift */; };
 		AAEB6D9A1B3AEBB400DB52F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAEB6D981B3AEBB400DB52F9 /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AACD87151B3B6FBC00BF712E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		AACD87191B3B707800BF712E /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		AACD871B1B3B70AD00BF712E /* SplashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		AAEB6D8F1B3AEBB400DB52F9 /* Guardioes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guardioes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB6D931B3AEBB400DB52F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAEB6D941B3AEBB400DB52F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +89,9 @@
 				AAEB6D9B1B3AEBB400DB52F9 /* Images.xcassets */,
 				AAEB6D9D1B3AEBB400DB52F9 /* LaunchScreen.xib */,
 				AAEB6D921B3AEBB400DB52F9 /* Supporting Files */,
+				AACD87151B3B6FBC00BF712E /* BaseViewController.swift */,
+				AACD87191B3B707800BF712E /* SplashViewController.swift */,
+				AACD871B1B3B70AD00BF712E /* SplashViewController.xib */,
 			);
 			path = Guardioes;
 			sourceTree = "<group>";
@@ -195,6 +204,7 @@
 				AAEB6D9A1B3AEBB400DB52F9 /* Main.storyboard in Resources */,
 				AAEB6D9F1B3AEBB400DB52F9 /* LaunchScreen.xib in Resources */,
 				AAEB6D9C1B3AEBB400DB52F9 /* Images.xcassets in Resources */,
+				AACD871C1B3B70AD00BF712E /* SplashViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +224,8 @@
 			files = (
 				AAEB6D971B3AEBB400DB52F9 /* MainViewController.swift in Sources */,
 				AAEB6D951B3AEBB400DB52F9 /* AppDelegate.swift in Sources */,
+				AACD87161B3B6FBC00BF712E /* BaseViewController.swift in Sources */,
+				AACD871A1B3B707800BF712E /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
