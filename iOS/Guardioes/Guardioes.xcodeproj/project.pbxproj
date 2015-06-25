@@ -38,6 +38,12 @@
 		AACD87651B3C8C9A00BF712E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD87631B3C8C9A00BF712E /* SettingsViewController.xib */; };
 		AACD87681B3C8CC500BF712E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87661B3C8CC500BF712E /* NewsViewController.swift */; };
 		AACD87691B3C8CC500BF712E /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD87671B3C8CC500BF712E /* NewsViewController.xib */; };
+		AACD87721B3C8F9C00BF712E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87701B3C8F9C00BF712E /* MapViewController.swift */; };
+		AACD87731B3C8F9C00BF712E /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD87711B3C8F9C00BF712E /* MapViewController.xib */; };
+		AACD87761B3C8FB100BF712E /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87741B3C8FB100BF712E /* TipViewController.swift */; };
+		AACD87771B3C8FB100BF712E /* TipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD87751B3C8FB100BF712E /* TipViewController.xib */; };
+		AACD877A1B3C8FE700BF712E /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87781B3C8FE700BF712E /* DiaryViewController.swift */; };
+		AACD877B1B3C8FE700BF712E /* DiaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD87791B3C8FE700BF712E /* DiaryViewController.xib */; };
 		AAEB6D951B3AEBB400DB52F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB6D941B3AEBB400DB52F9 /* AppDelegate.swift */; };
 		AAEB6D9C1B3AEBB400DB52F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAEB6D9B1B3AEBB400DB52F9 /* Images.xcassets */; };
 		AAEB6DAB1B3AEBB400DB52F9 /* GuardioesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB6DAA1B3AEBB400DB52F9 /* GuardioesTests.swift */; };
@@ -64,7 +70,7 @@
 		AACD87331B3C5BCD00BF712E /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		AACD87361B3C5BFC00BF712E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		AACD87371B3C5BFC00BF712E /* CreateAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
-		AACD873A1B3C5C3A00BF712E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		AACD873A1B3C5C3A00BF712E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Guardioes/View/Menu/MenuViewController.swift; sourceTree = SOURCE_ROOT; };
 		AACD873B1B3C5C3A00BF712E /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		AACD873E1B3C5C5500BF712E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AACD873F1B3C5C5500BF712E /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -85,6 +91,12 @@
 		AACD87631B3C8C9A00BF712E /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		AACD87661B3C8CC500BF712E /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		AACD87671B3C8CC500BF712E /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
+		AACD87701B3C8F9C00BF712E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AACD87711B3C8F9C00BF712E /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		AACD87741B3C8FB100BF712E /* TipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
+		AACD87751B3C8FB100BF712E /* TipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipViewController.xib; sourceTree = "<group>"; };
+		AACD87781B3C8FE700BF712E /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		AACD87791B3C8FE700BF712E /* DiaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryViewController.xib; sourceTree = "<group>"; };
 		AAEB6D8F1B3AEBB400DB52F9 /* Guardioes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guardioes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB6D931B3AEBB400DB52F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAEB6D941B3AEBB400DB52F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,12 +134,16 @@
 				AACD872A1B3C4D2100BF712E /* SplashViewController.swift */,
 				AACD872E1B3C5BB500BF712E /* WelcomeViewController.swift */,
 				AACD872F1B3C5BB500BF712E /* WelcomeViewController.xib */,
-				AACD873A1B3C5C3A00BF712E /* MenuViewController.swift */,
-				AACD873B1B3C5C3A00BF712E /* MenuViewController.xib */,
 				AACD873E1B3C5C5500BF712E /* MainViewController.swift */,
 				AACD873F1B3C5C5500BF712E /* MainViewController.xib */,
 				AACD87661B3C8CC500BF712E /* NewsViewController.swift */,
 				AACD87671B3C8CC500BF712E /* NewsViewController.xib */,
+				AACD87701B3C8F9C00BF712E /* MapViewController.swift */,
+				AACD87711B3C8F9C00BF712E /* MapViewController.xib */,
+				AACD87741B3C8FB100BF712E /* TipViewController.swift */,
+				AACD87751B3C8FB100BF712E /* TipViewController.xib */,
+				AACD87781B3C8FE700BF712E /* DiaryViewController.swift */,
+				AACD87791B3C8FE700BF712E /* DiaryViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +193,7 @@
 		AACD87431B3C5D7100BF712E /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				AACD873B1B3C5C3A00BF712E /* MenuViewController.xib */,
 				AACD87571B3C8C4500BF712E /* AboutViewController.xib */,
 				AACD875B1B3C8C5F00BF712E /* HelpViewController.xib */,
 				AACD875F1B3C8C7200BF712E /* ProfileViewController.xib */,
@@ -207,6 +224,7 @@
 		AACD87461B3C5D8A00BF712E /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				AACD873A1B3C5C3A00BF712E /* MenuViewController.swift */,
 				AACD87561B3C8C4500BF712E /* AboutViewController.swift */,
 				AACD875A1B3C8C5F00BF712E /* HelpViewController.swift */,
 				AACD875E1B3C8C7200BF712E /* ProfileViewController.swift */,
@@ -370,6 +388,8 @@
 				AACD87691B3C8CC500BF712E /* NewsViewController.xib in Resources */,
 				AAEB6D9C1B3AEBB400DB52F9 /* Images.xcassets in Resources */,
 				AACD87651B3C8C9A00BF712E /* SettingsViewController.xib in Resources */,
+				AACD87771B3C8FB100BF712E /* TipViewController.xib in Resources */,
+				AACD87731B3C8F9C00BF712E /* MapViewController.xib in Resources */,
 				AACD87551B3C8AC600BF712E /* SelectParticipantViewController.xib in Resources */,
 				AACD87391B3C5BFC00BF712E /* CreateAccountViewController.xib in Resources */,
 				AACD87411B3C5C5500BF712E /* MainViewController.xib in Resources */,
@@ -379,6 +399,7 @@
 				AACD875D1B3C8C5F00BF712E /* HelpViewController.xib in Resources */,
 				AACD873D1B3C5C3A00BF712E /* MenuViewController.xib in Resources */,
 				AACD87591B3C8C4500BF712E /* AboutViewController.xib in Resources */,
+				AACD877B1B3C8FE700BF712E /* DiaryViewController.xib in Resources */,
 				AACD87241B3B7FE200BF712E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,8 +431,11 @@
 				AACD873C1B3C5C3A00BF712E /* MenuViewController.swift in Sources */,
 				AACD874C1B3C8A8D00BF712E /* SymptomViewController.swift in Sources */,
 				AACD87681B3C8CC500BF712E /* NewsViewController.swift in Sources */,
+				AACD87721B3C8F9C00BF712E /* MapViewController.swift in Sources */,
 				AACD87401B3C5C5500BF712E /* MainViewController.swift in Sources */,
 				AACD87601B3C8C7200BF712E /* ProfileViewController.swift in Sources */,
+				AACD877A1B3C8FE700BF712E /* DiaryViewController.swift in Sources */,
+				AACD87761B3C8FB100BF712E /* TipViewController.swift in Sources */,
 				AACD87581B3C8C4500BF712E /* AboutViewController.swift in Sources */,
 				AACD87501B3C8AA900BF712E /* StateViewController.swift in Sources */,
 			);
