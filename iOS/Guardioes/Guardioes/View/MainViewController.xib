@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Guardioes" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -13,7 +13,188 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cb-bN-cwb">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="2ke-TF-TfX"/>
+                        <constraint firstAttribute="width" constant="75" id="afn-65-Hag"/>
+                    </constraints>
+                    <state key="normal" title="Notícias">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="2ke-TF-TfX"/>
+                            <exclude reference="afn-65-Hag"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="2ke-TF-TfX"/>
+                            <include reference="afn-65-Hag"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="onNews:" destination="-1" eventType="touchUpInside" id="Bem-EH-EVu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wtn-qx-har">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3zQ-V3-2mn"/>
+                        <constraint firstAttribute="width" constant="125" id="vtT-h4-JGc"/>
+                    </constraints>
+                    <state key="normal" title="Mapa da Saúde">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="3zQ-V3-2mn"/>
+                            <exclude reference="vtT-h4-JGc"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="3zQ-V3-2mn"/>
+                            <include reference="vtT-h4-JGc"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="onMap:" destination="-1" eventType="touchUpInside" id="AvZ-hK-Wmw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAN-uf-PCb">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="115" id="xjE-9a-fQL"/>
+                        <constraint firstAttribute="height" constant="30" id="ytD-dA-mJL"/>
+                    </constraints>
+                    <state key="normal" title="Participe Agora!">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="xjE-9a-fQL"/>
+                            <exclude reference="ytD-dA-mJL"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="xjE-9a-fQL"/>
+                            <include reference="ytD-dA-mJL"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="onJoin:" destination="-1" eventType="touchUpInside" id="5SM-ap-tzM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1W-cQ-xOV">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Zo2-Qv-F2I"/>
+                        <constraint firstAttribute="width" constant="125" id="zxd-uS-q1m"/>
+                    </constraints>
+                    <state key="normal" title="Dicas de Saúde">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Zo2-Qv-F2I"/>
+                            <exclude reference="zxd-uS-q1m"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="Zo2-Qv-F2I"/>
+                            <include reference="zxd-uS-q1m"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="onTip:" destination="-1" eventType="touchUpInside" id="CuR-Ae-UPs"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lve-Cf-e5h">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="125" id="KjW-g4-87A"/>
+                        <constraint firstAttribute="height" constant="30" id="NLH-vN-jFN"/>
+                    </constraints>
+                    <state key="normal" title="Diário da Saúde">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="KjW-g4-87A"/>
+                            <exclude reference="NLH-vN-jFN"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="KjW-g4-87A"/>
+                            <include reference="NLH-vN-jFN"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="onDiary:" destination="-1" eventType="touchUpInside" id="Wyw-4m-hj0"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="Lve-Cf-e5h" secondAttribute="centerX" constant="-0.5" id="A2h-WK-3dT"/>
+                <constraint firstItem="m1W-cQ-xOV" firstAttribute="top" secondItem="hAN-uf-PCb" secondAttribute="bottom" constant="8" id="JOZ-nE-odB"/>
+                <constraint firstAttribute="centerX" secondItem="hAN-uf-PCb" secondAttribute="centerX" constant="-0.5" id="Ppe-lL-Kgm"/>
+                <constraint firstItem="Lve-Cf-e5h" firstAttribute="top" secondItem="m1W-cQ-xOV" secondAttribute="bottom" constant="8" id="ZA8-9A-2sY"/>
+                <constraint firstAttribute="centerX" secondItem="Wtn-qx-har" secondAttribute="centerX" constant="-0.5" id="Zg7-Dx-RfG"/>
+                <constraint firstAttribute="centerY" secondItem="hAN-uf-PCb" secondAttribute="centerY" id="dxM-xr-OnW"/>
+                <constraint firstAttribute="centerX" secondItem="m1W-cQ-xOV" secondAttribute="centerX" constant="-0.5" id="gf9-ip-5Gs"/>
+                <constraint firstAttribute="centerX" secondItem="0cb-bN-cwb" secondAttribute="centerX" constant="-0.5" id="lrP-bR-XfH"/>
+                <constraint firstItem="Wtn-qx-har" firstAttribute="top" secondItem="0cb-bN-cwb" secondAttribute="bottom" constant="8" id="pvd-ho-wUD"/>
+                <constraint firstItem="hAN-uf-PCb" firstAttribute="top" secondItem="Wtn-qx-har" secondAttribute="bottom" constant="8" id="zih-NE-a8w"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="0cb-bN-cwb"/>
+                    <exclude reference="Wtn-qx-har"/>
+                    <exclude reference="hAN-uf-PCb"/>
+                    <exclude reference="m1W-cQ-xOV"/>
+                    <exclude reference="Lve-Cf-e5h"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="lrP-bR-XfH"/>
+                    <exclude reference="Zg7-Dx-RfG"/>
+                    <exclude reference="pvd-ho-wUD"/>
+                    <exclude reference="Ppe-lL-Kgm"/>
+                    <exclude reference="dxM-xr-OnW"/>
+                    <exclude reference="zih-NE-a8w"/>
+                    <exclude reference="JOZ-nE-odB"/>
+                    <exclude reference="gf9-ip-5Gs"/>
+                    <exclude reference="A2h-WK-3dT"/>
+                    <exclude reference="ZA8-9A-2sY"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="0cb-bN-cwb"/>
+                    <include reference="Wtn-qx-har"/>
+                    <include reference="hAN-uf-PCb"/>
+                    <include reference="m1W-cQ-xOV"/>
+                    <include reference="Lve-Cf-e5h"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="lrP-bR-XfH"/>
+                    <include reference="Zg7-Dx-RfG"/>
+                    <include reference="pvd-ho-wUD"/>
+                    <include reference="Ppe-lL-Kgm"/>
+                    <include reference="dxM-xr-OnW"/>
+                    <include reference="zih-NE-a8w"/>
+                    <include reference="JOZ-nE-odB"/>
+                    <include reference="gf9-ip-5Gs"/>
+                    <include reference="A2h-WK-3dT"/>
+                    <include reference="ZA8-9A-2sY"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

@@ -22,6 +22,22 @@
 		AACD87401B3C5C5500BF712E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD873E1B3C5C5500BF712E /* MainViewController.swift */; };
 		AACD87411B3C5C5500BF712E /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD873F1B3C5C5500BF712E /* MainViewController.xib */; };
 		AACD87491B3C778100BF712E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87481B3C778100BF712E /* Extension.swift */; };
+		AACD874C1B3C8A8D00BF712E /* SymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD874A1B3C8A8D00BF712E /* SymptomViewController.swift */; };
+		AACD874D1B3C8A8D00BF712E /* SymptomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD874B1B3C8A8D00BF712E /* SymptomViewController.xib */; };
+		AACD87501B3C8AA900BF712E /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD874E1B3C8AA900BF712E /* StateViewController.swift */; };
+		AACD87511B3C8AA900BF712E /* StateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD874F1B3C8AA900BF712E /* StateViewController.xib */; };
+		AACD87541B3C8AC600BF712E /* SelectParticipantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87521B3C8AC600BF712E /* SelectParticipantViewController.swift */; };
+		AACD87551B3C8AC600BF712E /* SelectParticipantViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD87531B3C8AC600BF712E /* SelectParticipantViewController.xib */; };
+		AACD87581B3C8C4500BF712E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87561B3C8C4500BF712E /* AboutViewController.swift */; };
+		AACD87591B3C8C4500BF712E /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD87571B3C8C4500BF712E /* AboutViewController.xib */; };
+		AACD875C1B3C8C5F00BF712E /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD875A1B3C8C5F00BF712E /* HelpViewController.swift */; };
+		AACD875D1B3C8C5F00BF712E /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD875B1B3C8C5F00BF712E /* HelpViewController.xib */; };
+		AACD87601B3C8C7200BF712E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD875E1B3C8C7200BF712E /* ProfileViewController.swift */; };
+		AACD87611B3C8C7200BF712E /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD875F1B3C8C7200BF712E /* ProfileViewController.xib */; };
+		AACD87641B3C8C9A00BF712E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87621B3C8C9A00BF712E /* SettingsViewController.swift */; };
+		AACD87651B3C8C9A00BF712E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD87631B3C8C9A00BF712E /* SettingsViewController.xib */; };
+		AACD87681B3C8CC500BF712E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87661B3C8CC500BF712E /* NewsViewController.swift */; };
+		AACD87691B3C8CC500BF712E /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACD87671B3C8CC500BF712E /* NewsViewController.xib */; };
 		AAEB6D951B3AEBB400DB52F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB6D941B3AEBB400DB52F9 /* AppDelegate.swift */; };
 		AAEB6D9C1B3AEBB400DB52F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAEB6D9B1B3AEBB400DB52F9 /* Images.xcassets */; };
 		AAEB6DAB1B3AEBB400DB52F9 /* GuardioesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB6DAA1B3AEBB400DB52F9 /* GuardioesTests.swift */; };
@@ -53,6 +69,22 @@
 		AACD873E1B3C5C5500BF712E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AACD873F1B3C5C5500BF712E /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		AACD87481B3C778100BF712E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AACD874A1B3C8A8D00BF712E /* SymptomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomViewController.swift; sourceTree = "<group>"; };
+		AACD874B1B3C8A8D00BF712E /* SymptomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymptomViewController.xib; sourceTree = "<group>"; };
+		AACD874E1B3C8AA900BF712E /* StateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
+		AACD874F1B3C8AA900BF712E /* StateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StateViewController.xib; sourceTree = "<group>"; };
+		AACD87521B3C8AC600BF712E /* SelectParticipantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectParticipantViewController.swift; sourceTree = "<group>"; };
+		AACD87531B3C8AC600BF712E /* SelectParticipantViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectParticipantViewController.xib; sourceTree = "<group>"; };
+		AACD87561B3C8C4500BF712E /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		AACD87571B3C8C4500BF712E /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		AACD875A1B3C8C5F00BF712E /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		AACD875B1B3C8C5F00BF712E /* HelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
+		AACD875E1B3C8C7200BF712E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AACD875F1B3C8C7200BF712E /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		AACD87621B3C8C9A00BF712E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AACD87631B3C8C9A00BF712E /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		AACD87661B3C8CC500BF712E /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		AACD87671B3C8CC500BF712E /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 		AAEB6D8F1B3AEBB400DB52F9 /* Guardioes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guardioes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAEB6D931B3AEBB400DB52F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAEB6D941B3AEBB400DB52F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +126,8 @@
 				AACD873B1B3C5C3A00BF712E /* MenuViewController.xib */,
 				AACD873E1B3C5C5500BF712E /* MainViewController.swift */,
 				AACD873F1B3C5C5500BF712E /* MainViewController.xib */,
+				AACD87661B3C8CC500BF712E /* NewsViewController.swift */,
+				AACD87671B3C8CC500BF712E /* NewsViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +177,10 @@
 		AACD87431B3C5D7100BF712E /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				AACD87571B3C8C4500BF712E /* AboutViewController.xib */,
+				AACD875B1B3C8C5F00BF712E /* HelpViewController.xib */,
+				AACD875F1B3C8C7200BF712E /* ProfileViewController.xib */,
+				AACD87631B3C8C9A00BF712E /* SettingsViewController.xib */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -150,6 +188,9 @@
 		AACD87441B3C5D7600BF712E /* Survey */ = {
 			isa = PBXGroup;
 			children = (
+				AACD874B1B3C8A8D00BF712E /* SymptomViewController.xib */,
+				AACD874F1B3C8AA900BF712E /* StateViewController.xib */,
+				AACD87531B3C8AC600BF712E /* SelectParticipantViewController.xib */,
 			);
 			path = Survey;
 			sourceTree = "<group>";
@@ -166,6 +207,10 @@
 		AACD87461B3C5D8A00BF712E /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				AACD87561B3C8C4500BF712E /* AboutViewController.swift */,
+				AACD875A1B3C8C5F00BF712E /* HelpViewController.swift */,
+				AACD875E1B3C8C7200BF712E /* ProfileViewController.swift */,
+				AACD87621B3C8C9A00BF712E /* SettingsViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -173,6 +218,9 @@
 		AACD87471B3C5D8F00BF712E /* Survey */ = {
 			isa = PBXGroup;
 			children = (
+				AACD874A1B3C8A8D00BF712E /* SymptomViewController.swift */,
+				AACD874E1B3C8AA900BF712E /* StateViewController.swift */,
+				AACD87521B3C8AC600BF712E /* SelectParticipantViewController.swift */,
 			);
 			path = Survey;
 			sourceTree = "<group>";
@@ -316,13 +364,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AACD87611B3C8C7200BF712E /* ProfileViewController.xib in Resources */,
+				AACD87511B3C8AA900BF712E /* StateViewController.xib in Resources */,
 				AACD87351B3C5BCD00BF712E /* LoginViewController.xib in Resources */,
+				AACD87691B3C8CC500BF712E /* NewsViewController.xib in Resources */,
 				AAEB6D9C1B3AEBB400DB52F9 /* Images.xcassets in Resources */,
+				AACD87651B3C8C9A00BF712E /* SettingsViewController.xib in Resources */,
+				AACD87551B3C8AC600BF712E /* SelectParticipantViewController.xib in Resources */,
 				AACD87391B3C5BFC00BF712E /* CreateAccountViewController.xib in Resources */,
 				AACD87411B3C5C5500BF712E /* MainViewController.xib in Resources */,
 				AACD87311B3C5BB500BF712E /* WelcomeViewController.xib in Resources */,
 				AACD872D1B3C4D2100BF712E /* SplashViewController.xib in Resources */,
+				AACD874D1B3C8A8D00BF712E /* SymptomViewController.xib in Resources */,
+				AACD875D1B3C8C5F00BF712E /* HelpViewController.xib in Resources */,
 				AACD873D1B3C5C3A00BF712E /* MenuViewController.xib in Resources */,
+				AACD87591B3C8C4500BF712E /* AboutViewController.xib in Resources */,
 				AACD87241B3B7FE200BF712E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,13 +399,21 @@
 			files = (
 				AACD87491B3C778100BF712E /* Extension.swift in Sources */,
 				AACD87381B3C5BFC00BF712E /* CreateAccountViewController.swift in Sources */,
+				AACD87541B3C8AC600BF712E /* SelectParticipantViewController.swift in Sources */,
 				AACD87341B3C5BCD00BF712E /* LoginViewController.swift in Sources */,
 				AACD87301B3C5BB500BF712E /* WelcomeViewController.swift in Sources */,
 				AAEB6D951B3AEBB400DB52F9 /* AppDelegate.swift in Sources */,
 				AACD87161B3B6FBC00BF712E /* BaseViewController.swift in Sources */,
+				AACD87641B3C8C9A00BF712E /* SettingsViewController.swift in Sources */,
+				AACD875C1B3C8C5F00BF712E /* HelpViewController.swift in Sources */,
 				AACD872C1B3C4D2100BF712E /* SplashViewController.swift in Sources */,
 				AACD873C1B3C5C3A00BF712E /* MenuViewController.swift in Sources */,
+				AACD874C1B3C8A8D00BF712E /* SymptomViewController.swift in Sources */,
+				AACD87681B3C8CC500BF712E /* NewsViewController.swift in Sources */,
 				AACD87401B3C5C5500BF712E /* MainViewController.swift in Sources */,
+				AACD87601B3C8C7200BF712E /* ProfileViewController.swift in Sources */,
+				AACD87581B3C8C4500BF712E /* AboutViewController.swift in Sources */,
+				AACD87501B3C8AA900BF712E /* StateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

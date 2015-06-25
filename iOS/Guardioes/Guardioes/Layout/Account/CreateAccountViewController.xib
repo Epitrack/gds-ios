@@ -13,7 +13,56 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgf-ms-dck">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="WyY-jC-NGx"/>
+                        <constraint firstAttribute="width" constant="75" id="te4-ZS-RJw"/>
+                    </constraints>
+                    <state key="normal" title="Cadastrar">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="WyY-jC-NGx"/>
+                            <exclude reference="te4-ZS-RJw"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="WyY-jC-NGx"/>
+                            <include reference="te4-ZS-RJw"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="onCreateAccount:" destination="-1" eventType="touchUpInside" id="NC8-aq-5pH"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="hgf-ms-dck" secondAttribute="centerX" constant="-0.5" id="NSq-5W-fIq"/>
+                <constraint firstAttribute="centerY" secondItem="hgf-ms-dck" secondAttribute="centerY" id="szl-6L-qO1"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="hgf-ms-dck"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="NSq-5W-fIq"/>
+                    <exclude reference="szl-6L-qO1"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="hgf-ms-dck"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="NSq-5W-fIq"/>
+                    <include reference="szl-6L-qO1"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
