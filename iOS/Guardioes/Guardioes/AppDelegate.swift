@@ -5,16 +5,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         if let window = window {
             
-            var navigationController: UINavigationController = UINavigationController(rootViewController: SplashViewController())
+            let viewController = SplashViewController(nibName: "SplashViewController", bundle: nil)
             
-            window.rootViewController = navigationController
+            window.rootViewController = UINavigationController(rootViewController: viewController)
             
             window.makeKeyAndVisible()
         }

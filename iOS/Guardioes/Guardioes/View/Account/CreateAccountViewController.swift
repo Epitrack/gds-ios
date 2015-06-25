@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  CreateAccountViewController.swift
 //  Guardioes
 //
 //  Created by Igor Morais on 6/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: BaseViewController {
+class CreateAccountViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
