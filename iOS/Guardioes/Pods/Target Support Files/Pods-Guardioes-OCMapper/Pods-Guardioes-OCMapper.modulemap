@@ -1,0 +1,6 @@
+framework module OCMapper {
+  umbrella header "Pods-Guardioes-OCMapper-umbrella.h"
+
+  export *
+  module * { export * }
+}

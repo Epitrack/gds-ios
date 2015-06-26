@@ -4,6 +4,8 @@ class SplashViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        RequestManager().request(.GET, url: "https://flunearyou.org/flu-news.json", parameterMap: nil, encoding: .JSON)
     }
 
     @IBAction func onEnter(sender: AnyObject) {
