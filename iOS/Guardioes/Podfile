@@ -2,6 +2,8 @@ platform :ios, '8.0'
 
 target 'Guardioes' do
 
+  pod 'Alamofire', '~> 1.2'
+
 end
 
 target 'GuardioesTests' do
