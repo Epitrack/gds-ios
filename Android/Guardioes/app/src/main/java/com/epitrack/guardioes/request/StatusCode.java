@@ -21,6 +21,7 @@ public enum StatusCode {
     PARTIAL_CONTENT (206),
     MULTI_STATUS (207),
     ALREADY_REPORTED (208),
+    IM_USED (226),
 
     /**
      * Redirection.
