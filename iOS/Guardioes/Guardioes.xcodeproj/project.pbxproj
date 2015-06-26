@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA5060701B3CB0B800FAD877 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA50606E1B3CB0B800FAD877 /* MenuCell.swift */; };
+		AA5060711B3CB0B800FAD877 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA50606F1B3CB0B800FAD877 /* MenuCell.xib */; };
 		AACD87161B3B6FBC00BF712E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD87151B3B6FBC00BF712E /* BaseViewController.swift */; };
 		AACD87241B3B7FE200BF712E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACD87231B3B7FE200BF712E /* Default-568h@2x.png */; };
 		AACD872C1B3C4D2100BF712E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD872A1B3C4D2100BF712E /* SplashViewController.swift */; };
@@ -60,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA50606E1B3CB0B800FAD877 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		AA50606F1B3CB0B800FAD877 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		AACD87151B3B6FBC00BF712E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AACD87231B3B7FE200BF712E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AACD872A1B3C4D2100BF712E /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				AACD875A1B3C8C5F00BF712E /* HelpViewController.swift */,
 				AACD875E1B3C8C7200BF712E /* ProfileViewController.swift */,
 				AACD87621B3C8C9A00BF712E /* SettingsViewController.swift */,
+				AA50606E1B3CB0B800FAD877 /* MenuCell.swift */,
+				AA50606F1B3CB0B800FAD877 /* MenuCell.xib */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 			files = (
 				AACD87611B3C8C7200BF712E /* ProfileViewController.xib in Resources */,
 				AACD87511B3C8AA900BF712E /* StateViewController.xib in Resources */,
+				AA5060711B3CB0B800FAD877 /* MenuCell.xib in Resources */,
 				AACD87351B3C5BCD00BF712E /* LoginViewController.xib in Resources */,
 				AACD87691B3C8CC500BF712E /* NewsViewController.xib in Resources */,
 				AAEB6D9C1B3AEBB400DB52F9 /* Images.xcassets in Resources */,
@@ -432,6 +439,7 @@
 				AACD874C1B3C8A8D00BF712E /* SymptomViewController.swift in Sources */,
 				AACD87681B3C8CC500BF712E /* NewsViewController.swift in Sources */,
 				AACD87721B3C8F9C00BF712E /* MapViewController.swift in Sources */,
+				AA5060701B3CB0B800FAD877 /* MenuCell.swift in Sources */,
 				AACD87401B3C5C5500BF712E /* MainViewController.swift in Sources */,
 				AACD87601B3C8C7200BF712E /* ProfileViewController.swift in Sources */,
 				AACD877A1B3C8FE700BF712E /* DiaryViewController.swift in Sources */,

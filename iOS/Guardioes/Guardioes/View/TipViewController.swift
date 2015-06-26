@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  TipViewController.swift
 //  Guardioes
 //
 //  Created by Igor Morais on 6/25/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: BaseViewController {
+class TipViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

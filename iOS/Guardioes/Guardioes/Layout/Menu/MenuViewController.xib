@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="Guardioes" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="8NM-uz-DhJ" id="91H-AS-gmY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8NM-uz-DhJ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zae-LQ-tPd"/>
+                        <outlet property="delegate" destination="-1" id="B8A-p5-5KY"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8NM-uz-DhJ" secondAttribute="bottom" id="C9e-k8-XBw"/>
+                <constraint firstAttribute="trailing" secondItem="8NM-uz-DhJ" secondAttribute="trailing" id="Q80-Xp-DQc"/>
+                <constraint firstItem="8NM-uz-DhJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="u34-1h-tpY"/>
+                <constraint firstItem="8NM-uz-DhJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wGG-fe-fQp"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="8NM-uz-DhJ"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="C9e-k8-XBw"/>
+                    <exclude reference="Q80-Xp-DQc"/>
+                    <exclude reference="u34-1h-tpY"/>
+                    <exclude reference="wGG-fe-fQp"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="8NM-uz-DhJ"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="C9e-k8-XBw"/>
+                    <include reference="Q80-Xp-DQc"/>
+                    <include reference="u34-1h-tpY"/>
+                    <include reference="wGG-fe-fQp"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

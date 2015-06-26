@@ -163,6 +163,8 @@
                 </mask>
                 <mask key="constraints">
                     <exclude reference="lrP-bR-XfH"/>
+                    <exclude reference="A2h-WK-3dT"/>
+                    <exclude reference="ZA8-9A-2sY"/>
                     <exclude reference="Zg7-Dx-RfG"/>
                     <exclude reference="pvd-ho-wUD"/>
                     <exclude reference="Ppe-lL-Kgm"/>
@@ -170,8 +172,6 @@
                     <exclude reference="zih-NE-a8w"/>
                     <exclude reference="JOZ-nE-odB"/>
                     <exclude reference="gf9-ip-5Gs"/>
-                    <exclude reference="A2h-WK-3dT"/>
-                    <exclude reference="ZA8-9A-2sY"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -184,6 +184,8 @@
                 </mask>
                 <mask key="constraints">
                     <include reference="lrP-bR-XfH"/>
+                    <include reference="A2h-WK-3dT"/>
+                    <include reference="ZA8-9A-2sY"/>
                     <include reference="Zg7-Dx-RfG"/>
                     <include reference="pvd-ho-wUD"/>
                     <include reference="Ppe-lL-Kgm"/>
@@ -191,8 +193,6 @@
                     <include reference="zih-NE-a8w"/>
                     <include reference="JOZ-nE-odB"/>
                     <include reference="gf9-ip-5Gs"/>
-                    <include reference="A2h-WK-3dT"/>
-                    <include reference="ZA8-9A-2sY"/>
                 </mask>
             </variation>
         </view>
