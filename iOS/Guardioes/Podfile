@@ -5,8 +5,8 @@ use_frameworks!
 target 'Guardioes' do
 
   pod 'Alamofire', '~> 1.2'
-  #pod 'Google/CloudMessaging'
-  #pod 'Google/SignIn'
+  # pod 'Google/CloudMessaging'
+  # pod 'Google/SignIn'
   pod 'OCMapper', '~> 2.1'
 
 end
