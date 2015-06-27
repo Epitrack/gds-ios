@@ -12,13 +12,13 @@ import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MenuFragment extends BaseFragment {
+public class MainFragment extends BaseFragment {
 
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {
 
-        final View view = inflater.inflate(R.layout.menu_fragment, viewGroup, false);
+        final View view = inflater.inflate(R.layout.main_fragment, viewGroup, false);
 
         ButterKnife.inject(this, view);
 

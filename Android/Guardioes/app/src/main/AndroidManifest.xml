@@ -96,6 +96,32 @@
             android:exported="false"
             android:screenOrientation="portrait"/>
 
+        # Menu
+
+        <activity
+            android:name=".view.menu.ProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".view.menu.SettingsActivity"
+            android:exported="false"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".view.menu.AboutActivity"
+            android:exported="false"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".view.menu.HelpActivity"
+            android:exported="false"
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait"/>
+
         # Survey
 
         <activity

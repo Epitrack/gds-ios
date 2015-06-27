@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.view.menu.Menu;
+import com.epitrack.guardioes.view.menu.MenuAdapter;
 import com.epitrack.guardioes.view.menu.OnMenuListener;
 
 import java.util.HashMap;
@@ -23,7 +26,7 @@ import butterknife.InjectView;
 
 public class MainActivity extends BaseAppCompatActivity implements OnMenuListener {
 
-    private static final Class<? extends Fragment> MAIN_FRAGMENT = MenuFragment.class;
+    private static final Class<? extends Fragment> MAIN_FRAGMENT = MainFragment.class;
 
     @InjectView(R.id.main_activity_recycler_view_menu)
     RecyclerView recyclerView;
@@ -109,14 +112,20 @@ public class MainActivity extends BaseAppCompatActivity implements OnMenuListene
     @Override
     public void onMenuSelect(final Menu menu) {
 
-        if (menu.isFragment()) {
+        drawerLayout.closeDrawer(layoutContent);
+
+        if (menu.isDialog()) {
+
+
+        } else if (menu.isFragment()) {
 
             if (!menu.getTag().equals(getCurrentFragment().getTag())) {
 
                 replaceFragment(menu.getMenuClass(), menu.getTag());
             }
 
-            drawerLayout.closeDrawer(layoutContent);
+        } else if (menu.isActivity()) {
+            startActivity(new Intent(this, menu.getMenuClass()));
         }
     }
 

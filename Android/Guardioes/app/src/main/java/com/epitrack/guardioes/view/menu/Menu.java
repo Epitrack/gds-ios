@@ -1,21 +1,18 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.menu;
 
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.app.Fragment;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.menu.AboutFragment;
-import com.epitrack.guardioes.view.menu.HelpFragment;
-import com.epitrack.guardioes.view.menu.ProfileFragment;
-import com.epitrack.guardioes.view.menu.SettingsFragment;
 
 public enum Menu {
 
-    PROFILE     (1, R.string.profile, R.drawable.ic_launcher, ProfileFragment.class),
-    SETTINGS    (2, R.string.settings, R.drawable.ic_launcher, SettingsFragment.class),
-    ABOUT       (3, R.string.about, R.drawable.ic_launcher, AboutFragment.class),
-    HELP        (4, R.string.help, R.drawable.ic_launcher, HelpFragment.class),
-    EXIT        (5, R.string.exit, R.drawable.ic_launcher, AboutFragment.class);
+    PROFILE     (1, R.string.profile, R.drawable.ic_launcher, ProfileActivity.class),
+    SETTINGS    (2, R.string.settings, R.drawable.ic_launcher, SettingsActivity.class),
+    ABOUT       (3, R.string.about, R.drawable.ic_launcher, AboutActivity.class),
+    HELP        (4, R.string.help, R.drawable.ic_launcher, HelpActivity.class),
+    EXIT        (5, R.string.exit, R.drawable.ic_launcher, AboutActivity.class);
 
     private final int id;
     private final int name;
@@ -48,6 +45,10 @@ public enum Menu {
 
     public final String getTag() {
         return menuClass.getSimpleName();
+    }
+
+    public final boolean isDialog() {
+        return DialogFragment.class.isAssignableFrom(menuClass);
     }
 
     public final boolean isFragment() {
