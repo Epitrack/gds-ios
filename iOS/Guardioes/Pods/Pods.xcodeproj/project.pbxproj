@@ -7,383 +7,347 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C91DCA65B924D6669CA3021 /* Pods-Guardioes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C165B41C66972151584F847 /* Pods-Guardioes-dummy.m */; };
-		0E3EBAE3BFE50B26CBF68909 /* Pods-Guardioes-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 44212555B08344A21011ACF1 /* Pods-Guardioes-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		18B5A1D2E08538F50D4EF6FF /* ObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3DF014626FA13FE7132CA6 /* ObjectMapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		21C95984BE3CA3C2F32B4311 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6449C5731DE1EDCCD2943F22 /* Alamofire.swift */; };
-		29F4DDF9804432F5933A6D04 /* CommonLoggingProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 78CE009EBA5AECF1F20B45A4 /* CommonLoggingProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A2BE6AD26B241910E177C09 /* ManagedObjectInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FCA53141932F2752BF8451 /* ManagedObjectInstanceProvider.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		2B81866AE06D81E06D9FAE93 /* NSObject+ObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7D4B9998374BC53B1195D7 /* NSObject+ObjectMapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		2ED1F6198CE7F2CD9EFCB1F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F108D49D4B8F171B2C2137 /* Foundation.framework */; };
-		2F1C1FC0D6DE6AA038E5509E /* MappingProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 74E48121BF93B5293CEEB793 /* MappingProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		31A23CEC00D168009C2F40E5 /* InstanceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = D6A3C17BA2A5681534F8B5D4 /* InstanceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39E0CF0CC41BABC4BF8C81A7 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463D34CD8FA92D472563A0E2 /* Validation.swift */; };
-		3DF9ED22858F5B2D6BB16E25 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5E8B5811ED900AEAD805A /* Manager.swift */; };
-		42E4E64CF28D44B7DB3FDDE9 /* ObjectMappingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3A4D0DA811F6E634C01B7E /* ObjectMappingInfo.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		45671BA00AD09639E8F77CBB /* InCodeMappingProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D2A469DC75B906E4683B05 /* InCodeMappingProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5751AF584A74A91C6BA1BDB5 /* Pods-Guardioes-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F66A72ABAE92DAC869D9FC8D /* Pods-Guardioes-Alamofire-dummy.m */; };
-		60E3ED4233B887A1166B4B32 /* ObjectInstanceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = CE070898DC8442486B4CDD75 /* ObjectInstanceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6355CA627BCCFE366DC6C061 /* NSObject+ObjectMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = BBAAACE7E0109CE0100DB531 /* NSObject+ObjectMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6CF4EDE01E0B0B61F50D8201 /* Pods-Guardioes-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A78026589F68C210F8979B /* Pods-Guardioes-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		774CC6F00F246AB1B3D2A8A4 /* Pods-Guardioes-OCMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ACC32912302740090FBB3B55 /* Pods-Guardioes-OCMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E0779B671EE719427E59120 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F108D49D4B8F171B2C2137 /* Foundation.framework */; };
-		81E43908F51AE0EBAF55361A /* NSDictionary+ObjectMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 58F604878B9B2AE18D461141 /* NSDictionary+ObjectMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8872FBB85E57115FBA55B745 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347998A44833E9AB4E890BCA /* Request.swift */; };
-		934F01934CFD0F508E76B965 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC619C81980EFF472D9DF737 /* Download.swift */; };
-		955DCFCDFDF07369164EFB7E /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F19EF78F3E428F75B516476 /* ParameterEncoding.swift */; };
-		989562194793013A40569000 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CD8D43DBBB749E021B181 /* Upload.swift */; };
-		A37D34873FB5431950280DA2 /* Pods-Guardioes-OCMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 503B3925313256989EC6A65B /* Pods-Guardioes-OCMapper-dummy.m */; };
-		ADC89ACEB9DB8E921F25866F /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FFC1E3A56BB695E25AF771 /* ResponseSerialization.swift */; };
-		B8FBB20C8139715CA935F57C /* ManagedObjectInstanceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCAE2D2843E051FC2560A14 /* ManagedObjectInstanceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BCA5FFCAD2AC3E8E1A4084C7 /* NSDictionary+ObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A8C32698ADA133110E316D /* NSDictionary+ObjectMapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C3964C4AC57CA9CA7D04D8F9 /* LoggingProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EA39D5F6D9F935B9EBDD1DF /* LoggingProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C8645AD8E389CC35E43060A4 /* InCodeMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B107F376D93E0C8B35205E0 /* InCodeMappingProvider.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D27F9B84F4A7B2EE6139ACE8 /* CommonLoggingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 81E4BEB783FC356DD6C9AB5E /* CommonLoggingProvider.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E56FFA92DE872C0F9733D95E /* ObjectInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 81386F3C19E375A6A0C92DD3 /* ObjectInstanceProvider.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E7A5A0F24E2000235BC993FE /* OCMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 851A5BBF2732DD0B50A57D08 /* OCMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8AFE0961E8FE08A1977E7A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F108D49D4B8F171B2C2137 /* Foundation.framework */; };
-		F5F46DC9193FD4262E1D6504 /* ObjectMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 10577E15D560A4FBCF836972 /* ObjectMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FFA921EA4E9860C86836A3CA /* ObjectMappingInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD089B199F0F06A31A979E2 /* ObjectMappingInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		015D671FA6778F59C80C7682 /* NSDictionary+ObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD11E1B755F393D53E5C3A09 /* NSDictionary+ObjectMapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2360F71B829451398F47EF82 /* NSObject+ObjectMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = D130D50A84BF294907EFEA36 /* NSObject+ObjectMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34F422A1AE47D3190FD526CE /* Pods-Guardioes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3906EFF5FAAB5912DB15CBE9 /* Pods-Guardioes-dummy.m */; };
+		3EBFE08BBC80612E469DCA36 /* ManagedObjectInstanceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 271EEBD846204F1A35E28CC2 /* ManagedObjectInstanceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		44514D425B14AF4B561DE8AD /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730585CF1355C0AC7C04FE3A /* Alamofire.swift */; };
+		4753C5270CF4CC2A85A101D3 /* CommonLoggingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A967321F87FF12DAF1ABCD /* CommonLoggingProvider.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		49D5E11B3515D61D6BDFB309 /* OCMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A78F211ADB6AB177E11826B3 /* OCMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49EAD35C1800215C08EAFAE6 /* Pods-Guardioes-OCMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D0F5BA01E0FDC75C14D721 /* Pods-Guardioes-OCMapper-dummy.m */; };
+		4D61F9CDF351ADE649CB3966 /* InstanceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = C2F91FF0DDC8B4A987B6FF46 /* InstanceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		508088C28AF2E1D02450F2E1 /* InCodeMappingProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 94B3DA6E6344CC319D08BBE1 /* InCodeMappingProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		533E89C438AEE02E5BCA8072 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF403D446487210A26A32EC /* Download.swift */; };
+		60227332F6D7E2B3012D2556 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7268285ECF78424C0EFA0 /* ResponseSerialization.swift */; };
+		651AA10E438A892A97F00884 /* InCodeMappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B080861B3B218452FC578C /* InCodeMappingProvider.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		67C8EE4AEF1CB36E49074119 /* ObjectInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A017AC21583781BAC9825C1 /* ObjectInstanceProvider.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		77A9CB6DEAA9B7928804D4CE /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9335723293405ADA8CB66CBA /* Upload.swift */; };
+		870FD626D48BE1F224A42D9B /* ObjectMappingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 409B05AA07AA0E69E1EBDBDC /* ObjectMappingInfo.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		893A9A50759F62E390986090 /* Pods-Guardioes-OCMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0199214C1A5C6738EBD8A738 /* Pods-Guardioes-OCMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91322319F9482DA9ECBDE768 /* MappingProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CA37B22D3B6E67946FFF7C /* MappingProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93675F3380825704BD46173B /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A93F886AEB0BB6FB641680 /* Manager.swift */; };
+		9B6436594168B1BB40830178 /* Pods-Guardioes-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C8DB25A4314928F4511DB070 /* Pods-Guardioes-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D9D9F2EEAAB63D62743B9E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E826392226CCD5F6EAB4C7D8 /* Foundation.framework */; };
+		A0859C53FBD5BC1DD322F334 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E826392226CCD5F6EAB4C7D8 /* Foundation.framework */; };
+		A7A30ECFDB8F71177961D308 /* Pods-Guardioes-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CC74C7573F9BB0AA3C8527 /* Pods-Guardioes-Alamofire-dummy.m */; };
+		A8C5F9D8883BFFAF4281B2E3 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9FD30F58EEF1457BA5A5B /* Validation.swift */; };
+		A91994FA925AF468253AF649 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E826392226CCD5F6EAB4C7D8 /* Foundation.framework */; };
+		AA867D9ECE5CC3E530E6E262 /* CommonLoggingProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 62C577DE340EDDFFFEFCC674 /* CommonLoggingProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B08CDF29DCA6812F8CB4544F /* Pods-Guardioes-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FCA5730DCD4FF3A48D725B79 /* Pods-Guardioes-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B680A3D8A1EF8E477E0E4AC8 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA9D44E13B776F003D335BD /* Request.swift */; };
+		BCB69F39D25551582F2C6AA6 /* NSDictionary+ObjectMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = B6D2963B9A16B5229BD23600 /* NSDictionary+ObjectMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C753D1959139368B87EF304F /* ObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7367930EC4FAA6BC404468 /* ObjectMapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C7BD795FE23B2994D1C46AF2 /* NSObject+ObjectMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F394F86383254C6B9D47B5B1 /* NSObject+ObjectMapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D1BB7B4E583BCC6FAA21A40B /* ObjectMappingInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DA805F3440EEE3DFBAAC28 /* ObjectMappingInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAFC2A309E7C364E57E45DF4 /* ObjectInstanceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BBA71740A76978E13784E60 /* ObjectInstanceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E43C827E1460E626742608E8 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDEB55C6E115C891959D49A /* ParameterEncoding.swift */; };
+		E7B00BA8D78878A1C0F12C0B /* ObjectMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = EB962A4ED734C0CF01EFB543 /* ObjectMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2B23F1BDF42492A9D2317F0 /* ManagedObjectInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BCFEE90529EBDAE79728CB /* ManagedObjectInstanceProvider.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F2C5D8ADD4FD341D4323DEFD /* LoggingProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B9DB758ED8D08C2FD74C590 /* LoggingProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		31B41F12290890AA421B70D0 /* PBXContainerItemProxy */ = {
+		1695DE5C8AFEE40BF395D7AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F976A220DE0005CC439E6207 /* Project object */;
+			containerPortal = F98A251804C99E869E845A48 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F4BFD31FF774A0EAE88336FC;
+			remoteGlobalIDString = 3CA268CB1A4BF7CE3B948D92;
 			remoteInfo = "Pods-Guardioes-OCMapper";
 		};
-		EB9507C43E5FCE52966A5C31 /* PBXContainerItemProxy */ = {
+		F97912D3F854F8EFE9172875 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F976A220DE0005CC439E6207 /* Project object */;
+			containerPortal = F98A251804C99E869E845A48 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BBBE2134AF3F8D92D6128AF0;
+			remoteGlobalIDString = FE13E4203A3A5DE37464ECD9;
 			remoteInfo = "Pods-Guardioes-Alamofire";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0278853F692F5A9206A70C18 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		09A8C32698ADA133110E316D /* NSDictionary+ObjectMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+ObjectMapper.m"; path = "OCMapper/Source/Categories/NSDictionary+ObjectMapper.m"; sourceTree = "<group>"; };
-		0B8FE79A4572A45FAA8F5975 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C165B41C66972151584F847 /* Pods-Guardioes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Guardioes-dummy.m"; sourceTree = "<group>"; };
-		10577E15D560A4FBCF836972 /* ObjectMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectMapper.h; path = OCMapper/Source/ObjectMapper.h; sourceTree = "<group>"; };
-		125DBB6DC0ECC6A3B0F5BA0D /* Pods-Guardioes-OCMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Guardioes-OCMapper.modulemap"; sourceTree = "<group>"; };
-		172CD8D43DBBB749E021B181 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
-		1F19EF78F3E428F75B516476 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		1F7D4B9998374BC53B1195D7 /* NSObject+ObjectMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ObjectMapper.m"; path = "OCMapper/Source/Categories/NSObject+ObjectMapper.m"; sourceTree = "<group>"; };
-		2BCAE2D2843E051FC2560A14 /* ManagedObjectInstanceProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ManagedObjectInstanceProvider.h; path = "OCMapper/Source/Instance Provider/ManagedObjectInstanceProvider.h"; sourceTree = "<group>"; };
-		2DEE73C97BA143D587441ACA /* Pods-Guardioes-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes-Alamofire.xcconfig"; sourceTree = "<group>"; };
-		347998A44833E9AB4E890BCA /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		44212555B08344A21011ACF1 /* Pods-Guardioes-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-umbrella.h"; sourceTree = "<group>"; };
-		463D34CD8FA92D472563A0E2 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		4B107F376D93E0C8B35205E0 /* InCodeMappingProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = InCodeMappingProvider.m; path = "OCMapper/Source/Mapping Provider/In Code Mapping/InCodeMappingProvider.m"; sourceTree = "<group>"; };
-		503B3925313256989EC6A65B /* Pods-Guardioes-OCMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Guardioes-OCMapper-dummy.m"; sourceTree = "<group>"; };
-		567185E6CD34479366FA8EB5 /* OCMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		58F604878B9B2AE18D461141 /* NSDictionary+ObjectMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+ObjectMapper.h"; path = "OCMapper/Source/Categories/NSDictionary+ObjectMapper.h"; sourceTree = "<group>"; };
-		5A3A4D0DA811F6E634C01B7E /* ObjectMappingInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ObjectMappingInfo.m; path = OCMapper/Source/ObjectMappingInfo.m; sourceTree = "<group>"; };
-		62CD3A55D3065BAAA3B61AC3 /* Pods-Guardioes-OCMapper-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes-OCMapper-Private.xcconfig"; sourceTree = "<group>"; };
-		6449C5731DE1EDCCD2943F22 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		69DD44831D230BB498234868 /* Pods-Guardioes-OCMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes-OCMapper.xcconfig"; sourceTree = "<group>"; };
-		6A3F5D23416DC72B16E728AD /* Pods-Guardioes-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Guardioes-frameworks.sh"; sourceTree = "<group>"; };
-		6C96A6B3CAB1F6534FE7FBD1 /* Pods-Guardioes-OCMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-OCMapper-prefix.pch"; sourceTree = "<group>"; };
-		6EF5E8B5811ED900AEAD805A /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
-		74E48121BF93B5293CEEB793 /* MappingProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MappingProvider.h; path = "OCMapper/Source/Mapping Provider/MappingProvider.h"; sourceTree = "<group>"; };
-		7840EB8EE8A8E0AD7A8DD59C /* Pods-Guardioes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes.debug.xcconfig"; sourceTree = "<group>"; };
-		78CE009EBA5AECF1F20B45A4 /* CommonLoggingProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CommonLoggingProvider.h; path = "OCMapper/Source/Logging Provider/CommonLoggingProvider.h"; sourceTree = "<group>"; };
-		78FFC1E3A56BB695E25AF771 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		7F800453EEA81CFA979439D3 /* Pods-Guardioes-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Guardioes-acknowledgements.plist"; sourceTree = "<group>"; };
-		81386F3C19E375A6A0C92DD3 /* ObjectInstanceProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ObjectInstanceProvider.m; path = "OCMapper/Source/Instance Provider/ObjectInstanceProvider.m"; sourceTree = "<group>"; };
-		81E4BEB783FC356DD6C9AB5E /* CommonLoggingProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CommonLoggingProvider.m; path = "OCMapper/Source/Logging Provider/CommonLoggingProvider.m"; sourceTree = "<group>"; };
-		84576B73D76D6CAE3227766E /* Pods-Guardioes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes.release.xcconfig"; sourceTree = "<group>"; };
-		851A5BBF2732DD0B50A57D08 /* OCMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMapper.h; path = OCMapper/Source/OCMapper.h; sourceTree = "<group>"; };
-		8A3DF014626FA13FE7132CA6 /* ObjectMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ObjectMapper.m; path = OCMapper/Source/ObjectMapper.m; sourceTree = "<group>"; };
-		8CA8E2041A2A276D6F93EC20 /* Pods-Guardioes-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-environment.h"; sourceTree = "<group>"; };
-		8EA39D5F6D9F935B9EBDD1DF /* LoggingProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoggingProvider.h; path = "OCMapper/Source/Logging Provider/LoggingProvider.h"; sourceTree = "<group>"; };
-		9029A01476DFD4DD4442A826 /* Pods-Guardioes-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Guardioes-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A52ED1CC2CE9480CDE5E2CAB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5DAA4BCBE10C30D9174402F /* Pods-Guardioes.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Guardioes.modulemap"; sourceTree = "<group>"; };
-		AC619C81980EFF472D9DF737 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
-		ACC32912302740090FBB3B55 /* Pods-Guardioes-OCMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-OCMapper-umbrella.h"; sourceTree = "<group>"; };
-		AFCA8AA0FADA8C1D1BED5CA2 /* Pods-Guardioes-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		BBAAACE7E0109CE0100DB531 /* NSObject+ObjectMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+ObjectMapper.h"; path = "OCMapper/Source/Categories/NSObject+ObjectMapper.h"; sourceTree = "<group>"; };
-		CE070898DC8442486B4CDD75 /* ObjectInstanceProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectInstanceProvider.h; path = "OCMapper/Source/Instance Provider/ObjectInstanceProvider.h"; sourceTree = "<group>"; };
-		D6A3C17BA2A5681534F8B5D4 /* InstanceProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InstanceProvider.h; path = "OCMapper/Source/Instance Provider/InstanceProvider.h"; sourceTree = "<group>"; };
-		D7A78026589F68C210F8979B /* Pods-Guardioes-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		DF09F03BA3C05F14036981CF /* Pods-Guardioes-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Guardioes-Alamofire.modulemap"; sourceTree = "<group>"; };
-		E59D1D2C296282E893C65BF6 /* Pods_Guardioes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guardioes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6FCA53141932F2752BF8451 /* ManagedObjectInstanceProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ManagedObjectInstanceProvider.m; path = "OCMapper/Source/Instance Provider/ManagedObjectInstanceProvider.m"; sourceTree = "<group>"; };
-		E7F108D49D4B8F171B2C2137 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E8D2A469DC75B906E4683B05 /* InCodeMappingProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InCodeMappingProvider.h; path = "OCMapper/Source/Mapping Provider/In Code Mapping/InCodeMappingProvider.h"; sourceTree = "<group>"; };
-		F3B94DC3C4CFC007574FD68C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5B38D8962CB6E9389CF6EA0 /* Pods-Guardioes-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Guardioes-resources.sh"; sourceTree = "<group>"; };
-		F66A72ABAE92DAC869D9FC8D /* Pods-Guardioes-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Guardioes-Alamofire-dummy.m"; sourceTree = "<group>"; };
-		F7325FC607C4D806DE59443A /* Pods-Guardioes-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
-		F8E84576E2023C725FB5B65D /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FAD089B199F0F06A31A979E2 /* ObjectMappingInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectMappingInfo.h; path = OCMapper/Source/ObjectMappingInfo.h; sourceTree = "<group>"; };
+		0199214C1A5C6738EBD8A738 /* Pods-Guardioes-OCMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-OCMapper-umbrella.h"; sourceTree = "<group>"; };
+		05A967321F87FF12DAF1ABCD /* CommonLoggingProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CommonLoggingProvider.m; path = "OCMapper/Source/Logging Provider/CommonLoggingProvider.m"; sourceTree = "<group>"; };
+		07CA37B22D3B6E67946FFF7C /* MappingProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MappingProvider.h; path = "OCMapper/Source/Mapping Provider/MappingProvider.h"; sourceTree = "<group>"; };
+		0CF403D446487210A26A32EC /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
+		0FA9D44E13B776F003D335BD /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		134B0DF625DD840584495CFB /* Pods-Guardioes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes.debug.xcconfig"; sourceTree = "<group>"; };
+		161B857FF791034DB228FE20 /* OCMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19BCFEE90529EBDAE79728CB /* ManagedObjectInstanceProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ManagedObjectInstanceProvider.m; path = "OCMapper/Source/Instance Provider/ManagedObjectInstanceProvider.m"; sourceTree = "<group>"; };
+		271EEBD846204F1A35E28CC2 /* ManagedObjectInstanceProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ManagedObjectInstanceProvider.h; path = "OCMapper/Source/Instance Provider/ManagedObjectInstanceProvider.h"; sourceTree = "<group>"; };
+		29DA805F3440EEE3DFBAAC28 /* ObjectMappingInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectMappingInfo.h; path = OCMapper/Source/ObjectMappingInfo.h; sourceTree = "<group>"; };
+		2C92F3AF800781A58ACB0249 /* Pods-Guardioes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes.release.xcconfig"; sourceTree = "<group>"; };
+		3906EFF5FAAB5912DB15CBE9 /* Pods-Guardioes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Guardioes-dummy.m"; sourceTree = "<group>"; };
+		3B9DB758ED8D08C2FD74C590 /* LoggingProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoggingProvider.h; path = "OCMapper/Source/Logging Provider/LoggingProvider.h"; sourceTree = "<group>"; };
+		3BBA71740A76978E13784E60 /* ObjectInstanceProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectInstanceProvider.h; path = "OCMapper/Source/Instance Provider/ObjectInstanceProvider.h"; sourceTree = "<group>"; };
+		3C7367930EC4FAA6BC404468 /* ObjectMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ObjectMapper.m; path = OCMapper/Source/ObjectMapper.m; sourceTree = "<group>"; };
+		3CB9FD30F58EEF1457BA5A5B /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		3DDEB55C6E115C891959D49A /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		409B05AA07AA0E69E1EBDBDC /* ObjectMappingInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ObjectMappingInfo.m; path = OCMapper/Source/ObjectMappingInfo.m; sourceTree = "<group>"; };
+		44AC25F57DD8387A29A5FF0B /* Pods-Guardioes-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes-Alamofire.xcconfig"; sourceTree = "<group>"; };
+		45A93F886AEB0BB6FB641680 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
+		500A396DB9B1F4594A8DAD83 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62C577DE340EDDFFFEFCC674 /* CommonLoggingProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CommonLoggingProvider.h; path = "OCMapper/Source/Logging Provider/CommonLoggingProvider.h"; sourceTree = "<group>"; };
+		63B7268285ECF78424C0EFA0 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		66383306D0CA3A3B01D5802F /* Pods-Guardioes-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Guardioes-Alamofire.modulemap"; sourceTree = "<group>"; };
+		6D28E2D81F6843CE445F4695 /* Pods-Guardioes-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Guardioes-acknowledgements.plist"; sourceTree = "<group>"; };
+		730585CF1355C0AC7C04FE3A /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		7613F56A7A95C2AD002B2E24 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		76864B314F9095BCA0589D66 /* Pods-Guardioes-OCMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes-OCMapper.xcconfig"; sourceTree = "<group>"; };
+		7DA6B8DBE828577DDC989C09 /* Pods_Guardioes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guardioes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81D0F5BA01E0FDC75C14D721 /* Pods-Guardioes-OCMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Guardioes-OCMapper-dummy.m"; sourceTree = "<group>"; };
+		8A017AC21583781BAC9825C1 /* ObjectInstanceProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ObjectInstanceProvider.m; path = "OCMapper/Source/Instance Provider/ObjectInstanceProvider.m"; sourceTree = "<group>"; };
+		9335723293405ADA8CB66CBA /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
+		94B3DA6E6344CC319D08BBE1 /* InCodeMappingProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InCodeMappingProvider.h; path = "OCMapper/Source/Mapping Provider/In Code Mapping/InCodeMappingProvider.h"; sourceTree = "<group>"; };
+		A78F211ADB6AB177E11826B3 /* OCMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMapper.h; path = OCMapper/Source/OCMapper.h; sourceTree = "<group>"; };
+		A831EF055BC93838B99F7E06 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA24C9432FBE82DA3A4D6453 /* Pods-Guardioes-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Guardioes-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B6D2963B9A16B5229BD23600 /* NSDictionary+ObjectMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+ObjectMapper.h"; path = "OCMapper/Source/Categories/NSDictionary+ObjectMapper.h"; sourceTree = "<group>"; };
+		B7E499F54A7CD4469A5B9591 /* Pods-Guardioes-OCMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-OCMapper-prefix.pch"; sourceTree = "<group>"; };
+		BD3CD04AB3A0DD71E83DC4AB /* Pods-Guardioes.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Guardioes.modulemap"; sourceTree = "<group>"; };
+		C1DC20F1E608F74180A858EB /* Pods-Guardioes-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-environment.h"; sourceTree = "<group>"; };
+		C2AAAF2E3CFDE7C930044E92 /* Pods-Guardioes-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Guardioes-frameworks.sh"; sourceTree = "<group>"; };
+		C2F91FF0DDC8B4A987B6FF46 /* InstanceProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = InstanceProvider.h; path = "OCMapper/Source/Instance Provider/InstanceProvider.h"; sourceTree = "<group>"; };
+		C8AE528D23B2DB63A6C454DA /* Pods-Guardioes-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		C8DB25A4314928F4511DB070 /* Pods-Guardioes-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		C9584E6266407DBE68972DB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA9FB3DEC795DD853AF79AC9 /* Pods-Guardioes-OCMapper-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes-OCMapper-Private.xcconfig"; sourceTree = "<group>"; };
+		CD11E1B755F393D53E5C3A09 /* NSDictionary+ObjectMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+ObjectMapper.m"; path = "OCMapper/Source/Categories/NSDictionary+ObjectMapper.m"; sourceTree = "<group>"; };
+		D130D50A84BF294907EFEA36 /* NSObject+ObjectMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+ObjectMapper.h"; path = "OCMapper/Source/Categories/NSObject+ObjectMapper.h"; sourceTree = "<group>"; };
+		D4B080861B3B218452FC578C /* InCodeMappingProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = InCodeMappingProvider.m; path = "OCMapper/Source/Mapping Provider/In Code Mapping/InCodeMappingProvider.m"; sourceTree = "<group>"; };
+		D5015A874215436A78DBE07D /* Pods-Guardioes-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Guardioes-resources.sh"; sourceTree = "<group>"; };
+		E5A402B0A6E62BF2AF6C1099 /* Pods-Guardioes-OCMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Guardioes-OCMapper.modulemap"; sourceTree = "<group>"; };
+		E826392226CCD5F6EAB4C7D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EB962A4ED734C0CF01EFB543 /* ObjectMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ObjectMapper.h; path = OCMapper/Source/ObjectMapper.h; sourceTree = "<group>"; };
+		F2CC74C7573F9BB0AA3C8527 /* Pods-Guardioes-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Guardioes-Alamofire-dummy.m"; sourceTree = "<group>"; };
+		F35AE482930C4B3B2F7BED7E /* Pods-Guardioes-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Guardioes-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
+		F394F86383254C6B9D47B5B1 /* NSObject+ObjectMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+ObjectMapper.m"; path = "OCMapper/Source/Categories/NSObject+ObjectMapper.m"; sourceTree = "<group>"; };
+		F937ADCA4A65FA4C396A6E51 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA5730DCD4FF3A48D725B79 /* Pods-Guardioes-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Guardioes-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		06F87058143709A9C5AD904C /* Frameworks */ = {
+		18A310EADC7B00B7CDEF292A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ED1F6198CE7F2CD9EFCB1F1 /* Foundation.framework in Frameworks */,
+				A91994FA925AF468253AF649 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		36256AC71A1462EE1B2D9324 /* Frameworks */ = {
+		615E69299A0E5B8F75217E28 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8AFE0961E8FE08A1977E7A6 /* Foundation.framework in Frameworks */,
+				A0859C53FBD5BC1DD322F334 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6019B786C487B195302E4904 /* Frameworks */ = {
+		6F7CE97868B141DF60CAB995 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E0779B671EE719427E59120 /* Foundation.framework in Frameworks */,
+				9D9D9F2EEAAB63D62743B9E6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0AFD950EF98015459B7B058E = {
+		15BE65898C2B98666E607641 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F8E84576E2023C725FB5B65D /* Podfile */,
-				5DBEC9B6CDBB746C4547109F /* Frameworks */,
-				B2082FE341D15B36BEACAC7B /* Pods */,
-				F185C05319A2A31B7CA1CCAE /* Products */,
-				B170966E3C4B1A58F9CC5EA1 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		265EE2142F7B8EA97A3F0E3E /* OCMapper */ = {
-			isa = PBXGroup;
-			children = (
-				78CE009EBA5AECF1F20B45A4 /* CommonLoggingProvider.h */,
-				81E4BEB783FC356DD6C9AB5E /* CommonLoggingProvider.m */,
-				E8D2A469DC75B906E4683B05 /* InCodeMappingProvider.h */,
-				4B107F376D93E0C8B35205E0 /* InCodeMappingProvider.m */,
-				D6A3C17BA2A5681534F8B5D4 /* InstanceProvider.h */,
-				8EA39D5F6D9F935B9EBDD1DF /* LoggingProvider.h */,
-				2BCAE2D2843E051FC2560A14 /* ManagedObjectInstanceProvider.h */,
-				E6FCA53141932F2752BF8451 /* ManagedObjectInstanceProvider.m */,
-				74E48121BF93B5293CEEB793 /* MappingProvider.h */,
-				58F604878B9B2AE18D461141 /* NSDictionary+ObjectMapper.h */,
-				09A8C32698ADA133110E316D /* NSDictionary+ObjectMapper.m */,
-				BBAAACE7E0109CE0100DB531 /* NSObject+ObjectMapper.h */,
-				1F7D4B9998374BC53B1195D7 /* NSObject+ObjectMapper.m */,
-				851A5BBF2732DD0B50A57D08 /* OCMapper.h */,
-				CE070898DC8442486B4CDD75 /* ObjectInstanceProvider.h */,
-				81386F3C19E375A6A0C92DD3 /* ObjectInstanceProvider.m */,
-				10577E15D560A4FBCF836972 /* ObjectMapper.h */,
-				8A3DF014626FA13FE7132CA6 /* ObjectMapper.m */,
-				FAD089B199F0F06A31A979E2 /* ObjectMappingInfo.h */,
-				5A3A4D0DA811F6E634C01B7E /* ObjectMappingInfo.m */,
-				372C9B15ABE10CFD2E7F37C3 /* Support Files */,
-			);
-			path = OCMapper;
-			sourceTree = "<group>";
-		};
-		2849F06EF70E284D9E3A1FBB /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				6449C5731DE1EDCCD2943F22 /* Alamofire.swift */,
-				AC619C81980EFF472D9DF737 /* Download.swift */,
-				6EF5E8B5811ED900AEAD805A /* Manager.swift */,
-				1F19EF78F3E428F75B516476 /* ParameterEncoding.swift */,
-				347998A44833E9AB4E890BCA /* Request.swift */,
-				78FFC1E3A56BB695E25AF771 /* ResponseSerialization.swift */,
-				172CD8D43DBBB749E021B181 /* Upload.swift */,
-				463D34CD8FA92D472563A0E2 /* Validation.swift */,
-				E483F50B346997DA49010D9D /* Support Files */,
-			);
-			path = Alamofire;
-			sourceTree = "<group>";
-		};
-		372C9B15ABE10CFD2E7F37C3 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A52ED1CC2CE9480CDE5E2CAB /* Info.plist */,
-				125DBB6DC0ECC6A3B0F5BA0D /* Pods-Guardioes-OCMapper.modulemap */,
-				69DD44831D230BB498234868 /* Pods-Guardioes-OCMapper.xcconfig */,
-				62CD3A55D3065BAAA3B61AC3 /* Pods-Guardioes-OCMapper-Private.xcconfig */,
-				503B3925313256989EC6A65B /* Pods-Guardioes-OCMapper-dummy.m */,
-				6C96A6B3CAB1F6534FE7FBD1 /* Pods-Guardioes-OCMapper-prefix.pch */,
-				ACC32912302740090FBB3B55 /* Pods-Guardioes-OCMapper-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-Guardioes-OCMapper";
-			sourceTree = "<group>";
-		};
-		5DBEC9B6CDBB746C4547109F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8391F571EAADF8017B54620A /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8391F571EAADF8017B54620A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				E7F108D49D4B8F171B2C2137 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		B170966E3C4B1A58F9CC5EA1 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D51373ED0ABFFF215EC2DDF0 /* Pods-Guardioes */,
+				E1F1A99D911FA750798DA790 /* Pods-Guardioes */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B2082FE341D15B36BEACAC7B /* Pods */ = {
+		346244D063D1F8EFADA96956 /* OCMapper */ = {
 			isa = PBXGroup;
 			children = (
-				2849F06EF70E284D9E3A1FBB /* Alamofire */,
-				265EE2142F7B8EA97A3F0E3E /* OCMapper */,
+				62C577DE340EDDFFFEFCC674 /* CommonLoggingProvider.h */,
+				05A967321F87FF12DAF1ABCD /* CommonLoggingProvider.m */,
+				94B3DA6E6344CC319D08BBE1 /* InCodeMappingProvider.h */,
+				D4B080861B3B218452FC578C /* InCodeMappingProvider.m */,
+				C2F91FF0DDC8B4A987B6FF46 /* InstanceProvider.h */,
+				3B9DB758ED8D08C2FD74C590 /* LoggingProvider.h */,
+				271EEBD846204F1A35E28CC2 /* ManagedObjectInstanceProvider.h */,
+				19BCFEE90529EBDAE79728CB /* ManagedObjectInstanceProvider.m */,
+				07CA37B22D3B6E67946FFF7C /* MappingProvider.h */,
+				B6D2963B9A16B5229BD23600 /* NSDictionary+ObjectMapper.h */,
+				CD11E1B755F393D53E5C3A09 /* NSDictionary+ObjectMapper.m */,
+				D130D50A84BF294907EFEA36 /* NSObject+ObjectMapper.h */,
+				F394F86383254C6B9D47B5B1 /* NSObject+ObjectMapper.m */,
+				A78F211ADB6AB177E11826B3 /* OCMapper.h */,
+				3BBA71740A76978E13784E60 /* ObjectInstanceProvider.h */,
+				8A017AC21583781BAC9825C1 /* ObjectInstanceProvider.m */,
+				EB962A4ED734C0CF01EFB543 /* ObjectMapper.h */,
+				3C7367930EC4FAA6BC404468 /* ObjectMapper.m */,
+				29DA805F3440EEE3DFBAAC28 /* ObjectMappingInfo.h */,
+				409B05AA07AA0E69E1EBDBDC /* ObjectMappingInfo.m */,
+				F3AD27EC837967AEE8C36FAD /* Support Files */,
 			);
-			name = Pods;
+			path = OCMapper;
 			sourceTree = "<group>";
 		};
-		D51373ED0ABFFF215EC2DDF0 /* Pods-Guardioes */ = {
+		3B7452E66BCD10A53CE3AD67 /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				F3B94DC3C4CFC007574FD68C /* Info.plist */,
-				A5DAA4BCBE10C30D9174402F /* Pods-Guardioes.modulemap */,
-				9029A01476DFD4DD4442A826 /* Pods-Guardioes-acknowledgements.markdown */,
-				7F800453EEA81CFA979439D3 /* Pods-Guardioes-acknowledgements.plist */,
-				0C165B41C66972151584F847 /* Pods-Guardioes-dummy.m */,
-				8CA8E2041A2A276D6F93EC20 /* Pods-Guardioes-environment.h */,
-				6A3F5D23416DC72B16E728AD /* Pods-Guardioes-frameworks.sh */,
-				F5B38D8962CB6E9389CF6EA0 /* Pods-Guardioes-resources.sh */,
-				44212555B08344A21011ACF1 /* Pods-Guardioes-umbrella.h */,
-				7840EB8EE8A8E0AD7A8DD59C /* Pods-Guardioes.debug.xcconfig */,
-				84576B73D76D6CAE3227766E /* Pods-Guardioes.release.xcconfig */,
+				730585CF1355C0AC7C04FE3A /* Alamofire.swift */,
+				0CF403D446487210A26A32EC /* Download.swift */,
+				45A93F886AEB0BB6FB641680 /* Manager.swift */,
+				3DDEB55C6E115C891959D49A /* ParameterEncoding.swift */,
+				0FA9D44E13B776F003D335BD /* Request.swift */,
+				63B7268285ECF78424C0EFA0 /* ResponseSerialization.swift */,
+				9335723293405ADA8CB66CBA /* Upload.swift */,
+				3CB9FD30F58EEF1457BA5A5B /* Validation.swift */,
+				7F4BE2567F084EA9A4637340 /* Support Files */,
 			);
-			name = "Pods-Guardioes";
-			path = "Target Support Files/Pods-Guardioes";
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
-		E483F50B346997DA49010D9D /* Support Files */ = {
+		64F40A8A072774C9EFB7E0C4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0B8FE79A4572A45FAA8F5975 /* Info.plist */,
-				DF09F03BA3C05F14036981CF /* Pods-Guardioes-Alamofire.modulemap */,
-				2DEE73C97BA143D587441ACA /* Pods-Guardioes-Alamofire.xcconfig */,
-				F7325FC607C4D806DE59443A /* Pods-Guardioes-Alamofire-Private.xcconfig */,
-				F66A72ABAE92DAC869D9FC8D /* Pods-Guardioes-Alamofire-dummy.m */,
-				AFCA8AA0FADA8C1D1BED5CA2 /* Pods-Guardioes-Alamofire-prefix.pch */,
-				D7A78026589F68C210F8979B /* Pods-Guardioes-Alamofire-umbrella.h */,
+				A831EF055BC93838B99F7E06 /* Alamofire.framework */,
+				161B857FF791034DB228FE20 /* OCMapper.framework */,
+				7DA6B8DBE828577DDC989C09 /* Pods_Guardioes.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		670137B728679443B08BF374 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E826392226CCD5F6EAB4C7D8 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7F4BE2567F084EA9A4637340 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C9584E6266407DBE68972DB4 /* Info.plist */,
+				66383306D0CA3A3B01D5802F /* Pods-Guardioes-Alamofire.modulemap */,
+				44AC25F57DD8387A29A5FF0B /* Pods-Guardioes-Alamofire.xcconfig */,
+				F35AE482930C4B3B2F7BED7E /* Pods-Guardioes-Alamofire-Private.xcconfig */,
+				F2CC74C7573F9BB0AA3C8527 /* Pods-Guardioes-Alamofire-dummy.m */,
+				C8AE528D23B2DB63A6C454DA /* Pods-Guardioes-Alamofire-prefix.pch */,
+				C8DB25A4314928F4511DB070 /* Pods-Guardioes-Alamofire-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Guardioes-Alamofire";
 			sourceTree = "<group>";
 		};
-		F185C05319A2A31B7CA1CCAE /* Products */ = {
+		8810B82D26264670DAC6C8A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0278853F692F5A9206A70C18 /* Alamofire.framework */,
-				567185E6CD34479366FA8EB5 /* OCMapper.framework */,
-				E59D1D2C296282E893C65BF6 /* Pods_Guardioes.framework */,
+				670137B728679443B08BF374 /* iOS */,
 			);
-			name = Products;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A431932C8362F929C55F18F8 = {
+			isa = PBXGroup;
+			children = (
+				7613F56A7A95C2AD002B2E24 /* Podfile */,
+				8810B82D26264670DAC6C8A8 /* Frameworks */,
+				E3066EEB4839393214FC08B1 /* Pods */,
+				64F40A8A072774C9EFB7E0C4 /* Products */,
+				15BE65898C2B98666E607641 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E1F1A99D911FA750798DA790 /* Pods-Guardioes */ = {
+			isa = PBXGroup;
+			children = (
+				500A396DB9B1F4594A8DAD83 /* Info.plist */,
+				BD3CD04AB3A0DD71E83DC4AB /* Pods-Guardioes.modulemap */,
+				AA24C9432FBE82DA3A4D6453 /* Pods-Guardioes-acknowledgements.markdown */,
+				6D28E2D81F6843CE445F4695 /* Pods-Guardioes-acknowledgements.plist */,
+				3906EFF5FAAB5912DB15CBE9 /* Pods-Guardioes-dummy.m */,
+				C1DC20F1E608F74180A858EB /* Pods-Guardioes-environment.h */,
+				C2AAAF2E3CFDE7C930044E92 /* Pods-Guardioes-frameworks.sh */,
+				D5015A874215436A78DBE07D /* Pods-Guardioes-resources.sh */,
+				FCA5730DCD4FF3A48D725B79 /* Pods-Guardioes-umbrella.h */,
+				134B0DF625DD840584495CFB /* Pods-Guardioes.debug.xcconfig */,
+				2C92F3AF800781A58ACB0249 /* Pods-Guardioes.release.xcconfig */,
+			);
+			name = "Pods-Guardioes";
+			path = "Target Support Files/Pods-Guardioes";
+			sourceTree = "<group>";
+		};
+		E3066EEB4839393214FC08B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B7452E66BCD10A53CE3AD67 /* Alamofire */,
+				346244D063D1F8EFADA96956 /* OCMapper */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3AD27EC837967AEE8C36FAD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F937ADCA4A65FA4C396A6E51 /* Info.plist */,
+				E5A402B0A6E62BF2AF6C1099 /* Pods-Guardioes-OCMapper.modulemap */,
+				76864B314F9095BCA0589D66 /* Pods-Guardioes-OCMapper.xcconfig */,
+				CA9FB3DEC795DD853AF79AC9 /* Pods-Guardioes-OCMapper-Private.xcconfig */,
+				81D0F5BA01E0FDC75C14D721 /* Pods-Guardioes-OCMapper-dummy.m */,
+				B7E499F54A7CD4469A5B9591 /* Pods-Guardioes-OCMapper-prefix.pch */,
+				0199214C1A5C6738EBD8A738 /* Pods-Guardioes-OCMapper-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Guardioes-OCMapper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3C638DA726751E32107CD3D1 /* Headers */ = {
+		4D7C750734E6C828DBCACE3D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E3EBAE3BFE50B26CBF68909 /* Pods-Guardioes-umbrella.h in Headers */,
+				B08CDF29DCA6812F8CB4544F /* Pods-Guardioes-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		55CAC86323E4F639219DF00C /* Headers */ = {
+		922BBE5D1FFF558CAF360DE6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29F4DDF9804432F5933A6D04 /* CommonLoggingProvider.h in Headers */,
-				45671BA00AD09639E8F77CBB /* InCodeMappingProvider.h in Headers */,
-				31A23CEC00D168009C2F40E5 /* InstanceProvider.h in Headers */,
-				C3964C4AC57CA9CA7D04D8F9 /* LoggingProvider.h in Headers */,
-				B8FBB20C8139715CA935F57C /* ManagedObjectInstanceProvider.h in Headers */,
-				2F1C1FC0D6DE6AA038E5509E /* MappingProvider.h in Headers */,
-				81E43908F51AE0EBAF55361A /* NSDictionary+ObjectMapper.h in Headers */,
-				6355CA627BCCFE366DC6C061 /* NSObject+ObjectMapper.h in Headers */,
-				E7A5A0F24E2000235BC993FE /* OCMapper.h in Headers */,
-				60E3ED4233B887A1166B4B32 /* ObjectInstanceProvider.h in Headers */,
-				F5F46DC9193FD4262E1D6504 /* ObjectMapper.h in Headers */,
-				FFA921EA4E9860C86836A3CA /* ObjectMappingInfo.h in Headers */,
-				774CC6F00F246AB1B3D2A8A4 /* Pods-Guardioes-OCMapper-umbrella.h in Headers */,
+				9B6436594168B1BB40830178 /* Pods-Guardioes-Alamofire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95D3956BAE11C24479373C25 /* Headers */ = {
+		9D178D4B65955F9F7B762270 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CF4EDE01E0B0B61F50D8201 /* Pods-Guardioes-Alamofire-umbrella.h in Headers */,
+				AA867D9ECE5CC3E530E6E262 /* CommonLoggingProvider.h in Headers */,
+				508088C28AF2E1D02450F2E1 /* InCodeMappingProvider.h in Headers */,
+				4D61F9CDF351ADE649CB3966 /* InstanceProvider.h in Headers */,
+				F2C5D8ADD4FD341D4323DEFD /* LoggingProvider.h in Headers */,
+				3EBFE08BBC80612E469DCA36 /* ManagedObjectInstanceProvider.h in Headers */,
+				91322319F9482DA9ECBDE768 /* MappingProvider.h in Headers */,
+				BCB69F39D25551582F2C6AA6 /* NSDictionary+ObjectMapper.h in Headers */,
+				2360F71B829451398F47EF82 /* NSObject+ObjectMapper.h in Headers */,
+				49D5E11B3515D61D6BDFB309 /* OCMapper.h in Headers */,
+				DAFC2A309E7C364E57E45DF4 /* ObjectInstanceProvider.h in Headers */,
+				E7B00BA8D78878A1C0F12C0B /* ObjectMapper.h in Headers */,
+				D1BB7B4E583BCC6FAA21A40B /* ObjectMappingInfo.h in Headers */,
+				893A9A50759F62E390986090 /* Pods-Guardioes-OCMapper-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		350382B83840BF6E8013F95E /* Pods-Guardioes */ = {
+		3CA268CB1A4BF7CE3B948D92 /* Pods-Guardioes-OCMapper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ABE8652077E1ED60D4A2B03A /* Build configuration list for PBXNativeTarget "Pods-Guardioes" */;
+			buildConfigurationList = 8F178819DA5ADC42F4D3B1C3 /* Build configuration list for PBXNativeTarget "Pods-Guardioes-OCMapper" */;
 			buildPhases = (
-				55783CDDA1779E67FEB1EC0E /* Sources */,
-				36256AC71A1462EE1B2D9324 /* Frameworks */,
-				3C638DA726751E32107CD3D1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BAB161676922B7106DD26A8 /* PBXTargetDependency */,
-				DF502E1E33D71A44E983C569 /* PBXTargetDependency */,
-			);
-			name = "Pods-Guardioes";
-			productName = "Pods-Guardioes";
-			productReference = E59D1D2C296282E893C65BF6 /* Pods_Guardioes.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		BBBE2134AF3F8D92D6128AF0 /* Pods-Guardioes-Alamofire */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C295EBEDFE6910698AA98AC4 /* Build configuration list for PBXNativeTarget "Pods-Guardioes-Alamofire" */;
-			buildPhases = (
-				29C44ED29C9BE644C18065DC /* Sources */,
-				6019B786C487B195302E4904 /* Frameworks */,
-				95D3956BAE11C24479373C25 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-Guardioes-Alamofire";
-			productName = "Pods-Guardioes-Alamofire";
-			productReference = 0278853F692F5A9206A70C18 /* Alamofire.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F4BFD31FF774A0EAE88336FC /* Pods-Guardioes-OCMapper */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 33E741CED11471D607AA84BF /* Build configuration list for PBXNativeTarget "Pods-Guardioes-OCMapper" */;
-			buildPhases = (
-				A06646840AE78B353DC96AB2 /* Sources */,
-				06F87058143709A9C5AD904C /* Frameworks */,
-				55CAC86323E4F639219DF00C /* Headers */,
+				1DEB1733D9AFAEA549203599 /* Sources */,
+				6F7CE97868B141DF60CAB995 /* Frameworks */,
+				9D178D4B65955F9F7B762270 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -391,98 +355,134 @@
 			);
 			name = "Pods-Guardioes-OCMapper";
 			productName = "Pods-Guardioes-OCMapper";
-			productReference = 567185E6CD34479366FA8EB5 /* OCMapper.framework */;
+			productReference = 161B857FF791034DB228FE20 /* OCMapper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DE8D714DB629839B30983479 /* Pods-Guardioes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E96BEDCA9FA6D53AA1B6B4AB /* Build configuration list for PBXNativeTarget "Pods-Guardioes" */;
+			buildPhases = (
+				1E5F771123A99261E5EA36FE /* Sources */,
+				615E69299A0E5B8F75217E28 /* Frameworks */,
+				4D7C750734E6C828DBCACE3D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14507C908BA52D43594D04BC /* PBXTargetDependency */,
+				D9D677697915F75E8257826C /* PBXTargetDependency */,
+			);
+			name = "Pods-Guardioes";
+			productName = "Pods-Guardioes";
+			productReference = 7DA6B8DBE828577DDC989C09 /* Pods_Guardioes.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FE13E4203A3A5DE37464ECD9 /* Pods-Guardioes-Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AA8F6A60706011F3B6A7AE8 /* Build configuration list for PBXNativeTarget "Pods-Guardioes-Alamofire" */;
+			buildPhases = (
+				1942572D3C0D787FE0D43676 /* Sources */,
+				18A310EADC7B00B7CDEF292A /* Frameworks */,
+				922BBE5D1FFF558CAF360DE6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Guardioes-Alamofire";
+			productName = "Pods-Guardioes-Alamofire";
+			productReference = A831EF055BC93838B99F7E06 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F976A220DE0005CC439E6207 /* Project object */ = {
+		F98A251804C99E869E845A48 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = F2BDDF450EEA22AACE2684AA /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 5CE64ADB5D7C11DD211B0F34 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 0AFD950EF98015459B7B058E;
-			productRefGroup = F185C05319A2A31B7CA1CCAE /* Products */;
+			mainGroup = A431932C8362F929C55F18F8;
+			productRefGroup = 64F40A8A072774C9EFB7E0C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				350382B83840BF6E8013F95E /* Pods-Guardioes */,
-				BBBE2134AF3F8D92D6128AF0 /* Pods-Guardioes-Alamofire */,
-				F4BFD31FF774A0EAE88336FC /* Pods-Guardioes-OCMapper */,
+				DE8D714DB629839B30983479 /* Pods-Guardioes */,
+				FE13E4203A3A5DE37464ECD9 /* Pods-Guardioes-Alamofire */,
+				3CA268CB1A4BF7CE3B948D92 /* Pods-Guardioes-OCMapper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		29C44ED29C9BE644C18065DC /* Sources */ = {
+		1942572D3C0D787FE0D43676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21C95984BE3CA3C2F32B4311 /* Alamofire.swift in Sources */,
-				934F01934CFD0F508E76B965 /* Download.swift in Sources */,
-				3DF9ED22858F5B2D6BB16E25 /* Manager.swift in Sources */,
-				955DCFCDFDF07369164EFB7E /* ParameterEncoding.swift in Sources */,
-				5751AF584A74A91C6BA1BDB5 /* Pods-Guardioes-Alamofire-dummy.m in Sources */,
-				8872FBB85E57115FBA55B745 /* Request.swift in Sources */,
-				ADC89ACEB9DB8E921F25866F /* ResponseSerialization.swift in Sources */,
-				989562194793013A40569000 /* Upload.swift in Sources */,
-				39E0CF0CC41BABC4BF8C81A7 /* Validation.swift in Sources */,
+				44514D425B14AF4B561DE8AD /* Alamofire.swift in Sources */,
+				533E89C438AEE02E5BCA8072 /* Download.swift in Sources */,
+				93675F3380825704BD46173B /* Manager.swift in Sources */,
+				E43C827E1460E626742608E8 /* ParameterEncoding.swift in Sources */,
+				A7A30ECFDB8F71177961D308 /* Pods-Guardioes-Alamofire-dummy.m in Sources */,
+				B680A3D8A1EF8E477E0E4AC8 /* Request.swift in Sources */,
+				60227332F6D7E2B3012D2556 /* ResponseSerialization.swift in Sources */,
+				77A9CB6DEAA9B7928804D4CE /* Upload.swift in Sources */,
+				A8C5F9D8883BFFAF4281B2E3 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		55783CDDA1779E67FEB1EC0E /* Sources */ = {
+		1DEB1733D9AFAEA549203599 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C91DCA65B924D6669CA3021 /* Pods-Guardioes-dummy.m in Sources */,
+				4753C5270CF4CC2A85A101D3 /* CommonLoggingProvider.m in Sources */,
+				651AA10E438A892A97F00884 /* InCodeMappingProvider.m in Sources */,
+				F2B23F1BDF42492A9D2317F0 /* ManagedObjectInstanceProvider.m in Sources */,
+				015D671FA6778F59C80C7682 /* NSDictionary+ObjectMapper.m in Sources */,
+				C7BD795FE23B2994D1C46AF2 /* NSObject+ObjectMapper.m in Sources */,
+				67C8EE4AEF1CB36E49074119 /* ObjectInstanceProvider.m in Sources */,
+				C753D1959139368B87EF304F /* ObjectMapper.m in Sources */,
+				870FD626D48BE1F224A42D9B /* ObjectMappingInfo.m in Sources */,
+				49EAD35C1800215C08EAFAE6 /* Pods-Guardioes-OCMapper-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A06646840AE78B353DC96AB2 /* Sources */ = {
+		1E5F771123A99261E5EA36FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D27F9B84F4A7B2EE6139ACE8 /* CommonLoggingProvider.m in Sources */,
-				C8645AD8E389CC35E43060A4 /* InCodeMappingProvider.m in Sources */,
-				2A2BE6AD26B241910E177C09 /* ManagedObjectInstanceProvider.m in Sources */,
-				BCA5FFCAD2AC3E8E1A4084C7 /* NSDictionary+ObjectMapper.m in Sources */,
-				2B81866AE06D81E06D9FAE93 /* NSObject+ObjectMapper.m in Sources */,
-				E56FFA92DE872C0F9733D95E /* ObjectInstanceProvider.m in Sources */,
-				18B5A1D2E08538F50D4EF6FF /* ObjectMapper.m in Sources */,
-				42E4E64CF28D44B7DB3FDDE9 /* ObjectMappingInfo.m in Sources */,
-				A37D34873FB5431950280DA2 /* Pods-Guardioes-OCMapper-dummy.m in Sources */,
+				34F422A1AE47D3190FD526CE /* Pods-Guardioes-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2BAB161676922B7106DD26A8 /* PBXTargetDependency */ = {
+		14507C908BA52D43594D04BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Guardioes-Alamofire";
-			target = BBBE2134AF3F8D92D6128AF0 /* Pods-Guardioes-Alamofire */;
-			targetProxy = EB9507C43E5FCE52966A5C31 /* PBXContainerItemProxy */;
+			target = FE13E4203A3A5DE37464ECD9 /* Pods-Guardioes-Alamofire */;
+			targetProxy = F97912D3F854F8EFE9172875 /* PBXContainerItemProxy */;
 		};
-		DF502E1E33D71A44E983C569 /* PBXTargetDependency */ = {
+		D9D677697915F75E8257826C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Guardioes-OCMapper";
-			target = F4BFD31FF774A0EAE88336FC /* Pods-Guardioes-OCMapper */;
-			targetProxy = 31B41F12290890AA421B70D0 /* PBXContainerItemProxy */;
+			target = 3CA268CB1A4BF7CE3B948D92 /* Pods-Guardioes-OCMapper */;
+			targetProxy = 1695DE5C8AFEE40BF395D7AF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1B57CD78F83A5B6744EE9317 /* Debug */ = {
+		1DD58B4F57BAC1034EB835F6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7325FC607C4D806DE59443A /* Pods-Guardioes-Alamofire-Private.xcconfig */;
+			baseConfigurationReference = F35AE482930C4B3B2F7BED7E /* Pods-Guardioes-Alamofire-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -497,18 +497,80 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-Guardioes-Alamofire/Pods-Guardioes-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		4C5496FBEA39610423A3C2E9 /* Debug */ = {
+		1E0B64881A474B48DAA91071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46D1CB00E7A0B67FD7190A05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C92F3AF800781A58ACB0249 /* Pods-Guardioes.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Guardioes/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Guardioes/Pods-Guardioes.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Guardioes;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		66B9279B043C5CBE3C548710 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -547,153 +609,9 @@
 			};
 			name = Debug;
 		};
-		86E18CF661652F91E4BDEB79 /* Release */ = {
+		BA3DD820CAB0D0E7E0DBFAC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62CD3A55D3065BAAA3B61AC3 /* Pods-Guardioes-OCMapper-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Guardioes-OCMapper/Pods-Guardioes-OCMapper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-Guardioes-OCMapper/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Guardioes-OCMapper/Pods-Guardioes-OCMapper.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = OCMapper;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A4CC28673326EC1411897240 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7325FC607C4D806DE59443A /* Pods-Guardioes-Alamofire-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Guardioes-Alamofire/Pods-Guardioes-Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-Guardioes-Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Guardioes-Alamofire/Pods-Guardioes-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A6E196BCCE84A15569C4010F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62CD3A55D3065BAAA3B61AC3 /* Pods-Guardioes-OCMapper-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Guardioes-OCMapper/Pods-Guardioes-OCMapper-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-Guardioes-OCMapper/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Guardioes-OCMapper/Pods-Guardioes-OCMapper.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = OCMapper;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C14DEA385DFC5366043EDE55 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		C3B584DFAAC7DB76DB6CDB63 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84576B73D76D6CAE3227766E /* Pods-Guardioes.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Guardioes/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-Guardioes/Pods-Guardioes.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Guardioes;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EE1AF7CD4501FF115CDC6674 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7840EB8EE8A8E0AD7A8DD59C /* Pods-Guardioes.debug.xcconfig */;
+			baseConfigurationReference = 134B0DF625DD840584495CFB /* Pods-Guardioes.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -721,46 +639,128 @@
 			};
 			name = Debug;
 		};
+		CD0853936FEE63DA2B22F49A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA9FB3DEC795DD853AF79AC9 /* Pods-Guardioes-OCMapper-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Guardioes-OCMapper/Pods-Guardioes-OCMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-Guardioes-OCMapper/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Guardioes-OCMapper/Pods-Guardioes-OCMapper.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = OCMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E02941B4047D69D4FB2F3D8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA9FB3DEC795DD853AF79AC9 /* Pods-Guardioes-OCMapper-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Guardioes-OCMapper/Pods-Guardioes-OCMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-Guardioes-OCMapper/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Guardioes-OCMapper/Pods-Guardioes-OCMapper.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = OCMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EA261EF99C676AC313D9351C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F35AE482930C4B3B2F7BED7E /* Pods-Guardioes-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Guardioes-Alamofire/Pods-Guardioes-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-Guardioes-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Guardioes-Alamofire/Pods-Guardioes-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33E741CED11471D607AA84BF /* Build configuration list for PBXNativeTarget "Pods-Guardioes-OCMapper" */ = {
+		5CE64ADB5D7C11DD211B0F34 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A6E196BCCE84A15569C4010F /* Debug */,
-				86E18CF661652F91E4BDEB79 /* Release */,
+				66B9279B043C5CBE3C548710 /* Debug */,
+				1E0B64881A474B48DAA91071 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ABE8652077E1ED60D4A2B03A /* Build configuration list for PBXNativeTarget "Pods-Guardioes" */ = {
+		8AA8F6A60706011F3B6A7AE8 /* Build configuration list for PBXNativeTarget "Pods-Guardioes-Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE1AF7CD4501FF115CDC6674 /* Debug */,
-				C3B584DFAAC7DB76DB6CDB63 /* Release */,
+				EA261EF99C676AC313D9351C /* Debug */,
+				1DD58B4F57BAC1034EB835F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C295EBEDFE6910698AA98AC4 /* Build configuration list for PBXNativeTarget "Pods-Guardioes-Alamofire" */ = {
+		8F178819DA5ADC42F4D3B1C3 /* Build configuration list for PBXNativeTarget "Pods-Guardioes-OCMapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1B57CD78F83A5B6744EE9317 /* Debug */,
-				A4CC28673326EC1411897240 /* Release */,
+				CD0853936FEE63DA2B22F49A /* Debug */,
+				E02941B4047D69D4FB2F3D8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F2BDDF450EEA22AACE2684AA /* Build configuration list for PBXProject "Pods" */ = {
+		E96BEDCA9FA6D53AA1B6B4AB /* Build configuration list for PBXNativeTarget "Pods-Guardioes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4C5496FBEA39610423A3C2E9 /* Debug */,
-				C14DEA385DFC5366043EDE55 /* Release */,
+				BA3DD820CAB0D0E7E0DBFAC2 /* Debug */,
+				46D1CB00E7A0B67FD7190A05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F976A220DE0005CC439E6207 /* Project object */;
+	rootObject = F98A251804C99E869E845A48 /* Project object */;
 }
