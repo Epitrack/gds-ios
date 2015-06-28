@@ -35,11 +35,11 @@ public class WelcomeActivity extends FragmentActivity {
         pageIndicator.setViewPager(viewPager);
     }
 
-    public void onRegister(final View view) {
-        startActivity(new Intent(this, CreateAccountActivity.class));
-    }
-
     public void onEnter(final View view) {
         startActivity(new Intent(this, LoginActivity.class));
+    }
+
+    public void onRegister(final View view) {
+        startActivity(new Intent(this, CreateAccountActivity.class));
     }
 }
