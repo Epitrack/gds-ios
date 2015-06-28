@@ -52,22 +52,21 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
 
         <activity
-            android:name=".view.account.LoginActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.NoActionBar"/>
-
-        <activity
             android:name=".view.welcome.WelcomeActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.NoActionBar"/>
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".view.account.LoginActivity"
+            android:exported="false"
+            android:parentActivityName=".view.welcome.WelcomeActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".view.account.CreateAccountActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.NoActionBar"/>
+            android:parentActivityName=".view.welcome.WelcomeActivity"
+            android:screenOrientation="portrait"/>
 
         # Main
 
