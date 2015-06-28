@@ -3,20 +3,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <fragment
-        class="com.epitrack.guardioes.view.account.SocialFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
-        android:tag="social_fragment"/>
-
     <LinearLayout
+        android:id="@+id/login_activity_linear_layout_social_login"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="225dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
+
+        <fragment
+            class="com.epitrack.guardioes.view.account.SocialFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:tag="social_fragment"/>
+
+        <Button
+            android:id="@+id/login_activity_button_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hit me"
+            android:layout_marginTop="25dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/login_activity_linear_layout_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="invisible">
 
         <EditText
             android:id="@+id/login_activity_edit_text_mail"
@@ -33,7 +51,7 @@
             android:inputType="textPassword"/>
 
         <Button
-            android:id="@+id/login_activity_button_enter"
+            android:id="@+id/login_activity_button_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/enter"/>
@@ -43,6 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Esqueceu a senha?"/>
+
     </LinearLayout>
 
 </RelativeLayout>
