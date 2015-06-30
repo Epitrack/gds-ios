@@ -5,7 +5,7 @@ import android.content.Context;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
-public class RequestHandler {
+public final class RequestHandler {
 
     private static RequestHandler requestHandler;
 
@@ -15,7 +15,7 @@ public class RequestHandler {
         queue = setupQueue(context.getApplicationContext());
     }
 
-    public static RequestHandler getInstance(final Context context) {
+    public static RequestHandler getRequestHandler(final Context context) {
 
         if (requestHandler == null) {
             requestHandler = new RequestHandler(context);
