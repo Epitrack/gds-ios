@@ -16,7 +16,7 @@
     <string name="join">Participe agora!</string>
 
     <string name="register">Cadastrar</string>
-    <string name="enter">Entrar</string>
+    <string name="splash_activity_enter">Entrar</string>
 
     # NewsActivity
     <string name="news_activity_title">Notícias</string>

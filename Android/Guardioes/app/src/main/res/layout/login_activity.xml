@@ -54,7 +54,7 @@
             android:id="@+id/login_activity_button_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/enter"/>
+            android:text="@string/splash_activity_enter"/>
 
         <TextView
             android:id="@+id/login_activity_text_view_forgot_password"
