@@ -5,21 +5,28 @@
               android:orientation="vertical">
 
     <Button
-        android:id="@+id/social_fragment_button_google"
-        android:layout_width="225dp"
+        android:id="@+id/social_fragment_button_facebook"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gmail"/>
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/selector_button_facebook"/>
+
+    <Button
+        android:id="@+id/social_fragment_button_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/selector_button_google"/>
 
     <Button
         android:id="@+id/social_fragment_button_twitter"
-        android:layout_width="225dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Twitter"/>
-
-    <Button
-        android:id="@+id/social_fragment_button_facebook"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:text="Facebook"/>
+        android:layout_margin="5dp"
+        android:background="@drawable/selector_button_twitter"/>
 
 </LinearLayout>
