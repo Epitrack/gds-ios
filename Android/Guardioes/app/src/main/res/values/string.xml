@@ -3,6 +3,26 @@
 
     <string name="app_name">Guardiões Da Saúde</string>
 
+    # Splash Activity
+    <string name="splash_activity_enter">Entrar</string>
+
+    # Social Fragment
+    <string name="social_fragment_facebook">Facebook</string>
+    <string name="social_fragment_google">Google</string>
+    <string name="social_fragment_twitter">Twitter</string>
+
+    # Login Activity
+    <string name="login_activity_social_hint">Entrar rapidamente com:</string>
+    <string name="login_activity_mail_hint">Ou use o seu email:</string>
+    <string name="login_activity_mail">Email</string>
+
+    # Create Account Activity
+    <string name="create_account_activity_social_hint">Cadastre-se rapidamente com:</string>
+    <string name="create_account_activity_privacy_hint">Ou use o seu email:</string>
+    <string name="create_account_activity_mail_hint">Ou use o seu email:</string>
+    <string name="create_account_activity_mail">Email</string>
+    <string name="create_account_activity_terms_hint">Concordo com os Termos de Uso</string>
+
     <string name="profile">Perfil</string>
     <string name="settings">Configurações</string>
     <string name="about">Sobre</string>
@@ -16,25 +36,24 @@
     <string name="join">Participe agora!</string>
 
     <string name="register">Cadastrar</string>
-    <string name="splash_activity_enter">Entrar</string>
 
-    # NewsActivity
+    # News Activity
     <string name="news_activity_title">Notícias</string>
     <string name="news_activity_search">Procurar</string>
     <string name="news_activity_hyphen">-</string>
 
-    # StateActivity
+    # State Activity
     <string name="state_activity_message">Como você está\nse sentindo?</string>
     <string name="state_activity_good">Bem</string>
     <string name="state_activity_bad">Mal</string>
 
-    # SymptomsActivity
+    # Symptoms Activity
     <string name="symptom_activity_message">Qual desses sintomas\nvocê está sentindo?</string>
     <string name="symptom_activity_symptom">Sintomas</string>
     <string name="symptom_activity_other">Outros</string>
     <string name="symptom_activity_confirm">Confirmar</string>
 
-    # SelectParticipantActivity
+    # Select Participant Activity
     <string name="select_participant_activity_message">De quem será\no relatório?</string>
     <string name="select_participant_activity_age">{0} anos</string>
     <string name="select_participant_activity_family">Familiares</string>
