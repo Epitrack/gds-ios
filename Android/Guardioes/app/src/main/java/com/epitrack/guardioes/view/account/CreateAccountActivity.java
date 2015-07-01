@@ -41,7 +41,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     @InjectView(R.id.create_account_activity_edit_text_birth_date)
     EditText editTextBirthDate;
 
-    private boolean inLogin;
+    private boolean inCreateAccount;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -50,6 +50,8 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
         setContentView(R.layout.create_account_activity);
 
         ButterKnife.inject(this);
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         // TODO: Check play service
         // TODO: Register to GCM. Review soon..
@@ -64,7 +66,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
         if (item.getItemId() == android.R.id.home) {
 
-            if (inLogin) {
+            if (inCreateAccount) {
                 handlerAnimation();
 
             } else {
@@ -81,7 +83,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     @Override
     public void onBackPressed() {
 
-        if (inLogin) {
+        if (inCreateAccount) {
             handlerAnimation();
 
         } else {
@@ -106,7 +108,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
             @Override
             public void onAnimationEnd(final Animation animation) {
-                inLogin = true;
+                inCreateAccount = true;
             }
 
             @Override
@@ -134,7 +136,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
             @Override
             public void onAnimationEnd(final Animation animation) {
-                inLogin = false;
+                inCreateAccount = false;
             }
 
             @Override

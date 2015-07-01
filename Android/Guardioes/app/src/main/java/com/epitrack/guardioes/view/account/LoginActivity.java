@@ -43,6 +43,8 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
 
         ButterKnife.inject(this);
 
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         // TODO: Check play service
         // TODO: Register to GCM. Review soon..
         // startService(new Intent(this, RegisterService.class));
