@@ -64,13 +64,13 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
 
-        final Menu menu = menuArray[position];
-
-        viewHolder.textViewName.setText(viewHolder.textViewName.getContext()
-                                                               .getResources()
-                                                               .getString(menu.getName()));
-
-        viewHolder.imageViewIcon.setImageResource(menu.getIcon());
+//        final Menu menu = menuArray[position];
+//
+//        viewHolder.textViewName.setText(viewHolder.textViewName.getContext()
+//                                                               .getResources()
+//                                                               .getString(menu.getName()));
+//
+//        viewHolder.imageViewIcon.setImageResource(menu.getIcon());
     }
 
     @Override

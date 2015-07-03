@@ -1,7 +1,11 @@
 package com.epitrack.guardioes.view;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +15,6 @@ import android.view.View;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.menu.Menu;
-import com.epitrack.guardioes.view.menu.OnMenuListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,18 +22,15 @@ import java.util.Map;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainActivity extends AppCompatActivity implements OnMenuListener {
+public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 
     private static final Class<? extends Fragment> MAIN_FRAGMENT = MainFragment.class;
 
-//    @InjectView(R.id.main_activity_recycler_view_menu)
-//    RecyclerView recyclerView;
-//
-//    @InjectView(R.id.main_activity_linear_layout_content)
-//    LinearLayout layoutContent;
-
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
+
+    @InjectView(R.id.main_activity_navigation_view_main_menu)
+    NavigationView navigationView;
 
     @InjectView(R.id.main_activity_drawer_layout)
     DrawerLayout drawerLayout;
@@ -86,14 +86,10 @@ public class MainActivity extends AppCompatActivity implements OnMenuListener {
 
         drawerLayout.setDrawerListener(drawerToggle);
 
-//        recyclerView.setHasFixedSize(true);
-//
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//
-//        recyclerView.setAdapter(new MenuAdapter(this, Menu.values()));
+        navigationView.setNavigationItemSelectedListener(this);
 
-//        addFragment(MAIN_FRAGMENT,
-//                    MAIN_FRAGMENT.getSimpleName());
+        addFragment(MAIN_FRAGMENT,
+                MAIN_FRAGMENT.getSimpleName());
     }
 
     @Override
@@ -109,70 +105,76 @@ public class MainActivity extends AppCompatActivity implements OnMenuListener {
     }
 
     @Override
-    public void onMenuSelect(final Menu menu) {
+    public void onBackPressed() {
 
-//        drawerLayout.closeDrawer(layoutContent);
-//
-//        if (menu.isDialog()) {
-//
-//
-//        } else if (menu.isFragment()) {
-//
-//            if (!menu.getTag().equals(getCurrentFragment().getTag())) {
-//
-//                replaceFragment(menu.getMenuClass(), menu.getTag());
-//            }
-//
-//        } else if (menu.isActivity()) {
-//            startActivity(new Intent(this, menu.getMenuClass()));
-//        }
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        } else if (getCurrentFragment().getTag().equals(MAIN_FRAGMENT.getSimpleName())) {
+
+            super.onBackPressed();
+
+        } else {
+
+            replaceFragment(MAIN_FRAGMENT,
+                            MAIN_FRAGMENT.getSimpleName());
+        }
     }
 
     @Override
-    public void onBackPressed() {
+    public boolean onNavigationItemSelected(final MenuItem menuItem) {
 
-//        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-//            drawerLayout.closeDrawer(layoutContent);
-//
-//        } else if (getCurrentFragment().getTag().equals(MAIN_FRAGMENT.getSimpleName())) {
-//
-//            super.onBackPressed();
-//
-//        } else {
-//
-//            replaceFragment(MAIN_FRAGMENT,
-//                            MAIN_FRAGMENT.getSimpleName());
-//        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+
+        final Menu menu = Menu.getBy(menuItem);
+
+        if (menu.isDialog()) {
+
+
+        } else if (menu.isFragment()) {
+
+            if (!menu.getTag().equals(getCurrentFragment().getTag())) {
+
+                replaceFragment(menu.getMenuClass(), menu.getTag());
+            }
+
+        } else if (menu.isActivity()) {
+            startActivity(new Intent(this, menu.getMenuClass()));
+        }
+
+        menuItem.setCheckable(true);
+
+        return true;
     }
 
-//    private Fragment getCurrentFragment() {
-//        return getFragmentManager().findFragmentById(R.id.main_activity_frame_layout_fragment_container);
-//    }
-//
-//    private void addFragment(final Class<? extends Fragment> fragmentClass, final String tag) {
-//
-//        final Fragment fragment = Fragment.instantiate(this, fragmentClass.getName());
-//
-//        getFragmentManager().beginTransaction()
-//                            .add(R.id.main_activity_frame_layout_fragment_container, fragment, tag)
-//                            .commit();
-//
-//        fragmentMap.put(tag, fragment);
-//    }
-//
-//    private void replaceFragment(final Class<?> fragmentClass, final String tag) {
-//
-//        Fragment fragment = fragmentMap.get(tag);
-//
-//        if (fragment == null) {
-//
-//            fragment = Fragment.instantiate(this, fragmentClass.getName());
-//
-//            fragmentMap.put(tag, fragment);
-//        }
-//
-//        getFragmentManager().beginTransaction()
-//                            .replace(R.id.main_activity_frame_layout_fragment_container, fragment, tag)
-//                            .commit();
-//    }
+    private Fragment getCurrentFragment() {
+        return getFragmentManager().findFragmentById(R.id.main_activity_frame_layout_fragment_container);
+    }
+
+    private void addFragment(final Class<? extends Fragment> fragmentClass, final String tag) {
+
+        final Fragment fragment = Fragment.instantiate(this, fragmentClass.getName());
+
+        getFragmentManager().beginTransaction()
+                            .add(R.id.main_activity_frame_layout_fragment_container, fragment, tag)
+                            .commit();
+
+        fragmentMap.put(tag, fragment);
+    }
+
+    private void replaceFragment(final Class<?> fragmentClass, final String tag) {
+
+        Fragment fragment = fragmentMap.get(tag);
+
+        if (fragment == null) {
+
+            fragment = Fragment.instantiate(this, fragmentClass.getName());
+
+            fragmentMap.put(tag, fragment);
+        }
+
+        getFragmentManager().beginTransaction()
+                            .replace(R.id.main_activity_frame_layout_fragment_container, fragment, tag)
+                            .commit();
+    }
 }

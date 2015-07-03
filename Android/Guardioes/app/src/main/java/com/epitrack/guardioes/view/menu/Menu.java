@@ -3,40 +3,31 @@ package com.epitrack.guardioes.view.menu;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.app.Fragment;
+import android.view.MenuItem;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.view.MainFragment;
 
 public enum Menu {
 
-    PROFILE     (1, R.string.main_menu_profile, R.drawable.ic_launcher, ProfileActivity.class),
-    SETTINGS    (2, R.string.main_menu_setting, R.drawable.ic_launcher, SettingsActivity.class),
-    ABOUT       (3, R.string.main_menu_about, R.drawable.ic_launcher, AboutActivity.class),
-    HELP        (4, R.string.main_menu_help, R.drawable.ic_launcher, HelpActivity.class),
-    EXIT        (5, R.string.main_menu_exit, R.drawable.ic_launcher, AboutActivity.class);
+    HOME        (R.id.main_menu_home, MainFragment.class),
+    PROFILE     (R.id.main_menu_profile, ProfileActivity.class),
+    SETTINGS    (R.id.main_menu_setting, SettingsActivity.class),
+    ABOUT       (R.id.main_menu_about, AboutActivity.class),
+    HELP        (R.id.main_menu_help, HelpActivity.class),
+    EXIT        (R.id.main_menu_exit, AboutActivity.class);
 
     private final int id;
-    private final int name;
-    private final int icon;
     private final Class<?> menuClass;
 
-    Menu(final int id, final int name, final int icon, final Class<?> menuClass) {
+    Menu(final int id, final Class<?> menuClass) {
 
         this.id = id;
-        this.name = name;
-        this.icon = icon;
         this.menuClass = menuClass;
     }
 
     public final int getId() {
         return id;
-    }
-
-    public final int getName() {
-        return name;
-    }
-
-    public final int getIcon() {
-        return icon;
     }
 
     public final Class<?> getMenuClass() {
@@ -71,11 +62,11 @@ public enum Menu {
         throw new IllegalArgumentException("The Menu has not found.");
     }
 
-    public static Menu getBy(final String name) {
+    public static Menu getBy(final MenuItem menuItem) {
 
         for (final Menu menu : Menu.values()) {
 
-            if (menu.name().equals(name)) {
+            if (menu.getId() == menuItem.getItemId()) {
                 return menu;
             }
         }
