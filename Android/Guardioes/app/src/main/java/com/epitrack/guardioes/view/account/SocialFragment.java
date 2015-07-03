@@ -1,15 +1,16 @@
 package com.epitrack.guardioes.view.account;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender.SendIntentException;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.utility.Constants;
@@ -25,16 +26,17 @@ import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.plus.Plus;
 import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
-import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.identity.TwitterAuthClient;
 
 import java.util.Arrays;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
@@ -45,6 +47,15 @@ public class SocialFragment extends Fragment {
     private static final int REQUEST_CODE_FACEBOOK = 64206;
 
     private static final String FACEBOOK_PERMISSION_PUBLIC_PROFILE = "public_profile";
+
+    @InjectView(R.id.social_fragment_button_facebook)
+    Button buttonFaceBook;
+
+    @InjectView(R.id.social_fragment_button_google)
+    Button buttonGoogle;
+
+    @InjectView(R.id.social_fragment_button_twitter)
+    Button buttonTwitter;
 
     private GoogleApiClient authGoogle;
     private TwitterAuthClient authTwitter;
@@ -107,7 +118,7 @@ public class SocialFragment extends Fragment {
 
         final LoginManager loginManager = LoginManager.getInstance();
 
-        loginManager.logInWithReadPermissions(this,
+        loginManager.logInWithReadPermissions(getActivity(),
                                               Arrays.asList(FACEBOOK_PERMISSION_PUBLIC_PROFILE));
 
         loginManager.registerCallback(listenerManager, new FaceBookHandler());
@@ -157,6 +168,19 @@ public class SocialFragment extends Fragment {
         FacebookSdk.sdkInitialize(context);
     }
 
+    private class TwitterHandler extends Callback<TwitterSession> {
+
+        @Override
+        public void success(final Result<TwitterSession> session) {
+            listener.onSuccess();
+        }
+
+        @Override
+        public void failure(final TwitterException e) {
+            listener.onError();
+        }
+    }
+
     private class GoogleHandler implements ConnectionCallbacks, OnConnectionFailedListener {
 
         @Override
@@ -191,19 +215,6 @@ public class SocialFragment extends Fragment {
         }
     }
 
-    private class TwitterHandler extends Callback<TwitterSession> {
-
-        @Override
-        public void success(final Result<TwitterSession> session) {
-            listener.onSuccess();
-        }
-
-        @Override
-        public void failure(final TwitterException e) {
-            listener.onError();
-        }
-    }
-
     private class FaceBookHandler implements FacebookCallback<LoginResult> {
 
         @Override
@@ -220,5 +231,12 @@ public class SocialFragment extends Fragment {
         public void onError(FacebookException e) {
             listener.onError();
         }
+    }
+
+    public void setEnable(final boolean enable) {
+
+        buttonTwitter.setEnabled(enable);
+        buttonFaceBook.setEnabled(enable);
+        buttonGoogle.setEnabled(enable);
     }
 }
