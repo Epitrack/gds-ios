@@ -2,6 +2,7 @@ package com.epitrack.guardioes.view.account;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -16,9 +17,12 @@ import com.epitrack.guardioes.view.MainActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
 public class CreateAccountActivity extends BaseAppCompatActivity implements OnSocialAccountListener {
+
+    private static final String TAG_SOCIAL_FRAGMENT = "social_fragment";
 
     @InjectView(R.id.create_account_activity_linear_layout_social_login)
     LinearLayout linearLayoutSocialLogin;
@@ -43,6 +47,8 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
     private boolean inCreateAccount;
 
+    private SocialFragment socialFragment;
+
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
@@ -62,6 +68,13 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.privacy_menu, menu);
+
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
 
         if (item.getItemId() == android.R.id.home) {
@@ -78,6 +91,25 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
         }
 
         return true;
+    }
+
+    public void onPrivacy(final MenuItem item) {
+        Toast.makeText(this, "Open dialog", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnCheckedChanged(R.id.create_account_activity_check_box_term)
+    public void onCheck(final boolean checked) {
+
+        if (socialFragment == null) {
+            socialFragment = (SocialFragment) getFragmentManager().findFragmentByTag(TAG_SOCIAL_FRAGMENT);
+        }
+
+        socialFragment.setEnable(checked);
+    }
+
+    @OnClick(R.id.create_account_activity_text_view_term)
+    public void onTerm() {
+        Toast.makeText(this, "Open terms", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -165,13 +197,13 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     public void onSuccess() {
 
         navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                       Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
     @OnClick(R.id.create_account_activity_button_create_account)
     public void onCreateAccount() {
 
         navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                       Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 }
