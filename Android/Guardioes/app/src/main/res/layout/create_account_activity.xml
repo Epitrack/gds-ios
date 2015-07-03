@@ -3,19 +3,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/image_logo"/>
+
     <LinearLayout
         android:id="@+id/create_account_activity_linear_layout_social_login"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
-        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
         android:orientation="vertical">
+
+        <TextView
+            style="@style/TextHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:text="@string/create_account_activity_social_message"/>
 
         <fragment
             class="com.epitrack.guardioes.view.account.SocialFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:tag="social_fragment"/>
 
         <Button

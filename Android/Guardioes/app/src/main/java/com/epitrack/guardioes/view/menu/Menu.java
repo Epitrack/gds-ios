@@ -8,11 +8,11 @@ import com.epitrack.guardioes.R;
 
 public enum Menu {
 
-    PROFILE     (1, R.string.profile, R.drawable.ic_launcher, ProfileActivity.class),
-    SETTINGS    (2, R.string.settings, R.drawable.ic_launcher, SettingsActivity.class),
-    ABOUT       (3, R.string.about, R.drawable.ic_launcher, AboutActivity.class),
-    HELP        (4, R.string.help, R.drawable.ic_launcher, HelpActivity.class),
-    EXIT        (5, R.string.exit, R.drawable.ic_launcher, AboutActivity.class);
+    PROFILE     (1, R.string.main_menu_profile, R.drawable.ic_launcher, ProfileActivity.class),
+    SETTINGS    (2, R.string.main_menu_setting, R.drawable.ic_launcher, SettingsActivity.class),
+    ABOUT       (3, R.string.main_menu_about, R.drawable.ic_launcher, AboutActivity.class),
+    HELP        (4, R.string.main_menu_help, R.drawable.ic_launcher, HelpActivity.class),
+    EXIT        (5, R.string.main_menu_exit, R.drawable.ic_launcher, AboutActivity.class);
 
     private final int id;
     private final int name;
