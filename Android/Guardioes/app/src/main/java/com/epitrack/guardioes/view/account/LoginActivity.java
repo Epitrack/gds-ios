@@ -83,6 +83,11 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
         }
     }
 
+    @OnClick(R.id.login_activity_text_view_forgot_password)
+    public void onForgotPassword() {
+        Toast.makeText(this, "Oii", Toast.LENGTH_SHORT).show();
+    }
+
     @OnClick(R.id.login_activity_button_mail)
     public void onLoginAnimation() {
 
@@ -92,15 +97,14 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
 
             @Override
             public void onAnimationStart(final Animation animation) {
-
-                if (linearLayoutLogin.getVisibility() == View.INVISIBLE) {
-                    linearLayoutLogin.setVisibility(View.VISIBLE);
-                }
+                linearLayoutLogin.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onAnimationEnd(final Animation animation) {
                 inLogin = true;
+
+                linearLayoutSocialLogin.setVisibility(View.INVISIBLE);
             }
 
             @Override
@@ -123,12 +127,14 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
 
             @Override
             public void onAnimationStart(final Animation animation) {
-
+                linearLayoutSocialLogin.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onAnimationEnd(final Animation animation) {
                 inLogin = false;
+
+                linearLayoutLogin.setVisibility(View.INVISIBLE);
             }
 
             @Override
