@@ -22,10 +22,17 @@
 
     # Create Account Activity
     <string name="create_account_activity_mail">Email</string>
-
+    <string name="create_account_activity_register">Cadastrar</string>
+    <string name="create_account_activity_privacy">Privacidade</string>
+    <string name="create_account_activity_mail_hint">Email</string>
+    <string name="create_account_activity_password_hint">Senha</string>
+    <string name="create_account_activity_repeat_password_hint">Repetir senha</string>
+    <string name="create_account_activity_nickname_hint">Apelido</string>
+    <string name="create_account_activity_birth_date_hint">Data de nascimento</string>
     <string name="create_account_activity_social_message">Cadastre-se rapidamente com:</string>
     <string name="create_account_activity_mail_message">Ou use o seu email:</string>
-    <string name="create_account_activity_terms_message">Concordo com os Termos de Uso</string>
+    <string name="create_account_activity_term_message_1">Concordo com os</string>
+    <string name="create_account_activity_term_message_2"><u>Termos de uso.</u></string>
 
     # Main Menu
     <string name="main_menu_home">Home</string>
