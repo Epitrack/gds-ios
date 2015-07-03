@@ -76,6 +76,7 @@
         <activity
             android:name=".view.MainActivity"
             android:exported="false"
+            android:theme="@style/Theme.Menu"
             android:screenOrientation="portrait"/>
 
         <activity

@@ -3,27 +3,48 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/image_logo"/>
+
     <LinearLayout
         android:id="@+id/login_activity_linear_layout_social_login"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
-        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
         android:orientation="vertical">
+
+        <TextView
+            style="@style/TextHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:text="@string/login_activity_social_message"/>
 
         <fragment
             class="com.epitrack.guardioes.view.account.SocialFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:tag="social_fragment"/>
+
+        <TextView
+            style="@style/TextHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/login_activity_mail_message"/>
 
         <Button
             android:id="@+id/login_activity_button_mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hit me"
-            android:layout_marginTop="25dp"/>
+            android:layout_margin="5dp"
+            android:background="@drawable/selector_button_mail"/>
 
     </LinearLayout>
 
@@ -31,36 +52,48 @@
         android:id="@+id/login_activity_linear_layout_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
-        android:gravity="center_horizontal"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="200dp"
         android:orientation="vertical"
         android:visibility="invisible">
 
         <EditText
             android:id="@+id/login_activity_edit_text_mail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="15"
-            android:inputType="textEmailAddress"/>
+            android:hint="@string/login_activity_mail_hint"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"/>
 
         <EditText
             android:id="@+id/login_activity_edit_text_password"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="15"
-            android:inputType="textPassword"/>
+            android:layout_marginTop="7dp"
+            android:hint="@string/login_activity_password_hint"
+            android:inputType="textPassword"
+            android:maxLength="16"/>
 
         <Button
             android:id="@+id/login_activity_button_login"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/splash_activity_enter"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/selector_button_white"
+            android:text="@string/login_activity_login"
+            android:textColor="@color/primary_light"/>
 
         <TextView
             android:id="@+id/login_activity_text_view_forgot_password"
+            style="@style/TextHintLight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Esqueceu a senha?"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="125dp"
+            android:text="@string/login_activity_forgot_password_message"/>
 
     </LinearLayout>
 
