@@ -12,22 +12,28 @@
     <string name="social_fragment_twitter">Twitter</string>
 
     # Login Activity
-    <string name="login_activity_social_hint">Entrar rapidamente com:</string>
-    <string name="login_activity_mail_hint">Ou use o seu email:</string>
     <string name="login_activity_mail">Email</string>
+    <string name="login_activity_login">Logar</string>
+    <string name="login_activity_mail_hint">Email</string>
+    <string name="login_activity_password_hint">Senha</string>
+    <string name="login_activity_social_message">Entrar rapidamente com:</string>
+    <string name="login_activity_mail_message">Ou use o seu email:</string>
+    <string name="login_activity_forgot_password_message"><u>Esqueceu sua senha?</u></string>
 
     # Create Account Activity
-    <string name="create_account_activity_social_hint">Cadastre-se rapidamente com:</string>
-    <string name="create_account_activity_privacy_hint">Ou use o seu email:</string>
-    <string name="create_account_activity_mail_hint">Ou use o seu email:</string>
     <string name="create_account_activity_mail">Email</string>
-    <string name="create_account_activity_terms_hint">Concordo com os Termos de Uso</string>
 
-    <string name="profile">Perfil</string>
-    <string name="settings">Configurações</string>
-    <string name="about">Sobre</string>
-    <string name="help">Ajuda</string>
-    <string name="exit">Sair</string>
+    <string name="create_account_activity_social_message">Cadastre-se rapidamente com:</string>
+    <string name="create_account_activity_mail_message">Ou use o seu email:</string>
+    <string name="create_account_activity_terms_message">Concordo com os Termos de Uso</string>
+
+    # Main Menu
+    <string name="main_menu_home">Home</string>
+    <string name="main_menu_profile">Perfil</string>
+    <string name="main_menu_setting">Configurações</string>
+    <string name="main_menu_about">Sobre</string>
+    <string name="main_menu_help">Ajuda</string>
+    <string name="main_menu_exit">Sair</string>
 
     <string name="news">Notícias</string>
     <string name="map">Mapa da Saúde</string>
