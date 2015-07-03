@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/main_menu_home"
+            android:checked="true"
+            android:icon="@drawable/selector_icon_home"
+            android:title="@string/main_menu_home"/>
+
+        <item
+            android:id="@+id/main_menu_profile"
+            android:icon="@drawable/selector_icon_profile"
+            android:title="@string/main_menu_profile"/>
+
+        <item
+            android:id="@+id/main_menu_setting"
+            android:icon="@drawable/selector_icon_setting"
+            android:title="@string/main_menu_setting"/>
+
+        <item
+            android:id="@+id/main_menu_about"
+            android:icon="@drawable/selector_icon_about"
+            android:title="@string/main_menu_about"/>
+
+        <item
+            android:id="@+id/main_menu_help"
+            android:icon="@drawable/selector_icon_help"
+            android:title="@string/main_menu_help"/>
+
+        <item
+            android:id="@+id/main_menu_exit"
+            android:icon="@drawable/selector_icon_exit"
+            android:title="@string/main_menu_exit"/>
+
+    </group>
+
+</menu>
