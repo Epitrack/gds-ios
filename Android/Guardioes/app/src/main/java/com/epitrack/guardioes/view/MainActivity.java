@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name) {
 
             @Override

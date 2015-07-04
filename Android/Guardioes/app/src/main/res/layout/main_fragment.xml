@@ -1,41 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:gravity="center_horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/background_map">
 
-    <Button
-        android:id="@+id/menu_fragment_button_news"
+    <ImageView
+        android:id="@+id/main_fragment_image_view_avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/news"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/image_avatar_1"/>
 
-    <Button
-        android:id="@+id/menu_fragment_button_map"
+    <TextView
+        android:id="@+id/main_fragment_text_view_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/menu_fragment_button_news"
-        android:text="@string/map"/>
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="110dp"
+        android:text="@string/main_fragment_name_message"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
 
-    <Button
-        android:id="@+id/menu_fragment_button_tip"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/menu_fragment_button_map"
-        android:text="@string/tip"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/image_main_menu"/>
 
-    <Button
-        android:id="@+id/menu_fragment_button_diary"
+    <TextView
+        android:id="@+id/main_fragment_text_view_notice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/menu_fragment_button_tip"
-        android:text="@string/diary"/>
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="220dp"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/icon_notice"
+        android:gravity="center"
+        android:text="@string/main_fragment_notice"/>
 
-    <Button
-        android:id="@+id/menu_fragment_button_join"
+    <TextView
+        android:id="@+id/main_fragment_text_view_map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/menu_fragment_button_diary"
-        android:text="@string/join"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="220dp"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/icon_map"
+        android:gravity="center"
+        android:text="@string/main_fragment_map"/>
+
+    <TextView
+        android:id="@+id/main_fragment_text_view_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="70dp"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/icon_tip"
+        android:gravity="center"
+        android:text="@string/main_fragment_tip"/>
+
+    <TextView
+        android:id="@+id/main_fragment_text_view_diary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="70dp"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/icon_diary"
+        android:gravity="center"
+        android:text="@string/main_fragment_diary"/>
+
+    <TextView
+        android:id="@+id/main_fragment_text_view_join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="115dp"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/icon_join"
+        android:gravity="center"
+        android:text="@string/main_fragment_join"/>
 
 </RelativeLayout>

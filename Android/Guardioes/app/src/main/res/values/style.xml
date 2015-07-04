@@ -87,6 +87,8 @@
     <style name="Theme.Menu" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
+
+        <item name="drawerArrowStyle">@style/Theme.DrawerArrow</item>
     </style>
 
     <style name="TextHint">

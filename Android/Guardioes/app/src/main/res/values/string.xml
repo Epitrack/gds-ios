@@ -42,11 +42,13 @@
     <string name="main_menu_help">Ajuda</string>
     <string name="main_menu_exit">Sair</string>
 
-    <string name="news">Notícias</string>
-    <string name="map">Mapa da Saúde</string>
-    <string name="tip">Dicas de Saúde</string>
-    <string name="diary">Diário da Saúde</string>
-    <string name="join">Participe agora!</string>
+    # Main Fragment
+    <string name="main_fragment_name_message">Olá,\n{0}!</string>
+    <string name="main_fragment_notice">Notícias</string>
+    <string name="main_fragment_map">Mapa da\nSaúde</string>
+    <string name="main_fragment_tip">Dicas de\nSaúde</string>
+    <string name="main_fragment_diary">Diário da\nSaúde</string>
+    <string name="main_fragment_join">Participe\nagora!</string>
 
     <string name="register">Cadastrar</string>
 
