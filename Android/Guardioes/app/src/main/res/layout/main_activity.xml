@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_activity_drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -26,7 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        view:headerLayout="@layout/menu_header"
-        view:menu="@menu/main_menu"/>
+        layout:headerLayout="@layout/menu_header"
+        layout:itemBackground="@android:color/transparent"
+        layout:menu="@menu/main_menu"/>
 
 </android.support.v4.widget.DrawerLayout>

@@ -13,20 +13,20 @@ import com.epitrack.guardioes.model.News;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
-public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int POSITION_HEADER = 0;
 
     private static final int VIEW_AMOUNT = 1;
 
-    private final OnNewsListener listener;
+    private final OnNoticeListener listener;
 
     private final List<News> newsList = new ArrayList<>();
 
-    public NewsAdapter(final OnNewsListener listener) {
+    public NoticeAdapter(final OnNoticeListener listener) {
 
         if (listener == null) {
             throw new IllegalArgumentException("The listener cannot be null.");
@@ -39,61 +39,61 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         news.setTitle("Camanha de vacinação contra a gripe começa em 4 de maio, diz ministro");
         news.setSource("saude.estadao.com.br");
-        news.setDate("Hoje");
+        news.setPublicationDate("Hoje");
 
         final News news1 = new News();
 
         news1.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news1.setSource("mundoestranho.abril.com.br");
-        news1.setDate("2 dias atrás");
+        news1.setPublicationDate("2 dias atrás");
 
         final News news2 = new News();
 
         news2.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news2.setSource("mundoestranho.abril.com.br");
-        news2.setDate("2 dias atrás");
+        news2.setPublicationDate("2 dias atrás");
 
         final News news3 = new News();
 
         news3.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news3.setSource("mundoestranho.abril.com.br");
-        news3.setDate("2 dias atrás");
+        news3.setPublicationDate("2 dias atrás");
 
         final News news4 = new News();
 
         news4.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news4.setSource("mundoestranho.abril.com.br");
-        news4.setDate("2 dias atrás");
+        news4.setPublicationDate("2 dias atrás");
 
         final News news5 = new News();
 
         news5.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news5.setSource("mundoestranho.abril.com.br");
-        news5.setDate("2 dias atrás");
+        news5.setPublicationDate("2 dias atrás");
 
         final News news6 = new News();
 
         news6.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news6.setSource("mundoestranho.abril.com.br");
-        news6.setDate("2 dias atrás");
+        news6.setPublicationDate("2 dias atrás");
 
         final News news7 = new News();
 
         news7.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news7.setSource("mundoestranho.abril.com.br");
-        news7.setDate("2 dias atrás");
+        news7.setPublicationDate("2 dias atrás");
 
         final News news8 = new News();
 
         news8.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news8.setSource("mundoestranho.abril.com.br");
-        news8.setDate("2 dias atrás");
+        news8.setPublicationDate("2 dias atrás");
 
         final News news9 = new News();
 
         news9.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news9.setSource("mundoestranho.abril.com.br");
-        news9.setDate("2 dias atrás");
+        news9.setPublicationDate("2 dias atrás");
 
         newsList.add(news);
         newsList.add(news1);
@@ -115,44 +115,44 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public class HeaderViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.news_header_text_view_title)
+        @Bind(R.id.news_header_text_view_title)
         TextView textViewTitle;
 
-        @InjectView(R.id.news_header_text_view_source)
+        @Bind(R.id.news_header_text_view_source)
         TextView textViewSource;
 
-        @InjectView(R.id.news_header_text_view_date)
+        @Bind(R.id.news_header_text_view_date)
         TextView textViewDate;
 
-        @InjectView(R.id.news_header_image_view_image)
+        @Bind(R.id.news_header_image_view_image)
         ImageView imageViewImage;
 
 
         public HeaderViewHolder(final View view) {
             super(view);
 
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.news_text_view_title)
+        @Bind(R.id.news_text_view_title)
         TextView textViewTitle;
 
-        @InjectView(R.id.news_text_view_source)
+        @Bind(R.id.news_text_view_source)
         TextView textViewSource;
 
-        @InjectView(R.id.news_text_view_date)
+        @Bind(R.id.news_text_view_date)
         TextView textViewDate;
 
-        @InjectView(R.id.news_image_view_image)
+        @Bind(R.id.news_image_view_image)
         ImageView imageViewImage;
 
         public ItemViewHolder(final View view) {
             super(view);
 
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 
@@ -163,13 +163,13 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         if (viewType == ViewType.ITEM) {
 
-            final View view = inflater.inflate(R.layout.news_item, viewGroup, false);
+            final View view = inflater.inflate(R.layout.notice_item, viewGroup, false);
 
             return new ItemViewHolder(view);
 
         } else if (viewType == ViewType.HEADER) {
 
-            final View view = inflater.inflate(R.layout.news_header, viewGroup, false);
+            final View view = inflater.inflate(R.layout.notice_header, viewGroup, false);
 
             return new HeaderViewHolder(view);
         }
@@ -188,7 +188,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             headerHolder.textViewTitle.setText(news.getTitle());
             headerHolder.textViewSource.setText(news.getSource());
-            headerHolder.textViewDate.setText(news.getDate());
+            headerHolder.textViewDate.setText(news.getPublicationDate());
             headerHolder.imageViewImage.setImageResource(R.drawable.stub_news);
 
         } else {
@@ -197,7 +197,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
             itemHolder.textViewTitle.setText(news.getTitle());
             itemHolder.textViewSource.setText(news.getSource());
-            itemHolder.textViewDate.setText(news.getDate());
+            itemHolder.textViewDate.setText(news.getPublicationDate());
             itemHolder.imageViewImage.setImageResource(R.drawable.stub1);
         }
     }

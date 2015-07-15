@@ -4,7 +4,7 @@ public class News {
 
     private String title;
     private String source;
-    private String date;
+    private String publicationDate;
 
     public final String getTitle() {
         return title;
@@ -22,11 +22,11 @@ public class News {
         this.source = source;
     }
 
-    public final String getDate() {
-        return date;
+    public final String getPublicationDate() {
+        return publicationDate;
     }
 
-    public final void setDate(final String date) {
-        this.date = date;
+    public final void setPublicationDate(final String publicationDate) {
+        this.publicationDate = publicationDate;
     }
 }

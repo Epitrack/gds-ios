@@ -7,9 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.facebook.appevents.AppEventsLogger;
 
-/**
- * Created by IgorMorais on 6/12/15.
- */
 public class BaseAppCompatActivity extends AppCompatActivity implements Navigate {
 
     @Override

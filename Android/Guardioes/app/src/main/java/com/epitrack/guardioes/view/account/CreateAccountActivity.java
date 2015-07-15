@@ -15,8 +15,8 @@ import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.MainActivity;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
@@ -24,25 +24,25 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
     private static final String TAG_SOCIAL_FRAGMENT = "social_fragment";
 
-    @InjectView(R.id.create_account_activity_linear_layout_social_login)
+    @Bind(R.id.create_account_activity_linear_layout_social_login)
     LinearLayout linearLayoutSocialLogin;
 
-    @InjectView(R.id.create_account_activity_linear_layout_login)
+    @Bind(R.id.create_account_activity_linear_layout_login)
     LinearLayout linearLayoutLogin;
 
-    @InjectView(R.id.create_account_activity_edit_text_mail)
+    @Bind(R.id.create_account_activity_edit_text_mail)
     EditText editTextMail;
 
-    @InjectView(R.id.create_account_activity_edit_text_password)
+    @Bind(R.id.create_account_activity_edit_text_password)
     EditText editTextPassword;
 
-    @InjectView(R.id.create_account_activity_edit_text_repeat_password)
+    @Bind(R.id.create_account_activity_edit_text_repeat_password)
     EditText editTextRepeatPassword;
 
-    @InjectView(R.id.create_account_activity_edit_text_name)
+    @Bind(R.id.create_account_activity_edit_text_name)
     EditText editTextName;
 
-    @InjectView(R.id.create_account_activity_edit_text_birth_date)
+    @Bind(R.id.create_account_activity_edit_text_birth_date)
     EditText editTextBirthDate;
 
     private boolean inCreateAccount;
@@ -55,7 +55,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
         setContentView(R.layout.create_account_activity);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 

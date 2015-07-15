@@ -9,8 +9,8 @@ import android.widget.CheckBox;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Symptom;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class SymptomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -42,13 +42,13 @@ public class SymptomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.symptom_check_box_symptom)
+        @Bind(R.id.symptom_check_box_symptom)
         CheckBox checkBoxSymptom;
 
         public ItemViewHolder(final View view) {
             super(view);
 
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 

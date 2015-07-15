@@ -21,7 +21,7 @@ public class WelcomePageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
 
-        View view = inflater.inflate(R.layout.about_activity, viewGroup, false);
+        View view = inflater.inflate(R.layout.help_fragment, viewGroup, false);
 
         // Temp..
         Random random = new Random();

@@ -35,8 +35,8 @@ import com.twitter.sdk.android.core.identity.TwitterAuthClient;
 
 import java.util.Arrays;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
@@ -48,13 +48,13 @@ public class SocialFragment extends Fragment {
 
     private static final String FACEBOOK_PERMISSION_PUBLIC_PROFILE = "public_profile";
 
-    @InjectView(R.id.social_fragment_button_facebook)
+    @Bind(R.id.social_fragment_button_facebook)
     Button buttonFaceBook;
 
-    @InjectView(R.id.social_fragment_button_google)
+    @Bind(R.id.social_fragment_button_google)
     Button buttonGoogle;
 
-    @InjectView(R.id.social_fragment_button_twitter)
+    @Bind(R.id.social_fragment_button_twitter)
     Button buttonTwitter;
 
     private GoogleApiClient authGoogle;
@@ -83,7 +83,7 @@ public class SocialFragment extends Fragment {
 
         final View view = inflater.inflate(R.layout.social_fragment, viewGroup, false);
 
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         return view;
     }
@@ -92,7 +92,7 @@ public class SocialFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
 
-        ButterKnife.reset(this);
+        ButterKnife.unbind(this);
     }
 
     @OnClick(R.id.social_fragment_button_google)

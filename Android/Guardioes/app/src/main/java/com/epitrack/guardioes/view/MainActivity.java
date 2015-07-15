@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.menu.Menu;
@@ -19,20 +18,20 @@ import com.epitrack.guardioes.view.menu.Menu;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 
-    private static final Class<? extends Fragment> MAIN_FRAGMENT = MainFragment.class;
+    private static final Class<? extends Fragment> MAIN_FRAGMENT = HomeFragment.class;
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     Toolbar toolbar;
 
-    @InjectView(R.id.main_activity_navigation_view_main_menu)
+    @Bind(R.id.main_activity_navigation_view_main_menu)
     NavigationView navigationView;
 
-    @InjectView(R.id.main_activity_drawer_layout)
+    @Bind(R.id.main_activity_drawer_layout)
     DrawerLayout drawerLayout;
 
     private ActionBarDrawerToggle drawerToggle;
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         setContentView(R.layout.main_activity);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setupViews();
     }
@@ -54,44 +53,16 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setLogo(R.drawable.icon_logo_small);
 
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name) {
-
-            @Override
-            public void onDrawerOpened(final View drawerView) {
-                super.onDrawerOpened(drawerView);
-
-                //getSupportActionBar().setTitle(R.string.app_name);
-            }
-
-            @Override
-            public void onDrawerClosed(final View drawerView) {
-                super.onDrawerClosed(drawerView);
-
-//                final String tag = getCurrentFragment().getTag();
-//
-//                if (tag.equals(Menu.PROFILE.getTag())) {
-//                    getSupportActionBar().setTitle(R.string.profile);
-//
-//                } else if (tag.equals(Menu.SETTINGS.getTag())) {
-//                    getSupportActionBar().setTitle(R.string.settings);
-//
-//                } else if (tag.equals(Menu.ABOUT.getTag())) {
-//                    getSupportActionBar().setTitle(R.string.about);
-//
-//                } else if (tag.equals(Menu.HELP.getTag())) {
-//                    getSupportActionBar().setTitle(R.string.help);
-//                }
-            }
-        };
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
 
         drawerLayout.setDrawerListener(drawerToggle);
 
         navigationView.setNavigationItemSelectedListener(this);
 
         addFragment(MAIN_FRAGMENT,
-                MAIN_FRAGMENT.getSimpleName());
+                    MAIN_FRAGMENT.getSimpleName());
     }
 
     @Override
@@ -144,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
             startActivity(new Intent(this, menu.getMenuClass()));
         }
 
-        menuItem.setCheckable(true);
+        menuItem.setChecked(true);
 
         return true;
     }

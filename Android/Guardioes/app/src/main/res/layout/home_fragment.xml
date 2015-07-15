@@ -32,7 +32,8 @@
         android:src="@drawable/image_main_menu"/>
 
     <TextView
-        android:id="@+id/main_fragment_text_view_notice"
+        android:id="@+id/home_fragment_text_view_notice"
+        style="@style/TextHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -44,7 +45,8 @@
         android:text="@string/main_fragment_notice"/>
 
     <TextView
-        android:id="@+id/main_fragment_text_view_map"
+        android:id="@+id/home_fragment_text_view_map"
+        style="@style/TextHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -56,7 +58,8 @@
         android:text="@string/main_fragment_map"/>
 
     <TextView
-        android:id="@+id/main_fragment_text_view_tip"
+        android:id="@+id/home_fragment_text_view_tip"
+        style="@style/TextHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -69,7 +72,8 @@
         android:text="@string/main_fragment_tip"/>
 
     <TextView
-        android:id="@+id/main_fragment_text_view_diary"
+        android:id="@+id/home_fragment_text_view_diary"
+        style="@style/TextHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -82,7 +86,8 @@
         android:text="@string/main_fragment_diary"/>
 
     <TextView
-        android:id="@+id/main_fragment_text_view_join"
+        android:id="@+id/home_fragment_text_view_join"
+        style="@style/TextHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

@@ -16,7 +16,7 @@ public class StateActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.state_activity);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     @OnClick(R.id.state_activity_text_view_state_good)

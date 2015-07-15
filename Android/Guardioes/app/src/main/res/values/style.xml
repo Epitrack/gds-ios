@@ -91,14 +91,23 @@
         <item name="drawerArrowStyle">@style/Theme.DrawerArrow</item>
     </style>
 
+    <style name="ActionBarMenu">
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
     <style name="TextHint">
         <item name="android:textSize">15dp</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 
-    <style name="TextMenu">
+    <style name="TextMenuMain">
         <item name="android:textSize">15dp</item>
         <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TextHome">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="TextHintLight">

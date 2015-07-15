@@ -6,16 +6,16 @@ import android.app.Fragment;
 import android.view.MenuItem;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.MainFragment;
+import com.epitrack.guardioes.view.HomeFragment;
 
 public enum Menu {
 
-    HOME        (R.id.main_menu_home, MainFragment.class),
-    PROFILE     (R.id.main_menu_profile, ProfileActivity.class),
-    SETTINGS    (R.id.main_menu_setting, SettingsActivity.class),
-    ABOUT       (R.id.main_menu_about, AboutActivity.class),
-    HELP        (R.id.main_menu_help, HelpActivity.class),
-    EXIT        (R.id.main_menu_exit, AboutActivity.class);
+    HOME        (R.id.main_menu_home, HomeFragment.class),
+    PROFILE     (R.id.main_menu_profile, ProfileFragment.class),
+    SETTINGS    (R.id.main_menu_setting, SettingsFragment.class),
+    ABOUT       (R.id.main_menu_about, AboutFragment.class),
+    HELP        (R.id.main_menu_help, HelpFragment.class),
+    EXIT        (R.id.main_menu_exit, AboutFragment.class);
 
     private final int id;
     private final Class<?> menuClass;

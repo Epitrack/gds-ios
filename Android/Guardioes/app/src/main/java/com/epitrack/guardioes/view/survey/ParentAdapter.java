@@ -12,8 +12,8 @@ import com.epitrack.guardioes.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder> {
 
@@ -85,19 +85,19 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        @InjectView(R.id.parent_text_view_name)
+        @Bind(R.id.parent_text_view_name)
         TextView textViewName;
 
-        @InjectView(R.id.parent_text_view_age)
+        @Bind(R.id.parent_text_view_age)
         TextView textViewAge;
 
-        @InjectView(R.id.parent_image_view_photo)
+        @Bind(R.id.parent_image_view_photo)
         ImageView imageViewPhoto;
 
         public ViewHolder(final View view) {
             super(view);
 
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
 
             view.setOnClickListener(this);
         }

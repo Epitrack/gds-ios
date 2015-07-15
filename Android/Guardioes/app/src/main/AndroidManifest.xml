@@ -76,51 +76,29 @@
         <activity
             android:name=".view.MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.Menu"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Menu"/>
 
         <activity
-            android:name=".view.NewsActivity"
+            android:name=".view.NoticeActivity"
             android:exported="false"
+            android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name=".view.MapActivity"
             android:exported="false"
+            android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name=".view.TipActivity"
             android:exported="false"
+            android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name=".view.DiaryActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-
-        # Menu
-
-        <activity
-            android:name=".view.menu.ProfileActivity"
-            android:exported="false"
-            android:parentActivityName=".view.MainActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity
-            android:name=".view.menu.SettingsActivity"
-            android:exported="false"
-            android:parentActivityName=".view.MainActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity
-            android:name=".view.menu.AboutActivity"
-            android:exported="false"
-            android:parentActivityName=".view.MainActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity
-            android:name=".view.menu.HelpActivity"
             android:exported="false"
             android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"/>

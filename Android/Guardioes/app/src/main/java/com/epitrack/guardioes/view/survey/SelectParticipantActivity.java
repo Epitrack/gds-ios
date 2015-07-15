@@ -9,22 +9,22 @@ import android.widget.TextView;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class SelectParticipantActivity extends BaseAppCompatActivity implements OnParentListener {
 
-    @InjectView(R.id.select_participant_activity_text_view_name)
+    @Bind(R.id.select_participant_activity_text_view_name)
     TextView textViewName;
 
-    @InjectView(R.id.select_participant_activity_text_view_age)
+    @Bind(R.id.select_participant_activity_text_view_age)
     TextView textViewAge;
 
-    @InjectView(R.id.select_participant_activity_image_view_photo)
+    @Bind(R.id.select_participant_activity_image_view_photo)
     ImageView imageViewPhoto;
 
-    @InjectView(R.id.select_participant_activity_recycler_view_parent)
+    @Bind(R.id.select_participant_activity_recycler_view_parent)
     RecyclerView recyclerView;
 
     @Override
@@ -33,7 +33,7 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
 
         setContentView(R.layout.select_participant_activity);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         // TODO: Get content from Intent
 

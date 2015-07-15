@@ -15,22 +15,22 @@ import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.MainActivity;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class LoginActivity extends BaseAppCompatActivity implements OnSocialAccountListener {
 
-    @InjectView(R.id.login_activity_linear_layout_social_login)
+    @Bind(R.id.login_activity_linear_layout_social_login)
     LinearLayout linearLayoutSocialLogin;
 
-    @InjectView(R.id.login_activity_linear_layout_login)
+    @Bind(R.id.login_activity_linear_layout_login)
     LinearLayout linearLayoutLogin;
 
-    @InjectView(R.id.login_activity_edit_text_mail)
+    @Bind(R.id.login_activity_edit_text_mail)
     EditText editTextMail;
 
-    @InjectView(R.id.login_activity_edit_text_password)
+    @Bind(R.id.login_activity_edit_text_password)
     EditText editTextPassword;
 
     private boolean inLogin;
@@ -41,7 +41,7 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
 
         setContentView(R.layout.login_activity);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
