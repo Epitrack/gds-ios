@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -45,6 +46,9 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     @Bind(R.id.create_account_activity_edit_text_birth_date)
     EditText editTextBirthDate;
 
+    @Bind(R.id.create_account_activity_button_create_account)
+    Button buttonCreateAccount;
+
     private boolean inCreateAccount;
 
     private SocialFragment socialFragment;
@@ -58,6 +62,10 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
         ButterKnife.bind(this);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        buttonCreateAccount.setEnabled(false);
+
+        getSocialFragment().setEnable(false);
 
         // TODO: Check play service
         // TODO: Register to GCM. Review soon..
@@ -100,11 +108,9 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     @OnCheckedChanged(R.id.create_account_activity_check_box_term)
     public void onCheck(final boolean checked) {
 
-        if (socialFragment == null) {
-            socialFragment = (SocialFragment) getFragmentManager().findFragmentByTag(TAG_SOCIAL_FRAGMENT);
-        }
+        buttonCreateAccount.setEnabled(checked);
 
-        socialFragment.setEnable(checked);
+        getSocialFragment().setEnable(checked);
     }
 
     @OnClick(R.id.create_account_activity_text_view_term)
@@ -193,17 +199,26 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
         Toast.makeText(this, "Cancel..", Toast.LENGTH_SHORT).show();
     }
 
+    private SocialFragment getSocialFragment() {
+
+        if (socialFragment == null) {
+            socialFragment = (SocialFragment) getFragmentManager().findFragmentByTag(TAG_SOCIAL_FRAGMENT);
+        }
+
+        return socialFragment;
+    }
+
     @Override
     public void onSuccess() {
 
         navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                Intent.FLAG_ACTIVITY_NEW_TASK);
+                                       Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
     @OnClick(R.id.create_account_activity_button_create_account)
     public void onCreateAccount() {
 
         navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                Intent.FLAG_ACTIVITY_NEW_TASK);
+                                       Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 }
