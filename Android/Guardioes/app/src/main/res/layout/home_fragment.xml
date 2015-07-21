@@ -1,101 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/background_map">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/background_map"
+              android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/main_fragment_image_view_avatar"
+        android:id="@+id/home_fragment_image_view_avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/image_avatar_1"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/image_avatar_3"/>
 
     <TextView
-        android:id="@+id/main_fragment_text_view_name"
+        android:id="@+id/home_fragment_text_view_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="-25dp"
         android:text="@string/main_fragment_name_message"
         android:textColor="@android:color/white"
         android:textSize="30dp"
         android:textStyle="bold"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/image_main_menu"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp">
 
-    <TextView
-        android:id="@+id/home_fragment_text_view_notice"
-        style="@style/TextHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="220dp"
-        android:drawablePadding="10dp"
-        android:drawableTop="@drawable/icon_notice"
-        android:gravity="center"
-        android:text="@string/main_fragment_notice"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/image_main_menu"/>
 
-    <TextView
-        android:id="@+id/home_fragment_text_view_map"
-        style="@style/TextHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="70dp"
-        android:layout_marginTop="220dp"
-        android:drawablePadding="10dp"
-        android:drawableTop="@drawable/icon_map"
-        android:gravity="center"
-        android:text="@string/main_fragment_map"/>
+        <TextView
+            android:id="@+id/home_fragment_text_view_notice"
+            style="@style/TextHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="25dp"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/icon_notice"
+            android:gravity="center"
+            android:text="@string/main_fragment_notice"/>
 
-    <TextView
-        android:id="@+id/home_fragment_text_view_tip"
-        style="@style/TextHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="70dp"
-        android:drawablePadding="10dp"
-        android:drawableTop="@drawable/icon_tip"
-        android:gravity="center"
-        android:text="@string/main_fragment_tip"/>
+        <TextView
+            android:id="@+id/home_fragment_text_view_map"
+            style="@style/TextHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="25dp"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/icon_map"
+            android:gravity="center"
+            android:text="@string/main_fragment_map"/>
 
-    <TextView
-        android:id="@+id/home_fragment_text_view_diary"
-        style="@style/TextHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="70dp"
-        android:drawablePadding="10dp"
-        android:drawableTop="@drawable/icon_diary"
-        android:gravity="center"
-        android:text="@string/main_fragment_diary"/>
+        <TextView
+            android:id="@+id/home_fragment_text_view_tip"
+            style="@style/TextHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="35dp"
+            android:layout_marginLeft="50dp"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/icon_tip"
+            android:gravity="center"
+            android:text="@string/main_fragment_tip"/>
 
-    <TextView
-        android:id="@+id/home_fragment_text_view_join"
-        style="@style/TextHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="115dp"
-        android:drawablePadding="10dp"
-        android:drawableTop="@drawable/icon_join"
-        android:gravity="center"
-        android:text="@string/main_fragment_join"/>
+        <TextView
+            android:id="@+id/home_fragment_text_view_diary"
+            style="@style/TextHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="35dp"
+            android:layout_marginRight="50dp"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/icon_diary"
+            android:gravity="center"
+            android:text="@string/main_fragment_diary"/>
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/home_fragment_text_view_join"
+            style="@style/TextHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/icon_join"
+            android:gravity="center"
+            android:text="@string/main_fragment_join"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

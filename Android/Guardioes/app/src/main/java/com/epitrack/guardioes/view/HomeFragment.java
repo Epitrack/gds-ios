@@ -16,7 +16,7 @@ import butterknife.OnClick;
 
 public class HomeFragment extends BaseFragment {
 
-    @Bind(R.id.main_fragment_text_view_name)
+    @Bind(R.id.home_fragment_text_view_name)
     TextView textViewName;
 
     @Override

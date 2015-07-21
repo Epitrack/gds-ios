@@ -107,6 +107,7 @@
 
     <style name="TextHome">
         <item name="android:textSize">15dp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 
