@@ -4,5 +4,7 @@ import android.location.Location;
 
 public interface OnLocationListener {
 
-    void onLocationFound(Location location);
+    void onLastLocation(Location location);
+
+    void onLocation(Location location);
 }
