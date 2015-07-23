@@ -1,6 +1,6 @@
 package com.epitrack.guardioes.model;
 
-public class News {
+public class Notice {
 
     private String title;
     private String source;
