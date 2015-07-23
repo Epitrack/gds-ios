@@ -42,13 +42,22 @@
     <string name="main_menu_help">Ajuda</string>
     <string name="main_menu_exit">Sair</string>
 
-    # Main Fragment
-    <string name="main_fragment_name_message">Olá,\n{0}!</string>
-    <string name="main_fragment_notice">Notícias</string>
-    <string name="main_fragment_map">Mapa da\nSaúde</string>
-    <string name="main_fragment_tip">Dicas de\nSaúde</string>
-    <string name="main_fragment_diary">Diário da\nSaúde</string>
-    <string name="main_fragment_join">Participe\nagora!</string>
+    # Menu Share
+    <string name="menu_share_facebook">Facebook</string>
+    <string name="menu_share_twitter">Twitter</string>
+    <string name="menu_share_gmail">Gmail</string>
+
+    # Home Fragment
+    <string name="home_fragment_name_message">Olá,\n{0}!</string>
+    <string name="home_fragment_notice">Notícias</string>
+    <string name="home_fragment_map">Mapa da\nSaúde</string>
+    <string name="home_fragment_tip">Dicas de\nSaúde</string>
+    <string name="home_fragment_diary">Diário da\nSaúde</string>
+    <string name="home_fragment_join">Participe\nagora!</string>
+
+    # Map Activity
+    <string name="map_activity_share_menu">Compartilhar</string>
+    <string name="map_activity_search_menu">Procurar</string>
 
     <string name="register">Cadastrar</string>
 
