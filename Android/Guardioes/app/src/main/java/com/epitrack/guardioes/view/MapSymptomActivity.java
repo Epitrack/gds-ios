@@ -38,8 +38,6 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
                 .findFragmentById(R.id.map_activity_fragment_map_symptom);
 
         mapFragment.getMapAsync(this);
-
-        getSupportActionBar().setTitle(R.string.map_symptom_activity_title);
     }
 
     @Override

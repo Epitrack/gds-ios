@@ -19,13 +19,13 @@ public class StateActivity extends BaseAppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.state_activity_text_view_state_good)
-    public void onStateGood() {
+    @OnClick(R.id.state_activity_text_view_state_bad)
+    public void onStateBad() {
         navigateTo(SymptomActivity.class);
     }
 
-    @OnClick(R.id.state_activity_text_view_state_bad)
-    public void onStateBad() {
+    @OnClick(R.id.state_activity_text_view_state_good)
+    public void onStateGood() {
         navigateTo(SymptomActivity.class);
     }
 }

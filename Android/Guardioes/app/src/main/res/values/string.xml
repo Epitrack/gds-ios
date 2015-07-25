@@ -44,6 +44,12 @@
     <string name="home_fragment_diary">Diário da\nSaúde</string>
     <string name="home_fragment_join">Participe\nagora!</string>
 
+    # State Activity
+    <string name="state_activity_good">Bem</string>
+    <string name="state_activity_bad">Mal</string>
+    <string name="state_activity_state_message">Como está sua saúde\nneste momento?</string>
+    <string name="state_activity_state_hint">Alguns sinais e sintomas serão apresentados na\npróxima tela caso a opção \"Mal\" seja selecionada.</string>
+
     # Map Point Activity
     <string name="map_point_activity_hospital_title">UPAs</string>
     <string name="map_point_activity_pharmacy_title">Farmácias</string>
@@ -53,15 +59,10 @@
     <string name="map_symptom_activity_share_menu">Compartilhar</string>
     <string name="map_symptom_activity_search_menu">Procurar</string>
 
-    # News Activity
+    # Notice Activity
     <string name="notice_activity_title">Notícias</string>
     <string name="notice_activity_search">Procurar</string>
     <string name="notice_activity_hyphen">-</string>
-
-    # State Activity
-    <string name="state_activity_message">Como você está\nse sentindo?</string>
-    <string name="state_activity_good">Bem</string>
-    <string name="state_activity_bad">Mal</string>
 
     # Symptoms Activity
     <string name="symptom_activity_message">Qual desses sintomas\nvocê está sentindo?</string>
