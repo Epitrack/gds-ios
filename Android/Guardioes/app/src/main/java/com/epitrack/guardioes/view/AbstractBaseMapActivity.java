@@ -26,13 +26,13 @@ public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity impl
 
     private GoogleMap map;
 
-    private LocationManager locationManager;
+    private LocationManager locationHandler;
 
     @Override
     protected void onResume() {
         super.onResume();
 
-//        if (locationManager.getLocationManager().isConnected()) {
+//        if (locationHandler.getLocationHandler().isConnected()) {
 //
 //        }
     }
@@ -48,7 +48,7 @@ public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity impl
     public void onMapReady(final GoogleMap map) {
         setMap(map);
 
-        locationManager = new LocationManager(this, this);
+        locationHandler = new LocationManager(this, this);
     }
 
     @Override

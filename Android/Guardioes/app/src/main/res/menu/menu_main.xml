@@ -7,32 +7,32 @@
             android:id="@+id/main_menu_home"
             android:checked="true"
             android:icon="@drawable/selector_icon_home"
-            android:title="@string/main_menu_home"/>
+            android:title="@string/menu_main_home"/>
 
         <item
             android:id="@+id/main_menu_profile"
             android:icon="@drawable/selector_icon_profile"
-            android:title="@string/main_menu_profile"/>
+            android:title="@string/menu_main_profile"/>
 
         <item
             android:id="@+id/main_menu_setting"
             android:icon="@drawable/selector_icon_setting"
-            android:title="@string/main_menu_setting"/>
+            android:title="@string/menu_main_setting"/>
 
         <item
             android:id="@+id/main_menu_about"
             android:icon="@drawable/selector_icon_about"
-            android:title="@string/main_menu_about"/>
+            android:title="@string/menu_main_about"/>
 
         <item
             android:id="@+id/main_menu_help"
             android:icon="@drawable/selector_icon_help"
-            android:title="@string/main_menu_help"/>
+            android:title="@string/menu_main_help"/>
 
         <item
             android:id="@+id/main_menu_exit"
             android:icon="@drawable/selector_icon_exit"
-            android:title="@string/main_menu_exit"/>
+            android:title="@string/menu_main_exit"/>
 
     </group>
 

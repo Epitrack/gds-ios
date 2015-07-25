@@ -26,7 +26,7 @@ public class LocationManager extends BaseManager implements ConnectionCallbacks,
 
     private final Handler handler = new Handler();
 
-    private GoogleApiClient locationManager;
+    private GoogleApiClient locationHandler;
 
     private final OnLocationListener listener;
 
@@ -44,12 +44,12 @@ public class LocationManager extends BaseManager implements ConnectionCallbacks,
 
     private void load() {
 
-        locationManager = new GoogleApiClient.Builder(getContext()).addConnectionCallbacks(this)
+        locationHandler = new GoogleApiClient.Builder(getContext()).addConnectionCallbacks(this)
                                                                    .addOnConnectionFailedListener(this)
                                                                    .addApi(LocationServices.API)
                                                                    .build();
 
-        locationManager.connect();
+        locationHandler.connect();
     }
 
     @Override
@@ -60,18 +60,18 @@ public class LocationManager extends BaseManager implements ConnectionCallbacks,
             @Override
             public void run() {
 
-                final Location location = LocationServices.FusedLocationApi.getLastLocation(locationManager);
+                final Location location = LocationServices.FusedLocationApi.getLastLocation(locationHandler);
 
                 listener.onLastLocation(location);
             }
         });
 
-        LocationServices.FusedLocationApi.requestLocationUpdates(locationManager, LOCATION_REQUEST, this);
+        LocationServices.FusedLocationApi.requestLocationUpdates(locationHandler, LOCATION_REQUEST, this);
     }
 
     @Override
     public void onConnectionSuspended(final int i) {
-        locationManager.connect();
+        locationHandler.connect();
     }
 
     @Override
@@ -92,7 +92,7 @@ public class LocationManager extends BaseManager implements ConnectionCallbacks,
         });
     }
 
-    public final GoogleApiClient getLocationManager() {
-        return locationManager;
+    public final GoogleApiClient getLocationHandler() {
+        return locationHandler;
     }
 }

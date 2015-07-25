@@ -35,12 +35,12 @@
     <string name="create_account_activity_term_message_2"><u>Termos de uso.</u></string>
 
     # Main Menu
-    <string name="main_menu_home">Home</string>
-    <string name="main_menu_profile">Perfil</string>
-    <string name="main_menu_setting">Configurações</string>
-    <string name="main_menu_about">Sobre</string>
-    <string name="main_menu_help">Ajuda</string>
-    <string name="main_menu_exit">Sair</string>
+    <string name="menu_main_home">Home</string>
+    <string name="menu_main_profile">Perfil</string>
+    <string name="menu_main_setting">Configurações</string>
+    <string name="menu_main_about">Sobre</string>
+    <string name="menu_main_help">Ajuda</string>
+    <string name="menu_main_exit">Sair</string>
 
     # Menu Share
     <string name="menu_share_facebook">Facebook</string>
@@ -54,6 +54,12 @@
     <string name="home_fragment_tip">Dicas de\nSaúde</string>
     <string name="home_fragment_diary">Diário da\nSaúde</string>
     <string name="home_fragment_join">Participe\nagora!</string>
+
+    # Map Point Activity
+    <string name="map_point_activity_hospital_title">UPAs</string>
+    <string name="map_point_activity_pharmacy_title">Farmácias</string>
+
+    // Here
 
     # Map Activity
     <string name="map_activity_share_menu">Compartilhar</string>
