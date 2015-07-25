@@ -28,6 +28,6 @@
         android:layout_gravity="start"
         layout:headerLayout="@layout/menu_header"
         layout:itemBackground="@android:color/transparent"
-        layout:menu="@menu/main_menu"/>
+        layout:menu="@menu/menu_main"/>
 
 </android.support.v4.widget.DrawerLayout>

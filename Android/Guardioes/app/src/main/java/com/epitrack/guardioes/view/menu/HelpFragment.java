@@ -15,7 +15,7 @@ public class HelpFragment extends BaseFragment {
     public void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        getSupportActionBar().setTitle(R.string.main_menu_help);
+        getSupportActionBar().setTitle(R.string.menu_main_help);
     }
 
     @Nullable

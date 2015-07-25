@@ -2,11 +2,11 @@ package com.epitrack.guardioes.view.welcome;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.view.BaseFragmentActivity;
 import com.epitrack.guardioes.view.account.CreateAccountActivity;
 import com.epitrack.guardioes.view.account.LoginActivity;
 import com.viewpagerindicator.CirclePageIndicator;
@@ -14,7 +14,7 @@ import com.viewpagerindicator.CirclePageIndicator;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class WelcomeActivity extends FragmentActivity {
+public class WelcomeActivity extends BaseFragmentActivity {
 
     @Bind(R.id.welcome_activity_view_pager_indicator)
     CirclePageIndicator pageIndicator;

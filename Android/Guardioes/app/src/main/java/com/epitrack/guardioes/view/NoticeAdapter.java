@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.model.News;
+import com.epitrack.guardioes.model.Notice;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private final OnNoticeListener listener;
 
-    private final List<News> newsList = new ArrayList<>();
+    private final List<Notice> newsList = new ArrayList<>();
 
     public NoticeAdapter(final OnNoticeListener listener) {
 
@@ -35,61 +35,61 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         this.listener = listener;
 
         // TODO: STUB
-        final News news = new News();
+        final Notice news = new Notice();
 
         news.setTitle("Camanha de vacinação contra a gripe começa em 4 de maio, diz ministro");
         news.setSource("saude.estadao.com.br");
         news.setPublicationDate("Hoje");
 
-        final News news1 = new News();
+        final Notice news1 = new Notice();
 
         news1.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news1.setSource("mundoestranho.abril.com.br");
         news1.setPublicationDate("2 dias atrás");
 
-        final News news2 = new News();
+        final Notice news2 = new Notice();
 
         news2.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news2.setSource("mundoestranho.abril.com.br");
         news2.setPublicationDate("2 dias atrás");
 
-        final News news3 = new News();
+        final Notice news3 = new Notice();
 
         news3.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news3.setSource("mundoestranho.abril.com.br");
         news3.setPublicationDate("2 dias atrás");
 
-        final News news4 = new News();
+        final Notice news4 = new Notice();
 
         news4.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news4.setSource("mundoestranho.abril.com.br");
         news4.setPublicationDate("2 dias atrás");
 
-        final News news5 = new News();
+        final Notice news5 = new Notice();
 
         news5.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news5.setSource("mundoestranho.abril.com.br");
         news5.setPublicationDate("2 dias atrás");
 
-        final News news6 = new News();
+        final Notice news6 = new Notice();
 
         news6.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news6.setSource("mundoestranho.abril.com.br");
         news6.setPublicationDate("2 dias atrás");
 
-        final News news7 = new News();
+        final Notice news7 = new Notice();
 
         news7.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news7.setSource("mundoestranho.abril.com.br");
         news7.setPublicationDate("2 dias atrás");
 
-        final News news8 = new News();
+        final Notice news8 = new Notice();
 
         news8.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news8.setSource("mundoestranho.abril.com.br");
         news8.setPublicationDate("2 dias atrás");
 
-        final News news9 = new News();
+        final Notice news9 = new Notice();
 
         news9.setTitle("É possivel pegar mais de uma gripe ao mesmo tempo?");
         news9.setSource("mundoestranho.abril.com.br");
@@ -180,7 +180,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, final int position) {
 
-        final News news = newsList.get(position);
+        final Notice news = newsList.get(position);
 
         if (viewHolder instanceof HeaderViewHolder) {
 

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.PrefManager;
 import com.epitrack.guardioes.utility.Constants;
-import com.epitrack.guardioes.view.welcome.WelcomeActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -31,6 +30,6 @@ public class SplashActivity extends BaseActivity {
 
     @OnClick(R.id.splash_activity_button_enter)
     public void onEnter() {
-        navigateTo(WelcomeActivity.class);
+        navigateTo(MapSymptomActivity.class);
     }
 }

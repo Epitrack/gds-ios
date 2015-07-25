@@ -35,8 +35,8 @@ public class HomeFragment extends BaseFragment {
 
         ButterKnife.bind(this, view);
 
-        String text = getString(R.string.main_fragment_name_message);
-        text = text.replace("{0}", "Renatinder");
+        String text = getString(R.string.home_fragment_name_message);
+        text = text.replace("{0}", "Onicio");
 
         textViewName.setText(text);
 
@@ -50,12 +50,12 @@ public class HomeFragment extends BaseFragment {
 
     @OnClick(R.id.home_fragment_text_view_map)
     public void onMap() {
-        navigateTo(MapActivity.class);
+        navigateTo(MapSymptomActivity.class);
     }
 
     @OnClick(R.id.home_fragment_text_view_tip)
     public void onTip() {
-        navigateTo(TipActivity.class);
+        navigateTo(MapPointActivity.class);
     }
 
     @OnClick(R.id.home_fragment_text_view_diary)

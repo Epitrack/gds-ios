@@ -15,7 +15,7 @@ public final class RequestHandler {
         queue = setupQueue(context.getApplicationContext());
     }
 
-    public static RequestHandler getRequestHandler(final Context context) {
+    public static RequestHandler with(final Context context) {
 
         if (requestHandler == null) {
             requestHandler = new RequestHandler(context);

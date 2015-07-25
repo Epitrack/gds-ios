@@ -77,7 +77,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.privacy_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_privacy, menu);
 
         return true;
     }

@@ -52,6 +52,8 @@ dependencies {
 
     compile 'com.google.android.gms:play-services-plus:7.5.0'
 
+    compile 'com.cocosw:bottomsheet:1.+@aar'
+
     compile('com.twitter.sdk.android:twitter:1.6.0@aar') {
 
         transitive = true;
