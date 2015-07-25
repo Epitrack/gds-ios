@@ -21,16 +21,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class MapSymptomActivity extends AbstractBaseMapActivity {
 
-    private MarkerOptions markerOptionBad;
-    private MarkerOptions markerOption;
-
-    private final Map<Marker, Point> pointMap = new HashMap<>();
+    private MarkerOptions badMarkerOption;
+    private MarkerOptions goodMarkerOption;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -43,7 +39,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
         mapFragment.getMapAsync(this);
 
-        getSupportActionBar().setTitle(R.string.home_fragment_map);
+        getSupportActionBar().setTitle(R.string.map_symptom_activity_title);
     }
 
     @Override
@@ -55,7 +51,9 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
     public void onShare(final MenuItem menuItem) {
 
-        new BottomSheet.Builder(this).sheet(R.menu.menu_share).grid().show();
+        new BottomSheet.Builder(this).sheet(R.menu.menu_share)
+                                     .grid()
+                                     .show();
     }
 
     @Override
@@ -65,7 +63,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
         load();
     }
 
-    // Temporary
+    // TODO: Temporary
     private void load() {
 
         Loader.with().getHandler().post(new Runnable() {
@@ -96,11 +94,16 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
         });
     }
 
+    // TODO: Stub..
     private void addMarker(final List<Point> pointList) {
 
         final Handler handler = new Handler(Looper.getMainLooper());
 
-        for (final Point point : pointList) {
+        for (int i = 0; i < pointList.size(); i++) {
+
+            final int count = i;
+
+            final Point point = pointList.get(i);
 
             handler.post(new Runnable() {
 
@@ -109,25 +112,37 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
                     final LatLng latLng = new LatLng(point.getLatitude(), point.getLongitude());
 
-                    final Marker marker = getMap().addMarker(loadMarkerOption().position(latLng));
+                    if (count % 2 == 0) {
+                        getMap().addMarker(loadGoodMarkerOption().position(latLng));
 
-                    pointMap.put(marker, point);
+                    } else {
+                        getMap().addMarker(loadBadMarkerOption().position(latLng));
+                    }
                 }
             });
         }
     }
 
-    private MarkerOptions loadMarkerOption() {
+    private MarkerOptions loadBadMarkerOption() {
 
-        if (markerOption == null) {
-            markerOption = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_bad_small));
+        if (badMarkerOption == null) {
+            badMarkerOption = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_bad_small));
         }
 
-        return markerOption;
+        return badMarkerOption;
+    }
+
+    private MarkerOptions loadGoodMarkerOption() {
+
+        if (goodMarkerOption == null) {
+            goodMarkerOption = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_good_small));
+        }
+
+        return goodMarkerOption;
     }
 
     @Override
     public boolean onMarkerClick(final Marker marker) {
-        return false;
+        return true;
     }
 }
