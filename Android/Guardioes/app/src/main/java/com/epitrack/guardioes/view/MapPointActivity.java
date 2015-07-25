@@ -112,7 +112,7 @@ public class MapPointActivity extends AbstractBaseMapActivity {
 
                     final LatLng latLng = new LatLng(point.getLatitude(), point.getLongitude());
 
-                    final Marker marker = getMap().addMarker(loadMarkerOption().position(latLng));
+                    final Marker marker = getMap().addMarker(getMarkerOption().position(latLng));
 
                     pointMap.put(marker, point);
                 }
@@ -120,7 +120,7 @@ public class MapPointActivity extends AbstractBaseMapActivity {
         }
     }
 
-    private MarkerOptions loadMarkerOption() {
+    private MarkerOptions getMarkerOption() {
 
         if (markerOption == null) {
             markerOption = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_hospital));

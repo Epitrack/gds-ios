@@ -5,12 +5,12 @@
     <item
         android:icon="@drawable/selector_icon_share"
         android:onClick="onShare"
-        android:title="@string/map_activity_share_menu"
+        android:title="@string/map_symptom_activity_share_menu"
         menu:showAsAction="ifRoom"/>
 
     <item
         android:icon="@drawable/selector_icon_search"
-        android:title="@string/map_activity_search_menu"
+        android:title="@string/map_symptom_activity_search_menu"
         menu:actionViewClass="android.support.v7.widget.SearchView"
         menu:showAsAction="ifRoom"/>
 
