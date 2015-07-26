@@ -137,7 +137,6 @@
         <item name="android:textColorPrimary">@color/translucent_black_light</item>
         <item name="android:textColorSecondary">@color/translucent_black_light</item>
         <item name="android:textColorHint">@color/translucent_black_light</item>
-
     </style>
 
 </resources>
