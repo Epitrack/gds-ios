@@ -5,18 +5,20 @@
               android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="75dp"
         android:gravity="center_horizontal"
-        android:text="@string/symptom_activity_message"
-        android:textSize="25dp"/>
+        android:text="@string/symptom_activity_symptom_message"
+        android:textSize="20dp"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/symptom_activity_recycler_view_symptom"
+    <ListView
+        android:id="@+id/symptom_activity_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"/>
+        android:background="@android:color/white"
+        android:divider="@color/translucent_black_dark"
+        android:dividerHeight="1dp"/>
 
 </LinearLayout>

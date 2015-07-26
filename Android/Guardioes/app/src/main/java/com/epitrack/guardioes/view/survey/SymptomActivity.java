@@ -1,8 +1,10 @@
 package com.epitrack.guardioes.view.survey;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Symptom;
@@ -13,8 +15,8 @@ import butterknife.ButterKnife;
 
 public class SymptomActivity extends BaseAppCompatActivity {
 
-    @Bind(R.id.symptom_activity_recycler_view_symptom)
-    RecyclerView recyclerView;
+    @Bind(R.id.symptom_activity_list_view)
+    ListView listView;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -24,8 +26,19 @@ public class SymptomActivity extends BaseAppCompatActivity {
 
         ButterKnife.bind(this);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        final View footerView = LayoutInflater.from(this).inflate(R.layout.symptom_footer, null);
 
-        recyclerView.setAdapter(new SymptomAdapter(Symptom.values()));
+        footerView.findViewById(R.id.symptom_button_confirm).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(final View view) {
+
+                Toast.makeText(SymptomActivity.this, "Funcionalidade ainda não disponível", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        listView.addFooterView(footerView);
+
+        listView.setAdapter(new SymptomAdapter(this, Symptom.values()));
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.epitrack.guardioes">
+<manifest
+    package="com.epitrack.guardioes"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -71,7 +72,6 @@
             android:theme="@style/Theme.Transparent.ActionBar"/>
 
         # Main
-
         <activity
             android:name=".view.MainActivity"
             android:exported="false"
@@ -87,6 +87,7 @@
         <activity
             android:name=".view.MapSymptomActivity"
             android:exported="false"
+            android:label="@string/map_symptom_activity_title"
             android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"/>
 
@@ -109,7 +110,6 @@
             android:screenOrientation="portrait"/>
 
         # Survey
-
         <activity
             android:name=".view.survey.SelectParticipantActivity"
             android:exported="false"

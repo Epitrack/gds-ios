@@ -1,141 +1,89 @@
 package com.epitrack.guardioes.view.survey;
 
-import android.support.v7.widget.RecyclerView;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Symptom;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
+public class SymptomAdapter extends ArrayAdapter<Symptom> {
 
-public class SymptomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private static final int VIEW_TYPE_ITEM = 1;
+    private static final int VIEW_TYPE_OTHER = 2;
 
-    private static final int POSITION_HEADER = 0;
-    private static final int POSITION_OTHER = 8;
+    private static final int VIEW_TYPE_AMOUNT = 2;
 
-    private static final int VIEW_AMOUNT = 3;
+    private static final int POSITION_VIEW_TYPE_OTHER = 11;
 
     private final Symptom[] symptomArray;
 
-    public SymptomAdapter(final Symptom[] symptomArray) {
+    public SymptomAdapter(final Context context, final Symptom[] symptomArray) {
+        super(context, 0, symptomArray);
+
         this.symptomArray = symptomArray;
     }
 
-    public static class ViewType {
+    public static class ViewHolder {
 
-        public static final int ITEM = 1;
-        public static final int HEADER = 2;
-        public static final int FOOTER = 3;
-        public static final int OTHER = 4;
-    }
-
-    public class HeaderViewHolder extends RecyclerView.ViewHolder {
-
-        public HeaderViewHolder(final View view) {
-            super(view);
-        }
-    }
-
-    public class ItemViewHolder extends RecyclerView.ViewHolder {
-
-        @Bind(R.id.symptom_check_box_symptom)
         CheckBox checkBoxSymptom;
-
-        public ItemViewHolder(final View view) {
-            super(view);
-
-            ButterKnife.bind(this, view);
-        }
-    }
-
-    public class FooterViewHolder extends RecyclerView.ViewHolder {
-
-        public FooterViewHolder(final View view) {
-            super(view);
-        }
-    }
-
-    public class OtherViewHolder extends RecyclerView.ViewHolder {
-
-        public OtherViewHolder(final View view) {
-            super(view);
-        }
+        TextView textViewName;
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup viewGroup, final int viewType) {
-
-        final LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-
-        if (viewType == ViewType.ITEM) {
-
-            final View view = inflater.inflate(R.layout.symptom_item, viewGroup, false);
-
-            return new ItemViewHolder(view);
-
-        } else if (viewType == ViewType.HEADER) {
-
-            final View view = inflater.inflate(R.layout.symptom_header, viewGroup, false);
-
-            return new HeaderViewHolder(view);
-
-        } else if (viewType == ViewType.FOOTER) {
-
-            final View view = inflater.inflate(R.layout.symptom_footer, viewGroup, false);
-
-            return new FooterViewHolder(view);
-
-        } else if (viewType == ViewType.OTHER) {
-
-            final View view = inflater.inflate(R.layout.symptom_other, viewGroup, false);
-
-            return new OtherViewHolder(view);
-        }
-
-        throw new IllegalArgumentException("The ViewHolder has not found.");
+    public int getCount() {
+        return symptomArray.length + 1;
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, final int position) {
-
-        if (viewHolder instanceof ItemViewHolder) {
-
-            ((ItemViewHolder) viewHolder).checkBoxSymptom.setText(getItem(position).getName());
-        }
+    public int getViewTypeCount() {
+        return VIEW_TYPE_AMOUNT;
     }
 
     @Override
     public int getItemViewType(final int position) {
-
-        if (position == POSITION_HEADER) {
-            return ViewType.HEADER;
-
-        } else if (position == getItemCount() - 1) {
-            return ViewType.FOOTER;
-
-        } else if (position == POSITION_OTHER) {
-            return ViewType.OTHER;
-
-        } else {
-            return ViewType.ITEM;
-        }
+        return (position == POSITION_VIEW_TYPE_OTHER ? VIEW_TYPE_OTHER : VIEW_TYPE_ITEM) - 1;
     }
 
     @Override
-    public int getItemCount() {
-        return symptomArray.length + VIEW_AMOUNT;
-    }
+    public View getView(final int position, final View convertView, final ViewGroup viewGroup) {
+        View view = convertView;
 
-    public Symptom getItem(final int position) {
+        if (getItemViewType(position) == VIEW_TYPE_OTHER) {
 
-        if (position > POSITION_OTHER) {
-            return symptomArray[position - 2];
+            return LayoutInflater.from(viewGroup.getContext())
+                                 .inflate(R.layout.symptom_other, viewGroup, false);
+
+        } else {
+
+            ViewHolder viewHolder;
+
+            if (view == null) {
+
+                view = LayoutInflater.from(viewGroup.getContext())
+                                     .inflate(R.layout.symptom_item, viewGroup, false);
+
+                viewHolder = new ViewHolder();
+
+                viewHolder.checkBoxSymptom = (CheckBox) view.findViewById(R.id.symptom_check_box);
+                viewHolder.textViewName = (TextView) view.findViewById(R.id.symptom_text_view_name);
+
+                view.setTag(viewHolder);
+
+            } else {
+
+                viewHolder = (ViewHolder) view.getTag();
+            }
+
+            final Symptom symptom = position > POSITION_VIEW_TYPE_OTHER ? getItem(position - 1) : getItem(position);
+
+            viewHolder.textViewName.setText(symptom.getName());
+
+            return view;
         }
-
-        return symptomArray[position - 1];
     }
 }
