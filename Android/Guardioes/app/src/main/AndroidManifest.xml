@@ -120,7 +120,7 @@
         <activity
             android:name=".view.survey.StateActivity"
             android:exported="false"
-            android:parentActivityName=".view.survey.MainActivity"
+            android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Survey"/>
 
