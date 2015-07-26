@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
+import com.epitrack.guardioes.view.survey.StateActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -65,7 +65,7 @@ public class HomeFragment extends BaseFragment {
 
     @OnClick(R.id.home_fragment_text_view_join)
     public void onJoin() {
-        navigateTo(SelectParticipantActivity.class);
+        navigateTo(StateActivity.class);
     }
 
     @Override
