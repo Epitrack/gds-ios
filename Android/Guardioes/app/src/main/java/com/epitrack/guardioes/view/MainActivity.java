@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setLogo(R.drawable.icon_logo_small);
+        getSupportActionBar().setLogo(R.drawable.image_logo_small);
 
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
 

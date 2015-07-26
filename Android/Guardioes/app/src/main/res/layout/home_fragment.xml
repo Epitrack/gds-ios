@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/image_main_menu"/>
+            android:src="@drawable/background_home_menu"/>
 
         <TextView
             android:id="@+id/home_fragment_text_view_notice"
