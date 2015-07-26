@@ -40,6 +40,8 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:7.5.0'
     compile 'com.google.android.gms:play-services-gcm:7.5.0'
 
+    compile 'com.marshalchen.ultimaterecyclerview:library:0.3.11'
+
     compile 'com.facebook.android:facebook-android-sdk:4.2.0'
 
     compile 'com.google.android.gms:play-services-location:7.5.0'
