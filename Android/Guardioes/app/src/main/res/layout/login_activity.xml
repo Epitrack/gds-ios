@@ -64,7 +64,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/login_activity_mail_hint"
             android:inputType="textEmailAddress"
-            android:maxLength="50"/>
+            android:maxLength="50"
+            android:textColorHint="@color/translucent_white_light"/>
 
         <EditText
             android:id="@+id/login_activity_edit_text_password"
@@ -72,7 +73,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/login_activity_password_hint"
             android:inputType="textPassword"
-            android:maxLength="16"/>
+            android:maxLength="16"
+            android:textColorHint="@color/translucent_white_light"/>
 
         <Button
             android:id="@+id/login_activity_button_login"
