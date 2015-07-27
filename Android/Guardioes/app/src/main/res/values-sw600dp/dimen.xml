@@ -3,4 +3,8 @@
 
     <dimen name="splash_activity_button_enter_margin_bottom">175dp</dimen>
 
+    <dimen name="state_activity_state_message_margin_top">125dp</dimen>
+    <dimen name="state_activity_text_view_state_good_margin_top">275dp</dimen>
+    <dimen name="state_activity_text_view_state_bad_margin_top">75dp</dimen>
+
 </resources>
