@@ -2,35 +2,47 @@ package com.epitrack.guardioes.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.PrefManager;
 import com.epitrack.guardioes.utility.Constants;
-import com.epitrack.guardioes.view.account.LoginActivity;
+import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
+import com.epitrack.guardioes.view.survey.StateActivity;
+import com.epitrack.guardioes.view.survey.SymptomActivity;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+public class SplashActivity extends BaseActivity implements Runnable {
 
-public class SplashActivity extends BaseActivity {
+    private static final long WAIT_TIME = 1500;
+
+    private final Handler handler = new Handler();
 
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        if (new PrefManager(this).get(Constants.Pref.USER) == null) {
-            setContentView(R.layout.splash_activity);
+        setContentView(R.layout.splash_activity);
 
-            ButterKnife.bind(this);
+        handler.postDelayed(this, WAIT_TIME);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        handler.removeCallbacks(this);
+    }
+
+    @Override
+    public void run() {
+
+        if (new PrefManager(this).get(Constants.Pref.USER) == null) {
+            navigateTo(SymptomActivity.class);
 
         } else {
 
             navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                            Intent.FLAG_ACTIVITY_NEW_TASK);
         }
-    }
-
-    @OnClick(R.id.splash_activity_button_enter)
-    public void onEnter() {
-        navigateTo(LoginActivity.class);
     }
 }

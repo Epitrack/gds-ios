@@ -10,19 +10,6 @@
         android:layout_marginTop="50dp"
         android:src="@drawable/image_logo_large"/>
 
-    <Button
-        android:id="@+id/splash_activity_button_enter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/splash_activity_button_enter_margin_bottom"
-        android:background="@drawable/selector_button_enter"
-        android:text="@string/splash_activity_enter"
-        android:textColor="@android:color/white"
-        android:textSize="18dp"
-        android:textStyle="bold"/>
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
