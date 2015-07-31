@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.survey.StateActivity;
+import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -36,7 +36,7 @@ public class HomeFragment extends BaseFragment {
         ButterKnife.bind(this, view);
 
         String text = getString(R.string.home_fragment_name_message);
-        text = text.replace("{0}", "Onicio");
+        text = text.replace("{0}", "Dudu");
 
         textViewName.setText(text);
 
@@ -65,7 +65,7 @@ public class HomeFragment extends BaseFragment {
 
     @OnClick(R.id.home_fragment_text_view_join)
     public void onJoin() {
-        navigateTo(StateActivity.class);
+        navigateTo(SelectParticipantActivity.class);
     }
 
     @Override

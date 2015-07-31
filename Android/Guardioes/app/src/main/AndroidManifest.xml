@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="com.epitrack.guardioes"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.epitrack.guardioes">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -115,12 +114,12 @@
             android:exported="false"
             android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Survey"/>
+            android:theme="@style/Theme.ActionBar.Survey"/>
 
         <activity
             android:name=".view.survey.StateActivity"
             android:exported="false"
-            android:parentActivityName=".view.MainActivity"
+            android:parentActivityName=".view.survey.SelectParticipantActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Survey"/>
 
@@ -130,6 +129,13 @@
             android:parentActivityName=".view.survey.StateActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Survey"/>
+
+        <activity
+            android:name=".view.survey.ShareActivity"
+            android:exported="false"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NoActionBar"/>
 
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
