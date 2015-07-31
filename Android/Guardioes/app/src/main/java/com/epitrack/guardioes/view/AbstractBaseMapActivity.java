@@ -17,7 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, OnLocationListener {
 
-    private static final long DEFAULT_ZOOM = 15;
+    private static final long DEFAULT_ZOOM = 10;
 
     private final Handler handler = new Handler();
 
