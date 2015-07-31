@@ -61,6 +61,12 @@
     <string name="symptom_activity_other">Outros</string>
     <string name="symptom_activity_confirm">Confirmar</string>
 
+    # ShareActivity
+    <string name="share_activity_confirm">Confirmar</string>
+    <string name="share_activity_message">Obrigado pela\ninformação!</string>
+    <string name="share_activity_message_hint">Não deixe de procurar um serviço de saúde mais\npróximo. Continue informando diariamente como\nestá sua saúde.</string>
+    <string name="share_activity_social_message_hint">Convidem seus amigos para serem guardiões.</string>
+
     # Map Point Activity
     <string name="map_point_activity_hospital_title">UPAs</string>
     <string name="map_point_activity_pharmacy_title">Farmácias</string>
