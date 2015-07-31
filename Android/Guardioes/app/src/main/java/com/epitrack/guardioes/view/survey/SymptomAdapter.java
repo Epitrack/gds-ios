@@ -53,7 +53,7 @@ public class SymptomAdapter extends ArrayAdapter<Symptom> {
     public View getView(final int position, final View convertView, final ViewGroup viewGroup) {
         View view = convertView;
 
-        if (getItemViewType(position) == VIEW_TYPE_OTHER) {
+        if (getItemViewType(position) == VIEW_TYPE_OTHER - 1) {
 
             return LayoutInflater.from(viewGroup.getContext())
                                  .inflate(R.layout.symptom_other, viewGroup, false);

@@ -4,7 +4,6 @@
     <string name="app_name">Guardiões Da Saúde</string>
 
     # Splash Activity
-    <string name="splash_activity_enter">Entrar</string>
 
     # Social Fragment
     <string name="social_fragment_facebook">Facebook</string>
@@ -44,6 +43,13 @@
     <string name="home_fragment_diary">Diário da\nSaúde</string>
     <string name="home_fragment_join">Participe\nagora!</string>
 
+    # Select Participant Activity
+    <string name="select_participant_activity_message">Quem vai participar?</string>
+    <string name="select_participant_activity_message_hint">Selecione algum dos perfis abaixo\npara começar a participar.</string>
+    <string name="select_participant_activity_age">%d anos</string>
+    <string name="select_participant_activity_parent">Membros do domicílio</string>
+    <string name="parent_item_age">%d anos</string>
+
     # State Activity
     <string name="state_activity_good">Bem</string>
     <string name="state_activity_bad">Mal</string>
@@ -68,11 +74,6 @@
     <string name="notice_activity_title">Notícias</string>
     <string name="notice_activity_search">Procurar</string>
     <string name="notice_activity_hyphen">-</string>
-
-    # Select Participant Activity
-    <string name="select_participant_activity_message">De quem será\no relatório?</string>
-    <string name="select_participant_activity_age">{0} anos</string>
-    <string name="select_participant_activity_family">Familiares</string>
 
     # Main Menu
     <string name="menu_main_home">Home</string>

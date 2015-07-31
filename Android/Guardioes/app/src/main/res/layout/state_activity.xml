@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/background_blue">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_blue">
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,7 +11,7 @@
         android:layout_marginTop="@dimen/state_activity_state_message_margin_top"
         android:gravity="center_horizontal"
         android:text="@string/state_activity_state_message"
-        android:textSize="28dp"/>
+        android:textSize="28dp" />
 
     <TextView
         android:id="@+id/state_activity_text_view_state_good"
@@ -22,7 +22,7 @@
         android:drawableTop="@drawable/icon_good"
         android:gravity="center_horizontal"
         android:text="@string/state_activity_good"
-        android:textSize="20dp"/>
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/state_activity_text_view_state_bad"
@@ -34,7 +34,7 @@
         android:drawableTop="@drawable/icon_bad"
         android:gravity="center_horizontal"
         android:text="@string/state_activity_bad"
-        android:textSize="20dp"/>
+        android:textSize="18dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,6 +44,6 @@
         android:layout_marginBottom="25dp"
         android:gravity="center_horizontal"
         android:text="@string/state_activity_state_hint"
-        android:textSize="13dp"/>
+        android:textSize="13dp" />
 
 </RelativeLayout>

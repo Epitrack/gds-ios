@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Symptom;
@@ -33,7 +32,7 @@ public class SymptomActivity extends BaseAppCompatActivity {
             @Override
             public void onClick(final View view) {
 
-                Toast.makeText(SymptomActivity.this, "Funcionalidade ainda não disponível", Toast.LENGTH_SHORT).show();
+                navigateTo(ShareActivity.class);
             }
         });
 

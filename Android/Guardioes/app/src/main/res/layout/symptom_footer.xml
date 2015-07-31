@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:background="@drawable/background_blue">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_blue">
 
     <Button
         android:id="@+id/symptom_button_confirm"
@@ -14,6 +14,6 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/selector_button_white"
         android:text="@string/symptom_activity_confirm"
-        android:textColor="@color/primary_light"/>
+        android:textColor="@color/primary_light" />
 
 </LinearLayout>

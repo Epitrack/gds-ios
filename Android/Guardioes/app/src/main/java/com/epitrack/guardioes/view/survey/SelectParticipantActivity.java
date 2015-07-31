@@ -21,10 +21,10 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
     @Bind(R.id.select_participant_activity_text_view_age)
     TextView textViewAge;
 
-    @Bind(R.id.select_participant_activity_image_view_photo)
-    ImageView imageViewPhoto;
+    @Bind(R.id.select_participant_activity_image_view_avatar)
+    ImageView imageViewAvatar;
 
-    @Bind(R.id.select_participant_activity_recycler_view_parent)
+    @Bind(R.id.select_participant_activity_recycler_view)
     RecyclerView recyclerView;
 
     @Override
@@ -39,8 +39,8 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
 
         if (true) {
 
-            textViewName.setText("Someone");
-            textViewAge.setText("26 Anos");
+            textViewName.setText("Dudu");
+            textViewAge.setText("24 Anos");
 
             recyclerView.setHasFixedSize(true);
 
@@ -50,7 +50,7 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         }
     }
 
-    @OnClick(R.id.select_participant_activity_image_view_photo)
+    @OnClick(R.id.select_participant_activity_image_view_avatar)
     public void onUserSelect() {
         navigateTo(StateActivity.class);
     }
