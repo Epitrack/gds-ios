@@ -91,6 +91,11 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="Theme.NoActionBar.Share" parent="Theme.NoActionBar">
+        <item name="windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@drawable/background_blue</item>
+    </style>
+
     <style name="Theme.Transparent.ActionBar" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@android:color/transparent</item>
         <item name="colorPrimaryDark">@color/translucent_black_dark</item>
