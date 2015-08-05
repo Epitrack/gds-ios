@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Symptom;
+import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
 import butterknife.Bind;
@@ -32,7 +33,10 @@ public class SymptomActivity extends BaseAppCompatActivity {
             @Override
             public void onClick(final View view) {
 
-                navigateTo(ShareActivity.class);
+                final Bundle bundle = new Bundle();
+                bundle.putBoolean(Constants.Intent.HAS_BAD_STATE, true);
+
+                navigateTo(ShareActivity.class, bundle);
             }
         });
 

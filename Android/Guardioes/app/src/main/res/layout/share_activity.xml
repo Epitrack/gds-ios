@@ -21,19 +21,22 @@
         android:src="@drawable/image_complete" />
 
     <TextView
+        android:id="@+id/share_activity_text_view_hospital_message_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
         android:text="@string/share_activity_message_hint"
-        android:textSize="13dp" />
+        android:textSize="13dp"
+        android:visibility="gone" />
 
     <TextView
+        android:id="@+id/share_activity_text_view_social_message_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="40dp"
         android:text="@string/share_activity_social_message_hint"
         android:textSize="13dp" />
 
