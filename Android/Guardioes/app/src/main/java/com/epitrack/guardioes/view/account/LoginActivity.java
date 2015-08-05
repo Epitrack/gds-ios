@@ -2,6 +2,7 @@ package com.epitrack.guardioes.view.account;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -14,6 +15,12 @@ import android.widget.Toast;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.MainActivity;
+import com.mobsandgeeks.saripaar.ValidationError;
+import com.mobsandgeeks.saripaar.Validator;
+import com.mobsandgeeks.saripaar.annotation.Email;
+import com.mobsandgeeks.saripaar.annotation.Password;
+
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -27,13 +34,17 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
     @Bind(R.id.login_activity_linear_layout_login)
     LinearLayout linearLayoutLogin;
 
+    @Email(messageResId = R.string.validation_mail)
     @Bind(R.id.login_activity_edit_text_mail)
     EditText editTextMail;
 
+    @Password(messageResId = R.string.validation_password)
     @Bind(R.id.login_activity_edit_text_password)
     EditText editTextPassword;
 
     private boolean inLogin;
+
+    private Validator validator;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -43,7 +54,16 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
 
         ButterKnife.bind(this);
 
+        final ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar == null) {
+            throw new IllegalArgumentException("The actionBar is null.");
+        }
+
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        validator = new Validator(this);
+        validator.setValidationListener(new ValidationHandler());
 
         // TODO: Check play service
         // TODO: Register to GCM. Review soon..
@@ -163,13 +183,43 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
     public void onSuccess() {
 
         navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
     @OnClick(R.id.login_activity_button_login)
     public void onLogin(final View view) {
 
+        //validator.validate();
+
         navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                        Intent.FLAG_ACTIVITY_NEW_TASK);
+    }
+
+    private class ValidationHandler implements Validator.ValidationListener {
+
+        @Override
+        public void onValidationSucceeded() {
+
+            // TODO: Make request
+
+            navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                           Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
+
+        @Override
+        public void onValidationFailed(final List<ValidationError> errorList) {
+
+            for (final ValidationError error : errorList) {
+
+                final String message = error.getCollatedErrorMessage(LoginActivity.this);
+
+                final View view = error.getView();
+
+                if (view instanceof EditText) {
+
+                    ((EditText) view).setError(message);
+                }
+            }
+        }
     }
 }

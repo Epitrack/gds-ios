@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:src="@drawable/image_logo"/>
+        android:src="@drawable/image_logo" />
 
     <LinearLayout
         android:id="@+id/login_activity_linear_layout_social_login"
@@ -23,13 +23,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
-            android:text="@string/login_activity_social_message"/>
+            android:text="@string/login_activity_social_message" />
 
         <fragment
             class="com.epitrack.guardioes.view.account.SocialFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:tag="social_fragment"/>
+            android:tag="social_fragment" />
 
         <TextView
             style="@style/TextHint"
@@ -37,14 +37,14 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="20dp"
-            android:text="@string/login_activity_mail_message"/>
+            android:text="@string/login_activity_mail_message" />
 
         <Button
             android:id="@+id/login_activity_button_mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/selector_button_mail"/>
+            android:background="@drawable/selector_button_mail" />
 
     </LinearLayout>
 
@@ -65,7 +65,7 @@
             android:hint="@string/login_activity_mail_hint"
             android:inputType="textEmailAddress"
             android:maxLength="50"
-            android:textColorHint="@color/translucent_white_light"/>
+            android:textColorHint="@color/translucent_white_light" />
 
         <EditText
             android:id="@+id/login_activity_edit_text_password"
@@ -74,7 +74,7 @@
             android:hint="@string/login_activity_password_hint"
             android:inputType="textPassword"
             android:maxLength="16"
-            android:textColorHint="@color/translucent_white_light"/>
+            android:textColorHint="@color/translucent_white_light" />
 
         <Button
             android:id="@+id/login_activity_button_login"
@@ -85,7 +85,7 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/selector_button_white"
             android:text="@string/login_activity_login"
-            android:textColor="@color/primary_light"/>
+            android:textColor="@color/primary_light" />
 
         <TextView
             android:id="@+id/login_activity_text_view_forgot_password"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="125dp"
-            android:text="@string/login_activity_forgot_password_message"/>
+            android:text="@string/login_activity_forgot_password_message" />
 
     </LinearLayout>
 

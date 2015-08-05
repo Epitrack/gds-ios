@@ -2,6 +2,7 @@ package com.epitrack.guardioes.view.account;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +16,15 @@ import android.widget.Toast;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.MainActivity;
+import com.mobsandgeeks.saripaar.ValidationError;
+import com.mobsandgeeks.saripaar.Validator;
+import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
+import com.mobsandgeeks.saripaar.annotation.Email;
+import com.mobsandgeeks.saripaar.annotation.Length;
+import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+import com.mobsandgeeks.saripaar.annotation.Password;
+
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,6 +32,8 @@ import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
 public class CreateAccountActivity extends BaseAppCompatActivity implements OnSocialAccountListener {
+
+    private static final int MIN_CHAR_NICKNAME = 3;
 
     private static final String TAG_SOCIAL_FRAGMENT = "social_fragment";
 
@@ -31,18 +43,23 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     @Bind(R.id.create_account_activity_linear_layout_login)
     LinearLayout linearLayoutLogin;
 
+    @Email(messageResId = R.string.validation_mail)
     @Bind(R.id.create_account_activity_edit_text_mail)
     EditText editTextMail;
 
+    @Password(messageResId = R.string.validation_password)
     @Bind(R.id.create_account_activity_edit_text_password)
     EditText editTextPassword;
 
-    @Bind(R.id.create_account_activity_edit_text_repeat_password)
-    EditText editTextRepeatPassword;
+    @ConfirmPassword(messageResId = R.string.validation_confirm_password)
+    @Bind(R.id.create_account_activity_edit_text_confirm_password)
+    EditText editTextConfirmPassword;
 
-    @Bind(R.id.create_account_activity_edit_text_name)
-    EditText editTextName;
+    @Length(min = MIN_CHAR_NICKNAME, trim = true, messageResId = R.string.validation_nickname)
+    @Bind(R.id.create_account_activity_edit_text_nickname)
+    EditText editTextNickname;
 
+    @NotEmpty(messageResId = R.string.validation_not_empty)
     @Bind(R.id.create_account_activity_edit_text_birth_date)
     EditText editTextBirthDate;
 
@@ -53,6 +70,8 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
     private SocialFragment socialFragment;
 
+    private Validator validator;
+
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
@@ -61,11 +80,20 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
         ButterKnife.bind(this);
 
+        final ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar == null) {
+            throw new IllegalArgumentException("The actionBar is null.");
+        }
+
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         buttonCreateAccount.setEnabled(false);
 
         getSocialFragment().setEnable(false);
+
+        validator = new Validator(this);
+        validator.setValidationListener(new ValidationHandler());
 
         // TODO: Check play service
         // TODO: Register to GCM. Review soon..
@@ -218,7 +246,37 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     @OnClick(R.id.create_account_activity_button_create_account)
     public void onCreateAccount() {
 
+        //validator.validate();
+
         navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                        Intent.FLAG_ACTIVITY_NEW_TASK);
+    }
+
+    private class ValidationHandler implements Validator.ValidationListener {
+
+        @Override
+        public void onValidationSucceeded() {
+
+            // TODO: Make request
+
+            navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                           Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
+
+        @Override
+        public void onValidationFailed(final List<ValidationError> errorList) {
+
+            for (final ValidationError error : errorList) {
+
+                final String message = error.getCollatedErrorMessage(CreateAccountActivity.this);
+
+                final View view = error.getView();
+
+                if (view instanceof EditText) {
+
+                    ((EditText) view).setError(message);
+                }
+            }
+        }
     }
 }

@@ -94,4 +94,11 @@
     <string name="menu_share_twitter">Twitter</string>
     <string name="menu_share_gmail">Gmail</string>
 
+    # Validation
+    <string name="validation_not_empty">Campo obrigátorio</string>
+    <string name="validation_mail">Email inválido</string>
+    <string name="validation_password">Senha inválida</string>
+    <string name="validation_confirm_password">Senhas não conferem</string>
+    <string name="validation_nickname">Mínimo três caracteres</string>
+
 </resources>
