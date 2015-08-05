@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primary">#008DEC</color>
-    <color name="primary_light">#1E88E5</color>
-    <color name="primary_dark">#226DB6</color>
+    <color name="primary">#008dec</color>
+    <color name="primary_light">#1e88e5</color>
+    <color name="primary_dark">#226db6</color>
 
     <color name="blue_dark">#186cb7</color>
 
-    <color name="grey_bright">#E2E6E7</color>
+    <color name="blue_bright">#02a9d2</color>
+
+    <color name="grey_bright">#e2e6e7</color>
     <color name="grey_light">#999999</color>
     <color name="grey">#757575</color>
 
     <color name="translucent_black_light">#80000000</color>
     <color name="translucent_black_dark">#33000000</color>
 
-    <color name="translucent_blue">#B31976D2</color>
+    <color name="translucent_blue">#b31976d2</color>
 
-    <color name="translucent_white_light">#80FFFFFF</color>
-    <color name="translucent_white_dark">#CCFFFFFF</color>
+    <color name="translucent_white_light">#80ffffff</color>
+    <color name="translucent_white_dark">#ccffffff</color>
 
 </resources>

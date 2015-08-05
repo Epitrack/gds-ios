@@ -101,4 +101,10 @@
     <string name="validation_confirm_password">Senhas não conferem</string>
     <string name="validation_nickname">Mínimo três caracteres</string>
 
+    # Submit Survey Dialog
+    <string name="submit_survey_dialog_title">Atenção</string>
+    <string name="submit_survey_dialog_message">Deseja registrar suas informações?</string>
+    <string name="submit_survey_dialog_no">NÃO</string>
+    <string name="submit_survey_dialog_yes">SIM</string>
+
 </resources>
