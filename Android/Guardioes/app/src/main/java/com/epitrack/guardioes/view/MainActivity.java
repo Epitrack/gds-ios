@@ -13,7 +13,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.menu.Menu;
+import com.epitrack.guardioes.manager.PrefManager;
+import com.epitrack.guardioes.utility.Constants;
+import com.epitrack.guardioes.view.account.LoginActivity;
+import com.epitrack.guardioes.view.menu.HomeMenu;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         navigationView.setNavigationItemSelectedListener(this);
 
         addFragment(MAIN_FRAGMENT,
-                    MAIN_FRAGMENT.getSimpleName());
+                MAIN_FRAGMENT.getSimpleName());
     }
 
     @Override
@@ -99,20 +102,29 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
         drawerLayout.closeDrawer(GravityCompat.START);
 
-        final Menu menu = Menu.getBy(menuItem);
+        final HomeMenu homeMenu = HomeMenu.getBy(menuItem);
 
-        if (menu.isDialog()) {
+        if (homeMenu.getId() == HomeMenu.EXIT.getId()) {
 
+            if (new PrefManager(this).remove(Constants.Pref.USER)) {
 
-        } else if (menu.isFragment()) {
+                final Intent intent = new Intent(this, LoginActivity.class);
 
-            if (!menu.getTag().equals(getCurrentFragment().getTag())) {
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                replaceFragment(menu.getMenuClass(), menu.getTag());
+                startActivity(intent);
             }
 
-        } else if (menu.isActivity()) {
-            startActivity(new Intent(this, menu.getMenuClass()));
+        } else if (homeMenu.isFragment()) {
+
+            if (!homeMenu.getTag().equals(getCurrentFragment().getTag())) {
+
+                replaceFragment(homeMenu.getMenuClass(), homeMenu.getTag());
+            }
+
+        } else if (homeMenu.isActivity()) {
+            startActivity(new Intent(this, homeMenu.getMenuClass()));
         }
 
         menuItem.setChecked(true);

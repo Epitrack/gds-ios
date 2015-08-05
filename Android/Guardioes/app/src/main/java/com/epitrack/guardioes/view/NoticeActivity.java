@@ -11,7 +11,7 @@ import butterknife.ButterKnife;
 
 public class NoticeActivity extends BaseAppCompatActivity implements OnNoticeListener {
 
-    @Bind(R.id.news_activity_recycler_view_news)
+    @Bind(R.id.notice_activity_recycler_view)
     RecyclerView recyclerView;
 
     @Override
