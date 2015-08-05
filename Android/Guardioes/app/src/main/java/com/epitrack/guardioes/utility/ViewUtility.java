@@ -10,14 +10,14 @@ public final class ViewUtility {
 
     }
 
-    public static float toPixel(final Context context, final float densityPixel) {
+    public static int toPixel(final Context context, final float densityPixel) {
 
         final float density = context.getResources().getDisplayMetrics().density;
 
-        return densityPixel * density;
+        return (int) (densityPixel * density);
     }
 
-    public static float toDensity(final Context context, final float pixel) {
+    public static float toDensity(final Context context, final int pixel) {
 
         final float density = context.getResources().getDisplayMetrics().density;
 
