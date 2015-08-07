@@ -16,6 +16,7 @@
         <item name="android:dialogTheme">@style/Theme.Dialog</item>
 
         <item name="android:textColor">@android:color/white</item>
+
     </style>
 
     <style name="Theme.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
@@ -50,7 +51,7 @@
 
     <style name="Theme.Survey" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@android:color/transparent</item>
-        <item name="colorPrimaryDark">@color/translucent_black_dark</item>
+        <item name="colorPrimaryDark">@color/translucent_black_light</item>
         <item name="windowActionBarOverlay">true</item>
         <item name="android:windowBackground">@drawable/background_blue</item>
 
@@ -84,7 +85,7 @@
     </style>
 
     <style name="Theme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimaryDark">@color/translucent_black_dark</item>
+        <item name="colorPrimaryDark">@color/translucent_black_light</item>
         <item name="android:windowBackground">@drawable/background_map</item>
 
         <item name="android:textAllCaps">false</item>
@@ -98,7 +99,7 @@
 
     <style name="Theme.Transparent.ActionBar" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@android:color/transparent</item>
-        <item name="colorPrimaryDark">@color/translucent_black_dark</item>
+        <item name="colorPrimaryDark">@color/translucent_black_light</item>
         <item name="windowActionBarOverlay">true</item>
         <item name="android:windowBackground">@drawable/background_map</item>
 
@@ -126,6 +127,7 @@
     <style name="Theme.Menu" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/blue_light</item>
 
         <item name="drawerArrowStyle">@style/Theme.DrawerArrow</item>
     </style>
@@ -156,13 +158,9 @@
     </style>
 
     <style name="BottomSheet.Share" parent="BottomSheet.Dialog">
-        <item name="android:textColorPrimary">@color/translucent_black_light</item>
-        <item name="android:textColorSecondary">@color/translucent_black_light</item>
-        <item name="android:textColorHint">@color/translucent_black_light</item>
-    </style>
-
-    <style name="SwitchButton" parent="MD">
-        <item name="android:padding">17dp</item>
+        <item name="android:textColorPrimary">@color/translucent_black_dark</item>
+        <item name="android:textColorSecondary">@color/translucent_black_dark</item>
+        <item name="android:textColorHint">@color/translucent_black_dark</item>
     </style>
 
 </resources>

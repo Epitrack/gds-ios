@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.menu;
 
 import android.content.Context;
+import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
-import com.kyleduo.switchbutton.SwitchButton;
 
 public class SettingAdapter extends ArrayAdapter<Setting> {
 
@@ -19,7 +19,7 @@ public class SettingAdapter extends ArrayAdapter<Setting> {
     public static class ViewHolder {
 
         TextView textViewName;
-        SwitchButton switchButton;
+        SwitchCompat switchSetting;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class SettingAdapter extends ArrayAdapter<Setting> {
             viewHolder = new ViewHolder();
 
             viewHolder.textViewName = (TextView) view.findViewById(R.id.setting_name);
-            viewHolder.switchButton = (SwitchButton) view.findViewById(R.id.setting_switch_button);
+            viewHolder.switchSetting = (SwitchCompat) view.findViewById(R.id.setting_switch);
 
             view.setTag(viewHolder);
 

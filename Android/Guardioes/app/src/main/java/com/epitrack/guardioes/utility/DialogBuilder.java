@@ -15,7 +15,7 @@ public final class DialogBuilder extends BaseBuilder {
 
         return new MaterialDialog.Builder(getContext())
                                  .titleColorRes(android.R.color.black)
-                                 .contentColorRes(R.color.translucent_black_light)
+                                 .contentColorRes(R.color.translucent_black_dark)
                                  .negativeColorRes(R.color.blue_bright)
                                  .positiveColorRes(R.color.blue_bright);
     }
