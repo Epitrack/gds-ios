@@ -15,6 +15,11 @@ public final class Constants {
         public static final String SECRET = "";
     }
 
+    public static class Config {
+
+        public static final boolean DEBUG = false;
+    }
+
     public static class Intent {
 
         public static final String HAS_BAD_STATE = "has_bad_state";
