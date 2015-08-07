@@ -11,7 +11,7 @@ import com.koushikdutta.ion.builder.Builders;
 
 import java.util.Map;
 
-public final class Requester extends Base implements IRequester {
+final class Requester extends Base implements IRequester {
 
     private static final String TAG = Requester.class.getSimpleName();
 

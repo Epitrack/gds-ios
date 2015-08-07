@@ -8,7 +8,7 @@ import com.koushikdutta.async.future.FutureCallback;
 
 import java.io.IOException;
 
-public class RequestHandler<T> implements FutureCallback<String> {
+class RequestHandler<T> implements FutureCallback<String> {
 
     private static final String TAG = RequestHandler.class.getSimpleName();
     

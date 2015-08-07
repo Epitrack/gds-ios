@@ -2,7 +2,7 @@ package com.epitrack.guardioes.request;
 
 import android.content.Context;
 
-public class Base {
+class Base {
 
     private final Context context;
 
