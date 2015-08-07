@@ -107,4 +107,11 @@
     <string name="submit_survey_dialog_no">NÃO</string>
     <string name="submit_survey_dialog_yes">SIM</string>
 
+    # Setting Fragment
+    <string name="setting_fragment_notification">Notificações</string>
+
+    <string name="setting_alert">Alertas</string>
+    <string name="setting_sound">Sons</string>
+    <string name="setting_mail">Emails</string>
+
 </resources>

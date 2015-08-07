@@ -12,7 +12,7 @@ public enum HomeMenu {
 
     HOME        (R.id.main_menu_home, HomeFragment.class),
     PROFILE     (R.id.main_menu_profile, ProfileFragment.class),
-    SETTINGS    (R.id.main_menu_setting, SettingsFragment.class),
+    SETTINGS    (R.id.main_menu_setting, SettingFragment.class),
     ABOUT       (R.id.main_menu_about, AboutFragment.class),
     HELP        (R.id.main_menu_help, HelpFragment.class),
     EXIT        (R.id.main_menu_exit, null);

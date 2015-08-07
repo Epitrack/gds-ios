@@ -161,4 +161,8 @@
         <item name="android:textColorHint">@color/translucent_black_light</item>
     </style>
 
+    <style name="SwitchButton" parent="MD">
+        <item name="android:padding">17dp</item>
+    </style>
+
 </resources>

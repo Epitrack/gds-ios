@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="3dp"
+    android:paddingTop="3dp">
+
+    <TextView
+        android:id="@+id/setting_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="17dp"
+        android:layout_weight="1"
+        android:textColor="@color/grey"
+        android:textSize="15dp" />
+
+    <com.kyleduo.switchbutton.SwitchButton
+        android:id="@+id/setting_switch_button"
+        style="@style/SwitchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        layout:offDrawable="@color/grey_bright"
+        layout:onDrawable="@color/blue_light" />
+
+</LinearLayout>
