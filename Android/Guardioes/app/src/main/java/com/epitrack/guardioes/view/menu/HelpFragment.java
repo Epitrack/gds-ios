@@ -21,6 +21,6 @@ public class HelpFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {
-        return inflater.inflate(R.layout.help_fragment, viewGroup, false);
+        return inflater.inflate(R.layout.help, viewGroup, false);
     }
 }

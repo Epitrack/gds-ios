@@ -16,7 +16,7 @@ import butterknife.OnClick;
 
 public class HomeFragment extends BaseFragment {
 
-    @Bind(R.id.home_fragment_text_view_name)
+    @Bind(R.id.text_view_name)
     TextView textViewName;
 
     @Override
@@ -31,7 +31,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {
 
-        final View view = inflater.inflate(R.layout.home_fragment, viewGroup, false);
+        final View view = inflater.inflate(R.layout.home, viewGroup, false);
 
         ButterKnife.bind(this, view);
 
@@ -43,27 +43,27 @@ public class HomeFragment extends BaseFragment {
         return view;
     }
 
-    @OnClick(R.id.home_fragment_text_view_notice)
+    @OnClick(R.id.text_view_notice)
     public void onNews() {
         navigateTo(NoticeActivity.class);
     }
 
-    @OnClick(R.id.home_fragment_text_view_map)
+    @OnClick(R.id.text_view_map)
     public void onMap() {
         navigateTo(MapSymptomActivity.class);
     }
 
-    @OnClick(R.id.home_fragment_text_view_tip)
+    @OnClick(R.id.text_view_tip)
     public void onTip() {
         navigateTo(MapPointActivity.class);
     }
 
-    @OnClick(R.id.home_fragment_text_view_diary)
+    @OnClick(R.id.text_view_diary)
     public void onDiary() {
         navigateTo(DiaryActivity.class);
     }
 
-    @OnClick(R.id.home_fragment_text_view_join)
+    @OnClick(R.id.text_view_join)
     public void onJoin() {
         navigateTo(SelectParticipantActivity.class);
     }

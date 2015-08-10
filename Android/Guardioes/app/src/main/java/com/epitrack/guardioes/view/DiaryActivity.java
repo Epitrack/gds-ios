@@ -10,6 +10,6 @@ public class DiaryActivity extends BaseAppCompatActivity {
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.diary_activity);
+        setContentView(R.layout.diary);
     }
 }

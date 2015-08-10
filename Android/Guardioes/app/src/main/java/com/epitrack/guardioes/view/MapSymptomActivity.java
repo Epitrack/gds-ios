@@ -32,10 +32,10 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.activity_map_symptom);
+        setContentView(R.layout.map_symptom);
 
         final MapFragment mapFragment = (MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map_activity_fragment_map_symptom);
+                .findFragmentById(R.id.fragment_map);
 
         mapFragment.getMapAsync(this);
     }

@@ -32,13 +32,13 @@ import butterknife.ButterKnife;
 
 public class MapPointActivity extends AbstractBaseMapActivity {
 
-    @Bind(R.id.map_point_activity_linear_layout)
+    @Bind(R.id.linear_layout)
     LinearLayout linearLayoutPoint;
 
-    @Bind(R.id.map_point_activity_text_view_name)
+    @Bind(R.id.text_view_name)
     TextView textViewName;
 
-    @Bind(R.id.map_point_activity_text_view_address)
+    @Bind(R.id.text_view_address)
     TextView textViewAddress;
 
     private MarkerOptions markerOption;
@@ -49,12 +49,12 @@ public class MapPointActivity extends AbstractBaseMapActivity {
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.activity_map_point);
+        setContentView(R.layout.map_point);
 
         ButterKnife.bind(this);
 
         final MapFragment mapFragment = (MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map_point_activity_fragment_map);
+                .findFragmentById(R.id.fragment_map);
 
         mapFragment.getMapAsync(this);
 

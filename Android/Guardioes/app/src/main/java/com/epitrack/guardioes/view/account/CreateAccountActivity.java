@@ -37,33 +37,33 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
     private static final String TAG_SOCIAL_FRAGMENT = "social_fragment";
 
-    @Bind(R.id.create_account_activity_linear_layout_social_login)
+    @Bind(R.id.linear_layout_social_account)
     LinearLayout linearLayoutSocialLogin;
 
-    @Bind(R.id.create_account_activity_linear_layout_login)
+    @Bind(R.id.linear_layout_account)
     LinearLayout linearLayoutLogin;
 
     @Email(messageResId = R.string.validation_mail)
-    @Bind(R.id.create_account_activity_edit_text_mail)
+    @Bind(R.id.edit_text_mail)
     EditText editTextMail;
 
     @Password(messageResId = R.string.validation_password)
-    @Bind(R.id.create_account_activity_edit_text_password)
+    @Bind(R.id.edit_text_password)
     EditText editTextPassword;
 
     @ConfirmPassword(messageResId = R.string.validation_confirm_password)
-    @Bind(R.id.create_account_activity_edit_text_confirm_password)
+    @Bind(R.id.edit_text_confirm_password)
     EditText editTextConfirmPassword;
 
     @Length(min = MIN_CHAR_NICKNAME, trim = true, messageResId = R.string.validation_nickname)
-    @Bind(R.id.create_account_activity_edit_text_nickname)
+    @Bind(R.id.edit_text_name)
     EditText editTextNickname;
 
     @NotEmpty(messageResId = R.string.validation_not_empty)
-    @Bind(R.id.create_account_activity_edit_text_birth_date)
+    @Bind(R.id.edit_text_birth_date)
     EditText editTextBirthDate;
 
-    @Bind(R.id.create_account_activity_button_create_account)
+    @Bind(R.id.button_create_account)
     Button buttonCreateAccount;
 
     private boolean inCreateAccount;
@@ -76,7 +76,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.create_account_activity);
+        setContentView(R.layout.create_account);
 
         ButterKnife.bind(this);
 
@@ -133,7 +133,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
         Toast.makeText(this, "Open dialog", Toast.LENGTH_SHORT).show();
     }
 
-    @OnCheckedChanged(R.id.create_account_activity_check_box_term)
+    @OnCheckedChanged(R.id.check_box_term)
     public void onCheck(final boolean checked) {
 
         buttonCreateAccount.setEnabled(checked);
@@ -141,7 +141,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
         getSocialFragment().setEnable(checked);
     }
 
-    @OnClick(R.id.create_account_activity_text_view_term)
+    @OnClick(R.id.text_view_term)
     public void onTerm() {
         Toast.makeText(this, "Open terms", Toast.LENGTH_SHORT).show();
     }
@@ -157,7 +157,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
         }
     }
 
-    @OnClick(R.id.create_account_activity_button_mail)
+    @OnClick(R.id.button_mail)
     public void onCreateAccountAnimation() {
 
         final Animation slideIn = AnimationUtils.loadAnimation(this, R.anim.slide_in_left);
@@ -243,7 +243,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
                                        Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
-    @OnClick(R.id.create_account_activity_button_create_account)
+    @OnClick(R.id.button_create_account)
     public void onCreateAccount() {
 
         //validator.validate();

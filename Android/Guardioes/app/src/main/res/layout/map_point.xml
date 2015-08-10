@@ -4,13 +4,13 @@
                 android:layout_height="match_parent">
 
     <fragment
-        android:id="@+id/map_point_activity_fragment_map"
+        android:id="@+id/fragment_map"
         android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <LinearLayout
-        android:id="@+id/map_point_activity_linear_layout"
+        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -19,7 +19,7 @@
         android:visibility="invisible">
 
         <TextView
-            android:id="@+id/map_point_activity_text_view_name"
+            android:id="@+id/text_view_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -32,7 +32,7 @@
             android:textSize="24dp"/>
 
         <TextView
-            android:id="@+id/map_point_activity_text_view_address"
+            android:id="@+id/text_view_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
@@ -40,7 +40,6 @@
             android:layout_marginRight="15dp"
             android:fontFamily="sans-serif-light"
             android:singleLine="true"
-            android:text="Av. Agamenom Magalhães"
             android:textColor="@color/grey"
             android:textSize="13dp"/>
 
