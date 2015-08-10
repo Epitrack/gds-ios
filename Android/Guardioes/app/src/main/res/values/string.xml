@@ -96,6 +96,10 @@
     # Symptom
     <string name="message_check_symptom">Marque abaixo o que você está\nsentindo nesse momento:</string>
 
+    # About
+
+    <string name="message_about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et justo vitae enim porttitor ultricies sollicitudin malesuada ante. Donec eget cursus est. Phasellus lobortis facilisis dolor, vitae semper ex aliquam at. Ut vel ornare felis, eu pellentesque tellus. Integer vitae magna in arcu placerat scelerisque. Suspendisse eu mi arcu. Maecenas blandit, odio quis porttitor ultrices, tellus dolor facilisis quam, vel rutrum massa sem nec eros. Donec volutpat justo convallis sapien faucibus, in rutrum ligula tincidunt. Maecenas ac quam egestas, consectetur ligula a, egestas erat. Duis tincidunt euismod velit, sit amet fringilla orci. Aliquam erat volutpat.</string>
+
     # Share
 
     <string name="message_hospital">Não deixe de procurar um serviço de saúde mais\npróximo. Continue informando diariamente como\nestá sua saúde.</string>

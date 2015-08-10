@@ -10,6 +10,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:layout_marginTop="35dp"
-        android:src="@drawable/image_logo"/>
+        android:src="@drawable/image_logo_white"/>
 
 </RelativeLayout>
