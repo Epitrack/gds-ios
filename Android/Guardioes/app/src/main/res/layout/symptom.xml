@@ -2,22 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_dark"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/setting_fragment_notification"
-        android:textColor="@color/grey_light" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="75dp"
+        android:gravity="center_horizontal"
+        android:text="@string/symptom_activity_symptom_message"
+        android:textSize="20dp" />
 
     <ListView
-        android:id="@+id/setting_fragment_list_view"
+        android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@android:color/white"
         android:divider="@color/translucent_black_light"
         android:dividerHeight="1dp" />

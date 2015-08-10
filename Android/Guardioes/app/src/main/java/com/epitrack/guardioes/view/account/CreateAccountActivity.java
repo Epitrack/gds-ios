@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
-import com.epitrack.guardioes.view.MainActivity;
+import com.epitrack.guardioes.view.HomeActivity;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
@@ -35,7 +35,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
     private static final int MIN_CHAR_NICKNAME = 3;
 
-    private static final String TAG_SOCIAL_FRAGMENT = "social_fragment";
+    private static final String TAG_SOCIAL_FRAGMENT = SocialFragment.class.getSimpleName();
 
     @Bind(R.id.linear_layout_social_account)
     LinearLayout linearLayoutSocialLogin;
@@ -105,7 +105,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_privacy, menu);
+        getMenuInflater().inflate(R.menu.privacy, menu);
 
         return true;
     }
@@ -239,7 +239,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     @Override
     public void onSuccess() {
 
-        navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                        Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
@@ -248,7 +248,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
         //validator.validate();
 
-        navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                        Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
@@ -259,7 +259,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
             // TODO: Make request
 
-            navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+            navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                            Intent.FLAG_ACTIVITY_NEW_TASK);
         }
 

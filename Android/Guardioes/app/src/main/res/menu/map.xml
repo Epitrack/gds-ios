@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:menu="http://schemas.android.com/apk/res-auto">
+    xmlns:menu="http://schemas.android.com/apk/res-auto">
 
     <item
         android:icon="@drawable/selector_icon_share"
         android:onClick="onShare"
         android:title="@string/map_symptom_activity_share_menu"
-        menu:showAsAction="ifRoom"/>
+        menu:showAsAction="ifRoom" />
 
     <item
         android:icon="@drawable/selector_icon_search"
         android:title="@string/map_symptom_activity_search_menu"
         menu:actionViewClass="android.support.v7.widget.SearchView"
-        menu:showAsAction="ifRoom"/>
+        menu:showAsAction="ifRoom" />
 
 </menu>

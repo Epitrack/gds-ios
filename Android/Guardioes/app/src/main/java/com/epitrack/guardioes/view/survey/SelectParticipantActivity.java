@@ -15,23 +15,23 @@ import butterknife.OnClick;
 
 public class SelectParticipantActivity extends BaseAppCompatActivity implements OnParentListener {
 
-    @Bind(R.id.select_participant_activity_text_view_name)
+    @Bind(R.id.text_view_name)
     TextView textViewName;
 
-    @Bind(R.id.select_participant_activity_text_view_age)
+    @Bind(R.id.text_view_age)
     TextView textViewAge;
 
-    @Bind(R.id.select_participant_activity_image_view_avatar)
+    @Bind(R.id.image_view_photo)
     ImageView imageViewAvatar;
 
-    @Bind(R.id.select_participant_activity_recycler_view)
+    @Bind(R.id.recycler_view)
     RecyclerView recyclerView;
 
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.select_participant_activity);
+        setContentView(R.layout.select_participant);
 
         ButterKnife.bind(this);
 
@@ -50,7 +50,7 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         }
     }
 
-    @OnClick(R.id.select_participant_activity_image_view_avatar)
+    @OnClick(R.id.image_view_photo)
     public void onUserSelect() {
         navigateTo(StateActivity.class);
     }

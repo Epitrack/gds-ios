@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
-import com.epitrack.guardioes.view.MainActivity;
+import com.epitrack.guardioes.view.HomeActivity;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
@@ -28,18 +28,18 @@ import butterknife.OnClick;
 
 public class LoginActivity extends BaseAppCompatActivity implements OnSocialAccountListener {
 
-    @Bind(R.id.login_activity_linear_layout_social_login)
+    @Bind(R.id.linear_layout_social_login)
     LinearLayout linearLayoutSocialLogin;
 
-    @Bind(R.id.login_activity_linear_layout_login)
+    @Bind(R.id.linear_layout_login)
     LinearLayout linearLayoutLogin;
 
     @Email(messageResId = R.string.validation_mail)
-    @Bind(R.id.login_activity_edit_text_mail)
+    @Bind(R.id.edit_text_mail)
     EditText editTextMail;
 
     @Password(messageResId = R.string.validation_password)
-    @Bind(R.id.login_activity_edit_text_password)
+    @Bind(R.id.edit_text_password)
     EditText editTextPassword;
 
     private boolean inLogin;
@@ -50,7 +50,7 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.login_activity);
+        setContentView(R.layout.login);
 
         ButterKnife.bind(this);
 
@@ -103,12 +103,12 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
         }
     }
 
-    @OnClick(R.id.login_activity_text_view_forgot_password)
+    @OnClick(R.id.text_view_forgot_password)
     public void onForgotPassword() {
         Toast.makeText(this, "Oii", Toast.LENGTH_SHORT).show();
     }
 
-    @OnClick(R.id.login_activity_button_mail)
+    @OnClick(R.id.button_mail)
     public void onLoginAnimation() {
 
         final Animation slideIn = AnimationUtils.loadAnimation(this, R.anim.slide_in_left);
@@ -182,16 +182,16 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
     @Override
     public void onSuccess() {
 
-        navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                         Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
-    @OnClick(R.id.login_activity_button_login)
+    @OnClick(R.id.button_login)
     public void onLogin(final View view) {
 
         //validator.validate();
 
-        navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                        Intent.FLAG_ACTIVITY_NEW_TASK);
     }
 
@@ -202,7 +202,7 @@ public class LoginActivity extends BaseAppCompatActivity implements OnSocialAcco
 
             // TODO: Make request
 
-            navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+            navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                            Intent.FLAG_ACTIVITY_NEW_TASK);
         }
 

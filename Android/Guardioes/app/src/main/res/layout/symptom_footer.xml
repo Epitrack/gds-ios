@@ -5,7 +5,7 @@
     android:background="@drawable/background_blue">
 
     <Button
-        android:id="@+id/symptom_button_confirm"
+        android:id="@+id/button_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"

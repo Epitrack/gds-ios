@@ -14,12 +14,12 @@
     <color name="grey_light">#999999</color>
     <color name="grey">#757575</color>
 
-    <color name="translucent_black_dark">#80000000</color>
     <color name="translucent_black_light">#33000000</color>
+    <color name="translucent_black_dark">#80000000</color>
 
     <color name="translucent_blue">#b31976d2</color>
 
     <color name="translucent_white_light">#80ffffff</color>
-    <color name="translucent_white_dark">#ccffffff</color>
+    <color name="translucent_white">#ccffffff</color>
 
 </resources>

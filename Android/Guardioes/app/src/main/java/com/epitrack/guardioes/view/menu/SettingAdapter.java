@@ -31,7 +31,7 @@ public class SettingAdapter extends ArrayAdapter<Setting> {
         if (view == null) {
 
             view = LayoutInflater.from(viewGroup.getContext())
-                                 .inflate(R.layout.item_setting, viewGroup, false);
+                                 .inflate(R.layout.setting_item, viewGroup, false);
 
             viewHolder = new ViewHolder();
 

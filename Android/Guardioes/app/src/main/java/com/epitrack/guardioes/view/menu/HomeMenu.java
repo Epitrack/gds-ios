@@ -10,12 +10,12 @@ import com.epitrack.guardioes.view.HomeFragment;
 
 public enum HomeMenu {
 
-    HOME        (R.id.main_menu_home, HomeFragment.class),
-    PROFILE     (R.id.main_menu_profile, ProfileFragment.class),
-    SETTINGS    (R.id.main_menu_setting, SettingFragment.class),
-    ABOUT       (R.id.main_menu_about, AboutFragment.class),
-    HELP        (R.id.main_menu_help, HelpFragment.class),
-    EXIT        (R.id.main_menu_exit, null);
+    HOME        (R.id.home, HomeFragment.class),
+    PROFILE     (R.id.profile, ProfileFragment.class),
+    SETTINGS    (R.id.setting, SettingFragment.class),
+    ABOUT       (R.id.about, AboutFragment.class),
+    HELP        (R.id.help, HelpFragment.class),
+    EXIT        (R.id.exit, null);
 
     private final int id;
     private final Class<?> menuClass;

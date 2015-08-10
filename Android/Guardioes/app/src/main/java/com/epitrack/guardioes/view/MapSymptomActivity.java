@@ -42,14 +42,14 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_map, menu);
+        getMenuInflater().inflate(R.menu.map, menu);
 
         return true;
     }
 
     public void onShare(final MenuItem menuItem) {
 
-        new BottomSheet.Builder(this).sheet(R.menu.menu_share)
+        new BottomSheet.Builder(this).sheet(R.menu.share)
                                      .grid()
                                      .show();
     }

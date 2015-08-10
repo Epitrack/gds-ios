@@ -9,15 +9,13 @@ import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseFragmentActivity;
 import com.epitrack.guardioes.view.account.CreateAccountActivity;
 import com.epitrack.guardioes.view.account.LoginActivity;
-import com.viewpagerindicator.CirclePageIndicator;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class WelcomeActivity extends BaseFragmentActivity {
 
-    @Bind(R.id.welcome_activity_view_pager_indicator)
-    CirclePageIndicator pageIndicator;
+//    @Bind(R.id.welcome_activity_view_pager_indicator)
+//    CirclePageIndicator pageIndicator;
 
     @Bind(R.id.welcome_activity_view_pager)
     ViewPager viewPager;
@@ -30,9 +28,9 @@ public class WelcomeActivity extends BaseFragmentActivity {
 
         ButterKnife.bind(this);
 
-        viewPager.setAdapter(new WelcomePagerAdapter(getSupportFragmentManager(), this));
+        //viewPager.setAdapter(new WelcomePagerAdapter(getSupportFragmentManager(), this));
 
-        pageIndicator.setViewPager(viewPager);
+        //pageIndicator.setViewPager(viewPager);
     }
 
     public void onEnter(final View view) {

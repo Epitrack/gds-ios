@@ -69,8 +69,8 @@ public class SymptomAdapter extends ArrayAdapter<Symptom> {
 
                 viewHolder = new ViewHolder();
 
-                viewHolder.checkBoxSymptom = (CheckBox) view.findViewById(R.id.symptom_check_box);
-                viewHolder.textViewName = (TextView) view.findViewById(R.id.symptom_text_view_name);
+                viewHolder.checkBoxSymptom = (CheckBox) view.findViewById(R.id.check_box_symptom);
+                viewHolder.textViewName = (TextView) view.findViewById(R.id.text_view_name);
 
                 view.setTag(viewHolder);
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:menu="http://schemas.android.com/apk/res-auto">
+    xmlns:menu="http://schemas.android.com/apk/res-auto">
 
     <item
         android:icon="@drawable/selector_icon_privacy"
         android:onClick="onPrivacy"
         android:title="@string/create_account_activity_privacy"
-        menu:showAsAction="always"/>
+        menu:showAsAction="always" />
 
 </menu>

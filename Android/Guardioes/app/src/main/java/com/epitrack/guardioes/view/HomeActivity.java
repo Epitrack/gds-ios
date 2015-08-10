@@ -24,14 +24,14 @@ import java.util.Map;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 
     private static final Class<? extends Fragment> MAIN_FRAGMENT = HomeFragment.class;
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
 
-    @Bind(R.id.main_activity_navigation_view_main_menu)
+    @Bind(R.id.navigation_view)
     NavigationView navigationView;
 
     @Bind(R.id.main_activity_drawer_layout)
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.home_activity);
 
         ButterKnife.bind(this);
 
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
     }
 
     private Fragment getCurrentFragment() {
-        return getFragmentManager().findFragmentById(R.id.main_activity_frame_layout_fragment_container);
+        return getFragmentManager().findFragmentById(R.id.frame_layout);
     }
 
     private void addFragment(final Class<? extends Fragment> fragmentClass, final String tag) {
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         final Fragment fragment = Fragment.instantiate(this, fragmentClass.getName());
 
         getFragmentManager().beginTransaction()
-                            .add(R.id.main_activity_frame_layout_fragment_container, fragment, tag)
+                            .add(R.id.frame_layout, fragment, tag)
                             .commit();
 
         fragmentMap.put(tag, fragment);
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         }
 
         getFragmentManager().beginTransaction()
-                            .replace(R.id.main_activity_frame_layout_fragment_container, fragment, tag)
+                            .replace(R.id.frame_layout, fragment, tag)
                             .commit();
     }
 }

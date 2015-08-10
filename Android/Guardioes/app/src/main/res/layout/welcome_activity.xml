@@ -13,14 +13,14 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="50dp"/>
 
-    <com.viewpagerindicator.CirclePageIndicator
+    <!--<com.viewpagerindicator.CirclePageIndicator
         android:id="@+id/welcome_activity_view_pager_indicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/welcome_activity_view_pager"
         android:padding="15dp"
         app:fillColor="#FF888888"
-        app:radius="5dp"/>
+        app:radius="5dp"/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,12 +35,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:onClick="onRegister"
-            android:text="@string/map_point_activity_hospital_title"/>
+            android:text="Cadastrar"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:text="Entrar"
             android:onClick="onEnter"/>
     </LinearLayout>
 

@@ -122,16 +122,16 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public class HeaderViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.news_header_text_view_title)
+        @Bind(R.id.text_view_title)
         TextView textViewTitle;
 
-        @Bind(R.id.news_header_text_view_source)
+        @Bind(R.id.text_view_source)
         TextView textViewSource;
 
-        @Bind(R.id.news_header_text_view_date)
+        @Bind(R.id.text_view_publication_date)
         TextView textViewDate;
 
-        @Bind(R.id.news_header_image_view_image)
+        @Bind(R.id.image_view_image)
         ImageView imageViewImage;
 
 
@@ -144,16 +144,16 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.news_text_view_title)
+        @Bind(R.id.text_view_title)
         TextView textViewTitle;
 
-        @Bind(R.id.news_text_view_source)
+        @Bind(R.id.text_view_source)
         TextView textViewSource;
 
-        @Bind(R.id.news_text_view_date)
+        @Bind(R.id.text_view_publication_date)
         TextView textViewDate;
 
-        @Bind(R.id.news_image_view_image)
+        @Bind(R.id.image_view_image)
         ImageView imageViewImage;
 
         public ItemViewHolder(final View view) {

@@ -19,7 +19,7 @@ public class SplashActivity extends BaseActivity implements Runnable {
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.splash_activity);
+        setContentView(R.layout.splash);
 
         handler.postDelayed(this, WAIT_TIME);
     }
@@ -39,7 +39,7 @@ public class SplashActivity extends BaseActivity implements Runnable {
 
         } else {
 
-            navigateTo(MainActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+            navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                            Intent.FLAG_ACTIVITY_NEW_TASK);
         }
     }

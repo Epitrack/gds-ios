@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Main" parent="Theme.AppCompat.Light">
+    <style name="Theme.Home" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/primary_light</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
 
@@ -139,11 +139,6 @@
     <style name="TextHint">
         <item name="android:textSize">15dp</item>
         <item name="android:textColor">@android:color/white</item>
-    </style>
-
-    <style name="TextMenuMain">
-        <item name="android:textSize">15dp</item>
-        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="TextHome">

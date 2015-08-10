@@ -48,13 +48,13 @@ public class SocialFragment extends Fragment {
 
     private static final String FACEBOOK_PERMISSION_PUBLIC_PROFILE = "public_profile";
 
-    @Bind(R.id.social_fragment_button_facebook)
+    @Bind(R.id.fragment_button_facebook)
     Button buttonFaceBook;
 
-    @Bind(R.id.social_fragment_button_google)
+    @Bind(R.id.button_google)
     Button buttonGoogle;
 
-    @Bind(R.id.social_fragment_button_twitter)
+    @Bind(R.id.button_twitter)
     Button buttonTwitter;
 
     private GoogleApiClient authGoogle;
@@ -81,7 +81,7 @@ public class SocialFragment extends Fragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {
 
-        final View view = inflater.inflate(R.layout.social_fragment, viewGroup, false);
+        final View view = inflater.inflate(R.layout.social, viewGroup, false);
 
         ButterKnife.bind(this, view);
 
@@ -95,7 +95,7 @@ public class SocialFragment extends Fragment {
         ButterKnife.unbind(this);
     }
 
-    @OnClick(R.id.social_fragment_button_google)
+    @OnClick(R.id.button_google)
     public void onGoogle() {
 
         loadGoogle(getActivity());
@@ -103,7 +103,7 @@ public class SocialFragment extends Fragment {
         authGoogle.connect();
     }
 
-    @OnClick(R.id.social_fragment_button_twitter)
+    @OnClick(R.id.button_twitter)
     public void onTwitter() {
 
         loadTwitter(getActivity());
@@ -111,7 +111,7 @@ public class SocialFragment extends Fragment {
         authTwitter.authorize(getActivity(), new TwitterHandler());
     }
 
-    @OnClick(R.id.social_fragment_button_facebook)
+    @OnClick(R.id.fragment_button_facebook)
     public void onFaceBook() {
 
         loadFaceBook(getActivity());

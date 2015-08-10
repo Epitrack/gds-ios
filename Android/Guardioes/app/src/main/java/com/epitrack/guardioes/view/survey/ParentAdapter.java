@@ -70,13 +70,13 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        @Bind(R.id.parent_text_view_name)
+        @Bind(R.id.text_view_name)
         TextView textViewName;
 
-        @Bind(R.id.parent_text_view_age)
+        @Bind(R.id.text_view_age)
         TextView textViewAge;
 
-        @Bind(R.id.parent_image_view_avatar)
+        @Bind(R.id.image_view_photo)
         ImageView imageViewPhoto;
 
         public ViewHolder(final View view) {

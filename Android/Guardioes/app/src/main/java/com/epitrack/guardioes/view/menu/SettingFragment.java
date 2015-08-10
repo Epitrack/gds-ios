@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 
 public class SettingFragment extends BaseFragment {
 
-    @Bind(R.id.setting_fragment_list_view)
+    @Bind(R.id.list_view)
     ListView listView;
 
     @Override
@@ -29,7 +29,7 @@ public class SettingFragment extends BaseFragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {
 
-        final View view = inflater.inflate(R.layout.setting_fragment, viewGroup, false);
+        final View view = inflater.inflate(R.layout.setting, viewGroup, false);
 
         ButterKnife.bind(this, view);
 

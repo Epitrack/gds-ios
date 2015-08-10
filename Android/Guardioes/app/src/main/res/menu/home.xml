@@ -4,35 +4,35 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/main_menu_home"
+            android:id="@+id/home"
             android:checked="true"
             android:icon="@drawable/selector_icon_home"
-            android:title="@string/menu_main_home"/>
+            android:title="@string/menu_main_home" />
 
         <item
-            android:id="@+id/main_menu_profile"
+            android:id="@+id/profile"
             android:icon="@drawable/selector_icon_profile"
-            android:title="@string/menu_main_profile"/>
+            android:title="@string/menu_main_profile" />
 
         <item
-            android:id="@+id/main_menu_setting"
+            android:id="@+id/setting"
             android:icon="@drawable/selector_icon_setting"
-            android:title="@string/menu_main_setting"/>
+            android:title="@string/menu_main_setting" />
 
         <item
-            android:id="@+id/main_menu_about"
+            android:id="@+id/about"
             android:icon="@drawable/selector_icon_about"
-            android:title="@string/menu_main_about"/>
+            android:title="@string/menu_main_about" />
 
         <item
-            android:id="@+id/main_menu_help"
+            android:id="@+id/help"
             android:icon="@drawable/selector_icon_help"
-            android:title="@string/menu_main_help"/>
+            android:title="@string/menu_main_help" />
 
         <item
-            android:id="@+id/main_menu_exit"
+            android:id="@+id/exit"
             android:icon="@drawable/selector_icon_exit"
-            android:title="@string/menu_main_exit"/>
+            android:title="@string/menu_main_exit" />
 
     </group>
 

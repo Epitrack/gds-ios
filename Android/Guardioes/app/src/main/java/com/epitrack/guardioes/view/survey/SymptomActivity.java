@@ -17,20 +17,20 @@ import butterknife.ButterKnife;
 
 public class SymptomActivity extends BaseAppCompatActivity {
 
-    @Bind(R.id.symptom_activity_list_view)
+    @Bind(R.id.list_view)
     ListView listView;
 
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.symptom_activity);
+        setContentView(R.layout.symptom);
 
         ButterKnife.bind(this);
 
         final View footerView = LayoutInflater.from(this).inflate(R.layout.symptom_footer, null);
 
-        footerView.findViewById(R.id.symptom_button_confirm).setOnClickListener(new View.OnClickListener() {
+        footerView.findViewById(R.id.button_confirm).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(final View view) {

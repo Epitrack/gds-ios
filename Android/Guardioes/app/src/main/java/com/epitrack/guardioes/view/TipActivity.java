@@ -10,6 +10,6 @@ public class TipActivity extends BaseAppCompatActivity {
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.tip_activity);
+        setContentView(R.layout.tip);
     }
 }

@@ -11,14 +11,14 @@ import butterknife.ButterKnife;
 
 public class NoticeActivity extends BaseAppCompatActivity implements OnNoticeListener {
 
-    @Bind(R.id.notice_activity_recycler_view)
+    @Bind(R.id.recycler_view)
     RecyclerView recyclerView;
 
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.notice_activity);
+        setContentView(R.layout.notice);
 
         ButterKnife.bind(this);
 

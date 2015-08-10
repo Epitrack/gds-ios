@@ -14,17 +14,17 @@ public class StateActivity extends BaseAppCompatActivity {
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        setContentView(R.layout.state_activity);
+        setContentView(R.layout.state);
 
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.state_activity_text_view_state_good)
+    @OnClick(R.id.text_view_state_good)
     public void onStateGood() {
         navigateTo(ShareActivity.class);
     }
 
-    @OnClick(R.id.state_activity_text_view_state_bad)
+    @OnClick(R.id.text_view_state_bad)
     public void onStateBad() {
         navigateTo(SymptomActivity.class);
     }

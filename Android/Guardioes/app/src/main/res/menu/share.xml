@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/facebook"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/menu_share_facebook" />
+
+    <item
+        android:id="@+id/twitter"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/menu_share_twitter" />
+
+    <item
+        android:id="@+id/gmail"
+        android:icon="@drawable/ic_launcher"
+        android:title="@string/menu_share_gmail" />
+
+</menu>

@@ -21,7 +21,7 @@
         android:src="@drawable/image_complete" />
 
     <TextView
-        android:id="@+id/share_activity_text_view_hospital_message_hint"
+        android:id="@+id/text_view_hospital_message_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -32,7 +32,7 @@
         android:visibility="gone" />
 
     <TextView
-        android:id="@+id/share_activity_text_view_social_message_hint"
+        android:id="@+id/text_view_social_message_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
@@ -55,7 +55,7 @@
         android:background="@drawable/selector_button_twitter" />
 
     <Button
-        android:id="@+id/share_activity_button_confirm"
+        android:id="@+id/button_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
