@@ -11,7 +11,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="20dp"
-        android:text="@string/setting_fragment_notification"
+        android:text="@string/notification"
         android:textColor="@color/grey_light" />
 
     <ListView

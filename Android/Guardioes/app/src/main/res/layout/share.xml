@@ -10,7 +10,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
-        android:text="@string/share_activity_message"
+        android:text="@string/message_thanks"
         android:textSize="28dp" />
 
     <ImageView
@@ -27,7 +27,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
-        android:text="@string/share_activity_message_hint"
+        android:text="@string/message_hospital"
         android:textSize="13dp"
         android:visibility="gone" />
 
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
         android:layout_marginTop="40dp"
-        android:text="@string/share_activity_social_message_hint"
+        android:text="@string/message_invite_friend"
         android:textSize="13dp" />
 
     <Button
@@ -62,6 +62,6 @@
         android:layout_marginRight="35dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/button_translucent"
-        android:text="@string/share_activity_confirm" />
+        android:text="@string/confirm" />
 
 </LinearLayout>

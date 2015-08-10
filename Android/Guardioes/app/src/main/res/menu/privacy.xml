@@ -5,7 +5,7 @@
     <item
         android:icon="@drawable/selector_icon_privacy"
         android:onClick="onPrivacy"
-        android:title="@string/create_account_activity_privacy"
+        android:title="@string/privacy"
         menu:showAsAction="always" />
 
 </menu>

@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/parent_item_age"
+        android:text="@string/message_age"
         android:textSize="15dp" />
 
 </LinearLayout>

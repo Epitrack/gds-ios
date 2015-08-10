@@ -58,7 +58,7 @@ public class MapPointActivity extends AbstractBaseMapActivity {
 
         mapFragment.getMapAsync(this);
 
-        getSupportActionBar().setTitle(R.string.map_point_activity_hospital_title);
+        getSupportActionBar().setTitle(R.string.hospital);
     }
 
     @Override

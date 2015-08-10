@@ -15,7 +15,7 @@ public class ProfileFragment extends BaseFragment {
     public void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        getSupportActionBar().setTitle(R.string.menu_main_profile);
+        getSupportActionBar().setTitle(R.string.profile);
     }
 
     @Nullable

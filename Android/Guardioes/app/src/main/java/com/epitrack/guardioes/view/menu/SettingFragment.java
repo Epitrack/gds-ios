@@ -22,7 +22,7 @@ public class SettingFragment extends BaseFragment {
     public void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        getSupportActionBar().setTitle(R.string.menu_main_setting);
+        getSupportActionBar().setTitle(R.string.setting);
     }
 
     @Nullable

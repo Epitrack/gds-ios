@@ -36,10 +36,10 @@ public class SymptomActivity extends BaseAppCompatActivity {
             public void onClick(final View view) {
 
                 new DialogBuilder(SymptomActivity.this).load()
-                        .title(R.string.submit_survey_dialog_title)
-                        .content(R.string.submit_survey_dialog_message)
-                        .negativeText(R.string.submit_survey_dialog_no)
-                        .positiveText(R.string.submit_survey_dialog_yes)
+                        .title(R.string.attention)
+                        .content(R.string.message_register_info)
+                        .negativeText(R.string.no)
+                        .positiveText(R.string.yes)
                         .callback(new MaterialDialog.ButtonCallback() {
 
                             @Override

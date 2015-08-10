@@ -1,115 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Guardiões Da Saúde</string>
+    <string name="app_name">Guardiões da Saúde</string>
 
-    # Social Fragment
-    <string name="social_fragment_facebook">Facebook</string>
-    <string name="social_fragment_google">Google</string>
-    <string name="social_fragment_twitter">Twitter</string>
+    # Common
 
-    # Welcome Activity
+    <string name="about">Sobre</string>
+    <string name="alert">Alertas</string>
+    <string name="attention">Atenção</string>
+    <string name="bad">Mal</string>
+    <string name="confirm">Confirmar</string>
+    <string name="diary_health">Diário da Saúde</string>
+    <string name="diary_health_1">Diário da\nSaúde</string>
+    <string name="exit">Sair</string>
+    <string name="facebook">Facebook</string>
+    <string name="gmail">Gmail</string>
+    <string name="good">Bem</string>
+    <string name="google">Google</string>
+    <string name="help">Ajuda</string>
+    <string name="home">Ínicio</string>
+    <string name="hospital">UPAs</string>
+    <string name="hyphen">-</string>
+    <string name="join">Participe\nagora!</string>
+    <string name="login">Logar</string>
+    <string name="mail">Email</string>
+    <string name="mails">Emails</string>
+    <string name="map_health">Mapa da Saúde</string>
+    <string name="map_health_1">Mapa da\nSaúde</string>
+    <string name="no">Não</string>
+    <string name="notice">Notícias</string>
+    <string name="notification">Notificações</string>
+    <string name="other">Outros</string>
+    <string name="pharmacy">Farmácias</string>
+    <string name="privacy">Privacidade</string>
+    <string name="profile">Perfil</string>
+    <string name="register">Cadastrar</string>
+    <string name="search">Procurar</string>
+    <string name="setting">Configurações</string>
+    <string name="share">Compartilhar</string>
+    <string name="sound">Sons</string>
+    <string name="tip_health">Dicas de Saúde</string>
+    <string name="tip_health_1">Dicas de\nSaúde</string>
+    <string name="twitter">Twitter</string>
+    <string name="yes">Sim</string>
 
-    # Login Activity
-    <string name="login_activity_mail">Email</string>
-    <string name="login_activity_login">Logar</string>
-    <string name="login_activity_mail_hint">Email</string>
-    <string name="login_activity_password_hint">Senha</string>
-    <string name="login_activity_social_message">Entrar rapidamente com:</string>
-    <string name="login_activity_mail_message">Ou use o seu email:</string>
-    <string name="login_activity_forgot_password_message"><u>Esqueceu sua senha?</u></string>
+    # Hint
 
-    # Create Account Activity
-    <string name="create_account_activity_mail">Email</string>
-    <string name="create_account_activity_register">Cadastrar</string>
-    <string name="create_account_activity_privacy">Privacidade</string>
-    <string name="create_account_activity_mail_hint">Email</string>
-    <string name="create_account_activity_password_hint">Senha</string>
-    <string name="create_account_activity_repeat_password_hint">Repetir senha</string>
-    <string name="create_account_activity_nickname_hint">Apelido</string>
-    <string name="create_account_activity_birth_date_hint">Data de nascimento</string>
-    <string name="create_account_activity_social_message">Cadastre-se rapidamente com:</string>
-    <string name="create_account_activity_mail_message">Ou use o seu email:</string>
-    <string name="create_account_activity_term_message_1">Concordo com os</string>
-    <string name="create_account_activity_term_message_2"><u>Termos de uso.</u></string>
-
-    # Home Fragment
-    <string name="home_fragment_name_message">Olá,\n{0}!</string>
-    <string name="home_fragment_notice">Notícias</string>
-    <string name="home_fragment_map">Mapa da\nSaúde</string>
-    <string name="home_fragment_tip">Dicas de\nSaúde</string>
-    <string name="home_fragment_diary">Diário da\nSaúde</string>
-    <string name="home_fragment_join">Participe\nagora!</string>
-
-    # Select Participant Activity
-    <string name="select_participant_activity_message">Quem vai participar?</string>
-    <string name="select_participant_activity_message_hint">Selecione algum dos perfis abaixo\npara começar a participar.</string>
-    <string name="select_participant_activity_age">%d anos</string>
-    <string name="select_participant_activity_parent">Membros do domicílio</string>
-    <string name="parent_item_age">%d anos</string>
-
-    # State Activity
-    <string name="state_activity_good">Bem</string>
-    <string name="state_activity_bad">Mal</string>
-    <string name="state_activity_state_message">Como está sua saúde\nneste momento?</string>
-    <string name="state_activity_state_hint">Alguns sinais e sintomas serão apresentados na\npróxima tela caso a opção \"Mal\" seja selecionada.</string>
-
-    # Symptom Activity
-    <string name="symptom_activity_symptom_message">Marque abaixo o que você está\nsentindo nesse momento:</string>
-    <string name="symptom_activity_other">Outros</string>
-    <string name="symptom_activity_confirm">Confirmar</string>
-
-    # ShareActivity
-    <string name="share_activity_confirm">Confirmar</string>
-    <string name="share_activity_message">Obrigado pela\ninformação!</string>
-    <string name="share_activity_message_hint">Não deixe de procurar um serviço de saúde mais\npróximo. Continue informando diariamente como\nestá sua saúde.</string>
-    <string name="share_activity_social_message_hint">Convidem seus amigos para serem guardiões.</string>
-
-    # Map Point Activity
-    <string name="map_point_activity_hospital_title">UPAs</string>
-    <string name="map_point_activity_pharmacy_title">Farmácias</string>
-
-    # Map Symptom Activity
-    <string name="map_symptom_activity_title">Mapa da Saúde</string>
-    <string name="map_symptom_activity_share_menu">Compartilhar</string>
-    <string name="map_symptom_activity_search_menu">Procurar</string>
-
-    # Notice Activity
-    <string name="notice_activity_title">Notícias</string>
-    <string name="notice_activity_search">Procurar</string>
-    <string name="notice_activity_hyphen">-</string>
-
-    # Main Menu
-    <string name="menu_main_home">Home</string>
-    <string name="menu_main_profile">Perfil</string>
-    <string name="menu_main_setting">Configurações</string>
-    <string name="menu_main_about">Sobre</string>
-    <string name="menu_main_help">Ajuda</string>
-    <string name="menu_main_exit">Sair</string>
-
-    # Menu Share
-    <string name="menu_share_facebook">Facebook</string>
-    <string name="menu_share_twitter">Twitter</string>
-    <string name="menu_share_gmail">Gmail</string>
+    <string name="hint_birth_date">Data de nascimento</string>
+    <string name="hint_mail">Email</string>
+    <string name="hint_nickname">Apelido</string>
+    <string name="hint_password">Senha</string>
+    <string name="hint_repeat_password">Repetir senha</string>
 
     # Validation
-    <string name="validation_not_empty">Campo obrigátorio</string>
+
+    <string name="validation_confirm_password">Senhas não conferem</string>
+    <string name="validation_empty">Campo obrigatório</string>
+    <string name="validation_length">Mínimo três caracteres</string>
     <string name="validation_mail">Email inválido</string>
     <string name="validation_password">Senha inválida</string>
-    <string name="validation_confirm_password">Senhas não conferem</string>
-    <string name="validation_nickname">Mínimo três caracteres</string>
 
-    # Submit Survey Dialog
-    <string name="submit_survey_dialog_title">Atenção</string>
-    <string name="submit_survey_dialog_message">Deseja registrar suas informações?</string>
-    <string name="submit_survey_dialog_no">NÃO</string>
-    <string name="submit_survey_dialog_yes">SIM</string>
+    # Message
 
-    # Setting Fragment
-    <string name="setting_fragment_notification">Notificações</string>
+    <string name="message_use_mail">Ou use o seu email:</string>
 
-    <string name="setting_alert">Alertas</string>
-    <string name="setting_sound">Sons</string>
-    <string name="setting_mail">Emails</string>
+    # Welcome
+
+    # Login
+
+    <string name="message_forgot_password"><u>Esqueceu sua senha?</u></string>
+    <string name="message_login_enter">Entrar rapidamente com:</string>
+
+    # Create Account
+
+    <string name="message_agree">Concordo com os</string>
+    <string name="message_create_account">Cadastre-se rapidamente com:</string>
+    <string name="message_term"><u>Termos de uso.</u></string>
+
+    # Home
+
+    <string name="message_hello">Olá,\n{0}!</string>
+
+    # Select Participant
+
+    <string name="message_age">%d anos</string>
+    <string name="message_home_member">Membros do domicílio</string>
+    <string name="message_select_profile">Selecione algum dos perfis abaixo\npara começar a participar.</string>
+    <string name="message_who_participate">Quem vai participar?</string>
+
+    # State
+
+    <string name="message_health_state">Como está sua saúde\nneste momento?</string>
+    <string name="message_present_symptom">Alguns sinais e sintomas serão apresentados na\npróxima tela caso a opção \"Mal\" seja selecionada.</string>
+
+    # Symptom
+    <string name="message_check_symptom">Marque abaixo o que você está\nsentindo nesse momento:</string>
+
+    # Share
+
+    <string name="message_hospital">Não deixe de procurar um serviço de saúde mais\npróximo. Continue informando diariamente como\nestá sua saúde.</string>
+    <string name="message_invite_friend">Convidem seus amigos para serem guardiões.</string>
+    <string name="message_thanks">Obrigado pela\ninformação!</string>
+
+    # Dialog Survey
+
+    <string name="message_register_info">Deseja registrar suas informações?</string>
 
 </resources>

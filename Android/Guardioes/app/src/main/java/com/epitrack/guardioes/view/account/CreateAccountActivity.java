@@ -35,7 +35,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
 
     private static final int MIN_CHAR_NICKNAME = 3;
 
-    private static final String TAG_SOCIAL_FRAGMENT = SocialFragment.class.getSimpleName();
+    private static final String SOCIAL_FRAGMENT = "social_fragment";
 
     @Bind(R.id.linear_layout_social_account)
     LinearLayout linearLayoutSocialLogin;
@@ -55,11 +55,11 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     @Bind(R.id.edit_text_confirm_password)
     EditText editTextConfirmPassword;
 
-    @Length(min = MIN_CHAR_NICKNAME, trim = true, messageResId = R.string.validation_nickname)
+    @Length(min = MIN_CHAR_NICKNAME, trim = true, messageResId = R.string.validation_length)
     @Bind(R.id.edit_text_name)
     EditText editTextNickname;
 
-    @NotEmpty(messageResId = R.string.validation_not_empty)
+    @NotEmpty(messageResId = R.string.validation_empty)
     @Bind(R.id.edit_text_birth_date)
     EditText editTextBirthDate;
 
@@ -230,7 +230,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     private SocialFragment getSocialFragment() {
 
         if (socialFragment == null) {
-            socialFragment = (SocialFragment) getFragmentManager().findFragmentByTag(TAG_SOCIAL_FRAGMENT);
+            socialFragment = (SocialFragment) getFragmentManager().findFragmentByTag(SOCIAL_FRAGMENT);
         }
 
         return socialFragment;

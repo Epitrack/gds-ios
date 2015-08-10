@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
-            android:text="@string/create_account_activity_social_message" />
+            android:text="@string/message_create_account" />
 
         <fragment
             class="com.epitrack.guardioes.view.account.SocialFragment"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="20dp"
-            android:text="@string/create_account_activity_mail_message" />
+            android:text="@string/message_use_mail" />
 
         <Button
             android:id="@+id/button_mail"
@@ -62,7 +62,7 @@
             android:id="@+id/edit_text_mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/create_account_activity_mail_hint"
+            android:hint="@string/hint_mail"
             android:inputType="textEmailAddress"
             android:maxLength="50" />
 
@@ -70,7 +70,7 @@
             android:id="@+id/edit_text_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/create_account_activity_password_hint"
+            android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:maxLength="16" />
 
@@ -78,7 +78,7 @@
             android:id="@+id/edit_text_confirm_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/create_account_activity_repeat_password_hint"
+            android:hint="@string/hint_repeat_password"
             android:inputType="textPassword"
             android:maxLength="16" />
 
@@ -86,7 +86,7 @@
             android:id="@+id/edit_text_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/create_account_activity_nickname_hint"
+            android:hint="@string/hint_nickname"
             android:inputType="textPersonName"
             android:maxLength="15" />
 
@@ -94,7 +94,7 @@
             android:id="@+id/edit_text_birth_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/create_account_activity_birth_date_hint"
+            android:hint="@string/hint_birth_date"
             android:inputType="date" />
 
         <Button
@@ -105,7 +105,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/selector_button_white"
-            android:text="@string/create_account_activity_register"
+            android:text="@string/register"
             android:textColor="@color/primary_light" />
 
     </LinearLayout>
@@ -129,14 +129,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="3dp"
-            android:text="@string/create_account_activity_term_message_1" />
+            android:text="@string/message_agree" />
 
         <TextView
             android:id="@+id/text_view_term"
             style="@style/TextHintLight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/create_account_activity_term_message_2" />
+            android:text="@string/message_term" />
 
     </LinearLayout>
 

@@ -35,7 +35,7 @@ public class HomeFragment extends BaseFragment {
 
         ButterKnife.bind(this, view);
 
-        String text = getString(R.string.home_fragment_name_message);
+        String text = getString(R.string.message_hello);
         text = text.replace("{0}", "Dudu");
 
         textViewName.setText(text);

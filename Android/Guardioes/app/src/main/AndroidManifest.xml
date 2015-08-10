@@ -86,7 +86,7 @@
         <activity
             android:name=".view.MapSymptomActivity"
             android:exported="false"
-            android:label="@string/map_symptom_activity_title"
+            android:label="@string/map_health"
             android:parentActivityName=".view.HomeActivity"
             android:screenOrientation="portrait" />
 

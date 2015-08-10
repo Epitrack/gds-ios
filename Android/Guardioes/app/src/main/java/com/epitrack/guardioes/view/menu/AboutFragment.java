@@ -15,7 +15,7 @@ public class AboutFragment extends BaseFragment {
     public void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        getSupportActionBar().setTitle(R.string.menu_main_about);
+        getSupportActionBar().setTitle(R.string.about);
     }
 
     @Nullable

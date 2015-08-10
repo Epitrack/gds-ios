@@ -4,9 +4,9 @@ import com.epitrack.guardioes.R;
 
 public enum Setting {
 
-    ALERT (R.string.setting_alert),
-    SOUND (R.string.setting_sound),
-    EMAIL (R.string.setting_mail);
+    ALERT (R.string.alert),
+    SOUND (R.string.sound),
+    EMAIL (R.string.mails);
 
     private final int name;
 

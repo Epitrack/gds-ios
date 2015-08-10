@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="155dp"
         android:layout_marginTop="205dp"
-        android:text="@string/home_fragment_name_message"
+        android:text="@string/message_hello"
         android:textColor="@android:color/white"
         android:textSize="30dp"
         android:textStyle="bold" />
@@ -45,7 +45,7 @@
             android:drawablePadding="10dp"
             android:drawableTop="@drawable/icon_notice"
             android:gravity="center"
-            android:text="@string/home_fragment_notice" />
+            android:text="@string/notice" />
 
         <TextView
             android:id="@+id/text_view_map"
@@ -58,7 +58,7 @@
             android:drawablePadding="10dp"
             android:drawableTop="@drawable/icon_map"
             android:gravity="center"
-            android:text="@string/home_fragment_map" />
+            android:text="@string/map_health_1" />
 
         <TextView
             android:id="@+id/text_view_tip"
@@ -71,7 +71,7 @@
             android:drawablePadding="10dp"
             android:drawableTop="@drawable/icon_tip"
             android:gravity="center"
-            android:text="@string/home_fragment_tip" />
+            android:text="@string/tip_health_1" />
 
         <TextView
             android:id="@+id/text_view_diary"
@@ -85,7 +85,7 @@
             android:drawablePadding="10dp"
             android:drawableTop="@drawable/icon_diary"
             android:gravity="center"
-            android:text="@string/home_fragment_diary" />
+            android:text="@string/diary_health_1" />
 
         <TextView
             android:id="@+id/text_view_join"
@@ -97,7 +97,7 @@
             android:drawablePadding="10dp"
             android:drawableTop="@drawable/icon_join"
             android:gravity="center"
-            android:text="@string/home_fragment_join" />
+            android:text="@string/join" />
 
     </RelativeLayout>
 
