@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.HomeFragment;
+import com.epitrack.guardioes.view.menu.help.HelpFragment;
 
 public enum HomeMenu {
 

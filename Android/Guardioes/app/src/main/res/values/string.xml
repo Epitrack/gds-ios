@@ -10,6 +10,7 @@
     <string name="attention">Atenção</string>
     <string name="bad">Mal</string>
     <string name="confirm">Confirmar</string>
+    <string name="contact">Entre em contato</string>
     <string name="diary_health">Diário da Saúde</string>
     <string name="diary_health_1">Diário da\nSaúde</string>
     <string name="exit">Sair</string>
@@ -30,17 +31,21 @@
     <string name="no">Não</string>
     <string name="notice">Notícias</string>
     <string name="notification">Notificações</string>
+    <string name="option">Opções</string>
     <string name="other">Outros</string>
     <string name="pharmacy">Farmácias</string>
     <string name="privacy">Privacidade</string>
     <string name="profile">Perfil</string>
     <string name="register">Cadastrar</string>
+    <string name="report">Relatar erros no aplicativo</string>
     <string name="search">Procurar</string>
     <string name="setting">Configurações</string>
     <string name="share">Compartilhar</string>
     <string name="sound">Sons</string>
+    <string name="term">Termos e politícas</string>
     <string name="tip_health">Dicas de Saúde</string>
     <string name="tip_health_1">Dicas de\nSaúde</string>
+    <string name="tutorial">Tutorial</string>
     <string name="twitter">Twitter</string>
     <string name="yes">Sim</string>
 
