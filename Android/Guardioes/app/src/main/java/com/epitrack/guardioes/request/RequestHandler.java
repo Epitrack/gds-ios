@@ -1,6 +1,6 @@
 package com.epitrack.guardioes.request;
 
-import com.epitrack.guardioes.utility.Constants;
+import com.epitrack.guardioes.BuildConfig;
 import com.epitrack.guardioes.utility.Logger;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -31,7 +31,7 @@ class RequestHandler<T> implements FutureCallback<String> {
 
             } else {
 
-                if (Constants.Config.DEBUG) {
+                if (BuildConfig.DEBUG) {
                     Logger.logDebug(TAG, json);
                 }
 
@@ -45,7 +45,7 @@ class RequestHandler<T> implements FutureCallback<String> {
 
                 } catch (IOException e) {
 
-                    if (Constants.Config.DEBUG) {
+                    if (BuildConfig.DEBUG) {
                         Logger.logDebug(TAG, e.getMessage());
                     }
 
@@ -55,7 +55,7 @@ class RequestHandler<T> implements FutureCallback<String> {
 
         } else {
 
-            if (Constants.Config.DEBUG) {
+            if (BuildConfig.DEBUG) {
                 Logger.logDebug(TAG, error.getMessage());
             }
 
