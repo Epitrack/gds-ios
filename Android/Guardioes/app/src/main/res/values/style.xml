@@ -13,7 +13,7 @@
 
         <item name="buttonStyle">@style/Theme.Button</item>
 
-        <item name="android:dialogTheme">@style/Theme.Dialog</item>
+        <item name="android:dialogTheme">@style/Theme.NotifyDialog</item>
 
         <item name="android:textColor">@android:color/white</item>
 
@@ -45,7 +45,7 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
-    <style name="Theme.Dialog" parent="Theme.AppCompat.Light.Dialog">
+    <style name="Theme.NotifyDialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowNoTitle">true</item>
     </style>
 
