@@ -45,9 +45,7 @@ public class SettingAdapter extends ArrayAdapter<Setting> {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        final String name = viewGroup.getContext().getString(getItem(position).getName());
-
-        viewHolder.textViewName.setText(name);
+        viewHolder.textViewName.setText(getItem(position).getName());
 
         return view;
     }
