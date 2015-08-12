@@ -82,6 +82,14 @@
     <string name="message_create_account">Cadastre-se rapidamente com:</string>
     <string name="message_term"><u>Termos de uso.</u></string>
 
+    # Privacy
+
+    <string name="message_privacy">Nós nos preocupamos\ncom a sua privacidade</string>
+
+    <string name="message_privacy_tip_1">• Sua participação é voluntária e anônima</string>
+    <string name="message_privacy_tip_2">• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável</string>
+    <string name="message_privacy_tip_3">• Para maiores informações, consulte os termos de uso</string>
+
     # Home
 
     <string name="message_hello">Olá,\n{0}!</string>

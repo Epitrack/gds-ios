@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
+import com.epitrack.guardioes.view.NotifyDialog;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
@@ -130,7 +131,28 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements OnSo
     }
 
     public void onPrivacy(final MenuItem item) {
-        Toast.makeText(this, "Open dialog", Toast.LENGTH_SHORT).show();
+
+        new NotifyDialog() {
+
+            @Override
+            public int getLayout() {
+                return R.layout.privacy;
+            }
+
+            @Override
+            public void findView(final View view) {
+                super.findView(view);
+
+                view.findViewById(R.id.image_button_close).setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(final View view) {
+                        dismiss();
+                    }
+                });
+            }
+
+        }.show(getFragmentManager(), NotifyDialog.TAG);
     }
 
     @OnCheckedChanged(R.id.check_box_term)
