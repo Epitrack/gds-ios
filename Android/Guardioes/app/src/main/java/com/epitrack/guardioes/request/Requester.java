@@ -3,7 +3,7 @@ package com.epitrack.guardioes.request;
 import android.content.Context;
 import android.util.Log;
 
-import com.epitrack.guardioes.utility.Constants;
+import com.epitrack.guardioes.BuildConfig;
 import com.epitrack.guardioes.utility.Logger;
 import com.epitrack.guardioes.utility.Utility;
 import com.koushikdutta.ion.Ion;
@@ -45,7 +45,7 @@ final class Requester extends Base implements IRequester {
 
         if (method == Method.GET || method == Method.HEAD || method == Method.DELETE) {
 
-            if (Constants.Config.DEBUG) {
+            if (BuildConfig.DEBUG) {
                 Logger.logDebug(TAG, "The paramMap is a queryMap.");
             }
 
@@ -53,7 +53,7 @@ final class Requester extends Base implements IRequester {
 
         } else {
 
-            if (Constants.Config.DEBUG) {
+            if (BuildConfig.DEBUG) {
                 Logger.logDebug(TAG, "The paramMap is a bodyMap.");
             }
 
@@ -96,7 +96,7 @@ final class Requester extends Base implements IRequester {
 
         if (queryMap == null || queryMap.isEmpty()) {
 
-            if (Constants.Config.DEBUG) {
+            if (BuildConfig.DEBUG) {
                 Logger.logDebug(TAG, "The queryMap is null or empty.");
             }
 
@@ -109,7 +109,7 @@ final class Requester extends Base implements IRequester {
 
         if (headerMap == null || headerMap.isEmpty()) {
 
-            if (Constants.Config.DEBUG) {
+            if (BuildConfig.DEBUG) {
                 Logger.logDebug(TAG, "The headerMap is null or empty.");
             }
 
@@ -122,7 +122,7 @@ final class Requester extends Base implements IRequester {
 
         if (bodyMap == null || bodyMap.isEmpty()) {
 
-            if (Constants.Config.DEBUG) {
+            if (BuildConfig.DEBUG) {
                 Logger.logDebug(TAG, "The bodyMap is null or empty.");
             }
 
@@ -133,7 +133,7 @@ final class Requester extends Base implements IRequester {
             }
         }
 
-        if (Constants.Config.DEBUG) {
+        if (BuildConfig.DEBUG) {
 
             Utility.print(queryMap);
             Utility.print(headerMap);
@@ -170,7 +170,7 @@ final class Requester extends Base implements IRequester {
 
         if (queryMap == null || queryMap.isEmpty()) {
 
-            if (Constants.Config.DEBUG) {
+            if (BuildConfig.DEBUG) {
                 Logger.logDebug(TAG, "The queryMap is null or empty.");
             }
 
@@ -183,7 +183,7 @@ final class Requester extends Base implements IRequester {
 
         if (headerMap == null || headerMap.isEmpty()) {
 
-            if (Constants.Config.DEBUG) {
+            if (BuildConfig.DEBUG) {
                 Logger.logDebug(TAG, "The headerMap is null or empty.");
             }
 
@@ -196,7 +196,7 @@ final class Requester extends Base implements IRequester {
 
         if (body == null) {
 
-            if (Constants.Config.DEBUG) {
+            if (BuildConfig.DEBUG) {
                 Logger.logDebug(TAG, "The body is null.");
             }
 
@@ -205,7 +205,7 @@ final class Requester extends Base implements IRequester {
             builder.setJsonPojoBody(body);
         }
 
-        if (Constants.Config.DEBUG) {
+        if (BuildConfig.DEBUG) {
 
             Utility.print(queryMap);
             Utility.print(headerMap);

@@ -1,6 +1,6 @@
 package com.epitrack.guardioes.view;
 
-public interface OnDialogListener {
+public interface DialogListener {
 
     void onActionNegative(AbstractNotifyDialog dialog, int requestCode);
 

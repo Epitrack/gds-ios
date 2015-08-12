@@ -15,9 +15,7 @@ public final class Utility {
 
         try {
 
-            final String json = new ObjectMapper().writeValueAsString(entity);
-
-            Logger.logDebug(TAG, json);
+            Logger.logDebug(TAG, new ObjectMapper().writeValueAsString(entity));
 
         } catch (JsonProcessingException e) {
             Logger.logError(TAG, e.getMessage());

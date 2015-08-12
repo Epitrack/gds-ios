@@ -9,7 +9,7 @@ import com.epitrack.guardioes.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NoticeActivity extends BaseAppCompatActivity implements OnNoticeListener {
+public class NoticeActivity extends BaseAppCompatActivity implements NoticeListener {
 
     @Bind(R.id.recycler_view)
     RecyclerView recyclerView;

@@ -22,11 +22,11 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private static final int VIEW_AMOUNT = 1;
 
-    private final OnNoticeListener listener;
+    private final NoticeListener listener;
 
     private final List<Notice> newsList = new ArrayList<>();
 
-    public NoticeAdapter(final OnNoticeListener listener) {
+    public NoticeAdapter(final NoticeListener listener) {
 
         if (listener == null) {
             throw new IllegalArgumentException("The listener cannot be null.");
