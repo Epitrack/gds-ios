@@ -2,22 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="20dp"
-    android:paddingTop="20dp">
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
 
-    <ImageView
-        android:id="@+id/image_view_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <RelativeLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="17dp" />
+        android:layout_marginLeft="17dp">
+
+        <ImageView
+            android:id="@+id/image_view_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/text_view_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="17dp"
+        android:layout_marginLeft="15dp"
         android:textColor="@color/grey"
         android:textSize="15dp" />
 
