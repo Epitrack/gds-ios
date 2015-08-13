@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
     @Bind(R.id.navigation_view)
     NavigationView navigationView;
 
-    @Bind(R.id.main_activity_drawer_layout)
+    @Bind(R.id.drawer_layout)
     DrawerLayout drawerLayout;
 
     private ActionBarDrawerToggle drawerToggle;
