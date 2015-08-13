@@ -17,11 +17,11 @@ import butterknife.ButterKnife;
 
 public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder> {
 
-    private final OnParentListener listener;
+    private final ParentListener listener;
 
     private List<Parent> parentList = new ArrayList<>();
 
-    public ParentAdapter(final OnParentListener listener) {
+    public ParentAdapter(final ParentListener listener) {
 
         if (listener == null) {
             throw new IllegalArgumentException("The listener cannot be null.");

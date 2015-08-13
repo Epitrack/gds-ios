@@ -2,7 +2,7 @@ package com.epitrack.guardioes.manager;
 
 import android.location.Location;
 
-public interface OnLocationListener {
+public interface LocationListener {
 
     void onLastLocation(Location location);
 

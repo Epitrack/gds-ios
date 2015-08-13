@@ -7,12 +7,11 @@ import android.os.Handler;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
 
-public class LocationManager extends BaseManager implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
+public class LocationManager extends BaseManager implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
 
     private static final long INTERVAL = 1000;
     private static final long FASTESET_INTERVAL = 5000;
@@ -26,9 +25,9 @@ public class LocationManager extends BaseManager implements GoogleApiClient.Conn
 
     private GoogleApiClient locationHandler;
 
-    private final OnLocationListener listener;
+    private final LocationListener listener;
 
-    public LocationManager(final Context context, final OnLocationListener listener) {
+    public LocationManager(final Context context, final LocationListener listener) {
         super(context);
 
         if (listener == null) {

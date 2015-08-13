@@ -13,7 +13,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SelectParticipantActivity extends BaseAppCompatActivity implements OnParentListener {
+public class SelectParticipantActivity extends BaseAppCompatActivity implements ParentListener {
 
     @Bind(R.id.text_view_name)
     TextView textViewName;

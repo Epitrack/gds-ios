@@ -26,7 +26,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginActivity extends BaseAppCompatActivity implements OnSocialAccountListener {
+public class LoginActivity extends BaseAppCompatActivity implements SocialAccountListener {
 
     @Bind(R.id.linear_layout_social_login)
     LinearLayout linearLayoutSocialLogin;

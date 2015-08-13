@@ -1,6 +1,6 @@
 package com.epitrack.guardioes.view.survey;
 
-public interface OnParentListener {
+public interface ParentListener {
 
     void onParentSelect();
 }

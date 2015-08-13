@@ -62,19 +62,19 @@ public class SocialFragment extends Fragment {
 
     private final CallbackManager listenerManager = CallbackManager.Factory.create();
 
-    private OnSocialAccountListener listener;
+    private SocialAccountListener listener;
 
     @Override
     public void onAttach(final Activity activity) {
         super.onAttach(activity);
 
-        if (!(activity instanceof OnSocialAccountListener)) {
+        if (!(activity instanceof SocialAccountListener)) {
 
             throw new IllegalStateException("The " +
-                    activity.getClass().getSimpleName() + " must implement OnSocialAccountListener.");
+                    activity.getClass().getSimpleName() + " must implement SocialAccountListener.");
         }
 
-        listener = (OnSocialAccountListener) activity;
+        listener = (SocialAccountListener) activity;
     }
 
     @Nullable

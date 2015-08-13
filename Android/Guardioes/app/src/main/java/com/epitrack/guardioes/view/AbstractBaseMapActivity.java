@@ -4,8 +4,8 @@ import android.location.Location;
 import android.os.Handler;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.manager.LocationListener;
 import com.epitrack.guardioes.manager.LocationManager;
-import com.epitrack.guardioes.manager.OnLocationListener;
 import com.epitrack.guardioes.utility.LocationUtility;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, OnLocationListener {
+public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, LocationListener {
 
     private static final long DEFAULT_ZOOM = 10;
 

@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
-public class CreateAccountActivity extends BaseAppCompatActivity implements OnSocialAccountListener {
+public class CreateAccountActivity extends BaseAppCompatActivity implements SocialAccountListener {
 
     private static final int MIN_CHAR_NICKNAME = 3;
 
