@@ -152,6 +152,16 @@
         <item name="android:textColor">@color/translucent_white_light</item>
     </style>
 
+    <style name="TextWelcomeName">
+        <item name="android:textSize">21dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextWelcomeMessage">
+        <item name="android:textSize">15dp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
     <style name="BottomSheet.Share" parent="BottomSheet.Dialog">
         <item name="android:textColorPrimary">@color/translucent_black_dark</item>
         <item name="android:textColorSecondary">@color/translucent_black_dark</item>

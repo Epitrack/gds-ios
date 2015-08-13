@@ -21,6 +21,7 @@ public final class Constants {
 
     public static class Intent {
 
+        public static final String WELCOME = "welcome";
         public static final String HAS_BAD_STATE = "has_bad_state";
     }
 

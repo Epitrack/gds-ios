@@ -1,29 +1,37 @@
 package com.epitrack.guardioes.view.welcome;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.epitrack.guardioes.view.welcome.WelcomePageFragment;
+import com.epitrack.guardioes.utility.Constants;
 
 public class WelcomePagerAdapter extends FragmentPagerAdapter {
 
     private final Context context;
+    private final Welcome[] welcomeArray;
 
-    public WelcomePagerAdapter(final FragmentManager fragmentManager, final Context context) {
+    public WelcomePagerAdapter(final FragmentManager fragmentManager, final Context context, final Welcome[] welcomeArray) {
         super(fragmentManager);
 
         this.context = context;
+        this.welcomeArray = welcomeArray;
     }
 
     @Override
     public int getCount() {
-        return 5;
+        return welcomeArray.length;
     }
 
     @Override
     public Fragment getItem(final int position) {
-        return Fragment.instantiate(context, WelcomePageFragment.class.getName());
+
+        final Bundle bundle = new Bundle();
+
+        bundle.putInt(Constants.Intent.WELCOME, Welcome.getBy(position + 1).getId());
+
+        return Fragment.instantiate(context, WelcomePageFragment.class.getName(), bundle);
     }
 }
