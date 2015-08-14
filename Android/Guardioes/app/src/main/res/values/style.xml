@@ -9,6 +9,8 @@
         <item name="actionBarStyle">@style/Theme.Style.ActionBar</item>
         <item name="drawerArrowStyle">@style/Theme.DrawerArrow</item>
 
+        <item name="colorAccent">@color/blue_light</item>
+
         <item name="bottomSheetStyle">@style/BottomSheet.Share</item>
 
         <item name="buttonStyle">@style/Theme.Button</item>

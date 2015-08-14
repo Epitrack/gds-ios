@@ -19,14 +19,17 @@ public enum HelpContact implements IMenu {
         this.icon = icon;
     }
 
+    @Override
     public final int getId() {
         return id;
     }
 
+    @Override
     public final int getName() {
         return name;
     }
 
+    @Override
     public final int getIcon() {
         return icon;
     }

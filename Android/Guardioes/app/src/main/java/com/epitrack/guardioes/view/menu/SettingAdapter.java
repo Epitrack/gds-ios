@@ -36,7 +36,7 @@ public class SettingAdapter extends ArrayAdapter<Setting> {
             viewHolder = new ViewHolder();
 
             viewHolder.textViewName = (TextView) view.findViewById(R.id.text_view_name);
-            viewHolder.switchSetting = (SwitchCompat) view.findViewById(R.id.switch_interest);
+            viewHolder.switchSetting = (SwitchCompat) view.findViewById(R.id.switch_setting);
 
             view.setTag(viewHolder);
 
