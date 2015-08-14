@@ -9,20 +9,25 @@
     <string name="alert">Alertas</string>
     <string name="attention">Atenção</string>
     <string name="bad">Mal</string>
+    <string name="category">Category</string>
     <string name="confirm">Confirmar</string>
     <string name="contact">Entre em contato</string>
     <string name="diary_health">Diário da Saúde</string>
     <string name="diary_health_1">Diário da\nSaúde</string>
+    <string name="disease">Doenças</string>
     <string name="enter">Entrar</string>
     <string name="exit">Sair</string>
     <string name="facebook">Facebook</string>
     <string name="gmail">Gmail</string>
     <string name="good">Bem</string>
     <string name="google">Google</string>
+    <string name="hashtag">Hashtag</string>
+    <string name="health">Saúde</string>
     <string name="help">Ajuda</string>
     <string name="home">Ínicio</string>
     <string name="hospital">UPAs</string>
     <string name="hyphen">-</string>
+    <string name="interest">Interesses</string>
     <string name="join">Participe\nagora!</string>
     <string name="login">Logar</string>
     <string name="mail">Email</string>
@@ -49,6 +54,7 @@
     <string name="tutorial">Tutorial</string>
     <string name="twitter">Twitter</string>
     <string name="yes">Sim</string>
+    <string name="welfare">Bem estar</string>
     <string name="welcome">Bem-vindo!</string>
 
     # Hint
@@ -101,6 +107,18 @@
     # Home
 
     <string name="message_hello">Olá,\n{0}!</string>
+
+    # Profile
+
+    <string name="edit_profile">Editar perfil</string>
+    <string name="message_profile">Atualize as informações do seu perfil e dos membros domicíliar</string>
+    <string name="message_interest">Selecione as categorias e hashtags que você deseja seguir</string>
+
+    # Interest
+
+    <string name="tag_ministry">#MinisterioDaSaude</string>
+    <string name="tag_flu">#Gripe</string>
+    <string name="tag_app">#GuardioesDaSaude</string>
 
     # Select Participant
 
