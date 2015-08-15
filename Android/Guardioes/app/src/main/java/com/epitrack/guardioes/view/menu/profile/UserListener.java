@@ -2,7 +2,7 @@ package com.epitrack.guardioes.view.menu.profile;
 
 import com.epitrack.guardioes.model.User;
 
-public interface MemberListener {
+public interface UserListener {
 
     void onAdd();
 

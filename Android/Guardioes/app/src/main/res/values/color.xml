@@ -5,6 +5,10 @@
     <color name="primary_light">#1e88e5</color>
     <color name="primary_dark">#226db6</color>
 
+    <color name="dark_sky_blue">#2a88e5</color>
+
+    <color name="bluish">#2072cc</color>
+
     <color name="blue_bright">#02a9d2</color>
     <color name="blue_light">#2c8dec</color>
     <color name="blue_dark">#186cb7</color>
@@ -15,6 +19,7 @@
     <color name="grey">#757575</color>
     <color name="grey_dark">#444444</color>
 
+    <color name="translucent_black_bright">#1A000000</color>
     <color name="translucent_black_light">#33000000</color>
     <color name="translucent_black_dark">#80000000</color>
 
