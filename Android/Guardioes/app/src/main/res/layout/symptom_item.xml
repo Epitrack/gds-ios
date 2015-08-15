@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="20dp"
-    android:paddingTop="20dp">
+    android:paddingBottom="15dp"
+    android:paddingTop="15dp">
 
     <CheckBox
         android:id="@+id/check_box_symptom"

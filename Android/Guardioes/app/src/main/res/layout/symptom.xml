@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="25dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="70dp"
         android:gravity="center_horizontal"
         android:text="@string/message_check_symptom"
         android:textSize="20dp" />
