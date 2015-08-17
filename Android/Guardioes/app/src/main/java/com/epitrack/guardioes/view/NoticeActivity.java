@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import com.epitrack.guardioes.R;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class NoticeActivity extends BaseAppCompatActivity implements NoticeListener {
 
@@ -19,8 +18,6 @@ public class NoticeActivity extends BaseAppCompatActivity implements NoticeListe
         super.onCreate(bundle);
 
         setContentView(R.layout.notice);
-
-        ButterKnife.bind(this);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

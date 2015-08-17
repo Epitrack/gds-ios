@@ -5,7 +5,6 @@ import android.os.Bundle;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class StateActivity extends BaseAppCompatActivity {
@@ -15,8 +14,6 @@ public class StateActivity extends BaseAppCompatActivity {
         super.onCreate(bundle);
 
         setContentView(R.layout.state);
-
-        ButterKnife.bind(this);
     }
 
     @OnClick(R.id.text_view_state_good)

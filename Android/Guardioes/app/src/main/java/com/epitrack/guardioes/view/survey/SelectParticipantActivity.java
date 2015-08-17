@@ -10,7 +10,6 @@ import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SelectParticipantActivity extends BaseAppCompatActivity implements ParentListener {
@@ -32,8 +31,6 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         super.onCreate(bundle);
 
         setContentView(R.layout.select_participant);
-
-        ButterKnife.bind(this);
 
         // TODO: Get content from Intent
 

@@ -23,7 +23,6 @@ import com.mobsandgeeks.saripaar.annotation.Password;
 import java.util.List;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LoginActivity extends BaseAppCompatActivity implements SocialAccountListener {
@@ -52,15 +51,13 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
 
         setContentView(R.layout.login);
 
-        ButterKnife.bind(this);
-
         final ActionBar actionBar = getSupportActionBar();
 
         if (actionBar == null) {
             throw new IllegalArgumentException("The actionBar is null.");
         }
 
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
 
         validator = new Validator(this);
         validator.setValidationListener(new ValidationHandler());

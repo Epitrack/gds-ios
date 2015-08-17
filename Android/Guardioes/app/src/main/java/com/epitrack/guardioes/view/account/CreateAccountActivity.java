@@ -28,7 +28,6 @@ import com.mobsandgeeks.saripaar.annotation.Password;
 import java.util.List;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
@@ -79,15 +78,13 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
         setContentView(R.layout.create_account);
 
-        ButterKnife.bind(this);
-
         final ActionBar actionBar = getSupportActionBar();
 
         if (actionBar == null) {
             throw new IllegalArgumentException("The actionBar is null.");
         }
 
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
 
         buttonCreateAccount.setEnabled(false);
 

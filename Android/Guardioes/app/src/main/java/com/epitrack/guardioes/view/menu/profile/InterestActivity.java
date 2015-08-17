@@ -10,7 +10,6 @@ import com.epitrack.guardioes.view.IMenu;
 import com.epitrack.guardioes.view.MenuListener;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class InterestActivity extends BaseAppCompatActivity implements MenuListener {
 
@@ -25,8 +24,6 @@ public class InterestActivity extends BaseAppCompatActivity implements MenuListe
         super.onCreate(bundle);
 
         setContentView(R.layout.interest);
-
-        ButterKnife.bind(this);
 
         listViewCategory.setAdapter(new InterestAdapter(this, this, InterestCategory.values()));
 

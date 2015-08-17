@@ -13,7 +13,6 @@ import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class SymptomActivity extends BaseAppCompatActivity {
 
@@ -25,8 +24,6 @@ public class SymptomActivity extends BaseAppCompatActivity {
         super.onCreate(bundle);
 
         setContentView(R.layout.symptom);
-
-        ButterKnife.bind(this);
 
         final View footerView = LayoutInflater.from(this).inflate(R.layout.symptom_footer, null);
 

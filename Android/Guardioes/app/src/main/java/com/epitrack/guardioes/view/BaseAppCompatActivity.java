@@ -3,18 +3,29 @@ package com.epitrack.guardioes.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.facebook.appevents.AppEventsLogger;
 
-public class BaseAppCompatActivity extends AppCompatActivity implements Navigate {
+import butterknife.ButterKnife;
+
+public class BaseAppCompatActivity extends AppCompatActivity implements ViewListener, Navigate {
 
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        final ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar == null) {
+            throw new IllegalStateException("The actionBar cannot be null.");
+        }
+
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -29,6 +40,32 @@ public class BaseAppCompatActivity extends AppCompatActivity implements Navigate
         super.onPause();
 
         AppEventsLogger.deactivateApp(this);
+    }
+
+    @Override
+    public void setContentView(final int layout) {
+        super.setContentView(layout);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void setContentView(final View view) {
+        super.setContentView(view);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void setContentView(final View view, final ViewGroup.LayoutParams layoutParam) {
+        super.setContentView(view, layoutParam);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void onSetContentView() {
+        ButterKnife.bind(this);
     }
 
     @Override

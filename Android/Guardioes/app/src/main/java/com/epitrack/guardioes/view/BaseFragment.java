@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
+import butterknife.ButterKnife;
+
 public class BaseFragment extends Fragment implements Navigate {
 
     @Override
@@ -15,6 +17,13 @@ public class BaseFragment extends Fragment implements Navigate {
 
         setDisplayTitle(true);
         setDisplayLogo(false);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+        ButterKnife.unbind(this);
     }
 
     @Override

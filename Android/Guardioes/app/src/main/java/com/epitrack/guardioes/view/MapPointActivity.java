@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 public class MapPointActivity extends AbstractBaseMapActivity {
 
@@ -50,8 +49,6 @@ public class MapPointActivity extends AbstractBaseMapActivity {
         super.onCreate(bundle);
 
         setContentView(R.layout.map_point);
-
-        ButterKnife.bind(this);
 
         final MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.fragment_map);

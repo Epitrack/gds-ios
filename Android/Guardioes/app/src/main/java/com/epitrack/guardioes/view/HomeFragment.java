@@ -67,11 +67,4 @@ public class HomeFragment extends BaseFragment {
     public void onJoin() {
         navigateTo(SelectParticipantActivity.class);
     }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-
-        ButterKnife.unbind(this);
-    }
 }

@@ -15,7 +15,6 @@ import com.epitrack.guardioes.utility.Logger;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AvatarActivity extends BaseAppCompatActivity implements AdapterView.OnItemClickListener {
@@ -32,8 +31,6 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
         super.onCreate(bundle);
 
         setContentView(R.layout.avatar);
-
-        ButterKnife.bind(this);
 
         gridView.setAdapter(new AvatarAdapter(this, Avatar.values()));
 

@@ -7,7 +7,6 @@ import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class UserActivity extends BaseAppCompatActivity {
@@ -20,8 +19,6 @@ public class UserActivity extends BaseAppCompatActivity {
         super.onCreate(bundle);
 
         setContentView(R.layout.user);
-
-        ButterKnife.bind(this);
     }
 
     @OnClick(R.id.image_view_image)

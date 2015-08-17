@@ -11,7 +11,6 @@ import com.epitrack.guardioes.view.BaseAppCompatActivity;
 import java.util.ArrayList;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ProfileActivity extends BaseAppCompatActivity implements UserListener {
@@ -24,8 +23,6 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         super.onCreate(bundle);
 
         setContentView(R.layout.profile_activity);
-
-        ButterKnife.bind(this);
 
         listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
     }

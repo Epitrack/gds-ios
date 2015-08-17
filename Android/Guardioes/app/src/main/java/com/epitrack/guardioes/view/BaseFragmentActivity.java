@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.facebook.appevents.AppEventsLogger;
 
-/**
- * Created by IgorMorais on 6/18/15.
- */
-public class BaseFragmentActivity extends FragmentActivity implements Navigate {
+import butterknife.ButterKnife;
+
+public class BaseFragmentActivity extends FragmentActivity implements ViewListener, Navigate {
 
     @Override
     protected void onResume() {
@@ -24,6 +25,32 @@ public class BaseFragmentActivity extends FragmentActivity implements Navigate {
         super.onPause();
 
         AppEventsLogger.deactivateApp(this);
+    }
+
+    @Override
+    public void setContentView(final int layout) {
+        super.setContentView(layout);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void setContentView(final View view) {
+        super.setContentView(view);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void setContentView(final View view, final ViewGroup.LayoutParams layoutParam) {
+        super.setContentView(view, layoutParam);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void onSetContentView() {
+        ButterKnife.bind(this);
     }
 
     @Override

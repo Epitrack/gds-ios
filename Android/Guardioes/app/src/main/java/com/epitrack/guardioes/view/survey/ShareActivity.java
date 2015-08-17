@@ -12,7 +12,6 @@ import com.epitrack.guardioes.view.BaseActivity;
 import com.epitrack.guardioes.view.HomeActivity;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ShareActivity extends BaseActivity {
@@ -30,8 +29,6 @@ public class ShareActivity extends BaseActivity {
         super.onCreate(bundle);
 
         setContentView(R.layout.share);
-
-        ButterKnife.bind(this);
 
         final boolean hasBadState = getIntent().getBooleanExtra(Constants.Intent.HAS_BAD_STATE, false);
 

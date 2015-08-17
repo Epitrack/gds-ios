@@ -3,10 +3,14 @@ package com.epitrack.guardioes.view;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.facebook.appevents.AppEventsLogger;
 
-public class BaseActivity extends Activity implements Navigate {
+import butterknife.ButterKnife;
+
+public class BaseActivity extends Activity implements ViewListener, Navigate {
 
     @Override
     protected void onResume() {
@@ -20,6 +24,32 @@ public class BaseActivity extends Activity implements Navigate {
         super.onPause();
 
         AppEventsLogger.deactivateApp(this);
+    }
+
+    @Override
+    public void setContentView(final int layout) {
+        super.setContentView(layout);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void setContentView(final View view) {
+        super.setContentView(view);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void setContentView(final View view, final ViewGroup.LayoutParams layoutParam) {
+        super.setContentView(view, layoutParam);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void onSetContentView() {
+        ButterKnife.bind(this);
     }
 
     @Override
