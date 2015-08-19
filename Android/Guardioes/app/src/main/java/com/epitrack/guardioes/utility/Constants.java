@@ -1,8 +1,5 @@
 package com.epitrack.guardioes.utility;
 
-/**
- * Created by IgorMorais on 6/9/15.
- */
 public final class Constants {
 
     private Constants() {
@@ -19,15 +16,22 @@ public final class Constants {
 
     }
 
+    public static class RequestCode {
+
+        public static final int IMAGE = 5000;
+    }
+
     public static class Intent {
 
         public static final String WELCOME = "welcome";
+        public static final String AVATAR = "avatar";
+        public static final String URI = "uri";
         public static final String HAS_BAD_STATE = "has_bad_state";
     }
 
     public static class Pref {
 
-        public static final String USER = "User";
+        public static final String USER = "user";
     }
 
     public static class Push {
