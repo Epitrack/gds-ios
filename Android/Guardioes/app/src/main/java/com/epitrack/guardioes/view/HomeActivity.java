@@ -65,7 +65,7 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
         navigationView.setNavigationItemSelectedListener(this);
 
         addFragment(MAIN_FRAGMENT,
-                MAIN_FRAGMENT.getSimpleName());
+                    MAIN_FRAGMENT.getSimpleName());
     }
 
     @Override

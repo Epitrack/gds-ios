@@ -37,6 +37,7 @@
     <string name="map_health">Mapa da Saúde</string>
     <string name="map_health_1">Mapa da\nSaúde</string>
     <string name="member">Membro do domicílio</string>
+    <string name="next">Próximo</string>
     <string name="no">Não</string>
     <string name="notice">Notícias</string>
     <string name="notification">Notificações</string>
@@ -45,6 +46,7 @@
     <string name="pharmacy">Farmácias</string>
     <string name="privacy">Privacidade</string>
     <string name="profile">Perfil</string>
+    <string name="race">Cor/Raça</string>
     <string name="register">Cadastrar</string>
     <string name="report">Relatar erros no aplicativo</string>
     <string name="save">Salvar</string>
@@ -66,6 +68,14 @@
     <string-array name="gender_array">
         <item>Masculino</item>
         <item>Feminino</item>
+    </string-array>
+
+    <string-array name="race_array">
+        <item>Branca</item>
+        <item>Preta</item>
+        <item>Parda</item>
+        <item>Amarela</item>
+        <item>Indígena</item>
     </string-array>
 
     # Hint

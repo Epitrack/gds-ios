@@ -38,10 +38,13 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     private static final String SOCIAL_FRAGMENT = "social_fragment";
 
     @Bind(R.id.linear_layout_social_account)
-    LinearLayout linearLayoutSocialLogin;
+    LinearLayout linearLayoutSocial;
 
-    @Bind(R.id.linear_layout_account)
-    LinearLayout linearLayoutLogin;
+    @Bind(R.id.linear_layout_next)
+    LinearLayout linearLayoutNext;
+
+    @Bind(R.id.linear_layout_create)
+    LinearLayout linearLayoutCreate;
 
     @Email(messageResId = R.string.validation_mail)
     @Bind(R.id.edit_text_mail)
@@ -63,14 +66,14 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     @Bind(R.id.edit_text_birth_date)
     EditText editTextBirthDate;
 
-    @Bind(R.id.button_create_account)
-    Button buttonCreateAccount;
-
-    private boolean inCreateAccount;
+    @Bind(R.id.button_mail)
+    Button buttonMail;
 
     private SocialFragment socialFragment;
 
     private Validator validator;
+
+    private State state = State.SOCIAL;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -86,7 +89,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
         actionBar.setDisplayShowTitleEnabled(false);
 
-        buttonCreateAccount.setEnabled(false);
+        buttonMail.setEnabled(false);
 
         getSocialFragment().setEnable(false);
 
@@ -113,11 +116,11 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
         if (item.getItemId() == android.R.id.home) {
 
-            if (inCreateAccount) {
-                handlerAnimation();
+            if (state == State.SOCIAL) {
+                return super.onOptionsItemSelected(item);
 
             } else {
-                return super.onOptionsItemSelected(item);
+                handlerState();
             }
 
         } else {
@@ -155,7 +158,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     @OnCheckedChanged(R.id.check_box_term)
     public void onCheck(final boolean checked) {
 
-        buttonCreateAccount.setEnabled(checked);
+        buttonMail.setEnabled(checked);
 
         getSocialFragment().setEnable(checked);
     }
@@ -168,47 +171,43 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     @Override
     public void onBackPressed() {
 
-        if (inCreateAccount) {
-            handlerAnimation();
+        if (state == State.SOCIAL) {
+            super.onBackPressed();
 
         } else {
-            super.onBackPressed();
+            handlerState();
+        }
+    }
+
+    private void previous() {
+        state = State.getBy(state.getId() - 1);
+    }
+
+    private void next() {
+        state = State.getBy(state.getId() + 1);
+    }
+
+    private void handlerState() {
+
+        if (state == State.NEXT) {
+            onPreviousAnimation(linearLayoutSocial, linearLayoutNext);
+
+        } else if (state == State.CREATE) {
+            onPreviousAnimation(linearLayoutNext, linearLayoutCreate);
         }
     }
 
     @OnClick(R.id.button_mail)
-    public void onCreateAccountAnimation() {
-
-        final Animation slideIn = AnimationUtils.loadAnimation(this, R.anim.slide_in_left);
-
-        slideIn.setAnimationListener(new Animation.AnimationListener() {
-
-            @Override
-            public void onAnimationStart(final Animation animation) {
-
-                if (linearLayoutLogin.getVisibility() == View.INVISIBLE) {
-                    linearLayoutLogin.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onAnimationEnd(final Animation animation) {
-                inCreateAccount = true;
-            }
-
-            @Override
-            public void onAnimationRepeat(final Animation animation) {
-
-            }
-        });
-
-        final Animation slideOut = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
-
-        linearLayoutLogin.startAnimation(slideIn);
-        linearLayoutSocialLogin.startAnimation(slideOut);
+    public void onMail() {
+        onNextAnimation(linearLayoutNext, linearLayoutSocial);
     }
 
-    private void handlerAnimation() {
+    @OnClick(R.id.button_next)
+    public void onNext() {
+        onNextAnimation(linearLayoutCreate, linearLayoutNext);
+    }
+
+    private void onPreviousAnimation(final View visibleView, final View invisibleView) {
 
         final Animation slideIn = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
 
@@ -216,12 +215,16 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
             @Override
             public void onAnimationStart(final Animation animation) {
-
+                visibleView.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onAnimationEnd(final Animation animation) {
-                inCreateAccount = false;
+                previous();
+
+                invisibleView.setVisibility(View.INVISIBLE);
+
+                invisibleView.clearAnimation();
             }
 
             @Override
@@ -232,8 +235,42 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
         final Animation slideOut = AnimationUtils.loadAnimation(this, R.anim.slide_out_right);
 
-        linearLayoutSocialLogin.startAnimation(slideIn);
-        linearLayoutLogin.startAnimation(slideOut);
+        visibleView.startAnimation(slideIn);
+
+        invisibleView.startAnimation(slideOut);
+    }
+
+    private void onNextAnimation(final View visibleView, final View invisibleView) {
+
+        final Animation slideIn = AnimationUtils.loadAnimation(this, R.anim.slide_in_left);
+
+        slideIn.setAnimationListener(new Animation.AnimationListener() {
+
+            @Override
+            public void onAnimationStart(final Animation animation) {
+                visibleView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(final Animation animation) {
+                next();
+
+                invisibleView.setVisibility(View.INVISIBLE);
+
+                invisibleView.clearAnimation();
+            }
+
+            @Override
+            public void onAnimationRepeat(final Animation animation) {
+
+            }
+        });
+
+        final Animation slideOut = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+
+        visibleView.startAnimation(slideIn);
+
+        invisibleView.startAnimation(slideOut);
     }
 
     @Override
@@ -265,6 +302,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     @OnClick(R.id.button_create_account)
     public void onCreateAccount() {
 
+        // TODO: Uncomment this to validate
         //validator.validate();
 
         navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
@@ -296,6 +334,33 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                     ((EditText) view).setError(message);
                 }
             }
+        }
+    }
+
+    enum State {
+
+        SOCIAL (1), NEXT (2), CREATE (3);
+
+        private final int id;
+
+        State(final int id) {
+            this.id = id;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public static State getBy(final int id) {
+
+            for (final State state : State.values()) {
+
+                if (state.getId() == id) {
+                    return state;
+                }
+            }
+
+            throw new IllegalArgumentException("The State has not found.");
         }
     }
 }
