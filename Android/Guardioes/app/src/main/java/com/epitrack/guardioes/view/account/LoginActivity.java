@@ -122,6 +122,8 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                 inLogin = true;
 
                 linearLayoutSocialLogin.setVisibility(View.INVISIBLE);
+
+                linearLayoutSocialLogin.clearAnimation();
             }
 
             @Override
@@ -152,6 +154,8 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                 inLogin = false;
 
                 linearLayoutLogin.setVisibility(View.INVISIBLE);
+
+                linearLayoutLogin.clearAnimation();
             }
 
             @Override
