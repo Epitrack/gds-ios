@@ -26,7 +26,8 @@ public final class Constants {
         public static final String WELCOME = "welcome";
         public static final String AVATAR = "avatar";
         public static final String URI = "uri";
-        public static final String HAS_BAD_STATE = "has_bad_state";
+        public static final String MAIN_MEMBER = "main_member";
+        public static final String BAD_STATE = "has_bad_state";
     }
 
     public static class Pref {

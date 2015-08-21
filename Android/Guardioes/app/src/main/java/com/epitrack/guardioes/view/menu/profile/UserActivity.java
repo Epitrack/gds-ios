@@ -3,8 +3,13 @@ package com.epitrack.guardioes.view.menu.profile;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
@@ -17,17 +22,56 @@ import butterknife.OnClick;
 
 public class UserActivity extends BaseAppCompatActivity {
 
+    @Bind(R.id.text_view_message)
+    TextView textViewMessage;
+
+    @Bind(R.id.edit_text_nickname)
+    EditText editTextNickname;
+
     @Bind(R.id.image_view_image)
     ImageView imageViewImage;
 
     @Bind(R.id.spinner_gender)
     Spinner spinnerGender;
 
+    @Bind(R.id.spinner_race)
+    Spinner spinnerRace;
+
+    @Bind(R.id.edit_text_birth_date)
+    EditText editTextBirthDate;
+
+    @Bind(R.id.text_layout_mail)
+    TextInputLayout textLayoutMail;
+
+    @Bind(R.id.edit_text_mail)
+    EditText editTextMail;
+
+    @Bind(R.id.linear_layout_password)
+    LinearLayout linearLayoutPassword;
+
+    @Bind(R.id.edit_text_password)
+    EditText editTextPassword;
+
+    @Bind(R.id.edit_text_confirm_password)
+    EditText editTextConfirmPassword;
+
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.user);
+
+        final boolean mainMember = getIntent().getBooleanExtra(Constants.Intent.MAIN_MEMBER, false);
+
+        if (mainMember) {
+
+            textViewMessage.setText(R.string.message_fields);
+
+            textLayoutMail.setVisibility(View.VISIBLE);
+            editTextMail.setVisibility(View.VISIBLE);
+
+            linearLayoutPassword.setVisibility(View.VISIBLE);
+        }
     }
 
     @OnClick(R.id.image_view_image)

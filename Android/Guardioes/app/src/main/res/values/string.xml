@@ -141,7 +141,8 @@
     <string name="message_interest">Selecione as categorias e hashtags que você deseja seguir</string>
 
     # User
-    <string name="message_new_member">Preencha todos os campos abaixo para adicionar um novo membro.</string>
+    <string name="message_new_member">Preencha todos os campos abaixo\npara adicionar um novo membro.</string>
+    <string name="message_fields">Apenas os campos habilitados\npoderão ser alterados.</string>
 
     # Interest
 

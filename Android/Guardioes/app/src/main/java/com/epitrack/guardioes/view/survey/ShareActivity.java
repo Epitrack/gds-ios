@@ -30,7 +30,7 @@ public class ShareActivity extends BaseActivity {
 
         setContentView(R.layout.share);
 
-        final boolean hasBadState = getIntent().getBooleanExtra(Constants.Intent.HAS_BAD_STATE, false);
+        final boolean hasBadState = getIntent().getBooleanExtra(Constants.Intent.BAD_STATE, false);
 
         if (hasBadState) {
 

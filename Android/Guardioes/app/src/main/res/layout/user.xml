@@ -6,14 +6,14 @@
     android:background="@drawable/background_blue">
 
     <TextView
-        android:id="@+id/text_view"
+        android:id="@+id/text_view_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
         android:layout_marginTop="70dp"
         android:gravity="center_horizontal"
-        android:text="@string/message_select_profile"
+        android:text="@string/message_new_member"
         android:textColor="@android:color/white"
         android:textSize="18dp" />
 
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button_add"
-        android:layout_below="@id/text_view"
+        android:layout_below="@id/text_view_message"
         android:background="@android:color/white"
         android:orientation="vertical"
         android:paddingLeft="30dp"
@@ -48,6 +48,7 @@
                 layout:hintTextAppearance="@style/Text.EditText.Label">
 
                 <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edit_text_nickname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_nickname"
@@ -61,7 +62,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="10dp"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -84,14 +86,43 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/race"
+                    android:textColor="@color/bluish"
+                    android:textSize="13dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_race"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/race_array" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
                 android:layout_weight="1"
                 layout:hintTextAppearance="@style/Text.EditText.Label">
 
                 <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edit_text_birth_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_birth_date"
@@ -99,12 +130,35 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_layout_mail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                layout:hintTextAppearance="@style/Text.EditText.Label">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edit_text_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="@string/hint_mail"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50"
+                    android:visibility="invisible" />
+
+            </android.support.design.widget.TextInputLayout>
+
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linear_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="5dp"
+            android:visibility="invisible">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="0dp"
@@ -113,25 +167,27 @@
                 layout:hintTextAppearance="@style/Text.EditText.Label">
 
                 <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edit_text_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_mail"
-                    android:inputType="textEmailAddress"
-                    android:maxLength="50" />
+                    android:hint="@string/hint_password"
+                    android:inputType="textPassword"
+                    android:maxLength="16" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="25dp"
                 android:layout_weight="1"
                 layout:hintTextAppearance="@style/Text.EditText.Label">
 
                 <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edit_text_confirm_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_password"
+                    android:hint="@string/hint_repeat_password"
                     android:inputType="textPassword"
                     android:maxLength="16" />
 

@@ -6,6 +6,7 @@ import android.widget.ListView;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.User;
+import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
 import java.util.ArrayList;
@@ -48,7 +49,18 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
 
     @Override
     public void onEdit(final User user) {
-        navigateTo(UserActivity.class);
+
+        // TODO: Check if is main member..
+        if (false) {
+
+            final Bundle bundle = new Bundle();
+            bundle.putBoolean(Constants.Intent.MAIN_MEMBER, true);
+
+            navigateTo(UserActivity.class, bundle);
+
+        } else {
+            navigateTo(UserActivity.class);
+        }
     }
 
     @Override
