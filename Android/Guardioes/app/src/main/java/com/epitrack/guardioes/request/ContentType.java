@@ -1,6 +1,9 @@
 package com.epitrack.guardioes.request;
 
-public enum ContentType implements IHeader {
+/**
+ * @author Igor Morais
+ */
+enum ContentType implements IHeader {
 
     JSON ("application/json", Header.CONTENT_TYPE),
     URL_ENCODED ("application/x-www-form-urlencoded", Header.CONTENT_TYPE);
@@ -14,12 +17,12 @@ public enum ContentType implements IHeader {
     }
 
     @Override
-    public String getValue() {
+    public final String getValue() {
         return value;
     }
 
     @Override
-    public Header getHeader() {
+    public final Header getHeader() {
         return header;
     }
 }

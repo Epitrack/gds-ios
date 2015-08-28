@@ -1,6 +1,9 @@
 package com.epitrack.guardioes.request;
 
-public enum Method {
+/**
+ * @author Igor Morais
+ */
+enum Method {
 
     OPTIONS     ("Options"),
     GET         ("Get"),

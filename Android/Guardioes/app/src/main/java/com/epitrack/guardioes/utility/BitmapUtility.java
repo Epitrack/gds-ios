@@ -10,6 +10,9 @@ import android.graphics.Rect;
 
 import java.io.ByteArrayOutputStream;
 
+/**
+ * @author Igor Morais
+ */
 public final class BitmapUtility {
 
     public static final int QUALITY = 100;

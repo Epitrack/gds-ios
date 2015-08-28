@@ -3,7 +3,10 @@ package com.epitrack.guardioes.request;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HeaderBuilder {
+/**
+ * @author Igor Morais
+ */
+final class HeaderBuilder {
 
     public Map<String, String> add(final IHeader... headerArray) {
 

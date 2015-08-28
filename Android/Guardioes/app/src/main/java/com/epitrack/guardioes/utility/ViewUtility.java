@@ -4,6 +4,9 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * @author Igor Morais
+ */
 public final class ViewUtility {
 
     private ViewUtility () {

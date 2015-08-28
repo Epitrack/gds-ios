@@ -1,5 +1,8 @@
 package com.epitrack.guardioes.request;
 
+/**
+ * @author Igor Morais
+ */
 public interface RequestListener<T> {
 
     void onStart();

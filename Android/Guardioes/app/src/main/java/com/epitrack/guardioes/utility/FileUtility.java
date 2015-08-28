@@ -7,6 +7,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/**
+ * @author Igor Morais
+ */
 public final class FileUtility {
 
     private static final String TAG = FileUtility.class.getSimpleName();

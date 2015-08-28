@@ -3,6 +3,9 @@ package com.epitrack.guardioes.utility;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * @author Igor Morais
+ */
 public final class Utility {
 
     private static final String TAG = Utility.class.getSimpleName();

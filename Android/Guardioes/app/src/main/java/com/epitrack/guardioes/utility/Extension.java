@@ -1,5 +1,8 @@
 package com.epitrack.guardioes.utility;
 
+/**
+ * @author Igor Morais
+ */
 public enum Extension {
 
     JPG(".jpg"), PNG(".png"), BITMAP(".bmp");

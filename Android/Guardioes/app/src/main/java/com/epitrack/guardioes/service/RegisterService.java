@@ -10,6 +10,9 @@ import com.google.android.gms.iid.InstanceID;
 
 import java.io.IOException;
 
+/**
+ * @author Igor Morais
+ */
 public class RegisterService extends IntentService {
 
     private static final String TAG = RegisterService.class.getSimpleName();

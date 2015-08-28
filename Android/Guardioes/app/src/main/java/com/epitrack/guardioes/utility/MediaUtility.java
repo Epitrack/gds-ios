@@ -5,6 +5,9 @@ import android.os.Environment;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author Igor Morais
+ */
 public final class MediaUtility {
 
     private static final String TAG = MediaUtility.class.getSimpleName();

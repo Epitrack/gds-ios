@@ -5,6 +5,9 @@ import android.content.Context;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 
+/**
+ * @author Igor Morais
+ */
 public final class DialogBuilder extends BaseBuilder {
 
     public DialogBuilder(final Context context) {

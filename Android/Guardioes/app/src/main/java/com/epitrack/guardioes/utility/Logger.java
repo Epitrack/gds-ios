@@ -2,6 +2,9 @@ package com.epitrack.guardioes.utility;
 
 import android.util.Log;
 
+/**
+ * @author Igor Morais
+ */
 public final class Logger {
 
     private Logger() {

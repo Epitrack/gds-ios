@@ -4,6 +4,9 @@ import android.os.Bundle;
 
 import com.google.android.gms.gcm.GcmListenerService;
 
+/**
+ * @author Igor Morais
+ */
 public class PushService extends GcmListenerService {
 
     @Override

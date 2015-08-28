@@ -5,7 +5,7 @@ import android.location.Location;
 import com.google.android.gms.maps.model.LatLng;
 
 /**
- * Created by IgorMorais on 7/22/15.
+ * @author Igor Morais
  */
 public final class LocationUtility {
 

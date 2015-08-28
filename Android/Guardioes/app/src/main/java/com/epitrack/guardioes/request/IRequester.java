@@ -2,6 +2,9 @@ package com.epitrack.guardioes.request;
 
 import java.util.Map;
 
+/**
+ * @author Igor Morais
+ */
 interface IRequester {
 
     <T> void request(final Method method,

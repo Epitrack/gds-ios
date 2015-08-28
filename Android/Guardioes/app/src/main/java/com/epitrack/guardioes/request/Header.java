@@ -1,6 +1,9 @@
 package com.epitrack.guardioes.request;
 
-public enum Header {
+/**
+ * @author Igor Morais
+ */
+enum Header {
 
     ACCEPT ("Accept"),
     AUTHORIZATION ("Authorization"),
@@ -13,7 +16,7 @@ public enum Header {
         this.value = value;
     }
 
-    public String getValue() {
+    public final String getValue() {
         return value;
     }
 }

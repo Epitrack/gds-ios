@@ -2,6 +2,9 @@ package com.epitrack.guardioes.utility;
 
 import android.content.Context;
 
+/**
+ * @author Igor Morais
+ */
 public class BaseBuilder {
 
     private final Context context;
