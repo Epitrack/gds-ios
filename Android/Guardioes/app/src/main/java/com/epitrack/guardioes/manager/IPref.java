@@ -1,5 +1,8 @@
 package com.epitrack.guardioes.manager;
 
+/**
+ * @author Igor Morais
+ */
 public interface IPref {
 
     <T> T get(String key);

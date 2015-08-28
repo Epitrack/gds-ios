@@ -2,11 +2,14 @@ package com.epitrack.guardioes.request;
 
 import android.content.Context;
 
-class Base {
+/**
+ * @author Igor Morais
+ */
+class BaseRequester {
 
     private final Context context;
 
-    public Base(final Context context) {
+    public BaseRequester(final Context context) {
         this.context = context;
     }
 

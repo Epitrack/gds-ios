@@ -5,6 +5,9 @@ import android.os.HandlerThread;
 
 import com.epitrack.guardioes.utility.Logger;
 
+/**
+ * @author Igor Morais
+ */
 public final class Loader {
 
     private static final String TAG = Loader.class.getSimpleName();

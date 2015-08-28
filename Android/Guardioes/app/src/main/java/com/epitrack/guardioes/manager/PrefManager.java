@@ -11,6 +11,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 
+/**
+ * @author Igor Morais
+ */
 public class PrefManager extends BaseManager implements IPref {
 
     private static final String TAG = PrefManager.class.getSimpleName();

@@ -2,6 +2,9 @@ package com.epitrack.guardioes.manager;
 
 import android.content.Context;
 
+/**
+ * @author Igor Morais
+ */
 class BaseManager {
 
     private final Context context;
