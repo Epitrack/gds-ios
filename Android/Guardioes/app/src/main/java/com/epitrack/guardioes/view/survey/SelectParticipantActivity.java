@@ -9,6 +9,9 @@ import android.widget.TextView;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.OnClick;
 
@@ -43,7 +46,10 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
 
             recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-            recyclerView.setAdapter(new ParentAdapter(this));
+            // TODO: Need take real data
+            final List<ParentAdapter.Parent> parentList = new ArrayList<>();
+
+            recyclerView.setAdapter(new ParentAdapter(this, parentList));
         }
     }
 
