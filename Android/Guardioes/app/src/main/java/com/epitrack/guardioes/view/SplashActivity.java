@@ -8,6 +8,9 @@ import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.PrefManager;
 import com.epitrack.guardioes.utility.Constants;
 
+/**
+ * @author Igor Morais
+ */
 public class SplashActivity extends BaseActivity implements Runnable {
 
     private static final long WAIT_TIME = 1500;

@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
 
+/**
+ * @author Igor Morais
+ */
 public class ProfileAdapter extends ArrayAdapter<Profile> {
 
     public ProfileAdapter(final Context context, final Profile[] profileArray) {

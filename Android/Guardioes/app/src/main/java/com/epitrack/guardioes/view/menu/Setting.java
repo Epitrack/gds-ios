@@ -2,6 +2,9 @@ package com.epitrack.guardioes.view.menu;
 
 import com.epitrack.guardioes.R;
 
+/**
+ * @author Igor Morais
+ */
 public enum Setting {
 
     ALERT (R.string.alert),

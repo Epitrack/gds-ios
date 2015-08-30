@@ -40,6 +40,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
+/**
+ * @author Igor Morais
+ */
 public class SocialFragment extends Fragment {
 
     private static final int REQUEST_CODE_GOOGLE = 6667;

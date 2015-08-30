@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.epitrack.guardioes.utility.Constants;
 
+/**
+ * @author Igor Morais
+ */
 public class WelcomePagerAdapter extends FragmentPagerAdapter {
 
     private final Context context;

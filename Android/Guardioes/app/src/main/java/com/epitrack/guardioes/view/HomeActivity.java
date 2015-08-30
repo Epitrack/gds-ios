@@ -24,6 +24,9 @@ import java.util.Map;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * @author Igor Morais
+ */
 public class HomeActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 
     private static final Class<? extends Fragment> MAIN_FRAGMENT = HomeFragment.class;

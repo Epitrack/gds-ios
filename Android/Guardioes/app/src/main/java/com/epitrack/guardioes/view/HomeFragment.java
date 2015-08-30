@@ -14,6 +14,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * @author Igor Morais
+ */
 public class HomeFragment extends BaseFragment {
 
     @Bind(R.id.text_view_name)

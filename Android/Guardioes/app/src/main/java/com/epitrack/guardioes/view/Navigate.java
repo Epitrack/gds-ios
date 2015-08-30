@@ -3,6 +3,9 @@ package com.epitrack.guardioes.view;
 import android.app.Activity;
 import android.os.Bundle;
 
+/**
+ * @author Igor Morais
+ */
 public interface Navigate {
 
     void navigateTo(Class<? extends Activity> activityClass);

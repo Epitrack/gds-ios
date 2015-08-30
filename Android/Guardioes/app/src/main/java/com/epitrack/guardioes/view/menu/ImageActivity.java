@@ -16,6 +16,9 @@ import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
 import butterknife.Bind;
 
+/**
+ * @author Igor Morais
+ */
 public class ImageActivity extends BaseAppCompatActivity {
 
     private static final String TAG = ImageActivity.class.getSimpleName();

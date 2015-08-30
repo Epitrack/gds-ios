@@ -15,6 +15,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+/**
+ * @author Igor Morais
+ */
 public class SelectParticipantActivity extends BaseAppCompatActivity implements ParentListener {
 
     @Bind(R.id.text_view_name)

@@ -11,6 +11,9 @@ import com.epitrack.guardioes.view.MenuListener;
 
 import butterknife.Bind;
 
+/**
+ * @author Igor Morais
+ */
 public class InterestActivity extends BaseAppCompatActivity implements MenuListener {
 
     @Bind(R.id.list_view_category)

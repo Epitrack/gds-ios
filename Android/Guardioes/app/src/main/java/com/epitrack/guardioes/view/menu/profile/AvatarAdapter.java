@@ -9,6 +9,9 @@ import android.widget.ImageView;
 
 import com.epitrack.guardioes.R;
 
+/**
+ * @author Igor Morais
+ */
 public class AvatarAdapter extends ArrayAdapter<Avatar> {
 
     public AvatarAdapter(final Context context, final Avatar[] avatarArray) {

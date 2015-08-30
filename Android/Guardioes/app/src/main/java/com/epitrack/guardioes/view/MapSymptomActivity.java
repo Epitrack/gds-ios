@@ -23,6 +23,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+/**
+ * @author Igor Morais
+ */
 public class MapSymptomActivity extends AbstractBaseMapActivity {
 
     private MarkerOptions badMarkerOption;

@@ -2,6 +2,9 @@ package com.epitrack.guardioes.view.menu.profile;
 
 import com.epitrack.guardioes.R;
 
+/**
+ * @author Igor Morais
+ */
 public enum Avatar {
 
     AVATAR_CHILD_FEMALE_1   (1, R.drawable.image_avatar_small_1, R.drawable.image_avatar_1),

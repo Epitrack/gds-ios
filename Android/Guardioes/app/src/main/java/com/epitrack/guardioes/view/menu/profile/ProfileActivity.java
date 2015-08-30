@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+/**
+ * @author Igor Morais
+ */
 public class ProfileActivity extends BaseAppCompatActivity implements UserListener {
 
     @Bind(R.id.list_view)

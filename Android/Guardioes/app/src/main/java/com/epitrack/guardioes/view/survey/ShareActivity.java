@@ -14,6 +14,9 @@ import com.epitrack.guardioes.view.HomeActivity;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+/**
+ * @author Igor Morais
+ */
 public class ShareActivity extends BaseActivity {
 
     private static final float MARGIN_TOP = 25;

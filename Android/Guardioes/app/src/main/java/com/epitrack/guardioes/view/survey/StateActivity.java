@@ -7,6 +7,9 @@ import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
 import butterknife.OnClick;
 
+/**
+ * @author Igor Morais
+ */
 public class StateActivity extends BaseAppCompatActivity {
 
     @Override

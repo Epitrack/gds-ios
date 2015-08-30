@@ -11,13 +11,13 @@ import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.BaseFragment;
 import com.epitrack.guardioes.view.IMenu;
 import com.epitrack.guardioes.view.MenuListener;
-import com.epitrack.guardioes.view.menu.help.HelpAdapter;
-import com.epitrack.guardioes.view.menu.help.HelpContact;
-import com.epitrack.guardioes.view.menu.help.HelpOption;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * @author Igor Morais
+ */
 public class HelpFragment extends BaseFragment implements MenuListener {
 
     @Bind(R.id.list_view_option)

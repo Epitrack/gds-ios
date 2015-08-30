@@ -12,6 +12,9 @@ import com.epitrack.guardioes.BuildConfig;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.utility.Logger;
 
+/**
+ * @author Igor Morais
+ */
 public abstract class NotifyDialog extends DialogFragment implements OnClickListener {
 
     public static final String TAG = NotifyDialog.class.getSimpleName();

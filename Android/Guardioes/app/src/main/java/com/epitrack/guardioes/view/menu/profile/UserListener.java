@@ -2,6 +2,9 @@ package com.epitrack.guardioes.view.menu.profile;
 
 import com.epitrack.guardioes.model.User;
 
+/**
+ * @author Igor Morais
+ */
 public interface UserListener {
 
     void onAdd();

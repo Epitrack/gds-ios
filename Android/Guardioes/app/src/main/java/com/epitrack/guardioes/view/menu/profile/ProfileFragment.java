@@ -14,6 +14,9 @@ import com.epitrack.guardioes.view.BaseFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * @author Igor Morais
+ */
 public class ProfileFragment extends BaseFragment implements AdapterView.OnItemClickListener {
 
     @Bind(R.id.list_view)

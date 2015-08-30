@@ -12,6 +12,9 @@ import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.IMenu;
 import com.epitrack.guardioes.view.MenuListener;
 
+/**
+ * @author Igor Morais
+ */
 public class HelpAdapter extends ArrayAdapter<IMenu> {
 
     private final MenuListener listener;

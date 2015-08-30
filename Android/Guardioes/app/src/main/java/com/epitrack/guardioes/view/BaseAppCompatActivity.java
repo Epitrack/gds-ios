@@ -12,6 +12,9 @@ import com.facebook.appevents.AppEventsLogger;
 
 import butterknife.ButterKnife;
 
+/**
+ * @author Igor Morais
+ */
 public class BaseAppCompatActivity extends AppCompatActivity implements ViewListener, Navigate {
 
     @Override

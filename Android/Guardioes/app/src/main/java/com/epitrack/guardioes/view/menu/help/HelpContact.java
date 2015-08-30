@@ -3,6 +3,9 @@ package com.epitrack.guardioes.view.menu.help;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.IMenu;
 
+/**
+ * @author Igor Morais
+ */
 public enum HelpContact implements IMenu {
 
     MAIL        (1, R.string.mail, R.drawable.icon_mail),

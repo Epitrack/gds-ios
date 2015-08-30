@@ -29,6 +29,9 @@ import java.util.Map;
 
 import butterknife.Bind;
 
+/**
+ * @author Igor Morais
+ */
 public class MapPointActivity extends AbstractBaseMapActivity {
 
     @Bind(R.id.linear_layout)

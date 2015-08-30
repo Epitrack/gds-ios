@@ -25,6 +25,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+/**
+ * @author Igor Morais
+ */
 public class LoginActivity extends BaseAppCompatActivity implements SocialAccountListener {
 
     @Bind(R.id.linear_layout_social_login)

@@ -13,6 +13,9 @@ import com.epitrack.guardioes.model.User;
 
 import java.util.List;
 
+/**
+ * @author Igor Morais
+ */
 public class UserAdapter extends ArrayAdapter<User> {
 
     private final UserListener listener;

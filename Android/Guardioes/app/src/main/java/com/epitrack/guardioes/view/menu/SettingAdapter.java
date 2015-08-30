@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
 
+/**
+ * @author Igor Morais
+ */
 public class SettingAdapter extends ArrayAdapter<Setting> {
 
     public SettingAdapter(final Context context, final Setting[] settingArray) {

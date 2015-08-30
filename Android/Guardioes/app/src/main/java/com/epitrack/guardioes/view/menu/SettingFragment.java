@@ -13,6 +13,9 @@ import com.epitrack.guardioes.view.BaseFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * @author Igor Morais
+ */
 public class SettingFragment extends BaseFragment {
 
     @Bind(R.id.list_view)

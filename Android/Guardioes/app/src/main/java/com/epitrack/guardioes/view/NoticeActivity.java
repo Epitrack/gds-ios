@@ -22,6 +22,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * @author Igor Morais
+ */
 public class NoticeActivity extends AppCompatActivity implements NoticeListener {
 
     @Bind(R.id.collapsing_toolbar)

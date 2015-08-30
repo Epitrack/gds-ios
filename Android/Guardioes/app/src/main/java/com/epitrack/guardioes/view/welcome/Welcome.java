@@ -2,6 +2,9 @@ package com.epitrack.guardioes.view.welcome;
 
 import com.epitrack.guardioes.R;
 
+/**
+ * @author Igor Morais
+ */
 public enum Welcome {
 
     WELCOME     (1, R.layout.welcome_page),

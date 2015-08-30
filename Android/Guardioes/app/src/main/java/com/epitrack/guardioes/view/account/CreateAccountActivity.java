@@ -31,6 +31,9 @@ import butterknife.Bind;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
+/**
+ * @author Igor Morais
+ */
 public class CreateAccountActivity extends BaseAppCompatActivity implements SocialAccountListener {
 
     private static final int MIN_CHAR_NICKNAME = 3;

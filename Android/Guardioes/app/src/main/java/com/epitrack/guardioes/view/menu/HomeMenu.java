@@ -10,6 +10,9 @@ import com.epitrack.guardioes.view.HomeFragment;
 import com.epitrack.guardioes.view.menu.help.HelpFragment;
 import com.epitrack.guardioes.view.menu.profile.ProfileFragment;
 
+/**
+ * @author Igor Morais
+ */
 public enum HomeMenu {
 
     HOME        (R.id.home, HomeFragment.class),

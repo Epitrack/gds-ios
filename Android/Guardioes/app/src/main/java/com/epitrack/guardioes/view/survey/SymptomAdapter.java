@@ -11,6 +11,9 @@ import android.widget.TextView;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Symptom;
 
+/**
+ * @author Igor Morais
+ */
 public class SymptomAdapter extends ArrayAdapter<Symptom> {
 
     private static final int VIEW_TYPE_ITEM = 1;

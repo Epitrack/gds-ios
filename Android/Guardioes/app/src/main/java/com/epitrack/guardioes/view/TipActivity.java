@@ -4,6 +4,9 @@ import android.os.Bundle;
 
 import com.epitrack.guardioes.R;
 
+/**
+ * @author Igor Morais
+ */
 public class TipActivity extends BaseAppCompatActivity {
 
     @Override

@@ -3,6 +3,9 @@ package com.epitrack.guardioes.view.menu.profile;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.IMenu;
 
+/**
+ * @author Igor Morais
+ */
 public enum InterestTag implements IMenu {
 
     MINISTRY    (1, R.string.tag_ministry),

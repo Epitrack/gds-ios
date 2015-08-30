@@ -25,6 +25,9 @@ import java.io.File;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+/**
+ * @author Igor Morais
+ */
 public class AvatarActivity extends BaseAppCompatActivity implements AdapterView.OnItemClickListener {
 
     private static final String TAG = AvatarActivity.class.getSimpleName();

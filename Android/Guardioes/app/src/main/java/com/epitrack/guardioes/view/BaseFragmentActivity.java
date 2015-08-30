@@ -11,6 +11,9 @@ import com.facebook.appevents.AppEventsLogger;
 
 import butterknife.ButterKnife;
 
+/**
+ * @author Igor Morais
+ */
 public class BaseFragmentActivity extends FragmentActivity implements ViewListener, Navigate {
 
     @Override

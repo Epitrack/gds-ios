@@ -2,6 +2,9 @@ package com.epitrack.guardioes.view.menu.profile;
 
 import com.epitrack.guardioes.R;
 
+/**
+ * @author Igor Morais
+ */
 public enum Profile {
 
     PROFILE     (1, R.string.edit_profile, R.string.message_profile),

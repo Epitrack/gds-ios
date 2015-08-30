@@ -14,6 +14,9 @@ import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
 import butterknife.Bind;
 
+/**
+ * @author Igor Morais
+ */
 public class SymptomActivity extends BaseAppCompatActivity {
 
     @Bind(R.id.list_view)

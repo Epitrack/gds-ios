@@ -3,6 +3,9 @@ package com.epitrack.guardioes.view.menu.help;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.IMenu;
 
+/**
+ * @author Igor Morais
+ */
 public enum HelpOption implements IMenu {
 
     TUTORIAL    (1, R.string.tutorial, R.drawable.icon_tutorial),

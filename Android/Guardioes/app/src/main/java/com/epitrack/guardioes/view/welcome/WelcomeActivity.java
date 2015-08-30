@@ -12,6 +12,9 @@ import com.viewpagerindicator.CirclePageIndicator;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+/**
+ * @author Igor Morais
+ */
 public class WelcomeActivity extends BaseFragmentActivity {
 
     @Bind(R.id.page_indicator)

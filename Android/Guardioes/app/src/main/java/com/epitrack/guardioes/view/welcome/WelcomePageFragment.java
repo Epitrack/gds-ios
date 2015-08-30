@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 
 import com.epitrack.guardioes.utility.Constants;
 
+/**
+ * @author Igor Morais
+ */
 public class WelcomePageFragment extends Fragment {
 
     @Nullable

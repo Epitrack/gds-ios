@@ -9,6 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 
+/**
+ * @author Igor Morais
+ */
 public class BaseFragment extends Fragment implements Navigate {
 
     @Override

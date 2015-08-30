@@ -20,6 +20,9 @@ import com.epitrack.guardioes.view.BaseAppCompatActivity;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+/**
+ * @author Igor Morais
+ */
 public class UserActivity extends BaseAppCompatActivity {
 
     @Bind(R.id.text_view_message)
