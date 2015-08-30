@@ -105,7 +105,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.privacy, menu);
 
         return true;

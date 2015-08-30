@@ -56,6 +56,7 @@ public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity impl
 
         final LatLng latLng = LocationUtility.toLatLng(location);
 
+
         getMap().animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, DEFAULT_ZOOM), new GoogleMap.CancelableCallback() {
 
             @Override

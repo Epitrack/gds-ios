@@ -16,30 +16,22 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-
-    private static final int POSITION_HEADER = 0;
-
-    private static final int VIEW_AMOUNT = 1;
+public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder> {
 
     private final NoticeListener listener;
 
-    private final List<Notice> newsList = new ArrayList<>();
+    private List<Notice> noticeList = new ArrayList<>();
 
-    public NoticeAdapter(final NoticeListener listener) {
+    public NoticeAdapter(final NoticeListener listener, final List<Notice> noticeList) {
 
         if (listener == null) {
             throw new IllegalArgumentException("The listener cannot be null.");
         }
 
         this.listener = listener;
+        this.noticeList = noticeList;
 
         // TODO: STUB
-        final Notice news = new Notice();
-
-        news.setTitle("Camanha de vacinação contra a gripe começa em 4 de maio, diz ministro");
-        news.setSource("saude.estadao.com.br");
-        news.setPublicationDate("Hoje");
 
         final Notice news1 = new Notice();
 
@@ -95,32 +87,18 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         news9.setSource("blog.saude.gov.br");
         news9.setPublicationDate("11 dias atrás");
 
-//        final Notice news10 = new Notice();
-//
-//        news10.setTitle("Coreia do Sul declara extinta a epidemia do novo coronavírus");
-//        news10.setSource("http://noticias.r7.com/");
-//        news10.setPublicationDate("12 dias atrás");
-
-        newsList.add(news);
-        newsList.add(news1);
-        newsList.add(news2);
-        newsList.add(news3);
-        newsList.add(news4);
-        newsList.add(news5);
-        newsList.add(news6);
-        newsList.add(news7);
-        newsList.add(news8);
-        newsList.add(news9);
-        //newsList.add(news10);
+        noticeList.add(news1);
+        noticeList.add(news2);
+        noticeList.add(news3);
+        noticeList.add(news4);
+        noticeList.add(news5);
+        noticeList.add(news6);
+        noticeList.add(news7);
+        noticeList.add(news8);
+        noticeList.add(news9);
     }
 
-    public static class ViewType {
-
-        public static final int ITEM = 1;
-        public static final int HEADER = 2;
-    }
-
-    public class HeaderViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         @Bind(R.id.text_view_title)
         TextView textViewTitle;
@@ -128,35 +106,13 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         @Bind(R.id.text_view_source)
         TextView textViewSource;
 
-        @Bind(R.id.text_view_publication_date)
+        @Bind(R.id.text_view_date)
         TextView textViewDate;
 
         @Bind(R.id.image_view_image)
         ImageView imageViewImage;
 
-
-        public HeaderViewHolder(final View view) {
-            super(view);
-
-            ButterKnife.bind(this, view);
-        }
-    }
-
-    public class ItemViewHolder extends RecyclerView.ViewHolder {
-
-        @Bind(R.id.text_view_title)
-        TextView textViewTitle;
-
-        @Bind(R.id.text_view_source)
-        TextView textViewSource;
-
-        @Bind(R.id.text_view_publication_date)
-        TextView textViewDate;
-
-        @Bind(R.id.image_view_image)
-        ImageView imageViewImage;
-
-        public ItemViewHolder(final View view) {
+        public ViewHolder(final View view) {
             super(view);
 
             ButterKnife.bind(this, view);
@@ -164,85 +120,27 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup viewGroup, final int viewType) {
+    public NoticeAdapter.ViewHolder onCreateViewHolder(final ViewGroup viewGroup, final int viewType) {
+        
+        final View view = LayoutInflater.from(viewGroup.getContext())
+                                        .inflate(R.layout.notice_item, viewGroup, false);
 
-        final LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-
-        if (viewType == ViewType.ITEM) {
-
-            final View view = inflater.inflate(R.layout.notice_item, viewGroup, false);
-
-            return new ItemViewHolder(view);
-
-        } else if (viewType == ViewType.HEADER) {
-
-            final View view = inflater.inflate(R.layout.notice_header, viewGroup, false);
-
-            return new HeaderViewHolder(view);
-        }
-
-        throw new IllegalArgumentException("The ViewHolder has not found.");
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(final NoticeAdapter.ViewHolder viewHolder, final int position) {
 
-        final Notice news = newsList.get(position);
+        final Notice notice = noticeList.get(position);
 
-        if (viewHolder instanceof HeaderViewHolder) {
-
-            final HeaderViewHolder headerHolder = (HeaderViewHolder) viewHolder;
-
-            headerHolder.textViewTitle.setText(news.getTitle());
-            headerHolder.textViewSource.setText(news.getSource());
-            headerHolder.textViewDate.setText(news.getPublicationDate());
-            headerHolder.imageViewImage.setImageResource(R.drawable.stub_news);
-
-        } else {
-
-            final ItemViewHolder itemHolder = (ItemViewHolder) viewHolder;
-
-            itemHolder.textViewTitle.setText(news.getTitle());
-            itemHolder.textViewSource.setText(news.getSource());
-            itemHolder.textViewDate.setText(news.getPublicationDate());
-
-            if (position == 1) {
-                itemHolder.imageViewImage.setImageResource(R.drawable.stub1);
-
-            } else if (position == 2) {
-                itemHolder.imageViewImage.setImageResource(R.drawable.news_1);
-
-            } else if (position == 3) {
-                itemHolder.imageViewImage.setImageResource(R.drawable.news_2);
-
-            } else if (position == 4) {
-                itemHolder.imageViewImage.setImageResource(R.drawable.news_3);
-
-            } else if (position == 5) {
-                itemHolder.imageViewImage.setImageResource(R.drawable.news_4);
-
-            } else if (position == 6) {
-                itemHolder.imageViewImage.setImageResource(R.drawable.news_5);
-
-            } else if (position == 7) {
-                itemHolder.imageViewImage.setImageResource(R.drawable.news_6);
-
-            } else if (position == 8) {
-                itemHolder.imageViewImage.setImageResource(R.drawable.news_7);
-
-            } else if (position == 9) {
-                itemHolder.imageViewImage.setImageResource(R.drawable.news_8);
-            }
-        }
-    }
-
-    @Override
-    public int getItemViewType(final int position) {
-        return position == POSITION_HEADER ? ViewType.HEADER : ViewType.ITEM;
+        viewHolder.textViewTitle.setText(notice.getTitle());
+        viewHolder.textViewSource.setText(notice.getSource());
+        viewHolder.textViewDate.setText(notice.getPublicationDate());
+        viewHolder.imageViewImage.setImageResource(R.drawable.stub1);
     }
 
     @Override
     public int getItemCount() {
-        return newsList.size();
+        return noticeList.size();
     }
 }

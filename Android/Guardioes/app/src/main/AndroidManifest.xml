@@ -125,7 +125,8 @@
             android:name=".view.NoticeActivity"
             android:exported="false"
             android:parentActivityName=".view.HomeActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Notice" />
 
         <activity
             android:name=".view.MapSymptomActivity"

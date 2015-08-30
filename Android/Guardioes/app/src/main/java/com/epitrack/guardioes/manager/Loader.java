@@ -23,7 +23,7 @@ public final class Loader {
         Logger.logDebug(TAG, "Start");
     }
 
-    private static final class LazyLoader {
+    private static class LazyLoader {
         private static final Loader INSTANCE = new Loader();
     }
 
