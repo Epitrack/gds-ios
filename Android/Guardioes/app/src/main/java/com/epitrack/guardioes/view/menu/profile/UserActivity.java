@@ -64,7 +64,7 @@ public class UserActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.user);
 
-        final boolean mainMember = getIntent().getBooleanExtra(Constants.Intent.MAIN_MEMBER, false);
+        final boolean mainMember = getIntent().getBooleanExtra(Constants.Bundle.MAIN_MEMBER, false);
 
         if (mainMember) {
 
@@ -97,15 +97,15 @@ public class UserActivity extends BaseAppCompatActivity {
 
             if (resultCode == RESULT_OK) {
 
-                if (intent.hasExtra(Constants.Intent.AVATAR)) {
+                if (intent.hasExtra(Constants.Bundle.AVATAR)) {
 
-                    final Avatar avatar = (Avatar) intent.getSerializableExtra(Constants.Intent.AVATAR);
+                    final Avatar avatar = (Avatar) intent.getSerializableExtra(Constants.Bundle.AVATAR);
 
                     imageViewImage.setImageResource(avatar.getSmall());
 
-                } else if (intent.hasExtra(Constants.Intent.URI)) {
+                } else if (intent.hasExtra(Constants.Bundle.URI)) {
 
-                    final Uri uri = intent.getParcelableExtra(Constants.Intent.URI);
+                    final Uri uri = intent.getParcelableExtra(Constants.Bundle.URI);
 
                     final int width = imageViewImage.getWidth();
                     final int height = imageViewImage.getHeight();

@@ -38,7 +38,7 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
 
         setContentView(R.layout.select_participant);
 
-        // TODO: Get content from Intent
+        // TODO: Get content from Bundle
 
         if (true) {
 

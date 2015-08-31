@@ -123,7 +123,7 @@ public class MapPointActivity extends AbstractBaseMapActivity {
     private MarkerOptions getMarkerOption() {
 
         if (markerOption == null) {
-            markerOption = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_hospital));
+            markerOption = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_marker_hospital));
         }
 
         return markerOption;

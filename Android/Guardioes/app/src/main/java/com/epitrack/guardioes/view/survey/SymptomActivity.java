@@ -46,7 +46,7 @@ public class SymptomActivity extends BaseAppCompatActivity {
                             public void onPositive(final MaterialDialog dialog) {
 
                                 final Bundle bundle = new Bundle();
-                                bundle.putBoolean(Constants.Intent.BAD_STATE, true);
+                                bundle.putBoolean(Constants.Bundle.BAD_STATE, true);
 
                                 navigateTo(ShareActivity.class, bundle);
                             }

@@ -57,7 +57,7 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         if (false) {
 
             final Bundle bundle = new Bundle();
-            bundle.putBoolean(Constants.Intent.MAIN_MEMBER, true);
+            bundle.putBoolean(Constants.Bundle.MAIN_MEMBER, true);
 
             navigateTo(UserActivity.class, bundle);
 

@@ -72,7 +72,7 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
 
             final Intent intent = new Intent();
 
-            intent.putExtra(Constants.Intent.AVATAR, handler.getAvatar());
+            intent.putExtra(Constants.Bundle.AVATAR, handler.getAvatar());
 
             setResult(RESULT_OK, intent);
 
@@ -97,7 +97,7 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
 
             final Bundle bundle = new Bundle();
 
-            bundle.putParcelable(Constants.Intent.URI, Uri.fromFile(getPhotoFile()));
+            bundle.putParcelable(Constants.Bundle.URI, Uri.fromFile(getPhotoFile()));
 
             navigateTo(ImageActivity.class, Intent.FLAG_ACTIVITY_FORWARD_RESULT, bundle);
 

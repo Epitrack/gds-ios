@@ -45,7 +45,7 @@ public class ImageActivity extends BaseAppCompatActivity {
 
         if (hasFocus) {
 
-            final Uri uri = getIntent().getParcelableExtra(Constants.Intent.URI);
+            final Uri uri = getIntent().getParcelableExtra(Constants.Bundle.URI);
 
             if (uri == null) {
                 throw new IllegalStateException("The uri is null.");
@@ -67,7 +67,7 @@ public class ImageActivity extends BaseAppCompatActivity {
 
         final Intent intent = new Intent();
 
-        intent.putExtra(Constants.Intent.URI, Uri.parse(path));
+        intent.putExtra(Constants.Bundle.URI, Uri.parse(path));
 
         setResult(RESULT_OK, intent);
 
