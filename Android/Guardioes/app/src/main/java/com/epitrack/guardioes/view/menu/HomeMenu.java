@@ -26,7 +26,6 @@ public enum HomeMenu {
     private final Class<?> menuClass;
 
     HomeMenu(final int id, final Class<?> menuClass) {
-
         this.id = id;
         this.menuClass = menuClass;
     }

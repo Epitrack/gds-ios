@@ -136,9 +136,31 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".view.TipActivity"
+            android:name=".view.tip.TipActivity"
             android:exported="false"
+            android:label="@string/tip_health"
             android:parentActivityName=".view.HomeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.tip.VaccineActivity"
+            android:exported="false"
+            android:label="@string/vaccine"
+            android:parentActivityName=".view.tip.TipActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.tip.CareActivity"
+            android:exported="false"
+            android:label="@string/care"
+            android:parentActivityName=".view.tip.TipActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.tip.PreventionActivity"
+            android:exported="false"
+            android:label="@string/prevention"
+            android:parentActivityName=".view.tip.TipActivity"
             android:screenOrientation="portrait" />
 
         <activity

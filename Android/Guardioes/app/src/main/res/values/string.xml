@@ -78,6 +78,18 @@
         <item>Indígena</item>
     </string-array>
 
+    # Tip
+
+    <string name="vaccine">Vacinas</string>
+    <string name="phone">Telefone úteis</string>
+    <string name="care">Cuidados básicos</string>
+    <string name="prevention">Prevenção</string>
+
+    <string name="emergency">SAMU</string>
+    <string name="police">Polícia Militar</string>
+    <string name="fireman">Bombeiros</string>
+    <string name="defense">Defesa Civil</string>
+
     # Hint
 
     <string name="hint_birth_date">Data de nascimento</string>
