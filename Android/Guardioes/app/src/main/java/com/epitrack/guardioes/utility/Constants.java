@@ -24,9 +24,10 @@ public final class Constants {
         public static final int IMAGE = 5000;
     }
 
-    public static class Intent {
+    public static class Bundle {
 
         public static final String WELCOME = "welcome";
+        public static final String TIP = "tip";
         public static final String AVATAR = "avatar";
         public static final String URI = "uri";
         public static final String MAIN_MEMBER = "main_member";

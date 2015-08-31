@@ -18,7 +18,7 @@ public class WelcomePageFragment extends Fragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {
 
-        final int id = getArguments().getInt(Constants.Intent.WELCOME, Integer.MIN_VALUE);
+        final int id = getArguments().getInt(Constants.Bundle.WELCOME, Integer.MIN_VALUE);
 
         return inflater.inflate(Welcome.getBy(id).getLayout(), viewGroup, false);
     }
