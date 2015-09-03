@@ -16,11 +16,11 @@ import com.google.android.gms.location.LocationServices;
 public class LocationManager extends BaseManager implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
 
     private static final long INTERVAL = 1000;
-    private static final long FASTESET_INTERVAL = 5000;
+    private static final long FASTEST_INTERVAL = 5000;
     private static final int  PRIORITY = LocationRequest.PRIORITY_HIGH_ACCURACY;
 
     private static final LocationRequest LOCATION_REQUEST = new LocationRequest().setInterval(INTERVAL)
-                                                                                 .setFastestInterval(FASTESET_INTERVAL)
+                                                                                 .setFastestInterval(FASTEST_INTERVAL)
                                                                                  .setPriority(PRIORITY);
 
     private final Handler handler = new Handler();

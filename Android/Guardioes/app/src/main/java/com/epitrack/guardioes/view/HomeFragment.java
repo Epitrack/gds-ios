@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
+import com.epitrack.guardioes.view.tip.TipActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -58,7 +59,7 @@ public class HomeFragment extends BaseFragment {
 
     @OnClick(R.id.text_view_tip)
     public void onTip() {
-        navigateTo(MapPointActivity.class);
+        navigateTo(TipActivity.class);
     }
 
     @OnClick(R.id.text_view_diary)

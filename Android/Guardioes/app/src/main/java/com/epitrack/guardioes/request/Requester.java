@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * @author Igor Morais
  */
-final class Requester extends BaseRequester implements IRequester {
+class Requester extends BaseRequester implements IRequester {
 
     private static final String TAG = Requester.class.getSimpleName();
 
