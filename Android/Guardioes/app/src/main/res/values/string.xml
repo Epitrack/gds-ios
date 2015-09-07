@@ -13,6 +13,7 @@
     <string name="category">Category</string>
     <string name="confirm">Confirmar</string>
     <string name="contact">Entre em contato</string>
+    <string name="diarrheal">Diarréica</string>
     <string name="diary_health">Diário da Saúde</string>
     <string name="diary_health_1">Diário da\nSaúde</string>
     <string name="disease">Doenças</string>
@@ -20,6 +21,7 @@
     <string name="exit">Sair</string>
     <string name="facebook">Facebook</string>
     <string name="gender">Sexo</string>
+    <string name="general">Geral</string>
     <string name="gmail">Gmail</string>
     <string name="good">Bem</string>
     <string name="google">Google</string>
@@ -47,13 +49,16 @@
     <string name="privacy">Privacidade</string>
     <string name="profile">Perfil</string>
     <string name="race">Cor/Raça</string>
+    <string name="rash">Exantemáica</string>
     <string name="register">Cadastrar</string>
     <string name="report">Relatar erros no aplicativo</string>
+    <string name="respiratory">Respiratória</string>
     <string name="save">Salvar</string>
     <string name="search">Procurar</string>
     <string name="setting">Configurações</string>
     <string name="share">Compartilhar</string>
     <string name="sound">Sons</string>
+    <string name="syndromes">Síndromes</string>
     <string name="take_photo">Tirar foto</string>
     <string name="term">Termos e politícas</string>
     <string name="tip_health">Dicas de Saúde</string>

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_panel"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    layout:umanoOverlay="true"
+    layout:umanoPanelHeight="120dp"
+    layout:umanoShadowHeight="0dp">
 
     <fragment
         android:id="@+id/fragment_map"
@@ -9,4 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</RelativeLayout>
+    <include layout="@layout/map_panel" />
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

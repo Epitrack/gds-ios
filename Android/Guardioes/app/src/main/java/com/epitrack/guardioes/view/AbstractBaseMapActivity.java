@@ -1,12 +1,12 @@
 package com.epitrack.guardioes.view;
 
 import android.location.Location;
-import android.os.Handler;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.LocationListener;
 import com.epitrack.guardioes.manager.LocationManager;
 import com.epitrack.guardioes.utility.LocationUtility;
+import com.epitrack.guardioes.utility.Logger;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -20,9 +20,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
  */
 public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, LocationListener {
 
-    private static final long DEFAULT_ZOOM = 10;
+    private static final String TAG = AbstractBaseMapActivity.class.getSimpleName();
 
-    private final Handler handler = new Handler();
+    private static final long DEFAULT_ZOOM = 10;
 
     private MarkerOptions markerOption;
     private Marker userMarker;
@@ -30,22 +30,6 @@ public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity impl
     private GoogleMap map;
 
     private LocationManager locationHandler;
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-//        if (locationHandler.getLocationHandler().isConnected()) {
-//
-//        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        // Stop
-    }
 
     @Override
     public void onMapReady(final GoogleMap map) {
@@ -58,7 +42,6 @@ public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity impl
     public void onLastLocation(final Location location) {
 
         final LatLng latLng = LocationUtility.toLatLng(location);
-
 
         getMap().animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, DEFAULT_ZOOM), new GoogleMap.CancelableCallback() {
 
@@ -77,8 +60,11 @@ public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity impl
     @Override
     public void onLocation(final Location location) {
 
-        if (getUserMarker() != null) {
-            getUserMarker().setPosition(LocationUtility.toLatLng(location));
+        if (userMarker == null) {
+            Logger.logDebug(TAG, "The user marker is null.");
+
+        } else {
+            userMarker.setPosition(LocationUtility.toLatLng(location));
         }
     }
 
