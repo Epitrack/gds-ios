@@ -1,4 +1,4 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.base;
 
 import android.location.Location;
 

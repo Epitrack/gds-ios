@@ -1,8 +1,9 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.diary;
 
 import android.os.Bundle;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.view.BaseAppCompatActivity;
 
 /**
  * @author Igor Morais

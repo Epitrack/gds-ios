@@ -1,6 +1,7 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.tip;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.view.IMenu;
 
 /**
  * @author Igor Morais

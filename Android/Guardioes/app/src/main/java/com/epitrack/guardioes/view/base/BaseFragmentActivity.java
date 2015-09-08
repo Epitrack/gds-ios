@@ -1,4 +1,4 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.base;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.epitrack.guardioes.view.Navigate;
+import com.epitrack.guardioes.view.ViewListener;
 import com.facebook.appevents.AppEventsLogger;
 
 import butterknife.ButterKnife;

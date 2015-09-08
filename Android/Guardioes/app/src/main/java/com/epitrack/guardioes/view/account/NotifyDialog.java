@@ -1,4 +1,4 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.account;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.epitrack.guardioes.BuildConfig;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.utility.Logger;
+import com.epitrack.guardioes.view.base.DialogListener;
 
 /**
  * @author Igor Morais

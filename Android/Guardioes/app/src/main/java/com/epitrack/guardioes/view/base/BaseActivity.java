@@ -1,43 +1,71 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.base;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.epitrack.guardioes.view.Navigate;
+import com.epitrack.guardioes.view.ViewListener;
+import com.facebook.appevents.AppEventsLogger;
 
 import butterknife.ButterKnife;
 
 /**
  * @author Igor Morais
  */
-public class BaseFragment extends Fragment implements Navigate {
+public class BaseActivity extends Activity implements ViewListener, Navigate {
 
     @Override
-    public void onCreate(final Bundle bundle) {
-        super.onCreate(bundle);
+    protected void onResume() {
+        super.onResume();
 
-        setDisplayTitle(true);
-        setDisplayLogo(false);
+        AppEventsLogger.activateApp(this);
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    protected void onPause() {
+        super.onPause();
 
-        ButterKnife.unbind(this);
+        AppEventsLogger.deactivateApp(this);
+    }
+
+    @Override
+    public void setContentView(final int layout) {
+        super.setContentView(layout);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void setContentView(final View view) {
+        super.setContentView(view);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void setContentView(final View view, final ViewGroup.LayoutParams layoutParam) {
+        super.setContentView(view, layoutParam);
+
+        onSetContentView();
+    }
+
+    @Override
+    public void onSetContentView() {
+        ButterKnife.bind(this);
     }
 
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass) {
-        startActivity(new Intent(getActivity(), activityClass));
+        startActivity(new Intent(this, activityClass));
     }
 
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass, final int flags) {
 
-        final Intent intent = new Intent(getActivity(), activityClass);
+        final Intent intent = new Intent(this, activityClass);
         intent.setFlags(flags);
 
         startActivity(intent);
@@ -46,7 +74,7 @@ public class BaseFragment extends Fragment implements Navigate {
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass, final Bundle bundle) {
 
-        final Intent intent = new Intent(getActivity(), activityClass);
+        final Intent intent = new Intent(this, activityClass);
         intent.putExtras(bundle);
 
         startActivity(intent);
@@ -55,7 +83,7 @@ public class BaseFragment extends Fragment implements Navigate {
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass, final int flags, final Bundle bundle) {
 
-        final Intent intent = new Intent(getActivity(), activityClass);
+        final Intent intent = new Intent(this, activityClass);
         intent.setFlags(flags);
         intent.putExtras(bundle);
 
@@ -64,14 +92,14 @@ public class BaseFragment extends Fragment implements Navigate {
 
     @Override
     public void navigateForResult(final Class<? extends Activity> activityClass, final int requestCode) {
-        startActivityForResult(new Intent(getActivity(), activityClass), requestCode);
+        startActivityForResult(new Intent(this, activityClass), requestCode);
     }
 
     @Override
     public void navigateForResult(final Class<? extends Activity> activityClass, final int requestCode,
                                   final int flags) {
 
-        final Intent intent = new Intent(getActivity(), activityClass);
+        final Intent intent = new Intent(this, activityClass);
         intent.setFlags(flags);
 
         startActivityForResult(intent, requestCode);
@@ -81,7 +109,7 @@ public class BaseFragment extends Fragment implements Navigate {
     public void navigateForResult(final Class<? extends Activity> activityClass, final int requestCode,
                                   final Bundle bundle) {
 
-        final Intent intent = new Intent(getActivity(), activityClass);
+        final Intent intent = new Intent(this, activityClass);
         intent.putExtras(bundle);
 
         startActivityForResult(intent, requestCode);
@@ -91,22 +119,10 @@ public class BaseFragment extends Fragment implements Navigate {
     public void navigateForResult(final Class<? extends Activity> activityClass, final int requestCode,
                                   final int flags, final Bundle bundle) {
 
-        final Intent intent = new Intent(getActivity(), activityClass);
+        final Intent intent = new Intent(this, activityClass);
         intent.setFlags(flags);
         intent.putExtras(bundle);
 
         startActivityForResult(intent, requestCode);
     }
-
-    public final ActionBar getSupportActionBar() {
-        return ((AppCompatActivity) getActivity()).getSupportActionBar();
-    }
-
-    public final void setDisplayTitle(final boolean display) {
-        getSupportActionBar().setDisplayShowTitleEnabled(display);
-    }
-
-    public final void setDisplayLogo(final boolean display) {
-        getSupportActionBar().setDisplayUseLogoEnabled(display);
-    }
- }
+}

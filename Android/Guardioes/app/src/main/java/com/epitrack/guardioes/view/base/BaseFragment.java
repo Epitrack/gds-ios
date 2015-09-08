@@ -1,85 +1,45 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.base;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.facebook.appevents.AppEventsLogger;
+import com.epitrack.guardioes.view.Navigate;
 
 import butterknife.ButterKnife;
 
 /**
  * @author Igor Morais
  */
-public class BaseAppCompatActivity extends AppCompatActivity implements ViewListener, Navigate {
+public class BaseFragment extends Fragment implements Navigate {
 
     @Override
-    protected void onCreate(Bundle bundle) {
+    public void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        final ActionBar actionBar = getSupportActionBar();
-
-        if (actionBar == null) {
-            throw new IllegalStateException("The actionBar cannot be null.");
-        }
-
-        actionBar.setHomeButtonEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        setDisplayTitle(true);
+        setDisplayLogo(false);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    public void onDestroyView() {
+        super.onDestroyView();
 
-        AppEventsLogger.activateApp(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        AppEventsLogger.deactivateApp(this);
-    }
-
-    @Override
-    public void setContentView(final int layout) {
-        super.setContentView(layout);
-
-        onSetContentView();
-    }
-
-    @Override
-    public void setContentView(final View view) {
-        super.setContentView(view);
-
-        onSetContentView();
-    }
-
-    @Override
-    public void setContentView(final View view, final ViewGroup.LayoutParams layoutParam) {
-        super.setContentView(view, layoutParam);
-
-        onSetContentView();
-    }
-
-    @Override
-    public void onSetContentView() {
-        ButterKnife.bind(this);
+        ButterKnife.unbind(this);
     }
 
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass) {
-        startActivity(new Intent(this, activityClass));
+        startActivity(new Intent(getActivity(), activityClass));
     }
 
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass, final int flags) {
 
-        final Intent intent = new Intent(this, activityClass);
+        final Intent intent = new Intent(getActivity(), activityClass);
         intent.setFlags(flags);
 
         startActivity(intent);
@@ -88,7 +48,7 @@ public class BaseAppCompatActivity extends AppCompatActivity implements ViewList
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass, final Bundle bundle) {
 
-        final Intent intent = new Intent(this, activityClass);
+        final Intent intent = new Intent(getActivity(), activityClass);
         intent.putExtras(bundle);
 
         startActivity(intent);
@@ -97,7 +57,7 @@ public class BaseAppCompatActivity extends AppCompatActivity implements ViewList
     @Override
     public void navigateTo(final Class<? extends Activity> activityClass, final int flags, final Bundle bundle) {
 
-        final Intent intent = new Intent(this, activityClass);
+        final Intent intent = new Intent(getActivity(), activityClass);
         intent.setFlags(flags);
         intent.putExtras(bundle);
 
@@ -106,14 +66,14 @@ public class BaseAppCompatActivity extends AppCompatActivity implements ViewList
 
     @Override
     public void navigateForResult(final Class<? extends Activity> activityClass, final int requestCode) {
-        startActivityForResult(new Intent(this, activityClass), requestCode);
+        startActivityForResult(new Intent(getActivity(), activityClass), requestCode);
     }
 
     @Override
     public void navigateForResult(final Class<? extends Activity> activityClass, final int requestCode,
                                   final int flags) {
 
-        final Intent intent = new Intent(this, activityClass);
+        final Intent intent = new Intent(getActivity(), activityClass);
         intent.setFlags(flags);
 
         startActivityForResult(intent, requestCode);
@@ -123,7 +83,7 @@ public class BaseAppCompatActivity extends AppCompatActivity implements ViewList
     public void navigateForResult(final Class<? extends Activity> activityClass, final int requestCode,
                                   final Bundle bundle) {
 
-        final Intent intent = new Intent(this, activityClass);
+        final Intent intent = new Intent(getActivity(), activityClass);
         intent.putExtras(bundle);
 
         startActivityForResult(intent, requestCode);
@@ -133,10 +93,22 @@ public class BaseAppCompatActivity extends AppCompatActivity implements ViewList
     public void navigateForResult(final Class<? extends Activity> activityClass, final int requestCode,
                                   final int flags, final Bundle bundle) {
 
-        final Intent intent = new Intent(this, activityClass);
+        final Intent intent = new Intent(getActivity(), activityClass);
         intent.setFlags(flags);
         intent.putExtras(bundle);
 
         startActivityForResult(intent, requestCode);
     }
-}
+
+    public final ActionBar getSupportActionBar() {
+        return ((AppCompatActivity) getActivity()).getSupportActionBar();
+    }
+
+    public final void setDisplayTitle(final boolean display) {
+        getSupportActionBar().setDisplayShowTitleEnabled(display);
+    }
+
+    public final void setDisplayLogo(final boolean display) {
+        getSupportActionBar().setDisplayUseLogoEnabled(display);
+    }
+ }

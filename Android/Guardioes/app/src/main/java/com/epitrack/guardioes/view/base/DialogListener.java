@@ -1,4 +1,6 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.base;
+
+import com.epitrack.guardioes.view.NotifyDialog;
 
 /**
  * @author Igor Morais

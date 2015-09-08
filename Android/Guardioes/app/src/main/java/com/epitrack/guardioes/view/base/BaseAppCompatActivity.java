@@ -1,11 +1,15 @@
-package com.epitrack.guardioes.view;
+package com.epitrack.guardioes.view.base;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.epitrack.guardioes.view.Navigate;
+import com.epitrack.guardioes.view.ViewListener;
 import com.facebook.appevents.AppEventsLogger;
 
 import butterknife.ButterKnife;
@@ -13,7 +17,21 @@ import butterknife.ButterKnife;
 /**
  * @author Igor Morais
  */
-public class BaseActivity extends Activity implements ViewListener, Navigate {
+public class BaseAppCompatActivity extends AppCompatActivity implements ViewListener, Navigate {
+
+    @Override
+    protected void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+
+        final ActionBar actionBar = getSupportActionBar();
+
+        if (actionBar == null) {
+            throw new IllegalStateException("The actionBar cannot be null.");
+        }
+
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+    }
 
     @Override
     protected void onResume() {
