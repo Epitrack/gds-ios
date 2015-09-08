@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;

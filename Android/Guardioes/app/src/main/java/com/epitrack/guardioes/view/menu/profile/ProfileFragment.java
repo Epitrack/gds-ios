@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.BaseFragment;
+import com.epitrack.guardioes.view.base.BaseFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

@@ -3,7 +3,7 @@ package com.epitrack.guardioes.view.survey;
 import android.os.Bundle;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
 import butterknife.OnClick;
 

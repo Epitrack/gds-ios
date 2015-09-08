@@ -12,7 +12,7 @@ import com.epitrack.guardioes.utility.BitmapUtility;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.Extension;
 import com.epitrack.guardioes.utility.FileUtility;
-import com.epitrack.guardioes.view.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
 import butterknife.Bind;
 

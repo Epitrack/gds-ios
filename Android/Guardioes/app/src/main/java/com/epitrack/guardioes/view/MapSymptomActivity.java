@@ -12,6 +12,7 @@ import com.cocosw.bottomsheet.BottomSheet;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.Loader;
 import com.epitrack.guardioes.model.Point;
+import com.epitrack.guardioes.view.base.AbstractBaseMapActivity;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.gms.maps.GoogleMap;

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.epitrack.guardioes.view.Navigate;
-import com.epitrack.guardioes.view.ViewListener;
+import com.epitrack.guardioes.view.account.ViewListener;
 import com.facebook.appevents.AppEventsLogger;
 
 import butterknife.ButterKnife;

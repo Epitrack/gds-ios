@@ -7,7 +7,7 @@ import android.widget.ListView;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.utility.Constants;
-import com.epitrack.guardioes.view.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
 import java.util.ArrayList;
 

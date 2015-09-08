@@ -10,7 +10,7 @@ import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Symptom;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
-import com.epitrack.guardioes.view.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
 import butterknife.Bind;
 

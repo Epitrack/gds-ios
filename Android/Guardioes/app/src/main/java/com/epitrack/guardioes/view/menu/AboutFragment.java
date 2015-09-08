@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.BaseFragment;
+import com.epitrack.guardioes.view.base.BaseFragment;
 
 /**
  * @author Igor Morais

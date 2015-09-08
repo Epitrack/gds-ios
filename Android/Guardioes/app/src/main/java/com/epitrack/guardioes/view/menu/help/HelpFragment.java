@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.BaseFragment;
+import com.epitrack.guardioes.view.base.BaseFragment;
 import com.epitrack.guardioes.view.IMenu;
 import com.epitrack.guardioes.view.MenuListener;
 

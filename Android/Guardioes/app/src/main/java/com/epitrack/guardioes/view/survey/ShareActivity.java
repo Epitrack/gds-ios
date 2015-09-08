@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.ViewUtility;
-import com.epitrack.guardioes.view.BaseActivity;
+import com.epitrack.guardioes.view.base.BaseActivity;
 import com.epitrack.guardioes.view.HomeActivity;
 
 import butterknife.Bind;

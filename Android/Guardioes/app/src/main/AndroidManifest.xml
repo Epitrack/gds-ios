@@ -164,7 +164,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".view.DiaryActivity"
+            android:name=".view.diary.DiaryActivity"
             android:exported="false"
             android:parentActivityName=".view.HomeActivity"
             android:screenOrientation="portrait" />

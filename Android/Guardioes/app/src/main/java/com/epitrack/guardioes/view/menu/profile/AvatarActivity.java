@@ -17,7 +17,7 @@ import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.Extension;
 import com.epitrack.guardioes.utility.Logger;
 import com.epitrack.guardioes.utility.MediaUtility;
-import com.epitrack.guardioes.view.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.menu.ImageActivity;
 
 import java.io.File;

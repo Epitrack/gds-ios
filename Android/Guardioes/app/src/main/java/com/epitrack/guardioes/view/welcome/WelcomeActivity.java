@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.BaseFragmentActivity;
+import com.epitrack.guardioes.view.base.BaseFragmentActivity;
 import com.epitrack.guardioes.view.account.CreateAccountActivity;
 import com.epitrack.guardioes.view.account.LoginActivity;
 import com.viewpagerindicator.CirclePageIndicator;

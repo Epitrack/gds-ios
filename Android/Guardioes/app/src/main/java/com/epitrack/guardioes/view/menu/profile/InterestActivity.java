@@ -5,7 +5,7 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.view.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.IMenu;
 import com.epitrack.guardioes.view.MenuListener;
 

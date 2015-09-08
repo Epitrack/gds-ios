@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.utility.BitmapUtility;
 import com.epitrack.guardioes.utility.Constants;
-import com.epitrack.guardioes.view.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
 import butterknife.Bind;
 import butterknife.OnClick;
