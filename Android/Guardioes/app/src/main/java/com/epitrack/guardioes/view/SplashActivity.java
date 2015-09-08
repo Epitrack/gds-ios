@@ -7,6 +7,8 @@ import android.os.Handler;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.PrefManager;
 import com.epitrack.guardioes.utility.Constants;
+import com.epitrack.guardioes.view.base.BaseActivity;
+import com.epitrack.guardioes.view.welcome.WelcomeActivity;
 
 /**
  * @author Igor Morais
@@ -37,7 +39,7 @@ public class SplashActivity extends BaseActivity implements Runnable {
     public void run() {
 
         if (new PrefManager(this).get(Constants.Pref.USER) == null) {
-            navigateTo(NoticeActivity.class);
+            navigateTo(WelcomeActivity.class);
 
         } else {
 
