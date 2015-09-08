@@ -206,7 +206,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
     @OnClick(R.id.button_next)
     public void onNext() {
-        onNextAnimation(linearLayoutCreate, linearLayoutNext);
+        validator.validate();
     }
 
     private void onPreviousAnimation(final View visibleView, final View invisibleView) {
@@ -305,7 +305,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     public void onCreateAccount() {
 
         // TODO: Uncomment this to validate
-        //validator.validate();
+        //
 
         navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                        Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -316,10 +316,16 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
         @Override
         public void onValidationSucceeded() {
 
-            // TODO: Make request
+            if (state == State.NEXT) {
+                onNextAnimation(linearLayoutCreate, linearLayoutNext);
 
-            navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                           Intent.FLAG_ACTIVITY_NEW_TASK);
+            } else {
+
+                // TODO: Make request
+
+                navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                               Intent.FLAG_ACTIVITY_NEW_TASK);
+            }
         }
 
         @Override
@@ -331,7 +337,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
                 final View view = error.getView();
 
-                if (view instanceof EditText) {
+                if (view.getVisibility() == View.VISIBLE && view instanceof EditText) {
 
                     ((EditText) view).setError(message);
                 }
