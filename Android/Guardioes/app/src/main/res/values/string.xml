@@ -10,6 +10,7 @@
     <string name="attention">Atenção</string>
     <string name="avatar">Avatar</string>
     <string name="bad">Mal</string>
+    <string name="calendar">Calendário</string>
     <string name="category">Category</string>
     <string name="confirm">Confirmar</string>
     <string name="contact">Entre em contato</string>
@@ -20,6 +21,7 @@
     <string name="enter">Entrar</string>
     <string name="exit">Sair</string>
     <string name="facebook">Facebook</string>
+    <string name="frequency">Frequência</string>
     <string name="gender">Sexo</string>
     <string name="general">Geral</string>
     <string name="gmail">Gmail</string>
@@ -53,6 +55,7 @@
     <string name="register">Cadastrar</string>
     <string name="report">Relatar erros no aplicativo</string>
     <string name="respiratory">Respiratória</string>
+    <string name="resume">Resumo</string>
     <string name="save">Salvar</string>
     <string name="search">Procurar</string>
     <string name="setting">Configurações</string>
@@ -185,6 +188,10 @@
     # About
 
     <string name="message_about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et justo vitae enim porttitor ultricies sollicitudin malesuada ante. Donec eget cursus est. Phasellus lobortis facilisis dolor, vitae semper ex aliquam at. Ut vel ornare felis, eu pellentesque tellus. Integer vitae magna in arcu placerat scelerisque. Suspendisse eu mi arcu. Maecenas blandit, odio quis porttitor ultrices, tellus dolor facilisis quam, vel rutrum massa sem nec eros. Donec volutpat justo convallis sapien faucibus, in rutrum ligula tincidunt. Maecenas ac quam egestas, consectetur ligula a, egestas erat. Duis tincidunt euismod velit, sit amet fringilla orci. Aliquam erat volutpat.</string>
+
+    # Diary
+
+    <string name="message_select_member">Selecione um membro</string>
 
     # Share
 

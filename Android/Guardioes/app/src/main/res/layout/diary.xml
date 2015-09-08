@@ -1,7 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/message_select_member"
+            android:textColor="@color/primary_light"
+            android:textSize="14dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="15dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/resume"
+                android:textColor="@color/primary_light"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/text_view_participation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black_dark"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <include layout="@layout/symptom_report" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/calendar"
+                android:textColor="@color/primary_light"
+                android:textSize="13dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="17dp"
+                android:background="@android:color/holo_purple" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="17dp">
+
+                <ImageView
+                    android:id="@+id/image_view_state"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:src="@drawable/icon_bad" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_view_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_light"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/text_view_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/black_dark"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/text_view_symptom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/black_dark"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/frequency"
+                android:textColor="@color/primary_light"
+                android:textSize="14dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/holo_purple" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
