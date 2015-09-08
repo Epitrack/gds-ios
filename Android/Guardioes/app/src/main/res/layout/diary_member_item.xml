@@ -17,7 +17,8 @@
         android:layout_height="3dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
-        android:background="@color/primary_light" />
+        android:background="@color/primary_light"
+        android:visibility="invisible" />
 
     <View
         android:layout_width="match_parent"

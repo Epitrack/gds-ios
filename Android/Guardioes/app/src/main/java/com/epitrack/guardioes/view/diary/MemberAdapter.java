@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.utility.ViewUtility;
 import com.epitrack.guardioes.view.survey.ParentListener;
 
 import java.util.ArrayList;
@@ -20,6 +21,13 @@ import butterknife.ButterKnife;
  * @author Igor Morais
  */
 public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder> {
+
+    private static final int SELECT = 0;
+
+    private static final float MARGIN_LARGE = 16;
+    private static final float MARGIN_SMALL = 8;
+
+    private ViewHolder viewHolder;
 
     private final ParentListener listener;
 
@@ -81,18 +89,31 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
         @Bind(R.id.image_view_photo)
         ImageView imageViewPhoto;
 
+        @Bind(R.id.view_select)
+        View viewSelect;
+
+        private boolean select;
+
         public ViewHolder(final View view) {
             super(view);
 
             ButterKnife.bind(this, view);
 
-            view.setOnClickListener(this);
+            imageViewPhoto.setOnClickListener(this);
         }
 
         @Override
         public void onClick(final View view) {
 
-            listener.onParentSelect();
+            if (viewSelect.getVisibility() == View.INVISIBLE) {
+
+                viewSelect.setVisibility(View.VISIBLE);
+                viewHolder.viewSelect.setVisibility(View.INVISIBLE);
+
+                viewHolder = this;
+
+                listener.onParentSelect();
+            }
         }
     }
 
@@ -100,7 +121,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
     public ViewHolder onCreateViewHolder(final ViewGroup viewGroup, final int viewType) {
 
         final View view = LayoutInflater.from(viewGroup.getContext())
-                                        .inflate(R.layout.diary_member_item, viewGroup, false);
+                .inflate(R.layout.diary_member_item, viewGroup, false);
 
         return new ViewHolder(view);
     }
@@ -109,6 +130,31 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
 
         final Parent parent = parentList.get(position);
+
+        if (position == SELECT) {
+
+            ViewUtility.setMarginLeft(viewHolder.imageViewPhoto,
+                                      ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_LARGE));
+
+            viewHolder.viewSelect.setVisibility(View.VISIBLE);
+
+            this.viewHolder = viewHolder;
+
+        } else {
+
+            ViewUtility.setMarginLeft(viewHolder.imageViewPhoto,
+                                      ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_SMALL));
+        }
+
+        if (position == getItemCount() - 1) {
+            ViewUtility.setMarginRight(viewHolder.imageViewPhoto,
+                                       ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_LARGE));
+
+        } else {
+
+            ViewUtility.setMarginRight(viewHolder.imageViewPhoto,
+                                       ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_SMALL));
+        }
 
         viewHolder.textViewName.setText(parent.name);
 
