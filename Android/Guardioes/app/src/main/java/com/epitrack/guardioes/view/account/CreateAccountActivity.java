@@ -11,11 +11,19 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.User;
+import com.epitrack.guardioes.request.RequestListener;
+import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.request.SimpleRequesterException;
+import com.epitrack.guardioes.request.UserRequester;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
+import com.epitrack.guardioes.request.Method;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
@@ -24,11 +32,20 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Password;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 import butterknife.Bind;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
+
+import static com.epitrack.guardioes.request.SimpleRequester.SendPostRequest;
 
 /**
  * @author Igor Morais
@@ -70,6 +87,13 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
     @Bind(R.id.button_mail)
     Button buttonMail;
+
+    //Miquéias Lopes
+    @Bind(R.id.spinner_race)
+    Spinner spinnerRace;
+
+    @Bind(R.id.spinner_gender)
+    Spinner spinnerGender;
 
     private SocialFragment socialFragment;
 
@@ -305,10 +329,10 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     public void onCreateAccount() {
 
         // TODO: Uncomment this to validate
-        //
+        validator.validate();
 
-        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                       Intent.FLAG_ACTIVITY_NEW_TASK);
+        /*navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                       Intent.FLAG_ACTIVITY_NEW_TASK);*/
     }
 
     private class ValidationHandler implements Validator.ValidationListener {
@@ -323,8 +347,86 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
                 // TODO: Make request
 
-                navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                               Intent.FLAG_ACTIVITY_NEW_TASK);
+                // Miquéias Lopes
+                User user = new User();
+
+                user.setNick(editTextNickname.getText().toString().trim().toLowerCase());
+                user.setDob(editTextBirthDate.getText().toString().trim().toLowerCase());
+                String gender = spinnerGender.getSelectedItem().toString();
+                gender = gender.substring(0, 1);
+                user.setGender(gender.toUpperCase());
+                user.setRace(spinnerRace.getSelectedItem().toString().toLowerCase());
+                user.setEmail(editTextMail.getText().toString().trim().toLowerCase());
+                user.setPassword(editTextPassword.getText().toString().trim());
+
+                /*Map<String, String> bodyMap = new HashMap<>();
+
+                bodyMap.put("nick", user.getNick());
+                bodyMap.put("email", user.getEmail());
+                bodyMap.put("password", user.getPassword());
+                bodyMap.put("client", user.getClient());
+                bodyMap.put("dob", user.getDob());
+                bodyMap.put("gender", user.getGender());
+                bodyMap.put("app_token", user.getApp_token());
+                bodyMap.put("race", user.getRace());
+                bodyMap.put("platform", user.getPlatform());*/
+
+                final JSONObject jRoot = new JSONObject();
+
+                try {
+                    jRoot.put("nick", user.getNick());
+                    jRoot.put("email", user.getEmail());
+                    jRoot.put("password", user.getPassword());
+                    jRoot.put("client", user.getClient());
+                    jRoot.put("dob", user.getDob());
+                    jRoot.put("gender", user.getGender());
+                    jRoot.put("app_token", user.getApp_token());
+                    jRoot.put("race", user.getRace());
+                    jRoot.put("platform", user.getPlatform());
+
+                    SimpleRequester sendPostRequest = new SimpleRequester();
+                    sendPostRequest.setUrl(Requester.API_URL + "user/create");
+                    sendPostRequest.setJsonObject(jRoot);
+
+                    String jsonStr = sendPostRequest.execute(sendPostRequest).get();
+
+                    JSONObject jsonObject = new JSONObject(jsonStr);
+
+                    if (jsonObject.get("error").toString() == "true") {
+                        Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                Intent.FLAG_ACTIVITY_NEW_TASK);
+                    }
+
+                } catch (JSONException e) {
+                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+
+                /*new UserRequester(getApplicationContext()).requestUser(Method.POST, bodyMap, "user/create", new RequestListener<User>() {
+
+                    @Override
+                    public void onStart() {
+
+                    }
+
+                    @Override
+                    public void onError(Exception e) {
+                        Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onSuccess(User entity) {
+                        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                Intent.FLAG_ACTIVITY_NEW_TASK);
+                    }
+                });*/
+
+
             }
         }
 

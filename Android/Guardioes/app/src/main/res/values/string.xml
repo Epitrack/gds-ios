@@ -79,11 +79,11 @@
     </string-array>
 
     <string-array name="race_array">
-        <item>Branca</item>
-        <item>Preta</item>
-        <item>Parda</item>
-        <item>Amarela</item>
-        <item>Indígena</item>
+        <item>Branco</item>
+        <item>Preto</item>
+        <item>Pardo</item>
+        <item>Amarelo</item>
+        <item>Indígeno</item>
     </string-array>
 
     # Tip

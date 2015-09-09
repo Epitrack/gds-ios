@@ -3,7 +3,7 @@ package com.epitrack.guardioes.request;
 /**
  * @author Igor Morais
  */
-enum Method {
+public enum Method {
 
     OPTIONS     ("Options"),
     GET         ("Get"),

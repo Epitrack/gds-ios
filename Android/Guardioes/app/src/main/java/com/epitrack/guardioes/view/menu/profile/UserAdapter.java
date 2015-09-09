@@ -90,7 +90,7 @@ public class UserAdapter extends ArrayAdapter<User> {
 
         final User user = getItem(position);
 
-        viewHolder.textViewName.setText(user.getName());
+        viewHolder.textViewName.setText(user.getNick());
         viewHolder.textViewType.setText(user.getType());
         viewHolder.imageViewImage.setImageResource(user.getImage());
 

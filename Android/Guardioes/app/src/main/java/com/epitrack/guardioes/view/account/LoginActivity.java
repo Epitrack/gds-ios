@@ -13,6 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
+import com.epitrack.guardioes.model.User;
+import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -20,7 +24,11 @@ import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.Password;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -193,10 +201,10 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
     @OnClick(R.id.button_login)
     public void onLogin(final View view) {
 
-        //validator.validate();
+        validator.validate();
 
-        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                       Intent.FLAG_ACTIVITY_NEW_TASK);
+        /*navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                       Intent.FLAG_ACTIVITY_NEW_TASK);*/
     }
 
     private class ValidationHandler implements Validator.ValidationListener {
@@ -205,9 +213,52 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
         public void onValidationSucceeded() {
 
             // TODO: Make request
+            //Miquéias Lopes
+            User user = new User();
 
-            navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                           Intent.FLAG_ACTIVITY_NEW_TASK);
+            user.setEmail(editTextMail.getText().toString().trim().toLowerCase());
+            user.setPassword(editTextPassword.getText().toString().trim());
+
+            JSONObject jsonObject = new JSONObject();
+
+            try {
+                jsonObject.put("email", user.getEmail());
+                jsonObject.put("password", user.getPassword());
+
+                SimpleRequester sendPostRequest = new SimpleRequester();
+                sendPostRequest.setUrl(Requester.API_URL + "user/login");
+                sendPostRequest.setJsonObject(jsonObject);
+
+                String jsonStr = sendPostRequest.execute(sendPostRequest).get();
+
+                jsonObject = new JSONObject(jsonStr);
+
+                if (jsonObject.get("error").toString() == "true") {
+                    Toast.makeText(getApplicationContext(), "Erro ao fazer o login. - " + jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                } else {
+
+                    JSONObject jsonObjectUser = jsonObject.getJSONObject("user");
+
+                    SingleUser singleUser = SingleUser.getInstance();
+                    singleUser.setNick(jsonObjectUser.getString("nick").toString());
+                    singleUser.setEmail(jsonObjectUser.getString("email").toString());
+                    singleUser.setGender(jsonObjectUser.getString("gender").toString());
+                    singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                    singleUser.setId(jsonObjectUser.getString("id").toString());
+
+                    navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                            Intent.FLAG_ACTIVITY_NEW_TASK);
+                }
+
+            } catch (JSONException e) {
+                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            } catch (InterruptedException e) {
+                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            } catch (ExecutionException e) {
+                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
         }
 
         @Override
