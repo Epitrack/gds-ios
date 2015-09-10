@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
+import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
@@ -228,6 +229,7 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                 SimpleRequester sendPostRequest = new SimpleRequester();
                 sendPostRequest.setUrl(Requester.API_URL + "user/login");
                 sendPostRequest.setJsonObject(jsonObject);
+                sendPostRequest.setMethod(Method.POST);
 
                 String jsonStr = sendPostRequest.execute(sendPostRequest).get();
 

@@ -14,7 +14,8 @@ public class SingleUser extends User {
     public static synchronized SingleUser getInstance() {
 
         if (instance == null) {
-            return new SingleUser();
+            instance = new SingleUser();
+            return instance;
         } else {
             return instance;
         }

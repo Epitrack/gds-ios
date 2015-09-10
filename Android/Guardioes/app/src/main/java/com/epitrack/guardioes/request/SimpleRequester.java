@@ -27,6 +27,7 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
     private static final String TAG = Requester.class.getSimpleName();
     private String url;
     private JSONObject jsonObject;
+    private Method method;
 
     public SimpleRequester() {
 
@@ -40,29 +41,24 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
         this.jsonObject = jsonObject;
     }
 
+    public void setMethod(Method method) {
+        this.method = method;
+    }
+
     @Override
     protected String doInBackground(SimpleRequester... params) {
         try {
-            return SendPostRequest(this.url, Method.POST, this.jsonObject);
+            return SendPostRequest(this.url, this.method, this.jsonObject);
         } catch (Exception e) {
             return e.getMessage();
         }
     }
 
 
-    public static String SendPostRequest(String posturl, JSONObject jsonObjSend) throws JSONException, IOException, Exception {
-        return SendPostRequest(posturl, Method.POST, jsonObjSend);
-    }
-
-    /*public static String SendGetRequest(String posturl) throws JSONException, IOException {
-        HttpGet httpget = new HttpGet(posturl);
-        HttpClient Client = new DefaultHttpClient();
-
-        ResponseHandler<String> responseHandler = new BasicResponseHandler();
-        String response = Client.execute(httpget, responseHandler);
-
-        return response;
+    /*public static String SendPostRequest(String posturl, JSONObject jsonObjSend) throws JSONException, IOException, Exception {
+        return SendPostRequest(posturl, this.method, jsonObjSend);
     }*/
+
 
     private static String SendPostRequest(String posturl, Method method, JSONObject jsonObjSend) throws JSONException, IOException, SimpleRequesterException {
 
@@ -73,36 +69,49 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
             throw new IllegalArgumentException("invalid url: " + posturl);
         }
 
-        String body = "";
-        if (jsonObjSend != null) {
-            body = jsonObjSend.toString();
+        HttpURLConnection conn = null;
+        byte[] bytes = null;
+        conn = (HttpURLConnection) url.openConnection();
+
+        if (method == method.POST) {
+            String body = "";
+            if (jsonObjSend != null) {
+                body = jsonObjSend.toString();
+            }
+
+            Logger.logDebug(TAG, body + "' to " + url);
+            bytes = body.getBytes();
+            conn.setRequestProperty("Content-Type", "application/json");
         }
 
-        Logger.logDebug(TAG, body + "' to " + url);
-        byte[] bytes = body.getBytes();
-        HttpURLConnection conn = null;
-        conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestProperty("Content-Type", "application/json");
         conn.setReadTimeout(10000);
         conn.setConnectTimeout(15000);
-        conn.setRequestMethod(String.valueOf(method.POST));
+        conn.setRequestMethod(String.valueOf(method));
         conn.setDoInput(true);
         conn.setDoOutput(true);
 
-        // post the request
-        OutputStream out = conn.getOutputStream();
-        out.write(bytes);
-        out.close();
-        // handle the response
-        int status = conn.getResponseCode();
-        if (status != 200) {
-            return MessageText.ERROR_SERVER.toString();
+        if (method == method.POST) {
+            // post the request
+            OutputStream out = conn.getOutputStream();
+            out.write(bytes);
+            out.close();
+
+            // handle the response
+            int status = conn.getResponseCode();
+            if (status != 200) {
+                return MessageText.ERROR_SERVER.toString();
+            }
         }
 
         String convertStreamToString = "";
         if (conn != null) {
-            convertStreamToString = convertStreamToString(conn.getInputStream(), /*HTTP.UTF_8*/"UTF-8");
-            conn.disconnect();
+            if (method == Method.POST) {
+                convertStreamToString = convertStreamToString(conn.getInputStream(), /*HTTP.UTF_8*/"UTF-8");
+                conn.disconnect();
+            } else if (method == Method.GET) {
+                convertStreamToString = convertStreamToString((InputStream)conn.getContent(), /*HTTP.UTF_8*/"UTF-8");
+                conn.disconnect();
+            }
         }
 
         return convertStreamToString;
@@ -129,4 +138,6 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
 
         return sb.toString();
     }
+
+
 }

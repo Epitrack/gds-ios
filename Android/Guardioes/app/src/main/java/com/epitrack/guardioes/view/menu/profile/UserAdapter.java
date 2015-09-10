@@ -9,9 +9,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
+import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author Igor Morais
@@ -23,10 +32,48 @@ public class UserAdapter extends ArrayAdapter<User> {
     public UserAdapter(final Context context, final List<User> userList, final UserListener listener) {
         super(context, 0, userList);
 
-        // TODO: Stub
+        //Miquéias Lopes
 
-        userList.add(new User(R.drawable.image_avatar_small_2, "Aninha", "Você"));
-        userList.add(new User(R.drawable.image_avatar_small_6, "Carol", "Membro do domicílio"));
+        SingleUser singleUser = SingleUser.getInstance();
+
+        userList.add(new User(R.drawable.image_avatar_small_2, singleUser.getNick(), "Você"));
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setUrl(Requester.API_URL + "user/household/" + singleUser.getId());
+        simpleRequester.setJsonObject(null);
+        simpleRequester.setMethod(Method.GET);
+
+        try {
+            String jsonStr = simpleRequester.execute(simpleRequester).get();
+
+            JSONObject jsonObject = new JSONObject(jsonStr);
+
+            if (jsonObject.get("error").toString() == "false") {
+
+                JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                if (jsonArray.length() > 0) {
+
+                    JSONObject jsonObjectUser;
+                    JSONObject jsonObjectHousehold;
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+
+                        jsonObjectUser = jsonArray.getJSONObject(i);
+                        jsonObjectHousehold = jsonObjectUser.optJSONObject("user");
+                        userList.add(new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(), jsonObjectHousehold.get("nick").toString()));
+                    }
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        /*userList.add(new User(R.drawable.image_avatar_small_6, "Carol", "Membro do domicílio"));
         userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
         userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
         userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
@@ -36,7 +83,7 @@ public class UserAdapter extends ArrayAdapter<User> {
         userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
         userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
         userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
+        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));*/
 
         this.listener = listener;
     }

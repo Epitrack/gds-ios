@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.RequestListener;
 import com.epitrack.guardioes.request.Requester;
@@ -45,7 +46,6 @@ import butterknife.Bind;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
-import static com.epitrack.guardioes.request.SimpleRequester.SendPostRequest;
 
 /**
  * @author Igor Morais
@@ -350,7 +350,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                 // Miquéias Lopes
                 User user = new User();
 
-                user.setNick(editTextNickname.getText().toString().trim().toLowerCase());
+                user.setNick(editTextNickname.getText().toString().trim());
                 user.setDob(editTextBirthDate.getText().toString().trim().toLowerCase());
                 String gender = spinnerGender.getSelectedItem().toString();
                 gender = gender.substring(0, 1);
@@ -384,17 +384,28 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                     jRoot.put("race", user.getRace());
                     jRoot.put("platform", user.getPlatform());
 
-                    SimpleRequester sendPostRequest = new SimpleRequester();
-                    sendPostRequest.setUrl(Requester.API_URL + "user/create");
-                    sendPostRequest.setJsonObject(jRoot);
+                    SimpleRequester simpleRequester = new SimpleRequester();
+                    simpleRequester.setUrl(Requester.API_URL + "user/create");
+                    simpleRequester.setJsonObject(jRoot);
+                    simpleRequester.setMethod(Method.POST);
 
-                    String jsonStr = sendPostRequest.execute(sendPostRequest).get();
+                    String jsonStr = simpleRequester.execute(simpleRequester).get();
 
                     JSONObject jsonObject = new JSONObject(jsonStr);
 
                     if (jsonObject.get("error").toString() == "true") {
                         Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
                     } else {
+
+                        JSONObject jsonObjectUser = jsonObject.getJSONObject("user");
+
+                        SingleUser singleUser = SingleUser.getInstance();
+                        singleUser.setNick(jsonObjectUser.getString("nick").toString());
+                        singleUser.setEmail(jsonObjectUser.getString("email").toString());
+                        singleUser.setGender(jsonObjectUser.getString("gender").toString());
+                        singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                        singleUser.setId(jsonObjectUser.getString("id").toString());
+
                         Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
                         navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                 Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -405,28 +416,6 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-
-
-                /*new UserRequester(getApplicationContext()).requestUser(Method.POST, bodyMap, "user/create", new RequestListener<User>() {
-
-                    @Override
-                    public void onStart() {
-
-                    }
-
-                    @Override
-                    public void onError(Exception e) {
-                        Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onSuccess(User entity) {
-                        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                Intent.FLAG_ACTIVITY_NEW_TASK);
-                    }
-                });*/
-
-
             }
         }
 

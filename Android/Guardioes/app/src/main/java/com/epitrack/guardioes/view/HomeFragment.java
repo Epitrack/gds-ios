@@ -5,9 +5,11 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.view.base.BaseFragment;
 import com.epitrack.guardioes.view.diary.DiaryActivity;
 import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
@@ -25,6 +27,10 @@ public class HomeFragment extends BaseFragment {
     @Bind(R.id.text_view_name)
     TextView textViewName;
 
+    @Bind(R.id.image_view_photo)
+    ImageView imageViewPhoto;
+
+
     @Override
     public void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
@@ -41,8 +47,10 @@ public class HomeFragment extends BaseFragment {
 
         ButterKnife.bind(this, view);
 
+        SingleUser singleUser = SingleUser.getInstance();
+
         String text = getString(R.string.message_hello);
-        text = text.replace("{0}", "Dudu");
+        text = text.replace("{0}", singleUser.getNick());
 
         textViewName.setText(text);
 
