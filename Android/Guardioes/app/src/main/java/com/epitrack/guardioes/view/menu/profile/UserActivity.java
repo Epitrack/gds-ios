@@ -65,6 +65,35 @@ public class UserActivity extends BaseAppCompatActivity {
         setContentView(R.layout.user);
 
         final boolean mainMember = getIntent().getBooleanExtra(Constants.Bundle.MAIN_MEMBER, false);
+        final String nick = getIntent().getStringExtra("nick");
+        final String dob = getIntent().getStringExtra("dob");
+        final String gender = getIntent().getStringExtra("gender");
+        final String race = getIntent().getStringExtra("race");
+        final String email = getIntent().getStringExtra("email");
+
+        editTextNickname.setText(nick);
+        editTextBirthDate.setText(dob);
+        editTextMail.setText(email);
+
+        if (race == "branco") {
+            spinnerGender.setSelection(0);
+        } else if (race == "preto") {
+            spinnerGender.setSelection(1);
+        } else if (race == "pardo") {
+            spinnerGender.setSelection(2);
+        } else if (race == "amarelo") {
+            spinnerGender.setSelection(3);
+        } else if (race == "indígeno") {
+            spinnerGender.setSelection(4);
+        }
+
+        //spinnerGender.setSelection();
+
+        if (gender == "M") {
+            spinnerRace.setSelection(0);
+        } else {
+            spinnerRace.setSelection(1);
+        }
 
         if (mainMember) {
 

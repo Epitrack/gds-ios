@@ -18,6 +18,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import java.net.HttpURLConnection;
+import java.net.URLConnection;
 
 /**
  * @author Miquéias Lopes on 09/09/15.
@@ -60,20 +61,22 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
     }*/
 
 
-    private static String SendPostRequest(String posturl, Method method, JSONObject jsonObjSend) throws JSONException, IOException, SimpleRequesterException {
+    private static String SendPostRequest(String apiUrl, Method method, JSONObject jsonObjSend) throws JSONException, IOException, SimpleRequesterException {
 
         URL url;
+        String returnStr = "";
         try {
-            url = new URL(posturl);
+            url = new URL(apiUrl);
         } catch (MalformedURLException e) {
-            throw new IllegalArgumentException("invalid url: " + posturl);
+            throw new IllegalArgumentException("invalid url: " + apiUrl);
         }
 
-        HttpURLConnection conn = null;
-        byte[] bytes = null;
-        conn = (HttpURLConnection) url.openConnection();
+        if (method == Method.POST) {
 
-        if (method == method.POST) {
+            HttpURLConnection conn = null;
+            byte[] bytes = null;
+            conn = (HttpURLConnection) url.openConnection();
+
             String body = "";
             if (jsonObjSend != null) {
                 body = jsonObjSend.toString();
@@ -82,15 +85,13 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
             Logger.logDebug(TAG, body + "' to " + url);
             bytes = body.getBytes();
             conn.setRequestProperty("Content-Type", "application/json");
-        }
 
-        conn.setReadTimeout(10000);
-        conn.setConnectTimeout(15000);
-        conn.setRequestMethod(String.valueOf(method));
-        conn.setDoInput(true);
-        conn.setDoOutput(true);
+            conn.setReadTimeout(10000);
+            conn.setConnectTimeout(15000);
+            conn.setRequestMethod(String.valueOf(method));
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
 
-        if (method == method.POST) {
             // post the request
             OutputStream out = conn.getOutputStream();
             out.write(bytes);
@@ -101,20 +102,34 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
             if (status != 200) {
                 return MessageText.ERROR_SERVER.toString();
             }
-        }
 
-        String convertStreamToString = "";
-        if (conn != null) {
-            if (method == Method.POST) {
+
+            String convertStreamToString = "";
+            if (conn != null) {
                 convertStreamToString = convertStreamToString(conn.getInputStream(), /*HTTP.UTF_8*/"UTF-8");
                 conn.disconnect();
-            } else if (method == Method.GET) {
-                convertStreamToString = convertStreamToString((InputStream)conn.getContent(), /*HTTP.UTF_8*/"UTF-8");
-                conn.disconnect();
             }
-        }
+            returnStr = convertStreamToString;
+            return convertStreamToString;
+        } else if (method == Method.GET) {
+            url = new URL(apiUrl);
+            URLConnection urlConnection = url.openConnection();
 
-        return convertStreamToString;
+            StringBuilder stringBuilder = null;
+            BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+
+            String inputLine;
+            String jsonStr = "";
+            while ((inputLine = br.readLine()) != null) {
+                jsonStr = inputLine;
+            }
+            br.close();
+
+            returnStr = jsonStr;
+            return jsonStr;
+        } else{
+            return returnStr;
+        }
     }
 
     private static String convertStreamToString(InputStream is, String enc) throws UnsupportedEncodingException {

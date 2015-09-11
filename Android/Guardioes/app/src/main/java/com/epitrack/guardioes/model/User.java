@@ -31,6 +31,16 @@ public class User {
         this.email = email;
     }
 
+    public User(int image, String nick, String email, String id, String dob, String race, String gender) {
+        this.image = image;
+        this.nick = nick;
+        this.email = email;
+        this.id = id;
+        this.dob = dob;
+        this.race = race;
+        this.gender = gender;
+    }
+
     public int getImage() {
         return image;
     }

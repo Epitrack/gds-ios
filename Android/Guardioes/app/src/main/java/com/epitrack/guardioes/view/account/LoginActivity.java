@@ -247,6 +247,8 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     singleUser.setGender(jsonObjectUser.getString("gender").toString());
                     singleUser.setPicture(jsonObjectUser.getString("picture").toString());
                     singleUser.setId(jsonObjectUser.getString("id").toString());
+                    singleUser.setRace(jsonObjectUser.getString("race").toString());
+                    singleUser.setDob(jsonObjectUser.getString("dob").toString());
 
                     navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                             Intent.FLAG_ACTIVITY_NEW_TASK);

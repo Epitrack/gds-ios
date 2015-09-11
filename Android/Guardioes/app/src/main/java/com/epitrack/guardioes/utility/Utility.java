@@ -1,5 +1,10 @@
 package com.epitrack.guardioes.utility;
 
+import android.app.Dialog;
+import android.content.Context;
+
+
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -8,6 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public final class Utility {
 
+    static MaterialDialog.Builder builder = null;
     private static final String TAG = Utility.class.getSimpleName();
 
     private Utility() {

@@ -35,8 +35,9 @@ public class UserAdapter extends ArrayAdapter<User> {
         //Miquéias Lopes
 
         SingleUser singleUser = SingleUser.getInstance();
-
-        userList.add(new User(R.drawable.image_avatar_small_2, singleUser.getNick(), "Você"));
+        //int image, String nick, String email, String id, String dob, String race, String gender, String password)
+        userList.add(new User(R.drawable.image_avatar_small_2, singleUser.getNick(), singleUser.getEmail(), singleUser.getId(),
+                singleUser.getDob(), singleUser.getRace(), singleUser.getGender()));
 
         SimpleRequester simpleRequester = new SimpleRequester();
         simpleRequester.setUrl(Requester.API_URL + "user/household/" + singleUser.getId());
@@ -54,14 +55,17 @@ public class UserAdapter extends ArrayAdapter<User> {
 
                 if (jsonArray.length() > 0) {
 
-                    JSONObject jsonObjectUser;
                     JSONObject jsonObjectHousehold;
+                    //JSONObject jsonObjectHousehold;
 
                     for (int i = 0; i < jsonArray.length(); i++) {
 
-                        jsonObjectUser = jsonArray.getJSONObject(i);
-                        jsonObjectHousehold = jsonObjectUser.optJSONObject("user");
-                        userList.add(new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(), jsonObjectHousehold.get("nick").toString()));
+                        jsonObjectHousehold = jsonArray.getJSONObject(i);
+                        //jsonObjectUser = jsonObjectUser.optJSONObject("user");
+                        userList.add(new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
+                                /*jsonObjectHousehold.get("email").toString()*/"", jsonObjectHousehold.get("id").toString(),
+                                jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
+                                jsonObjectHousehold.get("gender").toString()));
                     }
                 }
             }
@@ -72,18 +76,6 @@ public class UserAdapter extends ArrayAdapter<User> {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        /*userList.add(new User(R.drawable.image_avatar_small_6, "Carol", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));
-        userList.add(new User(R.drawable.image_avatar_small_8, "Dudu", "Membro do domicílio"));*/
 
         this.listener = listener;
     }
