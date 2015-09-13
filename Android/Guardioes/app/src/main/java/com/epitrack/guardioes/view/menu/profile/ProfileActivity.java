@@ -60,7 +60,10 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
     @Override
     @OnClick(R.id.button_add)
     public void onAdd() {
-        navigateTo(UserActivity.class);
+        final Bundle bundle = new Bundle();
+
+        bundle.putBoolean(Constants.Bundle.NEW_MEMBER, true);
+        navigateTo(UserActivity.class, bundle);
     }
 
     @Override
@@ -68,19 +71,19 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
 
         final Bundle bundle = new Bundle();
 
+        bundle.putBoolean(Constants.Bundle.NEW_MEMBER, false);
         bundle.putString("nick", user.getNick());
         bundle.putString("dob", user.getDob());
         bundle.putString("gender", user.getGender());
         bundle.putString("race", user.getRace());
         bundle.putString("email", user.getEmail());
         bundle.putString("password", user.getPassword());
+        bundle.putString("id", user.getId());
 
         // TODO: Check if is main member..
         if (singleUser.getId() == user.getId()) {
-
             bundle.putBoolean(Constants.Bundle.MAIN_MEMBER, true);
             navigateTo(UserActivity.class, bundle);
-
         } else {
             navigateTo(UserActivity.class, bundle);
         }
@@ -92,9 +95,9 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
 
         if (singleUser.getId() == user.getId()) {
 
-            DialogBuilder dialogBuilder = new DialogBuilder(getApplicationContext());
+            /*DialogBuilder dialogBuilder = new DialogBuilder(getApplicationContext());
 
-            dialogBuilder.load().content(R.string.not_remove_member).build().show();
+            dialogBuilder.load().content(R.string.not_remove_member).build().show();*/
 
             Toast.makeText(getApplicationContext(), R.string.not_remove_member, Toast.LENGTH_SHORT).show();
         } else {

@@ -87,6 +87,7 @@
     </string-array>
 
     <string name="generic_error">Não foi possível executar a operação. Tente novamente em alguns instantes.</string>
+    <string name="generic_update_data_ok">Dados alterados com sucesso.</string>
 
     # Tip
 
@@ -157,6 +158,7 @@
     <string name="add_member">Adicionar novo membro</string>
     <string name="not_remove_member">Você não pode remover seu perfil.</string>
     <string name="delete_user">Membro excluído com sucesso.</string>
+    <string name="new_member_ok">Membro incluído com sucesso.</string>
 
     # Profile Fragment
 

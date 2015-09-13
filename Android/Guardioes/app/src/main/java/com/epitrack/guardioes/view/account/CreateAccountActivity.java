@@ -22,6 +22,7 @@ import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.request.SimpleRequesterException;
 import com.epitrack.guardioes.request.UserRequester;
+import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.request.Method;
@@ -378,7 +379,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                     jRoot.put("email", user.getEmail());
                     jRoot.put("password", user.getPassword());
                     jRoot.put("client", user.getClient());
-                    jRoot.put("dob", user.getDob());
+                    jRoot.put("dob", DateFormat.getDate(user.getDob()));
                     jRoot.put("gender", user.getGender());
                     jRoot.put("app_token", user.getApp_token());
                     jRoot.put("race", user.getRace());

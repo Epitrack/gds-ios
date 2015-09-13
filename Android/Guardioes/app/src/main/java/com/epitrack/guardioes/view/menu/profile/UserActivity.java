@@ -13,9 +13,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
+import com.epitrack.guardioes.model.User;
+import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.BitmapUtility;
 import com.epitrack.guardioes.utility.Constants;
+import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -64,45 +75,49 @@ public class UserActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.user);
 
-        final boolean mainMember = getIntent().getBooleanExtra(Constants.Bundle.MAIN_MEMBER, false);
-        final String nick = getIntent().getStringExtra("nick");
-        final String dob = getIntent().getStringExtra("dob");
-        final String gender = getIntent().getStringExtra("gender");
-        final String race = getIntent().getStringExtra("race");
-        final String email = getIntent().getStringExtra("email");
+        final boolean newMenber = getIntent().getBooleanExtra(Constants.Bundle.NEW_MEMBER, false);
 
-        editTextNickname.setText(nick);
-        editTextBirthDate.setText(dob);
-        editTextMail.setText(email);
+        if (!newMenber) {
+            final boolean mainMember = getIntent().getBooleanExtra(Constants.Bundle.MAIN_MEMBER, false);
+            final String nick = getIntent().getStringExtra("nick");
+            final String dob = getIntent().getStringExtra("dob");
+            final String gender = getIntent().getStringExtra("gender");
+            final String race = getIntent().getStringExtra("race");
+            final String email = getIntent().getStringExtra("email");
 
-        if (race == "branco") {
-            spinnerGender.setSelection(0);
-        } else if (race == "preto") {
-            spinnerGender.setSelection(1);
-        } else if (race == "pardo") {
-            spinnerGender.setSelection(2);
-        } else if (race == "amarelo") {
-            spinnerGender.setSelection(3);
-        } else if (race == "indígeno") {
-            spinnerGender.setSelection(4);
-        }
+            editTextNickname.setText(nick);
+            editTextBirthDate.setText(DateFormat.getDate(dob, "dd/MM/yyyy"));
+            editTextMail.setText(email);
 
-        //spinnerGender.setSelection();
+            if (race.equals("branco")) {
+                spinnerRace.setSelection(0);
+            } else if (race.equals("preto")) {
+                spinnerRace.setSelection(1);
+            } else if (race.equals("pardo")) {
+                spinnerRace.setSelection(2);
+            } else if (race.equals("amarelo")) {
+                spinnerRace.setSelection(3);
+            } else if (race.equals("indígeno")) {
+                spinnerRace.setSelection(4);
+            }
 
-        if (gender == "M") {
-            spinnerRace.setSelection(0);
-        } else {
-            spinnerRace.setSelection(1);
-        }
+            //spinnerGender.setSelection();
 
-        if (mainMember) {
+            if (gender.equals("M")) {
+                spinnerGender.setSelection(0);
+            } else {
+                spinnerGender.setSelection(1);
+            }
 
-            textViewMessage.setText(R.string.message_fields);
+            if (mainMember) {
 
-            textLayoutMail.setVisibility(View.VISIBLE);
-            editTextMail.setVisibility(View.VISIBLE);
+                textViewMessage.setText(R.string.message_fields);
 
-            linearLayoutPassword.setVisibility(View.VISIBLE);
+                textLayoutMail.setVisibility(View.VISIBLE);
+                editTextMail.setVisibility(View.VISIBLE);
+
+                linearLayoutPassword.setVisibility(View.VISIBLE);
+            }
         }
     }
 
@@ -113,10 +128,88 @@ public class UserActivity extends BaseAppCompatActivity {
 
     @OnClick(R.id.button_add)
     public void onAdd() {
+        //Miquéias Lopes
+        User user = new User();
+        SingleUser singleUser = SingleUser.getInstance();
+        final boolean newMenber = getIntent().getBooleanExtra(Constants.Bundle.NEW_MEMBER, false);
+        final boolean mainMember = getIntent().getBooleanExtra(Constants.Bundle.MAIN_MEMBER, false);
 
-        // TODO: Make request to servers
+        user.setNick(editTextNickname.getText().toString().trim());
+        user.setDob(editTextBirthDate.getText().toString().trim().toLowerCase());
+        String gender = spinnerGender.getSelectedItem().toString();
+        gender = gender.substring(0, 1);
+        user.setGender(gender.toUpperCase());
+        user.setRace(spinnerRace.getSelectedItem().toString().toLowerCase());
 
-        Toast.makeText(this, "Houston, we have a problem", Toast.LENGTH_SHORT).show();
+
+        JSONObject jsonObject = new JSONObject();
+
+        try {
+            jsonObject.put("nick", user.getNick());
+            jsonObject.put("dob", DateFormat.getDate(user.getDob()));
+            jsonObject.put("gender", user.getGender());
+            jsonObject.put("race", user.getRace());
+            jsonObject.put("client", user.getClient());
+            jsonObject.put("race", user.getRace());
+
+            if (mainMember) {
+                String password = editTextPassword.getText().toString().trim();
+                String confirmPassword = editTextConfirmPassword.getText().toString().trim();
+
+                if (!password.equals("")) {
+                    if (password.equals(confirmPassword)) {
+                        user.setPassword(password);
+                        jsonObject.put("password", user.getPassword());
+                    }
+                }
+            }
+
+            if (newMenber) {
+                jsonObject.put("user", singleUser.getId());
+            } else if (mainMember) {
+                jsonObject.put("id", singleUser.getId());
+            } else {
+                jsonObject.put("id", getIntent().getStringExtra("id"));
+            }
+
+            SimpleRequester simpleRequester = new SimpleRequester();
+
+            if (newMenber) {
+                simpleRequester.setUrl(Requester.API_URL + "household/create");
+            } else if (mainMember) {
+                simpleRequester.setUrl(Requester.API_URL + "user/update");
+            } else {
+                simpleRequester.setUrl(Requester.API_URL + "household/update");
+            }
+
+            simpleRequester.setJsonObject(jsonObject);
+            simpleRequester.setMethod(Method.POST);
+
+            String jsonStr = simpleRequester.execute(simpleRequester).get();
+
+            jsonObject = new JSONObject(jsonStr);
+
+            if (jsonObject.get("error").toString() == "true") {
+                Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+            } else {
+                if (newMenber) {
+                    Toast.makeText(getApplicationContext(), R.string.new_member_ok, Toast.LENGTH_SHORT).show();
+                } else if (mainMember) {
+                    Toast.makeText(getApplicationContext(), R.string.generic_update_data_ok, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), R.string.generic_update_data_ok, Toast.LENGTH_SHORT).show();
+                }
+
+                navigateTo(ProfileActivity.class);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
