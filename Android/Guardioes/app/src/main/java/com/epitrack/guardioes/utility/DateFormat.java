@@ -2,6 +2,7 @@ package com.epitrack.guardioes.utility;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -39,5 +40,24 @@ public final class DateFormat {
         } finally {
             return strReturn;
         }
+    }
+
+    public static int getDateDiff(String date) {
+
+        SimpleDateFormat userFormat = new SimpleDateFormat("yyyy");
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+
+        Date userDate = null;
+        int diffDate = -1;
+
+        try {
+            userDate = userFormat.parse(date);
+            diffDate = year - Integer.parseInt(userFormat.format(userDate).toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return diffDate;
     }
 }

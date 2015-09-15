@@ -168,4 +168,5 @@ public class User {
     public void setPicture(String picture) {
         this.picture = picture;
     }
+
 }

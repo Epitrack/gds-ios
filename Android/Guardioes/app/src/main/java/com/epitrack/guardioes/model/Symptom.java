@@ -5,7 +5,6 @@ package com.epitrack.guardioes.model;
  */
 public enum Symptom {
 
-    // TODO: Stub only
     FEVER ("Febre"),
     FEVER1 ("Tosse"),
     FEVER2 ("Náusea ou vômito"),

@@ -2,6 +2,7 @@ package com.epitrack.guardioes.request;
 
 import android.os.AsyncTask;
 
+import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.utility.Logger;
 import com.epitrack.guardioes.utility.MessageText;
 
@@ -65,6 +66,8 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
 
         URL url;
         String returnStr = "";
+        SingleUser singleUser = SingleUser.getInstance();
+
         try {
             url = new URL(apiUrl);
         } catch (MalformedURLException e) {
@@ -85,6 +88,7 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
             Logger.logDebug(TAG, body + "' to " + url);
             bytes = body.getBytes();
             conn.setRequestProperty("Content-Type", "application/json");
+            conn.setRequestProperty("app_token", singleUser.getApp_token());
 
             conn.setReadTimeout(10000);
             conn.setConnectTimeout(15000);
@@ -114,6 +118,8 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
         } else if (method == Method.GET) {
             url = new URL(apiUrl);
             URLConnection urlConnection = url.openConnection();
+
+            urlConnection.setRequestProperty("app_token", singleUser.getApp_token());
 
             StringBuilder stringBuilder = null;
             BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));

@@ -1,16 +1,29 @@
 package com.epitrack.guardioes.view.survey;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
+import com.epitrack.guardioes.model.User;
+import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.utility.DateFormat;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -18,13 +31,14 @@ import butterknife.ButterKnife;
 /**
  * @author Igor Morais
  */
-public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder> {
+public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder> implements View.OnClickListener {
 
     private final ParentListener listener;
+    private Context context;
 
-    private List<Parent> parentList = new ArrayList<>();
+    private List<User> parentList = new ArrayList<>();
 
-    public ParentAdapter(final ParentListener listener, final List<Parent> parentList) {
+    public ParentAdapter(final ParentListener listener, final List<User> parentList) {
 
         if (listener == null) {
             throw new IllegalArgumentException("The listener cannot be null.");
@@ -32,44 +46,22 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
 
         this.listener = listener;
         this.parentList = parentList;
+    }
 
-        // TODO: Remove this.. Stub only
+    public ParentAdapter(final Context context, final ParentListener listener, final List<User> parentList) {
 
-        final Parent parent1 = new Parent();
-        parent1.name = "Aninha";
-        parent1.age = 15;
+        if (listener == null) {
+            throw new IllegalArgumentException("The listener cannot be null.");
+        }
 
-        final Parent parent2 = new Parent();
-        parent2.name = "Gui";
-        parent2.age = 21;
+        this.listener = listener;
+        this.parentList = parentList;
+        this.context = context;
+    }
 
-        final Parent parent3 = new Parent();
-        parent3.name = "Peu";
-        parent3.age = 9;
+    @Override
+    public void onClick(View v) {
 
-        final Parent parent4 = new Parent();
-        parent4.name = "Cadu";
-        parent4.age = 28;
-
-        final Parent parent5 = new Parent();
-        parent5.name = "Cah";
-        parent5.age = 25;
-
-        final Parent parent6 = new Parent();
-        parent6.name = "Gui";
-        parent6.age = 22;
-
-        final Parent parent7 = new Parent();
-        parent7.name = "Ju";
-        parent7.age = 18;
-
-        parentList.add(parent1);
-        parentList.add(parent2);
-        parentList.add(parent3);
-        parentList.add(parent4);
-        parentList.add(parent5);
-        parentList.add(parent6);
-        parentList.add(parent7);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -83,18 +75,20 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
         @Bind(R.id.image_view_photo)
         ImageView imageViewPhoto;
 
+        @Bind(R.id.text_view_id_parent)
+        TextView textViewId;
+
         public ViewHolder(final View view) {
             super(view);
 
             ButterKnife.bind(this, view);
-
             view.setOnClickListener(this);
         }
 
         @Override
-        public void onClick(final View view) {
-
-            listener.onParentSelect();
+        public void onClick(View view) {
+            //Toast.makeText(context, textViewId.getText(), Toast.LENGTH_SHORT).show();
+            listener.onParentSelect(textViewId.getText().toString());
         }
     }
 
@@ -103,39 +97,23 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
 
         final View view = LayoutInflater.from(viewGroup.getContext())
                                         .inflate(R.layout.parent_item, viewGroup, false);
-
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
 
-        final Parent parent = parentList.get(position);
+        User parent = parentList.get(position);
 
-        viewHolder.textViewName.setText(parent.name);
-        viewHolder.textViewAge.setText(parent.age + " Anos");
+        viewHolder.textViewName.setText(parent.getNick());
+        viewHolder.textViewAge.setText(DateFormat.getDateDiff(parent.getDob()) + " Anos");
+        viewHolder.textViewId.setText(parent.getId());
 
-        if (position == 0 ) {
+        if (parent.getGender().equals("F")) {
             viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_1);
-
-        } else if (position == 1) {
+        } else {
             viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_2);
-
-        } else if (position == 2) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_3);
-
-        } else if (position == 3) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
-
-        } else if (position == 4) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_5);
-
-        } else if (position == 5) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
-
-        } else if (position == 6) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
-        }
+         }
     }
 
     @Override
@@ -143,11 +121,4 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
         return parentList.size();
     }
 
-    // TODO: Remove this.. Stub only
-
-    public class Parent {
-
-        public String name;
-        public int age;
-    }
 }

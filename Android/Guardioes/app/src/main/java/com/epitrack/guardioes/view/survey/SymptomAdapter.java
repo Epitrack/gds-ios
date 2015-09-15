@@ -6,15 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Symptom;
+import com.epitrack.guardioes.model.SymptomList;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Igor Morais
  */
-public class SymptomAdapter extends ArrayAdapter<Symptom> {
+public class SymptomAdapter extends ArrayAdapter<SymptomList> {
 
     private static final int VIEW_TYPE_ITEM = 1;
     private static final int VIEW_TYPE_OTHER = 2;
@@ -23,23 +29,22 @@ public class SymptomAdapter extends ArrayAdapter<Symptom> {
 
     private static final int POSITION_VIEW_TYPE_OTHER = 11;
 
-    private final Symptom[] symptomArray;
+    final private List<SymptomList> symptomArray;
 
-    public SymptomAdapter(final Context context, final Symptom[] symptomArray) {
+    public SymptomAdapter(final Context context, final List<SymptomList> symptomArray) {
         super(context, 0, symptomArray);
 
         this.symptomArray = symptomArray;
     }
 
     public static class ViewHolder {
-
         CheckBox checkBoxSymptom;
         TextView textViewName;
     }
 
     @Override
     public int getCount() {
-        return symptomArray.length + 1;
+        return symptomArray.size() + 1;
     }
 
     @Override
@@ -49,7 +54,7 @@ public class SymptomAdapter extends ArrayAdapter<Symptom> {
 
     @Override
     public int getItemViewType(final int position) {
-        return (position == POSITION_VIEW_TYPE_OTHER ? VIEW_TYPE_OTHER : VIEW_TYPE_ITEM) - 1;
+        return (position == POSITION_VIEW_TYPE_OTHER ? VIEW_TYPE_OTHER: VIEW_TYPE_ITEM) - 1;
     }
 
     @Override
@@ -75,17 +80,32 @@ public class SymptomAdapter extends ArrayAdapter<Symptom> {
                 viewHolder.checkBoxSymptom = (CheckBox) view.findViewById(R.id.check_box_symptom);
                 viewHolder.textViewName = (TextView) view.findViewById(R.id.text_view_name);
 
+                viewHolder.checkBoxSymptom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        int getPosition = (Integer) buttonView.getTag();  // Here we get the position that we have set for the checkbox using setTag.
+                        symptomArray.get(getPosition).setSelected(buttonView.isChecked()); // Set the value of checkbox to maintain its state.
+                    }
+                });
+
                 view.setTag(viewHolder);
+                view.setTag(R.id.check_box_symptom, viewHolder.checkBoxSymptom);
 
             } else {
-
                 viewHolder = (ViewHolder) view.getTag();
             }
 
-            final Symptom symptom = position > POSITION_VIEW_TYPE_OTHER ? getItem(position - 1) : getItem(position);
+            final SymptomList symptomList = position > POSITION_VIEW_TYPE_OTHER ? this.symptomArray.get(position - 1) : this.symptomArray.get(position);
 
-            viewHolder.textViewName.setText(symptom.getName());
+            if (position > POSITION_VIEW_TYPE_OTHER) {
+                viewHolder.checkBoxSymptom.setTag(position - 1);
+            } else {
+                viewHolder.checkBoxSymptom.setTag(position);
+            }
 
+            viewHolder.textViewName.setText(symptomList.getNome());
+            viewHolder.checkBoxSymptom.setChecked(symptomList.isSelected());
             return view;
         }
     }

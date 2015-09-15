@@ -56,6 +56,14 @@
             android:text="@string/message_age"
             android:textSize="20dp" />
 
+        <TextView
+            android:id="@+id/text_view_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:textSize="5dp" />
+
     </LinearLayout>
 
     <TextView

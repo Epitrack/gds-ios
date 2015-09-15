@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.survey.ParentListener;
 
@@ -65,11 +66,6 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         setupView();
     }
 
-    @Override
-    public void onParentSelect() {
-
-    }
-
     private void setupView() {
 
         // TODO: Stub
@@ -85,5 +81,10 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         textViewDay.setText("Sexta-feira");
         textViewDate.setText("15 de maio");
         textViewSymptom.setText("7 Sintomas");
+    }
+
+    @Override
+    public void onParentSelect(String id) {
+
     }
 }

@@ -5,7 +5,6 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
@@ -14,7 +13,6 @@ import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
-import com.epitrack.guardioes.utility.Utility;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
 import org.json.JSONException;
@@ -83,10 +81,8 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         // TODO: Check if is main member..
         if (singleUser.getId() == user.getId()) {
             bundle.putBoolean(Constants.Bundle.MAIN_MEMBER, true);
-            navigateTo(UserActivity.class, bundle);
-        } else {
-            navigateTo(UserActivity.class, bundle);
         }
+        navigateTo(UserActivity.class, bundle);
     }
 
     @Override
@@ -114,6 +110,13 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
 
                 if (jsonObject.get("error").toString() == "true") {
                     Toast.makeText(getApplicationContext(), R.string.generic_error, Toast.LENGTH_SHORT).show();
+
+                    /*new DialogBuilder(ProfileActivity.this).load()
+                            .title(R.string.attention)
+                            .content(R.string.delete_user)
+                            .positiveText(R.string.yes)
+                            .show();*/
+
                 } else {
                     Toast.makeText(getApplicationContext(), R.string.delete_user, Toast.LENGTH_SHORT).show();
                     listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));

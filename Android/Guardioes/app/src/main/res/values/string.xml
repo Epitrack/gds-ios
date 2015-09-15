@@ -72,6 +72,7 @@
     <string name="you">Você</string>
     <string name="welfare">Bem estar</string>
     <string name="welcome">Bem-vindo!</string>
+    <string name="ok">OK</string>
 
     <string-array name="gender_array">
         <item>Masculino</item>
@@ -208,5 +209,6 @@
     # Dialog Survey
 
     <string name="message_register_info">Deseja registrar suas informações?</string>
+    <string name="message_register_no_symptom">Escolha algum sintoma antes de confirmar.</string>
 
 </resources>

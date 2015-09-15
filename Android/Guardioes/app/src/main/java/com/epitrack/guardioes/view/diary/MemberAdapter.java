@@ -112,7 +112,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
 
                 viewHolder = this;
 
-                listener.onParentSelect();
+                listener.onParentSelect("");
             }
         }
     }
