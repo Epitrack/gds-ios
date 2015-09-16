@@ -20,6 +20,7 @@ import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
 import org.json.JSONArray;
@@ -147,10 +148,11 @@ public class SymptomActivity extends BaseAppCompatActivity {
         JSONObject jsonObject = new JSONObject();
 
         User user = new User();
+        LocationUtility locationUtility = new LocationUtility(getApplicationContext());
 
         user.setId(id);
-        user.setLat(-23.5505199);
-        user.setLon(-46.6333094);
+        user.setLat(locationUtility.getLatitude());
+        user.setLon(locationUtility.getLongitude());
 
         jsonObject.put("user_id", user.getId());
         jsonObject.put("lat", user.getLat());
