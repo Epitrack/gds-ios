@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.tip;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
 
@@ -42,6 +43,10 @@ public class TipActivity extends BaseAppCompatActivity implements ExpandableList
     public boolean onChildClick(final ExpandableListView listView, final View view, final int groupPosition, final int childPosition, final long id) {
 
         final Phone phone = Phone.getBy(id);
+        final Bundle bundle = new Bundle();
+
+        bundle.putString("phone_id", phone.toString());
+        navigateTo(UsefulPhonesActivity.class, bundle);
 
         return false;
     }

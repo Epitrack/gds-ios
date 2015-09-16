@@ -73,6 +73,7 @@
     <string name="welfare">Bem estar</string>
     <string name="welcome">Bem-vindo!</string>
     <string name="ok">OK</string>
+    <string name="call">Ligar</string>
 
     <string-array name="gender_array">
         <item>Masculino</item>
@@ -101,6 +102,7 @@
     <string name="police">Polícia Militar</string>
     <string name="fireman">Bombeiros</string>
     <string name="defense">Defesa Civil</string>
+    <string name="useful_phones">Telefones Úteis</string>
 
     # Hint
 
