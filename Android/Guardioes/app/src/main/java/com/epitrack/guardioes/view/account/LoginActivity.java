@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.account;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
@@ -25,6 +26,7 @@ import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.Password;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -54,8 +56,9 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
     EditText editTextPassword;
 
     private boolean inLogin;
-
     private Validator validator;
+    SharedPreferences sharedPreferences = null;
+    public static final String PREFS_NAME = "preferences_id";
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -71,9 +74,56 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
 
         actionBar.setDisplayShowTitleEnabled(false);
 
-        validator = new Validator(this);
-        validator.setValidationListener(new ValidationHandler());
+        sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
+        String prefId = sharedPreferences.getString("PrefUser", "");
 
+        if (!prefId.equals("")) {
+
+            JSONObject jsonObject = new JSONObject();
+
+            SimpleRequester sendPostRequest = new SimpleRequester();
+            sendPostRequest.setUrl(Requester.API_URL + "user/get/"+prefId);
+            sendPostRequest.setJsonObject(jsonObject);
+            sendPostRequest.setMethod(Method.GET);
+
+            String jsonStr;
+            try {
+                jsonStr = sendPostRequest.execute(sendPostRequest).get();
+
+                jsonObject = new JSONObject(jsonStr);
+
+                if (jsonObject.get("error").toString() == "true") {
+                    Toast.makeText(getApplicationContext(), "Erro ao fazer o login. - " + jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                } else {
+
+                    JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                    for (int i = 0; i < jsonArray.length() ; i++) {
+                        SingleUser singleUser = SingleUser.getInstance();
+                        singleUser.setNick(jsonArray.getJSONObject(i).getString("nick").toString());
+                        singleUser.setEmail(jsonArray.getJSONObject(i).getString("email").toString());
+                        singleUser.setGender(jsonArray.getJSONObject(i).getString("gender").toString());
+                        singleUser.setPicture(jsonArray.getJSONObject(i).getString("picture").toString());
+                        singleUser.setId(jsonArray.getJSONObject(i).getString("id").toString());
+                        singleUser.setRace(jsonArray.getJSONObject(i).getString("race").toString());
+                        singleUser.setDob(jsonArray.getJSONObject(i).getString("dob").toString());
+                    }
+
+                    navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                            Intent.FLAG_ACTIVITY_NEW_TASK);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            validator = new Validator(this);
+            validator.setValidationListener(new ValidationHandler());
+        }
         // TODO: Check play service
         // TODO: Register to GCM. Review soon..
         // startService(new Intent(this, RegisterService.class));
@@ -249,6 +299,12 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     singleUser.setId(jsonObjectUser.getString("id").toString());
                     singleUser.setRace(jsonObjectUser.getString("race").toString());
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
+
+                    sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                    editor.putString("PrefUser", singleUser.getId());
+                    editor.commit();
 
                     navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                             Intent.FLAG_ACTIVITY_NEW_TASK);
