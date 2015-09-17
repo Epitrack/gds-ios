@@ -213,4 +213,97 @@
     <string name="message_register_info">Deseja registrar suas informações?</string>
     <string name="message_register_no_symptom">Escolha algum sintoma antes de confirmar.</string>
 
+    #Prevention
+    <string name="prevention_title_01">Prevenção\n</string>
+    <string name="prevention_content_01">- No Brasil, a transmissão concentra-se na Região Amazônica, composta pelos estados do Acre, Amapá, Amazonas, Maranhão, Mato Grosso, Pará, Rondônia, Roraima e Tocantins;\n
+
+- Em áreas de transmissão de malária, é fundamental que o viajante tenha conhecimento sobre o horário de maior atividade de mosquitos vetores de malária, do pôr-do-sol ao amanhecer;\n
+
+- Use roupas claras e com manga longa, durante atividades de exposição elevada;
+
+- Aplique repelente nas áreas expostas da pele, seguindo a orientação do fabricante. Em crianças com idade inferior a dois anos, não é recomendado o uso de repelente sem orientação médica;\n
+
+- Em áreas de transmissão de malária é imprescindível que o viajante fique atento ao surgimento de sintomas da doença, como febre, dor no corpo e dor de cabeça;\n
+
+- Em caso de manifestação de algum sintoma da doença, procure uma unidade de saúde especializada mais próxima, o ideal é que este atendimento seja feito o quanto antes, em até 48 horas após os primeiros sintomas;\n
+
+- O Brasil conta com uma rede pública de saúde estruturada para diagnosticar e tratar os pacientes, de forma oportuna e adequada;\n
+
+- Caso você queira adquirir mais informações acerca da malária antes de realizar a sua viagem, busque orientações em um dos Centros de Referência\n
+</string>
+    <string name="prevention_title_02">Previna-se contra doenças de transmissão respiratória\n</string>
+    <string name="prevention_content_02">- Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\n
+
+- Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\n
+
+- Indivíduos doentes devem ficar em repouso, consumir alimentação balanceada, aumentar a ingestão de líquidos e evitar aglomerações e ambientes fechados;\n
+
+- Mantenha os ambientes ventilados;\n
+
+- Esteja sempre atento ao apresentar sintomas respiratórios de maior gravidade e procure imediatamente assistência médica.\n
+</string>
+    <string name="prevention_title_03">Consuma alimentos e bebidas de forma saudável\n</string>
+    <string name="prevention_content_03">- Evite consumir alimentos cujas condições higiênicas, de preparo e acondicionamento, são precárias;\n
+
+- Prefira alimentos que contenham baixo teor de açúcares, gorduras e sal;\n
+
+- Beba bastante líquido, preferencialmente água ou suco. Evite alimentos crus ou mal cozidos, principalmente os frutos do mar;\n
+
+- Alimentos embalados devem conter no rótulo a identificação do produtor, data de validade e a embalagem deve estar íntegra;\n
+
+- Durante o turismo rural, dê preferência aos alimentos que podem ficar sem refrigeração e não estraguem com o calor;\n
+
+- Caso tenha diarreia e vômitos por conta da ingestão de alimentos e bebidas, é preciso cuidado redobrado com a desidratação. Recomenda-se a ingestão de sal de reidratação oral, disponibilizado gratuitamente pelo Sistema Único de Saúde, ou outras soluções do tipo. As bebidas esportivas não compensam corretamente as perdas e não devem ser utilizadas para tratamento de doença diarreica.\n
+</string>
+    <string name="prevention_title_04">Pratique sexo de forma segura\n</string>
+    <string name="prevention_content_04">- No Brasil, a camisinha é distribuída gratuitamente pelo governo e está disponível em postos de saúde, unidades de pronto atendimento, albergues, Centros de Atendimento ao Turista e em outros pontos de distribuição espalhados pelas cidades. \nLeve sempre consigo os preservativos para facilitar a sua utilização e a prevenção de doenças sexualmente transmissíveis</string>
+
+    #Care
+
+    <string name="care_title_01">Cuidados básicos\n</string>
+    <string name="care_content_01">- Procure seu médico, preferencialmente, entre 4 e 8 semanas antes da viagem para informar seu roteiro. Peça orientações sobre cuidados para proteção contra doenças e lesões;\n
+
+- Você pode ter dificuldade ou não encontrar os medicamentos que utiliza habitualmente durante a viagem. Peça orientação ao seu médico sobre quais medicamentos e em que quantidade deve levar durante a viagem, incluindo a bagagem de mão;\n
+
+- Carregue com você os seus documentos de identificação, de preferência em inglês e português, com informações de contatos pessoais, tipo sanguíneo, se tem alergias, diabetes ou outras doenças que possam requerer particular atenção;\n
+
+- Toda gestante deve consultar seu médico antes da viagem, pois estará sujeita a vários riscos e a viagem pode afetar sua segurança e conforto;\n
+
+- Antes de viajar consulte a empresa de transporte sobre as regras específicas para gestantes;\n
+
+- O Brasil é um país de clima tropical. Recomenda-se ao viajante a ingestão constante de líquidos para evitar a desidratação;\n
+
+- Use roupas e calçados confortáveis. Eles lhe darão segurança e proteção contra torções, picadas de insetos e acidentes com animais peçonhentos;\n
+
+- Para se proteger do sol, cubra-se com roupas apropriadas, utilize chapéu ou boné e óculos escuros. Evite a exposição direta ao sol entre 10 horas da manhã e 4 horas da tarde;\n
+
+- Use protetor solar com fator de proteção adequado à cor de sua pele, de acordo com as orientações do fabricante. Mesmo em locais mais frios, sua pele ficará protegida dos raios solares;\n
+
+- Use repelentes quando houver necessidade\n
+
+- Lave as mãos com água e sabão várias vezes ao dia, principalmente antes de ingerir alimentos, após utilizar conduções públicas, visitar mercados ou locais com grande fluxo de pessoas.\n
+
+- No Brasil, é proibido por lei dirigir após o consumo de bebida alcoólica, mesmo em pequenas quantidades\n
+</string>
+
+    #Vacinne
+    <string name="vacinne_title_01">Vacinas\n</string>
+    <string name="vacinne_content_01">- A Organização Mundial da Saúde (OMS) informa que não há calendário internacional de vacinação para todos os viajantes. Para cada viajante, será adotada recomendação personalizada de acordo com os países a serem visitados, dependendo do tipo, duração e tempo disponível para aplicação da vacina antes da partida;\n
+
+- O Brasil não exige o Certificado Internacional de Vacinação ou Profilaxia para entrada no país;\n
+
+- Certifique-se de que suas vacinas de rotina estejam em dia, de acordo com as recomendações de seu país de origem, pois é uma medida eficaz e segura para a prevenção de várias doenças;\n
+
+- Devido a circulação do sarampo na Europa, África e Ásia recomenda-se que pessoas com origem ou destino a países com ocorrência dessa doença estejam vacinados previamente;\n
+
+- A preparação para a viagem é uma boa oportunidade para verificar o estado vacinal de bebês, crianças, adolescentes, adultos e idosos.\n
+
+ - Todo morador ou visitante de qualquer cidade brasileira tem disponível também as vacinas para influenza e Pólio que são enfermidades relacionadas a possíveis emergências de saúde pública de importância internacional para a Organização Mundial de Saúde.\n
+\n</string>
+    <string name="vacinne_title_02">Prevenção contra febre amarela\n</string>
+    <string name="vacinne_content_02">- Previna-se contra febre amarela tomando a vacina 10 dias antes de visitar áreas de mata ou de praticar turismo ecológico ou rural.\n
+
+- Procure seu medico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem;\n
+\n</string>
+
 </resources>
