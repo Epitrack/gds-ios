@@ -89,6 +89,7 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
             bytes = body.getBytes();
             conn.setRequestProperty("Content-Type", "application/json");
             conn.setRequestProperty("app_token", singleUser.getApp_token());
+            conn.setRequestProperty("user_token", singleUser.getUser_token());
 
             conn.setReadTimeout(10000);
             conn.setConnectTimeout(15000);
@@ -120,6 +121,7 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
             URLConnection urlConnection = url.openConnection();
 
             urlConnection.setRequestProperty("app_token", singleUser.getApp_token());
+            urlConnection.setRequestProperty("user_token", singleUser.getUser_token());
 
             StringBuilder stringBuilder = null;
             BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));

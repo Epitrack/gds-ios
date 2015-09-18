@@ -20,6 +20,7 @@ public class User {
     private String zip;
     private String id;
     private String picture;
+    private String user_token;
 
     public User() {
 
@@ -169,4 +170,11 @@ public class User {
         this.picture = picture;
     }
 
+    public String getUser_token() {
+        return user_token;
+    }
+
+    public void setUser_token(String user_token) {
+        this.user_token = user_token;
+    }
 }

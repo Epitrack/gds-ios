@@ -25,28 +25,38 @@ public class UsefulPhonesActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.useful_phones);
 
-        phoneId = Integer.parseInt(getIntent().getStringExtra("phone_id"));
+        phoneId = getIntent().getIntExtra("phone_id", 1);
         ImageView imageView = (ImageView) findViewById(R.id.image_call);
-        TextView textView = (TextView) findViewById(R.id.text_call);
+        TextView textViewDesc = (TextView) findViewById(R.id.text_call_desc);
+        TextView textViewTitle = (TextView) findViewById(R.id.text_call_title);
+        TextView textViewNumber = (TextView) findViewById(R.id.text_call_number);
 
         if (phoneId == Phone.EMERGENCY.getId()) {
             imageView.setImageResource(R.drawable.icon_samu);
-            textView.setText("");
+            textViewDesc.setText(R.string.emergence_text);
+            textViewTitle.setText("SAMU");
+            textViewNumber.setText("192");
         } else if (phoneId == Phone.POLICE.getId()) {
             imageView.setImageResource(R.drawable.icon_police);
-            textView.setText("");
+            textViewTitle.setText(R.string.police_text);
+            textViewNumber.setText("192");
+            textViewDesc.setText("");
         } else if (phoneId == Phone.FIREMAN.getId()) {
             imageView.setImageResource(R.drawable.icon_firefighter);
-            textView.setText("");
+            textViewTitle.setText(R.string.fireman_text);
+            textViewNumber.setText("193");
+            textViewDesc.setText("");
         } else if (phoneId == Phone.DEFENSE.getId()) {
             imageView.setImageResource(R.drawable.icon_civildefense);
-            textView.setText("");
+            textViewTitle.setText(R.string.defense_text);
+            textViewNumber.setText("0800 644 0199");
+            textViewDesc.setText("");
         }
     }
 
     @OnClick(R.id.button_call)
     public void onClick() {
-        Intent itent;
+        Intent intent;
         Uri uri = null;
 
         if (phoneId == Phone.EMERGENCY.getId()) {
@@ -58,7 +68,7 @@ public class UsefulPhonesActivity extends BaseAppCompatActivity {
         } else if (phoneId == Phone.DEFENSE.getId()) {
             uri = Uri.parse("08006440199");
         }
-        itent = new Intent(Intent.ACTION_DIAL, uri);
-        startActivity(itent);
+        intent = new Intent(Intent.ACTION_DIAL, uri);
+        startActivity(intent);
     }
 }

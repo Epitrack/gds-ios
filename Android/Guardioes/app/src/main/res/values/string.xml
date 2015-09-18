@@ -104,6 +104,11 @@
     <string name="defense">Defesa Civil</string>
     <string name="useful_phones">Telefones Úteis</string>
 
+    <string name="emergence_text">Serviço de Atendimento Móvel de Urgência</string>
+    <string name="police_text">Polícia Militar</string>
+    <string name="fireman_text">Bombeiro Civil</string>
+    <string name="defense_text">Defesa Civil</string>
+
     # Hint
 
     <string name="hint_birth_date">Data de nascimento</string>

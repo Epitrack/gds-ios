@@ -58,7 +58,7 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
     private boolean inLogin;
     private Validator validator;
     SharedPreferences sharedPreferences = null;
-    public static final String PREFS_NAME = "preferences_id";
+    public static final String PREFS_NAME = "preferences_user_token";
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -75,14 +75,17 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
         actionBar.setDisplayShowTitleEnabled(false);
 
         sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
-        String prefId = sharedPreferences.getString("PrefUser", "");
+        String prefUserToken = sharedPreferences.getString("preferences_user_token", "");
 
-        if (!prefId.equals("")) {
+        if (!prefUserToken.equals("")) {
 
+            SingleUser singleUser = SingleUser.getInstance();
             JSONObject jsonObject = new JSONObject();
 
+            singleUser.setUser_token(prefUserToken);
+
             SimpleRequester sendPostRequest = new SimpleRequester();
-            sendPostRequest.setUrl(Requester.API_URL + "user/get/"+prefId);
+            sendPostRequest.setUrl(Requester.API_URL + "user/lookup/");
             sendPostRequest.setJsonObject(jsonObject);
             sendPostRequest.setMethod(Method.GET);
 
@@ -96,18 +99,21 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     Toast.makeText(getApplicationContext(), "Erro ao fazer o login. - " + jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
                 } else {
 
-                    JSONArray jsonArray = jsonObject.getJSONArray("data");
+                    JSONObject jsonObjectUser = jsonObject.getJSONObject("data");
 
-                    for (int i = 0; i < jsonArray.length() ; i++) {
-                        SingleUser singleUser = SingleUser.getInstance();
-                        singleUser.setNick(jsonArray.getJSONObject(i).getString("nick").toString());
-                        singleUser.setEmail(jsonArray.getJSONObject(i).getString("email").toString());
-                        singleUser.setGender(jsonArray.getJSONObject(i).getString("gender").toString());
-                        singleUser.setPicture(jsonArray.getJSONObject(i).getString("picture").toString());
-                        singleUser.setId(jsonArray.getJSONObject(i).getString("id").toString());
-                        singleUser.setRace(jsonArray.getJSONObject(i).getString("race").toString());
-                        singleUser.setDob(jsonArray.getJSONObject(i).getString("dob").toString());
-                    }
+                    singleUser.setNick(jsonObjectUser.getString("nick").toString());
+                    singleUser.setEmail(jsonObjectUser.getString("email").toString());
+                    singleUser.setGender(jsonObjectUser.getString("gender").toString());
+                    singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                    singleUser.setId(jsonObjectUser.getString("id").toString());
+                    singleUser.setRace(jsonObjectUser.getString("race").toString());
+                    singleUser.setDob(jsonObjectUser.getString("dob").toString());
+                    singleUser.setUser_token(jsonObjectUser.get("token").toString());
+
+                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString("preferences_user_token", singleUser.getUser_token());
+                    editor.commit();
 
                     navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                             Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -299,11 +305,12 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     singleUser.setId(jsonObjectUser.getString("id").toString());
                     singleUser.setRace(jsonObjectUser.getString("race").toString());
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
+                    singleUser.setUser_token(jsonObject.get("token").toString());
 
                     sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                    editor.putString("PrefUser", singleUser.getId());
+                    editor.putString("preferences_user_token", singleUser.getUser_token());
                     editor.commit();
 
                     navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |

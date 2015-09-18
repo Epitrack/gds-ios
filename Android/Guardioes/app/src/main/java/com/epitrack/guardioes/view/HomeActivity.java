@@ -2,6 +2,7 @@ package com.epitrack.guardioes.view;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
@@ -17,6 +18,7 @@ import com.epitrack.guardioes.manager.PrefManager;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.view.account.LoginActivity;
 import com.epitrack.guardioes.view.menu.HomeMenu;
+import com.epitrack.guardioes.view.welcome.WelcomeActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,6 +45,7 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
     private ActionBarDrawerToggle drawerToggle;
 
     private final Map<String, Fragment> fragmentMap = new HashMap<>();
+    public static final String PREFS_NAME = "preferences_user_token";
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -91,12 +94,21 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
 
         } else if (getCurrentFragment().getTag().equals(MAIN_FRAGMENT.getSimpleName())) {
 
-            super.onBackPressed();
+            //super.onBackPressed();
+
+            final Intent intent = new Intent(this, WelcomeActivity.class);
+
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                    Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            startActivity(intent);
+
 
         } else {
 
             replaceFragment(MAIN_FRAGMENT,
-                            MAIN_FRAGMENT.getSimpleName());
+                    MAIN_FRAGMENT.getSimpleName());
+
         }
     }
 
@@ -111,7 +123,12 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
 
             if (new PrefManager(this).remove(Constants.Pref.USER)) {
 
-                final Intent intent = new Intent(this, LoginActivity.class);
+                final Intent intent = new Intent(this, WelcomeActivity.class);
+
+                SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("preferences_user_token", "");
+                editor.commit();
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                 Intent.FLAG_ACTIVITY_NEW_TASK);
