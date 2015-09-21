@@ -131,7 +131,22 @@ public class UserAdapter extends ArrayAdapter<User> {
 
         viewHolder.textViewName.setText(user.getNick());
         viewHolder.textViewType.setText(user.getType());
-        viewHolder.imageViewImage.setImageResource(user.getImage());
+
+        if (user.getGender().equals("M")) {
+
+            if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_6);
+            } else {
+                viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_4);
+            }
+        } else {
+
+            if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_8);
+            } else {
+                viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_7);
+            }
+        }
 
         return view;
     }

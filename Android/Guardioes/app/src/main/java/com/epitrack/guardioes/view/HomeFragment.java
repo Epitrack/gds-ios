@@ -52,6 +52,23 @@ public class HomeFragment extends BaseFragment {
         String text = getString(R.string.message_hello);
         text = text.replace("{0}", singleUser.getNick());
 
+        if (singleUser.getGender().equals("M")) {
+
+            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+            } else {
+                imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+            }
+        } else {
+
+            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
+            } else {
+                imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
+            }
+        }
+
+
         textViewName.setText(text);
 
         return view;

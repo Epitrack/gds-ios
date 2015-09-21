@@ -109,11 +109,21 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
         viewHolder.textViewAge.setText(DateFormat.getDateDiff(parent.getDob()) + " Anos");
         viewHolder.textViewId.setText(parent.getId());
 
-        if (parent.getGender().equals("F")) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_1);
+        if (parent.getGender().equals("M")) {
+
+            if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+            } else {
+                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+            }
         } else {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_2);
-         }
+
+            if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
+            } else {
+                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
+            }
+        }
     }
 
     @Override

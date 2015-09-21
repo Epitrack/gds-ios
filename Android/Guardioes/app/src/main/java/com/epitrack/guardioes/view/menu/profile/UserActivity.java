@@ -101,16 +101,28 @@ public class UserActivity extends BaseAppCompatActivity {
                 spinnerRace.setSelection(4);
             }
 
-            //spinnerGender.setSelection();
-
             if (gender.equals("M")) {
                 spinnerGender.setSelection(0);
             } else {
                 spinnerGender.setSelection(1);
             }
 
-            if (mainMember) {
+            if (gender.equals("M")) {
+                if (race.equals("branco") || race.equals("amarelo")) {
+                    imageViewImage.setImageResource(R.drawable.image_avatar_6);
+                } else {
+                    imageViewImage.setImageResource(R.drawable.image_avatar_4);
+                }
+            } else {
 
+                if (race.equals("branco") || race.equals("amarelo")) {
+                    imageViewImage.setImageResource(R.drawable.image_avatar_8);
+                } else {
+                    imageViewImage.setImageResource(R.drawable.image_avatar_7);
+                }
+            }
+
+            if (mainMember) {
                 textViewMessage.setText(R.string.message_fields);
 
                 textLayoutMail.setVisibility(View.VISIBLE);
@@ -140,7 +152,6 @@ public class UserActivity extends BaseAppCompatActivity {
         gender = gender.substring(0, 1);
         user.setGender(gender.toUpperCase());
         user.setRace(spinnerRace.getSelectedItem().toString().toLowerCase());
-
 
         JSONObject jsonObject = new JSONObject();
 
@@ -209,7 +220,6 @@ public class UserActivity extends BaseAppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.epitrack.guardioes.view.diary;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
+import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.utility.ViewUtility;
 import com.epitrack.guardioes.view.survey.ParentListener;
 
@@ -31,9 +34,12 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
 
     private final ParentListener listener;
 
-    private List<Parent> parentList = new ArrayList<>();
+    //private List<Parent> parentList = new ArrayList<>();
+    private List<User> usertList = new ArrayList<>();
 
-    public MemberAdapter(final ParentListener listener, final List<Parent> parentList) {
+    private Context context;
+
+    /*public MemberAdapter(final ParentListener listener, final List<Parent> parentList) {
 
         if (listener == null) {
             throw new IllegalArgumentException("The listener cannot be null.");
@@ -41,44 +47,17 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
 
         this.listener = listener;
         this.parentList = parentList;
+    }*/
 
-        // TODO: Remove this.. Stub only
+    public MemberAdapter(final Context context, final ParentListener listener, final List<User> parentList) {
 
-        final Parent parent1 = new Parent();
-        parent1.name = "Aninha";
-        parent1.age = 15;
+        if (listener == null) {
+            throw new IllegalArgumentException("The listener cannot be null.");
+        }
 
-        final Parent parent2 = new Parent();
-        parent2.name = "Gui";
-        parent2.age = 21;
-
-        final Parent parent3 = new Parent();
-        parent3.name = "Peu";
-        parent3.age = 9;
-
-        final Parent parent4 = new Parent();
-        parent4.name = "Cadu";
-        parent4.age = 28;
-
-        final Parent parent5 = new Parent();
-        parent5.name = "Cah";
-        parent5.age = 25;
-
-        final Parent parent6 = new Parent();
-        parent6.name = "Gui";
-        parent6.age = 22;
-
-        final Parent parent7 = new Parent();
-        parent7.name = "Ju";
-        parent7.age = 18;
-
-        parentList.add(parent1);
-        parentList.add(parent2);
-        parentList.add(parent3);
-        parentList.add(parent4);
-        parentList.add(parent5);
-        parentList.add(parent6);
-        parentList.add(parent7);
+        this.listener = listener;
+        this.usertList = parentList;
+        this.context = context;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -129,7 +108,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
 
-        final Parent parent = parentList.get(position);
+        final User parent = usertList.get(position);
 
         if (position == SELECT) {
 
@@ -143,12 +122,12 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
         } else {
 
             ViewUtility.setMarginLeft(viewHolder.imageViewPhoto,
-                                      ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_SMALL));
+                    ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_SMALL));
         }
 
         if (position == getItemCount() - 1) {
             ViewUtility.setMarginRight(viewHolder.imageViewPhoto,
-                                       ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_LARGE));
+                    ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_LARGE));
 
         } else {
 
@@ -156,41 +135,28 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
                                        ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_SMALL));
         }
 
-        viewHolder.textViewName.setText(parent.name);
+        viewHolder.textViewName.setText(parent.getNick());
 
-        if (position == 0) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_1);
+        if (parent.getGender().equals("M")) {
 
-        } else if (position == 1) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_2);
+            if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+            } else {
+                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+            }
+        } else {
 
-        } else if (position == 2) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_3);
-
-        } else if (position == 3) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
-
-        } else if (position == 4) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_5);
-
-        } else if (position == 5) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
-
-        } else if (position == 6) {
-            viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
+            if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
+            } else {
+                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
+            }
         }
     }
 
     @Override
     public int getItemCount() {
-        return parentList.size();
+        return usertList.size();
     }
 
-    // TODO: Remove this.. Stub only
-
-    public class Parent {
-
-        public String name;
-        public int age;
-    }
 }

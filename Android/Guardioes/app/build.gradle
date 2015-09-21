@@ -30,52 +30,40 @@ android {
     }
 }
 
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
 dependencies {
-
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.github.mmin18.layoutcast:library:1.1.4@aar'
-
     compile 'com.android.support:support-v4:23.0.1'
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
     compile 'com.android.support:recyclerview-v7:23.0.1'
     compile 'com.google.android.gms:play-services-maps:7.8.0'
     compile 'com.google.android.gms:play-services-gcm:7.8.0'
-
     compile 'com.edmodo:cropper:1.0.1'
-
     compile 'com.facebook.android:facebook-android-sdk:4.2.0'
-
     compile 'com.google.android.gms:play-services-location:7.8.0'
-
     compile 'com.jakewharton:butterknife:7.0.1'
-
     compile 'com.viewpagerindicator:library:2.4.1@aar'
-
     compile 'com.google.android.gms:play-services-plus:7.8.0'
-
     compile 'me.zhanghai.android.materialprogressbar:library:1.0.2'
-
     compile 'com.mobsandgeeks:android-saripaar:2.0.2'
-
     compile 'com.afollestad:material-dialogs:0.7.8.1'
-
     compile 'com.koushikdutta.ion:ion:2.1.6'
-
     compile 'com.sothree.slidinguppanel:library:3.1.1'
-
     compile 'com.cocosw:bottomsheet:1.1.1@aar'
-
-    compile ('com.twitter.sdk.android:twitter:1.6.0@aar') {
+    compile('com.twitter.sdk.android:twitter:1.6.0@aar') {
 
         transitive = true;
     }
-
-    compile (
+    compile(
 
             [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.5.3'],
             [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.5.3'],
             [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.5.3']
     )
+    compile 'com.github.PhilJay:MPAndroidChart:v2.1.4'
 }

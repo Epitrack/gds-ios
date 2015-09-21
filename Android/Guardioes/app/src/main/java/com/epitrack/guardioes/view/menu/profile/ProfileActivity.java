@@ -111,12 +111,6 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
                 if (jsonObject.get("error").toString() == "true") {
                     Toast.makeText(getApplicationContext(), R.string.generic_error, Toast.LENGTH_SHORT).show();
 
-                    /*new DialogBuilder(ProfileActivity.this).load()
-                            .title(R.string.attention)
-                            .content(R.string.delete_user)
-                            .positiveText(R.string.yes)
-                            .show();*/
-
                 } else {
                     Toast.makeText(getApplicationContext(), R.string.delete_user, Toast.LENGTH_SHORT).show();
                     listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));

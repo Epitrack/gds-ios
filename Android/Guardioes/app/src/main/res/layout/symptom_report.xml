@@ -86,10 +86,15 @@
     </LinearLayout>
 
     <!-- Change to graph-->
-    <View
+    <!--<View
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center_vertical"
-        android:background="@android:color/holo_purple" />
+        android:background="@android:color/holo_purple" />-->
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie_chart_diary"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_vertical" />
 
 </LinearLayout>
