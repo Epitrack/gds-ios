@@ -203,6 +203,9 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         //Calendar Config
         materialCalendarView.setOnDateChangedListener(this);
         materialCalendarView.setOnMonthChangedListener(this);
+        materialCalendarView.setArrowColor(R.color.blue_dark);
+        materialCalendarView.setWeekDayLabels(new String[]{"S", "T", "Q", "Q", "S", "S", "D"});
+        materialCalendarView.setTitleMonths(new String[] {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"});
 
         //textViewDay.setText("Sexta-feira");
         //textViewDate.setText("15 de maio");
@@ -237,11 +240,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
         dataSet.setColors(colors);
 
-        // instantiate pie data object now
         PieData data = new PieData(xVals, dataSet);
-        //data.setValueFormatter(new PercentFormatter());
-        //data.setValueTextSize(0f);
-        //data.setValueTextColor(R.color.grey_dark);
         data.setDrawValues(false);
         data.setHighlightEnabled(false);
 
