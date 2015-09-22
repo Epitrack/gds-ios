@@ -72,6 +72,8 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
     private double goodCount = 0;
     private double badCount = 0;
     private double totalCount = 0;
+    private double goodPercent = 0;
+    private double badPercent = 0;
 
     SingleUser singleUser = SingleUser.getInstance();
 
@@ -155,34 +157,25 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
             textViewParticipation.setText((int)totalCount +  " Participações");
 
-            double goodPercent = goodCount / totalCount;
+            goodPercent = goodCount / totalCount;
             textViewGoodPercentage.setText((int)(goodPercent * 100) + "% Bem");
             textViewGoodReport.setText((int)goodCount  + " Relatórios");
 
-            double badPercent = badCount / totalCount;
+            badPercent = badCount / totalCount;
             textViewBadPercentage.setText((int)(badPercent * 100) + "% Mal");
             textViewBadReport.setText((int) badCount + " Relatórios");
 
-           /* pieChart.setUsePercentValues(true);
-            pieChart.setDescription("");
-            pieChart.setDragDecelerationFrictionCoef(0.95f);
-            pieChart.setDrawHoleEnabled(true);
-            pieChart.setHoleColorTransparent(true);
-            pieChart.setTransparentCircleColor(Color.WHITE);
-            pieChart.setTransparentCircleAlpha(100);
-            pieChart.setHoleRadius(58f);
-            pieChart.setTransparentCircleRadius(61f);
-            //pieChart.setDrawCenterText(true);
-            pieChart.setRotationAngle(0);
-            pieChart.setRotationEnabled(true);*/
-
-            //pieChart.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 0.5f));
-            pieChart.setHoleRadius(60f);
-            pieChart.setDrawCenterText(false);
-            pieChart.setHoleColorTransparent(false);
-            pieChart.setDrawHoleEnabled(true);
+            //Pie Char Config
             pieChart.setUsePercentValues(false);
-            pieChart.setHoleColor(Color.WHITE);
+            pieChart.setDescription("");
+            pieChart.setDrawCenterText(true);
+            pieChart.setDrawSliceText(false);
+            pieChart.setDrawHoleEnabled(false);
+            pieChart.setHoleColorTransparent(true);
+            pieChart.setHoleRadius(7);
+            pieChart.setTransparentCircleRadius(10);
+            pieChart.setRotationAngle(0);
+            pieChart.setRotationEnabled(true);
 
             setData();
 
@@ -207,7 +200,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
     private void setData() {
 
-        float[] yData = { (int)badCount, (int)goodCount };
+        float[] yData = { (int)(badPercent * 100), (int)(goodPercent * 100)};
         String[] xData = { "Mal", "Bem" };
 
         ArrayList<Entry> yVals1 = new ArrayList<Entry>();
@@ -220,32 +213,12 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         for (int i = 0; i < xData.length; i++)
             xVals.add(xData[i]);
 
-        // create pie data set
         PieDataSet dataSet = new PieDataSet(yVals1, "");
         dataSet.setSliceSpace(2);
         dataSet.setSelectionShift(2);
 
-        // add many colors
-        int colors[] = {Color.parseColor("#FF0000"),Color.parseColor("#CCCC00")
-        };
-        /*ArrayList<Integer> colors = new ArrayList<Integer>();
+        int colors[] = {Color.parseColor("#FF0000"),Color.parseColor("#CCCC00")};
 
-        for (int c : ColorTemplate.VORDIPLOM_COLORS)
-            colors.add(c);
-
-        for (int c : ColorTemplate.JOYFUL_COLORS)
-            colors.add(c);
-
-        for (int c : ColorTemplate.COLORFUL_COLORS)
-            colors.add(c);
-
-        for (int c : ColorTemplate.LIBERTY_COLORS)
-            colors.add(c);
-
-        for (int c : ColorTemplate.PASTEL_COLORS)
-            colors.add(c);
-
-        colors.add(ColorTemplate.getHoloBlue());*/
         dataSet.setColors(colors);
 
         // instantiate pie data object now
@@ -255,7 +228,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         data.setValueTextColor(R.color.grey_dark);
 
         pieChart.setData(data);
-        pieChart.highlightValues(null);
+        //pieChart.highlightValues(null);
         pieChart.invalidate();
     }
 }
