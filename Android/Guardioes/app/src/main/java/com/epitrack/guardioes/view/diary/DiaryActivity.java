@@ -3,10 +3,13 @@ package com.epitrack.guardioes.view.diary;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.SingleUser;
@@ -23,11 +26,17 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.OnDateChangedListener;
+import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -37,7 +46,7 @@ import butterknife.Bind;
 /**
  * @author Igor Morais
  */
-public class DiaryActivity extends BaseAppCompatActivity implements ParentListener {
+public class DiaryActivity extends BaseAppCompatActivity implements ParentListener, OnDateChangedListener, OnMonthChangedListener {
 
     @Bind(R.id.text_view_participation)
     TextView textViewParticipation;
@@ -77,6 +86,11 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
     SingleUser singleUser = SingleUser.getInstance();
 
+    private static final DateFormat FORMATTER = SimpleDateFormat.getDateInstance();
+
+    @Bind(R.id.calendarView)
+    MaterialCalendarView materialCalendarView;
+
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
@@ -87,7 +101,6 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        //final List<MemberAdapter.Parent> parentList = new ArrayList<>();
         final List<User> parentList = new ArrayList<>();
 
         SimpleRequester simpleRequester = new SimpleRequester();
@@ -159,7 +172,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
             goodPercent = goodCount / totalCount;
             textViewGoodPercentage.setText((int)(goodPercent * 100) + "% Bem");
-            textViewGoodReport.setText((int)goodCount  + " Relatórios");
+            textViewGoodReport.setText((int) goodCount + " Relatórios");
 
             badPercent = badCount / totalCount;
             textViewBadPercentage.setText((int)(badPercent * 100) + "% Mal");
@@ -168,14 +181,14 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
             //Pie Char Config
             pieChart.setUsePercentValues(false);
             pieChart.setDescription("");
-            pieChart.setDrawCenterText(true);
+            pieChart.setDrawCenterText(false);
             pieChart.setDrawSliceText(false);
             pieChart.setDrawHoleEnabled(false);
-            pieChart.setHoleColorTransparent(true);
+            pieChart.setHoleColorTransparent(false);
             pieChart.setHoleRadius(7);
             pieChart.setTransparentCircleRadius(10);
             pieChart.setRotationAngle(0);
-            pieChart.setRotationEnabled(true);
+            pieChart.setRotationEnabled(false);
 
             setData();
 
@@ -187,6 +200,9 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
             e.printStackTrace();
         }
 
+        //Calendar Config
+        materialCalendarView.setOnDateChangedListener(this);
+        materialCalendarView.setOnMonthChangedListener(this);
 
         //textViewDay.setText("Sexta-feira");
         //textViewDate.setText("15 de maio");
@@ -223,12 +239,29 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
         // instantiate pie data object now
         PieData data = new PieData(xVals, dataSet);
-        data.setValueFormatter(new PercentFormatter());
-        data.setValueTextSize(14f);
-        data.setValueTextColor(R.color.grey_dark);
+        //data.setValueFormatter(new PercentFormatter());
+        //data.setValueTextSize(0f);
+        //data.setValueTextColor(R.color.grey_dark);
+        data.setDrawValues(false);
+        data.setHighlightEnabled(false);
 
         pieChart.setData(data);
-        //pieChart.highlightValues(null);
         pieChart.invalidate();
+    }
+
+    @Override
+    public void onDateChanged(@NonNull MaterialCalendarView widget, @Nullable CalendarDay date) {
+        if(date == null) {
+            //textView.setText(null);
+        }
+        else {
+            //textView.setText(FORMATTER.format(date.getDate()));
+            Toast.makeText(this, FORMATTER.format(date.getDate()), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onMonthChanged(MaterialCalendarView materialCalendarView, CalendarDay date) {
+        Toast.makeText(this, FORMATTER.format(date.getDate()), Toast.LENGTH_SHORT).show();
     }
 }

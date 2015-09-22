@@ -66,4 +66,5 @@ dependencies {
             [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.5.3']
     )
     compile 'com.github.PhilJay:MPAndroidChart:v2.1.4'
+    compile 'com.prolificinteractive:material-calendarview:0.8.1'
 }
