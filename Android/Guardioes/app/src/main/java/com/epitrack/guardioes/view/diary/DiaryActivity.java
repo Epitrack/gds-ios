@@ -7,7 +7,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,14 +65,17 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
     @Bind(R.id.text_view_bad_report)
     TextView textViewBadReport;
 
-    @Bind(R.id.text_view_day)
-    TextView textViewDay;
+    //@Bind(R.id.text_view_good_percentage_2)
+    //TextView textViewGoodPercentageDetail;
 
-    @Bind(R.id.text_view_date)
-    TextView textViewDate;
+    @Bind(R.id.text_view_good_report_2)
+    TextView textViewGoodReportDetail;
 
-    @Bind(R.id.text_view_symptom)
-    TextView textViewSymptom;
+    //@Bind(R.id.text_view_bad_percentage_2)
+    //TextView textViewBadPercentageDetail;
+
+    @Bind(R.id.text_view_bad_report_2)
+    TextView textViewBadReportDetail;
 
     @Bind(R.id.recycler_view)
     RecyclerView recyclerView;
@@ -78,11 +83,23 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
     @Bind(R.id.pie_chart_diary)
     PieChart pieChart;
 
+    @Bind(R.id.layout_detail_good)
+    RelativeLayout layoutDetailGood;
+
+    @Bind(R.id.layout_detail_bad)
+    RelativeLayout layoutDetailBad;
+
+    private double totalCount = 0;
     private double goodCount = 0;
     private double badCount = 0;
-    private double totalCount = 0;
     private double goodPercent = 0;
     private double badPercent = 0;
+
+    private double totalCountDetail = 0;
+    private double goodCountDetail = 0;
+    private double badCountDetail = 0;
+    private double goodPercentDetail = 0;
+    private double badPercentDetail = 0;
 
     SingleUser singleUser = SingleUser.getInstance();
 
@@ -98,8 +115,10 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         setContentView(R.layout.diary);
 
         recyclerView.setHasFixedSize(true);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        layoutDetailGood.setVisibility(View.INVISIBLE);
+        layoutDetailBad.setVisibility(View.INVISIBLE);
 
         final List<User> parentList = new ArrayList<>();
 
@@ -157,7 +176,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         simpleRequester.setJsonObject(null);
         simpleRequester.setMethod(Method.GET);
 
-        String jsonStr = null;
+        String jsonStr;
         try {
             jsonStr = simpleRequester.execute(simpleRequester).get();
 
@@ -170,11 +189,21 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
             textViewParticipation.setText((int)totalCount +  " Participações");
 
-            goodPercent = goodCount / totalCount;
+            if (totalCount == 0) {
+                goodPercent = 0;
+            } else {
+                goodPercent = goodCount / totalCount;
+            }
+
             textViewGoodPercentage.setText((int)(goodPercent * 100) + "% Bem");
             textViewGoodReport.setText((int) goodCount + " Relatórios");
 
-            badPercent = badCount / totalCount;
+            if (totalCount == 0) {
+                badPercent = 0;
+            } else {
+                badPercent = badCount / totalCount;
+            }
+
             textViewBadPercentage.setText((int)(badPercent * 100) + "% Mal");
             textViewBadReport.setText((int) badCount + " Relatórios");
 
@@ -204,12 +233,8 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         materialCalendarView.setOnDateChangedListener(this);
         materialCalendarView.setOnMonthChangedListener(this);
         materialCalendarView.setArrowColor(R.color.blue_dark);
-        materialCalendarView.setWeekDayLabels(new String[]{"S", "T", "Q", "Q", "S", "S", "D"});
-        materialCalendarView.setTitleMonths(new String[] {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"});
-
-        //textViewDay.setText("Sexta-feira");
-        //textViewDate.setText("15 de maio");
-        //textViewSymptom.setText("7 Sintomas");
+        materialCalendarView.setWeekDayLabels(new String[]{"D", "S", "T", "Q", "Q", "S", "S"});
+        materialCalendarView.setTitleMonths(new String[]{"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"});
     }
 
     @Override
@@ -250,12 +275,75 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
     @Override
     public void onDateChanged(@NonNull MaterialCalendarView widget, @Nullable CalendarDay date) {
-        if(date == null) {
-            //textView.setText(null);
+
+        if (layoutDetailGood.getVisibility() == View.INVISIBLE) {
+            layoutDetailGood.setVisibility(View.VISIBLE);
+            layoutDetailBad.setVisibility(View.VISIBLE);
         }
-        else {
-            //textView.setText(FORMATTER.format(date.getDate()));
-            Toast.makeText(this, FORMATTER.format(date.getDate()), Toast.LENGTH_SHORT).show();
+
+        if(date != null) {
+
+            SimpleRequester simpleRequester = new SimpleRequester();
+            simpleRequester.setUrl(Requester.API_URL + "user/calendar/day?day="+date.getDay()+"&month=" + (date.getMonth() + 1) + "&year=" + date.getYear());
+            simpleRequester.setJsonObject(null);
+            simpleRequester.setMethod(Method.GET);
+
+            String jsonStr;
+            goodCountDetail = 0;
+            badCountDetail = 0;
+
+            try {
+                jsonStr = simpleRequester.execute(simpleRequester).get();
+
+                JSONObject jsonObject = new JSONObject(jsonStr);
+
+                if (jsonObject.get("error").toString() == "true") {
+                    Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                } else {
+
+                    JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObjectSymptom = jsonArray.getJSONObject(i);
+                        JSONObject jsonObjectDetail = jsonObjectSymptom.getJSONObject("_id");
+
+                        if (jsonObjectDetail.get("no_symptom").toString().equals("Y")) {
+
+                            badCountDetail = Double.parseDouble(jsonObjectSymptom.get("count").toString());
+
+                        } else if (jsonObjectDetail.get("no_symptom").toString().equals("N")) {
+
+                            goodCountDetail = Double.parseDouble(jsonObjectSymptom.get("count").toString());
+                        }
+                    }
+
+                    totalCountDetail = badCountDetail + goodCountDetail;
+
+                    if (badCountDetail == 0) {
+                        //textViewBadPercentageDetail.setText("0% Mal");
+                        textViewBadReportDetail.setText("0 Relatórios \"Estou Mal\"");
+                    } else {
+                        badPercentDetail = ((badCountDetail / totalCountDetail) * 100);
+                        //textViewBadPercentageDetail.setText((int)badPercentDetail + "% Mal");
+                        textViewBadReportDetail.setText((int)badCountDetail + " Relatórios \"Estou Mal\"");
+                    }
+
+                    if (goodCountDetail == 0) {
+                        //textViewGoodPercentageDetail.setText("0% Bem");;
+                        textViewGoodReportDetail.setText("0 Relatórios \"Estou Bem\"");
+                    } else {
+                        goodPercentDetail = ((goodCountDetail / totalCountDetail) * 100);
+                        //textViewGoodPercentageDetail.setText((int)goodPercentDetail + "% Bem");;
+                        textViewGoodReportDetail.setText((int)goodCountDetail + " Relatórios \"Estou Bem\"");
+                    }
+                }
+            }catch(JSONException e){
+                e.printStackTrace();
+            }catch(InterruptedException e){
+                e.printStackTrace();
+            }catch(ExecutionException e){
+                e.printStackTrace();
+            }
         }
     }
 

@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 />
 
-            <LinearLayout
+           <!-- <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -135,7 +135,142 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </LinearLayout>-->
+
+            <!--<LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/layout_detail">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/icon_good" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_view_good_percentage_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black_dark"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:text="30%" />
+
+                        <TextView
+                            android:id="@+id/text_view_good_report_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="@color/black_dark"
+                            android:textSize="10dp"
+                            android:text="30 Relatórios" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginLeft="-100dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/icon_bad" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_view_bad_percentage_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black_dark"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:text="30%" />
+
+                        <TextView
+                            android:id="@+id/text_view_bad_report_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="@color/black_dark"
+                            android:textSize="10dp"
+                            android:text="30 Relatórios" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_detail_good"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/icon_good"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/imageViewDetail" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:id="@+id/text_view_good_report_2"
+                    android:textColor="@color/black_dark"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageViewDetail"
+                    android:layout_toEndOf="@+id/imageViewDetail" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/layout_detail_bad"
+                android:layout_gravity="center_horizontal" >
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/icon_bad"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/imageViewDetail2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:id="@+id/text_view_bad_report_2"
+                    android:textColor="@color/black_dark"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageViewDetail2" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
