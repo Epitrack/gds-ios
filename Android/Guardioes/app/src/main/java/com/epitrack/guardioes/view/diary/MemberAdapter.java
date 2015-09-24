@@ -38,6 +38,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
     private List<User> usertList = new ArrayList<>();
 
     private Context context;
+    private String userId;
 
     /*public MemberAdapter(final ParentListener listener, final List<Parent> parentList) {
 
@@ -91,7 +92,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
 
                 viewHolder = this;
 
-                listener.onParentSelect("");
+                listener.onParentSelect(userId);
             }
         }
     }
@@ -134,6 +135,8 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
             ViewUtility.setMarginRight(viewHolder.imageViewPhoto,
                                        ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_SMALL));
         }
+
+        userId = parent.getId();
 
         viewHolder.textViewName.setText(parent.getNick());
 

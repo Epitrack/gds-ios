@@ -56,12 +56,6 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
         }
     }
 
-
-    /*public static String SendPostRequest(String posturl, JSONObject jsonObjSend) throws JSONException, IOException, Exception {
-        return SendPostRequest(posturl, this.method, jsonObjSend);
-    }*/
-
-
     private static String SendPostRequest(String apiUrl, Method method, JSONObject jsonObjSend) throws JSONException, IOException, SimpleRequesterException {
 
         URL url;

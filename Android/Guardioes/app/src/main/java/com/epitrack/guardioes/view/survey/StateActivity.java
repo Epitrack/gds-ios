@@ -26,6 +26,7 @@ import butterknife.OnClick;
 public class StateActivity extends BaseAppCompatActivity {
 
     String id;
+    SingleUser singleUser = SingleUser.getInstance();
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -34,7 +35,7 @@ public class StateActivity extends BaseAppCompatActivity {
         final boolean mainMember = getIntent().getBooleanExtra(Constants.Bundle.MAIN_MEMBER, false);
 
         if (mainMember) {
-            SingleUser singleUser = SingleUser.getInstance();
+
             id = singleUser.getId();
         } else {
             id = getIntent().getStringExtra("id_user");
@@ -56,7 +57,11 @@ public class StateActivity extends BaseAppCompatActivity {
         user.setLon(locationUtility.getLongitude());
 
         try {
-            jsonObject.put("user_id", user.getId());
+            jsonObject.put("user_id", singleUser.getId());
+
+            if (user.getId() != singleUser.getId()) {
+                jsonObject.put("household_id", user.getId());
+            }
             jsonObject.put("lat", user.getLat());
             jsonObject.put("lon", user.getLon());
             jsonObject.put("app_token", user.getApp_token());

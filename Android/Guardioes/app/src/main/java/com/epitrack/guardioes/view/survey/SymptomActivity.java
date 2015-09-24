@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.Symptom;
 import com.epitrack.guardioes.model.SymptomList;
 import com.epitrack.guardioes.model.User;
@@ -154,7 +155,13 @@ public class SymptomActivity extends BaseAppCompatActivity {
         user.setLat(locationUtility.getLatitude());
         user.setLon(locationUtility.getLongitude());
 
-        jsonObject.put("user_id", user.getId());
+        SingleUser singleUser = SingleUser.getInstance();
+
+        jsonObject.put("user_id", singleUser.getId());
+
+        if (user.getId() != singleUser.getId()) {
+            jsonObject.put("household_id", user.getId());
+        }
         jsonObject.put("lat", user.getLat());
         jsonObject.put("lon", user.getLon());
         jsonObject.put("app_token", user.getApp_token());

@@ -40,6 +40,8 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -117,9 +119,6 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        layoutDetailGood.setVisibility(View.INVISIBLE);
-        layoutDetailBad.setVisibility(View.INVISIBLE);
-
         final List<User> parentList = new ArrayList<>();
 
         SimpleRequester simpleRequester = new SimpleRequester();
@@ -155,7 +154,6 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
                     }
                 }
             }
-
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -165,14 +163,19 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         }
 
         recyclerView.setAdapter(new MemberAdapter(getApplicationContext(), this, parentList));
-
-        setupView();
+        setupView(null);
     }
 
-    private void setupView() {
+    private void setupView(String idHouseHold) {
 
         SimpleRequester simpleRequester = new SimpleRequester();
-        simpleRequester.setUrl(Requester.API_URL + "user/survey/summary");
+
+        if ((idHouseHold != singleUser.getId()) && (idHouseHold != null)) {
+            simpleRequester.setUrl(Requester.API_URL + "household/survey/summary?household_id="+idHouseHold);
+        } else {
+            simpleRequester.setUrl(Requester.API_URL + "user/survey/summary");
+        }
+
         simpleRequester.setJsonObject(null);
         simpleRequester.setMethod(Method.GET);
 
@@ -221,6 +224,16 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
             setData();
 
+            layoutDetailGood.setVisibility(View.INVISIBLE);
+            layoutDetailBad.setVisibility(View.INVISIBLE);
+
+            //Calendar Config
+            materialCalendarView.setOnDateChangedListener(this);
+            materialCalendarView.setOnMonthChangedListener(this);
+            materialCalendarView.setArrowColor(R.color.blue_dark);
+            materialCalendarView.setWeekDayLabels(new String[]{"D", "S", "T", "Q", "Q", "S", "S"});
+            materialCalendarView.setTitleMonths(new String[]{"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"});
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -228,18 +241,11 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        //Calendar Config
-        materialCalendarView.setOnDateChangedListener(this);
-        materialCalendarView.setOnMonthChangedListener(this);
-        materialCalendarView.setArrowColor(R.color.blue_dark);
-        materialCalendarView.setWeekDayLabels(new String[]{"D", "S", "T", "Q", "Q", "S", "S"});
-        materialCalendarView.setTitleMonths(new String[]{"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"});
     }
 
     @Override
     public void onParentSelect(String id) {
-
+        setupView(id);
     }
 
     private void setData() {
@@ -321,20 +327,20 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
                     if (badCountDetail == 0) {
                         //textViewBadPercentageDetail.setText("0% Mal");
-                        textViewBadReportDetail.setText("0 Relatórios \"Estou Mal\"");
+                        textViewBadReportDetail.setText("     0 Relatórios \"Estou Mal\"");
                     } else {
                         badPercentDetail = ((badCountDetail / totalCountDetail) * 100);
                         //textViewBadPercentageDetail.setText((int)badPercentDetail + "% Mal");
-                        textViewBadReportDetail.setText((int)badCountDetail + " Relatórios \"Estou Mal\"");
+                        textViewBadReportDetail.setText("     " + (int)badCountDetail + " Relatórios \"Estou Mal\"");
                     }
 
                     if (goodCountDetail == 0) {
                         //textViewGoodPercentageDetail.setText("0% Bem");;
-                        textViewGoodReportDetail.setText("0 Relatórios \"Estou Bem\"");
+                        textViewGoodReportDetail.setText("     0 Relatórios \"Estou Bem\"");
                     } else {
                         goodPercentDetail = ((goodCountDetail / totalCountDetail) * 100);
                         //textViewGoodPercentageDetail.setText((int)goodPercentDetail + "% Bem");;
-                        textViewGoodReportDetail.setText((int)goodCountDetail + " Relatórios \"Estou Bem\"");
+                        textViewGoodReportDetail.setText("     " + (int)goodCountDetail + " Relatórios \"Estou Bem\"");
                     }
                 }
             }catch(JSONException e){
@@ -349,6 +355,6 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
     @Override
     public void onMonthChanged(MaterialCalendarView materialCalendarView, CalendarDay date) {
-        Toast.makeText(this, FORMATTER.format(date.getDate()), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, FORMATTER.format(date.getDate()), Toast.LENGTH_SHORT).show();
     }
 }
