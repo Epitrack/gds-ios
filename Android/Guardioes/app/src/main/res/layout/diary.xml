@@ -74,7 +74,8 @@
                 android:id="@+id/calendarView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:focusableInTouchMode="true" />
+                android:focusableInTouchMode="true"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -84,12 +85,14 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/report_day"
                 android:textColor="@color/primary_light"
+                android:id="@+id/text_view_total_dia"
                 android:textSize="13dp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/layout_detail_good"
+                android:layout_marginLeft="22dp"
                 android:layout_gravity="center_horizontal">
 
                 <ImageView
@@ -115,6 +118,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
                 android:id="@+id/layout_detail_bad"
                 android:layout_gravity="center_horizontal" >
 

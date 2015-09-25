@@ -7,8 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.DTO;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.utility.ViewUtility;
@@ -72,6 +74,9 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
         @Bind(R.id.view_select)
         View viewSelect;
 
+        @Bind(R.id.text_id_view)
+        TextView textViewId;
+
         private boolean select;
 
         public ViewHolder(final View view) {
@@ -92,7 +97,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
 
                 viewHolder = this;
 
-                listener.onParentSelect(userId);
+                listener.onParentSelect(viewHolder.textViewId.getText().toString());
             }
         }
     }
@@ -136,9 +141,10 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
                                        ViewUtility.toPixel(viewHolder.itemView.getContext(), MARGIN_SMALL));
         }
 
-        userId = parent.getId();
-
         viewHolder.textViewName.setText(parent.getNick());
+
+        userId = parent.getId();
+        viewHolder.textViewId.setText(userId);
 
         if (parent.getGender().equals("M")) {
 
@@ -155,6 +161,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
                 viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
             }
         }
+
     }
 
     @Override
