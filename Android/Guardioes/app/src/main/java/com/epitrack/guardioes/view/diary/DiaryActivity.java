@@ -110,11 +110,11 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
     @Bind(R.id.text_view_total_dia)
     TextView textViewTotalDia;
 
-    @Bind(R.id.line_chart)
-    GraphView lineChart;
-
     @Bind(R.id.frequency_report)
     TextView textViewFrequencyReport;
+
+    @Bind(R.id.line_chart)
+    GraphView lineChart;
 
     private double totalCount = 0;
     private double goodCount = 0;
@@ -133,8 +133,6 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
     SingleUser singleUser = SingleUser.getInstance();
 
     private static final DateFormat FORMATTER = SimpleDateFormat.getDateInstance();
-
-    Map<Integer, Double> mapTotalMonth = new HashMap<Integer, Double>();
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -293,6 +291,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         onDateChanged(materialCalendarView, CalendarDay.today());
         idSelectedUser = id;
 
+        setDataLineChart();
         setTextTotalReport(null);
         setupView(id);
     }
@@ -332,6 +331,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
         textViewFrequencyReport.setText("Frequência de envio em " + CalendarDay.today().getYear());
 
+        Map<Integer, Double> mapTotalMonth = new HashMap<Integer, Double>();
         Map<Integer, Double> mapTotalMonthTemp = new HashMap<Integer, Double>();
         mapTotalMonthTemp.put(1, 0.0);
         mapTotalMonthTemp.put(2, 0.0);
@@ -347,7 +347,15 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         mapTotalMonthTemp.put(12, 0.0);
 
         SimpleRequester simpleRequester = new SimpleRequester();
-        simpleRequester.setUrl(Requester.API_URL + "user/calendar/year?year=" + CalendarDay.today().getYear());
+
+        if (idSelectedUser == singleUser.getId()) {
+            simpleRequester.setUrl(Requester.API_URL + "user/calendar/year?year=" + CalendarDay.today().getYear());
+        } else  if (idSelectedUser.equals("")) {
+            simpleRequester.setUrl(Requester.API_URL + "user/calendar/year?year=" + CalendarDay.today().getYear());
+        } else {
+            simpleRequester.setUrl(Requester.API_URL + "household/calendar/year?year=" + CalendarDay.today().getYear() + "&household_id="+idSelectedUser);
+        }
+
         simpleRequester.setJsonObject(null);
         simpleRequester.setMethod(Method.GET);
 
@@ -373,8 +381,9 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
                             mapTotalMonthTemp.put(j, Double.parseDouble(jsonObjectTotalMonth.get("percent").toString()));
                         }
                     }
-
                 }
+
+                lineChart.removeAllSeries();
 
                //Line Chart
                 mapTotalMonth.put(1, mapTotalMonthTemp.get(1));
@@ -391,6 +400,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
                 mapTotalMonth.put(12, mapTotalMonthTemp.get(12));
 
                 LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>();
+
 
                 for (int k = 1; k <= mapTotalMonth.size(); k++) {
                     series.appendData(new DataPoint(k, mapTotalMonth.get(k)), true, 100);
