@@ -23,12 +23,28 @@ import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.survey.ParentListener;
 import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.LimitLine;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.jjoe64.graphview.DefaultLabelFormatter;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.Viewport;
+import com.jjoe64.graphview.helper.StaticLabelsFormatter;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.DataPointInterface;
+import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.OnDataPointTapListener;
+import com.jjoe64.graphview.series.Series;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateChangedListener;
@@ -43,7 +59,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
@@ -68,14 +86,8 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
     @Bind(R.id.text_view_bad_report)
     TextView textViewBadReport;
 
-    //@Bind(R.id.text_view_good_percentage_2)
-    //TextView textViewGoodPercentageDetail;
-
     @Bind(R.id.text_view_good_report_2)
     TextView textViewGoodReportDetail;
-
-    //@Bind(R.id.text_view_bad_percentage_2)
-    //TextView textViewBadPercentageDetail;
 
     @Bind(R.id.text_view_bad_report_2)
     TextView textViewBadReportDetail;
@@ -98,6 +110,12 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
     @Bind(R.id.text_view_total_dia)
     TextView textViewTotalDia;
 
+    @Bind(R.id.line_chart)
+    GraphView lineChart;
+
+    @Bind(R.id.frequency_report)
+    TextView textViewFrequencyReport;
+
     private double totalCount = 0;
     private double goodCount = 0;
     private double badCount = 0;
@@ -115,6 +133,8 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
     SingleUser singleUser = SingleUser.getInstance();
 
     private static final DateFormat FORMATTER = SimpleDateFormat.getDateInstance();
+
+    Map<Integer, Double> mapTotalMonth = new HashMap<Integer, Double>();
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -170,6 +190,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
         recyclerView.setAdapter(new MemberAdapter(getApplicationContext(), this, parentList));
         setupView(null);
+        setDataLineChart();
     }
 
     private void setupView(String idHouseHold) {
@@ -305,6 +326,114 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
         pieChart.setData(data);
         pieChart.invalidate();
+    }
+
+    private void setDataLineChart() {
+
+        textViewFrequencyReport.setText("Frequência de envio em " + CalendarDay.today().getYear());
+
+        Map<Integer, Double> mapTotalMonthTemp = new HashMap<Integer, Double>();
+        mapTotalMonthTemp.put(1, 0.0);
+        mapTotalMonthTemp.put(2, 0.0);
+        mapTotalMonthTemp.put(3, 0.0);
+        mapTotalMonthTemp.put(4, 0.0);
+        mapTotalMonthTemp.put(5, 0.0);
+        mapTotalMonthTemp.put(6, 0.0);
+        mapTotalMonthTemp.put(7, 0.0);
+        mapTotalMonthTemp.put(8, 0.0);
+        mapTotalMonthTemp.put(9, 0.0);
+        mapTotalMonthTemp.put(10, 0.0);
+        mapTotalMonthTemp.put(11, 0.0);
+        mapTotalMonthTemp.put(12, 0.0);
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setUrl(Requester.API_URL + "user/calendar/year?year=" + CalendarDay.today().getYear());
+        simpleRequester.setJsonObject(null);
+        simpleRequester.setMethod(Method.GET);
+
+        String jsonStr;
+        try {
+            jsonStr = simpleRequester.execute(simpleRequester).get();
+            JSONObject jsonObject = new JSONObject(jsonStr);
+
+            if (jsonObject.get("error").toString() == "true") {
+                Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+            } else {
+                JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObjectTotalMonth = jsonArray.getJSONObject(i);
+                    JSONObject jsonObjectDetail = jsonObjectTotalMonth.getJSONObject("_id");
+
+                    int month = Integer.parseInt(jsonObjectDetail.get("month").toString());
+
+                    for (int j = 1; j <= mapTotalMonthTemp.size(); j++) {
+
+                        if (j == month) {
+                            mapTotalMonthTemp.put(j, Double.parseDouble(jsonObjectTotalMonth.get("percent").toString()));
+                        }
+                    }
+
+                }
+
+               //Line Chart
+                mapTotalMonth.put(1, mapTotalMonthTemp.get(1));
+                mapTotalMonth.put(2, mapTotalMonthTemp.get(2));
+                mapTotalMonth.put(3, mapTotalMonthTemp.get(3));
+                mapTotalMonth.put(4, mapTotalMonthTemp.get(4));
+                mapTotalMonth.put(5, mapTotalMonthTemp.get(5));
+                mapTotalMonth.put(6, mapTotalMonthTemp.get(6));
+                mapTotalMonth.put(7, mapTotalMonthTemp.get(7));
+                mapTotalMonth.put(8, mapTotalMonthTemp.get(8));
+                mapTotalMonth.put(9, mapTotalMonthTemp.get(9));
+                mapTotalMonth.put(10, mapTotalMonthTemp.get(10));
+                mapTotalMonth.put(11, mapTotalMonthTemp.get(11));
+                mapTotalMonth.put(12, mapTotalMonthTemp.get(12));
+
+                LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>();
+
+                for (int k = 1; k <= mapTotalMonth.size(); k++) {
+                    series.appendData(new DataPoint(k, mapTotalMonth.get(k)), true, 100);
+                }
+
+                series.setDrawDataPoints(true);
+                series.setBackgroundColor(R.color.blue_dark);
+                series.setDataPointsRadius(5);
+
+                series.setOnDataPointTapListener(new OnDataPointTapListener() {
+                    @Override
+                    public void onTap(Series series, DataPointInterface dataPoint) {
+                        Toast.makeText(getApplicationContext(), dataPoint.getY() + "% da frequência no envio de relatórios.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                StaticLabelsFormatter staticLabelsFormatter = new StaticLabelsFormatter(lineChart);
+                staticLabelsFormatter.setHorizontalLabels(new String[]{"jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"});
+                staticLabelsFormatter.setVerticalLabels(new String[]{"0%", "25%", "50%", "75%", "100%"});
+
+                lineChart.getGridLabelRenderer().setLabelFormatter(staticLabelsFormatter);
+
+                lineChart.getGridLabelRenderer().setVerticalLabelsColor(R.color.grey_light);
+                lineChart.getGridLabelRenderer().setHorizontalLabelsColor(R.color.grey_light);
+                lineChart.setTitleColor(R.color.grey_light);
+                lineChart.setTitleTextSize(12f);
+                lineChart.addSeries(series);
+                Viewport viewport = lineChart.getViewport();
+                viewport.setYAxisBoundsManual(true);
+                viewport.setMinY(0);
+                viewport.setMaxY(100);
+                viewport.setScrollable(false);
+
+
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

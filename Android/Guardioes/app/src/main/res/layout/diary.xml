@@ -149,16 +149,21 @@
                 android:layout_marginTop="30dp"
                 android:text="@string/frequency"
                 android:textColor="@color/primary_light"
+                android:id="@+id/frequency_report"
                 android:textSize="14dp" />
 
-            <View
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/line_chart"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginTop="15dp"
-                android:background="@android:color/holo_purple" />
+                android:layout_height="200dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:textSize="14dp" />
 
         </LinearLayout>
 

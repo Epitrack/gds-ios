@@ -67,4 +67,5 @@ dependencies {
     )
     compile 'com.github.PhilJay:MPAndroidChart:v2.1.4'
     compile 'com.prolificinteractive:material-calendarview:0.8.1'
+    compile 'com.jjoe64:graphview:4.0.1'
 }
