@@ -399,6 +399,8 @@
 		AAEB6D871B3AEBB400DB52F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Epitrack;
 				TargetAttributes = {

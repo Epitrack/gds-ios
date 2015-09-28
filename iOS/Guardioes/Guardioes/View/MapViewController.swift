@@ -21,7 +21,7 @@ class MapViewController: BaseViewController, CLLocationManagerDelegate {
     }
     
     // See flux
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         
         if status == CLAuthorizationStatus.AuthorizedWhenInUse {
             

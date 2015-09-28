@@ -7,11 +7,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cocosw.bottomsheet.BottomSheet;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.Loader;
 import com.epitrack.guardioes.model.Point;
+import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.view.base.AbstractBaseMapActivity;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,9 +28,15 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -126,7 +137,6 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
         setupView();
     }
 
-    // TODO: Temporary
     private void load() {
 
         Loader.with().getHandler().post(new Runnable() {
@@ -136,28 +146,70 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
                 try {
 
-                    final InputStream inputStream = getAssets().open("upas.json");
+                    final List<Point> pointList = new ArrayList<Point>();
+                    LocationUtility locationUtility = new LocationUtility(getApplicationContext());
 
-                    final List<Point> pointList = new ObjectMapper().readValue(inputStream, new TypeReference<List<Point>>() {
-                    });
+                    SimpleRequester simpleRequester = new SimpleRequester();
+                    simpleRequester.setJsonObject(null);
+                    simpleRequester.setMethod(Method.GET);
+                    simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
 
-                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                    String jsonStr = simpleRequester.execute(simpleRequester).get();
 
-                        @Override
-                        public void run() {
-                            addMarker(pointList);
+                    JSONObject jsonObject = new JSONObject(jsonStr);
+
+                    if (jsonObject.get("error").toString() == "true") {
+                        Toast.makeText(getApplicationContext(), "Erro: " + jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                    } else {
+
+                        JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                        for (int i = 0; i < jsonArray.length(); i++) {
+
+                            Point point = new Point();
+
+                            if (jsonArray.getJSONObject(i).get("no_symptom").equals("Y")) {
+                                point.setSympton(false);
+                            } else {
+                                point.setSympton(true);
+                            }
+
+                            point.setLongitude(Double.parseDouble(jsonArray.getJSONObject(i).get("lon").toString()));
+                            point.setLatitude(Double.parseDouble(jsonArray.getJSONObject(i).get("lat").toString()));
+
+                            pointList.add(point);
                         }
+                    }
 
-                    }, 2000);
+                    //final InputStream inputStream = getAssets().open("upas.json");
 
-                } catch (IOException e) {
+                    //final List<Point> pointList = new ObjectMapper().readValue(inputStream, new TypeReference<List<Point>>() {
+                    //});
+
+                    if (pointList.size() > 0) {
+                       new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                addMarker(pointList);
+                            }
+
+                        }, 2000);
+                    }
+
+                }/* catch (IOException e) {
+                    e.printStackTrace();
+                } */catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         });
     }
 
-    // TODO: Stub..
     private void addMarker(final List<Point> pointList) {
 
         final Handler handler = new Handler(Looper.getMainLooper());
@@ -175,7 +227,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
                     final LatLng latLng = new LatLng(point.getLatitude(), point.getLongitude());
 
-                    if (count % 2 == 0) {
+                    if (!point.isSympton()) {
                         getMap().addMarker(loadGoodMarkerOption().position(latLng));
 
                     } else {

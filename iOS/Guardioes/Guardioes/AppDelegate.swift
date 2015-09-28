@@ -24,9 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate { // GGLInstanceIDDelegate
     
     private func setupPush(application: UIApplication) {
         
-        let notificationType = UIUserNotificationType.Alert |
-                               UIUserNotificationType.Sound |
-                               UIUserNotificationType.Badge
+        let notificationType: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge]
         
         let notificationSetting = UIUserNotificationSettings(forTypes: notificationType,
                                                              categories: nil)
@@ -77,20 +75,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate { // GGLInstanceIDDelegate
         
         if let token = token {
             
-            println(token)
+            print(token)
         }
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         
         // TEMP
-        println("Fail to register")
+        print("Fail to register")
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
         // TEMP
-        println("Notification received")
+        print("Notification received")
     }
     
     func onTokenRefresh() {

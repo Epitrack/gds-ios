@@ -16,6 +16,7 @@ public class Point {
     private String bairro;
     private String cep;
     private String telefone;
+    private boolean sympton;
 
     public String getName() {
         return name;
@@ -87,5 +88,13 @@ public class Point {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public boolean isSympton() {
+        return sympton;
+    }
+
+    public void setSympton(boolean sympton) {
+        this.sympton = sympton;
     }
 }
