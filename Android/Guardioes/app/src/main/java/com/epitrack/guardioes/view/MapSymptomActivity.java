@@ -15,7 +15,6 @@ import com.epitrack.guardioes.manager.Loader;
 import com.epitrack.guardioes.model.Point;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
-import com.epitrack.guardioes.request.SimpleRequest;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.view.base.AbstractBaseMapActivity;
