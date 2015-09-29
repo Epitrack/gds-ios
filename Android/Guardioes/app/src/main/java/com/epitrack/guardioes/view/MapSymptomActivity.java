@@ -91,6 +91,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
     private MarkerOptions badMarkerOption;
     private MarkerOptions goodMarkerOption;
+    private LocationUtility locationUtility = new LocationUtility(getApplicationContext());
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -148,7 +149,6 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
                 try {
 
                     final List<Point> pointList = new ArrayList<Point>();
-                    LocationUtility locationUtility = new LocationUtility(getApplicationContext());
 
                     SimpleRequester simpleRequester = new SimpleRequester();
                     simpleRequester.setJsonObject(null);
@@ -242,7 +242,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
     private void setupView() {
 
         SimpleRequester simpleRequester = new SimpleRequester();
-        simpleRequester.setUrl(Requester.API_URL + "");
+        simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
         simpleRequester.setJsonObject(null);
         simpleRequester.setMethod(Method.GET);
 
