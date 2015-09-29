@@ -15,6 +15,7 @@ import com.epitrack.guardioes.manager.Loader;
 import com.epitrack.guardioes.model.Point;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequest;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.view.base.AbstractBaseMapActivity;
@@ -240,27 +241,66 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
     private void setupView() {
 
-        // TODO: Stub
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setUrl(Requester.API_URL + "");
+        simpleRequester.setJsonObject(null);
+        simpleRequester.setMethod(Method.GET);
 
-        textViewCity.setText("Recife");
-        textViewState.setText("Pernambuco");
-        textViewParticipation.setText("71.253 Participações essa semana");
+        try {
+            String jsonStr = simpleRequester.execute(simpleRequester).get();
 
-        textViewGoodPercentage.setText("68% Bem");
-        textViewGoodReport.setText("48.452 Relatórios");
+            JSONObject jsonObject = new JSONObject(jsonStr);
 
-        textViewBadPercentage.setText("32% Mal");
-        textViewBadReport.setText("22.800 Relatórios");
+            if (jsonObject.get("error").toString() == "true") {
+                Toast.makeText(getApplicationContext(), "Erro: " + jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+            } else {
+                JSONObject jsonObjectData = jsonObject.getJSONObject("data");
+                JSONObject jsonObjectLocation = jsonObjectData.getJSONObject("location");
 
-        textViewPercentage1.setText("47%");
-        progressBar1.setProgress(47);
+                textViewCity.setText(jsonObjectLocation.get("city").toString());
+                textViewState.setText(jsonObjectLocation.get("state").toString());
+                textViewParticipation.setText(jsonObjectData.get("total_surveys").toString());
 
-        textViewPercentage2.setText("34%");
-        progressBar2.setProgress(34);
+                double totalNoSympton = Double.parseDouble(jsonObjectData.get("total_no_symptoms").toString());
+                double goodPercent = 0;
 
-        textViewPercentage3.setText("80%");
-        progressBar3.setProgress(80);
-    }
+                if (totalNoSympton > 0) {
+                    goodPercent = (Double.parseDouble(jsonObjectData.get("total_surveys").toString()) / totalNoSympton);
+                }
+
+                textViewGoodPercentage.setText(goodPercent + "% Bem");
+                textViewGoodReport.setText(jsonObjectData.get("total_no_symptoms").toString());
+
+                double totalSympton = Double.parseDouble(jsonObjectData.get("total_symptoms").toString());
+                double badPercent = 0;
+
+                if (totalNoSympton > 0) {
+                    badPercent = (Double.parseDouble(jsonObjectData.get("total_surveys").toString()) / totalSympton);
+                }
+
+                textViewBadPercentage.setText(badPercent + "% Mal");
+                textViewBadReport.setText(jsonObjectData.get("total_symptoms").toString());
+
+                JSONObject jsonObjectDiseases = jsonObjectData.getJSONObject("diseases");
+
+                textViewPercentage1.setText(jsonObjectDiseases.get("diarreica").toString()  + "%");
+                progressBar1.setProgress(Integer.parseInt(jsonObjectDiseases.get("diarreica").toString()));
+
+                textViewPercentage2.setText(jsonObjectDiseases.get("exantematica").toString()  + "%");
+                progressBar2.setProgress(Integer.parseInt(jsonObjectDiseases.get("exantematica").toString()));
+
+                textViewPercentage3.setText(jsonObjectDiseases.get("respiratoria").toString()  + "%");
+                progressBar3.setProgress(Integer.parseInt(jsonObjectDiseases.get("respiratoria").toString()));
+            }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (JSONException e){
+                e.printStackTrace();
+            }
+        }
 
     private MarkerOptions loadBadMarkerOption() {
 
