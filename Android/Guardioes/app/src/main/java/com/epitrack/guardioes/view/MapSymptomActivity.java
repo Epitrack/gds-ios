@@ -90,13 +90,15 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
     private MarkerOptions badMarkerOption;
     private MarkerOptions goodMarkerOption;
-    private LocationUtility locationUtility = new LocationUtility(getApplicationContext());
+    private LocationUtility locationUtility;
 
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.map_symptom);
+
+        locationUtility = new LocationUtility(getApplicationContext());
 
         final MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.fragment_map);
@@ -258,7 +260,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
                 textViewCity.setText(jsonObjectLocation.get("city").toString());
                 textViewState.setText(jsonObjectLocation.get("state").toString());
-                textViewParticipation.setText(jsonObjectData.get("total_surveys").toString());
+                textViewParticipation.setText(jsonObjectData.get("total_surveys").toString() + " Participações essa semana.");
 
                 double totalNoSympton = Double.parseDouble(jsonObjectData.get("total_no_symptoms").toString());
                 double goodPercent = 0;
@@ -268,7 +270,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
                 }
 
                 textViewGoodPercentage.setText(goodPercent + "% Bem");
-                textViewGoodReport.setText(jsonObjectData.get("total_no_symptoms").toString());
+                textViewGoodReport.setText(jsonObjectData.get("total_no_symptoms").toString() + " Relatórios");
 
                 double totalSympton = Double.parseDouble(jsonObjectData.get("total_symptoms").toString());
                 double badPercent = 0;
@@ -278,7 +280,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
                 }
 
                 textViewBadPercentage.setText(badPercent + "% Mal");
-                textViewBadReport.setText(jsonObjectData.get("total_symptoms").toString());
+                textViewBadReport.setText(jsonObjectData.get("total_symptoms").toString() + " Relatórios");
 
                 JSONObject jsonObjectDiseases = jsonObjectData.getJSONObject("diseases");
 

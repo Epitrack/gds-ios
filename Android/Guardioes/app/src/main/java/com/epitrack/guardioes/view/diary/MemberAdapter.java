@@ -36,21 +36,10 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
 
     private final ParentListener listener;
 
-    //private List<Parent> parentList = new ArrayList<>();
     private List<User> usertList = new ArrayList<>();
 
     private Context context;
     private String userId;
-
-    /*public MemberAdapter(final ParentListener listener, final List<Parent> parentList) {
-
-        if (listener == null) {
-            throw new IllegalArgumentException("The listener cannot be null.");
-        }
-
-        this.listener = listener;
-        this.parentList = parentList;
-    }*/
 
     public MemberAdapter(final Context context, final ParentListener listener, final List<User> parentList) {
 

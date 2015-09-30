@@ -79,6 +79,14 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent.ActionBar" />
 
+        # Help
+
+        <activity
+            android:name=".view.menu.help.Term"
+            android:exported="false"
+            android:label="@string/term"
+            android:screenOrientation="portrait" />
+
         # Profile
 
         <activity

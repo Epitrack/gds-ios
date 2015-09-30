@@ -18,6 +18,7 @@ import com.epitrack.guardioes.view.MenuListener;
 public class HelpAdapter extends ArrayAdapter<IMenu> {
 
     private final MenuListener listener;
+    private ViewHolder viewHolder;
 
     public HelpAdapter(final Context context, final MenuListener listener, final IMenu[] menuArray) {
         super(context, 0, menuArray);
@@ -34,8 +35,6 @@ public class HelpAdapter extends ArrayAdapter<IMenu> {
     @Override
     public View getView(final int position, final View convertView, final ViewGroup viewGroup) {
         View view = convertView;
-
-        ViewHolder viewHolder;
 
         if (view == null) {
 
