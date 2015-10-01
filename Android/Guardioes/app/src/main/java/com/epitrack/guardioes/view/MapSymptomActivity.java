@@ -1,5 +1,6 @@
 package com.epitrack.guardioes.view;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -9,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.cocosw.bottomsheet.BottomSheet;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.Loader;
@@ -16,10 +18,15 @@ import com.epitrack.guardioes.model.Point;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.view.base.AbstractBaseMapActivity;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -88,6 +95,9 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
     @Bind(R.id.sliding_panel)
     SlidingUpPanelLayout slidingPanel;
 
+    @Bind(R.id.pie_chart_diary)
+    PieChart pieChart;
+
     private MarkerOptions badMarkerOption;
     private MarkerOptions goodMarkerOption;
     private LocationUtility locationUtility;
@@ -100,10 +110,30 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
 
         locationUtility = new LocationUtility(getApplicationContext());
 
-        final MapFragment mapFragment = (MapFragment) getFragmentManager()
-                .findFragmentById(R.id.fragment_map);
+        if (locationUtility.getLocation() == null) {
+            new DialogBuilder(MapSymptomActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.network_disable)
+                    .positiveText(R.string.ok)
+                    .callback(new MaterialDialog.ButtonCallback() {
 
-        mapFragment.getMapAsync(this);
+                        @Override
+                        public void onPositive(final MaterialDialog dialog) {
+                            navigateTo(HomeActivity.class);
+                        }
+
+                    }).show();
+        } else {
+
+            final MapFragment mapFragment = (MapFragment) getFragmentManager()
+                    .findFragmentById(R.id.fragment_map);
+
+            mapFragment.getMapAsync(this);
+        }
+    }
+
+    private void sair() {
+
     }
 
     @Override
@@ -135,9 +165,10 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
     public void onMapReady(final GoogleMap map) {
         super.onMapReady(map);
 
-        load();
-
-        setupView();
+        if (locationUtility.getLocation() == null) {
+            load();
+            setupView();
+        }
     }
 
     private void load() {
@@ -183,13 +214,8 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
                         }
                     }
 
-                    //final InputStream inputStream = getAssets().open("upas.json");
-
-                    //final List<Point> pointList = new ObjectMapper().readValue(inputStream, new TypeReference<List<Point>>() {
-                    //});
-
                     if (pointList.size() > 0) {
-                       new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
 
                             @Override
                             public void run() {
@@ -199,9 +225,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
                         }, 2000);
                     }
 
-                }/* catch (IOException e) {
-                    e.printStackTrace();
-                } */catch (InterruptedException e) {
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 } catch (ExecutionException e) {
                     e.printStackTrace();
@@ -266,32 +290,47 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
                 double goodPercent = 0;
 
                 if (totalNoSympton > 0) {
-                    goodPercent = (Double.parseDouble(jsonObjectData.get("total_surveys").toString()) / totalNoSympton);
+                    goodPercent = (totalNoSympton / Double.parseDouble(jsonObjectData.get("total_surveys").toString()));
                 }
 
-                textViewGoodPercentage.setText(goodPercent + "% Bem");
+                textViewGoodPercentage.setText((int)(goodPercent * 100) + "% Bem");
                 textViewGoodReport.setText(jsonObjectData.get("total_no_symptoms").toString() + " Relatórios");
 
                 double totalSympton = Double.parseDouble(jsonObjectData.get("total_symptoms").toString());
                 double badPercent = 0;
 
                 if (totalNoSympton > 0) {
-                    badPercent = (Double.parseDouble(jsonObjectData.get("total_surveys").toString()) / totalSympton);
+                    badPercent = (totalSympton / Double.parseDouble(jsonObjectData.get("total_surveys").toString()));
                 }
 
-                textViewBadPercentage.setText(badPercent + "% Mal");
+                textViewBadPercentage.setText((int)(badPercent * 100) + "% Mal");
                 textViewBadReport.setText(jsonObjectData.get("total_symptoms").toString() + " Relatórios");
 
                 JSONObject jsonObjectDiseases = jsonObjectData.getJSONObject("diseases");
 
-                textViewPercentage1.setText(jsonObjectDiseases.get("diarreica").toString()  + "%");
+                textViewPercentage1.setText(jsonObjectDiseases.get("diarreica").toString() + "%");
                 progressBar1.setProgress(Integer.parseInt(jsonObjectDiseases.get("diarreica").toString()));
 
-                textViewPercentage2.setText(jsonObjectDiseases.get("exantematica").toString()  + "%");
+                textViewPercentage2.setText(jsonObjectDiseases.get("exantematica").toString() + "%");
                 progressBar2.setProgress(Integer.parseInt(jsonObjectDiseases.get("exantematica").toString()));
 
-                textViewPercentage3.setText(jsonObjectDiseases.get("respiratoria").toString()  + "%");
+                textViewPercentage3.setText(jsonObjectDiseases.get("respiratoria").toString() + "%");
                 progressBar3.setProgress(Integer.parseInt(jsonObjectDiseases.get("respiratoria").toString()));
+
+                //Pie Char Config
+                pieChart.setUsePercentValues(false);
+                pieChart.setDescription("");
+                pieChart.setDrawCenterText(false);
+                pieChart.setDrawSliceText(false);
+                pieChart.setDrawHoleEnabled(false);
+                pieChart.setHoleColorTransparent(false);
+                pieChart.setHoleRadius(7);
+                pieChart.setTransparentCircleRadius(10);
+                pieChart.setRotationAngle(0);
+                pieChart.setClickable(false);
+                pieChart.setRotationEnabled(false);
+
+                setData(badPercent, goodPercent);
             }
 
             } catch (InterruptedException e) {
@@ -302,6 +341,37 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
                 e.printStackTrace();
             }
         }
+
+    private void setData(double badPercent, double goodPercent) {
+
+        float[] yData = { (int)(badPercent * 100), (int)(goodPercent * 100)};
+        String[] xData = { "Mal", "Bem" };
+
+        ArrayList<Entry> yVals1 = new ArrayList<Entry>();
+
+        for (int i = 0; i < yData.length; i++)
+            yVals1.add(new Entry(yData[i], i));
+
+        ArrayList<String> xVals = new ArrayList<String>();
+
+        for (int i = 0; i < xData.length; i++)
+            xVals.add(xData[i]);
+
+        PieDataSet dataSet = new PieDataSet(yVals1, "");
+        dataSet.setSliceSpace(2);
+        dataSet.setSelectionShift(2);
+
+        int colors[] = {Color.parseColor("#FF0000"),Color.parseColor("#CCCC00")};
+
+        dataSet.setColors(colors);
+
+        PieData data = new PieData(xVals, dataSet);
+        data.setDrawValues(false);
+        data.setHighlightEnabled(false);
+
+        pieChart.setData(data);
+        pieChart.invalidate();
+    }
 
     private MarkerOptions loadBadMarkerOption() {
 

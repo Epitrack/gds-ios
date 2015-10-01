@@ -46,7 +46,11 @@ public final class LocationUtility extends Service implements LocationListener {
     }
 
     public static LatLng toLatLng(final Location location) {
-        return new LatLng(location.getLatitude(), location.getLongitude());
+        if (location != null) {
+            return new LatLng(location.getLatitude(), location.getLongitude());
+        } else {
+            return null;
+        }
     }
 
     public double getLatitude(){
@@ -63,7 +67,7 @@ public final class LocationUtility extends Service implements LocationListener {
         return longitude;
     }
 
-    private Location getLocation() {
+    public Location getLocation() {
         try {
             locationManager = (LocationManager) context
                     .getSystemService(LOCATION_SERVICE);
@@ -75,43 +79,41 @@ public final class LocationUtility extends Service implements LocationListener {
                     .isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
             if (!isGPSEnabled && !isNetworkEnabled) {
-                // no network provider is enabled
-            } else {
-                this.canGetLocation = true;
-                if (isNetworkEnabled) {
+                return null;
+            }
+            this.canGetLocation = true;
+            if (isNetworkEnabled) {
+                locationManager.requestLocationUpdates(
+                        LocationManager.NETWORK_PROVIDER,
+                        MIN_TIME_BW_UPDATES,
+                        MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                Logger.logDebug("Network", "Network");
+                if (locationManager != null) {
+                    location = locationManager
+                            .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                    if (location != null) {
+                        latitude = location.getLatitude();
+                        longitude = location.getLongitude();
+                    }
+                }
+            }
+            if (isGPSEnabled) {
+                if (location == null) {
                     locationManager.requestLocationUpdates(
-                            LocationManager.NETWORK_PROVIDER,
+                            LocationManager.GPS_PROVIDER,
                             MIN_TIME_BW_UPDATES,
                             MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                    Logger.logDebug("Network", "Network");
+                    Logger.logDebug("GPS Enabled", "GPS Enabled");
                     if (locationManager != null) {
                         location = locationManager
-                                .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                                .getLastKnownLocation(LocationManager.GPS_PROVIDER);
                         if (location != null) {
                             latitude = location.getLatitude();
                             longitude = location.getLongitude();
                         }
                     }
                 }
-                if (isGPSEnabled) {
-                    if (location == null) {
-                        locationManager.requestLocationUpdates(
-                                LocationManager.GPS_PROVIDER,
-                                MIN_TIME_BW_UPDATES,
-                                MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                        Logger.logDebug("GPS Enabled", "GPS Enabled");
-                        if (locationManager != null) {
-                            location = locationManager
-                                    .getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                            if (location != null) {
-                                latitude = location.getLatitude();
-                                longitude = location.getLongitude();
-                            }
-                        }
-                    }
-                }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }

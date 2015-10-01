@@ -69,7 +69,9 @@
             android:textColor="@color/primary_light"
             android:textSize="14dp" />
 
-        <include layout="@layout/symptom_report" />
+        <include layout="@layout/symptom_report"
+            android:layout_width="fill_parent"
+            android:layout_height="130dp"/>
 
         <TextView
             android:layout_width="wrap_content"

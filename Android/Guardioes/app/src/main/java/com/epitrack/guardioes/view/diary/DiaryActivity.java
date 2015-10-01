@@ -248,6 +248,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
             pieChart.setTransparentCircleRadius(10);
             pieChart.setRotationAngle(0);
             pieChart.setRotationEnabled(false);
+            pieChart.setClickable(false);
 
             setData();
 

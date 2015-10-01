@@ -9,6 +9,11 @@ public final class Constants {
 
     }
 
+    public  static  class Goole {
+
+        public static final String KEY_API_MAPS = "AIzaSyDYl7spN_NpAjAWL7Hi183SK2cApiIS3Eg";
+    }
+
     public static class Twitter {
 
         public static final String KEY = "";
