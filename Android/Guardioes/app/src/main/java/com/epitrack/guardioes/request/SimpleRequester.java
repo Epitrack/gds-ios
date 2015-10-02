@@ -30,6 +30,7 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
     private String url;
     private JSONObject jsonObject;
     private Method method;
+    private boolean otherAPI = false;
 
     public SimpleRequester() {
 
@@ -47,16 +48,20 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
         this.method = method;
     }
 
+    public void setOtherAPI(boolean otherAPI) {
+        this.otherAPI = otherAPI;
+    }
+
     @Override
     protected String doInBackground(SimpleRequester... params) {
         try {
-            return SendPostRequest(this.url, this.method, this.jsonObject);
+            return SendPostRequest(this.url, this.method, this.jsonObject, this.otherAPI);
         } catch (Exception e) {
             return e.getMessage();
         }
     }
 
-    private static String SendPostRequest(String apiUrl, Method method, JSONObject jsonObjSend) throws JSONException, IOException, SimpleRequesterException {
+    private static String SendPostRequest(String apiUrl, Method method, JSONObject jsonObjSend, boolean otherAPI) throws JSONException, IOException, SimpleRequesterException {
 
         URL url;
         String returnStr = "";
@@ -114,8 +119,10 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
             url = new URL(apiUrl);
             URLConnection urlConnection = url.openConnection();
 
-            urlConnection.setRequestProperty("app_token", singleUser.getApp_token());
-            urlConnection.setRequestProperty("user_token", singleUser.getUser_token());
+            if (!otherAPI) {
+                urlConnection.setRequestProperty("app_token", singleUser.getApp_token());
+                urlConnection.setRequestProperty("user_token", singleUser.getUser_token());
+            }
 
             StringBuilder stringBuilder = null;
             BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
@@ -123,7 +130,11 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
             String inputLine;
             String jsonStr = "";
             while ((inputLine = br.readLine()) != null) {
-                jsonStr = inputLine;
+                if (!otherAPI) {
+                    jsonStr = inputLine;
+                } else {
+                    jsonStr += inputLine;
+                }
             }
             br.close();
 

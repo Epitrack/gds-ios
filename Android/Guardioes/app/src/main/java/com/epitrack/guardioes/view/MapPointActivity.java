@@ -8,11 +8,20 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.Loader;
 import com.epitrack.guardioes.model.Point;
+import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.utility.Constants;
+import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.view.base.AbstractBaseMapActivity;
+import com.epitrack.guardioes.view.tip.Tip;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.gms.maps.GoogleMap;
@@ -22,11 +31,17 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
 
@@ -45,8 +60,10 @@ public class MapPointActivity extends AbstractBaseMapActivity {
     TextView textViewAddress;
 
     private MarkerOptions markerOption;
-
     private final Map<Marker, Point> pointMap = new HashMap<>();
+
+    int tip;
+    private LocationUtility locationUtility;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -54,22 +71,102 @@ public class MapPointActivity extends AbstractBaseMapActivity {
 
         setContentView(R.layout.map_point);
 
-        final MapFragment mapFragment = (MapFragment) getFragmentManager()
-                .findFragmentById(R.id.fragment_map);
+        locationUtility = new LocationUtility(getApplicationContext());
 
-        mapFragment.getMapAsync(this);
+        if (locationUtility.getLocation() == null) {
+            new DialogBuilder(MapPointActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.network_disable)
+                    .positiveText(R.string.ok)
+                    .callback(new MaterialDialog.ButtonCallback() {
+                        @Override
+                        public void onPositive(final MaterialDialog dialog) {
+                            navigateTo(HomeActivity.class);
+                        }
+                    }).show();
+        } else {
 
-        getSupportActionBar().setTitle(R.string.hospital);
+            tip = getIntent().getIntExtra(Constants.Bundle.TIP, 0);
+
+            final MapFragment mapFragment = (MapFragment) getFragmentManager()
+                    .findFragmentById(R.id.fragment_map);
+
+            mapFragment.getMapAsync(this);
+
+            if (Tip.getBy(tip) == Tip.PHARMACY) {
+                getSupportActionBar().setTitle(R.string.pharmacy);
+            } else if (Tip.getBy(tip) == Tip.HOSPITAL) {
+                getSupportActionBar().setTitle(R.string.hospital);
+            }
+        }
     }
 
     @Override
     public void onMapReady(final GoogleMap map) {
         super.onMapReady(map);
 
-        load();
+        if (Tip.getBy(tip) == Tip.PHARMACY) {
+            loadPharmacy();
+        } else if (Tip.getBy(tip) == Tip.HOSPITAL) {
+            load();
+        }
     }
 
-    // Temporary
+    private void loadPharmacy() {
+
+        final List<Point> pointList = new ArrayList<Point>();
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setJsonObject(null);
+        simpleRequester.setMethod(Method.GET);
+        simpleRequester.setOtherAPI(true);
+        simpleRequester.setUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=pharmacy&location="+locationUtility.getLatitude()+","+locationUtility.getLongitude()+"&radius=10000&key=AIzaSyDYl7spN_NpAjAWL7Hi183SK2cApiIS3Eg");
+
+        String jsonStr = null;
+        try {
+            jsonStr = simpleRequester.execute(simpleRequester).get();
+
+            JSONObject jsonObject = new JSONObject(jsonStr);
+
+            if (!jsonObject.get("status").toString().toUpperCase().equals("OK")) {
+                Toast.makeText(getApplicationContext(), R.string.generic_error, Toast.LENGTH_SHORT).show();
+            } else {
+
+                JSONArray jsonArray = jsonObject.getJSONArray("results");
+
+                for (int i = 0; i < jsonArray.length(); i++) {
+
+                    jsonObject = jsonArray.getJSONObject(i);
+                    JSONObject jsonObjectGeometry = jsonObject.getJSONObject("geometry");
+                    JSONObject jsonObjectLocation = jsonObjectGeometry.getJSONObject("location");
+
+                    Point point = new Point();
+                    point.setLatitude(jsonObjectLocation.getDouble("lat"));
+                    point.setLongitude(jsonObjectLocation.getDouble("lng"));
+
+                    pointList.add(point);
+                }
+
+                if (pointList.size() > 0) {
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            addMarker(pointList);
+                        }
+                    }, 2000);
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
     private void load() {
 
         Loader.with().getHandler().post(new Runnable() {
@@ -123,8 +220,14 @@ public class MapPointActivity extends AbstractBaseMapActivity {
 
     private MarkerOptions getMarkerOption() {
 
-        if (markerOption == null) {
-            markerOption = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_marker_hospital));
+        if (Tip.getBy(tip) == Tip.PHARMACY) {
+            if (markerOption == null) {
+                markerOption = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_marker_pharmacy));
+            }
+        } else if (Tip.getBy(tip) == Tip.HOSPITAL) {
+            if (markerOption == null) {
+                markerOption = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_marker_hospital));
+            }
         }
 
         return markerOption;
