@@ -360,18 +360,6 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                 user.setEmail(editTextMail.getText().toString().trim().toLowerCase());
                 user.setPassword(editTextPassword.getText().toString().trim());
 
-                /*Map<String, String> bodyMap = new HashMap<>();
-
-                bodyMap.put("nick", user.getNick());
-                bodyMap.put("email", user.getEmail());
-                bodyMap.put("password", user.getPassword());
-                bodyMap.put("client", user.getClient());
-                bodyMap.put("dob", user.getDob());
-                bodyMap.put("gender", user.getGender());
-                bodyMap.put("app_token", user.getApp_token());
-                bodyMap.put("race", user.getRace());
-                bodyMap.put("platform", user.getPlatform());*/
-
                 final JSONObject jRoot = new JSONObject();
 
                 try {

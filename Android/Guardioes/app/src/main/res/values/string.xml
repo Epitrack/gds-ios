@@ -76,6 +76,7 @@
     <string name="ok">OK</string>
     <string name="call">Ligar</string>
     <string name="network_disable">Serviços de localização desativados. Habilite-os nas configurações do aparelho para poder visualiar o mapa.</string>
+    <string name="google_fail">Não foi possível realizar o login. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
 
     <string-array name="gender_array">
         <item>Masculino</item>

@@ -276,16 +276,3 @@
     </application>
 
 </manifest>
-
-<!--=======
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
-
-    <application>
-        <activity android:name="com.epitrack.guardioes.view.tip.UsefulPhonesActivity"
-            android:label="@string/title_activity_useful_phones"
-            >
-        </activity>
-    </application>
-
-</manifest>
->>>>>>> Added-->
