@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.DTO;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.RequestListener;
@@ -22,10 +23,13 @@ import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.request.SimpleRequesterException;
 import com.epitrack.guardioes.request.UserRequester;
+import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DateFormat;
+import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.view.menu.profile.UserActivity;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
@@ -302,7 +306,42 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
     @Override
     public void onError() {
-        Toast.makeText(this, "Houston, we have a problem", Toast.LENGTH_SHORT).show();
+
+        if (DTO.object != null) {
+            if (DTO.object instanceof Bundle) {
+
+                Bundle bundle = (Bundle) DTO.object;
+
+                String typeBundle = bundle.getString(Constants.Bundle.ACCESS_SOCIAL);
+
+                if (typeBundle == Constants.Bundle.GOOGLE) {
+
+                    new DialogBuilder(CreateAccountActivity.this).load()
+                            .title(R.string.attention)
+                            .content(R.string.google_fail)
+                            .positiveText(R.string.ok)
+                            .show();
+
+                } else if (typeBundle == Constants.Bundle.FACEBOOK) {
+
+                    new DialogBuilder(CreateAccountActivity.this).load()
+                            .title(R.string.attention)
+                            .content(R.string.facebook_fail)
+                            .positiveText(R.string.ok)
+                            .show();
+
+                } else if (typeBundle == Constants.Bundle.TWITTER) {
+
+                    new DialogBuilder(CreateAccountActivity.this).load()
+                            .title(R.string.attention)
+                            .content(R.string.twitter_fail)
+                            .positiveText(R.string.ok)
+                            .show();
+                }
+
+                DTO.object = null;
+            }
+        }
     }
 
     @Override
@@ -322,8 +361,23 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     @Override
     public void onSuccess() {
 
-        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                       Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (DTO.object != null) {
+            if (DTO.object instanceof Bundle) {
+
+                Bundle dtoBundle = new Bundle();
+
+                dtoBundle.putBoolean(Constants.Bundle.SOCIAL_NEW, true);
+                dtoBundle.putBoolean(Constants.Bundle.NEW_MEMBER, false);
+                dtoBundle.putBoolean(Constants.Bundle.MAIN_MEMBER, false);
+
+                DTO.object = null;
+
+                navigateTo(UserActivity.class, dtoBundle);
+            }
+        } else {
+            navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                    Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
     }
 
     @OnClick(R.id.button_create_account)

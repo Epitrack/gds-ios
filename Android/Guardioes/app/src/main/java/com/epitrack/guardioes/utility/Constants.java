@@ -16,8 +16,8 @@ public final class Constants {
 
     public static class Twitter {
 
-        public static final String KEY = "";
-        public static final String SECRET = "";
+        public static final String KEY = "QiiN9HpeJCN9tTbYvd1PfA1eE";
+        public static final String SECRET = "JDNgByadEC8q7DtEZr24gWjZhT1kTiGGqJlPBRB6x6MgtGVZMU";
     }
 
     public static class Config {
@@ -38,6 +38,11 @@ public final class Constants {
         public static final String MAIN_MEMBER = "main_member";
         public static final String BAD_STATE = "has_bad_state";
         public static final String NEW_MEMBER = "new_member";
+        public static final String SOCIAL_NEW = "social_new";
+        public static final String GOOGLE = "google";
+        public static final String FACEBOOK = "facebook";
+        public static final String TWITTER = "twitter";
+        public static final String ACCESS_SOCIAL = "access_social";
     }
 
     public static class Pref {

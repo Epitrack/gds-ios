@@ -53,6 +53,8 @@
 
         </activity>
 
+        <activity android:name="com.twitter.sdk.android.core.identity.OAuthActivity" />
+
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -259,7 +261,7 @@
 
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="" />
+            android:value="d8ff9925924fa10046e7f8eb13fcbdc1ada7b548" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

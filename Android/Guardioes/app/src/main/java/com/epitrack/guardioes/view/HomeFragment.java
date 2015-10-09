@@ -9,7 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.DTO;
 import com.epitrack.guardioes.model.SingleUser;
+import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.view.base.BaseFragment;
 import com.epitrack.guardioes.view.diary.DiaryActivity;
 import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
@@ -41,7 +43,7 @@ public class HomeFragment extends BaseFragment {
 
     @Nullable
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, Bundle bundle) {
 
         final View view = inflater.inflate(R.layout.home_fragment, viewGroup, false);
 
@@ -67,8 +69,6 @@ public class HomeFragment extends BaseFragment {
                 imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
             }
         }
-
-
         textViewName.setText(text);
 
         return view;

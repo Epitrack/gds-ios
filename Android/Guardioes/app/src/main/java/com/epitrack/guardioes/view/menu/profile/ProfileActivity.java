@@ -61,6 +61,7 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         final Bundle bundle = new Bundle();
 
         bundle.putBoolean(Constants.Bundle.NEW_MEMBER, true);
+        bundle.putBoolean(Constants.Bundle.SOCIAL_NEW, false);
         navigateTo(UserActivity.class, bundle);
     }
 
@@ -69,6 +70,7 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
 
         final Bundle bundle = new Bundle();
 
+        bundle.putBoolean(Constants.Bundle.SOCIAL_NEW, false);
         bundle.putBoolean(Constants.Bundle.NEW_MEMBER, false);
         bundle.putString("nick", user.getNick());
         bundle.putString("dob", user.getDob());
