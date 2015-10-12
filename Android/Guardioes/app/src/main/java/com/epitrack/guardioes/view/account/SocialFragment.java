@@ -4,33 +4,20 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentSender.SendIntentException;
-import android.content.SharedPreferences;
+import android.content.IntentSender;
 import android.os.Bundle;
-import android.support.annotation.BinderThread;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.DTO;
 import com.epitrack.guardioes.model.SingleUser;
-import com.epitrack.guardioes.model.User;
-import com.epitrack.guardioes.request.Method;
-import com.epitrack.guardioes.request.Requester;
-import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.Constants;
-import com.epitrack.guardioes.utility.DateFormat;
-import com.epitrack.guardioes.utility.DialogBuilder;
-import com.epitrack.guardioes.view.HomeActivity;
+import com.epitrack.guardioes.view.Navigate;
 import com.epitrack.guardioes.view.base.BaseFragment;
-import com.epitrack.guardioes.view.menu.profile.UserActivity;
-import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -38,31 +25,23 @@ import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphRequestAsyncTask;
 import com.facebook.GraphResponse;
-import com.facebook.Profile;
-import com.facebook.ProfileTracker;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
-import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
-import com.twitter.sdk.android.core.TwitterAuthToken;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterAuthClient;
-import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
-import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -80,13 +59,6 @@ public class SocialFragment extends BaseFragment {
 
     private static final String FACEBOOK_PERMISSION_PUBLIC_PROFILE = "public_profile";
 
-    private AccessTokenTracker accessTokenTracker;
-    private AccessToken accessToken;
-    private ProfileTracker profileTracker;
-
-    SharedPreferences sharedPreferences = null;
-    public static final String PREFS_NAME = "preferences_user_token";
-
     @Bind(R.id.fragment_button_facebook)
     Button buttonFaceBook;
 
@@ -96,15 +68,9 @@ public class SocialFragment extends BaseFragment {
     @Bind(R.id.button_twitter)
     Button buttonTwitter;
 
-    private GoogleApiClient authGoogle;
-    private TwitterAuthClient authTwitter;
-
-    private final CallbackManager listenerManager = CallbackManager.Factory.create();
+    //@Bind(R.id.button_access_social)
+    //Button buttonAccessSocial;
     private SocialAccountListener listener;
-
-    SingleUser singleUser = SingleUser.getInstance();
-
-    private TwitterSession twitterSession;
 
     @Override
     public void onAttach(final Activity activity) {
@@ -137,44 +103,58 @@ public class SocialFragment extends BaseFragment {
         ButterKnife.unbind(this);
     }
 
-    @OnClick(R.id.button_google)
+   //@OnClick(R.id.button_access_social)
+    //public void onSocial() {
+    //    navigateTo(SocialLoginActivity.class);
+    //}
+
+   @OnClick(R.id.button_google)
     public void onGoogle() {
 
-        loadGoogle(getActivity());
+        //loadGoogle(getActivity());
+        //authGoogle.connect();
 
-        authGoogle.connect();
+       DTO.object = Constants.Bundle.GOOGLE;
+       navigateTo(SocialLoginActivity.class);
     }
 
     @OnClick(R.id.button_twitter)
     public void onTwitter() {
 
-        loadTwitter(getActivity());
+        //loadTwitter(getActivity().getApplicationContext());
+        //authTwitter.authorize(getActivity(), new TwitterHandler());
 
-        authTwitter.authorize(getActivity(), new TwitterHandler());
+        DTO.object = Constants.Bundle.TWITTER;
+        navigateTo(SocialLoginActivity.class);
     }
 
     @OnClick(R.id.fragment_button_facebook)
     public void onFaceBook() {
 
-        loadFaceBook(getActivity());
+        //loadFaceBook(getActivity());
+        //final LoginManager loginManager = LoginManager.getInstance();
+        //loginManager.logInWithReadPermissions(getActivity(),
+        //        Arrays.asList(FACEBOOK_PERMISSION_PUBLIC_PROFILE));
+        //loginManager.registerCallback(listenerManager, new FaceBookHandler());
 
-        final LoginManager loginManager = LoginManager.getInstance();
+        DTO.object = Constants.Bundle.FACEBOOK;
+        navigateTo(SocialLoginActivity.class);
 
-        loginManager.logInWithReadPermissions(getActivity(),
-                Arrays.asList(FACEBOOK_PERMISSION_PUBLIC_PROFILE));
-
-        loginManager.registerCallback(listenerManager, new FaceBookHandler());
     }
 
-    @Override
+   /* @Override
     public void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
         if (requestCode == REQUEST_CODE_GOOGLE) {
             authGoogle.connect();
 
         } else if (requestCode == REQUEST_CODE_TWITTER) {
-            authTwitter.onActivityResult(requestCode, resultCode, intent);
-
+            Fragment socialFragment = getChildFragmentManager().findFragmentByTag("social_fragment");
+            if (socialFragment != null) {
+                socialFragment.onActivityResult(requestCode, resultCode, intent);
+            } else {
+                authTwitter.onActivityResult(requestCode, resultCode, intent);
+            }
         } else if (requestCode == REQUEST_CODE_FACEBOOK) {
             listenerManager.onActivityResult(requestCode, resultCode, intent);
         }
@@ -290,7 +270,7 @@ public class SocialFragment extends BaseFragment {
         }
     }
 
-    private class GoogleHandler implements ConnectionCallbacks, OnConnectionFailedListener {
+    private class GoogleHandler implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
         @Override
         public void onConnected(final Bundle bundle) {
@@ -312,7 +292,7 @@ public class SocialFragment extends BaseFragment {
 
                     connectionResult.startResolutionForResult(getActivity(), REQUEST_CODE_GOOGLE);
 
-                } catch (SendIntentException e) {
+                } catch (IntentSender.SendIntentException e) {
                     authGoogle.connect();
                 }
 
@@ -367,12 +347,13 @@ public class SocialFragment extends BaseFragment {
 
             listener.onError();
         }
-    }
+    }*/
 
     public void setEnable(final boolean enable) {
 
         buttonTwitter.setEnabled(enable);
         buttonFaceBook.setEnabled(enable);
         buttonGoogle.setEnabled(enable);
+        //buttonAccessSocial.setEnabled(enable);
     }
 }

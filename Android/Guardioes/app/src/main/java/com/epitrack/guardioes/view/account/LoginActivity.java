@@ -19,6 +19,7 @@ import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -58,7 +59,6 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
     private boolean inLogin;
     private Validator validator;
     SharedPreferences sharedPreferences = null;
-    public static final String PREFS_NAME = "preferences_user_token";
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -74,8 +74,8 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
 
         actionBar.setDisplayShowTitleEnabled(false);
 
-        sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
-        String prefUserToken = sharedPreferences.getString("preferences_user_token", "");
+        sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
+        String prefUserToken = sharedPreferences.getString(Constants.Pref.PREFS_NAME, "");
 
         if (!prefUserToken.equals("")) {
 
@@ -110,9 +110,9 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
                     singleUser.setUser_token(jsonObjectUser.get("token").toString());
 
-                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                    SharedPreferences settings = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
                     SharedPreferences.Editor editor = settings.edit();
-                    editor.putString("preferences_user_token", singleUser.getUser_token());
+                    editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
                     editor.commit();
 
                     navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
@@ -307,10 +307,10 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
                     singleUser.setUser_token(jsonObject.get("token").toString());
 
-                    sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
+                    sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                    editor.putString("preferences_user_token", singleUser.getUser_token());
+                    editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
                     editor.commit();
 
                     navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |

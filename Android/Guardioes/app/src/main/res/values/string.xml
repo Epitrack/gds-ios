@@ -81,7 +81,7 @@
     <string name="twitter_fail">Não foi possível realizar o login. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
     <string name="new_user_social_media">Complete o cadastro a seguir para acessar o Guardiões da Saúde.</string>
     <string name="cadastro_sucesso">Cadastro realizado com sucesso!</string>
-
+    <string name="user_exist">Cadastro realizado anterioremente com essa rede social ou e-mail.</string>
 
     <string-array name="gender_array">
         <item>Masculino</item>

@@ -16,8 +16,8 @@ public final class Constants {
 
     public static class Twitter {
 
-        public static final String KEY = "QiiN9HpeJCN9tTbYvd1PfA1eE";
-        public static final String SECRET = "JDNgByadEC8q7DtEZr24gWjZhT1kTiGGqJlPBRB6x6MgtGVZMU";
+        public static final String KEY = "btijYH36dtguxb6CcHTprkERG";
+        public static final String SECRET = "UJR1qUL7ReNnEnFulMKumaP84Ff9JUxffNybxbr5oyMdIo6wro";
     }
 
     public static class Config {
@@ -48,6 +48,8 @@ public final class Constants {
     public static class Pref {
 
         public static final String USER = "user";
+        public static final String PREFS_NAME = "preferences_user_token";
+        public static final String PREFS_SOCIAL = "preferences_social";
     }
 
     public static class Push {

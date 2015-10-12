@@ -18,7 +18,7 @@ android {
     defaultConfig {
 
         applicationId "com.epitrack.guardioes"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -79,4 +79,5 @@ dependencies {
     compile 'com.github.PhilJay:MPAndroidChart:v2.1.4'
     compile 'com.prolificinteractive:material-calendarview:0.8.1'
     compile 'com.jjoe64:graphview:4.0.1'
+    compile 'org.twitter4j:twitter4j-core:4.0.2'
 }

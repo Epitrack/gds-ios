@@ -77,7 +77,6 @@ public class UserActivity extends BaseAppCompatActivity {
     boolean newMenber;
     boolean mainMember;
     SingleUser singleUser = SingleUser.getInstance();
-    public static final String PREFS_NAME = "preferences_user_token";
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -183,6 +182,12 @@ public class UserActivity extends BaseAppCompatActivity {
                 editTextMail.setVisibility(View.VISIBLE);
 
                 linearLayoutPassword.setVisibility(View.VISIBLE);
+            } else if (socialNew) {
+                if (singleUser.getEmail() == null) {
+                    textLayoutMail.setVisibility(View.VISIBLE);
+                    editTextMail.setVisibility(View.VISIBLE);
+                    editTextMail.setEnabled(true);
+                }
             }
         }
     }
@@ -251,6 +256,15 @@ public class UserActivity extends BaseAppCompatActivity {
                 jsonObject.put("password", singleUser.getPassword());
                 jsonObject.put("app_token", user.getApp_token());
                 jsonObject.put("platform", user.getPlatform());
+
+                if (singleUser.getEmail() == null) {
+                    jsonObject.put("email", editTextMail.getText().toString().toLowerCase());
+                    jsonObject.put("password", editTextMail.getText().toString().toLowerCase());
+
+                } else {
+                    jsonObject.put("email", singleUser.getEmail());
+                }
+
                 simpleRequester.setUrl(Requester.API_URL + "user/create");
             }
 
@@ -273,6 +287,9 @@ public class UserActivity extends BaseAppCompatActivity {
                     singleUser.setGender(jsonObjectUser.getString("gender").toString());
                     singleUser.setPicture(jsonObjectUser.getString("picture").toString());
                     singleUser.setId(jsonObjectUser.getString("id").toString());
+                    singleUser.setPassword(jsonObjectUser.getString("email").toString());
+                    singleUser.setRace(jsonObjectUser.getString("race").toString());
+                    singleUser.setDob(jsonObjectUser.getString("dob").toString());
 
                     SharedPreferences sharedPreferences = null;
 
@@ -295,10 +312,16 @@ public class UserActivity extends BaseAppCompatActivity {
                     } else {
                         singleUser.setUser_token(jsonObject.get("token").toString());
 
-                        sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
+                        sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                        editor.putString("preferences_user_token", singleUser.getUser_token());
+                        editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
+                        editor.commit();
+
+                        sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_SOCIAL, 0);
+                        SharedPreferences.Editor editorSocial = sharedPreferences.edit();
+
+                        editorSocial.putString(Constants.Pref.PREFS_NAME, "true");
                         editor.commit();
                     }
 
