@@ -2,6 +2,7 @@ package com.epitrack.guardioes.view.account;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -112,8 +113,9 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
                     String secret = authToken.secret;
                     String user = session.getUserName();
 
+                    singleUser.setTw(token);
                     singleUser.setNick(user);
-
+                    userExistSocial(token, Constants.Bundle.TWITTER);
                     executeSocialLogin(false);
                 }
 
@@ -151,7 +153,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
             buttonFaceBook.setReadPermissions(Arrays.asList("public_profile", "email"));
             buttonFaceBook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                @Override
-               public void onSuccess(LoginResult loginResult) {
+               public void onSuccess(final LoginResult loginResult) {
 
                    GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
                        @Override
@@ -165,13 +167,13 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
                                //String email = jsonObject.getString("email");
                                //String gender = jsonObject.getString("gender");
                                //gender = gender.substring(0, 1).toUpperCase();
-
-                               singleUser.setNick(user);
+                                singleUser.setFb(loginResult.getAccessToken().getToken());
+                                singleUser.setNick(user);
                                //singleUser.setEmail(email);
                                //singleUser.setPassword(email);
                                //singleUser.setGender(gender);
-
-                               executeSocialLogin(false);
+                                userExistSocial(loginResult.getAccessToken().getToken(), Constants.Bundle.FACEBOOK);
+                                executeSocialLogin(false);
 
                            } catch (JSONException e) {
                                e.printStackTrace();
@@ -241,6 +243,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
                     int genderInt = person.getGender();//0 for male, and 1 for female
                     String email = Plus.AccountApi.getAccountName(authGoogle);
 
+                    singleUser.setGl(person.getId());
                     singleUser.setEmail(email);
                     singleUser.setPassword(email);
                     singleUser.setNick(personName);
@@ -249,7 +252,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
                     } else {
                         singleUser.setGender("F");
                     }
-
+                    userExistSocial(person.getId(), Constants.Bundle.GOOGLE);
                     executeSocialLogin(false);
                 }
             }
@@ -347,8 +350,6 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
                     bReturn = false;
                 }
             }
-
-//V6J7M-B3WP9-QR9D9-T2XQQ-R3P8Y
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -358,6 +359,80 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
         }
 
         return bReturn;
+    }
+
+    private void userExistSocial(String token, String type) {
+
+        String url = "";
+
+        if (type == Constants.Bundle.GOOGLE) {
+            url = "user/get?gl=";
+        } else if (type == Constants.Bundle.FACEBOOK) {
+            url = "user/get?fb=";
+        } else if (type == Constants.Bundle.TWITTER) {
+            url = "user/get?tw=";
+        }
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setMethod(Method.GET);
+        simpleRequester.setUrl(Requester.API_URL + url + token);
+
+        try {
+            String jsonStr = simpleRequester.execute(simpleRequester).get();
+
+            JSONObject jsonObject = new JSONObject(jsonStr);
+
+            if (jsonObject.get("error").toString() == "false") {
+
+                JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                if (jsonArray.length() > 0) {
+
+                    JSONObject jsonObjectUser = jsonArray.getJSONObject(0);
+
+                    String email = jsonObjectUser.getString("email").toString();
+                    String password = jsonObjectUser.getString("email").toString();
+
+                    jsonObject = new JSONObject();
+                    jsonObject.put("email", email);
+                    jsonObject.put("password", password);
+
+                    simpleRequester = new SimpleRequester();
+                    simpleRequester.setUrl(Requester.API_URL + "user/login");
+                    simpleRequester.setJsonObject(jsonObject);
+                    simpleRequester.setMethod(Method.POST);
+
+                    jsonStr = simpleRequester.execute(simpleRequester).get();
+
+                    jsonObject = new JSONObject(jsonStr);
+
+                    singleUser.setNick(jsonObjectUser.getString("nick").toString());
+                    singleUser.setEmail(jsonObjectUser.getString("email").toString());
+                    singleUser.setGender(jsonObjectUser.getString("gender").toString());
+                    singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                    singleUser.setId(jsonObjectUser.getString("id").toString());
+                    singleUser.setRace(jsonObjectUser.getString("race").toString());
+                    singleUser.setDob(jsonObjectUser.getString("dob").toString());
+                    singleUser.setUser_token(jsonObject.get("token").toString());
+
+                    SharedPreferences sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                    editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
+                    editor.commit();
+
+                    navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                            Intent.FLAG_ACTIVITY_NEW_TASK);
+                }
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

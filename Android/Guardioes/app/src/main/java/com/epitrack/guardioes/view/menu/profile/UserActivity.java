@@ -256,6 +256,9 @@ public class UserActivity extends BaseAppCompatActivity {
                 jsonObject.put("password", singleUser.getPassword());
                 jsonObject.put("app_token", user.getApp_token());
                 jsonObject.put("platform", user.getPlatform());
+                jsonObject.put("gl", singleUser.getGl());
+                jsonObject.put("tw", singleUser.getTw());
+                jsonObject.put("fb", singleUser.getFb());
 
                 if (singleUser.getEmail() == null) {
                     jsonObject.put("email", editTextMail.getText().toString().toLowerCase());

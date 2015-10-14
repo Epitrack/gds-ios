@@ -21,6 +21,9 @@ public class User {
     private String id;
     private String picture;
     private String user_token;
+    private String tw;
+    private String fb;
+    private String gl;
 
     public User() {
 
@@ -176,5 +179,29 @@ public class User {
 
     public void setUser_token(String user_token) {
         this.user_token = user_token;
+    }
+
+    public String getGl() {
+        return gl;
+    }
+
+    public void setGl(String gl) {
+        this.gl = gl;
+    }
+
+    public String getFb() {
+        return fb;
+    }
+
+    public void setFb(String fb) {
+        this.fb = fb;
+    }
+
+    public String getTw() {
+        return tw;
+    }
+
+    public void setTw(String tw) {
+        this.tw = tw;
     }
 }

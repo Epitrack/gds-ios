@@ -112,6 +112,7 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
         }
     }
 
+    //Miqueias - SAIR
     @Override
     public boolean onNavigationItemSelected(final MenuItem menuItem) {
 
