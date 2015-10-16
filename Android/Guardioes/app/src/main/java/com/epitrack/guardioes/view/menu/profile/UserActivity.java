@@ -222,6 +222,21 @@ public class UserActivity extends BaseAppCompatActivity {
                     .positiveText(R.string.ok)
                     .show();
 
+        } else if (DateFormat.getDateDiff(DateFormat.getDate(editTextBirthDate.getText().toString().trim())) > 120) {
+
+            new DialogBuilder(UserActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.dob_invalid)
+                    .positiveText(R.string.ok)
+                    .show();
+
+        } else if (DateFormat.getDateDiff(DateFormat.getDate(editTextBirthDate.getText().toString().trim())) < 0) {
+
+            new DialogBuilder(UserActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.dob_invalid)
+                    .positiveText(R.string.ok)
+                    .show();
         } else {
 
             JSONObject jsonObject = new JSONObject();

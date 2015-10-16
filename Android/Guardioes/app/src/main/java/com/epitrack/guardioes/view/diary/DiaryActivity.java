@@ -282,7 +282,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
             date = CalendarDay.today();
         }
 
-        String today = date.getDay() + "/" + date.getMonth() + "/" + date.getYear();
+        String today = date.getDay() + "/" + (date.getMonth() + 1) + "/" + date.getYear();
         textViewTotalDia.setText("Total de envios no dia " + today);
     }
 

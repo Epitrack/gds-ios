@@ -400,17 +400,29 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
             if (state == State.NEXT) {
 
+                boolean dobIsFail;
 
                 if (!DateFormat.isDate(editTextBirthDate.getText().toString().trim().toLowerCase())) {
+                    dobIsFail = true;
+                } else if (DateFormat.getDateDiff(DateFormat.getDate(editTextBirthDate.getText().toString().trim())) < 12) {
+                    dobIsFail = true;
+                } else if(DateFormat.getDateDiff(DateFormat.getDate(editTextBirthDate.getText().toString().trim())) > 120) {
+                    dobIsFail = true;
+                } else {
+                    dobIsFail = false;
+                }
+
+
+                if (dobIsFail) {
                     new DialogBuilder(CreateAccountActivity.this).load()
                             .title(R.string.attention)
                             .content(R.string.dob_invalid)
                             .positiveText(R.string.ok)
                             .show();
                 } else {
-
                     onNextAnimation(linearLayoutCreate, linearLayoutNext);
                 }
+
 
             } else {
 
