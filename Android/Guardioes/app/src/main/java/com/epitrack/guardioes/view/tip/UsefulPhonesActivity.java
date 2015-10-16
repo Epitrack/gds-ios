@@ -60,15 +60,16 @@ public class UsefulPhonesActivity extends BaseAppCompatActivity {
         Uri uri = null;
 
         if (phoneId == Phone.EMERGENCY.getId()) {
-            uri = Uri.parse("192");
+            uri = Uri.parse("tel:192");
         } else if (phoneId == Phone.POLICE.getId()) {
-            uri = Uri.parse("190");
+            uri = Uri.parse("tel:190");
         } else if (phoneId == Phone.FIREMAN.getId()) {
-            uri = Uri.parse("193");
+            uri = Uri.parse("tel:193");
         } else if (phoneId == Phone.DEFENSE.getId()) {
-            uri = Uri.parse("08006440199");
+            uri = Uri.parse("tel:08006440199");
         }
-        intent = new Intent(Intent.ACTION_DIAL, uri);
+        intent = new Intent(Intent.ACTION_DIAL);
+        intent.setData(uri);
         startActivity(intent);
     }
 }

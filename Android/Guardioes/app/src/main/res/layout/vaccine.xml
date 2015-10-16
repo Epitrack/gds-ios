@@ -3,10 +3,18 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/image_view_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="25dp"
+            android:src="@drawable/image_logo_blue" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,17 +23,22 @@
         android:textSize="13dp"
         android:textStyle="bold"
         android:textColor="@color/grey"
-        />
+        android:layout_below="@+id/image_view_logo"
+        android:layout_alignLeft="@+id/vacinne_content_01"
+        android:layout_alignStart="@+id/vacinne_content_01" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="13dp"
         android:text="@string/vacinne_content_01"
+        android:id="@+id/vacinne_content_01"
+        android:layout_below="@id/image_view_logo"
+        android:layout_margin="30dp"
         android:textColor="@color/grey"/>
 
 
-    <TextView
+   <!-- <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/vacinne_title_02"
@@ -39,6 +52,6 @@
         android:layout_height="wrap_content"
         android:textSize="13dp"
         android:text="@string/vacinne_content_02"
-        android:textColor="@color/grey"/>
-    </LinearLayout>
+        android:textColor="@color/grey"/>-->
+    </RelativeLayout>
 </ScrollView>

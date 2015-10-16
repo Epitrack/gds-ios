@@ -64,7 +64,7 @@
     <string name="sound">Sons</string>
     <string name="syndromes">Síndromes</string>
     <string name="take_photo">Tirar foto</string>
-    <string name="term">Termos e politícas</string>
+    <string name="term">Termos e Politícas</string>
     <string name="tip_health">Dicas de Saúde</string>
     <string name="tip_health_1">Dicas de\nSaúde</string>
     <string name="tutorial">Tutorial</string>
@@ -289,8 +289,39 @@ Sua participação é uma gentil contribuição para o aprimoramento da vigilân
 
 - O Brasil conta com uma rede pública de saúde estruturada para diagnosticar e tratar os pacientes, de forma oportuna e adequada;\n
 
-- Caso você queira adquirir mais informações acerca da malária antes de realizar a sua viagem, busque orientações em um dos Centros de Referência\n
-</string>
+- Caso você queira adquirir mais informações acerca da malária antes de realizar a sua viagem, busque orientações em um dos Centros de Referência\n\n
+
+<b>Previna-se contra doenças de transmissão respiratória</b>\n\n
+
+- Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\n
+
+- Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\n
+
+- Indivíduos doentes devem ficar em repouso, consumir alimentação balanceada, aumentar a ingestão de líquidos e evitar aglomerações e ambientes fechados;\n
+
+- Mantenha os ambientes ventilados;\n
+
+- Esteja sempre atento ao apresentar sintomas respiratórios de maior gravidade e procure imediatamente assistência médica.\n\n
+
+<b>Consuma alimentos e bebidas de forma saudável</b>\n\n
+
+- Evite consumir alimentos cujas condições higiênicas, de preparo e acondicionamento, são precárias;\n
+
+- Prefira alimentos que contenham baixo teor de açúcares, gorduras e sal;\n
+
+- Beba bastante líquido, preferencialmente água ou suco. Evite alimentos crus ou mal cozidos, principalmente os frutos do mar;\n
+
+- Alimentos embalados devem conter no rótulo a identificação do produtor, data de validade e a embalagem deve estar íntegra;\n
+
+- Durante o turismo rural, dê preferência aos alimentos que podem ficar sem refrigeração e não estraguem com o calor;\n
+
+- Caso tenha diarreia e vômitos por conta da ingestão de alimentos e bebidas, é preciso cuidado redobrado com a desidratação. Recomenda-se a ingestão de sal de reidratação oral, disponibilizado gratuitamente pelo Sistema Único de Saúde, ou outras soluções do tipo. As bebidas esportivas não compensam corretamente as perdas e não devem ser utilizadas para tratamento de doença diarreica.\n\n
+
+
+<b>Pratique sexo de forma segura</b>\n\n
+- No Brasil, a camisinha é distribuída gratuitamente pelo governo e está disponível em postos de saúde, unidades de pronto atendimento, albergues, Centros de Atendimento ao Turista e em outros pontos de distribuição espalhados pelas cidades. \nLeve sempre consigo os preservativos para facilitar a sua utilização e a prevenção de doenças sexualmente transmissíveis
+
+    </string>
     <string name="prevention_title_02">Previna-se contra doenças de transmissão respiratória\n</string>
     <string name="prevention_content_02">- Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\n
 
@@ -359,7 +390,12 @@ Sua participação é uma gentil contribuição para o aprimoramento da vigilân
 - A preparação para a viagem é uma boa oportunidade para verificar o estado vacinal de bebês, crianças, adolescentes, adultos e idosos.\n
 
  - Todo morador ou visitante de qualquer cidade brasileira tem disponível também as vacinas para influenza e Pólio que são enfermidades relacionadas a possíveis emergências de saúde pública de importância internacional para a Organização Mundial de Saúde.\n
-\n</string>
+\n
+    <b>Prevenção contra febre amarela</b>\n\n
+
+    Previna-se contra febre amarela tomando a vacina 10 dias antes de visitar áreas de mata ou de praticar turismo ecológico ou rural.\n
+
+- Procure seu medico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem;\n\n</string>
     <string name="vacinne_title_02">Prevenção contra febre amarela\n</string>
     <string name="vacinne_content_02">- Previna-se contra febre amarela tomando a vacina 10 dias antes de visitar áreas de mata ou de praticar turismo ecológico ou rural.\n
 
@@ -472,13 +508,7 @@ A disposição através do Webapp e da aplicação de links e referências para 
 
 O acesso ao serviço representa a aceitação expressa e irrestrita dos Termos de Uso acima descritos. Ao concordar com esses termos você concede uma licença perpétua, isenta de royalties, licença incondicional para o “GUARDIÕES DA SAÚDE”, Ministério da Saúde e todas as organizações sucessoras, para publicar a sua contribuição de forma agregada, na própria aplicação, bem como divulgá-las aos serviços de vigilância em saúde pública relacionados. Você também concorda que “GUARDIÕES DA SAÚDE” tem o direito, mas não a obrigação, de editar ou remover qualquer contribuição a critério exclusivo da equipe do “GUARDIÕES DA SAÚDE”.\n\n
 
-Data da última revisão: junho /2015zn
-
-
-
-
-
-
+Data da última revisão: junho /2015
 </string>
 
 </resources>

@@ -30,6 +30,7 @@ import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.view.menu.help.Term;
 import com.epitrack.guardioes.view.menu.profile.UserActivity;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -197,7 +198,8 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
     @OnClick(R.id.text_view_term)
     public void onTerm() {
-        Toast.makeText(this, "Open terms", Toast.LENGTH_SHORT).show();
+        navigateTo(Term.class);
+        //Toast.makeText(this, "Open terms", Toast.LENGTH_SHORT).show();
     }
 
     @Override
