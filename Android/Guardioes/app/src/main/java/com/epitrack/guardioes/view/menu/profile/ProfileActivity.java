@@ -1,10 +1,12 @@
 package com.epitrack.guardioes.view.menu.profile;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
@@ -13,12 +15,16 @@ import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.menu.HomeMenu;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
@@ -33,6 +39,7 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
     ListView listView;
 
     SingleUser singleUser = SingleUser.getInstance();
+    private final Map<String, Fragment> fragmentMap = new HashMap<>();
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -44,11 +51,18 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
     }
 
     @Override
+    protected void onResume()
+    {
+        super.onResume();
+        listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
+    }
+
+    @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
 
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
-
+            //navigateTo(ProfileFragment.class);
         } else {
             super.onOptionsItemSelected(item);
         }
@@ -93,38 +107,67 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
 
         if (singleUser.getId() == user.getId()) {
 
-            /*DialogBuilder dialogBuilder = new DialogBuilder(getApplicationContext());
+            new DialogBuilder(ProfileActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.not_remove_member)
+                    .positiveText(R.string.ok)
+                    .show();
 
-            dialogBuilder.load().content(R.string.not_remove_member).build().show();*/
-
-            Toast.makeText(getApplicationContext(), R.string.not_remove_member, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), R.string.not_remove_member, Toast.LENGTH_SHORT).show();
         } else {
 
-            SimpleRequester simpleRequester = new SimpleRequester();
-            simpleRequester.setMethod(Method.GET);
-            simpleRequester.setUrl(Requester.API_URL + "household/delete/" + user.getId() + "?client=api");
-            simpleRequester.setJsonObject(null);
+            new DialogBuilder(ProfileActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.delete_profile)
+                    .positiveText(R.string.yes)
+                    .negativeText(R.string.no)
+                    .callback(new MaterialDialog.ButtonCallback() {
 
-            try {
-                String jsonStr = simpleRequester.execute(simpleRequester).get();
+                        @Override
+                        public void onNegative(final MaterialDialog dialog) {
 
-                JSONObject jsonObject = new JSONObject(jsonStr);
+                        }
 
-                if (jsonObject.get("error").toString() == "true") {
-                    Toast.makeText(getApplicationContext(), R.string.generic_error, Toast.LENGTH_SHORT).show();
+                        @Override
+                        public void onPositive(final MaterialDialog dialog) {
 
-                } else {
-                    Toast.makeText(getApplicationContext(), R.string.delete_user, Toast.LENGTH_SHORT).show();
-                    listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
-                }
+                            SimpleRequester simpleRequester = new SimpleRequester();
+                            simpleRequester.setMethod(Method.GET);
+                            simpleRequester.setUrl(Requester.API_URL + "household/delete/" + user.getId() + "?client=api");
+                            simpleRequester.setJsonObject(null);
 
-            } catch (InterruptedException e) {
-                Toast.makeText(getApplicationContext(), R.string.generic_error + " - " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            } catch (ExecutionException e) {
-                Toast.makeText(getApplicationContext(), R.string.generic_error + " - " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            } catch (JSONException e) {
-                Toast.makeText(getApplicationContext(), R.string.generic_error + " - " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
+                            try {
+                                String jsonStr = simpleRequester.execute(simpleRequester).get();
+
+                                JSONObject jsonObject = new JSONObject(jsonStr);
+
+                                if (jsonObject.get("error").toString() == "true") {
+                                    refresh(true);
+                                } else {
+                                    refresh(false);
+                                }
+
+                            } catch (InterruptedException e) {
+                                Toast.makeText(getApplicationContext(), R.string.generic_error + " - " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            } catch (ExecutionException e) {
+                                Toast.makeText(getApplicationContext(), R.string.generic_error + " - " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            } catch (JSONException e) {
+                                Toast.makeText(getApplicationContext(), R.string.generic_error + " - " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                    }).show();
+
+
+        }
+    }
+
+    private void refresh(boolean error) {
+        if (error) {
+            Toast.makeText(getApplicationContext(), R.string.generic_error, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), R.string.delete_user, Toast.LENGTH_SHORT).show();
+            listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
         }
     }
 }

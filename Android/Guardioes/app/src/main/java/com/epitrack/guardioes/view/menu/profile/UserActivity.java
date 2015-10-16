@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -30,6 +31,7 @@ import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
@@ -212,151 +214,187 @@ public class UserActivity extends BaseAppCompatActivity {
         user.setGender(gender.toUpperCase());
         user.setRace(spinnerRace.getSelectedItem().toString().toLowerCase());
 
-        JSONObject jsonObject = new JSONObject();
-        SimpleRequester simpleRequester = new SimpleRequester();
+        if (!DateFormat.isDate(user.getDob())) {
 
-        try {
-            jsonObject.put("nick", user.getNick());
-            jsonObject.put("dob", DateFormat.getDate(user.getDob()));
-            jsonObject.put("gender", user.getGender());
-            jsonObject.put("race", user.getRace());
-            jsonObject.put("client", user.getClient());
-            jsonObject.put("race", user.getRace());
+            new DialogBuilder(UserActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.dob_invalid)
+                    .positiveText(R.string.ok)
+                    .show();
 
-            if (!socialNew) {
+        } else {
 
-                if (mainMember) {
-                    String password = editTextPassword.getText().toString().trim();
-                    String confirmPassword = editTextConfirmPassword.getText().toString().trim();
+            JSONObject jsonObject = new JSONObject();
+            SimpleRequester simpleRequester = new SimpleRequester();
 
-                    if (!password.equals("")) {
-                        if (password.equals(confirmPassword)) {
-                            user.setPassword(password);
-                            jsonObject.put("password", user.getPassword());
+            try {
+                jsonObject.put("nick", user.getNick());
+                jsonObject.put("dob", DateFormat.getDate(user.getDob()));
+                jsonObject.put("gender", user.getGender());
+                jsonObject.put("race", user.getRace());
+                jsonObject.put("client", user.getClient());
+                jsonObject.put("race", user.getRace());
+
+                if (!socialNew) {
+
+                    if (mainMember) {
+                        String password = editTextPassword.getText().toString().trim();
+                        String confirmPassword = editTextConfirmPassword.getText().toString().trim();
+
+                        if (!password.equals("")) {
+                            if (password.equals(confirmPassword)) {
+                                user.setPassword(password);
+                                jsonObject.put("password", user.getPassword());
+                            }
                         }
                     }
-                }
 
-                if (newMenber) {
-                    jsonObject.put("user", singleUser.getId());
-                } else if (mainMember) {
-                    jsonObject.put("id", singleUser.getId());
-                } else {
-                    jsonObject.put("id", getIntent().getStringExtra("id"));
-                }
-
-                if (newMenber) {
-                    simpleRequester.setUrl(Requester.API_URL + "household/create");
-                } else if (mainMember) {
-                    simpleRequester.setUrl(Requester.API_URL + "user/update");
-                } else {
-                    simpleRequester.setUrl(Requester.API_URL + "household/update");
-                }
-            } else {
-                jsonObject.put("password", singleUser.getPassword());
-                jsonObject.put("app_token", user.getApp_token());
-                jsonObject.put("platform", user.getPlatform());
-                jsonObject.put("gl", singleUser.getGl());
-                jsonObject.put("tw", singleUser.getTw());
-                jsonObject.put("fb", singleUser.getFb());
-
-                if (singleUser.getEmail() == null) {
-                    jsonObject.put("email", editTextMail.getText().toString().toLowerCase());
-                    jsonObject.put("password", editTextMail.getText().toString().toLowerCase());
-
-                } else {
-                    jsonObject.put("email", singleUser.getEmail());
-                }
-
-                simpleRequester.setUrl(Requester.API_URL + "user/create");
-            }
-
-            simpleRequester.setJsonObject(jsonObject);
-            simpleRequester.setMethod(Method.POST);
-
-            String jsonStr = simpleRequester.execute(simpleRequester).get();
-
-            jsonObject = new JSONObject(jsonStr);
-
-            if (jsonObject.get("error").toString() == "true") {
-                Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
-            } else {
-                if (socialNew) {
-
-                    JSONObject jsonObjectUser = jsonObject.getJSONObject("user");
-
-                    singleUser.setNick(jsonObjectUser.getString("nick").toString());
-                    singleUser.setEmail(jsonObjectUser.getString("email").toString());
-                    singleUser.setGender(jsonObjectUser.getString("gender").toString());
-                    singleUser.setPicture(jsonObjectUser.getString("picture").toString());
-                    singleUser.setId(jsonObjectUser.getString("id").toString());
-                    singleUser.setPassword(jsonObjectUser.getString("email").toString());
-                    singleUser.setRace(jsonObjectUser.getString("race").toString());
-                    singleUser.setDob(jsonObjectUser.getString("dob").toString());
-
-                    SharedPreferences sharedPreferences = null;
-
-                    jsonObject = new JSONObject();
-
-                    jsonObject.put("email", singleUser.getEmail());
-                    jsonObject.put("password", singleUser.getPassword());
-
-                    simpleRequester = new SimpleRequester();
-                    simpleRequester.setUrl(Requester.API_URL + "user/login");
-                    simpleRequester.setJsonObject(jsonObject);
-                    simpleRequester.setMethod(Method.POST);
-
-                    jsonStr = simpleRequester.execute(simpleRequester).get();
-
-                    jsonObject = new JSONObject(jsonStr);
-
-                    if (jsonObject.get("error").toString() == "true") {
-                        Toast.makeText(getApplicationContext(), "Erro - " + jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                    if (newMenber) {
+                        jsonObject.put("user", singleUser.getId());
+                    } else if (mainMember) {
+                        jsonObject.put("id", singleUser.getId());
                     } else {
-                        singleUser.setUser_token(jsonObject.get("token").toString());
-
-                        sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                        editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
-                        editor.commit();
-
-                        sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_SOCIAL, 0);
-                        SharedPreferences.Editor editorSocial = sharedPreferences.edit();
-
-                        editorSocial.putString(Constants.Pref.PREFS_NAME, "true");
-                        editor.commit();
+                        jsonObject.put("id", getIntent().getStringExtra("id"));
                     }
 
+                    if (newMenber) {
+                        simpleRequester.setUrl(Requester.API_URL + "household/create");
+                    } else if (mainMember) {
+                        simpleRequester.setUrl(Requester.API_URL + "user/update");
+                    } else {
+                        simpleRequester.setUrl(Requester.API_URL + "household/update");
+                    }
+                } else {
+                    jsonObject.put("password", singleUser.getPassword());
+                    jsonObject.put("app_token", user.getApp_token());
+                    jsonObject.put("platform", user.getPlatform());
+                    jsonObject.put("gl", singleUser.getGl());
+                    jsonObject.put("tw", singleUser.getTw());
+                    jsonObject.put("fb", singleUser.getFb());
+
+                    if (singleUser.getEmail() == null) {
+                        jsonObject.put("email", editTextMail.getText().toString().toLowerCase());
+                        jsonObject.put("password", editTextMail.getText().toString().toLowerCase());
+
+                    } else {
+                        jsonObject.put("email", singleUser.getEmail());
+                    }
+
+                    simpleRequester.setUrl(Requester.API_URL + "user/create");
+                }
+
+                simpleRequester.setJsonObject(jsonObject);
+                simpleRequester.setMethod(Method.POST);
+
+                String jsonStr = simpleRequester.execute(simpleRequester).get();
+
+                jsonObject = new JSONObject(jsonStr);
+
+                if (jsonObject.get("error").toString() == "true") {
+                    //Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
 
                     new DialogBuilder(UserActivity.this).load()
                             .title(R.string.attention)
-                            .content(R.string.cadastro_sucesso)
+                            .content(R.string.error_add_new_member)
                             .positiveText(R.string.ok)
-                            .callback(new MaterialDialog.ButtonCallback() {
-                                @Override
-                                public void onPositive(final MaterialDialog dialog) {
-                                    navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                            Intent.FLAG_ACTIVITY_NEW_TASK);
-                                }
-                            }).show();
+                            .show();
+
                 } else {
-                    if (newMenber) {
-                        Toast.makeText(getApplicationContext(), R.string.new_member_ok, Toast.LENGTH_SHORT).show();
-                    } else if (mainMember) {
-                        Toast.makeText(getApplicationContext(), R.string.generic_update_data_ok, Toast.LENGTH_SHORT).show();
+                    if (socialNew) {
+
+                        JSONObject jsonObjectUser = jsonObject.getJSONObject("user");
+
+                        singleUser.setNick(jsonObjectUser.getString("nick").toString());
+                        singleUser.setEmail(jsonObjectUser.getString("email").toString());
+                        singleUser.setGender(jsonObjectUser.getString("gender").toString());
+                        singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                        singleUser.setId(jsonObjectUser.getString("id").toString());
+                        singleUser.setPassword(jsonObjectUser.getString("email").toString());
+                        singleUser.setRace(jsonObjectUser.getString("race").toString());
+                        singleUser.setDob(jsonObjectUser.getString("dob").toString());
+
+                        SharedPreferences sharedPreferences = null;
+
+                        jsonObject = new JSONObject();
+
+                        jsonObject.put("email", singleUser.getEmail());
+                        jsonObject.put("password", singleUser.getPassword());
+
+                        simpleRequester = new SimpleRequester();
+                        simpleRequester.setUrl(Requester.API_URL + "user/login");
+                        simpleRequester.setJsonObject(jsonObject);
+                        simpleRequester.setMethod(Method.POST);
+
+                        jsonStr = simpleRequester.execute(simpleRequester).get();
+
+                        jsonObject = new JSONObject(jsonStr);
+
+                        if (jsonObject.get("error").toString() == "true") {
+                            Toast.makeText(getApplicationContext(), "Erro - " + jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                        } else {
+                            singleUser.setUser_token(jsonObject.get("token").toString());
+
+                            sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                            editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
+                            editor.commit();
+
+                            sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_SOCIAL, 0);
+                            SharedPreferences.Editor editorSocial = sharedPreferences.edit();
+
+                            editorSocial.putString(Constants.Pref.PREFS_NAME, "true");
+                            editor.commit();
+                        }
+
+
+                        new DialogBuilder(UserActivity.this).load()
+                                .title(R.string.attention)
+                                .content(R.string.cadastro_sucesso)
+                                .positiveText(R.string.ok)
+                                .callback(new MaterialDialog.ButtonCallback() {
+                                    @Override
+                                    public void onPositive(final MaterialDialog dialog) {
+                                        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                                Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    }
+                                }).show();
                     } else {
-                        Toast.makeText(getApplicationContext(), R.string.generic_update_data_ok, Toast.LENGTH_SHORT).show();
+                        if (newMenber) {
+                            //Toast.makeText(getApplicationContext(), R.string.new_member_ok, Toast.LENGTH_SHORT).show();
+                            new DialogBuilder(UserActivity.this).load()
+                                    .title(R.string.attention)
+                                    .content(R.string.new_member_ok)
+                                    .positiveText(R.string.ok)
+                                    .show();
+                        } else if (mainMember) {
+                            //Toast.makeText(getApplicationContext(), R.string.generic_update_data_ok, Toast.LENGTH_SHORT).show();
+                            new DialogBuilder(UserActivity.this).load()
+                                    .title(R.string.attention)
+                                    .content(R.string.generic_update_data_ok)
+                                    .positiveText(R.string.ok)
+                                    .show();
+                        } else {
+                            //Toast.makeText(getApplicationContext(), R.string.generic_update_data_ok, Toast.LENGTH_SHORT).show();
+                            new DialogBuilder(UserActivity.this).load()
+                                    .title(R.string.attention)
+                                    .content(R.string.generic_update_data_ok)
+                                    .positiveText(R.string.ok)
+                                    .show();
+                        }
+                        //navigateTo(ProfileActivity.class);
+                        editTextNickname.setText("");
+                        editTextBirthDate.setText("");
+
                     }
-                    navigateTo(ProfileActivity.class);
                 }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
         }
     }
 
@@ -372,6 +410,7 @@ public class UserActivity extends BaseAppCompatActivity {
                     final Avatar avatar = (Avatar) intent.getSerializableExtra(Constants.Bundle.AVATAR);
 
                     imageViewImage.setImageResource(avatar.getSmall());
+                    //singleUser.setPicture(avatar.getSmall());
 
                 } else if (intent.hasExtra(Constants.Bundle.URI)) {
 
@@ -384,5 +423,17 @@ public class UserActivity extends BaseAppCompatActivity {
                 }
             }
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+
+        } else {
+            super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 }

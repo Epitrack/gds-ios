@@ -82,6 +82,7 @@
     <string name="new_user_social_media">Complete o cadastro a seguir para acessar o Guardiões da Saúde.</string>
     <string name="cadastro_sucesso">Cadastro realizado com sucesso!</string>
     <string name="user_exist">Cadastro realizado anterioremente com essa rede social ou e-mail.</string>
+    <string name="delete_profile">Deseja remover o perfil definitivamente? Essa operação é irreversível.</string>
 
     <string-array name="gender_array">
         <item>Masculino</item>
@@ -97,6 +98,7 @@
     </string-array>
 
     <string name="generic_error">Não foi possível executar a operação. Tente novamente em alguns instantes.</string>
+    <string name="erro_new_user">Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso.</string>
     <string name="generic_update_data_ok">Dados alterados com sucesso.</string>
 
     # Tip
@@ -175,6 +177,8 @@
     <string name="not_remove_member">Você não pode remover seu perfil.</string>
     <string name="delete_user">Membro excluído com sucesso.</string>
     <string name="new_member_ok">Membro incluído com sucesso.</string>
+    <string name="error_add_new_member">Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente e tente novamente.</string>
+    <string name="dob_invalid">Data de nascimento inválida.</string>
 
     # Profile Fragment
 
@@ -359,8 +363,8 @@ Sua participação é uma gentil contribuição para o aprimoramento da vigilân
 \n</string>
 
     #Terms of use
-
-    <string name="terms_content_01"><b>TERMOS DE USO\n\n</b>
+    <string name="terms_title_01">Termos de Uso</string>
+    <string name="terms_content_01">
 
 Por favor, leia estes termos legais de uso antes de utilizar o “GUARDIÕES DA SAÚDE”, fazer qualquer colaboração, acessar ou baixar qualquer informação desta aplicação.\n\n
 

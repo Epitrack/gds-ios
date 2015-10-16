@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.DTO;
 import com.epitrack.guardioes.model.SingleUser;
@@ -437,7 +438,12 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                     JSONObject jsonObject = new JSONObject(jsonStr);
 
                     if (jsonObject.get("error").toString() == "true") {
-                        Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                        new DialogBuilder(CreateAccountActivity.this).load()
+                                .title(R.string.attention)
+                                .content(R.string.erro_new_user)
+                                .positiveText(R.string.ok)
+                                .show();
                     } else {
 
                         JSONObject jsonObjectUser = jsonObject.getJSONObject("user");
@@ -448,6 +454,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                         singleUser.setGender(jsonObjectUser.getString("gender").toString());
                         singleUser.setPicture(jsonObjectUser.getString("picture").toString());
                         singleUser.setId(jsonObjectUser.getString("id").toString());
+                        singleUser.setRace(jsonObjectUser.getString("race").toString());
 
                         Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
                         navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |

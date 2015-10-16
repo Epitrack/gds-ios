@@ -38,12 +38,12 @@
         android:id="@+id/message_about_content_01" />
 
 
-    <ImageView
+    <!--<ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/image_sponsor" />
+        android:src="@drawable/image_sponsor" />-->
 
    </RelativeLayout>
 

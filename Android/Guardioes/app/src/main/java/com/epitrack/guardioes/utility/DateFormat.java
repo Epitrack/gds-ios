@@ -60,4 +60,19 @@ public final class DateFormat {
 
         return diffDate;
     }
+
+    public static boolean isDate(String date) {
+        boolean bReturn = true;
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        df.setLenient(false); // aqui o pulo do gato
+
+        try {
+            df.parse (date);
+            bReturn = true;
+        } catch (ParseException ex) {
+            bReturn = false;
+        } finally {
+            return  bReturn;
+        }
+    }
 }

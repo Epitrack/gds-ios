@@ -76,6 +76,12 @@
             android:exported="false"
             android:label="@string/term"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.menu.help.TutorialActivity"
+            android:exported="false"
+            android:label="@string/tutorial"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NoActionBar"/>
         # Profile
         <activity
             android:name=".view.menu.profile.ProfileActivity"

@@ -8,7 +8,7 @@ import com.epitrack.guardioes.view.IMenu;
  */
 public enum HelpContact implements IMenu {
 
-    MAIL        (1, R.string.mail, R.drawable.icon_mail),
+    //MAIL        (1, R.string.mail, R.drawable.icon_mail),
     FACEBOOK    (2, R.string.facebook, R.drawable.icon_facebook),
     TWITTER     (3, R.string.twitter, R.drawable.icon_twitter);
 

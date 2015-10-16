@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.menu.help;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -51,14 +52,30 @@ public class HelpFragment extends BaseFragment implements MenuListener {
         listViewOption.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (HelpOption.getBy(position+1).getId() == HelpOption.TERM.getId() ) {
-
+                if (HelpOption.getBy(position + 1).getId() == HelpOption.TERM.getId()) {
                     navigateTo(Term.class);
+                } else if (HelpOption.getBy(position + 1).getId() == HelpOption.TUTORIAL.getId()) {
+                    navigateTo(TutorialActivity.class);
                 }
             }
         });
 
         listViewContact.setAdapter(new HelpAdapter(getActivity(), this, HelpContact.values()));
+
+        listViewContact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (HelpContact.getBy(position + 2).getId() == HelpContact.TWITTER.getId()) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("https://twitter.com/minsaude"));
+                    startActivity(i);
+                } else if (HelpContact.getBy(position + 2).getId() == HelpContact.FACEBOOK.getId()) {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse("https://www.facebook.com/minsaude"));
+                    startActivity(i);
+                }
+            }
+        });
 
         return view;
     }
