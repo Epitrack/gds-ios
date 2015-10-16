@@ -169,10 +169,10 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
         }
     }
 
-    @OnClick(R.id.text_view_forgot_password)
-    public void onForgotPassword() {
-        Toast.makeText(this, "Oii", Toast.LENGTH_SHORT).show();
-    }
+    //@OnClick(R.id.text_view_forgot_password)
+    //public void onForgotPassword() {
+    //    Toast.makeText(this, "Oii", Toast.LENGTH_SHORT).show();
+    //}
 
     @OnClick(R.id.button_mail)
     public void onLoginAnimation() {

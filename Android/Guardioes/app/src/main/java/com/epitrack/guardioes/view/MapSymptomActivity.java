@@ -165,7 +165,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
     public void onMapReady(final GoogleMap map) {
         super.onMapReady(map);
 
-        if (locationUtility.getLocation() == null) {
+        if (locationUtility.getLocation() != null) {
             load();
             setupView();
         }
