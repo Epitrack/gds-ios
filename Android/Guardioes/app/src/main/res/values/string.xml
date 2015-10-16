@@ -86,6 +86,7 @@
     <string name="internet_fail">É preciso estar conectado a internet para continuar a utilizar o Guardiões da Saúde</string>
     <string name="password_fail">A senha precisa ter pelo menos seis caracteres.</string>
     <string name="password_not_equal">As senhas precisam ser iguais.</string>
+    <string name="open_google_maps">Deseja visualizar endereço no Google Maps?</string>
 
     <string-array name="gender_array">
         <item>Masculino</item>

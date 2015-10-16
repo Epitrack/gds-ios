@@ -1,5 +1,7 @@
 package com.epitrack.guardioes.view;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -268,6 +270,33 @@ public class MapPointActivity extends AbstractBaseMapActivity {
             });
 
             linearLayoutPoint.startAnimation(animation);
+
+            new DialogBuilder(MapPointActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.open_google_maps)
+                    .positiveText(R.string.yes)
+                    .negativeText(R.string.no)
+                    .callback(new MaterialDialog.ButtonCallback() {
+
+                        @Override
+                        public void onNegative(final MaterialDialog dialog) {
+
+                        }
+
+                        @Override
+                        public void onPositive(final MaterialDialog dialog) {
+                            double latitude = point.getLatitude();
+                            double longitude = point.getLongitude();
+                            String label = point.getName();
+                            String uriBegin = "geo:" + latitude + "," + longitude;
+                            String query = latitude + "," + longitude + "(" + label + ")";
+                            String encodedQuery = Uri.encode(query);
+                            String uriString = uriBegin + "?q=" + encodedQuery + "&z=14";
+                            Uri uri = Uri.parse(uriString);
+                            Intent intent = new Intent(android.content.Intent.ACTION_VIEW, uri);
+                            startActivity(intent);
+                        }
+                    }).show();
         }
 
         return true;
