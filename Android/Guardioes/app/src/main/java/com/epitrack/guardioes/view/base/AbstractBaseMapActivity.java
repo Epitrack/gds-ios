@@ -22,7 +22,7 @@ public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity impl
 
     private static final String TAG = AbstractBaseMapActivity.class.getSimpleName();
 
-    private static final long DEFAULT_ZOOM = 10;
+    private static final long DEFAULT_ZOOM = 12;
 
     private MarkerOptions markerOption;
     private Marker userMarker;

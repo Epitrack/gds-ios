@@ -143,6 +143,8 @@ public class MapPointActivity extends AbstractBaseMapActivity {
                     Point point = new Point();
                     point.setLatitude(jsonObjectLocation.getDouble("lat"));
                     point.setLongitude(jsonObjectLocation.getDouble("lng"));
+                    point.setLogradouro(jsonObject.getString("formatted_address"));
+                    point.setName(jsonObject.getString("name"));
 
                     pointList.add(point);
                 }
@@ -238,33 +240,35 @@ public class MapPointActivity extends AbstractBaseMapActivity {
 
         final Point point = pointMap.get(marker);
 
-        textViewName.setText(point.getName());
-        textViewAddress.setText(formatAddress(point));
+        if (point != null) {
+            textViewName.setText(point.getName());
+            textViewAddress.setText(formatAddress(point));
 
-        final Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_top);
+            final Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_top);
 
-        animation.setAnimationListener(new Animation.AnimationListener() {
+            animation.setAnimationListener(new Animation.AnimationListener() {
 
-            @Override
-            public void onAnimationStart(final Animation animation) {
+                @Override
+                public void onAnimationStart(final Animation animation) {
 
-                if (linearLayoutPoint.getVisibility() == View.INVISIBLE) {
-                    linearLayoutPoint.setVisibility(View.VISIBLE);
+                    if (linearLayoutPoint.getVisibility() == View.INVISIBLE) {
+                        linearLayoutPoint.setVisibility(View.VISIBLE);
+                    }
                 }
-            }
 
-            @Override
-            public void onAnimationEnd(final Animation animation) {
+                @Override
+                public void onAnimationEnd(final Animation animation) {
 
-            }
+                }
 
-            @Override
-            public void onAnimationRepeat(final Animation animation) {
+                @Override
+                public void onAnimationRepeat(final Animation animation) {
 
-            }
-        });
+                }
+            });
 
-        linearLayoutPoint.startAnimation(animation);
+            linearLayoutPoint.startAnimation(animation);
+        }
 
         return true;
     }
