@@ -1,5 +1,6 @@
 package com.epitrack.guardioes.view.survey;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -61,6 +62,22 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         textViewName.setText(singleUser.getNick());
         textViewAge.setText(j + " Anos");
         textViewId.setText(singleUser.getId());
+
+        if (singleUser.getGender().equals("M")) {
+
+            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                imageViewAvatar.setImageResource(R.drawable.image_avatar_6);
+            } else {
+                imageViewAvatar.setImageResource(R.drawable.image_avatar_4);
+            }
+        } else {
+
+            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                imageViewAvatar.setImageResource(R.drawable.image_avatar_8);
+            } else {
+                imageViewAvatar.setImageResource(R.drawable.image_avatar_7);
+            }
+        }
 
         recyclerView.setHasFixedSize(true);
 

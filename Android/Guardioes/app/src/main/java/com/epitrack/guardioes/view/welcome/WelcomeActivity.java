@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.NetworkUtility;
 import com.epitrack.guardioes.view.base.BaseFragmentActivity;
 import com.epitrack.guardioes.view.account.CreateAccountActivity;
 import com.epitrack.guardioes.view.account.LoginActivity;
@@ -36,11 +38,36 @@ public class WelcomeActivity extends BaseFragmentActivity {
 
     @OnClick(R.id.button_login)
     public void onLogin() {
-        navigateTo(LoginActivity.class);
+
+        if (NetworkUtility.isOnline(getApplicationContext())) {
+
+            navigateTo(LoginActivity.class);
+
+        } else {
+
+            new DialogBuilder(WelcomeActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.internet_fail)
+                    .positiveText(R.string.ok)
+                    .show();
+
+        }
     }
 
     @OnClick(R.id.button_create_account)
     public void onCreateAccount() {
-        navigateTo(CreateAccountActivity.class);
+
+        if (NetworkUtility.isOnline(getApplicationContext())) {
+
+            navigateTo(CreateAccountActivity.class);
+
+        } else {
+
+            new DialogBuilder(WelcomeActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.internet_fail)
+                    .positiveText(R.string.ok)
+                    .show();
+        }
     }
 }

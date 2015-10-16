@@ -20,6 +20,7 @@ import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.Constants;
+import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -292,7 +293,13 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                 jsonObject = new JSONObject(jsonStr);
 
                 if (jsonObject.get("error").toString() == "true") {
-                    Toast.makeText(getApplicationContext(), "Erro ao fazer o login. - " + jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+
+                    new DialogBuilder(LoginActivity.this).load()
+                            .title(R.string.attention)
+                            .content(R.string.generic_error_login)
+                            .positiveText(R.string.ok)
+                            .show();
+
                 } else {
 
                     JSONObject jsonObjectUser = jsonObject.getJSONObject("user");

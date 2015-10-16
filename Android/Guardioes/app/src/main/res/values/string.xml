@@ -83,6 +83,9 @@
     <string name="cadastro_sucesso">Cadastro realizado com sucesso!</string>
     <string name="user_exist">Cadastro realizado anterioremente com essa rede social ou e-mail.</string>
     <string name="delete_profile">Deseja remover o perfil definitivamente? Essa operação é irreversível.</string>
+    <string name="internet_fail">É preciso estar conectado a internet para continuar a utilizar o Guardiões da Saúde</string>
+    <string name="password_fail">A senha precisa ter pelo menos seis caracteres.</string>
+    <string name="password_not_equal">As senhas precisam ser iguais.</string>
 
     <string-array name="gender_array">
         <item>Masculino</item>
@@ -98,6 +101,7 @@
     </string-array>
 
     <string name="generic_error">Não foi possível executar a operação. Tente novamente em alguns instantes.</string>
+    <string name="generic_error_login">Não foi possível executar a operação. Verifique se todos os campos estão preenchidos corretamente e tente novamente.</string>
     <string name="erro_new_user">Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso.</string>
     <string name="generic_update_data_ok">Dados alterados com sucesso.</string>
 
@@ -133,7 +137,7 @@
     <string name="validation_empty">Campo obrigatório</string>
     <string name="validation_length">Mínimo três caracteres</string>
     <string name="validation_mail">Email inválido</string>
-    <string name="validation_password">Senha inválida</string>
+    <string name="validation_password">Senha inválida ou com menos de 6 caracteres</string>
 
     # Message
 

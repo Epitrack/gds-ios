@@ -491,11 +491,11 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
                         JSONObject jsonObjectSymptom = jsonArray.getJSONObject(i);
                         JSONObject jsonObjectDetail = jsonObjectSymptom.getJSONObject("_id");
 
-                        if (jsonObjectDetail.get("no_symptom").toString().equals("Y")) {
+                        if (jsonObjectDetail.get("no_symptom").toString().equals("N")) {
 
                             badCountDetail = Double.parseDouble(jsonObjectSymptom.get("count").toString());
 
-                        } else if (jsonObjectDetail.get("no_symptom").toString().equals("N")) {
+                        } else if (jsonObjectDetail.get("no_symptom").toString().equals("Y")) {
 
                             goodCountDetail = Double.parseDouble(jsonObjectSymptom.get("count").toString());
                         }

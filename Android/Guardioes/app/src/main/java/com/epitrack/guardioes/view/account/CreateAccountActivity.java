@@ -426,56 +426,67 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                 user.setEmail(editTextMail.getText().toString().trim().toLowerCase());
                 user.setPassword(editTextPassword.getText().toString().trim());
 
-                final JSONObject jRoot = new JSONObject();
+                if (user.getPassword().length() <= 5) {
 
-                try {
-                    jRoot.put("nick", user.getNick());
-                    jRoot.put("email", user.getEmail());
-                    jRoot.put("password", user.getPassword());
-                    jRoot.put("client", user.getClient());
-                    jRoot.put("dob", DateFormat.getDate(user.getDob()));
-                    jRoot.put("gender", user.getGender());
-                    jRoot.put("app_token", user.getApp_token());
-                    jRoot.put("race", user.getRace());
-                    jRoot.put("platform", user.getPlatform());
+                    new DialogBuilder(CreateAccountActivity.this).load()
+                            .title(R.string.attention)
+                            .content(R.string.password_fail)
+                            .positiveText(R.string.ok)
+                            .show();
 
-                    SimpleRequester simpleRequester = new SimpleRequester();
-                    simpleRequester.setUrl(Requester.API_URL + "user/create");
-                    simpleRequester.setJsonObject(jRoot);
-                    simpleRequester.setMethod(Method.POST);
+                } else {
 
-                    String jsonStr = simpleRequester.execute(simpleRequester).get();
+                    final JSONObject jRoot = new JSONObject();
 
-                    JSONObject jsonObject = new JSONObject(jsonStr);
+                    try {
+                        jRoot.put("nick", user.getNick());
+                        jRoot.put("email", user.getEmail());
+                        jRoot.put("password", user.getPassword());
+                        jRoot.put("client", user.getClient());
+                        jRoot.put("dob", DateFormat.getDate(user.getDob()));
+                        jRoot.put("gender", user.getGender());
+                        jRoot.put("app_token", user.getApp_token());
+                        jRoot.put("race", user.getRace());
+                        jRoot.put("platform", user.getPlatform());
 
-                    if (jsonObject.get("error").toString() == "true") {
-                        //Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
-                        new DialogBuilder(CreateAccountActivity.this).load()
-                                .title(R.string.attention)
-                                .content(R.string.erro_new_user)
-                                .positiveText(R.string.ok)
-                                .show();
-                    } else {
+                        SimpleRequester simpleRequester = new SimpleRequester();
+                        simpleRequester.setUrl(Requester.API_URL + "user/create");
+                        simpleRequester.setJsonObject(jRoot);
+                        simpleRequester.setMethod(Method.POST);
 
-                        JSONObject jsonObjectUser = jsonObject.getJSONObject("user");
+                        String jsonStr = simpleRequester.execute(simpleRequester).get();
 
-                        SingleUser singleUser = SingleUser.getInstance();
-                        singleUser.setNick(jsonObjectUser.getString("nick").toString());
-                        singleUser.setEmail(jsonObjectUser.getString("email").toString());
-                        singleUser.setGender(jsonObjectUser.getString("gender").toString());
-                        singleUser.setPicture(jsonObjectUser.getString("picture").toString());
-                        singleUser.setId(jsonObjectUser.getString("id").toString());
-                        singleUser.setRace(jsonObjectUser.getString("race").toString());
+                        JSONObject jsonObject = new JSONObject(jsonStr);
 
-                        Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
-                        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                Intent.FLAG_ACTIVITY_NEW_TASK);
+                        if (jsonObject.get("error").toString() == "true") {
+                            //Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                            new DialogBuilder(CreateAccountActivity.this).load()
+                                    .title(R.string.attention)
+                                    .content(R.string.erro_new_user)
+                                    .positiveText(R.string.ok)
+                                    .show();
+                        } else {
+
+                            JSONObject jsonObjectUser = jsonObject.getJSONObject("user");
+
+                            SingleUser singleUser = SingleUser.getInstance();
+                            singleUser.setNick(jsonObjectUser.getString("nick").toString());
+                            singleUser.setEmail(jsonObjectUser.getString("email").toString());
+                            singleUser.setGender(jsonObjectUser.getString("gender").toString());
+                            singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                            singleUser.setId(jsonObjectUser.getString("id").toString());
+                            singleUser.setRace(jsonObjectUser.getString("race").toString());
+
+                            Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                            navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                    Intent.FLAG_ACTIVITY_NEW_TASK);
+                        }
+
+                    } catch (JSONException e) {
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-
-                } catch (JSONException e) {
-                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         }

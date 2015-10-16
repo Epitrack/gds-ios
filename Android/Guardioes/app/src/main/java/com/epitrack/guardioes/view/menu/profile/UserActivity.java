@@ -241,6 +241,28 @@ public class UserActivity extends BaseAppCompatActivity {
                         String password = editTextPassword.getText().toString().trim();
                         String confirmPassword = editTextConfirmPassword.getText().toString().trim();
 
+                        if ((password.trim().length() < 6) || (confirmPassword.trim().length() < 6)) {
+
+                            new DialogBuilder(UserActivity.this).load()
+                                    .title(R.string.attention)
+                                    .content(R.string.password_fail)
+                                    .positiveText(R.string.ok)
+                                    .show();
+
+                            return;
+                        }
+
+                        if (!password.equals(confirmPassword)) {
+
+                            new DialogBuilder(UserActivity.this).load()
+                                    .title(R.string.attention)
+                                    .content(R.string.password_not_equal)
+                                    .positiveText(R.string.ok)
+                                    .show();
+
+                            return;
+                        }
+
                         if (!password.equals("")) {
                             if (password.equals(confirmPassword)) {
                                 user.setPassword(password);
