@@ -77,6 +77,11 @@
             android:label="@string/term"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".view.menu.help.Report"
+            android:exported="false"
+            android:label="@string/report"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".view.menu.help.TutorialActivity"
             android:exported="false"
             android:label="@string/tutorial"

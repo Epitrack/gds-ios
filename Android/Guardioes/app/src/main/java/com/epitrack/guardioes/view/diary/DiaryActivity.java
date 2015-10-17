@@ -153,7 +153,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         parentList.add(new User(R.drawable.image_avatar_small_8, singleUser.getNick(),
                 singleUser.getEmail(), singleUser.getId(),
                 singleUser.getDob(), singleUser.getRace(),
-                singleUser.getGender()));
+                singleUser.getGender(), singleUser.getPicture()));
 
         try {
             String jsonStr = simpleRequester.execute(simpleRequester).get();
@@ -174,7 +174,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
                         parentList.add(new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
                                 /*jsonObjectHousehold.get("email").toString()*/"", jsonObjectHousehold.get("id").toString(),
                                 jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
-                                jsonObjectHousehold.get("gender").toString()));
+                                jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString()));
                     }
                 }
             }

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Symptom;
 import com.epitrack.guardioes.model.SymptomList;
+import com.epitrack.guardioes.view.menu.profile.InterestActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,7 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
 
     public static class ViewHolder {
         CheckBox checkBoxSymptom;
-        TextView textViewName;
+        //TextView textViewName;
     }
 
     @Override
@@ -68,7 +69,7 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
 
         } else {
 
-            ViewHolder viewHolder;
+            final ViewHolder viewHolder;
 
             if (view == null) {
 
@@ -78,7 +79,7 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
                 viewHolder = new ViewHolder();
 
                 viewHolder.checkBoxSymptom = (CheckBox) view.findViewById(R.id.check_box_symptom);
-                viewHolder.textViewName = (TextView) view.findViewById(R.id.text_view_name);
+                //viewHolder.textViewName = (TextView) view.findViewById(R.id.text_view_name);
 
                 viewHolder.checkBoxSymptom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -91,6 +92,7 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
 
                 view.setTag(viewHolder);
                 view.setTag(R.id.check_box_symptom, viewHolder.checkBoxSymptom);
+                //view.setTag(R.id.text_view_name, viewHolder.checkBoxSymptom);
 
             } else {
                 viewHolder = (ViewHolder) view.getTag();
@@ -99,13 +101,16 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
             final SymptomList symptomList = position > POSITION_VIEW_TYPE_OTHER ? this.symptomArray.get(position - 1) : this.symptomArray.get(position);
 
             if (position > POSITION_VIEW_TYPE_OTHER) {
+                //viewHolder.textViewName.setTag(position - 1);
                 viewHolder.checkBoxSymptom.setTag(position - 1);
             } else {
+                //viewHolder.textViewName.setTag(position);
                 viewHolder.checkBoxSymptom.setTag(position);
             }
 
-            viewHolder.textViewName.setText(symptomList.getNome());
+            //viewHolder.textViewName.setText(symptomList.getNome());
             viewHolder.checkBoxSymptom.setChecked(symptomList.isSelected());
+            viewHolder.checkBoxSymptom.setText("        " + symptomList.getNome() + "                                                     ");
             return view;
         }
     }

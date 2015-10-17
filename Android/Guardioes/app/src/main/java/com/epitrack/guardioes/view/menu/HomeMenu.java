@@ -17,7 +17,7 @@ public enum HomeMenu {
 
     HOME        (R.id.home, HomeFragment.class),
     PROFILE     (R.id.profile, ProfileFragment.class),
-    SETTINGS    (R.id.setting, SettingFragment.class),
+    //SETTINGS    (R.id.setting, SettingFragment.class),
     ABOUT       (R.id.about, AboutFragment.class),
     HELP        (R.id.help, HelpFragment.class),
     EXIT        (R.id.exit, null);

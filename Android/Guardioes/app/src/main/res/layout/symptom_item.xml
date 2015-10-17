@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="15dp"
-    android:paddingTop="15dp">
+    android:paddingTop="15dp"
+    android:id="@+id/layout_item_survey">
 
     <CheckBox
         android:id="@+id/check_box_symptom"
@@ -13,7 +14,7 @@
         android:layout_marginLeft="30dp"
         android:button="@drawable/selector_check_box_blue" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/text_view_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,6 +22,6 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:textColor="@color/grey"
-        android:textSize="15dp" />
+        android:textSize="15dp" />-->
 
 </LinearLayout>

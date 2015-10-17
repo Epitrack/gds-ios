@@ -79,6 +79,7 @@ public class UserActivity extends BaseAppCompatActivity {
     boolean newMenber;
     boolean mainMember;
     SingleUser singleUser = SingleUser.getInstance();
+    private int userAvatar = 0;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -177,6 +178,8 @@ public class UserActivity extends BaseAppCompatActivity {
                 }
             }
 
+
+
             if (mainMember) {
                 textViewMessage.setText(R.string.message_fields);
 
@@ -184,6 +187,10 @@ public class UserActivity extends BaseAppCompatActivity {
                 editTextMail.setVisibility(View.VISIBLE);
 
                 linearLayoutPassword.setVisibility(View.VISIBLE);
+
+                if (Integer.parseInt(singleUser.getPicture()) > 0) {
+                    imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getSmall());
+                }
             } else if (socialNew) {
                 if (singleUser.getEmail() == null) {
                     textLayoutMail.setVisibility(View.VISIBLE);
@@ -249,6 +256,10 @@ public class UserActivity extends BaseAppCompatActivity {
                 jsonObject.put("race", user.getRace());
                 jsonObject.put("client", user.getClient());
                 jsonObject.put("race", user.getRace());
+
+                if (userAvatar > 0) {
+                    jsonObject.put("picture", userAvatar);
+                }
 
                 if (!socialNew) {
 
@@ -447,7 +458,7 @@ public class UserActivity extends BaseAppCompatActivity {
                     final Avatar avatar = (Avatar) intent.getSerializableExtra(Constants.Bundle.AVATAR);
 
                     imageViewImage.setImageResource(avatar.getSmall());
-                    //singleUser.setPicture(avatar.getSmall());
+                    userAvatar = avatar.getId();
 
                 } else if (intent.hasExtra(Constants.Bundle.URI)) {
 
@@ -457,6 +468,7 @@ public class UserActivity extends BaseAppCompatActivity {
                     final int height = imageViewImage.getHeight();
 
                     imageViewImage.setImageBitmap(BitmapUtility.scale(width, height, uri.getPath()));
+
                 }
             }
         }

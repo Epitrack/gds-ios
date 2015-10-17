@@ -14,6 +14,7 @@ import com.epitrack.guardioes.model.DTO;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.utility.ViewUtility;
+import com.epitrack.guardioes.view.menu.profile.Avatar;
 import com.epitrack.guardioes.view.survey.ParentListener;
 
 import java.util.ArrayList;
@@ -135,20 +136,25 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
         userId = parent.getId();
         viewHolder.textViewId.setText(userId);
 
-        if (parent.getGender().equals("M")) {
+        if (Integer.parseInt(parent.getPicture()) == 0) {
 
-            if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
-                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+            if (parent.getGender().equals("M")) {
+
+                if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+                } else {
+                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+                }
             } else {
-                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+
+                if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
+                } else {
+                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
+                }
             }
         } else {
-
-            if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
-                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
-            } else {
-                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
-            }
+            viewHolder.imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(parent.getPicture())).getSmall());
         }
 
     }

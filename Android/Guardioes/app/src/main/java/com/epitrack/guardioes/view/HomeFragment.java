@@ -1,5 +1,6 @@
 package com.epitrack.guardioes.view;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.view.base.BaseFragment;
 import com.epitrack.guardioes.view.diary.DiaryActivity;
+import com.epitrack.guardioes.view.menu.profile.Avatar;
 import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
 import com.epitrack.guardioes.view.tip.TipActivity;
 
@@ -54,20 +56,29 @@ public class HomeFragment extends BaseFragment {
         String text = getString(R.string.message_hello);
         text = text.replace("{0}", singleUser.getNick());
 
-        if (singleUser.getGender().equals("M")) {
+        if (singleUser.getPicture().length() > 1) {
+            singleUser.setPicture("0");
+        }
 
-            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
-                imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+        if (Integer.parseInt(singleUser.getPicture()) == 0) {
+
+            if (singleUser.getGender().equals("M")) {
+
+                if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                    imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+                } else {
+                    imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+                }
             } else {
-                imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+
+                if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                    imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
+                } else {
+                    imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
+                }
             }
         } else {
-
-            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
-                imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
-            } else {
-                imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
-            }
+            imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getLarge());
         }
         textViewName.setText(text);
 

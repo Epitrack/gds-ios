@@ -17,6 +17,7 @@ import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.menu.profile.Avatar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -63,20 +64,25 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         textViewAge.setText(j + " Anos");
         textViewId.setText(singleUser.getId());
 
-        if (singleUser.getGender().equals("M")) {
+        if (Integer.parseInt(singleUser.getPicture()) == 0) {
 
-            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
-                imageViewAvatar.setImageResource(R.drawable.image_avatar_6);
+            if (singleUser.getGender().equals("M")) {
+
+                if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                    imageViewAvatar.setImageResource(R.drawable.image_avatar_6);
+                } else {
+                    imageViewAvatar.setImageResource(R.drawable.image_avatar_4);
+                }
             } else {
-                imageViewAvatar.setImageResource(R.drawable.image_avatar_4);
+
+                if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                    imageViewAvatar.setImageResource(R.drawable.image_avatar_8);
+                } else {
+                    imageViewAvatar.setImageResource(R.drawable.image_avatar_7);
+                }
             }
         } else {
-
-            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
-                imageViewAvatar.setImageResource(R.drawable.image_avatar_8);
-            } else {
-                imageViewAvatar.setImageResource(R.drawable.image_avatar_7);
-            }
+            imageViewAvatar.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getLarge());
         }
 
         recyclerView.setHasFixedSize(true);
@@ -109,7 +115,7 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
                         parentList.add(new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
                                 /*jsonObjectHousehold.get("email").toString()*/"", jsonObjectHousehold.get("id").toString(),
                                 jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
-                                jsonObjectHousehold.get("gender").toString()));
+                                jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString()));
                     }
                 }
             }

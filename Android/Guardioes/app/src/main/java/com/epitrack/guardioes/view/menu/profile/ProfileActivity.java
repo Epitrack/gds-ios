@@ -15,9 +15,7 @@ import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
-import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
-import com.epitrack.guardioes.view.menu.HomeMenu;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -93,6 +91,7 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         bundle.putString("email", user.getEmail());
         bundle.putString("password", user.getPassword());
         bundle.putString("id", user.getId());
+        bundle.putString("picture", user.getPicture());
 
         // TODO: Check if is main member..
         if (singleUser.getId() == user.getId()) {

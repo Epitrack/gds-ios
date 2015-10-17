@@ -56,6 +56,8 @@ public class HelpFragment extends BaseFragment implements MenuListener {
                     navigateTo(Term.class);
                 } else if (HelpOption.getBy(position + 1).getId() == HelpOption.TUTORIAL.getId()) {
                     navigateTo(TutorialActivity.class);
+                } else if (HelpOption.getBy(position + 1).getId() == HelpOption.REPORT.getId()) {
+                    navigateTo(Report.class);
                 }
             }
         });

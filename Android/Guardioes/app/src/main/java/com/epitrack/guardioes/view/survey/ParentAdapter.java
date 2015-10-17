@@ -16,6 +16,7 @@ import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.DateFormat;
+import com.epitrack.guardioes.view.menu.profile.Avatar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -109,20 +110,24 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
         viewHolder.textViewAge.setText(DateFormat.getDateDiff(parent.getDob()) + " Anos");
         viewHolder.textViewId.setText(parent.getId());
 
-        if (parent.getGender().equals("M")) {
+        if (Integer.parseInt(parent.getPicture()) == 0) {
+            if (parent.getGender().equals("M")) {
 
-            if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
-                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+                if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+                } else {
+                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+                }
             } else {
-                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+
+                if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
+                } else {
+                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
+                }
             }
         } else {
-
-            if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
-                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
-            } else {
-                viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
-            }
+            viewHolder.imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(parent.getPicture())).getLarge());
         }
     }
 

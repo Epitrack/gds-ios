@@ -105,11 +105,12 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     singleUser.setNick(jsonObjectUser.getString("nick").toString());
                     singleUser.setEmail(jsonObjectUser.getString("email").toString());
                     singleUser.setGender(jsonObjectUser.getString("gender").toString());
-                    singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                    //singleUser.setPicture(jsonObjectUser.getString("picture").toString());
                     singleUser.setId(jsonObjectUser.getString("id").toString());
                     singleUser.setRace(jsonObjectUser.getString("race").toString());
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
                     singleUser.setUser_token(jsonObjectUser.get("token").toString());
+                    singleUser.setPicture(jsonObjectUser.get("picture").toString());
 
                     SharedPreferences settings = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
                     SharedPreferences.Editor editor = settings.edit();
@@ -308,11 +309,12 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     singleUser.setNick(jsonObjectUser.getString("nick").toString());
                     singleUser.setEmail(jsonObjectUser.getString("email").toString());
                     singleUser.setGender(jsonObjectUser.getString("gender").toString());
-                    singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                    //singleUser.setPicture(jsonObjectUser.getString("picture").toString());
                     singleUser.setId(jsonObjectUser.getString("id").toString());
                     singleUser.setRace(jsonObjectUser.getString("race").toString());
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
                     singleUser.setUser_token(jsonObject.get("token").toString());
+                    singleUser.setPicture(jsonObjectUser.get("picture").toString());
 
                     sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
                     SharedPreferences.Editor editor = sharedPreferences.edit();

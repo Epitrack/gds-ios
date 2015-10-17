@@ -1,5 +1,7 @@
 package com.epitrack.guardioes.model;
 
+import android.graphics.Bitmap;
+
 public class User {
 
     // TODO: This is for stub only.
@@ -24,6 +26,9 @@ public class User {
     private String tw;
     private String fb;
     private String gl;
+    private int imageResource;
+    private Bitmap bitmapImage;
+    private String avatar;
 
     public User() {
 
@@ -43,6 +48,17 @@ public class User {
         this.dob = dob;
         this.race = race;
         this.gender = gender;
+    }
+
+    public User(int image, String nick, String email, String id, String dob, String race, String gender, String picture) {
+        this.image = image;
+        this.nick = nick;
+        this.email = email;
+        this.id = id;
+        this.dob = dob;
+        this.race = race;
+        this.gender = gender;
+        this.picture = picture;
     }
 
     public int getImage() {
@@ -203,5 +219,29 @@ public class User {
 
     public void setTw(String tw) {
         this.tw = tw;
+    }
+
+    public int getImageResource() {
+        return imageResource;
+    }
+
+    public void setImageResource(int imageResource) {
+        this.imageResource = imageResource;
+    }
+
+    public Bitmap getBitmapImage() {
+        return bitmapImage;
+    }
+
+    public void setBitmapImage(Bitmap bitmapImage) {
+        this.bitmapImage = bitmapImage;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }

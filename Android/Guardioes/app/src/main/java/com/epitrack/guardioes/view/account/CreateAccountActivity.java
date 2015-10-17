@@ -462,6 +462,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                         jRoot.put("app_token", user.getApp_token());
                         jRoot.put("race", user.getRace());
                         jRoot.put("platform", user.getPlatform());
+                        jRoot.put("picture", "0");
 
                         SimpleRequester simpleRequester = new SimpleRequester();
                         simpleRequester.setUrl(Requester.API_URL + "user/create");

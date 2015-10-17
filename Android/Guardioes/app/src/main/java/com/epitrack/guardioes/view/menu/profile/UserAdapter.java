@@ -35,9 +35,9 @@ public class UserAdapter extends ArrayAdapter<User> {
         //Miquéias Lopes
 
         SingleUser singleUser = SingleUser.getInstance();
-        //int image, String nick, String email, String id, String dob, String race, String gender, String password)
+
         userList.add(new User(R.drawable.image_avatar_small_2, singleUser.getNick(), singleUser.getEmail(), singleUser.getId(),
-                singleUser.getDob(), singleUser.getRace(), singleUser.getGender()));
+                singleUser.getDob(), singleUser.getRace(), singleUser.getGender(), singleUser.getPicture()));
 
         SimpleRequester simpleRequester = new SimpleRequester();
         simpleRequester.setUrl(Requester.API_URL + "user/household/" + singleUser.getId());
@@ -56,16 +56,15 @@ public class UserAdapter extends ArrayAdapter<User> {
                 if (jsonArray.length() > 0) {
 
                     JSONObject jsonObjectHousehold;
-                    //JSONObject jsonObjectHousehold;
 
                     for (int i = 0; i < jsonArray.length(); i++) {
 
                         jsonObjectHousehold = jsonArray.getJSONObject(i);
-                        //jsonObjectUser = jsonObjectUser.optJSONObject("user");
+
                         userList.add(new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
                                 /*jsonObjectHousehold.get("email").toString()*/"", jsonObjectHousehold.get("id").toString(),
                                 jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
-                                jsonObjectHousehold.get("gender").toString()));
+                                jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString()));
                     }
                 }
             }
@@ -132,20 +131,25 @@ public class UserAdapter extends ArrayAdapter<User> {
         viewHolder.textViewName.setText(user.getNick());
         viewHolder.textViewType.setText(user.getType());
 
-        if (user.getGender().equals("M")) {
+        if (Integer.parseInt(user.getPicture()) == 0) {
 
-            if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
-                viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_6);
+            if (user.getGender().equals("M")) {
+
+                if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_6);
+                } else {
+                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_4);
+                }
             } else {
-                viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_4);
+
+                if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_8);
+                } else {
+                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_7);
+                }
             }
         } else {
-
-            if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
-                viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_8);
-            } else {
-                viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_7);
-            }
+            viewHolder.imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(user.getPicture())).getSmall());
         }
 
         return view;
