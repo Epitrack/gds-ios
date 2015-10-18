@@ -122,6 +122,7 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
             if (!otherAPI) {
                 urlConnection.setRequestProperty("app_token", singleUser.getApp_token());
                 urlConnection.setRequestProperty("user_token", singleUser.getUser_token());
+                //urlConnection.setRequestProperty("Content-Type", "application/json");
             }
 
             StringBuilder stringBuilder = null;

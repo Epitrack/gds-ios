@@ -68,7 +68,7 @@ public class StateActivity extends BaseAppCompatActivity {
             jsonObject.put("platform", user.getPlatform());
             jsonObject.put("client", user.getClient());
             jsonObject.put("no_symptom", "Y");
-
+            jsonObject.put("user_token", singleUser.getUser_token());
 
             SimpleRequester sendPostRequest = new SimpleRequester();
             sendPostRequest.setUrl(Requester.API_URL + "survey/create");
@@ -77,10 +77,10 @@ public class StateActivity extends BaseAppCompatActivity {
 
             String jsonStr = sendPostRequest.execute(sendPostRequest).get();
 
-            jsonObject = new JSONObject(jsonStr);
+            JSONObject jsonObjectSurvey = new JSONObject(jsonStr);
 
-            if (jsonObject.get("error").toString() == "true") {
-                Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+            if (jsonObjectSurvey.get("error").toString().equals("true")) {
+                Toast.makeText(getApplicationContext(), jsonObjectSurvey.get("message").toString(), Toast.LENGTH_SHORT).show();
             }
         } catch (JSONException e) {
             e.printStackTrace();

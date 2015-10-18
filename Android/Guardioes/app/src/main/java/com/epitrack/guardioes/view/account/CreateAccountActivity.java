@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.account;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
@@ -103,10 +104,9 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     Spinner spinnerGender;
 
     private SocialFragment socialFragment;
-
     private Validator validator;
-
     private State state = State.SOCIAL;
+    private SharedPreferences sharedPreferences = null;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -491,6 +491,40 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                             singleUser.setPicture(jsonObjectUser.getString("picture").toString());
                             singleUser.setId(jsonObjectUser.getString("id").toString());
                             singleUser.setRace(jsonObjectUser.getString("race").toString());
+                            singleUser.setDob(jsonObjectUser.getString("dob").toString());
+
+                            //login
+                            JSONObject jsonObjectLogin = new JSONObject();
+                            jsonObjectLogin.put("email", user.getEmail());
+                            jsonObjectLogin.put("password", user.getPassword());
+
+                            SimpleRequester sendPostRequest = new SimpleRequester();
+                            sendPostRequest.setUrl(Requester.API_URL + "user/login");
+                            sendPostRequest.setJsonObject(jsonObjectLogin);
+                            sendPostRequest.setMethod(Method.POST);
+
+                            String jsonStrLogin = sendPostRequest.execute(sendPostRequest).get();
+
+                            JSONObject jsonObjectLoginResult = new JSONObject(jsonStrLogin);
+
+                            if (jsonObjectLoginResult.get("error").toString() == "true") {
+
+                                navigateTo(LoginActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                        Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                            } else {
+
+                                JSONObject jsonObjectUserLogin = jsonObject.getJSONObject("user");
+
+                                singleUser.setUser_token(jsonObjectUserLogin.get("token").toString());
+
+                                sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
+                                editor.commit();
+                            }
+
 
                             Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
                             navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |

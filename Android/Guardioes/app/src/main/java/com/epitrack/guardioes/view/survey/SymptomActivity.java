@@ -168,6 +168,7 @@ public class SymptomActivity extends BaseAppCompatActivity {
         jsonObject.put("platform", user.getPlatform());
         jsonObject.put("client", user.getClient());
         jsonObject.put("no_symptom", "N");
+        jsonObject.put("user_token", singleUser.getUser_token());
 
         for (int i = 0; i < symptomArray.size(); i++) {
 
