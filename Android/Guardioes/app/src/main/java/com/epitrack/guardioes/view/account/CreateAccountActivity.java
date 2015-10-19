@@ -199,7 +199,6 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     @OnClick(R.id.text_view_term)
     public void onTerm() {
         navigateTo(Term.class);
-        //Toast.makeText(this, "Open terms", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -463,6 +462,8 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                         jRoot.put("race", user.getRace());
                         jRoot.put("platform", user.getPlatform());
                         jRoot.put("picture", "0");
+                        jRoot.put("lat", -8.0464492);
+                        jRoot.put("lon", -34.9324883);
 
                         SimpleRequester simpleRequester = new SimpleRequester();
                         simpleRequester.setUrl(Requester.API_URL + "user/create");
@@ -474,7 +475,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                         JSONObject jsonObject = new JSONObject(jsonStr);
 
                         if (jsonObject.get("error").toString() == "true") {
-                            //Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+
                             new DialogBuilder(CreateAccountActivity.this).load()
                                     .title(R.string.attention)
                                     .content(R.string.erro_new_user)
@@ -492,39 +493,13 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                             singleUser.setId(jsonObjectUser.getString("id").toString());
                             singleUser.setRace(jsonObjectUser.getString("race").toString());
                             singleUser.setDob(jsonObjectUser.getString("dob").toString());
+                            singleUser.setUser_token(jsonObjectUser.getString("token").toString());
 
-                            //login
-                            JSONObject jsonObjectLogin = new JSONObject();
-                            jsonObjectLogin.put("email", user.getEmail());
-                            jsonObjectLogin.put("password", user.getPassword());
+                            sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                            SimpleRequester sendPostRequest = new SimpleRequester();
-                            sendPostRequest.setUrl(Requester.API_URL + "user/login");
-                            sendPostRequest.setJsonObject(jsonObjectLogin);
-                            sendPostRequest.setMethod(Method.POST);
-
-                            String jsonStrLogin = sendPostRequest.execute(sendPostRequest).get();
-
-                            JSONObject jsonObjectLoginResult = new JSONObject(jsonStrLogin);
-
-                            if (jsonObjectLoginResult.get("error").toString() == "true") {
-
-                                navigateTo(LoginActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                        Intent.FLAG_ACTIVITY_NEW_TASK);
-
-                            } else {
-
-                                JSONObject jsonObjectUserLogin = jsonObject.getJSONObject("user");
-
-                                singleUser.setUser_token(jsonObjectUserLogin.get("token").toString());
-
-                                sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                                editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
-                                editor.commit();
-                            }
-
+                            editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
+                            editor.commit();
 
                             Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
                             navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
