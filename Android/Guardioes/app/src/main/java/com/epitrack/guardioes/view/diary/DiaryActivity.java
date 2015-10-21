@@ -1,42 +1,30 @@
 package com.epitrack.guardioes.view.diary;
 
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.model.DTO;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.utility.MySelectorDecoratorGood;
+import com.epitrack.guardioes.utility.MySelectorDecoratorBad;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.survey.ParentListener;
-import com.github.mikephil.charting.animation.Easing;
-import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.LimitLine;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.formatter.PercentFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
-import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
@@ -46,8 +34,10 @@ import com.jjoe64.graphview.series.LineGraphSeries;
 import com.jjoe64.graphview.series.OnDataPointTapListener;
 import com.jjoe64.graphview.series.Series;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.DayViewDecorator;
+import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
-import com.prolificinteractive.materialcalendarview.OnDateChangedListener;
+import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
 import org.json.JSONArray;
@@ -55,9 +45,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -69,7 +59,7 @@ import butterknife.Bind;
 /**
  * @author Igor Morais
  */
-public class DiaryActivity extends BaseAppCompatActivity implements ParentListener, OnDateChangedListener, OnMonthChangedListener {
+public class DiaryActivity extends BaseAppCompatActivity implements ParentListener, OnDateSelectedListener, OnMonthChangedListener {
 
     @Bind(R.id.text_view_participation)
     TextView textViewParticipation;
@@ -129,10 +119,13 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
     private double badPercentDetail = 0;
 
     private String idSelectedUser = "";
-
     SingleUser singleUser = SingleUser.getInstance();
-
     private static final DateFormat FORMATTER = SimpleDateFormat.getDateInstance();
+    private ArrayList<Date> dateArrayList = new ArrayList<>();
+    private ArrayList<Integer> daysGood = null;
+    private ArrayList<Integer> daysBad = null;
+    private ArrayList<Integer> daysZero = null;
+    private ArrayList<Date> daysGoodAndBad = null;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -192,6 +185,8 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
     }
 
     private void setupView(String idHouseHold) {
+
+        countTotalGoodAndBad(materialCalendarView, materialCalendarView.getCurrentDate());
 
         SimpleRequester simpleRequester = new SimpleRequester();
 
@@ -256,13 +251,13 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
             layoutDetailBad.setVisibility(View.INVISIBLE);
 
             //Calendar Config
+            materialCalendarView.setSelectionMode(MaterialCalendarView.SELECTION_MODE_MULTIPLE);
+            materialCalendarView.setArrowColor(R.color.blue_light);
             materialCalendarView.setOnDateChangedListener(this);
             materialCalendarView.setOnMonthChangedListener(this);
-            materialCalendarView.setArrowColor(R.color.blue_light);
             materialCalendarView.setWeekDayLabels(new String[]{"D", "S", "T", "Q", "Q", "S", "S"});
             materialCalendarView.setTitleMonths(new String[]{"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"});
-
-            materialCalendarView.setSelectedDate(CalendarDay.today());
+            materialCalendarView.addDecorators(new MySelectorDecoratorGood(this, daysGood), new MySelectorDecoratorBad(this, daysBad), new DayDisableDecorator(daysZero));
             onDateChanged(materialCalendarView, CalendarDay.today());
 
             setTextTotalReport(null);
@@ -288,9 +283,10 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
     @Override
     public void onParentSelect(String id) {
+        idSelectedUser = id;
+        countTotalGoodAndBad(materialCalendarView, CalendarDay.today());
         materialCalendarView.setSelectedDate(CalendarDay.today());
         onDateChanged(materialCalendarView, CalendarDay.today());
-        idSelectedUser = id;
 
         setDataLineChart();
         setTextTotalReport(null);
@@ -447,8 +443,20 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         }
     }
 
-    @Override
+
     public void onDateChanged(@NonNull MaterialCalendarView widget, @Nullable CalendarDay date) {
+        onDateSelected(widget, date, true);
+    }
+
+    @Override
+    public void onMonthChanged(MaterialCalendarView materialCalendarView, CalendarDay date) {
+        countTotalGoodAndBad(materialCalendarView, date);
+    }
+
+    @Override
+    public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
+
+        widget.invalidateDecorators();
 
         if (layoutDetailGood.getVisibility() == View.INVISIBLE) {
             layoutDetailGood.setVisibility(View.VISIBLE);
@@ -456,6 +464,15 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         }
 
         if(date != null) {
+
+            if (daysGoodAndBad.size() > 0) {
+                for (int i = 0; i < daysGoodAndBad.size(); i++) {
+
+                    if (daysGoodAndBad.get(i).equals(date.getDate())) {
+                        widget.setDateSelected(daysGoodAndBad.get(i), true);
+                    }
+                }
+            }
 
             setTextTotalReport(date);
 
@@ -531,8 +548,113 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         }
     }
 
+    private void countTotalGoodAndBad(MaterialCalendarView materialCalendarView, CalendarDay date) {
+
+        daysGood = new ArrayList<>();
+        daysBad = new ArrayList<>();
+        daysZero = new ArrayList<>();
+        daysGoodAndBad = new ArrayList<>();
+
+        for (int j = 1; j <= 31; j++) {
+
+            SimpleRequester simpleRequester = new SimpleRequester();
+
+            if (idSelectedUser == singleUser.getId()) {
+                simpleRequester.setUrl(Requester.API_URL + "user/calendar/day?day=" + j + "&month=" + (date.getMonth() + 1) + "&year=" + date.getYear());
+            } else if (idSelectedUser.equals("")) {
+                simpleRequester.setUrl(Requester.API_URL + "user/calendar/day?day=" + j + "&month=" + (date.getMonth() + 1) + "&year=" + date.getYear());
+            } else {
+                simpleRequester.setUrl(Requester.API_URL + "household/calendar/day?day=" + j + "&month=" + (date.getMonth() + 1) + "&year=" + date.getYear() + "&household_id=" + idSelectedUser);
+            }
+
+            simpleRequester.setJsonObject(null);
+            simpleRequester.setMethod(Method.GET);
+
+            String jsonStr;
+            int goodCountTotal = 0;
+            int badCountTotal = 0;
+
+            try {
+                jsonStr = simpleRequester.execute(simpleRequester).get();
+
+                JSONObject jsonObject = new JSONObject(jsonStr);
+
+                if (jsonObject.get("error").toString() == "true") {
+                    Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+                } else {
+
+                    JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObjectSymptom = jsonArray.getJSONObject(i);
+                        JSONObject jsonObjectDetail = jsonObjectSymptom.getJSONObject("_id");
+
+                        if (jsonObjectDetail.get("no_symptom").toString().equals("N")) {
+
+                            goodCountTotal = Integer.parseInt(jsonObjectSymptom.get("count").toString());
+
+                        } else if (jsonObjectDetail.get("no_symptom").toString().equals("Y")) {
+
+                            badCountTotal = Integer.parseInt(jsonObjectSymptom.get("count").toString());
+                        }
+                    }
+                    if (goodCountTotal == 0 && badCountTotal == 0) {
+                        daysZero.add(j);
+                    } else {
+                        if (goodCountTotal >= badCountTotal) {
+                            daysGood.add(j);
+                        } else {
+                            daysBad.add(j);
+                        }
+
+                        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                        Date dateFormated = format.parse(date.getYear() + "-" + (date.getMonth() + 1) + "-" + j);
+                        daysGoodAndBad.add(dateFormated);
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        if (daysGoodAndBad.size() > 0) {
+            for (int i = 0; i < daysGoodAndBad.size(); i++) {
+                materialCalendarView.setDateSelected(daysGoodAndBad.get(i), true);
+            }
+        }
+        materialCalendarView.addDecorators(new MySelectorDecoratorGood(this, daysGood), new MySelectorDecoratorBad(this, daysBad), new DayDisableDecorator(daysZero));
+    }
+}
+
+class DayDisableDecorator implements DayViewDecorator {
+
+    private ArrayList<Integer> days;
+
+    public DayDisableDecorator(ArrayList<Integer> days) {
+        this.days = days;
+    }
+
     @Override
-    public void onMonthChanged(MaterialCalendarView materialCalendarView, CalendarDay date) {
-        //Toast.makeText(this, FORMATTER.format(date.getDate()), Toast.LENGTH_SHORT).show();
+    public boolean shouldDecorate(CalendarDay day) {
+        if (days.size() > 0) {
+            for (int i = 0; i < days.size(); i++) {
+                if (days.get(i) == day.getDay()) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public void decorate(DayViewFacade view) {
+        view.setDaysDisabled(true);
     }
 }

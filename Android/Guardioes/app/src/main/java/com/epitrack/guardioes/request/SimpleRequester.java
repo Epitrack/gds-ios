@@ -96,12 +96,10 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
             conn.setDoInput(true);
             conn.setDoOutput(true);
 
-            // post the request
             OutputStream out = conn.getOutputStream();
             out.write(bytes);
             out.close();
 
-            // handle the response
             int status = conn.getResponseCode();
             if (status != 200) {
                 return MessageText.ERROR_SERVER.toString();

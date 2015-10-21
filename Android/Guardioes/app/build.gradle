@@ -18,7 +18,7 @@ android {
     defaultConfig {
 
         applicationId "com.epitrack.guardioes"
-        minSdkVersion 17
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -77,7 +77,7 @@ dependencies {
             [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.5.3']
     )
     compile 'com.github.PhilJay:MPAndroidChart:v2.1.4'
-    compile 'com.prolificinteractive:material-calendarview:0.8.1'
+    compile 'com.prolificinteractive:material-calendarview:1.1.0'
     compile 'com.jjoe64:graphview:4.0.1'
     compile 'org.twitter4j:twitter4j-core:4.0.2'
 }

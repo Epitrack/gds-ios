@@ -16,7 +16,7 @@ import com.viewpagerindicator.CirclePageIndicator;
 import butterknife.Bind;
 
 /**
- * Created by @Miquéias Lopes
+ * @author Miquéias Lopes
  */
 public class TutorialActivity extends BaseFragmentActivity {
 

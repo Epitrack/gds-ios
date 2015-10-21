@@ -17,7 +17,7 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 /**
- * Created by @Miqueias Lopes on 17/10/15.
+ * @author Miqueias Lopes
  */
 public class Report extends BaseAppCompatActivity {
 

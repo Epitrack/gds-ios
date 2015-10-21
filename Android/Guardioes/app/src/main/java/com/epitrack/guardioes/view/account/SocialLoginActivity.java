@@ -60,7 +60,7 @@ import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
 /**
- * Created @Miqueias Lopes on 11/10/15.
+ * @author Miqueias Lopes
  */
 public class SocialLoginActivity extends BaseAppCompatActivity {
 
