@@ -3,8 +3,11 @@ package com.epitrack.guardioes.view.menu.profile;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.IMenu;
 import com.epitrack.guardioes.view.MenuListener;
@@ -27,8 +30,7 @@ public class InterestActivity extends BaseAppCompatActivity implements MenuListe
         super.onCreate(bundle);
 
         setContentView(R.layout.interest);
-
-        listViewCategory.setAdapter(new InterestAdapter(this, this, InterestCategory.values()));
+        //listViewCategory.setAdapter(new InterestAdapter(this, this, InterestCategory.values()));
 
         listViewTag.setAdapter(new InterestAdapter(this, this, InterestTag.values()));
     }
@@ -48,6 +50,6 @@ public class InterestActivity extends BaseAppCompatActivity implements MenuListe
 
     @Override
     public void onMenuSelect(final IMenu menu) {
-
+        Toast.makeText(getApplicationContext(), menu.getId(), Toast.LENGTH_SHORT);
     }
 }

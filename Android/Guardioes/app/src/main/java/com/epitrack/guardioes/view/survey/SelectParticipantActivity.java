@@ -64,6 +64,10 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         textViewAge.setText(j + " Anos");
         textViewId.setText(singleUser.getId());
 
+        if (singleUser.getPicture().length() > 1) {
+            singleUser.setPicture("0");
+        }
+
         if (Integer.parseInt(singleUser.getPicture()) == 0) {
 
             if (singleUser.getGender().equals("M")) {

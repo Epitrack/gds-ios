@@ -2,6 +2,8 @@ package com.epitrack.guardioes.model;
 
 import android.graphics.Bitmap;
 
+import org.json.JSONArray;
+
 public class User {
 
     // TODO: This is for stub only.
@@ -29,6 +31,7 @@ public class User {
     private int imageResource;
     private Bitmap bitmapImage;
     private String avatar;
+    private JSONArray hashtags;
 
     public User() {
 
@@ -243,5 +246,13 @@ public class User {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public JSONArray getHashtags() {
+        return hashtags;
+    }
+
+    public void setHashtags(JSONArray hashtags) {
+        this.hashtags = hashtags;
     }
 }

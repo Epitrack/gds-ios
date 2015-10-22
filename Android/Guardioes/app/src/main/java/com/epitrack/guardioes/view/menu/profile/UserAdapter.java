@@ -131,6 +131,10 @@ public class UserAdapter extends ArrayAdapter<User> {
         viewHolder.textViewName.setText(user.getNick());
         viewHolder.textViewType.setText(user.getType());
 
+        if (user.getPicture().length() > 1) {
+            user.setPicture("0");
+        }
+
         if (Integer.parseInt(user.getPicture()) == 0) {
 
             if (user.getGender().equals("M")) {

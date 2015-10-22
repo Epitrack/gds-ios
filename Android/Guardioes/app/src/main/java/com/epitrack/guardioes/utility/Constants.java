@@ -9,9 +9,15 @@ public final class Constants {
 
     }
 
-    public  static  class Google {
+    public static class Google {
 
         public static final String KEY_API_MAPS = "AIzaSyDYl7spN_NpAjAWL7Hi183SK2cApiIS3Eg";
+    }
+
+    public static class General {
+
+        public static final String ADD = "ADD";
+        public static final String REMOVE = "REMOVE";
     }
 
     public static class Twitter {

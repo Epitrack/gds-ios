@@ -14,10 +14,17 @@ public enum InterestTag implements IMenu {
 
     private final int id;
     private final int name;
+    private String idApi;
 
     InterestTag(final int id, final int name) {
         this.id = id;
         this.name = name;
+    }
+
+    InterestTag(final int id, final int name, String idApi) {
+        this.id = id;
+        this.name = name;
+        this.idApi = idApi;
     }
 
     @Override
@@ -35,6 +42,9 @@ public enum InterestTag implements IMenu {
         return 0;
     }
 
+    public String getIdApi() {
+        return idApi;
+    }
 
     public static InterestTag getBy(final int id) {
 
@@ -47,4 +57,5 @@ public enum InterestTag implements IMenu {
 
         throw new IllegalArgumentException("The InterestTag has not found.");
     }
+
 }

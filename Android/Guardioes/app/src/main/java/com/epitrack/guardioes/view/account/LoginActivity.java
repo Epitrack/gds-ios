@@ -111,6 +111,7 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
                     singleUser.setUser_token(jsonObjectUser.get("token").toString());
                     singleUser.setPicture(jsonObjectUser.get("picture").toString());
+                    singleUser.setHashtags(jsonObjectUser.getJSONArray("hashtags"));
 
                     SharedPreferences settings = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
                     SharedPreferences.Editor editor = settings.edit();
@@ -315,6 +316,7 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
                     singleUser.setUser_token(jsonObject.get("token").toString());
                     singleUser.setPicture(jsonObjectUser.get("picture").toString());
+                    singleUser.setHashtags(jsonObjectUser.getJSONArray("hashtags"));
 
                     sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
                     SharedPreferences.Editor editor = sharedPreferences.edit();

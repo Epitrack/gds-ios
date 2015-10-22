@@ -136,6 +136,10 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
         userId = parent.getId();
         viewHolder.textViewId.setText(userId);
 
+        if (parent.getPicture().length() > 1) {
+            parent.setPicture("0");
+        }
+
         if (Integer.parseInt(parent.getPicture()) == 0) {
 
             if (parent.getGender().equals("M")) {

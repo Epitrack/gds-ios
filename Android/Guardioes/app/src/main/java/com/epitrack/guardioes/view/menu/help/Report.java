@@ -42,13 +42,13 @@ public class Report extends BaseAppCompatActivity {
 
         boolean isError = false;
 
-        if (txtSubject.getText().toString().trim() == "") {
+        if (txtSubject.getText().toString().trim().equals("")) {
             isError = true;
-        } else if (txtMessage.getText().toString().trim() == "") {
+        } else if (txtMessage.getText().toString().trim().equals("")) {
             isError = true;
         }
 
-        if (!isError) {
+        if (isError) {
             new DialogBuilder(Report.this).load()
                     .title(R.string.attention)
                     .content(R.string.email_null)

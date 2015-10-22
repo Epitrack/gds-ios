@@ -10,14 +10,25 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.Notice;
+import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.utility.DialogBuilder;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -61,8 +72,7 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // TODO: Need take data from server
-        final List<Notice> noticeList = new ArrayList<>();
+        //JodaTimeAndroid.init(this);
 
         setupHeader(new Notice());
 
@@ -70,7 +80,51 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        recyclerView.setAdapter(new NoticeAdapter(this, noticeList));
+        recyclerView.setAdapter(new NoticeAdapter(this, getNoticeList()));
+
+    }
+
+    private List<Notice> getNoticeList() {
+
+        List<Notice> noticeList = new ArrayList<>();
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setMethod(Method.GET);
+        simpleRequester.setUrl(Requester.API_URL + "news/get");
+
+        try {
+            String jsonStr = simpleRequester.execute(simpleRequester).get();
+            JSONArray jsonArray = new JSONObject(jsonStr).getJSONObject("data").getJSONArray("statuses");
+
+            if (jsonArray.length() > 0) {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                    Notice notice = new Notice();
+
+                    notice.setTitle(jsonObject.get("text").toString());
+                    notice.setSource("via Twitter @minsaude");
+
+                    //DateTime dtToday = new DateTime();
+                    //DateTime dtOther = new DateTime(DateTime.parse(jsonObject.get("text").toString()));
+                    //Duration dur = new Duration(dtOther, dtToday);
+
+                    //notice.setPublicationDate(dur.getStandardDays() + " dias atrás");
+                    notice.setDrawable(R.drawable.stub1);
+                    notice.setLink("https://twitter.com/minsaude/status/" + jsonObject.get("id_str").toString());
+
+                    noticeList.add(notice);
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return noticeList;
     }
 
     @Override
@@ -87,9 +141,9 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
     private void setupHeader(final Notice notice) {
 
         // TODO: Stub only
-        notice.setTitle("Campanha de vacinação contra gripe começa em 4 de maio, diz ministro.");
-        notice.setSource("saude.estadao.com.br");
-        notice.setPublicationDate("10:20");
+        //notice.setTitle("Campanha de vacinação contra gripe começa em 4 de maio, diz ministro.");
+        //notice.setSource("saude.estadao.com.br");
+        //notice.setPublicationDate("10:20");
 
         textViewTitle.setText(notice.getTitle());
         textViewSource.setText(notice.getSource());
@@ -99,6 +153,23 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
 
     @Override
     public void onNoticeSelect(final Notice notice) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com")));
+
+        new DialogBuilder(NoticeActivity.this).load()
+                .title(R.string.attention)
+                .content(R.string.open_link)
+                .positiveText(R.string.yes)
+                .negativeText(R.string.no)
+                .callback(new MaterialDialog.ButtonCallback() {
+
+                    @Override
+                    public void onNegative(final MaterialDialog dialog) {
+
+                    }
+
+                    @Override
+                    public void onPositive(final MaterialDialog dialog) {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(notice.getLink())));
+                    }
+                }).show();
     }
 }

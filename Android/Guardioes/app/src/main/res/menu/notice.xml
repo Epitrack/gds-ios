@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:menu="http://schemas.android.com/apk/res-auto">
 
-    <item
+    <!--<item
         android:icon="@drawable/selector_icon_privacy"
         android:onClick="onPrivacy"
         android:title="@string/privacy"
@@ -12,6 +12,6 @@
         android:icon="@drawable/selector_icon_search"
         android:title="@string/search"
         menu:actionViewClass="android.support.v7.widget.SearchView"
-        menu:showAsAction="ifRoom" />
+        menu:showAsAction="ifRoom" />-->
 
 </menu>
