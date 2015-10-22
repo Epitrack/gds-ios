@@ -1,7 +1,10 @@
 package com.epitrack.guardioes.request;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 
+import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.utility.Logger;
 import com.epitrack.guardioes.utility.MessageText;
@@ -20,17 +23,22 @@ import java.net.URL;
 
 import java.net.HttpURLConnection;
 import java.net.URLConnection;
+import java.text.SimpleDateFormat;
+import java.util.Objects;
 
 /**
  * @author Miquéias Lopes on 09/09/15.
  */
-public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
+public class SimpleRequester extends AsyncTask<SimpleRequester, Object, String> {
 
     private static final String TAG = Requester.class.getSimpleName();
     private String url;
     private JSONObject jsonObject;
     private Method method;
     private boolean otherAPI = false;
+    private ProgressDialog progressDialog;
+    private Context context;
+    private String strReturn;
 
     public SimpleRequester() {
 
@@ -52,9 +60,46 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Void, String> {
         this.otherAPI = otherAPI;
     }
 
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
+    public String getStrReturn() {
+        return this.strReturn;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        if (context != null) {
+            progressDialog = new ProgressDialog(context);
+            progressDialog.setTitle(R.string.app_name);
+            progressDialog.setMessage("Carregando...");
+            progressDialog.show();
+        }
+    }
+
+    @Override
+    protected void onPostExecute(String result) {
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+        }
+
+        this.strReturn = result;
+    }
+
+    @Override
+    protected void onProgressUpdate(Object... values) {
+        if (progressDialog != null) {
+            progressDialog.setMessage("Carregando...");
+        }
+    }
+
     @Override
     protected String doInBackground(SimpleRequester... params) {
         try {
+            publishProgress();
+            //strReturn = SendPostRequest(this.url, this.method, this.jsonObject, this.otherAPI);
+            //return strReturn;
             return SendPostRequest(this.url, this.method, this.jsonObject, this.otherAPI);
         } catch (Exception e) {
             return e.getMessage();

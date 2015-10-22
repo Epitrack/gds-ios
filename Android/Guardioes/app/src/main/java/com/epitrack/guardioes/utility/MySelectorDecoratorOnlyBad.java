@@ -2,11 +2,8 @@ package com.epitrack.guardioes.utility;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
-import android.text.style.StyleSpan;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.diary.DiaryActivity;
@@ -17,15 +14,15 @@ import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import java.util.ArrayList;
 
 /**
- * @author Miqueias Lopes
+ * @author Miquéias Lopes
  */
-public class MySelectorDecoratorGood implements DayViewDecorator {
+public class MySelectorDecoratorOnlyBad implements DayViewDecorator {
 
     private Drawable drawable = null;
     private ArrayList<Integer> days;
 
-    public MySelectorDecoratorGood(DiaryActivity context, ArrayList<Integer> days) {
-        drawable = context.getResources().getDrawable(R.drawable.img_donut_75_calendar);
+    public MySelectorDecoratorOnlyBad(DiaryActivity context, ArrayList<Integer> days) {
+        drawable = context.getResources().getDrawable(R.drawable.img_donut_0_calendar);
         this.days = days;
     }
 
@@ -46,5 +43,4 @@ public class MySelectorDecoratorGood implements DayViewDecorator {
         view.addSpan(new ForegroundColorSpan(Color.BLACK));
         view.setSelectionDrawable(drawable);
     }
-
 }
