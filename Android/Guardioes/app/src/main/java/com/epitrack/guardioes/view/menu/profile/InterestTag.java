@@ -46,6 +46,10 @@ public enum InterestTag implements IMenu {
         return idApi;
     }
 
+    public void setIdApi(String idApi) {
+        this.idApi = idApi;
+    }
+
     public static InterestTag getBy(final int id) {
 
         for (final InterestTag tag : InterestTag.values()) {

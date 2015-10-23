@@ -6,11 +6,15 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.IMenu;
 import com.epitrack.guardioes.view.MenuListener;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import butterknife.Bind;
 
@@ -30,8 +34,9 @@ public class InterestActivity extends BaseAppCompatActivity implements MenuListe
         super.onCreate(bundle);
 
         setContentView(R.layout.interest);
-        //listViewCategory.setAdapter(new InterestAdapter(this, this, InterestCategory.values()));
-
+        InterestTag.getBy(1).setIdApi("5629090b9ad47c0d2fb0196d");
+        InterestTag.getBy(2).setIdApi("5629091d9ad47c0d2fb0196e");
+        InterestTag.getBy(3).setIdApi("5629092f9ad47c0d2fb0196f");
         listViewTag.setAdapter(new InterestAdapter(this, this, InterestTag.values()));
     }
 
