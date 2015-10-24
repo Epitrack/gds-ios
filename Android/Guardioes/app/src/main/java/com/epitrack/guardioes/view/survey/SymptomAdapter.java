@@ -28,7 +28,7 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
 
     private static final int VIEW_TYPE_AMOUNT = 2;
 
-    private static final int POSITION_VIEW_TYPE_OTHER = 11;
+    private static final int POSITION_VIEW_TYPE_OTHER = 13;
 
     final private List<SymptomList> symptomArray;
 

@@ -104,7 +104,7 @@
         <item>Preto</item>
         <item>Pardo</item>
         <item>Amarelo</item>
-        <item>Indigeno</item>
+        <item>Indigena</item>
     </string-array>
 
     <string name="generic_error">Não foi possível executar a operação. Tente novamente em alguns instantes.</string>

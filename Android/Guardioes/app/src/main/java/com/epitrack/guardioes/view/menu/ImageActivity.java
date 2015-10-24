@@ -14,6 +14,9 @@ import com.epitrack.guardioes.utility.Extension;
 import com.epitrack.guardioes.utility.FileUtility;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
+import java.util.Date;
+import java.util.Random;
+
 import butterknife.Bind;
 
 /**
@@ -60,9 +63,11 @@ public class ImageActivity extends BaseAppCompatActivity {
 
     public void onSave(final MenuItem menuItem) {
 
+        Random r = new Random();
+
         final String path = FileUtility.save(this,
-                                             "teste",
-                                             Extension.PNG,
+                                             "GDS_" + r.nextInt(),
+                                             Extension.JPG,
                                              cropImageView.getCroppedImage());
 
         final Intent intent = new Intent();

@@ -136,7 +136,9 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
 
             if (AccessToken.getCurrentAccessToken() != null) {
 
-                AccessToken.setCurrentAccessToken(null);
+                userExistSocial(AccessToken.getCurrentAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
+
+                //AccessToken.setCurrentAccessToken(null);
 
                 new DialogBuilder(SocialLoginActivity.this).load()
                         .title(R.string.attention)
@@ -167,7 +169,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
                                //String email = jsonObject.getString("email");
                                //String gender = jsonObject.getString("gender");
                                //gender = gender.substring(0, 1).toUpperCase();
-                                singleUser.setFb(loginResult.getAccessToken().getToken());
+                                singleUser.setFb(loginResult.getAccessToken().getUserId());
                                 singleUser.setNick(user);
                                //singleUser.setEmail(email);
                                //singleUser.setPassword(email);
@@ -227,6 +229,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
                     .addOnConnectionFailedListener(handler)
                     .addApi(Plus.API)
                     .addScope(Plus.SCOPE_PLUS_LOGIN)
+                    .addScope(Plus.SCOPE_PLUS_PROFILE)
                     .build();
         }
     }
@@ -409,7 +412,13 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
                     singleUser.setNick(jsonObjectUser.getString("nick").toString());
                     singleUser.setEmail(jsonObjectUser.getString("email").toString());
                     singleUser.setGender(jsonObjectUser.getString("gender").toString());
-                    singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+
+                    try {
+                        singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                    } catch (Exception e) {
+                        singleUser.setPicture("0");
+                    }
+
                     singleUser.setId(jsonObjectUser.getString("id").toString());
                     singleUser.setRace(jsonObjectUser.getString("race").toString());
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
@@ -419,7 +428,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
 
                     editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
-                    editor.commit();
+                    editor.apply();
 
                     navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                             Intent.FLAG_ACTIVITY_NEW_TASK);

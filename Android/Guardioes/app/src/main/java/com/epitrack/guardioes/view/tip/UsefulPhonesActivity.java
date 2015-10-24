@@ -39,7 +39,7 @@ public class UsefulPhonesActivity extends BaseAppCompatActivity {
         } else if (phoneId == Phone.POLICE.getId()) {
             imageView.setImageResource(R.drawable.icon_police);
             textViewTitle.setText(R.string.police_text);
-            textViewNumber.setText("192");
+            textViewNumber.setText("190");
             textViewDesc.setText("");
         } else if (phoneId == Phone.FIREMAN.getId()) {
             imageView.setImageResource(R.drawable.icon_firefighter);

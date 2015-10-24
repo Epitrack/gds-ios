@@ -28,10 +28,12 @@ public class User {
     private String tw;
     private String fb;
     private String gl;
-    private int imageResource;
+    private String imageResource;
     private Bitmap bitmapImage;
     private String avatar;
     private JSONArray hashtags;
+    private int widthImageProfile;
+    private int heightImageProfile;
 
     public User() {
 
@@ -224,11 +226,11 @@ public class User {
         this.tw = tw;
     }
 
-    public int getImageResource() {
+    public String getImageResource() {
         return imageResource;
     }
 
-    public void setImageResource(int imageResource) {
+    public void setImageResource(String imageResource) {
         this.imageResource = imageResource;
     }
 
@@ -254,5 +256,21 @@ public class User {
 
     public void setHashtags(JSONArray hashtags) {
         this.hashtags = hashtags;
+    }
+
+    public int getWidthImageProfile() {
+        return widthImageProfile;
+    }
+
+    public void setWidthImageProfile(int widthImageProfile) {
+        this.widthImageProfile = widthImageProfile;
+    }
+
+    public int getHeightImageProfile() {
+        return heightImageProfile;
+    }
+
+    public void setHeightImageProfile(int heightImageProfile) {
+        this.heightImageProfile = heightImageProfile;
     }
 }

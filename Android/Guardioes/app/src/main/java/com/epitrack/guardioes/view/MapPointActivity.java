@@ -1,10 +1,15 @@
 package com.epitrack.guardioes.view;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -44,6 +49,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
 
 import butterknife.Bind;
 
@@ -104,14 +110,27 @@ public class MapPointActivity extends AbstractBaseMapActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        } else {
+            super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+
+    @Override
     public void onMapReady(final GoogleMap map) {
         super.onMapReady(map);
 
-        if (Tip.getBy(tip) == Tip.PHARMACY) {
+        /*if (Tip.getBy(tip) == Tip.PHARMACY) {
             loadPharmacy();
         } else if (Tip.getBy(tip) == Tip.HOSPITAL) {
             load();
-        }
+        }*/
+
+        new MapAsyncTaskRunner().executeOnExecutor(Executors.newSingleThreadExecutor());
     }
 
     private void loadPharmacy() {
@@ -305,4 +324,38 @@ public class MapPointActivity extends AbstractBaseMapActivity {
     private String formatAddress(final Point point) {
         return point.getLogradouro() + ", " + point.getNumero();
     }
+
+    private class MapAsyncTaskRunner extends AsyncTask<Void, Void, Void> {
+
+        private ProgressDialog progressDialog;
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+
+            if (Tip.getBy(tip) == Tip.PHARMACY) {
+                loadPharmacy();
+            } else if (Tip.getBy(tip) == Tip.HOSPITAL) {
+                load();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void voids) {
+
+            progressDialog.dismiss();
+        }
+
+        @Override
+        protected void onPreExecute() {
+            progressDialog = new ProgressDialog(MapPointActivity.this);
+            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(30, 136, 229)));
+            progressDialog.setTitle(R.string.app_name);
+            progressDialog.setMessage("Atualizando dados no mapa...");
+            progressDialog.show();
+        }
+    }
+
 }

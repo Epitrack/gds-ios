@@ -14,6 +14,7 @@ import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.utility.BitmapUtility;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +29,7 @@ import java.util.concurrent.ExecutionException;
 public class UserAdapter extends ArrayAdapter<User> {
 
     private final UserListener listener;
+    SingleUser singleUser = SingleUser.getInstance();
 
     public UserAdapter(final Context context, final List<User> userList, final UserListener listener) {
         super(context, 0, userList);
@@ -131,29 +133,34 @@ public class UserAdapter extends ArrayAdapter<User> {
         viewHolder.textViewName.setText(user.getNick());
         viewHolder.textViewType.setText(user.getType());
 
-        if (user.getPicture().length() > 1) {
-            user.setPicture("0");
-        }
+        if (!singleUser.getImageResource().equals("") && singleUser.getId().equals(user.getId())) {
+            viewHolder.imageViewImage.setImageBitmap(BitmapUtility.scale((singleUser.getWidthImageProfile() / 2), (singleUser.getHeightImageProfile() / 2), singleUser.getImageResource()));
+        } else {
 
-        if (Integer.parseInt(user.getPicture()) == 0) {
+            if (user.getPicture().length() > 1) {
+                user.setPicture("0");
+            }
 
-            if (user.getGender().equals("M")) {
+            if (Integer.parseInt(user.getPicture()) == 0) {
 
-                if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
-                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_6);
+                if (user.getGender().equals("M")) {
+
+                    if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                        viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_6);
+                    } else {
+                        viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_4);
+                    }
                 } else {
-                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_4);
+
+                    if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                        viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_8);
+                    } else {
+                        viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_7);
+                    }
                 }
             } else {
-
-                if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
-                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_8);
-                } else {
-                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_7);
-                }
+                viewHolder.imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(user.getPicture())).getSmall());
             }
-        } else {
-            viewHolder.imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(user.getPicture())).getSmall());
         }
 
         return view;

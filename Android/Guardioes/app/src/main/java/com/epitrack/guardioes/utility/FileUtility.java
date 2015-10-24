@@ -2,6 +2,7 @@ package com.epitrack.guardioes.utility;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Environment;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -20,7 +21,8 @@ public final class FileUtility {
 
     public static String save(final Context context, final String name, final Extension extension, final Bitmap bitmap) {
 
-        final File file = new File(context.getFilesDir(), name + extension.getName());
+        //final File file = new File(context.getFilesDir(), name + extension.getName());
+        final File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), name + extension.getName());
 
         try {
 

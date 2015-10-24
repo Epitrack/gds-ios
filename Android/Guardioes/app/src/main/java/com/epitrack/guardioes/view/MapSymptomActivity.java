@@ -1,9 +1,13 @@
 package com.epitrack.guardioes.view;
 
+import android.app.SearchManager;
+import android.app.SearchableInfo;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
@@ -51,7 +55,7 @@ import butterknife.OnClick;
 /**
  * @author Igor Morais
  */
-public class MapSymptomActivity extends AbstractBaseMapActivity {
+public class MapSymptomActivity extends AbstractBaseMapActivity implements SearchView.OnQueryTextListener {
 
     @Bind(R.id.text_view_city)
     TextView textViewCity;
@@ -101,6 +105,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
     private MarkerOptions badMarkerOption;
     private MarkerOptions goodMarkerOption;
     private LocationUtility locationUtility;
+    private SearchView searchVieww;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -132,15 +137,41 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
         }
     }
 
-    private void sair() {
-
-    }
-
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
         getMenuInflater().inflate(R.menu.map, menu);
 
+        MenuItem searchItem = menu.findItem(R.id.search_survey);
+        searchVieww = (SearchView) searchItem.getActionView();
+        setupSearchView(searchItem);
+
         return true;
+    }
+
+    private void setupSearchView(MenuItem searchItem) {
+
+        if (isAlwaysExpanded()) {
+            searchVieww.setIconifiedByDefault(false);
+        } else {
+            searchItem.setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_IF_ROOM
+                    | MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
+        }
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        if (searchManager != null) {
+            List<SearchableInfo> searchables = searchManager.getSearchablesInGlobalSearch();
+
+            SearchableInfo info = searchManager.getSearchableInfo(getComponentName());
+            for (SearchableInfo inf : searchables) {
+                if (inf.getSuggestAuthority() != null
+                        && inf.getSuggestAuthority().startsWith("applications")) {
+                    info = inf;
+                }
+            }
+            searchVieww.setSearchableInfo(info);
+        }
+
+        searchVieww.setOnQueryTextListener(this);
     }
 
     public void onShare(final MenuItem menuItem) {
@@ -394,5 +425,19 @@ public class MapSymptomActivity extends AbstractBaseMapActivity {
     @Override
     public boolean onMarkerClick(final Marker marker) {
         return true;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
+
+    protected boolean isAlwaysExpanded() {
+        return false;
     }
 }

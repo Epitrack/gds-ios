@@ -14,6 +14,7 @@ import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.utility.BitmapUtility;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
@@ -42,7 +43,8 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
     TextView textViewAge;
 
     @Bind(R.id.image_view_photo)
-    ImageView imageViewAvatar;
+    de.hdodenhof.circleimageview.CircleImageView imageViewAvatar;
+    //ImageView imageViewAvatar;
 
     @Bind(R.id.recycler_view)
     RecyclerView recyclerView;
@@ -64,29 +66,34 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         textViewAge.setText(j + " Anos");
         textViewId.setText(singleUser.getId());
 
-        if (singleUser.getPicture().length() > 1) {
-            singleUser.setPicture("0");
-        }
+        if (singleUser.getImageResource().equals("")) {
 
-        if (Integer.parseInt(singleUser.getPicture()) == 0) {
+            if (singleUser.getPicture().length() > 1) {
+                singleUser.setPicture("0");
+            }
 
-            if (singleUser.getGender().equals("M")) {
+            if (Integer.parseInt(singleUser.getPicture()) == 0) {
 
-                if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
-                    imageViewAvatar.setImageResource(R.drawable.image_avatar_6);
+                if (singleUser.getGender().equals("M")) {
+
+                    if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                        imageViewAvatar.setImageResource(R.drawable.image_avatar_6);
+                    } else {
+                        imageViewAvatar.setImageResource(R.drawable.image_avatar_4);
+                    }
                 } else {
-                    imageViewAvatar.setImageResource(R.drawable.image_avatar_4);
+
+                    if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                        imageViewAvatar.setImageResource(R.drawable.image_avatar_8);
+                    } else {
+                        imageViewAvatar.setImageResource(R.drawable.image_avatar_7);
+                    }
                 }
             } else {
-
-                if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
-                    imageViewAvatar.setImageResource(R.drawable.image_avatar_8);
-                } else {
-                    imageViewAvatar.setImageResource(R.drawable.image_avatar_7);
-                }
+                imageViewAvatar.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getLarge());
             }
         } else {
-            imageViewAvatar.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getLarge());
+            imageViewAvatar.setImageBitmap(BitmapUtility.scale(singleUser.getWidthImageProfile(), singleUser.getHeightImageProfile(), singleUser.getImageResource()));
         }
 
         recyclerView.setHasFixedSize(true);

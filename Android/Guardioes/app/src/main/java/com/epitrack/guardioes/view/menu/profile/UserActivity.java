@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -31,6 +32,11 @@ import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
@@ -49,7 +55,8 @@ public class UserActivity extends BaseAppCompatActivity {
     EditText editTextNickname;
 
     @Bind(R.id.image_view_image)
-    ImageView imageViewImage;
+    de.hdodenhof.circleimageview.CircleImageView imageViewImage;
+    //ImageView imageViewImage;
 
     @Bind(R.id.spinner_gender)
     Spinner spinnerGender;
@@ -80,6 +87,7 @@ public class UserActivity extends BaseAppCompatActivity {
     boolean mainMember;
     SingleUser singleUser = SingleUser.getInstance();
     private int userAvatar = 0;
+    String photoPath = "";
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -92,6 +100,7 @@ public class UserActivity extends BaseAppCompatActivity {
         setContentView(R.layout.user);
 
         if (socialNew) {
+            imageViewImage.setVisibility(View.INVISIBLE);
             new DialogBuilder(UserActivity.this).load()
                     .title(R.string.attention)
                     .content(R.string.new_user_social_media)
@@ -103,6 +112,7 @@ public class UserActivity extends BaseAppCompatActivity {
                         }
                     }).show();
         } else {
+            imageViewImage.setVisibility(View.VISIBLE);
             loadUser();
         }
     }
@@ -146,7 +156,7 @@ public class UserActivity extends BaseAppCompatActivity {
                     spinnerRace.setSelection(2);
                 } else if (race.equals("amarelo")) {
                     spinnerRace.setSelection(3);
-                } else if (race.equals("indígeno")) {
+                } else if (race.equals("indígena")) {
                     spinnerRace.setSelection(4);
                 }
             }
@@ -162,18 +172,22 @@ public class UserActivity extends BaseAppCompatActivity {
                     spinnerGender.setSelection(1);
                 }
 
-                if (gender.equals("M")) {
-                    if (race.equals("branco") || race.equals("amarelo")) {
-                        imageViewImage.setImageResource(R.drawable.image_avatar_6);
-                    } else {
-                        imageViewImage.setImageResource(R.drawable.image_avatar_4);
-                    }
+                if (singleUser.getEmail().equals(email) && !singleUser.getImageResource().equals("")) {
+                    imageViewImage.setImageBitmap(BitmapUtility.scale((singleUser.getWidthImageProfile() / 2), (singleUser.getHeightImageProfile() / 2), singleUser.getImageResource()));
                 } else {
-
-                    if (race.equals("branco") || race.equals("amarelo")) {
-                        imageViewImage.setImageResource(R.drawable.image_avatar_8);
+                    if (gender.equals("M")) {
+                        if (race.equals("branco") || race.equals("amarelo")) {
+                            imageViewImage.setImageResource(R.drawable.image_avatar_6);
+                        } else {
+                            imageViewImage.setImageResource(R.drawable.image_avatar_4);
+                        }
                     } else {
-                        imageViewImage.setImageResource(R.drawable.image_avatar_7);
+
+                        if (race.equals("branco") || race.equals("amarelo")) {
+                            imageViewImage.setImageResource(R.drawable.image_avatar_8);
+                        } else {
+                            imageViewImage.setImageResource(R.drawable.image_avatar_7);
+                        }
                     }
                 }
             }
@@ -259,10 +273,34 @@ public class UserActivity extends BaseAppCompatActivity {
 
                 if (userAvatar > 0) {
                     jsonObject.put("picture", userAvatar);
+                } else if (photoPath.length() > 0) {
+                    try {
+                        JSONObject uploadImageField = new JSONObject();
+                        photoPath = photoPath.replace("\"", "");
+                        uploadImageField.put("uploadFile", photoPath);
+                        photoPath = "";
+
+                        SimpleRequester uploadImage = new SimpleRequester();
+                        uploadImage.setMethod(Method.POST);
+                        uploadImage.setJsonObject(uploadImageField);
+                        uploadImage.setUrl(Requester.API_URL + "user/upload-photo");
+
+                        String uploadImageStr = uploadImage.execute(uploadImage).get();
+                        JSONObject uploadImageJsonObject = new JSONObject(uploadImageStr);
+
+                        if (uploadImageJsonObject.get("error").toString().equals("true")) {
+                            jsonObject.put("picture", "0");
+                        }
+                    } catch (JSONException e) {
+                        jsonObject.put("picture", "0");
+                    } catch (InterruptedException e) {
+                        jsonObject.put("picture", "0");
+                    } catch (ExecutionException e) {
+                        jsonObject.put("picture", "0");
+                    }
                 }
 
                 if (!socialNew) {
-
                     if (mainMember) {
                         String password = editTextPassword.getText().toString().trim();
                         String confirmPassword = editTextConfirmPassword.getText().toString().trim();
@@ -319,6 +357,7 @@ public class UserActivity extends BaseAppCompatActivity {
                     jsonObject.put("gl", singleUser.getGl());
                     jsonObject.put("tw", singleUser.getTw());
                     jsonObject.put("fb", singleUser.getFb());
+                    jsonObject.put("picture", "0");
 
                     if (singleUser.getEmail() == null) {
                         jsonObject.put("email", editTextMail.getText().toString().toLowerCase());
@@ -355,7 +394,7 @@ public class UserActivity extends BaseAppCompatActivity {
                         singleUser.setNick(jsonObjectUser.getString("nick").toString());
                         singleUser.setEmail(jsonObjectUser.getString("email").toString());
                         singleUser.setGender(jsonObjectUser.getString("gender").toString());
-                        singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                        singleUser.setPicture("0");
                         singleUser.setId(jsonObjectUser.getString("id").toString());
                         singleUser.setPassword(jsonObjectUser.getString("email").toString());
                         singleUser.setRace(jsonObjectUser.getString("race").toString());
@@ -409,31 +448,26 @@ public class UserActivity extends BaseAppCompatActivity {
                                 }).show();
                     } else {
                         if (newMenber) {
-                            //Toast.makeText(getApplicationContext(), R.string.new_member_ok, Toast.LENGTH_SHORT).show();
                             new DialogBuilder(UserActivity.this).load()
                                     .title(R.string.attention)
                                     .content(R.string.new_member_ok)
                                     .positiveText(R.string.ok)
                                     .show();
                         } else if (mainMember) {
-                            //Toast.makeText(getApplicationContext(), R.string.generic_update_data_ok, Toast.LENGTH_SHORT).show();
                             new DialogBuilder(UserActivity.this).load()
                                     .title(R.string.attention)
                                     .content(R.string.generic_update_data_ok)
                                     .positiveText(R.string.ok)
                                     .show();
                         } else {
-                            //Toast.makeText(getApplicationContext(), R.string.generic_update_data_ok, Toast.LENGTH_SHORT).show();
                             new DialogBuilder(UserActivity.this).load()
                                     .title(R.string.attention)
                                     .content(R.string.generic_update_data_ok)
                                     .positiveText(R.string.ok)
                                     .show();
                         }
-                        //navigateTo(ProfileActivity.class);
                         editTextNickname.setText("");
                         editTextBirthDate.setText("");
-
                     }
                 }
             } catch (JSONException e) {
@@ -467,7 +501,9 @@ public class UserActivity extends BaseAppCompatActivity {
                     final int width = imageViewImage.getWidth();
                     final int height = imageViewImage.getHeight();
 
-                    imageViewImage.setImageBitmap(BitmapUtility.scale(width, height, uri.getPath()));
+                    imageViewImage.setImageBitmap(BitmapUtility.scale(width, height, uri.getPath().replace("\"", "")));
+
+                    photoPath = uri.getPath();
 
                 }
             }
@@ -485,4 +521,5 @@ public class UserActivity extends BaseAppCompatActivity {
         }
         return true;
     }
+
 }
