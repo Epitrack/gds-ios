@@ -182,7 +182,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
                         jsonObjectHousehold = jsonArray.getJSONObject(i);
                         parentList.add(new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
-                                /*jsonObjectHousehold.get("email").toString()*/"", jsonObjectHousehold.get("id").toString(),
+                                "", jsonObjectHousehold.get("id").toString(),
                                 jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
                                 jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString()));
                     }
@@ -592,10 +592,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
                 JSONObject jsonObject = new JSONObject(jsonStr);
 
-                if (jsonObject.get("error").toString() == "true") {
-                    Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
-                } else {
-
+                if (jsonObject.get("error").toString() == "false") {
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
 
                     for (int i = 0; i < jsonArray.length(); i++) {
