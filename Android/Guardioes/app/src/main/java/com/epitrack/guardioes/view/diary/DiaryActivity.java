@@ -572,7 +572,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
             SimpleRequester simpleRequester = new SimpleRequester();
 
-            if (idSelectedUser == singleUser.getId()) {
+            if (idSelectedUser.equals(singleUser.getId())) {
                 simpleRequester.setUrl(Requester.API_URL + "user/calendar/day?day=" + j + "&month=" + (date.getMonth() + 1) + "&year=" + date.getYear());
             } else if (idSelectedUser.equals("")) {
                 simpleRequester.setUrl(Requester.API_URL + "user/calendar/day?day=" + j + "&month=" + (date.getMonth() + 1) + "&year=" + date.getYear());
@@ -592,7 +592,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
                 JSONObject jsonObject = new JSONObject(jsonStr);
 
-                if (jsonObject.get("error").toString() == "false") {
+                if (jsonObject.get("error").toString().equals("false") ) {
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
 
                     for (int i = 0; i < jsonArray.length(); i++) {

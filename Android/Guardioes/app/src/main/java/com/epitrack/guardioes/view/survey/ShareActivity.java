@@ -1,8 +1,10 @@
 package com.epitrack.guardioes.view.survey;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
@@ -10,6 +12,14 @@ import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.ViewUtility;
 import com.epitrack.guardioes.view.base.BaseActivity;
 import com.epitrack.guardioes.view.HomeActivity;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.share.Sharer;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
+import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -27,11 +37,41 @@ public class ShareActivity extends BaseActivity {
     @Bind(R.id.text_view_social_message_hint)
     TextView textViewHSocialMessage;
 
+    @Bind(R.id.share_facebook)
+    Button buttonShareFacebook;
+
+    @Bind(R.id.share_twitter)
+    Button buttonShareTwitter;
+
+    CallbackManager callbackManager;
+    ShareDialog shareDialog;
+
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.share);
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
+        shareDialog = new ShareDialog(this);
+
+        shareDialog.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
+            @Override
+            public void onSuccess(Sharer.Result result) {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
 
         final boolean hasBadState = getIntent().getBooleanExtra(Constants.Bundle.BAD_STATE, false);
 
@@ -58,4 +98,26 @@ public class ShareActivity extends BaseActivity {
         navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                                        Intent.FLAG_ACTIVITY_NEW_TASK);
     }
+
+    @OnClick(R.id.share_facebook)
+    public void shareFacebook() {
+
+        ShareLinkContent content = new ShareLinkContent.Builder()
+                .setContentDescription("Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org")
+                .setContentTitle("Guardiões da Saúde")
+                .setContentUrl(Uri.parse("http://www.guardioesdasaude.org"))
+                .build();
+
+        shareDialog.show(content);
+    }
+
+    @OnClick(R.id.share_twitter)
+    public void sahreTwitter() {
+
+        TweetComposer.Builder builder = new TweetComposer.Builder(this)
+                .text("Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org");
+        builder.show();
+
+    }
+
 }

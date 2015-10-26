@@ -236,6 +236,9 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/key_facebook" />
+        <provider android:authorities="com.facebook.app.FacebookContentProvider179676235701655"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true"/>
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
