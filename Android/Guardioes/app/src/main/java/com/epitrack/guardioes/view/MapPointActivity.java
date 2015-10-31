@@ -103,6 +103,13 @@ public class MapPointActivity extends AbstractBaseMapActivity {
 
             if (Tip.getBy(tip) == Tip.PHARMACY) {
                 getSupportActionBar().setTitle(R.string.pharmacy);
+
+                new DialogBuilder(MapPointActivity.this).load()
+                        .title(R.string.attention)
+                        .content(R.string.alert_pharmacy)
+                        .positiveText(R.string.ok)
+                        .show();
+
             } else if (Tip.getBy(tip) == Tip.HOSPITAL) {
                 getSupportActionBar().setTitle(R.string.hospital);
             }

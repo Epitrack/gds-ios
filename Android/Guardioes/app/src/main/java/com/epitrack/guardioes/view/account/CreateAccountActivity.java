@@ -15,19 +15,16 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.DTO;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
-import com.epitrack.guardioes.request.RequestListener;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
-import com.epitrack.guardioes.request.SimpleRequesterException;
-import com.epitrack.guardioes.request.UserRequester;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.Mask;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.request.Method;
@@ -41,19 +38,14 @@ import com.mobsandgeeks.saripaar.annotation.Length;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Password;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
 
 import butterknife.Bind;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
-
 
 /**
  * @author Igor Morais
@@ -128,6 +120,8 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
         validator = new Validator(this);
         validator.setValidationListener(new ValidationHandler());
+
+        editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
 
         // TODO: Check play service
         // TODO: Register to GCM. Review soon..

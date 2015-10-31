@@ -10,7 +10,8 @@ public enum HelpContact implements IMenu {
 
     //MAIL        (1, R.string.mail, R.drawable.icon_mail),
     FACEBOOK    (2, R.string.facebook, R.drawable.icon_facebook),
-    TWITTER     (3, R.string.twitter, R.drawable.icon_twitter);
+    TWITTER     (3, R.string.twitter, R.drawable.icon_twitter),
+    REPORT      (4, R.string.report, R.drawable.icon_report);
 
     private final int id;
     private final int name;

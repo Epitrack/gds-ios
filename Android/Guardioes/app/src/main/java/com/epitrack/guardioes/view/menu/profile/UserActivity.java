@@ -26,6 +26,7 @@ import com.epitrack.guardioes.utility.BitmapUtility;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.Mask;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
@@ -92,6 +93,8 @@ public class UserActivity extends BaseAppCompatActivity {
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
+
+        editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
 
         socialNew = getIntent().getBooleanExtra(Constants.Bundle.SOCIAL_NEW, false);
         newMenber = getIntent().getBooleanExtra(Constants.Bundle.NEW_MEMBER, false);

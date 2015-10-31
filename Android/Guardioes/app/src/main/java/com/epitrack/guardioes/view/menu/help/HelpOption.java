@@ -9,8 +9,7 @@ import com.epitrack.guardioes.view.IMenu;
 public enum HelpOption implements IMenu {
 
     TUTORIAL    (1, R.string.tutorial, R.drawable.icon_tutorial),
-    TERM        (2, R.string.term, R.drawable.icon_term),
-    REPORT      (3, R.string.report, R.drawable.icon_report);
+    TERM        (2, R.string.term, R.drawable.icon_term);
 
     private final int id;
     private final int name;

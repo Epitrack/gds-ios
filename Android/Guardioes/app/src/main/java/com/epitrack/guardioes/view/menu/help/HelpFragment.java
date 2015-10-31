@@ -56,8 +56,6 @@ public class HelpFragment extends BaseFragment implements MenuListener {
                     navigateTo(Term.class);
                 } else if (HelpOption.getBy(position + 1).getId() == HelpOption.TUTORIAL.getId()) {
                     navigateTo(TutorialActivity.class);
-                } else if (HelpOption.getBy(position + 1).getId() == HelpOption.REPORT.getId()) {
-                    navigateTo(Report.class);
                 }
             }
         });
@@ -75,6 +73,8 @@ public class HelpFragment extends BaseFragment implements MenuListener {
                     Intent i = new Intent(Intent.ACTION_VIEW);
                     i.setData(Uri.parse("https://www.facebook.com/minsaude"));
                     startActivity(i);
+                } else if (HelpContact.getBy(position + 2).getId() == HelpContact.REPORT.getId()) {
+                    navigateTo(Report.class);
                 }
             }
         });

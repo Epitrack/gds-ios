@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/vacinne_title_01"
-        android:textSize="13dp"
+        android:textSize="15dp"
         android:textStyle="bold"
         android:textColor="@color/grey"
         android:layout_below="@+id/image_view_logo"
@@ -30,7 +30,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="13dp"
+        android:textSize="15dp"
         android:text="@string/vacinne_content_01"
         android:id="@+id/vacinne_content_01"
         android:layout_below="@id/image_view_logo"

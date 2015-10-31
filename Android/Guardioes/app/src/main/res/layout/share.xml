@@ -11,7 +11,7 @@
         android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
         android:text="@string/message_thanks"
-        android:textSize="28dp" />
+        android:textSize="20dp" />
 
     <ImageView
         android:layout_width="wrap_content"

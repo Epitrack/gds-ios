@@ -22,7 +22,7 @@
             android:text="@string/terms_title_01"
             android:textColor="@color/grey"
             android:textStyle="bold"
-            android:textSize="13dp"
+            android:textSize="15dp"
             android:layout_below="@+id/image_view_logo"
             android:layout_alignLeft="@+id/message_about_content_01"
             android:layout_alignStart="@+id/message_about_content_01" />
@@ -34,7 +34,7 @@
             android:layout_margin="30dp"
             android:text="@string/terms_content_01"
             android:textColor="@color/grey"
-            android:textSize="13dp"
+            android:textSize="15dp"
             android:id="@+id/message_about_content_01" />
 
 
