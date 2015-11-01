@@ -102,6 +102,9 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
     @Bind(R.id.pie_chart_diary)
     PieChart pieChart;
 
+    @Bind(R.id.syndromes)
+    TextView txtSyndromes;
+
     private MarkerOptions badMarkerOption;
     private MarkerOptions goodMarkerOption;
     private LocationUtility locationUtility;
@@ -179,6 +182,16 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
         new BottomSheet.Builder(this).sheet(R.menu.share)
                                      .grid()
                                      .show();
+    }
+
+    @OnClick(R.id.syndromes)
+    public void onSyndromes() {
+
+        new DialogBuilder(MapSymptomActivity.this).load()
+                .title(R.string.attention)
+                .content(R.string.syndromes_desc)
+                .positiveText(R.string.ok)
+                .show();
     }
 
     @OnClick(R.id.button_expand)

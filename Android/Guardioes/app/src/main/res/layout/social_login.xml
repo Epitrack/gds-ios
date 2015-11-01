@@ -13,6 +13,15 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/selector_button_facebook" />-->
 
+    <TextureView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Carregando..."
+        />
+
     <com.facebook.login.widget.LoginButton
         android:id="@+id/fragment_button_facebook"
         android:layout_width="wrap_content"
@@ -21,15 +30,24 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="800dp"/>
 
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/button_google"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp" />
 
-    <Button
+    <!--<Button
         android:id="@+id/button_google"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/selector_button_google" />
+        android:background="@drawable/selector_button_google" />-->
+
+
 
     <!--<Button
         android:id="@+id/button_twitter"

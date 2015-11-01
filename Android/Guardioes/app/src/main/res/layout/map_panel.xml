@@ -71,7 +71,8 @@
 
         <include layout="@layout/symptom_report"
             android:layout_width="fill_parent"
-            android:layout_height="130dp"/>
+            android:layout_height="130dp"
+            android:layout_marginLeft="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -83,6 +84,7 @@
             android:drawableRight="@drawable/icon_info"
             android:text="@string/syndromes"
             android:textColor="@color/primary_light"
+            android:id="@+id/syndromes"
             android:textSize="14dp" />
 
         <LinearLayout
@@ -91,12 +93,6 @@
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginTop="15dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/icon_question" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -145,12 +141,6 @@
             android:layout_marginRight="32dp"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/icon_question" />
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -198,12 +188,6 @@
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginTop="10dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/icon_question" />
 
             <LinearLayout
                 android:layout_width="0dp"

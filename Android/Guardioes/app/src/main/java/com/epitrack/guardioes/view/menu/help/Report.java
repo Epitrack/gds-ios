@@ -57,7 +57,7 @@ public class Report extends BaseAppCompatActivity {
         } else {
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("message/rfc822");
-            i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"contato@epitrack.com.br"});
+            i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"contato@guardioesdasaude.org"});
             i.putExtra(Intent.EXTRA_SUBJECT, txtSubject.getText().toString().trim());
             i.putExtra(Intent.EXTRA_TEXT, txtMessage.getText().toString().trim());
             try {

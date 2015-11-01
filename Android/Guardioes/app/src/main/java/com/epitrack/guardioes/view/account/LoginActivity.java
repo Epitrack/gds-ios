@@ -1,9 +1,12 @@
 package com.epitrack.guardioes.view.account;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.text.InputType;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -13,6 +16,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
@@ -177,10 +181,28 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
         }
     }
 
-    //@OnClick(R.id.text_view_forgot_password)
-    //public void onForgotPassword() {
-    //    Toast.makeText(this, "Oii", Toast.LENGTH_SHORT).show();
-    //}
+    @OnClick(R.id.text_view_forgot_password)
+    public void onForgotPassword() {
+        final String[] str = {""};
+        new DialogBuilder(LoginActivity.this).load()
+                .title("E-mail")
+                //.content(R.string.network_disable)
+                .positiveText(R.string.ok)
+                //.inputMaxLength(30, R.color.material_blue_grey_950)
+                .inputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
+                .input("email@exemplo.com", "", new MaterialDialog.InputCallback() {
+                    @Override
+                    public void onInput(MaterialDialog dialog, CharSequence input) {
+                        str[0] = input.toString();
+                        new DialogBuilder(LoginActivity.this).load()
+                                .title(R.string.app_name)
+                                .content(R.string.new_password)
+                                .positiveText(R.string.ok)
+                                .show();
+                    }
+                }).negativeText("FECHAR")
+                .show();
+    }
 
     @OnClick(R.id.button_mail)
     public void onLoginAnimation() {

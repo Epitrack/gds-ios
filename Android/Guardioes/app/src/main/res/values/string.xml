@@ -94,7 +94,10 @@
     <string name="email_null">Título e/ou mensagem não informados.</string>
     <string name="open_link">Deseja abrir o link da notícia?</string>
     <string name="share_participation">Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org</string>
-    <string name="alert_pharmacy">Atenção! Algumas farmácias, podem, não ser exibidas no mapa.</string>
+    <string name="alert_pharmacy">Algumas farmácias podem não ser exibidas no mapa.</string>
+    <string name="share_ok">Publicado com sucesso!</string>
+    <string name="syndromes_desc">As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: diarreica (febre, diarreia, náusea ou vômito), respiratória (febre, tosse e dor de garganta) e exantemática (febre, exantema, tosse, dor nas articulações e dor de cabeça).</string>
+    <string name="new_password">As instruções para a nova senha foram enviadas para o seu e-mail.</string>
 
     <string-array name="gender_array">
         <item>Masculino</item>

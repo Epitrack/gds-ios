@@ -104,6 +104,7 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
             startActivity(intent);
 
 
+
         } else {
 
             replaceFragment(MAIN_FRAGMENT,

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.utility.Constants;
+import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.utility.ViewUtility;
 import com.epitrack.guardioes.view.base.BaseActivity;
 import com.epitrack.guardioes.view.HomeActivity;
@@ -43,7 +44,6 @@ public class ShareActivity extends BaseActivity {
     @Bind(R.id.share_twitter)
     Button buttonShareTwitter;
 
-    CallbackManager callbackManager;
     ShareDialog shareDialog;
 
     @Override
@@ -51,27 +51,7 @@ public class ShareActivity extends BaseActivity {
         super.onCreate(bundle);
 
         setContentView(R.layout.share);
-
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        callbackManager = CallbackManager.Factory.create();
         shareDialog = new ShareDialog(this);
-
-        shareDialog.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
-            @Override
-            public void onSuccess(Sharer.Result result) {
-
-            }
-
-            @Override
-            public void onCancel() {
-
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-
-            }
-        });
 
         final boolean hasBadState = getIntent().getBooleanExtra(Constants.Bundle.BAD_STATE, false);
 
@@ -81,6 +61,11 @@ public class ShareActivity extends BaseActivity {
 
             ViewUtility.setMarginTop(textViewHSocialMessage, ViewUtility.toPixel(this, MARGIN_TOP));
         }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
@@ -117,7 +102,5 @@ public class ShareActivity extends BaseActivity {
         TweetComposer.Builder builder = new TweetComposer.Builder(this)
                 .text("Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org");
         builder.show();
-
     }
-
 }

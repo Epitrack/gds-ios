@@ -94,13 +94,13 @@ public class UserActivity extends BaseAppCompatActivity {
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
-        editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
-
         socialNew = getIntent().getBooleanExtra(Constants.Bundle.SOCIAL_NEW, false);
         newMenber = getIntent().getBooleanExtra(Constants.Bundle.NEW_MEMBER, false);
         mainMember = getIntent().getBooleanExtra(Constants.Bundle.MAIN_MEMBER, false);
 
         setContentView(R.layout.user);
+
+        editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
 
         if (socialNew) {
             imageViewImage.setVisibility(View.INVISIBLE);
@@ -402,6 +402,11 @@ public class UserActivity extends BaseAppCompatActivity {
                         singleUser.setPassword(jsonObjectUser.getString("email").toString());
                         singleUser.setRace(jsonObjectUser.getString("race").toString());
                         singleUser.setDob(jsonObjectUser.getString("dob").toString());
+                        try {
+                            singleUser.setHashtags(jsonObjectUser.getJSONArray("hashtags"));
+                        } catch (Exception e) {
+
+                        }
 
                         SharedPreferences sharedPreferences = null;
 

@@ -2,10 +2,12 @@ package com.epitrack.guardioes.view.account;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -36,7 +38,11 @@ import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.Scopes;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 import com.twitter.sdk.android.Twitter;
@@ -62,24 +68,39 @@ import io.fabric.sdk.android.Fabric;
 /**
  * @author Miqueias Lopes
  */
-public class SocialLoginActivity extends BaseAppCompatActivity {
+public class SocialLoginActivity extends BaseAppCompatActivity implements View.OnClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     @Bind(R.id.fragment_button_facebook)
     LoginButton buttonFaceBook;
 
     @Bind(R.id.button_google)
-    Button buttonGoogle;
+    SignInButton buttonGoogle;
 
     @Bind(R.id.button_twitter)
     TwitterLoginButton buttonTwitter;
 
     private String modeSociaLogin;
-    private GoogleApiClient authGoogle;
-    private ProfileTracker profileTracker;
+
+    //Google
+    private static final int RC_SIGN_IN = 0;
+    private GoogleApiClient mGoogleApiClient;
+    private static final int PROFILE_PIC_SIZE = 400;
+    private ConnectionResult mConnectionResult;
+
+    /**
+     * A flag indicating that a PendingIntent is in progress and prevents us
+     * from starting further intents.
+     */
+    private boolean mIntentInProgress;
+    private boolean mSignInClicked;
+
+    //Facebook
     private CallbackManager callbackManager;
 
+    //Twitter
     private static final String TWITTER_KEY = "2lnE0tRTpj0VPihSOpvrT13rv";
     private static final String TWITTER_SECRET = "lbcEUcgSSZrzpRDkwPoBlj0BbcWADPymMLvvFewbwTO2j426hx";
+    private ProfileTracker profileTracker;
 
     SingleUser singleUser = SingleUser.getInstance();
 
@@ -128,6 +149,17 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
 
              buttonTwitter.callOnClick();
         } else if (modeSociaLogin == Constants.Bundle.GOOGLE) {
+
+            buttonGoogle.setOnClickListener(this);
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(Plus.API)
+                    .addScope(new Scope(Scopes.PROFILE))
+                    .addScope(new Scope(Scopes.EMAIL))
+                    .addScope(Plus.SCOPE_PLUS_LOGIN)
+                    .build();
+
             buttonGoogle.callOnClick();
         } else if (modeSociaLogin == Constants.Bundle.FACEBOOK) {
 
@@ -200,12 +232,24 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
         }
     }
 
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (modeSociaLogin == Constants.Bundle.GOOGLE) {
-            authGoogle.connect();
+            if (requestCode == RC_SIGN_IN) {
+                if (requestCode != RESULT_OK) {
+                    mSignInClicked = false;
+                }
+
+                mIntentInProgress = false;
+
+                if (!mGoogleApiClient.isConnecting()) {
+                    mGoogleApiClient.connect();
+                }
+            }
         } else if (modeSociaLogin == Constants.Bundle.FACEBOOK) {
             callbackManager.onActivityResult(requestCode, resultCode, data);
         } else if (modeSociaLogin == Constants.Bundle.TWITTER) {
@@ -213,38 +257,17 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
         }
     }
 
-    @OnClick(R.id.button_google)
-    public void onGoogle() {
-        loadGoogle(getApplicationContext());
-        authGoogle.connect();
-    }
-
-    private void loadGoogle(final Context context) {
-
-        if (authGoogle == null) {
-
-            final GoogleHandler handler = new GoogleHandler();
-
-            authGoogle = new GoogleApiClient.Builder(context).addConnectionCallbacks(handler)
-                    .addOnConnectionFailedListener(handler)
-                    .addApi(Plus.API)
-                    .addScope(Plus.SCOPE_PLUS_LOGIN)
-                    .addScope(Plus.SCOPE_PLUS_PROFILE)
-                    .build();
-        }
-    }
-
-    private void getDatabyGoogleApi() {
+    private void getProfileInformation() {
         try {
 
-            if (authGoogle.isConnected()) {
-                Person person = Plus.PeopleApi.getCurrentPerson(authGoogle);
+            if (mGoogleApiClient.isConnected()) {
+                Person person = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
 
                 if (person != null) {
 
                     String personName = person.getDisplayName();
                     int genderInt = person.getGender();//0 for male, and 1 for female
-                    String email = Plus.AccountApi.getAccountName(authGoogle);
+                    String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
 
                     singleUser.setGl(person.getId());
                     singleUser.setEmail(email);
@@ -264,7 +287,16 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
         }
     }
 
-    private class GoogleHandler implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_google:
+                signInWithGplus();
+                break;
+        }
+    }
+
+    /*private class GoogleHandler implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
         @Override
         public void onConnected(final Bundle bundle) {
@@ -281,7 +313,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
         public void onConnectionFailed(final ConnectionResult connectionResult) {
             executeSocialLogin(true);
         }
-    }
+    }*/
 
     private void executeSocialLogin(boolean loginFail) {
 
@@ -450,5 +482,76 @@ public class SocialLoginActivity extends BaseAppCompatActivity {
         if (profileTracker != null) {
             profileTracker.stopTracking();
         }
+    }
+
+    protected void onStart() {
+        super.onStart();
+        mGoogleApiClient.connect();
+    }
+
+    protected void onStop() {
+        super.onStop();
+        if (mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.disconnect();
+        }
+    }
+
+    @Override
+    public void onConnected(Bundle bundle) {
+        mSignInClicked = false;
+        getProfileInformation();
+        updateUI(true);
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        mGoogleApiClient.connect();
+        updateUI(false);
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult result) {
+        if (!result.hasResolution()) {
+            GooglePlayServicesUtil.getErrorDialog(result.getErrorCode(), this,
+                    0).show();
+            return;
+        }
+
+        if (!mIntentInProgress) {
+            // Store the ConnectionResult for later usage
+            mConnectionResult = result;
+
+            if (mSignInClicked) {
+                // The user has already clicked 'sign-in' so we attempt to
+                // resolve all
+                // errors until the user is signed in, or they cancel.
+                resolveSignInError();
+            }
+        }
+    }
+
+    private void signInWithGplus() {
+        if (!mGoogleApiClient.isConnecting()) {
+            mSignInClicked = true;
+            resolveSignInError();
+        }
+
+        getProfileInformation();
+    }
+
+    private void resolveSignInError() {
+        if (mConnectionResult.hasResolution()) {
+            try {
+                mIntentInProgress = true;
+                mConnectionResult.startResolutionForResult(this, RC_SIGN_IN);
+            } catch (IntentSender.SendIntentException e) {
+                mIntentInProgress = false;
+                mGoogleApiClient.connect();
+            }
+        }
+    }
+
+    private void updateUI(boolean isSignedIn) {
+
     }
 }
