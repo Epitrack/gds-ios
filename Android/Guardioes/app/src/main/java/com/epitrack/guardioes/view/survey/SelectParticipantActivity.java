@@ -19,6 +19,8 @@ import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.menu.profile.Avatar;
+import com.epitrack.guardioes.view.menu.profile.UserActivity;
+import com.melnykov.fab.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,6 +54,9 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
     @Bind(R.id.text_view_id)
     TextView textViewId;
 
+    List<User> parentList = new ArrayList<>();
+    SingleUser singleUser = SingleUser.getInstance();
+
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
@@ -59,7 +64,6 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         setContentView(R.layout.select_participant);
 
         //Miquéias Lopes
-        SingleUser singleUser = SingleUser.getInstance();
         int j = DateFormat.getDateDiff(singleUser.getDob());
 
         textViewName.setText(singleUser.getNick());
@@ -100,7 +104,12 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        final List<User> parentList = new ArrayList<>();
+        loadHousehold();
+    }
+
+    private void loadHousehold() {
+
+        parentList = new ArrayList<>();
 
         SimpleRequester simpleRequester = new SimpleRequester();
         simpleRequester.setUrl(Requester.API_URL + "user/household/" + singleUser.getId());
@@ -139,6 +148,29 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         }
 
         recyclerView.setAdapter(new ParentAdapter(getApplicationContext(), this, parentList));
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadHousehold();
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        loadHousehold();
+    }
+
+    @OnClick(R.id.button_add)
+    public void onAdd() {
+        final Bundle bundle = new Bundle();
+
+        bundle.putBoolean(Constants.Bundle.NEW_MEMBER, true);
+        bundle.putBoolean(Constants.Bundle.SOCIAL_NEW, false);
+        navigateTo(UserActivity.class, bundle);
     }
 
     @OnClick(R.id.image_view_photo)

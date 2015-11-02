@@ -221,6 +221,7 @@ public class HomeFragment extends BaseFragment {
         protected void onPreExecute() {
             progressDialog = new ProgressDialog(getActivity());
             progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(30, 136, 229)));
+            progressDialog.getWindow().setTitleColor(Color.rgb(255, 255, 255));
             progressDialog.setTitle(R.string.app_name);
             progressDialog.setMessage("Estamos atualizando seus dados...");
             progressDialog.show();

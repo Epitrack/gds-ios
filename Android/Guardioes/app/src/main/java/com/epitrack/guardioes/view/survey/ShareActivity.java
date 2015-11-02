@@ -3,10 +3,13 @@ package com.epitrack.guardioes.view.survey;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
@@ -19,6 +22,8 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.share.Sharer;
 import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.MessageDialog;
+import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
 import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 
@@ -44,14 +49,39 @@ public class ShareActivity extends BaseActivity {
     @Bind(R.id.share_twitter)
     Button buttonShareTwitter;
 
+    ShareButton shareButton;
     ShareDialog shareDialog;
+    CallbackManager callbackManager;
 
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.share);
-        shareDialog = new ShareDialog(this);
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
+        //shareDialog = new ShareDialog(this);
+        shareButton = new ShareButton(this);
+
+        shareButton.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
+            @Override
+            public void onSuccess(Sharer.Result result) {
+
+                Log.v("MyApp", "Share success!");
+            }
+
+            @Override
+            public void onCancel() {
+
+                Log.v("MyApp", "Share canceled");
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+
+                Log.v("MyApp", "Share error: " + e.toString());
+            }
+        });
 
         final boolean hasBadState = getIntent().getBooleanExtra(Constants.Bundle.BAD_STATE, false);
 
@@ -66,6 +96,7 @@ public class ShareActivity extends BaseActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
@@ -93,7 +124,10 @@ public class ShareActivity extends BaseActivity {
                 .setContentUrl(Uri.parse("http://www.guardioesdasaude.org"))
                 .build();
 
-        shareDialog.show(content);
+        //shareDialog.show(content);
+        shareButton.setShareContent(content);
+        shareButton.callOnClick();
+
     }
 
     @OnClick(R.id.share_twitter)
