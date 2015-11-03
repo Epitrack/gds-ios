@@ -91,14 +91,16 @@
         android:layout_alignParentStart="true" />
     <Button
         android:id="@+id/button_add"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/selector_button_white_dark"
         android:text="@string/add_member"
         android:textColor="@color/primary_light"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

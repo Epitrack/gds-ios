@@ -45,7 +45,6 @@
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:inputType="textMultiLine"
             android:hint="@string/message"
             android:ems="10"
             android:maxLength="350"

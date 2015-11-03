@@ -465,13 +465,17 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
 
     protected void onStart() {
         super.onStart();
-        mGoogleApiClient.connect();
+        if (mGoogleApiClient != null) {
+            mGoogleApiClient.connect();
+        }
     }
 
     protected void onStop() {
         super.onStop();
-        if (mGoogleApiClient.isConnected()) {
-            mGoogleApiClient.disconnect();
+        if (mGoogleApiClient != null) {
+            if (mGoogleApiClient.isConnected()) {
+                mGoogleApiClient.disconnect();
+            }
         }
     }
 
