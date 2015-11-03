@@ -232,8 +232,6 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
         }
     }
 
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -295,25 +293,6 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                 break;
         }
     }
-
-    /*private class GoogleHandler implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
-
-        @Override
-        public void onConnected(final Bundle bundle) {
-            getDatabyGoogleApi();
-            executeSocialLogin(false);
-        }
-
-        @Override
-        public void onConnectionSuspended(final int i) {
-            authGoogle.connect();
-        }
-
-        @Override
-        public void onConnectionFailed(final ConnectionResult connectionResult) {
-            executeSocialLogin(true);
-        }
-    }*/
 
     private void executeSocialLogin(boolean loginFail) {
 

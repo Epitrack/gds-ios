@@ -1,8 +1,10 @@
 package com.epitrack.guardioes.view.survey;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.model.User;
@@ -10,7 +12,10 @@ import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.Constants;
+import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.utility.LocationUtility;
+import com.epitrack.guardioes.utility.SocialShare;
+import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
 import org.json.JSONException;
@@ -98,5 +103,24 @@ public class StateActivity extends BaseAppCompatActivity {
 
         bundle.putString("id_user", id);
         navigateTo(SymptomActivity.class, bundle);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        if (SocialShare.getInstance().isShared()) {
+            new DialogBuilder(StateActivity.this).load()
+                    .title(R.string.app_name)
+                    .content(R.string.share_ok)
+                    .positiveText(R.string.ok)
+                    .callback(new MaterialDialog.ButtonCallback() {
+                        @Override
+                        public void onPositive(final MaterialDialog dialog) {
+                            SocialShare.getInstance().setIsShared(false);
+                            navigateTo(HomeActivity.class);
+                        }
+                    }).show();
+        }
     }
 }

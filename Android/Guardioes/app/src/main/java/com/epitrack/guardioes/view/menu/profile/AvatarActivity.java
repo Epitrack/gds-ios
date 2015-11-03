@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.menu.profile;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -86,6 +87,7 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
         final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getPhotoFile()));
+        intent.putExtra(MediaStore.EXTRA_SCREEN_ORIENTATION, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         startActivityForResult(intent, Constants.RequestCode.IMAGE);
     }

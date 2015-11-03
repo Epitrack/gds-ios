@@ -13,6 +13,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.SocialShare;
 import com.epitrack.guardioes.utility.ViewUtility;
 import com.epitrack.guardioes.view.base.BaseActivity;
 import com.epitrack.guardioes.view.HomeActivity;
@@ -61,9 +62,9 @@ public class ShareActivity extends BaseActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         callbackManager = CallbackManager.Factory.create();
         //shareDialog = new ShareDialog(this);
-        shareButton = new ShareButton(this);
+        shareDialog = new ShareDialog(this);
 
-        shareButton.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
+        shareDialog.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
             @Override
             public void onSuccess(Sharer.Result result) {
 
@@ -94,14 +95,14 @@ public class ShareActivity extends BaseActivity {
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
     public void onBackPressed() {
-        navigateTo();
+        navigateTo(HomeActivity.class);
     }
 
     @OnClick(R.id.button_confirm)
@@ -124,10 +125,8 @@ public class ShareActivity extends BaseActivity {
                 .setContentUrl(Uri.parse("http://www.guardioesdasaude.org"))
                 .build();
 
-        //shareDialog.show(content);
-        shareButton.setShareContent(content);
-        shareButton.callOnClick();
-
+        shareDialog.show(content);
+        SocialShare.getInstance().setIsShared(true);
     }
 
     @OnClick(R.id.share_twitter)
@@ -136,5 +135,7 @@ public class ShareActivity extends BaseActivity {
         TweetComposer.Builder builder = new TweetComposer.Builder(this)
                 .text("Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org");
         builder.show();
+        SocialShare.getInstance().setIsShared(true);
+
     }
 }
