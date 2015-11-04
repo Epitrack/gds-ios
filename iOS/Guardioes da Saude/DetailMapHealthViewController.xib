@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Foco_Std_Bd.ttf">
+            <string>Foco-Bold</string>
+            <string>Foco-Bold</string>
+            <string>Foco-Bold</string>
+            <string>Foco-Bold</string>
+        </mutableArray>
+        <mutableArray key="Foco_Std_Lt.ttf">
+            <string>Foco-Light</string>
+            <string>Foco-Light</string>
+            <string>Foco-Light</string>
+            <string>Foco-Light</string>
+            <string>Foco-Light</string>
+            <string>Foco-Light</string>
+            <string>Foco-Light</string>
+            <string>Foco-Light</string>
+        </mutableArray>
+        <mutableArray key="Foco_Std_Rg.ttf">
+            <string>Foco-Regular</string>
+            <string>Foco-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailMapHealthViewController">
+            <connections>
+                <outlet property="progessViewRespiratoria" destination="eH5-am-Zro" id="vOv-hT-f93"/>
+                <outlet property="progressViewDiarreica" destination="dgX-C1-R58" id="aCo-Zc-RP3"/>
+                <outlet property="progressViewExantematica" destination="LS0-WN-wrD" id="M0Z-C1-wMQ"/>
+                <outlet property="txtCity" destination="1PA-Yq-vsC" id="a23-7l-iOI"/>
+                <outlet property="txtCountBad" destination="NJY-g6-YiJ" id="o41-Bi-TyZ"/>
+                <outlet property="txtCountGood" destination="cO5-Gh-Sn0" id="JFr-eE-1PC"/>
+                <outlet property="txtCountParticipation" destination="D49-qF-Qyx" id="ykR-iA-cBf"/>
+                <outlet property="txtPercentBad" destination="8OG-v3-zgD" id="lcn-Ix-bOn"/>
+                <outlet property="txtPercentGood" destination="tIB-f1-Bhb" id="U5I-NM-CZb"/>
+                <outlet property="txtState" destination="zcC-bU-tJ5" id="7nV-Rl-yb4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recife" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PA-Yq-vsC">
+                    <rect key="frame" x="8" y="79" width="240" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="21"/>
+                    <color key="textColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pernanbuco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcC-bU-tJ5">
+                    <rect key="frame" x="8" y="108" width="240" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exantemáica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5x-Ad-xIf">
+                    <rect key="frame" x="8" y="408" width="101" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Diarreica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyI-LA-OAn">
+                    <rect key="frame" x="8" y="370" width="101" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Respiratória" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlE-SP-qKp">
+                    <rect key="frame" x="8" y="447" width="101" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="71.253 Participações essa semana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D49-qF-Qyx">
+                    <rect key="frame" x="8" y="147" width="304" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Geral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egE-rj-4tt">
+                    <rect key="frame" x="8" y="183" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
+                    <color key="textColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_well_dash.png" translatesAutoresizingMaskIntoConstraints="NO" id="s39-SS-Dhp">
+                    <rect key="frame" x="12" y="223" width="35" height="35"/>
+                    <animations/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_bad_dash.png" translatesAutoresizingMaskIntoConstraints="NO" id="WUg-BP-v5e">
+                    <rect key="frame" x="12" y="277" width="35" height="35"/>
+                    <animations/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6p-2s-jEC">
+                    <rect key="frame" x="95" y="275" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIB-f1-Bhb">
+                    <rect key="frame" x="55" y="220" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OG-v3-zgD">
+                    <rect key="frame" x="55" y="275" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izc-0j-mfJ">
+                    <rect key="frame" x="95" y="220" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22.800 Relatórios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJY-g6-YiJ">
+                    <rect key="frame" x="55" y="294" width="137" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="10"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22.800 Relatórios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO5-Gh-Sn0">
+                    <rect key="frame" x="55" y="240" width="137" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="10"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Síndromes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbf-uo-6JT">
+                    <rect key="frame" x="8" y="341" width="96" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
+                    <color key="textColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="eH5-am-Zro">
+                    <rect key="frame" x="8" y="470" width="304" height="2"/>
+                    <animations/>
+                </progressView>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="dgX-C1-R58">
+                    <rect key="frame" x="8" y="392" width="304" height="2"/>
+                    <animations/>
+                </progressView>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LS0-WN-wrD">
+                    <rect key="frame" x="8" y="432" width="304" height="2"/>
+                    <animations/>
+                </progressView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="LS0-WN-wrD" secondAttribute="trailing" constant="8" id="Eof-Fy-tsc"/>
+                <constraint firstItem="LS0-WN-wrD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Fvl-9Y-xn9"/>
+                <constraint firstAttribute="trailing" secondItem="eH5-am-Zro" secondAttribute="trailing" constant="8" id="OOo-IH-Eex"/>
+                <constraint firstItem="eH5-am-Zro" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Xtv-4v-KGs"/>
+                <constraint firstItem="dgX-C1-R58" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="392" id="Yw4-A0-sCm"/>
+                <constraint firstItem="eH5-am-Zro" firstAttribute="top" secondItem="LS0-WN-wrD" secondAttribute="bottom" constant="36" id="b9f-iN-kCm"/>
+                <constraint firstItem="LS0-WN-wrD" firstAttribute="top" secondItem="dgX-C1-R58" secondAttribute="bottom" constant="38" id="hzr-wE-SH0"/>
+                <constraint firstItem="dgX-C1-R58" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="rPb-Io-evx"/>
+                <constraint firstAttribute="trailing" secondItem="dgX-C1-R58" secondAttribute="trailing" constant="8" id="rzf-Pe-MhG"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_bad_dash.png" width="41" height="41"/>
+        <image name="icon_well_dash.png" width="41" height="41"/>
+    </resources>
+</document>
