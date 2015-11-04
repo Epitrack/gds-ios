@@ -11,7 +11,7 @@
         android:layout_marginTop="15dp"
         android:gravity="center_horizontal"
         android:text="@string/message_thanks"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -39,6 +39,14 @@
         android:text="@string/message_invite_friend"
         android:textSize="13dp"
         android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:id="@+id/share_whatsapp"
+        android:background="@drawable/btn_whatsapp_default" />
 
     <Button
         android:layout_width="wrap_content"
