@@ -35,10 +35,10 @@
         android:id="@+id/text_view_social_message_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
         android:layout_marginTop="40dp"
         android:text="@string/message_invite_friend"
-        android:textSize="13dp" />
+        android:textSize="13dp"
+        android:layout_gravity="center_horizontal"/>
 
     <Button
         android:layout_width="wrap_content"

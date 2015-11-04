@@ -19,6 +19,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:text="Carregando..."
+        android:textColor="@color/white_dark"
         />
 
     <com.facebook.login.widget.LoginButton

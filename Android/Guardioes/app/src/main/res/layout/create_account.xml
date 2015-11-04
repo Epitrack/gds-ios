@@ -96,6 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapSentences"
+                android:textColor="@android:color/white"
                 android:hint="@string/hint_nickname"
                 android:maxLength="15" />
 
@@ -110,6 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_birth_date"
+                android:textColor="@android:color/white"
                 android:inputType="date" />
 
         </android.support.design.widget.TextInputLayout>
@@ -204,6 +206,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_mail"
                 android:inputType="textEmailAddress"
+                android:textColor="@android:color/white"
                 android:maxLength="50" />
 
         </android.support.design.widget.TextInputLayout>
@@ -218,6 +221,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_password"
                 android:inputType="textPassword"
+                android:textColor="@android:color/white"
                 android:maxLength="16" />
 
         </android.support.design.widget.TextInputLayout>
@@ -232,6 +236,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_repeat_password"
                 android:inputType="textPassword"
+                android:textColor="@android:color/white"
                 android:maxLength="16" />
 
         </android.support.design.widget.TextInputLayout>
