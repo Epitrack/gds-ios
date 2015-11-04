@@ -5,13 +5,22 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -55,16 +64,53 @@ public class Report extends BaseAppCompatActivity {
                     .positiveText(R.string.ok)
                     .show();
         } else {
-            Intent i = new Intent(Intent.ACTION_SEND);
-            i.setType("message/rfc822");
-            i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"contato@guardioesdasaude.org"});
-            i.putExtra(Intent.EXTRA_SUBJECT, txtSubject.getText().toString().trim());
-            i.putExtra(Intent.EXTRA_TEXT, txtMessage.getText().toString().trim());
+
             try {
-                startActivity(Intent.createChooser(i, "Enviando email..."));
-            } catch (android.content.ActivityNotFoundException ex) {
-                Toast.makeText(Report.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                JSONObject jsonPost = new JSONObject();
+                jsonPost.put("title", txtSubject.getText().toString().trim());
+                jsonPost.put("text", txtMessage.getText().toString().trim());
+
+                SimpleRequester simpleRequester = new SimpleRequester();
+                simpleRequester.setMethod(Method.POST);
+                simpleRequester.setJsonObject(jsonPost);
+                simpleRequester.setUrl(Requester.API_URL + "email/log");
+
+                String jsonStr = simpleRequester.execute(simpleRequester).get();
+
+                JSONObject jsonObject = new JSONObject(jsonStr);
+
+                if (jsonObject.get("error").toString().equals("false")) {
+                    isError = false;
+                } else {
+                    isError = true;
+                }
+
+            } catch (JSONException e) {
+                isError = true;
+            } catch (InterruptedException e) {
+                isError = true;
+            } catch (ExecutionException e) {
+                isError = true;
+            } finally {
+                if (isError) {
+                    new DialogBuilder(Report.this).load()
+                            .title(R.string.attention)
+                            .content(R.string.email_not_send)
+                            .positiveText(R.string.ok)
+                            .show();
+                } else {
+                    new DialogBuilder(Report.this).load()
+                            .title(R.string.app_name)
+                            .content(R.string.email_send)
+                            .positiveText(R.string.ok)
+                            .show();
+
+                    txtSubject.setText("");
+                    txtMessage.setText("");
+                }
             }
+
+
         }
     }
 

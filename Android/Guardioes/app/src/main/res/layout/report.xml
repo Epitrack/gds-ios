@@ -35,18 +35,19 @@
 
             <EditText
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailSubject"
                 android:hint="@string/subject"
                 android:maxLength="50"
-                android:id="@+id/txt_report_subject" />
+                android:id="@+id/txt_report_subject"/>
 
         </LinearLayout>
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:inputType="textMultiLine"
             android:hint="@string/message"
-            android:ems="10"
             android:maxLength="350"
             android:id="@+id/report_message" />
 
