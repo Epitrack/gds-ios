@@ -1,6 +1,8 @@
 package com.epitrack.guardioes.view.survey;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,6 +51,9 @@ public class ShareActivity extends BaseActivity {
 
     @Bind(R.id.share_twitter)
     Button buttonShareTwitter;
+
+    @Bind(R.id.share_whatsapp)
+    Button buttonShareWhatsApp;
 
     ShareButton shareButton;
     ShareDialog shareDialog;
@@ -138,4 +143,33 @@ public class ShareActivity extends BaseActivity {
         SocialShare.getInstance().setIsShared(true);
 
     }
+
+    @OnClick(R.id.share_whatsapp)
+    public void shareWhatsApp() {
+
+        PackageManager pm=getPackageManager();
+        try {
+
+            Intent waIntent = new Intent(Intent.ACTION_SEND);
+            waIntent.setType("text/plain");
+            String text = "Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org";
+
+            PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
+            //Check if package exists or not. If not then code
+            //in catch block will be called
+            waIntent.setPackage("com.whatsapp");
+
+            waIntent.putExtra(Intent.EXTRA_TEXT, text);
+            startActivity(Intent.createChooser(waIntent, "Compartilhado!"));
+
+        } catch (PackageManager.NameNotFoundException e) {
+            new DialogBuilder(ShareActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.whatsapp_not_installed)
+                    .positiveText(R.string.ok)
+                    .show();
+        }
+
+    }
+
 }
