@@ -31,7 +31,7 @@
             initWithTitle:@"Menu"
                     style:UIBarButtonItemStyleBordered
                    target:self
-                   action:@selector(flipView:)];
+                   action:@selector(showMenu:)];
     self.navigationItem.leftBarButtonItem = flipButton;
 
     // Do any additional setup after loading the view from its nib.
@@ -75,6 +75,10 @@
     // Pass the selected object to the new view controller.
 }/
 */
+
+-(void)showMenu:(id)sender  {
+    NSLog(@"menu action");
+}
 
 - (IBAction)btnJoinNow:(id)sender {
     SelectParticipantViewController *selectParticipantViewController = [[SelectParticipantViewController alloc] init];
