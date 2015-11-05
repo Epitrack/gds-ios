@@ -11,6 +11,8 @@
 #import "SelectParticipantViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "MapHealthViewController.h"
+#import "NoticeViewController.h"
+#import "HealthTipsViewController.h"
 
 @interface HomeViewController ()
 
@@ -24,6 +26,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton = YES;
+    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc]
+            initWithTitle:@"Menu"
+                    style:UIBarButtonItemStyleBordered
+                   target:self
+                   action:@selector(flipView:)];
+    self.navigationItem.leftBarButtonItem = flipButton;
+
     // Do any additional setup after loading the view from its nib.
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
@@ -74,6 +84,19 @@
 - (IBAction)btnMapHealth:(id)sender {
     MapHealthViewController *mapHealthViewController = [[MapHealthViewController alloc] init];
     [self.navigationController pushViewController:mapHealthViewController animated:YES];
+}
+
+- (IBAction)notice:(id)sender {
+    
+    NoticeViewController *noticeViewController = [[NoticeViewController alloc] init];
+    [self.navigationController pushViewController:noticeViewController animated:YES];
+}
+
+- (IBAction)healthTips:(id)sender {
+    
+    HealthTipsViewController *healthTipsViewController = [[HealthTipsViewController alloc] init];
+    [self.navigationController pushViewController:healthTipsViewController animated:YES];
+    
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {

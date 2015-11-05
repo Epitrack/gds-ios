@@ -163,6 +163,9 @@
                             <exclude reference="VHk-b0-P05"/>
                         </mask>
                     </variation>
+                    <connections>
+                        <action selector="notice:" destination="-1" eventType="touchUpInside" id="mYc-oH-veT"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-s7-TsV">
                     <rect key="frame" x="39" y="352" width="106" height="106"/>
@@ -175,6 +178,9 @@
                             <exclude reference="PKq-q2-c3N"/>
                         </mask>
                     </variation>
+                    <connections>
+                        <action selector="healthTips:" destination="-1" eventType="touchUpInside" id="vNO-Rp-sXd"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNS-dT-rgh">
                     <rect key="frame" x="176" y="352" width="106" height="106"/>

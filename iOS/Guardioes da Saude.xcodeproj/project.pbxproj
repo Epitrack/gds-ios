@@ -29,6 +29,20 @@
 		520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */; };
 		520158FA1BE3CD9D00982856 /* DetailMapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */; };
 		522360BF1BE9176D006D0598 /* DetailMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 522360BE1BE9176D006D0598 /* DetailMap.m */; };
+		524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C141B1BEBC697003A6C2D /* NoticeViewController.m */; };
+		524C141E1BEBC697003A6C2D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C141C1BEBC697003A6C2D /* NoticeViewController.xib */; };
+		524C14221BEBCEE6003A6C2D /* HealthTipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C14201BEBCEE6003A6C2D /* HealthTipsViewController.m */; };
+		524C14231BEBCEE6003A6C2D /* HealthTipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C14211BEBCEE6003A6C2D /* HealthTipsViewController.xib */; };
+		524C14271BEBD89C003A6C2D /* EmergencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C14251BEBD89C003A6C2D /* EmergencyViewController.m */; };
+		524C14281BEBD89C003A6C2D /* EmergencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C14261BEBD89C003A6C2D /* EmergencyViewController.xib */; };
+		524C142C1BEBDC55003A6C2D /* VacineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C142A1BEBDC55003A6C2D /* VacineViewController.m */; };
+		524C142D1BEBDC55003A6C2D /* VacineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C142B1BEBDC55003A6C2D /* VacineViewController.xib */; };
+		524C14311BEBE043003A6C2D /* PharmacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C142F1BEBE043003A6C2D /* PharmacyViewController.m */; };
+		524C14321BEBE043003A6C2D /* PharmacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C14301BEBE043003A6C2D /* PharmacyViewController.xib */; };
+		524C14361BEBE533003A6C2D /* BasicCareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C14341BEBE533003A6C2D /* BasicCareViewController.m */; };
+		524C14371BEBE533003A6C2D /* BasicCareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C14351BEBE533003A6C2D /* BasicCareViewController.xib */; };
+		524C143B1BEBE67C003A6C2D /* PreventionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C14391BEBE67C003A6C2D /* PreventionViewController.m */; };
+		524C143C1BEBE67C003A6C2D /* PreventionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C143A1BEBE67C003A6C2D /* PreventionViewController.xib */; };
 		5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */; };
 		5250D7411BE29B27006E8A63 /* MapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */; };
 		5250D7441BE2ADD3006E8A63 /* SurveyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250D7431BE2ADD3006E8A63 /* SurveyMap.m */; };
@@ -313,6 +327,27 @@
 		520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMapHealthViewController.xib; sourceTree = "<group>"; };
 		522360BD1BE9176D006D0598 /* DetailMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailMap.h; path = "Guardioes da Saude/DetailMap.h"; sourceTree = "<group>"; };
 		522360BE1BE9176D006D0598 /* DetailMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailMap.m; path = "Guardioes da Saude/DetailMap.m"; sourceTree = "<group>"; };
+		524C141A1BEBC697003A6C2D /* NoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
+		524C141B1BEBC697003A6C2D /* NoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeViewController.m; sourceTree = "<group>"; };
+		524C141C1BEBC697003A6C2D /* NoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticeViewController.xib; sourceTree = "<group>"; };
+		524C141F1BEBCEE6003A6C2D /* HealthTipsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthTipsViewController.h; sourceTree = "<group>"; };
+		524C14201BEBCEE6003A6C2D /* HealthTipsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthTipsViewController.m; sourceTree = "<group>"; };
+		524C14211BEBCEE6003A6C2D /* HealthTipsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HealthTipsViewController.xib; sourceTree = "<group>"; };
+		524C14241BEBD89C003A6C2D /* EmergencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmergencyViewController.h; sourceTree = "<group>"; };
+		524C14251BEBD89C003A6C2D /* EmergencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmergencyViewController.m; sourceTree = "<group>"; };
+		524C14261BEBD89C003A6C2D /* EmergencyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmergencyViewController.xib; sourceTree = "<group>"; };
+		524C14291BEBDC55003A6C2D /* VacineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VacineViewController.h; sourceTree = "<group>"; };
+		524C142A1BEBDC55003A6C2D /* VacineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VacineViewController.m; sourceTree = "<group>"; };
+		524C142B1BEBDC55003A6C2D /* VacineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VacineViewController.xib; sourceTree = "<group>"; };
+		524C142E1BEBE043003A6C2D /* PharmacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PharmacyViewController.h; sourceTree = "<group>"; };
+		524C142F1BEBE043003A6C2D /* PharmacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PharmacyViewController.m; sourceTree = "<group>"; };
+		524C14301BEBE043003A6C2D /* PharmacyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PharmacyViewController.xib; sourceTree = "<group>"; };
+		524C14331BEBE533003A6C2D /* BasicCareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicCareViewController.h; sourceTree = "<group>"; };
+		524C14341BEBE533003A6C2D /* BasicCareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicCareViewController.m; sourceTree = "<group>"; };
+		524C14351BEBE533003A6C2D /* BasicCareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCareViewController.xib; sourceTree = "<group>"; };
+		524C14381BEBE67C003A6C2D /* PreventionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreventionViewController.h; sourceTree = "<group>"; };
+		524C14391BEBE67C003A6C2D /* PreventionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreventionViewController.m; sourceTree = "<group>"; };
+		524C143A1BEBE67C003A6C2D /* PreventionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreventionViewController.xib; sourceTree = "<group>"; };
 		5250D73D1BE29B27006E8A63 /* MapHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapHealthViewController.h; sourceTree = "<group>"; };
 		5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapHealthViewController.m; sourceTree = "<group>"; };
 		5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapHealthViewController.xib; sourceTree = "<group>"; };
@@ -638,10 +673,31 @@
 				5250D73D1BE29B27006E8A63 /* MapHealthViewController.h */,
 				5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */,
 				5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */,
+				524C141A1BEBC697003A6C2D /* NoticeViewController.h */,
+				524C141B1BEBC697003A6C2D /* NoticeViewController.m */,
+				524C141C1BEBC697003A6C2D /* NoticeViewController.xib */,
+				524C141F1BEBCEE6003A6C2D /* HealthTipsViewController.h */,
+				524C14201BEBCEE6003A6C2D /* HealthTipsViewController.m */,
+				524C14211BEBCEE6003A6C2D /* HealthTipsViewController.xib */,
+				524C142E1BEBE043003A6C2D /* PharmacyViewController.h */,
+				524C142F1BEBE043003A6C2D /* PharmacyViewController.m */,
+				524C14301BEBE043003A6C2D /* PharmacyViewController.xib */,
+				524C14331BEBE533003A6C2D /* BasicCareViewController.h */,
+				524C14341BEBE533003A6C2D /* BasicCareViewController.m */,
+				524C14351BEBE533003A6C2D /* BasicCareViewController.xib */,
+				524C14381BEBE67C003A6C2D /* PreventionViewController.h */,
+				524C14391BEBE67C003A6C2D /* PreventionViewController.m */,
+				524C143A1BEBE67C003A6C2D /* PreventionViewController.xib */,
 				257315BE1BCEF07900FDB102 /* HomeViewController.m */,
 				25A19BE31BC5913100F08FA9 /* LoginViewController.h */,
 				25A19BE41BC5913100F08FA9 /* LoginViewController.m */,
 				25F3B2371BDC8C540014BC30 /* HomeViewController.xib */,
+				524C14241BEBD89C003A6C2D /* EmergencyViewController.h */,
+				524C14251BEBD89C003A6C2D /* EmergencyViewController.m */,
+				524C14261BEBD89C003A6C2D /* EmergencyViewController.xib */,
+				524C14291BEBDC55003A6C2D /* VacineViewController.h */,
+				524C142A1BEBDC55003A6C2D /* VacineViewController.m */,
+				524C142B1BEBDC55003A6C2D /* VacineViewController.xib */,
 				25A19BD51BC46CE800F08FA9 /* TutorialViewController.h */,
 				25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */,
 			);
@@ -1091,6 +1147,7 @@
 				52E7279F1BEA93B800B46945 /* icon_pin_urgency@3x.png in Resources */,
 				52E727E11BEA93B800B46945 /* img_profile11@3x.png in Resources */,
 				52E727131BEA93B800B46945 /* icon_tips_vaccines@2x.png in Resources */,
+				524C142D1BEBDC55003A6C2D /* VacineViewController.xib in Resources */,
 				52E727781BEA93B800B46945 /* icon_home@3x.png in Resources */,
 				52E727791BEA93B800B46945 /* icon_info_blue.png in Resources */,
 				25630CF71BDF96F90047FF07 /* ListSymptomsViewController.xib in Resources */,
@@ -1146,6 +1203,7 @@
 				52E7271E1BEA93B800B46945 /* button_default_white@3x.png in Resources */,
 				52E727191BEA93B800B46945 /* icon_check_survey.png in Resources */,
 				52E727E71BEA93B800B46945 /* input_floatbox_login_email@3x.png in Resources */,
+				524C141E1BEBC697003A6C2D /* NoticeViewController.xib in Resources */,
 				52E727BE1BEA93B800B46945 /* img_main_menu.png in Resources */,
 				52E7278D1BEA93B800B46945 /* icon_logout@3x.png in Resources */,
 				52E7278E1BEA93B800B46945 /* icon_mail.png in Resources */,
@@ -1154,6 +1212,7 @@
 				52E7274A1BEA93B800B46945 /* button_twitter@2x.png in Resources */,
 				52E727B71BEA93B800B46945 /* icon_tutorial@3x.png in Resources */,
 				52E727EA1BEA93B800B46945 /* input_floatbox_register_email@3x.png in Resources */,
+				524C14231BEBCEE6003A6C2D /* HealthTipsViewController.xib in Resources */,
 				52E7272E1BEA93B800B46945 /* button_splash.png in Resources */,
 				52E7276B1BEA93B800B46945 /* icon_dicasdesaude@2x.png in Resources */,
 				52E727581BEA93B800B46945 /* icon_bad.png in Resources */,
@@ -1167,6 +1226,7 @@
 				52E727CB1BEA93B800B46945 /* img_profile04@2x.png in Resources */,
 				52E727D01BEA93B800B46945 /* img_profile06.png in Resources */,
 				52E727161BEA93B800B46945 /* img_card@2x.png in Resources */,
+				524C143C1BEBE67C003A6C2D /* PreventionViewController.xib in Resources */,
 				52E727BD1BEA93B800B46945 /* icon_well@3x.png in Resources */,
 				52E727651BEA93B800B46945 /* icon_config@2x.png in Resources */,
 				52E727E81BEA93B800B46945 /* input_floatbox_register_email.png in Resources */,
@@ -1243,6 +1303,7 @@
 				52E727061BEA93B800B46945 /* icon_tips_pharmacies.png in Resources */,
 				52E7272C1BEA93B800B46945 /* icon_menu@2x.png in Resources */,
 				52E727251BEA93B800B46945 /* BG_blur_tutorial.png in Resources */,
+				524C14371BEBE533003A6C2D /* BasicCareViewController.xib in Resources */,
 				52E727B11BEA93B800B46945 /* icon_tutorial02@2x.png in Resources */,
 				52E727081BEA93B800B46945 /* icon_tips_pharmacies@3x.png in Resources */,
 				52E727031BEA93B800B46945 /* icon_tips_basiccares.png in Resources */,
@@ -1256,11 +1317,13 @@
 				52E727951BEA93B800B46945 /* icon_noticias@2x.png in Resources */,
 				52E727201BEA93B800B46945 /* BG_survey@2x.png in Resources */,
 				52E727571BEA93B800B46945 /* icon_about@3x.png in Resources */,
+				524C14281BEBD89C003A6C2D /* EmergencyViewController.xib in Resources */,
 				52E727741BEA93B800B46945 /* icon_help_n_faq@2x.png in Resources */,
 				52E727471BEA93B800B46945 /* button_register@2x.png in Resources */,
 				52E727A41BEA93B800B46945 /* icon_profile@2x.png in Resources */,
 				52E727351BEA93B800B46945 /* BG_light@2x.png in Resources */,
 				5250D7411BE29B27006E8A63 /* MapHealthViewController.xib in Resources */,
+				524C14321BEBE043003A6C2D /* PharmacyViewController.xib in Resources */,
 				52E727501BEA93B800B46945 /* fab_location@2x.png in Resources */,
 				52E727C11BEA93B800B46945 /* img_profile01.png in Resources */,
 				52E727461BEA93B800B46945 /* button_register.png in Resources */,
@@ -1337,10 +1400,16 @@
 			files = (
 				258F14E31BCEE3CC00CE86B7 /* User.m in Sources */,
 				5250D7441BE2ADD3006E8A63 /* SurveyMap.m in Sources */,
+				524C14221BEBCEE6003A6C2D /* HealthTipsViewController.m in Sources */,
+				524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */,
+				524C14361BEBE533003A6C2D /* BasicCareViewController.m in Sources */,
 				2548B9E91BDEB3C80004E00F /* ThankYouForParticipatingViewController.m in Sources */,
 				25630CF61BDF96F90047FF07 /* ListSymptomsViewController.m in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				2548B9E41BDEA8750004E00F /* SelectStateViewController.m in Sources */,
+				524C142C1BEBDC55003A6C2D /* VacineViewController.m in Sources */,
+				524C143B1BEBE67C003A6C2D /* PreventionViewController.m in Sources */,
+				524C14271BEBD89C003A6C2D /* EmergencyViewController.m in Sources */,
 				256DBA941BD0399D0029A569 /* DTO.m in Sources */,
 				528C8B041BB82630003CFC91 /* ViewController.m in Sources */,
 				5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */,
@@ -1354,6 +1423,7 @@
 				528C8AFE1BB82630003CFC91 /* main.m in Sources */,
 				251AD8F81BD553D3000C1B84 /* Facade.m in Sources */,
 				522360BF1BE9176D006D0598 /* DetailMap.m in Sources */,
+				524C14311BEBE043003A6C2D /* PharmacyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

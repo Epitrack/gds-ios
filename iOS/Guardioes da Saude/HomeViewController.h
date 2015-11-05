@@ -14,5 +14,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgUser;
 - (IBAction)btnJoinNow:(id)sender;
 - (IBAction)btnMapHealth:(id)sender;
+- (IBAction)notice:(id)sender;
+- (IBAction)healthTips:(id)sender;
 
 @end
