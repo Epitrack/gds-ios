@@ -51,8 +51,8 @@ public class ProfileFragment extends BaseFragment implements AdapterView.OnItemC
         if (profile == Profile.PROFILE) {
             navigateTo(ProfileActivity.class);
 
-        } else if (profile == Profile.INTEREST) {
+        } /*else if (profile == Profile.INTEREST) {
             navigateTo(InterestActivity.class);
-        }
+        }*/
     }
 }

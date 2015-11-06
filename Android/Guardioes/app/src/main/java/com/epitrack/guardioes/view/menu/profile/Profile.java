@@ -7,8 +7,8 @@ import com.epitrack.guardioes.R;
  */
 public enum Profile {
 
-    PROFILE     (1, R.string.edit_profile, R.string.message_profile),
-    INTEREST    (2, R.string.interest, R.string.message_interest);
+    PROFILE     (1, R.string.edit_profile, R.string.message_profile);
+    //INTEREST    (2, R.string.interest, R.string.message_interest);
 
     private final int id;
     private final int name;
