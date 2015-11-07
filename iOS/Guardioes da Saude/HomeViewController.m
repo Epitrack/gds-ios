@@ -13,6 +13,8 @@
 #import "MapHealthViewController.h"
 #import "NoticeViewController.h"
 #import "HealthTipsViewController.h"
+#import "SWRevealViewController.h"
+#import "TutorialViewController.h"
 
 @interface HomeViewController ()
 
@@ -26,13 +28,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    user = [User getInstance];
+
+    if(user.user_token == nil) {
+        TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
+        [self.navigationController pushViewController:tutorialViewController animated:YES];
+    }
+
     self.navigationItem.hidesBackButton = YES;
-    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc]
-            initWithTitle:@"Menu"
-                    style:UIBarButtonItemStyleBordered
-                   target:self
-                   action:@selector(showMenu:)];
-    self.navigationItem.leftBarButtonItem = flipButton;
+    
+    SWRevealViewController *revealController = [self revealViewController];
+    [revealController panGestureRecognizer];
+    [revealController tapGestureRecognizer];
+
+    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+                                                                         style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
+    self.navigationItem.leftBarButtonItem = revealButtonItem;
 
     // Do any additional setup after loading the view from its nib.
     locationManager = [[CLLocationManager alloc] init];
@@ -44,8 +55,7 @@
     [locationManager startUpdatingLocation];
     
     AFHTTPRequestOperationManager *manager;
-    user = [User getInstance];
-    
+
     manager = [AFHTTPRequestOperationManager manager];
     [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
     [manager.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];

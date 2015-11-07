@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Foco_Std_Rg.ttf">
+            <string>Foco-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EnterViewController">
+            <connections>
+                <outlet property="txtEmail" destination="x1M-kQ-Cl5" id="l8H-c0-yQC"/>
+                <outlet property="txtPassword" destination="lEZ-rN-3BF" id="rC3-vL-HNP"/>
+                <outlet property="view" destination="CW4-Kl-UeC" id="vEi-zw-aEE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="CW4-Kl-UeC">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_blur_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vnd-r1-FUg">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <animations/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="XGt-Ju-gGZ">
+                    <rect key="frame" x="31" y="60" width="259" height="100"/>
+                    <animations/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZD-9G-n14">
+                    <rect key="frame" x="184" y="359" width="106" height="40"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="106" id="cKN-5x-dEd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
+                    <state key="normal" title="Entrar" backgroundImage="button_enter.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnEnter:" destination="-1" eventType="touchUpInside" id="U1l-YW-sQE"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1M-kQ-Cl5">
+                    <rect key="frame" x="31" y="177" width="259" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lEZ-rN-3BF">
+                    <rect key="frame" x="31" y="215" width="259" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                </textField>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Vnd-r1-FUg" firstAttribute="centerX" secondItem="CW4-Kl-UeC" secondAttribute="centerX" id="1NK-w1-BrD"/>
+                <constraint firstItem="lEZ-rN-3BF" firstAttribute="top" secondItem="x1M-kQ-Cl5" secondAttribute="bottom" constant="8" id="3Fz-0F-IMA"/>
+                <constraint firstItem="Vnd-r1-FUg" firstAttribute="centerY" secondItem="CW4-Kl-UeC" secondAttribute="centerY" id="4dq-IS-Sxc"/>
+                <constraint firstItem="lEZ-rN-3BF" firstAttribute="leading" secondItem="CW4-Kl-UeC" secondAttribute="leading" constant="31" id="5bw-p1-7S8"/>
+                <constraint firstItem="XGt-Ju-gGZ" firstAttribute="trailing" secondItem="GZD-9G-n14" secondAttribute="trailing" id="C3c-ZD-rRE"/>
+                <constraint firstItem="Vnd-r1-FUg" firstAttribute="height" secondItem="CW4-Kl-UeC" secondAttribute="height" id="GgP-RH-kas"/>
+                <constraint firstAttribute="trailing" secondItem="x1M-kQ-Cl5" secondAttribute="trailing" constant="30" id="Ug0-iq-pfY"/>
+                <constraint firstAttribute="bottom" secondItem="GZD-9G-n14" secondAttribute="bottom" constant="169" id="WMu-Ny-U1i"/>
+                <constraint firstItem="XGt-Ju-gGZ" firstAttribute="leading" secondItem="lEZ-rN-3BF" secondAttribute="leading" id="Ywb-Ke-WJF"/>
+                <constraint firstAttribute="trailing" secondItem="lEZ-rN-3BF" secondAttribute="trailing" constant="30" id="bBg-TL-61O"/>
+                <constraint firstItem="XGt-Ju-gGZ" firstAttribute="leading" secondItem="x1M-kQ-Cl5" secondAttribute="leading" id="brS-Ik-aRV"/>
+                <constraint firstItem="XGt-Ju-gGZ" firstAttribute="leading" secondItem="CW4-Kl-UeC" secondAttribute="leading" constant="31" id="cuH-vz-4m1"/>
+                <constraint firstItem="XGt-Ju-gGZ" firstAttribute="centerX" secondItem="CW4-Kl-UeC" secondAttribute="centerX" id="ehv-ci-H30"/>
+                <constraint firstAttribute="trailing" secondItem="XGt-Ju-gGZ" secondAttribute="trailing" constant="30" id="mb1-uY-d0x"/>
+                <constraint firstItem="x1M-kQ-Cl5" firstAttribute="leading" secondItem="CW4-Kl-UeC" secondAttribute="leading" constant="31" id="osk-IN-ZvO"/>
+                <constraint firstAttribute="trailing" secondItem="lEZ-rN-3BF" secondAttribute="trailing" constant="30" id="qA0-Ge-ZHA"/>
+                <constraint firstItem="Vnd-r1-FUg" firstAttribute="width" secondItem="CW4-Kl-UeC" secondAttribute="width" id="qT7-ya-EV5"/>
+                <constraint firstItem="x1M-kQ-Cl5" firstAttribute="top" secondItem="XGt-Ju-gGZ" secondAttribute="bottom" constant="17" id="tIm-Ah-Cgp"/>
+                <constraint firstItem="XGt-Ju-gGZ" firstAttribute="top" secondItem="CW4-Kl-UeC" secondAttribute="top" constant="60" id="v83-q5-lE5"/>
+                <constraint firstAttribute="trailing" secondItem="x1M-kQ-Cl5" secondAttribute="trailing" constant="30" id="yY8-YN-Lp2"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BG_blur_tutorial.png" width="320" height="568"/>
+        <image name="button_enter.png" width="105" height="40"/>
+        <image name="icon_logo_horizontal.png" width="219" height="100"/>
+    </resources>
+</document>

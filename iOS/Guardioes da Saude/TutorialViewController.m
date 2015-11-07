@@ -7,6 +7,7 @@
 //
 
 #import "TutorialViewController.h"
+#import "SelectTypeLoginViewController.h"
 
 @interface TutorialViewController ()
 @property (strong, nonatomic) IBOutlet UIPageControl *pageController;
@@ -21,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.hidesBackButton = YES;
     self.indexTutorial = 0;
     self.arrImg = @[@"icon_logo_tutorial.png", @"icon_tutorial01", @"icon_tutorial02", @"icon_tutorial03"];
     
@@ -35,6 +37,11 @@
     
     [self.imgBgTutorial addGestureRecognizer:leftSwipe];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
 }
 
 - (void)didSwipe: (UISwipeGestureRecognizer *) sender {
@@ -117,5 +124,10 @@
     NSInteger index = self.pageController.currentPage;
     
     self.imgTutorial.image = [UIImage imageNamed:self.arrImg[index]];
+}
+- (IBAction)btnEnter:(id)sender {
+    
+    SelectTypeLoginViewController *selectTypeLoginViewController = [[SelectTypeLoginViewController alloc] init];
+    [self.navigationController pushViewController:selectTypeLoginViewController animated:YES];
 }
 @end

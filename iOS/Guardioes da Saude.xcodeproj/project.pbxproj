@@ -24,10 +24,14 @@
 		258F14E31BCEE3CC00CE86B7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F14E11BCEE3CC00CE86B7 /* User.m */; };
 		25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */; };
 		25A19BDD1BC528C700F08FA9 /* Requester.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A19BDC1BC528C700F08FA9 /* Requester.m */; };
-		25A19BE51BC5913100F08FA9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A19BE41BC5913100F08FA9 /* LoginViewController.m */; };
 		25F3B2381BDC8C540014BC30 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F3B2371BDC8C540014BC30 /* HomeViewController.xib */; };
 		520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */; };
 		520158FA1BE3CD9D00982856 /* DetailMapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */; };
+		520CD0D51BED3DB800F24B45 /* SelectTypeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520CD0D31BED3DB800F24B45 /* SelectTypeLoginViewController.m */; };
+		520CD0D61BED3DB800F24B45 /* SelectTypeLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CD0D41BED3DB800F24B45 /* SelectTypeLoginViewController.xib */; };
+		520CD0E21BED436700F24B45 /* EnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520CD0E01BED436700F24B45 /* EnterViewController.m */; };
+		520CD0E31BED436700F24B45 /* EnterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CD0E11BED436700F24B45 /* EnterViewController.xib */; };
+		520CD0E51BED47EF00F24B45 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CD0E41BED47EF00F24B45 /* TutorialViewController.xib */; };
 		522360BF1BE9176D006D0598 /* DetailMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 522360BE1BE9176D006D0598 /* DetailMap.m */; };
 		524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C141B1BEBC697003A6C2D /* NoticeViewController.m */; };
 		524C141E1BEBC697003A6C2D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C141C1BEBC697003A6C2D /* NoticeViewController.xib */; };
@@ -43,9 +47,16 @@
 		524C14371BEBE533003A6C2D /* BasicCareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C14351BEBE533003A6C2D /* BasicCareViewController.xib */; };
 		524C143B1BEBE67C003A6C2D /* PreventionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C14391BEBE67C003A6C2D /* PreventionViewController.m */; };
 		524C143C1BEBE67C003A6C2D /* PreventionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C143A1BEBE67C003A6C2D /* PreventionViewController.xib */; };
+		524C14461BECE363003A6C2D /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C14441BECE363003A6C2D /* SWRevealViewController.m */; };
 		5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */; };
 		5250D7411BE29B27006E8A63 /* MapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */; };
 		5250D7441BE2ADD3006E8A63 /* SurveyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250D7431BE2ADD3006E8A63 /* SurveyMap.m */; };
+		525A33221BECF3BA00B62E33 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525A33201BECF3BA00B62E33 /* RearViewController.m */; };
+		525A33231BECF3BA00B62E33 /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A33211BECF3BA00B62E33 /* RearViewController.xib */; };
+		525A33261BECF5AC00B62E33 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 525A33241BECF5AC00B62E33 /* reveal-icon.png */; };
+		525A33271BECF5AC00B62E33 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525A33251BECF5AC00B62E33 /* reveal-icon@2x.png */; };
+		525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525A33291BED1F8200B62E33 /* MenuViewController.m */; };
+		525A332C1BED1F8200B62E33 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A332A1BED1F8200B62E33 /* MenuViewController.xib */; };
 		528C8AFE1BB82630003CFC91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 528C8AFD1BB82630003CFC91 /* main.m */; };
 		528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 528C8B001BB82630003CFC91 /* AppDelegate.m */; };
 		528C8B041BB82630003CFC91 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528C8B031BB82630003CFC91 /* ViewController.m */; };
@@ -319,12 +330,18 @@
 		25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		25A19BDC1BC528C700F08FA9 /* Requester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requester.m; sourceTree = "<group>"; };
 		25A19BDE1BC5292000F08FA9 /* Requester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Requester.h; sourceTree = "<group>"; };
-		25A19BE31BC5913100F08FA9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		25A19BE41BC5913100F08FA9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		25F3B2371BDC8C540014BC30 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		520158F61BE3CD9D00982856 /* DetailMapHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMapHealthViewController.h; sourceTree = "<group>"; };
 		520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMapHealthViewController.m; sourceTree = "<group>"; };
 		520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMapHealthViewController.xib; sourceTree = "<group>"; };
+		520CD0D21BED3DB800F24B45 /* SelectTypeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeLoginViewController.h; sourceTree = "<group>"; };
+		520CD0D31BED3DB800F24B45 /* SelectTypeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTypeLoginViewController.m; sourceTree = "<group>"; };
+		520CD0D41BED3DB800F24B45 /* SelectTypeLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTypeLoginViewController.xib; sourceTree = "<group>"; };
+		520CD0DF1BED436700F24B45 /* EnterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterViewController.h; sourceTree = "<group>"; };
+		520CD0E01BED436700F24B45 /* EnterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterViewController.m; sourceTree = "<group>"; };
+		520CD0E11BED436700F24B45 /* EnterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterViewController.xib; sourceTree = "<group>"; };
+		520CD0E41BED47EF00F24B45 /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
+		5221A8271BED3337006659E2 /* SwitchLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchLoginViewController.h; sourceTree = "<group>"; };
 		522360BD1BE9176D006D0598 /* DetailMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailMap.h; path = "Guardioes da Saude/DetailMap.h"; sourceTree = "<group>"; };
 		522360BE1BE9176D006D0598 /* DetailMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailMap.m; path = "Guardioes da Saude/DetailMap.m"; sourceTree = "<group>"; };
 		524C141A1BEBC697003A6C2D /* NoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
@@ -348,11 +365,21 @@
 		524C14381BEBE67C003A6C2D /* PreventionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreventionViewController.h; sourceTree = "<group>"; };
 		524C14391BEBE67C003A6C2D /* PreventionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreventionViewController.m; sourceTree = "<group>"; };
 		524C143A1BEBE67C003A6C2D /* PreventionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreventionViewController.xib; sourceTree = "<group>"; };
+		524C14431BECE363003A6C2D /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		524C14441BECE363003A6C2D /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		5250D73D1BE29B27006E8A63 /* MapHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapHealthViewController.h; sourceTree = "<group>"; };
 		5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapHealthViewController.m; sourceTree = "<group>"; };
 		5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapHealthViewController.xib; sourceTree = "<group>"; };
 		5250D7421BE2ADD3006E8A63 /* SurveyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyMap.h; sourceTree = "<group>"; };
 		5250D7431BE2ADD3006E8A63 /* SurveyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyMap.m; sourceTree = "<group>"; };
+		525A331F1BECF3BA00B62E33 /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
+		525A33201BECF3BA00B62E33 /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
+		525A33211BECF3BA00B62E33 /* RearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearViewController.xib; sourceTree = "<group>"; };
+		525A33241BECF5AC00B62E33 /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon.png"; sourceTree = "<group>"; };
+		525A33251BECF5AC00B62E33 /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reveal-icon@2x.png"; sourceTree = "<group>"; };
+		525A33281BED1F8200B62E33 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		525A33291BED1F8200B62E33 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		525A332A1BED1F8200B62E33 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		528C8AF91BB82630003CFC91 /* Guardioes da Saude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardioes da Saude.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		528C8AFD1BB82630003CFC91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		528C8AFF1BB82630003CFC91 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -654,9 +681,49 @@
 		25A19BD81BC4B05700F08FA9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5221A82C1BED34E6006659E2 /* Wellcome */,
+				5221A8241BED3172006659E2 /* Home */,
+				5221A8231BED314E006659E2 /* Notice */,
+				5221A8221BED3126006659E2 /* Tips */,
+				5221A8211BED30F1006659E2 /* Survey */,
+				5221A8201BED30CC006659E2 /* MapHealth */,
+				5221A81F1BED30BE006659E2 /* Diary */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		25A19BD91BC4B24500F08FA9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				25A19BDC1BC528C700F08FA9 /* Requester.m */,
+				25A19BDE1BC5292000F08FA9 /* Requester.h */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		5221A81F1BED30BE006659E2 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Diary;
+			sourceTree = "<group>";
+		};
+		5221A8201BED30CC006659E2 /* MapHealth */ = {
+			isa = PBXGroup;
+			children = (
 				520158F61BE3CD9D00982856 /* DetailMapHealthViewController.h */,
 				520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */,
 				520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */,
+				5250D73D1BE29B27006E8A63 /* MapHealthViewController.h */,
+				5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */,
+				5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */,
+			);
+			name = MapHealth;
+			sourceTree = "<group>";
+		};
+		5221A8211BED30F1006659E2 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
 				25630CF31BDF96F90047FF07 /* ListSymptomsViewController.h */,
 				25630CF41BDF96F90047FF07 /* ListSymptomsViewController.m */,
 				25630CF51BDF96F90047FF07 /* ListSymptomsViewController.xib */,
@@ -666,16 +733,16 @@
 				2548B9E61BDEB3C80004E00F /* ThankYouForParticipatingViewController.h */,
 				2548B9E71BDEB3C80004E00F /* ThankYouForParticipatingViewController.m */,
 				2548B9E81BDEB3C80004E00F /* ThankYouForParticipatingViewController.xib */,
-				257315BD1BCEF07900FDB102 /* HomeViewController.h */,
 				2548B9DC1BDE76380004E00F /* SelectParticipantViewController.h */,
 				2548B9DD1BDE76380004E00F /* SelectParticipantViewController.m */,
 				2548B9DE1BDE76380004E00F /* SelectParticipantViewController.xib */,
-				5250D73D1BE29B27006E8A63 /* MapHealthViewController.h */,
-				5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */,
-				5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */,
-				524C141A1BEBC697003A6C2D /* NoticeViewController.h */,
-				524C141B1BEBC697003A6C2D /* NoticeViewController.m */,
-				524C141C1BEBC697003A6C2D /* NoticeViewController.xib */,
+			);
+			name = Survey;
+			sourceTree = "<group>";
+		};
+		5221A8221BED3126006659E2 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
 				524C141F1BEBCEE6003A6C2D /* HealthTipsViewController.h */,
 				524C14201BEBCEE6003A6C2D /* HealthTipsViewController.m */,
 				524C14211BEBCEE6003A6C2D /* HealthTipsViewController.xib */,
@@ -688,29 +755,66 @@
 				524C14381BEBE67C003A6C2D /* PreventionViewController.h */,
 				524C14391BEBE67C003A6C2D /* PreventionViewController.m */,
 				524C143A1BEBE67C003A6C2D /* PreventionViewController.xib */,
-				257315BE1BCEF07900FDB102 /* HomeViewController.m */,
-				25A19BE31BC5913100F08FA9 /* LoginViewController.h */,
-				25A19BE41BC5913100F08FA9 /* LoginViewController.m */,
-				25F3B2371BDC8C540014BC30 /* HomeViewController.xib */,
 				524C14241BEBD89C003A6C2D /* EmergencyViewController.h */,
 				524C14251BEBD89C003A6C2D /* EmergencyViewController.m */,
 				524C14261BEBD89C003A6C2D /* EmergencyViewController.xib */,
 				524C14291BEBDC55003A6C2D /* VacineViewController.h */,
 				524C142A1BEBDC55003A6C2D /* VacineViewController.m */,
 				524C142B1BEBDC55003A6C2D /* VacineViewController.xib */,
-				25A19BD51BC46CE800F08FA9 /* TutorialViewController.h */,
-				25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */,
 			);
-			name = View;
+			name = Tips;
 			sourceTree = "<group>";
 		};
-		25A19BD91BC4B24500F08FA9 /* Request */ = {
+		5221A8231BED314E006659E2 /* Notice */ = {
 			isa = PBXGroup;
 			children = (
-				25A19BDC1BC528C700F08FA9 /* Requester.m */,
-				25A19BDE1BC5292000F08FA9 /* Requester.h */,
+				524C141A1BEBC697003A6C2D /* NoticeViewController.h */,
+				524C141B1BEBC697003A6C2D /* NoticeViewController.m */,
+				524C141C1BEBC697003A6C2D /* NoticeViewController.xib */,
 			);
-			name = Request;
+			name = Notice;
+			sourceTree = "<group>";
+		};
+		5221A8241BED3172006659E2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				525A331F1BECF3BA00B62E33 /* RearViewController.h */,
+				525A33201BECF3BA00B62E33 /* RearViewController.m */,
+				525A33211BECF3BA00B62E33 /* RearViewController.xib */,
+				525A33281BED1F8200B62E33 /* MenuViewController.h */,
+				525A33291BED1F8200B62E33 /* MenuViewController.m */,
+				525A332A1BED1F8200B62E33 /* MenuViewController.xib */,
+				257315BD1BCEF07900FDB102 /* HomeViewController.h */,
+				257315BE1BCEF07900FDB102 /* HomeViewController.m */,
+				25F3B2371BDC8C540014BC30 /* HomeViewController.xib */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		5221A82C1BED34E6006659E2 /* Wellcome */ = {
+			isa = PBXGroup;
+			children = (
+				520CD0E41BED47EF00F24B45 /* TutorialViewController.xib */,
+				520CD0DF1BED436700F24B45 /* EnterViewController.h */,
+				520CD0E01BED436700F24B45 /* EnterViewController.m */,
+				520CD0E11BED436700F24B45 /* EnterViewController.xib */,
+				520CD0D21BED3DB800F24B45 /* SelectTypeLoginViewController.h */,
+				520CD0D31BED3DB800F24B45 /* SelectTypeLoginViewController.m */,
+				520CD0D41BED3DB800F24B45 /* SelectTypeLoginViewController.xib */,
+				25A19BD51BC46CE800F08FA9 /* TutorialViewController.h */,
+				25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */,
+				5221A8271BED3337006659E2 /* SwitchLoginViewController.h */,
+			);
+			name = Wellcome;
+			sourceTree = "<group>";
+		};
+		524C14401BECE13E003A6C2D /* SWReval */ = {
+			isa = PBXGroup;
+			children = (
+				524C14431BECE363003A6C2D /* SWRevealViewController.h */,
+				524C14441BECE363003A6C2D /* SWRevealViewController.m */,
+			);
+			name = SWReval;
 			sourceTree = "<group>";
 		};
 		528C8AF01BB82630003CFC91 = {
@@ -734,6 +838,7 @@
 		528C8AFB1BB82630003CFC91 /* Guardioes da Saude */ = {
 			isa = PBXGroup;
 			children = (
+				524C14401BECE13E003A6C2D /* SWReval */,
 				251AD8F91BD553DE000C1B84 /* Facade */,
 				256DBA951BD039AE0029A569 /* Utility */,
 				258F14DD1BCED4A800CE86B7 /* Model */,
@@ -770,6 +875,8 @@
 				88FA9B3A1BC2EE5D00DD8506 /* icon_tips_pharmacies.png */,
 				88FA9B3B1BC2EE5D00DD8506 /* icon_tips_pharmacies@2x.png */,
 				88FA9B3C1BC2EE5D00DD8506 /* icon_tips_pharmacies@3x.png */,
+				525A33241BECF5AC00B62E33 /* reveal-icon.png */,
+				525A33251BECF5AC00B62E33 /* reveal-icon@2x.png */,
 				88FA9B3D1BC2EE5D00DD8506 /* icon_tips_phones.png */,
 				88FA9B3E1BC2EE5D00DD8506 /* icon_tips_phones@2x.png */,
 				88FA9B3F1BC2EE5D00DD8506 /* icon_tips_phones@3x.png */,
@@ -1133,6 +1240,7 @@
 				52E7271A1BEA93B800B46945 /* icon_check_survey@2x.png in Resources */,
 				52E727601BEA93B800B46945 /* icon_checkbok_true@3x.png in Resources */,
 				52E727041BEA93B800B46945 /* icon_tips_basiccares@2x.png in Resources */,
+				520CD0E51BED47EF00F24B45 /* TutorialViewController.xib in Resources */,
 				52E727BB1BEA93B800B46945 /* icon_well.png in Resources */,
 				52E7275B1BEA93B800B46945 /* icon_camera.png in Resources */,
 				52E7278A1BEA93B800B46945 /* icon_logo_tutorial@3x.png in Resources */,
@@ -1144,6 +1252,7 @@
 				52E727DD1BEA93B800B46945 /* img_profile10@2x.png in Resources */,
 				528C8B091BB82630003CFC91 /* Assets.xcassets in Resources */,
 				52E727A71BEA93B800B46945 /* icon_question@2x.png in Resources */,
+				525A33271BECF5AC00B62E33 /* reveal-icon@2x.png in Resources */,
 				52E7279F1BEA93B800B46945 /* icon_pin_urgency@3x.png in Resources */,
 				52E727E11BEA93B800B46945 /* img_profile11@3x.png in Resources */,
 				52E727131BEA93B800B46945 /* icon_tips_vaccines@2x.png in Resources */,
@@ -1201,6 +1310,7 @@
 				52E727D11BEA93B800B46945 /* img_profile06@2x.png in Resources */,
 				52E727121BEA93B800B46945 /* icon_tips_vaccines.png in Resources */,
 				52E7271E1BEA93B800B46945 /* button_default_white@3x.png in Resources */,
+				525A33261BECF5AC00B62E33 /* reveal-icon.png in Resources */,
 				52E727191BEA93B800B46945 /* icon_check_survey.png in Resources */,
 				52E727E71BEA93B800B46945 /* input_floatbox_login_email@3x.png in Resources */,
 				524C141E1BEBC697003A6C2D /* NoticeViewController.xib in Resources */,
@@ -1236,6 +1346,7 @@
 				52E727801BEA93B800B46945 /* icon_lock@2x.png in Resources */,
 				52E727BF1BEA93B800B46945 /* img_main_menu@2x.png in Resources */,
 				52E727A01BEA93B800B46945 /* icon_problem.png in Resources */,
+				520CD0D61BED3DB800F24B45 /* SelectTypeLoginViewController.xib in Resources */,
 				52E727511BEA93B800B46945 /* fab_location@3x.png in Resources */,
 				52E7270D1BEA93B800B46945 /* icon_tips_prevention@2x.png in Resources */,
 				52E727C81BEA93B800B46945 /* img_profile03@2x.png in Resources */,
@@ -1248,6 +1359,7 @@
 				52E727B61BEA93B800B46945 /* icon_tutorial@2x.png in Resources */,
 				52E727ED1BEA93B800B46945 /* modal_ui_alert@3x.png in Resources */,
 				52E727361BEA93B800B46945 /* BG_light@3x.png in Resources */,
+				525A33231BECF3BA00B62E33 /* RearViewController.xib in Resources */,
 				52E7278F1BEA93B800B46945 /* icon_mail@2x.png in Resources */,
 				52E727A51BEA93B800B46945 /* icon_profile@3x.png in Resources */,
 				52E7270B1BEA93B800B46945 /* icon_tips_phones@3x.png in Resources */,
@@ -1304,6 +1416,7 @@
 				52E7272C1BEA93B800B46945 /* icon_menu@2x.png in Resources */,
 				52E727251BEA93B800B46945 /* BG_blur_tutorial.png in Resources */,
 				524C14371BEBE533003A6C2D /* BasicCareViewController.xib in Resources */,
+				525A332C1BED1F8200B62E33 /* MenuViewController.xib in Resources */,
 				52E727B11BEA93B800B46945 /* icon_tutorial02@2x.png in Resources */,
 				52E727081BEA93B800B46945 /* icon_tips_pharmacies@3x.png in Resources */,
 				52E727031BEA93B800B46945 /* icon_tips_basiccares.png in Resources */,
@@ -1325,6 +1438,7 @@
 				5250D7411BE29B27006E8A63 /* MapHealthViewController.xib in Resources */,
 				524C14321BEBE043003A6C2D /* PharmacyViewController.xib in Resources */,
 				52E727501BEA93B800B46945 /* fab_location@2x.png in Resources */,
+				520CD0E31BED436700F24B45 /* EnterViewController.xib in Resources */,
 				52E727C11BEA93B800B46945 /* img_profile01.png in Resources */,
 				52E727461BEA93B800B46945 /* button_register.png in Resources */,
 				52E7273F1BEA93B800B46945 /* button_enter@3x.png in Resources */,
@@ -1403,23 +1517,27 @@
 				524C14221BEBCEE6003A6C2D /* HealthTipsViewController.m in Sources */,
 				524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */,
 				524C14361BEBE533003A6C2D /* BasicCareViewController.m in Sources */,
+				524C14461BECE363003A6C2D /* SWRevealViewController.m in Sources */,
 				2548B9E91BDEB3C80004E00F /* ThankYouForParticipatingViewController.m in Sources */,
 				25630CF61BDF96F90047FF07 /* ListSymptomsViewController.m in Sources */,
+				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				2548B9E41BDEA8750004E00F /* SelectStateViewController.m in Sources */,
 				524C142C1BEBDC55003A6C2D /* VacineViewController.m in Sources */,
 				524C143B1BEBE67C003A6C2D /* PreventionViewController.m in Sources */,
+				520CD0E21BED436700F24B45 /* EnterViewController.m in Sources */,
+				525A33221BECF3BA00B62E33 /* RearViewController.m in Sources */,
 				524C14271BEBD89C003A6C2D /* EmergencyViewController.m in Sources */,
 				256DBA941BD0399D0029A569 /* DTO.m in Sources */,
 				528C8B041BB82630003CFC91 /* ViewController.m in Sources */,
 				5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */,
 				25A19BDD1BC528C700F08FA9 /* Requester.m in Sources */,
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
-				25A19BE51BC5913100F08FA9 /* LoginViewController.m in Sources */,
 				520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */,
 				528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */,
 				25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */,
 				25630CFA1BDFA2760047FF07 /* Symptom.m in Sources */,
+				520CD0D51BED3DB800F24B45 /* SelectTypeLoginViewController.m in Sources */,
 				528C8AFE1BB82630003CFC91 /* main.m in Sources */,
 				251AD8F81BD553D3000C1B84 /* Facade.m in Sources */,
 				522360BF1BE9176D006D0598 /* DetailMap.m in Sources */,

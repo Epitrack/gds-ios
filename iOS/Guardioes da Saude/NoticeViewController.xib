@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lKH-1s-FWh">
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="lKH-1s-FWh">
                     <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                     <animations/>
                     <textInputTraits key="textInputTraits"/>
@@ -34,10 +34,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <animations/>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0zV-AC-cil">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zV-AC-cil">
                     <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDP-zi-XmS">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pDP-zi-XmS">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
                             <animations/>
                             <constraints>
@@ -51,9 +51,9 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <visualEffectView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mnb-06-fBl">
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mnb-06-fBl">
                             <rect key="frame" x="0.0" y="179" width="320" height="91"/>
-                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="fSA-c0-mKm">
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fSA-c0-mKm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <animations/>
@@ -61,7 +61,7 @@
                             <animations/>
                             <blurEffect style="light"/>
                         </visualEffectView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Campanha de vacinação contra gripe começa em 4 de maio, diz ministro" translatesAutoresizingMaskIntoConstraints="NO" id="lfo-1M-uRy">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Campanha de vacinação contra gripe começa em 4 de maio, diz ministro" translatesAutoresizingMaskIntoConstraints="NO" id="lfo-1M-uRy">
                             <rect key="frame" x="8" y="179" width="304" height="64"/>
                             <animations/>
                             <constraints>
@@ -74,12 +74,12 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="x5J-X2-jZ8"/>
                                     <exclude reference="tKg-Dg-aEU"/>
+                                    <exclude reference="x5J-X2-jZ8"/>
                                 </mask>
                             </variation>
                         </textView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="saude.estadao.com.br | hoje" translatesAutoresizingMaskIntoConstraints="NO" id="2bA-Dd-jB9">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="saude.estadao.com.br | hoje" translatesAutoresizingMaskIntoConstraints="NO" id="2bA-Dd-jB9">
                             <rect key="frame" x="8" y="239" width="304" height="31"/>
                             <animations/>
                             <constraints>
@@ -93,18 +93,21 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="xR6-Sj-8SF"/>
                                     <exclude reference="6Ho-t1-Gze"/>
                                     <exclude reference="gTu-eD-hYd"/>
+                                    <exclude reference="xR6-Sj-8SF"/>
                                 </mask>
                             </variation>
                         </textView>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-5n-CiM">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mPn-5n-CiM">
                             <rect key="frame" x="0.0" y="270" width="320" height="234"/>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="234" id="FZ7-rX-MfK"/>
+                            </constraints>
                         </tableView>
-                        <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IQ2-34-z0i">
+                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IQ2-34-z0i">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <animations/>
                             <textInputTraits key="textInputTraits"/>
@@ -112,9 +115,12 @@
                     </subviews>
                     <animations/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="pDP-zi-XmS" secondAttribute="trailing" id="25R-LZ-Rkb"/>
+                        <constraint firstItem="IQ2-34-z0i" firstAttribute="top" secondItem="0zV-AC-cil" secondAttribute="top" id="6DI-mU-txR"/>
                         <constraint firstItem="Mnb-06-fBl" firstAttribute="bottom" secondItem="pDP-zi-XmS" secondAttribute="bottom" id="CuH-Ni-F34"/>
                         <constraint firstItem="Mnb-06-fBl" firstAttribute="top" secondItem="pDP-zi-XmS" secondAttribute="bottom" constant="-132" id="Gii-hT-k2O"/>
                         <constraint firstItem="Mnb-06-fBl" firstAttribute="top" secondItem="pDP-zi-XmS" secondAttribute="bottom" constant="8" symbolic="YES" id="HAc-2w-Crw"/>
+                        <constraint firstItem="mPn-5n-CiM" firstAttribute="leading" secondItem="Mnb-06-fBl" secondAttribute="leading" id="I0h-za-dF3"/>
                         <constraint firstItem="2bA-Dd-jB9" firstAttribute="bottom" secondItem="fSA-c0-mKm" secondAttribute="bottom" id="Im4-xj-Xsb"/>
                         <constraint firstItem="Mnb-06-fBl" firstAttribute="top" secondItem="pDP-zi-XmS" secondAttribute="bottom" constant="-89" id="J1t-OI-enT"/>
                         <constraint firstItem="lfo-1M-uRy" firstAttribute="top" secondItem="fSA-c0-mKm" secondAttribute="top" id="OVv-6e-fs9"/>
@@ -123,18 +129,21 @@
                         <constraint firstAttribute="width" secondItem="0zV-AC-cil" secondAttribute="height" multiplier="40:63" id="ZFJ-z6-8Kh"/>
                         <constraint firstItem="Mnb-06-fBl" firstAttribute="height" secondItem="pDP-zi-XmS" secondAttribute="height" multiplier="0.336" id="aQ5-7m-hHb"/>
                         <constraint firstItem="Mnb-06-fBl" firstAttribute="top" secondItem="pDP-zi-XmS" secondAttribute="bottom" constant="-132" id="hWx-Ni-pOr"/>
+                        <constraint firstItem="pDP-zi-XmS" firstAttribute="leading" secondItem="Mnb-06-fBl" secondAttribute="leading" id="keW-zr-dC6"/>
+                        <constraint firstItem="IQ2-34-z0i" firstAttribute="top" secondItem="pDP-zi-XmS" secondAttribute="top" id="mR4-Vg-5x7"/>
                         <constraint firstItem="Mnb-06-fBl" firstAttribute="top" secondItem="pDP-zi-XmS" secondAttribute="bottom" id="mxp-Zz-iNd"/>
+                        <constraint firstAttribute="bottom" secondItem="mPn-5n-CiM" secondAttribute="bottom" id="pK5-Ll-8lu"/>
                         <constraint firstItem="Mnb-06-fBl" firstAttribute="top" secondItem="pDP-zi-XmS" secondAttribute="bottom" constant="-132" id="qUn-UH-Q7R"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="ZFJ-z6-8Kh"/>
+                            <exclude reference="Gii-hT-k2O"/>
+                            <exclude reference="HAc-2w-Crw"/>
+                            <exclude reference="J1t-OI-enT"/>
                             <exclude reference="hWx-Ni-pOr"/>
                             <exclude reference="mxp-Zz-iNd"/>
                             <exclude reference="qUn-UH-Q7R"/>
-                            <exclude reference="HAc-2w-Crw"/>
-                            <exclude reference="J1t-OI-enT"/>
-                            <exclude reference="Gii-hT-k2O"/>
                             <exclude reference="SZc-z9-XlE"/>
                         </mask>
                     </variation>
@@ -155,10 +164,13 @@
                 <constraint firstItem="pDP-zi-XmS" firstAttribute="height" secondItem="ghM-Co-7di" secondAttribute="height" multiplier="0.475" id="Tw3-5C-5u8"/>
                 <constraint firstItem="2bA-Dd-jB9" firstAttribute="width" secondItem="ghM-Co-7di" secondAttribute="width" multiplier="0.95" id="aX4-Xa-8cg"/>
                 <constraint firstItem="JTW-OO-G6O" firstAttribute="width" secondItem="ghM-Co-7di" secondAttribute="width" id="bQ2-WF-A5w"/>
+                <constraint firstItem="lKH-1s-FWh" firstAttribute="top" secondItem="ghM-Co-7di" secondAttribute="top" constant="64" id="baV-jn-n7q"/>
                 <constraint firstItem="pDP-zi-XmS" firstAttribute="centerX" secondItem="ghM-Co-7di" secondAttribute="centerX" id="dGM-UU-znR"/>
                 <constraint firstItem="JTW-OO-G6O" firstAttribute="height" secondItem="ghM-Co-7di" secondAttribute="height" id="dfu-K8-L3L"/>
                 <constraint firstItem="0zV-AC-cil" firstAttribute="centerX" secondItem="ghM-Co-7di" secondAttribute="centerX" id="gdX-lM-cFy"/>
+                <constraint firstItem="0zV-AC-cil" firstAttribute="bottom" secondItem="JTW-OO-G6O" secondAttribute="bottom" id="hib-e1-VJJ"/>
                 <constraint firstItem="0zV-AC-cil" firstAttribute="leading" secondItem="ghM-Co-7di" secondAttribute="leadingMargin" constant="-20" id="i6L-Ch-KD7"/>
+                <constraint firstItem="lKH-1s-FWh" firstAttribute="top" secondItem="0zV-AC-cil" secondAttribute="top" id="nWx-Kp-1ze"/>
                 <constraint firstItem="IQ2-34-z0i" firstAttribute="width" secondItem="ghM-Co-7di" secondAttribute="width" id="oks-gb-WCt"/>
                 <constraint firstItem="lfo-1M-uRy" firstAttribute="centerX" secondItem="ghM-Co-7di" secondAttribute="centerX" id="ooa-WH-Xol"/>
                 <constraint firstItem="mPn-5n-CiM" firstAttribute="width" secondItem="ghM-Co-7di" secondAttribute="width" id="vCu-RL-u2e"/>
@@ -168,8 +180,8 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="NY0-PF-WUr"/>
                     <exclude reference="i6L-Ch-KD7"/>
+                    <exclude reference="NY0-PF-WUr"/>
                 </mask>
             </variation>
         </view>

@@ -1,26 +1,26 @@
 //
-//  LoginViewController.m
+//  EnterViewController.m
 //  Guardioes da Saude
 //
-//  Created by Miqueias Lopes on 07/10/15.
+//  Created by Miqueias Lopes on 06/11/15.
 //  Copyright © 2015 epitrack. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "EnterViewController.h"
 #import "HomeViewController.h"
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
 #import "Facade.h"
 
-@interface LoginViewController ()
+@interface EnterViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation EnterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,15 +28,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-//}
-
+}
+*/
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.txtEmail endEditing:YES];
@@ -51,7 +51,7 @@
     return TRUE;
 }
 
-- (IBAction)btnLogin:(id)sender {
+- (IBAction)btnEnter:(id)sender {
     
     [self.txtEmail resignFirstResponder];
     [self.txtPassword resignFirstResponder];
@@ -66,7 +66,7 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     } else {
-      
+        
         AFHTTPRequestOperationManager *manager;
         NSDictionary *params;
         
@@ -89,14 +89,14 @@
                       [alert addAction:defaultAction];
                       [self presentViewController:alert animated:YES completion:nil];
                   } else {
-                  
+                      
                       Facade *facade = [[Facade alloc] init];
                       facade.action = @"LOGIN";
                       facade.dictionary = responseObject;
                       [facade run];
-                  
+                      
                       User *user = [User getInstance];
-                  
+                      
                       if (user.user_token == NULL) {
                           UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível fazer o login. E-mail e/ou senha inválidos." preferredStyle:UIAlertControllerStyleActionSheet];
                           UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -118,47 +118,7 @@
                   [alert addAction:defaultAction];
                   [self presentViewController:alert animated:YES completion:nil];
               }];
-        
-        /*Requester *requester = [[Requester alloc] init];
-        
-        requester.method = @"POST";
-        requester.url = @"user/login";
-        requester.params = @{@"email":self.txtEmail.text.lowercaseString,
-                             @"password": self.txtPassword.text};
-        requester.action = @"LOGIN";
-        
-        [requester execute];*/
-        
-        /*if (![[User getInstance].user_token isEqualToString:@""]) {
-            HomeViewController *homeViewController = [[HomeViewController alloc] init];
-            [self.navigationController pushViewController:homeViewController animated:YES];
-        } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível fazer o login. Tente novamente em alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        }*/
-        
-        /*jsonStr = [requester getStringJson];
-        
-        NSError *error;
-        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:jsonStr options:NSJSONReadingMutableContainers error:&error];
-        
-        if (!error) {
-            
-            if ([[jsonObject objectForKey:@"error"] isEqualToString:@"true"]) {
-                
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível fazer o login. Tente novamente em alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
-                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                    NSLog(@"You pressed button OK");
-                }];
-                [alert addAction:defaultAction];
-                [self presentViewController:alert animated:YES completion:nil];
-            }
-        }*/
     }
-}
 
+}
 @end
