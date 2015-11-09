@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CIDR_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Default-568h@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/AppDelegate.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/AppDelegate.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets.xcassets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_blur_menu.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_blur_menu@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_blur_menu@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_blur_tutorial.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_blur_tutorial@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_blur_tutorial@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_dark.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_dark@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_dark@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_light.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_light@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_light@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_survey.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_survey@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/BG_survey@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_default.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_default@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_default@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_default_white.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_default_white@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_default_white@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_email.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_email@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_email@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_enter.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_enter@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_enter@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_facebook.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_facebook@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_facebook@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_google.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_google@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_google@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_register.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_register@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_register@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_splash.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_splash@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_splash@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_twitter.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_twitter@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_twitter@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_cancel.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_cancel@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_cancel@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_location.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_location@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_location@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_plus.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_plus@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_plus@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/Foco_Std_Bd.ttf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/Foco_Std_Lt.ttf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/Foco_Std_Rg.ttf" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_about.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_about@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_about@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_bad.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_bad@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_bad@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_bad_dash.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_bad_dash@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_bad_dash@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_camera.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_camera@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_camera@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_check_survey.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_check_survey@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_check_survey@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_checkbok_true.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_checkbok_true@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_checkbok_true@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_checkbox_false.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_checkbox_false@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_checkbox_false@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_close.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_config.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_config@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_config@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_diariodasaude.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_diariodasaude@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_diariodasaude@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_dicasdesaude.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_dicasdesaude@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_dicasdesaude@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_facebook.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_facebook@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_facebook@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_google.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_google@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_google@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_help_n_faq.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_help_n_faq@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_help_n_faq@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_home.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_home@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_home@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_info_blue.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_info_blue@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_info_blue@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_info_white.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_info_white@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_info_white@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_lock.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_lock@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_lock@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logo_horizontal.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logo_horizontal@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logo_horizontal@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logo_splash.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logo_splash@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logo_splash@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logo_tutorial.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logo_tutorial@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logo_tutorial@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logout.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logout@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_logout@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_mail.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_mail@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_mail@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_mapadasaude.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_mapadasaude@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_mapadasaude@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_menu.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_menu@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_menu@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_noticias.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_noticias@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_noticias@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_participeagora.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_participeagora@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_participeagora@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_bad.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_bad@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_bad@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_pharmacy.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_pharmacy@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_pharmacy@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_urgency.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_urgency@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_urgency@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_userlocation.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_userlocation@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_userlocation@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_well.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_well@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_pin_well@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_problem.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_problem@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_problem@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_profile.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_profile@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_profile@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_question.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_question@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_question@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_security.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_security@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_security@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_basiccares.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_basiccares@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_basiccares@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_pharmacies.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_pharmacies@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_pharmacies@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_phones.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_phones@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_phones@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_prevention.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_prevention@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_prevention@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_urgency.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_urgency@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_urgency@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_vaccines.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_vaccines@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tips_vaccines@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial01.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial01@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial01@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial02.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial02@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial02@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial03.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial03@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial03@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_tutorial@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_twitter.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_twitter@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_twitter@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_well.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_well@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_well@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_well_dash.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_well_dash@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/icon_well_dash@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_card.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_card@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_card@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_main_menu.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_main_menu@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_main_menu@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile01.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile01@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile01@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile01_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile01_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile01_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile02.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile02@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile02@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile02_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile02_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile02_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile03.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile03@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile03@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile03_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile03_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile03_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile04.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile04@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile04@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile04_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile04_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile04_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile05.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile05@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile05@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile05_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile05_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile05_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile06.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile06@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile06@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile06_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile06_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile06_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile07.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile07@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile07@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile07_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile07_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile07_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile08.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile08@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile08@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile08_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile08_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile08_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile09.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile09@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile09@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile09_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile09_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile09_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile10.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile10@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile10@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile10_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile10_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile10_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile11.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile11@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile11@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile11_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile11_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile11_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile12.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile12@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile12@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile12_mini.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile12_mini@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/img_profile12_mini@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/input_floatbox_login_email.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/input_floatbox_login_email@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/input_floatbox_login_email@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/input_floatbox_register_email.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/input_floatbox_register_email@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/input_floatbox_register_email@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/modal_ui_alert.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/modal_ui_alert@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/modal_ui_alert@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/reveal-icon.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/reveal-icon@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Base.lproj/Main.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/BasicCareViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/BasicCareViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/BasicCareViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/DetailMap.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/DetailMap.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/DetailMapHealthViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/DetailMapHealthViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/DetailMapHealthViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/DTO.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/DTO.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/EmergencyViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/EmergencyViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/EmergencyViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/EnterViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/EnterViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/EnterViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Facade.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Facade.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HealthTipsViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HealthTipsViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HealthTipsViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HomeViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HomeViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HomeViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Household.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Household.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ImageUtility.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ImageUtility.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ListSymptomsViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ListSymptomsViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ListSymptomsViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/main.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/MapHealthViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/MapHealthViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/MapHealthViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/MenuViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/MenuViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/MenuViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/NoticeViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/NoticeViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/NoticeViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/PharmacyViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/PharmacyViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/PharmacyViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/PreventionViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/PreventionViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/PreventionViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/RearViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/RearViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/RearViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Requester.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Requester.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Screenshots/BG_blur_menu.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Screenshots/BG_blur_menu@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Screenshots/BG_blur_menu@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Screenshots/BG_blur_tutorial.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Screenshots/BG_blur_tutorial@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Screenshots/BG_blur_tutorial@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectParticipantViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectParticipantViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectParticipantViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectStateViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectStateViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectStateViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectTypeLoginViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectTypeLoginViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectTypeLoginViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SWRevealViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SWRevealViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ThankYouForParticipatingViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ThankYouForParticipatingViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ThankYouForParticipatingViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TutorialViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TutorialViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TutorialViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/User.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/User.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/VacineViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/VacineViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/VacineViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLSessionManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFURLSessionManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIAlertView+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIAlertView+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImage+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ASHorizontalScrollViewForObjectiveC/Sources/ASHorizontalScrollView/ASHorizontalScrollView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ASHorizontalScrollViewForObjectiveC/Sources/ASHorizontalScrollView/ASHorizontalScrollView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ASHorizontalScrollViewForObjectiveC/Sources/ASHorizontalScrollView/ASHorizontalScrollViewDelegate.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ASHorizontalScrollViewForObjectiveC/Sources/ASHorizontalScrollView/ASHorizontalScrollViewDelegate.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/ASHorizontalScrollViewForObjectiveC/Sources/ASHorizontalScrollView/license.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PTEHorizontalTableView/PTEHorizontalTableView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/PTEHorizontalTableView/PTEHorizontalTableView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ASHorizontalScrollViewForObjectiveC/ASHorizontalScrollViewForObjectiveC-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ASHorizontalScrollViewForObjectiveC/ASHorizontalScrollViewForObjectiveC-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ASHorizontalScrollViewForObjectiveC/ASHorizontalScrollViewForObjectiveC.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude-acknowledgements.markdown" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude-acknowledgements.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude-frameworks.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude-resources.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude.debug.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude.release.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.markdown" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods-frameworks.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods-resources.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods.debug.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods.release.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PTEHorizontalTableView/PTEHorizontalTableView-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PTEHorizontalTableView/PTEHorizontalTableView-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PTEHorizontalTableView/PTEHorizontalTableView.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SurveyMap.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SurveyMap.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Symptom.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Symptom.m" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accounts.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AddressBook.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AddressBookUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AdSupport.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AudioUnit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AVFoundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AVKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CFNetwork.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Contacts.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ContactsUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreAudio.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreAudioKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreBluetooth.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreData.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreLocation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMedia.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMIDI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMotion.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreSpotlight.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreTelephony.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreVideo.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKitUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ExternalAccessory.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameController.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GLKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GSS.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HealthKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HomeKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/iAd.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ImageIO.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/JavaScriptCore.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/LocalAuthentication.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MapKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaAccessibility.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MessageUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MobileCoreServices.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MultipeerConnectivity.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NewsstandKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NotificationCenter.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/OpenAL.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/OpenGLES.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PassKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PushKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/QuartzCore.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/QuickLook.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ReplayKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SafariServices.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Social.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SpriteKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/StoreKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SystemConfiguration.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Twitter.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchConnectivity.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WebKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.0/include" />
+          <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/DTPerformanceSession.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/InterfaceBuilderKit.framework/Headers" />
+          <root url="file://$MODULE_DIR$/Pods/Headers/Private" />
+          <root url="file://$MODULE_DIR$/Pods/Headers/Public" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accelerate.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Accounts.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AddressBook.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AddressBookUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AdSupport.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AudioUnit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AVFoundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AVKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CFNetwork.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Contacts.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ContactsUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreAudio.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreAudioKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreBluetooth.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreData.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreLocation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMedia.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMIDI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreMotion.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreSpotlight.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreTelephony.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreVideo.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKitUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ExternalAccessory.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameController.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GLKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GSS.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HealthKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HomeKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/iAd.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ImageIO.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/JavaScriptCore.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/LocalAuthentication.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MapKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaAccessibility.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MessageUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MobileCoreServices.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MultipeerConnectivity.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NewsstandKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/NotificationCenter.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/OpenAL.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/OpenGLES.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PassKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PushKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/QuartzCore.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/QuickLook.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ReplayKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SafariServices.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Social.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SpriteKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/StoreKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SystemConfiguration.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Twitter.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoToolbox.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchConnectivity.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WebKit.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1" />
+          <root url="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.0/include" />
+          <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/DTPerformanceSession.framework/Headers" />
+          <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/InterfaceBuilderKit.framework/Headers" />
+          <root url="file://$MODULE_DIR$/Pods/Headers/Private" />
+          <root url="file://$MODULE_DIR$/Pods/Headers/Public" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
