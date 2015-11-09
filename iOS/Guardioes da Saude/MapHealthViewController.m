@@ -40,8 +40,8 @@
     // Do any additional setup after loading the view from its nib.
     //latitude = -22.9035393;
     //longitude = -22.9035393;
-    self.MapHealth.showsUserLocation = YES;
-    self.MapHealth.delegate = self;
+    self.mapHealth.showsUserLocation = YES;
+    self.mapHealth.delegate = self;
     
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
@@ -126,7 +126,7 @@
     MKAnnotationView *v = [views objectAtIndex:0];
     CLLocationDistance distance = 500;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([v.annotation coordinate], distance, distance);
-    [self.MapHealth setRegion:region animated:YES];
+    [self.mapHealth setRegion:region animated:YES];
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
@@ -177,7 +177,7 @@
                 pin.coordinate = annotationCoord;
                 pin.title = isSymptom;
                 
-                [self.MapHealth addAnnotation:pin];
+                [self.mapHealth addAnnotation:pin];
             }
         }
     }

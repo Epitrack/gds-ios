@@ -15,7 +15,7 @@
     NSMutableArray *surveysMap;
 }
 
-@property (retain, nonatomic) IBOutlet MKMapView *MapHealth;
+@property (retain, nonatomic) IBOutlet MKMapView *mapHealth;
 - (void) addPin;
 - (void) loadSummary;
 - (void) loadSurvey;

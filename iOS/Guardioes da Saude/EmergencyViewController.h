@@ -11,5 +11,6 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface EmergencyViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@property (retain, nonatomic) IBOutlet MKMapView *mapEmergency;
 
 @end
