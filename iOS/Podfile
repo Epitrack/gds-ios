@@ -7,6 +7,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.1'
 xcodeproj 'Guardioes da Saude.xcodeproj'
 pod 'AFNetworking'
+pod 'PTEHorizontalTableView'
+pod 'ASHorizontalScrollViewForObjectiveC', '~> 1.0'
 target 'Guardioes da Saude' do
 
 end

@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASHorizontalScrollView.h"
 
-@interface SelectParticipantViewController : UIViewController
+@interface SelectParticipantViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    
+    UITableView *sampleTableView;
+}
 @property (strong, nonatomic) IBOutlet UIButton *imgMainMember;
 - (IBAction)btnSelectMainMember:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextView *txtDobMainMember;

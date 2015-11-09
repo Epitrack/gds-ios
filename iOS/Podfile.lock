@@ -20,11 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.6.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - ASHorizontalScrollViewForObjectiveC (1.0)
+  - PTEHorizontalTableView (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - ASHorizontalScrollViewForObjectiveC (~> 1.0)
+  - PTEHorizontalTableView
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  ASHorizontalScrollViewForObjectiveC: ae062186417c66a626a1961d0115deffa38d226e
+  PTEHorizontalTableView: 2c65c4360282223628dabc664508dde922f98efd
 
 COCOAPODS: 0.39.0
