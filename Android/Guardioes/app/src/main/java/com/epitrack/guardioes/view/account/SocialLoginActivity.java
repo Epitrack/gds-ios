@@ -24,6 +24,7 @@ import com.epitrack.guardioes.utility.Utility;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.menu.profile.UserActivity;
+import com.epitrack.guardioes.view.welcome.WelcomeActivity;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -504,6 +505,26 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             // Store the ConnectionResult for later usage
             mConnectionResult = result;
 
+            if (result.getErrorCode() > 0) {
+
+                resolveSignInError();
+
+                /*String errorMessage = getMessageConnectionFailedGoogle(result.getErrorCode());
+
+                new DialogBuilder(SocialLoginActivity.this).load()
+                        .title(R.string.attention)
+                        .content(errorMessage)
+                        .positiveText(R.string.ok)
+                        .callback(new MaterialDialog.ButtonCallback() {
+
+                            @Override
+                            public void onPositive(final MaterialDialog dialog) {
+                                resolveSignInError();
+                            }
+
+                        }).show();*/
+            }
+
             if (mSignInClicked) {
                 // The user has already clicked 'sign-in' so we attempt to
                 // resolve all
@@ -536,5 +557,85 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
 
     private void updateUI(boolean isSignedIn) {
 
+    }
+
+    private String getMessageConnectionFailedGoogle(int errorCode) {
+
+        String strReturn = "";
+
+        if (errorCode == Constants.Google.API_UNAVAILABLE) {
+
+            strReturn = "Um dos componentes da API que você tentou se conectar não está disponível.";
+
+        } else if (errorCode == Constants.Google.CANCELED) {
+
+            strReturn = "A conexão foi cancelada.";
+
+        } else if (errorCode == Constants.Google.DEVELOPER_ERROR) {
+
+            strReturn = "O aplicativo está configurado incorretamente.";
+
+        } else if (errorCode == Constants.Google.INTERNAL_ERROR) {
+
+            strReturn = "Ocorreu um erro interno.";
+
+        } else if (errorCode == Constants.Google.INTERRUPTED) {
+
+            strReturn = "Uma interrupção ocorreu enquanto aguardava a conexão completa.";
+
+        } else if (errorCode == Constants.Google.INVALID_ACCOUNT) {
+
+            strReturn = "O cliente tentou se conectar ao serviço com um nome de conta inválido especificado.";
+
+        } else if (errorCode == Constants.Google.LICENSE_CHECK_FAILED) {
+
+            strReturn = "O aplicativo não está licenciado para o usuário.";
+
+        } else if (errorCode == Constants.Google.NETWORK_ERROR) {
+
+            strReturn = "Ocorreu um erro de rede.";
+
+        } else if (errorCode == Constants.Google.RESOLUTION_REQUIRED) {
+
+            strReturn = "Conclusão da conexão requer alguma forma de resolução.";
+
+        } else if (errorCode == Constants.Google.SERVICE_DISABLED) {
+
+            strReturn = "A versão instalada dos serviços do Google Play foi desativada neste dispositivo.";
+
+        } else if (errorCode == Constants.Google.SERVICE_INVALID) {
+
+            strReturn = "A versão dos serviços Google Play instalados neste dispositivo não é original.";
+
+        } else if (errorCode == Constants.Google.SERVICE_MISSING) {
+
+            strReturn = "Serviços do Google Play está faltando neste dispositivo.";
+
+        } else if (errorCode == Constants.Google.SERVICE_MISSING_PERMISSION) {
+
+            strReturn = "Serviço Google Play não tem um ou mais permissões necessárias.";
+
+        } else if (errorCode == Constants.Google.SERVICE_UPDATING) {
+
+            strReturn = "Serviço Google Play está sendo atualizado neste dispositivo.";
+
+        } else if (errorCode == Constants.Google.SERVICE_VERSION_UPDATE_REQUIRED) {
+
+            strReturn = "A versão instalada dos serviços do Google Play está desatualizada.";
+
+        } else if (errorCode == Constants.Google.SIGN_IN_FAILED) {
+
+            strReturn = "O cliente tentou conectar-se ao serviço, mas o usuário não está conectado.";
+
+        } else if (errorCode == Constants.Google.SIGN_IN_REQUIRED) {
+
+            strReturn = "O cliente tentou conectar-se ao serviço, mas o usuário não está conectado.";
+
+        } else if (errorCode == Constants.Google.TIMEOUT) {
+
+            strReturn = "O tempo limite foi ultrapassado, enquanto espera para a conexão para concluir.";
+        }
+
+        return strReturn;
     }
 }

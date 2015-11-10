@@ -109,6 +109,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
     private MarkerOptions goodMarkerOption;
     private LocationUtility locationUtility;
     private SearchView searchVieww;
+    private String queryText;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -442,6 +443,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        queryText = query;
         return false;
     }
 

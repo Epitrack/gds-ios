@@ -138,7 +138,7 @@ public class ShareActivity extends BaseActivity {
     public void sahreTwitter() {
 
         TweetComposer.Builder builder = new TweetComposer.Builder(this)
-                .text("Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org");
+                .text("Acabei de participar do Guardiões da Saúde, participe você também: http://www.guardioesdasaude.org");
         builder.show();
         SocialShare.getInstance().setIsShared(true);
 
@@ -152,7 +152,7 @@ public class ShareActivity extends BaseActivity {
 
             Intent waIntent = new Intent(Intent.ACTION_SEND);
             waIntent.setType("text/plain");
-            String text = "Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org";
+            String text = "Acabei de participar do Guardiões da Saúde, participe você também: http://www.guardioesdasaude.org";
 
             PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
             //Check if package exists or not. If not then code

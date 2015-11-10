@@ -143,77 +143,85 @@ public class UserActivity extends BaseAppCompatActivity {
 
         if (!newMenber || socialNew) {
 
-            editTextNickname.setText(nick);
+            try {
+                    editTextNickname.setText(nick);
 
-            if (dob != null) {
-                editTextBirthDate.setText(DateFormat.getDate(dob, "dd/MM/yyyy"));
-            }
-            editTextMail.setText(email);
+                    if (dob != null) {
+                        editTextBirthDate.setText(DateFormat.getDate(dob, "dd/MM/yyyy"));
+                    }
+                    editTextMail.setText(email);
 
-            if (race != null) {
-                if (race.equals("branco")) {
-                    spinnerRace.setSelection(0);
-                } else if (race.equals("preto")) {
-                    spinnerRace.setSelection(1);
-                } else if (race.equals("pardo")) {
-                    spinnerRace.setSelection(2);
-                } else if (race.equals("amarelo")) {
-                    spinnerRace.setSelection(3);
-                } else if (race.equals("indígena")) {
-                    spinnerRace.setSelection(4);
-                }
-            }
-
-            if (race == null) {
-                race = "branco";
-            }
-
-            if (gender != null) {
-                if (gender.equals("M")) {
-                    spinnerGender.setSelection(0);
-                } else {
-                    spinnerGender.setSelection(1);
-                }
-
-                if (singleUser.getEmail().equals(email) && !singleUser.getImageResource().equals("")) {
-                    imageViewImage.setImageBitmap(BitmapUtility.scale((singleUser.getWidthImageProfile() / 2), (singleUser.getHeightImageProfile() / 2), singleUser.getImageResource()));
-                } else {
-                    if (gender.equals("M")) {
-                        if (race.equals("branco") || race.equals("amarelo")) {
-                            imageViewImage.setImageResource(R.drawable.image_avatar_6);
-                        } else {
-                            imageViewImage.setImageResource(R.drawable.image_avatar_4);
-                        }
-                    } else {
-
-                        if (race.equals("branco") || race.equals("amarelo")) {
-                            imageViewImage.setImageResource(R.drawable.image_avatar_8);
-                        } else {
-                            imageViewImage.setImageResource(R.drawable.image_avatar_7);
+                    if (race != null) {
+                        if (race.equals("branco")) {
+                            spinnerRace.setSelection(0);
+                        } else if (race.equals("preto")) {
+                            spinnerRace.setSelection(1);
+                        } else if (race.equals("pardo")) {
+                            spinnerRace.setSelection(2);
+                        } else if (race.equals("amarelo")) {
+                            spinnerRace.setSelection(3);
+                        } else if (race.equals("indígena")) {
+                            spinnerRace.setSelection(4);
                         }
                     }
-                }
-            }
+
+                    if (race == null) {
+                        race = "branco";
+                    }
+
+                    if (gender != null) {
+                        if (gender.equals("M")) {
+                            spinnerGender.setSelection(0);
+                        } else {
+                            spinnerGender.setSelection(1);
+                        }
+
+                        if (singleUser.getImageResource() == null) {
+                            if (gender.equals("M")) {
+                                if (race.equals("branco") || race.equals("amarelo")) {
+                                    imageViewImage.setImageResource(R.drawable.image_avatar_6);
+                                } else {
+                                    imageViewImage.setImageResource(R.drawable.image_avatar_4);
+                                }
+                            } else {
+
+                                if (race.equals("branco") || race.equals("amarelo")) {
+                                    imageViewImage.setImageResource(R.drawable.image_avatar_8);
+                                } else {
+                                    imageViewImage.setImageResource(R.drawable.image_avatar_7);
+                                }
+                            }
+                        } else {
+                            if (singleUser.getEmail().equals(email) && !singleUser.getImageResource().equals("")) {
+                                imageViewImage.setImageBitmap(BitmapUtility.scale((singleUser.getWidthImageProfile() / 2), (singleUser.getHeightImageProfile() / 2), singleUser.getImageResource()));
+                            }
+                        }
+                    }
 
 
 
-            if (mainMember) {
-                textViewMessage.setText(R.string.message_fields);
+                    if (mainMember) {
+                        textViewMessage.setText(R.string.message_fields);
 
-                textLayoutMail.setVisibility(View.VISIBLE);
-                editTextMail.setVisibility(View.VISIBLE);
+                        textLayoutMail.setVisibility(View.VISIBLE);
+                        editTextMail.setVisibility(View.VISIBLE);
 
-                linearLayoutPassword.setVisibility(View.VISIBLE);
+                        linearLayoutPassword.setVisibility(View.VISIBLE);
 
-                if (Integer.parseInt(singleUser.getPicture()) > 0) {
-                    imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getSmall());
-                }
-            } else if (socialNew) {
-                if (singleUser.getEmail() == null) {
-                    textLayoutMail.setVisibility(View.VISIBLE);
-                    editTextMail.setVisibility(View.VISIBLE);
-                    editTextMail.setEnabled(true);
-                }
+                        if (Integer.parseInt(singleUser.getPicture()) > 0) {
+                            imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getSmall());
+                        }
+                    } else if (socialNew) {
+                        if (singleUser.getEmail() == null) {
+                            textLayoutMail.setVisibility(View.VISIBLE);
+                            editTextMail.setVisibility(View.VISIBLE);
+                            editTextMail.setEnabled(true);
+                        }
+                    }
+
+                } catch (Exception e) {
+
+                e.printStackTrace();
             }
         }
     }
@@ -308,32 +316,35 @@ public class UserActivity extends BaseAppCompatActivity {
                         String password = editTextPassword.getText().toString().trim();
                         String confirmPassword = editTextConfirmPassword.getText().toString().trim();
 
-                        if ((password.trim().length() < 6) || (confirmPassword.trim().length() < 6)) {
+                        if (!password.trim().equals("") || !confirmPassword.trim().equals("")) {
 
-                            new DialogBuilder(UserActivity.this).load()
-                                    .title(R.string.attention)
-                                    .content(R.string.password_fail)
-                                    .positiveText(R.string.ok)
-                                    .show();
+                            if ((password.trim().length() < 6) || (confirmPassword.trim().length() < 6)) {
 
-                            return;
-                        }
+                                new DialogBuilder(UserActivity.this).load()
+                                        .title(R.string.attention)
+                                        .content(R.string.password_fail)
+                                        .positiveText(R.string.ok)
+                                        .show();
 
-                        if (!password.equals(confirmPassword)) {
+                                return;
+                            }
 
-                            new DialogBuilder(UserActivity.this).load()
-                                    .title(R.string.attention)
-                                    .content(R.string.password_not_equal)
-                                    .positiveText(R.string.ok)
-                                    .show();
+                            if (!password.equals(confirmPassword)) {
 
-                            return;
-                        }
+                                new DialogBuilder(UserActivity.this).load()
+                                        .title(R.string.attention)
+                                        .content(R.string.password_not_equal)
+                                        .positiveText(R.string.ok)
+                                        .show();
 
-                        if (!password.equals("")) {
-                            if (password.equals(confirmPassword)) {
-                                user.setPassword(password);
-                                jsonObject.put("password", user.getPassword());
+                                return;
+                            }
+
+                            if (!password.equals("")) {
+                                if (password.equals(confirmPassword)) {
+                                    user.setPassword(password);
+                                    jsonObject.put("password", user.getPassword());
+                                }
                             }
                         }
                     }
@@ -474,8 +485,8 @@ public class UserActivity extends BaseAppCompatActivity {
                                     .positiveText(R.string.ok)
                                     .show();
                         }
-                        editTextNickname.setText("");
-                        editTextBirthDate.setText("");
+                        //editTextNickname.setText("");
+                        //editTextBirthDate.setText("");
                     }
                 }
             } catch (JSONException e) {
