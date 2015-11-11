@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"Guardiões da Saúde";
+
 }
 
 - (void)didReceiveMemoryWarning {

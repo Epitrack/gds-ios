@@ -24,15 +24,15 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="GaS-SR-V1f">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_survey.png" translatesAutoresizingMaskIntoConstraints="NO" id="H5A-ch-b9w">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <animations/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUq-5V-Heq">
-                    <rect key="frame" x="144" y="159" width="312" height="115"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUq-5V-Heq">
+                    <rect key="frame" x="12" y="151" width="296" height="108"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="YUq-5V-Heq" secondAttribute="height" multiplier="74:27" constant="-3.1851851851852189" id="Rkv-5G-4on"/>
@@ -43,7 +43,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsO-Qz-4ZH">
-                    <rect key="frame" x="144" y="231" width="312" height="114"/>
+                    <rect key="frame" x="12" y="219" width="296" height="108"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="DsO-Qz-4ZH" secondAttribute="height" multiplier="74:27" id="1ct-uv-ZRe"/>
@@ -54,15 +54,18 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jag-nq-GfN">
-                    <rect key="frame" x="144" y="303" width="312" height="114"/>
+                    <rect key="frame" x="12" y="287" width="296" height="108"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="jag-nq-GfN" secondAttribute="height" multiplier="74:27" id="T81-s2-bKv"/>
                     </constraints>
                     <state key="normal" backgroundImage="img_card.png"/>
+                    <connections>
+                        <action selector="phones:" destination="-1" eventType="touchUpInside" id="UJV-rG-HOE"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCu-ca-nc3">
-                    <rect key="frame" x="144" y="375" width="312" height="114"/>
+                    <rect key="frame" x="12" y="355" width="296" height="108"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="rCu-ca-nc3" secondAttribute="height" multiplier="74:27" id="L6w-0A-6Cb"/>
@@ -73,7 +76,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHd-ek-5C2">
-                    <rect key="frame" x="144" y="447" width="312" height="114"/>
+                    <rect key="frame" x="12" y="423" width="296" height="108"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="mHd-ek-5C2" secondAttribute="height" multiplier="74:27" id="rd7-kw-CD1"/>
@@ -84,7 +87,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yp8-C8-QpO">
-                    <rect key="frame" x="144" y="520" width="312" height="114"/>
+                    <rect key="frame" x="12" y="492" width="296" height="108"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="yp8-C8-QpO" secondAttribute="height" multiplier="74:27" id="fW6-8L-SJB"/>
@@ -94,8 +97,8 @@
                         <action selector="prevention:" destination="-1" eventType="touchUpInside" id="ST9-Ha-kfq"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Urgências e emergências" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-ah-Bt1">
-                    <rect key="frame" x="219" y="172" width="215" height="34"/>
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Urgências e emergências" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-ah-Bt1">
+                    <rect key="frame" x="78" y="163" width="215" height="34"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="FZe-l2-03G"/>
@@ -111,15 +114,15 @@
                         </mask>
                     </variation>
                 </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_urgency.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Fi-aI-aPT">
-                    <rect key="frame" x="149" y="175" width="33" height="28"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_tips_urgency.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Fi-aI-aPT">
+                    <rect key="frame" x="29" y="166" width="32" height="27"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8Fi-aI-aPT" secondAttribute="height" multiplier="32:27" id="7We-TT-FmG"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_vaccines.png" translatesAutoresizingMaskIntoConstraints="NO" id="1sK-pv-7c3">
-                    <rect key="frame" x="159" y="249" width="14" height="31"/>
+                    <rect key="frame" x="39" y="236" width="13" height="30"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1sK-pv-7c3" secondAttribute="height" multiplier="13:30" id="1bZ-qh-JzY"/>
@@ -132,7 +135,7 @@
                     </variation>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Vacinas" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxF-rt-Qgn">
-                    <rect key="frame" x="219" y="248" width="215" height="34"/>
+                    <rect key="frame" x="78" y="234" width="215" height="34"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="215" id="NIl-gl-zhN"/>
@@ -149,7 +152,7 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_phones.png" translatesAutoresizingMaskIntoConstraints="NO" id="wMx-hG-e2M">
-                    <rect key="frame" x="154" y="323" width="24" height="24"/>
+                    <rect key="frame" x="34" y="306" width="23" height="23"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="wMx-hG-e2M" secondAttribute="height" multiplier="13:30" id="F0Q-OL-zd8"/>
@@ -158,13 +161,13 @@
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="UHt-Qq-JsJ"/>
                             <exclude reference="F0Q-OL-zd8"/>
+                            <exclude reference="UHt-Qq-JsJ"/>
                         </mask>
                     </variation>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Telefones úteis" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="079-N1-Wbu">
-                    <rect key="frame" x="219" y="318" width="215" height="33"/>
+                    <rect key="frame" x="78" y="301" width="215" height="33"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="1Cl-J6-KVy"/>
@@ -182,7 +185,7 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_pharmacies.png" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-Of-eeP">
-                    <rect key="frame" x="153" y="397" width="26" height="26"/>
+                    <rect key="frame" x="33" y="376" width="25" height="25"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="L8E-Of-eeP" secondAttribute="height" multiplier="1:1" id="EQi-LF-jDf"/>
@@ -199,7 +202,7 @@
                     </variation>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Farmácias" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhl-w7-7oM">
-                    <rect key="frame" x="219" y="393" width="215" height="33"/>
+                    <rect key="frame" x="78" y="372" width="215" height="33"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="1cW-IO-tJJ"/>
@@ -217,7 +220,7 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_basiccares.png" translatesAutoresizingMaskIntoConstraints="NO" id="bOK-4b-217">
-                    <rect key="frame" x="152" y="471" width="28" height="28"/>
+                    <rect key="frame" x="32" y="446" width="27" height="27"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="bOK-4b-217" secondAttribute="height" multiplier="1:1" id="4rP-BT-plC"/>
@@ -229,14 +232,14 @@
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="4rP-BT-plC"/>
+                            <exclude reference="Mxg-o1-6Ow"/>
                             <exclude reference="gxf-7X-n91"/>
                             <exclude reference="yuc-Ha-Ua8"/>
-                            <exclude reference="Mxg-o1-6Ow"/>
                         </mask>
                     </variation>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Cuidados básicos" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gw-cs-RYP">
-                    <rect key="frame" x="219" y="468" width="215" height="33"/>
+                    <rect key="frame" x="78" y="443" width="215" height="33"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1Gw-cs-RYP" secondAttribute="height" multiplier="214:33" id="BAm-pY-hb4"/>
@@ -248,13 +251,13 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="drD-c6-uaB"/>
                             <exclude reference="BAm-pY-hb4"/>
+                            <exclude reference="drD-c6-uaB"/>
                         </mask>
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_prevention.png" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-wB-7Pa">
-                    <rect key="frame" x="153" y="546" width="24" height="23"/>
+                    <rect key="frame" x="33" y="517" width="23" height="22"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="vpu-wB-7Pa" secondAttribute="height" multiplier="1:1" id="0pL-KT-ZZE"/>
@@ -267,15 +270,15 @@
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="0pL-KT-ZZE"/>
-                            <exclude reference="Q8I-RO-qB0"/>
-                            <exclude reference="Ma3-n4-OAx"/>
                             <exclude reference="8hx-kk-yQ0"/>
                             <exclude reference="8n8-KK-gwP"/>
+                            <exclude reference="Ma3-n4-OAx"/>
+                            <exclude reference="Q8I-RO-qB0"/>
                         </mask>
                     </variation>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Prevenção" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrb-lO-9HD">
-                    <rect key="frame" x="219" y="541" width="215" height="33"/>
+                    <rect key="frame" x="78" y="512" width="215" height="33"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="215" id="JWV-DM-yCG"/>
@@ -293,7 +296,7 @@
                     </variation>
                 </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Selecione uma categoria" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0T-uw-qtC">
-                    <rect key="frame" x="150" y="91" width="300" height="46"/>
+                    <rect key="frame" x="10" y="85" width="300" height="46"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="Gi3-NF-Y5y"/>
@@ -398,22 +401,23 @@
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="centerX" secondItem="YUq-5V-Heq" secondAttribute="centerX" multiplier="0.285" id="ybR-8E-LVb"/>
                 <constraint firstItem="yp8-C8-QpO" firstAttribute="width" secondItem="yp8-C8-QpO" secondAttribute="height" multiplier="74:27" id="zQi-XL-Bot"/>
             </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="uKO-kJ-eEX"/>
+                    <exclude reference="A25-Nq-7c1"/>
                     <exclude reference="ODF-Ly-PA7"/>
                     <exclude reference="iER-Rt-vqJ"/>
-                    <exclude reference="A25-Nq-7c1"/>
-                    <exclude reference="6h8-bu-MD7"/>
+                    <exclude reference="uKO-kJ-eEX"/>
                     <exclude reference="2eC-FZ-CdX"/>
+                    <exclude reference="6h8-bu-MD7"/>
                     <exclude reference="AaP-z9-Bv9"/>
-                    <exclude reference="hD5-U3-Gzm"/>
                     <exclude reference="B1m-qB-kZq"/>
-                    <exclude reference="oUR-uX-2pX"/>
                     <exclude reference="Tnz-VS-Yoe"/>
+                    <exclude reference="hD5-U3-Gzm"/>
+                    <exclude reference="oUR-uX-2pX"/>
                     <exclude reference="ybR-8E-LVb"/>
-                    <exclude reference="S0v-Hk-VuI"/>
                     <exclude reference="qQV-qs-NLd"/>
+                    <exclude reference="S0v-Hk-VuI"/>
                     <exclude reference="FaB-X5-qdI"/>
                     <exclude reference="tAJ-Z2-6jk"/>
                     <exclude reference="Eiv-zR-Wuh"/>
@@ -423,8 +427,8 @@
                     <exclude reference="fFj-XI-U7x"/>
                     <exclude reference="mHl-Ac-dYu"/>
                     <exclude reference="zQi-XL-Bot"/>
-                    <exclude reference="N2b-ZY-aW1"/>
                     <exclude reference="TfL-dN-ubr"/>
+                    <exclude reference="N2b-ZY-aW1"/>
                 </mask>
             </variation>
         </view>

@@ -25,6 +25,7 @@ const float kCellHeight = 100.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"Guardiões da Saúde";
     user = [User getInstance];
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];

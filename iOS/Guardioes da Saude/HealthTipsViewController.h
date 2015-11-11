@@ -15,5 +15,6 @@
 - (IBAction)pharmacy:(id)sender;
 - (IBAction)basicCare:(id)sender;
 - (IBAction)prevention:(id)sender;
+- (IBAction)phones:(id)sender;
 
 @end

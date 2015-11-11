@@ -38,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"Mapa da Saúde";
     //latitude = -22.9035393;
     //longitude = -22.9035393;
     self.mapHealth.showsUserLocation = YES;

@@ -96,8 +96,8 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="pmK-Sq-bJC"/>
                             <exclude reference="iJt-JA-aND"/>
+                            <exclude reference="pmK-Sq-bJC"/>
                         </mask>
                     </variation>
                 </textView>

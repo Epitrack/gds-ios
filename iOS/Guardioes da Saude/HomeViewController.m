@@ -28,6 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"Guardiões da Saúde";
+    
     user = [User getInstance];
 
     if(user.user_token == nil) {

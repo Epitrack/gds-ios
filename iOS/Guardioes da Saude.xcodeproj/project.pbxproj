@@ -57,6 +57,20 @@
 		525A33271BECF5AC00B62E33 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525A33251BECF5AC00B62E33 /* reveal-icon@2x.png */; };
 		525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525A33291BED1F8200B62E33 /* MenuViewController.m */; };
 		525A332C1BED1F8200B62E33 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A332A1BED1F8200B62E33 /* MenuViewController.xib */; };
+		528705B91BF3744600321985 /* PhonesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528705B71BF3744600321985 /* PhonesViewController.m */; };
+		528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528705B81BF3744600321985 /* PhonesViewController.xib */; };
+		528705C41BF3AB5F00321985 /* iconBombeirosMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BB1BF3AB5F00321985 /* iconBombeirosMini.png */; };
+		528705C51BF3AB5F00321985 /* iconBombeirosMini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BC1BF3AB5F00321985 /* iconBombeirosMini@2x.png */; };
+		528705C61BF3AB5F00321985 /* iconBombeirosMini@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BD1BF3AB5F00321985 /* iconBombeirosMini@3x.png */; };
+		528705C71BF3AB5F00321985 /* iconDefesacivilMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BE1BF3AB5F00321985 /* iconDefesacivilMini.png */; };
+		528705C81BF3AB5F00321985 /* iconDefesacivilMini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BF1BF3AB5F00321985 /* iconDefesacivilMini@2x.png */; };
+		528705C91BF3AB5F00321985 /* iconDefesacivilMini@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705C01BF3AB5F00321985 /* iconDefesacivilMini@3x.png */; };
+		528705CA1BF3AB5F00321985 /* iconPMMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705C11BF3AB5F00321985 /* iconPMMini.png */; };
+		528705CB1BF3AB5F00321985 /* iconPMMini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705C21BF3AB5F00321985 /* iconPMMini@2x.png */; };
+		528705CC1BF3AB5F00321985 /* iconPMMini@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705C31BF3AB5F00321985 /* iconPMMini@3x.png */; };
+		528705D01BF3C5CA00321985 /* iconSamuMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705CD1BF3C5CA00321985 /* iconSamuMini.png */; };
+		528705D11BF3C5CA00321985 /* iconSamuMini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705CE1BF3C5CA00321985 /* iconSamuMini@2x.png */; };
+		528705D21BF3C5CA00321985 /* iconSamuMini@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705CF1BF3C5CA00321985 /* iconSamuMini@3x.png */; };
 		528881CA1BEEE9FC004B2759 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528881C91BEEE9FC004B2759 /* Default-568h@2x.png */; };
 		528C8AFE1BB82630003CFC91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 528C8AFD1BB82630003CFC91 /* main.m */; };
 		528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 528C8B001BB82630003CFC91 /* AppDelegate.m */; };
@@ -439,6 +453,21 @@
 		525A33281BED1F8200B62E33 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		525A33291BED1F8200B62E33 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		525A332A1BED1F8200B62E33 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		528705B61BF3744600321985 /* PhonesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhonesViewController.h; sourceTree = "<group>"; };
+		528705B71BF3744600321985 /* PhonesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhonesViewController.m; sourceTree = "<group>"; };
+		528705B81BF3744600321985 /* PhonesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhonesViewController.xib; sourceTree = "<group>"; };
+		528705BB1BF3AB5F00321985 /* iconBombeirosMini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconBombeirosMini.png; sourceTree = "<group>"; };
+		528705BC1BF3AB5F00321985 /* iconBombeirosMini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBombeirosMini@2x.png"; sourceTree = "<group>"; };
+		528705BD1BF3AB5F00321985 /* iconBombeirosMini@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBombeirosMini@3x.png"; sourceTree = "<group>"; };
+		528705BE1BF3AB5F00321985 /* iconDefesacivilMini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconDefesacivilMini.png; sourceTree = "<group>"; };
+		528705BF1BF3AB5F00321985 /* iconDefesacivilMini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconDefesacivilMini@2x.png"; sourceTree = "<group>"; };
+		528705C01BF3AB5F00321985 /* iconDefesacivilMini@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconDefesacivilMini@3x.png"; sourceTree = "<group>"; };
+		528705C11BF3AB5F00321985 /* iconPMMini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconPMMini.png; sourceTree = "<group>"; };
+		528705C21BF3AB5F00321985 /* iconPMMini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconPMMini@2x.png"; sourceTree = "<group>"; };
+		528705C31BF3AB5F00321985 /* iconPMMini@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconPMMini@3x.png"; sourceTree = "<group>"; };
+		528705CD1BF3C5CA00321985 /* iconSamuMini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconSamuMini.png; sourceTree = "<group>"; };
+		528705CE1BF3C5CA00321985 /* iconSamuMini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconSamuMini@2x.png"; sourceTree = "<group>"; };
+		528705CF1BF3C5CA00321985 /* iconSamuMini@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconSamuMini@3x.png"; sourceTree = "<group>"; };
 		528881C91BEEE9FC004B2759 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		528C8AF91BB82630003CFC91 /* Guardioes da Saude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Guardioes da Saude.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		528C8AFD1BB82630003CFC91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -886,6 +915,9 @@
 				524C14291BEBDC55003A6C2D /* VacineViewController.h */,
 				524C142A1BEBDC55003A6C2D /* VacineViewController.m */,
 				524C142B1BEBDC55003A6C2D /* VacineViewController.xib */,
+				528705B61BF3744600321985 /* PhonesViewController.h */,
+				528705B71BF3744600321985 /* PhonesViewController.m */,
+				528705B81BF3744600321985 /* PhonesViewController.xib */,
 			);
 			name = Tips;
 			sourceTree = "<group>";
@@ -993,6 +1025,18 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				528705CD1BF3C5CA00321985 /* iconSamuMini.png */,
+				528705CE1BF3C5CA00321985 /* iconSamuMini@2x.png */,
+				528705CF1BF3C5CA00321985 /* iconSamuMini@3x.png */,
+				528705BB1BF3AB5F00321985 /* iconBombeirosMini.png */,
+				528705BC1BF3AB5F00321985 /* iconBombeirosMini@2x.png */,
+				528705BD1BF3AB5F00321985 /* iconBombeirosMini@3x.png */,
+				528705BE1BF3AB5F00321985 /* iconDefesacivilMini.png */,
+				528705BF1BF3AB5F00321985 /* iconDefesacivilMini@2x.png */,
+				528705C01BF3AB5F00321985 /* iconDefesacivilMini@3x.png */,
+				528705C11BF3AB5F00321985 /* iconPMMini.png */,
+				528705C21BF3AB5F00321985 /* iconPMMini@2x.png */,
+				528705C31BF3AB5F00321985 /* iconPMMini@3x.png */,
 				52D2BC411BF12EBE007C9C09 /* BG_blur_menu.png */,
 				52D2BC421BF12EBE007C9C09 /* BG_blur_menu@2x.png */,
 				52D2BC431BF12EBE007C9C09 /* BG_blur_menu@3x.png */,
@@ -1422,6 +1466,7 @@
 				52E7276E1BEA93B800B46945 /* icon_facebook@2x.png in Resources */,
 				52E727C51BEA93B800B46945 /* img_profile02@2x.png in Resources */,
 				52E727881BEA93B800B46945 /* icon_logo_tutorial.png in Resources */,
+				528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */,
 				52E727B81BEA93B800B46945 /* icon_twitter.png in Resources */,
 				52E7271D1BEA93B800B46945 /* button_default_white@2x.png in Resources */,
 				52E727BA1BEA93B800B46945 /* icon_twitter@3x.png in Resources */,
@@ -1487,6 +1532,7 @@
 				52D2BC8E1BF12EBF007C9C09 /* icon_well_dash@3x.png in Resources */,
 				52E727101BEA93B800B46945 /* icon_tips_urgency@2x.png in Resources */,
 				52E727931BEA93B800B46945 /* icon_mapadasaude@3x.png in Resources */,
+				528705D21BF3C5CA00321985 /* iconSamuMini@3x.png in Resources */,
 				52E727281BEA93B800B46945 /* Foco_Std_Bd.ttf in Resources */,
 				52E7270F1BEA93B800B46945 /* icon_tips_urgency.png in Resources */,
 				52E7270C1BEA93B800B46945 /* icon_tips_prevention.png in Resources */,
@@ -1504,6 +1550,7 @@
 				52E7276D1BEA93B800B46945 /* icon_facebook.png in Resources */,
 				52E727491BEA93B800B46945 /* button_twitter.png in Resources */,
 				52E727331BEA93B800B46945 /* BG_dark@3x.png in Resources */,
+				528705C41BF3AB5F00321985 /* iconBombeirosMini.png in Resources */,
 				52E727A61BEA93B800B46945 /* icon_question.png in Resources */,
 				52E7277F1BEA93B800B46945 /* icon_lock.png in Resources */,
 				52E727641BEA93B800B46945 /* icon_config.png in Resources */,
@@ -1516,6 +1563,7 @@
 				52E727E91BEA93B800B46945 /* input_floatbox_register_email@2x.png in Resources */,
 				52E727D11BEA93B800B46945 /* img_profile06@2x.png in Resources */,
 				528881CA1BEEE9FC004B2759 /* Default-568h@2x.png in Resources */,
+				528705C51BF3AB5F00321985 /* iconBombeirosMini@2x.png in Resources */,
 				52E727121BEA93B800B46945 /* icon_tips_vaccines.png in Resources */,
 				52D2BC871BF12EBF007C9C09 /* icon_pin_userlocation@2x.png in Resources */,
 				52E7271E1BEA93B800B46945 /* button_default_white@3x.png in Resources */,
@@ -1525,6 +1573,7 @@
 				524C141E1BEBC697003A6C2D /* NoticeViewController.xib in Resources */,
 				52E727BE1BEA93B800B46945 /* img_main_menu.png in Resources */,
 				52E7278D1BEA93B800B46945 /* icon_logout@3x.png in Resources */,
+				528705D01BF3C5CA00321985 /* iconSamuMini.png in Resources */,
 				52E7278E1BEA93B800B46945 /* icon_mail.png in Resources */,
 				52E727711BEA93B800B46945 /* icon_google@2x.png in Resources */,
 				52E727AD1BEA93B800B46945 /* icon_tutorial01.png in Resources */,
@@ -1533,6 +1582,7 @@
 				52E727EA1BEA93B800B46945 /* input_floatbox_register_email@3x.png in Resources */,
 				524C14231BEBCEE6003A6C2D /* HealthTipsViewController.xib in Resources */,
 				52E7272E1BEA93B800B46945 /* button_splash.png in Resources */,
+				528705C71BF3AB5F00321985 /* iconDefesacivilMini.png in Resources */,
 				52E7276B1BEA93B800B46945 /* icon_dicasdesaude@2x.png in Resources */,
 				52E727581BEA93B800B46945 /* icon_bad.png in Resources */,
 				52D2BC7F1BF12EBF007C9C09 /* BG_blur_tutorial@3x.png in Resources */,
@@ -1557,6 +1607,8 @@
 				52E727871BEA93B800B46945 /* icon_logo_splash@3x.png in Resources */,
 				52E727801BEA93B800B46945 /* icon_lock@2x.png in Resources */,
 				52E727BF1BEA93B800B46945 /* img_main_menu@2x.png in Resources */,
+				528705CA1BF3AB5F00321985 /* iconPMMini.png in Resources */,
+				528705D11BF3C5CA00321985 /* iconSamuMini@2x.png in Resources */,
 				52E727A01BEA93B800B46945 /* icon_problem.png in Resources */,
 				52D2BCA01BF12EBF007C9C09 /* img_profile06_mini@3x.png in Resources */,
 				520CD0D61BED3DB800F24B45 /* SelectTypeLoginViewController.xib in Resources */,
@@ -1630,12 +1682,15 @@
 				52D2BC841BF12EBF007C9C09 /* icon_pin_bad@2x.png in Resources */,
 				52E727751BEA93B800B46945 /* icon_help_n_faq@3x.png in Resources */,
 				520158FA1BE3CD9D00982856 /* DetailMapHealthViewController.xib in Resources */,
+				528705C91BF3AB5F00321985 /* iconDefesacivilMini@3x.png in Resources */,
+				528705CC1BF3AB5F00321985 /* iconPMMini@3x.png in Resources */,
 				52E727891BEA93B800B46945 /* icon_logo_tutorial@2x.png in Resources */,
 				52E727171BEA93B800B46945 /* img_card@3x.png in Resources */,
 				52E727311BEA93B800B46945 /* BG_dark.png in Resources */,
 				52E7271B1BEA93B800B46945 /* icon_check_survey@3x.png in Resources */,
 				52E727211BEA93B800B46945 /* BG_survey@3x.png in Resources */,
 				52E727E21BEA93B800B46945 /* img_profile12.png in Resources */,
+				528705C61BF3AB5F00321985 /* iconBombeirosMini@3x.png in Resources */,
 				52E727EB1BEA93B800B46945 /* modal_ui_alert.png in Resources */,
 				52E727EC1BEA93B800B46945 /* modal_ui_alert@2x.png in Resources */,
 				52E727141BEA93B800B46945 /* icon_tips_vaccines@3x.png in Resources */,
@@ -1669,6 +1724,7 @@
 				524C14281BEBD89C003A6C2D /* EmergencyViewController.xib in Resources */,
 				52E727741BEA93B800B46945 /* icon_help_n_faq@2x.png in Resources */,
 				52E727471BEA93B800B46945 /* button_register@2x.png in Resources */,
+				528705CB1BF3AB5F00321985 /* iconPMMini@2x.png in Resources */,
 				52E727A41BEA93B800B46945 /* icon_profile@2x.png in Resources */,
 				52D2BCA11BF12EBF007C9C09 /* img_profile07_mini.png in Resources */,
 				52E727351BEA93B800B46945 /* BG_light@2x.png in Resources */,
@@ -1677,6 +1733,7 @@
 				52E727501BEA93B800B46945 /* fab_location@2x.png in Resources */,
 				520CD0E31BED436700F24B45 /* EnterViewController.xib in Resources */,
 				52D2BC971BF12EBF007C9C09 /* img_profile03_mini@3x.png in Resources */,
+				528705C81BF3AB5F00321985 /* iconDefesacivilMini@2x.png in Resources */,
 				52E727C11BEA93B800B46945 /* img_profile01.png in Resources */,
 				52E727461BEA93B800B46945 /* button_register.png in Resources */,
 				52E7273F1BEA93B800B46945 /* button_enter@3x.png in Resources */,
@@ -1784,6 +1841,7 @@
 				52EC50411BF02200002FEACE /* Household.m in Sources */,
 				522360BF1BE9176D006D0598 /* DetailMap.m in Sources */,
 				524C14311BEBE043003A6C2D /* PharmacyViewController.m in Sources */,
+				528705B91BF3744600321985 /* PhonesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

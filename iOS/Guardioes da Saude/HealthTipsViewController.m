@@ -12,6 +12,7 @@
 #import "BasicCareViewController.h"
 #import "EmergencyViewController.h"
 #import "PreventionViewController.h"
+#import "PhonesViewController.h"
 
 @interface HealthTipsViewController ()
 
@@ -22,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"Dicas de Saúde";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,5 +64,10 @@
 - (IBAction)prevention:(id)sender {
     PreventionViewController *preventionViewController = [[PreventionViewController alloc] init];
     [self.navigationController pushViewController:preventionViewController animated:YES];
+}
+
+- (IBAction)phones:(id)sender {
+    PhonesViewController *phonesViewController = [[PhonesViewController alloc] init];
+    [self.navigationController pushViewController:phonesViewController animated:YES];
 }
 @end
