@@ -11,5 +11,6 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface PharmacyViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@property (retain, nonatomic) IBOutlet MKMapView *mapPharmacy;
 
 @end

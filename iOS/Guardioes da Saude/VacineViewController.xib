@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Foco_Std_Rg.ttf">
@@ -20,26 +19,32 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-S2-zf7">
-                    <rect key="frame" x="24" y="84" width="272" height="483"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="uw7-Q8-kWV">
+                    <rect key="frame" x="40" y="66" width="240" height="100"/>
                     <animations/>
-                    <string key="text"> • A Organização Mundial da Saúde (OMS) informa que não há calendário internacional de vacinação para todos os viajantes. Para cada viajante, será adotada recomendação personalizada de acordo com os países a serem visitados, dependendo do tipo, duração e tempo disponível para aplicação da vacina antes da partida;
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-S2-zf7">
+                    <rect key="frame" x="24" y="169" width="272" height="391"/>
+                    <animations/>
+                    <mutableString key="text">Vacinas
 
-• O Brasil não exige o Certificado Internacional de Vacinação ou Profilaxia para entrada no país;
+	• A Organização Mundial da Saúde (OMS) informa que não há calendário internacional de vacinação para todos os viajantes. Para cada viajante, será adotada recomendação personalizada de acordo com os países a serem visitados, dependendo do tipo, duração e tempo disponível para aplicação da vacina antes da partida;
 
-• Certifique-se de que suas vacinas de rotina estejam em dia, de acordo com as recomendações de seu país de origem, pois é uma medida eficaz e segura para a prevenção de várias doenças;
+	• O Brasil não exige o Certificado Internacional de Vacinação ou Profilaxia para entrada no país;
 
-• Devido a circulação do sarampo na Europa, África e Ásia recomenda-se que pessoas com origem ou destino a países com ocorrência dessa doença estejam vacinados previamente;
+	• Certifique-se de que suas vacinas de rotina estejam em dia, de acordo com as recomendações de seu país de origem, pois é uma medida eficaz e segura para a prevenção de várias doenças;
 
-• A preparação para a viagem é uma boa oportunidade para verificar o estado vacinal de bebês, crianças, adolescentes, adultos e idosos.
+	• Devido a circulação do sarampo na Europa, África e Ásia recomenda-se que pessoas com origem ou destino a países com ocorrência dessa doença estejam vacinados previamente;
 
- • Todo morador ou visitante de qualquer cidade brasileira tem disponível também as vacinas para influenza e Pólio que são enfermidades relacionadas a possíveis emergências de saúde pública de importância internacional para a Organização Mundial de Saúde. 
+	• A preparação para a viagem é uma boa oportunidade para verificar o estado vacinal de bebês, crianças, adolescentes, adultos e idosos.
+
+ 	• Todo morador ou visitante de qualquer cidade brasileira tem disponível também as vacinas para influenza e Pólio que são enfermidades relacionadas a possíveis emergências de saúde pública de importância internacional para a Organização Mundial de Saúde. 
 
 Prevenção contra febre amarela
 
-• Previna-se contra febre amarela tomando a vacina 10 dias antes de visitar áreas de mata ou de praticar turismo ecológico ou rural.
+	• Previna-se contra febre amarela tomando a vacina 10 dias antes de visitar áreas de mata ou de praticar turismo ecológico ou rural.
 
-• Procure seu medico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem;</string>
+	• Procure seu medico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem;</mutableString>
                     <color key="textColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -48,11 +53,18 @@ Prevenção contra febre amarela
             <animations/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="XT1-S2-zf7" firstAttribute="width" secondItem="sn7-cJ-Bld" secondAttribute="width" multiplier="0.85" id="RKu-j7-xaE"/>
-                <constraint firstItem="XT1-S2-zf7" firstAttribute="centerX" secondItem="sn7-cJ-Bld" secondAttribute="centerX" id="cdC-VO-9zz"/>
-                <constraint firstItem="XT1-S2-zf7" firstAttribute="height" secondItem="sn7-cJ-Bld" secondAttribute="height" multiplier="0.85" id="h5X-Ah-Qdk"/>
+                <constraint firstAttribute="bottom" secondItem="XT1-S2-zf7" secondAttribute="bottom" constant="8" id="514-97-FhJ"/>
+                <constraint firstItem="XT1-S2-zf7" firstAttribute="leading" secondItem="sn7-cJ-Bld" secondAttribute="leading" constant="24" id="I6z-Vc-0Cc"/>
+                <constraint firstAttribute="trailing" secondItem="uw7-Q8-kWV" secondAttribute="trailing" constant="40" id="P7N-18-Qb4"/>
+                <constraint firstItem="uw7-Q8-kWV" firstAttribute="leading" secondItem="sn7-cJ-Bld" secondAttribute="leading" constant="40" id="acg-og-PtQ"/>
+                <constraint firstAttribute="trailing" secondItem="XT1-S2-zf7" secondAttribute="trailing" constant="24" id="dZO-2e-G1w"/>
+                <constraint firstItem="XT1-S2-zf7" firstAttribute="top" secondItem="uw7-Q8-kWV" secondAttribute="bottom" constant="3" id="rGC-sg-btx"/>
+                <constraint firstItem="uw7-Q8-kWV" firstAttribute="top" secondItem="sn7-cJ-Bld" secondAttribute="top" constant="66" id="zvl-NG-h9g"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_logo_horizontal.png" width="219" height="100"/>
+    </resources>
 </document>
