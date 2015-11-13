@@ -19,14 +19,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="uw7-Q8-kWV">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="uw7-Q8-kWV">
                     <rect key="frame" x="40" y="66" width="240" height="100"/>
                     <animations/>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-S2-zf7">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-S2-zf7">
                     <rect key="frame" x="24" y="169" width="272" height="391"/>
                     <animations/>
-                    <mutableString key="text">Vacinas
+                    <string key="text">Vacinas
 
 	• A Organização Mundial da Saúde (OMS) informa que não há calendário internacional de vacinação para todos os viajantes. Para cada viajante, será adotada recomendação personalizada de acordo com os países a serem visitados, dependendo do tipo, duração e tempo disponível para aplicação da vacina antes da partida;
 
@@ -44,7 +44,7 @@ Prevenção contra febre amarela
 
 	• Previna-se contra febre amarela tomando a vacina 10 dias antes de visitar áreas de mata ou de praticar turismo ecológico ou rural.
 
-	• Procure seu medico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem;</mutableString>
+	• Procure seu medico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem;</string>
                     <color key="textColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

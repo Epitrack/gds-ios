@@ -8,8 +8,14 @@
 
 #import "MenuViewController.h"
 #import "SWRevealViewController.h"
+#import "HomeViewController.h"
+#import "AboutViewController.h"
+#import "HelpViewController.h"
 
-@interface MenuViewController ()
+@interface MenuViewController () {
+    
+    UIViewController *newFrontController;
+}
 
 @end
 
@@ -18,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    newFrontController = nil;
     
     // We determine whether we have a grand parent SWRevealViewController, this means we are at least one level behind the hierarchy
     SWRevealViewController *parentRevealController = self.revealViewController;
@@ -77,4 +85,33 @@
 }
 */
 
+- (IBAction)btnHome:(id)sender {
+    
+    HomeViewController *homeViewController = [[HomeViewController alloc] init];
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+    SWRevealViewController *revealController = self.revealViewController;
+    [revealController pushFrontViewController:newFrontController animated:YES];
+}
+
+- (IBAction)btnAbout:(id)sender {
+    
+    AboutViewController *aboutViewController = [[AboutViewController alloc] init];
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:aboutViewController];
+    SWRevealViewController *revealController = self.revealViewController;
+    [revealController pushFrontViewController:newFrontController animated:YES];
+}
+
+- (IBAction)btnHelp:(id)sender {
+    
+    HelpViewController *helpViewController = [[HelpViewController alloc] init];
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:helpViewController];
+    SWRevealViewController *revealController = self.revealViewController;
+    [revealController pushFrontViewController:newFrontController animated:YES];
+}
+
+- (IBAction)btnProfile:(id)sender {
+}
+
+- (IBAction)btnExit:(id)sender {
+}
 @end

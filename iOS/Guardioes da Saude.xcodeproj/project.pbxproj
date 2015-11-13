@@ -78,6 +78,14 @@
 		528C8B071BB82630003CFC91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528C8B051BB82630003CFC91 /* Main.storyboard */; };
 		528C8B091BB82630003CFC91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528C8B081BB82630003CFC91 /* Assets.xcassets */; };
 		528C8B0C1BB82630003CFC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528C8B0A1BB82630003CFC91 /* LaunchScreen.storyboard */; };
+		529BE1CE1BF62C8200692EEC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1CC1BF62C8200692EEC /* AboutViewController.m */; };
+		529BE1CF1BF62C8200692EEC /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1CD1BF62C8200692EEC /* AboutViewController.xib */; };
+		529BE1D31BF6598300692EEC /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1D11BF6598300692EEC /* HelpViewController.m */; };
+		529BE1D41BF6598300692EEC /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1D21BF6598300692EEC /* HelpViewController.xib */; };
+		529BE1D81BF65ECE00692EEC /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1D61BF65ECE00692EEC /* TermsViewController.m */; };
+		529BE1D91BF65ECE00692EEC /* TermsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1D71BF65ECE00692EEC /* TermsViewController.xib */; };
+		529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */; };
+		529BE1DE1BF6696900692EEC /* TutorialHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */; };
 		52D2BC7A1BF12EBF007C9C09 /* BG_blur_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D2BC411BF12EBE007C9C09 /* BG_blur_menu.png */; };
 		52D2BC7B1BF12EBF007C9C09 /* BG_blur_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D2BC421BF12EBE007C9C09 /* BG_blur_menu@2x.png */; };
 		52D2BC7C1BF12EBF007C9C09 /* BG_blur_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D2BC431BF12EBE007C9C09 /* BG_blur_menu@3x.png */; };
@@ -479,6 +487,18 @@
 		528C8B081BB82630003CFC91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		528C8B0B1BB82630003CFC91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		528C8B0D1BB82630003CFC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		529BE1CB1BF62C8200692EEC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		529BE1CC1BF62C8200692EEC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		529BE1CD1BF62C8200692EEC /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		529BE1D01BF6598300692EEC /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		529BE1D11BF6598300692EEC /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		529BE1D21BF6598300692EEC /* HelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
+		529BE1D51BF65ECE00692EEC /* TermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsViewController.h; sourceTree = "<group>"; };
+		529BE1D61BF65ECE00692EEC /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
+		529BE1D71BF65ECE00692EEC /* TermsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TermsViewController.xib; sourceTree = "<group>"; };
+		529BE1DA1BF6696900692EEC /* TutorialHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialHelpViewController.h; sourceTree = "<group>"; };
+		529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialHelpViewController.m; sourceTree = "<group>"; };
+		529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialHelpViewController.xib; sourceTree = "<group>"; };
 		52D2BC411BF12EBE007C9C09 /* BG_blur_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG_blur_menu.png; sourceTree = "<group>"; };
 		52D2BC421BF12EBE007C9C09 /* BG_blur_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_blur_menu@2x.png"; sourceTree = "<group>"; };
 		52D2BC431BF12EBE007C9C09 /* BG_blur_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_blur_menu@3x.png"; sourceTree = "<group>"; };
@@ -944,6 +964,18 @@
 				257315BD1BCEF07900FDB102 /* HomeViewController.h */,
 				257315BE1BCEF07900FDB102 /* HomeViewController.m */,
 				25F3B2371BDC8C540014BC30 /* HomeViewController.xib */,
+				529BE1CB1BF62C8200692EEC /* AboutViewController.h */,
+				529BE1CC1BF62C8200692EEC /* AboutViewController.m */,
+				529BE1CD1BF62C8200692EEC /* AboutViewController.xib */,
+				529BE1D01BF6598300692EEC /* HelpViewController.h */,
+				529BE1D11BF6598300692EEC /* HelpViewController.m */,
+				529BE1D21BF6598300692EEC /* HelpViewController.xib */,
+				529BE1D51BF65ECE00692EEC /* TermsViewController.h */,
+				529BE1D61BF65ECE00692EEC /* TermsViewController.m */,
+				529BE1D71BF65ECE00692EEC /* TermsViewController.xib */,
+				529BE1DA1BF6696900692EEC /* TutorialHelpViewController.h */,
+				529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */,
+				529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1480,6 +1512,7 @@
 				52E727601BEA93B800B46945 /* icon_checkbok_true@3x.png in Resources */,
 				52E727041BEA93B800B46945 /* icon_tips_basiccares@2x.png in Resources */,
 				520CD0E51BED47EF00F24B45 /* TutorialViewController.xib in Resources */,
+				529BE1D41BF6598300692EEC /* HelpViewController.xib in Resources */,
 				52D2BC8B1BF12EBF007C9C09 /* icon_pin_well@3x.png in Resources */,
 				52E727BB1BEA93B800B46945 /* icon_well.png in Resources */,
 				52E7275B1BEA93B800B46945 /* icon_camera.png in Resources */,
@@ -1499,6 +1532,7 @@
 				52E727E11BEA93B800B46945 /* img_profile11@3x.png in Resources */,
 				52E727131BEA93B800B46945 /* icon_tips_vaccines@2x.png in Resources */,
 				524C142D1BEBDC55003A6C2D /* VacineViewController.xib in Resources */,
+				529BE1DE1BF6696900692EEC /* TutorialHelpViewController.xib in Resources */,
 				52E727781BEA93B800B46945 /* icon_home@3x.png in Resources */,
 				52E727791BEA93B800B46945 /* icon_info_blue.png in Resources */,
 				25630CF71BDF96F90047FF07 /* ListSymptomsViewController.xib in Resources */,
@@ -1518,6 +1552,7 @@
 				52D2BC9C1BF12EBF007C9C09 /* img_profile05_mini@2x.png in Resources */,
 				52D2BCA71BF12EBF007C9C09 /* img_profile09_mini.png in Resources */,
 				52E727091BEA93B800B46945 /* icon_tips_phones.png in Resources */,
+				529BE1CF1BF62C8200692EEC /* AboutViewController.xib in Resources */,
 				52E7277C1BEA93B800B46945 /* icon_info_white.png in Resources */,
 				52E727E51BEA93B800B46945 /* input_floatbox_login_email.png in Resources */,
 				52E7274E1BEA93B800B46945 /* fab_cancel@3x.png in Resources */,
@@ -1654,6 +1689,7 @@
 				52E7275C1BEA93B800B46945 /* icon_camera@2x.png in Resources */,
 				52E7272D1BEA93B800B46945 /* icon_menu@3x.png in Resources */,
 				52D2BCA61BF12EBF007C9C09 /* img_profile08_mini@3x.png in Resources */,
+				529BE1D91BF65ECE00692EEC /* TermsViewController.xib in Resources */,
 				2548B9EA1BDEB3C80004E00F /* ThankYouForParticipatingViewController.xib in Resources */,
 				52E727CE1BEA93B800B46945 /* img_profile05@2x.png in Resources */,
 				52E727841BEA93B800B46945 /* icon_logo_horizontal@3x.png in Resources */,
@@ -1820,6 +1856,7 @@
 				25630CF61BDF96F90047FF07 /* ListSymptomsViewController.m in Sources */,
 				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
+				529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */,
 				2548B9E41BDEA8750004E00F /* SelectStateViewController.m in Sources */,
 				524C142C1BEBDC55003A6C2D /* VacineViewController.m in Sources */,
 				524C143B1BEBE67C003A6C2D /* PreventionViewController.m in Sources */,
@@ -1827,6 +1864,7 @@
 				525A33221BECF3BA00B62E33 /* RearViewController.m in Sources */,
 				524C14271BEBD89C003A6C2D /* EmergencyViewController.m in Sources */,
 				256DBA941BD0399D0029A569 /* DTO.m in Sources */,
+				529BE1D81BF65ECE00692EEC /* TermsViewController.m in Sources */,
 				528C8B041BB82630003CFC91 /* ViewController.m in Sources */,
 				5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */,
 				25A19BDD1BC528C700F08FA9 /* Requester.m in Sources */,
@@ -1834,7 +1872,9 @@
 				520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */,
 				528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */,
 				25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */,
+				529BE1D31BF6598300692EEC /* HelpViewController.m in Sources */,
 				25630CFA1BDFA2760047FF07 /* Symptom.m in Sources */,
+				529BE1CE1BF62C8200692EEC /* AboutViewController.m in Sources */,
 				520CD0D51BED3DB800F24B45 /* SelectTypeLoginViewController.m in Sources */,
 				528C8AFE1BB82630003CFC91 /* main.m in Sources */,
 				251AD8F81BD553D3000C1B84 /* Facade.m in Sources */,

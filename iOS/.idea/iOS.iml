@@ -3,6 +3,9 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Default-568h@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/AboutViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/AboutViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/AboutViewController.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/AppDelegate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/AppDelegate.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets.xcassets" isTestSource="false" />
@@ -329,6 +332,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HealthTipsViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HealthTipsViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HealthTipsViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HelpViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HelpViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HelpViewController.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HomeViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HomeViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/HomeViewController.xib" isTestSource="false" />
@@ -381,9 +387,15 @@
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectTypeLoginViewController.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SWRevealViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SWRevealViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TermsViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TermsViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TermsViewController.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ThankYouForParticipatingViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ThankYouForParticipatingViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ThankYouForParticipatingViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TutorialHelpViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TutorialHelpViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TutorialHelpViewController.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TutorialViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TutorialViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/TutorialViewController.xib" isTestSource="false" />
