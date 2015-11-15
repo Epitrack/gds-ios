@@ -207,10 +207,23 @@
                  city = location[@"city"];
                  state = location[@"state"];;
                  totalSurvey = [summary[@"total_surveys"] integerValue];
+                 
                  totalNoSymptom = [summary[@"total_no_symptoms"] integerValue];
-                 goodPercent = ((totalNoSymptom / totalSurvey) * 100);
+                 
+                 if (totalNoSymptom > 0) {
+                     goodPercent = ((totalNoSymptom / totalSurvey) * 100);
+                 } else {
+                     goodPercent = 0;
+                 }
+                 
                  totalWithSymptom = [summary[@"total_symptoms"] integerValue];
-                 badPercent = ((totalWithSymptom / totalSurvey) * 100);
+                 
+                 if (totalWithSymptom > 0) {
+                     badPercent = ((totalWithSymptom / totalSurvey) * 100);
+                 } else {
+                     badPercent = 0;
+                 }
+                 
                  diarreica = [diseases[@"diarreica"] doubleValue];
                  exantemaica = [diseases[@"exantematica"] doubleValue];
                  respiratoria = [diseases[@"respiratoria"] doubleValue];

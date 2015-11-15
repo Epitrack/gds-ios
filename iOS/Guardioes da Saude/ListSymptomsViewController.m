@@ -168,7 +168,7 @@
         //[self.tableSymptoms deselectRowAtIndexPath:indexPath animated:YES];
         Symptom *currentSymptom = [symptoms objectAtIndex:indexPath.row];
         
-        NSLog(@"Row: %d", indexPath.row);
+        //NSLog(@"Row: %d", indexPath.row);
         BOOL indexExists = NO;
         
         if (indexPath.row == 0 || indexPath.row == 14) {

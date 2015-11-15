@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NoticeViewController : UIViewController
+@interface NoticeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> 
+@property (strong, nonatomic) IBOutlet UITableView *tableViewNotice;
 
 @end

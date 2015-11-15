@@ -103,7 +103,7 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
                     Notice notice = new Notice();
 
                     notice.setTitle(jsonObject.get("text").toString());
-                    notice.setSource("via Twitter @minsaude");
+                    notice.setSource("via @minsaude");
 
                     //DateTime dtToday = new DateTime();
                     //DateTime dtOther = new DateTime(DateTime.parse(jsonObject.get("text").toString()));

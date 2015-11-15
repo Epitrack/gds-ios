@@ -86,6 +86,10 @@
 		529BE1D91BF65ECE00692EEC /* TermsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1D71BF65ECE00692EEC /* TermsViewController.xib */; };
 		529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */; };
 		529BE1DE1BF6696900692EEC /* TutorialHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */; };
+		529BE1E21BF8C68B00692EEC /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1E01BF8C68B00692EEC /* ReportViewController.m */; };
+		529BE1E31BF8C68B00692EEC /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1E11BF8C68B00692EEC /* ReportViewController.xib */; };
+		529BE1E51BF8DD4100692EEC /* notice_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1E41BF8DD4100692EEC /* notice_header.png */; };
+		529BE1E81BF9053D00692EEC /* Notice.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1E71BF9053D00692EEC /* Notice.m */; };
 		52D2BC7A1BF12EBF007C9C09 /* BG_blur_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D2BC411BF12EBE007C9C09 /* BG_blur_menu.png */; };
 		52D2BC7B1BF12EBF007C9C09 /* BG_blur_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D2BC421BF12EBE007C9C09 /* BG_blur_menu@2x.png */; };
 		52D2BC7C1BF12EBF007C9C09 /* BG_blur_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D2BC431BF12EBE007C9C09 /* BG_blur_menu@3x.png */; };
@@ -499,6 +503,12 @@
 		529BE1DA1BF6696900692EEC /* TutorialHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialHelpViewController.h; sourceTree = "<group>"; };
 		529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialHelpViewController.m; sourceTree = "<group>"; };
 		529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialHelpViewController.xib; sourceTree = "<group>"; };
+		529BE1DF1BF8C68B00692EEC /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		529BE1E01BF8C68B00692EEC /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		529BE1E11BF8C68B00692EEC /* ReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportViewController.xib; sourceTree = "<group>"; };
+		529BE1E41BF8DD4100692EEC /* notice_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notice_header.png; sourceTree = "<group>"; };
+		529BE1E61BF9053D00692EEC /* Notice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notice.h; path = "Guardioes da Saude/Notice.h"; sourceTree = "<group>"; };
+		529BE1E71BF9053D00692EEC /* Notice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notice.m; path = "Guardioes da Saude/Notice.m"; sourceTree = "<group>"; };
 		52D2BC411BF12EBE007C9C09 /* BG_blur_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG_blur_menu.png; sourceTree = "<group>"; };
 		52D2BC421BF12EBE007C9C09 /* BG_blur_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_blur_menu@2x.png"; sourceTree = "<group>"; };
 		52D2BC431BF12EBE007C9C09 /* BG_blur_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_blur_menu@3x.png"; sourceTree = "<group>"; };
@@ -847,6 +857,8 @@
 				5250D7431BE2ADD3006E8A63 /* SurveyMap.m */,
 				258F14E11BCEE3CC00CE86B7 /* User.m */,
 				258F14E21BCEE3CC00CE86B7 /* User.h */,
+				529BE1E61BF9053D00692EEC /* Notice.h */,
+				529BE1E71BF9053D00692EEC /* Notice.m */,
 			);
 			name = Model;
 			path = ..;
@@ -976,6 +988,9 @@
 				529BE1DA1BF6696900692EEC /* TutorialHelpViewController.h */,
 				529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */,
 				529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */,
+				529BE1DF1BF8C68B00692EEC /* ReportViewController.h */,
+				529BE1E01BF8C68B00692EEC /* ReportViewController.m */,
+				529BE1E11BF8C68B00692EEC /* ReportViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1057,6 +1072,7 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				529BE1E41BF8DD4100692EEC /* notice_header.png */,
 				528705CD1BF3C5CA00321985 /* iconSamuMini.png */,
 				528705CE1BF3C5CA00321985 /* iconSamuMini@2x.png */,
 				528705CF1BF3C5CA00321985 /* iconSamuMini@3x.png */,
@@ -1595,6 +1611,7 @@
 				52E7272A1BEA93B800B46945 /* Foco_Std_Rg.ttf in Resources */,
 				52E727851BEA93B800B46945 /* icon_logo_splash.png in Resources */,
 				52E727341BEA93B800B46945 /* BG_light.png in Resources */,
+				529BE1E51BF8DD4100692EEC /* notice_header.png in Resources */,
 				52E727E91BEA93B800B46945 /* input_floatbox_register_email@2x.png in Resources */,
 				52E727D11BEA93B800B46945 /* img_profile06@2x.png in Resources */,
 				528881CA1BEEE9FC004B2759 /* Default-568h@2x.png in Resources */,
@@ -1623,6 +1640,7 @@
 				52D2BC7F1BF12EBF007C9C09 /* BG_blur_tutorial@3x.png in Resources */,
 				52E727E31BEA93B800B46945 /* img_profile12@2x.png in Resources */,
 				52E727901BEA93B800B46945 /* icon_mail@3x.png in Resources */,
+				529BE1E31BF8C68B00692EEC /* ReportViewController.xib in Resources */,
 				52E727541BEA93B800B46945 /* fab_plus@3x.png in Resources */,
 				52D2BCAC1BF12EBF007C9C09 /* img_profile10_mini@3x.png in Resources */,
 				52E727521BEA93B800B46945 /* fab_plus.png in Resources */,
@@ -1867,7 +1885,9 @@
 				529BE1D81BF65ECE00692EEC /* TermsViewController.m in Sources */,
 				528C8B041BB82630003CFC91 /* ViewController.m in Sources */,
 				5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */,
+				529BE1E21BF8C68B00692EEC /* ReportViewController.m in Sources */,
 				25A19BDD1BC528C700F08FA9 /* Requester.m in Sources */,
+				529BE1E81BF9053D00692EEC /* Notice.m in Sources */,
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
 				520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */,
 				528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */,

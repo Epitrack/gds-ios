@@ -26,7 +26,7 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="zLs-iT-GZz">
                     <rect key="frame" x="24" y="169" width="272" height="391"/>
                     <animations/>
-                    <mutableString key="text">Sobre o “Guardiões da Saúde”
+                    <string key="text">Sobre o “Guardiões da Saúde”
 
     • O GUARDIÕES DA SAÚDE é um aplicativo projetado para dispositivos móveis e faz parte do projeto inovador de aprimoramento da vigilância em saúde no Sistema Único de Saúde (SUS), denominado Vigilância Participativa.
 
@@ -64,7 +64,7 @@ Custo
 
     • Acesso aos serviços com custo: por meio de seu pacote de dados contratado;
 
-    • Chamada telefônica: Os serviços públicos de referência descritos nos telefones úteis são oferecidos por meio de chamada gratuita, conforme informação do órgão responsável;</mutableString>
+    • Chamada telefônica: Os serviços públicos de referência descritos nos telefones úteis são oferecidos por meio de chamada gratuita, conforme informação do órgão responsável;</string>
                     <color key="textColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

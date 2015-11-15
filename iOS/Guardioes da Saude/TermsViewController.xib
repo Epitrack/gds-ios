@@ -26,7 +26,7 @@
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="2iQ-BZ-aMh">
                     <rect key="frame" x="24" y="169" width="272" height="391"/>
                     <animations/>
-                    <mutableString key="text">Política de Privacidade e Termos de Uso
+                    <string key="text">Política de Privacidade e Termos de Uso
 
 	• Por favor, leia estes termos legais de uso antes de utilizar o GUARDIÕES DA SAÚDE, fazer qualquer colaboração, acessar ou baixar qualquer informação desta aplicação.Ao acessar ou utilizar o GUARDIÕES DA SAÚDE, você aceita e concorda em cumprir os termos e condições estabelecidos neste “Termos Legais de Uso”.
 	• Este termo é um acordo vinculativo entre você e o GUARDIÕES DA SAÚDE, que abrange todo o seu acesso e uso dessa aplicação, o que inclui o uso de todas as informações, dados, ferramentas, produtos, serviços e outros conteúdos disponíveis por meio deste.Ao utilizar esta aplicação, você confirma que compreende e concorda com as seguintes regras dispostas:
@@ -103,7 +103,7 @@ Diante de ameaças ou qualquer outra situação de risco a vossa saúde ou integ
 13.Considerações Finais
 
 	• O acesso ao serviço representa a aceitação expressa e irrestrita dos Termos de Uso acima descritos. Ao concordar com esses termos você concede uma licença perpétua, isenta de royalties, licença incondicional para o GUARDIÕES DA SAÚDE, Ministério da Saúde e todas as organizações sucessoras, para publicar a sua contribuição de forma agregada, na própria aplicação, bem como divulgá-las aos serviços de vigilância em saúde pública relacionados. Você também concorda que GUARDIÕES DA SAÚDE tem o direito, mas não a obrigação, de editar ou remover qualquer contribuição a critério exclusivo da equipe do GUARDIÕES DA SAÚDE.
-</mutableString>
+</string>
                     <color key="textColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

@@ -307,6 +307,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/modal_ui_alert.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/modal_ui_alert@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/modal_ui_alert@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/notice_header.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/reveal-icon.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/reveal-icon@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
@@ -353,6 +354,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/MenuViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/MenuViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/MenuViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Notice.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Notice.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/NoticeViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/NoticeViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/NoticeViewController.xib" isTestSource="false" />
@@ -368,6 +371,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/RearViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/RearViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/RearViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ReportViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ReportViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ReportViewController.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Requester.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Requester.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Screenshots/BG_blur_menu.png" isTestSource="false" />
