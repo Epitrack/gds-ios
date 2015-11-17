@@ -1437,7 +1437,7 @@
 				TargetAttributes = {
 					528C8AF81BB82630003CFC91 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 7AH4KP6Z95;
+						DevelopmentTeam = 98JM6MRC2J;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -2016,9 +2016,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "epitrack.Guardioes-da-Saude";
+				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "75f96b89-57ca-4d24-b901-c5b98dbc8670";
 			};
 			name = Debug;
 		};
@@ -2031,7 +2031,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "epitrack.Guardioes-da-Saude";
+				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
