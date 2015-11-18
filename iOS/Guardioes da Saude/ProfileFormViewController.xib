@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Foco_Std_Rg.ttf">
+            <string>Foco-Regular</string>
+            <string>Foco-Regular</string>
+            <string>Foco-Regular</string>
+            <string>Foco-Regular</string>
+            <string>Foco-Regular</string>
+            <string>Foco-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileFormViewController">
+            <connections>
+                <outlet property="imgProfile" destination="gXv-vK-Kcf" id="T15-we-vD8"/>
+                <outlet property="segmentGender" destination="0FJ-RT-Tpc" id="YvP-d4-9wi"/>
+                <outlet property="segmentRace" destination="G9h-jO-61b" id="B9e-Ud-2dr"/>
+                <outlet property="txtConfirmPassword" destination="6sK-1B-A9r" id="wGP-QG-xem"/>
+                <outlet property="txtDob" destination="Jyt-ir-xuR" id="5ek-G3-g2S"/>
+                <outlet property="txtEmail" destination="izN-6m-mbW" id="4le-GI-jyk"/>
+                <outlet property="txtNick" destination="stU-B6-9Lb" id="8Cx-zb-8nC"/>
+                <outlet property="txtPassword" destination="wxn-ne-Zt8" id="nCJ-Kw-8X2"/>
+                <outlet property="view" destination="7yH-EU-eag" id="u2V-Gj-R00"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="7yH-EU-eag">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="img_profile01.png" translatesAutoresizingMaskIntoConstraints="NO" id="gXv-vK-Kcf">
+                    <rect key="frame" x="31" y="68" width="259" height="100"/>
+                    <animations/>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apelido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="stU-B6-9Lb">
+                    <rect key="frame" x="31" y="171" width="259" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nascimento Ex: 01/05/1970" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jyt-ir-xuR">
+                    <rect key="frame" x="31" y="286" width="270" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@exemplo.com.br" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izN-6m-mbW">
+                    <rect key="frame" x="31" y="324" width="270" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-ne-Zt8">
+                    <rect key="frame" x="31" y="362" width="270" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                </textField>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0FJ-RT-Tpc">
+                    <rect key="frame" x="31" y="211" width="153" height="29"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <segments>
+                        <segment title="Masculino"/>
+                        <segment title="Feminino"/>
+                    </segments>
+                </segmentedControl>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G9h-jO-61b">
+                    <rect key="frame" x="31" y="250" width="270" height="29"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <segments>
+                        <segment title="Branco"/>
+                        <segment title="Preto"/>
+                        <segment title="Pardo"/>
+                        <segment title="Amarelo"/>
+                        <segment title="Indígena"/>
+                    </segments>
+                </segmentedControl>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repita sua senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6sK-1B-A9r">
+                    <rect key="frame" x="31" y="400" width="270" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcD-Sb-OPF">
+                    <rect key="frame" x="195" y="439" width="106" height="40"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="106" id="92F-jL-E7w"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
+                    <state key="normal" title="Salvar" backgroundImage="button_default.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnAction:" destination="-1" eventType="touchUpInside" id="d6V-Ls-keP"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6sK-1B-A9r" secondAttribute="trailing" constant="19" id="1eO-D2-HRY"/>
+                <constraint firstItem="Jyt-ir-xuR" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="31" id="3O2-Vh-vFl"/>
+                <constraint firstItem="6sK-1B-A9r" firstAttribute="top" secondItem="wxn-ne-Zt8" secondAttribute="bottom" constant="8" id="4bx-Jt-ZMv"/>
+                <constraint firstAttribute="trailing" secondItem="stU-B6-9Lb" secondAttribute="trailing" constant="30" id="5by-Z8-p0v"/>
+                <constraint firstItem="izN-6m-mbW" firstAttribute="top" secondItem="Jyt-ir-xuR" secondAttribute="bottom" constant="8" id="7mx-WA-fmE"/>
+                <constraint firstItem="izN-6m-mbW" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="31" id="9hf-Cz-TTD"/>
+                <constraint firstAttribute="trailing" secondItem="tcD-Sb-OPF" secondAttribute="trailing" constant="19" id="CEO-Wr-YAs"/>
+                <constraint firstItem="0FJ-RT-Tpc" firstAttribute="top" secondItem="stU-B6-9Lb" secondAttribute="bottom" constant="10" id="Htt-3v-jf6"/>
+                <constraint firstAttribute="trailing" secondItem="wxn-ne-Zt8" secondAttribute="trailing" constant="19" id="IEg-pT-HpP"/>
+                <constraint firstItem="gXv-vK-Kcf" firstAttribute="centerX" secondItem="7yH-EU-eag" secondAttribute="centerX" id="Oed-ta-7wC"/>
+                <constraint firstAttribute="trailing" secondItem="stU-B6-9Lb" secondAttribute="trailing" constant="30" id="SvF-9P-vAp"/>
+                <constraint firstItem="G9h-jO-61b" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="31" id="UNx-b1-AJs"/>
+                <constraint firstItem="wxn-ne-Zt8" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="31" id="VoP-76-SzN"/>
+                <constraint firstItem="stU-B6-9Lb" firstAttribute="top" secondItem="gXv-vK-Kcf" secondAttribute="bottom" constant="3" id="WfF-Nc-laZ"/>
+                <constraint firstItem="Jyt-ir-xuR" firstAttribute="top" secondItem="G9h-jO-61b" secondAttribute="bottom" constant="8" id="aDZ-8m-ALp"/>
+                <constraint firstAttribute="trailing" secondItem="G9h-jO-61b" secondAttribute="trailing" constant="19" id="dwe-SL-phE"/>
+                <constraint firstItem="0FJ-RT-Tpc" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="31" id="hMg-Ug-iHP"/>
+                <constraint firstItem="wxn-ne-Zt8" firstAttribute="top" secondItem="izN-6m-mbW" secondAttribute="bottom" constant="8" id="hbf-9F-80R"/>
+                <constraint firstItem="G9h-jO-61b" firstAttribute="top" secondItem="0FJ-RT-Tpc" secondAttribute="bottom" constant="11" id="iQ3-Wh-GNO"/>
+                <constraint firstItem="gXv-vK-Kcf" firstAttribute="top" secondItem="7yH-EU-eag" secondAttribute="top" constant="68" id="jG4-et-Jo3"/>
+                <constraint firstAttribute="trailing" secondItem="izN-6m-mbW" secondAttribute="trailing" constant="19" id="jbI-fQ-ASv"/>
+                <constraint firstItem="gXv-vK-Kcf" firstAttribute="trailing" secondItem="tcD-Sb-OPF" secondAttribute="trailing" constant="-11" id="khP-Bq-lJS"/>
+                <constraint firstItem="gXv-vK-Kcf" firstAttribute="leading" secondItem="stU-B6-9Lb" secondAttribute="leading" id="mJD-zc-YCG"/>
+                <constraint firstAttribute="trailing" secondItem="Jyt-ir-xuR" secondAttribute="trailing" constant="19" id="mMy-Am-Sml"/>
+                <constraint firstItem="tcD-Sb-OPF" firstAttribute="top" secondItem="6sK-1B-A9r" secondAttribute="bottom" constant="9" id="r5d-2f-s4H"/>
+                <constraint firstItem="6sK-1B-A9r" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="31" id="riT-LP-Ve5"/>
+                <constraint firstAttribute="trailing" secondItem="gXv-vK-Kcf" secondAttribute="trailing" constant="30" id="sGe-jd-SLs"/>
+                <constraint firstItem="stU-B6-9Lb" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="31" id="tlM-AM-W9U"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_default.png" width="267" height="38"/>
+        <image name="img_profile01.png" width="130" height="130"/>
+    </resources>
+</document>

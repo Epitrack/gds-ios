@@ -13,5 +13,8 @@
     NSMutableArray *users;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableViewProfile;
+@property (weak, nonatomic) IBOutlet UIButton *btnMainUser;
+- (IBAction)btnEditMainUser:(id)sender;
+- (IBAction)btnAddHousehold:(id)sender;
 
 @end
