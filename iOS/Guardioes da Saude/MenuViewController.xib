@@ -42,7 +42,7 @@
                         <constraint firstAttribute="width" secondItem="WQy-Gf-hA1" secondAttribute="height" multiplier="27:23" id="Ig6-Xg-KJv"/>
                     </constraints>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Início" translatesAutoresizingMaskIntoConstraints="NO" id="KS3-qX-hht">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Início" translatesAutoresizingMaskIntoConstraints="NO" id="KS3-qX-hht">
                     <rect key="frame" x="65" y="120" width="127" height="33"/>
                     <animations/>
                     <constraints>
@@ -66,7 +66,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Perfil" translatesAutoresizingMaskIntoConstraints="NO" id="5fg-JR-SpJ">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Perfil" translatesAutoresizingMaskIntoConstraints="NO" id="5fg-JR-SpJ">
                     <rect key="frame" x="65" y="193" width="127" height="33"/>
                     <animations/>
                     <constraints>
@@ -77,7 +77,7 @@
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="18"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sobre" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-Xd-I2M">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Sobre" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-Xd-I2M">
                     <rect key="frame" x="65" y="254" width="127" height="33"/>
                     <animations/>
                     <constraints>
@@ -103,7 +103,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ajuda" translatesAutoresizingMaskIntoConstraints="NO" id="OFN-GK-Jgh">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Ajuda" translatesAutoresizingMaskIntoConstraints="NO" id="OFN-GK-Jgh">
                     <rect key="frame" x="65" y="322" width="127" height="33"/>
                     <animations/>
                     <constraints>
@@ -154,7 +154,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sair" translatesAutoresizingMaskIntoConstraints="NO" id="H3o-iZ-0GD">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Sair" translatesAutoresizingMaskIntoConstraints="NO" id="H3o-iZ-0GD">
                     <rect key="frame" x="65" y="390" width="127" height="33"/>
                     <animations/>
                     <constraints>

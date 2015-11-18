@@ -193,6 +193,9 @@
                             <exclude reference="8KC-Jd-STt"/>
                         </mask>
                     </variation>
+                    <connections>
+                        <action selector="diaryHealth:" destination="-1" eventType="touchUpInside" id="BaD-F1-qJH"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGE-hC-oId">
                     <rect key="frame" x="118" y="304" width="84" height="84"/>

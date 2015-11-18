@@ -15,6 +15,7 @@
 #import "HealthTipsViewController.h"
 #import "SWRevealViewController.h"
 #import "TutorialViewController.h"
+#import "DiaryHealthViewController.h"
 
 @interface HomeViewController ()
 
@@ -103,16 +104,18 @@
 }
 
 - (IBAction)notice:(id)sender {
-    
     NoticeViewController *noticeViewController = [[NoticeViewController alloc] init];
     [self.navigationController pushViewController:noticeViewController animated:YES];
 }
 
 - (IBAction)healthTips:(id)sender {
-    
     HealthTipsViewController *healthTipsViewController = [[HealthTipsViewController alloc] init];
     [self.navigationController pushViewController:healthTipsViewController animated:YES];
-    
+}
+
+- (IBAction)diaryHealth:(id)sender {
+    DiaryHealthViewController *diaryHealthViewController = [[DiaryHealthViewController alloc] init];
+    [self.navigationController pushViewController:diaryHealthViewController animated:YES];
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {

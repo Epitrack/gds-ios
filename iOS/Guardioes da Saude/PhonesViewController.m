@@ -55,11 +55,11 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"cellForRowAtIndexPath");
     
-    static NSString *cellSymptomCacheID = @"CellSymptomCacheID";
-    UITableViewCell *cell = [self.tableViewPhones dequeueReusableCellWithIdentifier:cellSymptomCacheID];
+    static NSString *cellCacheID = @"CellCacheID";
+    UITableViewCell *cell = [self.tableViewPhones dequeueReusableCellWithIdentifier:cellCacheID];
     
     if (cell == nil ) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellSymptomCacheID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellCacheID];
     }
     
     cell.tag = indexPath.row;

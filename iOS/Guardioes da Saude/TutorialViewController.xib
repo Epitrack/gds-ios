@@ -41,6 +41,9 @@
                         <constraint firstAttribute="width" secondItem="i40-G2-ylt" secondAttribute="height" multiplier="19:5" id="ayD-bU-pA2"/>
                     </constraints>
                     <state key="normal" title="Registrar-se" backgroundImage="button_register.png"/>
+                    <connections>
+                        <action selector="btnNewUser:" destination="-1" eventType="touchUpInside" id="C0o-ei-rNh"/>
+                    </connections>
                 </button>
                 <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9KC-Jm-W5d">
                     <rect key="frame" x="132" y="392" width="55" height="37"/>

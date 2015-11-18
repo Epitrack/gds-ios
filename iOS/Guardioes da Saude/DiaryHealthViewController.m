@@ -1,32 +1,35 @@
 //
-//  SelectParticipantViewController.m
+//  DiaryHealthViewController.m
 //  Guardioes da Saude
 //
-//  Created by Miqueias Lopes on 26/10/15.
+//  Created by Miqueias Lopes on 16/11/15.
 //  Copyright © 2015 epitrack. All rights reserved.
 //
 
-#import "SelectParticipantViewController.h"
-#import "User.h"
-#import "SelectStateViewController.h"
+#import "DiaryHealthViewController.h"
 #import "Household.h"
+#import "User.h"
 
-@interface SelectParticipantViewController ()
+@interface DiaryHealthViewController ()
 
 @end
 
-@implementation SelectParticipantViewController {
-    
+@implementation DiaryHealthViewController {
+    NSMutableArray *buttons;
     User *user;
 }
 
-const float kCellHeight = 100.0f;
+const float _kCellHeight = 100.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Guardiões da Saúde";
+    self.navigationItem.title = @"Diário da Saúde";
+    
     user = [User getInstance];
+    buttons = [NSMutableArray array];
+    
+    [self loadMainUser];
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
@@ -35,22 +38,11 @@ const float kCellHeight = 100.0f;
     
     //create table view to contain ASHorizontalScrollView
     
-    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight-100, self.view.frame.size.width, self.view.frame.size.height)];
+    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 160, self.view.frame.size.width, self.view.frame.size.height)];
     sampleTableView.delegate = self;
     sampleTableView.dataSource = self;
     sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:sampleTableView];
-    
-    self.txtNameMainMember.text = user.nick;
-    
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"yyyy"];
-    
-    NSString *dobUser = [user.dob componentsSeparatedByString:@"-"][0];
-    NSString *currentDate = [format stringFromDate:[NSDate date]];
-    NSInteger ageUser= [currentDate intValue] - [dobUser intValue];
-    
-    self.txtDobMainMember.text = [NSString stringWithFormat:@"%ld Anos", (long)ageUser];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,13 +60,49 @@ const float kCellHeight = 100.0f;
 }
 */
 
-- (IBAction)btnSelectMainMember:(id)sender {
+#pragma tableview datasource
+- (void)loadMainUser {
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:
+                              CGRectMake(button.bounds.size.width/4,
+                                         5,
+                                         button.bounds.size.width/2,
+                                         button.bounds.size.height/2)];
     
-    SelectStateViewController *selectStateViewController = [[SelectStateViewController alloc] init];
-    [self.navigationController pushViewController:selectStateViewController animated:YES];
+    if (user.picture.length > 2) {
+        
+        NSString *imageLink =  [@"http://52.20.162.21" stringByAppendingString:user.picture];
+        
+        NSURL * imageURL = [NSURL URLWithString:imageLink];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * image = [UIImage imageWithData:imageData];
+        [imageView setImage:image];
+    } else {
+        
+        NSString *avatar;
+        
+        if (user.picture.length == 1) {
+            avatar = [NSString stringWithFormat: @"img_profile0%@", user.picture];
+        } else if (user.picture.length == 2) {
+            avatar = [NSString stringWithFormat: @"img_profile%@",user.picture];
+        }
+        
+        [imageView setImage:[UIImage imageNamed:avatar]];
+    }
+    
+    [imageView setImage:[UIImage imageNamed:user.picture]];
+    
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 50, button.bounds.size.width/2, button.bounds.size.height/2)];
+    label.text= user.nick;
+    label.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
+    label.textColor = [UIColor whiteColor];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    [label setFont:[UIFont fontWithName:@"Arial" size:10.0]];
+    [button addSubview:label];
+    [button addSubview:imageView];
+    [buttons addObject:button];
 }
 
-#pragma tableview datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -95,13 +123,12 @@ const float kCellHeight = 100.0f;
         
         if (indexPath.row == 0) {
             //sample code of how to use this scroll view
-            ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kCellHeight)];
+            ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, _kCellHeight)];
             [cell.contentView addSubview:horizontalScrollView];
             horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             horizontalScrollView.uniformItemSize = CGSizeMake(100, 100);
             //this must be called after changing any size or margin property of this class to get acurrate margin
             [horizontalScrollView setItemsMarginOnce];
-            NSMutableArray *buttons = [NSMutableArray array];
             NSDictionary *households = user.household;
             
             if (households.count > 0) {
@@ -113,6 +140,7 @@ const float kCellHeight = 100.0f;
                     NSString *avatar;
                     
                     @try {
+                        NSLog(@"picture: %@", picture);
                         if (picture.length > 2) {
                             avatar = @"img_profile01";
                         }
@@ -126,7 +154,7 @@ const float kCellHeight = 100.0f;
                         } else if (p.length == 2) {
                             avatar = [NSString stringWithFormat: @"img_profile%@", p];
                         }
-
+                        
                     }
                     
                     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
@@ -145,19 +173,13 @@ const float kCellHeight = 100.0f;
                     [label setTextAlignment:NSTextAlignmentCenter];
                     [label setFont:[UIFont fontWithName:@"Arial" size:10.0]];
                     [button addSubview:label];
-                    
-                    //[button setTitle:nick forState:UIControlStateNormal];
-                    //[button.titleLabel setFont:[UIFont fontWithName:@"Arial" size:10.0]];
-                    //[button.titleLabel setTextAlignment: NSTextAlignmentCenter];
-                    //[button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                     [button addSubview:imageView];
-                    
                     [buttons addObject:button];
                 }
                 
-                if (buttons.count > 0) {
-                    [horizontalScrollView addItems:buttons];
-                }
+                //if (buttons.count > 0) {
+                [horizontalScrollView addItems:buttons];
+                //}
             }
         }
     }
@@ -165,12 +187,11 @@ const float kCellHeight = 100.0f;
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return kCellHeight;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return _kCellHeight;
 }
 
-- (void) pushAction: (id)sender{
+- (void) pushAction: (id)sender {
     NSLog(@"Clicou");
     
 }
@@ -179,6 +200,5 @@ const float kCellHeight = 100.0f;
     
     NSLog(@"didSelectRowAtIndexPath");
 }
-
 
 @end
