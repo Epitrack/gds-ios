@@ -14,9 +14,11 @@
     NSMutableArray *symptoms;
     NSDictionary *symptomsTemp;
     NSMutableDictionary *symptomsSelected;
+    NSMutableArray *symptomsArray;
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableSymptoms;
 - (IBAction)btnConfirmSurvey:(id)sender;
 - (void) loadSymptoms;
+
 
 @end

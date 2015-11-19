@@ -25,7 +25,6 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Guardiões da Saúde";
     user = [User getInstance];
-    self.navigationItem.hidesBackButton = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +41,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillAppear:animated];
+}
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.txtNick endEditing:YES];
     [self.txtEmail endEditing:YES];

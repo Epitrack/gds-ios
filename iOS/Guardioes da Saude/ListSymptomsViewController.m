@@ -19,6 +19,7 @@
     double longitude;
     User *user;
     NSIndexPath *oldIndexPath;
+    NSMutableIndexSet *selected;
 }
 
 @end
@@ -29,6 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Guardiões da Saúde";
+    selected = [[NSMutableIndexSet alloc] init];
     user = [User getInstance];
     [self loadSymptoms];
     
@@ -57,61 +59,91 @@
 }
 */
 
+- (void) loadSymptomsArray {
+    
+}
+
 - (IBAction)btnConfirmSurvey:(id)sender {
     
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];;
     
-    [params setValue:@"user_id" forKey:user.idUser];
-    [params setValue:@"lat" forKey:[NSString stringWithFormat:@"%.8f", latitude]];
-    [params setValue:@"lon" forKey:[NSString stringWithFormat:@"%.8f", longitude]];
-    [params setValue:@"app_token" forKey:user.app_token];
-    [params setValue:@"client" forKey:user.client];
-    [params setValue:@"platform" forKey:user.platform];
-    [params setValue:@"no_symptom" forKey:@"N"];
-    [params setValue:@"token" forKey:user.user_token];
-    
-    for (Symptom *s in symptomsSelected) {
-        NSString *code = [NSString stringWithFormat:@"%@", s];
-        if([code isEqualToString:@"hadContagiousContact"] || [code isEqualToString:@"hadHealthCare"] || [code isEqualToString:@"hadTravelledAbroad"]) {
-            [params setValue:@"true" forKey:code];
-        } else {
-            [params setValue:@"Y" forKey:code];
-        }
-    }
+    if (selected.count > 0) {
         
-    NSLog(@"params %@", params);
-    
-    
-    AFHTTPRequestOperationManager *manager;
-    
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:@"http://52.20.162.21/survey/create"
-       parameters:params
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              
-              ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] init];
-              [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
-    
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Deseja registrar suas informações?" preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"SIM" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button YES");
+            
+            
+            NSMutableDictionary *params = [[NSMutableDictionary alloc] init];;
+            
+            [params setValue:user.idUser forKey:@"user_id"];
+            [params setValue:[NSString stringWithFormat:@"%.8f" , latitude] forKey:@"lat"];
+            [params setValue:[NSString stringWithFormat:@"%.8f", longitude] forKey:@"lon"];
+            [params setValue:user.app_token forKey:@"app_token"];
+            [params setValue:user.client forKey:@"client"];
+            [params setValue:user.platform forKey:@"platform"];
+            [params setValue:@"N" forKey:@"no_symptom"];
+            [params setValue:user.user_token forKey:@"token"];
+            
+            for (int i=0; i < 17; i++) {
+                
+                if ([selected containsIndex:i]) {
+                    Symptom *symptom = [symptoms objectAtIndex:i];
+                    if([symptom.code isEqualToString:@"hadContagiousContact"] || [symptom.code isEqualToString:@"hadHealthCare"] || [symptom.code isEqualToString:@"hadTravelledAbroad"]) {
+                        [params setValue:@"true" forKey:symptom.code];
+                    } else {
+                        [params setValue:@"Y" forKey:symptom.code];
+                    }
+                    
+                }
+            }
+            
+            NSLog(@"params %@", params);
+            
+            AFHTTPRequestOperationManager *manager;
+            
+            manager = [AFHTTPRequestOperationManager manager];
+            [manager POST:@"http://52.20.162.21/survey/create"
+               parameters:params
+                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                      
+                      ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] init];
+                      [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
+                      
+                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                      NSLog(@"error %@", error);
+                      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Infelizmente não conseguimos conlcuir esta operação. Tente novamente dentro de alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
+                      UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                          NSLog(@"You pressed button OK");
+                      }];
+                      [alert addAction:defaultAction];
+                      [self presentViewController:alert animated:YES completion:nil];
+                      
+                  }];
+        }];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"NÃO" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button NO");
+        }];
+        [alert addAction:yesAction];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Infelizmente não conseguimos conlcuir esta operação. Tente novamente dentro de alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Escolha algum sintoma antes de confirmar.." preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button OK");
         }];
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
-        
-    }];
-    
+
+    }
 }
 
 - (void) loadSymptoms {
     
     symptoms = [[NSMutableArray alloc] init];
     
-    Symptom *others = [[Symptom alloc] initWithName:@"Sintomas" andCode:@"sintomas"];
-    [symptoms addObject:others];
-    
+    Symptom *others;
+
     for (NSDictionary *item in user.symptoms) {
         NSString *name = item[@"name"];
         NSString *code = item[@"code"];
@@ -144,21 +176,271 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellSymptomCacheID];
     }
     
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"symptomCell" forIndexPath:indexPath];
+    //UITableViewCell *cell;
+    
     Symptom *symptom = [symptoms objectAtIndex:indexPath.row];
     
-    if ([symptom.code isEqualToString: @"sintomas"] || [symptom.code isEqualToString: @"outros"]) {
-        cell.backgroundColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
-        cell.textLabel.textColor = [UIColor whiteColor];
-    } else {
-        cell.backgroundColor = [UIColor whiteColor];
-        cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+    //NSLog(@"symptoms: %@", symptoms);
+    //NSLog(@"symptom: %@", symptom.code);
+    
+    if (indexPath.row == 0) {
+        if ([symptom.code isEqualToString: @"febre"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 1) {
+        if ([symptom.code isEqualToString: @"tosse"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 2) {
+        if ([symptom.code isEqualToString: @"nausea-vomito"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 3) {
+        if ([symptom.code isEqualToString: @"manchas-vermelhas"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 4) {
+        if ([symptom.code isEqualToString: @"dor-nas-juntas"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 5) {
+        if ([symptom.code isEqualToString: @"diarreia"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 6) {
+        if ([symptom.code isEqualToString: @"dor-no-corpo"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 7) {
+        if ([symptom.code isEqualToString: @"sangramento"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 8) {
+        if ([symptom.code isEqualToString: @"dor-de-cabeca"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 9) {
+        if ([symptom.code isEqualToString: @"olhos-vermelhos"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+            else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 10) {
+        if ([symptom.code isEqualToString: @"coceira"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+            else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 11) {
+        if ([symptom.code isEqualToString: @"falta-de-ar"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+            else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 12) {
+        if ([symptom.code isEqualToString: @"urina-escura-ou-olhos-amarelados"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 13) {
+        if ([symptom.code isEqualToString: @"outros"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.textLabel.textColor = [UIColor whiteColor];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        }
+    } else if (indexPath.row == 14) {
+        if ([symptom.code isEqualToString: @"hadContagiousContact"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 15) {
+        if ([symptom.code isEqualToString: @"hadHealthCare"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
+    } else if (indexPath.row == 16) {
+        if ([symptom.code isEqualToString: @"hadTravelledAbroad"]) {
+            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
+            cell.backgroundColor = [UIColor whiteColor];
+            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.tag = indexPath.row;
+            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+            cell.textLabel.text = symptom.name;
+            
+            if ([selected containsIndex:indexPath.row]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+            }
+        }
     }
+        
+   return cell;
     
-    cell.tag = indexPath.row;
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.textLabel.text = symptom.name;
-    
-    return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -171,24 +453,33 @@
         //NSLog(@"Row: %d", indexPath.row);
         BOOL indexExists = NO;
         
-        if (indexPath.row == 0 || indexPath.row == 14) {
+        if (indexPath.row == 13) {
             [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
         } else {
         
-            for (Symptom *s in symptomsSelected) {
+            /*for (Symptom *s in symptomsSelected) {
             
                 NSString *curremtCode = currentSymptom.code;
                 NSString *code = [NSString stringWithFormat:@"%@", s];
             
                 if ([code isEqualToString:curremtCode]) {
-                    //[symptomsSelected removeObjectForKey:currentSymptom.code];
-                    [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+                    [symptomsSelected removeObjectForKey:currentSymptom.code];
+                    //[self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
                     indexExists = YES;
                 }
             }
             if (indexExists == NO) {
                 [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
                 //[symptomsSelected setObject:currentSymptom forKey:currentSymptom.code];
+            }
+        }*/
+            if ([selected containsIndex:indexPath.row]) {
+                [selected removeIndex:indexPath.row];
+                [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+            }
+            else {
+                [selected addIndex:indexPath.row];
+                [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
             }
         }
         

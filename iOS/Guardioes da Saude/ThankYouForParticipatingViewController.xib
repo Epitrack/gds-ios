@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Foco_Std_Lt.ttf">
@@ -27,28 +28,40 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG_blur_menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="tqL-Ou-Z9i">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Obrigado pela informação!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pe7-h0-q1G">
+                    <rect key="frame" x="31" y="80" width="356" height="36"/>
                     <animations/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Obrigado pela informação!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pe7-h0-q1G">
-                    <rect key="frame" x="81" y="80" width="251" height="36"/>
-                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="rIg-FX-9i5"/>
+                    </constraints>
                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="21"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como esrá sua saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq">
-                    <rect key="frame" x="40" y="382" width="338" height="61"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Acompanhe seu histórico no Diário da Saúde" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4K-IG-67k">
+                    <rect key="frame" x="8" y="109" width="398" height="36"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="fic-dN-seL"/>
+                    </constraints>
+                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como esrá sua saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq">
+                    <rect key="frame" x="31" y="486" width="338" height="61"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="61" id="ErM-n7-P3j"/>
+                    </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="12"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqY-3s-F0Z">
-                    <rect key="frame" x="74" y="519" width="267" height="38"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqY-3s-F0Z">
+                    <rect key="frame" x="31" y="592" width="347" height="38"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
                     <state key="normal" title="Facebook" backgroundImage="button_facebook.png">
@@ -56,19 +69,15 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypd-vZ-RP9">
-                    <rect key="frame" x="74" y="572" width="267" height="38"/>
+                    <rect key="frame" x="31" y="637" width="347" height="38"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" title="Facebook" backgroundImage="button_twitter.png">
+                    <state key="normal" title="Twitter" backgroundImage="button_twitter.png">
                         <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_check_survey.png" translatesAutoresizingMaskIntoConstraints="NO" id="zIx-1e-Tfy">
-                    <rect key="frame" x="123" y="183" width="169" height="175"/>
-                    <animations/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0U-C0-bM8">
-                    <rect key="frame" x="73" y="690" width="268" height="38"/>
+                    <rect key="frame" x="31" y="690" width="347" height="38"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
                     <state key="normal" title="Continuar" backgroundImage="button_default_white.png">
@@ -78,37 +87,61 @@
                         <action selector="btnContinue:" destination="-1" eventType="touchUpInside" id="qqh-Ab-mbA"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Convide seus amigos para serem Guardiões." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
-                    <rect key="frame" x="93" y="480" width="229" height="31"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Convide seus amigos para serem Guardiões." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
+                    <rect key="frame" x="31" y="543" width="347" height="31"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="Rvv-cr-hQP"/>
+                    </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="12"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Obrigado pela informação!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4K-IG-67k">
-                    <rect key="frame" x="81" y="124" width="251" height="36"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check_survey.png" translatesAutoresizingMaskIntoConstraints="NO" id="zIx-1e-Tfy">
+                    <rect key="frame" x="123" y="153" width="169" height="175"/>
                     <animations/>
-                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="21"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="175" id="kv2-Be-dGG"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="a0U-C0-bM8" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="73" id="AIP-jL-kps"/>
-                <constraint firstItem="a0U-C0-bM8" firstAttribute="top" secondItem="ypd-vZ-RP9" secondAttribute="bottom" constant="80" id="GOf-Lo-Y56"/>
-                <constraint firstAttribute="trailing" secondItem="ypd-vZ-RP9" secondAttribute="trailing" constant="73" id="LW6-wS-eKn"/>
-                <constraint firstItem="ypd-vZ-RP9" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="74" id="Q17-0x-mSB"/>
-                <constraint firstAttribute="trailing" secondItem="a0U-C0-bM8" secondAttribute="trailing" constant="73" id="i8p-IF-0Of"/>
+                <constraint firstAttribute="trailing" secondItem="yjK-KE-wnq" secondAttribute="trailing" constant="45" id="13z-Cd-iaA"/>
+                <constraint firstItem="Pe7-h0-q1G" firstAttribute="top" secondItem="P0O-cc-Vgz" secondAttribute="top" constant="80" id="70B-I6-an9"/>
+                <constraint firstItem="yjK-KE-wnq" firstAttribute="leading" secondItem="Pe7-h0-q1G" secondAttribute="leading" id="71g-hG-zEx"/>
+                <constraint firstItem="ypd-vZ-RP9" firstAttribute="top" secondItem="QqY-3s-F0Z" secondAttribute="bottom" constant="7" id="7DR-sh-4T4"/>
+                <constraint firstItem="a0U-C0-bM8" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="31" id="AIP-jL-kps"/>
+                <constraint firstItem="a0U-C0-bM8" firstAttribute="top" secondItem="ypd-vZ-RP9" secondAttribute="bottom" constant="15" id="GOf-Lo-Y56"/>
+                <constraint firstAttribute="trailing" secondItem="QqY-3s-F0Z" secondAttribute="trailing" constant="36" id="HdB-Qs-Dkq"/>
+                <constraint firstItem="QqY-3s-F0Z" firstAttribute="top" secondItem="XwE-05-RnE" secondAttribute="bottom" constant="18" id="Hj9-bk-FAI"/>
+                <constraint firstAttribute="trailing" secondItem="Pe7-h0-q1G" secondAttribute="trailing" constant="27" id="JXm-QI-PxM"/>
+                <constraint firstItem="Z4K-IG-67k" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leadingMargin" id="Jho-Mq-U9V"/>
+                <constraint firstItem="zIx-1e-Tfy" firstAttribute="centerX" secondItem="Z4K-IG-67k" secondAttribute="centerX" constant="0.5" id="LPJ-G1-kOt"/>
+                <constraint firstAttribute="trailing" secondItem="ypd-vZ-RP9" secondAttribute="trailing" constant="36" id="LW6-wS-eKn"/>
+                <constraint firstItem="XwE-05-RnE" firstAttribute="top" secondItem="yjK-KE-wnq" secondAttribute="bottom" constant="-4" id="M4I-hQ-HYI"/>
+                <constraint firstItem="ypd-vZ-RP9" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="31" id="Q17-0x-mSB"/>
+                <constraint firstItem="yjK-KE-wnq" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="31" id="bgd-gT-e7W"/>
+                <constraint firstAttribute="trailing" secondItem="XwE-05-RnE" secondAttribute="trailing" constant="36" id="cRh-qq-KoB"/>
+                <constraint firstItem="Z4K-IG-67k" firstAttribute="top" secondItem="Pe7-h0-q1G" secondAttribute="bottom" constant="-7" id="i4c-qW-VMe"/>
+                <constraint firstAttribute="trailing" secondItem="a0U-C0-bM8" secondAttribute="trailing" constant="36" id="i8p-IF-0Of"/>
+                <constraint firstItem="zIx-1e-Tfy" firstAttribute="top" secondItem="Z4K-IG-67k" secondAttribute="bottom" constant="8" id="lk6-7T-88n"/>
+                <constraint firstItem="zIx-1e-Tfy" firstAttribute="centerX" secondItem="P0O-cc-Vgz" secondAttribute="centerX" constant="0.5" id="sGa-we-6Pt"/>
+                <constraint firstItem="XwE-05-RnE" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="31" id="yEm-jH-eNx"/>
+                <constraint firstItem="Pe7-h0-q1G" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="31" id="zq3-f8-rbG"/>
                 <constraint firstAttribute="bottom" secondItem="a0U-C0-bM8" secondAttribute="bottom" constant="8" id="zrU-sZ-gSb"/>
+                <constraint firstItem="QqY-3s-F0Z" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="31" id="zvj-qf-yLs"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="bgd-gT-e7W"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>
-        <image name="BG_blur_menu.png" width="321" height="568"/>
         <image name="button_default_white.png" width="268" height="38"/>
         <image name="button_facebook.png" width="267" height="38"/>
         <image name="button_twitter.png" width="267" height="38"/>
