@@ -1,7 +1,7 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '8.0'
 # Uncomment this line if you're using Swift
-# use_frameworks!
+use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.1'
@@ -9,6 +9,10 @@ xcodeproj 'Guardioes da Saude.xcodeproj'
 pod 'AFNetworking'
 pod 'PTEHorizontalTableView'
 pod 'ASHorizontalScrollViewForObjectiveC', '~> 1.0'
+pod 'JSONModel'
+pod 'Charts', '~> 2.1'
+pod 'JYGraphView', '~> 0.1'
+pod 'JTCalendar', '~> 2.0'
 target 'Guardioes da Saude' do
 
 end

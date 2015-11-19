@@ -82,3 +82,22 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Guardioes da Saude/AFNetworking.framework"
+  install_framework "Pods-Guardioes da Saude/ASHorizontalScrollViewForObjectiveC.framework"
+  install_framework "Pods-Guardioes da Saude/Charts.framework"
+  install_framework "Pods-Guardioes da Saude/JSONModel.framework"
+  install_framework "Pods-Guardioes da Saude/JTCalendar.framework"
+  install_framework "Pods-Guardioes da Saude/JYGraphView.framework"
+  install_framework "Pods-Guardioes da Saude/PTEHorizontalTableView.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Guardioes da Saude/AFNetworking.framework"
+  install_framework "Pods-Guardioes da Saude/ASHorizontalScrollViewForObjectiveC.framework"
+  install_framework "Pods-Guardioes da Saude/Charts.framework"
+  install_framework "Pods-Guardioes da Saude/JSONModel.framework"
+  install_framework "Pods-Guardioes da Saude/JTCalendar.framework"
+  install_framework "Pods-Guardioes da Saude/JYGraphView.framework"
+  install_framework "Pods-Guardioes da Saude/PTEHorizontalTableView.framework"
+fi

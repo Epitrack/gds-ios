@@ -82,3 +82,22 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/ASHorizontalScrollViewForObjectiveC.framework"
+  install_framework "Pods/Charts.framework"
+  install_framework "Pods/JSONModel.framework"
+  install_framework "Pods/JTCalendar.framework"
+  install_framework "Pods/JYGraphView.framework"
+  install_framework "Pods/PTEHorizontalTableView.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/AFNetworking.framework"
+  install_framework "Pods/ASHorizontalScrollViewForObjectiveC.framework"
+  install_framework "Pods/Charts.framework"
+  install_framework "Pods/JSONModel.framework"
+  install_framework "Pods/JTCalendar.framework"
+  install_framework "Pods/JYGraphView.framework"
+  install_framework "Pods/PTEHorizontalTableView.framework"
+fi

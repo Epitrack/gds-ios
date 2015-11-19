@@ -21,16 +21,28 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - ASHorizontalScrollViewForObjectiveC (1.0)
+  - Charts (2.1.6)
+  - JSONModel (1.1.2)
+  - JTCalendar (2.1.4)
+  - JYGraphView (0.1.0)
   - PTEHorizontalTableView (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking
   - ASHorizontalScrollViewForObjectiveC (~> 1.0)
+  - Charts (~> 2.1)
+  - JSONModel
+  - JTCalendar (~> 2.0)
+  - JYGraphView (~> 0.1)
   - PTEHorizontalTableView
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   ASHorizontalScrollViewForObjectiveC: ae062186417c66a626a1961d0115deffa38d226e
+  Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
+  JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
+  JTCalendar: 9b1352c7ec41cc26b19c189d6608ba48060a53d9
+  JYGraphView: 1f0e5541664acff0f43a31fee5e6bd7171236539
   PTEHorizontalTableView: 2c65c4360282223628dabc664508dde922f98efd
 
 COCOAPODS: 0.39.0

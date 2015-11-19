@@ -23,7 +23,6 @@
 		257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 257315BE1BCEF07900FDB102 /* HomeViewController.m */; };
 		258F14E31BCEE3CC00CE86B7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F14E11BCEE3CC00CE86B7 /* User.m */; };
 		25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */; };
-		25A19BDD1BC528C700F08FA9 /* Requester.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A19BDC1BC528C700F08FA9 /* Requester.m */; };
 		25F3B2381BDC8C540014BC30 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F3B2371BDC8C540014BC30 /* HomeViewController.xib */; };
 		520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */; };
 		520158FA1BE3CD9D00982856 /* DetailMapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */; };
@@ -380,7 +379,18 @@
 		52E727ED1BEA93B800B46945 /* modal_ui_alert@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8829B5F81BB9D5A500F4C75A /* modal_ui_alert@3x.png */; };
 		52EC50411BF02200002FEACE /* Household.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC50401BF02200002FEACE /* Household.m */; };
 		52EC50441BF026CC002FEACE /* ImageUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC50431BF026CC002FEACE /* ImageUtility.m */; };
-		A8F25B21A9D7197D4F321086 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3A85EE0572816B3504B5C2 /* libPods.a */; };
+		9E122E6DA5824937A683452F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8024AD3523214155324B45 /* Pods.framework */; };
+		AAE38B371BF9211D009CD20B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B311BF9211D009CD20B /* Constants.m */; };
+		AAE38B381BF9211D009CD20B /* Requester.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B331BF9211D009CD20B /* Requester.m */; };
+		AAE38B391BF9211D009CD20B /* UserRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B361BF9211D009CD20B /* UserRequester.m */; };
+		AAE38B3C1BFA1CAA009CD20B /* HouseholdRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B3B1BFA1CAA009CD20B /* HouseholdRequester.m */; };
+		AAE38B3F1BFA2425009CD20B /* SurveyRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B3E1BFA2425009CD20B /* SurveyRequester.m */; };
+		AAE38B421BFA2A09009CD20B /* Sumary.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B411BFA2A09009CD20B /* Sumary.m */; };
+		AAE38B451BFA5DD8009CD20B /* SumaryCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B441BFA5DD8009CD20B /* SumaryCalendar.m */; };
+		AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B471BFA713E009CD20B /* SumaryGraph.m */; };
+		AAE38B4B1BFA80AF009CD20B /* SumaryLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B4A1BFA80AF009CD20B /* SumaryLocation.m */; };
+		AAE38B4E1BFAA16F009CD20B /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B4D1BFAA16F009CD20B /* ChartViewController.m */; };
+		AAE38B501BFAA1D8009CD20B /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE38B4F1BFAA1D8009CD20B /* ChartViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -410,8 +420,6 @@
 		258F14E21BCEE3CC00CE86B7 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = "Guardioes da Saude/User.h"; sourceTree = "<group>"; };
 		25A19BD51BC46CE800F08FA9 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
-		25A19BDC1BC528C700F08FA9 /* Requester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requester.m; sourceTree = "<group>"; };
-		25A19BDE1BC5292000F08FA9 /* Requester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Requester.h; sourceTree = "<group>"; };
 		25F3B2371BDC8C540014BC30 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		520158F61BE3CD9D00982856 /* DetailMapHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMapHealthViewController.h; sourceTree = "<group>"; };
 		520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMapHealthViewController.m; sourceTree = "<group>"; };
@@ -796,8 +804,31 @@
 		88FA9B491BC2EE5E00DD8506 /* img_card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_card.png; sourceTree = "<group>"; };
 		88FA9B4A1BC2EE5E00DD8506 /* img_card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_card@2x.png"; sourceTree = "<group>"; };
 		88FA9B4B1BC2EE5E00DD8506 /* img_card@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_card@3x.png"; sourceTree = "<group>"; };
+		8E8024AD3523214155324B45 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9645C5439DC8F116716932CE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		AE3A85EE0572816B3504B5C2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAE38B301BF9211D009CD20B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		AAE38B311BF9211D009CD20B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		AAE38B321BF9211D009CD20B /* Requester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Requester.h; sourceTree = "<group>"; };
+		AAE38B331BF9211D009CD20B /* Requester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requester.m; sourceTree = "<group>"; };
+		AAE38B341BF9211D009CD20B /* StatusCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusCode.h; sourceTree = "<group>"; };
+		AAE38B351BF9211D009CD20B /* UserRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRequester.h; sourceTree = "<group>"; };
+		AAE38B361BF9211D009CD20B /* UserRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRequester.m; sourceTree = "<group>"; };
+		AAE38B3A1BFA1CAA009CD20B /* HouseholdRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseholdRequester.h; sourceTree = "<group>"; };
+		AAE38B3B1BFA1CAA009CD20B /* HouseholdRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseholdRequester.m; sourceTree = "<group>"; };
+		AAE38B3D1BFA2425009CD20B /* SurveyRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyRequester.h; sourceTree = "<group>"; };
+		AAE38B3E1BFA2425009CD20B /* SurveyRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyRequester.m; sourceTree = "<group>"; };
+		AAE38B401BFA2A09009CD20B /* Sumary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sumary.h; sourceTree = "<group>"; };
+		AAE38B411BFA2A09009CD20B /* Sumary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sumary.m; sourceTree = "<group>"; };
+		AAE38B431BFA5DD8009CD20B /* SumaryCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SumaryCalendar.h; sourceTree = "<group>"; };
+		AAE38B441BFA5DD8009CD20B /* SumaryCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumaryCalendar.m; sourceTree = "<group>"; };
+		AAE38B461BFA713E009CD20B /* SumaryGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SumaryGraph.h; sourceTree = "<group>"; };
+		AAE38B471BFA713E009CD20B /* SumaryGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumaryGraph.m; sourceTree = "<group>"; };
+		AAE38B491BFA80AF009CD20B /* SumaryLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SumaryLocation.h; sourceTree = "<group>"; };
+		AAE38B4A1BFA80AF009CD20B /* SumaryLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumaryLocation.m; sourceTree = "<group>"; };
+		AAE38B4C1BFAA16F009CD20B /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
+		AAE38B4D1BFAA16F009CD20B /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
+		AAE38B4F1BFAA1D8009CD20B /* ChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartViewController.xib; sourceTree = "<group>"; };
+		AAE38B5E1BFBC81E009CD20B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -807,7 +838,7 @@
 			files = (
 				2548B9EE1BDEBA310004E00F /* CoreLocation.framework in Frameworks */,
 				2548B9EC1BDEBA250004E00F /* MapKit.framework in Frameworks */,
-				A8F25B21A9D7197D4F321086 /* libPods.a in Frameworks */,
+				9E122E6DA5824937A683452F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,6 +878,14 @@
 				5250D7431BE2ADD3006E8A63 /* SurveyMap.m */,
 				258F14E11BCEE3CC00CE86B7 /* User.m */,
 				258F14E21BCEE3CC00CE86B7 /* User.h */,
+				AAE38B401BFA2A09009CD20B /* Sumary.h */,
+				AAE38B411BFA2A09009CD20B /* Sumary.m */,
+				AAE38B431BFA5DD8009CD20B /* SumaryCalendar.h */,
+				AAE38B441BFA5DD8009CD20B /* SumaryCalendar.m */,
+				AAE38B461BFA713E009CD20B /* SumaryGraph.h */,
+				AAE38B471BFA713E009CD20B /* SumaryGraph.m */,
+				AAE38B491BFA80AF009CD20B /* SumaryLocation.h */,
+				AAE38B4A1BFA80AF009CD20B /* SumaryLocation.m */,
 			);
 			name = Model;
 			path = ..;
@@ -862,17 +901,11 @@
 				5221A8211BED30F1006659E2 /* Survey */,
 				5221A8201BED30CC006659E2 /* MapHealth */,
 				5221A81F1BED30BE006659E2 /* Diary */,
+				AAE38B4C1BFAA16F009CD20B /* ChartViewController.h */,
+				AAE38B4D1BFAA16F009CD20B /* ChartViewController.m */,
+				AAE38B4F1BFAA1D8009CD20B /* ChartViewController.xib */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		25A19BD91BC4B24500F08FA9 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				25A19BDC1BC528C700F08FA9 /* Requester.m */,
-				25A19BDE1BC5292000F08FA9 /* Requester.h */,
-			);
-			name = Request;
 			sourceTree = "<group>";
 		};
 		5221A81F1BED30BE006659E2 /* Diary */ = {
@@ -1026,11 +1059,11 @@
 		528C8AFB1BB82630003CFC91 /* Guardioes da Saude */ = {
 			isa = PBXGroup;
 			children = (
+				AAE38B2F1BF9211D009CD20B /* Request */,
 				524C14401BECE13E003A6C2D /* SWReval */,
 				251AD8F91BD553DE000C1B84 /* Facade */,
 				256DBA951BD039AE0029A569 /* Utility */,
 				258F14DD1BCED4A800CE86B7 /* Model */,
-				25A19BD91BC4B24500F08FA9 /* Request */,
 				8829B5381BB9D5A400F4C75A /* Assets */,
 				528C8AFF1BB82630003CFC91 /* AppDelegate.h */,
 				528C8B001BB82630003CFC91 /* AppDelegate.m */,
@@ -1042,6 +1075,7 @@
 				528C8B0A1BB82630003CFC91 /* LaunchScreen.storyboard */,
 				528C8B0D1BB82630003CFC91 /* Info.plist */,
 				528C8AFC1BB82630003CFC91 /* Supporting Files */,
+				AAE38B5E1BFBC81E009CD20B /* Bridging-Header.h */,
 			);
 			path = "Guardioes da Saude";
 			sourceTree = "<group>";
@@ -1377,12 +1411,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AAE38B2F1BF9211D009CD20B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				AAE38B301BF9211D009CD20B /* Constants.h */,
+				AAE38B311BF9211D009CD20B /* Constants.m */,
+				AAE38B321BF9211D009CD20B /* Requester.h */,
+				AAE38B331BF9211D009CD20B /* Requester.m */,
+				AAE38B341BF9211D009CD20B /* StatusCode.h */,
+				AAE38B351BF9211D009CD20B /* UserRequester.h */,
+				AAE38B361BF9211D009CD20B /* UserRequester.m */,
+				AAE38B3A1BFA1CAA009CD20B /* HouseholdRequester.h */,
+				AAE38B3B1BFA1CAA009CD20B /* HouseholdRequester.m */,
+				AAE38B3D1BFA2425009CD20B /* SurveyRequester.h */,
+				AAE38B3E1BFA2425009CD20B /* SurveyRequester.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		CF810800BC26A068848D3B68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				2548B9ED1BDEBA310004E00F /* CoreLocation.framework */,
 				2548B9EB1BDEBA250004E00F /* MapKit.framework */,
-				AE3A85EE0572816B3504B5C2 /* libPods.a */,
+				8E8024AD3523214155324B45 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1498,6 +1550,7 @@
 				52E7276E1BEA93B800B46945 /* icon_facebook@2x.png in Resources */,
 				52E727C51BEA93B800B46945 /* img_profile02@2x.png in Resources */,
 				52E727881BEA93B800B46945 /* icon_logo_tutorial.png in Resources */,
+				AAE38B501BFAA1D8009CD20B /* ChartViewController.xib in Resources */,
 				528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */,
 				52E727B81BEA93B800B46945 /* icon_twitter.png in Resources */,
 				52E7271D1BEA93B800B46945 /* button_default_white@2x.png in Resources */,
@@ -1849,7 +1902,9 @@
 				258F14E31BCEE3CC00CE86B7 /* User.m in Sources */,
 				5250D7441BE2ADD3006E8A63 /* SurveyMap.m in Sources */,
 				524C14221BEBCEE6003A6C2D /* HealthTipsViewController.m in Sources */,
+				AAE38B381BF9211D009CD20B /* Requester.m in Sources */,
 				524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */,
+				AAE38B3F1BFA2425009CD20B /* SurveyRequester.m in Sources */,
 				524C14361BEBE533003A6C2D /* BasicCareViewController.m in Sources */,
 				524C14461BECE363003A6C2D /* SWRevealViewController.m in Sources */,
 				2548B9E91BDEB3C80004E00F /* ThankYouForParticipatingViewController.m in Sources */,
@@ -1862,22 +1917,29 @@
 				524C143B1BEBE67C003A6C2D /* PreventionViewController.m in Sources */,
 				520CD0E21BED436700F24B45 /* EnterViewController.m in Sources */,
 				525A33221BECF3BA00B62E33 /* RearViewController.m in Sources */,
+				AAE38B371BF9211D009CD20B /* Constants.m in Sources */,
+				AAE38B451BFA5DD8009CD20B /* SumaryCalendar.m in Sources */,
 				524C14271BEBD89C003A6C2D /* EmergencyViewController.m in Sources */,
 				256DBA941BD0399D0029A569 /* DTO.m in Sources */,
 				529BE1D81BF65ECE00692EEC /* TermsViewController.m in Sources */,
 				528C8B041BB82630003CFC91 /* ViewController.m in Sources */,
 				5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */,
-				25A19BDD1BC528C700F08FA9 /* Requester.m in Sources */,
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
+				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,
 				520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */,
+				AAE38B4E1BFAA16F009CD20B /* ChartViewController.m in Sources */,
 				528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */,
 				25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */,
 				529BE1D31BF6598300692EEC /* HelpViewController.m in Sources */,
 				25630CFA1BDFA2760047FF07 /* Symptom.m in Sources */,
+				AAE38B3C1BFA1CAA009CD20B /* HouseholdRequester.m in Sources */,
 				529BE1CE1BF62C8200692EEC /* AboutViewController.m in Sources */,
 				520CD0D51BED3DB800F24B45 /* SelectTypeLoginViewController.m in Sources */,
+				AAE38B421BFA2A09009CD20B /* Sumary.m in Sources */,
+				AAE38B4B1BFA80AF009CD20B /* SumaryLocation.m in Sources */,
 				528C8AFE1BB82630003CFC91 /* main.m in Sources */,
 				251AD8F81BD553D3000C1B84 /* Facade.m in Sources */,
+				AAE38B391BF9211D009CD20B /* UserRequester.m in Sources */,
 				52EC50411BF02200002FEACE /* Household.m in Sources */,
 				522360BF1BE9176D006D0598 /* DetailMap.m in Sources */,
 				524C14311BEBE043003A6C2D /* PharmacyViewController.m in Sources */,

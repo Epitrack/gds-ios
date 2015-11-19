@@ -6,9 +6,10 @@
 //  Copyright © 2015 epitrack. All rights reserved.
 //
 
+#import "JSONModel.h"
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject {
+@interface User : JSONModel {
     NSString *nick;
     NSString *email;
     NSString *password;
