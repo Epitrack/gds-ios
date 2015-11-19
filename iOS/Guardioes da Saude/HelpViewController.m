@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "TermsViewController.h"
 #import "TutorialHelpViewController.h"
+#import "ReportViewController.h"
 
 @interface HelpViewController ()
 
@@ -72,6 +73,9 @@
 }
 
 - (IBAction)btnReport:(id)sender {
+    
+    ReportViewController *reportViewController = [[ReportViewController alloc] init];
+    [self.navigationController pushViewController:reportViewController animated:YES];
     
 }
 @end

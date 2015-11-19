@@ -11,6 +11,7 @@
 #import "HomeViewController.h"
 #import "AboutViewController.h"
 #import "HelpViewController.h"
+#import "ProfileListViewController.h"
 
 @interface MenuViewController () {
     
@@ -110,6 +111,11 @@
 }
 
 - (IBAction)btnProfile:(id)sender {
+    
+    ProfileListViewController *profileListController = [[ProfileListViewController alloc] init];
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:profileListController];
+    SWRevealViewController *revealController = self.revealViewController;
+    [revealController pushFrontViewController:newFrontController animated:YES];
 }
 
 - (IBAction)btnExit:(id)sender {

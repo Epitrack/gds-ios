@@ -16,5 +16,6 @@
 - (IBAction)btnMapHealth:(id)sender;
 - (IBAction)notice:(id)sender;
 - (IBAction)healthTips:(id)sender;
+- (IBAction)diaryHealth:(id)sender;
 
 @end

@@ -50,6 +50,10 @@
 		5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */; };
 		5250D7411BE29B27006E8A63 /* MapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */; };
 		5250D7441BE2ADD3006E8A63 /* SurveyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250D7431BE2ADD3006E8A63 /* SurveyMap.m */; };
+		525648161BFBF01000FE64AE /* ProfileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525648141BFBF01000FE64AE /* ProfileListViewController.m */; };
+		525648171BFBF01000FE64AE /* ProfileListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525648151BFBF01000FE64AE /* ProfileListViewController.xib */; };
+		5256481B1BFCF96100FE64AE /* ProfileFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525648191BFCF96100FE64AE /* ProfileFormViewController.m */; };
+		5256481C1BFCF96100FE64AE /* ProfileFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5256481A1BFCF96100FE64AE /* ProfileFormViewController.xib */; };
 		525A33221BECF3BA00B62E33 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525A33201BECF3BA00B62E33 /* RearViewController.m */; };
 		525A33231BECF3BA00B62E33 /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A33211BECF3BA00B62E33 /* RearViewController.xib */; };
 		525A33261BECF5AC00B62E33 /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 525A33241BECF5AC00B62E33 /* reveal-icon.png */; };
@@ -85,6 +89,14 @@
 		529BE1D91BF65ECE00692EEC /* TermsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1D71BF65ECE00692EEC /* TermsViewController.xib */; };
 		529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */; };
 		529BE1DE1BF6696900692EEC /* TutorialHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */; };
+		529BE1E21BF8C68B00692EEC /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1E01BF8C68B00692EEC /* ReportViewController.m */; };
+		529BE1E31BF8C68B00692EEC /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1E11BF8C68B00692EEC /* ReportViewController.xib */; };
+		529BE1E51BF8DD4100692EEC /* notice_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1E41BF8DD4100692EEC /* notice_header.png */; };
+		529BE1E81BF9053D00692EEC /* Notice.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1E71BF9053D00692EEC /* Notice.m */; };
+		52D15DD21BFBCA3E00FC31F3 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D15DD01BFBCA3E00FC31F3 /* CreateAccountViewController.m */; };
+		52D15DD31BFBCA3E00FC31F3 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D15DD11BFBCA3E00FC31F3 /* CreateAccountViewController.xib */; };
+		52D15DD71BFBCA8100FC31F3 /* DiaryHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D15DD41BFBCA8100FC31F3 /* DiaryHealthViewController.xib */; };
+		52D15DD81BFBCA8100FC31F3 /* DiaryHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D15DD51BFBCA8100FC31F3 /* DiaryHealthViewController.m */; };
 		52D2BC7A1BF12EBF007C9C09 /* BG_blur_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D2BC411BF12EBE007C9C09 /* BG_blur_menu.png */; };
 		52D2BC7B1BF12EBF007C9C09 /* BG_blur_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D2BC421BF12EBE007C9C09 /* BG_blur_menu@2x.png */; };
 		52D2BC7C1BF12EBF007C9C09 /* BG_blur_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D2BC431BF12EBE007C9C09 /* BG_blur_menu@3x.png */; };
@@ -461,6 +473,12 @@
 		5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapHealthViewController.xib; sourceTree = "<group>"; };
 		5250D7421BE2ADD3006E8A63 /* SurveyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyMap.h; sourceTree = "<group>"; };
 		5250D7431BE2ADD3006E8A63 /* SurveyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyMap.m; sourceTree = "<group>"; };
+		525648131BFBF01000FE64AE /* ProfileListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileListViewController.h; sourceTree = "<group>"; };
+		525648141BFBF01000FE64AE /* ProfileListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileListViewController.m; sourceTree = "<group>"; };
+		525648151BFBF01000FE64AE /* ProfileListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileListViewController.xib; sourceTree = "<group>"; };
+		525648181BFCF96100FE64AE /* ProfileFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileFormViewController.h; sourceTree = "<group>"; };
+		525648191BFCF96100FE64AE /* ProfileFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileFormViewController.m; sourceTree = "<group>"; };
+		5256481A1BFCF96100FE64AE /* ProfileFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileFormViewController.xib; sourceTree = "<group>"; };
 		525A331F1BECF3BA00B62E33 /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
 		525A33201BECF3BA00B62E33 /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
 		525A33211BECF3BA00B62E33 /* RearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearViewController.xib; sourceTree = "<group>"; };
@@ -507,6 +525,18 @@
 		529BE1DA1BF6696900692EEC /* TutorialHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialHelpViewController.h; sourceTree = "<group>"; };
 		529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialHelpViewController.m; sourceTree = "<group>"; };
 		529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialHelpViewController.xib; sourceTree = "<group>"; };
+		529BE1DF1BF8C68B00692EEC /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		529BE1E01BF8C68B00692EEC /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		529BE1E11BF8C68B00692EEC /* ReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportViewController.xib; sourceTree = "<group>"; };
+		529BE1E41BF8DD4100692EEC /* notice_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notice_header.png; sourceTree = "<group>"; };
+		529BE1E61BF9053D00692EEC /* Notice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notice.h; path = "Guardioes da Saude/Notice.h"; sourceTree = "<group>"; };
+		529BE1E71BF9053D00692EEC /* Notice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notice.m; path = "Guardioes da Saude/Notice.m"; sourceTree = "<group>"; };
+		52D15DCF1BFBCA3E00FC31F3 /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
+		52D15DD01BFBCA3E00FC31F3 /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
+		52D15DD11BFBCA3E00FC31F3 /* CreateAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
+		52D15DD41BFBCA8100FC31F3 /* DiaryHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryHealthViewController.xib; sourceTree = "<group>"; };
+		52D15DD51BFBCA8100FC31F3 /* DiaryHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryHealthViewController.m; sourceTree = "<group>"; };
+		52D15DD61BFBCA8100FC31F3 /* DiaryHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryHealthViewController.h; sourceTree = "<group>"; };
 		52D2BC411BF12EBE007C9C09 /* BG_blur_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG_blur_menu.png; sourceTree = "<group>"; };
 		52D2BC421BF12EBE007C9C09 /* BG_blur_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_blur_menu@2x.png"; sourceTree = "<group>"; };
 		52D2BC431BF12EBE007C9C09 /* BG_blur_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_blur_menu@3x.png"; sourceTree = "<group>"; };
@@ -886,6 +916,8 @@
 				AAE38B471BFA713E009CD20B /* SumaryGraph.m */,
 				AAE38B491BFA80AF009CD20B /* SumaryLocation.h */,
 				AAE38B4A1BFA80AF009CD20B /* SumaryLocation.m */,
+				529BE1E61BF9053D00692EEC /* Notice.h */,
+				529BE1E71BF9053D00692EEC /* Notice.m */,
 			);
 			name = Model;
 			path = ..;
@@ -911,6 +943,9 @@
 		5221A81F1BED30BE006659E2 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				52D15DD41BFBCA8100FC31F3 /* DiaryHealthViewController.xib */,
+				52D15DD51BFBCA8100FC31F3 /* DiaryHealthViewController.m */,
+				52D15DD61BFBCA8100FC31F3 /* DiaryHealthViewController.h */,
 			);
 			name = Diary;
 			sourceTree = "<group>";
@@ -1009,6 +1044,15 @@
 				529BE1DA1BF6696900692EEC /* TutorialHelpViewController.h */,
 				529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */,
 				529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */,
+				529BE1DF1BF8C68B00692EEC /* ReportViewController.h */,
+				529BE1E01BF8C68B00692EEC /* ReportViewController.m */,
+				529BE1E11BF8C68B00692EEC /* ReportViewController.xib */,
+				525648131BFBF01000FE64AE /* ProfileListViewController.h */,
+				525648141BFBF01000FE64AE /* ProfileListViewController.m */,
+				525648151BFBF01000FE64AE /* ProfileListViewController.xib */,
+				525648181BFCF96100FE64AE /* ProfileFormViewController.h */,
+				525648191BFCF96100FE64AE /* ProfileFormViewController.m */,
+				5256481A1BFCF96100FE64AE /* ProfileFormViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1016,6 +1060,9 @@
 		5221A82C1BED34E6006659E2 /* Wellcome */ = {
 			isa = PBXGroup;
 			children = (
+				52D15DCF1BFBCA3E00FC31F3 /* CreateAccountViewController.h */,
+				52D15DD01BFBCA3E00FC31F3 /* CreateAccountViewController.m */,
+				52D15DD11BFBCA3E00FC31F3 /* CreateAccountViewController.xib */,
 				520CD0E41BED47EF00F24B45 /* TutorialViewController.xib */,
 				520CD0DF1BED436700F24B45 /* EnterViewController.h */,
 				520CD0E01BED436700F24B45 /* EnterViewController.m */,
@@ -1091,6 +1138,7 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				529BE1E41BF8DD4100692EEC /* notice_header.png */,
 				528705CD1BF3C5CA00321985 /* iconSamuMini.png */,
 				528705CE1BF3C5CA00321985 /* iconSamuMini@2x.png */,
 				528705CF1BF3C5CA00321985 /* iconSamuMini@3x.png */,
@@ -1473,7 +1521,7 @@
 				TargetAttributes = {
 					528C8AF81BB82630003CFC91 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 7AH4KP6Z95;
+						DevelopmentTeam = 98JM6MRC2J;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -1612,6 +1660,7 @@
 				52D2BCA31BF12EBF007C9C09 /* img_profile07_mini@3x.png in Resources */,
 				52E7279E1BEA93B800B46945 /* icon_pin_urgency@2x.png in Resources */,
 				52E727721BEA93B800B46945 /* icon_google@3x.png in Resources */,
+				525648171BFBF01000FE64AE /* ProfileListViewController.xib in Resources */,
 				52D2BCA81BF12EBF007C9C09 /* img_profile09_mini@2x.png in Resources */,
 				52E7274B1BEA93B800B46945 /* button_twitter@3x.png in Resources */,
 				52E727C01BEA93B800B46945 /* img_main_menu@3x.png in Resources */,
@@ -1647,12 +1696,15 @@
 				52E7275E1BEA93B800B46945 /* icon_checkbok_true.png in Resources */,
 				52E7272A1BEA93B800B46945 /* Foco_Std_Rg.ttf in Resources */,
 				52E727851BEA93B800B46945 /* icon_logo_splash.png in Resources */,
+				52D15DD31BFBCA3E00FC31F3 /* CreateAccountViewController.xib in Resources */,
 				52E727341BEA93B800B46945 /* BG_light.png in Resources */,
+				529BE1E51BF8DD4100692EEC /* notice_header.png in Resources */,
 				52E727E91BEA93B800B46945 /* input_floatbox_register_email@2x.png in Resources */,
 				52E727D11BEA93B800B46945 /* img_profile06@2x.png in Resources */,
 				528881CA1BEEE9FC004B2759 /* Default-568h@2x.png in Resources */,
 				528705C51BF3AB5F00321985 /* iconBombeirosMini@2x.png in Resources */,
 				52E727121BEA93B800B46945 /* icon_tips_vaccines.png in Resources */,
+				5256481C1BFCF96100FE64AE /* ProfileFormViewController.xib in Resources */,
 				52D2BC871BF12EBF007C9C09 /* icon_pin_userlocation@2x.png in Resources */,
 				52E7271E1BEA93B800B46945 /* button_default_white@3x.png in Resources */,
 				525A33261BECF5AC00B62E33 /* reveal-icon.png in Resources */,
@@ -1676,6 +1728,7 @@
 				52D2BC7F1BF12EBF007C9C09 /* BG_blur_tutorial@3x.png in Resources */,
 				52E727E31BEA93B800B46945 /* img_profile12@2x.png in Resources */,
 				52E727901BEA93B800B46945 /* icon_mail@3x.png in Resources */,
+				529BE1E31BF8C68B00692EEC /* ReportViewController.xib in Resources */,
 				52E727541BEA93B800B46945 /* fab_plus@3x.png in Resources */,
 				52D2BCAC1BF12EBF007C9C09 /* img_profile10_mini@3x.png in Resources */,
 				52E727521BEA93B800B46945 /* fab_plus.png in Resources */,
@@ -1827,6 +1880,7 @@
 				52E727461BEA93B800B46945 /* button_register.png in Resources */,
 				52E7273F1BEA93B800B46945 /* button_enter@3x.png in Resources */,
 				52E727CF1BEA93B800B46945 /* img_profile05@3x.png in Resources */,
+				52D15DD71BFBCA8100FC31F3 /* DiaryHealthViewController.xib in Resources */,
 				52E727D41BEA93B800B46945 /* img_profile07@2x.png in Resources */,
 				52E7271F1BEA93B800B46945 /* BG_survey.png in Resources */,
 				52E727C71BEA93B800B46945 /* img_profile03.png in Resources */,
@@ -1901,6 +1955,7 @@
 				52EC50441BF026CC002FEACE /* ImageUtility.m in Sources */,
 				258F14E31BCEE3CC00CE86B7 /* User.m in Sources */,
 				5250D7441BE2ADD3006E8A63 /* SurveyMap.m in Sources */,
+				52D15DD81BFBCA8100FC31F3 /* DiaryHealthViewController.m in Sources */,
 				524C14221BEBCEE6003A6C2D /* HealthTipsViewController.m in Sources */,
 				AAE38B381BF9211D009CD20B /* Requester.m in Sources */,
 				524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */,
@@ -1912,6 +1967,7 @@
 				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */,
+				5256481B1BFCF96100FE64AE /* ProfileFormViewController.m in Sources */,
 				2548B9E41BDEA8750004E00F /* SelectStateViewController.m in Sources */,
 				524C142C1BEBDC55003A6C2D /* VacineViewController.m in Sources */,
 				524C143B1BEBE67C003A6C2D /* PreventionViewController.m in Sources */,
@@ -1924,6 +1980,9 @@
 				529BE1D81BF65ECE00692EEC /* TermsViewController.m in Sources */,
 				528C8B041BB82630003CFC91 /* ViewController.m in Sources */,
 				5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */,
+				529BE1E21BF8C68B00692EEC /* ReportViewController.m in Sources */,
+				25A19BDD1BC528C700F08FA9 /* Requester.m in Sources */,
+				529BE1E81BF9053D00692EEC /* Notice.m in Sources */,
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
 				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,
 				520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */,
@@ -1933,7 +1992,9 @@
 				529BE1D31BF6598300692EEC /* HelpViewController.m in Sources */,
 				25630CFA1BDFA2760047FF07 /* Symptom.m in Sources */,
 				AAE38B3C1BFA1CAA009CD20B /* HouseholdRequester.m in Sources */,
+				525648161BFBF01000FE64AE /* ProfileListViewController.m in Sources */,
 				529BE1CE1BF62C8200692EEC /* AboutViewController.m in Sources */,
+				52D15DD21BFBCA3E00FC31F3 /* CreateAccountViewController.m in Sources */,
 				520CD0D51BED3DB800F24B45 /* SelectTypeLoginViewController.m in Sources */,
 				AAE38B421BFA2A09009CD20B /* Sumary.m in Sources */,
 				AAE38B4B1BFA80AF009CD20B /* SumaryLocation.m in Sources */,
@@ -2058,9 +2119,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "epitrack.Guardioes-da-Saude";
+				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "75f96b89-57ca-4d24-b901-c5b98dbc8670";
 			};
 			name = Debug;
 		};
@@ -2073,7 +2134,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "epitrack.Guardioes-da-Saude";
+				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

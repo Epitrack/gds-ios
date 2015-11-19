@@ -92,8 +92,8 @@
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="18"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Ln-c4-u1d">
-                    <rect key="frame" x="26" y="380" width="26" height="24"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Ln-c4-u1d">
+                    <rect key="frame" x="33" y="380" width="13" height="24"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0Ln-c4-u1d" secondAttribute="height" multiplier="27:23" id="Ek3-nC-dWJ"/>
@@ -127,8 +127,8 @@
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="18"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_problem.png" translatesAutoresizingMaskIntoConstraints="NO" id="xfX-mV-ncq">
-                    <rect key="frame" x="24" y="475" width="26" height="24"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_problem.png" translatesAutoresizingMaskIntoConstraints="NO" id="xfX-mV-ncq">
+                    <rect key="frame" x="28" y="475" width="19" height="24"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="xfX-mV-ncq" secondAttribute="height" multiplier="27:23" id="Reg-BA-4qL"/>
@@ -208,13 +208,24 @@
                         <action selector="btnTerms:" destination="-1" eventType="touchUpInside" id="Rsf-EY-u21"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Entre em contato" translatesAutoresizingMaskIntoConstraints="NO" id="zfm-DG-JZr">
-                    <rect key="frame" x="15" y="315" width="191" height="35"/>
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Reportar erros no aplicativo" translatesAutoresizingMaskIntoConstraints="NO" id="T0Z-UG-ibw">
+                    <rect key="frame" x="65" y="469" width="231" height="33"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="N47-4F-5Dl"/>
+                        <constraint firstAttribute="width" constant="231" id="haT-av-V9b"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Entre em contato" translatesAutoresizingMaskIntoConstraints="NO" id="zfm-DG-JZr">
+                    <rect key="frame" x="20" y="314" width="191" height="35"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="33" id="JHY-Z2-Tgd"/>
-                        <constraint firstAttribute="width" constant="119" id="b0a-BR-NYM"/>
-                        <constraint firstAttribute="width" secondItem="zfm-DG-JZr" secondAttribute="height" multiplier="17:5" id="fSF-e0-OkP"/>
+                        <constraint firstAttribute="width" constant="191" id="b0a-BR-NYM"/>
+                        <constraint firstAttribute="width" secondItem="zfm-DG-JZr" secondAttribute="height" multiplier="17:5" constant="72" id="fSF-e0-OkP"/>
                         <constraint firstAttribute="width" constant="127" id="zux-wn-1SL"/>
                     </constraints>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -226,17 +237,6 @@
                             <exclude reference="zux-wn-1SL"/>
                         </mask>
                     </variation>
-                </textView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Reportar Erros no Aplicativo" translatesAutoresizingMaskIntoConstraints="NO" id="T0Z-UG-ibw">
-                    <rect key="frame" x="65" y="469" width="231" height="33"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="33" id="N47-4F-5Dl"/>
-                        <constraint firstAttribute="width" constant="231" id="haT-av-V9b"/>
-                    </constraints>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
             <animations/>
@@ -250,7 +250,7 @@
                 <constraint firstItem="zfm-DG-JZr" firstAttribute="centerY" secondItem="kmF-sT-AOO" secondAttribute="centerY" multiplier="1.17" id="57L-Ia-Ifi"/>
                 <constraint firstItem="bw5-F0-BLb" firstAttribute="top" secondItem="0Ln-c4-u1d" secondAttribute="bottom" constant="22" id="5XV-bU-AFv"/>
                 <constraint firstItem="XKk-xe-fLu" firstAttribute="width" secondItem="kmF-sT-AOO" secondAttribute="height" multiplier="95:284" id="67e-y0-myc"/>
-                <constraint firstItem="zfm-DG-JZr" firstAttribute="leading" secondItem="dYC-G9-1tV" secondAttribute="leading" id="6Fs-2u-Otm"/>
+                <constraint firstItem="zfm-DG-JZr" firstAttribute="leading" secondItem="dYC-G9-1tV" secondAttribute="leading" constant="5" id="6Fs-2u-Otm"/>
                 <constraint firstItem="xfX-mV-ncq" firstAttribute="centerY" secondItem="qT3-wn-aFU" secondAttribute="centerY" constant="-6" id="6qh-k7-gr4"/>
                 <constraint firstItem="ukx-Au-SZN" firstAttribute="centerY" secondItem="L8n-bK-pNQ" secondAttribute="centerY" id="7UY-Zn-VMW"/>
                 <constraint firstItem="ukx-Au-SZN" firstAttribute="centerX" secondItem="kmF-sT-AOO" secondAttribute="centerX" multiplier="0.86" id="7nA-Lb-NFG"/>

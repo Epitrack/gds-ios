@@ -8,6 +8,7 @@
 
 #import "TutorialViewController.h"
 #import "SelectTypeLoginViewController.h"
+#import "CreateAccountViewController.h"
 
 @interface TutorialViewController ()
 @property (strong, nonatomic) IBOutlet UIPageControl *pageController;
@@ -129,5 +130,11 @@
     
     SelectTypeLoginViewController *selectTypeLoginViewController = [[SelectTypeLoginViewController alloc] init];
     [self.navigationController pushViewController:selectTypeLoginViewController animated:YES];
+}
+
+- (IBAction)btnNewUser:(id)sender {
+    
+    CreateAccountViewController *createAccountViewController = [[CreateAccountViewController alloc] init];
+    [self.navigationController pushViewController:createAccountViewController animated:YES];
 }
 @end
