@@ -18,6 +18,8 @@
 @implementation SelectParticipantViewController {
     
     User *user;
+    NSMutableDictionary *householdsDictionary;
+    NSInteger *i;
 }
 
 const float kCellHeight = 100.0f;
@@ -27,6 +29,9 @@ const float kCellHeight = 100.0f;
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Guardiões da Saúde";
     user = [User getInstance];
+    
+    NSMutableDictionary *householdsDictionary = [[NSMutableDictionary alloc] init];
+    i = 0;
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
@@ -111,13 +116,13 @@ const float kCellHeight = 100.0f;
                     NSString *nick = h[@"nick"];
                     NSString *picture = h[@"picture"];
                     NSString *avatar;
+                    NSString *idHousehold = h[@"id"];
                     
                     @try {
                         if (picture.length > 2) {
                             avatar = @"img_profile01";
                         }
-                    }
-                    @catch (NSException *exception) {
+                    }@catch (NSException *exception) {
                         
                         NSString *p = [NSString stringWithFormat:@"%@", picture];
                         
@@ -126,7 +131,6 @@ const float kCellHeight = 100.0f;
                         } else if (p.length == 2) {
                             avatar = [NSString stringWithFormat: @"img_profile%@", p];
                         }
-
                     }
                     
                     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
@@ -144,15 +148,18 @@ const float kCellHeight = 100.0f;
                     label.textColor = [UIColor whiteColor];
                     [label setTextAlignment:NSTextAlignmentCenter];
                     [label setFont:[UIFont fontWithName:@"Arial" size:10.0]];
-                    [button addSubview:label];
-                    
-                    //[button setTitle:nick forState:UIControlStateNormal];
+                    [label setValue:idHousehold forKey:idHousehold];
+                    //[button addSubview:label];
+                    //[button setTitle:idHousehold forState:UIControlStateNormal];
                     //[button.titleLabel setFont:[UIFont fontWithName:@"Arial" size:10.0]];
                     //[button.titleLabel setTextAlignment: NSTextAlignmentCenter];
-                    //[button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
+                    [button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                     [button addSubview:imageView];
+                    i++;
+                    [button setTag:*(i)];
                     
                     [buttons addObject:button];
+                    [householdsDictionary setValue:idHousehold forKey:[NSString stringWithFormat: @"%ld", (long)i]];
                 }
                 
                 if (buttons.count > 0) {
@@ -172,6 +179,10 @@ const float kCellHeight = 100.0f;
 
 - (void) pushAction: (id)sender{
     NSLog(@"Clicou");
+    UIButton *button = (UIButton*) sender;
+    NSString *idHousehold = [householdsDictionary objectForKey:[NSString stringWithFormat: @"%ld", (long)button.tag]];
+    NSLog(@"id %@", idHousehold);
+    //button.
     
 }
 

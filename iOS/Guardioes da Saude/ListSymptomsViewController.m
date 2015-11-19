@@ -73,7 +73,7 @@
             NSLog(@"You pressed button YES");
             
             
-            NSMutableDictionary *params = [[NSMutableDictionary alloc] init];;
+            NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
             
             [params setValue:user.idUser forKey:@"user_id"];
             [params setValue:[NSString stringWithFormat:@"%.8f" , latitude] forKey:@"lat"];
