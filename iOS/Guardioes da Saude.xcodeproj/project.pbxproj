@@ -1981,7 +1981,6 @@
 				528C8B041BB82630003CFC91 /* ViewController.m in Sources */,
 				5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */,
 				529BE1E21BF8C68B00692EEC /* ReportViewController.m in Sources */,
-				25A19BDD1BC528C700F08FA9 /* Requester.m in Sources */,
 				529BE1E81BF9053D00692EEC /* Notice.m in Sources */,
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
 				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,
