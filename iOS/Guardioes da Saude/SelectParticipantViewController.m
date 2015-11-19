@@ -10,6 +10,7 @@
 #import "User.h"
 #import "SelectStateViewController.h"
 #import "Household.h"
+#import "HouseholdThumbnail.h"
 
 @interface SelectParticipantViewController ()
 
@@ -133,7 +134,7 @@ const float kCellHeight = 100.0f;
                         }
                     }
                     
-                    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+                    /*UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
                     UIImageView *imageView = [[UIImageView alloc] initWithFrame:
                                               CGRectMake(button.bounds.size.width/4,
                                                          5,
@@ -159,8 +160,10 @@ const float kCellHeight = 100.0f;
                     //i++;
                     //[button setTag:*(i)];
                     
-                    [buttons addObject:button];
-                    [householdsDictionary setValue:idHousehold forKey:[NSString stringWithFormat: @"%ld", (long)i]];
+                    [buttons addObject:button];*/
+                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
+                    [buttons addObject:thumb];
+                    [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
                 
                 if (buttons.count > 0) {
@@ -180,8 +183,9 @@ const float kCellHeight = 100.0f;
 
 - (void) pushAction: (id)sender{
     NSLog(@"Clicou");
-    UIButton *button = (UIButton*) sender;
-    NSString *idHousehold = [householdsDictionary objectForKey:[NSString stringWithFormat: @"%ld", (long)button.tag]];
+    UIButton *b = (UIButton *) sender;
+    HouseholdThumbnail *thumb = (HouseholdThumbnail*) b.superview;
+    NSString *idHousehold = thumb.user_household_id;
     NSLog(@"id %@", idHousehold);
     //button.
     
