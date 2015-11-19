@@ -154,6 +154,7 @@ const float kCellHeight = 100.0f;
                     //[button.titleLabel setFont:[UIFont fontWithName:@"Arial" size:10.0]];
                     //[button.titleLabel setTextAlignment: NSTextAlignmentCenter];
                     //[button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
+                    //[button setValue:idHousehold forKey:idHousehold];
                     [button addSubview:imageView];
                     //i++;
                     //[button setTag:*(i)];
