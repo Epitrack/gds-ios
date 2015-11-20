@@ -188,11 +188,13 @@ didDisconnectWithUser:(GIDGoogleUser *)user
        parameters:nil
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               
-              NSDictionary *response = responseObject[@"data"];
+              NSArray *response = responseObject[@"data"];
               
               if (response.count > 0) {
-                  NSString *email = response[@"email"];
-                  NSString *passowrd = response[@"password"];
+                  NSDictionary *userObject = [response objectAtIndex:0];
+                  
+                  NSString *email = userObject[@"email"];
+                  NSString *passowrd = userObject[@"password"];
                   
                   [self loginSocialWithEmail:email andPassword:passowrd];
                   

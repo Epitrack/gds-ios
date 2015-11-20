@@ -188,12 +188,13 @@
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              
-             NSDictionary *response = responseObject[@"data"];
+             NSArray *response = responseObject[@"data"];
              
              if (response.count > 0) {
-                 NSString *email = response[@"email"];
-
-                 if ([email isEqualToString:@""]) {
+                 NSDictionary *userObject = [response objectAtIndex:0];
+                 NSString *email = userObject[@"email"];
+                 
+                 if (![email isEqualToString:@""]) {
                      userExists = YES;
                  }
                  

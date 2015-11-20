@@ -864,8 +864,12 @@
           <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/InterfaceBuilderKit.framework/Headers" />
           <root url="file://$MODULE_DIR$/FBSDKCoreKit.framework/Headers" />
           <root url="file://$MODULE_DIR$/FBSDKLoginKit.framework/Headers" />
+          <root url="file://$MODULE_DIR$/Pods/Fabric/iOS/Fabric.framework/Headers" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Private" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Public" />
+          <root url="file://$MODULE_DIR$/Pods/TwitterCore/TwitterCore.framework/Headers" />
+          <root url="file://$MODULE_DIR$/Pods/TwitterKit/TwitterKit.framework/Headers" />
         </CLASSES>
         <SOURCES>
           <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework/Headers" />
@@ -958,9 +962,28 @@
           <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/InterfaceBuilderKit.framework/Headers" />
           <root url="file://$MODULE_DIR$/FBSDKCoreKit.framework/Headers" />
           <root url="file://$MODULE_DIR$/FBSDKLoginKit.framework/Headers" />
+          <root url="file://$MODULE_DIR$/Pods/Fabric/iOS/Fabric.framework/Headers" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Private" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Public" />
+          <root url="file://$MODULE_DIR$/Pods/TwitterCore/TwitterCore.framework/Headers" />
+          <root url="file://$MODULE_DIR$/Pods/TwitterKit/TwitterKit.framework/Headers" />
         </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GMRConfiguration.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Core-Module.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLSignIn/Public/SignIn.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/CloudMessaging-Module.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/SignIn-Module.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/Core.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLContext.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLSignIn/Public/GGLContext+SignIn.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLErrorCode.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLConfiguration.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/AppInvite-Module.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/AdMob-Module.h" />
+        </excluded>
       </library>
     </orderEntry>
   </component>
