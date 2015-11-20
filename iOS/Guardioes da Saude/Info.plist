@@ -29,8 +29,44 @@
 	<string>0.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb179676235701655</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>40</string>
+	<string>103</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>d8ff9925924fa10046e7f8eb13fcbdc1ada7b548</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>E9EqdjiPsk3esF54X9qc8LYU6</string>
+					<key>consumerSecret</key>
+					<string>pyjiplPQZFP4h367EktqjNVP2nJfiiiSFnnsVJpQzdnE3LEppm</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
+	<key>FacebookAppID</key>
+	<string>179676235701655</string>
+	<key>FacebookDisplayName</key>
+	<string>Guardioes da Saude</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
@@ -42,24 +78,30 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-		<key>NSExceptionAllowsInsecureHTTPLoads</key>
-		<true/>
 		<key>NSExceptionDomains</key>
-		<dict/>
-		<key>NSExceptionMinimumTLSVersion</key>
-		<string></string>
-		<key>NSExceptionRequiresForwardSecrecy</key>
-		<true/>
-		<key>NSIncludesSubdomains</key>
-		<true/>
-		<key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
-		<true/>
-		<key>NSThirdPartyExceptionMinimumTLSVersion</key>
-		<string></string>
-		<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-		<true/>
-		<key>www.epitrack.com.br</key>
-		<dict/>
+		<dict>
+			<key>akamaihd.net</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+			<key>facebook.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+			<key>fbcdn.net</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+		</dict>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string></string>

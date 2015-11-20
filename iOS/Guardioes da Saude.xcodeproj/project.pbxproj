@@ -31,6 +31,10 @@
 		520CD0E21BED436700F24B45 /* EnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520CD0E01BED436700F24B45 /* EnterViewController.m */; };
 		520CD0E31BED436700F24B45 /* EnterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CD0E11BED436700F24B45 /* EnterViewController.xib */; };
 		520CD0E51BED47EF00F24B45 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CD0E41BED47EF00F24B45 /* TutorialViewController.xib */; };
+		5215BBBC1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215BBBA1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m */; };
+		5215BBBD1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5215BBBB1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib */; };
+		5215BBC61BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215BBC31BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m */; };
+		5215BBC71BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5215BBC41BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib */; };
 		522360BF1BE9176D006D0598 /* DetailMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 522360BE1BE9176D006D0598 /* DetailMap.m */; };
 		524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C141B1BEBC697003A6C2D /* NoticeViewController.m */; };
 		524C141E1BEBC697003A6C2D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C141C1BEBC697003A6C2D /* NoticeViewController.xib */; };
@@ -60,6 +64,9 @@
 		525A33271BECF5AC00B62E33 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525A33251BECF5AC00B62E33 /* reveal-icon@2x.png */; };
 		525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525A33291BED1F8200B62E33 /* MenuViewController.m */; };
 		525A332C1BED1F8200B62E33 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A332A1BED1F8200B62E33 /* MenuViewController.xib */; };
+		525E8DCA1BFE8DA40020D4D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 525E8DC91BFE8DA40020D4D6 /* GoogleService-Info.plist */; };
+		525E8DCC1BFE9F210020D4D6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525E8DCB1BFE9F210020D4D6 /* FBSDKCoreKit.framework */; };
+		525E8DCE1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525E8DCD1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework */; };
 		528705B91BF3744600321985 /* PhonesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528705B71BF3744600321985 /* PhonesViewController.m */; };
 		528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528705B81BF3744600321985 /* PhonesViewController.xib */; };
 		528705C41BF3AB5F00321985 /* iconBombeirosMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BB1BF3AB5F00321985 /* iconBombeirosMini.png */; };
@@ -157,6 +164,7 @@
 		52DBBA6C1BFE479A00900D22 /* imgNoticias@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DBBA691BFE479A00900D22 /* imgNoticias@2x.png */; };
 		52DBBA6D1BFE479A00900D22 /* imgNoticias@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DBBA6A1BFE479A00900D22 /* imgNoticias@3x.png */; };
 		52DBBA6E1BFE479A00900D22 /* imgNoticias.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DBBA6B1BFE479A00900D22 /* imgNoticias.png */; };
+		52DBBA711BFE6CCC00900D22 /* NewsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DBBA701BFE6CCC00900D22 /* NewsRequester.m */; };
 		52E727031BEA93B800B46945 /* icon_tips_basiccares.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FA9B371BC2EE5D00DD8506 /* icon_tips_basiccares.png */; };
 		52E727041BEA93B800B46945 /* icon_tips_basiccares@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FA9B381BC2EE5D00DD8506 /* icon_tips_basiccares@2x.png */; };
 		52E727051BEA93B800B46945 /* icon_tips_basiccares@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FA9B391BC2EE5D00DD8506 /* icon_tips_basiccares@3x.png */; };
@@ -447,6 +455,12 @@
 		520CD0E01BED436700F24B45 /* EnterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterViewController.m; sourceTree = "<group>"; };
 		520CD0E11BED436700F24B45 /* EnterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterViewController.xib; sourceTree = "<group>"; };
 		520CD0E41BED47EF00F24B45 /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
+		5215BBB91BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeCreateAccoutViewController.h; sourceTree = "<group>"; };
+		5215BBBA1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTypeCreateAccoutViewController.m; sourceTree = "<group>"; };
+		5215BBBB1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTypeCreateAccoutViewController.xib; sourceTree = "<group>"; };
+		5215BBC31BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountSocialLoginViewController.m; sourceTree = "<group>"; };
+		5215BBC41BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountSocialLoginViewController.xib; sourceTree = "<group>"; };
+		5215BBC51BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountSocialLoginViewController.h; sourceTree = "<group>"; };
 		522360BD1BE9176D006D0598 /* DetailMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailMap.h; path = "Guardioes da Saude/DetailMap.h"; sourceTree = "<group>"; };
 		522360BE1BE9176D006D0598 /* DetailMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailMap.m; path = "Guardioes da Saude/DetailMap.m"; sourceTree = "<group>"; };
 		524C141A1BEBC697003A6C2D /* NoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
@@ -491,6 +505,9 @@
 		525A33281BED1F8200B62E33 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		525A33291BED1F8200B62E33 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		525A332A1BED1F8200B62E33 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		525E8DC91BFE8DA40020D4D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		525E8DCB1BFE9F210020D4D6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		525E8DCD1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		528705B61BF3744600321985 /* PhonesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhonesViewController.h; sourceTree = "<group>"; };
 		528705B71BF3744600321985 /* PhonesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhonesViewController.m; sourceTree = "<group>"; };
 		528705B81BF3744600321985 /* PhonesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhonesViewController.xib; sourceTree = "<group>"; };
@@ -601,6 +618,8 @@
 		52DBBA691BFE479A00900D22 /* imgNoticias@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgNoticias@2x.png"; sourceTree = "<group>"; };
 		52DBBA6A1BFE479A00900D22 /* imgNoticias@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgNoticias@3x.png"; sourceTree = "<group>"; };
 		52DBBA6B1BFE479A00900D22 /* imgNoticias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgNoticias.png; sourceTree = "<group>"; };
+		52DBBA6F1BFE6CCC00900D22 /* NewsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsRequester.h; sourceTree = "<group>"; };
+		52DBBA701BFE6CCC00900D22 /* NewsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsRequester.m; sourceTree = "<group>"; };
 		52EC503F1BF02200002FEACE /* Household.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Household.h; path = "Guardioes da Saude/Household.h"; sourceTree = "<group>"; };
 		52EC50401BF02200002FEACE /* Household.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Household.m; path = "Guardioes da Saude/Household.m"; sourceTree = "<group>"; };
 		52EC50421BF026CC002FEACE /* ImageUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtility.h; sourceTree = "<group>"; };
@@ -876,6 +895,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2548B9EE1BDEBA310004E00F /* CoreLocation.framework in Frameworks */,
+				525E8DCC1BFE9F210020D4D6 /* FBSDKCoreKit.framework in Frameworks */,
+				525E8DCE1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework in Frameworks */,
 				2548B9EC1BDEBA250004E00F /* MapKit.framework in Frameworks */,
 				9E122E6DA5824937A683452F /* Pods.framework in Frameworks */,
 			);
@@ -1071,6 +1092,9 @@
 		5221A82C1BED34E6006659E2 /* Wellcome */ = {
 			isa = PBXGroup;
 			children = (
+				5215BBC31BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m */,
+				5215BBC41BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib */,
+				5215BBC51BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.h */,
 				52D15DCF1BFBCA3E00FC31F3 /* CreateAccountViewController.h */,
 				52D15DD01BFBCA3E00FC31F3 /* CreateAccountViewController.m */,
 				52D15DD11BFBCA3E00FC31F3 /* CreateAccountViewController.xib */,
@@ -1083,6 +1107,9 @@
 				520CD0D41BED3DB800F24B45 /* SelectTypeLoginViewController.xib */,
 				25A19BD51BC46CE800F08FA9 /* TutorialViewController.h */,
 				25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */,
+				5215BBB91BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.h */,
+				5215BBBA1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m */,
+				5215BBBB1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib */,
 			);
 			name = Wellcome;
 			sourceTree = "<group>";
@@ -1117,6 +1144,7 @@
 		528C8AFB1BB82630003CFC91 /* Guardioes da Saude */ = {
 			isa = PBXGroup;
 			children = (
+				525E8DC91BFE8DA40020D4D6 /* GoogleService-Info.plist */,
 				AAE38B2F1BF9211D009CD20B /* Request */,
 				524C14401BECE13E003A6C2D /* SWReval */,
 				251AD8F91BD553DE000C1B84 /* Facade */,
@@ -1487,6 +1515,8 @@
 				AAE38B3B1BFA1CAA009CD20B /* HouseholdRequester.m */,
 				AAE38B3D1BFA2425009CD20B /* SurveyRequester.h */,
 				AAE38B3E1BFA2425009CD20B /* SurveyRequester.m */,
+				52DBBA6F1BFE6CCC00900D22 /* NewsRequester.h */,
+				52DBBA701BFE6CCC00900D22 /* NewsRequester.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1494,6 +1524,8 @@
 		CF810800BC26A068848D3B68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				525E8DCD1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework */,
+				525E8DCB1BFE9F210020D4D6 /* FBSDKCoreKit.framework */,
 				2548B9ED1BDEBA310004E00F /* CoreLocation.framework */,
 				2548B9EB1BDEBA250004E00F /* MapKit.framework */,
 				8E8024AD3523214155324B45 /* Pods.framework */,
@@ -1514,6 +1546,7 @@
 				528C8AF71BB82630003CFC91 /* Resources */,
 				7F0F7422DB7EB5BA6F65C405 /* Embed Pods Frameworks */,
 				93A11230394FB0FE426790A5 /* Copy Pods Resources */,
+				5215BBB81BFEC45500070EC4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1839,6 +1872,7 @@
 				52E727D21BEA93B800B46945 /* img_profile06@3x.png in Resources */,
 				52E727AB1BEA93B800B46945 /* icon_security@3x.png in Resources */,
 				52D2BC841BF12EBF007C9C09 /* icon_pin_bad@2x.png in Resources */,
+				525E8DCA1BFE8DA40020D4D6 /* GoogleService-Info.plist in Resources */,
 				52E727751BEA93B800B46945 /* icon_help_n_faq@3x.png in Resources */,
 				520158FA1BE3CD9D00982856 /* DetailMapHealthViewController.xib in Resources */,
 				528705C91BF3AB5F00321985 /* iconDefesacivilMini@3x.png in Resources */,
@@ -1885,12 +1919,14 @@
 				52E727471BEA93B800B46945 /* button_register@2x.png in Resources */,
 				528705CB1BF3AB5F00321985 /* iconPMMini@2x.png in Resources */,
 				52E727A41BEA93B800B46945 /* icon_profile@2x.png in Resources */,
+				5215BBBD1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib in Resources */,
 				52D2BCA11BF12EBF007C9C09 /* img_profile07_mini.png in Resources */,
 				52E727351BEA93B800B46945 /* BG_light@2x.png in Resources */,
 				5250D7411BE29B27006E8A63 /* MapHealthViewController.xib in Resources */,
 				524C14321BEBE043003A6C2D /* PharmacyViewController.xib in Resources */,
 				52E727501BEA93B800B46945 /* fab_location@2x.png in Resources */,
 				520CD0E31BED436700F24B45 /* EnterViewController.xib in Resources */,
+				5215BBC71BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib in Resources */,
 				52D2BC971BF12EBF007C9C09 /* img_profile03_mini@3x.png in Resources */,
 				528705C81BF3AB5F00321985 /* iconDefesacivilMini@2x.png in Resources */,
 				52E727C11BEA93B800B46945 /* img_profile01.png in Resources */,
@@ -1917,6 +1953,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5215BBB81BFEC45500070EC4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" d8ff9925924fa10046e7f8eb13fcbdc1ada7b548 d6b4ae1dd3c907d12160121c74eadc08f94e91822ec1f264a7e5f88069dcfeba";
+		};
 		7F0F7422DB7EB5BA6F65C405 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1976,6 +2025,7 @@
 				524C14221BEBCEE6003A6C2D /* HealthTipsViewController.m in Sources */,
 				AAE38B381BF9211D009CD20B /* Requester.m in Sources */,
 				524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */,
+				52DBBA711BFE6CCC00900D22 /* NewsRequester.m in Sources */,
 				AAE38B3F1BFA2425009CD20B /* SurveyRequester.m in Sources */,
 				524C14361BEBE533003A6C2D /* BasicCareViewController.m in Sources */,
 				524C14461BECE363003A6C2D /* SWRevealViewController.m in Sources */,
@@ -1994,6 +2044,7 @@
 				AAE38B451BFA5DD8009CD20B /* SumaryCalendar.m in Sources */,
 				524C14271BEBD89C003A6C2D /* EmergencyViewController.m in Sources */,
 				256DBA941BD0399D0029A569 /* DTO.m in Sources */,
+				5215BBBC1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m in Sources */,
 				529BE1D81BF65ECE00692EEC /* TermsViewController.m in Sources */,
 				528C8B041BB82630003CFC91 /* ViewController.m in Sources */,
 				5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */,
@@ -2022,6 +2073,7 @@
 				524C14311BEBE043003A6C2D /* PharmacyViewController.m in Sources */,
 				528705B91BF3744600321985 /* PhonesViewController.m in Sources */,
 				B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */,
+				5215BBC61BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2122,6 +2174,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2134,6 +2187,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
@@ -2149,6 +2207,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;

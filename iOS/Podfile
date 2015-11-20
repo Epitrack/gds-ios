@@ -13,6 +13,11 @@ pod 'JSONModel'
 pod 'Charts', '~> 2.1'
 pod 'JYGraphView', '~> 0.1'
 pod 'JTCalendar', '~> 2.0'
+pod 'Google/SignIn'
+pod 'Fabric'
+pod 'TwitterKit'
+pod 'TwitterCore'
+
 target 'Guardioes da Saude' do
 
 end

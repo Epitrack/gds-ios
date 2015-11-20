@@ -70,15 +70,18 @@
                 @"no_symptom": @"Y",
                 @"token":user.user_token};
     
-    
-        //jsonObject.put("household_id", user.getId());
+    if (user.idHousehold) {
+        [params setValue:user.idHousehold forKey:@"household_id"];
+    }
     
     manager = [AFHTTPRequestOperationManager manager];
     [manager POST:@"http://52.20.162.21/survey/create"
        parameters:params
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               
+              user.idHousehold = @"";
               ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] init];
+              thankYouForParticipatingViewController.txtBadSurvey.hidden = YES;
               [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
           
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

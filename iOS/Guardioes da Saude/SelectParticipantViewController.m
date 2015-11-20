@@ -134,33 +134,6 @@ const float kCellHeight = 100.0f;
                         }
                     }
                     
-                    /*UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
-                    UIImageView *imageView = [[UIImageView alloc] initWithFrame:
-                                              CGRectMake(button.bounds.size.width/4,
-                                                         5,
-                                                         button.bounds.size.width/2,
-                                                         button.bounds.size.height/2)];
-                    
-                    [imageView setImage:[UIImage imageNamed:avatar]];
-                    
-                    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 50, button.bounds.size.width/2, button.bounds.size.height/2)];
-                    label.text= nick;
-                    label.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
-                    label.textColor = [UIColor whiteColor];
-                    [label setTextAlignment:NSTextAlignmentCenter];
-                    [label setFont:[UIFont fontWithName:@"Arial" size:10.0]];
-                    //[label setValue:idHousehold forKey:idHousehold];
-                    //[button addSubview:label];
-                    //[button setTitle:idHousehold forState:UIControlStateNormal];
-                    //[button.titleLabel setFont:[UIFont fontWithName:@"Arial" size:10.0]];
-                    //[button.titleLabel setTextAlignment: NSTextAlignmentCenter];
-                    //[button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
-                    //[button setValue:idHousehold forKey:idHousehold];
-                    [button addSubview:imageView];
-                    //i++;
-                    //[button setTag:*(i)];
-                    
-                    [buttons addObject:button];*/
                     HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
                     [buttons addObject:thumb];
                     [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -187,7 +160,10 @@ const float kCellHeight = 100.0f;
     HouseholdThumbnail *thumb = (HouseholdThumbnail*) b.superview;
     NSString *idHousehold = thumb.user_household_id;
     NSLog(@"id %@", idHousehold);
-    //button.
+    
+    user.idHousehold = idHousehold;
+    SelectStateViewController *selectStateViewController = [[SelectStateViewController alloc] init];
+    [self.navigationController pushViewController:selectStateViewController animated:YES];
     
 }
 

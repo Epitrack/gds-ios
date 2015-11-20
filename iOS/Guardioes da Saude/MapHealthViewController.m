@@ -138,27 +138,37 @@
     longitude = currentLocation.coordinate.longitude;
 }
 
-/*- (MKAnnotationView *) mapView:(MKMapView *)mv viewForAnnotation:(id <MKAnnotation> ) annotation {
+- (MKAnnotationView *) mapView:(MKMapView *)mv viewForAnnotation:(id <MKAnnotation> ) annotation {
     UIImage *anImage = nil;
-    
     MKAnnotationView *pinView = nil;
     if(annotation != mv.userLocation){
-        static NSString *defaultPinID = @"com.invasivecode.pin";
+    /*    static NSString *defaultPinID = @"PinID";
+        pinView = (MKAnnotationView *)[mv dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        if ( pinView == nil ) {
+            pinView = [[MKAnnotationView alloc]
+                       initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+        }
+        pinView.canShowCallout = YES;
+        
+        if (pinView.t) {
+            pinView.M
+        }
+        
+        pinView.image = [UIImage imageNamed:@"icon_good_small.png"];*/
+    } else {
+        [mv.userLocation setTitle:user.nick];
+        static NSString *defaultPinID = @"user";
+        
         pinView = (MKAnnotationView *)[mv dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
         if ( pinView == nil )
             pinView = [[MKAnnotationView alloc]
                        initWithAnnotation:annotation reuseIdentifier:defaultPinID];
         
-            //pinView.pinColor = MKPinAnnotationColorGreen;
-            pinView.canShowCallout = YES;
-            //pinView.animatesDrop = YES;
-        
-            pinView.image = [UIImage imageNamed:@"icon_good_small.png"];    //as suggested by Squatch
-    } else {
-        [mv.userLocation setTitle:@"I am here"];
+        pinView.canShowCallout = YES;
+        pinView.image = [UIImage imageNamed:@"icon_pin_userlocation.png"];
     }
     return pinView;
-}*/
+}
 
 - (void) addPin {
     
@@ -176,7 +186,13 @@
                 
                 MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
                 pin.coordinate = annotationCoord;
-                pin.title = isSymptom;
+                
+                if ([isSymptom isEqualToString:@"Y"]) {
+                    pin.title = @"Estou Mal :(";
+                    //pin.pin
+                } else {
+                    pin.title = @"Estou Bem :)";
+                }
                 
                 [self.mapHealth addAnnotation:pin];
             }

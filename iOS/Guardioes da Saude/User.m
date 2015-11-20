@@ -33,6 +33,7 @@
 @synthesize household;
 @synthesize survey;
 @synthesize symptoms;
+@synthesize idHousehold;
 
 + (User *)getInstance {
     

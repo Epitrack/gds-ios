@@ -22,27 +22,72 @@ PODS:
     - AFNetworking/NSURLSession
   - ASHorizontalScrollViewForObjectiveC (1.0)
   - Charts (2.1.6)
+  - Fabric (1.6.1)
+  - Google/Core (1.2.1):
+    - GoogleInterchangeUtilities (~> 1.0)
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.1)
+  - Google/SignIn (1.2.1):
+    - Google/Core
+    - GoogleSignIn (~> 2.0)
+  - GoogleAppUtilities (1.0.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleAuthUtilities (1.0.1):
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleInterchangeUtilities (1.1.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleNetworkingUtilities (1.0.0):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSignIn (2.4.0):
+    - GoogleAppUtilities (~> 1.0)
+    - GoogleAuthUtilities (~> 1.0)
+    - GoogleNetworkingUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.0)
+  - GoogleSymbolUtilities (1.0.3)
+  - GoogleUtilities (1.1.0):
+    - GoogleSymbolUtilities (~> 1.0.0)
   - JSONModel (1.1.2)
   - JTCalendar (2.1.4)
   - JYGraphView (0.1.0)
   - PTEHorizontalTableView (1.0.0)
+  - TwitterCore (1.13.1):
+    - Fabric
+  - TwitterKit (1.13.1):
+    - TwitterCore (= 1.13.1)
 
 DEPENDENCIES:
   - AFNetworking
   - ASHorizontalScrollViewForObjectiveC (~> 1.0)
   - Charts (~> 2.1)
+  - Fabric
+  - Google/SignIn
   - JSONModel
   - JTCalendar (~> 2.0)
   - JYGraphView (~> 0.1)
   - PTEHorizontalTableView
+  - TwitterCore
+  - TwitterKit
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   ASHorizontalScrollViewForObjectiveC: ae062186417c66a626a1961d0115deffa38d226e
   Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
+  Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
+  Google: fd33b5fa40fa3aaee5176de49c873a74e3d11dce
+  GoogleAppUtilities: c01c6a5671e9da8b9d690fdaec5959d6c2aac699
+  GoogleAuthUtilities: 049ffd3a297cdffd271451b82fd4e75304f15ef3
+  GoogleInterchangeUtilities: d7f7174176fbcf9710f696f1acebad4dbd98ac03
+  GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
+  GoogleSignIn: 79929b51e6299c69f1197bbd9c7a1367d523ecd8
+  GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
+  GoogleUtilities: 8ed9134debe11719097881711464752900668f10
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   JTCalendar: 9b1352c7ec41cc26b19c189d6608ba48060a53d9
   JYGraphView: 1f0e5541664acff0f43a31fee5e6bd7171236539
   PTEHorizontalTableView: 2c65c4360282223628dabc664508dde922f98efd
+  TwitterCore: 4f6fbd413f6d574d38bfbeeeb5cd75738caf567e
+  TwitterKit: 77ee49981d79c9663eae3920641addf7c8713b38
 
 COCOAPODS: 0.39.0

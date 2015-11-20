@@ -10,5 +10,7 @@
 
 @interface ThankYouForParticipatingViewController : UIViewController
 - (IBAction)btnContinue:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *txtBadSurvey;
+@property (weak, nonatomic) IBOutlet UIImageView *imgCheckSurvey;
 
 @end

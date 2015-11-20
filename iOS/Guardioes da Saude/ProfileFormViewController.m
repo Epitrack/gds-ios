@@ -15,6 +15,7 @@
 @interface ProfileFormViewController () {
     
     User *user;
+    NSDictionary *params;
     
 }
 
@@ -25,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     user = [User getInstance];
     if (self.newMember == 0) {
         self.navigationItem.title = @"Adicionar Membro";
@@ -65,7 +67,20 @@
         self.txtNick.text = user.nick;
         self.txtEmail.text = user.email;
         self.txtPassword.text = @"";
-        self.txtDob.text = user.dob;
+        
+        NSLog(@"dob %@", user.dob);
+        
+        NSLog(@"Dia %@", [user.dob substringWithRange:NSMakeRange(8, 2)]);
+        NSLog(@"Mês %@", [user.dob substringWithRange:NSMakeRange(5, 2)]);
+        NSLog(@"Ano %@", [user.dob substringWithRange:NSMakeRange(0, 4)]);
+        
+        NSString *day = [user.dob substringWithRange:NSMakeRange(8, 2)];
+        NSString *month = [user.dob substringWithRange:NSMakeRange(5, 2)];
+        NSString *year = [user.dob substringWithRange:NSMakeRange(0, 4)];
+        
+        NSString *dob = [NSString stringWithFormat: @"%@/%@/%@", day, month, year];
+        
+        self.txtDob.text = dob;
         
         if ([user.gender isEqualToString:@"M"]) {
             self.segmentGender.selectedSegmentIndex = 0;
@@ -150,20 +165,24 @@
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-        if (self.txtPassword.text.length < 6) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A senha precisa ter pelo menos 6 carcteres." preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        } else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Senha inválida" preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
+        if (![self.txtPassword.text isEqualToString:@""]) {
+            if (self.txtPassword.text.length < 6) {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A senha precisa ter pelo menos 6 carcteres." preferredStyle:UIAlertControllerStyleActionSheet];
+                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                    NSLog(@"You pressed button OK");
+                }];
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            } else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Senha inválida" preferredStyle:UIAlertControllerStyleActionSheet];
+                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                    NSLog(@"You pressed button OK");
+                }];
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:YES completion:nil];
+            } else {
+                [params setValue:self.txtPassword.text forKey:@"password"];
+            }
         } else {
     
             NSString *gender;
@@ -196,8 +215,7 @@
             } else if (self.segmentRace.selectedSegmentIndex == 4) {
                 race = @"indigena";
             }
-    
-            NSDictionary *params;
+
             NSString *url;
     
             if (self.newMember == 0) {
@@ -237,7 +255,6 @@
             
                     params = @{@"nick":self.txtNick.text,
                        @"email": self.txtEmail.text.lowercaseString,
-                       @"password": self.txtPassword.text,
                        @"client": user.client,
                        @"dob": dob,
                        @"gender": gender,
@@ -246,7 +263,7 @@
                        @"platform": user.platform,
                        @"picture": @"0",
                        @"user": user.idUser};
-            
+
                     url = @"http://52.20.162.21/user/update";
                 }
             }

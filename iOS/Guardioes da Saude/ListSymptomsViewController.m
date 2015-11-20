@@ -59,10 +59,6 @@
 }
 */
 
-- (void) loadSymptomsArray {
-    
-}
-
 - (IBAction)btnConfirmSurvey:(id)sender {
     
     
@@ -83,6 +79,10 @@
             [params setValue:user.platform forKey:@"platform"];
             [params setValue:@"N" forKey:@"no_symptom"];
             [params setValue:user.user_token forKey:@"token"];
+            
+            if (user.idHousehold) {
+                [params setValue:user.idHousehold forKey:@"household_id"];
+            }
             
             for (int i=0; i < 17; i++) {
                 
@@ -106,6 +106,7 @@
                parameters:params
                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
                       
+                      user.idHousehold = @"";
                       ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] init];
                       [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
                       
@@ -176,13 +177,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellSymptomCacheID];
     }
     
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"symptomCell" forIndexPath:indexPath];
-    //UITableViewCell *cell;
-    
     Symptom *symptom = [symptoms objectAtIndex:indexPath.row];
-    
-    //NSLog(@"symptoms: %@", symptoms);
-    //NSLog(@"symptom: %@", symptom.code);
     
     if (indexPath.row == 0) {
         if ([symptom.code isEqualToString: @"febre"]) {

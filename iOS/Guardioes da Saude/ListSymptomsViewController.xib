@@ -61,7 +61,7 @@
                         </mask>
                     </variation>
                 </textView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pzw-kU-ucB">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pzw-kU-ucB">
                     <rect key="frame" x="0.0" y="141" width="320" height="285"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,16 +90,20 @@
             <constraints>
                 <constraint firstItem="pZg-ht-pCA" firstAttribute="width" secondItem="h7N-fR-oo8" secondAttribute="width" id="0Ev-Ja-c7o"/>
                 <constraint firstAttribute="trailing" secondItem="lQx-nB-0Om" secondAttribute="trailing" constant="-1" id="5xX-ib-qIo"/>
+                <constraint firstItem="lQx-nB-0Om" firstAttribute="top" secondItem="pzw-kU-ucB" secondAttribute="bottom" constant="8" id="C6B-c6-uAV"/>
                 <constraint firstItem="R19-CX-MxJ" firstAttribute="centerX" secondItem="h7N-fR-oo8" secondAttribute="centerX" id="EHo-m6-4JJ"/>
                 <constraint firstItem="lQx-nB-0Om" firstAttribute="leading" secondItem="h7N-fR-oo8" secondAttribute="leading" id="HnN-SC-dr2"/>
                 <constraint firstItem="pZg-ht-pCA" firstAttribute="height" secondItem="h7N-fR-oo8" secondAttribute="height" id="Q8b-iG-f3c"/>
+                <constraint firstItem="pzw-kU-ucB" firstAttribute="leading" secondItem="h7N-fR-oo8" secondAttribute="leading" id="Rqh-ho-teC"/>
                 <constraint firstItem="pZg-ht-pCA" firstAttribute="centerY" secondItem="h7N-fR-oo8" secondAttribute="centerY" id="WHq-00-Lnt"/>
+                <constraint firstItem="pzw-kU-ucB" firstAttribute="top" secondItem="R19-CX-MxJ" secondAttribute="bottom" constant="24" id="YwH-Sv-LJw"/>
                 <constraint firstItem="R19-CX-MxJ" firstAttribute="centerX" secondItem="h7N-fR-oo8" secondAttribute="centerX" id="bm0-26-oCF"/>
                 <constraint firstItem="R19-CX-MxJ" firstAttribute="height" secondItem="h7N-fR-oo8" secondAttribute="height" id="fRd-Ir-xh6"/>
                 <constraint firstAttribute="bottom" secondItem="lQx-nB-0Om" secondAttribute="bottom" constant="8" id="maf-CU-mda"/>
                 <constraint firstItem="pZg-ht-pCA" firstAttribute="centerX" secondItem="h7N-fR-oo8" secondAttribute="centerX" id="psH-v6-IAL"/>
                 <constraint firstItem="R19-CX-MxJ" firstAttribute="width" secondItem="h7N-fR-oo8" secondAttribute="width" id="qb1-kw-Kga"/>
                 <constraint firstItem="R19-CX-MxJ" firstAttribute="centerY" secondItem="h7N-fR-oo8" secondAttribute="centerY" multiplier="0.36" id="uLs-0n-PFk"/>
+                <constraint firstAttribute="trailing" secondItem="pzw-kU-ucB" secondAttribute="trailing" id="uar-rr-kpB"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">

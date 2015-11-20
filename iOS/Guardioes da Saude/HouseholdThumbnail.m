@@ -27,16 +27,8 @@
     label.textColor = [UIColor whiteColor];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setFont:[UIFont fontWithName:@"Arial" size:10.0]];
-    //[label setValue:idHousehold forKey:idHousehold];
-    //[button addSubview:label];
-    //[button setTitle:idHousehold forState:UIControlStateNormal];
-    //[button.titleLabel setFont:[UIFont fontWithName:@"Arial" size:10.0]];
-    //[button.titleLabel setTextAlignment: NSTextAlignmentCenter];
-    //[button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
-    //[button setValue:idHousehold forKey:idHousehold];
+    [self.button addSubview:label];
     [self.button addSubview:imageView];
-    //i++;
-    //[button setTag:*(i)];
     [self addSubview:self.button];
     return self;
 }

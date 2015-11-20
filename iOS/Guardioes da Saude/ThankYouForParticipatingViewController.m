@@ -20,6 +20,13 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Guardiões da Saúde";
     self.navigationItem.hidesBackButton = YES;
+    
+    CGSize result = [[UIScreen mainScreen] bounds].size;
+    
+    if (result.height < 568) {
+        self.imgCheckSurvey.hidden = YES;
+    }
+        
 }
 
 - (void)didReceiveMemoryWarning {
