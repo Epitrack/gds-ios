@@ -443,31 +443,27 @@
     NSLog(@"didSelectRowAtIndexPath");
     @try {
         //[self.tableSymptoms deselectRowAtIndexPath:indexPath animated:YES];
-        Symptom *currentSymptom = [symptoms objectAtIndex:indexPath.row];
+        //Symptom *currentSymptom = [symptoms objectAtIndex:indexPath.row];
         
         //NSLog(@"Row: %d", indexPath.row);
-        BOOL indexExists = NO;
+        //BOOL indexExists = NO;
         
         if (indexPath.row == 13) {
             [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+            [self.tableSymptoms cellForRowAtIndexPath:indexPath].backgroundColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            [self.tableSymptoms cellForRowAtIndexPath:indexPath].textLabel.textColor = [UIColor whiteColor];
+            
+            UIView *bgColorView = [[UIView alloc] init];
+            bgColorView.backgroundColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            
+            [self.tableSymptoms cellForRowAtIndexPath:indexPath].selectedBackgroundView = bgColorView;
         } else {
         
-            /*for (Symptom *s in symptomsSelected) {
+            UIView *bgColorView = [[UIView alloc] init];
+            bgColorView.backgroundColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
             
-                NSString *curremtCode = currentSymptom.code;
-                NSString *code = [NSString stringWithFormat:@"%@", s];
+            [self.tableSymptoms cellForRowAtIndexPath:indexPath].selectedBackgroundView = bgColorView;
             
-                if ([code isEqualToString:curremtCode]) {
-                    [symptomsSelected removeObjectForKey:currentSymptom.code];
-                    //[self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-                    indexExists = YES;
-                }
-            }
-            if (indexExists == NO) {
-                [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-                //[symptomsSelected setObject:currentSymptom forKey:currentSymptom.code];
-            }
-        }*/
             if ([selected containsIndex:indexPath.row]) {
                 [selected removeIndex:indexPath.row];
                 [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
