@@ -192,16 +192,44 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                 .inputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
                 .input("email@exemplo.com", "", new MaterialDialog.InputCallback() {
                     @Override
+
                     public void onInput(MaterialDialog dialog, CharSequence input) {
                         str[0] = input.toString();
+
                         new DialogBuilder(LoginActivity.this).load()
-                                .title(R.string.app_name)
-                                .content(R.string.new_password)
-                                .positiveText(R.string.ok)
-                                .show();
+                                    .title(R.string.app_name)
+                                    .content(forgotPassword(str[0]))
+                                    .positiveText(R.string.ok)
+                                    .show();
                     }
+
+
                 }).negativeText("FECHAR")
                 .show();
+    }
+
+
+    private String forgotPassword(String email) {
+
+        try {
+
+            JSONObject jsonObject = new JSONObject();
+
+            jsonObject.put("email", email);
+
+            SimpleRequester sendPostRequest = new SimpleRequester();
+            sendPostRequest.setUrl(Requester.API_URL + "user/forgot-password");
+            sendPostRequest.setJsonObject(jsonObject);
+            sendPostRequest.setMethod(Method.POST);
+
+            String jsonStr = sendPostRequest.execute(sendPostRequest).get();
+
+            jsonObject = new JSONObject(jsonStr);
+
+            return jsonObject.get("message").toString();
+        } catch (Exception e) {
+            return "Não foi possível enviar o e-mail. Tente novamente em alguns minutos";
+        }
     }
 
     @OnClick(R.id.button_mail)
