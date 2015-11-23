@@ -100,6 +100,11 @@
         onSuccess: ^(User * user) {
             
             if (user.user_token) {
+                NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                NSString *userKey = user.user_token;
+                
+                [preferences setValue:userKey forKey:@"userTokenKey"];
+                [preferences synchronize];
                 
                 [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
             
@@ -165,6 +170,13 @@
                       [alert addAction:defaultAction];
                       [self presentViewController:alert animated:YES completion:nil];
                   } else {
+                      
+                      NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                      NSString *userKey = user.user_token;
+                      
+                      [preferences setValue:userKey forKey:@"userTokenKey"];
+                      [preferences synchronize];
+                      
                       HomeViewController *homeViewController = [[HomeViewController alloc] init];
                       [self.navigationController pushViewController:homeViewController animated:YES];
                   }

@@ -30,18 +30,31 @@
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
-    
-    TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
-    HomeViewController *frontViewController = [[HomeViewController alloc] init];
+
     MenuViewController *rearViewController = [[MenuViewController alloc] init];
     
-    UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
-    UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
+    SWRevealViewController *revealController;
     
-    SWRevealViewController *revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
-    revealController.delegate = self;
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *userTokenKey = @"userTokenKey";
     
-    self.viewController = revealController;
+    if ([preferences objectForKey:userTokenKey] != nil) {
+        HomeViewController *frontViewController = [[HomeViewController alloc] init];
+        UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+        UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
+        
+        revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
+        revealController.delegate = self;
+        self.viewController = revealController;
+    } else {
+        TutorialViewController *frontViewController = [[TutorialViewController alloc] init];
+        UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
+        UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
+        
+        revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
+        revealController.delegate = self;
+        self.viewController = revealController;
+    }
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];

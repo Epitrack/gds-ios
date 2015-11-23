@@ -32,12 +32,15 @@
     self.navigationItem.title = @"Guardiões da Saúde";
     
     user = [User getInstance];
-
-    if(user.user_token == nil) {
-        TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
-        [self.navigationController pushViewController:tutorialViewController animated:YES];
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSString *userTokenKey = @"userTokenKey";
+    
+    if ([preferences objectForKey:userTokenKey] != nil) {
+        NSString *userToken = [preferences valueForKey:userTokenKey];
+        [self authorizedAutomaticLogin:userToken];
     }
-
+    
     self.navigationItem.hidesBackButton = YES;
     
     SWRevealViewController *revealController = [self revealViewController];
@@ -79,6 +82,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.revealViewController.panGestureRecognizer.enabled=NO;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -88,6 +95,8 @@
     // Pass the selected object to the new view controller.
 }/
 */
+
+
 
 -(void)showMenu:(id)sender  {
     NSLog(@"menu action");
@@ -124,5 +133,58 @@
     
     user.lat = [NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude];
     user.lon = [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude];
+}
+
+- (BOOL) authorizedAutomaticLogin:(NSString *)userToken {
+    
+    AFHTTPRequestOperationManager *manager;
+    
+    manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
+    [manager.requestSerializer setValue:userToken forHTTPHeaderField:@"user_token"];
+    [manager GET:@"http://52.20.162.21/user/lookup/"
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             
+             if ([responseObject[@"error"] boolValue] == 1) {
+                 user.user_token = nil;
+             } else {
+                 NSDictionary *response = responseObject[@"data"];
+                 
+                 user.nick = response[@"nick"];
+                 user.email = response[@"email"];
+                 user.gender = response[@"gender"];
+                 user.picture = response[@"picture"];
+                 user.idUser =  response[@"id"];
+                 user.race = response[@"race"];
+                 user.dob = response[@"dob"];
+                 user.user_token = response[@"token"];
+                 user.hashtag = response[@"hashtags"];
+                 user.household = response[@"household"];
+                 user.survey = response[@"surveys"];
+                 
+                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                 NSString *userKey = user.user_token;
+                 
+                 [preferences setValue:userKey forKey:@"userTokenKey"];
+                 BOOL didSave = [preferences synchronize];
+                 
+                 if (!didSave) {
+                     user.user_token = nil;
+                 }
+                 
+                 self.txtNameUser.text = user.nick;
+             }
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error: %@", error);
+             user.user_token = nil;
+         }];
+    
+    if (user.user_token == nil) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 @end

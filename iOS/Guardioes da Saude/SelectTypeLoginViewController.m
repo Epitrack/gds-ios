@@ -257,6 +257,12 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                   user.household = response[@"household"];
                   user.survey = response[@"surveys"];
                   
+                  NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                  NSString *userKey = user.user_token;
+                  
+                  [preferences setValue:userKey forKey:@"userTokenKey"];
+                  [preferences synchronize];
+                  
                   [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
               }
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

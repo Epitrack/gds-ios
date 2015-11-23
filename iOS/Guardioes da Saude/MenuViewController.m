@@ -12,6 +12,8 @@
 #import "AboutViewController.h"
 #import "HelpViewController.h"
 #import "ProfileListViewController.h"
+#import "User.h"
+#import "TutorialViewController.h"
 
 @interface MenuViewController () {
     
@@ -119,5 +121,20 @@
 }
 
 - (IBAction)btnExit:(id)sender {
+    
+    User *user;
+    
+    user = [User getInstance];
+    user = nil;
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    
+    [preferences setValue:nil forKey:@"userTokenKey"];
+    [preferences synchronize];
+    
+    TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
+    SWRevealViewController *revealController = self.revealViewController;
+    [revealController pushFrontViewController:newFrontController animated:YES];    
 }
 @end
