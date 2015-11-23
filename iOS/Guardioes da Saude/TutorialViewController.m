@@ -10,6 +10,7 @@
 #import "SelectTypeLoginViewController.h"
 #import "CreateAccountViewController.h"
 #import "SelectTypeCreateAccoutViewController.h"
+#import "SWRevealViewController.h"
 
 @interface TutorialViewController ()
 @property (strong, nonatomic) IBOutlet UIPageControl *pageController;
@@ -44,6 +45,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+    self.revealViewController.panGestureRecognizer.enabled=NO;
 }
 
 - (void)didSwipe: (UISwipeGestureRecognizer *) sender {
@@ -58,18 +60,21 @@
                 self.txtTitle.text = @"Como está sua saúde?";
                 self.txtDescription.text = @"Maque na lista os sintomas que você apresenta.";
                 self.indexTutorial += 1;
+                [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
             case 1:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[2]];
                 self.txtTitle.text = @"Mapa da Saúde";
                 self.txtDescription.text = @"Acompanhe os casos de doenças em seu bairro ou um determinado local.";
                 self.indexTutorial += 1;
+                [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
             case 2:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[3]];
                 self.txtTitle.text = @"Dicas de Saúde";
                 self.txtDescription.text = @"Veja como se prevenir de doenças, quais são as UPAS e farmácias mais próximas de você e telefones úteis para caso de emergência.";
                 self.indexTutorial += 1;
+                [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
             case 3:
                 
@@ -85,18 +90,21 @@
                 self.txtTitle.text = @"Mapa da Saúde";
                 self.txtDescription.text = @"Acompanhe os casos de doenças em seu bairro ou um determinado local.";
                 self.indexTutorial -= 1;
+                [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
             case 2:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[1]];
                 self.txtTitle.text = @"Como está sua saúde?";
                 self.txtDescription.text = @"Maque na lista os sintomas que você apresenta.";
                 self.indexTutorial -= 1;
+                [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
             case 1:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[0]];
                 self.txtTitle.text = @"Bem-vindo";
                 self.txtDescription.text = @"Preparado para se tornar um Guardião da Saúde?";
                 self.indexTutorial -= 1;
+                [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
             case 0:
                 

@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UITextView *txtTitle;
 - (IBAction)btnEnter:(id)sender;
 - (IBAction)btnNewUser:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end

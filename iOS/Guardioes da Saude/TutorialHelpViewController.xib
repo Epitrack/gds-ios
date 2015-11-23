@@ -47,13 +47,13 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Preparado para se tornar um Guardião da Saúde?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="B9f-uz-Q4s">
-                    <rect key="frame" x="54" y="83" width="211" height="53"/>
+                    <rect key="frame" x="8" y="83" width="304" height="53"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="B9f-uz-Q4s" secondAttribute="height" multiplier="211:30" id="DPq-03-Zxe"/>
-                        <constraint firstAttribute="width" constant="211" id="Wx2-LQ-Fnp"/>
+                        <constraint firstAttribute="width" constant="304" id="Wx2-LQ-Fnp"/>
                         <constraint firstAttribute="width" constant="211" id="fnT-kf-mqx"/>
-                        <constraint firstAttribute="width" secondItem="B9f-uz-Q4s" secondAttribute="height" multiplier="211:53" id="hlQ-eW-Ahl"/>
+                        <constraint firstAttribute="width" secondItem="B9f-uz-Q4s" secondAttribute="height" multiplier="211:53" constant="93" id="hlQ-eW-Ahl"/>
                     </constraints>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>

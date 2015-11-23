@@ -28,9 +28,7 @@
     user = [User getInstance];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Guardiões da Saúde";
-    
-    //GOOGLE
-    [GIDSignIn sharedInstance].uiDelegate = self;
+
     // Uncomment to automatically sign in the user.
     //[[GIDSignIn sharedInstance] signInSilently];
 
@@ -48,8 +46,7 @@
         }
     }];
     
-    self.btnTwitter = logInButton;
-    
+    self.btnTwitter = logInButton;    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,7 +96,9 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnGoogleAction:(id)sender {
-
+    
+    //GOOGLE
+    [GIDSignIn sharedInstance].uiDelegate = self;
 }
 
 

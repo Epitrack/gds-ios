@@ -20,6 +20,7 @@
             <connections>
                 <outlet property="imgBgTutorial" destination="tFN-vj-bKJ" id="bsV-Kl-fZc"/>
                 <outlet property="imgTutorial" destination="ctv-Wu-AJh" id="GLb-Xv-p15"/>
+                <outlet property="pageControl" destination="9KC-Jm-W5d" id="gsb-L8-Ieg"/>
                 <outlet property="txtDescription" destination="CbB-mO-5AG" id="cko-dX-ObY"/>
                 <outlet property="txtTitle" destination="8DL-7b-WqM" id="hdp-fk-i8N"/>
                 <outlet property="view" destination="e6e-5v-vmX" id="gD1-Su-HhQ"/>
@@ -61,13 +62,13 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Preparado para se tornar um Guardião da Saúde?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CbB-mO-5AG">
-                    <rect key="frame" x="54" y="83" width="211" height="53"/>
+                    <rect key="frame" x="27" y="83" width="266" height="53"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="CbB-mO-5AG" secondAttribute="height" multiplier="211:53" id="TX4-Yu-sfs"/>
+                        <constraint firstAttribute="width" secondItem="CbB-mO-5AG" secondAttribute="height" multiplier="211:53" constant="55" id="TX4-Yu-sfs"/>
                         <constraint firstAttribute="width" secondItem="CbB-mO-5AG" secondAttribute="height" multiplier="211:30" id="ZTo-2E-dDa"/>
                         <constraint firstAttribute="width" constant="211" id="dze-fZ-1tc"/>
-                        <constraint firstAttribute="width" constant="211" id="eea-S4-Db9"/>
+                        <constraint firstAttribute="width" constant="266" id="eea-S4-Db9"/>
                     </constraints>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
@@ -80,7 +81,7 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon_logo_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-Wu-AJh">
-                    <rect key="frame" x="31" y="149" width="258" height="201"/>
+                    <rect key="frame" x="31" y="171" width="258" height="201"/>
                     <animations/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOh-dH-CHU">
@@ -101,10 +102,10 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ctv-Wu-AJh" firstAttribute="top" secondItem="CbB-mO-5AG" secondAttribute="bottom" constant="13.5" id="3Bh-gE-Vmy"/>
+                <constraint firstItem="ctv-Wu-AJh" firstAttribute="top" secondItem="CbB-mO-5AG" secondAttribute="bottom" constant="35" id="3Bh-gE-Vmy"/>
                 <constraint firstItem="9KC-Jm-W5d" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" id="3Um-pA-Y5T"/>
                 <constraint firstItem="i40-G2-ylt" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="27" id="7xU-d1-1Lh"/>
-                <constraint firstItem="9KC-Jm-W5d" firstAttribute="top" secondItem="ctv-Wu-AJh" secondAttribute="bottom" constant="42" id="9eZ-37-ULD"/>
+                <constraint firstItem="9KC-Jm-W5d" firstAttribute="top" secondItem="ctv-Wu-AJh" secondAttribute="bottom" constant="20" id="9eZ-37-ULD"/>
                 <constraint firstItem="8DL-7b-WqM" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" constant="60" id="CMP-5b-U8h"/>
                 <constraint firstItem="CbB-mO-5AG" firstAttribute="top" secondItem="8DL-7b-WqM" secondAttribute="bottom" constant="-7" id="DQG-VX-zr9"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="centerY" secondItem="e6e-5v-vmX" secondAttribute="centerY" id="Gyq-Lm-iD4"/>

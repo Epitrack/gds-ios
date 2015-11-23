@@ -1303,7 +1303,7 @@ const int FrontViewPositionNone = 0xff;
             journey = revealWidth - xLocation;
             if (xLocation > revealWidth)
             {
-                if (!bounceBack && stableDrag /*&& xPosition > _rearViewRevealWidth+_rearViewRevealOverdraw*0.5f*/)
+                if (!bounceBack && stableDrag )
                 {
                     frontViewPosition = FrontViewPositionRightMost;
                     journey = revealWidth+revealOverdraw - xLocation;

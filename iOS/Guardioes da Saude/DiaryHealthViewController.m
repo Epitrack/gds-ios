@@ -205,10 +205,7 @@ const float _kCellHeight = 100.0f;
                     [button addSubview:imageView];
                     [buttons addObject:button];
                 }
-                
-                //if (buttons.count > 0) {
                 [horizontalScrollView addItems:buttons];
-                //}
             }
         }
     }
