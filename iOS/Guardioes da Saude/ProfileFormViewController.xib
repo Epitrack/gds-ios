@@ -101,6 +101,11 @@
                         <action selector="btnAction:" destination="-1" eventType="touchUpInside" id="d6V-Ls-keP"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZR-Ih-Yms">
+                    <rect key="frame" x="42" y="21" width="94" height="95"/>
+                    <animations/>
+                    <state key="normal" backgroundImage="img_profile01.png"/>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
