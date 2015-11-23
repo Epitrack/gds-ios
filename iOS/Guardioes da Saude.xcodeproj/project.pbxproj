@@ -414,6 +414,7 @@
 		AAE38B4B1BFA80AF009CD20B /* SumaryLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B4A1BFA80AF009CD20B /* SumaryLocation.m */; };
 		AAE38B4E1BFAA16F009CD20B /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B4D1BFAA16F009CD20B /* ChartViewController.m */; };
 		AAE38B501BFAA1D8009CD20B /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE38B4F1BFAA1D8009CD20B /* ChartViewController.xib */; };
+		B23CB178C86EEA8A7C4AF3CE /* MapPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */; };
 		B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */; };
 /* End PBXBuildFile section */
 
@@ -887,6 +888,8 @@
 		AAE38B5E1BFBC81E009CD20B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseholdThumbnail.m; sourceTree = "<group>"; };
 		B23CB416A647D5FE2D95B7D9 /* HouseholdThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseholdThumbnail.h; sourceTree = "<group>"; };
+		B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPinAnnotation.m; sourceTree = "<group>"; };
+		B23CB8937DECB07E8EB03052 /* MapPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPinAnnotation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -948,6 +951,8 @@
 				AAE38B4A1BFA80AF009CD20B /* SumaryLocation.m */,
 				529BE1E61BF9053D00692EEC /* Notice.h */,
 				529BE1E71BF9053D00692EEC /* Notice.m */,
+				B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */,
+				B23CB8937DECB07E8EB03052 /* MapPinAnnotation.h */,
 			);
 			name = Model;
 			path = ..;
@@ -2074,6 +2079,7 @@
 				528705B91BF3744600321985 /* PhonesViewController.m in Sources */,
 				B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */,
 				5215BBC61BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m in Sources */,
+				B23CB178C86EEA8A7C4AF3CE /* MapPinAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

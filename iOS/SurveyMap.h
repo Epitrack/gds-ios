@@ -15,5 +15,6 @@
 @property(nonatomic, retain) NSString *latitude;
 @property(nonatomic, retain) NSString *longitude;
 @property(nonatomic, retain) NSString *isSymptom;
+@property(nonatomic, retain) NSString *survey_id;
 
 @end

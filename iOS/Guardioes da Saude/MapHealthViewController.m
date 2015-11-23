@@ -12,6 +12,7 @@
 #import "SurveyMap.h"
 #import "DetailMapHealthViewController.h"
 #import "DetailMap.h"
+#import "MapPinAnnotation.h"
 
 @interface MapHealthViewController ()
 
@@ -84,12 +85,14 @@
                  NSString *surveyLatitude = item[@"lat"];
                  NSString *surveyLongitude = item[@"lon"];
                  NSString *isSymptom = item[@"no_symptom"];
-                 
+                 NSString *survey_id = item[@"id"];
+
                  NSLog(@"surveyLatitude: %@", surveyLatitude);
                  NSLog(@"surveyLongitude: %@", surveyLongitude);
                  
                  if (surveyLatitude != 0 || surveyLongitude != 0) {
                      SurveyMap *s = [[SurveyMap alloc] initWithLatitude:surveyLatitude andLongitude:surveyLongitude andSymptom:isSymptom];
+                     s.survey_id = survey_id;
                      [surveysMap addObject:s];
                  }
              }
@@ -142,28 +145,27 @@
     UIImage *anImage = nil;
     MKAnnotationView *pinView = nil;
     if(annotation != mv.userLocation){
-    /*    static NSString *defaultPinID = @"PinID";
-        pinView = (MKAnnotationView *)[mv dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        MapPinAnnotation *pinA = (MapPinAnnotation *) annotation;
+        pinView = (MKAnnotationView *)[mv dequeueReusableAnnotationViewWithIdentifier:pinA.survey_id];
         if ( pinView == nil ) {
             pinView = [[MKAnnotationView alloc]
-                       initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+                    initWithAnnotation:annotation reuseIdentifier:pinA.survey_id];
         }
         pinView.canShowCallout = YES;
-        
-        if (pinView.t) {
-            pinView.M
+        if ([pinA.isSymptom isEqualToString:@"Y"]) {
+            pinView.image = [UIImage imageNamed:@"icon_pin_bad.png"];
+        } else {
+            pinView.image = [UIImage imageNamed:@"icon_pin_well.png"];
         }
-        
-        pinView.image = [UIImage imageNamed:@"icon_good_small.png"];*/
     } else {
         [mv.userLocation setTitle:user.nick];
         static NSString *defaultPinID = @"user";
         
         pinView = (MKAnnotationView *)[mv dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
-        if ( pinView == nil )
+        if ( pinView == nil ) {
             pinView = [[MKAnnotationView alloc]
-                       initWithAnnotation:annotation reuseIdentifier:defaultPinID];
-        
+                    initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+        }
         pinView.canShowCallout = YES;
         pinView.image = [UIImage imageNamed:@"icon_pin_userlocation.png"];
     }
@@ -184,8 +186,11 @@
                 annotationCoord.latitude = surveyLatitude;
                 annotationCoord.longitude = surveyLongitude;
                 
-                MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
+//                MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
+                MapPinAnnotation *pin = [[MapPinAnnotation alloc] init];
                 pin.coordinate = annotationCoord;
+                pin.isSymptom = isSymptom;
+                pin.survey_id = s.survey_id;
                 
                 if ([isSymptom isEqualToString:@"Y"]) {
                     pin.title = @"Estou Mal :(";
