@@ -17,6 +17,7 @@
             <connections>
                 <outlet property="imgBgTutorial" destination="NN0-8d-u9a" id="iLn-65-yKs"/>
                 <outlet property="imgTutorial" destination="aE9-on-xQo" id="GzO-Ew-qhE"/>
+                <outlet property="pageController" destination="WTk-va-xiS" id="iVP-ty-Zip"/>
                 <outlet property="txtDescription" destination="B9f-uz-Q4s" id="4al-aA-yvH"/>
                 <outlet property="txtTitle" destination="8uT-7f-uht" id="z0u-fV-Ald"/>
                 <outlet property="view" destination="HB2-4Q-u8X" id="BNn-bj-hje"/>

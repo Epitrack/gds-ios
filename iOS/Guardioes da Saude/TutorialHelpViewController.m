@@ -10,7 +10,6 @@
 
 @interface TutorialHelpViewController ()
 
-@property (strong, nonatomic) IBOutlet UIPageControl *pageController;
 @property NSArray *arrImg;
 
 @end

@@ -80,7 +80,7 @@
             [params setValue:@"N" forKey:@"no_symptom"];
             [params setValue:user.user_token forKey:@"token"];
             
-            if (user.idHousehold) {
+            if (![user.idHousehold isEqualToString:@""]) {
                 [params setValue:user.idHousehold forKey:@"household_id"];
             }
             

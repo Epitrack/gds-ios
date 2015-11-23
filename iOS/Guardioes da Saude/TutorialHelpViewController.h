@@ -15,5 +15,6 @@
 @property NSInteger indexTutorial;
 @property (strong, nonatomic) IBOutlet UITextView *txtDescription;
 @property (strong, nonatomic) IBOutlet UITextView *txtTitle;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageController;
 
 @end
