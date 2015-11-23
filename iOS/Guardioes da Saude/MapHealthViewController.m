@@ -227,7 +227,7 @@
                  totalNoSymptom = [summary[@"total_no_symptoms"] integerValue];
                  
                  if (totalNoSymptom > 0) {
-                     goodPercent = ((totalNoSymptom / totalSurvey) * 100);
+                     goodPercent = (((double)totalNoSymptom / (double)totalSurvey) * 100);
                  } else {
                      goodPercent = 0;
                  }
@@ -235,7 +235,7 @@
                  totalWithSymptom = [summary[@"total_symptoms"] integerValue];
                  
                  if (totalWithSymptom > 0) {
-                     badPercent = ((totalWithSymptom / totalSurvey) * 100);
+                     badPercent = (((double)totalWithSymptom / (double)totalSurvey) * 100);
                  } else {
                      badPercent = 0;
                  }
