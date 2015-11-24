@@ -67,6 +67,8 @@
 		525E8DCA1BFE8DA40020D4D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 525E8DC91BFE8DA40020D4D6 /* GoogleService-Info.plist */; };
 		525E8DCC1BFE9F210020D4D6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525E8DCB1BFE9F210020D4D6 /* FBSDKCoreKit.framework */; };
 		525E8DCE1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525E8DCD1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework */; };
+		527782CA1C04CEB700251BF8 /* SelectAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527782C81C04CEB700251BF8 /* SelectAvatarViewController.m */; };
+		527782CB1C04CEB700251BF8 /* SelectAvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527782C91C04CEB700251BF8 /* SelectAvatarViewController.xib */; };
 		528705B91BF3744600321985 /* PhonesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528705B71BF3744600321985 /* PhonesViewController.m */; };
 		528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528705B81BF3744600321985 /* PhonesViewController.xib */; };
 		528705C41BF3AB5F00321985 /* iconBombeirosMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BB1BF3AB5F00321985 /* iconBombeirosMini.png */; };
@@ -509,6 +511,9 @@
 		525E8DC91BFE8DA40020D4D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		525E8DCB1BFE9F210020D4D6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		525E8DCD1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		527782C71C04CEB700251BF8 /* SelectAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAvatarViewController.h; sourceTree = "<group>"; };
+		527782C81C04CEB700251BF8 /* SelectAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectAvatarViewController.m; sourceTree = "<group>"; };
+		527782C91C04CEB700251BF8 /* SelectAvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectAvatarViewController.xib; sourceTree = "<group>"; };
 		528705B61BF3744600321985 /* PhonesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhonesViewController.h; sourceTree = "<group>"; };
 		528705B71BF3744600321985 /* PhonesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhonesViewController.m; sourceTree = "<group>"; };
 		528705B81BF3744600321985 /* PhonesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhonesViewController.xib; sourceTree = "<group>"; };
@@ -1090,6 +1095,9 @@
 				525648181BFCF96100FE64AE /* ProfileFormViewController.h */,
 				525648191BFCF96100FE64AE /* ProfileFormViewController.m */,
 				5256481A1BFCF96100FE64AE /* ProfileFormViewController.xib */,
+				527782C71C04CEB700251BF8 /* SelectAvatarViewController.h */,
+				527782C81C04CEB700251BF8 /* SelectAvatarViewController.m */,
+				527782C91C04CEB700251BF8 /* SelectAvatarViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1854,6 +1862,7 @@
 				52E727CE1BEA93B800B46945 /* img_profile05@2x.png in Resources */,
 				52E727841BEA93B800B46945 /* icon_logo_horizontal@3x.png in Resources */,
 				52E727861BEA93B800B46945 /* icon_logo_splash@2x.png in Resources */,
+				527782CB1C04CEB700251BF8 /* SelectAvatarViewController.xib in Resources */,
 				52E7274C1BEA93B800B46945 /* fab_cancel.png in Resources */,
 				52E727481BEA93B800B46945 /* button_register@3x.png in Resources */,
 				52E7278B1BEA93B800B46945 /* icon_logout.png in Resources */,
@@ -2036,6 +2045,7 @@
 				524C14461BECE363003A6C2D /* SWRevealViewController.m in Sources */,
 				2548B9E91BDEB3C80004E00F /* ThankYouForParticipatingViewController.m in Sources */,
 				25630CF61BDF96F90047FF07 /* ListSymptomsViewController.m in Sources */,
+				527782CA1C04CEB700251BF8 /* SelectAvatarViewController.m in Sources */,
 				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */,

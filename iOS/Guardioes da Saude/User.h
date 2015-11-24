@@ -34,6 +34,9 @@
     NSDictionary *survey;
     NSDictionary *symptoms;
     NSString *idHousehold;
+    NSString *avatar;
+    NSString *photo;
+    
 }
 
 +(User *)getInstance;
@@ -62,5 +65,7 @@
 @property(nonatomic, retain) NSDictionary *survey;
 @property(nonatomic, retain) NSDictionary *symptoms;
 @property(nonatomic, retain) NSString *idHousehold;
+@property(nonatomic, retain) NSString *avatar;
+@property(nonatomic, retain) NSString *photo;
 
 @end

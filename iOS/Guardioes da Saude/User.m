@@ -34,6 +34,8 @@
 @synthesize survey;
 @synthesize symptoms;
 @synthesize idHousehold;
+@synthesize avatar;
+@synthesize photo;
 
 + (User *)getInstance {
     

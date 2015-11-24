@@ -418,6 +418,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Screenshots/BG_blur_tutorial.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Screenshots/BG_blur_tutorial@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Screenshots/BG_blur_tutorial@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectAvatarViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectAvatarViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectAvatarViewController.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectParticipantViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectParticipantViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/SelectParticipantViewController.xib" isTestSource="false" />

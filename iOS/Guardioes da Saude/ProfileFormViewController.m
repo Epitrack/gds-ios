@@ -11,6 +11,7 @@
 #import "Household.h"
 #import "AFNetworking/AFNetworking.h"
 #import "ProfileListViewController.h"
+#import "SelectAvatarViewController.h"
 
 @interface ProfileFormViewController () {
     
@@ -305,5 +306,10 @@
                     }];
             }
         }
+}
+- (IBAction)btnSelectPicture:(id)sender {
+    
+    SelectAvatarViewController *selectAvatarViewController = [[SelectAvatarViewController alloc] init];
+    [self.navigationController pushViewController:selectAvatarViewController animated:YES];
 }
 @end
