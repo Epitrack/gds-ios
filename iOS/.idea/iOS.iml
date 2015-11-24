@@ -451,6 +451,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/VacineViewController.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/ViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MapPinAnnotation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MapPinAnnotation.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m" isTestSource="false" />

@@ -61,8 +61,16 @@
     AFHTTPRequestOperationManager *manager;
     User *user = [User getInstance];
     
-    if (![user.idHousehold isEqualToString:@""]) {
-        //[params setValue:user.idHousehold forKey:@"household_id"];
+    if ([user.idHousehold isEqualToString:@""] || user.idHousehold  == nil) {
+        params = @{@"user_id":user.idUser,
+                   @"lat":[NSString stringWithFormat:@"%.8f", latitude],
+                   @"lon":[NSString stringWithFormat:@"%.8f", longitude],
+                   @"app_token":user.app_token,
+                   @"platform":user.platform,
+                   @"client":user.client,
+                   @"no_symptom": @"Y",
+                   @"token":user.user_token};
+    } else {
         params = @{@"user_id":user.idUser,
                    @"lat":[NSString stringWithFormat:@"%.8f", latitude],
                    @"lon":[NSString stringWithFormat:@"%.8f", longitude],
@@ -72,18 +80,10 @@
                    @"no_symptom": @"Y",
                    @"token":user.user_token,
                    @"household_id": user.idHousehold};
-    } else {
-        params = @{@"user_id":user.idUser,
-                   @"lat":[NSString stringWithFormat:@"%.8f", latitude],
-                   @"lon":[NSString stringWithFormat:@"%.8f", longitude],
-                   @"app_token":user.app_token,
-                   @"platform":user.platform,
-                   @"client":user.client,
-                   @"no_symptom": @"Y",
-                   @"token":user.user_token};
     }
     
     manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
     [manager POST:@"http://52.20.162.21/survey/create"
        parameters:params
           success:^(AFHTTPRequestOperation *operation, id responseObject) {

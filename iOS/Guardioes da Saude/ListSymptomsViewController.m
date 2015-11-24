@@ -80,7 +80,7 @@
             [params setValue:@"N" forKey:@"no_symptom"];
             [params setValue:user.user_token forKey:@"token"];
             
-            if (![user.idHousehold isEqualToString:@""]) {
+            if (![user.idHousehold isEqualToString:@""] && user.idHousehold  != nil) {
                 [params setValue:user.idHousehold forKey:@"household_id"];
             }
             
@@ -102,6 +102,7 @@
             AFHTTPRequestOperationManager *manager;
             
             manager = [AFHTTPRequestOperationManager manager];
+            [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
             [manager POST:@"http://52.20.162.21/survey/create"
                parameters:params
                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
