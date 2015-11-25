@@ -69,6 +69,9 @@
 		525E8DCE1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525E8DCD1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework */; };
 		527782CA1C04CEB700251BF8 /* SelectAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527782C81C04CEB700251BF8 /* SelectAvatarViewController.m */; };
 		527782CB1C04CEB700251BF8 /* SelectAvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527782C91C04CEB700251BF8 /* SelectAvatarViewController.xib */; };
+		527782CF1C062DC100251BF8 /* gdSToolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 527782CC1C062DC000251BF8 /* gdSToolbar.png */; };
+		527782D01C062DC100251BF8 /* gdSToolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527782CD1C062DC000251BF8 /* gdSToolbar@2x.png */; };
+		527782D11C062DC100251BF8 /* gdSToolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527782CE1C062DC000251BF8 /* gdSToolbar@3x.png */; };
 		528705B91BF3744600321985 /* PhonesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528705B71BF3744600321985 /* PhonesViewController.m */; };
 		528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528705B81BF3744600321985 /* PhonesViewController.xib */; };
 		528705C41BF3AB5F00321985 /* iconBombeirosMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BB1BF3AB5F00321985 /* iconBombeirosMini.png */; };
@@ -514,6 +517,9 @@
 		527782C71C04CEB700251BF8 /* SelectAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAvatarViewController.h; sourceTree = "<group>"; };
 		527782C81C04CEB700251BF8 /* SelectAvatarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectAvatarViewController.m; sourceTree = "<group>"; };
 		527782C91C04CEB700251BF8 /* SelectAvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectAvatarViewController.xib; sourceTree = "<group>"; };
+		527782CC1C062DC000251BF8 /* gdSToolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gdSToolbar.png; sourceTree = "<group>"; };
+		527782CD1C062DC000251BF8 /* gdSToolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gdSToolbar@2x.png"; sourceTree = "<group>"; };
+		527782CE1C062DC000251BF8 /* gdSToolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gdSToolbar@3x.png"; sourceTree = "<group>"; };
 		528705B61BF3744600321985 /* PhonesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhonesViewController.h; sourceTree = "<group>"; };
 		528705B71BF3744600321985 /* PhonesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhonesViewController.m; sourceTree = "<group>"; };
 		528705B81BF3744600321985 /* PhonesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhonesViewController.xib; sourceTree = "<group>"; };
@@ -1190,6 +1196,9 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				527782CC1C062DC000251BF8 /* gdSToolbar.png */,
+				527782CD1C062DC000251BF8 /* gdSToolbar@2x.png */,
+				527782CE1C062DC000251BF8 /* gdSToolbar@3x.png */,
 				52DBBA691BFE479A00900D22 /* imgNoticias@2x.png */,
 				52DBBA6A1BFE479A00900D22 /* imgNoticias@3x.png */,
 				52DBBA6B1BFE479A00900D22 /* imgNoticias.png */,
@@ -1813,6 +1822,7 @@
 				528705CA1BF3AB5F00321985 /* iconPMMini.png in Resources */,
 				528705D11BF3C5CA00321985 /* iconSamuMini@2x.png in Resources */,
 				52E727A01BEA93B800B46945 /* icon_problem.png in Resources */,
+				527782CF1C062DC100251BF8 /* gdSToolbar.png in Resources */,
 				52D2BCA01BF12EBF007C9C09 /* img_profile06_mini@3x.png in Resources */,
 				520CD0D61BED3DB800F24B45 /* SelectTypeLoginViewController.xib in Resources */,
 				52E727511BEA93B800B46945 /* fab_location@3x.png in Resources */,
@@ -1883,6 +1893,7 @@
 				52D2BC921BF12EBF007C9C09 /* img_profile02_mini.png in Resources */,
 				52D2BC801BF12EBF007C9C09 /* icon_bad_dash.png in Resources */,
 				52E727D31BEA93B800B46945 /* img_profile07.png in Resources */,
+				527782D01C062DC100251BF8 /* gdSToolbar@2x.png in Resources */,
 				52E727D21BEA93B800B46945 /* img_profile06@3x.png in Resources */,
 				52E727AB1BEA93B800B46945 /* icon_security@3x.png in Resources */,
 				52D2BC841BF12EBF007C9C09 /* icon_pin_bad@2x.png in Resources */,
@@ -1945,6 +1956,7 @@
 				528705C81BF3AB5F00321985 /* iconDefesacivilMini@2x.png in Resources */,
 				52E727C11BEA93B800B46945 /* img_profile01.png in Resources */,
 				52E727461BEA93B800B46945 /* button_register.png in Resources */,
+				527782D11C062DC100251BF8 /* gdSToolbar@3x.png in Resources */,
 				52E7273F1BEA93B800B46945 /* button_enter@3x.png in Resources */,
 				52E727CF1BEA93B800B46945 /* img_profile05@3x.png in Resources */,
 				52D15DD71BFBCA8100FC31F3 /* DiaryHealthViewController.xib in Resources */,

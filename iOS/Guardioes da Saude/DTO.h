@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DTO : NSObject
+@interface DTO : NSObject {
+    
+    NSString *string;
+    id data;
+}
 
-@property(nonatomic, assign) NSString *string;
-@property(nonatomic, assign) id data;
+@property(nonatomic, retain) NSString *string;
+@property(nonatomic, retain) id data;
 
 +(DTO *) getInstance;
 

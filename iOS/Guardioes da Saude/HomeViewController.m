@@ -30,6 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"Guardiões da Saúde";
+    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"gdSToolbar.png"] forBarMetrics:UIBarMetricsDefault];
+
     
     user = [User getInstance];
     
@@ -95,8 +97,6 @@
     // Pass the selected object to the new view controller.
 }/
 */
-
-
 
 -(void)showMenu:(id)sender  {
     NSLog(@"menu action");

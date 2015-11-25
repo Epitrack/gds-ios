@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
-@interface SelectAvatarViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface SelectAvatarViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
 @property (weak, nonatomic) IBOutlet UIButton *btn2;
 @property (weak, nonatomic) IBOutlet UIButton *btnPhoto;
@@ -35,5 +36,6 @@
 - (IBAction)btn7Action:(id)sender;
 - (IBAction)btn11Action:(id)sender;
 - (IBAction)btn12Action:(id)sender;
+@property (strong, atomic) ALAssetsLibrary* library;
 
 @end

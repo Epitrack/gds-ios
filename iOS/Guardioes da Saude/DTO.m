@@ -8,8 +8,6 @@
 
 #import "DTO.h"
 
-static DTO *_getInstance = nil;
-
 @implementation DTO
 
 @synthesize string;
@@ -30,7 +28,9 @@ static DTO *_getInstance = nil;
 
 - (id)init{
     
-    self = [super init];
+    if(self = [super init]) {
+        
+    }
     
     return self;
 }

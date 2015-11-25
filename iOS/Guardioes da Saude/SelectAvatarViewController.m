@@ -20,6 +20,8 @@
 
 @implementation SelectAvatarViewController
 
+@synthesize library;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -27,6 +29,7 @@
     
     self.navigationItem.title = @"Editar Foto";
     //self.navigationItem.hidesBackButton = YES;
+    self.library = [[ALAssetsLibrary alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,6 +87,7 @@
         
         NSString *imageName = [NSString stringWithFormat: @"gdsprofile_%@_%@.png", idPhoto, timeString];
         
+        
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
         NSString* path = [documentsDirectory stringByAppendingPathComponent:imageName];
@@ -92,12 +96,12 @@
         [data writeToFile:path atomically:YES];
         
         UIImage* image = [UIImage imageWithContentsOfFile:path];
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
         
         user.avatar = @"";
         user.photo = @"";
         
         dto.data = image;
-        //user.photo = chosenImage.
         
         [picker dismissViewControllerAnimated:YES completion:NULL];
     }
