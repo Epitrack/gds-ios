@@ -11,6 +11,7 @@
 @interface DTO : NSObject
 
 @property(nonatomic, assign) NSString *string;
+@property(nonatomic, assign) id data;
 
 +(DTO *) getInstance;
 

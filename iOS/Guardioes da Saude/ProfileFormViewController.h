@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UITextField *txtConfirmPassword;
 - (IBAction)btnAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UIImageView *imgProfile;
 @property (strong, nonatomic) NSString *idUser;
 @property (strong, nonatomic) NSString *idHousehold;
 @property (nonatomic, assign) NSInteger *newMember; //0 = YES and 1 = NO

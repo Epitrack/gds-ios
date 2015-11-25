@@ -105,7 +105,7 @@
     
     profileFormViewController.txtNick.text = household.nick;
     profileFormViewController.txtDob.text = household.dob;
-    profileFormViewController.imgProfile.image = [UIImage imageNamed:household.picture];
+    		[profileFormViewController.btnPicture setBackgroundImage:[UIImage imageNamed:household.picture] forState:UIControlStateNormal];
     
     if ([household.gender isEqualToString:@"M"]) {
         profileFormViewController.segmentGender.selectedSegmentIndex = 0;

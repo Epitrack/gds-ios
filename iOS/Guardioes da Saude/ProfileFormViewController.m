@@ -12,12 +12,13 @@
 #import "AFNetworking/AFNetworking.h"
 #import "ProfileListViewController.h"
 #import "SelectAvatarViewController.h"
+#import "DTO.h"
 
 @interface ProfileFormViewController () {
     
     User *user;
     NSDictionary *params;
-    
+    DTO *dto;
 }
 
 @end
@@ -29,41 +30,70 @@
     // Do any additional setup after loading the view from its nib.
     //NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     user = [User getInstance];
-    if (self.newMember == 0) {
-        self.navigationItem.title = @"Adicionar Membro";
-    } else {
+    dto = [DTO getInstance];
+    if (dto.data != nil) {
         if (self.idUser != nil || self.idHousehold != nil) {
             self.navigationItem.title = @"Editar Perfil";
             [self loadData];
         }
+    } else {
+        if (self.newMember == 0) {
+            self.navigationItem.title = @"Adicionar Membro";
+        } else {
+            if (self.idUser != nil || self.idHousehold != nil) {
+                self.navigationItem.title = @"Editar Perfil";
+                [self loadData];
+            }
+        }
     }
-    
-
 }
 
 - (void) loadData {
-    
     if (self.idHousehold == nil) {
         
         NSString *avatar;
         
-        @try {
-            if (user.picture.length > 2) {
-                avatar = @"img_profile01";
+        if (dto.data != nil) {
+            if ([dto.data isKindOfClass:[UIImage class]]) {
+                [self.btnPicture setBackgroundImage:dto.data forState:UIControlStateNormal];
+            } else if ([dto.data isKindOfClass:[NSString class]]) {
+                NSString *p = [NSString stringWithFormat:@"%@", dto.data];
+                
+                if (p.length == 1) {
+                    avatar = [NSString stringWithFormat: @"img_profile0%@.png", p];
+                } else if (p.length == 2) {
+                    avatar = [NSString stringWithFormat: @"img_profile%@.png", p];
+                }
+                [self.btnPicture setBackgroundImage:dto.data forState:UIControlStateNormal];
             }
-        }
-        @catch (NSException *exception) {
+        } else {
+            if ((![user.avatar isEqualToString:@""] && user.avatar != nil)) {
+                NSString *p = [NSString stringWithFormat:@"%@", user.avatar];
             
-            NSString *p = [NSString stringWithFormat:@"%@", user.picture];
-            
-            if (p.length == 1) {
-                avatar = [NSString stringWithFormat: @"img_profile0%@", p];
-            } else if (p.length == 2) {
-                avatar = [NSString stringWithFormat: @"img_profile%@", p];
+                if (p.length == 1) {
+                    avatar = [NSString stringWithFormat: @"img_profile0%@.png", p];
+                } else if (p.length == 2) {
+                    avatar = [NSString stringWithFormat: @"img_profile%@.png", p];
+                }
+            } else {
+                @try {
+                    if (user.picture.length > 2) {
+                        avatar = @"img_profile01.png";
+                    }
+                }
+                @catch (NSException *exception) {
+                
+                    NSString *p = [NSString stringWithFormat:@"%@", user.picture];
+                
+                    if (p.length == 1) {
+                        avatar = [NSString stringWithFormat: @"img_profile0%@.png", p];
+                    } else if (p.length == 2) {
+                        avatar = [NSString stringWithFormat: @"img_profile%@.png", p];
+                    }
+                }
             }
+            [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
         }
-        
-        self.imgProfile.image = [UIImage imageNamed:avatar];
         
         self.txtNick.text = user.nick;
         self.txtEmail.text = user.email;

@@ -13,18 +13,18 @@ static DTO *_getInstance = nil;
 @implementation DTO
 
 @synthesize string;
+@synthesize data;
 
 + (DTO *)getInstance {
     
-    if(_getInstance == nil){
-        
-        @synchronized([DTO class]){
-            _getInstance = [[DTO alloc] init];
-        }
-        
-    }
+    static DTO *getInstance = nil;
+    static dispatch_once_t onceToken;
     
-    return _getInstance;
+    dispatch_once(&onceToken, ^{
+        getInstance = [[self alloc] init];
+    });
+    
+    return getInstance;
     
 }
 
@@ -32,12 +32,7 @@ static DTO *_getInstance = nil;
     
     self = [super init];
     
-    /*if (self) {
-        string = @"";
-    }*/
-    
     return self;
-    
 }
 
 @end
