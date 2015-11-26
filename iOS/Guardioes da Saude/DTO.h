@@ -19,5 +19,4 @@
 
 +(DTO *) getInstance;
 
-
 @end

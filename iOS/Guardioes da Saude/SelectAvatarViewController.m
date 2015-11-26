@@ -26,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     user = [User getInstance];
+    dto = [DTO getInstance];
     
     self.navigationItem.title = @"Editar Foto";
     //self.navigationItem.hidesBackButton = YES;
@@ -166,6 +167,7 @@
     user.photo = @"";
     
     //user.avatar = idAvatar;
+    dto.string = idAvatar;
     dto.data = idAvatar;
     [self.navigationController popViewControllerAnimated:YES];
 }

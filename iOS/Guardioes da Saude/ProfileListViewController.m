@@ -38,6 +38,7 @@
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
     //[self.btnMainUser setTitle:user.nick forState:UIControlStateNormal];
+    [self loadHouseholds];
     [self loadUsers];
 }
 
@@ -71,20 +72,14 @@
             NSString *race = h[@"race"];
             NSString *avatar;
             
-            @try {
-                if (picture.length > 2) {
-                    avatar = @"img_profile01";
-                }
-            }
-            @catch (NSException *exception) {
-                
-                NSString *p = [NSString stringWithFormat:@"%@", picture];
-                
-                if (p.length == 1) {
-                    avatar = [NSString stringWithFormat: @"img_profile0%@", p];
-                } else if (p.length == 2) {
-                    avatar = [NSString stringWithFormat: @"img_profile%@", p];
-                }
+            //NSString *p = [NSString stringWithFormat:@"%@", picture];
+            
+            if (picture.length > 2) {
+                avatar = @"img_profile01.png";
+            } else if (picture.length == 1) {
+                avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
+            } else if (picture.length == 2) {
+                avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
             }
             
             Household *household = [[Household alloc] initWithNick:nick andDob:dob andGender:gender andRace:race andIdUser:user.idUser andPicture:avatar andIdHousehold:idHousehold];
@@ -119,7 +114,7 @@
         profileFormViewController.segmentRace.selectedSegmentIndex = 1;
     } else if ([household.race isEqualToString:@"pardo"]) {
         profileFormViewController.segmentRace.selectedSegmentIndex = 2;
-    } else if ([household.race isEqualToString:@"amarelo"]) {
+    } else if (          [household.race isEqualToString:@"amarelo"]) {
         profileFormViewController.segmentRace.selectedSegmentIndex = 3;
     } else if ([household.race isEqualToString:@"indigena"]) {
         profileFormViewController.segmentRace.selectedSegmentIndex = 4;
@@ -206,6 +201,7 @@
     profileFormViewController.idUser = user.idUser;
     profileFormViewController.idHousehold = nil;
     profileFormViewController.newMember = 1;
+    profileFormViewController.editProfile = 1;
     [self.navigationController pushViewController:profileFormViewController animated:YES];
 }
 

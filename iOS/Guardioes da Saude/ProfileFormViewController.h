@@ -23,5 +23,6 @@
 @property (nonatomic, assign) NSInteger *newMember; //0 = YES and 1 = NO
 @property (weak, nonatomic) IBOutlet UIButton *btnPicture;
 - (IBAction)btnSelectPicture:(id)sender;
+@property (nonatomic, assign) NSInteger *editProfile;
 
 @end

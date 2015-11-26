@@ -41,6 +41,7 @@
     if ([preferences objectForKey:userTokenKey] != nil) {
         NSString *userToken = [preferences valueForKey:userTokenKey];
         [self authorizedAutomaticLogin:userToken];
+        [self loadAvatar];
     }
     
     self.navigationItem.hidesBackButton = YES;
@@ -77,6 +78,23 @@
     
     NSLog(@"Nick: %@", user.nick);
     self.txtNameUser.text = user.nick;
+    
+}
+
+- (void) loadAvatar {
+    NSString *avatar;
+    
+    if ([user.picture isEqualToString:@"0"]) {
+        avatar = @"img_profile01.png";
+    } else {
+        
+        if (user.picture.length == 1) {
+            avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
+        } else if (user.picture.length == 2) {
+            avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
+        }
+    }
+    [self.imgUser setImage:[UIImage imageNamed:avatar]];
 }
 
 - (void)didReceiveMemoryWarning {

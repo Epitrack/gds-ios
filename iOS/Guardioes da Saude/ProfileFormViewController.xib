@@ -32,32 +32,32 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apelido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="stU-B6-9Lb">
-                    <rect key="frame" x="8" y="171" width="304" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apelido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="stU-B6-9Lb">
+                    <rect key="frame" x="8" y="175" width="304" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nascimento Ex: 01/05/1970" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jyt-ir-xuR">
-                    <rect key="frame" x="8" y="288" width="304" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nascimento Ex: 01/05/1970" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jyt-ir-xuR">
+                    <rect key="frame" x="8" y="292" width="304" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@exemplo.com.br" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izN-6m-mbW">
-                    <rect key="frame" x="8" y="329" width="304" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@exemplo.com.br" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izN-6m-mbW">
+                    <rect key="frame" x="8" y="330" width="304" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-ne-Zt8">
-                    <rect key="frame" x="8" y="369" width="304" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-ne-Zt8">
+                    <rect key="frame" x="8" y="370" width="304" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                 </textField>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0FJ-RT-Tpc">
-                    <rect key="frame" x="8" y="209" width="153" height="29"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0FJ-RT-Tpc">
+                    <rect key="frame" x="8" y="213" width="153" height="29"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <segments>
@@ -65,8 +65,8 @@
                         <segment title="Feminino"/>
                     </segments>
                 </segmentedControl>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G9h-jO-61b">
-                    <rect key="frame" x="8" y="248" width="304" height="29"/>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G9h-jO-61b">
+                    <rect key="frame" x="8" y="252" width="304" height="29"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <segments>
@@ -77,22 +77,14 @@
                         <segment title="Indígena"/>
                     </segments>
                 </segmentedControl>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repita sua senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6sK-1B-A9r">
-                    <rect key="frame" x="8" y="406" width="304" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repita sua senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6sK-1B-A9r">
+                    <rect key="frame" x="8" y="407" width="304" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZR-Ih-Yms">
-                    <rect key="frame" x="109" y="70" width="102" height="98"/>
-                    <animations/>
-                    <state key="normal" backgroundImage="img_profile01.png"/>
-                    <connections>
-                        <action selector="btnSelectPicture:" destination="-1" eventType="touchUpInside" id="cs6-b8-kRI"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcD-Sb-OPF">
-                    <rect key="frame" x="8" y="439" width="304" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcD-Sb-OPF">
+                    <rect key="frame" x="8" y="441" width="304" height="38"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <state key="normal" title="Salvar" backgroundImage="button_default.png">
@@ -102,16 +94,28 @@
                         <action selector="btnAction:" destination="-1" eventType="touchUpInside" id="d6V-Ls-keP"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZR-Ih-Yms">
+                    <rect key="frame" x="110" y="67" width="100" height="100"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="1Xy-RO-VjI"/>
+                        <constraint firstAttribute="width" constant="100" id="Qze-qO-6bN"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="img_profile01.png"/>
+                    <connections>
+                        <action selector="btnSelectPicture:" destination="-1" eventType="touchUpInside" id="cs6-b8-kRI"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="wxn-ne-Zt8" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="8" id="0sa-eJ-rJ6"/>
-                <constraint firstItem="izN-6m-mbW" firstAttribute="top" secondItem="Jyt-ir-xuR" secondAttribute="bottom" constant="11" id="1J3-zG-q0T"/>
+                <constraint firstItem="izN-6m-mbW" firstAttribute="top" secondItem="Jyt-ir-xuR" secondAttribute="bottom" constant="8" id="1J3-zG-q0T"/>
                 <constraint firstAttribute="bottom" secondItem="tcD-Sb-OPF" secondAttribute="bottom" constant="1" id="5NV-Sc-ZU2"/>
                 <constraint firstItem="Jyt-ir-xuR" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="8" id="6hs-t2-cRz"/>
                 <constraint firstAttribute="trailing" secondItem="G9h-jO-61b" secondAttribute="trailing" constant="8" id="9Ig-X2-FBN"/>
-                <constraint firstItem="stU-B6-9Lb" firstAttribute="top" secondItem="DZR-Ih-Yms" secondAttribute="bottom" constant="3" id="EfQ-Tk-1fj"/>
+                <constraint firstItem="stU-B6-9Lb" firstAttribute="top" secondItem="DZR-Ih-Yms" secondAttribute="bottom" constant="8" id="EfQ-Tk-1fj"/>
                 <constraint firstItem="wxn-ne-Zt8" firstAttribute="top" secondItem="izN-6m-mbW" secondAttribute="bottom" constant="10" id="NDz-YX-RGg"/>
                 <constraint firstItem="tcD-Sb-OPF" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="8" id="RuH-cy-RHv"/>
                 <constraint firstItem="Jyt-ir-xuR" firstAttribute="top" secondItem="G9h-jO-61b" secondAttribute="bottom" constant="12" id="S2t-ei-RSc"/>
@@ -126,7 +130,7 @@
                 <constraint firstItem="stU-B6-9Lb" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="8" id="kbN-yp-kT5"/>
                 <constraint firstAttribute="trailing" secondItem="6sK-1B-A9r" secondAttribute="trailing" constant="8" id="oLv-5H-f14"/>
                 <constraint firstAttribute="trailing" secondItem="izN-6m-mbW" secondAttribute="trailing" constant="8" id="piT-5l-ah5"/>
-                <constraint firstItem="DZR-Ih-Yms" firstAttribute="top" secondItem="7yH-EU-eag" secondAttribute="top" constant="70" id="rTb-hA-RXZ"/>
+                <constraint firstItem="DZR-Ih-Yms" firstAttribute="top" secondItem="7yH-EU-eag" secondAttribute="top" constant="67" id="rTb-hA-RXZ"/>
                 <constraint firstAttribute="trailing" secondItem="Jyt-ir-xuR" secondAttribute="trailing" constant="8" id="sbD-ke-U2D"/>
                 <constraint firstItem="izN-6m-mbW" firstAttribute="leading" secondItem="7yH-EU-eag" secondAttribute="leading" constant="8" id="vZf-AS-spX"/>
                 <constraint firstAttribute="trailing" secondItem="stU-B6-9Lb" secondAttribute="trailing" constant="8" id="wef-bl-nIS"/>

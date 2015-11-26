@@ -94,6 +94,21 @@
         }
     
         onError: ^(NSString * message) {
+            
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle: @"Guardiões da Saúde"
+                                                                            message: @"Não foi possível fazer o login. E-mail e/ou senha inválidos."
+                                                                     preferredStyle: UIAlertControllerStyleActionSheet];
+            
+            UIAlertAction * defaultAction = [UIAlertAction actionWithTitle: @"OK"
+                                                                     style: UIAlertActionStyleDefault
+                                                                   handler: ^(UIAlertAction * action) {
+                                                                       
+                                                                       NSLog(@"You pressed button OK");
+                                                                   }
+                                             ];
+            
+            [alert addAction: defaultAction];
+            [self presentViewController: alert animated: YES completion: nil];
     
         }
     

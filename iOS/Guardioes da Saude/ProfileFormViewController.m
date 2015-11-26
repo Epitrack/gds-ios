@@ -25,6 +25,11 @@
 
 @implementation ProfileFormViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"Here - viewDidAppear:(BOOL)animated");
+    [self loadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -39,9 +44,12 @@
     } else {
         if (self.newMember == 0) {
             self.navigationItem.title = @"Adicionar Membro";
+            self.txtPassword.hidden = YES;
+            self.txtConfirmPassword.hidden = YES;
         } else {
             if (self.idUser != nil || self.idHousehold != nil) {
                 self.navigationItem.title = @"Editar Perfil";
+                self.txtEmail.enabled = NO;
                 [self loadData];
             }
         }
@@ -49,10 +57,10 @@
 }
 
 - (void) loadData {
+    NSString *avatar;
+    avatar = @"img_profile01.png";
+    
     if (self.idHousehold == nil) {
-        
-        NSString *avatar;
-        
         if (dto.data != nil) {
             if ([dto.data isKindOfClass:[UIImage class]]) {
                 [self.btnPicture setBackgroundImage:dto.data forState:UIControlStateNormal];
@@ -64,10 +72,10 @@
                 } else if (p.length == 2) {
                     avatar = [NSString stringWithFormat: @"img_profile%@.png", p];
                 }
-                [self.btnPicture setBackgroundImage:dto.data forState:UIControlStateNormal];
+                [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
             }
         } else {
-            if ((![user.avatar isEqualToString:@""] && user.avatar != nil)) {
+           /* if ((![user.picture isEqualToString:@""] && user.avatar != nil)) {
                 NSString *p = [NSString stringWithFormat:@"%@", user.avatar];
             
                 if (p.length == 1) {
@@ -75,23 +83,17 @@
                 } else if (p.length == 2) {
                     avatar = [NSString stringWithFormat: @"img_profile%@.png", p];
                 }
-            } else {
-                @try {
-                    if (user.picture.length > 2) {
-                        avatar = @"img_profile01.png";
-                    }
+            } else {*/
+                if ([user.picture isEqualToString:@"0"]) {
+                    avatar = @"img_profile01.png";
+                } else if (user.picture.length == 1) {
+                    avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
+                } else if (user.picture.length == 2) {
+                    avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
                 }
-                @catch (NSException *exception) {
-                
-                    NSString *p = [NSString stringWithFormat:@"%@", user.picture];
-                
-                    if (p.length == 1) {
-                        avatar = [NSString stringWithFormat: @"img_profile0%@.png", p];
-                    } else if (p.length == 2) {
-                        avatar = [NSString stringWithFormat: @"img_profile%@.png", p];
-                    }
-                }
-            }
+            //}
+        }
+        if (![avatar isEqualToString:@""]) {
             [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
         }
         
@@ -140,8 +142,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    self.navigationItem.title = @"Guardiões da Saúde";
-    user = [User getInstance];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -182,12 +182,18 @@
         fieldNull = YES;
     } else if ([self.txtEmail.text isEqualToString:@""]) {
         fieldNull = YES;
-    } else if ([self.txtPassword.text isEqualToString:@""]) {
-        fieldNull = YES;
-    } else if ([self.txtConfirmPassword.text isEqualToString:@""]) {
-        fieldNull = YES;
     }
-
+    
+    if (self.newMember != 0 && (user.idHousehold == nil || [user.idHousehold isEqualToString:@""])) {
+        if (self.editProfile == 0) {
+            if ([self.txtPassword.text isEqualToString:@""] ) {
+                fieldNull = YES;
+            } else if ([self.txtConfirmPassword.text isEqualToString:@""]) {
+                fieldNull = YES;
+            }
+        }
+    }
+    
     if (fieldNull) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Preencha todos os campos do formulário." preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -248,9 +254,16 @@
             }
 
             NSString *url;
-    
+            NSString *picture;
+            
+            if (![dto.string isEqualToString:@""]) {
+                picture = dto.string;
+            } else {
+                picture = user.picture;
+            }
+            
             if (self.newMember == 0) {
-        
+                
                 params = @{@"nick":self.txtNick.text,
                    @"email": self.txtEmail.text.lowercaseString,
                    @"password": self.txtPassword.text,
@@ -260,7 +273,7 @@
                    @"app_token": user.app_token,
                    @"race": race,
                    @"platform": user.platform,
-                   @"picture": @"0",
+                   @"picture": picture,
                    @"user": user.idUser};
         
                 url = @"http://52.20.162.21/household/create";
@@ -277,7 +290,7 @@
                        @"app_token": user.app_token,
                        @"race": race,
                        @"platform": user.platform,
-                       @"picture": @"0",
+                       @"picture": picture,
                        @"id": self.idHousehold};
             
                     url = @"http://52.20.162.21/household/update";
@@ -292,16 +305,20 @@
                        @"app_token": user.app_token,
                        @"race": race,
                        @"platform": user.platform,
-                       @"picture": @"0",
-                       @"user": user.idUser};
+                       @"picture": picture,
+                       @"id": user.idUser};
 
                     url = @"http://52.20.162.21/user/update";
                 }
             }
-        
+            
+            dto.string = @"";
+            dto.data = nil;
+            
             AFHTTPRequestOperationManager *manager;
             manager = [AFHTTPRequestOperationManager manager];
             [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
+            [manager.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
             [manager POST:url
                 parameters:params
                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -318,10 +335,12 @@
                             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação realizada com sucesso." preferredStyle:UIAlertControllerStyleActionSheet];
                             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                                 NSLog(@"You pressed button OK");
-                                
+                                [self.navigationController popViewControllerAnimated:YES];
                             }];
+                            
                             [alert addAction:defaultAction];
                             [self presentViewController:alert animated:YES completion:nil];
+
                         }
                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                         NSLog(@"Error: %@", error);
@@ -329,7 +348,7 @@
                         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                             NSLog(@"You pressed button OK");
                             
-                            [self.navigationController popViewControllerAnimated:YES];
+                            //[self.navigationController popViewControllerAnimated:YES];
                         }];
                         [alert addAction:defaultAction];
                         [self presentViewController:alert animated:YES completion:nil];

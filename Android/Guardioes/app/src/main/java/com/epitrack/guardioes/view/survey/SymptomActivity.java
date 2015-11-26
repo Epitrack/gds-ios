@@ -161,7 +161,7 @@ public class SymptomActivity extends BaseAppCompatActivity {
 
         jsonObject.put("user_id", singleUser.getId());
 
-        if (user.getId() != singleUser.getId()) {
+        if (!(user.getId().equals(singleUser.getId()))) {
             jsonObject.put("household_id", user.getId());
         }
         jsonObject.put("lat", user.getLat());
