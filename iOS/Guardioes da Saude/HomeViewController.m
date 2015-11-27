@@ -30,9 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"Guardiões da Saúde";
+
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"gdSToolbar.png"] forBarMetrics:UIBarMetricsDefault];
 
-    
     user = [User getInstance];
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
@@ -41,7 +41,8 @@
     if ([preferences objectForKey:userTokenKey] != nil) {
         NSString *userToken = [preferences valueForKey:userTokenKey];
         [self authorizedAutomaticLogin:userToken];
-        [self loadAvatar];
+    } else {
+        [self.imgUser setImage:[UIImage imageNamed:@"img_profile01.png"]];
     }
     
     self.navigationItem.hidesBackButton = YES;
@@ -192,6 +193,7 @@
                  }
                  
                  self.txtNameUser.text = user.nick;
+                [self loadAvatar];
              }
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
+#import <TwitterKit/TwitterKit.h>
 
-@interface ThankYouForParticipatingViewController : UIViewController
+@interface ThankYouForParticipatingViewController : UIViewController<FBSDKSharingDelegate>
 - (IBAction)btnContinue:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *txtBadSurvey;
 @property (weak, nonatomic) IBOutlet UIImageView *imgCheckSurvey;
+@property (weak, nonatomic) IBOutlet UIButton *btnFacebook;
+@property (weak, nonatomic) IBOutlet UIButton *btnTwitter;
+- (IBAction)btnFacebookAction:(id)sender;
+- (IBAction)btnTwitterAction:(id)sender;
 
 @end

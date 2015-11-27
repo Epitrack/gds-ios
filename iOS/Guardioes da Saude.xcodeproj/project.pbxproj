@@ -72,6 +72,8 @@
 		527782CF1C062DC100251BF8 /* gdSToolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 527782CC1C062DC000251BF8 /* gdSToolbar.png */; };
 		527782D01C062DC100251BF8 /* gdSToolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527782CD1C062DC000251BF8 /* gdSToolbar@2x.png */; };
 		527782D11C062DC100251BF8 /* gdSToolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527782CE1C062DC000251BF8 /* gdSToolbar@3x.png */; };
+		527782D41C089A9B00251BF8 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527782D21C089A9B00251BF8 /* FBSDKMessengerShareKit.framework */; };
+		527782D51C089A9B00251BF8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527782D31C089A9B00251BF8 /* FBSDKShareKit.framework */; };
 		528705B91BF3744600321985 /* PhonesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528705B71BF3744600321985 /* PhonesViewController.m */; };
 		528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528705B81BF3744600321985 /* PhonesViewController.xib */; };
 		528705C41BF3AB5F00321985 /* iconBombeirosMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BB1BF3AB5F00321985 /* iconBombeirosMini.png */; };
@@ -520,6 +522,8 @@
 		527782CC1C062DC000251BF8 /* gdSToolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gdSToolbar.png; sourceTree = "<group>"; };
 		527782CD1C062DC000251BF8 /* gdSToolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gdSToolbar@2x.png"; sourceTree = "<group>"; };
 		527782CE1C062DC000251BF8 /* gdSToolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gdSToolbar@3x.png"; sourceTree = "<group>"; };
+		527782D21C089A9B00251BF8 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		527782D31C089A9B00251BF8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		528705B61BF3744600321985 /* PhonesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhonesViewController.h; sourceTree = "<group>"; };
 		528705B71BF3744600321985 /* PhonesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhonesViewController.m; sourceTree = "<group>"; };
 		528705B81BF3744600321985 /* PhonesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhonesViewController.xib; sourceTree = "<group>"; };
@@ -911,7 +915,9 @@
 				2548B9EE1BDEBA310004E00F /* CoreLocation.framework in Frameworks */,
 				525E8DCC1BFE9F210020D4D6 /* FBSDKCoreKit.framework in Frameworks */,
 				525E8DCE1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework in Frameworks */,
+				527782D51C089A9B00251BF8 /* FBSDKShareKit.framework in Frameworks */,
 				2548B9EC1BDEBA250004E00F /* MapKit.framework in Frameworks */,
+				527782D41C089A9B00251BF8 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				9E122E6DA5824937A683452F /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1546,6 +1552,8 @@
 		CF810800BC26A068848D3B68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				527782D21C089A9B00251BF8 /* FBSDKMessengerShareKit.framework */,
+				527782D31C089A9B00251BF8 /* FBSDKShareKit.framework */,
 				525E8DCD1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework */,
 				525E8DCB1BFE9F210020D4D6 /* FBSDKCoreKit.framework */,
 				2548B9ED1BDEBA310004E00F /* CoreLocation.framework */,

@@ -57,6 +57,23 @@ const float kCellHeight = 100.0f;
     NSInteger ageUser= [currentDate intValue] - [dobUser intValue];
     
     self.txtDobMainMember.text = [NSString stringWithFormat:@"%ld Anos", (long)ageUser];
+    [self loadAvatar];
+}
+
+- (void) loadAvatar {
+    NSString *avatar;
+    
+    if ([user.picture isEqualToString:@"0"]) {
+        avatar = @"img_profile01.png";
+    } else {
+        
+        if (user.picture.length == 1) {
+            avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
+        } else if (user.picture.length == 2) {
+            avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
+        }
+    }
+    [self.imgMainMember setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,18 +136,13 @@ const float kCellHeight = 100.0f;
                     NSString *avatar;
                     NSString *idHousehold = h[@"id"];
                     
-                    @try {
-                        if (picture.length > 2) {
-                            avatar = @"img_profile01";
-                        }
-                    }@catch (NSException *exception) {
-                        
-                        NSString *p = [NSString stringWithFormat:@"%@", picture];
-                        
-                        if (p.length == 1) {
-                            avatar = [NSString stringWithFormat: @"img_profile0%@", p];
-                        } else if (p.length == 2) {
-                            avatar = [NSString stringWithFormat: @"img_profile%@", p];
+                    if ([picture isEqualToString:@"0"]) {
+                        avatar = @"img_profile01.png";
+                    } else {
+                        if (picture.length == 1) {
+                            avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
+                        } else if (picture.length == 2) {
+                            avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
                         }
                     }
                     

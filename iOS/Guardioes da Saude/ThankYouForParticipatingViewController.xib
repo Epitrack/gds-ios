@@ -20,6 +20,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThankYouForParticipatingViewController">
             <connections>
+                <outlet property="btnFacebook" destination="QqY-3s-F0Z" id="bRi-DV-FRB"/>
+                <outlet property="btnTwitter" destination="ypd-vZ-RP9" id="dOb-0d-low"/>
                 <outlet property="imgCheckSurvey" destination="zIx-1e-Tfy" id="SPG-q6-HyG"/>
                 <outlet property="txtBadSurvey" destination="yjK-KE-wnq" id="zUh-5y-NCF"/>
                 <outlet property="view" destination="P0O-cc-Vgz" id="ypd-9p-a6b"/>
@@ -52,7 +54,7 @@
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como esrá sua saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como esrá sua saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq">
                     <rect key="frame" x="31" y="486" width="338" height="61"/>
                     <animations/>
                     <constraints>
@@ -62,13 +64,16 @@
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="12"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqY-3s-F0Z">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqY-3s-F0Z">
                     <rect key="frame" x="31" y="592" width="347" height="38"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
                     <state key="normal" title="Facebook" backgroundImage="button_facebook.png">
                         <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="btnFacebookAction:" destination="-1" eventType="touchUpInside" id="POI-bp-3eD"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypd-vZ-RP9">
                     <rect key="frame" x="31" y="637" width="347" height="38"/>
@@ -77,6 +82,9 @@
                     <state key="normal" title="Twitter" backgroundImage="button_twitter.png">
                         <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="btnTwitterAction:" destination="-1" eventType="touchUpInside" id="GN6-li-tcb"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0U-C0-bM8">
                     <rect key="frame" x="31" y="690" width="347" height="38"/>
@@ -89,7 +97,7 @@
                         <action selector="btnContinue:" destination="-1" eventType="touchUpInside" id="qqh-Ab-mbA"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Convide seus amigos para serem Guardiões." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Convide seus amigos para serem Guardiões." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
                     <rect key="frame" x="31" y="543" width="347" height="31"/>
                     <animations/>
                     <constraints>
