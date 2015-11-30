@@ -100,7 +100,7 @@ const float _kCellHeight = 100.0f;
     
     if (user.picture.length > 2) {
         
-        NSString *imageLink =  [@"http://52.20.162.21" stringByAppendingString:user.picture];
+        NSString *imageLink =  [@"http://api.guardioesdasaude.org" stringByAppendingString:user.picture];
         
         NSURL * imageURL = [NSURL URLWithString:imageLink];
         NSData * imageData = [NSData dataWithContentsOfURL:imageURL];

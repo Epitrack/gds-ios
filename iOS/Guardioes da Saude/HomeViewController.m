@@ -69,7 +69,7 @@
     manager = [AFHTTPRequestOperationManager manager];
     [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
     [manager.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
-    [manager GET:@"http://52.20.162.21/symptoms"
+    [manager GET:@"http://api.guardioesdasaude.org/symptoms"
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              user.symptoms = responseObject[@"data"];
@@ -161,7 +161,7 @@
     manager = [AFHTTPRequestOperationManager manager];
     [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
     [manager.requestSerializer setValue:userToken forHTTPHeaderField:@"user_token"];
-    [manager GET:@"http://52.20.162.21/user/lookup/"
+    [manager GET:@"http://api.guardioesdasaude.org/user/lookup/"
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              

@@ -179,11 +179,11 @@
 
     
     if ([type isEqualToString:@"GOOGLE"]) {
-        url = [NSString stringWithFormat: @"http://52.20.162.21/user/get?gl=%@", token];
+        url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/get?gl=%@", token];
     } else if ([type isEqualToString:@"FACEBOOK"]) {
-        url = [NSString stringWithFormat: @"http://52.20.162.21/user/get?fb=%@", token];
+        url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/get?fb=%@", token];
     } else if ([type isEqualToString:@"TWITTER"]) {
-        url = [NSString stringWithFormat: @"http://52.20.162.21/user/get?tw=%@", token];
+        url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/get?tw=%@", token];
     }
     
     AFHTTPRequestOperationManager *manager;

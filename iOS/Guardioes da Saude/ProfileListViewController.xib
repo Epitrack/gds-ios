@@ -7,24 +7,27 @@
         <mutableArray key="Foco_Std_Bd.ttf">
             <string>Foco-Bold</string>
             <string>Foco-Bold</string>
-            <string>Foco-Bold</string>
+        </mutableArray>
+        <mutableArray key="Foco_Std_Rg.ttf">
+            <string>Foco-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileListViewController">
             <connections>
                 <outlet property="btnMainUser" destination="0Kd-uA-Mwo" id="aiw-Fn-IRL"/>
+                <outlet property="imgMainUser" destination="Mbu-Tp-Nb9" id="bV3-0I-a4P"/>
                 <outlet property="tableViewProfile" destination="TBI-FJ-Mds" id="6p3-TX-xdL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TBI-FJ-Mds">
-                    <rect key="frame" x="0.0" y="194" width="320" height="328"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TBI-FJ-Mds">
+                    <rect key="frame" x="0.0" y="202" width="320" height="224"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -32,8 +35,8 @@
                         <outlet property="delegate" destination="-1" id="u6c-Mm-Ju4"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otx-9x-ASf">
-                    <rect key="frame" x="8" y="530" width="304" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otx-9x-ASf">
+                    <rect key="frame" x="8" y="434" width="304" height="38"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="15"/>
                     <state key="normal" title="Adicionar Novo Membro" backgroundImage="button_default.png">
@@ -43,12 +46,12 @@
                         <action selector="btnAddHousehold:" destination="-1" eventType="touchUpInside" id="x8s-Pl-R0q"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Kd-uA-Mwo">
-                    <rect key="frame" x="8" y="154" width="304" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Kd-uA-Mwo">
+                    <rect key="frame" x="77" y="154" width="235" height="30"/>
                     <animations/>
-                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="15"/>
-                    <state key="normal" title="Editar Meu Perfil" backgroundImage="button_default.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
+                    <state key="normal" title="Editar Meu Perfil">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="btnEditMainUser:" destination="-1" eventType="touchUpInside" id="Avk-BK-L5T"/>
@@ -62,6 +65,17 @@
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-Tp-Nb9">
+                    <rect key="frame" x="8" y="144" width="50" height="50"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Q7Z-X9-adO"/>
+                        <constraint firstAttribute="width" constant="50" id="eZC-7R-aDl"/>
+                    </constraints>
+                    <connections>
+                        <action selector="imgMainUserAction:" destination="-1" eventType="touchUpInside" id="NQp-yb-Ggh"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -70,18 +84,20 @@
                 <constraint firstAttribute="bottom" secondItem="Otx-9x-ASf" secondAttribute="bottom" constant="8" id="3N5-JV-cMa"/>
                 <constraint firstItem="0Kd-uA-Mwo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="154" id="6c9-k5-b4o"/>
                 <constraint firstItem="7fm-eJ-Lpk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="96" id="6ta-aq-L8E"/>
-                <constraint firstItem="0Kd-uA-Mwo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="C9f-Ux-92G"/>
+                <constraint firstItem="0Kd-uA-Mwo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="77" id="C9f-Ux-92G"/>
                 <constraint firstItem="TBI-FJ-Mds" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CC0-qT-QYl"/>
+                <constraint firstItem="Mbu-Tp-Nb9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Obc-Dw-iVg"/>
                 <constraint firstItem="Otx-9x-ASf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Rzm-hE-BOv"/>
                 <constraint firstItem="Otx-9x-ASf" firstAttribute="top" secondItem="TBI-FJ-Mds" secondAttribute="bottom" constant="8" id="Seg-XF-mkZ"/>
                 <constraint firstAttribute="trailing" secondItem="Otx-9x-ASf" secondAttribute="trailing" constant="8" id="URw-Vb-bYw"/>
                 <constraint firstItem="7fm-eJ-Lpk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Y2m-oI-Iin"/>
+                <constraint firstItem="Mbu-Tp-Nb9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="144" id="awC-EF-5hW"/>
                 <constraint firstItem="0Kd-uA-Mwo" firstAttribute="top" secondItem="7fm-eJ-Lpk" secondAttribute="bottom" constant="8" symbolic="YES" id="gI3-RI-OdD"/>
-                <constraint firstItem="TBI-FJ-Mds" firstAttribute="top" secondItem="0Kd-uA-Mwo" secondAttribute="bottom" constant="10" id="kjS-tL-iOs"/>
+                <constraint firstItem="TBI-FJ-Mds" firstAttribute="top" secondItem="0Kd-uA-Mwo" secondAttribute="bottom" constant="18" id="kjS-tL-iOs"/>
                 <constraint firstAttribute="trailing" secondItem="0Kd-uA-Mwo" secondAttribute="trailing" constant="8" id="o6l-mZ-pYA"/>
                 <constraint firstAttribute="trailing" secondItem="TBI-FJ-Mds" secondAttribute="trailing" id="xbd-3k-dAB"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>

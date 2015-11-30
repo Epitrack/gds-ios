@@ -84,7 +84,7 @@
     
     manager = [AFHTTPRequestOperationManager manager];
     [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [manager POST:@"http://52.20.162.21/survey/create"
+    [manager POST:@"http://api.guardioesdasaude.org/survey/create"
        parameters:params
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               

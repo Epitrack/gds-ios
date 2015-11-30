@@ -24,6 +24,7 @@
 		258F14E31BCEE3CC00CE86B7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F14E11BCEE3CC00CE86B7 /* User.m */; };
 		25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */; };
 		25F3B2381BDC8C540014BC30 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F3B2371BDC8C540014BC30 /* HomeViewController.xib */; };
+		42539894F3953B2154415BAC /* SingleHousehold.m in Sources */ = {isa = PBXBuildFile; fileRef = 42539CCCC760718C03D2A1B9 /* SingleHousehold.m */; };
 		520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */; };
 		520158FA1BE3CD9D00982856 /* DetailMapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */; };
 		520CD0D51BED3DB800F24B45 /* SelectTypeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520CD0D31BED3DB800F24B45 /* SelectTypeLoginViewController.m */; };
@@ -453,6 +454,8 @@
 		25A19BD51BC46CE800F08FA9 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		25F3B2371BDC8C540014BC30 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		42539B3348EBF190EF21DFD5 /* SingleHousehold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleHousehold.h; sourceTree = "<group>"; };
+		42539CCCC760718C03D2A1B9 /* SingleHousehold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleHousehold.m; sourceTree = "<group>"; };
 		520158F61BE3CD9D00982856 /* DetailMapHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMapHealthViewController.h; sourceTree = "<group>"; };
 		520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMapHealthViewController.m; sourceTree = "<group>"; };
 		520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMapHealthViewController.xib; sourceTree = "<group>"; };
@@ -970,6 +973,8 @@
 				529BE1E71BF9053D00692EEC /* Notice.m */,
 				B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */,
 				B23CB8937DECB07E8EB03052 /* MapPinAnnotation.h */,
+				42539CCCC760718C03D2A1B9 /* SingleHousehold.m */,
+				42539B3348EBF190EF21DFD5 /* SingleHousehold.h */,
 			);
 			name = Model;
 			path = ..;
@@ -2110,6 +2115,7 @@
 				B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */,
 				5215BBC61BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m in Sources */,
 				B23CB178C86EEA8A7C4AF3CE /* MapPinAnnotation.m in Sources */,
+				42539894F3953B2154415BAC /* SingleHousehold.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

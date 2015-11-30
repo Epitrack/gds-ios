@@ -106,7 +106,7 @@
 -(void) loadUpas {
     
     user = [User getInstance];
-    NSString *url = @"http://52.20.162.21/content/upas.json";
+    NSString *url = @"http://api.guardioesdasaude.org/content/upas.json";
     
     AFHTTPRequestOperationManager *manager;
     manager = [AFHTTPRequestOperationManager manager];

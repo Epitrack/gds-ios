@@ -13,12 +13,14 @@
 #import "ProfileListViewController.h"
 #import "SelectAvatarViewController.h"
 #import "DTO.h"
+#import "SingleHousehold.h"
 
 @interface ProfileFormViewController () {
     
     User *user;
     NSDictionary *params;
     DTO *dto;
+    SingleHousehold *singleHousehold;
 }
 
 @end
@@ -36,8 +38,27 @@
     //NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     user = [User getInstance];
     dto = [DTO getInstance];
-    if (dto.data != nil) {
-        if (self.idUser != nil || self.idHousehold != nil) {
+    singleHousehold = [SingleHousehold getInstance];
+
+    if (singleHousehold.id != nil) {
+        self.navigationItem.title = @"Editar Perfil";
+        [self loadData];
+    } else {
+        if (self.newMember == 0) {
+            self.navigationItem.title = @"Adicionar Membro";
+            self.txtPassword.hidden = YES;
+            self.txtConfirmPassword.hidden = YES;
+        } else {
+            if (self.idUser != nil || self.idHousehold != nil) {
+                self.navigationItem.title = @"Editar Perfil";
+                self.txtEmail.enabled = NO;
+                [self loadData];
+            }
+        }
+    }
+    
+    /*if (dto.data != nil) {
+        if (self.idUser != nil || singleHousehold.id != nil) {
             self.navigationItem.title = @"Editar Perfil";
             [self loadData];
         }
@@ -53,89 +74,148 @@
                 [self loadData];
             }
         }
-    }
+    }*/
 }
 
 - (void) loadData {
     NSString *avatar;
     avatar = @"img_profile01.png";
-    
-    if (self.idHousehold == nil) {
-        if (dto.data != nil) {
-            if ([dto.data isKindOfClass:[UIImage class]]) {
-                [self.btnPicture setBackgroundImage:dto.data forState:UIControlStateNormal];
-            } else if ([dto.data isKindOfClass:[NSString class]]) {
-                NSString *p = [NSString stringWithFormat:@"%@", dto.data];
-                
-                if (p.length == 1) {
-                    avatar = [NSString stringWithFormat: @"img_profile0%@.png", p];
-                } else if (p.length == 2) {
-                    avatar = [NSString stringWithFormat: @"img_profile%@.png", p];
-                }
-                [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-            }
-        } else {
-           /* if ((![user.picture isEqualToString:@""] && user.avatar != nil)) {
-                NSString *p = [NSString stringWithFormat:@"%@", user.avatar];
-            
-                if (p.length == 1) {
-                    avatar = [NSString stringWithFormat: @"img_profile0%@.png", p];
-                } else if (p.length == 2) {
-                    avatar = [NSString stringWithFormat: @"img_profile%@.png", p];
-                }
-            } else {*/
-                if ([user.picture isEqualToString:@"0"]) {
-                    avatar = @"img_profile01.png";
-                } else if (user.picture.length == 1) {
-                    avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
-                } else if (user.picture.length == 2) {
-                    avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
-                }
-            //}
-        }
-        if (![avatar isEqualToString:@""]) {
-            [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-        }
-        
-        self.txtNick.text = user.nick;
-        self.txtEmail.text = user.email;
-        self.txtPassword.text = @"";
-        
-        NSLog(@"dob %@", user.dob);
-        
-        NSLog(@"Dia %@", [user.dob substringWithRange:NSMakeRange(8, 2)]);
-        NSLog(@"Mês %@", [user.dob substringWithRange:NSMakeRange(5, 2)]);
-        NSLog(@"Ano %@", [user.dob substringWithRange:NSMakeRange(0, 4)]);
-        
-        NSString *day = [user.dob substringWithRange:NSMakeRange(8, 2)];
-        NSString *month = [user.dob substringWithRange:NSMakeRange(5, 2)];
-        NSString *year = [user.dob substringWithRange:NSMakeRange(0, 4)];
-        
-        NSString *dob = [NSString stringWithFormat: @"%@/%@/%@", day, month, year];
-        
+
+    if (singleHousehold.id != nil) {
+
+        self.txtPassword.hidden = YES;
+        self.txtConfirmPassword.hidden = YES;
+
+        self.txtNick.text = singleHousehold.nick;
+        self.txtEmail.text = singleHousehold.email;
+
+        NSLog(@"dob %@", singleHousehold.dob);
+
+        NSLog(@"Dia %@", [singleHousehold.dob substringWithRange:NSMakeRange(8, 2)]);
+        NSLog(@"Mês %@", [singleHousehold.dob substringWithRange:NSMakeRange(5, 2)]);
+        NSLog(@"Ano %@", [singleHousehold.dob substringWithRange:NSMakeRange(0, 4)]);
+
+        NSString *day = [singleHousehold.dob substringWithRange:NSMakeRange(8, 2)];
+        NSString *month = [singleHousehold.dob substringWithRange:NSMakeRange(5, 2)];
+        NSString *year = [singleHousehold.dob substringWithRange:NSMakeRange(0, 4)];
+
+        NSString *dob = [NSString stringWithFormat:@"%@/%@/%@", day, month, year];
+
         self.txtDob.text = dob;
-        
-        if ([user.gender isEqualToString:@"M"]) {
+
+        if ([singleHousehold.gender isEqualToString:@"0"]) {
             self.segmentGender.selectedSegmentIndex = 0;
         } else {
             self.segmentGender.selectedSegmentIndex = 1;
         }
-        
-        if ([user.race isEqualToString:@"branco"]) {
+
+        if ([singleHousehold.race isEqualToString:@"0"]) {
             self.segmentRace.selectedSegmentIndex = 0;
-        } else if ([user.race isEqualToString:@"preto"]) {
+        } else if ([singleHousehold.race isEqualToString:@"1"]) {
             self.segmentRace.selectedSegmentIndex = 1;
-        } else if ([user.race isEqualToString:@"pardo"]) {
+        } else if ([singleHousehold.race isEqualToString:@"2"]) {
             self.segmentRace.selectedSegmentIndex = 2;
-        } else if ([user.race isEqualToString:@"amarelo"]) {
+        } else if ([singleHousehold.race isEqualToString:@"3"]) {
             self.segmentRace.selectedSegmentIndex = 3;
-        } else if ([user.race isEqualToString:@"indigena"]) {
+        } else if ([singleHousehold.race isEqualToString:@"4"]) {
             self.segmentRace.selectedSegmentIndex = 4;
         }
+        
+        if ([singleHousehold.picture isEqualToString:@"0"]) {
+            avatar = @"img_profile01.png";
+        } else if (singleHousehold.picture.length == 1) {
+            avatar = [NSString stringWithFormat:@"img_profile0%@.png", singleHousehold.picture];
+        } else if (singleHousehold.picture.length == 2) {
+            avatar = [NSString stringWithFormat:@"img_profile%@.png", singleHousehold.picture];
+        }
+        
+        [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
+
     } else {
-        self.txtEmail.hidden = YES;
-        self.txtPassword.hidden = YES;
-        self.txtConfirmPassword.hidden = YES;
+
+
+        if (self.idHousehold == nil) {
+            if (dto.data != nil) {
+                if ([dto.data isKindOfClass:[UIImage class]]) {
+                    [self.btnPicture setBackgroundImage:dto.data forState:UIControlStateNormal];
+                } else if ([dto.data isKindOfClass:[NSString class]]) {
+                    NSString *p = [NSString stringWithFormat:@"%@", dto.data];
+
+                    if (p.length == 1) {
+                        avatar = [NSString stringWithFormat:@"img_profile0%@.png", p];
+                    } else if (p.length == 2) {
+                        avatar = [NSString stringWithFormat:@"img_profile%@.png", p];
+                    }
+                    [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
+                }
+            } else {
+                /* if ((![user.picture isEqualToString:@""] && user.avatar != nil)) {
+                     NSString *p = [NSString stringWithFormat:@"%@", user.avatar];
+
+                     if (p.length == 1) {
+                         avatar = [NSString stringWithFormat: @"img_profile0%@.png", p];
+                     } else if (p.length == 2) {
+                         avatar = [NSString stringWithFormat: @"img_profile%@.png", p];
+                     }
+                 } else {*/
+                if (self.editProfile == 1) {
+                    if ([user.picture isEqualToString:@"0"]) {
+                        avatar = @"img_profile01.png";
+                    } else if (user.picture.length == 1) {
+                        avatar = [NSString stringWithFormat:@"img_profile0%@.png", user.picture];
+                    } else if (user.picture.length == 2) {
+                        avatar = [NSString stringWithFormat:@"img_profile%@.png", user.picture];
+                    }
+                } else {
+                    avatar = @"img_profile01.png";
+                }
+            }
+            if (![avatar isEqualToString:@""]) {
+                [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
+            }
+
+            if (self.newMember != 0) {
+                self.txtNick.text = user.nick;
+                self.txtEmail.text = user.email;
+                self.txtPassword.text = @"";
+
+                NSLog(@"dob %@", user.dob);
+
+                NSLog(@"Dia %@", [user.dob substringWithRange:NSMakeRange(8, 2)]);
+                NSLog(@"Mês %@", [user.dob substringWithRange:NSMakeRange(5, 2)]);
+                NSLog(@"Ano %@", [user.dob substringWithRange:NSMakeRange(0, 4)]);
+
+                NSString *day = [user.dob substringWithRange:NSMakeRange(8, 2)];
+                NSString *month = [user.dob substringWithRange:NSMakeRange(5, 2)];
+                NSString *year = [user.dob substringWithRange:NSMakeRange(0, 4)];
+
+                NSString *dob = [NSString stringWithFormat:@"%@/%@/%@", day, month, year];
+
+                self.txtDob.text = dob;
+
+                if ([user.gender isEqualToString:@"M"]) {
+                    self.segmentGender.selectedSegmentIndex = 0;
+                } else {
+                    self.segmentGender.selectedSegmentIndex = 1;
+                }
+
+                if ([user.race isEqualToString:@"branco"]) {
+                    self.segmentRace.selectedSegmentIndex = 0;
+                } else if ([user.race isEqualToString:@"preto"]) {
+                    self.segmentRace.selectedSegmentIndex = 1;
+                } else if ([user.race isEqualToString:@"pardo"]) {
+                    self.segmentRace.selectedSegmentIndex = 2;
+                } else if ([user.race isEqualToString:@"amarelo"]) {
+                    self.segmentRace.selectedSegmentIndex = 3;
+                } else if ([user.race isEqualToString:@"indigena"]) {
+                    self.segmentRace.selectedSegmentIndex = 4;
+                }
+            }
+        } else {
+            //self.txtEmail.hidden = YES;
+            self.txtPassword.hidden = YES;
+            self.txtConfirmPassword.hidden = YES;
+        }
     }
 }
 
@@ -183,13 +263,15 @@
     } else if ([self.txtEmail.text isEqualToString:@""]) {
         fieldNull = YES;
     }
-    
-    if (self.newMember != 0 && (user.idHousehold == nil || [user.idHousehold isEqualToString:@""])) {
-        if (self.editProfile == 0) {
-            if ([self.txtPassword.text isEqualToString:@""] ) {
-                fieldNull = YES;
-            } else if ([self.txtConfirmPassword.text isEqualToString:@""]) {
-                fieldNull = YES;
+
+    if (singleHousehold.id != nil) {
+        if (self.newMember != 0 && (user.idHousehold == nil || [user.idHousehold isEqualToString:@""])) {
+            if (self.editProfile == 0) {
+                if ([self.txtPassword.text isEqualToString:@""]) {
+                    fieldNull = YES;
+                } else if ([self.txtConfirmPassword.text isEqualToString:@""]) {
+                    fieldNull = YES;
+                }
             }
         }
     }
@@ -256,14 +338,85 @@
             NSString *url;
             NSString *picture;
             
-            if (![dto.string isEqualToString:@""]) {
-                picture = dto.string;
-            } else {
-                picture = user.picture;
-            }
-            
-            if (self.newMember == 0) {
+            if (singleHousehold.id != nil) {
+                if (![dto.string isEqualToString:@""]) {
+                    picture = dto.string;
+                } else {
+                    picture = singleHousehold.picture;
+                }
                 
+                params = @{@"nick":self.txtNick.text,
+                           @"email": self.txtEmail.text.lowercaseString,
+                           @"password": self.txtPassword.text,
+                           @"client": user.client,
+                           @"dob": dob,
+                           @"gender": gender,
+                           @"app_token": user.app_token,
+                           @"race": race,
+                           @"platform": user.platform,
+                           @"picture": picture,
+                           @"id": singleHousehold.id};
+                
+                url = @"http://api.guardioesdasaude.org/household/update";
+            } else {
+                if (self.newMember == 0) {
+                    
+                    if (![dto.string isEqualToString:@""] && dto.string != nil) {
+                        picture = dto.string;
+                    } else {
+                        picture = @"1";
+                    }
+                    
+                    params = @{@"nick":self.txtNick.text,
+                               @"email": self.txtEmail.text.lowercaseString,
+                               @"password": self.txtPassword.text,
+                               @"client": user.client,
+                               @"dob": dob,
+                               @"gender": gender,
+                               @"app_token": user.app_token,
+                               @"race": race,
+                               @"platform": user.platform,
+                               @"picture": picture,
+                               @"user": user.idUser};
+                    
+                    url = @"http://api.guardioesdasaude.org/household/create";
+                    
+                } else {
+                    if (singleHousehold.id == nil && self.idUser != nil) {
+                        
+                        if (![dto.string isEqualToString:@""] && dto.string != nil) {
+                            picture = dto.string;
+                        } else if (![user.picture isEqualToString:@""] && user.picture != nil) {
+                            picture = user.picture;
+                        } else {
+                            picture = @"1";
+                        }
+                        
+                        params = @{@"nick":self.txtNick.text,
+                                   @"email": self.txtEmail.text.lowercaseString,
+                                   @"client": user.client,
+                                   @"dob": dob,
+                                   @"gender": gender,
+                                   @"app_token": user.app_token,
+                                   @"race": race,
+                                   @"platform": user.platform,
+                                   @"picture": picture,
+                                   @"id": user.idUser};
+                        
+                        url = @"http://api.guardioesdasaude.org/user/update";
+                    }
+
+                }
+            }
+
+            /*if (self.newMember == 0) {
+
+                if (![dto.string isEqualToString:@""]) {
+                    picture = dto.string;
+                } else {
+                    picture = @"1";
+                }
+
                 params = @{@"nick":self.txtNick.text,
                    @"email": self.txtEmail.text.lowercaseString,
                    @"password": self.txtPassword.text,
@@ -275,12 +428,18 @@
                    @"platform": user.platform,
                    @"picture": picture,
                    @"user": user.idUser};
-        
-                url = @"http://52.20.162.21/household/create";
+
+                url = @"http://api.guardioesdasaude.org/household/create";
         
             } else {
-                if (self.idHousehold != nil) {
-            
+                if (singleHousehold.id != nil) {
+
+                    if (![dto.string isEqualToString:@""]) {
+                        picture = dto.string;
+                    } else {
+                        picture = singleHousehold.picture;
+                    }
+
                     params = @{@"nick":self.txtNick.text,
                        @"email": self.txtEmail.text.lowercaseString,
                        @"password": self.txtPassword.text,
@@ -291,12 +450,18 @@
                        @"race": race,
                        @"platform": user.platform,
                        @"picture": picture,
-                       @"id": self.idHousehold};
+                       @"id": singleHousehold.id};
             
-                    url = @"http://52.20.162.21/household/update";
+                    url = @"http://api.guardioesdasaude.org/household/update";
         
-                } else if (self.idHousehold == nil && self.idUser != nil) {
-            
+                } else if (singleHousehold.id == nil && self.idUser != nil) {
+
+                    if (![dto.string isEqualToString:@""]) {
+                        picture = dto.string;
+                    } else {
+                        picture = @"1";
+                    }
+
                     params = @{@"nick":self.txtNick.text,
                        @"email": self.txtEmail.text.lowercaseString,
                        @"client": user.client,
@@ -308,9 +473,9 @@
                        @"picture": picture,
                        @"id": user.idUser};
 
-                    url = @"http://52.20.162.21/user/update";
+                    url = @"http://api.guardioesdasaude.org/user/update";
                 }
-            }
+            }*/
             
             dto.string = @"";
             dto.data = nil;
@@ -322,11 +487,14 @@
             [manager POST:url
                 parameters:params
                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                  
+                        NSLog(@"Responde Object %@", responseObject);
                         if ([responseObject[@"error"] boolValue] == 1) {
                             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível realizar a operação. Verifique se todos os campos estão preenchidos corretamente." preferredStyle:UIAlertControllerStyleActionSheet];
                             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                                  NSLog(@"You pressed button OK");
+                                NSLog(@"You pressed button OK");
+                                singleHousehold.id = nil;
+                                singleHousehold = nil;
+                                [self.navigationController popViewControllerAnimated:YES];
                             }];
                             [alert addAction:defaultAction];
                             [self presentViewController:alert animated:YES completion:nil];
@@ -335,10 +503,14 @@
                             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação realizada com sucesso." preferredStyle:UIAlertControllerStyleActionSheet];
                             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                                 NSLog(@"You pressed button OK");
+                                singleHousehold.id = nil;
+                                singleHousehold = nil;
                                 [self.navigationController popViewControllerAnimated:YES];
                             }];
                             
                             [alert addAction:defaultAction];
+                            //ProfileListViewController *profileListViewController = [[ProfileListViewController alloc] init];
+                            //[self.navigationController pushViewController:profileListViewController animated:YES];
                             [self presentViewController:alert animated:YES completion:nil];
 
                         }
@@ -347,7 +519,9 @@
                         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso." preferredStyle:UIAlertControllerStyleActionSheet];
                         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                             NSLog(@"You pressed button OK");
-                            
+                            singleHousehold.id = nil;
+                            singleHousehold = nil;
+                            [self.navigationController popViewControllerAnimated:YES];
                             //[self.navigationController popViewControllerAnimated:YES];
                         }];
                         [alert addAction:defaultAction];

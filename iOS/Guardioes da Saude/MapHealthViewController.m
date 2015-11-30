@@ -70,7 +70,7 @@
     }
     
     surveysMap = [[NSMutableArray alloc] init];
-    NSString *url = [NSString stringWithFormat: @"http://52.20.162.21/surveys/l?lon=%f&lat=%f", longitude, latitude];
+    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/surveys/l?lon=%f&lat=%f", longitude, latitude];
     
     AFHTTPRequestOperationManager *manager;
     manager = [AFHTTPRequestOperationManager manager];
@@ -210,7 +210,7 @@
 
 - (void) loadSummary {
     
-    NSString *url = [NSString stringWithFormat: @"http://52.20.162.21/surveys/summary/?lon=%f&lat=%f", longitude, latitude];
+    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/surveys/summary/?lon=%f&lat=%f", longitude, latitude];
     
     AFHTTPRequestOperationManager *managerTotalSurvey;
     managerTotalSurvey = [AFHTTPRequestOperationManager manager];

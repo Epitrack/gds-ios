@@ -32,8 +32,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <animations/>
                 </imageView>
-                <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="WTk-va-xiS">
-                    <rect key="frame" x="132" y="392" width="55" height="37"/>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="WTk-va-xiS">
+                    <rect key="frame" x="132" y="424" width="55" height="37"/>
                     <animations/>
                 </pageControl>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Bem-vindo!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8uT-7f-uht">
@@ -48,13 +48,13 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Preparado para se tornar um Guardião da Saúde?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="B9f-uz-Q4s">
-                    <rect key="frame" x="8" y="83" width="304" height="53"/>
+                    <rect key="frame" x="8" y="83" width="304" height="89"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="B9f-uz-Q4s" secondAttribute="height" multiplier="211:30" id="DPq-03-Zxe"/>
                         <constraint firstAttribute="width" constant="304" id="Wx2-LQ-Fnp"/>
                         <constraint firstAttribute="width" constant="211" id="fnT-kf-mqx"/>
-                        <constraint firstAttribute="width" secondItem="B9f-uz-Q4s" secondAttribute="height" multiplier="211:53" constant="93" id="hlQ-eW-Ahl"/>
+                        <constraint firstAttribute="width" secondItem="B9f-uz-Q4s" secondAttribute="height" multiplier="211:53" constant="-50.320754716981128" id="hlQ-eW-Ahl"/>
                     </constraints>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
@@ -67,13 +67,14 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_logo_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="aE9-on-xQo">
-                    <rect key="frame" x="31" y="149" width="258" height="201"/>
+                    <rect key="frame" x="31" y="205" width="258" height="201"/>
                     <animations/>
                 </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="WTk-va-xiS" secondAttribute="bottom" constant="19" id="1tC-l3-PLE"/>
                 <constraint firstItem="B9f-uz-Q4s" firstAttribute="top" secondItem="8uT-7f-uht" secondAttribute="bottom" constant="-7" id="3UG-te-VIg"/>
                 <constraint firstItem="8uT-7f-uht" firstAttribute="centerX" secondItem="HB2-4Q-u8X" secondAttribute="centerX" id="3hY-xY-Xyg"/>
                 <constraint firstItem="B9f-uz-Q4s" firstAttribute="centerX" secondItem="HB2-4Q-u8X" secondAttribute="centerX" id="8es-3W-3gR"/>
@@ -87,13 +88,14 @@
                 <constraint firstItem="WTk-va-xiS" firstAttribute="top" secondItem="aE9-on-xQo" secondAttribute="bottom" constant="42" id="aoj-b5-8HR"/>
                 <constraint firstItem="NN0-8d-u9a" firstAttribute="centerX" secondItem="HB2-4Q-u8X" secondAttribute="centerX" id="nEI-NE-80h"/>
                 <constraint firstItem="NN0-8d-u9a" firstAttribute="height" secondItem="HB2-4Q-u8X" secondAttribute="height" id="xHn-x1-ilA"/>
-                <constraint firstItem="aE9-on-xQo" firstAttribute="top" secondItem="B9f-uz-Q4s" secondAttribute="bottom" constant="13.5" id="zuB-l7-Bdh"/>
+                <constraint firstItem="aE9-on-xQo" firstAttribute="top" secondItem="B9f-uz-Q4s" secondAttribute="bottom" constant="33" id="zuB-l7-Bdh"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="aBz-qy-fr5"/>
                     <exclude reference="MKb-Bt-Drc"/>
+                    <exclude reference="aoj-b5-8HR"/>
                 </mask>
             </variation>
         </view>

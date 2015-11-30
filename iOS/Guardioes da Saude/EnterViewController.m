@@ -157,7 +157,7 @@
                @"password": self.txtPassword.text};
     
     manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:@"http://52.20.162.21/user/login"
+    [manager POST:@"http://api.guardioesdasaude.org/user/login"
        parameters:params
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               

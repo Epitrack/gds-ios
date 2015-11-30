@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnMainUser;
 - (IBAction)btnEditMainUser:(id)sender;
 - (IBAction)btnAddHousehold:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *imgMainUser;
+- (IBAction)imgMainUserAction:(id)sender;
 
 @end

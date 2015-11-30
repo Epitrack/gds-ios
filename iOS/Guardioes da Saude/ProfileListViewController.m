@@ -12,6 +12,7 @@
 #import "SWRevealViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "ProfileFormViewController.h"
+#import "SingleHousehold.h"
 
 @interface ProfileListViewController () {
     
@@ -37,9 +38,30 @@
                                                                          style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
-    //[self.btnMainUser setTitle:user.nick forState:UIControlStateNormal];
+    [self.btnMainUser setTitle:user.nick forState:UIControlStateNormal];
+    
+    NSString *avatar;
+    
+    if ([user.picture isEqualToString:@"0"]) {
+        avatar = @"img_profile01.png";
+    } else {
+        
+        if (user.picture.length == 1) {
+            avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
+        } else if (user.picture.length == 2) {
+            avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
+        }
+    }
+    
+    [self.imgMainUser setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
     [self loadHouseholds];
     [self loadUsers];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"Here - viewDidAppear:(BOOL)animated");
+    //[self loadHouseholds];
+    //[self loadUsers];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,44 +104,47 @@
                 avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
             }
             
-            Household *household = [[Household alloc] initWithNick:nick andDob:dob andGender:gender andRace:race andIdUser:user.idUser andPicture:avatar andIdHousehold:idHousehold];
+            Household *household = [[Household alloc] initWithNick:nick andDob:dob andGender:gender andRace:race andIdUser:user.idUser andPicture:avatar andIdHousehold:idHousehold andIdPicture:picture];
         
             [users addObject:household];
         }
     }
 }
 
-- (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Household *household = [users objectAtIndex:indexPath.row];
-    
-    ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
-    profileFormViewController.idUser = user.idUser;
-    profileFormViewController.idHousehold = household.idHousehold;
-    profileFormViewController.newMember = 1;
-    
-    profileFormViewController.txtNick.text = household.nick;
-    profileFormViewController.txtDob.text = household.dob;
-    		[profileFormViewController.btnPicture setBackgroundImage:[UIImage imageNamed:household.picture] forState:UIControlStateNormal];
+    SingleHousehold *singleHousehold = [SingleHousehold getInstance];
+
+    singleHousehold.idUser = user.idUser;
+    singleHousehold.id = household.idHousehold;
+    singleHousehold.idUser = user.idUser;
+
+    singleHousehold.nick = household.nick;
+    singleHousehold.dob = household.dob;
+    singleHousehold.picture = household.idPicture;
+
     
     if ([household.gender isEqualToString:@"M"]) {
-        profileFormViewController.segmentGender.selectedSegmentIndex = 0;
+        singleHousehold.gender = @"0";
     } else {
-        profileFormViewController.segmentGender.selectedSegmentIndex = 1;
+        singleHousehold.gender = @"1";
     }
     
     if ([household.race isEqualToString:@"branco"]) {
-        profileFormViewController.segmentRace.selectedSegmentIndex = 0;
+        singleHousehold.race = @"0";
     } else if ([household.race isEqualToString:@"preto"]) {
-        profileFormViewController.segmentRace.selectedSegmentIndex = 1;
+        singleHousehold.race = @"1";
     } else if ([household.race isEqualToString:@"pardo"]) {
-        profileFormViewController.segmentRace.selectedSegmentIndex = 2;
-    } else if (          [household.race isEqualToString:@"amarelo"]) {
-        profileFormViewController.segmentRace.selectedSegmentIndex = 3;
+        singleHousehold.race = @"2";
+    } else if ([household.race isEqualToString:@"amarelo"]) {
+        singleHousehold.race = @"3";
     } else if ([household.race isEqualToString:@"indigena"]) {
-        profileFormViewController.segmentRace.selectedSegmentIndex = 4;
+        singleHousehold.race = @"4";
     }
     
+
+    ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
     [self.navigationController pushViewController:profileFormViewController animated:YES];
     
 }
@@ -159,7 +184,7 @@
         Household *household = [users objectAtIndex:indexPath.row];
         
         NSString *idHousehold = household.idHousehold;
-        NSString *url = [NSString stringWithFormat: @"http://52.20.162.21/household/delete/%@?client=api", idHousehold];
+        NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/household/delete/%@?client=api", idHousehold];
         
         AFHTTPRequestOperationManager *manager;
         manager = [AFHTTPRequestOperationManager manager];
@@ -217,7 +242,7 @@
 - (void) loadHouseholds {
     
     NSString *idUSer = user.idUser;
-    NSString *url = [NSString stringWithFormat: @"http://52.20.162.21/user/household/%@", idUSer];
+    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/household/%@", idUSer];
     
     AFHTTPRequestOperationManager *manager;
     manager = [AFHTTPRequestOperationManager manager];
@@ -234,5 +259,13 @@
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              
          }];
+}
+- (IBAction)imgMainUserAction:(id)sender {
+    ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
+    profileFormViewController.idUser = user.idUser;
+    profileFormViewController.idHousehold = nil;
+    profileFormViewController.newMember = 1;
+    profileFormViewController.editProfile = 1;
+    [self.navigationController pushViewController:profileFormViewController animated:YES];
 }
 @end

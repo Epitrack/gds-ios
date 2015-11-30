@@ -72,7 +72,7 @@
                    @"text": self.txtMessage.text};
         
         manager = [AFHTTPRequestOperationManager manager];
-        [manager POST:@"http://52.20.162.21/email/log"
+        [manager POST:@"http://api.guardioesdasaude.org/email/log"
            parameters:params
               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                   

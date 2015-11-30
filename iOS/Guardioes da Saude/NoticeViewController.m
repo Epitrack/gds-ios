@@ -48,7 +48,7 @@
 
 - (void) loadNotices {
     
-    NSString *url = @"http://52.20.162.21/news/get";
+    NSString *url = @"http://api.guardioesdasaude.org/news/get";
     
     AFHTTPRequestOperationManager *manager;
     manager = [AFHTTPRequestOperationManager manager];
