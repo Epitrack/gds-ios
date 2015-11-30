@@ -17,8 +17,8 @@ import java.util.Map;
 public class Requester extends BaseRequester implements IRequester {
 
     private static final String TAG = Requester.class.getSimpleName();
-    public static final String API_URL = "http://52.20.162.21/";
-    public static final String API_URL_PHOTO = "http://52.20.162.21";
+    public static final String API_URL = "api.guardioesdasaude.org/";
+    public static final String API_URL_PHOTO = "api.guardioesdasaude.org";
 
     public Requester(final Context context) {
         super(context);
