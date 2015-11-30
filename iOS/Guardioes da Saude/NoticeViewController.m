@@ -10,6 +10,7 @@
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
 #import "Notice.h"
+#import "NoticeRequester.h"
 
 @interface NoticeViewController () {
     User *user;
@@ -27,7 +28,7 @@
     user = [User getInstance];
     notices = [[NSMutableArray alloc] init];
     
-    //[self loadNotices];
+    [self loadNotices];
     
 }
 
@@ -47,6 +48,16 @@
 */
 
 - (void) loadNotices {
+    
+    [[[NoticeRequester alloc] init] getNotices:user
+                                    onStart:^{}
+                                    onError:^(NSString * message){}
+                                    onSuccess:^(NSMutableArray *noticesRequest){
+                                        notices = noticesRequest;
+                                    }];
+}
+
+- (void) loadNoticesOld {
     
     NSString *url = @"http://api.guardioesdasaude.org/news/get";
     

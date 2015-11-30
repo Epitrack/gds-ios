@@ -175,7 +175,7 @@
             [manager POST:@"http://api.guardioesdasaude.org/user/create"
                parameters:params
                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                      
+                      NSLog(@"responseObject: %@", responseObject);
                       if ([responseObject[@"error"] boolValue] == 1) {
                           UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso." preferredStyle:UIAlertControllerStyleActionSheet];
                           UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {

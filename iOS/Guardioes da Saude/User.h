@@ -37,6 +37,7 @@
     NSString *avatar;
     NSString *photo;
     
+    
 }
 
 +(User *)getInstance;

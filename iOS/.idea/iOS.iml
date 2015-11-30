@@ -408,6 +408,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Request/HouseholdRequester.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Request/NewsRequester.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Request/NewsRequester.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Request/NoticeRequester.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Request/NoticeRequester.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Request/Requester.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Request/Requester.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Request/StatusCode.h" isTestSource="false" />

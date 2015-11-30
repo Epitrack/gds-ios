@@ -15,7 +15,7 @@
 #import "SingleHousehold.h"
 
 @interface ProfileListViewController () {
-    
+    SingleHousehold *singleHousehold;
     User *user;
 }
 
@@ -29,7 +29,8 @@
     self.navigationItem.title = @"Perfil";
     self.navigationItem.hidesBackButton = YES;
     user = [User getInstance];
-    
+    singleHousehold = [SingleHousehold getInstance];
+    singleHousehold = nil;
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
@@ -60,8 +61,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     NSLog(@"Here - viewDidAppear:(BOOL)animated");
-    //[self loadHouseholds];
-    //[self loadUsers];
+    singleHousehold = [SingleHousehold getInstance];
+    singleHousehold = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -111,11 +112,11 @@
     }
 }
 
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Household *household = [users objectAtIndex:indexPath.row];
-    SingleHousehold *singleHousehold = [SingleHousehold getInstance];
-
+    singleHousehold = [SingleHousehold getInstance];
     singleHousehold.idUser = user.idUser;
     singleHousehold.id = household.idHousehold;
     singleHousehold.idUser = user.idUser;
@@ -146,6 +147,7 @@
 
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
     [self.navigationController pushViewController:profileFormViewController animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
@@ -221,7 +223,8 @@
 }
 
 - (IBAction)btnEditMainUser:(id)sender {
-    
+    singleHousehold = [SingleHousehold getInstance];
+    singleHousehold.id = nil;
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
     profileFormViewController.idUser = user.idUser;
     profileFormViewController.idHousehold = nil;
@@ -232,6 +235,8 @@
 
 - (IBAction)btnAddHousehold:(id)sender {
     
+    singleHousehold = [SingleHousehold getInstance];
+    singleHousehold.id = nil;
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
     profileFormViewController.idUser = user.idUser;
     profileFormViewController.idHousehold = nil;
