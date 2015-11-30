@@ -264,7 +264,7 @@
         fieldNull = YES;
     }
 
-    if (singleHousehold.id != nil) {
+    if (singleHousehold.id == nil) {
         if (self.newMember != 0 && (user.idHousehold == nil || [user.idHousehold isEqualToString:@""])) {
             if (self.editProfile == 0) {
                 if ([self.txtPassword.text isEqualToString:@""]) {
@@ -339,7 +339,7 @@
             NSString *picture;
             
             if (singleHousehold.id != nil) {
-                if (![dto.string isEqualToString:@""]) {
+                if (![dto.string isEqualToString:@""] && dto.string != nil) {
                     picture = dto.string;
                 } else {
                     picture = singleHousehold.picture;

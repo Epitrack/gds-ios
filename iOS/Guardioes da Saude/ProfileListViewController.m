@@ -63,6 +63,8 @@
     NSLog(@"Here - viewDidAppear:(BOOL)animated");
     singleHousehold = [SingleHousehold getInstance];
     singleHousehold = nil;
+    [self loadHouseholds];
+    [self loadUsers];
 }
 
 - (void)didReceiveMemoryWarning {
