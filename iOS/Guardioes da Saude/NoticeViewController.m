@@ -10,10 +10,11 @@
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
 #import "Notice.h"
-#import "NoticeRequester.h"
+#import "SingleNotice.h"
 
 @interface NoticeViewController () {
     User *user;
+    SingleNotice *singleNotice;
     NSMutableArray *notices;
 }
 
@@ -26,10 +27,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Notícias";
     user = [User getInstance];
-    notices = [[NSMutableArray alloc] init];
-    
-    [self loadNotices];
-    
+    singleNotice = [SingleNotice getInstance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,16 +44,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (void) loadNotices {
-    
-    [[[NoticeRequester alloc] init] getNotices:user
-                                    onStart:^{}
-                                    onError:^(NSString * message){}
-                                    onSuccess:^(NSMutableArray *noticesRequest){
-                                        notices = noticesRequest;
-                                    }];
-}
 
 - (void) loadNoticesOld {
     
@@ -79,7 +67,7 @@
                  
                  Notice *notice = [[Notice alloc] initWithName:text andSource:source andLink:link];
                  
-                 [notices addObject:notice];
+                 //[notices addObject:notice];
                  
              }
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -94,7 +82,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"numberOfRowsInSection");
     
-    return notices.count;
+    return singleNotice.notices.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,13 +91,20 @@
     UITableViewCell *cell = [self.tableViewNotice dequeueReusableCellWithIdentifier:cellNoticeCacheID];
     
     if (cell == nil ) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellNoticeCacheID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellNoticeCacheID];
     }
     
-    Notice *notice = [notices objectAtIndex:indexPath.row];
+    Notice *notice = [singleNotice.notices objectAtIndex:indexPath.row];
+    
+    UIFont *textFont = [UIFont fontWithName: @"Arial" size: 9.0];
+    UIFont *detailFont = [UIFont fontWithName: @"Arial" size: 7.0];
+
+    
     
     cell.tag = indexPath.row;
+    cell.textLabel.font = textFont;
     cell.textLabel.text = notice.title;
+    cell.detailTextLabel.font = detailFont;
     cell.detailTextLabel.text = notice.source;
     
     return cell;
@@ -130,7 +125,7 @@
     }];
     [alert addAction:yesAction];
     [alert addAction:defaultAction];
-    
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 

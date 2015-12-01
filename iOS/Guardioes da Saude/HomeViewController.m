@@ -16,6 +16,8 @@
 #import "SWRevealViewController.h"
 #import "TutorialViewController.h"
 #import "DiaryHealthViewController.h"
+#import "NoticeRequester.h"
+#import "SingleNotice.h"
 
 @interface HomeViewController ()
 
@@ -25,6 +27,7 @@
     
     CLLocationManager *locationManager;
     User *user;
+    SingleNotice *singleNotice;
 }
 
 - (void)viewDidLoad {
@@ -35,6 +38,7 @@
 
     user = [User getInstance];
     
+    singleNotice = [SingleNotice getInstance];
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *userTokenKey = @"userTokenKey";
     
@@ -194,6 +198,7 @@
                  
                  self.txtNameUser.text = user.nick;
                 [self loadAvatar];
+                 [self loadNotices];
              }
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -206,5 +211,15 @@
     } else {
         return YES;
     }
+}
+
+- (void) loadNotices {
+    
+    [[[NoticeRequester alloc] init] getNotices:user
+                                       onStart:^{}
+                                       onError:^(NSString * message){}
+                                     onSuccess:^(NSMutableArray *noticesRequest){
+                                         singleNotice.notices = noticesRequest;
+                                     }];
 }
 @end
