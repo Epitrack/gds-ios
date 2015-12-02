@@ -89,7 +89,7 @@
     User * user = [[User alloc] init];
     
     user.email = @"recoba@gmail.com";
-    user.password = @"qwerty";
+    user.password = @"123456";
     
     [[[UserRequester alloc] init] login: user
      
