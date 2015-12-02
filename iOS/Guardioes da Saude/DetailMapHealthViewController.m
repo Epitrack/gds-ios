@@ -36,7 +36,10 @@
     self.progressViewDiarreica.progress = ([detailMap.diarreica doubleValue] / 100);
     self.progressViewExantematica.progress = ([detailMap.exantemaica doubleValue] / 100);
     self.progessViewRespiratoria.progress = ([detailMap.respiratoria doubleValue] / 100);
-
+    
+    self.lbPercentDiareica.text = [[NSString stringWithFormat:@"%.02f", ([detailMap.diarreica doubleValue] / 100)] stringByAppendingString:@"%"];
+    self.lbPercentExantematica.text = [[NSString stringWithFormat:@"%.02f", ([detailMap.exantemaica doubleValue] / 100)] stringByAppendingString:@"%"];
+    self.lbPercentRespiratoria.text =[[NSString stringWithFormat:@"%.02f", ([detailMap.respiratoria doubleValue] / 100)] stringByAppendingString:@"%"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -115,5 +118,14 @@
     }
     
     return stateDiscription;
+}
+- (IBAction)btnInfoAction:(id)sender {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: diarreica (febre, diarreia, náusea ou vômito), respiratória (febre, tosse e dor de garganta) e exantemática (febre, exantema, tosse, dor nas articulações e dor de cabeça)." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"You pressed button OK");
+    }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end

@@ -98,8 +98,6 @@
     
     UIFont *textFont = [UIFont fontWithName: @"Arial" size: 9.0];
     UIFont *detailFont = [UIFont fontWithName: @"Arial" size: 7.0];
-
-    
     
     cell.tag = indexPath.row;
     cell.textLabel.font = textFont;
@@ -117,8 +115,11 @@
     UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"SIM" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button YES");
         
-        Notice *openNotice = [notices objectAtIndex:indexPath.row];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:openNotice.link]];
+        Notice *openNotice = [singleNotice.notices objectAtIndex:indexPath.row];
+        NSString *url = openNotice.link;
+        url = [url stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"NÃO" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button NO");

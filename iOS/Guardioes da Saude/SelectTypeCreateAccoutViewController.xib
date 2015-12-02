@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectTypeCreateAccoutViewController">
             <connections>
+                <outlet property="btnCheckTerms" destination="QZA-Fy-5Cg" id="rqw-Ko-z7p"/>
                 <outlet property="btnEmail" destination="edN-vg-sjp" id="JSG-ZA-XyR"/>
                 <outlet property="btnFacebook" destination="cdD-kQ-h32" id="Ynu-0Q-kId"/>
                 <outlet property="btnGoogle" destination="eRs-bz-7jh" id="5EZ-pB-xzD"/>
@@ -80,10 +81,6 @@
                         <action selector="btnEmailAction:" destination="-1" eventType="touchUpInside" id="TB9-zs-dw6"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_checkbox_false.png" translatesAutoresizingMaskIntoConstraints="NO" id="rSO-mi-8FB">
-                    <rect key="frame" x="47" y="436" width="17" height="18"/>
-                    <animations/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oii-BN-GLk">
                     <rect key="frame" x="26" y="300" width="267" height="38"/>
                     <animations/>
@@ -107,12 +104,23 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKB-zz-AY4">
-                    <rect key="frame" x="72" y="430" width="177" height="30"/>
+                    <rect key="frame" x="72" y="429" width="177" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <state key="normal" title="Concordo com os Termos de Uso">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btnTermsAction:" destination="-1" eventType="touchUpInside" id="hCz-Ki-gOR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZA-Fy-5Cg">
+                    <rect key="frame" x="47" y="431" width="17" height="22"/>
+                    <animations/>
+                    <state key="normal" image="icon_checkbox_false.png"/>
+                    <connections>
+                        <action selector="btnCheckTermsAction:" destination="-1" eventType="touchUpInside" id="dR4-0S-hF7"/>
+                    </connections>
                 </button>
             </subviews>
             <animations/>
@@ -120,6 +128,7 @@
             <constraints>
                 <constraint firstItem="gEM-AV-79q" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leading" constant="30" id="0D0-U2-4XW"/>
                 <constraint firstItem="P6m-iX-dQn" firstAttribute="top" secondItem="oq7-He-VLg" secondAttribute="top" constant="179" id="3La-iu-ILI"/>
+                <constraint firstItem="QZA-Fy-5Cg" firstAttribute="top" secondItem="edN-vg-sjp" secondAttribute="bottom" constant="16" id="6px-nn-gpO"/>
                 <constraint firstItem="oC3-n5-Qke" firstAttribute="height" secondItem="oq7-He-VLg" secondAttribute="height" id="8uv-31-gLX"/>
                 <constraint firstAttribute="trailing" secondItem="eRs-bz-7jh" secondAttribute="trailing" constant="27" id="9t1-TK-lmQ"/>
                 <constraint firstAttribute="trailing" secondItem="Oii-BN-GLk" secondAttribute="trailing" constant="27" id="E5v-Tm-xEy"/>
@@ -127,13 +136,14 @@
                 <constraint firstItem="oC3-n5-Qke" firstAttribute="width" secondItem="oq7-He-VLg" secondAttribute="width" id="FrY-sR-TWb"/>
                 <constraint firstAttribute="trailing" secondItem="cdD-kQ-h32" secondAttribute="trailing" constant="27" id="IJN-QV-tGW"/>
                 <constraint firstAttribute="trailing" secondItem="gEM-AV-79q" secondAttribute="trailing" constant="31" id="JxF-sV-A6Z"/>
+                <constraint firstItem="GKB-zz-AY4" firstAttribute="leading" secondItem="QZA-Fy-5Cg" secondAttribute="trailing" constant="8" id="Ulp-wh-4nb"/>
                 <constraint firstAttribute="trailing" secondItem="edN-vg-sjp" secondAttribute="trailing" constant="28" id="UrX-MJ-aOu"/>
                 <constraint firstItem="edN-vg-sjp" firstAttribute="top" secondItem="qlz-z5-CYt" secondAttribute="bottom" constant="5" id="Ykw-C4-Td7"/>
                 <constraint firstItem="qlz-z5-CYt" firstAttribute="top" secondItem="Oii-BN-GLk" secondAttribute="bottom" constant="6" id="azT-lP-l1z"/>
                 <constraint firstItem="gEM-AV-79q" firstAttribute="top" secondItem="oq7-He-VLg" secondAttribute="top" constant="71" id="bAN-gb-9Da"/>
                 <constraint firstItem="cdD-kQ-h32" firstAttribute="top" secondItem="gEM-AV-79q" secondAttribute="bottom" constant="35" id="bS1-7p-RYJ"/>
                 <constraint firstItem="cdD-kQ-h32" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leading" constant="26" id="beL-bZ-4Qf"/>
-                <constraint firstItem="GKB-zz-AY4" firstAttribute="top" secondItem="edN-vg-sjp" secondAttribute="bottom" constant="15" id="cMl-mO-Pkr"/>
+                <constraint firstItem="GKB-zz-AY4" firstAttribute="top" secondItem="edN-vg-sjp" secondAttribute="bottom" constant="14" id="cMl-mO-Pkr"/>
                 <constraint firstItem="Oii-BN-GLk" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leading" constant="26" id="hiQ-JS-dU1"/>
                 <constraint firstItem="eRs-bz-7jh" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leading" constant="26" id="isd-ra-0hY"/>
                 <constraint firstItem="Oii-BN-GLk" firstAttribute="top" secondItem="eRs-bz-7jh" secondAttribute="bottom" constant="8" id="lJ2-xa-b8E"/>

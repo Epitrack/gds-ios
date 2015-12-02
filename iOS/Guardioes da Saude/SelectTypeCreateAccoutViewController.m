@@ -13,6 +13,7 @@
 #import "AFNetworking/AFNetworking.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "TermsViewController.h"
 
 @interface SelectTypeCreateAccoutViewController () {
     
@@ -30,6 +31,8 @@
     self.navigationItem.title = @"Guardiões da Saúde";
     user = [User getInstance];
     userExists = NO;
+    
+    //[self desableButtons];
     
     //GOOGLE
     [GIDSignIn sharedInstance].uiDelegate = self;
@@ -72,6 +75,22 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) desableButtons {
+    
+    self.btnFacebook.enabled = NO;
+    self.btnGoogle.enabled = NO;
+    self.btnTwitter.enabled = NO;
+    self.btnEmail.enabled = NO;
+}
+
+- (void) enableButtons {
+    
+    self.btnFacebook.enabled = YES;
+    self.btnGoogle.enabled = YES;
+    self.btnTwitter.enabled = YES;
+    self.btnEmail.enabled = YES;
+}
 
 - (IBAction)btnFacebookAction:(id)sender {
     
@@ -125,8 +144,6 @@
                       }
                   }];
              }
-             
-             
          }
      }];
 }
@@ -168,16 +185,18 @@
 }
 
 - (IBAction)btnEmailAction:(id)sender {
-    
     CreateAccountViewController *createAccountViewController = [[CreateAccountViewController alloc] init];
     [self.navigationController pushViewController:createAccountViewController animated:YES];
 }
 
+- (IBAction)btnTermsAction:(id)sender {
+    TermsViewController *termsViewController = [[TermsViewController alloc] init];
+    [self.navigationController pushViewController:termsViewController animated:YES];
+}
+
 - (BOOL) checkSocialLoginWithToken:(NSString *) token andType:(NSString *)type {
-    
     NSString *url;
 
-    
     if ([type isEqualToString:@"GOOGLE"]) {
         url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/get?gl=%@", token];
     } else if ([type isEqualToString:@"FACEBOOK"]) {
@@ -202,7 +221,6 @@
                  if (![email isEqualToString:@""]) {
                      userExists = YES;
                  }
-                 
              } else {
                  userExists = NO;
              }
@@ -212,9 +230,19 @@
              userExists = NO;
              
          }];
-
-    
     return userExists;
 }
 
+- (IBAction)btnCheckTermsAction:(id)sender {
+    UIImage *checkBoxFalse = [UIImage imageNamed:@"icon_checkbox_false.png"];
+    UIImage *checkBoxTrue = [UIImage imageNamed:@"icon_checkbok_true.png"];
+     
+    if (self.btnEmail.enabled == NO) {
+        [self enableButtons];
+        [self.btnCheckTerms setImage:checkBoxTrue forState:UIControlStateNormal];
+    } else {
+        [self desableButtons];
+        [self.btnCheckTerms setImage:checkBoxFalse forState:UIControlStateNormal];
+    }
+}
 @end

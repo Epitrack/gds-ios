@@ -20,5 +20,8 @@
 - (IBAction)btnGoogleAction:(id)sender;
 - (IBAction)btnTwitterAction:(id)sender;
 - (IBAction)btnEmailAction:(id)sender;
+- (IBAction)btnTermsAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnCheckTerms;
+- (IBAction)btnCheckTermsAction:(id)sender;
 
 @end

@@ -153,9 +153,9 @@
         }
         pinView.canShowCallout = YES;
         if ([pinA.isSymptom isEqualToString:@"Y"]) {
-            pinView.image = [UIImage imageNamed:@"icon_pin_bad.png"];
-        } else {
             pinView.image = [UIImage imageNamed:@"icon_pin_well.png"];
+        } else {
+            pinView.image = [UIImage imageNamed:@"icon_pin_bad.png"];
         }
     } else {
         [mv.userLocation setTitle:user.nick];
@@ -193,10 +193,10 @@
                 pin.survey_id = s.survey_id;
                 
                 if ([isSymptom isEqualToString:@"Y"]) {
-                    pin.title = @"Estou Mal :(";
+                    pin.title = @"Estou Bem :)";
                     //pin.pin
                 } else {
-                    pin.title = @"Estou Bem :)";
+                    pin.title = @"Estou Mal :(";
                 }
                 
                 [self.mapHealth addAnnotation:pin];
@@ -249,15 +249,21 @@
                  exantemaica = [diseases[@"exantematica"] doubleValue];
                  respiratoria = [diseases[@"respiratoria"] doubleValue];
                  
+                 if (totalWithSymptom > 0) {
+                     diarreica = diarreica / totalNoSymptom;
+                     exantemaica = exantemaica / totalNoSymptom;
+                     respiratoria = respiratoria / totalNoSymptom;
+                 }
+                 
                  [self.btnDetailMapHealth setTitle:city];
                  
                  detailMap.city = city;
                  detailMap.state = state;
-                 detailMap.totalSurvey = [[NSString stringWithFormat:@"%d", totalSurvey] stringByAppendingString:@" Participações essa semana"];
+                 detailMap.totalSurvey = [[NSString stringWithFormat:@"%d", totalSurvey] stringByAppendingString:@""];
                  detailMap.goodPercent = [[NSString stringWithFormat:@"%.f", goodPercent] stringByAppendingString:@"%"];
                  detailMap.badPercent = [[NSString stringWithFormat:@"%.f", badPercent] stringByAppendingString:@"%"];
-                 detailMap.totalNoSymptom = [[NSString stringWithFormat:@"%d", totalNoSymptom] stringByAppendingString:@" Relatórios"];
-                 detailMap.totalWithSymptom = [[NSString stringWithFormat:@"%d", totalWithSymptom] stringByAppendingString:@" Relatórios"];
+                 detailMap.totalNoSymptom = [[NSString stringWithFormat:@"%d", totalNoSymptom] stringByAppendingString:@""];
+                 detailMap.totalWithSymptom = [[NSString stringWithFormat:@"%d", totalWithSymptom] stringByAppendingString:@""];
                  
                  detailMap.diarreica = [NSString stringWithFormat:@"%f", diarreica];
                  detailMap.exantemaica = [NSString stringWithFormat:@"%f", exantemaica];
