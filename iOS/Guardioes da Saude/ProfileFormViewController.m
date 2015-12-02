@@ -255,6 +255,7 @@
 - (IBAction)btnAction:(id)sender {
     
     BOOL fieldNull = NO;
+    BOOL dateFail = NO;
     
     if ([self.txtNick.text isEqualToString:@""]) {
         fieldNull = YES;
@@ -276,7 +277,52 @@
         }
     }
     
-    if (fieldNull) {
+    if (![self.txtDob.text isEqualToString:@""]) {
+        
+        NSString *bar1 = [self.txtDob.text substringWithRange:NSMakeRange(2, 1)];
+        NSString *bar2 = [self.txtDob.text substringWithRange:NSMakeRange(5, 1)];
+        NSString *day = [self.txtDob.text substringWithRange:NSMakeRange(0, 2)];
+        NSString *month = [self.txtDob.text substringWithRange:NSMakeRange(3, 2)];
+        NSString *year = [self.txtDob.text substringWithRange:NSMakeRange(6, 4)];
+        
+        if (![bar1 isEqualToString:@"/"] || ![bar2 isEqualToString:@"/"]) {
+            dateFail = YES;
+        }
+        
+        @try {
+            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+            f.numberStyle = NSNumberFormatterDecimalStyle;
+            
+            NSNumber *validateDay = [NSNumber numberWithInteger: [day integerValue]];
+            
+            if (validateDay <= 0 || validateDay > 31) {
+                dateFail = YES;
+            }
+            NSNumber *validateMonth = [NSNumber numberWithInteger: [month integerValue]];
+            
+            if (validateDay <= 0 || validateDay > 12) {
+                dateFail = YES;
+            }
+            NSNumber *validateYear = [NSNumber numberWithInteger: [year integerValue]];
+            
+            if (validateDay <= 0) {
+                dateFail = YES;
+            }
+            
+        }
+        @catch (NSException *exception) {
+            dateFail = YES;
+        }
+    }
+    
+    if (dateFail) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Data de nascimento inválida." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button OK");
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else if (fieldNull) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Preencha todos os campos do formulário." preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button OK");

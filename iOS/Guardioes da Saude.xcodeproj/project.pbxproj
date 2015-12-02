@@ -76,6 +76,7 @@
 		527782D41C089A9B00251BF8 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527782D21C089A9B00251BF8 /* FBSDKMessengerShareKit.framework */; };
 		527782D51C089A9B00251BF8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527782D31C089A9B00251BF8 /* FBSDKShareKit.framework */; };
 		527782D81C0CC9FD00251BF8 /* NoticeRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 527782D71C0CC9FD00251BF8 /* NoticeRequester.m */; };
+		527782DB1C0DD31600251BF8 /* SingleNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 527782DA1C0DD31600251BF8 /* SingleNotice.m */; };
 		528705B91BF3744600321985 /* PhonesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528705B71BF3744600321985 /* PhonesViewController.m */; };
 		528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528705B81BF3744600321985 /* PhonesViewController.xib */; };
 		528705C41BF3AB5F00321985 /* iconBombeirosMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BB1BF3AB5F00321985 /* iconBombeirosMini.png */; };
@@ -530,6 +531,8 @@
 		527782D31C089A9B00251BF8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		527782D61C0CC9FD00251BF8 /* NoticeRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeRequester.h; sourceTree = "<group>"; };
 		527782D71C0CC9FD00251BF8 /* NoticeRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeRequester.m; sourceTree = "<group>"; };
+		527782D91C0DD31600251BF8 /* SingleNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleNotice.h; sourceTree = "<group>"; };
+		527782DA1C0DD31600251BF8 /* SingleNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleNotice.m; sourceTree = "<group>"; };
 		528705B61BF3744600321985 /* PhonesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhonesViewController.h; sourceTree = "<group>"; };
 		528705B71BF3744600321985 /* PhonesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhonesViewController.m; sourceTree = "<group>"; };
 		528705B81BF3744600321985 /* PhonesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhonesViewController.xib; sourceTree = "<group>"; };
@@ -978,6 +981,8 @@
 				B23CB8937DECB07E8EB03052 /* MapPinAnnotation.h */,
 				42539CCCC760718C03D2A1B9 /* SingleHousehold.m */,
 				42539B3348EBF190EF21DFD5 /* SingleHousehold.h */,
+				527782D91C0DD31600251BF8 /* SingleNotice.h */,
+				527782DA1C0DD31600251BF8 /* SingleNotice.m */,
 			);
 			name = Model;
 			path = ..;
@@ -2105,6 +2110,7 @@
 				529BE1D31BF6598300692EEC /* HelpViewController.m in Sources */,
 				25630CFA1BDFA2760047FF07 /* Symptom.m in Sources */,
 				AAE38B3C1BFA1CAA009CD20B /* HouseholdRequester.m in Sources */,
+				527782DB1C0DD31600251BF8 /* SingleNotice.m in Sources */,
 				525648161BFBF01000FE64AE /* ProfileListViewController.m in Sources */,
 				529BE1CE1BF62C8200692EEC /* AboutViewController.m in Sources */,
 				52D15DD21BFBCA3E00FC31F3 /* CreateAccountViewController.m in Sources */,

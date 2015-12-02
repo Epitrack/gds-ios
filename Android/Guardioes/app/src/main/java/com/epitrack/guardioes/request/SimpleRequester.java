@@ -174,11 +174,11 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Object, String> 
             String inputLine;
             String jsonStr = "";
             while ((inputLine = br.readLine()) != null) {
-                if (!otherAPI) {
-                    jsonStr = inputLine;
-                } else {
+                //if (!otherAPI) {
+                //    jsonStr = inputLine;
+                //} else {
                     jsonStr += inputLine;
-                }
+                //}
             }
             br.close();
 

@@ -768,6 +768,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/TwitterKit/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SingleHousehold.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SingleHousehold.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SingleNotice.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SingleNotice.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sumary.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Sumary.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SumaryCalendar.h" isTestSource="false" />
