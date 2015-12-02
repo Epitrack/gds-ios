@@ -112,16 +112,16 @@
 }
 
 - (void) getSummary: (User *) user
-              month: (int) month
-               year: (int) year
+              month: (NSInteger) month
+               year: (NSInteger) year
             onStart: (Start) onStart
             onError: (Error) onError
           onSuccess: (Success) onSuccess {
     
     NSString * url = [NSString stringWithFormat: @"%@/user/calendar/month?", Url];
     
-    NSDictionary * paramMap = @{ @"month": [NSNumber numberWithInt: month],
-                                 @"year": [NSNumber numberWithInt: year] };
+    NSDictionary * paramMap = @{ @"month": [NSNumber numberWithInteger: month],
+                                 @"year": [NSNumber numberWithInteger: year] };
     
     [self doGet: url
          header: @{ @"user_token": user.user_token }
@@ -151,7 +151,10 @@
                         
                         NSDictionary * sumaryMap = key[@"_id"];
                         
-                        SumaryCalendar * sumaryCalendar = [sumaryCalendarMap objectForKey: sumaryMap[@"day"]];
+                        NSString * keyMap = [NSString stringWithFormat: @"%@-%@-%@",
+                                          [sumaryMap[@"day"] stringValue], [sumaryMap[@"month"] stringValue], [sumaryMap[@"year"] stringValue]];
+                        
+                        SumaryCalendar * sumaryCalendar = [sumaryCalendarMap objectForKey: keyMap];
                                                            
                         if (sumaryCalendar) {
                             
@@ -168,7 +171,7 @@
                             
                             sumaryCalendar.day = [sumaryMap[@"day"] intValue];
                             sumaryCalendar.month = [sumaryMap[@"month"] intValue];
-                            sumaryCalendar.year = [sumaryMap[@"day"] intValue];
+                            sumaryCalendar.year = [sumaryMap[@"year"] intValue];
                             
                             if ([sumaryMap[@"no_symptom"] isEqualToString: @"N"]) {
                                 sumaryCalendar.symptomAmount = [key[@"count"] intValue];
@@ -177,7 +180,7 @@
                                 sumaryCalendar.noSymptomAmount = [key[@"count"] intValue];
                             }
                             
-                            [sumaryCalendarMap setValue: sumaryCalendar forKey: sumaryMap[@"day"]];
+                            [sumaryCalendarMap setValue: sumaryCalendar forKey: keyMap];
                         }
                     }
                     

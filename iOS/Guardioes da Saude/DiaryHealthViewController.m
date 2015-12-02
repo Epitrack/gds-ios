@@ -17,10 +17,12 @@
 #import "HouseholdRequester.h"
 #import <JTCalendar/JTCalendar.h>
 
+@import Charts;
+
 @interface DiaryHealthViewController () <JTCalendarDelegate>
 
 // Pizza graph
-//@property (nonatomic, weak) IBOutlet PieChartView * chartView;
+@property (nonatomic, weak) IBOutlet PieChartView * chartView;
 
 // Line graph
 @property (nonatomic, weak) IBOutlet JYGraphView * graphView;
@@ -47,47 +49,39 @@ const float _kCellHeight = 100.0f;
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Diário da Saúde";
     
-    user = [User getInstance];
-    buttons = [NSMutableArray array];
+    // We will move this to the top?
     
-    [self loadMainUser];
+//    user = [User getInstance];
+//    buttons = [NSMutableArray array];
+//    
+//    [self loadMainUser];
+//    
+//    CGRect screenBound = [[UIScreen mainScreen] bounds];
+//    CGSize screenSize = screenBound.size;
+//    //CGFloat screenWidth = screenSize.width;
+//    CGFloat screenHeight = screenSize.height;
+//    
+//    //create table view to contain ASHorizontalScrollView
+//    
+//    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 160, self.view.frame.size.width, self.view.frame.size.height)];
+//    sampleTableView.delegate = self;
+//    sampleTableView.dataSource = self;
+//    sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    
+//    [self.view addSubview:sampleTableView];
     
-    CGRect screenBound = [[UIScreen mainScreen] bounds];
-    CGSize screenSize = screenBound.size;
-    //CGFloat screenWidth = screenSize.width;
-    CGFloat screenHeight = screenSize.height;
-    
-    //create table view to contain ASHorizontalScrollView
-    
-    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 160, self.view.frame.size.width, self.view.frame.size.height)];
-    sampleTableView.delegate = self;
-    sampleTableView.dataSource = self;
-    sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:sampleTableView];
-    
-    //[self loadChartPie];
-    
-    [self loadChartLine];
+    [self loadChartPie];
     
     [self loadCalendar];
     
-    [self login];
+    [self loadChartLine];
+    
+    [self requestChartPie];
+    
+    [self requestCalendar: [NSDate date]];
+    
+    [self requestChartLine];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma tableview datasource
 - (void)loadMainUser {
@@ -229,7 +223,7 @@ const float _kCellHeight = 100.0f;
 
 - (void) loadChartPie {
     
-    /*[self.chartView setUsePercentValuesEnabled: NO];
+    [self.chartView setUsePercentValuesEnabled: NO];
     [self.chartView setDescriptionText: @""];
     [self.chartView setDrawCenterTextEnabled: NO];
     [self.chartView setDrawSliceTextEnabled: NO];
@@ -238,7 +232,7 @@ const float _kCellHeight = 100.0f;
     [self.chartView setHoleRadiusPercent: 7];
     [self.chartView setTransparentCircleRadiusPercent: 10];
     [self.chartView setRotationAngle: 0];
-    [self.chartView setRotationEnabled: NO];*/
+    [self.chartView setRotationEnabled: NO];
 }
 
 - (void) loadChartLine {
@@ -248,10 +242,10 @@ const float _kCellHeight = 100.0f;
     
     self.graphView.tintColor = [UIColor whiteColor];
     self.graphView.labelBackgroundColor = [UIColor whiteColor];
-    //self.graphView.labelFontColor = [ChartViewController toUiColor: @"#186cb7"];
+    self.graphView.labelFontColor = [DiaryHealthViewController toUiColor: @"#186cb7"];
     
-    //self.graphView.strokeColor = [ChartViewController toUiColor: @"#186cb7"];
-    //self.graphView.pointFillColor = [ChartViewController toUiColor: @"#186cb7"];
+    self.graphView.strokeColor = [DiaryHealthViewController toUiColor: @"#186cb7"];
+    self.graphView.pointFillColor = [DiaryHealthViewController toUiColor: @"#186cb7"];
     
     self.graphView.barColor = [UIColor clearColor];
     self.graphView.backgroundViewColor = [UIColor whiteColor];
@@ -269,34 +263,6 @@ const float _kCellHeight = 100.0f;
     [self.calendarManager setDate: [NSDate date]];
 }
 
-- (void) login {
-    
-    User * user = [[User alloc] init];
-    
-    user.email = @"recoba@gmail.com";
-    user.password = @"qwerty";
-    
-    [[[UserRequester alloc] init] login: user
-     
-                                onStart: ^{
-                                    
-                                }
-     
-                                onError: ^(NSString * message) {
-                                    
-                                }
-     
-                              onSuccess: ^(User * user) {
-                                  
-                                  [self requestChartPie];
-                                  
-                                  [self requestChartLine];
-                                  
-                                  [self requestCalendar];
-                              }
-     ];
-}
-
 - (void) requestChartPie {
     
     [[[UserRequester alloc] init] getSummary: [User getInstance]
@@ -311,7 +277,7 @@ const float _kCellHeight = 100.0f;
      
                                    onSuccess: ^(Sumary * sumary) {
                                        
-                                       /*NSArray * xData = @[@"Mal", @"Bem"];
+                                       NSArray * xData = @[@"Mal", @"Bem"];
                                        
                                        NSArray * yData = @[[NSNumber numberWithInt: sumary.symptom * 100],
                                                            [NSNumber numberWithInt: sumary.noSymptom * 100]];
@@ -340,8 +306,8 @@ const float _kCellHeight = 100.0f;
                                        
                                        NSMutableArray * colorArray = [NSMutableArray array];
                                        
-                                       [colorArray addObject: [ChartViewController toUiColor: @"#FF0000"]];
-                                       [colorArray addObject: [ChartViewController toUiColor: @"#CCCC00"]];
+                                       [colorArray addObject: [DiaryHealthViewController toUiColor: @"#FF0000"]];
+                                       [colorArray addObject: [DiaryHealthViewController toUiColor: @"#CCCC00"]];
                                        
                                        [dataSet setColors: colorArray];
                                        
@@ -352,7 +318,7 @@ const float _kCellHeight = 100.0f;
                                        
                                        [self.chartView setData: data];
                                        
-                                       [self.chartView setNeedsDisplay];*/
+                                       [self.chartView setNeedsDisplay];
                                    }
      ];
 }
@@ -403,11 +369,11 @@ const float _kCellHeight = 100.0f;
      ];
 }
 
-- (void) requestCalendar {
+- (void) requestCalendar: (NSDate *) date {
     
     [[[UserRequester alloc] init] getSummary: [User getInstance]
-                                       month: 11
-                                        year: 2015
+                                       month: [self getMonth: date]
+                                        year: [self getYear: date]
      
                                      onStart: ^{
                                          
@@ -430,21 +396,30 @@ const float _kCellHeight = 100.0f;
     
     if (self.calendarMap) {
         
+        dayView.hidden = NO;
+        
         if ([dayView isFromAnotherMonth]) {
             dayView.hidden = YES;
+        }
+        
+        NSString * key = [NSString stringWithFormat: @"%li-%li-%li",
+                          [self getDay: dayView.date], [self getMonth: dayView.date], [self getYear: dayView.date]];
+        
+        SumaryCalendar * sumaryCalendar = [self.calendarMap objectForKey: key];
+        
+        if (sumaryCalendar) {
             
-        } else {
-            
-            NSNumber * day = [NSNumber numberWithInteger: [self getDay: dayView.date]];
-            
-            SumaryCalendar * sumaryCalendar = [self.calendarMap objectForKey: day];
-            
-            if (sumaryCalendar) {
-                
-                [dayView addSubview: [self getState: sumaryCalendar]];
-            }
+            [dayView addSubview: [self getState: sumaryCalendar]];
         }
     }
+}
+
+- (void) calendarDidLoadPreviousPage: (JTCalendarManager *) calendar {
+    [self requestCalendar: calendar.date];
+}
+
+- (void) calendarDidLoadNextPage: (JTCalendarManager *) calendar {
+    [self requestCalendar: calendar.date];
 }
 
 - (NSInteger) getDay: (NSDate *) date {
@@ -454,10 +429,36 @@ const float _kCellHeight = 100.0f;
     return [dateComponent day];
 }
 
+- (NSInteger) getMonth: (NSDate *) date {
+    
+    NSDateComponents * dateComponent = [[NSCalendar currentCalendar] components: NSCalendarUnitMonth fromDate: date];
+    
+    return [dateComponent month];
+}
+
+- (NSInteger) getYear: (NSDate *) date {
+    
+    NSDateComponents * dateComponent = [[NSCalendar currentCalendar] components: NSCalendarUnitYear fromDate: date];
+    
+    return [dateComponent year];
+}
+
+- (BOOL) equals: (SumaryCalendar *) sumaryCalendar date: (NSDate *) date {
+    
+    NSInteger day = [self getDay: date];
+    NSInteger month = [self getMonth: date];
+    NSInteger year = [self getYear: date];
+
+    if (sumaryCalendar.day == day && sumaryCalendar.month == month && sumaryCalendar.year == year) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 - (UIImageView *) getState: (SumaryCalendar *) sumaryCalendar {
     
     UIImageView * view = [[UIImageView alloc] initWithFrame: CGRectMake(9, 0, 23, 23)];
-    view.alpha = 0.5;
     
     if (sumaryCalendar.noSymptomAmount == 0) {
         

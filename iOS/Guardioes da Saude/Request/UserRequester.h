@@ -21,8 +21,8 @@
           onSuccess: (Success) onSuccess;
 
 - (void) getSummary: (User *) user
-              month: (int) month
-               year: (int) year
+              month: (NSInteger) month
+               year: (NSInteger) year
             onStart: (Start) onStart
             onError: (Error) onError
           onSuccess: (Success) onSuccess;
