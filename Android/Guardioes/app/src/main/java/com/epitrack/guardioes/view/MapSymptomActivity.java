@@ -353,14 +353,38 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
 
                 JSONObject jsonObjectDiseases = jsonObjectData.getJSONObject("diseases");
 
-                textViewPercentage1.setText(jsonObjectDiseases.get("diarreica").toString() + "%");
-                progressBar1.setProgress(Integer.parseInt(jsonObjectDiseases.get("diarreica").toString()));
+                int total = (int)totalNoSympton + (int)totalSympton;
+                double diarreica = 0;
 
-                textViewPercentage2.setText(jsonObjectDiseases.get("exantematica").toString() + "%");
-                progressBar2.setProgress(Integer.parseInt(jsonObjectDiseases.get("exantematica").toString()));
+                if (total > 0) {
+                    diarreica = ((Integer.parseInt(jsonObjectDiseases.get("diarreica").toString()) * 100) / total);
 
-                textViewPercentage3.setText(jsonObjectDiseases.get("respiratoria").toString() + "%");
-                progressBar3.setProgress(Integer.parseInt(jsonObjectDiseases.get("respiratoria").toString()));
+                    textViewPercentage1.setText(diarreica + "%");
+                    progressBar1.setProgress(Integer.parseInt(diarreica + ""));
+
+                    double exantematica = 0;
+
+                    exantematica = ((Integer.parseInt(jsonObjectDiseases.get("exantematica").toString()) * 100) / total);
+
+                    textViewPercentage2.setText(exantematica + "%");
+                    progressBar2.setProgress(Integer.parseInt(exantematica + ""));
+
+                    double respiratoria = 0;
+
+                    respiratoria = ((Integer.parseInt(jsonObjectDiseases.get("respiratoria").toString()) * 100) / total);
+
+                    textViewPercentage1.setText(respiratoria + "%");
+                    progressBar1.setProgress(Integer.parseInt(respiratoria + ""));
+                } else {
+                    textViewPercentage1.setText("0%");
+                    progressBar1.setProgress(0);
+
+                    textViewPercentage2.setText("0%");
+                    progressBar2.setProgress(0);
+
+                    textViewPercentage3.setText("0%");
+                    progressBar3.setProgress(0);
+                }
 
                 //Pie Char Config
                 pieChart.setUsePercentValues(false);

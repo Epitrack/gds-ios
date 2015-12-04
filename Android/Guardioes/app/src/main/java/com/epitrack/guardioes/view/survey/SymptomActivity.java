@@ -41,6 +41,8 @@ import butterknife.Bind;
  */
 public class SymptomActivity extends BaseAppCompatActivity {
 
+    boolean isExantematica = false;
+
     @Bind(R.id.list_view)
     ListView listView;
 
@@ -91,10 +93,13 @@ public class SymptomActivity extends BaseAppCompatActivity {
 
                                     try {
                                         sendSymptom();
-                                        final Bundle bundle = new Bundle();
-                                        bundle.putBoolean(Constants.Bundle.BAD_STATE, true);
-
-                                        navigateTo(ShareActivity.class, bundle);
+                                        if (!isExantematica) {
+                                            navigateTo(ZikaActivity.class);
+                                        } else {
+                                            final Bundle bundle = new Bundle();
+                                            bundle.putBoolean(Constants.Bundle.BAD_STATE, true);
+                                            navigateTo(ShareActivity.class, bundle);
+                                        }
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     } catch (ExecutionException e) {
@@ -197,6 +202,10 @@ public class SymptomActivity extends BaseAppCompatActivity {
 
         if (jsonObject.get("error").toString() == "true") {
             Toast.makeText(getApplicationContext(), jsonObject.get("message").toString(), Toast.LENGTH_SHORT).show();
+        } else {
+            if (jsonObject.get("exantematica").toString() == "true") {
+                isExantematica = true;
+            }
         }
     }
 
