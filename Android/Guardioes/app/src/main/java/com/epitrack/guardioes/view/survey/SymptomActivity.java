@@ -93,7 +93,7 @@ public class SymptomActivity extends BaseAppCompatActivity {
 
                                     try {
                                         sendSymptom();
-                                        if (!isExantematica) {
+                                        if (isExantematica) {
                                             navigateTo(ZikaActivity.class);
                                         } else {
                                             final Bundle bundle = new Bundle();
