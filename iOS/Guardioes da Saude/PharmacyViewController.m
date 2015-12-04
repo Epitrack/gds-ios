@@ -9,6 +9,7 @@
 #import "PharmacyViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "User.h"
+#import "PharmacyGoogleMapsViewController.h"
 
 @interface PharmacyViewController () {
     
@@ -71,13 +72,11 @@
     id <MKAnnotation> annotation = [view annotation];
     
     if ([annotation isKindOfClass:[MKPointAnnotation class]]){
-        //MKPointAnnotation *pin = annotation;
-        
-        //pin.coordinate.l
-        
+        PharmacyGoogleMapsViewController *pharmacyGoogleMapsViewController = [[PharmacyGoogleMapsViewController alloc] init];
+        [self.navigationController pushViewController:pharmacyGoogleMapsViewController animated:YES];
     }
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    [alertView show];
+    //UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    //[alertView show];
 }
 
 
@@ -159,7 +158,8 @@
                      MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
                      pin.coordinate = annotationCoord;
                      pin.title = name;
-                     pin.subtitle = logradouro;
+                     //pin.subtitle = logradouro;
+                     pin.subtitle = @"Ver no Google Maps";
                      
                      [self.mapPharmacy addAnnotation:pin];
                  }

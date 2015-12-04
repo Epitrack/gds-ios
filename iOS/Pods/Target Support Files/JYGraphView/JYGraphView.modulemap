@@ -1,6 +1,0 @@
-framework module JYGraphView {
-  umbrella header "JYGraphView-umbrella.h"
-
-  export *
-  module * { export * }
-}
