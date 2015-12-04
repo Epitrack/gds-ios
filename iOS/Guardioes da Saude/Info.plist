@@ -32,14 +32,24 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb179676235701655</string>
+				<string>com.epitrack.gds</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.146401381326-skhtq5jehhp213aa7rpsf8pql62d08ho</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>360</string>
+	<string>411</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Google/SignIn.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <TwitterKit/TwitterKit.h>
+#import <GoogleSignIn/GoogleSignIn.h>
 
-@interface SelectTypeCreateAccoutViewController : UIViewController <GIDSignInUIDelegate>
+@interface SelectTypeCreateAccoutViewController : UIViewController <GIDSignInUIDelegate, GIDSignInDelegate>
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *btnFacebook;
 @property (weak, nonatomic) IBOutlet GIDSignInButton *btnGoogle;
 @property (weak, nonatomic) IBOutlet TWTRLogInButton *btnTwitter;
@@ -23,5 +23,8 @@
 - (IBAction)btnTermsAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnCheckTerms;
 - (IBAction)btnCheckTermsAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnGoogleDesable;
+@property (weak, nonatomic) IBOutlet UIButton *btnTwitterDesable;
+@property (weak, nonatomic) IBOutlet UIButton *btnFacebookDesable;
 
 @end

@@ -290,22 +290,29 @@
             }
         
             @try {
-                NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-                f.numberStyle = NSNumberFormatterDecimalStyle;
-            
-                NSNumber *validateDay = [NSNumber numberWithInteger: [day integerValue]];
-            
-                if (validateDay <= 0 || validateDay > 31) {
-                    dateFail = YES;
-                }
-                NSNumber *validateMonth = [NSNumber numberWithInteger: [month integerValue]];
-            
-                if (validateDay <= 0 || validateDay > 12) {
-                    dateFail = YES;
-                }
-                NSNumber *validateYear = [NSNumber numberWithInteger: [year integerValue]];
-            
+                int validateDay = [day intValue];
+                
                 if (validateDay <= 0) {
+                    dateFail = YES;
+                }
+                
+                if (validateDay > 31) {
+                    dateFail = YES;
+                }
+                
+                int validateMonth = [month intValue];
+                
+                if (validateMonth <= 0) {
+                    dateFail = YES;
+                }
+                
+                if (validateMonth > 12) {
+                    dateFail = YES;
+                }
+                
+                int validateYear = [year intValue];
+                
+                if (validateYear <= 0) {
                     dateFail = YES;
                 }
             }

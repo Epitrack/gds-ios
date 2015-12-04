@@ -51,6 +51,15 @@
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_twitter.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_twitter@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/button_twitter@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/buttonFacebookDesable.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/buttonFacebookDesable@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/buttonFacebookDesable@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/buttonGoogleDesable.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/buttonGoogleDesable@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/buttonGoogleDesable@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/buttonTwitterDesable.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/buttonTwitterDesable@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/buttonTwitterDesable@3x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_cancel.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_cancel@2x.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Guardioes da Saude/Assets/fab_cancel@3x.png" isTestSource="false" />
@@ -614,6 +623,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleAuthUtilities/Libraries/libGTMOAuth2_external.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleAuthUtilities/Libraries/libGTMOAuth2_internal.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleInterchangeUtilities/Libraries/libProtocolBuffers.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleMaps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleNetworkingUtilities/Libraries/libGTMSessionFetcher_core.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleNetworkingUtilities/Libraries/libGTMSessionFetcher_full.a" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Headers/Public/GIDAuthentication.h" isTestSource="false" />
@@ -882,6 +892,7 @@
           <root url="file://$MODULE_DIR$/FBSDKShareKit.framework/Headers" />
           <root url="file://$MODULE_DIR$/Pods/Fabric/iOS/Fabric.framework/Headers" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers" />
+          <root url="file://$MODULE_DIR$/Pods/GoogleMaps/Frameworks/GoogleMaps.framework/Headers" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Private" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Public" />
           <root url="file://$MODULE_DIR$/Pods/TwitterCore/TwitterCore.framework/Headers" />
@@ -982,6 +993,7 @@
           <root url="file://$MODULE_DIR$/FBSDKShareKit.framework/Headers" />
           <root url="file://$MODULE_DIR$/Pods/Fabric/iOS/Fabric.framework/Headers" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers" />
+          <root url="file://$MODULE_DIR$/Pods/GoogleMaps/Frameworks/GoogleMaps.framework/Headers" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Private" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Public" />
           <root url="file://$MODULE_DIR$/Pods/TwitterCore/TwitterCore.framework/Headers" />
@@ -990,17 +1002,17 @@
         <excluded>
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLSignIn/Public/SignIn.h" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Core-Module.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/CloudMessaging-Module.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/SignIn-Module.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GMRConfiguration.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLContext.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLConfiguration.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLSignIn/Public/GGLContext+SignIn.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLErrorCode.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/Core.h" />
-          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/AppInvite-Module.h" />
           <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/AdMob-Module.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/SignIn-Module.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLContext.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/Core.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/CloudMessaging-Module.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLErrorCode.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLSignIn/Public/GGLContext+SignIn.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GGLConfiguration.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/AppInvite-Module.h" />
+          <root url="file://$MODULE_DIR$/Pods/Google/Headers/GGLCore/Public/GMRConfiguration.h" />
         </excluded>
       </library>
     </orderEntry>

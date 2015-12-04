@@ -77,6 +77,8 @@
 		527782D51C089A9B00251BF8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527782D31C089A9B00251BF8 /* FBSDKShareKit.framework */; };
 		527782D81C0CC9FD00251BF8 /* NoticeRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 527782D71C0CC9FD00251BF8 /* NoticeRequester.m */; };
 		527782DB1C0DD31600251BF8 /* SingleNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 527782DA1C0DD31600251BF8 /* SingleNotice.m */; };
+		527782E11C10860B00251BF8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527782E01C10860B00251BF8 /* SystemConfiguration.framework */; };
+		527782E31C10861700251BF8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527782E21C10861700251BF8 /* StoreKit.framework */; };
 		528705B91BF3744600321985 /* PhonesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528705B71BF3744600321985 /* PhonesViewController.m */; };
 		528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528705B81BF3744600321985 /* PhonesViewController.xib */; };
 		528705C41BF3AB5F00321985 /* iconBombeirosMini.png in Resources */ = {isa = PBXBuildFile; fileRef = 528705BB1BF3AB5F00321985 /* iconBombeirosMini.png */; };
@@ -410,6 +412,15 @@
 		52E727EB1BEA93B800B46945 /* modal_ui_alert.png in Resources */ = {isa = PBXBuildFile; fileRef = 8829B5F61BB9D5A500F4C75A /* modal_ui_alert.png */; };
 		52E727EC1BEA93B800B46945 /* modal_ui_alert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8829B5F71BB9D5A500F4C75A /* modal_ui_alert@2x.png */; };
 		52E727ED1BEA93B800B46945 /* modal_ui_alert@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8829B5F81BB9D5A500F4C75A /* modal_ui_alert@3x.png */; };
+		52EBA74C1C11DD0E0019E1FA /* buttonFacebookDesable.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA7431C11DD0E0019E1FA /* buttonFacebookDesable.png */; };
+		52EBA74D1C11DD0E0019E1FA /* buttonFacebookDesable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA7441C11DD0E0019E1FA /* buttonFacebookDesable@2x.png */; };
+		52EBA74E1C11DD0E0019E1FA /* buttonFacebookDesable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA7451C11DD0E0019E1FA /* buttonFacebookDesable@3x.png */; };
+		52EBA74F1C11DD0E0019E1FA /* buttonGoogleDesable.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA7461C11DD0E0019E1FA /* buttonGoogleDesable.png */; };
+		52EBA7501C11DD0E0019E1FA /* buttonGoogleDesable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA7471C11DD0E0019E1FA /* buttonGoogleDesable@2x.png */; };
+		52EBA7511C11DD0E0019E1FA /* buttonGoogleDesable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA7481C11DD0E0019E1FA /* buttonGoogleDesable@3x.png */; };
+		52EBA7521C11DD0E0019E1FA /* buttonTwitterDesable.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA7491C11DD0E0019E1FA /* buttonTwitterDesable.png */; };
+		52EBA7531C11DD0E0019E1FA /* buttonTwitterDesable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA74A1C11DD0E0019E1FA /* buttonTwitterDesable@2x.png */; };
+		52EBA7541C11DD0E0019E1FA /* buttonTwitterDesable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA74B1C11DD0E0019E1FA /* buttonTwitterDesable@3x.png */; };
 		52EC50411BF02200002FEACE /* Household.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC50401BF02200002FEACE /* Household.m */; };
 		52EC50441BF026CC002FEACE /* ImageUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC50431BF026CC002FEACE /* ImageUtility.m */; };
 		9E122E6DA5824937A683452F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8024AD3523214155324B45 /* Pods.framework */; };
@@ -533,6 +544,10 @@
 		527782D71C0CC9FD00251BF8 /* NoticeRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeRequester.m; sourceTree = "<group>"; };
 		527782D91C0DD31600251BF8 /* SingleNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleNotice.h; sourceTree = "<group>"; };
 		527782DA1C0DD31600251BF8 /* SingleNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleNotice.m; sourceTree = "<group>"; };
+		527782E01C10860B00251BF8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		527782E21C10861700251BF8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		527782E41C10862400251BF8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		527782E51C10862400251BF8 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		528705B61BF3744600321985 /* PhonesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhonesViewController.h; sourceTree = "<group>"; };
 		528705B71BF3744600321985 /* PhonesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhonesViewController.m; sourceTree = "<group>"; };
 		528705B81BF3744600321985 /* PhonesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhonesViewController.xib; sourceTree = "<group>"; };
@@ -645,6 +660,15 @@
 		52DBBA6B1BFE479A00900D22 /* imgNoticias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgNoticias.png; sourceTree = "<group>"; };
 		52DBBA6F1BFE6CCC00900D22 /* NewsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsRequester.h; sourceTree = "<group>"; };
 		52DBBA701BFE6CCC00900D22 /* NewsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsRequester.m; sourceTree = "<group>"; };
+		52EBA7431C11DD0E0019E1FA /* buttonFacebookDesable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonFacebookDesable.png; sourceTree = "<group>"; };
+		52EBA7441C11DD0E0019E1FA /* buttonFacebookDesable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonFacebookDesable@2x.png"; sourceTree = "<group>"; };
+		52EBA7451C11DD0E0019E1FA /* buttonFacebookDesable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonFacebookDesable@3x.png"; sourceTree = "<group>"; };
+		52EBA7461C11DD0E0019E1FA /* buttonGoogleDesable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonGoogleDesable.png; sourceTree = "<group>"; };
+		52EBA7471C11DD0E0019E1FA /* buttonGoogleDesable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonGoogleDesable@2x.png"; sourceTree = "<group>"; };
+		52EBA7481C11DD0E0019E1FA /* buttonGoogleDesable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonGoogleDesable@3x.png"; sourceTree = "<group>"; };
+		52EBA7491C11DD0E0019E1FA /* buttonTwitterDesable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonTwitterDesable.png; sourceTree = "<group>"; };
+		52EBA74A1C11DD0E0019E1FA /* buttonTwitterDesable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonTwitterDesable@2x.png"; sourceTree = "<group>"; };
+		52EBA74B1C11DD0E0019E1FA /* buttonTwitterDesable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonTwitterDesable@3x.png"; sourceTree = "<group>"; };
 		52EC503F1BF02200002FEACE /* Household.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Household.h; path = "Guardioes da Saude/Household.h"; sourceTree = "<group>"; };
 		52EC50401BF02200002FEACE /* Household.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Household.m; path = "Guardioes da Saude/Household.m"; sourceTree = "<group>"; };
 		52EC50421BF026CC002FEACE /* ImageUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtility.h; sourceTree = "<group>"; };
@@ -921,6 +945,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				527782E31C10861700251BF8 /* StoreKit.framework in Frameworks */,
+				527782E11C10860B00251BF8 /* SystemConfiguration.framework in Frameworks */,
 				2548B9EE1BDEBA310004E00F /* CoreLocation.framework in Frameworks */,
 				525E8DCC1BFE9F210020D4D6 /* FBSDKCoreKit.framework in Frameworks */,
 				525E8DCE1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework in Frameworks */,
@@ -1215,6 +1241,15 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				52EBA7431C11DD0E0019E1FA /* buttonFacebookDesable.png */,
+				52EBA7441C11DD0E0019E1FA /* buttonFacebookDesable@2x.png */,
+				52EBA7451C11DD0E0019E1FA /* buttonFacebookDesable@3x.png */,
+				52EBA7461C11DD0E0019E1FA /* buttonGoogleDesable.png */,
+				52EBA7471C11DD0E0019E1FA /* buttonGoogleDesable@2x.png */,
+				52EBA7481C11DD0E0019E1FA /* buttonGoogleDesable@3x.png */,
+				52EBA7491C11DD0E0019E1FA /* buttonTwitterDesable.png */,
+				52EBA74A1C11DD0E0019E1FA /* buttonTwitterDesable@2x.png */,
+				52EBA74B1C11DD0E0019E1FA /* buttonTwitterDesable@3x.png */,
 				527782CC1C062DC000251BF8 /* gdSToolbar.png */,
 				527782CD1C062DC000251BF8 /* gdSToolbar@2x.png */,
 				527782CE1C062DC000251BF8 /* gdSToolbar@3x.png */,
@@ -1567,6 +1602,10 @@
 		CF810800BC26A068848D3B68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				527782E41C10862400251BF8 /* AddressBook.framework */,
+				527782E51C10862400251BF8 /* AddressBookUI.framework */,
+				527782E21C10861700251BF8 /* StoreKit.framework */,
+				527782E01C10860B00251BF8 /* SystemConfiguration.framework */,
 				527782D21C089A9B00251BF8 /* FBSDKMessengerShareKit.framework */,
 				527782D31C089A9B00251BF8 /* FBSDKShareKit.framework */,
 				525E8DCD1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework */,
@@ -1646,6 +1685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E727971BEA93B800B46945 /* icon_participeagora.png in Resources */,
+				52EBA7511C11DD0E0019E1FA /* buttonGoogleDesable@3x.png in Resources */,
 				52D2BC861BF12EBF007C9C09 /* icon_pin_userlocation.png in Resources */,
 				52D2BC891BF12EBF007C9C09 /* icon_pin_well.png in Resources */,
 				52E727771BEA93B800B46945 /* icon_home@2x.png in Resources */,
@@ -1735,12 +1775,14 @@
 				52E7275A1BEA93B800B46945 /* icon_bad@3x.png in Resources */,
 				52D2BCAA1BF12EBF007C9C09 /* img_profile10_mini.png in Resources */,
 				52E7274F1BEA93B800B46945 /* fab_location.png in Resources */,
+				52EBA7531C11DD0E0019E1FA /* buttonTwitterDesable@2x.png in Resources */,
 				52E727A81BEA93B800B46945 /* icon_question@3x.png in Resources */,
 				52E727451BEA93B800B46945 /* button_google@3x.png in Resources */,
 				52E7273E1BEA93B800B46945 /* button_enter@2x.png in Resources */,
 				52E727921BEA93B800B46945 /* icon_mapadasaude@2x.png in Resources */,
 				52E727E41BEA93B800B46945 /* img_profile12@3x.png in Resources */,
 				52E7273A1BEA93B800B46945 /* button_email.png in Resources */,
+				52EBA7501C11DD0E0019E1FA /* buttonGoogleDesable@2x.png in Resources */,
 				52E7279C1BEA93B800B46945 /* icon_pin_pharmacy@3x.png in Resources */,
 				52D2BC9C1BF12EBF007C9C09 /* img_profile05_mini@2x.png in Resources */,
 				52D2BCA71BF12EBF007C9C09 /* img_profile09_mini.png in Resources */,
@@ -1749,6 +1791,7 @@
 				52E7277C1BEA93B800B46945 /* icon_info_white.png in Resources */,
 				52E727E51BEA93B800B46945 /* input_floatbox_login_email.png in Resources */,
 				52E7274E1BEA93B800B46945 /* fab_cancel@3x.png in Resources */,
+				52EBA7521C11DD0E0019E1FA /* buttonTwitterDesable.png in Resources */,
 				52D2BCA31BF12EBF007C9C09 /* img_profile07_mini@3x.png in Resources */,
 				52E7279E1BEA93B800B46945 /* icon_pin_urgency@2x.png in Resources */,
 				52E727721BEA93B800B46945 /* icon_google@3x.png in Resources */,
@@ -1887,6 +1930,7 @@
 				52E727911BEA93B800B46945 /* icon_mapadasaude.png in Resources */,
 				2548B9E01BDE76380004E00F /* SelectParticipantViewController.xib in Resources */,
 				52E727DC1BEA93B800B46945 /* img_profile10.png in Resources */,
+				52EBA74C1C11DD0E0019E1FA /* buttonFacebookDesable.png in Resources */,
 				52E7275C1BEA93B800B46945 /* icon_camera@2x.png in Resources */,
 				52E7272D1BEA93B800B46945 /* icon_menu@3x.png in Resources */,
 				52D2BCA61BF12EBF007C9C09 /* img_profile08_mini@3x.png in Resources */,
@@ -1966,6 +2010,7 @@
 				52E727741BEA93B800B46945 /* icon_help_n_faq@2x.png in Resources */,
 				52E727471BEA93B800B46945 /* button_register@2x.png in Resources */,
 				528705CB1BF3AB5F00321985 /* iconPMMini@2x.png in Resources */,
+				52EBA74F1C11DD0E0019E1FA /* buttonGoogleDesable.png in Resources */,
 				52E727A41BEA93B800B46945 /* icon_profile@2x.png in Resources */,
 				5215BBBD1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib in Resources */,
 				52D2BCA11BF12EBF007C9C09 /* img_profile07_mini.png in Resources */,
@@ -1974,6 +2019,8 @@
 				524C14321BEBE043003A6C2D /* PharmacyViewController.xib in Resources */,
 				52E727501BEA93B800B46945 /* fab_location@2x.png in Resources */,
 				520CD0E31BED436700F24B45 /* EnterViewController.xib in Resources */,
+				52EBA74E1C11DD0E0019E1FA /* buttonFacebookDesable@3x.png in Resources */,
+				52EBA7541C11DD0E0019E1FA /* buttonTwitterDesable@3x.png in Resources */,
 				5215BBC71BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib in Resources */,
 				52D2BC971BF12EBF007C9C09 /* img_profile03_mini@3x.png in Resources */,
 				528705C81BF3AB5F00321985 /* iconDefesacivilMini@2x.png in Resources */,
@@ -1981,6 +2028,7 @@
 				52E727461BEA93B800B46945 /* button_register.png in Resources */,
 				527782D11C062DC100251BF8 /* gdSToolbar@3x.png in Resources */,
 				52E7273F1BEA93B800B46945 /* button_enter@3x.png in Resources */,
+				52EBA74D1C11DD0E0019E1FA /* buttonFacebookDesable@2x.png in Resources */,
 				52E727CF1BEA93B800B46945 /* img_profile05@3x.png in Resources */,
 				52D15DD71BFBCA8100FC31F3 /* DiaryHealthViewController.xib in Resources */,
 				52E727D41BEA93B800B46945 /* img_profile07@2x.png in Resources */,
@@ -2247,6 +2295,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2267,6 +2316,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";

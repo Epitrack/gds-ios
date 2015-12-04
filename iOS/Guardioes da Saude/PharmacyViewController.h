@@ -12,5 +12,6 @@
 
 @interface PharmacyViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (retain, nonatomic) IBOutlet MKMapView *mapPharmacy;
-
+@property (nonatomic, retain) MKPolyline *routeLine; //your line
+@property (nonatomic, retain) MKPolylineView *routeLineView; //overlay view
 @end

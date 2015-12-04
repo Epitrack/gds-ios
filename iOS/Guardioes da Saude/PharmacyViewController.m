@@ -66,6 +66,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    id <MKAnnotation> annotation = [view annotation];
+    
+    if ([annotation isKindOfClass:[MKPointAnnotation class]]){
+        //MKPointAnnotation *pin = annotation;
+        
+        //pin.coordinate.l
+        
+    }
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    [alertView show];
+}
+
+
 - (void) mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
     //NSLog(@"didUpdateUserLocation just got called!");
     

@@ -250,9 +250,9 @@
                  respiratoria = [diseases[@"respiratoria"] doubleValue];
                  
                  if (totalWithSymptom > 0) {
-                     diarreica = diarreica / totalNoSymptom;
-                     exantemaica = exantemaica / totalNoSymptom;
-                     respiratoria = respiratoria / totalNoSymptom;
+                     diarreica = ((diarreica * 100) / (totalWithSymptom + totalNoSymptom));
+                     exantemaica = ((exantemaica * 100) / (totalWithSymptom + totalNoSymptom));
+                     respiratoria = ((respiratoria * 100) / (totalWithSymptom + totalNoSymptom));
                  }
                  
                  [self.btnDetailMapHealth setTitle:city];

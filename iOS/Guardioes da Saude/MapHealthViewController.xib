@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
@@ -18,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8S8-Jl-wxO">
-                    <rect key="frame" x="0.0" y="107" width="320" height="461"/>
+                    <rect key="frame" x="0.0" y="63" width="320" height="505"/>
                     <animations/>
                 </mapView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qvp-3O-I8G">
@@ -55,7 +56,7 @@
                 <constraint firstAttribute="trailing" secondItem="s3m-j6-9yR" secondAttribute="trailing" constant="6" id="DWT-Uc-hQx"/>
                 <constraint firstItem="8S8-Jl-wxO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Uw6-2L-CPU"/>
                 <constraint firstAttribute="trailing" secondItem="Qvp-3O-I8G" secondAttribute="trailing" id="e8h-xb-RHF"/>
-                <constraint firstItem="8S8-Jl-wxO" firstAttribute="top" secondItem="zon-Qs-2fy" secondAttribute="bottom" id="gfs-Lx-3gJ"/>
+                <constraint firstItem="8S8-Jl-wxO" firstAttribute="top" secondItem="zon-Qs-2fy" secondAttribute="bottom" constant="-44" id="gfs-Lx-3gJ"/>
                 <constraint firstItem="Qvp-3O-I8G" firstAttribute="top" secondItem="8S8-Jl-wxO" secondAttribute="bottom" constant="-45" id="gkK-SO-ez8"/>
                 <constraint firstAttribute="bottom" secondItem="s3m-j6-9yR" secondAttribute="bottom" constant="10" id="h0f-gW-mXH"/>
                 <constraint firstItem="Qvp-3O-I8G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kpB-GW-3JU"/>
