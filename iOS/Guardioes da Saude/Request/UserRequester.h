@@ -15,12 +15,19 @@
                onError: (Error) onError
              onSuccess: (Success) onSuccess;
 
+/*- (void) getSummary: (User *) user
+            onStart: (Start) onStart
+            onError: (Error) onError
+          onSuccess: (Success) onSuccess;*/
+
 - (void) getSummary: (User *) user
+        idHousehold: (NSString *) idHousehold
             onStart: (Start) onStart
             onError: (Error) onError
           onSuccess: (Success) onSuccess;
 
 - (void) getSummary: (User *) user
+        idHousehold: (NSString *) idHousehold
               month: (NSInteger) month
                year: (NSInteger) year
             onStart: (Start) onStart
@@ -28,6 +35,7 @@
           onSuccess: (Success) onSuccess;
 
 - (void) getSummary: (User *) user
+        idHousehold: (NSString *) idHousehold
                year: (int) year
             onStart: (Start) onStart
             onError: (Error) onError

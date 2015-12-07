@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
@@ -38,7 +39,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Resumo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCD-SY-klR">
-                    <rect key="frame" x="8" y="68" width="56.5" height="20.5"/>
+                    <rect key="frame" x="8" y="68" width="57" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,8 +48,8 @@
                         <rect key="frame" x="8" y="71" width="63" height="20"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLD-I9-J0R">
-                    <rect key="frame" x="48" y="96" width="106.5" height="22.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Participações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLD-I9-J0R">
+                    <rect key="frame" x="48" y="96" width="107" height="23"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="19"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -57,7 +58,7 @@
                         <rect key="frame" x="41" y="99" width="116" height="23"/>
                     </variation>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_well.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ear-Mj-uUr">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_well.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ear-Mj-uUr">
                     <rect key="frame" x="8" y="125" width="40" height="40"/>
                     <animations/>
                     <constraints>
@@ -68,8 +69,8 @@
                         <rect key="frame" x="8" y="131" width="120" height="121"/>
                     </variation>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFy-Rm-50J">
-                    <rect key="frame" x="54" y="125" width="48" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFy-Rm-50J">
+                    <rect key="frame" x="54" y="125" width="48" height="21"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="48" id="sEx-QU-Tdp"/>
@@ -81,8 +82,8 @@
                         <rect key="frame" x="136" y="131" width="46" height="20"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxA-Jm-Clk">
-                    <rect key="frame" x="103" y="172" width="42" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxA-Jm-Clk">
+                    <rect key="frame" x="103" y="172" width="42" height="21"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="qaO-Rk-frs"/>
@@ -94,8 +95,8 @@
                         <rect key="frame" x="184" y="131" width="36" height="20"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42.589" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raC-I5-aBB">
-                    <rect key="frame" x="56" y="143" width="55" height="21.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="42.589" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raC-I5-aBB">
+                    <rect key="frame" x="56" y="143" width="55" height="22"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="55" id="ubQ-uo-qIY"/>
@@ -107,7 +108,7 @@
                         <rect key="frame" x="136" y="150" width="46" height="18"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relatórios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxh-ee-xdx">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Relatórios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxh-ee-xdx">
                     <rect key="frame" x="103" y="194" width="63" height="18"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
@@ -117,7 +118,7 @@
                         <rect key="frame" x="186" y="150" width="68" height="18"/>
                     </variation>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_bad.png" translatesAutoresizingMaskIntoConstraints="NO" id="dPV-tv-0Zj">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_bad.png" translatesAutoresizingMaskIntoConstraints="NO" id="dPV-tv-0Zj">
                     <rect key="frame" x="8" y="172" width="40" height="40"/>
                     <animations/>
                     <constraints>
@@ -128,8 +129,8 @@
                         <rect key="frame" x="9" y="253" width="121" height="121"/>
                     </variation>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuG-vi-trr">
-                    <rect key="frame" x="54" y="172" width="48" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuG-vi-trr">
+                    <rect key="frame" x="54" y="172" width="48" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -138,8 +139,8 @@
                         <rect key="frame" x="138" y="169" width="46" height="20"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WL-LD-dVn">
-                    <rect key="frame" x="103" y="125" width="42" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WL-LD-dVn">
+                    <rect key="frame" x="103" y="125" width="42" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -148,7 +149,7 @@
                         <rect key="frame" x="186" y="169" width="28" height="20"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42.589" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE1-9f-QVD">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="42.589" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE1-9f-QVD">
                     <rect key="frame" x="56" y="194" width="55" height="18"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
@@ -158,8 +159,8 @@
                         <rect key="frame" x="138" y="188" width="46" height="18"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relatórios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRA-aE-Zin">
-                    <rect key="frame" x="103" y="143" width="63" height="21.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Relatórios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRA-aE-Zin">
+                    <rect key="frame" x="103" y="143" width="63" height="22"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -168,7 +169,7 @@
                         <rect key="frame" x="188" y="188" width="68" height="18"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="162" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ove-rq-rDW">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="162" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ove-rq-rDW">
                     <rect key="frame" x="8" y="96" width="48" height="21"/>
                     <animations/>
                     <constraints>
@@ -227,12 +228,15 @@
                         <constraint firstItem="rbG-QR-Q67" firstAttribute="leading" secondItem="3rR-Mr-Ewr" secondAttribute="leading" constant="8" id="0Lm-QN-rz1"/>
                         <constraint firstItem="U9F-rp-6Vs" firstAttribute="top" secondItem="rPt-0J-hQH" secondAttribute="bottom" constant="8" id="0Lq-fE-Tze"/>
                         <constraint firstAttribute="trailing" secondItem="rbG-QR-Q67" secondAttribute="trailing" constant="8" id="7BK-xQ-4D1"/>
+                        <constraint firstItem="rbG-QR-Q67" firstAttribute="leading" secondItem="3rR-Mr-Ewr" secondAttribute="leading" constant="8" id="CtS-1G-dcR"/>
                         <constraint firstItem="U9F-rp-6Vs" firstAttribute="leading" secondItem="3rR-Mr-Ewr" secondAttribute="leading" constant="8" id="Eq8-2N-AeL"/>
                         <constraint firstAttribute="trailing" secondItem="rPt-0J-hQH" secondAttribute="trailing" constant="8" id="MSh-Mz-Gin"/>
+                        <constraint firstItem="rbG-QR-Q67" firstAttribute="top" secondItem="3rR-Mr-Ewr" secondAttribute="top" constant="8" id="NhS-ti-bpr"/>
                         <constraint firstItem="rbG-QR-Q67" firstAttribute="top" secondItem="3rR-Mr-Ewr" secondAttribute="top" constant="8" id="Pfs-PL-igt"/>
                         <constraint firstItem="rPt-0J-hQH" firstAttribute="leading" secondItem="3rR-Mr-Ewr" secondAttribute="leading" constant="8" id="TGk-fb-5Bl"/>
                         <constraint firstAttribute="bottom" secondItem="U9F-rp-6Vs" secondAttribute="bottom" constant="25" id="hA3-Wg-Ha1"/>
                         <constraint firstItem="rPt-0J-hQH" firstAttribute="top" secondItem="rbG-QR-Q67" secondAttribute="bottom" constant="8" id="lXv-DQ-Eea"/>
+                        <constraint firstAttribute="trailing" secondItem="rbG-QR-Q67" secondAttribute="trailing" constant="8" id="oyx-Ya-PM0"/>
                         <constraint firstAttribute="trailing" secondItem="U9F-rp-6Vs" secondAttribute="trailing" constant="8" id="zgz-IO-nuS"/>
                     </constraints>
                 </scrollView>
@@ -270,11 +274,11 @@
                 <constraint firstItem="Ove-rq-rDW" firstAttribute="leading" secondItem="GCD-SY-klR" secondAttribute="leading" id="bId-mR-NIj"/>
                 <constraint firstItem="3rR-Mr-Ewr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="bXd-h4-Orz"/>
                 <constraint firstItem="dPV-tv-0Zj" firstAttribute="bottom" secondItem="Yxh-ee-xdx" secondAttribute="bottom" id="dYF-Qd-rOA"/>
+                <constraint firstAttribute="bottom" secondItem="3rR-Mr-Ewr" secondAttribute="bottom" constant="122" id="efO-f6-w0n"/>
                 <constraint firstItem="hxA-Jm-Clk" firstAttribute="top" secondItem="XRA-aE-Zin" secondAttribute="bottom" constant="8" symbolic="YES" id="ibu-nG-Xoi"/>
                 <constraint firstItem="aE1-9f-QVD" firstAttribute="leading" secondItem="dPV-tv-0Zj" secondAttribute="trailing" constant="8" symbolic="YES" id="lWl-rC-6LC"/>
                 <constraint firstItem="Ear-Mj-uUr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="mxE-5I-sSn"/>
                 <constraint firstItem="Ove-rq-rDW" firstAttribute="firstBaseline" secondItem="jLD-I9-J0R" secondAttribute="baseline" id="r8V-4P-N1E"/>
-                <constraint firstAttribute="bottom" secondItem="3rR-Mr-Ewr" secondAttribute="bottom" constant="8" id="s2k-yu-U5S"/>
                 <constraint firstItem="jLD-I9-J0R" firstAttribute="top" secondItem="GCD-SY-klR" secondAttribute="bottom" constant="8" id="xLg-Vd-IDw"/>
                 <constraint firstItem="GCD-SY-klR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="z1f-dE-ZrX"/>
             </constraints>

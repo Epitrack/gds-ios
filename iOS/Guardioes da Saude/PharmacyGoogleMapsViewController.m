@@ -8,22 +8,24 @@
 
 #import "PharmacyGoogleMapsViewController.h"
 #import "User.h"
+#import "SingleLocation.h"
 @import GoogleMaps;
 
-@interface PharmacyGoogleMapsViewController ()
+@interface PharmacyGoogleMapsViewController () {
+    GMSMapView *mapView;
+    User *user;
+    SingleLocation *singleLocation;
+}
 
 @end
 
-@implementation PharmacyGoogleMapsViewController {
-    GMSMapView *mapView;
-    User *user;
-    
-}
+@implementation PharmacyGoogleMapsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     user = [User getInstance];
+    singleLocation = [SingleLocation getInstance];
     [self loadMap];
 }
 
@@ -35,19 +37,26 @@
 - (void) loadMap {
     // Create a GMSCameraPosition that tells the map to display the
     // coordinate -33.86,151.20 at zoom level 6.
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[user.lat longLongValue]
-                                                            longitude:[user.lon longLongValue]
-                                                                 zoom:6];
+    NSLog(@"tapGestureHandler: touchMapCoordinate = %@,%@", singleLocation.lat, singleLocation.lon);
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[singleLocation.lat longLongValue]
+                                                            longitude:[singleLocation.lon longLongValue]
+                                                                 zoom:15];
     mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView.myLocationEnabled = YES;
+    //mapView.myLocationEnabled = YES;
     self.view = mapView;
     
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake([user.lat longLongValue], [user.lon longLongValue]);
-    marker.title = user.nick;
+    marker.position = CLLocationCoordinate2DMake([singleLocation.lat longLongValue], [singleLocation.lon longLongValue]);
+    //marker.title = user.nick;
     //marker.snippet = @"Australia";
     marker.map = mapView;
+    //mapView.myLocationEnabled = YES;
+    mapView.mapType = kGMSTypeNormal;
+    mapView.settings.compassButton = YES;
+    mapView.settings.myLocationButton = YES;
+        
 }
 
 /*

@@ -16,6 +16,7 @@
 #import "SumaryCalendar.h"
 #import "HouseholdRequester.h"
 #import <JTCalendar/JTCalendar.h>
+#import "HouseholdThumbnail.h"
 
 @import Charts;
 
@@ -40,6 +41,7 @@
 @implementation DiaryHealthViewController {
     NSMutableArray *buttons;
     User *user;
+    NSString *selectedUser;
 }
 
 const float _kCellHeight = 100.0f;
@@ -51,24 +53,23 @@ const float _kCellHeight = 100.0f;
     
     // We will move this to the top?
     
-//    user = [User getInstance];
-//    buttons = [NSMutableArray array];
+    user = [User getInstance];
+    buttons = [NSMutableArray array];
 //    
-//    [self loadMainUser];
+    [self loadMainUser];
 //    
-//    CGRect screenBound = [[UIScreen mainScreen] bounds];
-//    CGSize screenSize = screenBound.size;
-//    //CGFloat screenWidth = screenSize.width;
-//    CGFloat screenHeight = screenSize.height;
+    CGRect screenBound = [[UIScreen mainScreen] bounds];
+    CGSize screenSize = screenBound.size;
+    CGFloat screenWidth = screenSize.width;
+    CGFloat screenHeight = screenSize.height;
 //    
 //    //create table view to contain ASHorizontalScrollView
 //    
-//    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 160, self.view.frame.size.width, self.view.frame.size.height)];
-//    sampleTableView.delegate = self;
-//    sampleTableView.dataSource = self;
-//    sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    
-//    [self.view addSubview:sampleTableView];
+    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 100, self.view.frame.size.width, self.view.frame.size.height)];
+    sampleTableView.delegate = self;
+    sampleTableView.dataSource = self;
+    sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:sampleTableView];
     
     [self loadChartPie];
     
@@ -76,12 +77,23 @@ const float _kCellHeight = 100.0f;
     
     [self loadChartLine];
     
-    [self requestChartPie];
+    [self requestChartPie:@""];
     
-    [self requestCalendar: [NSDate date]];
+    [self requestCalendar:@"" andDate:[NSDate date]];
     
-    [self requestChartLine];
+    [self requestChartLine: @""];
 }
+
+-(void) loadRequest {
+    
+    [self requestChartPie:@""];
+    
+    [self requestCalendar:@"" andDate:[NSDate date]];
+    
+    [self requestChartLine: @""];
+}
+
+
 
 #pragma tableview datasource
 - (void)loadMainUser {
@@ -92,7 +104,19 @@ const float _kCellHeight = 100.0f;
                                          button.bounds.size.width/2,
                                          button.bounds.size.height/2)];
     
-    if (user.picture.length > 2) {
+    NSString *avatar;
+    
+    if ([user.picture isEqualToString:@"0"]) {
+        avatar = @"img_profile01.png";
+    } else {
+        if (user.picture.length == 1) {
+            avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
+        } else if (user.picture.length == 2) {
+            avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
+        }
+    }
+    
+    /*if (user.picture.length > 2) {
         
         NSString *imageLink =  [@"http://api.guardioesdasaude.org" stringByAppendingString:user.picture];
         
@@ -111,9 +135,9 @@ const float _kCellHeight = 100.0f;
         }
         
         [imageView setImage:[UIImage imageNamed:avatar]];
-    }
+    }*/
     
-    [imageView setImage:[UIImage imageNamed:user.picture]];
+    [imageView setImage:[UIImage imageNamed:avatar]];
     
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 50, button.bounds.size.width/2, button.bounds.size.height/2)];
     label.text= user.nick;
@@ -161,43 +185,22 @@ const float _kCellHeight = 100.0f;
                     NSString *nick = h[@"nick"];
                     NSString *picture = h[@"picture"];
                     NSString *avatar;
+                    NSString *idHousehold = h[@"id"];
                     
-                    @try {
-                        NSLog(@"picture: %@", picture);
-                        if (picture.length > 2) {
-                            avatar = @"img_profile01";
+                    if ([picture isEqualToString:@"0"]) {
+                        avatar = @"img_profile01.png";
+                    } else {
+                        
+                        if (picture.length == 1) {
+                            avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
+                        } else if (picture.length == 2) {
+                            avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
                         }
                     }
-                    @catch (NSException *exception) {
-                        
-                        NSString *p = [NSString stringWithFormat:@"%@", picture];
-                        
-                        if (p.length == 1) {
-                            avatar = [NSString stringWithFormat: @"img_profile0%@", p];
-                        } else if (p.length == 2) {
-                            avatar = [NSString stringWithFormat: @"img_profile%@", p];
-                        }
-                        
-                    }
                     
-                    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
-                    UIImageView *imageView = [[UIImageView alloc] initWithFrame:
-                                              CGRectMake(button.bounds.size.width/4,
-                                                         5,
-                                                         button.bounds.size.width/2,
-                                                         button.bounds.size.height/2)];
-                    
-                    [imageView setImage:[UIImage imageNamed:avatar]];
-                    
-                    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 50, button.bounds.size.width/2, button.bounds.size.height/2)];
-                    label.text= nick;
-                    label.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
-                    label.textColor = [UIColor whiteColor];
-                    [label setTextAlignment:NSTextAlignmentCenter];
-                    [label setFont:[UIFont fontWithName:@"Arial" size:10.0]];
-                    [button addSubview:label];
-                    [button addSubview:imageView];
-                    [buttons addObject:button];
+                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
+                    [buttons addObject:thumb];
+                    [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
                 [horizontalScrollView addItems:buttons];
             }
@@ -212,8 +215,24 @@ const float _kCellHeight = 100.0f;
 }
 
 - (void) pushAction: (id)sender {
-    NSLog(@"Clicou");
+
+    UIButton *b = (UIButton *) sender;
+    HouseholdThumbnail *thumb = (HouseholdThumbnail*) b.superview;
+    NSString *idHousehold = thumb.user_household_id;
     
+    if ([idHousehold isEqualToString:user.idUser] || [idHousehold isEqualToString:@""]) {
+        [self requestChartPie:@""];
+        [self requestCalendar:@"" andDate:[NSDate date]];
+        [self requestChartLine: @""];
+
+        selectedUser = user.idUser;
+    } else {
+        [self requestChartPie:idHousehold];
+        [self requestCalendar:idHousehold andDate:[NSDate date]];
+        [self requestChartLine:idHousehold];
+
+        selectedUser = idHousehold;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -263,9 +282,11 @@ const float _kCellHeight = 100.0f;
     [self.calendarManager setDate: [NSDate date]];
 }
 
-- (void) requestChartPie {
+- (void) requestChartPie: (NSString *)idHousehold {
     
     [[[UserRequester alloc] init] getSummary: [User getInstance]
+     
+                                    idHousehold:idHousehold
      
                                      onStart: ^{
                                          
@@ -323,9 +344,10 @@ const float _kCellHeight = 100.0f;
      ];
 }
 
-- (void) requestChartLine {
+- (void) requestChartLine: (NSString *)idHousehold {
     
     [[[UserRequester alloc] init] getSummary: [User getInstance]
+                                 idHousehold: idHousehold
                                         year: 2015
      
                                      onStart: ^{
@@ -369,9 +391,10 @@ const float _kCellHeight = 100.0f;
      ];
 }
 
-- (void) requestCalendar: (NSDate *) date {
+- (void) requestCalendar: (NSString *)idHousehold andDate:(NSDate *) date {
     
     [[[UserRequester alloc] init] getSummary: [User getInstance]
+                                 idHousehold: idHousehold
                                        month: [self getMonth: date]
                                         year: [self getYear: date]
      
@@ -415,11 +438,11 @@ const float _kCellHeight = 100.0f;
 }
 
 - (void) calendarDidLoadPreviousPage: (JTCalendarManager *) calendar {
-    [self requestCalendar: calendar.date];
+    [self requestCalendar:selectedUser andDate:calendar.date];
 }
 
 - (void) calendarDidLoadNextPage: (JTCalendarManager *) calendar {
-    [self requestCalendar: calendar.date];
+    [self requestCalendar:selectedUser andDate: calendar.date];
 }
 
 - (NSInteger) getDay: (NSDate *) date {

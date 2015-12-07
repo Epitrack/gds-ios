@@ -73,11 +73,18 @@
 }
 
 - (void) getSummary: (User *) user
+        idHousehold: (NSString *)idHousehold
             onStart: (Start) onStart
             onError: (Error) onError
           onSuccess: (Success) onSuccess {
     
-    NSString * url = [NSString stringWithFormat: @"%@/user/survey/summary", Url];
+    NSString * url;
+    
+    if ([idHousehold isEqualToString:@""] || [idHousehold isEqualToString:user.idUser]) {
+        url = [NSString stringWithFormat: @"%@/user/survey/summary", Url];
+    } else {
+        url = [NSString stringWithFormat: @"%@/household/survey/summary?household_id=%@", Url, idHousehold];
+    }
     
     [self doGet: url
          header: @{ @"user_token": user.user_token }
@@ -112,13 +119,20 @@
 }
 
 - (void) getSummary: (User *) user
+        idHousehold: (NSString *) idHousehold
               month: (NSInteger) month
                year: (NSInteger) year
             onStart: (Start) onStart
             onError: (Error) onError
           onSuccess: (Success) onSuccess {
     
-    NSString * url = [NSString stringWithFormat: @"%@/user/calendar/month?", Url];
+    NSString * url;
+    
+    if ([idHousehold isEqualToString:@""] || [idHousehold isEqualToString:user.idUser]) {
+        url = [NSString stringWithFormat: @"%@/user/calendar/month?", Url];
+    } else {
+        url = [NSString stringWithFormat: @"%@/household/calendar/month?household_id=%@", Url, idHousehold];
+    }
     
     NSDictionary * paramMap = @{ @"month": [NSNumber numberWithInteger: month],
                                  @"year": [NSNumber numberWithInteger: year] };
@@ -196,12 +210,19 @@
 }
 
 - (void) getSummary: (User *) user
+        idHousehold: (NSString *) idHousehold
                year: (int) year
             onStart: (Start) onStart
             onError: (Error) onError
           onSuccess: (Success) onSuccess {
     
-    NSString * url = [NSString stringWithFormat: @"%@/user/calendar/year?", Url];
+    NSString * url;
+    
+    if ([idHousehold isEqualToString:@""] || [idHousehold isEqualToString:user.idUser]) {
+        url = [NSString stringWithFormat: @"%@/user/calendar/year?", Url];
+    } else {
+        url = [NSString stringWithFormat: @"%@/household/calendar/year?household_id=%@", Url, idHousehold];
+    }
     
     [self doGet: url
          header: @{ @"user_token": user.user_token }

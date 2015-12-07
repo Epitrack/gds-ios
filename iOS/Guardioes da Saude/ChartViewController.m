@@ -103,7 +103,7 @@
 
             onSuccess: ^(User * user) {
                 
-                [self requestChartPie];
+                [self requestChartPie:@""];
                 
                 [self requestChartLine];
                 
@@ -112,9 +112,11 @@
     ];
 }
 
-- (void) requestChartPie {
+- (void) requestChartPie: (NSString *)idHousehold {
     
     [[[UserRequester alloc] init] getSummary: [User getInstance]
+     
+             idHousehold:idHousehold
 
              onStart: ^{
                  
@@ -175,6 +177,7 @@
 - (void) requestChartLine {
     
     [[[UserRequester alloc] init] getSummary: [User getInstance]
+                                 idHousehold:@""
                                         year: 2015
      
              onStart: ^{
@@ -221,6 +224,7 @@
 - (void) requestCalendar {
     
     [[[UserRequester alloc] init] getSummary: [User getInstance]
+                                 idHousehold: @""
                                        month: 11
                                         year: 2015
 

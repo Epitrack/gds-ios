@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface PharmacyViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface PharmacyViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate>
 @property (retain, nonatomic) IBOutlet MKMapView *mapPharmacy;
 @property (nonatomic, retain) MKPolyline *routeLine; //your line
 @property (nonatomic, retain) MKPolylineView *routeLineView; //overlay view

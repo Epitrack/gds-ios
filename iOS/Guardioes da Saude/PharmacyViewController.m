@@ -10,6 +10,7 @@
 #import "AFNetworking/AFNetworking.h"
 #import "User.h"
 #import "PharmacyGoogleMapsViewController.h"
+#import "SingleLocation.h"
 
 @interface PharmacyViewController () {
     
@@ -29,6 +30,11 @@
     self.navigationItem.title = @"Farmácias";
     
     user = [User getInstance];
+    
+    UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self action:@selector(tapGestureHandler:)];
+    tgr.delegate = self;  //also add <UIGestureRecognizerDelegate> to @interface
+    [self.mapPharmacy addGestureRecognizer:tgr];
     
     self.mapPharmacy.showsUserLocation = YES;
     self.mapPharmacy.delegate = self;
@@ -74,11 +80,30 @@
     if ([annotation isKindOfClass:[MKPointAnnotation class]]){
         PharmacyGoogleMapsViewController *pharmacyGoogleMapsViewController = [[PharmacyGoogleMapsViewController alloc] init];
         [self.navigationController pushViewController:pharmacyGoogleMapsViewController animated:YES];
-    }
+   }
     //UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     //[alertView show];
 }
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    return YES;
+}
+
+- (void)tapGestureHandler:(UITapGestureRecognizer *)tgr {
+    
+    CGPoint touchPoint = [tgr locationInView:self.mapPharmacy];
+    CLLocationCoordinate2D touchMapCoordinate = [self.mapPharmacy convertPoint:touchPoint toCoordinateFromView:self.mapPharmacy];
+    
+    NSLog(@"tapGestureHandler: touchMapCoordinate = %f,%f",
+          touchMapCoordinate.latitude, touchMapCoordinate.longitude);
+
+    SingleLocation *singleLocation = [SingleLocation getInstance];
+    singleLocation.lat = [NSString stringWithFormat:@"%f", touchMapCoordinate.latitude];
+    singleLocation.lon = [NSString stringWithFormat:@"%f", touchMapCoordinate.longitude];
+    
+    //PharmacyGoogleMapsViewController *pharmacyGoogleMapsViewController = [[PharmacyGoogleMapsViewController alloc] init];
+    //[self.navigationController pushViewController:pharmacyGoogleMapsViewController animated:YES];
+}
 
 - (void) mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
     //NSLog(@"didUpdateUserLocation just got called!");

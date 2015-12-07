@@ -357,24 +357,29 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                 double diarreica = 0;
 
                 if (total > 0) {
+                    Double d;
+
                     diarreica = ((Integer.parseInt(jsonObjectDiseases.get("diarreica").toString()) * 100) / total);
+                    d = new Double(diarreica);
 
                     textViewPercentage1.setText(diarreica + "%");
-                    progressBar1.setProgress(Integer.parseInt(diarreica + ""));
+                    progressBar1.setProgress(d.intValue());
 
                     double exantematica = 0;
 
                     exantematica = ((Integer.parseInt(jsonObjectDiseases.get("exantematica").toString()) * 100) / total);
+                    d = new Double(exantematica);
 
                     textViewPercentage2.setText(exantematica + "%");
-                    progressBar2.setProgress(Integer.parseInt(exantematica + ""));
+                    progressBar2.setProgress(d.intValue());
 
                     double respiratoria = 0;
 
                     respiratoria = ((Integer.parseInt(jsonObjectDiseases.get("respiratoria").toString()) * 100) / total);
+                    d = new Double(respiratoria);
 
                     textViewPercentage1.setText(respiratoria + "%");
-                    progressBar1.setProgress(Integer.parseInt(respiratoria + ""));
+                    progressBar1.setProgress(d.intValue());
                 } else {
                     textViewPercentage1.setText("0%");
                     progressBar1.setProgress(0);
