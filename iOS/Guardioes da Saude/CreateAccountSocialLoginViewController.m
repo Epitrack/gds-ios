@@ -24,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     user = [User getInstance];
+    self.txtNick.text = user.nick;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde." preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
@@ -51,6 +52,7 @@
 - (IBAction)btnCadastrar:(id)sender {
     
     BOOL fieldNull = NO;
+    BOOL dateFail = NO;
     
     if ([self.txtNick.text isEqualToString:@""]) {
         fieldNull = YES;
@@ -60,7 +62,63 @@
         fieldNull = YES;
     }
     
-    if (fieldNull) {
+    if (![self.txtDob.text isEqualToString:@""]) {
+        if (self.txtDob.text.length == 10) {
+            
+            NSString *bar1 = [self.txtDob.text substringWithRange:NSMakeRange(2, 1)];
+            NSString *bar2 = [self.txtDob.text substringWithRange:NSMakeRange(5, 1)];
+            NSString *day = [self.txtDob.text substringWithRange:NSMakeRange(0, 2)];
+            NSString *month = [self.txtDob.text substringWithRange:NSMakeRange(3, 2)];
+            NSString *year = [self.txtDob.text substringWithRange:NSMakeRange(6, 4)];
+            
+            if (![bar1 isEqualToString:@"/"] || ![bar2 isEqualToString:@"/"]) {
+                dateFail = YES;
+            }
+            
+            @try {
+                
+                int validateDay = [day intValue];
+                
+                if (validateDay <= 0) {
+                    dateFail = YES;
+                }
+                
+                if (validateDay > 31) {
+                    dateFail = YES;
+                }
+                
+                int validateMonth = [month intValue];
+                
+                if (validateMonth <= 0) {
+                    dateFail = YES;
+                }
+                
+                if (validateMonth > 12) {
+                    dateFail = YES;
+                }
+                
+                int validateYear = [year intValue];
+                
+                if (validateYear <= 0) {
+                    dateFail = YES;
+                }
+            }
+            @catch (NSException *exception) {
+                dateFail = YES;
+            }
+        } else {
+            dateFail = YES;
+        }
+    }
+    
+    if (dateFail) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Data de nascimento inválida." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button OK");
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else if (fieldNull) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Preencha todos os campos do formulário." preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button OK");
@@ -113,19 +171,35 @@
         NSLog(@"race %@", race);
         NSLog(@"paltform %@", user.platform);
         
+        NSString *gl = @"";
+        NSString *tw = @"";
+        NSString *fb = @"";
+        
+        if (user.gl != nil) {
+            gl = user.gl;
+        }
+        
+        if (user.fb != nil) {
+            fb = user.fb;
+        }
+        
+        if (user.tw != nil) {
+            tw = user.tw;
+        }
+        
         params = @{@"nick":self.txtNick.text,
                    @"email": self.txtEmail.text.lowercaseString,
                    @"password": self.txtEmail.text.lowercaseString,
-                   @"gl": user.gl,
-                   @"tw": user.tw,
-                   @"fb": user.fb,
+                   @"gl": gl,
+                   @"tw": tw,
+                   @"fb": fb,
                    @"client": user.client,
                    @"dob": dob,
                    @"gender": gender,
                    @"app_token": user.app_token,
                    @"race": race,
                    @"platform": user.platform,
-                   @"picture": @"0",
+                   @"picture": @"1",
                    @"lat": @"-8.0464492",
                    @"lon": @"-34.9324883"};
         

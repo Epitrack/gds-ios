@@ -68,6 +68,11 @@
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"Foco" size:20.0], NSFontAttributeName, nil]];
     
+    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"iconBack.png"]];
+    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"iconBack.png"]];
+
+    
+    
     
     //GOOGLE
     //NSError* configureError;

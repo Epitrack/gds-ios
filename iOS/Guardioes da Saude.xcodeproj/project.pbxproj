@@ -55,6 +55,18 @@
 		5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */; };
 		5250D7411BE29B27006E8A63 /* MapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */; };
 		5250D7441BE2ADD3006E8A63 /* SurveyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250D7431BE2ADD3006E8A63 /* SurveyMap.m */; };
+		52558CD91C18B8EE00AF7DDF /* iconBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CCD1C18B8ED00AF7DDF /* iconBack.png */; };
+		52558CDA1C18B8EE00AF7DDF /* iconBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CCE1C18B8ED00AF7DDF /* iconBack@2x.png */; };
+		52558CDB1C18B8EE00AF7DDF /* iconBack@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CCF1C18B8ED00AF7DDF /* iconBack@3x.png */; };
+		52558CDC1C18B8EE00AF7DDF /* imgTutorial03.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CD01C18B8ED00AF7DDF /* imgTutorial03.png */; };
+		52558CDD1C18B8EE00AF7DDF /* imgTutorial03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CD11C18B8ED00AF7DDF /* imgTutorial03@2x.png */; };
+		52558CDE1C18B8EE00AF7DDF /* imgTutorial03@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CD21C18B8EE00AF7DDF /* imgTutorial03@3x.png */; };
+		52558CDF1C18B8EE00AF7DDF /* imgTutorial02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CD31C18B8EE00AF7DDF /* imgTutorial02@2x.png */; };
+		52558CE01C18B8EE00AF7DDF /* imgTutorial02.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CD41C18B8EE00AF7DDF /* imgTutorial02.png */; };
+		52558CE11C18B8EE00AF7DDF /* imgTutorial02@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CD51C18B8EE00AF7DDF /* imgTutorial02@3x.png */; };
+		52558CE21C18B8EE00AF7DDF /* imgTutorial01@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CD61C18B8EE00AF7DDF /* imgTutorial01@3x.png */; };
+		52558CE31C18B8EE00AF7DDF /* imgTutorial01.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CD71C18B8EE00AF7DDF /* imgTutorial01.png */; };
+		52558CE41C18B8EE00AF7DDF /* imgTutorial01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CD81C18B8EE00AF7DDF /* imgTutorial01@2x.png */; };
 		525648161BFBF01000FE64AE /* ProfileListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525648141BFBF01000FE64AE /* ProfileListViewController.m */; };
 		525648171BFBF01000FE64AE /* ProfileListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525648151BFBF01000FE64AE /* ProfileListViewController.xib */; };
 		5256481B1BFCF96100FE64AE /* ProfileFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525648191BFCF96100FE64AE /* ProfileFormViewController.m */; };
@@ -518,6 +530,18 @@
 		5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapHealthViewController.xib; sourceTree = "<group>"; };
 		5250D7421BE2ADD3006E8A63 /* SurveyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyMap.h; sourceTree = "<group>"; };
 		5250D7431BE2ADD3006E8A63 /* SurveyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyMap.m; sourceTree = "<group>"; };
+		52558CCD1C18B8ED00AF7DDF /* iconBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconBack.png; sourceTree = "<group>"; };
+		52558CCE1C18B8ED00AF7DDF /* iconBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBack@2x.png"; sourceTree = "<group>"; };
+		52558CCF1C18B8ED00AF7DDF /* iconBack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBack@3x.png"; sourceTree = "<group>"; };
+		52558CD01C18B8ED00AF7DDF /* imgTutorial03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgTutorial03.png; sourceTree = "<group>"; };
+		52558CD11C18B8ED00AF7DDF /* imgTutorial03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgTutorial03@2x.png"; sourceTree = "<group>"; };
+		52558CD21C18B8EE00AF7DDF /* imgTutorial03@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgTutorial03@3x.png"; sourceTree = "<group>"; };
+		52558CD31C18B8EE00AF7DDF /* imgTutorial02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgTutorial02@2x.png"; sourceTree = "<group>"; };
+		52558CD41C18B8EE00AF7DDF /* imgTutorial02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgTutorial02.png; sourceTree = "<group>"; };
+		52558CD51C18B8EE00AF7DDF /* imgTutorial02@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgTutorial02@3x.png"; sourceTree = "<group>"; };
+		52558CD61C18B8EE00AF7DDF /* imgTutorial01@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgTutorial01@3x.png"; sourceTree = "<group>"; };
+		52558CD71C18B8EE00AF7DDF /* imgTutorial01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgTutorial01.png; sourceTree = "<group>"; };
+		52558CD81C18B8EE00AF7DDF /* imgTutorial01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgTutorial01@2x.png"; sourceTree = "<group>"; };
 		525648131BFBF01000FE64AE /* ProfileListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileListViewController.h; sourceTree = "<group>"; };
 		525648141BFBF01000FE64AE /* ProfileListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileListViewController.m; sourceTree = "<group>"; };
 		525648151BFBF01000FE64AE /* ProfileListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileListViewController.xib; sourceTree = "<group>"; };
@@ -1254,6 +1278,18 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				52558CCD1C18B8ED00AF7DDF /* iconBack.png */,
+				52558CCE1C18B8ED00AF7DDF /* iconBack@2x.png */,
+				52558CCF1C18B8ED00AF7DDF /* iconBack@3x.png */,
+				52558CD01C18B8ED00AF7DDF /* imgTutorial03.png */,
+				52558CD11C18B8ED00AF7DDF /* imgTutorial03@2x.png */,
+				52558CD21C18B8EE00AF7DDF /* imgTutorial03@3x.png */,
+				52558CD31C18B8EE00AF7DDF /* imgTutorial02@2x.png */,
+				52558CD41C18B8EE00AF7DDF /* imgTutorial02.png */,
+				52558CD51C18B8EE00AF7DDF /* imgTutorial02@3x.png */,
+				52558CD61C18B8EE00AF7DDF /* imgTutorial01@3x.png */,
+				52558CD71C18B8EE00AF7DDF /* imgTutorial01.png */,
+				52558CD81C18B8EE00AF7DDF /* imgTutorial01@2x.png */,
 				52EBA7431C11DD0E0019E1FA /* buttonFacebookDesable.png */,
 				52EBA7441C11DD0E0019E1FA /* buttonFacebookDesable@2x.png */,
 				52EBA7451C11DD0E0019E1FA /* buttonFacebookDesable@3x.png */,
@@ -1717,6 +1753,7 @@
 				52E727421BEA93B800B46945 /* button_facebook@3x.png in Resources */,
 				52E727821BEA93B800B46945 /* icon_logo_horizontal.png in Resources */,
 				52E727671BEA93B800B46945 /* icon_diariodasaude.png in Resources */,
+				52558CDF1C18B8EE00AF7DDF /* imgTutorial02@2x.png in Resources */,
 				2548B9E51BDEA8750004E00F /* SelectStateViewController.xib in Resources */,
 				52E727661BEA93B800B46945 /* icon_config@3x.png in Resources */,
 				52E727761BEA93B800B46945 /* icon_home.png in Resources */,
@@ -1749,6 +1786,7 @@
 				52E7271D1BEA93B800B46945 /* button_default_white@2x.png in Resources */,
 				52E727BA1BEA93B800B46945 /* icon_twitter@3x.png in Resources */,
 				52E727A11BEA93B800B46945 /* icon_problem@2x.png in Resources */,
+				52558CDA1C18B8EE00AF7DDF /* iconBack@2x.png in Resources */,
 				52D2BC8C1BF12EBF007C9C09 /* icon_well_dash.png in Resources */,
 				52E727961BEA93B800B46945 /* icon_noticias@3x.png in Resources */,
 				52E727561BEA93B800B46945 /* icon_about@2x.png in Resources */,
@@ -1786,6 +1824,7 @@
 				52D2BC9A1BF12EBF007C9C09 /* img_profile04_mini@3x.png in Resources */,
 				52E727381BEA93B800B46945 /* button_default@2x.png in Resources */,
 				52E727231BEA93B800B46945 /* BG_blur_menu@2x.png in Resources */,
+				52558CDE1C18B8EE00AF7DDF /* imgTutorial03@3x.png in Resources */,
 				52E7275A1BEA93B800B46945 /* icon_bad@3x.png in Resources */,
 				52D2BCAA1BF12EBF007C9C09 /* img_profile10_mini.png in Resources */,
 				52E7274F1BEA93B800B46945 /* fab_location.png in Resources */,
@@ -1867,6 +1906,7 @@
 				52E7278E1BEA93B800B46945 /* icon_mail.png in Resources */,
 				52E727711BEA93B800B46945 /* icon_google@2x.png in Resources */,
 				52E727AD1BEA93B800B46945 /* icon_tutorial01.png in Resources */,
+				52558CE21C18B8EE00AF7DDF /* imgTutorial01@3x.png in Resources */,
 				52E7274A1BEA93B800B46945 /* button_twitter@2x.png in Resources */,
 				52E727B71BEA93B800B46945 /* icon_tutorial@3x.png in Resources */,
 				52E727EA1BEA93B800B46945 /* input_floatbox_register_email@3x.png in Resources */,
@@ -1889,6 +1929,7 @@
 				52E727811BEA93B800B46945 /* icon_lock@3x.png in Resources */,
 				52E727CB1BEA93B800B46945 /* img_profile04@2x.png in Resources */,
 				52E727D01BEA93B800B46945 /* img_profile06.png in Resources */,
+				52558CDD1C18B8EE00AF7DDF /* imgTutorial03@2x.png in Resources */,
 				52E727161BEA93B800B46945 /* img_card@2x.png in Resources */,
 				524C143C1BEBE67C003A6C2D /* PreventionViewController.xib in Resources */,
 				52E727BD1BEA93B800B46945 /* icon_well@3x.png in Resources */,
@@ -1916,6 +1957,7 @@
 				52E7277B1BEA93B800B46945 /* icon_info_blue@3x.png in Resources */,
 				52E727C21BEA93B800B46945 /* img_profile01@2x.png in Resources */,
 				52E727DB1BEA93B800B46945 /* img_profile09@3x.png in Resources */,
+				52558CD91C18B8EE00AF7DDF /* iconBack.png in Resources */,
 				52D2BCA91BF12EBF007C9C09 /* img_profile09_mini@3x.png in Resources */,
 				52E727C91BEA93B800B46945 /* img_profile03@3x.png in Resources */,
 				52E7277D1BEA93B800B46945 /* icon_info_white@2x.png in Resources */,
@@ -1930,6 +1972,7 @@
 				52E727A51BEA93B800B46945 /* icon_profile@3x.png in Resources */,
 				52E7270B1BEA93B800B46945 /* icon_tips_phones@3x.png in Resources */,
 				52E727111BEA93B800B46945 /* icon_tips_urgency@3x.png in Resources */,
+				52558CDB1C18B8EE00AF7DDF /* iconBack@3x.png in Resources */,
 				52E727441BEA93B800B46945 /* button_google@2x.png in Resources */,
 				52E727401BEA93B800B46945 /* button_facebook.png in Resources */,
 				52E727981BEA93B800B46945 /* icon_participeagora@2x.png in Resources */,
@@ -1940,6 +1983,7 @@
 				52E727CC1BEA93B800B46945 /* img_profile04@3x.png in Resources */,
 				52E7274D1BEA93B800B46945 /* fab_cancel@2x.png in Resources */,
 				52E727051BEA93B800B46945 /* icon_tips_basiccares@3x.png in Resources */,
+				52558CE11C18B8EE00AF7DDF /* imgTutorial02@3x.png in Resources */,
 				52D2BC8F1BF12EBF007C9C09 /* img_profile01_mini.png in Resources */,
 				52E727911BEA93B800B46945 /* icon_mapadasaude.png in Resources */,
 				2548B9E01BDE76380004E00F /* SelectParticipantViewController.xib in Resources */,
@@ -1960,6 +2004,7 @@
 				52E7279A1BEA93B800B46945 /* icon_pin_pharmacy.png in Resources */,
 				52E727C41BEA93B800B46945 /* img_profile02.png in Resources */,
 				52E727D71BEA93B800B46945 /* img_profile08@2x.png in Resources */,
+				52558CE01C18B8EE00AF7DDF /* imgTutorial02.png in Resources */,
 				52E727D81BEA93B800B46945 /* img_profile08@3x.png in Resources */,
 				52E727681BEA93B800B46945 /* icon_diariodasaude@2x.png in Resources */,
 				52E7275D1BEA93B800B46945 /* icon_camera@3x.png in Resources */,
@@ -2014,6 +2059,7 @@
 				52E727DF1BEA93B800B46945 /* img_profile11.png in Resources */,
 				52D2BC901BF12EBF007C9C09 /* img_profile01_mini@2x.png in Resources */,
 				52E727E61BEA93B800B46945 /* input_floatbox_login_email@2x.png in Resources */,
+				52558CE31C18B8EE00AF7DDF /* imgTutorial01.png in Resources */,
 				52D2BCB11BF12EBF007C9C09 /* img_profile12_mini@2x.png in Resources */,
 				52E727951BEA93B800B46945 /* icon_noticias@2x.png in Resources */,
 				52D2BC7C1BF12EBF007C9C09 /* BG_blur_menu@3x.png in Resources */,
@@ -2038,6 +2084,7 @@
 				5215BBC71BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib in Resources */,
 				52D2BC971BF12EBF007C9C09 /* img_profile03_mini@3x.png in Resources */,
 				528705C81BF3AB5F00321985 /* iconDefesacivilMini@2x.png in Resources */,
+				52558CDC1C18B8EE00AF7DDF /* imgTutorial03.png in Resources */,
 				52E727C11BEA93B800B46945 /* img_profile01.png in Resources */,
 				52E727461BEA93B800B46945 /* button_register.png in Resources */,
 				527782D11C062DC100251BF8 /* gdSToolbar@3x.png in Resources */,
@@ -2055,6 +2102,7 @@
 				52E7272B1BEA93B800B46945 /* icon_menu.png in Resources */,
 				52E727CD1BEA93B800B46945 /* img_profile05.png in Resources */,
 				52E727151BEA93B800B46945 /* img_card.png in Resources */,
+				52558CE41C18B8EE00AF7DDF /* imgTutorial01@2x.png in Resources */,
 				52E727181BEA93B800B46945 /* icon_close.png in Resources */,
 				52D2BCAB1BF12EBF007C9C09 /* img_profile10_mini@2x.png in Resources */,
 				52E727CA1BEA93B800B46945 /* img_profile04.png in Resources */,
@@ -2311,7 +2359,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2332,7 +2380,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";

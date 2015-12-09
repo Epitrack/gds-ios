@@ -72,9 +72,15 @@
     BOOL fieldNull = NO;
     BOOL dateFail = NO;
     
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"dd/MM/yyyy"];
+    NSString *formattedDate = [df stringFromDate:self.dtPikerDob.date];
+    
+    NSString *datePiker = formattedDate;
+    
     if ([self.txtNick.text isEqualToString:@""]) {
         fieldNull = YES;
-    } else if ([self.txtDob.text isEqualToString:@""]) {
+    } else if ([datePiker isEqualToString:@""]) {
         fieldNull = YES;
     } else if ([self.txtEmail.text isEqualToString:@""]) {
         fieldNull = YES;
@@ -84,14 +90,14 @@
         fieldNull = YES;
     }
     
-    if (![self.txtDob.text isEqualToString:@""]) {
-        if (self.txtDob.text.length == 10) {
+    if (![datePiker isEqualToString:@""]) {
+        if (datePiker.length == 10) {
 
-            NSString *bar1 = [self.txtDob.text substringWithRange:NSMakeRange(2, 1)];
-            NSString *bar2 = [self.txtDob.text substringWithRange:NSMakeRange(5, 1)];
-            NSString *day = [self.txtDob.text substringWithRange:NSMakeRange(0, 2)];
-            NSString *month = [self.txtDob.text substringWithRange:NSMakeRange(3, 2)];
-            NSString *year = [self.txtDob.text substringWithRange:NSMakeRange(6, 4)];
+            NSString *bar1 = [datePiker substringWithRange:NSMakeRange(2, 1)];
+            NSString *bar2 = [datePiker substringWithRange:NSMakeRange(5, 1)];
+            NSString *day = [datePiker substringWithRange:NSMakeRange(0, 2)];
+            NSString *month = [datePiker substringWithRange:NSMakeRange(3, 2)];
+            NSString *year = [datePiker substringWithRange:NSMakeRange(6, 4)];
         
             if (![bar1 isEqualToString:@"/"] || ![bar2 isEqualToString:@"/"]) {
                 dateFail = YES;
@@ -184,23 +190,23 @@
                 race = @"indigena";
             }
             
-            NSLog(@"Data %@", self.txtDob.text);
+            NSLog(@"Data %@", datePiker);
             
             //NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
             //[dateFormat setDateFormat:@"yyyy-MM-dd"];
-            //NSDate *date = [dateFormat dateFromString:self.txtDob.text];
+            //NSDate *date = [dateFormat dateFromString:datePiker];
             //NSString *stringDate = [dateFormat stringFromDate:date];
             
             AFHTTPRequestOperationManager *manager;
             NSDictionary *params;
 
-            NSLog(@"Dia %@", [self.txtDob.text substringWithRange:NSMakeRange(0, 2)]);
-            NSLog(@"Mês %@", [self.txtDob.text substringWithRange:NSMakeRange(3, 2)]);
-            NSLog(@"Ano %@", [self.txtDob.text substringWithRange:NSMakeRange(6, 4)]);
+            NSLog(@"Dia %@", [datePiker substringWithRange:NSMakeRange(0, 2)]);
+            NSLog(@"Mês %@", [datePiker substringWithRange:NSMakeRange(3, 2)]);
+            NSLog(@"Ano %@", [datePiker substringWithRange:NSMakeRange(6, 4)]);
             
-            NSString *day = [self.txtDob.text substringWithRange:NSMakeRange(0, 2)];
-            NSString *month = [self.txtDob.text substringWithRange:NSMakeRange(3, 2)];
-            NSString *year = [self.txtDob.text substringWithRange:NSMakeRange(6, 4)];
+            NSString *day = [datePiker substringWithRange:NSMakeRange(0, 2)];
+            NSString *month = [datePiker substringWithRange:NSMakeRange(3, 2)];
+            NSString *year = [datePiker substringWithRange:NSMakeRange(6, 4)];
             
             NSString *dob = [NSString stringWithFormat: @"%@-%@-%@", year, month, day];
             

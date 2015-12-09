@@ -26,5 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnGoogleDesable;
 @property (weak, nonatomic) IBOutlet UIButton *btnTwitterDesable;
 @property (weak, nonatomic) IBOutlet UIButton *btnFacebookDesable;
+- (IBAction)btnFacebookDesableAction:(id)sender;
+- (IBAction)btnGoogleDesabelAction:(id)sender;
+- (IBAction)btnTwitterDesabelAction:(id)sender;
 
 @end

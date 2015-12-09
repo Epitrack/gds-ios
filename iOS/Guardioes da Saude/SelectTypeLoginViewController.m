@@ -13,10 +13,13 @@
 #import "AFNetworking/AFNetworking.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "NoticeRequester.h"
+#import "SingleNotice.h"
 
 @interface SelectTypeLoginViewController () {
     
     User *user;
+    SingleNotice *singleNotice;
 }
 
 @end
@@ -26,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     user = [User getInstance];
+    singleNotice = [SingleNotice getInstance];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Guardiões da Saúde";
 
@@ -193,7 +197,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                   NSDictionary *userObject = [response objectAtIndex:0];
                   
                   NSString *email = userObject[@"email"];
-                  NSString *passowrd = userObject[@"password"];
+                  NSString *passowrd = userObject[@"email"];
                   
                   [self loginSocialWithEmail:email andPassword:passowrd];
                   
@@ -256,12 +260,15 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                   user.hashtag = response[@"hashtags"];
                   user.household = response[@"household"];
                   user.survey = response[@"surveys"];
+                  user.user_token = responseObject[@"token"];
                   
                   NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
                   NSString *userKey = user.user_token;
                   
                   [preferences setValue:userKey forKey:@"userTokenKey"];
                   [preferences synchronize];
+                  
+                  [self loadNotices];
                   
                   [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
               }
@@ -275,6 +282,16 @@ didDisconnectWithUser:(GIDGoogleUser *)user
               [self presentViewController:alert animated:YES completion:nil];
           }];
     
+}
+
+- (void) loadNotices {
+    
+    [[[NoticeRequester alloc] init] getNotices:user
+                                       onStart:^{}
+                                       onError:^(NSString * message){}
+                                     onSuccess:^(NSMutableArray *noticesRequest){
+                                         singleNotice.notices = noticesRequest;
+                                     }];
 }
 
 @end

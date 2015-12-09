@@ -12,6 +12,13 @@
 @interface DiaryHealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     
     UITableView *sampleTableView;
+    
 }
+@property (weak, nonatomic) IBOutlet UILabel *lbTotalParticipation;
+@property (weak, nonatomic) IBOutlet UILabel *lbPercentGood;
+@property (weak, nonatomic) IBOutlet UILabel *lbPercentBad;
+@property (weak, nonatomic) IBOutlet UILabel *lbTotalReportGood;
+@property (weak, nonatomic) IBOutlet UILabel *lbTotalReportBad;
+
 
 @end

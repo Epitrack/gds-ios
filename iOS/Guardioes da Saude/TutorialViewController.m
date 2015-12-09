@@ -43,7 +43,7 @@
     
     self.navigationItem.hidesBackButton = YES;
     self.indexTutorial = 0;
-    self.arrImg = @[@"icon_logo_tutorial.png", @"icon_tutorial01", @"icon_tutorial02", @"icon_tutorial03"];
+    self.arrImg = @[@"icon_logo_tutorial.png", @"imgTutorial01.png", @"imgTutorial02.png", @"imgTutorial03.png"];
     
     
     UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];

@@ -17,6 +17,7 @@
 #import "HouseholdRequester.h"
 #import <JTCalendar/JTCalendar.h>
 #import "HouseholdThumbnail.h"
+#import "Constants.h"
 
 @import Charts;
 
@@ -71,6 +72,8 @@ const float _kCellHeight = 100.0f;
     sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:sampleTableView];
     
+    //[self loadLabels:YES andUser:@""];
+    
     [self loadChartPie];
     
     [self loadCalendar];
@@ -93,7 +96,59 @@ const float _kCellHeight = 100.0f;
     [self requestChartLine: @""];
 }
 
-
+-(void) loadLabels:(BOOL)fristLoad andUser:(NSString *)idUSer {
+    
+    NSString * url;
+    
+    if (fristLoad) {
+        url = [NSString stringWithFormat: @"%@/user/survey/summary", Url];
+    } else {
+        if ([selectedUser isEqualToString:user.idUser]) {
+            url = [NSString stringWithFormat: @"%@/user/survey/summary", Url];
+        } else {
+            url = [NSString stringWithFormat: @"%@/household/survey/summary?household_id=%@", Url, selectedUser];
+        }
+    }
+    
+    AFHTTPRequestOperationManager *managerTotalSurvey;
+    managerTotalSurvey = [AFHTTPRequestOperationManager manager];
+    [managerTotalSurvey.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
+    [managerTotalSurvey.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
+    [managerTotalSurvey GET:url
+                 parameters:nil
+                    success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                        NSDictionary *summary = responseObject[@"data"];
+                       
+                        self.lbTotalParticipation.text = summary[@"total"];
+                        self.lbTotalReportGood.text = summary[@"no_symptom"];
+                        self.lbTotalReportBad.text = summary[@"symptom"];
+                        
+                        long total = [summary[@"total"] integerValue];
+                        long no_symptom = [summary[@"no_symptom"] integerValue];
+                        long symptom = [summary[@"symptom"] integerValue];
+                        
+                        double goodPercent;
+                        double badPercent;
+                        
+                        if (total == 0) {
+                            goodPercent = 0;
+                        } else {
+                            goodPercent = no_symptom / total;
+                        }
+                        
+                        if (total == 0) {
+                            badPercent = 0;
+                        } else {
+                            badPercent = symptom / total;
+                        }
+                        
+                        self.lbPercentGood.text = [[NSString stringWithFormat:@"%.02f", goodPercent] stringByAppendingString:@"%"];;
+                        self.lbPercentBad.text = [[NSString stringWithFormat:@"%.02f", badPercent] stringByAppendingString:@"%"];
+                        
+                    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                        NSLog(@"Error: %@", error);
+                    }];
+}
 
 #pragma tableview datasource
 - (void)loadMainUser {
@@ -115,27 +170,6 @@ const float _kCellHeight = 100.0f;
             avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
         }
     }
-    
-    /*if (user.picture.length > 2) {
-        
-        NSString *imageLink =  [@"http://api.guardioesdasaude.org" stringByAppendingString:user.picture];
-        
-        NSURL * imageURL = [NSURL URLWithString:imageLink];
-        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-        UIImage * image = [UIImage imageWithData:imageData];
-        [imageView setImage:image];
-    } else {
-        
-        NSString *avatar;
-        
-        if (user.picture.length == 1) {
-            avatar = [NSString stringWithFormat: @"img_profile0%@", user.picture];
-        } else if (user.picture.length == 2) {
-            avatar = [NSString stringWithFormat: @"img_profile%@",user.picture];
-        }
-        
-        [imageView setImage:[UIImage imageNamed:avatar]];
-    }*/
     
     [imageView setImage:[UIImage imageNamed:avatar]];
     
@@ -221,12 +255,14 @@ const float _kCellHeight = 100.0f;
     NSString *idHousehold = thumb.user_household_id;
     
     if ([idHousehold isEqualToString:user.idUser] || [idHousehold isEqualToString:@""]) {
+        [self loadLabels:YES andUser:selectedUser];
         [self requestChartPie:@""];
         [self requestCalendar:@"" andDate:[NSDate date]];
         [self requestChartLine: @""];
 
         selectedUser = user.idUser;
     } else {
+        [self loadLabels:NO andUser:selectedUser];
         [self requestChartPie:idHousehold];
         [self requestCalendar:idHousehold andDate:[NSDate date]];
         [self requestChartLine:idHousehold];

@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UITextField *txtConfirmPassword;
 - (IBAction)btnAddUser:(id)sender;
+@property (weak, nonatomic) IBOutlet UIDatePicker *dtPikerDob;
 
 @end

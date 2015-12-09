@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationItem.backBarButtonItem setImage: [UIImage imageNamed:@"iconBack.png"]];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Guardiões da Saúde";
     user = [User getInstance];
@@ -231,6 +232,13 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     if (isEnabled) {
         CreateAccountViewController *createAccountViewController = [[CreateAccountViewController alloc] init];
         [self.navigationController pushViewController:createAccountViewController animated:YES];
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button OK");
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -291,5 +299,32 @@ didDisconnectWithUser:(GIDGoogleUser *)user
         [self.btnCheckTerms setImage:checkBoxFalse forState:UIControlStateNormal];
         isEnabled = NO;
     }
+}
+- (IBAction)btnFacebookDesableAction:(id)sender {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"You pressed button OK");
+    }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (IBAction)btnGoogleDesabelAction:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"You pressed button OK");
+    }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (IBAction)btnTwitterDesabelAction:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"You pressed button OK");
+    }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end

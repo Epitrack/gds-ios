@@ -89,7 +89,8 @@
 - (void) loadAvatar {
     NSString *avatar;
     
-    if ([user.picture isEqualToString:@"0"]) {
+    if ([user.picture isEqualToString:@"0"] || user.picture == nil) {
+        user.picture = @"1";
         avatar = @"img_profile01.png";
     } else {
         
