@@ -29,5 +29,7 @@
 - (IBAction)btnFacebookDesableAction:(id)sender;
 - (IBAction)btnGoogleDesabelAction:(id)sender;
 - (IBAction)btnTwitterDesabelAction:(id)sender;
+- (IBAction)btnInfoAction:(id)sender;
+- (IBAction)btnBackAction:(id)sender;
 
 @end

@@ -14,6 +14,8 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "TermsViewController.h"
+#import "ModalPrivViewController.h"
+#import "TutorialViewController.h"
 
 @interface SelectTypeCreateAccoutViewController () {
     
@@ -29,9 +31,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationItem.backBarButtonItem setImage: [UIImage imageNamed:@"iconBack.png"]];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Guardiões da Saúde";
+    
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+    
+    UIBarButtonItem *infoItem = [[UIBarButtonItem alloc]
+                                   initWithImage:[UIImage imageNamed:@"infoCopy.png"]
+                                   style:UIBarButtonItemStylePlain
+                                   target:self
+                                   action:@selector(infoShow)];
+    
+    NSArray *actionButtonItems = @[infoItem];
+    
+    self.navigationItem.rightBarButtonItems = actionButtonItems;
+    self.navigationItem.title = @"";
+    
     user = [User getInstance];
     userExists = NO;
     isEnabled = NO;
@@ -71,9 +91,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
 /*
@@ -85,6 +104,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void) infoShow {
+    ModalPrivViewController *modalPrivController = [[ModalPrivViewController alloc] init];
+    modalPrivController.modalPresentationStyle = UIModalPresentationFormSheet;
+    modalPrivController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.navigationController presentModalViewController:modalPrivController animated:YES];
+
+}
+
 #pragma mark - GIDSignInDelegate
 
 - (void)signIn:(GIDSignIn *)signIn
@@ -116,7 +144,6 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     self.btnFacebookDesable.hidden = NO;
     self.btnGoogleDesable.hidden = NO;
     self.btnTwitterDesable.hidden = NO;
-    
     self.btnEmail.enabled = NO;
 }
 
@@ -125,10 +152,6 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     self.btnFacebookDesable.hidden = YES;
     self.btnGoogleDesable.hidden = YES;
     self.btnTwitterDesable.hidden = YES;
-    
-    /*self.btnFacebook.enabled = YES;
-    self.btnGoogle.enabled = YES;
-    self.btnTwitter.enabled = YES;*/
     self.btnEmail.enabled = YES;
 }
 
@@ -301,7 +324,6 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     }
 }
 - (IBAction)btnFacebookDesableAction:(id)sender {
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
@@ -326,5 +348,17 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     }];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (IBAction)btnInfoAction:(id)sender {
+    ModalPrivViewController *modalPrivController = [[ModalPrivViewController alloc] init];
+    modalPrivController.modalPresentationStyle = UIModalPresentationFormSheet;
+    modalPrivController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.navigationController presentModalViewController:modalPrivController animated:YES];
+}
+
+- (IBAction)btnBackAction:(id)sender {
+    TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
+    [self.navigationController pushViewController:tutorialViewController animated:YES];
 }
 @end

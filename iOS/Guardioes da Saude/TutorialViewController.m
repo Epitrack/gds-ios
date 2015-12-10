@@ -81,7 +81,7 @@
             case 1:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[2]];
                 self.txtTitle.text = @"Mapa da Saúde";
-                self.txtDescription.text = @"Acompanhe os casos de doenças em seu bairro ou um determinado local.";
+                self.txtDescription.text = @"Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
                 self.indexTutorial += 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
@@ -104,7 +104,7 @@
             case 3:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[2]];
                 self.txtTitle.text = @"Mapa da Saúde";
-                self.txtDescription.text = @"Acompanhe os casos de doenças em seu bairro ou um determinado local.";
+                self.txtDescription.text = @"Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
                 self.indexTutorial -= 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
                 break;

@@ -50,7 +50,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>512</string>
+	<string>544</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -126,6 +126,8 @@
 		<string>Foco_Std_Lt.ttf</string>
 		<string>Foco_Std_Bd.ttf</string>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreenViewController</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

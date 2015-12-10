@@ -55,6 +55,16 @@
 		5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */; };
 		5250D7411BE29B27006E8A63 /* MapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */; };
 		5250D7441BE2ADD3006E8A63 /* SurveyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5250D7431BE2ADD3006E8A63 /* SurveyMap.m */; };
+		52518A141C19B6E500B86D5E /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52518A121C19B6E500B86D5E /* LaunchScreenViewController.m */; };
+		52518A151C19B6E500B86D5E /* LaunchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52518A131C19B6E500B86D5E /* LaunchScreenViewController.xib */; };
+		52518A191C19F65F00B86D5E /* infoCopy.png in Resources */ = {isa = PBXBuildFile; fileRef = 52518A161C19F65F00B86D5E /* infoCopy.png */; };
+		52518A1A1C19F65F00B86D5E /* infoCopy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52518A171C19F65F00B86D5E /* infoCopy@2x.png */; };
+		52518A1B1C19F65F00B86D5E /* infoCopy@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52518A181C19F65F00B86D5E /* infoCopy@3x.png */; };
+		52518A1F1C19FC4800B86D5E /* ModalPrivViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52518A1D1C19FC4800B86D5E /* ModalPrivViewController.m */; };
+		52518A201C19FC4800B86D5E /* ModalPrivViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52518A1E1C19FC4800B86D5E /* ModalPrivViewController.xib */; };
+		52518A221C1A01F400B86D5E /* imgDialogTerms.png in Resources */ = {isa = PBXBuildFile; fileRef = 52518A211C1A01F400B86D5E /* imgDialogTerms.png */; };
+		52518A251C1A020200B86D5E /* imgDialogTerms@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52518A231C1A020200B86D5E /* imgDialogTerms@2x.png */; };
+		52518A261C1A020200B86D5E /* imgDialogTerms@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52518A241C1A020200B86D5E /* imgDialogTerms@3x.png */; };
 		52558CD91C18B8EE00AF7DDF /* iconBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CCD1C18B8ED00AF7DDF /* iconBack.png */; };
 		52558CDA1C18B8EE00AF7DDF /* iconBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CCE1C18B8ED00AF7DDF /* iconBack@2x.png */; };
 		52558CDB1C18B8EE00AF7DDF /* iconBack@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CCF1C18B8ED00AF7DDF /* iconBack@3x.png */; };
@@ -530,6 +540,18 @@
 		5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapHealthViewController.xib; sourceTree = "<group>"; };
 		5250D7421BE2ADD3006E8A63 /* SurveyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyMap.h; sourceTree = "<group>"; };
 		5250D7431BE2ADD3006E8A63 /* SurveyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyMap.m; sourceTree = "<group>"; };
+		52518A111C19B6E500B86D5E /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
+		52518A121C19B6E500B86D5E /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
+		52518A131C19B6E500B86D5E /* LaunchScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreenViewController.xib; sourceTree = "<group>"; };
+		52518A161C19F65F00B86D5E /* infoCopy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoCopy.png; sourceTree = "<group>"; };
+		52518A171C19F65F00B86D5E /* infoCopy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "infoCopy@2x.png"; sourceTree = "<group>"; };
+		52518A181C19F65F00B86D5E /* infoCopy@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "infoCopy@3x.png"; sourceTree = "<group>"; };
+		52518A1C1C19FC4800B86D5E /* ModalPrivViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalPrivViewController.h; sourceTree = "<group>"; };
+		52518A1D1C19FC4800B86D5E /* ModalPrivViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalPrivViewController.m; sourceTree = "<group>"; };
+		52518A1E1C19FC4800B86D5E /* ModalPrivViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalPrivViewController.xib; sourceTree = "<group>"; };
+		52518A211C1A01F400B86D5E /* imgDialogTerms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgDialogTerms.png; sourceTree = "<group>"; };
+		52518A231C1A020200B86D5E /* imgDialogTerms@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgDialogTerms@2x.png"; sourceTree = "<group>"; };
+		52518A241C1A020200B86D5E /* imgDialogTerms@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgDialogTerms@3x.png"; sourceTree = "<group>"; };
 		52558CCD1C18B8ED00AF7DDF /* iconBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconBack.png; sourceTree = "<group>"; };
 		52558CCE1C18B8ED00AF7DDF /* iconBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBack@2x.png"; sourceTree = "<group>"; };
 		52558CCF1C18B8ED00AF7DDF /* iconBack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBack@3x.png"; sourceTree = "<group>"; };
@@ -1211,6 +1233,12 @@
 				5215BBB91BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.h */,
 				5215BBBA1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m */,
 				5215BBBB1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib */,
+				52518A111C19B6E500B86D5E /* LaunchScreenViewController.h */,
+				52518A121C19B6E500B86D5E /* LaunchScreenViewController.m */,
+				52518A131C19B6E500B86D5E /* LaunchScreenViewController.xib */,
+				52518A1C1C19FC4800B86D5E /* ModalPrivViewController.h */,
+				52518A1D1C19FC4800B86D5E /* ModalPrivViewController.m */,
+				52518A1E1C19FC4800B86D5E /* ModalPrivViewController.xib */,
 			);
 			name = Wellcome;
 			sourceTree = "<group>";
@@ -1278,6 +1306,12 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				52518A231C1A020200B86D5E /* imgDialogTerms@2x.png */,
+				52518A241C1A020200B86D5E /* imgDialogTerms@3x.png */,
+				52518A211C1A01F400B86D5E /* imgDialogTerms.png */,
+				52518A161C19F65F00B86D5E /* infoCopy.png */,
+				52518A171C19F65F00B86D5E /* infoCopy@2x.png */,
+				52518A181C19F65F00B86D5E /* infoCopy@3x.png */,
 				52558CCD1C18B8ED00AF7DDF /* iconBack.png */,
 				52558CCE1C18B8ED00AF7DDF /* iconBack@2x.png */,
 				52558CCF1C18B8ED00AF7DDF /* iconBack@3x.png */,
@@ -1749,6 +1783,7 @@
 				52D2BC831BF12EBF007C9C09 /* icon_pin_bad.png in Resources */,
 				52D2BC9D1BF12EBF007C9C09 /* img_profile05_mini@3x.png in Resources */,
 				52E7278C1BEA93B800B46945 /* icon_logout@2x.png in Resources */,
+				52518A221C1A01F400B86D5E /* imgDialogTerms.png in Resources */,
 				52E727071BEA93B800B46945 /* icon_tips_pharmacies@2x.png in Resources */,
 				52E727421BEA93B800B46945 /* button_facebook@3x.png in Resources */,
 				52E727821BEA93B800B46945 /* icon_logo_horizontal.png in Resources */,
@@ -1786,6 +1821,7 @@
 				52E7271D1BEA93B800B46945 /* button_default_white@2x.png in Resources */,
 				52E727BA1BEA93B800B46945 /* icon_twitter@3x.png in Resources */,
 				52E727A11BEA93B800B46945 /* icon_problem@2x.png in Resources */,
+				52518A251C1A020200B86D5E /* imgDialogTerms@2x.png in Resources */,
 				52558CDA1C18B8EE00AF7DDF /* iconBack@2x.png in Resources */,
 				52D2BC8C1BF12EBF007C9C09 /* icon_well_dash.png in Resources */,
 				52E727961BEA93B800B46945 /* icon_noticias@3x.png in Resources */,
@@ -1946,6 +1982,7 @@
 				527782CF1C062DC100251BF8 /* gdSToolbar.png in Resources */,
 				52D2BCA01BF12EBF007C9C09 /* img_profile06_mini@3x.png in Resources */,
 				520CD0D61BED3DB800F24B45 /* SelectTypeLoginViewController.xib in Resources */,
+				52518A201C19FC4800B86D5E /* ModalPrivViewController.xib in Resources */,
 				52E727511BEA93B800B46945 /* fab_location@3x.png in Resources */,
 				52D2BC9F1BF12EBF007C9C09 /* img_profile06_mini@2x.png in Resources */,
 				52D2BC7B1BF12EBF007C9C09 /* BG_blur_menu@2x.png in Resources */,
@@ -1968,6 +2005,8 @@
 				52E727361BEA93B800B46945 /* BG_light@3x.png in Resources */,
 				52D2BCAF1BF12EBF007C9C09 /* img_profile11_mini@3x.png in Resources */,
 				525A33231BECF3BA00B62E33 /* RearViewController.xib in Resources */,
+				52518A1A1C19F65F00B86D5E /* infoCopy@2x.png in Resources */,
+				52518A1B1C19F65F00B86D5E /* infoCopy@3x.png in Resources */,
 				52E7278F1BEA93B800B46945 /* icon_mail@2x.png in Resources */,
 				52E727A51BEA93B800B46945 /* icon_profile@3x.png in Resources */,
 				52E7270B1BEA93B800B46945 /* icon_tips_phones@3x.png in Resources */,
@@ -1986,6 +2025,7 @@
 				52558CE11C18B8EE00AF7DDF /* imgTutorial02@3x.png in Resources */,
 				52D2BC8F1BF12EBF007C9C09 /* img_profile01_mini.png in Resources */,
 				52E727911BEA93B800B46945 /* icon_mapadasaude.png in Resources */,
+				52518A151C19B6E500B86D5E /* LaunchScreenViewController.xib in Resources */,
 				2548B9E01BDE76380004E00F /* SelectParticipantViewController.xib in Resources */,
 				52E727DC1BEA93B800B46945 /* img_profile10.png in Resources */,
 				52EBA74C1C11DD0E0019E1FA /* buttonFacebookDesable.png in Resources */,
@@ -2002,6 +2042,7 @@
 				52E727481BEA93B800B46945 /* button_register@3x.png in Resources */,
 				52E7278B1BEA93B800B46945 /* icon_logout.png in Resources */,
 				52E7279A1BEA93B800B46945 /* icon_pin_pharmacy.png in Resources */,
+				52518A261C1A020200B86D5E /* imgDialogTerms@3x.png in Resources */,
 				52E727C41BEA93B800B46945 /* img_profile02.png in Resources */,
 				52E727D71BEA93B800B46945 /* img_profile08@2x.png in Resources */,
 				52558CE01C18B8EE00AF7DDF /* imgTutorial02.png in Resources */,
@@ -2060,6 +2101,7 @@
 				52D2BC901BF12EBF007C9C09 /* img_profile01_mini@2x.png in Resources */,
 				52E727E61BEA93B800B46945 /* input_floatbox_login_email@2x.png in Resources */,
 				52558CE31C18B8EE00AF7DDF /* imgTutorial01.png in Resources */,
+				52518A191C19F65F00B86D5E /* infoCopy.png in Resources */,
 				52D2BCB11BF12EBF007C9C09 /* img_profile12_mini@2x.png in Resources */,
 				52E727951BEA93B800B46945 /* icon_noticias@2x.png in Resources */,
 				52D2BC7C1BF12EBF007C9C09 /* BG_blur_menu@3x.png in Resources */,
@@ -2225,7 +2267,9 @@
 				527782DB1C0DD31600251BF8 /* SingleNotice.m in Sources */,
 				525648161BFBF01000FE64AE /* ProfileListViewController.m in Sources */,
 				529BE1CE1BF62C8200692EEC /* AboutViewController.m in Sources */,
+				52518A1F1C19FC4800B86D5E /* ModalPrivViewController.m in Sources */,
 				52D15DD21BFBCA3E00FC31F3 /* CreateAccountViewController.m in Sources */,
+				52518A141C19B6E500B86D5E /* LaunchScreenViewController.m in Sources */,
 				520CD0D51BED3DB800F24B45 /* SelectTypeLoginViewController.m in Sources */,
 				AAE38B421BFA2A09009CD20B /* Sumary.m in Sources */,
 				AAE38B4B1BFA80AF009CD20B /* SumaryLocation.m in Sources */,
@@ -2359,7 +2403,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2380,7 +2424,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
