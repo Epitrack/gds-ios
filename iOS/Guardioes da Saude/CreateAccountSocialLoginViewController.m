@@ -24,6 +24,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     user = [User getInstance];
+    
+    [self.txtEmail setDelegate:self];
+    [self.txtDob setDelegate:self];
+    [self.txtNick setDelegate:self];
+    
     self.txtNick.text = user.nick;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde." preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -31,6 +36,8 @@
     }];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +55,20 @@
 }
 */
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.txtEmail endEditing:YES];
+    [self.txtNick endEditing:YES];
+    [self.txtDob endEditing:YES];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    [self.txtEmail resignFirstResponder];
+    [self.txtNick resignFirstResponder];
+    [self.txtDob resignFirstResponder];
+    return YES;
+}
 
 - (IBAction)btnCadastrar:(id)sender {
     

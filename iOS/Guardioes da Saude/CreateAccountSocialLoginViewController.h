@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateAccountSocialLoginViewController : UIViewController
+@interface CreateAccountSocialLoginViewController : UIViewController<UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
 @property (weak, nonatomic) IBOutlet UITextField *txtDob;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;

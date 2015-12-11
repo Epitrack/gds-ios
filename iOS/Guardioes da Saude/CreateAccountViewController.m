@@ -10,10 +10,13 @@
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
 #import "HomeViewController.h"
+#import "TutorialViewController.h"
 
 @interface CreateAccountViewController () {
     
     User *user;
+    NSArray *pickerDataGender;
+    NSArray *pickerDataRace;
 }
 
 @end
@@ -25,6 +28,20 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Guardiões da Saúde";
     user = [User getInstance];
+    [self.txtNick setDelegate:self];
+    [self.txtEmail setDelegate:self];
+    [self.txtPassword setDelegate:self];
+    [self.txtDob setDelegate:self];
+    [self.txtPassword setDelegate:self];
+    [self.txtConfirmPassword setDelegate:self];
+    
+    pickerDataGender = @[@"Masculino", @"Feminino"];
+    pickerDataRace = @[@"branco", @"preto", @"pardo", @"amarelo", @"indigena"];
+    
+    self.pickerGender.dataSource = self;
+    self.pickerGender.delegate = self;
+    self.pickRace.dataSource = self;
+    self.pickRace.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +60,7 @@
 */
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -171,14 +188,21 @@
         } else {
             NSString *gender;
             NSString *race;
+            NSInteger row;
             
-            if (self.segmentGender.selectedSegmentIndex == 0) {
+            row = [self.pickerGender selectedRowInComponent:0];
+            gender = [pickerDataGender objectAtIndex:row];
+            
+            if ([gender isEqualToString:@"Masculino"]) {
                 gender = @"M";
-            } else if (self.segmentGender.selectedSegmentIndex == 1) {
+            } else if ([gender isEqualToString:@"Feminino"]) {
                 gender = @"F";
             }
             
-            if (self.segmentRace.selectedSegmentIndex == 0) {
+            row = [self.pickRace selectedRowInComponent:0];
+            race = [pickerDataRace objectAtIndex:row];
+            
+            /*if (self.segmentRace.selectedSegmentIndex == 0) {
                 race = @"branco";
             } else if (self.segmentRace.selectedSegmentIndex == 1) {
                 race = @"preto";
@@ -188,7 +212,7 @@
                 race = @"amarelo";
             } else if (self.segmentRace.selectedSegmentIndex == 4) {
                 race = @"indigena";
-            }
+            }*/
             
             NSLog(@"Data %@", datePiker);
             
@@ -283,5 +307,60 @@
                   }];
             }
     }
+}
+- (IBAction)backButtonAction:(id)sender {
+    TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
+    [self.navigationController pushViewController:tutorialViewController animated:YES];
+}
+
+
+// The number of columns of data
+- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+// The number of rows of data
+- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    int iReturn = 0;
+    
+    if (pickerView == self.pickRace) {
+        iReturn = pickerDataRace.count;
+    } else if (pickerView == self.pickerGender) {
+        iReturn = pickerDataGender.count;
+    }
+    
+    return iReturn;
+}
+
+// The data to return for the row and component (column) that's being passed in
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *strReturn;
+    
+    if (pickerView == self.pickRace) {
+        strReturn = pickerDataRace[row];
+    } else if (pickerView == self.pickerGender) {
+        strReturn = pickerDataGender[row];
+    }
+    
+    return strReturn;
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    UILabel* tView = (UILabel*)view;
+    if (!tView) {
+        tView = [[UILabel alloc] init];
+        
+        [tView setFont:[UIFont fontWithName:@"Helvetica" size:15]];
+        [tView setTextAlignment:UITextAlignmentCenter];
+
+    }
+    
+    if (pickerView == self.pickRace) {
+        tView.text = [pickerDataRace objectAtIndex:row];
+    } else if (pickerView == self.pickerGender) {
+        tView.text = [pickerDataGender objectAtIndex:row];
+    }
+    
+    return tView;
 }
 @end

@@ -15,6 +15,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "NoticeRequester.h"
 #import "SingleNotice.h"
+#import "TutorialViewController.h"
 
 @interface SelectTypeLoginViewController () {
     
@@ -31,8 +32,16 @@
     user = [User getInstance];
     singleNotice = [SingleNotice getInstance];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Guardiões da Saúde";
+    self.navigationItem.title = @"";
 
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+    
     // Uncomment to automatically sign in the user.
     //[[GIDSignIn sharedInstance] signInSilently];
 
@@ -69,7 +78,7 @@
 */
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
 
@@ -170,6 +179,11 @@ didDisconnectWithUser:(GIDGoogleUser *)user
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
+}
+
+- (IBAction)iconBackAction:(id)sender {
+    TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
+    [self.navigationController pushViewController:tutorialViewController animated:YES];
 }
 
 - (void) checkSocialLoginWithToken:(NSString *) token andType:(NSString *)type {

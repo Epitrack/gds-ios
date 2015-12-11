@@ -110,8 +110,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.revealViewController.panGestureRecognizer.enabled=NO;
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillAppear:animated];
 }
-
 /*
 #pragma mark - Navigation
 

@@ -200,6 +200,8 @@
 		52DBBA6D1BFE479A00900D22 /* imgNoticias@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DBBA6A1BFE479A00900D22 /* imgNoticias@3x.png */; };
 		52DBBA6E1BFE479A00900D22 /* imgNoticias.png in Resources */ = {isa = PBXBuildFile; fileRef = 52DBBA6B1BFE479A00900D22 /* imgNoticias.png */; };
 		52DBBA711BFE6CCC00900D22 /* NewsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DBBA701BFE6CCC00900D22 /* NewsRequester.m */; };
+		52E6F0641C1B5AA900C88A08 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F0621C1B5AA900C88A08 /* ForgotPasswordViewController.m */; };
+		52E6F0651C1B5AA900C88A08 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F0631C1B5AA900C88A08 /* ForgotPasswordViewController.xib */; };
 		52E727031BEA93B800B46945 /* icon_tips_basiccares.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FA9B371BC2EE5D00DD8506 /* icon_tips_basiccares.png */; };
 		52E727041BEA93B800B46945 /* icon_tips_basiccares@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FA9B381BC2EE5D00DD8506 /* icon_tips_basiccares@2x.png */; };
 		52E727051BEA93B800B46945 /* icon_tips_basiccares@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FA9B391BC2EE5D00DD8506 /* icon_tips_basiccares@3x.png */; };
@@ -711,6 +713,9 @@
 		52DBBA6B1BFE479A00900D22 /* imgNoticias.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgNoticias.png; sourceTree = "<group>"; };
 		52DBBA6F1BFE6CCC00900D22 /* NewsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsRequester.h; sourceTree = "<group>"; };
 		52DBBA701BFE6CCC00900D22 /* NewsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsRequester.m; sourceTree = "<group>"; };
+		52E6F0611C1B5AA900C88A08 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		52E6F0621C1B5AA900C88A08 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		52E6F0631C1B5AA900C88A08 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		52EBA7431C11DD0E0019E1FA /* buttonFacebookDesable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonFacebookDesable.png; sourceTree = "<group>"; };
 		52EBA7441C11DD0E0019E1FA /* buttonFacebookDesable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonFacebookDesable@2x.png"; sourceTree = "<group>"; };
 		52EBA7451C11DD0E0019E1FA /* buttonFacebookDesable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonFacebookDesable@3x.png"; sourceTree = "<group>"; };
@@ -1239,6 +1244,9 @@
 				52518A1C1C19FC4800B86D5E /* ModalPrivViewController.h */,
 				52518A1D1C19FC4800B86D5E /* ModalPrivViewController.m */,
 				52518A1E1C19FC4800B86D5E /* ModalPrivViewController.xib */,
+				52E6F0611C1B5AA900C88A08 /* ForgotPasswordViewController.h */,
+				52E6F0621C1B5AA900C88A08 /* ForgotPasswordViewController.m */,
+				52E6F0631C1B5AA900C88A08 /* ForgotPasswordViewController.xib */,
 			);
 			name = Wellcome;
 			sourceTree = "<group>";
@@ -2137,6 +2145,7 @@
 				52E727D41BEA93B800B46945 /* img_profile07@2x.png in Resources */,
 				52E7271F1BEA93B800B46945 /* BG_survey.png in Resources */,
 				52E727C71BEA93B800B46945 /* img_profile03.png in Resources */,
+				52E6F0651C1B5AA900C88A08 /* ForgotPasswordViewController.xib in Resources */,
 				52E727621BEA93B800B46945 /* icon_checkbox_false@2x.png in Resources */,
 				52E727B31BEA93B800B46945 /* icon_tutorial03.png in Resources */,
 				52D2BC8A1BF12EBF007C9C09 /* icon_pin_well@2x.png in Resources */,
@@ -2219,6 +2228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E6F0641C1B5AA900C88A08 /* ForgotPasswordViewController.m in Sources */,
 				52EC50441BF026CC002FEACE /* ImageUtility.m in Sources */,
 				258F14E31BCEE3CC00CE86B7 /* User.m in Sources */,
 				5250D7441BE2ADD3006E8A63 /* SurveyMap.m in Sources */,

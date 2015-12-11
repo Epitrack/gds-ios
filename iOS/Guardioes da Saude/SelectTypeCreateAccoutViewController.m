@@ -33,13 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
-                                initWithTitle:@""
-                                style:UIBarButtonItemStyleBordered
-                                target:self
-                                action:nil];
     
-    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     
     UIBarButtonItem *infoItem = [[UIBarButtonItem alloc]
                                    initWithImage:[UIImage imageNamed:@"infoCopy.png"]

@@ -12,6 +12,8 @@
 #import "AFNetworking/AFNetworking.h"
 #import "Facade.h"
 #import "UserRequester.h"
+#import "SelectTypeLoginViewController.h"
+#import "ForgotPasswordViewController.h"
 
 @interface EnterViewController ()
 
@@ -22,8 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Guardiões da Saúde";
+    self.navigationItem.title = @"";
     self.navigationItem.hidesBackButton = NO;
+    [self.txtEmail setDelegate:self];
+    [self.txtPassword setDelegate:self];
+    
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
 
 }
 
@@ -43,7 +55,7 @@
 */
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
 
@@ -57,13 +69,13 @@
     [textField resignFirstResponder];
     [self.txtEmail resignFirstResponder];
     [self.txtPassword resignFirstResponder];
-    return TRUE;
+    return YES;
 }
 
 - (IBAction)btnEnter:(id)sender {
     
-    [self.txtEmail resignFirstResponder];
-    [self.txtPassword resignFirstResponder];
+    /*[self.txtEmail resignFirstResponder];
+    [self.txtPassword resignFirstResponder];*/
     
     if (([self.txtEmail.text isEqualToString: @""]) || ([self.txtPassword.text isEqualToString: @""])) {
         
@@ -83,6 +95,18 @@
         
         [self requestLogin: user];
     }
+}
+
+- (IBAction)iconBackAction:(id)sender {
+    SelectTypeLoginViewController *selectTypeLoginViewController = [[SelectTypeLoginViewController alloc] init];
+    [self.navigationController pushViewController:selectTypeLoginViewController animated:YES];
+}
+
+- (IBAction)forgotPasswordAction:(id)sender {
+    
+    ForgotPasswordViewController *forgotPasswordViewController = [[ForgotPasswordViewController alloc] init];
+    [self.navigationController pushViewController:forgotPasswordViewController animated:YES];
+    
 }
 
 - (void) requestLogin: (User *) user {

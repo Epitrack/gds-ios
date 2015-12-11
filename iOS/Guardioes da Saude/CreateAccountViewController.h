@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateAccountViewController : UIViewController
+@interface CreateAccountViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentGender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentRace;
@@ -18,5 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtConfirmPassword;
 - (IBAction)btnAddUser:(id)sender;
 @property (weak, nonatomic) IBOutlet UIDatePicker *dtPikerDob;
+- (IBAction)backButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerGender;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickRace;
 
 @end

@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet TWTRLogInButton *btnTwitter;
 - (IBAction)btnFacebookAction:(id)sender;
 - (IBAction)btnTwitterAction:(id)sender;
+- (IBAction)iconBackAction:(id)sender;
 
 
 @end

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -33,7 +34,7 @@
                     <animations/>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Entre rapidamente com:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdd-ll-kNL">
-                    <rect key="frame" x="26" y="174" width="165" height="31"/>
+                    <rect key="frame" x="26" y="202" width="165" height="31"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="AwV-1o-bdD"/>
@@ -48,7 +49,7 @@
                     <animations/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ylh-I4-MUm">
-                    <rect key="frame" x="26" y="208" width="267" height="38"/>
+                    <rect key="frame" x="26" y="236" width="267" height="38"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Ylh-I4-MUm" secondAttribute="height" multiplier="267:38" id="7JE-Yy-RJG"/>
@@ -62,7 +63,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNE-Bz-TYO">
-                    <rect key="frame" x="26" y="256" width="267" height="38"/>
+                    <rect key="frame" x="26" y="284" width="267" height="38"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="FNE-Bz-TYO" secondAttribute="height" multiplier="267:38" id="yMe-5m-IXy"/>
@@ -76,7 +77,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruF-c1-g2M">
-                    <rect key="frame" x="26" y="304" width="267" height="38"/>
+                    <rect key="frame" x="26" y="332" width="267" height="38"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ruF-c1-g2M" secondAttribute="height" multiplier="267:38" id="KSj-aN-0MV"/>
@@ -90,7 +91,7 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Ou use seu email:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geH-Tt-R1j">
-                    <rect key="frame" x="27" y="346" width="98" height="31"/>
+                    <rect key="frame" x="27" y="374" width="98" height="31"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="97.5" id="COp-MC-UIN"/>
@@ -109,7 +110,7 @@
                     </variation>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovf-g5-HuC">
-                    <rect key="frame" x="27" y="382" width="265" height="35"/>
+                    <rect key="frame" x="27" y="410" width="265" height="35"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ovf-g5-HuC" secondAttribute="height" multiplier="53:7" id="VHf-DG-uft"/>
@@ -120,6 +121,14 @@
                     </state>
                     <connections>
                         <action selector="btnLoginEmail:" destination="-1" eventType="touchUpInside" id="h88-Ny-72z"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUI-9E-psI">
+                    <rect key="frame" x="19" y="24" width="25" height="25"/>
+                    <animations/>
+                    <state key="normal" image="iconBack.png"/>
+                    <connections>
+                        <action selector="iconBackAction:" destination="-1" eventType="touchUpInside" id="NS2-vn-chM"/>
                     </connections>
                 </button>
             </subviews>
@@ -138,7 +147,7 @@
                 <constraint firstItem="Ylh-I4-MUm" firstAttribute="top" secondItem="jdd-ll-kNL" secondAttribute="bottom" constant="3" id="OSv-Y6-xuB"/>
                 <constraint firstItem="geH-Tt-R1j" firstAttribute="leading" secondItem="Cn2-7m-C16" secondAttribute="leading" constant="27" id="RDI-iq-US0"/>
                 <constraint firstItem="ESK-ac-hp5" firstAttribute="width" secondItem="Cn2-7m-C16" secondAttribute="width" id="T9w-hK-oqX"/>
-                <constraint firstItem="jdd-ll-kNL" firstAttribute="top" secondItem="QmN-4s-x6D" secondAttribute="bottom" constant="-4" id="Vfe-VR-nQh"/>
+                <constraint firstItem="jdd-ll-kNL" firstAttribute="top" secondItem="QmN-4s-x6D" secondAttribute="bottom" constant="24" id="Vfe-VR-nQh"/>
                 <constraint firstItem="FNE-Bz-TYO" firstAttribute="top" secondItem="Ylh-I4-MUm" secondAttribute="bottom" constant="10" id="asM-JP-1gF"/>
                 <constraint firstItem="FNE-Bz-TYO" firstAttribute="leading" secondItem="Cn2-7m-C16" secondAttribute="leading" constant="26" id="eVe-i9-mqi"/>
                 <constraint firstItem="QmN-4s-x6D" firstAttribute="leading" secondItem="Cn2-7m-C16" secondAttribute="leading" constant="30" id="esF-4j-uBQ"/>
@@ -159,6 +168,7 @@
         <image name="button_facebook.png" width="267" height="38"/>
         <image name="button_google.png" width="267" height="38"/>
         <image name="button_twitter.png" width="267" height="38"/>
+        <image name="iconBack.png" width="25" height="25"/>
         <image name="icon_logo_horizontal.png" width="219" height="100"/>
     </resources>
 </document>
