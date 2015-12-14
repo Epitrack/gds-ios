@@ -202,6 +202,10 @@
 		52DBBA711BFE6CCC00900D22 /* NewsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DBBA701BFE6CCC00900D22 /* NewsRequester.m */; };
 		52E6F0641C1B5AA900C88A08 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F0621C1B5AA900C88A08 /* ForgotPasswordViewController.m */; };
 		52E6F0651C1B5AA900C88A08 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E6F0631C1B5AA900C88A08 /* ForgotPasswordViewController.xib */; };
+		52E6F06F1C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F0681C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.m */; };
+		52E6F0701C1EFE8F00C88A08 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F06A1C1EFE8F00C88A08 /* TPKeyboardAvoidingScrollView.m */; };
+		52E6F0711C1EFE8F00C88A08 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F06C1C1EFE8F00C88A08 /* TPKeyboardAvoidingTableView.m */; };
+		52E6F0721C1EFE8F00C88A08 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F06E1C1EFE8F00C88A08 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		52E727031BEA93B800B46945 /* icon_tips_basiccares.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FA9B371BC2EE5D00DD8506 /* icon_tips_basiccares.png */; };
 		52E727041BEA93B800B46945 /* icon_tips_basiccares@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FA9B381BC2EE5D00DD8506 /* icon_tips_basiccares@2x.png */; };
 		52E727051BEA93B800B46945 /* icon_tips_basiccares@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88FA9B391BC2EE5D00DD8506 /* icon_tips_basiccares@3x.png */; };
@@ -716,6 +720,14 @@
 		52E6F0611C1B5AA900C88A08 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		52E6F0621C1B5AA900C88A08 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		52E6F0631C1B5AA900C88A08 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		52E6F0671C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		52E6F0681C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		52E6F0691C1EFE8F00C88A08 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		52E6F06A1C1EFE8F00C88A08 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		52E6F06B1C1EFE8F00C88A08 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		52E6F06C1C1EFE8F00C88A08 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		52E6F06D1C1EFE8F00C88A08 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		52E6F06E1C1EFE8F00C88A08 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		52EBA7431C11DD0E0019E1FA /* buttonFacebookDesable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonFacebookDesable.png; sourceTree = "<group>"; };
 		52EBA7441C11DD0E0019E1FA /* buttonFacebookDesable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonFacebookDesable@2x.png"; sourceTree = "<group>"; };
 		52EBA7451C11DD0E0019E1FA /* buttonFacebookDesable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonFacebookDesable@3x.png"; sourceTree = "<group>"; };
@@ -1281,6 +1293,7 @@
 		528C8AFB1BB82630003CFC91 /* Guardioes da Saude */ = {
 			isa = PBXGroup;
 			children = (
+				52E6F0661C1EFC6800C88A08 /* TPKeyboardAvoiding */,
 				525E8DC91BFE8DA40020D4D6 /* GoogleService-Info.plist */,
 				AAE38B2F1BF9211D009CD20B /* Request */,
 				524C14401BECE13E003A6C2D /* SWReval */,
@@ -1309,6 +1322,21 @@
 				528C8AFD1BB82630003CFC91 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52E6F0661C1EFC6800C88A08 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				52E6F0671C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.h */,
+				52E6F0681C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.m */,
+				52E6F0691C1EFE8F00C88A08 /* TPKeyboardAvoidingScrollView.h */,
+				52E6F06A1C1EFE8F00C88A08 /* TPKeyboardAvoidingScrollView.m */,
+				52E6F06B1C1EFE8F00C88A08 /* TPKeyboardAvoidingTableView.h */,
+				52E6F06C1C1EFE8F00C88A08 /* TPKeyboardAvoidingTableView.m */,
+				52E6F06D1C1EFE8F00C88A08 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				52E6F06E1C1EFE8F00C88A08 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			name = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
@@ -2241,9 +2269,11 @@
 				524C14361BEBE533003A6C2D /* BasicCareViewController.m in Sources */,
 				524C14461BECE363003A6C2D /* SWRevealViewController.m in Sources */,
 				2548B9E91BDEB3C80004E00F /* ThankYouForParticipatingViewController.m in Sources */,
+				52E6F0701C1EFE8F00C88A08 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				25630CF61BDF96F90047FF07 /* ListSymptomsViewController.m in Sources */,
 				527782CA1C04CEB700251BF8 /* SelectAvatarViewController.m in Sources */,
 				527782D81C0CC9FD00251BF8 /* NoticeRequester.m in Sources */,
+				52E6F06F1C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				52EBA7581C1209EF0019E1FA /* PharmacyGoogleMapsViewController.m in Sources */,
@@ -2271,6 +2301,7 @@
 				AAE38B4E1BFAA16F009CD20B /* ChartViewController.m in Sources */,
 				528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */,
 				25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */,
+				52E6F0711C1EFE8F00C88A08 /* TPKeyboardAvoidingTableView.m in Sources */,
 				529BE1D31BF6598300692EEC /* HelpViewController.m in Sources */,
 				25630CFA1BDFA2760047FF07 /* Symptom.m in Sources */,
 				AAE38B3C1BFA1CAA009CD20B /* HouseholdRequester.m in Sources */,
@@ -2284,6 +2315,7 @@
 				AAE38B421BFA2A09009CD20B /* Sumary.m in Sources */,
 				AAE38B4B1BFA80AF009CD20B /* SumaryLocation.m in Sources */,
 				528C8AFE1BB82630003CFC91 /* main.m in Sources */,
+				52E6F0721C1EFE8F00C88A08 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				251AD8F81BD553D3000C1B84 /* Facade.m in Sources */,
 				AAE38B391BF9211D009CD20B /* UserRequester.m in Sources */,
 				52EC50411BF02200002FEACE /* Household.m in Sources */,

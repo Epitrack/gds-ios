@@ -32,7 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"Guardiões da Saúde";
+    self.navigationItem.title = @"GUARDIÕES DA SAÚDE";
 
     //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"gdSToolbar.png"] forBarMetrics:UIBarMetricsDefault];
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -228,7 +229,7 @@
                         <constraint firstAttribute="width" secondItem="X58-T6-wET" secondAttribute="height" multiplier="5:1" id="pLU-mU-sty"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -244,10 +245,10 @@
                     </variation>
                 </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Mapa da Saúde" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qgV-NP-dS9">
-                    <rect key="frame" x="182" y="227" width="95" height="34"/>
+                    <rect key="frame" x="169" y="227" width="108" height="34"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="95" id="9oM-AN-Zip"/>
+                        <constraint firstAttribute="width" constant="108" id="9oM-AN-Zip"/>
                         <constraint firstAttribute="width" secondItem="qgV-NP-dS9" secondAttribute="height" multiplier="5:1" id="GTA-Zh-wM3"/>
                         <constraint firstAttribute="width" secondItem="qgV-NP-dS9" secondAttribute="height" multiplier="5:1" id="GaN-1Z-7N0"/>
                         <constraint firstAttribute="width" secondItem="qgV-NP-dS9" secondAttribute="height" multiplier="5:1" id="LXa-Xq-mdc"/>
@@ -255,12 +256,12 @@
                         <constraint firstAttribute="width" constant="280" id="OJ9-6K-5Bx"/>
                         <constraint firstAttribute="width" constant="280" id="WpM-Lz-mEl"/>
                         <constraint firstAttribute="width" secondItem="qgV-NP-dS9" secondAttribute="height" multiplier="5:1" id="asW-0o-5X9"/>
-                        <constraint firstAttribute="width" secondItem="qgV-NP-dS9" secondAttribute="height" multiplier="88:31" id="ftF-Zr-BgF"/>
+                        <constraint firstAttribute="width" secondItem="qgV-NP-dS9" secondAttribute="height" multiplier="88:31" constant="11.483870967741936" id="ftF-Zr-BgF"/>
                         <constraint firstAttribute="width" secondItem="qgV-NP-dS9" secondAttribute="height" multiplier="5:1" id="hMz-s3-mFe"/>
                         <constraint firstAttribute="width" constant="280" id="ijh-LX-QGR"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -293,7 +294,7 @@
                         <constraint firstAttribute="width" secondItem="SVA-tK-DbJ" secondAttribute="height" multiplier="5:1" id="zhC-7V-bNJ"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -310,15 +311,15 @@
                     </variation>
                 </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Dicas de Saúde" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PCR-l9-GTt">
-                    <rect key="frame" x="44" y="433" width="95" height="33"/>
+                    <rect key="frame" x="44" y="433" width="107" height="33"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="PCR-l9-GTt" secondAttribute="height" multiplier="5:1" id="4Nr-wp-Vs7"/>
-                        <constraint firstAttribute="width" constant="95" id="DTi-Uk-wzV"/>
+                        <constraint firstAttribute="width" constant="107" id="DTi-Uk-wzV"/>
                         <constraint firstAttribute="width" secondItem="PCR-l9-GTt" secondAttribute="height" multiplier="5:1" id="Q1Z-aL-sZ2"/>
                         <constraint firstAttribute="width" constant="280" id="UCT-Ej-mzQ"/>
                         <constraint firstAttribute="width" secondItem="PCR-l9-GTt" secondAttribute="height" multiplier="99:50" id="Vmt-KY-uue"/>
-                        <constraint firstAttribute="width" secondItem="PCR-l9-GTt" secondAttribute="height" multiplier="88:31" id="cmU-T4-iPs"/>
+                        <constraint firstAttribute="width" secondItem="PCR-l9-GTt" secondAttribute="height" multiplier="88:31" constant="13.322580645161281" id="cmU-T4-iPs"/>
                         <constraint firstAttribute="width" secondItem="PCR-l9-GTt" secondAttribute="height" multiplier="5:1" id="esQ-Kv-xAm"/>
                         <constraint firstAttribute="width" constant="280" id="fX2-Oe-zx4"/>
                         <constraint firstAttribute="width" secondItem="PCR-l9-GTt" secondAttribute="height" multiplier="5:1" id="soh-xP-EuR"/>
@@ -326,7 +327,7 @@
                         <constraint firstAttribute="width" secondItem="PCR-l9-GTt" secondAttribute="height" multiplier="5:1" id="x6G-qf-fVi"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -343,12 +344,12 @@
                     </variation>
                 </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Diário da Saúde" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pgA-cW-USv">
-                    <rect key="frame" x="182" y="434" width="95" height="33"/>
+                    <rect key="frame" x="169" y="434" width="108" height="33"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="95" id="30s-fX-aWR"/>
+                        <constraint firstAttribute="width" constant="108" id="30s-fX-aWR"/>
                         <constraint firstAttribute="width" secondItem="pgA-cW-USv" secondAttribute="height" multiplier="5:1" id="3RA-BP-1oL"/>
-                        <constraint firstAttribute="width" secondItem="pgA-cW-USv" secondAttribute="height" multiplier="88:31" id="6ax-U9-xI1"/>
+                        <constraint firstAttribute="width" secondItem="pgA-cW-USv" secondAttribute="height" multiplier="88:31" constant="14.322580645161281" id="6ax-U9-xI1"/>
                         <constraint firstAttribute="width" secondItem="pgA-cW-USv" secondAttribute="height" multiplier="99:50" id="HdZ-gM-cNa"/>
                         <constraint firstAttribute="width" secondItem="pgA-cW-USv" secondAttribute="height" multiplier="5:1" id="I3J-yU-fHy"/>
                         <constraint firstAttribute="width" secondItem="pgA-cW-USv" secondAttribute="height" multiplier="5:1" id="TY1-bW-aBv"/>
@@ -359,7 +360,7 @@
                         <constraint firstAttribute="width" secondItem="pgA-cW-USv" secondAttribute="height" multiplier="5:1" id="nY4-6Y-yHi"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -394,7 +395,7 @@
             <constraints>
                 <constraint firstItem="w3j-0Z-T9i" firstAttribute="top" secondItem="Mfh-YK-Xx5" secondAttribute="bottom" constant="-8" id="16Q-12-hkx"/>
                 <constraint firstItem="Q7r-uG-iaY" firstAttribute="centerX" secondItem="w3j-0Z-T9i" secondAttribute="centerX" multiplier="1.02" id="1JE-nN-kuq"/>
-                <constraint firstItem="qgV-NP-dS9" firstAttribute="centerX" secondItem="O1d-eP-RbX" secondAttribute="centerX" id="1OJ-gw-ypM"/>
+                <constraint firstItem="qgV-NP-dS9" firstAttribute="centerX" secondItem="O1d-eP-RbX" secondAttribute="centerX" constant="-6" id="1OJ-gw-ypM"/>
                 <constraint firstItem="X58-T6-wET" firstAttribute="centerY" secondItem="QGE-hC-oId" secondAttribute="centerY" multiplier="1.09" id="1b3-Z0-Rua"/>
                 <constraint firstItem="tq5-1r-wq3" firstAttribute="centerX" secondItem="w3j-0Z-T9i" secondAttribute="centerX" multiplier="0.58" id="1sg-Q2-jM4"/>
                 <constraint firstItem="w3j-0Z-T9i" firstAttribute="top" secondItem="Mfh-YK-Xx5" secondAttribute="bottom" constant="-8" id="1u6-cR-HsL"/>
@@ -477,7 +478,7 @@
                 <constraint firstItem="vHt-wZ-QpV" firstAttribute="centerY" secondItem="Cds-EH-tEM" secondAttribute="centerY" multiplier="0.5" id="ijn-Cw-9NJ"/>
                 <constraint firstItem="qgV-NP-dS9" firstAttribute="width" secondItem="O1d-eP-RbX" secondAttribute="width" id="l8t-eN-2Su"/>
                 <constraint firstItem="w3j-0Z-T9i" firstAttribute="top" secondItem="45K-Xd-xDB" secondAttribute="bottom" constant="-96" id="lIq-G7-f49"/>
-                <constraint firstItem="PCR-l9-GTt" firstAttribute="centerX" secondItem="mHY-s7-TsV" secondAttribute="centerX" id="mAv-dp-91A"/>
+                <constraint firstItem="PCR-l9-GTt" firstAttribute="centerX" secondItem="mHY-s7-TsV" secondAttribute="centerX" constant="5.5" id="mAv-dp-91A"/>
                 <constraint firstItem="w9n-BB-3Se" firstAttribute="height" secondItem="Cds-EH-tEM" secondAttribute="height" id="mwd-P5-RCQ"/>
                 <constraint firstItem="vHt-wZ-QpV" firstAttribute="centerX" secondItem="Cds-EH-tEM" secondAttribute="centerX" id="nGv-l5-44h"/>
                 <constraint firstItem="Q7r-uG-iaY" firstAttribute="centerY" secondItem="w3j-0Z-T9i" secondAttribute="centerY" multiplier="0.985" id="nRs-8V-1sk"/>
@@ -495,7 +496,7 @@
                 <constraint firstItem="w9n-BB-3Se" firstAttribute="centerX" secondItem="Cds-EH-tEM" secondAttribute="centerX" id="stW-ub-zQn"/>
                 <constraint firstItem="QGE-hC-oId" firstAttribute="centerX" secondItem="w3j-0Z-T9i" secondAttribute="centerX" id="u7M-an-8ww"/>
                 <constraint firstItem="mHY-s7-TsV" firstAttribute="centerY" secondItem="w3j-0Z-T9i" secondAttribute="centerY" multiplier="1.17" id="uRa-Az-sA2"/>
-                <constraint firstItem="pgA-cW-USv" firstAttribute="centerX" secondItem="tNS-dT-rgh" secondAttribute="centerX" id="ud0-Ey-wrT"/>
+                <constraint firstItem="pgA-cW-USv" firstAttribute="centerX" secondItem="tNS-dT-rgh" secondAttribute="centerX" constant="-6" id="ud0-Ey-wrT"/>
                 <constraint firstItem="tq5-1r-wq3" firstAttribute="top" secondItem="w3j-0Z-T9i" secondAttribute="bottom" constant="-95" id="uxJ-pD-FdB"/>
                 <constraint firstItem="gwN-Ey-cdI" firstAttribute="leading" secondItem="w3j-0Z-T9i" secondAttribute="trailing" constant="-91" id="wBh-lb-SZd"/>
                 <constraint firstItem="w3j-0Z-T9i" firstAttribute="top" secondItem="wMe-MA-CbT" secondAttribute="bottom" constant="-92" id="wGh-RI-gDy"/>

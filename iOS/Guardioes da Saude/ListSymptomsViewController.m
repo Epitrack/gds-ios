@@ -20,6 +20,7 @@
     User *user;
     NSIndexPath *oldIndexPath;
     NSMutableIndexSet *selected;
+    UIColor *bgCellColor;
 }
 
 @end
@@ -29,10 +30,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Guardiões da Saúde";
+    self.navigationItem.title = @"Participe Agora";
     selected = [[NSMutableIndexSet alloc] init];
     user = [User getInstance];
     [self loadSymptoms];
+    
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+    
+    bgCellColor = [UIColor colorWithRed:(22/255.0) green:(112/255.0) blue:(200/255.0) alpha:1];
+    [self.tableSymptoms setSeparatorColor:[UIColor whiteColor]];
     
     symptomsSelected = [[NSMutableDictionary alloc] init];
     
@@ -65,7 +77,7 @@
     if (selected.count > 0) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Deseja registrar suas informações?" preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"SIM" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button YES");
             
             
@@ -122,7 +134,7 @@
                       
                   }];
         }];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"NÃO" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Não" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button NO");
         }];
         [alert addAction:yesAction];
@@ -183,254 +195,336 @@
     if (indexPath.row == 0) {
         if ([symptom.code isEqualToString: @"febre"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 1) {
         if ([symptom.code isEqualToString: @"tosse"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.tag = indexPath.row;
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 2) {
         if ([symptom.code isEqualToString: @"nausea-vomito"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 3) {
         if ([symptom.code isEqualToString: @"manchas-vermelhas"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 4) {
         if ([symptom.code isEqualToString: @"dor-nas-juntas"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 5) {
         if ([symptom.code isEqualToString: @"diarreia"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 6) {
         if ([symptom.code isEqualToString: @"dor-no-corpo"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 7) {
         if ([symptom.code isEqualToString: @"sangramento"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 8) {
         if ([symptom.code isEqualToString: @"dor-de-cabeca"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 9) {
         if ([symptom.code isEqualToString: @"olhos-vermelhos"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             }
             else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 10) {
         if ([symptom.code isEqualToString: @"coceira"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             }
             else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 11) {
         if ([symptom.code isEqualToString: @"falta-de-ar"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             }
             else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 12) {
         if ([symptom.code isEqualToString: @"urina-escura-ou-olhos-amarelados"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 13) {
         if ([symptom.code isEqualToString: @"outros"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
             cell.textLabel.textColor = [UIColor whiteColor];
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.tag = indexPath.row;
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.accessoryView = nil;
         }
     } else if (indexPath.row == 14) {
         if ([symptom.code isEqualToString: @"hadContagiousContact"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:11];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 15) {
         if ([symptom.code isEqualToString: @"hadHealthCare"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     } else if (indexPath.row == 16) {
         if ([symptom.code isEqualToString: @"hadTravelledAbroad"]) {
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
-            cell.backgroundColor = [UIColor whiteColor];
-            cell.textLabel.textColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
+            cell.backgroundColor = bgCellColor;
+            cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                cell.accessoryView = checkmark;
             } else {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                cell.accessoryView = checkmark;
             }
         }
     }
@@ -443,50 +537,36 @@
 
     NSLog(@"didSelectRowAtIndexPath");
     @try {
-        //[self.tableSymptoms deselectRowAtIndexPath:indexPath animated:YES];
-        //Symptom *currentSymptom = [symptoms objectAtIndex:indexPath.row];
+        UIView *bgColorView = [[UIView alloc] init];
+        bgColorView.backgroundColor = bgCellColor;
         
-        //NSLog(@"Row: %d", indexPath.row);
-        //BOOL indexExists = NO;
+        [self.tableSymptoms setSeparatorColor:[UIColor whiteColor]];
+        [self.tableSymptoms cellForRowAtIndexPath:indexPath].selectedBackgroundView = bgColorView;
         
         if (indexPath.row == 13) {
             [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-            [self.tableSymptoms cellForRowAtIndexPath:indexPath].backgroundColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
-            [self.tableSymptoms cellForRowAtIndexPath:indexPath].textLabel.textColor = [UIColor whiteColor];
-            
-            UIView *bgColorView = [[UIView alloc] init];
-            bgColorView.backgroundColor = [UIColor colorWithRed:(30/255.0) green:(136/255.0) blue:(229/255.0) alpha:1];
-            
-            [self.tableSymptoms cellForRowAtIndexPath:indexPath].selectedBackgroundView = bgColorView;
+            [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = nil;
         } else {
-        
-            UIView *bgColorView = [[UIView alloc] init];
-            bgColorView.backgroundColor = [UIColor colorWithRed:(255/255.0) green:(255/255.0) blue:(255/255.0) alpha:1];
-            
-            [self.tableSymptoms cellForRowAtIndexPath:indexPath].selectedBackgroundView = bgColorView;
-            
             if ([selected containsIndex:indexPath.row]) {
                 [selected removeIndex:indexPath.row];
-                [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-            }
-            else {
+                //[self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+                //cell.accessoryType = UITableViewCellAccessoryNone;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
+                [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = checkmark;
+            } else {
                 [selected addIndex:indexPath.row];
-                [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+                //[self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = checkmark;
             }
         }
+        //}
         
     }
     @catch (NSException *exception) {
         NSLog(@"Error: %@", exception.description);
     }
-    
-    /*if([self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
-        [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-        [symptomsSelected removeObjectForKey:selectedSymptom.code];
-    }else{
-        [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-        [symptomsSelected setObject:selectedSymptom forKey:selectedSymptom.code];
-    }*/
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation

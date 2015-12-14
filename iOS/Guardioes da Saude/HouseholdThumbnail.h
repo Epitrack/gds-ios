@@ -14,4 +14,6 @@
 
 - (id)initWithHousehold:(NSString *)household_id frame:(CGRect)frame avatar:(NSString *)avatar nick:(NSString *)nick;
 
+- (id)initWithHousehold:(NSString *)household_id frame:(CGRect)frame avatar:(NSString *)avatar nick:(NSString *)nick dob:(NSString *)dob;
+
 @end

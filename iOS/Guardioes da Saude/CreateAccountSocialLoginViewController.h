@@ -10,11 +10,13 @@
 
 @interface CreateAccountSocialLoginViewController : UIViewController<UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
-@property (weak, nonatomic) IBOutlet UITextField *txtDob;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentGender;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentRace;
 - (IBAction)btnCadastrar:(id)sender;
+@property (weak, nonatomic) IBOutlet UIDatePicker *dtPikerDob;
+- (IBAction)backButtonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerGender;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerRace;
+
 
 
 @end

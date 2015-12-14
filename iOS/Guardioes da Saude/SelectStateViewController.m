@@ -26,7 +26,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Guardiões da Saúde";
+    self.navigationItem.title = @"Participe Agora";
+    
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     
     locationManager = [[CLLocationManager alloc] init];
     

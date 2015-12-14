@@ -14,6 +14,8 @@
 @interface CreateAccountSocialLoginViewController () {
     
     User *user;
+    NSArray *pickerDataGender;
+    NSArray *pickerDataRace;
 }
 
 @end
@@ -26,8 +28,10 @@
     user = [User getInstance];
     
     [self.txtEmail setDelegate:self];
-    [self.txtDob setDelegate:self];
     [self.txtNick setDelegate:self];
+    
+    pickerDataGender = @[@"Masculino", @"Feminino"];
+    pickerDataRace = @[@"branco", @"preto", @"pardo", @"amarelo", @"indigena"];
     
     self.txtNick.text = user.nick;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde." preferredStyle:UIAlertControllerStyleActionSheet];
@@ -58,7 +62,6 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.txtEmail endEditing:YES];
     [self.txtNick endEditing:YES];
-    [self.txtDob endEditing:YES];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -66,31 +69,35 @@
     [textField resignFirstResponder];
     [self.txtEmail resignFirstResponder];
     [self.txtNick resignFirstResponder];
-    [self.txtDob resignFirstResponder];
     return YES;
 }
 
 - (IBAction)btnCadastrar:(id)sender {
-    
     BOOL fieldNull = NO;
     BOOL dateFail = NO;
     
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"dd/MM/yyyy"];
+    NSString *formattedDate = [df stringFromDate:self.dtPikerDob.date];
+    
+    NSString *datePiker = formattedDate;
+    
     if ([self.txtNick.text isEqualToString:@""]) {
         fieldNull = YES;
-    } else if ([self.txtDob.text isEqualToString:@""]) {
+    } else if ([datePiker isEqualToString:@""]) {
         fieldNull = YES;
     } else if ([self.txtEmail.text isEqualToString:@""]) {
         fieldNull = YES;
     }
     
-    if (![self.txtDob.text isEqualToString:@""]) {
-        if (self.txtDob.text.length == 10) {
+    if (![datePiker isEqualToString:@""]) {
+        if (datePiker.length == 10) {
             
-            NSString *bar1 = [self.txtDob.text substringWithRange:NSMakeRange(2, 1)];
-            NSString *bar2 = [self.txtDob.text substringWithRange:NSMakeRange(5, 1)];
-            NSString *day = [self.txtDob.text substringWithRange:NSMakeRange(0, 2)];
-            NSString *month = [self.txtDob.text substringWithRange:NSMakeRange(3, 2)];
-            NSString *year = [self.txtDob.text substringWithRange:NSMakeRange(6, 4)];
+            NSString *bar1 = [datePiker substringWithRange:NSMakeRange(2, 1)];
+            NSString *bar2 = [datePiker substringWithRange:NSMakeRange(5, 1)];
+            NSString *day = [datePiker substringWithRange:NSMakeRange(0, 2)];
+            NSString *month = [datePiker substringWithRange:NSMakeRange(3, 2)];
+            NSString *year = [datePiker substringWithRange:NSMakeRange(6, 4)];
             
             if (![bar1 isEqualToString:@"/"] || ![bar2 isEqualToString:@"/"]) {
                 dateFail = YES;
@@ -149,14 +156,21 @@
     } else {
         NSString *gender;
         NSString *race;
+        NSInteger row;
         
-        if (self.segmentGender.selectedSegmentIndex == 0) {
+        row = [self.pickerGender selectedRowInComponent:0];
+        gender = [pickerDataGender objectAtIndex:row];
+        
+        if ([gender isEqualToString:@"Masculino"]) {
             gender = @"M";
-        } else if (self.segmentGender.selectedSegmentIndex == 1) {
+        } else if ([gender isEqualToString:@"Feminino"]) {
             gender = @"F";
         }
         
-        if (self.segmentRace.selectedSegmentIndex == 0) {
+        row = [self.pickerRace selectedRowInComponent:0];
+        race = [pickerDataRace objectAtIndex:row];
+        
+        /*if (self.segmentRace.selectedSegmentIndex == 0) {
             race = @"branco";
         } else if (self.segmentRace.selectedSegmentIndex == 1) {
             race = @"preto";
@@ -166,20 +180,20 @@
             race = @"amarelo";
         } else if (self.segmentRace.selectedSegmentIndex == 4) {
             race = @"indigena";
-        }
+        }*/
         
-        NSLog(@"Data %@", self.txtDob.text);
+        NSLog(@"Data %@", datePiker);
         
         AFHTTPRequestOperationManager *manager;
         NSDictionary *params;
         
-        NSLog(@"Dia %@", [self.txtDob.text substringWithRange:NSMakeRange(0, 2)]);
-        NSLog(@"Mês %@", [self.txtDob.text substringWithRange:NSMakeRange(3, 2)]);
-        NSLog(@"Ano %@", [self.txtDob.text substringWithRange:NSMakeRange(6, 4)]);
+        NSLog(@"Dia %@", [datePiker substringWithRange:NSMakeRange(0, 2)]);
+        NSLog(@"Mês %@", [datePiker substringWithRange:NSMakeRange(3, 2)]);
+        NSLog(@"Ano %@", [datePiker substringWithRange:NSMakeRange(6, 4)]);
         
-        NSString *day = [self.txtDob.text substringWithRange:NSMakeRange(0, 2)];
-        NSString *month = [self.txtDob.text substringWithRange:NSMakeRange(3, 2)];
-        NSString *year = [self.txtDob.text substringWithRange:NSMakeRange(6, 4)];
+        NSString *day = [datePiker substringWithRange:NSMakeRange(0, 2)];
+        NSString *month = [datePiker substringWithRange:NSMakeRange(3, 2)];
+        NSString *year = [datePiker substringWithRange:NSMakeRange(6, 4)];
         
         NSString *dob = [NSString stringWithFormat: @"%@-%@-%@", year, month, day];
         
@@ -273,6 +287,9 @@
                   [self presentViewController:alert animated:YES completion:nil];
               }];
     }
+}
 
+
+- (IBAction)backButtonAction:(id)sender {
 }
 @end

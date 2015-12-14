@@ -28,23 +28,32 @@ const float kCellHeight = 100.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Guardiões da Saúde";
+    self.navigationItem.title = @"Participe Agora";
     user = [User getInstance];
+    
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     
     NSMutableDictionary *householdsDictionary = [[NSMutableDictionary alloc] init];
     i = 0;
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
-    //CGFloat screenWidth = screenSize.width;
+    CGFloat screenWidth = screenSize.width;
     CGFloat screenHeight = screenSize.height;
     
     //create table view to contain ASHorizontalScrollView
     
-    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight-100, self.view.frame.size.width, self.view.frame.size.height)];
+    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight-95, self.view.frame.size.width, screenWidth)];
     sampleTableView.delegate = self;
     sampleTableView.dataSource = self;
     sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    sampleTableView.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
     [self.view addSubview:sampleTableView];
     
     self.txtNameMainMember.text = user.nick;
@@ -111,10 +120,11 @@ const float kCellHeight = 100.0f;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
         cell.textLabel.textColor = [UIColor whiteColor];
+        cell.detailTextLabel.textColor = [UIColor whiteColor];
         
         if (indexPath.row == 0) {
             //sample code of how to use this scroll view
@@ -135,6 +145,9 @@ const float kCellHeight = 100.0f;
                     NSString *picture = h[@"picture"];
                     NSString *avatar;
                     NSString *idHousehold = h[@"id"];
+                    NSString *dob = h[@"dob"];
+                    
+                    picture = @"0";
                     
                     if ([picture isEqualToString:@"0"]) {
                         avatar = @"img_profile01.png";
@@ -143,10 +156,12 @@ const float kCellHeight = 100.0f;
                             avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
                         } else if (picture.length == 2) {
                             avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
+                        } else if (picture.length > 2) {
+                            avatar = @"img_profile01.png";
                         }
                     }
                     
-                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
+                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick dob:dob];
                     [buttons addObject:thumb];
                     [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }

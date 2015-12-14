@@ -45,6 +45,10 @@
 }
 */
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+}
 - (IBAction)btnContinue:(id)sender {
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
     [self.navigationController pushViewController:homeViewController animated:YES];
