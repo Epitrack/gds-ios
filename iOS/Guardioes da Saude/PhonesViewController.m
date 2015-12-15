@@ -7,8 +7,13 @@
 //
 
 #import "PhonesViewController.h"
+#import "DetailPhoneViewController.h"
+#import "Phones.h"
 
-@interface PhonesViewController () 
+@interface PhonesViewController () {
+    
+    //Phones *phones;
+}
 @end
 
 @implementation PhonesViewController
@@ -16,7 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Telefones Úteis";
+    self.navigationItem.title = @"Dicas de Saúde";
+    
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+    
     [self loadPhones];
 }
 
@@ -65,17 +79,17 @@
     cell.tag = indexPath.row;
     cell.textLabel.text = [phones objectAtIndex:indexPath.row];
     if (indexPath.row == 0) {
-            cell.imageView.image = [UIImage imageNamed:@"iconSamuMini.png"];
-        cell.detailTextLabel.text = @"192";
+        //cell.imageView.image = [UIImage imageNamed:@"iconSamuMini.png"];
+        cell.detailTextLabel.text = @">";
     } else if (indexPath.row == 1) {
-            cell.imageView.image = [UIImage imageNamed:@"iconPMMini.png"];
-        cell.detailTextLabel.text = @"190";
+        //cell.imageView.image = [UIImage imageNamed:@"iconPMMini.png"];
+        cell.detailTextLabel.text = @">";
     } else if (indexPath.row == 2) {
-            cell.imageView.image = [UIImage imageNamed:@"iconBombeirosMini.png"];
-        cell.detailTextLabel.text = @"193";
+        //cell.imageView.image = [UIImage imageNamed:@"iconBombeirosMini.png"];
+        cell.detailTextLabel.text = @">";
     } else if (indexPath.row == 3) {
-            cell.imageView.image = [UIImage imageNamed:@"iconDefesacivilMini.png"];
-        cell.detailTextLabel.text = @"0800 644 0199";
+        //cell.imageView.image = [UIImage imageNamed:@"iconDefesacivilMini.png"];
+        cell.detailTextLabel.text = @">";
     }
     
     return cell;
@@ -84,19 +98,48 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSLog(@"didSelectRowAtIndexPath");
-    NSString *text;
+    //NSString *text;
+    
+    
     
     if (indexPath.row == 0) {
-        text = @"Ligag para o SAMU";
+        //text = @"Ligag para o SAMU";
+        Phones *phones = [Phones getInstance];
+        phones.lbHeader = @"SAMU";
+        phones.lbBody = @"SAMU";
+        phones.lbDetailBody = @"Serviço de Atendimento Médico de ";
+        phones.lbPhone = @"192";
+        phones.imgDetail = @"iconSamu.png";
     } else if (indexPath.row == 1) {
-        text = @"Ligar para a Polícia Militar";
+        //text = @"Ligar para a Polícia Militar";
+        Phones *phones = [Phones getInstance];
+        phones.lbHeader = @"Polícia Militar";
+        phones.lbBody = @"Polícia Militar";
+        phones.lbDetailBody = @"";
+        phones.lbPhone = @"192";
+        phones.imgDetail = @"iconPM.png";
     } else if (indexPath.row == 2) {
-        text = @"Ligar para os Bombeiros";
+        //text = @"Ligar para os Bombeiros";
+        Phones *phones = [Phones getInstance];
+        phones.lbHeader = @"Bombeiros";
+        phones.lbBody = @"Bombeiros";
+        phones.lbDetailBody = @"";
+        phones.lbPhone = @"192";
+        phones.imgDetail = @"iconBombeiros.png";
     } else if (indexPath.row == 3) {
-        text = @"Ligar para a Defesa Civil";
+        //text = @"Ligar para a Defesa Civil";
+        Phones *phones = [Phones getInstance];
+        phones.lbHeader = @"Defesa Civil";
+        phones.lbBody = @"Defesa Civil";
+        phones.lbDetailBody = @"";
+        phones.lbPhone = @"192";
+        phones.imgDetail = @"iconDefesacivil.png";
     }
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:text preferredStyle:UIAlertControllerStyleActionSheet];
+    DetailPhoneViewController *detailPhoneViewController = [[DetailPhoneViewController alloc] init];
+    [self.navigationController pushViewController:detailPhoneViewController animated:YES];
+    
+    /*UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:text preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"SIM" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button YES");
         if (indexPath.row == 0) {
@@ -114,7 +157,7 @@
     }];
     [alert addAction:yesAction];
     [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    [self presentViewController:alert animated:YES completion:nil];*/
 
     
 }

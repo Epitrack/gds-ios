@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -19,38 +20,32 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="i1j-0A-A5e">
-                    <rect key="frame" x="40" y="66" width="240" height="100"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKs-8b-1X6">
+                    <rect key="frame" x="8" y="88" width="304" height="472"/>
                     <animations/>
-                </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="JKs-8b-1X6">
-                    <rect key="frame" x="24" y="174" width="272" height="386"/>
-                    <animations/>
-                    <mutableString key="text">Cuidados Básicos
+                    <mutableString key="text">Procure seu médico, preferencialmente, entre 4 e 8 semanas antes da viagem para informar seu roteiro. Peça orientações sobre cuidados para proteção contra doenças e lesões;
 
-	• Procure seu médico, preferencialmente, entre 4 e 8 semanas antes da viagem para informar seu roteiro. Peça orientações sobre cuidados para proteção contra doenças e lesões;
+Você pode ter dificuldade ou não encontrar os medicamentos que utiliza habitualmente durante a viagem. Peça orientação ao seu médico sobre quais medicamentos e em que quantidade deve levar durante a viagem, incluindo a bagagem de mão;
 
-	• Você pode ter dificuldade ou não encontrar os medicamentos que utiliza habitualmente durante a viagem. Peça orientação ao seu médico sobre quais medicamentos e em que quantidade deve levar durante a viagem, incluindo a bagagem de mão;
+Carregue com você os seus documentos de identificação, de preferência em inglês e português, com informações de contatos pessoais, tipo sanguíneo, se tem alergias, diabetes ou outras doenças que possam requerer particular atenção;
 
-	• Carregue com você os seus documentos de identificação, de preferência em inglês e português, com informações de contatos pessoais, tipo sanguíneo, se tem alergias, diabetes ou outras doenças que possam requerer particular atenção;
+Toda gestante deve consultar seu médico antes da viagem, pois estará sujeita a vários riscos e a viagem pode afetar sua segurança e conforto;
 
-	• Toda gestante deve consultar seu médico antes da viagem, pois estará sujeita a vários riscos e a viagem pode afetar sua segurança e conforto;
+Antes de viajar consulte a empresa de transporte sobre as regras específicas para gestantes;
 
-	• Antes de viajar consulte a empresa de transporte sobre as regras específicas para gestantes;
+O Brasil é um país de clima tropical. Recomenda-se ao viajante a ingestão constante de líquidos para evitar a desidratação;
 
-	• O Brasil é um país de clima tropical. Recomenda-se ao viajante a ingestão constante de líquidos para evitar a desidratação;
+Use roupas e calçados confortáveis. Eles lhe darão segurança e proteção contra torções, picadas de insetos e acidentes com animais peçonhentos;
 
-	• Use roupas e calçados confortáveis. Eles lhe darão segurança e proteção contra torções, picadas de insetos e acidentes com animais peçonhentos;
+Para se proteger do sol, cubra-se com roupas apropriadas, utilize chapéu ou boné e óculos escuros. Evite a exposição direta ao sol entre 10 horas da manhã e 4 horas da tarde;
 
-	• Para se proteger do sol, cubra-se com roupas apropriadas, utilize chapéu ou boné e óculos escuros. Evite a exposição direta ao sol entre 10 horas da manhã e 4 horas da tarde;
+Use protetor solar com fator de proteção adequado à cor de sua pele, de acordo com as orientações do fabricante. Mesmo em locais mais frios, sua pele ficará protegida dos raios solares;
 
-	• Use protetor solar com fator de proteção adequado à cor de sua pele, de acordo com as orientações do fabricante. Mesmo em locais mais frios, sua pele ficará protegida dos raios solares;
+Use repelentes quando houver necessidade;
 
-	• Use repelentes quando houver necessidade;
+Lave as mãos com água e sabão várias vezes ao dia, principalmente antes de ingerir alimentos, após utilizar conduções públicas, visitar mercados ou locais com grande fluxo de pessoas.
 
-	• Lave as mãos com água e sabão várias vezes ao dia, principalmente antes de ingerir alimentos, após utilizar conduções públicas, visitar mercados ou locais com grande fluxo de pessoas.
-
-	• No Brasil, é proibido por lei dirigir após o consumo de bebida alcoólica, mesmo em pequenas quantidades.</mutableString>
+No Brasil, é proibido por lei dirigir após o consumo de bebida alcoólica, mesmo em pequenas quantidades.</mutableString>
                     <color key="textColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -60,17 +55,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="JKs-8b-1X6" secondAttribute="bottom" constant="8" id="3u6-gk-fPO"/>
-                <constraint firstItem="i1j-0A-A5e" firstAttribute="top" secondItem="Odf-hL-Utb" secondAttribute="top" constant="66" id="6ui-i5-U0s"/>
-                <constraint firstItem="JKs-8b-1X6" firstAttribute="top" secondItem="i1j-0A-A5e" secondAttribute="bottom" constant="8" id="Qjy-cC-g0o"/>
-                <constraint firstItem="JKs-8b-1X6" firstAttribute="leading" secondItem="Odf-hL-Utb" secondAttribute="leading" constant="24" id="SJP-Lf-DS7"/>
-                <constraint firstItem="i1j-0A-A5e" firstAttribute="leading" secondItem="Odf-hL-Utb" secondAttribute="leading" constant="40" id="Si0-f0-HGl"/>
-                <constraint firstAttribute="trailing" secondItem="i1j-0A-A5e" secondAttribute="trailing" constant="40" id="fGL-vu-QaJ"/>
-                <constraint firstAttribute="trailing" secondItem="JKs-8b-1X6" secondAttribute="trailing" constant="24" id="odX-40-e4a"/>
+                <constraint firstItem="JKs-8b-1X6" firstAttribute="top" secondItem="Odf-hL-Utb" secondAttribute="top" constant="88" id="6wR-vA-Tzt"/>
+                <constraint firstItem="JKs-8b-1X6" firstAttribute="leading" secondItem="Odf-hL-Utb" secondAttribute="leading" constant="8" id="SJP-Lf-DS7"/>
+                <constraint firstAttribute="trailing" secondItem="JKs-8b-1X6" secondAttribute="trailing" constant="8" id="odX-40-e4a"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
-    <resources>
-        <image name="icon_logo_horizontal.png" width="219" height="100"/>
-    </resources>
 </document>
