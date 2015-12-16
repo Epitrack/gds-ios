@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [NSTimer scheduledTimerWithTimeInterval:0.3
+    [NSTimer scheduledTimerWithTimeInterval:0.5
                                      target:self
                                    selector:@selector(doAnimation:)
                                    userInfo:nil
