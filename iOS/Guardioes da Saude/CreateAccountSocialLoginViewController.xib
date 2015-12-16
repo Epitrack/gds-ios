@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateAccountSocialLoginViewController">
             <connections>
+                <outlet property="dtPikerDob" destination="y1S-cV-AfF" id="1bi-Ns-g0a"/>
                 <outlet property="pickerGender" destination="8m0-Dz-byZ" id="zpx-kQ-8gt"/>
                 <outlet property="pickerRace" destination="7ab-ie-4IU" id="mvt-h2-ONp"/>
                 <outlet property="txtEmail" destination="y5r-E9-s3L" id="Rvz-dc-NZt"/>

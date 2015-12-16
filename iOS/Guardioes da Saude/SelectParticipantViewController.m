@@ -54,6 +54,7 @@ const float kCellHeight = 100.0f;
     sampleTableView.dataSource = self;
     sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     sampleTableView.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
+    sampleTableView.alwaysBounceVertical = NO;
     [self.view addSubview:sampleTableView];
     
     self.txtNameMainMember.text = user.nick;
@@ -147,7 +148,7 @@ const float kCellHeight = 100.0f;
                     NSString *idHousehold = h[@"id"];
                     NSString *dob = h[@"dob"];
                     
-                    picture = @"0";
+                    //picture = @"0";
                     
                     if ([picture isEqualToString:@"0"]) {
                         avatar = @"img_profile01.png";
@@ -161,7 +162,7 @@ const float kCellHeight = 100.0f;
                         }
                     }
                     
-                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick dob:dob];
+                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
                     [buttons addObject:thumb];
                     [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }

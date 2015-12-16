@@ -10,6 +10,7 @@
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
 #import "HomeViewController.h"
+#import "SelectTypeCreateAccoutViewController.h"
 
 @interface CreateAccountSocialLoginViewController () {
     
@@ -32,6 +33,11 @@
     
     pickerDataGender = @[@"Masculino", @"Feminino"];
     pickerDataRace = @[@"branco", @"preto", @"pardo", @"amarelo", @"indigena"];
+    
+    self.pickerGender.dataSource = self;
+    self.pickerGender.delegate = self;
+    self.pickerRace.dataSource = self;
+    self.pickerRace.delegate = self;
     
     self.txtNick.text = user.nick;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde." preferredStyle:UIAlertControllerStyleActionSheet];
@@ -291,5 +297,57 @@
 
 
 - (IBAction)backButtonAction:(id)sender {
+    SelectTypeCreateAccoutViewController *selectTypeCreateAccountViewController = [[SelectTypeCreateAccoutViewController alloc] init];
+    [self.navigationController pushViewController:selectTypeCreateAccountViewController animated:YES];
+}
+
+// The number of columns of data
+- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+// The number of rows of data
+- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    int iReturn = 0;
+    
+    if (pickerView == self.pickerRace) {
+        iReturn = pickerDataRace.count;
+    } else if (pickerView == self.pickerGender) {
+        iReturn = pickerDataGender.count;
+    }
+    
+    return iReturn;
+}
+
+// The data to return for the row and component (column) that's being passed in
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *strReturn;
+    
+    if (pickerView == self.pickerRace) {
+        strReturn = pickerDataRace[row];
+    } else if (pickerView == self.pickerGender) {
+        strReturn = pickerDataGender[row];
+    }
+    
+    return strReturn;
+}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    UILabel* tView = (UILabel*)view;
+    if (!tView) {
+        tView = [[UILabel alloc] init];
+        
+        [tView setFont:[UIFont fontWithName:@"Helvetica" size:15]];
+        [tView setTextAlignment:UITextAlignmentCenter];
+        
+    }
+    
+    if (pickerView == self.pickerRace) {
+        tView.text = [pickerDataRace objectAtIndex:row];
+    } else if (pickerView == self.pickerGender) {
+        tView.text = [pickerDataGender objectAtIndex:row];
+    }
+    
+    return tView;
 }
 @end

@@ -25,6 +25,15 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"UPAs";
     
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+
+    
     self.mapEmergency.showsUserLocation = YES;
     self.mapEmergency.delegate = self;
     

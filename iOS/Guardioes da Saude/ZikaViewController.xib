@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Foco_Std_Rg.ttf">
+            <string>Foco-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZikaViewController">
+            <connections>
+                <outlet property="view" destination="dT6-vV-cw4" id="UQ2-sp-KPO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="dT6-vV-cw4">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5G0-ep-RNZ">
+                    <rect key="frame" x="8" y="88" width="304" height="472"/>
+                    <animations/>
+                    <mutableString key="text">Os vírus da Dengue, Zika e Chikungunya são transmitidos pelo mosquito Aedes aegypti e apresentam sinais e sintomas parecidos, por isso é importante que procure o serviço de saúde mais próximo quando apresentar febre, dores no corpo e nas juntas (articulações) e observar manchas vermelhas pelo corpo, coceira e, principalmente, se você souber que no seu bairro ou cidade estão acontecendo casos de Dengue, Zika ou Chikungunya.
+
+A Dengue é a doença mais comum que muitos já conhecem. A infecção pelo vírus Zika e pelo vírus Chikungunya é mais recente. Essas doenças só começaram a aparecer no Brasil nos últimos dois anos.
+
+A maior parte das pessoas, cerca de 70% a 80%, que se infectarem pelo vírus Zika não ficarão doentes. É muito raro acontecer complicações pela infecção pelo vírus Zika, como a síndrome neurológica (exemplo: Síndrome de Guillain-Barré) ou malformações congênitas (ex.: microcefalia).
+
+Não existe tratamento específico para a infecção pelo vírus Zika. Não se recomenda o uso de medicamentos sem prescrição médica, em função do risco aumentado de complicações hemorrágicas (sangramento). Não se deve utilizar os medicamentos a base de ácido acetilsalicílico (ex.: AAS, Aspirina entre outros), nem anti-inflamatórios,
+
+A principal medida de prevenção é evitar a reprodução dos mosquitos transmissores das três doenças, o Aedes aegypti, evitando deixar água parada em pratinhos de plantas, jogando o lixo na lixeira, tampando as caixas de água e outros recipientes.
+
+Os repelentes para uso sobre a pele podem ser utilizados por gestantes, desde que estejam devidamente registrados na ANVISA e que sejam seguidas as instruções de uso descritas no rótulo. Produtos à base de DEET não devem ser usados em crianças menores de 2 anos. Em crianças entre 2 e 12 anos, a concentração dever ser no máximo 10% e a aplicação deve se restringir a 3 vezes por dia. Concentrações superiores a 10% são permitidas para maiores de 12 anos.
+
+Os repelentes de ambiente, como aqueles de parede (aparelhos elétricos) ou espirais não devem ser utilizados em locais com pouca ventilação nem na presença de pessoas asmáticas ou com alergias respiratórias. Podem ser utilizados em qualquer ambiente da casa desde que estejam no mínimo a 2 metros de distância das pessoas;
+</mutableString>
+                    <color key="textColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="5G0-ep-RNZ" firstAttribute="leading" secondItem="dT6-vV-cw4" secondAttribute="leading" constant="8" id="DGN-1l-fEC"/>
+                <constraint firstItem="5G0-ep-RNZ" firstAttribute="top" secondItem="dT6-vV-cw4" secondAttribute="top" constant="88" id="U7t-h3-WSu"/>
+                <constraint firstAttribute="trailing" secondItem="5G0-ep-RNZ" secondAttribute="trailing" constant="8" id="am8-Bf-kh7"/>
+                <constraint firstAttribute="bottom" secondItem="5G0-ep-RNZ" secondAttribute="bottom" constant="8" id="nLy-BZ-bLx"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

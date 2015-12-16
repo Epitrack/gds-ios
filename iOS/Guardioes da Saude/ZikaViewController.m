@@ -1,35 +1,38 @@
 //
-//  TermsViewController.m
+//  ZikaViewController.m
 //  Guardioes da Saude
 //
-//  Created by Miqueias Lopes on 13/11/15.
+//  Created by Miqueias Lopes on 16/12/15.
 //  Copyright © 2015 epitrack. All rights reserved.
 //
 
-#import "TermsViewController.h"
+#import "ZikaViewController.h"
 
-@interface TermsViewController ()
+@interface ZikaViewController ()
 
 @end
 
-@implementation TermsViewController
+@implementation ZikaViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Termos e Políticas";
+    self.navigationItem.title = @"Dicas de Saúde";
+    
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [super viewWillAppear:animated];
-}
-
 
 /*
 #pragma mark - Navigation

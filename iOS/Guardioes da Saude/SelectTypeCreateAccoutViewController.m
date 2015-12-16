@@ -138,7 +138,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     self.btnFacebookDesable.hidden = NO;
     self.btnGoogleDesable.hidden = NO;
     self.btnTwitterDesable.hidden = NO;
-    self.btnEmail.enabled = NO;
+    self.btnEmailDesable.hidden = NO;
 }
 
 - (void) enableButtons {
@@ -146,7 +146,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     self.btnFacebookDesable.hidden = YES;
     self.btnGoogleDesable.hidden = YES;
     self.btnTwitterDesable.hidden = YES;
-    self.btnEmail.enabled = YES;
+    self.btnEmailDesable.hidden = YES;
 }
 
 - (IBAction)btnFacebookAction:(id)sender {
@@ -307,7 +307,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     UIImage *checkBoxFalse = [UIImage imageNamed:@"icon_checkbox_false.png"];
     UIImage *checkBoxTrue = [UIImage imageNamed:@"icon_checkbok_true.png"];
      
-    if (self.btnEmail.enabled == NO) {
+    if (self.btnEmailDesable.hidden == NO) {
         [self enableButtons];
         [self.btnCheckTerms setImage:checkBoxTrue forState:UIControlStateNormal];
         isEnabled = YES;
@@ -354,5 +354,13 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 - (IBAction)btnBackAction:(id)sender {
     TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
     [self.navigationController pushViewController:tutorialViewController animated:YES];
+}
+- (IBAction)btnEmailDesable:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"You pressed button OK");
+    }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end

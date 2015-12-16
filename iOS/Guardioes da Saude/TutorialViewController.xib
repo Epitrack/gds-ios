@@ -3,12 +3,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Foco_Std_Bd.ttf">
             <string>Foco-Bold</string>
         </mutableArray>
         <mutableArray key="Foco_Std_Lt.ttf">
+            <string>Foco-Light</string>
             <string>Foco-Light</string>
         </mutableArray>
         <mutableArray key="Foco_Std_Rg.ttf">
@@ -20,6 +23,7 @@
             <connections>
                 <outlet property="imgBgTutorial" destination="tFN-vj-bKJ" id="bsV-Kl-fZc"/>
                 <outlet property="imgTutorial" destination="ctv-Wu-AJh" id="GLb-Xv-p15"/>
+                <outlet property="lbDescription" destination="wF8-KP-BLO" id="kdW-0O-7CY"/>
                 <outlet property="pageControl" destination="9KC-Jm-W5d" id="gsb-L8-Ieg"/>
                 <outlet property="txtDescription" destination="CbB-mO-5AG" id="cko-dX-ObY"/>
                 <outlet property="txtTitle" destination="8DL-7b-WqM" id="hdp-fk-i8N"/>
@@ -47,13 +51,6 @@
                     <rect key="frame" x="132" y="392" width="55" height="37"/>
                     <animations/>
                 </pageControl>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Bem-vindo!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8DL-7b-WqM">
-                    <rect key="frame" x="54" y="29" width="211" height="30"/>
-                    <animations/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Preparado para se tornar um Guardião da Saúde?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CbB-mO-5AG">
                     <rect key="frame" x="8" y="52" width="304" height="70"/>
                     <animations/>
@@ -61,12 +58,15 @@
                         <constraint firstAttribute="height" constant="70" id="zdK-tJ-UUQ"/>
                     </constraints>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-Wu-AJh">
                     <rect key="frame" x="31" y="106" width="258" height="269"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ctv-Wu-AJh" secondAttribute="height" multiplier="258:269" id="Oh6-hn-UN9"/>
+                    </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOh-dH-CHU">
                     <rect key="frame" x="184" y="432" width="105" height="40"/>
@@ -79,22 +79,44 @@
                         <action selector="btnEnter:" destination="-1" eventType="touchUpInside" id="jiB-Yh-67Z"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Preparado para se tornar um Guardião da Saúde" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF8-KP-BLO">
+                    <rect key="frame" x="56" y="80" width="209" height="42"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="209" id="9X1-EC-KNb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Bem-vindo!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8DL-7b-WqM">
+                    <rect key="frame" x="54" y="29" width="211" height="30"/>
+                    <animations/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="21"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="CbB-mO-5AG" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="8" id="1QW-zW-4H5"/>
+                <constraint firstItem="wF8-KP-BLO" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="72" id="1qk-52-Dz7"/>
                 <constraint firstItem="8DL-7b-WqM" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="54" id="1r2-fM-nxH"/>
                 <constraint firstItem="9KC-Jm-W5d" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="132" id="7CH-ig-C2u"/>
                 <constraint firstItem="CbB-mO-5AG" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" constant="52" id="9lV-q2-zcz"/>
                 <constraint firstAttribute="bottom" secondItem="i40-G2-ylt" secondAttribute="bottom" constant="8" id="BDl-xY-krA"/>
                 <constraint firstAttribute="trailing" secondItem="TOh-dH-CHU" secondAttribute="trailing" constant="31" id="C48-3Y-SCa"/>
                 <constraint firstItem="ctv-Wu-AJh" firstAttribute="centerX" secondItem="tFN-vj-bKJ" secondAttribute="centerX" id="CNO-17-kBy"/>
+                <constraint firstItem="wF8-KP-BLO" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" constant="0.5" id="Dmb-W2-acB"/>
                 <constraint firstAttribute="bottom" secondItem="i40-G2-ylt" secondAttribute="bottom" constant="8" id="EL3-bX-BJN"/>
                 <constraint firstAttribute="trailing" secondItem="9KC-Jm-W5d" secondAttribute="trailing" constant="133" id="Ea5-fG-zOt"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" id="I5y-8j-iqx"/>
                 <constraint firstItem="i40-G2-ylt" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="31" id="Il7-j2-ajn"/>
                 <constraint firstAttribute="bottom" secondItem="tFN-vj-bKJ" secondAttribute="bottom" id="JAd-C5-d4O"/>
+                <constraint firstItem="wF8-KP-BLO" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="72" id="Mvq-IR-v6Y"/>
+                <constraint firstAttribute="trailing" secondItem="wF8-KP-BLO" secondAttribute="trailing" constant="72" id="OXu-T0-UcV"/>
+                <constraint firstAttribute="trailing" secondItem="wF8-KP-BLO" secondAttribute="trailing" constant="71" id="Qew-fH-NZe"/>
                 <constraint firstItem="8DL-7b-WqM" firstAttribute="height" secondItem="tFN-vj-bKJ" secondAttribute="height" constant="-450" id="RFj-ki-ZC5"/>
                 <constraint firstItem="9KC-Jm-W5d" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="132" id="RPb-6R-5ra"/>
                 <constraint firstItem="9KC-Jm-W5d" firstAttribute="top" secondItem="ctv-Wu-AJh" secondAttribute="bottom" constant="17" id="RTm-6q-mbW"/>
@@ -107,16 +129,27 @@
                 <constraint firstItem="8DL-7b-WqM" firstAttribute="width" secondItem="tFN-vj-bKJ" secondAttribute="width" constant="-109" id="h8h-89-piM"/>
                 <constraint firstAttribute="trailing" secondItem="CbB-mO-5AG" secondAttribute="trailing" constant="8" id="hfj-vy-ycR"/>
                 <constraint firstAttribute="bottom" secondItem="TOh-dH-CHU" secondAttribute="bottom" constant="8" id="ib9-QQ-mcM"/>
+                <constraint firstItem="wF8-KP-BLO" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" constant="60" id="jbB-yM-Zh3"/>
                 <constraint firstAttribute="bottom" secondItem="TOh-dH-CHU" secondAttribute="bottom" constant="8" id="jzU-aP-TVp"/>
                 <constraint firstItem="i40-G2-ylt" firstAttribute="top" secondItem="9KC-Jm-W5d" secondAttribute="bottom" constant="3" id="kE8-bY-AfF"/>
                 <constraint firstAttribute="trailing" secondItem="tFN-vj-bKJ" secondAttribute="trailing" id="m1y-Dk-m06"/>
+                <constraint firstItem="wF8-KP-BLO" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" id="s3c-YZ-mNY"/>
                 <constraint firstItem="TOh-dH-CHU" firstAttribute="leading" secondItem="i40-G2-ylt" secondAttribute="trailing" constant="21" id="vYB-RP-DIK"/>
+                <constraint firstItem="wF8-KP-BLO" firstAttribute="centerY" secondItem="e6e-5v-vmX" secondAttribute="centerY" multiplier="0.25" constant="1" id="wWN-wr-U9u"/>
                 <constraint firstItem="9KC-Jm-W5d" firstAttribute="top" secondItem="ctv-Wu-AJh" secondAttribute="bottom" constant="17" id="wXz-JD-8Jl"/>
+                <constraint firstItem="wF8-KP-BLO" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="71" id="weg-4U-aWj"/>
                 <constraint firstAttribute="trailing" secondItem="TOh-dH-CHU" secondAttribute="trailing" constant="42" id="xqZ-Kg-eAt"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="1qk-52-Dz7"/>
+                    <exclude reference="Mvq-IR-v6Y"/>
+                    <exclude reference="OXu-T0-UcV"/>
+                    <exclude reference="Qew-fH-NZe"/>
+                    <exclude reference="s3c-YZ-mNY"/>
+                    <exclude reference="wWN-wr-U9u"/>
+                    <exclude reference="weg-4U-aWj"/>
                     <exclude reference="7CH-ig-C2u"/>
                     <exclude reference="RTm-6q-mbW"/>
                     <exclude reference="dvH-zJ-cwC"/>

@@ -47,7 +47,7 @@
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="26"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como esrá sua saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq">
                     <rect key="frame" x="8" y="230" width="297" height="61"/>
                     <animations/>
                     <constraints>
@@ -140,7 +140,7 @@
                 <constraint firstAttribute="trailing" secondItem="QqY-3s-F0Z" secondAttribute="trailing" constant="31" id="Gul-Ur-cRm"/>
                 <constraint firstItem="yjK-KE-wnq" firstAttribute="centerX" secondItem="P0O-cc-Vgz" secondAttribute="centerX" id="Hq6-PT-D0w"/>
                 <constraint firstItem="Pe7-h0-q1G" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="8" id="IWf-Fa-oa4"/>
-                <constraint firstItem="a0U-C0-bM8" firstAttribute="centerY" secondItem="P0O-cc-Vgz" secondAttribute="centerY" multiplier="1.8" id="Izy-Uy-jCB"/>
+                <constraint firstItem="a0U-C0-bM8" firstAttribute="centerY" secondItem="P0O-cc-Vgz" secondAttribute="centerY" multiplier="1.9" id="Izy-Uy-jCB"/>
                 <constraint firstItem="zIx-1e-Tfy" firstAttribute="centerY" secondItem="P0O-cc-Vgz" secondAttribute="centerY" multiplier="0.75" id="LAW-a6-O9v"/>
                 <constraint firstItem="yjK-KE-wnq" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="8" id="TSc-ob-Sb0"/>
                 <constraint firstItem="QqY-3s-F0Z" firstAttribute="centerY" secondItem="P0O-cc-Vgz" secondAttribute="centerY" multiplier="1.5" id="VBb-2E-9FV"/>

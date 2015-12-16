@@ -31,7 +31,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_survey.png" translatesAutoresizingMaskIntoConstraints="NO" id="isO-eI-eTP">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <rect key="frame" x="-6" y="0.0" width="326" height="486"/>
                     <animations/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
@@ -90,37 +90,6 @@
                         </mask>
                     </variation>
                 </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Membros do domicílio" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuy-Ah-4UN">
-                    <rect key="frame" x="97" y="341" width="131" height="39"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="218:77" id="IVF-wL-rKt"/>
-                        <constraint firstAttribute="width" constant="280" id="JGB-aW-u7r"/>
-                        <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="140:23" id="LNu-b8-KpQ"/>
-                        <constraint firstAttribute="width" constant="280" id="Vmm-ej-55f"/>
-                        <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="22:13" id="fqX-nG-cF3"/>
-                        <constraint firstAttribute="height" constant="39" id="gih-Bz-uw1"/>
-                        <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="140:23" id="pQX-ya-aZI"/>
-                        <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="140:23" id="sMH-pQ-aa6"/>
-                        <constraint firstAttribute="width" constant="131" id="tCy-QL-8DI"/>
-                        <constraint firstAttribute="width" constant="218" id="uTP-YL-Xez"/>
-                    </constraints>
-                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="13"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="IVF-wL-rKt"/>
-                            <exclude reference="JGB-aW-u7r"/>
-                            <exclude reference="LNu-b8-KpQ"/>
-                            <exclude reference="Vmm-ej-55f"/>
-                            <exclude reference="fqX-nG-cF3"/>
-                            <exclude reference="pQX-ya-aZI"/>
-                            <exclude reference="sMH-pQ-aa6"/>
-                            <exclude reference="uTP-YL-Xez"/>
-                        </mask>
-                    </variation>
-                </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Aninha" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OqM-Hs-WIA">
                     <rect key="frame" x="89" y="271" width="143" height="39"/>
                     <animations/>
@@ -162,11 +131,42 @@
                         <action selector="btnSelectMainMember:" destination="-1" eventType="touchUpInside" id="mbt-2t-ckA"/>
                     </connections>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Membros do domicílio" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuy-Ah-4UN">
+                    <rect key="frame" x="95" y="348" width="131" height="39"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="218:77" id="IVF-wL-rKt"/>
+                        <constraint firstAttribute="width" constant="280" id="JGB-aW-u7r"/>
+                        <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="140:23" id="LNu-b8-KpQ"/>
+                        <constraint firstAttribute="width" constant="280" id="Vmm-ej-55f"/>
+                        <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="22:13" id="fqX-nG-cF3"/>
+                        <constraint firstAttribute="height" constant="39" id="gih-Bz-uw1"/>
+                        <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="140:23" id="pQX-ya-aZI"/>
+                        <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="140:23" id="sMH-pQ-aa6"/>
+                        <constraint firstAttribute="width" constant="131" id="tCy-QL-8DI"/>
+                        <constraint firstAttribute="width" constant="218" id="uTP-YL-Xez"/>
+                    </constraints>
+                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="13"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="IVF-wL-rKt"/>
+                            <exclude reference="JGB-aW-u7r"/>
+                            <exclude reference="LNu-b8-KpQ"/>
+                            <exclude reference="Vmm-ej-55f"/>
+                            <exclude reference="fqX-nG-cF3"/>
+                            <exclude reference="pQX-ya-aZI"/>
+                            <exclude reference="sMH-pQ-aa6"/>
+                            <exclude reference="uTP-YL-Xez"/>
+                        </mask>
+                    </variation>
+                </textView>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="fuy-Ah-4UN" firstAttribute="centerY" secondItem="SnQ-vz-S2d" secondAttribute="centerY" multiplier="1.5" id="60y-jY-G8D"/>
+                <constraint firstItem="fuy-Ah-4UN" firstAttribute="centerY" secondItem="SnQ-vz-S2d" secondAttribute="centerY" multiplier="1.4" constant="31.5" id="60y-jY-G8D"/>
                 <constraint firstItem="IgO-QL-gMw" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" id="6GI-Zd-Fzs"/>
                 <constraint firstItem="IgO-QL-gMw" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" id="7xj-2i-Y5G"/>
                 <constraint firstItem="isO-eI-eTP" firstAttribute="top" secondItem="SnQ-vz-S2d" secondAttribute="top" id="9IY-wB-zbc"/>
@@ -177,20 +177,20 @@
                 <constraint firstItem="DZX-rV-oic" firstAttribute="width" secondItem="9Ru-5b-mQY" secondAttribute="width" multiplier="1.3" id="OIn-jk-SMr"/>
                 <constraint firstItem="OqM-Hs-WIA" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" id="ONA-XB-9f4"/>
                 <constraint firstItem="DZX-rV-oic" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" id="OR0-YY-r0P"/>
-                <constraint firstItem="isO-eI-eTP" firstAttribute="leading" secondItem="SnQ-vz-S2d" secondAttribute="leading" id="S6j-wS-UXq"/>
+                <constraint firstItem="isO-eI-eTP" firstAttribute="leading" secondItem="SnQ-vz-S2d" secondAttribute="leading" constant="-6" id="S6j-wS-UXq"/>
                 <constraint firstItem="9Ru-5b-mQY" firstAttribute="centerY" secondItem="SnQ-vz-S2d" secondAttribute="centerY" multiplier="0.926" constant="2.5159999999999627" id="cWM-Xi-kBx"/>
-                <constraint firstAttribute="bottom" secondItem="isO-eI-eTP" secondAttribute="bottom" id="ezM-h9-KIe"/>
-                <constraint firstItem="isO-eI-eTP" firstAttribute="centerY" secondItem="SnQ-vz-S2d" secondAttribute="centerY" id="i9i-s0-bNq"/>
+                <constraint firstAttribute="bottom" secondItem="isO-eI-eTP" secondAttribute="bottom" constant="-6" id="ezM-h9-KIe"/>
+                <constraint firstItem="isO-eI-eTP" firstAttribute="centerY" secondItem="SnQ-vz-S2d" secondAttribute="centerY" constant="3" id="i9i-s0-bNq"/>
                 <constraint firstItem="IgO-QL-gMw" firstAttribute="centerY" secondItem="SnQ-vz-S2d" secondAttribute="centerY" multiplier="0.43" id="iRF-tf-PpE"/>
-                <constraint firstItem="isO-eI-eTP" firstAttribute="height" secondItem="SnQ-vz-S2d" secondAttribute="height" id="kwf-Wd-dOZ"/>
+                <constraint firstItem="isO-eI-eTP" firstAttribute="height" secondItem="SnQ-vz-S2d" secondAttribute="height" constant="6" id="kwf-Wd-dOZ"/>
                 <constraint firstAttribute="trailing" secondItem="isO-eI-eTP" secondAttribute="trailing" id="rxR-EK-8eh"/>
-                <constraint firstItem="fuy-Ah-4UN" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" constant="2" id="sf0-QI-628"/>
+                <constraint firstItem="fuy-Ah-4UN" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" constant="0.5" id="sf0-QI-628"/>
                 <constraint firstItem="9Ru-5b-mQY" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" id="vsB-Wz-xGf"/>
                 <constraint firstItem="IgO-QL-gMw" firstAttribute="height" secondItem="SnQ-vz-S2d" secondAttribute="height" id="wYP-5C-VL0"/>
                 <constraint firstItem="OqM-Hs-WIA" firstAttribute="centerY" secondItem="SnQ-vz-S2d" secondAttribute="centerY" multiplier="1.21" id="yfP-6d-fss"/>
-                <constraint firstItem="isO-eI-eTP" firstAttribute="width" secondItem="SnQ-vz-S2d" secondAttribute="width" id="zWG-a9-DzG"/>
+                <constraint firstItem="isO-eI-eTP" firstAttribute="width" secondItem="SnQ-vz-S2d" secondAttribute="width" constant="6" id="zWG-a9-DzG"/>
                 <constraint firstItem="OqM-Hs-WIA" firstAttribute="width" secondItem="OqM-Hs-WIA" secondAttribute="height" multiplier="218:77" id="zg7-gs-gNu"/>
-                <constraint firstItem="isO-eI-eTP" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" id="zjR-I0-pjo"/>
+                <constraint firstItem="isO-eI-eTP" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" constant="-3" id="zjR-I0-pjo"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">

@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableSymptoms;
 - (IBAction)btnConfirmSurvey:(id)sender;
 - (void) loadSymptoms;
+@property (weak, nonatomic) IBOutlet UITextField *txtPais;
 
 
 @end

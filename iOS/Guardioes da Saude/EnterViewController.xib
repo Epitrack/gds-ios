@@ -26,10 +26,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghG-II-bFR" customClass="TPKeyboardAvoidingCollectionView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                    <animations/>
-                </scrollView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_blur_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vnd-r1-FUg">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <animations/>
@@ -41,6 +37,43 @@
                         <constraint firstAttribute="width" secondItem="XGt-Ju-gGZ" secondAttribute="height" multiplier="259:100" id="3cP-7N-UVn"/>
                     </constraints>
                 </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1M-kQ-Cl5">
+                    <rect key="frame" x="31" y="235" width="259" height="35"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Shn-8h-4t2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lEZ-rN-3BF">
+                    <rect key="frame" x="31" y="243" width="259" height="35"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="tQp-ad-y3m"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbr-Ez-0im">
+                    <rect key="frame" x="-8" y="32" width="79" height="25"/>
+                    <animations/>
+                    <state key="normal" image="iconBack.png"/>
+                    <connections>
+                        <action selector="iconBackAction:" destination="-1" eventType="touchUpInside" id="8vI-0r-hW8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3B-t8-oiR">
+                    <rect key="frame" x="61" y="423" width="122" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="Esqueceu a senha?">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="forgotPasswordAction:" destination="-1" eventType="touchUpInside" id="Ygj-Wn-J7k"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZD-9G-n14">
                     <rect key="frame" x="31" y="329" width="259" height="40"/>
                     <animations/>
@@ -60,37 +93,6 @@
                         <action selector="btnEnter:" destination="-1" eventType="touchUpInside" id="U1l-YW-sQE"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1M-kQ-Cl5">
-                    <rect key="frame" x="31" y="235" width="259" height="30"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lEZ-rN-3BF">
-                    <rect key="frame" x="31" y="243" width="259" height="30"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbr-Ez-0im">
-                    <rect key="frame" x="-8" y="32" width="79" height="25"/>
-                    <animations/>
-                    <state key="normal" image="iconBack.png"/>
-                    <connections>
-                        <action selector="iconBackAction:" destination="-1" eventType="touchUpInside" id="8vI-0r-hW8"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3B-t8-oiR">
-                    <rect key="frame" x="61" y="423" width="122" height="30"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <state key="normal" title="Esqueceu a senha?">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="forgotPasswordAction:" destination="-1" eventType="touchUpInside" id="Ygj-Wn-J7k"/>
-                    </connections>
-                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,21 +103,17 @@
                 <constraint firstItem="Vnd-r1-FUg" firstAttribute="centerY" secondItem="CW4-Kl-UeC" secondAttribute="centerY" id="4dq-IS-Sxc"/>
                 <constraint firstItem="lEZ-rN-3BF" firstAttribute="leading" secondItem="CW4-Kl-UeC" secondAttribute="leading" constant="31" id="5Kq-ZX-bdO"/>
                 <constraint firstItem="lEZ-rN-3BF" firstAttribute="leading" secondItem="CW4-Kl-UeC" secondAttribute="leading" constant="31" id="5bw-p1-7S8"/>
-                <constraint firstAttribute="trailing" secondItem="ghG-II-bFR" secondAttribute="trailing" id="88W-4S-vjs"/>
                 <constraint firstItem="lEZ-rN-3BF" firstAttribute="leading" secondItem="CW4-Kl-UeC" secondAttribute="leading" constant="31" id="Aqn-PU-noi"/>
                 <constraint firstItem="GZD-9G-n14" firstAttribute="centerY" secondItem="CW4-Kl-UeC" secondAttribute="centerY" multiplier="1.6" id="D95-ke-N1D"/>
                 <constraint firstItem="XGt-Ju-gGZ" firstAttribute="centerY" secondItem="CW4-Kl-UeC" secondAttribute="centerY" multiplier="0.5" id="DCS-iF-Nh6"/>
                 <constraint firstItem="Vnd-r1-FUg" firstAttribute="height" secondItem="CW4-Kl-UeC" secondAttribute="height" id="GgP-RH-kas"/>
                 <constraint firstItem="GZD-9G-n14" firstAttribute="top" secondItem="lEZ-rN-3BF" secondAttribute="bottom" constant="26" id="MT3-ZR-rnE"/>
                 <constraint firstAttribute="trailing" secondItem="GZD-9G-n14" secondAttribute="trailing" constant="30" id="Oo5-aD-NGI"/>
-                <constraint firstAttribute="bottom" secondItem="ghG-II-bFR" secondAttribute="bottom" id="Qvs-qG-HZ2"/>
                 <constraint firstItem="GZD-9G-n14" firstAttribute="top" secondItem="lEZ-rN-3BF" secondAttribute="bottom" constant="26" id="RBt-Ld-67l"/>
-                <constraint firstItem="ghG-II-bFR" firstAttribute="leading" secondItem="CW4-Kl-UeC" secondAttribute="leading" id="T7A-0F-abF"/>
                 <constraint firstItem="GZD-9G-n14" firstAttribute="centerX" secondItem="CW4-Kl-UeC" secondAttribute="centerX" id="T9a-QI-9hY"/>
                 <constraint firstAttribute="trailing" secondItem="x1M-kQ-Cl5" secondAttribute="trailing" constant="30" id="Ug0-iq-pfY"/>
                 <constraint firstAttribute="bottom" secondItem="GZD-9G-n14" secondAttribute="bottom" constant="111" id="WMu-Ny-U1i"/>
                 <constraint firstItem="lEZ-rN-3BF" firstAttribute="leading" secondItem="CW4-Kl-UeC" secondAttribute="leading" constant="31" id="Wd7-AL-2jj"/>
-                <constraint firstItem="ghG-II-bFR" firstAttribute="top" secondItem="CW4-Kl-UeC" secondAttribute="top" id="WhB-IE-qOn"/>
                 <constraint firstItem="p3B-t8-oiR" firstAttribute="centerX" secondItem="CW4-Kl-UeC" secondAttribute="centerX" id="WlX-vF-xZJ"/>
                 <constraint firstAttribute="trailing" secondItem="lEZ-rN-3BF" secondAttribute="trailing" constant="30" id="bBg-TL-61O"/>
                 <constraint firstItem="lEZ-rN-3BF" firstAttribute="centerY" secondItem="CW4-Kl-UeC" secondAttribute="centerY" multiplier="1.075" id="lRG-xM-Dit"/>
@@ -125,7 +123,7 @@
                 <constraint firstItem="p3B-t8-oiR" firstAttribute="centerY" secondItem="CW4-Kl-UeC" secondAttribute="centerY" multiplier="1.75" id="ncE-fx-tyU"/>
                 <constraint firstItem="x1M-kQ-Cl5" firstAttribute="leading" secondItem="CW4-Kl-UeC" secondAttribute="leading" constant="31" id="osk-IN-ZvO"/>
                 <constraint firstItem="x1M-kQ-Cl5" firstAttribute="leading" secondItem="CW4-Kl-UeC" secondAttribute="leading" constant="31" id="pfW-OX-Uj2"/>
-                <constraint firstItem="x1M-kQ-Cl5" firstAttribute="centerY" secondItem="CW4-Kl-UeC" secondAttribute="centerY" multiplier="0.95" id="pwj-yk-BWU"/>
+                <constraint firstItem="x1M-kQ-Cl5" firstAttribute="centerY" secondItem="CW4-Kl-UeC" secondAttribute="centerY" multiplier="0.93" id="pwj-yk-BWU"/>
                 <constraint firstAttribute="trailing" secondItem="lEZ-rN-3BF" secondAttribute="trailing" constant="30" id="qA0-Ge-ZHA"/>
                 <constraint firstItem="lEZ-rN-3BF" firstAttribute="centerX" secondItem="CW4-Kl-UeC" secondAttribute="centerX" id="qOd-1y-wf0"/>
                 <constraint firstItem="Vnd-r1-FUg" firstAttribute="width" secondItem="CW4-Kl-UeC" secondAttribute="width" id="qT7-ya-EV5"/>

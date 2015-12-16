@@ -17,6 +17,7 @@
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
+            <string>Foco-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -24,6 +25,7 @@
             <connections>
                 <outlet property="btnCheckTerms" destination="QZA-Fy-5Cg" id="rqw-Ko-z7p"/>
                 <outlet property="btnEmail" destination="edN-vg-sjp" id="JSG-ZA-XyR"/>
+                <outlet property="btnEmailDesable" destination="nlr-U8-F6q" id="PVc-0V-Sde"/>
                 <outlet property="btnFacebook" destination="cdD-kQ-h32" id="Ynu-0Q-kId"/>
                 <outlet property="btnFacebookDesable" destination="b4x-lS-wai" id="279-gk-ze1"/>
                 <outlet property="btnGoogle" destination="eRs-bz-7jh" id="5EZ-pB-xzD"/>
@@ -83,19 +85,6 @@
                         <action selector="btnGoogleDesabelAction:" destination="-1" eventType="touchUpInside" id="pCg-GT-iBM"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Ou use seu email:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlz-z5-CYt">
-                    <rect key="frame" x="27" y="432" width="98" height="31"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="3Dn-aH-yGx"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="Jc5-Zz-OT0"/>
-                        <constraint firstAttribute="height" constant="31" id="LXU-u8-Eaf"/>
-                        <constraint firstAttribute="width" constant="98" id="rGh-ue-MFu"/>
-                    </constraints>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="12"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edN-vg-sjp">
                     <rect key="frame" x="27" y="468" width="265" height="35"/>
                     <animations/>
@@ -105,6 +94,18 @@
                     </state>
                     <connections>
                         <action selector="btnEmailAction:" destination="-1" eventType="touchUpInside" id="TB9-zs-dw6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlr-U8-F6q">
+                    <rect key="frame" x="37" y="478" width="265" height="35"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
+                    <state key="normal" backgroundImage="buttonEmailDisable.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnEmailAction:" destination="-1" eventType="touchUpInside" id="QN5-1P-Y6H"/>
+                        <action selector="btnEmailDesable:" destination="-1" eventType="touchUpInside" id="vVC-qi-h5f"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oii-BN-GLk">
@@ -135,10 +136,10 @@
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="1cR-vD-Psr"/>
-                        <constraint firstAttribute="width" constant="165" id="Bth-bu-Q8C"/>
+                        <constraint firstAttribute="width" constant="250" id="Bth-bu-Q8C"/>
                     </constraints>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKB-zz-AY4">
@@ -188,6 +189,19 @@
                         <action selector="btnFacebookDesableAction:" destination="-1" eventType="touchUpInside" id="XKt-uL-jn5"/>
                     </connections>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Ou use seu email:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlz-z5-CYt">
+                    <rect key="frame" x="27" y="434" width="135" height="31"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="3Dn-aH-yGx"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="Jc5-Zz-OT0"/>
+                        <constraint firstAttribute="height" constant="31" id="LXU-u8-Eaf"/>
+                        <constraint firstAttribute="width" constant="150" id="rGh-ue-MFu"/>
+                    </constraints>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,6 +214,7 @@
                 <constraint firstItem="oC3-n5-Qke" firstAttribute="height" secondItem="oq7-He-VLg" secondAttribute="height" id="8uv-31-gLX"/>
                 <constraint firstItem="b4x-lS-wai" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="0.9" id="9hA-mz-ha4"/>
                 <constraint firstItem="szV-Js-ayu" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.2" id="BSW-gR-ShB"/>
+                <constraint firstItem="nlr-U8-F6q" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.5" id="BrN-re-6KT"/>
                 <constraint firstItem="szV-Js-ayu" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="C3J-kj-VKM"/>
                 <constraint firstItem="P6m-iX-dQn" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="0.75" id="CXp-jh-2cG"/>
                 <constraint firstItem="gcd-wq-n0r" firstAttribute="top" secondItem="P6m-iX-dQn" secondAttribute="bottom" constant="34" id="FDI-BM-xAv"/>
@@ -211,6 +226,7 @@
                 <constraint firstItem="QZA-Fy-5Cg" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.65" id="ZPy-q0-Cfo"/>
                 <constraint firstItem="gEM-AV-79q" firstAttribute="top" secondItem="oq7-He-VLg" secondAttribute="top" constant="70" id="bAN-gb-9Da"/>
                 <constraint firstItem="bvt-Iu-XbR" firstAttribute="top" secondItem="oq7-He-VLg" secondAttribute="top" constant="24" id="fjI-Ck-kNj"/>
+                <constraint firstItem="nlr-U8-F6q" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="mEh-XD-S2s"/>
                 <constraint firstItem="P6m-iX-dQn" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leading" multiplier="1.1" constant="27" id="mwl-BK-8eN"/>
                 <constraint firstItem="oC3-n5-Qke" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="np6-mb-Sq1"/>
                 <constraint firstItem="eRs-bz-7jh" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.05" id="pic-zL-fDR"/>
@@ -219,7 +235,7 @@
                 <constraint firstItem="b4x-lS-wai" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="xFq-gT-eL7"/>
                 <constraint firstItem="edN-vg-sjp" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="xJB-hZ-76g"/>
                 <constraint firstItem="GKB-zz-AY4" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.65" id="xLt-el-M1h"/>
-                <constraint firstItem="P6m-iX-dQn" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" multiplier="0.72" id="xgi-2a-Hrc"/>
+                <constraint firstItem="P6m-iX-dQn" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" multiplier="0.81" id="xgi-2a-Hrc"/>
                 <constraint firstItem="oC3-n5-Qke" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" id="yKf-IU-KBd"/>
                 <constraint firstItem="cdD-kQ-h32" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="0.9" id="yOm-Md-mLb"/>
                 <constraint firstAttribute="trailing" secondItem="bvt-Iu-XbR" secondAttribute="trailing" constant="28" id="yyM-ts-5TC"/>
@@ -237,6 +253,7 @@
     </objects>
     <resources>
         <image name="BG_blur_tutorial.png" width="320" height="568"/>
+        <image name="buttonEmailDisable.png" width="265" height="35"/>
         <image name="buttonFacebookDesable.png" width="267" height="38"/>
         <image name="buttonGoogleDesable.png" width="267" height="38"/>
         <image name="buttonTwitterDesable.png" width="267" height="38"/>

@@ -32,6 +32,11 @@
 		520CD0E21BED436700F24B45 /* EnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520CD0E01BED436700F24B45 /* EnterViewController.m */; };
 		520CD0E31BED436700F24B45 /* EnterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CD0E11BED436700F24B45 /* EnterViewController.xib */; };
 		520CD0E51BED47EF00F24B45 /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CD0E41BED47EF00F24B45 /* TutorialViewController.xib */; };
+		520EB7131C21EF220054D818 /* buttonEmailDisable.png in Resources */ = {isa = PBXBuildFile; fileRef = 520EB7101C21EF220054D818 /* buttonEmailDisable.png */; };
+		520EB7141C21EF220054D818 /* buttonEmailDisable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 520EB7111C21EF220054D818 /* buttonEmailDisable@2x.png */; };
+		520EB7151C21EF220054D818 /* buttonEmailDisable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 520EB7121C21EF220054D818 /* buttonEmailDisable@3x.png */; };
+		520EB7191C21EF670054D818 /* ZikaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520EB7171C21EF670054D818 /* ZikaViewController.m */; };
+		520EB71A1C21EF670054D818 /* ZikaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520EB7181C21EF670054D818 /* ZikaViewController.xib */; };
 		5215BBBC1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215BBBA1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m */; };
 		5215BBBD1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5215BBBB1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib */; };
 		5215BBC61BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215BBC31BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m */; };
@@ -537,6 +542,12 @@
 		520CD0E01BED436700F24B45 /* EnterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterViewController.m; sourceTree = "<group>"; };
 		520CD0E11BED436700F24B45 /* EnterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnterViewController.xib; sourceTree = "<group>"; };
 		520CD0E41BED47EF00F24B45 /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
+		520EB7101C21EF220054D818 /* buttonEmailDisable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonEmailDisable.png; sourceTree = "<group>"; };
+		520EB7111C21EF220054D818 /* buttonEmailDisable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonEmailDisable@2x.png"; sourceTree = "<group>"; };
+		520EB7121C21EF220054D818 /* buttonEmailDisable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonEmailDisable@3x.png"; sourceTree = "<group>"; };
+		520EB7161C21EF670054D818 /* ZikaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZikaViewController.h; sourceTree = "<group>"; };
+		520EB7171C21EF670054D818 /* ZikaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZikaViewController.m; sourceTree = "<group>"; };
+		520EB7181C21EF670054D818 /* ZikaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZikaViewController.xib; sourceTree = "<group>"; };
 		5215BBB91BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeCreateAccoutViewController.h; sourceTree = "<group>"; };
 		5215BBBA1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTypeCreateAccoutViewController.m; sourceTree = "<group>"; };
 		5215BBBB1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTypeCreateAccoutViewController.xib; sourceTree = "<group>"; };
@@ -1236,6 +1247,9 @@
 				52E6F0851C209A6B00C88A08 /* DetailPhoneViewController.h */,
 				52E6F0861C209A6B00C88A08 /* DetailPhoneViewController.m */,
 				52E6F0871C209A6B00C88A08 /* DetailPhoneViewController.xib */,
+				520EB7161C21EF670054D818 /* ZikaViewController.h */,
+				520EB7171C21EF670054D818 /* ZikaViewController.m */,
+				520EB7181C21EF670054D818 /* ZikaViewController.xib */,
 			);
 			name = Tips;
 			sourceTree = "<group>";
@@ -1403,6 +1417,9 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				520EB7101C21EF220054D818 /* buttonEmailDisable.png */,
+				520EB7111C21EF220054D818 /* buttonEmailDisable@2x.png */,
+				520EB7121C21EF220054D818 /* buttonEmailDisable@3x.png */,
 				52E6F08A1C20B18E00C88A08 /* bgWhite@3x.png */,
 				52E6F08B1C20B18E00C88A08 /* bgWhite.png */,
 				52E6F08C1C20B18E00C88A08 /* bgWhite@2x.png */,
@@ -1922,6 +1939,7 @@
 				52E727261BEA93B800B46945 /* BG_blur_tutorial@2x.png in Resources */,
 				52E727AE1BEA93B800B46945 /* icon_tutorial01@2x.png in Resources */,
 				25F3B2381BDC8C540014BC30 /* HomeViewController.xib in Resources */,
+				520EB71A1C21EF670054D818 /* ZikaViewController.xib in Resources */,
 				52E727B41BEA93B800B46945 /* icon_tutorial03@2x.png in Resources */,
 				52D2BCA21BF12EBF007C9C09 /* img_profile07_mini@2x.png in Resources */,
 				52E727A31BEA93B800B46945 /* icon_profile.png in Resources */,
@@ -2005,6 +2023,7 @@
 				52E727091BEA93B800B46945 /* icon_tips_phones.png in Resources */,
 				529BE1CF1BF62C8200692EEC /* AboutViewController.xib in Resources */,
 				52E7277C1BEA93B800B46945 /* icon_info_white.png in Resources */,
+				520EB7141C21EF220054D818 /* buttonEmailDisable@2x.png in Resources */,
 				52E727E51BEA93B800B46945 /* input_floatbox_login_email.png in Resources */,
 				52E7274E1BEA93B800B46945 /* fab_cancel@3x.png in Resources */,
 				52EBA7521C11DD0E0019E1FA /* buttonTwitterDesable.png in Resources */,
@@ -2153,10 +2172,12 @@
 				52E727401BEA93B800B46945 /* button_facebook.png in Resources */,
 				52E727981BEA93B800B46945 /* icon_participeagora@2x.png in Resources */,
 				52D2BC881BF12EBF007C9C09 /* icon_pin_userlocation@3x.png in Resources */,
+				520EB7131C21EF220054D818 /* buttonEmailDisable.png in Resources */,
 				52D2BC931BF12EBF007C9C09 /* img_profile02_mini@2x.png in Resources */,
 				52E7277A1BEA93B800B46945 /* icon_info_blue@2x.png in Resources */,
 				52E7279D1BEA93B800B46945 /* icon_pin_urgency.png in Resources */,
 				52E727CC1BEA93B800B46945 /* img_profile04@3x.png in Resources */,
+				520EB7151C21EF220054D818 /* buttonEmailDisable@3x.png in Resources */,
 				52E7274D1BEA93B800B46945 /* fab_cancel@2x.png in Resources */,
 				52E727051BEA93B800B46945 /* icon_tips_basiccares@3x.png in Resources */,
 				52558CE11C18B8EE00AF7DDF /* imgTutorial02@3x.png in Resources */,
@@ -2411,6 +2432,7 @@
 				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,
 				520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */,
 				AAE38B4E1BFAA16F009CD20B /* ChartViewController.m in Sources */,
+				520EB7191C21EF670054D818 /* ZikaViewController.m in Sources */,
 				528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */,
 				25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */,
 				52E6F0711C1EFE8F00C88A08 /* TPKeyboardAvoidingTableView.m in Sources */,

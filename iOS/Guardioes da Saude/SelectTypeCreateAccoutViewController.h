@@ -31,5 +31,7 @@
 - (IBAction)btnTwitterDesabelAction:(id)sender;
 - (IBAction)btnInfoAction:(id)sender;
 - (IBAction)btnBackAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnEmailDesable;
+- (IBAction)btnEmailDesable:(id)sender;
 
 @end

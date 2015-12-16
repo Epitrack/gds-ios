@@ -45,7 +45,7 @@
                         </mask>
                     </variation>
                     <connections>
-                        <action selector="emergency:" destination="-1" eventType="touchUpInside" id="pk5-du-2HJ"/>
+                        <action selector="zika:" destination="-1" eventType="touchUpInside" id="VrS-BE-jer"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUq-5V-Heq">
@@ -98,6 +98,7 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="mHd-ek-5C2" secondAttribute="height" multiplier="74:27" id="rd7-kw-CD1"/>
                     </constraints>
+                    <color key="tintColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" backgroundImage="img_card.png"/>
                     <connections>
                         <action selector="basicCare:" destination="-1" eventType="touchUpInside" id="Ne1-8P-stg"/>
@@ -131,7 +132,7 @@
                         </mask>
                     </variation>
                 </textView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Zika" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WA-6E-hRp">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Dengue, Zika e Chikungunya" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WA-6E-hRp">
                     <rect key="frame" x="52" y="267" width="215" height="34"/>
                     <animations/>
                     <constraints>
@@ -141,7 +142,7 @@
                         <constraint firstAttribute="width" constant="214" id="hcr-NR-PBa"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -442,7 +443,7 @@
                 <constraint firstItem="DsO-Qz-4ZH" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="yIr-ga-tjn"/>
                 <constraint firstItem="zrb-lO-9HD" firstAttribute="centerY" secondItem="vpu-wB-7Pa" secondAttribute="centerY" id="yMp-Nh-Diz"/>
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="centerX" secondItem="YUq-5V-Heq" secondAttribute="centerX" multiplier="0.285" id="ybR-8E-LVb"/>
-                <constraint firstItem="vA2-1E-AcB" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="0.46" id="ymY-4m-IML"/>
+                <constraint firstItem="vA2-1E-AcB" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="0.5" id="ymY-4m-IML"/>
                 <constraint firstItem="yp8-C8-QpO" firstAttribute="width" secondItem="yp8-C8-QpO" secondAttribute="height" multiplier="74:27" id="zQi-XL-Bot"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

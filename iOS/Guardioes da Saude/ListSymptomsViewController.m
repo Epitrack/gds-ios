@@ -44,7 +44,7 @@
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     
     bgCellColor = [UIColor colorWithRed:(22/255.0) green:(112/255.0) blue:(200/255.0) alpha:1];
-    [self.tableSymptoms setSeparatorColor:[UIColor whiteColor]];
+    [self.tableSymptoms setSeparatorColor:bgCellColor];
     
     symptomsSelected = [[NSMutableDictionary alloc] init];
     
@@ -91,6 +91,7 @@
             [params setValue:user.platform forKey:@"platform"];
             [params setValue:@"N" forKey:@"no_symptom"];
             [params setValue:user.user_token forKey:@"token"];
+            [params setObject:self.txtPais.text forKey:@"travelLocation"];
             
             if (![user.idHousehold isEqualToString:@""] && user.idHousehold  != nil) {
                 [params setValue:user.idHousehold forKey:@"household_id"];
@@ -460,7 +461,7 @@
             //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
             cell.backgroundColor = bgCellColor;
             cell.textLabel.textColor = [UIColor whiteColor];
-            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Bold" size:18];
             cell.tag = indexPath.row;
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
@@ -473,7 +474,7 @@
             cell.backgroundColor = bgCellColor;
             cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
-            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:11];
+            cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:12];
             cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
             cell.textLabel.text = symptom.name;
             
@@ -509,7 +510,6 @@
         }
     } else if (indexPath.row == 16) {
         if ([symptom.code isEqualToString: @"hadTravelledAbroad"]) {
-            //UITableViewCell *cell = [self.tableSymptoms dequeueReusableCellWithIdentifier:symptom.code];
             cell.backgroundColor = bgCellColor;
             cell.textLabel.textColor = [UIColor whiteColor];
             cell.tag = indexPath.row;
@@ -518,19 +518,15 @@
             cell.textLabel.text = symptom.name;
             
             if ([selected containsIndex:indexPath.row]) {
-                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
                 UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
                 cell.accessoryView = checkmark;
             } else {
-                //cell.accessoryType = UITableViewCellAccessoryNone;
                 UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
                 cell.accessoryView = checkmark;
             }
         }
     }
-        
    return cell;
-    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -540,8 +536,15 @@
         UIView *bgColorView = [[UIView alloc] init];
         bgColorView.backgroundColor = bgCellColor;
         
-        [self.tableSymptoms setSeparatorColor:[UIColor whiteColor]];
+        [self.tableSymptoms setSeparatorColor:bgCellColor];
         [self.tableSymptoms cellForRowAtIndexPath:indexPath].selectedBackgroundView = bgColorView;
+        
+        if (indexPath.row == 16) {
+            self.txtPais.enabled = YES;
+        } else {
+            self.txtPais.text = @"";
+            self.txtPais.enabled = NO;
+        }
         
         if (indexPath.row == 13) {
             [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
@@ -549,28 +552,21 @@
         } else {
             if ([selected containsIndex:indexPath.row]) {
                 [selected removeIndex:indexPath.row];
-                //[self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-                //cell.accessoryType = UITableViewCellAccessoryNone;
                 UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
                 [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = checkmark;
             } else {
                 [selected addIndex:indexPath.row];
-                //[self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-                //cell.accessoryType = UITableViewCellAccessoryCheckmark;
                 UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
                 [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = checkmark;
             }
         }
-        //}
-        
     }
     @catch (NSException *exception) {
         NSLog(@"Error: %@", exception.description);
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
     

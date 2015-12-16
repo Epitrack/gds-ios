@@ -41,6 +41,16 @@
         [self authorizedAutomaticLogin:userToken];
     }
     
+    CGSize result = [[UIScreen mainScreen] bounds].size;
+    
+    if (result.height < 568) {
+        [self.txtDescription setFont:[UIFont fontWithName:@"Foco-Regular" size:10]];
+        [self.lbDescription setFont:[UIFont fontWithName:@"Foco-Regular" size:10]];
+        [self.txtTitle setFont:[UIFont fontWithName:@"Foco-Bold" size:14]];
+    }
+    
+    self.lbDescription.hidden = NO;
+    self.txtDescription.text = @"";
     self.navigationItem.hidesBackButton = YES;
     self.indexTutorial = 0;
     self.arrImg = @[@"icon_logo_tutorial.png", @"imgTutorial01.png", @"imgTutorial02.png", @"imgTutorial03.png"];
@@ -75,6 +85,7 @@
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[1]];
                 self.txtTitle.text = @"Como está sua saúde?";
                 self.txtDescription.text = @"Maque na lista os sintomas que você apresenta.";
+                self.lbDescription.hidden = YES;
                 self.indexTutorial += 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
@@ -82,6 +93,7 @@
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[2]];
                 self.txtTitle.text = @"Mapa da Saúde";
                 self.txtDescription.text = @"Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
+                self.lbDescription.hidden = YES;
                 self.indexTutorial += 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
@@ -89,6 +101,7 @@
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[3]];
                 self.txtTitle.text = @"Dicas de Saúde";
                 self.txtDescription.text = @"Veja como se prevenir de doenças, quais são as UPAS e farmácias mais próximas de você e telefones úteis para caso de emergência.";
+                self.lbDescription.hidden = YES;
                 self.indexTutorial += 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
@@ -105,6 +118,7 @@
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[2]];
                 self.txtTitle.text = @"Mapa da Saúde";
                 self.txtDescription.text = @"Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
+                self.lbDescription.hidden = YES;
                 self.indexTutorial -= 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
@@ -112,13 +126,15 @@
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[1]];
                 self.txtTitle.text = @"Como está sua saúde?";
                 self.txtDescription.text = @"Maque na lista os sintomas que você apresenta.";
+                self.lbDescription.hidden = YES;
                 self.indexTutorial -= 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
                 break;
             case 1:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[0]];
                 self.txtTitle.text = @"Bem-vindo";
-                self.txtDescription.text = @"Preparado para se tornar um Guardião da Saúde?";
+                self.txtDescription.text = @"";
+                self.lbDescription.hidden = NO;
                 self.indexTutorial -= 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
                 break;

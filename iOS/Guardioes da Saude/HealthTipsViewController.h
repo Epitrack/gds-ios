@@ -16,5 +16,6 @@
 - (IBAction)basicCare:(id)sender;
 - (IBAction)prevention:(id)sender;
 - (IBAction)phones:(id)sender;
+- (IBAction)zika:(id)sender;
 
 @end

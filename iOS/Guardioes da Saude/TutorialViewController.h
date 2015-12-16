@@ -17,5 +17,6 @@
 - (IBAction)btnEnter:(id)sender;
 - (IBAction)btnNewUser:(id)sender;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UILabel *lbDescription;
 
 @end

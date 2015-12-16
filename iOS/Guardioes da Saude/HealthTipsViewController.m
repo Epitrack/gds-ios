@@ -13,6 +13,7 @@
 #import "EmergencyViewController.h"
 #import "PreventionViewController.h"
 #import "PhonesViewController.h"
+#import "ZikaViewController.h"
 
 @interface HealthTipsViewController ()
 
@@ -77,5 +78,10 @@
 - (IBAction)phones:(id)sender {
     PhonesViewController *phonesViewController = [[PhonesViewController alloc] init];
     [self.navigationController pushViewController:phonesViewController animated:YES];
+}
+
+- (IBAction)zika:(id)sender {
+    ZikaViewController *zikaViewController = [[ZikaViewController alloc] init];
+    [self.navigationController pushViewController:zikaViewController animated:YES];
 }
 @end

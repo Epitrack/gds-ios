@@ -34,14 +34,14 @@
                     <animations/>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Entre rapidamente com:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdd-ll-kNL">
-                    <rect key="frame" x="26" y="202" width="165" height="31"/>
+                    <rect key="frame" x="26" y="202" width="250" height="31"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="AwV-1o-bdD"/>
-                        <constraint firstAttribute="width" constant="165" id="ToG-jf-JrN"/>
+                        <constraint firstAttribute="width" constant="250" id="ToG-jf-JrN"/>
                     </constraints>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="QmN-4s-x6D">
@@ -91,16 +91,16 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Ou use seu email:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geH-Tt-R1j">
-                    <rect key="frame" x="27" y="374" width="98" height="31"/>
+                    <rect key="frame" x="27" y="374" width="120" height="38"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="97.5" id="COp-MC-UIN"/>
+                        <constraint firstAttribute="width" constant="120" id="COp-MC-UIN"/>
                         <constraint firstAttribute="width" secondItem="geH-Tt-R1j" secondAttribute="height" multiplier="97:31" constant="1" id="HZ4-QK-isl"/>
                         <constraint firstAttribute="width" constant="211" id="iJt-JA-aND"/>
                         <constraint firstAttribute="width" secondItem="geH-Tt-R1j" secondAttribute="height" multiplier="211:30" id="pmK-Sq-bJC"/>
                     </constraints>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -110,7 +110,7 @@
                     </variation>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovf-g5-HuC">
-                    <rect key="frame" x="27" y="410" width="265" height="35"/>
+                    <rect key="frame" x="27" y="417" width="265" height="35"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ovf-g5-HuC" secondAttribute="height" multiplier="53:7" id="VHf-DG-uft"/>

@@ -22,7 +22,15 @@
     [imageView setImage:[UIImage imageNamed:avatar]];
 
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(self.button.bounds.size.width/4, 50, self.button.bounds.size.width/2, self.button.bounds.size.height/2)];
-    label.text= nick;
+    
+    NSArray *array = [nick componentsSeparatedByString:@" "];
+    
+    if (array.count > 0) {
+        label.text = [array objectAtIndex:0];
+    } else {
+        label.text= nick;
+    }
+    
     label.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
     label.textColor = [UIColor whiteColor];
     [label setTextAlignment:NSTextAlignmentCenter];
@@ -54,7 +62,7 @@
     [imageView setImage:[UIImage imageNamed:avatar]];
     
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(self.button.bounds.size.width/4, 50, self.button.bounds.size.width/2, self.button.bounds.size.height/2)];
-    label.text= [NSString stringWithFormat:@"%@ - %ld Anos", nick, (long)ageUser];
+    label.text = [NSString stringWithFormat:@"%@ - %ld Anos", nick, (long)ageUser];
     label.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
     label.textColor = [UIColor whiteColor];
     [label setTextAlignment:NSTextAlignmentCenter];
