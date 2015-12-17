@@ -10,6 +10,7 @@ import android.os.Looper;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -104,6 +105,9 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
 
     @Bind(R.id.syndromes)
     TextView txtSyndromes;
+
+    @Bind(R.id.button_expand)
+    Button buttonExpand;
 
     private MarkerOptions badMarkerOption;
     private MarkerOptions goodMarkerOption;
@@ -200,9 +204,10 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
 
         if (slidingPanel.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED) {
             slidingPanel.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
-
+            buttonExpand.setBackground(this.getResources().getDrawable(R.drawable.fab_close));
         } else {
             slidingPanel.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+            buttonExpand.setBackground(this.getResources().getDrawable(R.drawable.fab_open));
         }
     }
 
@@ -328,7 +333,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                 JSONObject jsonObjectLocation = jsonObjectData.getJSONObject("location");
 
                 textViewCity.setText(jsonObjectLocation.get("city").toString());
-                textViewState.setText(jsonObjectLocation.get("state").toString());
+                textViewState.setText(getStateDescription(jsonObjectLocation.get("state").toString().toUpperCase()));
                 textViewParticipation.setText(jsonObjectData.get("total_surveys").toString() + " Participações essa semana.");
 
                 double totalNoSympton = Double.parseDouble(jsonObjectData.get("total_no_symptoms").toString());
@@ -378,8 +383,8 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     respiratoria = ((Integer.parseInt(jsonObjectDiseases.get("respiratoria").toString()) * 100) / total);
                     d = new Double(respiratoria);
 
-                    textViewPercentage1.setText(respiratoria + "%");
-                    progressBar1.setProgress(d.intValue());
+                    textViewPercentage3.setText(respiratoria + "%");
+                    progressBar3.setProgress(d.intValue());
                 } else {
                     textViewPercentage1.setText("0%");
                     progressBar1.setProgress(0);
@@ -483,5 +488,68 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
 
     protected boolean isAlwaysExpanded() {
         return false;
+    }
+
+    private String getStateDescription(String uf) {
+
+            String stateDiscription = "";
+
+            if (uf =="AC") {
+            stateDiscription = "Acre";
+            } else if (uf =="AL") {
+            stateDiscription = "Alagoas";
+            } else if (uf =="AP") {
+            stateDiscription = "Amapá";
+            } else if (uf =="AM") {
+            stateDiscription = "Amazonas";
+            } else if (uf =="BA") {
+            stateDiscription = "Bahia";
+            } else if (uf =="CE") {
+            stateDiscription = "Ceará";
+            } else if (uf =="DF") {
+            stateDiscription = "Distrito Federal";
+            } else if (uf =="ES") {
+            stateDiscription = "Espirito Santo";
+            } else if (uf =="GO") {
+            stateDiscription = "Goiás";
+            } else if (uf =="MA") {
+            stateDiscription = "Maranhão";
+            } else if (uf =="MT") {
+            stateDiscription = "Mato Grosso";
+            } else if (uf =="MS") {
+            stateDiscription = "Mato Grosso do Sul";
+            } else if (uf =="MG") {
+            stateDiscription = "Minas Gerais";
+            } else if (uf =="PR") {
+            stateDiscription = "Pará";
+            } else if (uf =="PB") {
+            stateDiscription = "Paraiba";
+            } else if (uf =="PA") {
+            stateDiscription = "Paraná";
+            } else if (uf =="PE") {
+            stateDiscription = "Pernambuco";
+            } else if (uf =="PI") {
+            stateDiscription = "Piauí";
+            } else if (uf =="RJ") {
+            stateDiscription = "Rio de Janeiro";
+            } else if (uf =="RN") {
+            stateDiscription = "Rio Grande do Norte";
+            } else if (uf =="RS") {
+            stateDiscription = "Rio Grande do Sul";
+            } else if (uf =="RO") {
+            stateDiscription = "Rondônia";
+            } else if (uf =="RR") {
+            stateDiscription = "Roraima";
+            } else if (uf =="SC") {
+            stateDiscription = "Santa Catarina";
+            } else if (uf =="SE") {
+            stateDiscription = "Sergipe";
+            } else if (uf =="SP") {
+            stateDiscription = "São Paulo";
+            } else if (uf =="TO") {
+            stateDiscription = "Tocantins";
+            }
+
+            return stateDiscription;
     }
 }

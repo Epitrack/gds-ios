@@ -13,9 +13,10 @@ import com.epitrack.guardioes.view.MapPointActivity;
  */
 public enum Tip implements IMenu {
 
+    ZIKA            (0, R.string.zika, R.drawable.icon_zika, ZikaTipActivity.class),
     HOSPITAL        (1, R.string.hospital, R.drawable.icon_hospital, MapPointActivity.class),
     VACCINE         (2, R.string.vaccine, R.drawable.icon_vaccine, VaccineActivity.class),
-    TELEPHONE       (3, R.string.phone, R.drawable.icon_phone, Fragment.class), // TODO: Stub
+    TELEPHONE       (3, R.string.phone, R.drawable.icon_phone, Fragment.class),
     PHARMACY        (4, R.string.pharmacy, R.drawable.icon_pharmacy, MapPointActivity.class),
     CARE            (5, R.string.care, R.drawable.icon_care, CareActivity.class),
     PREVENTION      (6, R.string.prevention, R.drawable.icon_prevention, PreventionActivity.class);
