@@ -81,7 +81,6 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
                 viewHolder = new ViewHolder();
 
                 viewHolder.checkBoxSymptom = (CheckBox) view.findViewById(R.id.check_box_symptom);
-                viewHolder.editTextCountry = (EditText) view.findViewById(R.id.edit_text_country);
 
                 viewHolder.checkBoxSymptom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
