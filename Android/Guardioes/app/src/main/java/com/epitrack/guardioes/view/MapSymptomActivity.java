@@ -3,6 +3,7 @@ package com.epitrack.guardioes.view;
 import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,6 +21,7 @@ import com.cocosw.bottomsheet.BottomSheet;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.Loader;
 import com.epitrack.guardioes.model.Point;
+import com.epitrack.guardioes.model.SingleDTO;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
@@ -114,6 +116,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
     private LocationUtility locationUtility;
     private SearchView searchVieww;
     private String queryText;
+    SingleDTO singleDTO = SingleDTO.getInstance();
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -235,7 +238,16 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     SimpleRequester simpleRequester = new SimpleRequester();
                     simpleRequester.setJsonObject(null);
                     simpleRequester.setMethod(Method.GET);
-                    simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
+                    if (singleDTO.getDto() != null) {
+                        if (!singleDTO.getDto().equals("")) {
+                            simpleRequester.setUrl(Requester.API_URL + "surveys/l?q=" + SingleDTO.getInstance().getDto());
+                        } else {
+                            simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
+                        }
+                    } else {
+                        simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
+                    }
+
 
                     String jsonStr = simpleRequester.execute(simpleRequester).get();
 
@@ -317,9 +329,18 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
     private void setupView() {
 
         SimpleRequester simpleRequester = new SimpleRequester();
-        simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
         simpleRequester.setJsonObject(null);
         simpleRequester.setMethod(Method.GET);
+        if (singleDTO.getDto() != null) {
+            if (!singleDTO.getDto().equals("")) {
+                simpleRequester.setUrl(Requester.API_URL + "surveys/l?q=" + SingleDTO.getInstance().getDto());
+            } else {
+                simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
+            }
+        } else {
+            simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
+        }
+        //simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
 
         try {
             String jsonStr = simpleRequester.execute(simpleRequester).get();
@@ -478,8 +499,20 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
     @Override
     public boolean onQueryTextSubmit(String query) {
         queryText = query;
+
+        if (query.equals("")) {
+            singleDTO.setDto("");
+        } else {
+            singleDTO.setDto(query);
+        }
+
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+
         return false;
     }
+
 
     @Override
     public boolean onQueryTextChange(String newText) {
