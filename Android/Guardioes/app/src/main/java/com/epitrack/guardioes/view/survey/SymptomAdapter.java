@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +41,7 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
 
     public static class ViewHolder {
         CheckBox checkBoxSymptom;
+        EditText editTextCountry;
         //TextView textViewName;
     }
 
@@ -79,7 +81,7 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
                 viewHolder = new ViewHolder();
 
                 viewHolder.checkBoxSymptom = (CheckBox) view.findViewById(R.id.check_box_symptom);
-                //viewHolder.textViewName = (TextView) view.findViewById(R.id.text_view_name);
+                viewHolder.editTextCountry = (EditText) view.findViewById(R.id.edit_text_country);
 
                 viewHolder.checkBoxSymptom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
@@ -92,8 +94,6 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
 
                 view.setTag(viewHolder);
                 view.setTag(R.id.check_box_symptom, viewHolder.checkBoxSymptom);
-                //view.setTag(R.id.text_view_name, viewHolder.checkBoxSymptom);
-
             } else {
                 viewHolder = (ViewHolder) view.getTag();
             }
@@ -110,7 +110,7 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
 
             //viewHolder.textViewName.setText(symptomList.getNome());
             viewHolder.checkBoxSymptom.setChecked(symptomList.isSelected());
-            viewHolder.checkBoxSymptom.setText("        " + symptomList.getNome() + "                                                     ");
+            viewHolder.checkBoxSymptom.setText("    " + symptomList.getNome() + "                                                     ");
             return view;
         }
     }

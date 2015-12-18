@@ -1,11 +1,14 @@
 package com.epitrack.guardioes.view.survey;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
+import butterknife.OnCheckedChanged;
 
 /**
  * @author Igor Morais
@@ -42,6 +46,8 @@ import butterknife.Bind;
 public class SymptomActivity extends BaseAppCompatActivity {
 
     boolean isExantematica = false;
+    boolean isTravelLocation = false;
+    String country = "";
 
     @Bind(R.id.list_view)
     ListView listView;
@@ -151,6 +157,7 @@ public class SymptomActivity extends BaseAppCompatActivity {
         listView.setAdapter(new SymptomAdapter(this, symptomArray));
     }
 
+
     private void sendSymptom() throws JSONException, ExecutionException, InterruptedException {
 
         JSONObject jsonObject = new JSONObject();
@@ -176,13 +183,13 @@ public class SymptomActivity extends BaseAppCompatActivity {
         jsonObject.put("client", user.getClient());
         jsonObject.put("no_symptom", "N");
         jsonObject.put("token", singleUser.getUser_token());
+        jsonObject.put("travelLocation", country);
 
         for (int i = 0; i < symptomArray.size(); i++) {
 
             String symptomName = symptomArray.get(i).getCodigo();
 
             if (symptomArray.get(i).isSelected()) {
-
                 if(symptomName.equals("hadContagiousContact") || symptomName.equals("hadHealthCare") || symptomName.equals("hadTravelledAbroad")) {
                     jsonObject.put(symptomArray.get(i).getCodigo(), "true");
                 } else {
@@ -196,7 +203,7 @@ public class SymptomActivity extends BaseAppCompatActivity {
         sendPostRequest.setJsonObject(jsonObject);
         sendPostRequest.setMethod(Method.POST);
 
-        String jsonStr = sendPostRequest.execute(sendPostRequest).get();
+       String jsonStr = sendPostRequest.execute(sendPostRequest).get();
 
         jsonObject = new JSONObject(jsonStr);
 
@@ -228,3 +235,4 @@ public class SymptomActivity extends BaseAppCompatActivity {
         }
     }
 }
+
