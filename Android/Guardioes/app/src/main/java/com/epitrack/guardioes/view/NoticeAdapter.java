@@ -51,8 +51,8 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
         @Bind(R.id.text_view_date)
         TextView textViewDate;
 
-        @Bind(R.id.image_view_image)
-        ImageView imageViewImage;
+        //@Bind(R.id.image_view_image)
+        //ImageView imageViewImage;
 
         public ViewHolder(final View view) {
             super(view);
@@ -76,11 +76,11 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
         final Notice notice = noticeList.get(position);
 
         viewHolder.textViewTitle.setText(notice.getTitle());
-        viewHolder.textViewSource.setText(notice.getSource());
-        viewHolder.textViewDate.setText(notice.getPublicationDate());
-        viewHolder.imageViewImage.setImageResource(R.drawable.stub1);
+        //viewHolder.textViewSource.setText(notice.getSource());
+        //viewHolder.textViewDate.setText(notice.getPublicationDate());
+        //viewHolder.imageViewImage.setImageResource(R.drawable.stub1);
 
-        viewHolder.imageViewImage.setOnClickListener(new View.OnClickListener() {
+        /*viewHolder.imageViewImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onNoticeSelect(notice);
@@ -92,7 +92,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
             public void onClick(View v) {
                 listener.onNoticeSelect(notice);
             }
-        });
+        });*/
     }
 
     @Override

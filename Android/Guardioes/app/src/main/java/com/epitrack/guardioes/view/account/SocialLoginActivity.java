@@ -105,6 +105,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
 
     SingleUser singleUser = SingleUser.getInstance();
 
+
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -170,8 +171,6 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             if (AccessToken.getCurrentAccessToken() != null) {
 
                 userExistSocial(AccessToken.getCurrentAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
-
-                //AccessToken.setCurrentAccessToken(null);
 
                 new DialogBuilder(SocialLoginActivity.this).load()
                         .title(R.string.attention)

@@ -5,6 +5,7 @@ import android.location.Location;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.LocationListener;
 import com.epitrack.guardioes.manager.LocationManager;
+import com.epitrack.guardioes.model.SingleDTO;
 import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.utility.Logger;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -31,6 +32,8 @@ public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity impl
 
     private LocationManager locationHandler;
 
+    private SingleDTO singleDTO = SingleDTO.getInstance();
+
     @Override
     public void onMapReady(final GoogleMap map) {
         setMap(map);
@@ -41,20 +44,35 @@ public abstract class AbstractBaseMapActivity extends BaseAppCompatActivity impl
     @Override
     public void onLastLocation(final Location location) {
 
-        final LatLng latLng = LocationUtility.toLatLng(location);
+        if (singleDTO.getLatLng() != null) {
+            final LatLng latLng = singleDTO.getLatLng();
+            singleDTO.setLatLng(null);
+            getMap().animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, DEFAULT_ZOOM), new GoogleMap.CancelableCallback() {
+                @Override
+                public void onFinish() {
+                    userMarker = getMap().addMarker(loadMarkerOption().position(latLng));
+                }
 
-        getMap().animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, DEFAULT_ZOOM), new GoogleMap.CancelableCallback() {
+                @Override
+                public void onCancel() {
 
-            @Override
-            public void onFinish() {
-                userMarker = getMap().addMarker(loadMarkerOption().position(latLng));
-            }
+                }
+            });
+        } else {
+            final LatLng latLng = LocationUtility.toLatLng(location);
 
-            @Override
-            public void onCancel() {
+            getMap().animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, DEFAULT_ZOOM), new GoogleMap.CancelableCallback() {
+                @Override
+                public void onFinish() {
+                    userMarker = getMap().addMarker(loadMarkerOption().position(latLng));
+                }
 
-            }
-        });
+                @Override
+                public void onCancel() {
+
+                }
+            });
+        }
     }
 
     @Override

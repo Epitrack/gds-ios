@@ -140,4 +140,12 @@ public final class LocationUtility extends Service implements LocationListener {
     public void onProviderDisabled(String provider) {
 
     }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 }

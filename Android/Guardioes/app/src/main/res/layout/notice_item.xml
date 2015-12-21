@@ -51,10 +51,10 @@
 
     </LinearLayout>
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/image_view_image"
         android:layout_width="95dp"
         android:layout_height="75dp"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop" />-->
 
 </LinearLayout>
