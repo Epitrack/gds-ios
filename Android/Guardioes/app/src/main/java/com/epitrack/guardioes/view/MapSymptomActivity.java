@@ -241,6 +241,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     if (singleDTO.getDto() != null) {
                         if (!singleDTO.getDto().equals("")) {
                             simpleRequester.setUrl(Requester.API_URL + "surveys/l?q=" + SingleDTO.getInstance().getDto());
+                            singleDTO.setDto(null);
                         } else {
                             simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
                         }
@@ -333,12 +334,12 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
         simpleRequester.setMethod(Method.GET);
         if (singleDTO.getDto() != null) {
             if (!singleDTO.getDto().equals("")) {
-                simpleRequester.setUrl(Requester.API_URL + "surveys/l?q=" + SingleDTO.getInstance().getDto());
+                simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?q=" + SingleDTO.getInstance().getDto());
             } else {
-                simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
+                simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
             }
         } else {
-            simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
+            simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
         }
         //simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
 
