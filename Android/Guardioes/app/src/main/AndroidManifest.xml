@@ -167,7 +167,7 @@
         <activity
             android:name=".view.tip.ZikaTipActivity"
             android:exported="false"
-            android:label="@string/prevention"
+            android:label="@string/zika"
             android:parentActivityName=".view.tip.TipActivity"
             android:screenOrientation="portrait" />
         <activity
