@@ -5,6 +5,7 @@ import android.app.SearchableInfo;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -34,6 +35,7 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -117,6 +119,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
     private SearchView searchVieww;
     private String queryText;
     SingleDTO singleDTO = SingleDTO.getInstance();
+    private static final long DEFAULT_ZOOM = 12;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -145,6 +148,39 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     .findFragmentById(R.id.fragment_map);
 
             mapFragment.getMapAsync(this);
+        }
+    }
+
+    private void setLocationBySearch() {
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setJsonObject(null);
+        simpleRequester.setMethod(Method.GET);
+        simpleRequester.setOtherAPI(true);
+        simpleRequester.setUrl("https://maps.googleapis.com/maps/api/geocode/json?address=" + singleDTO.getDto() + "&key=AIzaSyDRoA88MUJbF8TFPnaUXHvIrQzGPU5JC94");
+
+        try {
+            String jsonStr = simpleRequester.execute(simpleRequester).get();
+
+            JSONObject geocodeJson = new JSONObject(jsonStr);
+
+            if (geocodeJson.get("status").toString().toUpperCase().equals("OK")) {
+                JSONArray jsonArray = geocodeJson.getJSONArray("results");
+
+                JSONObject jsonObject = jsonArray.getJSONObject(0);
+                JSONObject jsonObjectGeometry = jsonObject.getJSONObject("geometry");
+                JSONObject jsonObjectLocation = jsonObjectGeometry.getJSONObject("location");
+
+                LatLng latLng = new LatLng(jsonObjectLocation.getDouble("lat"), jsonObjectLocation.getDouble("lng"));
+                singleDTO.setLatLng(latLng);
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 
@@ -217,7 +253,6 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
     @Override
     public void onMapReady(final GoogleMap map) {
         super.onMapReady(map);
-
         if (locationUtility.getLocation() != null) {
             load();
             setupView();
@@ -240,7 +275,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     simpleRequester.setMethod(Method.GET);
                     if (singleDTO.getDto() != null) {
                         if (!singleDTO.getDto().equals("")) {
-                            simpleRequester.setUrl(Requester.API_URL + "surveys/l?q=" + SingleDTO.getInstance().getDto());
+                            simpleRequester.setUrl(Requester.API_URL + "surveys/l?q=" + singleDTO.getDto());
                             singleDTO.setDto(null);
                         } else {
                             simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
@@ -248,7 +283,6 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     } else {
                         simpleRequester.setUrl(Requester.API_URL + "surveys/l?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
                     }
-
 
                     String jsonStr = simpleRequester.execute(simpleRequester).get();
 
@@ -334,7 +368,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
         simpleRequester.setMethod(Method.GET);
         if (singleDTO.getDto() != null) {
             if (!singleDTO.getDto().equals("")) {
-                simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?q=" + SingleDTO.getInstance().getDto());
+                simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?q=" + singleDTO.getDto());
             } else {
                 simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
             }
@@ -389,7 +423,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     diarreica = ((Integer.parseInt(jsonObjectDiseases.get("diarreica").toString()) * 100) / total);
                     d = new Double(diarreica);
 
-                    textViewPercentage1.setText(diarreica + "%");
+                    textViewPercentage1.setText(Math.round(diarreica) + "%");
                     progressBar1.setProgress(d.intValue());
 
                     double exantematica = 0;
@@ -397,7 +431,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     exantematica = ((Integer.parseInt(jsonObjectDiseases.get("exantematica").toString()) * 100) / total);
                     d = new Double(exantematica);
 
-                    textViewPercentage2.setText(exantematica + "%");
+                    textViewPercentage2.setText(Math.round(exantematica) + "%");
                     progressBar2.setProgress(d.intValue());
 
                     double respiratoria = 0;
@@ -405,7 +439,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     respiratoria = ((Integer.parseInt(jsonObjectDiseases.get("respiratoria").toString()) * 100) / total);
                     d = new Double(respiratoria);
 
-                    textViewPercentage3.setText(respiratoria + "%");
+                    textViewPercentage3.setText(Math.round(respiratoria) + "%");
                     progressBar3.setProgress(d.intValue());
                 } else {
                     textViewPercentage1.setText("0%");
@@ -502,9 +536,11 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
         queryText = query;
 
         if (query.equals("")) {
-            singleDTO.setDto("");
+            singleDTO.setDto(null);
+            singleDTO.setLatLng(null);
         } else {
             singleDTO.setDto(query);
+            setLocationBySearch();
         }
 
         Intent intent = getIntent();
@@ -528,60 +564,60 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
 
             String stateDiscription = "";
 
-            if (uf =="AC") {
-            stateDiscription = "Acre";
-            } else if (uf =="AL") {
-            stateDiscription = "Alagoas";
-            } else if (uf =="AP") {
-            stateDiscription = "Amapá";
-            } else if (uf =="AM") {
-            stateDiscription = "Amazonas";
-            } else if (uf =="BA") {
-            stateDiscription = "Bahia";
-            } else if (uf =="CE") {
-            stateDiscription = "Ceará";
-            } else if (uf =="DF") {
-            stateDiscription = "Distrito Federal";
-            } else if (uf =="ES") {
-            stateDiscription = "Espirito Santo";
-            } else if (uf =="GO") {
-            stateDiscription = "Goiás";
-            } else if (uf =="MA") {
-            stateDiscription = "Maranhão";
-            } else if (uf =="MT") {
-            stateDiscription = "Mato Grosso";
-            } else if (uf =="MS") {
-            stateDiscription = "Mato Grosso do Sul";
-            } else if (uf =="MG") {
-            stateDiscription = "Minas Gerais";
-            } else if (uf =="PR") {
-            stateDiscription = "Pará";
-            } else if (uf =="PB") {
-            stateDiscription = "Paraiba";
-            } else if (uf =="PA") {
-            stateDiscription = "Paraná";
-            } else if (uf =="PE") {
-            stateDiscription = "Pernambuco";
-            } else if (uf =="PI") {
-            stateDiscription = "Piauí";
-            } else if (uf =="RJ") {
-            stateDiscription = "Rio de Janeiro";
-            } else if (uf =="RN") {
-            stateDiscription = "Rio Grande do Norte";
-            } else if (uf =="RS") {
-            stateDiscription = "Rio Grande do Sul";
-            } else if (uf =="RO") {
-            stateDiscription = "Rondônia";
-            } else if (uf =="RR") {
-            stateDiscription = "Roraima";
-            } else if (uf =="SC") {
-            stateDiscription = "Santa Catarina";
-            } else if (uf =="SE") {
-            stateDiscription = "Sergipe";
-            } else if (uf =="SP") {
-            stateDiscription = "São Paulo";
-            } else if (uf =="TO") {
-            stateDiscription = "Tocantins";
+            if (uf.equals("AC")) {
+                stateDiscription = "Acre";
+            } else if (uf.equals("AL")) {
+                stateDiscription = "Alagoas";
+            } else if (uf.equals("AP")) {
+                stateDiscription = "Amapá";
+            } else if (uf.equals("AM")) {
+                stateDiscription = "Amazonas";
+            } else if (uf.equals("BA")) {
+                stateDiscription = "Bahia";
+            } else if (uf.equals("CE")) {
+                stateDiscription = "Ceará";
+            } else if (uf.equals("DF")) {
+                stateDiscription = "Distrito Federal";
+            } else if (uf.equals("ES")) {
+                stateDiscription = "Espirito Santo";
+            } else if (uf.equals("GO")) {
+                stateDiscription = "Goiás";
+            } else if (uf.equals("MA")) {
+                stateDiscription = "Maranhão";
+            } else if (uf.equals("MT")) {
+                stateDiscription = "Mato Grosso";
+            } else if (uf.equals("MS")) {
+                stateDiscription = "Mato Grosso do Sul";
+            } else if (uf.equals("MG")) {
+                stateDiscription = "Minas Gerais";
+            } else if (uf.equals("PR")) {
+                stateDiscription = "Paraná";
+            } else if (uf.equals("PB")) {
+                stateDiscription = "Paraiba";
+            } else if (uf.equals("PA")) {
+                stateDiscription = "Pará";
+            } else if (uf.equals("PE")) {
+                stateDiscription = "Pernambuco";
+            } else if (uf.equals("PI")) {
+                stateDiscription = "Piauí";
+            } else if (uf.equals("RJ")) {
+                stateDiscription = "Rio de Janeiro";
+            } else if (uf.equals("RN")) {
+                stateDiscription = "Rio Grande do Norte";
+            } else if (uf.equals("RS")) {
+                stateDiscription = "Rio Grande do Sul";
+            } else if (uf.equals("RO")) {
+                stateDiscription = "Rondônia";
+            } else if (uf.equals("RR")) {
+                stateDiscription = "Roraima";
+            } else if (uf.equals("SC")) {
+                stateDiscription = "Santa Catarina";
+            } else if (uf.equals("SE")) {
+                stateDiscription = "Sergipe";
+            } else if (uf.equals("SP")) {
+                stateDiscription = "São Paulo";
+            } else if (uf.equals("TO")) {
+                stateDiscription = "Tocantins";
             }
 
             return stateDiscription;

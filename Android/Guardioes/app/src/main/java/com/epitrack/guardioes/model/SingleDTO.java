@@ -1,5 +1,7 @@
 package com.epitrack.guardioes.model;
 
+import com.google.android.gms.maps.model.LatLng;
+
 /**
  * @author Mmiquéias Lopes on
  */
@@ -7,6 +9,7 @@ public class SingleDTO {
 
     private static SingleDTO instance;
     private String dto;
+    private LatLng latLng;
 
     private SingleDTO() {
 
@@ -28,5 +31,13 @@ public class SingleDTO {
 
     public void setDto(String dto) {
         this.dto = dto;
+    }
+
+    public LatLng getLatLng() {
+        return latLng;
+    }
+
+    public void setLatLng(LatLng latLng) {
+        this.latLng = latLng;
     }
 }

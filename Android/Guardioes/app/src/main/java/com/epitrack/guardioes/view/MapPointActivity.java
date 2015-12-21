@@ -131,12 +131,6 @@ public class MapPointActivity extends AbstractBaseMapActivity {
     public void onMapReady(final GoogleMap map) {
         super.onMapReady(map);
 
-        /*if (Tip.getBy(tip) == Tip.PHARMACY) {
-            loadPharmacy();
-        } else if (Tip.getBy(tip) == Tip.HOSPITAL) {
-            load();
-        }*/
-
         new MapAsyncTaskRunner().executeOnExecutor(Executors.newSingleThreadExecutor());
     }
 
