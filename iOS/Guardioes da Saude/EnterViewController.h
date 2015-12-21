@@ -14,5 +14,6 @@
 - (IBAction)btnEnter:(id)sender;
 - (IBAction)iconBackAction:(id)sender;
 - (IBAction)forgotPasswordAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicatorAct;
 
 @end

@@ -26,6 +26,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"";
     self.navigationItem.hidesBackButton = NO;
+    self.indicatorAct.hidden = YES;		
     [self.txtEmail setDelegate:self];
     [self.txtPassword setDelegate:self];
     
@@ -88,6 +89,9 @@
         
     } else {
         
+        self.indicatorAct.hidden = NO;
+        [self.indicatorAct startAnimating];
+        
         User * user = [[User alloc] init];
         
         user.email = self.txtEmail.text;
@@ -144,6 +148,8 @@
                 
                 [preferences setValue:userKey forKey:@"userTokenKey"];
                 [preferences synchronize];
+                [self.indicatorAct stopAnimating];
+                self.indicatorAct.hidden = YES;
                 
                 [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
             
