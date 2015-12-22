@@ -67,6 +67,8 @@ public class UserAdapter extends ArrayAdapter<User> {
                                 /*jsonObjectHousehold.get("email").toString()*/"", jsonObjectHousehold.get("id").toString(),
                                 jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
                                 jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString()));
+
+
                     }
                 }
             }
@@ -139,6 +141,8 @@ public class UserAdapter extends ArrayAdapter<User> {
 
             if (user.getPicture().length() > 2) {
                 user.setPicture("0");
+            } else {
+                user.setPicture(user.getPicture());
             }
 
             if (Integer.parseInt(user.getPicture()) == 0) {

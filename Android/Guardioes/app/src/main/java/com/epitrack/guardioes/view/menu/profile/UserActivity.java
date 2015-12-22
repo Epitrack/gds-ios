@@ -29,6 +29,7 @@ import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.utility.Mask;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.welcome.WelcomeActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -126,6 +127,7 @@ public class UserActivity extends BaseAppCompatActivity {
         String gender;
         String race;
         String email;
+        String picture;
 
         if (socialNew) {
             nick = singleUser.getNick();
@@ -133,12 +135,15 @@ public class UserActivity extends BaseAppCompatActivity {
             gender = singleUser.getGender();
             race = singleUser.getRace();
             email = singleUser.getEmail();
+            picture = singleUser.getPicture();
+
         } else {
             nick = getIntent().getStringExtra("nick");
             dob = getIntent().getStringExtra("dob");
             gender = getIntent().getStringExtra("gender");
             race = getIntent().getStringExtra("race");
             email = getIntent().getStringExtra("email");
+            picture = getIntent().getStringExtra("picture");
         }
 
         if (!newMenber || socialNew) {
@@ -176,7 +181,9 @@ public class UserActivity extends BaseAppCompatActivity {
                             spinnerGender.setSelection(1);
                         }
 
-                        if (singleUser.getImageResource() == null) {
+                        if (!picture.equals("")) {
+                            imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(picture)).getSmall());
+                        } else if (singleUser.getImageResource() == null) {
                             if (gender.equals("M")) {
                                 if (race.equals("branco") || race.equals("amarelo")) {
                                     imageViewImage.setImageResource(R.drawable.image_avatar_6);
@@ -197,8 +204,6 @@ public class UserActivity extends BaseAppCompatActivity {
                             }
                         }
                     }
-
-
 
                     if (mainMember) {
                         textViewMessage.setText(R.string.message_fields);
@@ -453,7 +458,6 @@ public class UserActivity extends BaseAppCompatActivity {
                             editor.commit();
                         }
 
-
                         new DialogBuilder(UserActivity.this).load()
                                 .title(R.string.attention)
                                 .content(R.string.cadastro_sucesso)
@@ -478,12 +482,14 @@ public class UserActivity extends BaseAppCompatActivity {
                                     .content(R.string.generic_update_data_ok)
                                     .positiveText(R.string.ok)
                                     .show();
+                            lookup();
                         } else {
                             new DialogBuilder(UserActivity.this).load()
                                     .title(R.string.attention)
                                     .content(R.string.generic_update_data_ok)
                                     .positiveText(R.string.ok)
                                     .show();
+                            lookup();
                         }
                         //editTextNickname.setText("");
                         //editTextBirthDate.setText("");
@@ -539,6 +545,50 @@ public class UserActivity extends BaseAppCompatActivity {
             super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    private void lookup() {
+        SingleUser singleUser = SingleUser.getInstance();
+        JSONObject jsonObject = new JSONObject();
+
+        SimpleRequester sendPostRequest = new SimpleRequester();
+        sendPostRequest.setUrl(Requester.API_URL + "user/lookup/");
+        sendPostRequest.setJsonObject(jsonObject);
+        sendPostRequest.setMethod(Method.GET);
+
+        String jsonStr;
+        try {
+            jsonStr = sendPostRequest.execute(sendPostRequest).get();
+
+            jsonObject = new JSONObject(jsonStr);
+
+            if (jsonObject.get("error").toString() == "true") {
+                navigateTo(WelcomeActivity.class);
+            } else {
+
+                JSONObject jsonObjectUser = jsonObject.getJSONObject("data");
+
+                singleUser.setNick(jsonObjectUser.getString("nick").toString());
+                singleUser.setEmail(jsonObjectUser.getString("email").toString());
+                singleUser.setGender(jsonObjectUser.getString("gender").toString());
+                singleUser.setId(jsonObjectUser.getString("id").toString());
+                singleUser.setRace(jsonObjectUser.getString("race").toString());
+                singleUser.setDob(jsonObjectUser.getString("dob").toString());
+                singleUser.setUser_token(jsonObjectUser.get("token").toString());
+
+                try {
+                    singleUser.setPicture(jsonObjectUser.get("picture").toString());
+                } catch (Exception e) {
+                    singleUser.setPicture("0");
+                }
+            }
+        } catch (InterruptedException e) {
+            navigateTo(WelcomeActivity.class);
+        } catch (ExecutionException e) {
+            navigateTo(WelcomeActivity.class);
+        } catch (JSONException e) {
+            navigateTo(WelcomeActivity.class);
+        }
     }
 
 }
