@@ -238,7 +238,11 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnGoogleAction:(id)sender {
-    
+    if(isEnabled){
+        
+    }else{
+        [self showTermsRequiredMsg];
+    }
 }
 
 - (IBAction)btnTwitterAction:(id)sender {
@@ -342,24 +346,6 @@ didDisconnectWithUser:(GIDGoogleUser *)user
         [self desableButtons];
         [self.btnCheckTerms setImage:checkBoxFalse forState:UIControlStateNormal];
     }
-}
-
-- (IBAction)btnGoogleDesabelAction:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"You pressed button OK");
-    }];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (IBAction)btnTwitterDesabelAction:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"You pressed button OK");
-    }];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)btnInfoAction:(id)sender {
