@@ -141,7 +141,7 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
         /*textViewTitle.setText(notice.getTitle());
         textViewSource.setText(notice.getSource());
         textViewDate.setText(notice.getPublicationDate());*/
-        imageView.setImageResource(R.drawable.stub_notice);
+        imageView.setImageResource(R.drawable.img_news);
     }
 
     @Override

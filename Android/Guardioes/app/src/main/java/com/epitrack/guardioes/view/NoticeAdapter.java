@@ -85,14 +85,14 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
             public void onClick(View v) {
                 listener.onNoticeSelect(notice);
             }
-        });
+        });*/
 
         viewHolder.textViewTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onNoticeSelect(notice);
             }
-        });*/
+        });
     }
 
     @Override
