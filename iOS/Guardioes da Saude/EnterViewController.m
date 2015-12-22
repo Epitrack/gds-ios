@@ -37,7 +37,16 @@
                                 action:nil];
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
+    [self.scrollView addGestureRecognizer:singleTap];
 
+}
+
+- (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture
+{
+    [self.txtEmail endEditing:YES];
+    [self.txtPassword endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {

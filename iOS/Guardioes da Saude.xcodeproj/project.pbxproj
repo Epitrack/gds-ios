@@ -1868,6 +1868,9 @@
 		528C8AF11BB82630003CFC91 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+				);
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = epitrack;
 				TargetAttributes = {
