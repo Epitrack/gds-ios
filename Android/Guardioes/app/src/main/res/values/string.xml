@@ -297,52 +297,51 @@ Sua participação é uma gentil contribuição para o aprimoramento da vigilân
 
     #Prevention
     <string name="prevention_title_01">Prevenção\n\n</string>
-    <string name="prevention_content_01">- No Brasil, a transmissão concentra-se na Região Amazônica, composta pelos estados do Acre, Amapá, Amazonas, Maranhão, Mato Grosso, Pará, Rondônia, Roraima e Tocantins;\n\n
+    <string name="prevention_content_01">Malária:\n\n
 
-- Em áreas de transmissão de malária, é fundamental que o viajante tenha conhecimento sobre o horário de maior atividade de mosquitos vetores de malária, do pôr-do-sol ao amanhecer;\n\n
+\tNo Brasil, a transmissão concentra-se na Região Amazônica, composta pelos estados do Acre, Amapá, Amazonas, Maranhão, Mato Grosso, Pará, Rondônia, Roraima e Tocantins;\n\n
 
-- Use roupas claras e com manga longa, durante atividades de exposição elevada;\n\n
+\tEm áreas de transmissão de malária, é fundamental que o viajante tenha conhecimento sobre o horário de maior atividade de mosquitos vetores de malária, do pôr-do-sol ao amanhecer;\n\n
 
-- Aplique repelente nas áreas expostas da pele, seguindo a orientação do fabricante. Em crianças com idade inferior a dois anos, não é recomendado o uso de repelente sem orientação médica;\n\n
+\tUse roupas claras e com manga longa, durante atividades de exposição elevada;\n\n
 
-- Em áreas de transmissão de malária é imprescindível que o viajante fique atento ao surgimento de sintomas da doença, como febre, dor no corpo e dor de cabeça;\n\n
+\tAplique repelente nas áreas expostas da pele, seguindo a orientação do fabricante. Em crianças com idade inferior a dois anos, não é recomendado o uso de repelente sem orientação médica;\n\n
 
-- Em caso de manifestação de algum sintoma da doença, procure uma unidade de saúde especializada mais próxima, o ideal é que este atendimento seja feito o quanto antes, em até 48 horas após os primeiros sintomas;\n\n
+\tEm áreas de transmissão de malária é imprescindível que o viajante fique atento ao surgimento de sintomas da doença, como febre, dor no corpo e dor de cabeça;\n\n
 
-- O Brasil conta com uma rede pública de saúde estruturada para diagnosticar e tratar os pacientes, de forma oportuna e adequada;\n\n
+\tEm caso de manifestação de algum sintoma da doença, procure uma unidade de saúde especializada mais próxima, o ideal é que este atendimento seja feito o quanto antes, em até 48 horas após os primeiros sintomas;\n\n
 
-- Caso você queira adquirir mais informações acerca da malária antes de realizar a sua viagem, busque orientações em um dos Centros de Referência\n\n
+\tO Brasil conta com uma rede pública de saúde estruturada para diagnosticar e tratar os pacientes, de forma oportuna e adequada;\n\n
 
-<b>Previna-se contra doenças de transmissão respiratória</b>\n\n
+\tCaso você queira adquirir mais informações acerca da malária antes de realizar a sua viagem, busque orientações em um dos Centros de Referência.\n\n
 
-- Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\n\n
+Previna-se contra doenças de transmissão respiratória:\n\n
 
-- Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\n\n
+\tLavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\n\n
 
-- Indivíduos doentes devem ficar em repouso, consumir alimentação balanceada, aumentar a ingestão de líquidos e evitar aglomerações e ambientes fechados;\n\n
+\tIndivíduos doentes devem ficar em repouso, consumir alimentação balanceada, aumentar a ingestão de líquidos e evitar aglomerações e ambientes fechados;\n\n
 
-- Mantenha os ambientes ventilados;\n\n
+\tMantenha os ambientes ventilados;\n\n
 
-- Esteja sempre atento ao apresentar sintomas respiratórios de maior gravidade e procure imediatamente assistência médica.\n\n
+\tEsteja sempre atento ao apresentar sintomas respiratórios de maior gravidade e procure imediatamente assistência médica.\n\n
 
-<b>Consuma alimentos e bebidas de forma saudável</b>\n\n
+\tConsuma alimentos e bebidas de forma saudável:\n\n
 
-- Evite consumir alimentos cujas condições higiênicas, de preparo e acondicionamento, são precárias;\n\n
+\tEvite consumir alimentos cujas condições higiênicas, de preparo e acondicionamento, são precárias;\n\n
 
-- Prefira alimentos que contenham baixo teor de açúcares, gorduras e sal;\n\n
+\tPrefira alimentos que contenham baixo teor de açúcares, gorduras e sal;\n\n
 
-- Beba bastante líquido, preferencialmente água ou suco. Evite alimentos crus ou mal cozidos, principalmente os frutos do mar;\n\n
+\tBeba bastante líquido, preferencialmente água ou suco. Evite alimentos crus ou mal cozidos, principalmente os frutos do mar;\n\n
 
-- Alimentos embalados devem conter no rótulo a identificação do produtor, data de validade e a embalagem deve estar íntegra;\n\n
+\tAlimentos embalados devem conter no rótulo a identificação do produtor, data de validade e a embalagem deve estar íntegra;\n\n
 
-- Durante o turismo rural, dê preferência aos alimentos que podem ficar sem refrigeração e não estraguem com o calor;\n\n
+\tDurante o turismo rural, dê preferência aos alimentos que podem ficar sem refrigeração e não estraguem com o calor;\n\n
 
-- Caso tenha diarreia e vômitos por conta da ingestão de alimentos e bebidas, é preciso cuidado redobrado com a desidratação. Recomenda-se a ingestão de sal de reidratação oral, disponibilizado gratuitamente pelo Sistema Único de Saúde, ou outras soluções do tipo. As bebidas esportivas não compensam corretamente as perdas e não devem ser utilizadas para tratamento de doença diarreica.\n\n
+\tCaso tenha diarreia e vômitos por conta da ingestão de alimentos e bebidas, é preciso cuidado redobrado com a desidratação. Recomenda-se a ingestão de sal de reidratação oral, disponibilizado gratuitamente pelo Sistema Único de Saúde, ou outras soluções do tipo. As bebidas esportivas não compensam corretamente as perdas e não devem ser utilizadas para tratamento de doença diarreica.\n\n
 
+Pratique sexo de forma segura:\n\n
 
-<b>Pratique sexo de forma segura</b>\n\n
-- No Brasil, a camisinha é distribuída gratuitamente pelo governo e está disponível em postos de saúde, unidades de pronto atendimento, albergues, Centros de Atendimento ao Turista e em outros pontos de distribuição espalhados pelas cidades. \nLeve sempre consigo os preservativos para facilitar a sua utilização e a prevenção de doenças sexualmente transmissíveis\n\n
-
+\tNo Brasil, a camisinha é distribuída gratuitamente pelo governo e está disponível em postos de saúde, unidades de pronto atendimento, albergues, Centros de Atendimento ao Turista e em outros pontos de distribuição espalhados pelas cidades. Leve sempre consigo os preservativos para facilitar a sua utilização e a prevenção de doenças sexualmente transmissíveis.\n
     </string>
     <string name="prevention_title_02">Previna-se contra doenças de transmissão respiratória\n\n</string>
     <string name="prevention_content_02">- Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;\n\n
@@ -507,16 +506,5 @@ O acesso ao serviço representa a aceitação expressa e irrestrita dos Termos d
 
     <string name="zika_title_01">Dengue, Zika e Chikungunya</string>
     <string name="zika_content_01">Os vírus da Dengue, Zika e Chikungunya são transmitidos pelo mosquito <i>Aedes aegypti</i> e apresentam sinais e sintomas parecidos.\n\n
-  É importante que você procure o serviço de saúde mais próximo quando apresentar febre, manchas vermelhas pelo corpo seguida de febre, dores no corpo, dor nas juntas (articulações) ou coceira.\n\n
-  As infecções pelos vírus Zika e Chikungunya começaram a ocorrer no Brasil nos últimos dois anos.\n\n
-  Procure informações sobre a ocorrência de casos de Dengue, Zika ou Chikungunya no seu bairro ou cidade.\n\n  
-No caso da infecção pelo vírus Zika, a maior parte das pessoas (mais de 80+), não ficarão doentes ou apresentarão sinais e sintomas.\n\n
-  É muito raro acontecer complicações devido infecção pelo vírus Zika, como a síndrome neurológica (exemplo: síndrome de Guillain-Barré) ou malformações congênitas (ex.: microcefalia).\n\n
-  Não existe tratamento específico para a infecção pelo vírus Zika.\n\n  Não se recomenda o uso de medicamentos sem prescrição médica, em função do risco aumentado de complicações hemorrágicas (sangramento).\n\n
-  Não se deve utilizar os medicamentos a base de ácido acetilsalicílico (ex.: AAS, Aspirina entre outros), nem anti-inflamatórios.\n\n  
-A principal medida de prevenção é evitar a reprodução dos mosquitos, evitando deixar água parada em pratinhos de plantas, jogando o lixo na lixeira, tampando as caixas de água e outros recipientes.\n\n
-  Repelentes:\n\n  
-\t\tOs repelentes para uso sobre a pele podem ser utilizados por gestantes, desde que estejam devidamente registrados na ANVISA e que sejam seguidas as instruções de uso descritas no rótulo.\n\n
- \t\tProdutos à base de DEET não devem ser usados em crianças menores de 2 anos. Em crianças entre 2 e 12 anos, a concentração dever ser no máximo 10+ e a aplicação deve se restringir a 3 vezes por dia. Concentrações superiores a 10+ são permitidas para maiores de 12 anos.\n\n
-\t \tOs repelentes de ambiente, como aqueles de parede (aparelhos elétricos) ou espirais não devem ser utilizados em locais com pouca ventilação nem na presença de pessoas asmáticas ou com alergias respiratórias;podendo ser utilizados em qualquer ambiente da casa desde que estejam no mínimo a 2 metros de distância das pessoas.\n\n</string>
+    É importante que você procure o serviço de saúde mais próximo quando apresentar febre, manchas vermelhas pelo corpo seguida de febre, dores no corpo, dor nas juntas (articulações) ou coceira.\n\n</string>
 </resources>
