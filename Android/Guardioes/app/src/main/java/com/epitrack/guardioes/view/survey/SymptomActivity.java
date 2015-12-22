@@ -87,35 +87,41 @@ public class SymptomActivity extends BaseAppCompatActivity {
 
                             }).show();
                 } else {
-                    new DialogBuilder(SymptomActivity.this).load()
-                            .title(R.string.attention)
-                            .content(R.string.message_register_info)
-                            .negativeText(R.string.no)
-                            .positiveText(R.string.yes)
-                            .callback(new MaterialDialog.ButtonCallback() {
 
-                                @Override
-                                public void onPositive(final MaterialDialog dialog) {
+                    for (int i = 0; i < symptomArray.size(); i++) {
+                        String symptomName = symptomArray.get(i).getCodigo();
 
-                                    try {
-                                        sendSymptom();
-                                        if (isExantematica) {
-                                            navigateTo(ZikaActivity.class);
-                                        } else {
-                                            final Bundle bundle = new Bundle();
-                                            bundle.putBoolean(Constants.Bundle.BAD_STATE, true);
-                                            navigateTo(ShareActivity.class, bundle);
-                                        }
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    } catch (ExecutionException e) {
-                                        e.printStackTrace();
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
+                        if (symptomName.equals("hadTravelledAbroad")) {
+                            isTravelLocation = true;
+                            break;
+                        }
+                    }
+
+                    if (isTravelLocation) {
+                        isTravelLocation = false;
+                        new DialogBuilder(SymptomActivity.this).load()
+                                .title("Em qual país você esteve?")
+                                .positiveText(R.string.ok)
+                                .inputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
+                                .input("Ex: Estados Unidos", "", new MaterialDialog.InputCallback() {
+                                    @Override
+
+                                    public void onInput(MaterialDialog dialog, CharSequence input) {
+                                        country = input.toString();
+                                        confirmSendSymptons();
+                                        new DialogBuilder(SymptomActivity.this).load()
+                                                .title(R.string.app_name)
+                                                .content(R.string.message_thanks_zika)
+                                                .positiveText(R.string.ok)
+                                                .show();
                                     }
-                                }
 
-                            }).show();
+
+                                }).negativeText("FECHAR")
+                                .show();
+                    } else {
+                        confirmSendSymptons();
+                    }
                 }
             }
         });
@@ -234,5 +240,33 @@ public class SymptomActivity extends BaseAppCompatActivity {
                     }).show();
         }
     }
-}
 
+    private void confirmSendSymptons() {
+        new DialogBuilder(SymptomActivity.this).load()
+                .title(R.string.attention)
+                .content(R.string.message_register_info)
+                .negativeText(R.string.no)
+                .positiveText(R.string.yes)
+                .callback(new MaterialDialog.ButtonCallback() {
+                    @Override
+                    public void onPositive(final MaterialDialog dialog) {
+                    try {
+                            sendSymptom();
+                            if (isExantematica) {
+                                navigateTo(ZikaActivity.class);
+                            } else {
+                                final Bundle bundle = new Bundle();
+                                bundle.putBoolean(Constants.Bundle.BAD_STATE, true);
+                                navigateTo(ShareActivity.class, bundle);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).show();
+    }
+}
