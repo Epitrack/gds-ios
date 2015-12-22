@@ -24,7 +24,7 @@ public class ZikaTipActivity extends BaseAppCompatActivity {
         setContentView(R.layout.zika_info);
 
 
-        zikaContent.setText(Html.fromHtml("<p>&#8226;&nbsp;Os vírus da Dengue, Zika e Chikungunya são transmitidos pelo mosquito Aedes aegypti e apresentam sinais e sintomas parecidos.</p>\n" +
+        zikaContent.setText(Html.fromHtml("<p>&#8226;&nbsp;Os vírus da Dengue, Zika e Chikungunya são transmitidos pelo mosquito <i>Aedes aegypti</i> e apresentam sinais e sintomas parecidos.</p>\n" +
                 "\n" +
                 "<p>&#8226;&nbsp;É importante que você procure o serviço de saúde mais próximo quando apresentar febre, manchas vermelhas pelo corpo seguida de febre, dores no corpo, dor nas juntas (articulações) ou coceira.</p>\n" +
                 "\n" +
@@ -44,7 +44,7 @@ public class ZikaTipActivity extends BaseAppCompatActivity {
                 "\n" +
                 "<p>&#8226;&nbsp;A principal medida de prevenção é evitar a reprodução dos mosquitos, evitando deixar água parada em pratinhos de plantas, jogando o lixo na lixeira, tampando as caixas de água e outros recipientes.</p>\n" +
                 "\n" +
-                "<p>&#8226;&nbsp;Repelentes:</p>\n" +
+                "<p>&nbsp;&nbsp;<b>Repelentes:</b></p>\n" +
                 "\n" +
                 "<p>&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp;Os repelentes para uso sobre a pele podem ser utilizados por gestantes, desde que estejam devidamente registrados na ANVISA e que sejam seguidas as instruções de uso descritas no rótulo.</p>\n" +
                 "<p>&nbsp;&nbsp;&nbsp;&nbsp;&#8226;&nbsp;Produtos à base de DEET não devem ser usados em crianças menores de 2 anos. Em crianças entre 2 e 12 anos, a concentração dever ser no máximo 10% e a aplicação deve se restringir a 3 vezes por dia. Concentrações superiores a 10% são permitidas para maiores de 12 anos.</p>\n" +

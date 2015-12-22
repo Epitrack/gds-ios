@@ -23,7 +23,7 @@ public class CareActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.care);
 
-        preventionContent.setText(Html.fromHtml("<p>Saúde do Viajante:</p>\n" +
+        preventionContent.setText(Html.fromHtml("<p><b>Saúde do Viajante:</b></p>\n" +
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Procure seu médico, preferencialmente, entre 4 e 8 semanas antes da viagem para informar seu roteiro. Peça orientações sobre cuidados para proteção contra doenças e lesões;</p>\n" +
                 "\n" +

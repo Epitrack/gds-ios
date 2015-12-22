@@ -23,7 +23,7 @@ public class PreventionActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.prevention);
 
-        preventContent.setText(Html.fromHtml("Malária<br><br>\n" +
+        preventContent.setText(Html.fromHtml("<b>Malária</b><br><br>\n" +
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;No Brasil, a transmissão concentra-se na Região Amazônica, composta pelos estados do Acre, Amapá, Amazonas, Maranhão, Mato Grosso, Pará, Rondônia, Roraima e Tocantins;</p>\n" +
                 "\n" +
@@ -41,7 +41,7 @@ public class PreventionActivity extends BaseAppCompatActivity {
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Caso você queira adquirir mais informações acerca da malária antes de realizar a sua viagem, busque orientações em um dos Centros de Referência.</p>\n" +
                 "\n" +
-                "Previna-se contra doenças de transmissão respiratória:\n" +
+                "<b>Previna-se contra doenças de transmissão respiratória:</b>\n" +
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Lavar as mãos com água e sabonete antes das refeições, de tocar os olhos, a boca e o nariz e após tossir, espirrar ou usar o banheiro;</p>\n" +
                 "\n" +
@@ -51,7 +51,7 @@ public class PreventionActivity extends BaseAppCompatActivity {
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Esteja sempre atento ao apresentar sintomas respiratórios de maior gravidade e procure imediatamente assistência médica.</p>\n" +
                 "\n" +
-                "Consuma alimentos e bebidas de forma saudável:<br>\n" +
+                "<b>Consuma alimentos e bebidas de forma saudável:</b><br>\n" +
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Evite consumir alimentos cujas condições higiênicas, de preparo e acondicionamento, são precárias;</p>\n" +
                 "\n" +
@@ -65,7 +65,7 @@ public class PreventionActivity extends BaseAppCompatActivity {
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Caso tenha diarreia e vômitos por conta da ingestão de alimentos e bebidas, é preciso cuidado redobrado com a desidratação. Recomenda-se a ingestão de sal de reidratação oral, disponibilizado gratuitamente pelo Sistema Único de Saúde, ou outras soluções do tipo. As bebidas esportivas não compensam corretamente as perdas e não devem ser utilizadas para tratamento de doença diarreica.</p>\n" +
                 "\n" +
-                "Pratique sexo de forma segura:\n" +
+                "<b>Pratique sexo de forma segura:</b>\n" +
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;No Brasil, a camisinha é distribuída gratuitamente pelo governo e está disponível em postos de saúde, unidades de pronto atendimento, albergues, Centros de Atendimento ao Turista e em outros pontos de distribuição espalhados pelas cidades. Leve sempre consigo os preservativos para facilitar a sua utilização e a prevenção de doenças sexualmente transmissíveis.<br>"));
 
