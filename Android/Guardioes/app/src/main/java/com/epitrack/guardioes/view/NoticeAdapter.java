@@ -45,11 +45,11 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
         @Bind(R.id.text_view_title)
         TextView textViewTitle;
 
-        @Bind(R.id.text_view_source)
-        TextView textViewSource;
+        //@Bind(R.id.text_view_source)
+        //TextView textViewSource;
 
-        @Bind(R.id.text_view_date)
-        TextView textViewDate;
+        //@Bind(R.id.text_view_date)
+        //TextView textViewDate;
 
         //@Bind(R.id.image_view_image)
         //ImageView imageViewImage;
