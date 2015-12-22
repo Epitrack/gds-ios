@@ -19,6 +19,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Relatar Erros";
+    
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+    
+    self.txtMessage.layer.borderWidth = 1.0f;
+    self.txtMessage.layer.borderColor = [[UIColor grayColor] CGColor];
+
 }
 
 - (void)didReceiveMemoryWarning {

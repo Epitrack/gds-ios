@@ -74,8 +74,14 @@
                         <action selector="btnConfirmSurvey:" destination="-1" eventType="touchUpInside" id="2Qs-DI-9S7"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do País" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-VV-WAG">
+                    <rect key="frame" x="8" y="399" width="304" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" delaysContentTouches="NO" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pzw-kU-ucB">
-                    <rect key="frame" x="0.0" y="141" width="320" height="288"/>
+                    <rect key="frame" x="0.0" y="141" width="320" height="256"/>
                     <animations/>
                     <color key="backgroundColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,19 +92,13 @@
                         <outlet property="delegate" destination="-1" id="nNr-g9-niX"/>
                     </connections>
                 </tableView>
-                <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do País" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-VV-WAG">
-                    <rect key="frame" x="8" y="399" width="304" height="30"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.073835509879999997" green="0.3219764182" blue="0.63230698529999996" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="pZg-ht-pCA" firstAttribute="width" secondItem="h7N-fR-oo8" secondAttribute="width" constant="6" id="0Ev-Ja-c7o"/>
                 <constraint firstAttribute="trailing" secondItem="lQx-nB-0Om" secondAttribute="trailing" constant="8" id="5xX-ib-qIo"/>
-                <constraint firstItem="lQx-nB-0Om" firstAttribute="top" secondItem="pzw-kU-ucB" secondAttribute="bottom" constant="5" id="C6B-c6-uAV"/>
+                <constraint firstItem="lQx-nB-0Om" firstAttribute="top" secondItem="pzw-kU-ucB" secondAttribute="bottom" constant="37" id="C6B-c6-uAV"/>
                 <constraint firstItem="R19-CX-MxJ" firstAttribute="centerX" secondItem="h7N-fR-oo8" secondAttribute="centerX" id="EHo-m6-4JJ"/>
                 <constraint firstItem="lQx-nB-0Om" firstAttribute="leading" secondItem="h7N-fR-oo8" secondAttribute="leading" constant="8" id="HnN-SC-dr2"/>
                 <constraint firstItem="6lR-VV-WAG" firstAttribute="leading" secondItem="h7N-fR-oo8" secondAttribute="leading" constant="8" id="LgJ-9o-68c"/>
@@ -106,7 +106,7 @@
                 <constraint firstItem="pzw-kU-ucB" firstAttribute="leading" secondItem="h7N-fR-oo8" secondAttribute="leading" id="Rqh-ho-teC"/>
                 <constraint firstItem="pZg-ht-pCA" firstAttribute="centerY" secondItem="h7N-fR-oo8" secondAttribute="centerY" id="WHq-00-Lnt"/>
                 <constraint firstItem="pzw-kU-ucB" firstAttribute="top" secondItem="R19-CX-MxJ" secondAttribute="bottom" constant="24" id="YwH-Sv-LJw"/>
-                <constraint firstItem="6lR-VV-WAG" firstAttribute="top" secondItem="pzw-kU-ucB" secondAttribute="bottom" constant="-30" id="bFR-RK-5ZP"/>
+                <constraint firstItem="6lR-VV-WAG" firstAttribute="top" secondItem="pzw-kU-ucB" secondAttribute="bottom" constant="2" id="bFR-RK-5ZP"/>
                 <constraint firstItem="R19-CX-MxJ" firstAttribute="centerX" secondItem="h7N-fR-oo8" secondAttribute="centerX" id="bm0-26-oCF"/>
                 <constraint firstAttribute="trailing" secondItem="6lR-VV-WAG" secondAttribute="trailing" constant="8" id="dvF-3p-8zQ"/>
                 <constraint firstItem="R19-CX-MxJ" firstAttribute="height" secondItem="h7N-fR-oo8" secondAttribute="height" id="fRd-Ir-xh6"/>

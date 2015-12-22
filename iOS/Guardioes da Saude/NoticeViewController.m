@@ -28,6 +28,14 @@
     self.navigationItem.title = @"Notícias";
     user = [User getInstance];
     singleNotice = [SingleNotice getInstance];
+    
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@""
+                                style:UIBarButtonItemStylePlain
+                                target:self
+                                action:nil];
+    
+    self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
 }
 
 - (void)didReceiveMemoryWarning {

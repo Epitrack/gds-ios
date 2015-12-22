@@ -31,6 +31,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Participe Agora";
+    self.txtPais.text = @"";
+    self.txtPais.enabled = NO;
+    self.txtPais.hidden = YES;
     selected = [[NSMutableIndexSet alloc] init];
     user = [User getInstance];
     [self loadSymptoms];
@@ -539,11 +542,19 @@
         [self.tableSymptoms setSeparatorColor:bgCellColor];
         [self.tableSymptoms cellForRowAtIndexPath:indexPath].selectedBackgroundView = bgColorView;
         
+        //CGSize tableViewSize = self.tableSymptoms.contentSize;
+        //CGFloat tableWidth = tableViewSize.width;
+        //CGFloat tableHeight = tableViewSize.height;
+        
         if (indexPath.row == 16) {
-            self.txtPais.enabled = YES;
-        } else {
-            self.txtPais.text = @"";
-            self.txtPais.enabled = NO;
+            if ([selected containsIndex:indexPath.row]) {
+                self.txtPais.text = @"";
+                self.txtPais.enabled = NO;
+                self.txtPais.hidden = YES;
+            } else {
+                self.txtPais.hidden = NO;
+                self.txtPais.enabled = YES;
+            }
         }
         
         if (indexPath.row == 13) {
