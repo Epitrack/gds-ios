@@ -65,8 +65,8 @@
     
     //FACEBOOK
     FBSDKLoginButton *btnFacebook = [[FBSDKLoginButton alloc] init];
-    self.btnFacebook = btnFacebook;
-    self.btnFacebook.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+    //self.btnFacebook = btnFacebook;
+    //self.btnFacebook.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     
     //TWITTER
     TWTRLogInButton* logInButton = [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession* session, NSError* error) {
@@ -77,7 +77,7 @@
         }
     }];
     
-    self.btnTwitter = logInButton;
+    //self.btnTwitter = logInButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -134,19 +134,47 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 
 
 - (void) desableButtons {
+    // Btn Facebook
+    UIImage *bgFacebook = [UIImage imageNamed:@"buttonFacebookDesable.png"];
+    [self.btnFacebook setBackgroundImage:bgFacebook forState:UIControlStateNormal];
+    [self.btnFacebook setTitle:@"" forState:UIControlStateNormal];
     
-    self.btnFacebookDesable.hidden = NO;
-    self.btnGoogleDesable.hidden = NO;
-    self.btnTwitterDesable.hidden = NO;
-    self.btnEmailDesable.hidden = NO;
+    // Btn Twitter
+    UIImage *bgTwitter = [UIImage imageNamed:@"buttonTwitterDesable.png"];
+    [self.btnTwitter setBackgroundImage:bgTwitter forState:UIControlStateNormal];
+    [self.btnTwitter setTitle:@"" forState:UIControlStateNormal];
+    
+    // Btn Google
+    UIImage *bgGoogle = [UIImage imageNamed:@"buttonGoogleDesable.png"];
+    [self.btnGoogle setBackgroundImage:bgGoogle forState:UIControlStateNormal];
+    [self.btnGoogle setTitle:@"" forState:UIControlStateNormal];
+    
+    // Btn Email
+    UIImage *bgEmail = [UIImage imageNamed:@"buttonEmailDisable.png"];
+    [self.btnEmail setBackgroundImage:bgEmail forState:UIControlStateNormal];
+    [self.btnEmail setTitle:@"" forState:UIControlStateNormal];
 }
 
 - (void) enableButtons {
-   
-    self.btnFacebookDesable.hidden = YES;
-    self.btnGoogleDesable.hidden = YES;
-    self.btnTwitterDesable.hidden = YES;
-    self.btnEmailDesable.hidden = YES;
+    //Btn Facebook
+    UIImage *bgFacebook = [UIImage imageNamed:@"button_facebook.png"];
+    [self.btnFacebook setBackgroundImage:bgFacebook forState:UIControlStateNormal];
+    [self.btnFacebook setTitle:@"Facebook" forState:UIControlStateNormal];
+    
+    //Btn Twitter
+    UIImage *bgTwitter = [UIImage imageNamed:@"button_twitter.png"];
+    [self.btnTwitter setBackgroundImage:bgTwitter forState:UIControlStateNormal];
+    [self.btnTwitter setTitle:@"Twitter" forState:UIControlStateNormal];
+    
+    //Btn Google
+    UIImage *bgGoogle = [UIImage imageNamed:@"button_google.png"];
+    [self.btnGoogle setBackgroundImage:bgGoogle forState:UIControlStateNormal];
+    [self.btnGoogle setTitle:@"Google" forState:UIControlStateNormal];
+    
+    //Btn Email
+    UIImage *bgEmail = [UIImage imageNamed:@"button_email.png"];
+    [self.btnEmail setBackgroundImage:bgEmail forState:UIControlStateNormal];
+    [self.btnEmail setTitle:@"email" forState:UIControlStateNormal];
 }
 
 - (IBAction)btnFacebookAction:(id)sender {
@@ -203,12 +231,18 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                  }
              }
          }];
+    }else{
+        [self showTermsRequiredMsg];
     }
     
 }
 
 - (IBAction)btnGoogleAction:(id)sender {
-    
+    if(isEnabled){
+        
+    }else{
+        [self showTermsRequiredMsg];
+    }
 }
 
 - (IBAction)btnTwitterAction:(id)sender {
@@ -242,6 +276,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                 [self presentViewController:alert animated:YES completion:nil];
             }
         }];
+    }else{
+        [self showTermsRequiredMsg];
     }
 }
 
@@ -250,12 +286,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
         CreateAccountViewController *createAccountViewController = [[CreateAccountViewController alloc] init];
         [self.navigationController pushViewController:createAccountViewController animated:YES];
     } else {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            NSLog(@"You pressed button OK");
-        }];
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        [self showTermsRequiredMsg];
     }
 }
 
@@ -306,42 +337,15 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 - (IBAction)btnCheckTermsAction:(id)sender {
     UIImage *checkBoxFalse = [UIImage imageNamed:@"icon_checkbox_false.png"];
     UIImage *checkBoxTrue = [UIImage imageNamed:@"icon_checkbok_true.png"];
+    isEnabled = !isEnabled;
      
-    if (self.btnEmailDesable.hidden == NO) {
+    if (isEnabled) {
         [self enableButtons];
         [self.btnCheckTerms setImage:checkBoxTrue forState:UIControlStateNormal];
-        isEnabled = YES;
     } else {
         [self desableButtons];
         [self.btnCheckTerms setImage:checkBoxFalse forState:UIControlStateNormal];
-        isEnabled = NO;
     }
-}
-- (IBAction)btnFacebookDesableAction:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"You pressed button OK");
-    }];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (IBAction)btnGoogleDesabelAction:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"You pressed button OK");
-    }];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
-- (IBAction)btnTwitterDesabelAction:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"You pressed button OK");
-    }];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)btnInfoAction:(id)sender {
@@ -355,7 +359,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
     [self.navigationController pushViewController:tutorialViewController animated:YES];
 }
-- (IBAction)btnEmailDesable:(id)sender {
+
+- (void)showTermsRequiredMsg {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
