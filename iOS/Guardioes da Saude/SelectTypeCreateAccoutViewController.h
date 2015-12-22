@@ -12,10 +12,7 @@
 #import <GoogleSignIn/GoogleSignIn.h>
 
 @interface SelectTypeCreateAccoutViewController : UIViewController <GIDSignInUIDelegate, GIDSignInDelegate>
-@property (weak, nonatomic) IBOutlet FBSDKLoginButton *btnFacebook;
-@property (weak, nonatomic) IBOutlet GIDSignInButton *btnGoogle;
-@property (weak, nonatomic) IBOutlet TWTRLogInButton *btnTwitter;
-@property (weak, nonatomic) IBOutlet UIButton *btnEmail;
+
 - (IBAction)btnFacebookAction:(id)sender;
 - (IBAction)btnGoogleAction:(id)sender;
 - (IBAction)btnTwitterAction:(id)sender;
@@ -23,15 +20,11 @@
 - (IBAction)btnTermsAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnCheckTerms;
 - (IBAction)btnCheckTermsAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *btnGoogleDesable;
-@property (weak, nonatomic) IBOutlet UIButton *btnTwitterDesable;
-@property (weak, nonatomic) IBOutlet UIButton *btnFacebookDesable;
-- (IBAction)btnFacebookDesableAction:(id)sender;
-- (IBAction)btnGoogleDesabelAction:(id)sender;
-- (IBAction)btnTwitterDesabelAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnGoogle;
+@property (weak, nonatomic) IBOutlet UIButton *btnTwitter;
+@property (weak, nonatomic) IBOutlet UIButton *btnFacebook;
 - (IBAction)btnInfoAction:(id)sender;
 - (IBAction)btnBackAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *btnEmailDesable;
-- (IBAction)btnEmailDesable:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnEmail;
 
 @end

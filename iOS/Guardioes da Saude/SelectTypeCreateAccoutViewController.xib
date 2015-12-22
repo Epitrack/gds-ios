@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Foco_Std_Rg.ttf">
-            <string>Foco-Regular</string>
-            <string>Foco-Regular</string>
-            <string>Foco-Regular</string>
-            <string>Foco-Regular</string>
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
@@ -24,14 +19,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectTypeCreateAccoutViewController">
             <connections>
                 <outlet property="btnCheckTerms" destination="QZA-Fy-5Cg" id="rqw-Ko-z7p"/>
-                <outlet property="btnEmail" destination="edN-vg-sjp" id="JSG-ZA-XyR"/>
-                <outlet property="btnEmailDesable" destination="nlr-U8-F6q" id="PVc-0V-Sde"/>
-                <outlet property="btnFacebook" destination="cdD-kQ-h32" id="Ynu-0Q-kId"/>
-                <outlet property="btnFacebookDesable" destination="b4x-lS-wai" id="279-gk-ze1"/>
-                <outlet property="btnGoogle" destination="eRs-bz-7jh" id="5EZ-pB-xzD"/>
-                <outlet property="btnGoogleDesable" destination="gcd-wq-n0r" id="5h6-AJ-HK8"/>
-                <outlet property="btnTwitter" destination="Oii-BN-GLk" id="EJH-ZV-kdu"/>
-                <outlet property="btnTwitterDesable" destination="szV-Js-ayu" id="Vfu-BL-GOC"/>
+                <outlet property="btnEmail" destination="nlr-U8-F6q" id="5t2-tL-PUW"/>
+                <outlet property="btnFacebook" destination="b4x-lS-wai" id="Y1m-1Z-gj1"/>
+                <outlet property="btnGoogle" destination="gcd-wq-n0r" id="XaJ-Fm-vAm"/>
+                <outlet property="btnTwitter" destination="szV-Js-ayu" id="VeO-4p-OWA"/>
                 <outlet property="view" destination="oq7-He-VLg" id="ygX-IY-Z82"/>
             </connections>
         </placeholder>
@@ -42,109 +33,76 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_blur_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="oC3-n5-Qke">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <animations/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="gEM-AV-79q">
                     <rect key="frame" x="31" y="70" width="259" height="100"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="gEM-AV-79q" secondAttribute="height" multiplier="259:100" id="A9r-RF-AGD"/>
-                    </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdD-kQ-h32">
-                    <rect key="frame" x="26" y="294" width="267" height="38"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" title="Facebook" backgroundImage="button_facebook.png">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnFacebookAction:" destination="-1" eventType="touchUpInside" id="ieb-GP-O5s"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRs-bz-7jh">
-                    <rect key="frame" x="26" y="342" width="267" height="38"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" title="Google" backgroundImage="button_google.png">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnGoogleAction:" destination="-1" eventType="touchUpInside" id="lCe-DZ-dby"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcd-wq-n0r">
-                    <rect key="frame" x="45" y="244" width="267" height="38"/>
-                    <animations/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcd-wq-n0r">
+                    <rect key="frame" x="26" y="313" width="268" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="C4c-nr-rpu"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
                     <state key="normal" backgroundImage="buttonGoogleDesable.png">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="btnGoogleAction:" destination="-1" eventType="touchUpInside" id="ziO-OI-C0e"/>
-                        <action selector="btnGoogleDesabelAction:" destination="-1" eventType="touchUpInside" id="pCg-GT-iBM"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edN-vg-sjp">
-                    <rect key="frame" x="27" y="468" width="265" height="35"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" title="email" backgroundImage="button_email.png">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnEmailAction:" destination="-1" eventType="touchUpInside" id="TB9-zs-dw6"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlr-U8-F6q">
-                    <rect key="frame" x="37" y="478" width="265" height="35"/>
-                    <animations/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlr-U8-F6q">
+                    <rect key="frame" x="27" y="400" width="266" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="l61-x8-fcg"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
                     <state key="normal" backgroundImage="buttonEmailDisable.png">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="btnEmailAction:" destination="-1" eventType="touchUpInside" id="QN5-1P-Y6H"/>
-                        <action selector="btnEmailDesable:" destination="-1" eventType="touchUpInside" id="vVC-qi-h5f"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oii-BN-GLk">
-                    <rect key="frame" x="26" y="388" width="267" height="38"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" title="Twitter" backgroundImage="button_twitter.png">
-                        <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnTwitterAction:" destination="-1" eventType="touchUpInside" id="ooL-e7-sgw"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szV-Js-ayu">
-                    <rect key="frame" x="45" y="290" width="267" height="38"/>
-                    <animations/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szV-Js-ayu">
+                    <rect key="frame" x="27" y="265" width="267" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="cBb-Cz-gwu"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
                     <state key="normal" backgroundImage="buttonTwitterDesable.png">
                         <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="btnTwitterAction:" destination="-1" eventType="touchUpInside" id="VMV-wP-4tx"/>
-                        <action selector="btnTwitterDesabelAction:" destination="-1" eventType="touchUpInside" id="s3W-wj-q4p"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Cadastre-se rapidamente com:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6m-iX-dQn">
-                    <rect key="frame" x="27" y="179" width="165" height="31"/>
-                    <animations/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4x-lS-wai">
+                    <rect key="frame" x="27" y="217" width="267" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="31" id="1cR-vD-Psr"/>
-                        <constraint firstAttribute="width" constant="250" id="Bth-bu-Q8C"/>
+                        <constraint firstAttribute="height" constant="40" id="48D-sh-Y2E"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
+                    <state key="normal" backgroundImage="buttonFacebookDesable.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnFacebookAction:" destination="-1" eventType="touchUpInside" id="X98-o0-bqO"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Cadastre-se rapidamente com:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6m-iX-dQn" userLabel="TxtRegister">
+                    <rect key="frame" x="23" y="178" width="269" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="nvG-cU-zML"/>
                     </constraints>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKB-zz-AY4">
-                    <rect key="frame" x="73" y="511" width="175" height="26"/>
-                    <animations/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKB-zz-AY4">
+                    <rect key="frame" x="68" y="446" width="204" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="zTx-lC-cOJ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <state key="normal" title="Concordo com os Termos de Uso">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,102 +111,80 @@
                         <action selector="btnTermsAction:" destination="-1" eventType="touchUpInside" id="hCz-Ki-gOR"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZA-Fy-5Cg">
-                    <rect key="frame" x="52" y="513" width="17" height="22"/>
-                    <animations/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZA-Fy-5Cg">
+                    <rect key="frame" x="43" y="448" width="17" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="tUY-Kf-YM5"/>
+                    </constraints>
                     <state key="normal" image="icon_checkbox_false.png"/>
                     <connections>
                         <action selector="btnCheckTermsAction:" destination="-1" eventType="touchUpInside" id="dR4-0S-hF7"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDz-Ha-8gA">
-                    <rect key="frame" x="19" y="24" width="25" height="25"/>
-                    <animations/>
-                    <state key="normal" image="iconBack.png"/>
-                    <connections>
-                        <action selector="btnBackAction:" destination="-1" eventType="touchUpInside" id="Atr-E3-JFs"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvt-Iu-XbR">
-                    <rect key="frame" x="266" y="24" width="26" height="26"/>
-                    <animations/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvt-Iu-XbR" userLabel="BtnInfo">
+                    <rect key="frame" x="284" y="24" width="28" height="26"/>
                     <state key="normal" image="infoCopy.png"/>
                     <connections>
                         <action selector="btnInfoAction:" destination="-1" eventType="touchUpInside" id="uvW-h9-XDx"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4x-lS-wai">
-                    <rect key="frame" x="27" y="192" width="267" height="38"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" backgroundImage="buttonFacebookDesable.png">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnFacebookAction:" destination="-1" eventType="touchUpInside" id="X98-o0-bqO"/>
-                        <action selector="btnFacebookDesableAction:" destination="-1" eventType="touchUpInside" id="XKt-uL-jn5"/>
-                    </connections>
-                </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Ou use seu email:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlz-z5-CYt">
-                    <rect key="frame" x="27" y="434" width="135" height="31"/>
-                    <animations/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Ou use seu email:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlz-z5-CYt">
+                    <rect key="frame" x="23" y="361" width="139" height="31"/>
                     <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="3Dn-aH-yGx"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="Jc5-Zz-OT0"/>
-                        <constraint firstAttribute="height" constant="31" id="LXU-u8-Eaf"/>
-                        <constraint firstAttribute="width" constant="150" id="rGh-ue-MFu"/>
+                        <constraint firstAttribute="height" constant="31" id="gs3-sz-eXn"/>
                     </constraints>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDz-Ha-8gA" userLabel="BtnBack">
+                    <rect key="frame" x="8" y="25" width="25" height="25"/>
+                    <state key="normal" image="iconBack.png"/>
+                    <connections>
+                        <action selector="btnBackAction:" destination="-1" eventType="touchUpInside" id="Atr-E3-JFs"/>
+                    </connections>
+                </button>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="GKB-zz-AY4" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" multiplier="1.05" id="03V-uX-Tob"/>
-                <constraint firstItem="gcd-wq-n0r" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="6OF-io-EUN"/>
-                <constraint firstItem="gcd-wq-n0r" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.05" id="7ci-jI-PpS"/>
-                <constraint firstItem="eRs-bz-7jh" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="7rW-2e-vAM"/>
-                <constraint firstItem="QZA-Fy-5Cg" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" multiplier="0.44" id="7uf-9K-MwE"/>
+                <constraint firstAttribute="trailing" secondItem="gDz-Ha-8gA" secondAttribute="trailing" constant="287" id="0I3-pL-vtu"/>
+                <constraint firstItem="QZA-Fy-5Cg" firstAttribute="top" secondItem="nlr-U8-F6q" secondAttribute="bottom" constant="8" id="65T-al-9Ph"/>
+                <constraint firstItem="GKB-zz-AY4" firstAttribute="top" secondItem="nlr-U8-F6q" secondAttribute="bottom" constant="6" id="8JQ-8J-G1S"/>
+                <constraint firstItem="qlz-z5-CYt" firstAttribute="top" secondItem="gcd-wq-n0r" secondAttribute="bottom" constant="8" id="8gp-Rt-WoF"/>
                 <constraint firstItem="oC3-n5-Qke" firstAttribute="height" secondItem="oq7-He-VLg" secondAttribute="height" id="8uv-31-gLX"/>
-                <constraint firstItem="b4x-lS-wai" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="0.9" id="9hA-mz-ha4"/>
-                <constraint firstItem="szV-Js-ayu" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.2" id="BSW-gR-ShB"/>
-                <constraint firstItem="nlr-U8-F6q" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.5" id="BrN-re-6KT"/>
-                <constraint firstItem="szV-Js-ayu" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="C3J-kj-VKM"/>
-                <constraint firstItem="P6m-iX-dQn" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="0.75" id="CXp-jh-2cG"/>
-                <constraint firstItem="gcd-wq-n0r" firstAttribute="top" secondItem="P6m-iX-dQn" secondAttribute="bottom" constant="34" id="FDI-BM-xAv"/>
+                <constraint firstAttribute="trailingMargin" secondItem="szV-Js-ayu" secondAttribute="trailing" constant="18" id="9Vy-Vn-8f5"/>
+                <constraint firstItem="gDz-Ha-8gA" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leading" constant="8" id="FiG-Fu-F8D"/>
                 <constraint firstItem="oC3-n5-Qke" firstAttribute="width" secondItem="oq7-He-VLg" secondAttribute="width" id="FrY-sR-TWb"/>
-                <constraint firstItem="qlz-z5-CYt" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.35" id="Gcj-VM-Rxv"/>
-                <constraint firstItem="qlz-z5-CYt" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" multiplier="0.55" id="Lw1-d8-RJ8"/>
-                <constraint firstItem="gEM-AV-79q" firstAttribute="width" secondItem="oq7-He-VLg" secondAttribute="height" multiplier="259:568" id="MZl-hn-9cp"/>
-                <constraint firstItem="cdD-kQ-h32" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="PMa-ze-2Vy"/>
-                <constraint firstItem="QZA-Fy-5Cg" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.65" id="ZPy-q0-Cfo"/>
-                <constraint firstItem="gEM-AV-79q" firstAttribute="top" secondItem="oq7-He-VLg" secondAttribute="top" constant="70" id="bAN-gb-9Da"/>
+                <constraint firstItem="gcd-wq-n0r" firstAttribute="top" secondItem="szV-Js-ayu" secondAttribute="bottom" constant="8" id="Hxh-Eg-r4X"/>
+                <constraint firstAttribute="trailing" secondItem="gEM-AV-79q" secondAttribute="trailing" constant="30" id="J9u-5W-wyn"/>
+                <constraint firstAttribute="trailingMargin" secondItem="GKB-zz-AY4" secondAttribute="trailing" constant="40" id="Lei-PP-xqd"/>
+                <constraint firstAttribute="trailingMargin" secondItem="P6m-iX-dQn" secondAttribute="trailing" constant="20" id="Lwa-o5-ntt"/>
+                <constraint firstItem="nlr-U8-F6q" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leadingMargin" constant="19" id="M2z-YI-DfD"/>
+                <constraint firstItem="gEM-AV-79q" firstAttribute="top" secondItem="oq7-He-VLg" secondAttribute="top" constant="70" id="O3S-PI-NPv"/>
+                <constraint firstItem="P6m-iX-dQn" firstAttribute="top" secondItem="gEM-AV-79q" secondAttribute="bottom" constant="8" id="OLI-3g-pcr"/>
+                <constraint firstAttribute="trailingMargin" secondItem="b4x-lS-wai" secondAttribute="trailing" constant="18" id="OXZ-zy-jyd"/>
+                <constraint firstItem="szV-Js-ayu" firstAttribute="top" secondItem="b4x-lS-wai" secondAttribute="bottom" constant="8" id="QIh-Fe-JXC"/>
+                <constraint firstItem="qlz-z5-CYt" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leadingMargin" constant="15" id="RHp-bf-48w"/>
+                <constraint firstItem="b4x-lS-wai" firstAttribute="top" secondItem="P6m-iX-dQn" secondAttribute="bottom" constant="8" id="Tiw-JP-Tgt"/>
+                <constraint firstItem="bvt-Iu-XbR" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leading" constant="284" id="U6d-tP-1hh"/>
+                <constraint firstItem="gDz-Ha-8gA" firstAttribute="top" secondItem="oq7-He-VLg" secondAttribute="top" constant="25" id="VkW-am-xOS"/>
+                <constraint firstAttribute="trailingMargin" secondItem="gcd-wq-n0r" secondAttribute="trailing" constant="18" id="dRe-Zn-0ev"/>
+                <constraint firstAttribute="trailingMargin" secondItem="qlz-z5-CYt" secondAttribute="trailing" constant="150" id="ePB-09-z5G"/>
                 <constraint firstItem="bvt-Iu-XbR" firstAttribute="top" secondItem="oq7-He-VLg" secondAttribute="top" constant="24" id="fjI-Ck-kNj"/>
-                <constraint firstItem="nlr-U8-F6q" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="mEh-XD-S2s"/>
-                <constraint firstItem="P6m-iX-dQn" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leading" multiplier="1.1" constant="27" id="mwl-BK-8eN"/>
+                <constraint firstItem="QZA-Fy-5Cg" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leadingMargin" constant="35" id="h4P-6C-gb2"/>
+                <constraint firstItem="gEM-AV-79q" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leading" constant="31" id="i9I-0t-nC8"/>
+                <constraint firstItem="GKB-zz-AY4" firstAttribute="leading" secondItem="QZA-Fy-5Cg" secondAttribute="trailing" constant="8" id="l9w-GX-jzO"/>
+                <constraint firstItem="P6m-iX-dQn" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leadingMargin" constant="15" id="lU9-DN-Oav"/>
                 <constraint firstItem="oC3-n5-Qke" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="np6-mb-Sq1"/>
-                <constraint firstItem="eRs-bz-7jh" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.05" id="pic-zL-fDR"/>
-                <constraint firstItem="Oii-BN-GLk" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="qBo-hK-Ng4"/>
-                <constraint firstItem="edN-vg-sjp" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.5" id="uew-tk-g9c"/>
-                <constraint firstItem="b4x-lS-wai" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="xFq-gT-eL7"/>
-                <constraint firstItem="edN-vg-sjp" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="xJB-hZ-76g"/>
-                <constraint firstItem="GKB-zz-AY4" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.65" id="xLt-el-M1h"/>
-                <constraint firstItem="P6m-iX-dQn" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" multiplier="0.81" id="xgi-2a-Hrc"/>
+                <constraint firstItem="szV-Js-ayu" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leadingMargin" constant="19" id="tJC-Tk-ddg"/>
+                <constraint firstItem="gcd-wq-n0r" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leadingMargin" constant="18" id="tmb-FV-Nmi"/>
+                <constraint firstItem="b4x-lS-wai" firstAttribute="leading" secondItem="oq7-He-VLg" secondAttribute="leadingMargin" constant="19" id="wKm-pV-1Oi"/>
                 <constraint firstItem="oC3-n5-Qke" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" id="yKf-IU-KBd"/>
-                <constraint firstItem="cdD-kQ-h32" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="0.9" id="yOm-Md-mLb"/>
-                <constraint firstAttribute="trailing" secondItem="bvt-Iu-XbR" secondAttribute="trailing" constant="28" id="yyM-ts-5TC"/>
-                <constraint firstItem="gEM-AV-79q" firstAttribute="centerX" secondItem="oq7-He-VLg" secondAttribute="centerX" id="zbw-Ep-2tK"/>
-                <constraint firstItem="Oii-BN-GLk" firstAttribute="centerY" secondItem="oq7-He-VLg" secondAttribute="centerY" multiplier="1.2" id="zid-kL-bVM"/>
+                <constraint firstItem="nlr-U8-F6q" firstAttribute="top" secondItem="qlz-z5-CYt" secondAttribute="bottom" constant="8" id="yTg-w1-QFQ"/>
+                <constraint firstAttribute="trailingMargin" secondItem="nlr-U8-F6q" secondAttribute="trailing" constant="19" id="yx4-mU-E4P"/>
+                <constraint firstAttribute="trailing" secondItem="bvt-Iu-XbR" secondAttribute="trailing" constant="8" id="yyM-ts-5TC"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="mwl-BK-8eN"/>
-                    <exclude reference="FDI-BM-xAv"/>
-                </mask>
-            </variation>
         </view>
     </objects>
     <resources>
@@ -257,10 +193,6 @@
         <image name="buttonFacebookDesable.png" width="267" height="38"/>
         <image name="buttonGoogleDesable.png" width="267" height="38"/>
         <image name="buttonTwitterDesable.png" width="267" height="38"/>
-        <image name="button_email.png" width="265" height="35"/>
-        <image name="button_facebook.png" width="267" height="38"/>
-        <image name="button_google.png" width="267" height="38"/>
-        <image name="button_twitter.png" width="267" height="38"/>
         <image name="iconBack.png" width="25" height="25"/>
         <image name="icon_checkbox_false.png" width="17" height="18"/>
         <image name="icon_logo_horizontal.png" width="219" height="100"/>
