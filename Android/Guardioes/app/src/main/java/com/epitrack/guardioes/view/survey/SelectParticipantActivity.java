@@ -72,7 +72,7 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
 
         if (singleUser.getImageResource().equals("")) {
 
-            if (singleUser.getPicture().length() > 1) {
+            if (singleUser.getPicture().length() > 2) {
                 singleUser.setPicture("0");
             }
 

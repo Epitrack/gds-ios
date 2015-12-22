@@ -72,8 +72,6 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //JodaTimeAndroid.init(this);
-
         setupHeader(new Notice());
 
         recyclerView.setHasFixedSize(true);
@@ -105,11 +103,6 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
                     notice.setTitle(jsonObject.get("text").toString());
                     notice.setSource("via @minsaude");
 
-                    //DateTime dtToday = new DateTime();
-                    //DateTime dtOther = new DateTime(DateTime.parse(jsonObject.get("text").toString()));
-                    //Duration dur = new Duration(dtOther, dtToday);
-
-                    //notice.setPublicationDate(dur.getStandardDays() + " dias atrás");
                     notice.setDrawable(R.drawable.stub1);
                     notice.setLink("https://twitter.com/minsaude/status/" + jsonObject.get("id_str").toString());
 
@@ -145,9 +138,9 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
         //notice.setSource("saude.estadao.com.br");
         //notice.setPublicationDate("10:20");
 
-        textViewTitle.setText(notice.getTitle());
+        /*textViewTitle.setText(notice.getTitle());
         textViewSource.setText(notice.getSource());
-        textViewDate.setText(notice.getPublicationDate());
+        textViewDate.setText(notice.getPublicationDate());*/
         imageView.setImageResource(R.drawable.stub_notice);
     }
 

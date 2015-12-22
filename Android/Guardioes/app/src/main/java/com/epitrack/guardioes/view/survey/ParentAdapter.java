@@ -110,7 +110,7 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
         viewHolder.textViewAge.setText(DateFormat.getDateDiff(parent.getDob()) + " Anos");
         viewHolder.textViewId.setText(parent.getId());
 
-        if (parent.getPicture().length() > 1) {
+        if (parent.getPicture().length() > 2) {
             parent.setPicture("0");
         }
 

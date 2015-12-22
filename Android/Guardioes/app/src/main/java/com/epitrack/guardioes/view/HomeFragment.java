@@ -90,7 +90,7 @@ public class HomeFragment extends BaseFragment {
 
             new ImageUserAsyncTaskRunner().execute(picture);
 
-            if (singleUser.getPicture().length() > 1) {
+            if (singleUser.getPicture().length() > 2) {
                 singleUser.setPicture("0");
             }
 

@@ -137,7 +137,7 @@ public class UserAdapter extends ArrayAdapter<User> {
             viewHolder.imageViewImage.setImageBitmap(BitmapUtility.scale((singleUser.getWidthImageProfile() / 2), (singleUser.getHeightImageProfile() / 2), singleUser.getImageResource()));
         } else {
 
-            if (user.getPicture().length() > 1) {
+            if (user.getPicture().length() > 2) {
                 user.setPicture("0");
             }
 
