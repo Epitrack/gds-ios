@@ -84,7 +84,7 @@
         <activity
             android:name=".view.menu.help.TutorialActivity"
             android:exported="false"
-            android:label="@string/tutorial"
+            android:label=" "
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent.ActionBarTutorial"/>
         # Profile

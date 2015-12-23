@@ -109,7 +109,8 @@ public class SymptomAdapter extends ArrayAdapter<SymptomList> {
 
             //viewHolder.textViewName.setText(symptomList.getNome());
             viewHolder.checkBoxSymptom.setChecked(symptomList.isSelected());
-            viewHolder.checkBoxSymptom.setText("   " + symptomList.getNome() + "                                                     ");
+            viewHolder.checkBoxSymptom.setText(symptomList.getNome() + "                                                     ");
+            viewHolder.checkBoxSymptom.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             return view;
         }
     }
