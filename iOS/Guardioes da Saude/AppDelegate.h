@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Google/SignIn.h>
 
 @class SWRevealViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, GIDSignInDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) SWRevealViewController *viewController;

@@ -69,11 +69,11 @@
                                                            [UIFont fontWithName:@"Foco" size:20.0], NSFontAttributeName, nil]];
 
     //GOOGLE
-    //NSError* configureError;
-    //[[GGLContext sharedInstance] configureWithError: &configureError];
-    //NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+    NSError* configureError;
+    [[GGLContext sharedInstance] configureWithError: &configureError];
+    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
-    //[GIDSignIn sharedInstance].delegate = self;
+    [GIDSignIn sharedInstance].delegate = self;
     
     //FACEBOOK
     [[FBSDKApplicationDelegate sharedInstance] application:application
@@ -87,6 +87,17 @@
     return YES;
 }
 
+- (void)signIn:(GIDSignIn *)signIn
+didSignInForUser:(GIDGoogleUser *)user
+     withError:(NSError *)error {
+    // Perform any operations on signed in user here.
+    NSString *userId = user.userID;                  // For client-side use only!
+    NSString *idToken = user.authentication.idToken; // Safe to send to the server
+    NSString *name = user.profile.name;
+    NSString *email = user.profile.email;
+    // ...
+}
+
 
 //FACEBOOK
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
@@ -95,18 +106,20 @@
                                                           openURL:url
                                                 sourceApplication:sourceApplication
                                                        annotation:annotation
-            ];
+            ] || [[GIDSignIn sharedInstance] handleURL:url
+                                     sourceApplication:sourceApplication
+                                            annotation:annotation];
 }
 
-//GOOGLE
-/*- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    return [[GIDSignIn sharedInstance] handleURL:url
-                               sourceApplication:sourceApplication
-                                      annotation:annotation];
-}*/
+////GOOGLE
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation {
+//    return [[GIDSignIn sharedInstance] handleURL:url
+//                               sourceApplication:sourceApplication
+//                                      annotation:annotation];
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

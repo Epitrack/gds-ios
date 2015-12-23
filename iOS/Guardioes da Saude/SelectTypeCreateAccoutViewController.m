@@ -16,6 +16,7 @@
 #import "TermsViewController.h"
 #import "ModalPrivViewController.h"
 #import "TutorialViewController.h"
+#import <Google/SignIn.h>
 
 @interface SelectTypeCreateAccoutViewController () {
     
@@ -56,16 +57,14 @@
     
     signIn.delegate = self;
     signIn.uiDelegate = self;
-    signIn.clientID = @"146401381326-skhtq5jehhp213aa7rpsf8pql62d08ho.apps.googleusercontent.com";
+    signIn.clientID = @"783481918318-of721315npktlthk9fic2u02sp2psa9h.apps.googleusercontent.com";
     //[signIn signInSilently];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.login"]];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.me"]];
     
-    //self.btnGoogle = signIn;
-    
     //FACEBOOK
     FBSDKLoginButton *btnFacebook = [[FBSDKLoginButton alloc] init];
-    //self.btnFacebook = btnFacebook;
+    self.btnFacebook = btnFacebook;
     //self.btnFacebook.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     
     //TWITTER
@@ -77,7 +76,51 @@
         }
     }];
     
-    //self.btnTwitter = logInButton;
+    self.btnTwitter = logInButton;
+}
+
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)userGl withError:(NSError *)error {
+    if (!error) {
+        user.email = userGl.profile.email;
+        user.gl = userGl.userID;
+        user.nick = userGl.profile.name;
+        
+        BOOL userGlExists = [self checkSocialLoginWithToken:user.gl andType:@"GOOGLE"];
+        if (userGlExists) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Cadastro realizado anterioremente com essa rede social ou e-mail." preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                NSLog(@"You pressed button OK");
+            }];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        } else {
+            CreateAccountSocialLoginViewController *createAccountSocialLoginViewController = [[CreateAccountSocialLoginViewController alloc] init];
+            [self.navigationController pushViewController:createAccountSocialLoginViewController animated:YES];
+        }
+        
+        
+    }
+}
+
+// Implement these methods only if the GIDSignInUIDelegate is not a subclass of
+// UIViewController.
+
+// Stop the UIActivityIndicatorView animation that was started when the user
+// pressed the Sign In button
+- (void)signInWillDispatch:(GIDSignIn *)signIn error:(NSError *)error {
+    
+}
+
+// Present a view that prompts the user to sign in with Google
+- (void)signIn:(GIDSignIn *)signIn
+presentViewController:(UIViewController *)viewController {
+    [self presentViewController:viewController animated:YES completion:nil];
+}
+
+// Dismiss the "Sign in with Google" view
+- (void)signIn:(GIDSignIn *)signIn
+dismissViewController:(UIViewController *)viewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,16 +152,16 @@
 
 #pragma mark - GIDSignInDelegate
 
-- (void)signIn:(GIDSignIn *)signIn
-didSignInForUser:(GIDGoogleUser *)user
-     withError:(NSError *)error {
-    if (error) {
-        signInAuthStatus = [NSString stringWithFormat:@"Status: Authentication error: %@", error];
-        return;
-    }
-    //[self reportAuthStatus];
-    //[self updateButtons];
-}
+//- (void)signIn:(GIDSignIn *)signIn
+//didSignInForUser:(GIDGoogleUser *)user
+//     withError:(NSError *)error {
+//    if (error) {
+//        signInAuthStatus = [NSString stringWithFormat:@"Status: Authentication error: %@", error];
+//        return;
+//    }
+//    //[self reportAuthStatus];
+//    //[self updateButtons];
+//}
 
 - (void)signIn:(GIDSignIn *)signIn
 didDisconnectWithUser:(GIDGoogleUser *)user
@@ -146,8 +189,9 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     
     // Btn Google
     UIImage *bgGoogle = [UIImage imageNamed:@"buttonGoogleDesable.png"];
-    [self.btnGoogle setBackgroundImage:bgGoogle forState:UIControlStateNormal];
-    [self.btnGoogle setTitle:@"" forState:UIControlStateNormal];
+    UIButton *btnGoogle = (UIButton *) self.btnGoogle;
+    [btnGoogle setBackgroundImage:bgGoogle forState:UIControlStateNormal];
+    [btnGoogle setTitle:@"" forState:UIControlStateNormal];
     
     // Btn Email
     UIImage *bgEmail = [UIImage imageNamed:@"buttonEmailDisable.png"];
@@ -239,7 +283,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 
 - (IBAction)btnGoogleAction:(id)sender {
     if(isEnabled){
-        
+        [[GIDSignIn sharedInstance] signIn];
     }else{
         [self showTermsRequiredMsg];
     }

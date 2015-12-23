@@ -40,6 +40,9 @@
     self.pickerRace.delegate = self;
     
     self.txtNick.text = user.nick;
+    if(user.email){
+        self.txtEmail.text = user.email;
+    }
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde." preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
