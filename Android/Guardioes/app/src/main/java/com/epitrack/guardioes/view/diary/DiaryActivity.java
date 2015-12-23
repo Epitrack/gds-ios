@@ -397,6 +397,8 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
                 }
 
                 lineChart.removeAllSeries();
+                lineChart.getGridLabelRenderer().setTextSize(18);
+                lineChart.getGridLabelRenderer().reloadStyles();
 
                //Line Chart
                 mapTotalMonth.put(1, mapTotalMonthTemp.get(1));

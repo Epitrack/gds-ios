@@ -88,6 +88,7 @@ public class UserAdapter extends ArrayAdapter<User> {
         TextView textViewName;
         TextView textViewType;
         ImageView imageViewImage;
+        ImageView imageTrash;
     }
 
     @Override
@@ -131,6 +132,12 @@ public class UserAdapter extends ArrayAdapter<User> {
         }
 
         final User user = getItem(position);
+
+        if (user.getId() == singleUser.getId()) {
+            viewHolder.imageTrash = (ImageView) view.findViewById(R.id.image_view_trash);
+            viewHolder.imageTrash.setVisibility(View.INVISIBLE);
+        }
+
 
         viewHolder.textViewName.setText(user.getNick());
         viewHolder.textViewType.setText(user.getType());

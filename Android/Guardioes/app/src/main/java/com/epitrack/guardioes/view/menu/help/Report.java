@@ -14,6 +14,7 @@ import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.SocialShare;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 
@@ -103,14 +104,18 @@ public class Report extends BaseAppCompatActivity {
                             .title(R.string.app_name)
                             .content(R.string.email_send)
                             .positiveText(R.string.ok)
+                            .callback(new MaterialDialog.ButtonCallback() {
+                                @Override
+                                public void onPositive(final MaterialDialog dialog) {
+                                    onBackPressed();
+                                }
+                            })
                             .show();
 
                     txtSubject.setText("");
                     txtMessage.setText("");
                 }
             }
-
-
         }
     }
 

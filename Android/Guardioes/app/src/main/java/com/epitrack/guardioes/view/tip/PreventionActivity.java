@@ -23,7 +23,7 @@ public class PreventionActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.prevention);
 
-        preventContent.setText(Html.fromHtml("<b>Malária</b><br><br>\n" +
+        preventContent.setText(Html.fromHtml("<b>Malária:</b><br><br>\n" +
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;No Brasil, a transmissão concentra-se na Região Amazônica, composta pelos estados do Acre, Amapá, Amazonas, Maranhão, Mato Grosso, Pará, Rondônia, Roraima e Tocantins;</p>\n" +
                 "\n" +
