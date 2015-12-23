@@ -45,12 +45,12 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.146401381326-skhtq5jehhp213aa7rpsf8pql62d08ho</string>
+				<string>com.googleusercontent.apps.783481918318-of721315npktlthk9fic2u02sp2psa9h</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>761</string>
+	<string>811</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>

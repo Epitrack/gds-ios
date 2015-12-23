@@ -11,7 +11,7 @@
 #import <TwitterKit/TwitterKit.h>
 #import <GoogleSignIn/GoogleSignIn.h>
 
-@interface SelectTypeCreateAccoutViewController : UIViewController <GIDSignInUIDelegate, GIDSignInDelegate>
+@interface SelectTypeCreateAccoutViewController : UIViewController <GIDSignInDelegate, GIDSignInUIDelegate>
 
 - (IBAction)btnFacebookAction:(id)sender;
 - (IBAction)btnGoogleAction:(id)sender;
@@ -21,8 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnCheckTerms;
 - (IBAction)btnCheckTermsAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnGoogle;
-@property (weak, nonatomic) IBOutlet UIButton *btnTwitter;
-@property (weak, nonatomic) IBOutlet UIButton *btnFacebook;
+@property (weak, nonatomic) IBOutlet TWTRLogInButton *btnTwitter;
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *btnFacebook;
 - (IBAction)btnInfoAction:(id)sender;
 - (IBAction)btnBackAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnEmail;
