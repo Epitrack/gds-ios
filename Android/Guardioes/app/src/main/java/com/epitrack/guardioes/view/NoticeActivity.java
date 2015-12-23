@@ -80,6 +80,8 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
 
         recyclerView.setAdapter(new NoticeAdapter(this, getNoticeList()));
 
+        getSupportActionBar().setTitle(R.string.notice);
+
     }
 
     private List<Notice> getNoticeList() {
