@@ -471,25 +471,44 @@ public class UserActivity extends BaseAppCompatActivity {
                                 }).show();
                     } else {
                         if (newMenber) {
+                            lookup();
                             new DialogBuilder(UserActivity.this).load()
                                     .title(R.string.attention)
                                     .content(R.string.new_member_ok)
                                     .positiveText(R.string.ok)
+                                    .callback(new MaterialDialog.ButtonCallback() {
+                                        @Override
+                                        public void onPositive(MaterialDialog dialog) {
+                                            onBackPressed();
+                                        }
+                                    })
                                     .show();
                         } else if (mainMember) {
+                            lookup();
                             new DialogBuilder(UserActivity.this).load()
                                     .title(R.string.attention)
                                     .content(R.string.generic_update_data_ok)
                                     .positiveText(R.string.ok)
+                                    .callback(new MaterialDialog.ButtonCallback() {
+                                        @Override
+                                        public void onPositive(MaterialDialog dialog) {
+                                            onBackPressed();
+                                        }
+                                    })
                                     .show();
-                            lookup();
                         } else {
+                            lookup();
                             new DialogBuilder(UserActivity.this).load()
                                     .title(R.string.attention)
                                     .content(R.string.generic_update_data_ok)
                                     .positiveText(R.string.ok)
+                                    .callback(new MaterialDialog.ButtonCallback() {
+                                        @Override
+                                        public void onPositive(MaterialDialog dialog) {
+                                            onBackPressed();
+                                        }
+                                    })
                                     .show();
-                            lookup();
                         }
 
                         //editTextNickname.setText("");
@@ -582,7 +601,6 @@ public class UserActivity extends BaseAppCompatActivity {
                 } catch (Exception e) {
                     singleUser.setPicture("0");
                 }
-
                 //navigateTo(ProfileActivity.class);
             }
         } catch (InterruptedException e) {
