@@ -105,7 +105,6 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
 
     SingleUser singleUser = SingleUser.getInstance();
 
-
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);

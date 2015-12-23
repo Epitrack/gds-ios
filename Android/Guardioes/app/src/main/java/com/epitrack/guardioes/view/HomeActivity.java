@@ -19,6 +19,7 @@ import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.view.account.LoginActivity;
 import com.epitrack.guardioes.view.menu.HomeMenu;
 import com.epitrack.guardioes.view.welcome.WelcomeActivity;
+import com.facebook.AccessToken;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -71,7 +72,7 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
         navigationView.setNavigationItemSelectedListener(this);
 
         addFragment(MAIN_FRAGMENT,
-                    MAIN_FRAGMENT.getSimpleName());
+                MAIN_FRAGMENT.getSimpleName());
     }
 
     @Override
@@ -132,8 +133,12 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
                 editor.putString("preferences_user_token", "");
                 editor.commit();
 
+                if (AccessToken.getCurrentAccessToken() != null) {
+                    AccessToken.setCurrentAccessToken(null);
+                }
+
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                Intent.FLAG_ACTIVITY_NEW_TASK);
+                        Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 startActivity(intent);
             }
