@@ -18,6 +18,7 @@ pod 'TwitterKit'
 pod 'TwitterCore'
 pod 'Google/SignIn'
 pod 'GoogleMaps'
+pod 'Google/Analytics'
 
 target 'Guardioes da Saude' do
 
