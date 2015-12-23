@@ -85,8 +85,20 @@
         user.gl = userGl.userID;
         user.nick = userGl.profile.name;
         
-        CreateAccountSocialLoginViewController *createAccountSocialLoginViewController = [[CreateAccountSocialLoginViewController alloc] init];
-        [self.navigationController pushViewController:createAccountSocialLoginViewController animated:YES];
+        BOOL userGlExists = [self checkSocialLoginWithToken:user.gl andType:@"GOOGLE"];
+        if (userGlExists) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Cadastro realizado anterioremente com essa rede social ou e-mail." preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                NSLog(@"You pressed button OK");
+            }];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        } else {
+            CreateAccountSocialLoginViewController *createAccountSocialLoginViewController = [[CreateAccountSocialLoginViewController alloc] init];
+            [self.navigationController pushViewController:createAccountSocialLoginViewController animated:YES];
+        }
+        
+        
     }
 }
 
