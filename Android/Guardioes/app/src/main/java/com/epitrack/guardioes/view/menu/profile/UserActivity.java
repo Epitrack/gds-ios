@@ -491,6 +491,7 @@ public class UserActivity extends BaseAppCompatActivity {
                                     .show();
                             lookup();
                         }
+
                         //editTextNickname.setText("");
                         //editTextBirthDate.setText("");
                     }
@@ -581,6 +582,8 @@ public class UserActivity extends BaseAppCompatActivity {
                 } catch (Exception e) {
                     singleUser.setPicture("0");
                 }
+
+                //navigateTo(ProfileActivity.class);
             }
         } catch (InterruptedException e) {
             navigateTo(WelcomeActivity.class);

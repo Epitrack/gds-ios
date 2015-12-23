@@ -86,7 +86,7 @@
             android:exported="false"
             android:label="@string/tutorial"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.NoActionBar" />
+            android:theme="@style/Theme.Transparent.ActionBarTutorial"/>
         # Profile
         <activity
             android:name=".view.menu.profile.ProfileActivity"
@@ -173,6 +173,7 @@
         <activity
             android:name=".view.diary.DiaryActivity"
             android:exported="false"
+            android:label="@string/diary_health"
             android:parentActivityName=".view.HomeActivity"
             android:screenOrientation="portrait" />
         <activity

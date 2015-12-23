@@ -18,7 +18,7 @@ import butterknife.Bind;
 /**
  * @author Miquéias Lopes
  */
-public class TutorialActivity extends BaseFragmentActivity {
+public class TutorialActivity extends BaseAppCompatActivity {
 
     @Bind(R.id.page_indicator)
     CirclePageIndicator pageIndicator;
@@ -33,7 +33,7 @@ public class TutorialActivity extends BaseFragmentActivity {
     Button buttonCreateAccount;
 
     @Override
-    protected void onCreate(final Bundle bundle) {
+    protected void onCreate(final Bundle bundle){
         super.onCreate(bundle);
 
         setContentView(R.layout.welcome);
@@ -46,16 +46,12 @@ public class TutorialActivity extends BaseFragmentActivity {
         buttonCreateAccount.setVisibility(View.INVISIBLE);
     }
 
-    /*@Override
+    @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
 
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+        onBackPressed();
 
-        } else {
-            super.onOptionsItemSelected(item);
-        }
         return true;
-    }*/
+    }
 
 }

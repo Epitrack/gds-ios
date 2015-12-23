@@ -13,7 +13,7 @@
         android:layout_marginTop="30dp"
         android:text="@string/report_title"
         android:textColor="@android:color/white"
-        android:textSize="18dp"
+        android:textSize="14dp"
         android:gravity="center_horizontal"
         android:layout_alignEnd="@+id/button_send_email"
         android:layout_alignStart="@+id/button_send_email" />

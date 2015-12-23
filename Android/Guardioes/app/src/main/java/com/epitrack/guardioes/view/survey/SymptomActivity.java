@@ -89,11 +89,13 @@ public class SymptomActivity extends BaseAppCompatActivity {
                 } else {
 
                     for (int i = 0; i < symptomArray.size(); i++) {
-                        String symptomName = symptomArray.get(i).getCodigo();
+                        if (symptomArray.get(i).isSelected()) {
+                            String symptomName = symptomArray.get(i).getCodigo();
 
-                        if (symptomName.equals("hadTravelledAbroad")) {
-                            isTravelLocation = true;
-                            break;
+                            if (symptomName.equals("hadTravelledAbroad")) {
+                                isTravelLocation = true;
+                                break;
+                            }
                         }
                     }
 

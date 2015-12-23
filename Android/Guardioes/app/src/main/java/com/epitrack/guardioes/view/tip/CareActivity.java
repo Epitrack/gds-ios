@@ -47,7 +47,7 @@ public class CareActivity extends BaseAppCompatActivity {
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Use repelentes quando houver necessidade;</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;Lave as mãos com água e sabão várias vezes ao dia, principalmente antes de ingerir alimentos, após utilizar conduções públicas, visitar mercados ou locais com grande fluxo de pessoas.</p>\n" +
+                "<p>&nbsp;&nbsp;&#8226;&nbsp;Lave as mãos com água e sabão várias vezes ao dia, principalmente antes de ingerir alimentos, após utilizar conduções públicas, visitar mercados ou locais com grande fluxo de pessoas;</p>\n" +
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;No Brasil, é proibido por lei dirigir após o consumo de bebida alcoólica, mesmo em pequenas quantidades.</p>"));
     }
