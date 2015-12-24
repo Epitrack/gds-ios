@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "THDatePickerViewController.h"
+#import "RMDateSelectionViewController.h"
 @import DownPicker;
 
-@interface CreateAccountSocialLoginViewController : UIViewController<UITextFieldDelegate, UITextViewDelegate, THDatePickerDelegate>
+@interface CreateAccountSocialLoginViewController : UIViewController<UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 - (IBAction)btnCadastrar:(id)sender;
@@ -19,8 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIDownPicker *downRace;
 @property (weak, nonatomic) IBOutlet UIButton *btnDate;
 - (IBAction)touchedButton:(id)sender;
+- (IBAction)action:(id)sender;
 
-@property (nonatomic, strong) THDatePickerViewController * datePicker;
 
 
 @end

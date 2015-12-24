@@ -27,6 +27,8 @@
 		42539894F3953B2154415BAC /* SingleHousehold.m in Sources */ = {isa = PBXBuildFile; fileRef = 42539CCCC760718C03D2A1B9 /* SingleHousehold.m */; };
 		520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */; };
 		520158FA1BE3CD9D00982856 /* DetailMapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */; };
+		5206C4301C2B1648003D0C83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5206C42F1C2B1648003D0C83 /* GoogleService-Info.plist */; };
+		5206C4341C2C1EF4003D0C83 /* DownPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5206C4331C2C1EF4003D0C83 /* DownPicker.framework */; };
 		520CD0D51BED3DB800F24B45 /* SelectTypeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520CD0D31BED3DB800F24B45 /* SelectTypeLoginViewController.m */; };
 		520CD0D61BED3DB800F24B45 /* SelectTypeLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CD0D41BED3DB800F24B45 /* SelectTypeLoginViewController.xib */; };
 		520CD0E21BED436700F24B45 /* EnterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520CD0E01BED436700F24B45 /* EnterViewController.m */; };
@@ -92,7 +94,6 @@
 		525A33271BECF5AC00B62E33 /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525A33251BECF5AC00B62E33 /* reveal-icon@2x.png */; };
 		525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525A33291BED1F8200B62E33 /* MenuViewController.m */; };
 		525A332C1BED1F8200B62E33 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A332A1BED1F8200B62E33 /* MenuViewController.xib */; };
-		525E8DCA1BFE8DA40020D4D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 525E8DC91BFE8DA40020D4D6 /* GoogleService-Info.plist */; };
 		525E8DCC1BFE9F210020D4D6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525E8DCB1BFE9F210020D4D6 /* FBSDKCoreKit.framework */; };
 		525E8DCE1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525E8DCD1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework */; };
 		527782CA1C04CEB700251BF8 /* SelectAvatarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527782C81C04CEB700251BF8 /* SelectAvatarViewController.m */; };
@@ -535,6 +536,8 @@
 		520158F61BE3CD9D00982856 /* DetailMapHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMapHealthViewController.h; sourceTree = "<group>"; };
 		520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMapHealthViewController.m; sourceTree = "<group>"; };
 		520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMapHealthViewController.xib; sourceTree = "<group>"; };
+		5206C42F1C2B1648003D0C83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5206C4331C2C1EF4003D0C83 /* DownPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DownPicker.framework; path = "Pods/../build/Debug-iphoneos/DownPicker.framework"; sourceTree = "<group>"; };
 		520CD0D21BED3DB800F24B45 /* SelectTypeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeLoginViewController.h; sourceTree = "<group>"; };
 		520CD0D31BED3DB800F24B45 /* SelectTypeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTypeLoginViewController.m; sourceTree = "<group>"; };
 		520CD0D41BED3DB800F24B45 /* SelectTypeLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTypeLoginViewController.xib; sourceTree = "<group>"; };
@@ -554,6 +557,7 @@
 		5215BBC31BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountSocialLoginViewController.m; sourceTree = "<group>"; };
 		5215BBC41BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountSocialLoginViewController.xib; sourceTree = "<group>"; };
 		5215BBC51BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountSocialLoginViewController.h; sourceTree = "<group>"; };
+		52199CB61C2C58310033A949 /* THCalendarDatePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = THCalendarDatePicker.framework; path = "Pods/../build/Debug-iphoneos/THCalendarDatePicker.framework"; sourceTree = "<group>"; };
 		522360BD1BE9176D006D0598 /* DetailMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailMap.h; path = "Guardioes da Saude/DetailMap.h"; sourceTree = "<group>"; };
 		522360BE1BE9176D006D0598 /* DetailMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailMap.m; path = "Guardioes da Saude/DetailMap.m"; sourceTree = "<group>"; };
 		524C141A1BEBC697003A6C2D /* NoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeViewController.h; sourceTree = "<group>"; };
@@ -622,7 +626,6 @@
 		525A33281BED1F8200B62E33 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		525A33291BED1F8200B62E33 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		525A332A1BED1F8200B62E33 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
-		525E8DC91BFE8DA40020D4D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		525E8DCB1BFE9F210020D4D6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		525E8DCD1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		527782C71C04CEB700251BF8 /* SelectAvatarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAvatarViewController.h; sourceTree = "<group>"; };
@@ -1083,6 +1086,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5206C4341C2C1EF4003D0C83 /* DownPicker.framework in Frameworks */,
 				527782E31C10861700251BF8 /* StoreKit.framework in Frameworks */,
 				527782E11C10860B00251BF8 /* SystemConfiguration.framework in Frameworks */,
 				2548B9EE1BDEBA310004E00F /* CoreLocation.framework in Frameworks */,
@@ -1368,8 +1372,8 @@
 		528C8AFB1BB82630003CFC91 /* Guardioes da Saude */ = {
 			isa = PBXGroup;
 			children = (
+				5206C42F1C2B1648003D0C83 /* GoogleService-Info.plist */,
 				52E6F0661C1EFC6800C88A08 /* TPKeyboardAvoiding */,
-				525E8DC91BFE8DA40020D4D6 /* GoogleService-Info.plist */,
 				AAE38B2F1BF9211D009CD20B /* Request */,
 				524C14401BECE13E003A6C2D /* SWReval */,
 				251AD8F91BD553DE000C1B84 /* Facade */,
@@ -1823,6 +1827,8 @@
 		CF810800BC26A068848D3B68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52199CB61C2C58310033A949 /* THCalendarDatePicker.framework */,
+				5206C4331C2C1EF4003D0C83 /* DownPicker.framework */,
 				527782E41C10862400251BF8 /* AddressBook.framework */,
 				527782E51C10862400251BF8 /* AddressBookUI.framework */,
 				527782E21C10861700251BF8 /* StoreKit.framework */,
@@ -2227,11 +2233,11 @@
 				52E727D21BEA93B800B46945 /* img_profile06@3x.png in Resources */,
 				52E727AB1BEA93B800B46945 /* icon_security@3x.png in Resources */,
 				52D2BC841BF12EBF007C9C09 /* icon_pin_bad@2x.png in Resources */,
-				525E8DCA1BFE8DA40020D4D6 /* GoogleService-Info.plist in Resources */,
 				52E727751BEA93B800B46945 /* icon_help_n_faq@3x.png in Resources */,
 				520158FA1BE3CD9D00982856 /* DetailMapHealthViewController.xib in Resources */,
 				528705C91BF3AB5F00321985 /* iconDefesacivilMini@3x.png in Resources */,
 				528705CC1BF3AB5F00321985 /* iconPMMini@3x.png in Resources */,
+				5206C4301C2B1648003D0C83 /* GoogleService-Info.plist in Resources */,
 				52E727891BEA93B800B46945 /* icon_logo_tutorial@2x.png in Resources */,
 				52E727171BEA93B800B46945 /* img_card@3x.png in Resources */,
 				52E727311BEA93B800B46945 /* BG_dark.png in Resources */,
@@ -2580,6 +2586,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -2601,6 +2608,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

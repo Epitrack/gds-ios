@@ -303,4 +303,47 @@
     SelectTypeCreateAccoutViewController *selectTypeCreateAccountViewController = [[SelectTypeCreateAccoutViewController alloc] init];
     [self.navigationController pushViewController:selectTypeCreateAccountViewController animated:YES];
 }
+- (IBAction)action:(id)sender {
+    RMActionControllerStyle style = RMActionControllerStyleWhite;
+    
+    RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
+        NSLog(@"Successfully selected date: %@", controller.contentView.date);
+    }];
+    
+    RMAction<RMActionController<UIDatePicker *> *> *cancelAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Cancel" style:RMActionStyleCancel andHandler:^(RMActionController<UIDatePicker *> *controller) {
+        NSLog(@"Date selection was canceled");
+    }];
+    
+    RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
+    dateSelectionController.title = @"Test";
+    dateSelectionController.message = @"This is a test message.\nPlease choose a date and press 'Select' or 'Cancel'.";
+    
+    [dateSelectionController addAction:selectAction];
+    [dateSelectionController addAction:cancelAction];
+    
+    
+    //You can enable or disable blur, bouncing and motion effects
+//    dateSelectionController.disableBouncingEffects = !self.bouncingSwitch.on;
+//    dateSelectionController.disableMotionEffects = !self.motionSwitch.on;
+//    dateSelectionController.disableBlurEffects = !self.blurSwitch.on;
+    
+    //You can access the actual UIDatePicker via the datePicker property
+    dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
+    dateSelectionController.datePicker.minuteInterval = 5;
+    dateSelectionController.datePicker.date = [NSDate dateWithTimeIntervalSinceReferenceDate:0];
+    
+    //On the iPad we want to show the date selection view controller within a popover. Fortunately, we can use iOS 8 API for this! :)
+    //(Of course only if we are running on iOS 8 or later)
+    if([dateSelectionController respondsToSelector:@selector(popoverPresentationController)] && [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        //First we set the modal presentation style to the popover style
+        dateSelectionController.modalPresentationStyle = UIModalPresentationPopover;
+        
+        //Then we tell the popover presentation controller, where the popover should appear
+//        dateSelectionController.popoverPresentationController.sourceView = self.tableView;
+//        dateSelectionController.popoverPresentationController.sourceRect = [self.tableView rectForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    }
+    
+    //Now just present the date selection controller using the standard iOS presentation method
+    [self presentViewController:dateSelectionController animated:YES completion:nil];
+}
 @end

@@ -31,7 +31,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BG_blur_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="iNa-7M-nfR">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huq-RO-TKh">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huq-RO-TKh">
                     <rect key="frame" x="8" y="19" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="RMh-b9-o11"/>
@@ -57,7 +57,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Po6-KA-bie" customClass="TPKeyboardAvoidingScrollView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-pH-74t">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-pH-74t">
                             <rect key="frame" x="52" y="39" width="219" height="100"/>
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apelido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2gP-za-RdG">
@@ -65,7 +65,7 @@
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Sexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmf-Pa-cH2">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmf-Pa-cH2">
                             <rect key="frame" x="23" y="189" width="42" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="42" id="TTS-eV-aLX"/>
@@ -78,7 +78,8 @@
                                     <exclude reference="TTS-eV-aLX"/>
                                 </mask>
                             </variation>
-                            <variation key="widthClass=compact">
+                            <variation key="widthClass=compact" misplaced="YES">
+                                <rect key="frame" x="23" y="190" width="42" height="20"/>
                                 <mask key="constraints">
                                     <include reference="TTS-eV-aLX"/>
                                 </mask>
@@ -136,20 +137,21 @@
                                 </mask>
                             </variation>
                         </label>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7L8-nc-Ha5">
-                            <rect key="frame" x="-160" y="-108" width="320" height="216"/>
-                            <date key="date" timeIntervalSinceReferenceDate="472673507.78355998">
-                                <!--2015-12-24 18:11:47 +0000-->
-                            </date>
-                            <variation key="widthClass=compact" fixedFrame="YES">
-                                <rect key="frame" x="-1" y="253" width="320" height="103"/>
-                            </variation>
-                        </datePicker>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@exemplo.com.br" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y5r-E9-s3L">
                             <rect key="frame" x="23" y="388" width="275" height="30"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-DL-f8l">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal" title="Button"/>
+                            <variation key="widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="100" y="253" width="196" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="action:" destination="-1" eventType="touchUpInside" id="1sb-Oi-N3m"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="BZo-DW-Eqc" firstAttribute="top" secondItem="u6t-4C-pXR" secondAttribute="bottom" constant="5" id="0dc-Rd-BDT"/>
@@ -191,9 +193,16 @@
                         <mask key="subviews">
                             <exclude reference="u6t-4C-pXR"/>
                             <exclude reference="BZo-DW-Eqc"/>
-                            <exclude reference="7L8-nc-Ha5"/>
+                            <exclude reference="Fea-DL-f8l"/>
                         </mask>
                         <mask key="constraints">
+                            <exclude reference="0dc-Rd-BDT"/>
+                            <exclude reference="Ajn-5y-XYi"/>
+                            <exclude reference="Djx-cQ-iLx"/>
+                            <exclude reference="1z2-jR-M7Q"/>
+                            <exclude reference="4Qf-rc-ZfV"/>
+                            <exclude reference="bFy-HE-hBq"/>
+                            <exclude reference="d5j-XZ-q3Y"/>
                             <exclude reference="VEM-vn-XcR"/>
                             <exclude reference="WAP-Ss-7zV"/>
                             <exclude reference="DGA-9u-XBT"/>
@@ -202,31 +211,31 @@
                             <exclude reference="XHQ-jp-3NS"/>
                             <exclude reference="sUL-er-9HP"/>
                             <exclude reference="zwm-6n-mQE"/>
-                            <exclude reference="1z2-jR-M7Q"/>
-                            <exclude reference="4Qf-rc-ZfV"/>
-                            <exclude reference="bFy-HE-hBq"/>
-                            <exclude reference="d5j-XZ-q3Y"/>
                             <exclude reference="Rdf-sL-sc1"/>
-                            <exclude reference="0dc-Rd-BDT"/>
-                            <exclude reference="Ajn-5y-XYi"/>
-                            <exclude reference="Djx-cQ-iLx"/>
-                            <exclude reference="1pv-Jq-LdJ"/>
-                            <exclude reference="fTD-SE-hH4"/>
-                            <exclude reference="hCP-w9-eTS"/>
                             <exclude reference="9CQ-2Q-buy"/>
                             <exclude reference="Rnh-jF-T2B"/>
                             <exclude reference="Ujd-ai-POE"/>
                             <exclude reference="a4g-IE-CEY"/>
                             <exclude reference="hXi-aS-RoT"/>
+                            <exclude reference="1pv-Jq-LdJ"/>
+                            <exclude reference="fTD-SE-hH4"/>
+                            <exclude reference="hCP-w9-eTS"/>
                         </mask>
                     </variation>
                     <variation key="widthClass=compact">
                         <mask key="subviews">
                             <include reference="u6t-4C-pXR"/>
                             <include reference="BZo-DW-Eqc"/>
-                            <include reference="7L8-nc-Ha5"/>
+                            <include reference="Fea-DL-f8l"/>
                         </mask>
                         <mask key="constraints">
+                            <include reference="0dc-Rd-BDT"/>
+                            <include reference="Ajn-5y-XYi"/>
+                            <include reference="Djx-cQ-iLx"/>
+                            <include reference="1z2-jR-M7Q"/>
+                            <include reference="4Qf-rc-ZfV"/>
+                            <include reference="bFy-HE-hBq"/>
+                            <include reference="d5j-XZ-q3Y"/>
                             <include reference="VEM-vn-XcR"/>
                             <include reference="WAP-Ss-7zV"/>
                             <include reference="DGA-9u-XBT"/>
@@ -235,22 +244,15 @@
                             <include reference="XHQ-jp-3NS"/>
                             <include reference="sUL-er-9HP"/>
                             <include reference="zwm-6n-mQE"/>
-                            <include reference="1z2-jR-M7Q"/>
-                            <include reference="4Qf-rc-ZfV"/>
-                            <include reference="bFy-HE-hBq"/>
-                            <include reference="d5j-XZ-q3Y"/>
                             <include reference="Rdf-sL-sc1"/>
-                            <include reference="0dc-Rd-BDT"/>
-                            <include reference="Ajn-5y-XYi"/>
-                            <include reference="Djx-cQ-iLx"/>
-                            <include reference="1pv-Jq-LdJ"/>
-                            <include reference="fTD-SE-hH4"/>
-                            <include reference="hCP-w9-eTS"/>
                             <include reference="9CQ-2Q-buy"/>
                             <include reference="Rnh-jF-T2B"/>
                             <include reference="Ujd-ai-POE"/>
                             <include reference="a4g-IE-CEY"/>
                             <include reference="hXi-aS-RoT"/>
+                            <include reference="1pv-Jq-LdJ"/>
+                            <include reference="fTD-SE-hH4"/>
+                            <include reference="hCP-w9-eTS"/>
                         </mask>
                     </variation>
                 </scrollView>
@@ -274,6 +276,8 @@
                     <exclude reference="huq-RO-TKh"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="VEI-IS-nAX"/>
+                    <exclude reference="j4p-39-9e3"/>
                     <exclude reference="ItN-qy-EPb"/>
                     <exclude reference="LXS-qH-p64"/>
                     <exclude reference="SPO-Tc-OLJ"/>
@@ -282,8 +286,6 @@
                     <exclude reference="Hoz-2C-fON"/>
                     <exclude reference="TMJ-Ul-6PK"/>
                     <exclude reference="nam-5r-f5T"/>
-                    <exclude reference="VEI-IS-nAX"/>
-                    <exclude reference="j4p-39-9e3"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -291,6 +293,8 @@
                     <include reference="huq-RO-TKh"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="VEI-IS-nAX"/>
+                    <include reference="j4p-39-9e3"/>
                     <include reference="ItN-qy-EPb"/>
                     <include reference="LXS-qH-p64"/>
                     <include reference="SPO-Tc-OLJ"/>
@@ -299,8 +303,6 @@
                     <include reference="Hoz-2C-fON"/>
                     <include reference="TMJ-Ul-6PK"/>
                     <include reference="nam-5r-f5T"/>
-                    <include reference="VEI-IS-nAX"/>
-                    <include reference="j4p-39-9e3"/>
                 </mask>
             </variation>
         </view>

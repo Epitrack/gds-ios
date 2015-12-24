@@ -19,6 +19,8 @@ pod 'TwitterCore'
 pod 'Google/SignIn'
 pod 'GoogleMaps'
 pod 'Google/Analytics'
+pod 'DownPicker'
+pod 'RMDateSelectionViewController'
 
 target 'Guardioes da Saude' do
 
