@@ -79,7 +79,10 @@
     <string name="network_disable">Serviços de localização desativados. Habilite-os nas configurações do aparelho para poder visualiar o mapa.</string>
     <string name="google_fail">Não foi possível realizar o login. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
     <string name="facebook_fail">Não foi possível realizar o login. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
-    <string name="twitter_fail">Não foi possível realizar o login. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
+    <string name="facebook_cancel">Acesso ao Guatdiões da Saúde via Facebook cancelado.</string>
+    <string name="facebook_error">Não foi possível acessar o Guardiões da Saúde através do Facebook. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
+    <string name="google_access_error">O Guardiões da Saúde não obeteve permissaão para acessar seus dados do Google. Verifique suas configurações.</string>
+    <string name="twitter_fail">Não foi possível acessar o Guardiões da Saúde através do Twitter. Tente novamente em alguns minutos ou acesse através do seu e-mail.</string>
     <string name="new_user_social_media">Complete o cadastro a seguir para acessar o Guardiões da Saúde.</string>
     <string name="cadastro_sucesso">Cadastro realizado com sucesso!</string>
     <string name="user_exist">Cadastro realizado anterioremente com essa rede social ou e-mail.</string>
