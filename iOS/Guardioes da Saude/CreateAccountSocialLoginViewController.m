@@ -17,8 +17,8 @@
     User *user;
     NSArray *pickerDataGender;
     NSArray *pickerDataRace;
+    
 }
-
 @end
 
 @implementation CreateAccountSocialLoginViewController
@@ -34,10 +34,12 @@
     pickerDataGender = @[@"Masculino", @"Feminino"];
     pickerDataRace = @[@"branco", @"preto", @"pardo", @"amarelo", @"indigena"];
     
-    self.pickerGender.dataSource = self;
-    self.pickerGender.delegate = self;
-    self.pickerRace.dataSource = self;
-    self.pickerRace.delegate = self;
+    (void)[self.downGenre initWithData:pickerDataGender];
+    (void)[self.downRace initWithData:pickerDataRace];
+    
+    NSString *placeHolderDownpicker = @"Toque para selecionar";
+    [self.downRace setPlaceholder:placeHolderDownpicker];
+    [self.downGenre setPlaceholder:placeHolderDownpicker];
     
     self.txtNick.text = user.nick;
     if(user.email){
@@ -49,8 +51,6 @@
     }];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,7 +87,7 @@
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"dd/MM/yyyy"];
-    NSString *formattedDate = [df stringFromDate:self.dtPikerDob.date];
+    NSString *formattedDate = nil;//[df stringFromDate:self.dtPikerDob.date];
     
     NSString *datePiker = formattedDate;
     
@@ -167,8 +167,8 @@
         NSString *race;
         NSInteger row;
         
-        row = [self.pickerGender selectedRowInComponent:0];
-        gender = [pickerDataGender objectAtIndex:row];
+//        row = [self.pickerGender selectedRowInComponent:0];
+//        gender = [pickerDataGender objectAtIndex:row];
         
         if ([gender isEqualToString:@"Masculino"]) {
             gender = @"M";
@@ -176,8 +176,8 @@
             gender = @"F";
         }
         
-        row = [self.pickerRace selectedRowInComponent:0];
-        race = [pickerDataRace objectAtIndex:row];
+//        row = [self.pickerRace selectedRowInComponent:0];
+//        race = [pickerDataRace objectAtIndex:row];
         
         /*if (self.segmentRace.selectedSegmentIndex == 0) {
             race = @"branco";
@@ -302,55 +302,5 @@
 - (IBAction)backButtonAction:(id)sender {
     SelectTypeCreateAccoutViewController *selectTypeCreateAccountViewController = [[SelectTypeCreateAccoutViewController alloc] init];
     [self.navigationController pushViewController:selectTypeCreateAccountViewController animated:YES];
-}
-
-// The number of columns of data
-- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
-}
-
-// The number of rows of data
-- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    int iReturn = 0;
-    
-    if (pickerView == self.pickerRace) {
-        iReturn = pickerDataRace.count;
-    } else if (pickerView == self.pickerGender) {
-        iReturn = pickerDataGender.count;
-    }
-    
-    return iReturn;
-}
-
-// The data to return for the row and component (column) that's being passed in
-- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSString *strReturn;
-    
-    if (pickerView == self.pickerRace) {
-        strReturn = pickerDataRace[row];
-    } else if (pickerView == self.pickerGender) {
-        strReturn = pickerDataGender[row];
-    }
-    
-    return strReturn;
-}
-
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
-    UILabel* tView = (UILabel*)view;
-    if (!tView) {
-        tView = [[UILabel alloc] init];
-        
-        [tView setFont:[UIFont fontWithName:@"Helvetica" size:15]];
-        [tView setTextAlignment:UITextAlignmentCenter];
-        
-    }
-    
-    if (pickerView == self.pickerRace) {
-        tView.text = [pickerDataRace objectAtIndex:row];
-    } else if (pickerView == self.pickerGender) {
-        tView.text = [pickerDataGender objectAtIndex:row];
-    }
-    
-    return tView;
 }
 @end
