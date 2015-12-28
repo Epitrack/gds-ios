@@ -185,6 +185,7 @@
                 <constraint firstItem="a4J-Dt-p6P" firstAttribute="leading" secondItem="Niu-VW-0r5" secondAttribute="leading" id="i6z-Va-ZSw"/>
                 <constraint firstItem="Niu-VW-0r5" firstAttribute="leading" secondItem="f7f-JZ-5sg" secondAttribute="leading" id="iAz-Ds-W6J"/>
                 <constraint firstItem="Niu-VW-0r5" firstAttribute="centerX" secondItem="f7f-JZ-5sg" secondAttribute="centerX" id="pK8-RW-SqG"/>
+                <constraint firstAttribute="trailing" secondItem="a4J-Dt-p6P" secondAttribute="trailing" id="zDe-if-Jts"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
