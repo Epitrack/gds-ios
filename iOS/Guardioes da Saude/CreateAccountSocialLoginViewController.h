@@ -19,8 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIDownPicker *downGenre;
 @property (weak, nonatomic) IBOutlet UIDownPicker *downRace;
 @property (weak, nonatomic) IBOutlet UIButton *btnDate;
-- (IBAction)touchedButton:(id)sender;
-- (IBAction)action:(id)sender;
+- (IBAction)changeBirthDate:(id)sender;
 
 
 

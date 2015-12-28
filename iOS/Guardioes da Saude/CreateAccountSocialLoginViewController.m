@@ -87,7 +87,6 @@
 
 - (IBAction)btnCadastrar:(id)sender {
     BOOL fieldNull = NO;
-    BOOL dateFail = NO;
     
     if ([self.txtEmail.text isEqualToString:@""] ||
         [self.txtNick.text isEqualToString:@""] ||
@@ -106,7 +105,6 @@
     } else {
         NSString *gender = self.downGenre.text;
         NSString *race = self.downRace.text;
-        NSInteger row;
         
         if ([gender isEqualToString:@"Masculino"]) {
             gender = @"M";
@@ -216,7 +214,7 @@
     SelectTypeCreateAccoutViewController *selectTypeCreateAccountViewController = [[SelectTypeCreateAccoutViewController alloc] init];
     [self.navigationController pushViewController:selectTypeCreateAccountViewController animated:YES];
 }
-- (IBAction)action:(id)sender {
+- (IBAction)changeBirthDate:(id)sender {
     RMActionControllerStyle style = RMActionControllerStyleWhite;
     
     RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
