@@ -14,10 +14,9 @@
 #import "SelectAvatarViewController.h"
 #import "DTO.h"
 #import "SingleHousehold.h"
+#import "UserRequester.h"
 
 @interface ProfileFormViewController () {
-    
-    User *user;
     NSDictionary *params;
     DTO *dto;
     SingleHousehold *singleHousehold;
@@ -27,196 +26,93 @@
 
 @implementation ProfileFormViewController
 
-- (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"Here - viewDidAppear:(BOOL)animated");
-    [self loadData];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    //NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    user = [User getInstance];
-    dto = [DTO getInstance];
-    singleHousehold = [SingleHousehold getInstance];
-
-    if (singleHousehold.id != nil) {
-        self.navigationItem.title = @"Editar Perfil";
-        [self loadData];
-    } else {
-        if (self.newMember == 0) {
-            self.navigationItem.title = @"Adicionar Membro";
-            self.txtPassword.hidden = YES;
-            self.txtConfirmPassword.hidden = YES;
-        } else {
-            if (self.idUser != nil || self.idHousehold != nil) {
-                self.navigationItem.title = @"Editar Perfil";
-                self.txtEmail.enabled = NO;
-                [self loadData];
-            }
-        }
+    if (self.operation == EDIT_USER) {
+        [self loadEditUser];
+    } else if (self.operation == EDIT_HOUSEHOLD){
+        [self loadEditHousehold];
+    } else if (self.operation == ADD_HOUSEHOLD){
+        [self loadAddHousehold];
     }
-    
-    /*if (dto.data != nil) {
-        if (self.idUser != nil || singleHousehold.id != nil) {
-            self.navigationItem.title = @"Editar Perfil";
-            [self loadData];
-        }
-    } else {
-        if (self.newMember == 0) {
-            self.navigationItem.title = @"Adicionar Membro";
-            self.txtPassword.hidden = YES;
-            self.txtConfirmPassword.hidden = YES;
-        } else {
-            if (self.idUser != nil || self.idHousehold != nil) {
-                self.navigationItem.title = @"Editar Perfil";
-                self.txtEmail.enabled = NO;
-                [self loadData];
-            }
-        }
-    }*/
 }
 
-- (void) loadData {
-    NSString *avatar;
-    avatar = @"img_profile01.png";
+- (void) loadEditUser{
+    self.navigationItem.title = @"Editar Perfil";
+    self.txtEmail.enabled = NO;
+    [self populateFormWithNick:self.user.nick
+                        andDob:self.user.dob
+                      andEmail:self.user.email
+                     andGender:self.user.gender
+                       andRace:self.user.race
+                    andPicture:self.user.picture];
+}
 
-    if (singleHousehold.id != nil) {
+- (void) loadEditHousehold{
+    self.navigationItem.title = @"Editar Perfil";
+    self.txtPassword.hidden = YES;
+    self.txtConfirmPassword.hidden = YES;
+    [self populateFormWithNick:self.household.nick
+                        andDob:self.household.dob
+                      andEmail:@""
+                     andGender:self.household.gender
+                       andRace:self.household.race
+                    andPicture:self.household.picture];
+}
 
-        self.txtPassword.hidden = YES;
-        self.txtConfirmPassword.hidden = YES;
+- (void) loadAddHousehold{
+    self.navigationItem.title = @"Adicionar Membro";
+    self.txtPassword.hidden = YES;
+    self.txtConfirmPassword.hidden = YES;
+}
 
-        self.txtNick.text = singleHousehold.nick;
-        self.txtEmail.text = singleHousehold.email;
-
-        NSLog(@"dob %@", singleHousehold.dob);
-
-        NSLog(@"Dia %@", [singleHousehold.dob substringWithRange:NSMakeRange(8, 2)]);
-        NSLog(@"Mês %@", [singleHousehold.dob substringWithRange:NSMakeRange(5, 2)]);
-        NSLog(@"Ano %@", [singleHousehold.dob substringWithRange:NSMakeRange(0, 4)]);
-
-        NSString *day = [singleHousehold.dob substringWithRange:NSMakeRange(8, 2)];
-        NSString *month = [singleHousehold.dob substringWithRange:NSMakeRange(5, 2)];
-        NSString *year = [singleHousehold.dob substringWithRange:NSMakeRange(0, 4)];
-
-        NSString *dob = [NSString stringWithFormat:@"%@/%@/%@", day, month, year];
-
-        self.txtDob.text = dob;
-
-        if ([singleHousehold.gender isEqualToString:@"0"]) {
-            self.segmentGender.selectedSegmentIndex = 0;
-        } else {
-            self.segmentGender.selectedSegmentIndex = 1;
-        }
-
-        if ([singleHousehold.race isEqualToString:@"0"]) {
-            self.segmentRace.selectedSegmentIndex = 0;
-        } else if ([singleHousehold.race isEqualToString:@"1"]) {
-            self.segmentRace.selectedSegmentIndex = 1;
-        } else if ([singleHousehold.race isEqualToString:@"2"]) {
-            self.segmentRace.selectedSegmentIndex = 2;
-        } else if ([singleHousehold.race isEqualToString:@"3"]) {
-            self.segmentRace.selectedSegmentIndex = 3;
-        } else if ([singleHousehold.race isEqualToString:@"4"]) {
-            self.segmentRace.selectedSegmentIndex = 4;
-        }
-        
-        if ([singleHousehold.picture isEqualToString:@"0"]) {
-            avatar = @"img_profile01.png";
-        } else if (singleHousehold.picture.length == 1) {
-            avatar = [NSString stringWithFormat:@"img_profile0%@.png", singleHousehold.picture];
-        } else if (singleHousehold.picture.length == 2) {
-            avatar = [NSString stringWithFormat:@"img_profile%@.png", singleHousehold.picture];
-        }
-        
-        [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-
+- (void) populateFormWithNick: (NSString *) nick
+                       andDob: (NSString *) dob
+                     andEmail: (NSString *) email
+                    andGender: (NSString *) gender
+                      andRace: (NSString *) race
+                   andPicture: (NSString *) picture{
+    self.txtNick.text = nick;
+    self.txtDob.text = [self formatterDate:dob];
+    self.txtEmail.text = email;
+    
+    if ([gender isEqualToString:@"0"]) {
+        self.segmentGender.selectedSegmentIndex = 0;
     } else {
-
-
-        if (self.idHousehold == nil) {
-            if (dto.data != nil) {
-                if ([dto.data isKindOfClass:[UIImage class]]) {
-                    [self.btnPicture setBackgroundImage:dto.data forState:UIControlStateNormal];
-                } else if ([dto.data isKindOfClass:[NSString class]]) {
-                    NSString *p = [NSString stringWithFormat:@"%@", dto.data];
-
-                    if (p.length == 1) {
-                        avatar = [NSString stringWithFormat:@"img_profile0%@.png", p];
-                    } else if (p.length == 2) {
-                        avatar = [NSString stringWithFormat:@"img_profile%@.png", p];
-                    }
-                    [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-                }
-            } else {
-                /* if ((![user.picture isEqualToString:@""] && user.avatar != nil)) {
-                     NSString *p = [NSString stringWithFormat:@"%@", user.avatar];
-
-                     if (p.length == 1) {
-                         avatar = [NSString stringWithFormat: @"img_profile0%@.png", p];
-                     } else if (p.length == 2) {
-                         avatar = [NSString stringWithFormat: @"img_profile%@.png", p];
-                     }
-                 } else {*/
-                if (self.editProfile == 1) {
-                    if ([user.picture isEqualToString:@"0"]) {
-                        avatar = @"img_profile01.png";
-                    } else if (user.picture.length == 1) {
-                        avatar = [NSString stringWithFormat:@"img_profile0%@.png", user.picture];
-                    } else if (user.picture.length == 2) {
-                        avatar = [NSString stringWithFormat:@"img_profile%@.png", user.picture];
-                    }
-                } else {
-                    avatar = @"img_profile01.png";
-                }
-            }
-            if (![avatar isEqualToString:@""]) {
-                [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-            }
-
-            if (self.newMember != 0) {
-                self.txtNick.text = user.nick;
-                self.txtEmail.text = user.email;
-                self.txtPassword.text = @"";
-
-                NSLog(@"dob %@", user.dob);
-
-                NSLog(@"Dia %@", [user.dob substringWithRange:NSMakeRange(8, 2)]);
-                NSLog(@"Mês %@", [user.dob substringWithRange:NSMakeRange(5, 2)]);
-                NSLog(@"Ano %@", [user.dob substringWithRange:NSMakeRange(0, 4)]);
-
-                NSString *day = [user.dob substringWithRange:NSMakeRange(8, 2)];
-                NSString *month = [user.dob substringWithRange:NSMakeRange(5, 2)];
-                NSString *year = [user.dob substringWithRange:NSMakeRange(0, 4)];
-
-                NSString *dob = [NSString stringWithFormat:@"%@/%@/%@", day, month, year];
-
-                self.txtDob.text = dob;
-
-                if ([user.gender isEqualToString:@"M"]) {
-                    self.segmentGender.selectedSegmentIndex = 0;
-                } else {
-                    self.segmentGender.selectedSegmentIndex = 1;
-                }
-
-                if ([user.race isEqualToString:@"branco"]) {
-                    self.segmentRace.selectedSegmentIndex = 0;
-                } else if ([user.race isEqualToString:@"preto"]) {
-                    self.segmentRace.selectedSegmentIndex = 1;
-                } else if ([user.race isEqualToString:@"pardo"]) {
-                    self.segmentRace.selectedSegmentIndex = 2;
-                } else if ([user.race isEqualToString:@"amarelo"]) {
-                    self.segmentRace.selectedSegmentIndex = 3;
-                } else if ([user.race isEqualToString:@"indigena"]) {
-                    self.segmentRace.selectedSegmentIndex = 4;
-                }
-            }
-        } else {
-            //self.txtEmail.hidden = YES;
-            self.txtPassword.hidden = YES;
-            self.txtConfirmPassword.hidden = YES;
-        }
+        self.segmentGender.selectedSegmentIndex = 1;
     }
+    
+    if ([race isEqualToString:@"branco"]) {
+        self.segmentRace.selectedSegmentIndex = 0;
+    } else if ([race isEqualToString:@"preto"]) {
+        self.segmentRace.selectedSegmentIndex = 1;
+    } else if ([race isEqualToString:@"pardo"]) {
+        self.segmentRace.selectedSegmentIndex = 2;
+    } else if ([race isEqualToString:@"amarelo"]) {
+        self.segmentRace.selectedSegmentIndex = 3;
+    } else if ([race isEqualToString:@"indigena"]) {
+        self.segmentRace.selectedSegmentIndex = 4;
+    }
+    
+    NSString *avatar = @"img_profile01.png";
+    if ([picture isEqualToString:@"0"]) {
+        avatar = @"img_profile01.png";
+    } else if (picture.length == 1) {
+        avatar = [NSString stringWithFormat:@"img_profile0%@.png", picture];
+    } else if (picture.length == 2) {
+        avatar = [NSString stringWithFormat:@"img_profile%@.png", picture];
+    }
+    
+    [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
+}
+
+- (NSString *) formatterDate: (NSString *) date{
+    NSString *day = [date substringWithRange:NSMakeRange(8, 2)];
+    NSString *month = [date substringWithRange:NSMakeRange(5, 2)];
+    NSString *year = [date substringWithRange:NSMakeRange(0, 4)];
+    
+    return [NSString stringWithFormat:@"%@/%@/%@", day, month, year];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -252,31 +148,21 @@
 }
 */
 
-- (IBAction)btnAction:(id)sender {
-    
-    BOOL fieldNull = NO;
-    BOOL dateFail = NO;
-    
+- (BOOL) validateForm{
+    BOOL fieldsValid = YES;
     if ([self.txtNick.text isEqualToString:@""]) {
-        fieldNull = YES;
+        fieldsValid = NO;
     } else if ([self.txtDob.text isEqualToString:@""]) {
-        fieldNull = YES;
+        fieldsValid = NO;
     } else if ([self.txtEmail.text isEqualToString:@""]) {
-        fieldNull = YES;
-    }
-
-    if (singleHousehold.id == nil) {
-        if (self.newMember != 0 && (user.idHousehold == nil || [user.idHousehold isEqualToString:@""])) {
-            if (self.editProfile == 0) {
-                if ([self.txtPassword.text isEqualToString:@""]) {
-                    fieldNull = YES;
-                } else if ([self.txtConfirmPassword.text isEqualToString:@""]) {
-                    fieldNull = YES;
-                }
-            }
-        }
+        fieldsValid = NO;
     }
     
+    return fieldsValid;
+}
+
+- (BOOL) validateDate{
+    BOOL dateValid = YES;
     if (![self.txtDob.text isEqualToString:@""]) {
         if (self.txtDob.text.length == 10) {
             NSString *bar1 = [self.txtDob.text substringWithRange:NSMakeRange(2, 1)];
@@ -284,46 +170,79 @@
             NSString *day = [self.txtDob.text substringWithRange:NSMakeRange(0, 2)];
             NSString *month = [self.txtDob.text substringWithRange:NSMakeRange(3, 2)];
             NSString *year = [self.txtDob.text substringWithRange:NSMakeRange(6, 4)];
-        
+            
             if (![bar1 isEqualToString:@"/"] || ![bar2 isEqualToString:@"/"]) {
-                dateFail = YES;
+                dateValid = NO;
             }
-        
+            
             @try {
                 int validateDay = [day intValue];
                 
                 if (validateDay <= 0) {
-                    dateFail = YES;
+                    dateValid = NO;
                 }
                 
                 if (validateDay > 31) {
-                    dateFail = YES;
+                    dateValid = NO;
                 }
                 
                 int validateMonth = [month intValue];
                 
                 if (validateMonth <= 0) {
-                    dateFail = YES;
+                    dateValid = NO;
                 }
                 
                 if (validateMonth > 12) {
-                    dateFail = YES;
+                    dateValid = NO;
                 }
                 
                 int validateYear = [year intValue];
                 
                 if (validateYear <= 0) {
-                    dateFail = YES;
+                    dateValid = NO;
                 }
             }
             @catch (NSException *exception) {
-                dateFail = YES;
+                dateValid = NO;
             }
         } else {
-            dateFail = YES;
+            dateValid = NO;
         }
     }
     
+    return dateValid;
+}
+
+- (IBAction)btnAction:(id)sender {
+    
+    if (![self validateDate]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                       message:@"Data de nascimento inválida."
+                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                    NSLog(@"You pressed button OK");
+                }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else if (![self validateForm]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                       message:@"Preencha todos os campos do formulário."
+                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                    NSLog(@"You pressed button OK");
+                }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else{
+        
+    }
+    
+    
+
     if (dateFail) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Data de nascimento inválida." preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -359,8 +278,8 @@
             }
         } else {
     
-            NSString *gender;
-            NSString *race;
+            NSString *gender = [self getGender];
+            NSString *race = [self getRace];
     
             NSLog(@"Dia %@", [self.txtDob.text substringWithRange:NSMakeRange(0, 2)]);
             NSLog(@"Mês %@", [self.txtDob.text substringWithRange:NSMakeRange(3, 2)]);
@@ -371,24 +290,6 @@
             NSString *year = [self.txtDob.text substringWithRange:NSMakeRange(6, 4)];
     
             NSString *dob = [NSString stringWithFormat: @"%@-%@-%@", year, month, day];
-    
-            if (self.segmentGender.selectedSegmentIndex == 0) {
-                gender = @"M";
-            } else if (self.segmentGender.selectedSegmentIndex == 1) {
-                gender = @"F";
-            }
-    
-            if (self.segmentRace.selectedSegmentIndex == 0) {
-                race = @"branco";
-            } else if (self.segmentRace.selectedSegmentIndex == 1) {
-                race = @"preto";
-            } else if (self.segmentRace.selectedSegmentIndex == 2) {
-                race = @"pardo";
-            } else if (self.segmentRace.selectedSegmentIndex == 3) {
-                race = @"amarelo";
-            } else if (self.segmentRace.selectedSegmentIndex == 4) {
-                race = @"indigena";
-            }
 
             NSString *url;
             NSString *picture;
@@ -557,6 +458,23 @@
                       
                             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação realizada com sucesso." preferredStyle:UIAlertControllerStyleActionSheet];
                             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                
+                                // O ideal é atualizar o singleton na camada de serviço
+//                                if(singleHousehold.id != nil){
+//                                    user.nick = self.txtNick.text;
+//                                    //user.dob = self.txtDob.text;
+//                                    user.gender = [self getGender];
+//                                    user.race = [self getRace];
+//                                    user.picture = [self getPicture];
+//                                }else{
+//                                    singleHousehold.nick = self.txtNick.text;
+//                                    //user.dob = self.txtDob.text;
+//                                    singleHousehold.gender = [self getGender];
+//                                    singleHousehold.race = [self getRace];
+//                                    singleHousehold.picture = [self getPicture];
+//                                }
+                                
+                                
                                 NSLog(@"You pressed button OK");
                                 singleHousehold.id = nil;
                                 singleHousehold = nil;
@@ -585,9 +503,72 @@
             }
         }
 }
+
+- (void) updateUser{
+    User *userUpdater = [[User alloc] init];
+    userUpdater.client = self.user.client;
+    userUpdater.app_token = self.user.app_token;
+    userUpdater.user_token = self.user.user_token;
+    userUpdater.nick = self.txtNick.text;
+    userUpdater.email = self.user.email;
+//    userUpdater.dob =
+    userUpdater.gender = [self getGender];
+    userUpdater.race = [self getRace];
+}
+
+- (void) createHousehold{
+    
+}
+
+- (void) updateHousehold{
+    
+}
+
 - (IBAction)btnSelectPicture:(id)sender {
     
     SelectAvatarViewController *selectAvatarViewController = [[SelectAvatarViewController alloc] init];
     [self.navigationController pushViewController:selectAvatarViewController animated:YES];
+}
+
+- (NSString *) getRace{
+    NSString *race;
+    
+    if (self.segmentRace.selectedSegmentIndex == 0) {
+        race = @"branco";
+    } else if (self.segmentRace.selectedSegmentIndex == 1) {
+        race = @"preto";
+    } else if (self.segmentRace.selectedSegmentIndex == 2) {
+        race = @"pardo";
+    } else if (self.segmentRace.selectedSegmentIndex == 3) {
+        race = @"amarelo";
+    } else if (self.segmentRace.selectedSegmentIndex == 4) {
+        race = @"indigena";
+    }
+    
+    return race;
+}
+
+- (NSString *) getGender{
+    NSString *gender;
+    if (self.segmentGender.selectedSegmentIndex == 0) {
+        gender = @"M";
+    } else if (self.segmentGender.selectedSegmentIndex == 1) {
+        gender = @"F";
+    }
+    
+    return gender;
+}
+
+- (NSString *) getPicture{
+    NSString *picture = @"";
+//    if (![dto.string isEqualToString:@""] && dto.string != nil) {
+//        picture = dto.string;
+//    } else if (![user.picture isEqualToString:@""] && user.picture != nil) {
+//        picture = user.picture;
+//    } else {
+//        picture = @"1";
+    //}
+    
+    return picture;
 }
 @end

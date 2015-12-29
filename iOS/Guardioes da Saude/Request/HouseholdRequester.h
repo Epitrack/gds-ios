@@ -25,4 +25,8 @@
             onError: (Error) onError
           onSuccess: (Success) onSuccess;
 
+- (void) getHouseholdsByUser: (User *) user
+                   onSuccess: (void (^)(NSMutableArray *households)) success
+                      onFail: (void (^)(NSError * erro)) failure;
+
 @end

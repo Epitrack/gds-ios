@@ -13,11 +13,14 @@
 #import "AFNetworking/AFNetworking.h"
 #import "ProfileFormViewController.h"
 #import "SingleHousehold.h"
+#import "HouseholdRequester.h"
 
 @interface ProfileListViewController () {
-    SingleHousehold *singleHousehold;
     User *user;
+    HouseholdRequester *householdeRequest;
 }
+
+@property NSMutableArray *households;
 
 @end
 
@@ -29,8 +32,8 @@
     self.navigationItem.title = @"Perfil";
     self.navigationItem.hidesBackButton = YES;
     user = [User getInstance];
-    singleHousehold = [SingleHousehold getInstance];
-    singleHousehold = nil;
+    householdeRequest = [[HouseholdRequester alloc]init];
+    
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
@@ -55,16 +58,14 @@
     }
     
     [self.imgMainUser setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-    [self loadHouseholds];
-    [self loadUsers];
+    
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"Here - viewDidAppear:(BOOL)animated");
-    singleHousehold = [SingleHousehold getInstance];
-    singleHousehold = nil;
+    //[self loadUsers];
+    
     [self loadHouseholds];
-    [self loadUsers];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -116,38 +117,11 @@
 
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    Household *household = [users objectAtIndex:indexPath.row];
-    singleHousehold = [SingleHousehold getInstance];
-    singleHousehold.idUser = user.idUser;
-    singleHousehold.id = household.idHousehold;
-    singleHousehold.idUser = user.idUser;
-
-    singleHousehold.nick = household.nick;
-    singleHousehold.dob = household.dob;
-    singleHousehold.picture = household.idPicture;
-
-    
-    if ([household.gender isEqualToString:@"M"]) {
-        singleHousehold.gender = @"0";
-    } else {
-        singleHousehold.gender = @"1";
-    }
-    
-    if ([household.race isEqualToString:@"branco"]) {
-        singleHousehold.race = @"0";
-    } else if ([household.race isEqualToString:@"preto"]) {
-        singleHousehold.race = @"1";
-    } else if ([household.race isEqualToString:@"pardo"]) {
-        singleHousehold.race = @"2";
-    } else if ([household.race isEqualToString:@"amarelo"]) {
-        singleHousehold.race = @"3";
-    } else if ([household.race isEqualToString:@"indigena"]) {
-        singleHousehold.race = @"4";
-    }
-    
-
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
+    Household *household = [users objectAtIndex:indexPath.row];
+    [profileFormViewController setHousehold:household];
+    [profileFormViewController setOperation:EDIT_HOUSEHOLD];
+    
     [self.navigationController pushViewController:profileFormViewController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -155,7 +129,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"numberOfRowsInSection");
-    return user.household.count;
+    return users.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -225,54 +199,33 @@
 }
 
 - (IBAction)btnEditMainUser:(id)sender {
-    singleHousehold = [SingleHousehold getInstance];
-    singleHousehold.id = nil;
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
-    profileFormViewController.idUser = user.idUser;
-    profileFormViewController.idHousehold = nil;
-    profileFormViewController.newMember = 1;
-    profileFormViewController.editProfile = 1;
+    [profileFormViewController setOperation:EDIT_USER];
+    [profileFormViewController setUser:user];
+    
     [self.navigationController pushViewController:profileFormViewController animated:YES];
 }
 
 - (IBAction)btnAddHousehold:(id)sender {
-    
-    singleHousehold = [SingleHousehold getInstance];
-    singleHousehold.id = nil;
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
-    profileFormViewController.idUser = user.idUser;
-    profileFormViewController.idHousehold = nil;
-    profileFormViewController.newMember = 0;
+    [profileFormViewController setOperation:ADD_HOUSEHOLD];
+    
     [self.navigationController pushViewController:profileFormViewController animated:YES];
 }
 
 - (void) loadHouseholds {
-    
-    NSString *idUSer = user.idUser;
-    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/household/%@", idUSer];
-    
-    AFHTTPRequestOperationManager *manager;
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [manager.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
-    [manager GET:url
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             
-             NSDictionary *households = responseObject[@"data"];
-             
-             user.household = households;
-             
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             
-         }];
+    [householdeRequest getHouseholdsByUser:user onSuccess:^(NSMutableArray *householdes){
+        users = [[NSMutableArray alloc] initWithArray:householdes];
+        [self.tableViewProfile reloadData];
+    }onFail:^(NSError *error){
+        NSLog(@"Ocorreu um erro ao carregar os households");
+    }];
 }
 - (IBAction)imgMainUserAction:(id)sender {
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
-    profileFormViewController.idUser = user.idUser;
-    profileFormViewController.idHousehold = nil;
-    profileFormViewController.newMember = 1;
-    profileFormViewController.editProfile = 1;
+    [profileFormViewController setOperation:EDIT_USER];
+    [profileFormViewController setUser:user];
+    
     [self.navigationController pushViewController:profileFormViewController animated:YES];
 }
 @end

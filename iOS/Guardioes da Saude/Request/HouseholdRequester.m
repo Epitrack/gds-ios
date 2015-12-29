@@ -188,4 +188,50 @@
      ];
 }
 
+- (void) getHouseholdsByUser: (User *) user
+                        onSuccess: (void (^)(NSMutableArray *households)) success
+                           onFail: (void (^)(NSError * erro)) failure{
+    NSString *idUSer = user.idUser;
+    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/household/%@", idUSer];
+    
+    AFHTTPRequestOperationManager *manager;
+    manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
+    [manager.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
+    [manager GET:url
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSMutableArray *houseHolds = [[NSMutableArray alloc] init];
+             NSDictionary *households = responseObject[@"data"];
+             
+             
+             for(NSDictionary *dicHousehold in households){
+                 NSString *picture = dicHousehold[@"picture"];
+                 NSString *avatar;
+                 if (picture.length > 2) {
+                     avatar = @"img_profile01.png";
+                 } else if (picture.length == 1) {
+                     avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
+                 } else if (picture.length == 2) {
+                     avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
+                 }
+                 
+                 
+                 Household *household = [[Household alloc] initWithNick:dicHousehold[@"nick"]
+                                                                 andDob:dicHousehold[@"dob"]
+                                                              andGender:dicHousehold[@"gender"]
+                                                                andRace:dicHousehold[@"race"]
+                                                              andIdUser:dicHousehold[@"user"][@"id"]
+                                                             andPicture:avatar
+                                                         andIdHousehold:dicHousehold[@"id"]];
+                 [houseHolds addObject:household];
+             }
+             
+             success(houseHolds);
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             failure(error);
+         }];
+}
+
 @end

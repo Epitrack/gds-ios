@@ -271,4 +271,30 @@
      ];
 }
 
+- (void) updateUser: (User *) user
+          onSuccess: (void(^)(User* user)) success
+             onFail: (void(^) (NSError *error)) fail{
+    NSDictionary *params = @{@"nick":user.nick,
+               @"email": user.email,
+               @"client": user.client,
+               @"dob": user.dob,
+               @"gender": user.gender,
+               @"app_token": user.app_token,
+               @"race": user.race,
+               @"platform": user.platform,
+               @"picture": user.picture,
+               @"id": user.idUser};
+    
+    [self doPost:@"http://api.guardioesdasaude.org/user/update"
+          header:@{@"user_token": user.user_token, @"app_token": user.app_token}
+       parameter:params
+           start:^(void){
+        
+    }error:^(AFHTTPRequestOperation *request, NSError *error){
+        fail(error);
+    }success:^(AFHTTPRequestOperation *request, id response){
+        success(user);
+    }];
+}
+
 @end

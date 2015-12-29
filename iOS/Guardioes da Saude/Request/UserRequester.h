@@ -40,4 +40,8 @@
             onStart: (Start) onStart
             onError: (Error) onError
           onSuccess: (Success) onSuccess;
+
+- (void) updateUser: (User *) user
+          onSuccess: (void(^)(User* user)) success
+             onFail: (void(^) (NSError *error)) fail;
 @end
