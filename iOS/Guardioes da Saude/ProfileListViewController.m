@@ -31,7 +31,6 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Perfil";
     self.navigationItem.hidesBackButton = YES;
-    user = [User getInstance];
     householdeRequest = [[HouseholdRequester alloc]init];
     
     SWRevealViewController *revealController = [self revealViewController];
@@ -42,6 +41,13 @@
                                                                          style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
+    
+    
+
+}
+
+- (void)  viewWillAppear:(BOOL)animated{
+    user = [User getInstance];
     [self.btnMainUser setTitle:user.nick forState:UIControlStateNormal];
     
     NSString *avatar;
@@ -58,12 +64,6 @@
     }
     
     [self.imgMainUser setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-    
-
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    //[self loadUsers];
     
     [self loadHouseholds];
 }

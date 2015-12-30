@@ -274,7 +274,7 @@
 - (void) updateUser: (User *) user
           onSuccess: (void(^)(User* user)) success
              onFail: (void(^) (NSError *error)) fail{
-    NSDictionary *params = @{@"nick":user.nick,
+    NSDictionary *params = @{@"nick": user.nick,
                @"email": user.email,
                @"client": user.client,
                @"dob": user.dob,
@@ -293,6 +293,16 @@
     }error:^(AFHTTPRequestOperation *request, NSError *error){
         fail(error);
     }success:^(AFHTTPRequestOperation *request, id response){
+        // Update system's user
+        User *sysUser = [User getInstance];
+        sysUser.nick = user.nick;
+        sysUser.email = user.email;
+        sysUser.dob = user.dob;
+        sysUser.gender = user.gender;
+        sysUser.race = user.race;
+        sysUser.picture = user.picture;
+        
+        //Call back success
         success(user);
     }];
 }
