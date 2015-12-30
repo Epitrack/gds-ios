@@ -56,6 +56,9 @@
     user = [User getInstance];
     detailMap = [DetailMap getInstance];
     
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
+    
     [self loadSurvey];
 }
 

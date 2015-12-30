@@ -85,6 +85,9 @@ const float _kCellHeight = 100.0f;
     [self requestCalendar:@"" andDate:[NSDate date]];
     
     [self requestChartLine: @""];
+    
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
 }
 
 -(void) loadRequest {
