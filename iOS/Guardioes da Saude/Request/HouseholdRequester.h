@@ -33,4 +33,8 @@
                onSuccess: (void(^)(void)) success
                   onFail: (void(^) (NSError *error)) fail;
 
+- (void) createHousehold: (Household *) household
+               onSuccess: (void(^)(void)) success
+                  onFail: (void(^) (NSError *error)) fail;
+
 @end

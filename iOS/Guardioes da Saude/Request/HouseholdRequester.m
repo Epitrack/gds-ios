@@ -242,7 +242,6 @@
     User *user = [User getInstance];
     
     NSDictionary *params = @{@"nick": household.nick,
-                             @"email": household.email,
                              @"client": user.client,
                              @"dob": household.dob,
                              @"gender": household.gender,
@@ -252,7 +251,41 @@
                              @"picture": household.picture,
                              @"id": household.idHousehold};
     
+    if (![household.email isEqualToString:@""]) {
+        [params setValue:household.email forKey:@"email"];
+    }
+    
     [self doPost:@"http://api.guardioesdasaude.org/household/update"
+          header:@{@"user_token": user.user_token, @"app_token": user.app_token}
+       parameter:params
+           start:^(void){
+               
+           }error:^(AFHTTPRequestOperation *request, NSError *error){
+               fail(error);
+           }success:^(AFHTTPRequestOperation *request, id response){
+               success();
+           }];
+}
+
+- (void) createHousehold: (Household *) household
+               onSuccess: (void(^)(void)) success
+                  onFail: (void(^) (NSError *error)) fail{
+    User *user = [User getInstance];
+    
+    NSDictionary *params = @{@"nick": household.nick,
+                             @"client": user.client,
+                             @"dob": household.dob,
+                             @"gender": household.gender,
+                             @"app_token": user.app_token,
+                             @"race": household.race,
+                             @"platform": user.platform,
+                             @"picture": household.picture,
+                             @"user": user.idUser};
+    if (![household.email isEqualToString:@""]) {
+        [params setValue:household.email forKey:@"email"];
+    }
+    
+    [self doPost:@"http://api.guardioesdasaude.org/household/create"
           header:@{@"user_token": user.user_token, @"app_token": user.app_token}
        parameter:params
            start:^(void){
