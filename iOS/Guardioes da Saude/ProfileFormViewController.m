@@ -15,12 +15,14 @@
 #import "DTO.h"
 #import "SingleHousehold.h"
 #import "UserRequester.h"
+#import "HouseholdRequester.h"
 
 @interface ProfileFormViewController () {
     NSDictionary *params;
     DTO *dto;
     SingleHousehold *singleHousehold;
     UserRequester *userRequester;
+    HouseholdRequester *householdRequester;
 }
 
 @end
@@ -31,15 +33,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     userRequester = [[UserRequester alloc] init];
-}
-
-- (void) viewWillAppear:(BOOL)animated{
+    householdRequester = [[HouseholdRequester alloc] init];
     if (self.operation == EDIT_USER) {
         [self loadEditUser];
     } else if (self.operation == EDIT_HOUSEHOLD){
         [self loadEditHousehold];
     } else if (self.operation == ADD_HOUSEHOLD){
         [self loadAddHousehold];
+    }
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    if (self.pictureSelected) {
+        [self updatePicture:self.pictureSelected];
     }
 }
 
@@ -60,10 +66,10 @@
     self.txtConfirmPassword.hidden = YES;
     [self populateFormWithNick:self.household.nick
                         andDob:self.household.dob
-                      andEmail:@""
+                      andEmail:self.household.email
                      andGender:self.household.gender
                        andRace:self.household.race
-                    andPicture:self.household.picture];
+                    andPicture:self.household.idPicture];
 }
 
 - (void) loadAddHousehold{
@@ -100,16 +106,7 @@
         self.segmentRace.selectedSegmentIndex = 4;
     }
     
-    NSString *avatar = @"img_profile01.png";
-    if ([picture isEqualToString:@"0"]) {
-        avatar = @"img_profile01.png";
-    } else if (picture.length == 1) {
-        avatar = [NSString stringWithFormat:@"img_profile0%@.png", picture];
-    } else if (picture.length == 2) {
-        avatar = [NSString stringWithFormat:@"img_profile%@.png", picture];
-    }
-    
-    [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
+    [self updatePicture:picture];
 }
 
 - (NSString *) formatterDate: (NSString *) date{
@@ -243,7 +240,12 @@
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
     }else{
-        [self updateUser];
+        if (self.operation == EDIT_USER) {
+            [self updateUser];
+        } else if(self.operation == EDIT_HOUSEHOLD){
+            [self updateHousehold];
+        }
+        
     }
     
     
@@ -520,7 +522,7 @@
     userUpdater.dob = [self getDob];
     userUpdater.gender = [self getGender];
     userUpdater.race = [self getRace];
-    userUpdater.picture = [self getPicture];
+    userUpdater.picture = self.pictureSelected;
     
     [userRequester updateUser:userUpdater onSuccess:^(User *user){
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação realizada com sucesso." preferredStyle:UIAlertControllerStyleActionSheet];
@@ -547,13 +549,40 @@
 }
 
 - (void) updateHousehold{
+    Household *updaterHousehold = [[Household alloc]init];
+    updaterHousehold.nick = self.txtNick.text;
+    updaterHousehold.email = self.txtEmail.text;
+    updaterHousehold.dob = [self getDob];
+    updaterHousehold.gender = [self getGender];
+    updaterHousehold.race = [self getRace];
+    updaterHousehold.picture = self.pictureSelected;
+    updaterHousehold.idHousehold = self.household.idHousehold;
+    
+    [householdRequester updateHousehold:updaterHousehold onSuccess:^(void){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação realizada com sucesso." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button OK");
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }onFail:^(NSError *error){
+        NSLog(@"Error: %@", error);
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button OK");
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
     
 }
 
 - (IBAction)btnSelectPicture:(id)sender {
-    
     SelectAvatarViewController *selectAvatarViewController = [[SelectAvatarViewController alloc] init];
-    selectAvatarViewController.user = self.user;
+    selectAvatarViewController.profileFormCtr = self;
+
     [self.navigationController pushViewController:selectAvatarViewController animated:YES];
 }
 
@@ -594,16 +623,18 @@
     return  [NSString stringWithFormat: @"%@-%@-%@", year, month, day];
 }
 
-- (NSString *) getPicture{
-    NSString *picture = @"";
-    if (![dto.string isEqualToString:@""] && dto.string != nil) {
-        picture = dto.string;
-    } else if (![self.user.picture isEqualToString:@""] && self.user.picture != nil) {
-        picture = self.user.picture;
-    } else {
-        picture = @"1";
+- (void) updatePicture: (NSString *) picture{
+    self.pictureSelected = picture;
+    
+    NSString *avatar = @"img_profile01.png";
+    if ([picture isEqualToString:@"0"]) {
+        avatar = @"img_profile01.png";
+    } else if (picture.length == 1) {
+        avatar = [NSString stringWithFormat:@"img_profile0%@.png", picture];
+    } else if (picture.length == 2) {
+        avatar = [NSString stringWithFormat:@"img_profile%@.png", picture];
     }
     
-    return picture;
+    [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
 }
 @end

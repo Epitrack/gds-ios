@@ -21,6 +21,7 @@ typedef enum operation{
 @property User *user;
 @property Household *household;
 @property Operation operation;
+@property (weak, nonatomic) NSString *pictureSelected;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentGender;

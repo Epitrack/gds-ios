@@ -29,4 +29,8 @@
                    onSuccess: (void (^)(NSMutableArray *households)) success
                       onFail: (void (^)(NSError * erro)) failure;
 
+- (void) updateHousehold: (Household *) household
+               onSuccess: (void(^)(void)) success
+                  onFail: (void(^) (NSError *error)) fail;
+
 @end

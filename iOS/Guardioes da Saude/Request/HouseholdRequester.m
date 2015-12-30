@@ -218,11 +218,13 @@
                  
                  
                  Household *household = [[Household alloc] initWithNick:dicHousehold[@"nick"]
+                                                               andEmail:dicHousehold[@"email"]
                                                                  andDob:dicHousehold[@"dob"]
                                                               andGender:dicHousehold[@"gender"]
                                                                 andRace:dicHousehold[@"race"]
                                                               andIdUser:dicHousehold[@"user"][@"id"]
                                                              andPicture:avatar
+                                                           andIdPicture: picture
                                                          andIdHousehold:dicHousehold[@"id"]];
                  [houseHolds addObject:household];
              }
@@ -232,6 +234,34 @@
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              failure(error);
          }];
+}
+
+- (void) updateHousehold: (Household *) household
+          onSuccess: (void(^)(void)) success
+             onFail: (void(^) (NSError *error)) fail{
+    User *user = [User getInstance];
+    
+    NSDictionary *params = @{@"nick": household.nick,
+                             @"email": household.email,
+                             @"client": user.client,
+                             @"dob": household.dob,
+                             @"gender": household.gender,
+                             @"app_token": user.app_token,
+                             @"race": household.race,
+                             @"platform": user.platform,
+                             @"picture": household.picture,
+                             @"id": household.idHousehold};
+    
+    [self doPost:@"http://api.guardioesdasaude.org/household/update"
+          header:@{@"user_token": user.user_token, @"app_token": user.app_token}
+       parameter:params
+           start:^(void){
+               
+           }error:^(AFHTTPRequestOperation *request, NSError *error){
+               fail(error);
+           }success:^(AFHTTPRequestOperation *request, id response){
+               success();
+           }];
 }
 
 @end
