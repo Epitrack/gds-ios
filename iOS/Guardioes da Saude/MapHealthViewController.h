@@ -19,9 +19,6 @@
 - (void) addPin;
 - (void) loadSummary;
 - (void) loadSurvey;
-@property (weak, nonatomic) IBOutlet UIToolbar *mapHealthToolBar;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDetailMapHealth;
-- (IBAction)showDetailMapHealth:(id)sender;
 - (IBAction)showDetailMapPlus:(id)sender;
 @property (weak, nonatomic) IBOutlet UISearchBar *seach;
 

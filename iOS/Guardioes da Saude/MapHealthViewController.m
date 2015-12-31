@@ -260,7 +260,7 @@
                      respiratoria = ((respiratoria * 100) / (totalWithSymptom + totalNoSymptom));
                  }
                  
-                 [self.btnDetailMapHealth setTitle:city];
+//                 [self.btnDetailMapHealth setTitle:city];
                  
                  detailMap.city = city;
                  detailMap.state = state;
@@ -305,7 +305,7 @@
     [searchBar resignFirstResponder];
     
     [GoogleUtil getLocationByAddress:self.seach.text onSuccess:^(NSString *lng, NSString *lat, NSString *fullNameCity){
-        [self.btnDetailMapHealth setTitle:fullNameCity];
+        //[self.btnDetailMapHealth setTitle:fullNameCity];
         
         CLLocationCoordinate2D coordenada = CLLocationCoordinate2DMake([lat doubleValue], [lng doubleValue]);
         CLLocationDistance distance = 1000;
