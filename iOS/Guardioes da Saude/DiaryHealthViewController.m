@@ -122,13 +122,13 @@ const float _kCellHeight = 100.0f;
                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
                         NSDictionary *summary = responseObject[@"data"];
                        
-                        self.lbTotalParticipation.text = summary[@"total"];
-                        self.lbTotalReportGood.text = summary[@"no_symptom"];
-                        self.lbTotalReportBad.text = summary[@"symptom"];
-                        
                         long total = [summary[@"total"] integerValue];
                         long no_symptom = [summary[@"no_symptom"] integerValue];
                         long symptom = [summary[@"symptom"] integerValue];
+                        
+                        self.lbTotalParticipation.text = [NSString stringWithFormat:@"%ld",total];
+                        self.lbTotalReportGood.text = [NSString stringWithFormat:@"%ld",no_symptom];
+                        self.lbTotalReportBad.text = [NSString stringWithFormat:@"%ld",symptom];
                         
                         double goodPercent;
                         double badPercent;
