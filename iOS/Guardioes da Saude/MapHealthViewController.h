@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface MapHealthViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate> {
+@interface MapHealthViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate> {
     
     NSMutableArray *surveysMap;
 }
@@ -23,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDetailMapHealth;
 - (IBAction)showDetailMapHealth:(id)sender;
 - (IBAction)showDetailMapPlus:(id)sender;
+@property (weak, nonatomic) IBOutlet UISearchBar *seach;
 
 @end

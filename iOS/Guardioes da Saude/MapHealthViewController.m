@@ -13,6 +13,7 @@
 #import "DetailMapHealthViewController.h"
 #import "DetailMap.h"
 #import "MapPinAnnotation.h"
+#import "GoogleUtil.h"
 
 @interface MapHealthViewController ()
 
@@ -60,6 +61,7 @@
                                                          forBarMetrics:UIBarMetricsDefault];
     
     [self loadSurvey];
+    self.seach.delegate = self;
 }
 
 - (void) loadSurvey {
@@ -288,5 +290,30 @@
 - (IBAction)showDetailMapPlus:(id)sender {
     DetailMapHealthViewController *detailMapHealthViewController = [[DetailMapHealthViewController alloc] init];
     [self.navigationController pushViewController:detailMapHealthViewController animated:YES];
+}
+
+-(void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.seach resignFirstResponder];
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+    
+    [GoogleUtil getLocationByAddress:self.seach.text onSuccess:^(NSString *lng, NSString *lat, NSString *fullNameCity){
+        [self.btnDetailMapHealth setTitle:fullNameCity];
+        
+        CLLocationCoordinate2D coordenada = CLLocationCoordinate2DMake([lat doubleValue], [lng doubleValue]);
+        CLLocationDistance distance = 1000;
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordenada, distance, distance);
+        [self.mapHealth setRegion:region animated:YES];
+    }onFail:^(NSError *error){
+        
+    }];
+    
 }
 @end
