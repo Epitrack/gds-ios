@@ -260,7 +260,9 @@
                      respiratoria = ((respiratoria * 100) / (totalWithSymptom + totalNoSymptom));
                  }
                  
-//                 [self.btnDetailMapHealth setTitle:city];
+                 self.lblCity.text = city;
+                 self.lblState.text = state;
+                 self.lblPaticipation.text = [NSString stringWithFormat:@"%d Participações essa semana", totalSurvey];
                  
                  detailMap.city = city;
                  detailMap.state = state;

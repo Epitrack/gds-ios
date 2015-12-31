@@ -21,5 +21,8 @@
 - (void) loadSurvey;
 - (IBAction)showDetailMapPlus:(id)sender;
 @property (weak, nonatomic) IBOutlet UISearchBar *seach;
+@property (weak, nonatomic) IBOutlet UILabel *lblCity;
+@property (weak, nonatomic) IBOutlet UILabel *lblState;
+@property (weak, nonatomic) IBOutlet UILabel *lblPaticipation;
 
 @end
