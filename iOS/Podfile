@@ -21,6 +21,7 @@ pod 'GoogleMaps'
 pod 'Google/Analytics'
 pod 'DownPicker'
 pod 'RMDateSelectionViewController'
+pod 'MRProgress'
 
 target 'Guardioes da Saude' do
 

@@ -57,6 +57,34 @@ PODS:
   - JSONModel (1.1.2)
   - JTCalendar (2.1.4)
   - JYGraphView (0.1.0)
+  - MRProgress (0.8.3):
+    - MRProgress/ActivityIndicator (= 0.8.3)
+    - MRProgress/Blur (= 0.8.3)
+    - MRProgress/Circular (= 0.8.3)
+    - MRProgress/Icons (= 0.8.3)
+    - MRProgress/NavigationBarProgress (= 0.8.3)
+    - MRProgress/Overlay (= 0.8.3)
+  - MRProgress/ActivityIndicator (0.8.3):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.3):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.3):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.3)
+  - MRProgress/Icons (0.8.3)
+  - MRProgress/NavigationBarProgress (0.8.3):
+    - MRProgress/ProgressBaseClass
+  - MRProgress/Overlay (0.8.3):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.3)
+  - MRProgress/Stopable (0.8.3):
+    - MRProgress/Helper
   - PTEHorizontalTableView (1.0.0)
   - RMActionController (1.0.5)
   - RMDateSelectionViewController (2.0.3):
@@ -78,6 +106,7 @@ DEPENDENCIES:
   - JSONModel
   - JTCalendar (~> 2.0)
   - JYGraphView (~> 0.1)
+  - MRProgress
   - PTEHorizontalTableView
   - RMDateSelectionViewController
   - TwitterCore
@@ -102,6 +131,7 @@ SPEC CHECKSUMS:
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   JTCalendar: 9b1352c7ec41cc26b19c189d6608ba48060a53d9
   JYGraphView: 1f0e5541664acff0f43a31fee5e6bd7171236539
+  MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   PTEHorizontalTableView: 2c65c4360282223628dabc664508dde922f98efd
   RMActionController: b83653e7452ed51492094d65dc82151c36443c03
   RMDateSelectionViewController: 354a0f1fe40bac01054528b7a8735f2973bbd813

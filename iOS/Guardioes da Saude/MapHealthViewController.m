@@ -14,6 +14,7 @@
 #import "DetailMap.h"
 #import "MapPinAnnotation.h"
 #import "GoogleUtil.h"
+#import <MRProgress/MRProgress.h>
 
 @interface MapHealthViewController ()
 
@@ -60,6 +61,9 @@
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
     
+
+    [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Carregando.." mode:MRProgressOverlayViewModeIndeterminate animated:YES];
+
     [self loadSurvey];
     self.seach.delegate = self;
 }
@@ -147,7 +151,6 @@
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mv viewForAnnotation:(id <MKAnnotation> ) annotation {
-    UIImage *anImage = nil;
     MKAnnotationView *pinView = nil;
     if(annotation != mv.userLocation){
         MapPinAnnotation *pinA = (MapPinAnnotation *) annotation;
@@ -216,7 +219,6 @@
 - (void) loadSummary {
     
     NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/surveys/summary/?lon=%f&lat=%f", longitude, latitude];
-    
     AFHTTPRequestOperationManager *managerTotalSurvey;
     managerTotalSurvey = [AFHTTPRequestOperationManager manager];
     [managerTotalSurvey.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
@@ -278,8 +280,10 @@
                  
              }
              
+             [MRProgressOverlayView dismissAllOverlaysForView:self.view animated:YES];
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);
+             [MRProgressOverlayView dismissAllOverlaysForView:self.view animated:YES];
          }];
 }
 
