@@ -274,16 +274,23 @@
 - (void) updateUser: (User *) user
           onSuccess: (void(^)(User* user)) success
              onFail: (void(^) (NSError *error)) fail{
-    NSDictionary *params = @{@"nick": user.nick,
-               @"email": user.email,
-               @"client": user.client,
-               @"dob": user.dob,
-               @"gender": user.gender,
-               @"app_token": user.app_token,
-               @"race": user.race,
-               @"platform": user.platform,
-               @"picture": user.picture,
-               @"id": user.idUser};
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    
+    [params setValue:user.nick forKey:@"nick"];
+    [params setValue:user.email forKey:@"email"];
+    [params setValue:user.client forKey:@"client"];
+    [params setValue:user.dob forKey:@"dob"];
+    [params setValue:user.gender forKey:@"gender"];
+    [params setValue:user.app_token forKey:@"app_token"];
+    [params setValue:user.race forKey:@"race"];
+    [params setValue:user.platform forKey:@"platform"];
+    [params setValue:user.picture forKey:@"picture"];
+    [params setValue:user.idUser forKey:@"id"];
+    
+    if (![user.password isEqualToString:@""]) {
+        [params setValue:user.password forKey:@"password"];
+    }
+    
     
     [self doPost:@"http://api.guardioesdasaude.org/user/update"
           header:@{@"user_token": user.user_token, @"app_token": user.app_token}

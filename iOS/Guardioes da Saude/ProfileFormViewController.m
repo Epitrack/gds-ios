@@ -12,15 +12,10 @@
 #import "AFNetworking/AFNetworking.h"
 #import "ProfileListViewController.h"
 #import "SelectAvatarViewController.h"
-#import "DTO.h"
-#import "SingleHousehold.h"
 #import "UserRequester.h"
 #import "HouseholdRequester.h"
 
 @interface ProfileFormViewController () {
-    NSDictionary *params;
-    DTO *dto;
-    SingleHousehold *singleHousehold;
     UserRequester *userRequester;
     HouseholdRequester *householdRequester;
 }
@@ -217,6 +212,34 @@
     return dateValid;
 }
 
+-(BOOL) validatePassword{
+    BOOL isPasswordValid = YES;
+    
+    if (![self.txtPassword.text isEqualToString:@""]) {
+        if (self.txtPassword.text.length < 6) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A senha precisa ter pelo menos 6 carcteres." preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                NSLog(@"You pressed button OK");
+            }];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            isPasswordValid = NO;
+        } else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Senha inválida" preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                NSLog(@"You pressed button OK");
+            }];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            isPasswordValid = NO;
+        }
+    }
+    
+    return isPasswordValid;
+}
+
 - (IBAction)btnAction:(id)sender {
     
     if (![self validateDate]) {
@@ -265,6 +288,30 @@
     userUpdater.gender = [self getGender];
     userUpdater.race = [self getRace];
     userUpdater.picture = self.pictureSelected;
+    
+    if (![self.txtPassword.text isEqualToString:@""]) {
+        if (self.txtPassword.text.length < 6) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A senha precisa ter pelo menos 6 carcteres." preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                NSLog(@"You pressed button OK");
+            }];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            return;
+        } else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Senha inválida" preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                NSLog(@"You pressed button OK");
+            }];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+            return;
+        }else {
+            userUpdater.password = self.txtPassword.text;
+        }
+    }
     
     [userRequester updateUser:userUpdater onSuccess:^(User *user){
         [self showSuccessMsg];

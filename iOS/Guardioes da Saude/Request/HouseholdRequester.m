@@ -241,15 +241,16 @@
              onFail: (void(^) (NSError *error)) fail{
     User *user = [User getInstance];
     
-    NSDictionary *params = @{@"nick": household.nick,
-                             @"client": user.client,
-                             @"dob": household.dob,
-                             @"gender": household.gender,
-                             @"app_token": user.app_token,
-                             @"race": household.race,
-                             @"platform": user.platform,
-                             @"picture": household.picture,
-                             @"id": household.idHousehold};
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setValue:household.nick forKey:@"nick"];
+    [params setValue:user.client forKey:@"client"];
+    [params setValue:household.dob forKey:@"dob"];
+    [params setValue:household.gender forKey:@"gender"];
+    [params setValue:user.app_token forKey:@"app_token"];
+    [params setValue:household.race forKey:@"race"];
+    [params setValue:user.platform forKey:@"platform"];
+    [params setValue:household.picture forKey:@"picture"];
+    [params setValue:household.idHousehold forKey:@"id"];
     
     if (![household.email isEqualToString:@""]) {
         [params setValue:household.email forKey:@"email"];
