@@ -14,6 +14,7 @@
 #import "DetailMap.h"
 #import "MapPinAnnotation.h"
 #import "GoogleUtil.h"
+#import "StateUtil.h"
 #import <MRProgress/MRProgress.h>
 
 @interface MapHealthViewController ()
@@ -233,7 +234,7 @@
              if (summary.count > 0) {
              
                  city = location[@"city"];
-                 state = location[@"state"];;
+                 state = [StateUtil getStateByUf:location[@"state"]];
                  totalSurvey = [summary[@"total_surveys"] integerValue];
                  
                  totalNoSymptom = [summary[@"total_no_symptoms"] integerValue];
