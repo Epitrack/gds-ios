@@ -37,9 +37,9 @@
     self.progressViewExantematica.progress = ([detailMap.exantemaica doubleValue]/100);
     self.progessViewRespiratoria.progress = ([detailMap.respiratoria doubleValue]/100);
     
-    self.lbPercentDiareica.text = [[NSString stringWithFormat:@"%.02f", ([detailMap.diarreica doubleValue])] stringByAppendingString:@"%"];
-    self.lbPercentExantematica.text = [[NSString stringWithFormat:@"%.02f", ([detailMap.exantemaica doubleValue])] stringByAppendingString:@"%"];
-    self.lbPercentRespiratoria.text =[[NSString stringWithFormat:@"%.02f", ([detailMap.respiratoria doubleValue])] stringByAppendingString:@"%"];
+    self.lbPercentDiareica.text = [NSString stringWithFormat:@"%g%%", [detailMap.diarreica doubleValue]];
+    self.lbPercentExantematica.text = [NSString stringWithFormat:@"%g%%", [detailMap.exantemaica doubleValue]];
+    self.lbPercentRespiratoria.text =[NSString stringWithFormat:@"%g%%", [detailMap.respiratoria doubleValue]];
 }
 
 - (void)didReceiveMemoryWarning {
