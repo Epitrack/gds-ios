@@ -58,10 +58,12 @@ public class ImageActivity extends BaseAppCompatActivity {
             final int height = cropImageView.getHeight();
 
             cropImageView.setImageBitmap(BitmapUtility.scale(width, height, uri.getPath()));
+
+            super.onBackPressed();
         }
     }
 
-    public void onSave(final MenuItem menuItem) {
+    public void onPhoto(final MenuItem menuItem) {
 
         Random r = new Random();
 

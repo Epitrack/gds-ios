@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.view.HomeFragment;
 import com.epitrack.guardioes.view.menu.help.HelpFragment;
+import com.epitrack.guardioes.view.menu.profile.ProfileActivity;
 import com.epitrack.guardioes.view.menu.profile.ProfileFragment;
 
 /**
@@ -16,7 +17,7 @@ import com.epitrack.guardioes.view.menu.profile.ProfileFragment;
 public enum HomeMenu {
 
     HOME        (R.id.home, HomeFragment.class),
-    PROFILE     (R.id.profile, ProfileFragment.class),
+    PROFILE     (R.id.profile, ProfileActivity.class),
     //SETTINGS    (R.id.setting, SettingFragment.class),
     ABOUT       (R.id.about, AboutFragment.class),
     HELP        (R.id.help, HelpFragment.class),

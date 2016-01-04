@@ -106,32 +106,40 @@ public class ParentAdapter extends RecyclerView.Adapter<ParentAdapter.ViewHolder
 
         User parent = parentList.get(position);
 
-        viewHolder.textViewName.setText(parent.getNick());
-        viewHolder.textViewAge.setText(DateFormat.getDateDiff(parent.getDob()) + " Anos");
-        viewHolder.textViewId.setText(parent.getId());
+        if (parent.getId().equals("-1")) {
+            viewHolder.imageViewPhoto.setImageResource(R.drawable.img_add_profile);
+            viewHolder.textViewName.setText(parent.getNick());
+            viewHolder.textViewName.setGravity(View.TEXT_ALIGNMENT_CENTER);
+            viewHolder.textViewAge.setText("");
+            viewHolder.textViewId.setText(parent.getId());
+        } else {
+            viewHolder.textViewName.setText(parent.getNick());
+            viewHolder.textViewAge.setText(DateFormat.getDateDiff(parent.getDob()) + " Anos");
+            viewHolder.textViewId.setText(parent.getId());
 
-        if (parent.getPicture().length() > 2) {
-            parent.setPicture("0");
-        }
+            if (parent.getPicture().length() > 2) {
+                parent.setPicture("0");
+            }
 
-        if (Integer.parseInt(parent.getPicture()) == 0) {
-            if (parent.getGender().equals("M")) {
+            if (Integer.parseInt(parent.getPicture()) == 0) {
+                if (parent.getGender().equals("M")) {
 
-                if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
-                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+                    if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+                    } else {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+                    }
                 } else {
-                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+
+                    if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
+                    } else {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
+                    }
                 }
             } else {
-
-                if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
-                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
-                } else {
-                    viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
-                }
+                viewHolder.imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(parent.getPicture())).getLarge());
             }
-        } else {
-            viewHolder.imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(parent.getPicture())).getLarge());
         }
     }
 
