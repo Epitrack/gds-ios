@@ -40,6 +40,22 @@
     self.lbPercentDiareica.text = [NSString stringWithFormat:@"%g%%", [detailMap.diarreica doubleValue]];
     self.lbPercentExantematica.text = [NSString stringWithFormat:@"%g%%", [detailMap.exantemaica doubleValue]];
     self.lbPercentRespiratoria.text =[NSString stringWithFormat:@"%g%%", [detailMap.respiratoria doubleValue]];
+    
+    
+    float goodPercent = [detailMap.goodPercent floatValue];
+    float badPercent = [detailMap.badPercent floatValue];
+    
+    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:goodPercent color:PNGreen],
+                       [PNPieChartDataItem dataItemWithValue:badPercent color:PNRed]];
+    
+    CGRect size = self.pieChartView.frame;
+    
+    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(0, 0, size.size.width, size.size.height) items:items];
+    self.pieChart.showOnlyValues = YES;
+    self.pieChart.showAbsoluteValues = NO;
+    [self.pieChart strokeChart];
+    
+    [self.pieChartView addSubview:self.pieChart];
 }
 
 - (void)didReceiveMemoryWarning {

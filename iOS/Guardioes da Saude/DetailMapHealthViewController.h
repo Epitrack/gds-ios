@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PNChart.h"
 
-@interface DetailMapHealthViewController : UIViewController
+@interface DetailMapHealthViewController : UIViewController<PNChartDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *txtCity;
 @property (weak, nonatomic) IBOutlet UILabel *txtState;
 @property (weak, nonatomic) IBOutlet UILabel *txtCountParticipation;
@@ -23,5 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbPercentExantematica;
 @property (weak, nonatomic) IBOutlet UILabel *lbPercentRespiratoria;
 - (IBAction)btnInfoAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *pieChartView;
+
+@property (nonatomic) PNPieChart *pieChart;
 
 @end

@@ -85,6 +85,8 @@ PODS:
   - MRProgress/ProgressBaseClass (0.8.3)
   - MRProgress/Stopable (0.8.3):
     - MRProgress/Helper
+  - PNChart (0.8.7):
+    - UICountingLabel (~> 1.2.0)
   - PTEHorizontalTableView (1.0.0)
   - RMActionController (1.0.5)
   - RMDateSelectionViewController (2.0.3):
@@ -93,6 +95,7 @@ PODS:
     - Fabric
   - TwitterKit (1.14.6):
     - TwitterCore (= 1.14.6)
+  - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.1)
@@ -107,6 +110,7 @@ DEPENDENCIES:
   - JTCalendar (~> 2.0)
   - JYGraphView (~> 0.1)
   - MRProgress
+  - PNChart
   - PTEHorizontalTableView
   - RMDateSelectionViewController
   - TwitterCore
@@ -132,10 +136,12 @@ SPEC CHECKSUMS:
   JTCalendar: 9b1352c7ec41cc26b19c189d6608ba48060a53d9
   JYGraphView: 1f0e5541664acff0f43a31fee5e6bd7171236539
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
+  PNChart: c1755716bbd45386d2035b2bf2ce73e6d3f8cb22
   PTEHorizontalTableView: 2c65c4360282223628dabc664508dde922f98efd
   RMActionController: b83653e7452ed51492094d65dc82151c36443c03
   RMDateSelectionViewController: 354a0f1fe40bac01054528b7a8735f2973bbd813
   TwitterCore: 5e9b2d066ceeef53fe611c0c4436cb700f1ed620
   TwitterKit: f67360ee0a5f935f053bf37015652ac157e4eb92
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
 COCOAPODS: 0.39.0

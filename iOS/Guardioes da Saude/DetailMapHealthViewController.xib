@@ -39,6 +39,7 @@
                 <outlet property="lbPercentDiareica" destination="WCE-ha-b97" id="v4S-iH-kLn"/>
                 <outlet property="lbPercentExantematica" destination="Q4p-LY-TyW" id="NNq-cV-Iv4"/>
                 <outlet property="lbPercentRespiratoria" destination="qtx-CD-dVu" id="DrR-Wu-xCx"/>
+                <outlet property="pieChartView" destination="8Lo-Kz-BAj" id="KMN-e3-liO"/>
                 <outlet property="progessViewRespiratoria" destination="eH5-am-Zro" id="vOv-hT-f93"/>
                 <outlet property="progressViewDiarreica" destination="dgX-C1-R58" id="aCo-Zc-RP3"/>
                 <outlet property="progressViewExantematica" destination="LS0-WN-wrD" id="M0Z-C1-wMQ"/>
@@ -217,6 +218,13 @@
                         <action selector="btnInfoAction:" destination="-1" eventType="touchUpInside" id="NDX-6c-viy"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lo-Kz-BAj" userLabel="View Chart">
+                    <rect key="frame" x="189" y="240" width="116" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="8Lo-Kz-BAj" secondAttribute="height" multiplier="29:32" id="2yW-B0-iyi"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -275,16 +283,19 @@
                 <constraint firstItem="WUg-BP-v5e" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="35:350" id="lpm-Ai-ytn"/>
                 <constraint firstItem="8OG-v3-zgD" firstAttribute="leading" secondItem="WUg-BP-v5e" secondAttribute="trailing" constant="8" id="nYO-YH-Aiv"/>
                 <constraint firstItem="NJY-g6-YiJ" firstAttribute="centerY" secondItem="WUg-BP-v5e" secondAttribute="centerY" multiplier="1.04" id="pHd-fq-tgT"/>
+                <constraint firstItem="8Lo-Kz-BAj" firstAttribute="top" secondItem="TvU-gR-JXp" secondAttribute="bottom" constant="67" id="pmR-lh-Yme"/>
                 <constraint firstAttribute="trailing" secondItem="Q4p-LY-TyW" secondAttribute="trailing" constant="15" id="pyr-yj-FzG"/>
                 <constraint firstItem="cO5-Gh-Sn0" firstAttribute="leading" secondItem="s39-SS-Dhp" secondAttribute="trailing" constant="8" id="qa1-ge-4y4"/>
                 <constraint firstItem="sXf-Eo-S89" firstAttribute="centerY" secondItem="NJY-g6-YiJ" secondAttribute="centerY" id="qtx-Se-sUl"/>
                 <constraint firstItem="sbf-uo-6JT" firstAttribute="top" secondItem="WUg-BP-v5e" secondAttribute="bottom" multiplier="1.1" constant="29" id="rI9-aB-Rpn"/>
                 <constraint firstItem="dgX-C1-R58" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="rPb-Io-evx"/>
                 <constraint firstAttribute="trailing" secondItem="dgX-C1-R58" secondAttribute="trailing" constant="15" id="rzf-Pe-MhG"/>
+                <constraint firstItem="8Lo-Kz-BAj" firstAttribute="leading" secondItem="A9M-LA-Vkp" secondAttribute="trailing" constant="27" id="sLx-Nd-E0M"/>
                 <constraint firstItem="JyI-LA-OAn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="tI7-lp-TFv"/>
                 <constraint firstItem="A9M-LA-Vkp" firstAttribute="leading" secondItem="cO5-Gh-Sn0" secondAttribute="trailing" constant="2" id="tQ3-61-PcL"/>
                 <constraint firstItem="s39-SS-Dhp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="19" id="xjj-gm-RDV"/>
                 <constraint firstItem="cO5-Gh-Sn0" firstAttribute="centerY" secondItem="s39-SS-Dhp" secondAttribute="centerY" multiplier="1.04" id="xvA-wS-h1C"/>
+                <constraint firstAttribute="trailing" secondItem="8Lo-Kz-BAj" secondAttribute="trailing" constant="15" id="xzj-eS-h3k"/>
                 <constraint firstItem="dgX-C1-R58" firstAttribute="top" secondItem="JyI-LA-OAn" secondAttribute="bottom" constant="5" id="zYo-Tq-NTG"/>
                 <constraint firstItem="qtx-CD-dVu" firstAttribute="top" secondItem="LS0-WN-wrD" secondAttribute="bottom" constant="15" id="za1-Fg-UgX"/>
                 <constraint firstItem="sbf-uo-6JT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.44" id="zun-gE-nAG"/>
