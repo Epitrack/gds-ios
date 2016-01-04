@@ -43,7 +43,13 @@
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     
     // Uncomment to automatically sign in the user.
-    //[[GIDSignIn sharedInstance] signInSilently];
+    //GOOGLE
+    GIDSignIn *signIn = [GIDSignIn sharedInstance];
+    signIn.delegate = self;
+    signIn.uiDelegate = self;
+    signIn.clientID = @"783481918318-of721315npktlthk9fic2u02sp2psa9h.apps.googleusercontent.com";
+    [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.login"]];
+    [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.me"]];
 
     //FACEBOOK
     FBSDKLoginButton *btnFacebook = [[FBSDKLoginButton alloc] init];
@@ -91,14 +97,11 @@
 // pressed the Sign In button
 
 - (void)signIn:(GIDSignIn *)signIn
-didSignInForUser:(GIDGoogleUser *)user
+    didSignInForUser:(GIDGoogleUser *)userGL
      withError:(NSError *)error {
-    // Perform any operations on signed in user here.
-    // ...
-    NSString *userId = user.userID;                  // For client-side use only!
-    NSString *idToken = user.authentication.idToken; // Safe to send to the server
-    NSString *name = user.profile.name;
-    NSString *email = user.profile.email;
+    if (!error) {
+        [self checkSocialLoginWithToken:userGL.userID andType:@"GOOGLE"];
+    }
 }
 
 - (void)signIn:(GIDSignIn *)signIn
@@ -111,7 +114,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 - (IBAction)btnGoogleAction:(id)sender {
     
     //GOOGLE
-    [GIDSignIn sharedInstance].uiDelegate = self;
+    [[GIDSignIn sharedInstance] signIn];
 }
 
 

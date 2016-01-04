@@ -17,8 +17,9 @@
     User *user;
     NSArray *pickerDataGender;
     NSArray *pickerDataRace;
+    NSDate *birthdate;
+    
 }
-
 @end
 
 @implementation CreateAccountSocialLoginViewController
@@ -34,10 +35,12 @@
     pickerDataGender = @[@"Masculino", @"Feminino"];
     pickerDataRace = @[@"branco", @"preto", @"pardo", @"amarelo", @"indigena"];
     
-    self.pickerGender.dataSource = self;
-    self.pickerGender.delegate = self;
-    self.pickerRace.dataSource = self;
-    self.pickerRace.delegate = self;
+    (void)[self.downGenre initWithData:pickerDataGender];
+    (void)[self.downRace initWithData:pickerDataRace];
+    
+    NSString *placeHolderDownpicker = @"Toque para selecionar";
+    [self.downRace setPlaceholder:placeHolderDownpicker];
+    [self.downGenre setPlaceholder:placeHolderDownpicker];
     
     self.txtNick.text = user.nick;
     if(user.email){
@@ -50,7 +53,8 @@
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
     
-    
+    birthdate = [DateUtil dateFromString:@"10/10/1990"];
+    [self updateBirthDate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,79 +87,15 @@
 
 - (IBAction)btnCadastrar:(id)sender {
     BOOL fieldNull = NO;
-    BOOL dateFail = NO;
     
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"dd/MM/yyyy"];
-    NSString *formattedDate = [df stringFromDate:self.dtPikerDob.date];
-    
-    NSString *datePiker = formattedDate;
-    
-    if ([self.txtNick.text isEqualToString:@""]) {
-        fieldNull = YES;
-    } else if ([datePiker isEqualToString:@""]) {
-        fieldNull = YES;
-    } else if ([self.txtEmail.text isEqualToString:@""]) {
+    if ([self.txtEmail.text isEqualToString:@""] ||
+        [self.txtNick.text isEqualToString:@""] ||
+        [self.downGenre.text isEqualToString:@""] ||
+        [self.downGenre.text isEqualToString:@""]) {
         fieldNull = YES;
     }
     
-    if (![datePiker isEqualToString:@""]) {
-        if (datePiker.length == 10) {
-            
-            NSString *bar1 = [datePiker substringWithRange:NSMakeRange(2, 1)];
-            NSString *bar2 = [datePiker substringWithRange:NSMakeRange(5, 1)];
-            NSString *day = [datePiker substringWithRange:NSMakeRange(0, 2)];
-            NSString *month = [datePiker substringWithRange:NSMakeRange(3, 2)];
-            NSString *year = [datePiker substringWithRange:NSMakeRange(6, 4)];
-            
-            if (![bar1 isEqualToString:@"/"] || ![bar2 isEqualToString:@"/"]) {
-                dateFail = YES;
-            }
-            
-            @try {
-                
-                int validateDay = [day intValue];
-                
-                if (validateDay <= 0) {
-                    dateFail = YES;
-                }
-                
-                if (validateDay > 31) {
-                    dateFail = YES;
-                }
-                
-                int validateMonth = [month intValue];
-                
-                if (validateMonth <= 0) {
-                    dateFail = YES;
-                }
-                
-                if (validateMonth > 12) {
-                    dateFail = YES;
-                }
-                
-                int validateYear = [year intValue];
-                
-                if (validateYear <= 0) {
-                    dateFail = YES;
-                }
-            }
-            @catch (NSException *exception) {
-                dateFail = YES;
-            }
-        } else {
-            dateFail = YES;
-        }
-    }
-    
-    if (dateFail) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Data de nascimento inválida." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            NSLog(@"You pressed button OK");
-        }];
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
-    }else if (fieldNull) {
+    if (fieldNull) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Preencha todos os campos do formulário." preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button OK");
@@ -163,12 +103,8 @@
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-        NSString *gender;
-        NSString *race;
-        NSInteger row;
-        
-        row = [self.pickerGender selectedRowInComponent:0];
-        gender = [pickerDataGender objectAtIndex:row];
+        NSString *gender = self.downGenre.text;
+        NSString *race = self.downRace.text;
         
         if ([gender isEqualToString:@"Masculino"]) {
             gender = @"M";
@@ -176,35 +112,10 @@
             gender = @"F";
         }
         
-        row = [self.pickerRace selectedRowInComponent:0];
-        race = [pickerDataRace objectAtIndex:row];
-        
-        /*if (self.segmentRace.selectedSegmentIndex == 0) {
-            race = @"branco";
-        } else if (self.segmentRace.selectedSegmentIndex == 1) {
-            race = @"preto";
-        } else if (self.segmentRace.selectedSegmentIndex == 2) {
-            race = @"pardo";
-        } else if (self.segmentRace.selectedSegmentIndex == 3) {
-            race = @"amarelo";
-        } else if (self.segmentRace.selectedSegmentIndex == 4) {
-            race = @"indigena";
-        }*/
-        
-        NSLog(@"Data %@", datePiker);
-        
         AFHTTPRequestOperationManager *manager;
         NSDictionary *params;
         
-        NSLog(@"Dia %@", [datePiker substringWithRange:NSMakeRange(0, 2)]);
-        NSLog(@"Mês %@", [datePiker substringWithRange:NSMakeRange(3, 2)]);
-        NSLog(@"Ano %@", [datePiker substringWithRange:NSMakeRange(6, 4)]);
-        
-        NSString *day = [datePiker substringWithRange:NSMakeRange(0, 2)];
-        NSString *month = [datePiker substringWithRange:NSMakeRange(3, 2)];
-        NSString *year = [datePiker substringWithRange:NSMakeRange(6, 4)];
-        
-        NSString *dob = [NSString stringWithFormat: @"%@-%@-%@", year, month, day];
+        NSString *dob = [DateUtil stringUSFromDate:birthdate];
         
         NSLog(@"nick %@", self.txtNick.text);
         NSLog(@"email %@", self.txtEmail.text.lowercaseString);
@@ -303,54 +214,33 @@
     SelectTypeCreateAccoutViewController *selectTypeCreateAccountViewController = [[SelectTypeCreateAccoutViewController alloc] init];
     [self.navigationController pushViewController:selectTypeCreateAccountViewController animated:YES];
 }
+- (IBAction)changeBirthDate:(id)sender {
+    RMActionControllerStyle style = RMActionControllerStyleWhite;
+    
+    RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
+        birthdate = controller.contentView.date;
+        [self updateBirthDate];
+    }];
+    
+    RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
+    dateSelectionController.title = @"Data de nascimento";
+    dateSelectionController.message = @"Selecione sua data de nascimento.";
+    
+    [dateSelectionController addAction:selectAction];
 
-// The number of columns of data
-- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
+    dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
+    dateSelectionController.datePicker.minuteInterval = 5;
+    dateSelectionController.datePicker.date = birthdate;
+    
+    if([dateSelectionController respondsToSelector:@selector(popoverPresentationController)] && [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        dateSelectionController.modalPresentationStyle = UIModalPresentationPopover;
+    }
+    
+    [self presentViewController:dateSelectionController animated:YES completion:nil];
 }
 
-// The number of rows of data
-- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    int iReturn = 0;
-    
-    if (pickerView == self.pickerRace) {
-        iReturn = pickerDataRace.count;
-    } else if (pickerView == self.pickerGender) {
-        iReturn = pickerDataGender.count;
-    }
-    
-    return iReturn;
-}
-
-// The data to return for the row and component (column) that's being passed in
-- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSString *strReturn;
-    
-    if (pickerView == self.pickerRace) {
-        strReturn = pickerDataRace[row];
-    } else if (pickerView == self.pickerGender) {
-        strReturn = pickerDataGender[row];
-    }
-    
-    return strReturn;
-}
-
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
-    UILabel* tView = (UILabel*)view;
-    if (!tView) {
-        tView = [[UILabel alloc] init];
-        
-        [tView setFont:[UIFont fontWithName:@"Helvetica" size:15]];
-        [tView setTextAlignment:UITextAlignmentCenter];
-        
-    }
-    
-    if (pickerView == self.pickerRace) {
-        tView.text = [pickerDataRace objectAtIndex:row];
-    } else if (pickerView == self.pickerGender) {
-        tView.text = [pickerDataGender objectAtIndex:row];
-    }
-    
-    return tView;
+- (void) updateBirthDate{
+    NSString *dateFormatted  = [DateUtil stringFromDate:birthdate];
+    [self.btnDate setTitle:dateFormatted forState:UIControlStateNormal];
 }
 @end

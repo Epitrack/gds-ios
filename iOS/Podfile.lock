@@ -22,6 +22,7 @@ PODS:
     - AFNetworking/NSURLSession
   - ASHorizontalScrollViewForObjectiveC (1.1)
   - Charts (2.1.6)
+  - DownPicker (0.1.34)
   - Fabric (1.6.1)
   - Google/Analytics (1.3.2):
     - Google/Core
@@ -56,16 +57,51 @@ PODS:
   - JSONModel (1.1.2)
   - JTCalendar (2.1.4)
   - JYGraphView (0.1.0)
+  - MRProgress (0.8.3):
+    - MRProgress/ActivityIndicator (= 0.8.3)
+    - MRProgress/Blur (= 0.8.3)
+    - MRProgress/Circular (= 0.8.3)
+    - MRProgress/Icons (= 0.8.3)
+    - MRProgress/NavigationBarProgress (= 0.8.3)
+    - MRProgress/Overlay (= 0.8.3)
+  - MRProgress/ActivityIndicator (0.8.3):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.3):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.3):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.3)
+  - MRProgress/Icons (0.8.3)
+  - MRProgress/NavigationBarProgress (0.8.3):
+    - MRProgress/ProgressBaseClass
+  - MRProgress/Overlay (0.8.3):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.3)
+  - MRProgress/Stopable (0.8.3):
+    - MRProgress/Helper
+  - PNChart (0.8.7):
+    - UICountingLabel (~> 1.2.0)
   - PTEHorizontalTableView (1.0.0)
+  - RMActionController (1.0.5)
+  - RMDateSelectionViewController (2.0.3):
+    - RMActionController (~> 1.0.5)
   - TwitterCore (1.14.6):
     - Fabric
   - TwitterKit (1.14.6):
     - TwitterCore (= 1.14.6)
+  - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.1)
   - ASHorizontalScrollViewForObjectiveC (~> 1.0)
   - Charts (~> 2.1)
+  - DownPicker
   - Fabric
   - Google/Analytics
   - Google/SignIn
@@ -73,7 +109,10 @@ DEPENDENCIES:
   - JSONModel
   - JTCalendar (~> 2.0)
   - JYGraphView (~> 0.1)
+  - MRProgress
+  - PNChart
   - PTEHorizontalTableView
+  - RMDateSelectionViewController
   - TwitterCore
   - TwitterKit
 
@@ -81,6 +120,7 @@ SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   ASHorizontalScrollViewForObjectiveC: 1a0b0677f27ae2780a10b7dc40cce66b511deb94
   Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
+  DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
   Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
   GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
@@ -95,8 +135,13 @@ SPEC CHECKSUMS:
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   JTCalendar: 9b1352c7ec41cc26b19c189d6608ba48060a53d9
   JYGraphView: 1f0e5541664acff0f43a31fee5e6bd7171236539
+  MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
+  PNChart: c1755716bbd45386d2035b2bf2ce73e6d3f8cb22
   PTEHorizontalTableView: 2c65c4360282223628dabc664508dde922f98efd
+  RMActionController: b83653e7452ed51492094d65dc82151c36443c03
+  RMDateSelectionViewController: 354a0f1fe40bac01054528b7a8735f2973bbd813
   TwitterCore: 5e9b2d066ceeef53fe611c0c4436cb700f1ed620
   TwitterKit: f67360ee0a5f935f053bf37015652ac157e4eb92
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
 COCOAPODS: 0.39.0

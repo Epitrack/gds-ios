@@ -10,16 +10,26 @@
 
 @implementation Household
 
--(id) initWithNick:(NSString *)nick andDob:(NSString *)dob andGender:(NSString *)gender andRace:(NSString *)race andIdUser:(NSString *)idUser andPicture:(NSString *)picture andIdHousehold:(NSString *)idHousehold {
+-(id) initWithNick:(NSString *)nick
+            andEmail:(NSString *)email
+            andDob:(NSString *)dob
+         andGender:(NSString *)gender
+           andRace:(NSString *)race
+         andIdUser:(NSString *)idUser
+        andPicture:(NSString *)picture
+      andIdPicture:(NSString *)idPicture
+    andIdHousehold:(NSString *)idHousehold {
     
     if (self == [super init]) {
 
         self.nick = nick;
+        self.email = email;
         self.dob = dob;
         self.gender = gender;
         self.race = race;
         self.idUSer = idUser;
         self.picture = picture;
+        self.idPicture = idPicture;
         self.idHousehold = idHousehold;
     }
     return self;

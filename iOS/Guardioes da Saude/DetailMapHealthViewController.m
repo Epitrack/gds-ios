@@ -27,7 +27,7 @@
     detailMap = [DetailMap getInstance];
     
     self.txtCity.text = detailMap.city;
-    self.txtState.text = [self getStateDescription:detailMap.state];
+    self.txtState.text = detailMap.state;
     self.txtCountParticipation.text = detailMap.totalSurvey;
     self.txtPercentGood.text = detailMap.goodPercent;
     self.txtPercentBad.text = detailMap.badPercent;
@@ -37,9 +37,31 @@
     self.progressViewExantematica.progress = ([detailMap.exantemaica doubleValue]/100);
     self.progessViewRespiratoria.progress = ([detailMap.respiratoria doubleValue]/100);
     
-    self.lbPercentDiareica.text = [[NSString stringWithFormat:@"%.02f", ([detailMap.diarreica doubleValue])] stringByAppendingString:@"%"];
-    self.lbPercentExantematica.text = [[NSString stringWithFormat:@"%.02f", ([detailMap.exantemaica doubleValue])] stringByAppendingString:@"%"];
-    self.lbPercentRespiratoria.text =[[NSString stringWithFormat:@"%.02f", ([detailMap.respiratoria doubleValue])] stringByAppendingString:@"%"];
+    self.lbPercentDiareica.text = [NSString stringWithFormat:@"%g%%", [detailMap.diarreica doubleValue]];
+    self.lbPercentExantematica.text = [NSString stringWithFormat:@"%g%%", [detailMap.exantemaica doubleValue]];
+    self.lbPercentRespiratoria.text =[NSString stringWithFormat:@"%g%%", [detailMap.respiratoria doubleValue]];
+    
+    [self loadPieChart];
+}
+
+-(void) loadPieChart{
+    float goodPercent = [detailMap.goodPercent floatValue];
+    float badPercent = [detailMap.badPercent floatValue];
+    
+    UIColor *goodColor = [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f];
+    UIColor *badColor = [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f];
+    
+    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:goodPercent color:goodColor],
+                       [PNPieChartDataItem dataItemWithValue:badPercent color:badColor]];
+    
+    CGRect size = self.pieChartView.frame;
+    
+    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(0, 0, size.size.width, size.size.height) items:items];
+    self.pieChart.showOnlyValues = YES;
+    self.pieChart.showAbsoluteValues = NO;
+    [self.pieChart strokeChart];
+    
+    [self.pieChartView addSubview:self.pieChart];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,69 +78,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
--(id) getStateDescription:(NSString *) uf {
-    
-    NSString *stateDiscription;
-    
-    if ([uf isEqualToString:@"AC"]) {
-        stateDiscription = @"Acre";
-    } else if ([uf isEqualToString:@"AL"]) {
-        stateDiscription = @"Alagoas";
-    } else if ([uf isEqualToString:@"AP"]) {
-        stateDiscription = @"Amapá";
-    } else if ([uf isEqualToString:@"AM"]) {
-        stateDiscription = @"Amazonas";
-    } else if ([uf isEqualToString:@"BA"]) {
-        stateDiscription = @"Bahia";
-    } else if ([uf isEqualToString:@"CE"]) {
-        stateDiscription = @"Ceará";
-    } else if ([uf isEqualToString:@"DF"]) {
-        stateDiscription = @"Distrito Federal";
-    } else if ([uf isEqualToString:@"ES"]) {
-        stateDiscription = @"Espirito Santo";
-    } else if ([uf isEqualToString:@"GO"]) {
-        stateDiscription = @"Goiás";
-    } else if ([uf isEqualToString:@"MA"]) {
-        stateDiscription = @"Maranhão";
-    } else if ([uf isEqualToString:@"MT"]) {
-        stateDiscription = @"Mato Grosso";
-    } else if ([uf isEqualToString:@"MS"]) {
-        stateDiscription = @"Mato Grosso do Sul";
-    } else if ([uf isEqualToString:@"MG"]) {
-        stateDiscription = @"Minas Gerais";
-    } else if ([uf isEqualToString:@"PR"]) {
-        stateDiscription = @"Pará";
-    } else if ([uf isEqualToString:@"PB"]) {
-        stateDiscription = @"Paraiba";
-    } else if ([uf isEqualToString:@"PA"]) {
-        stateDiscription = @"Paraná";
-    } else if ([uf isEqualToString:@"PE"]) {
-        stateDiscription = @"Pernambuco";
-    } else if ([uf isEqualToString:@"PI"]) {
-        stateDiscription = @"Piauí";
-    } else if ([uf isEqualToString:@"RJ"]) {
-        stateDiscription = @"Rio de Janeiro";
-    } else if ([uf isEqualToString:@"RN"]) {
-        stateDiscription = @"Rio Grande do Norte";
-    } else if ([uf isEqualToString:@"RS"]) {
-        stateDiscription = @"Rio Grande do Sul";
-    } else if ([uf isEqualToString:@"RO"]) {
-        stateDiscription = @"Rondônia";
-    } else if ([uf isEqualToString:@"RR"]) {
-        stateDiscription = @"Roraima";
-    } else if ([uf isEqualToString:@"SC"]) {
-        stateDiscription = @"Santa Catarina";
-    } else if ([uf isEqualToString:@"SE"]) {
-        stateDiscription = @"Sergipe";
-    } else if ([uf isEqualToString:@"SP"]) {
-        stateDiscription = @"São Paulo";
-    } else if ([uf isEqualToString:@"TO"]) {
-        stateDiscription = @"Tocantins";
-    }
-    
-    return stateDiscription;
-}
 - (IBAction)btnInfoAction:(id)sender {
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: diarreica (febre, diarreia, náusea ou vômito), respiratória (febre, tosse e dor de garganta) e exantemática (febre, exantema, tosse, dor nas articulações e dor de cabeça)." preferredStyle:UIAlertControllerStyleActionSheet];

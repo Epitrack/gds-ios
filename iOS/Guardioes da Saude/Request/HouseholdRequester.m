@@ -188,4 +188,114 @@
      ];
 }
 
+- (void) getHouseholdsByUser: (User *) user
+                        onSuccess: (void (^)(NSMutableArray *households)) success
+                           onFail: (void (^)(NSError * erro)) failure{
+    NSString *idUSer = user.idUser;
+    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/household/%@", idUSer];
+    
+    AFHTTPRequestOperationManager *manager;
+    manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
+    [manager.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
+    [manager GET:url
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSMutableArray *houseHolds = [[NSMutableArray alloc] init];
+             NSDictionary *households = responseObject[@"data"];
+             
+             
+             for(NSDictionary *dicHousehold in households){
+                 NSString *picture = dicHousehold[@"picture"];
+                 NSString *avatar;
+                 if (picture.length > 2) {
+                     avatar = @"img_profile01.png";
+                 } else if (picture.length == 1) {
+                     avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
+                 } else if (picture.length == 2) {
+                     avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
+                 }
+                 
+                 
+                 Household *household = [[Household alloc] initWithNick:dicHousehold[@"nick"]
+                                                               andEmail:dicHousehold[@"email"]
+                                                                 andDob:dicHousehold[@"dob"]
+                                                              andGender:dicHousehold[@"gender"]
+                                                                andRace:dicHousehold[@"race"]
+                                                              andIdUser:dicHousehold[@"user"][@"id"]
+                                                             andPicture:avatar
+                                                           andIdPicture: picture
+                                                         andIdHousehold:dicHousehold[@"id"]];
+                 [houseHolds addObject:household];
+             }
+             
+             success(houseHolds);
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             failure(error);
+         }];
+}
+
+- (void) updateHousehold: (Household *) household
+          onSuccess: (void(^)(void)) success
+             onFail: (void(^) (NSError *error)) fail{
+    User *user = [User getInstance];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setValue:household.nick forKey:@"nick"];
+    [params setValue:user.client forKey:@"client"];
+    [params setValue:household.dob forKey:@"dob"];
+    [params setValue:household.gender forKey:@"gender"];
+    [params setValue:user.app_token forKey:@"app_token"];
+    [params setValue:household.race forKey:@"race"];
+    [params setValue:user.platform forKey:@"platform"];
+    [params setValue:household.picture forKey:@"picture"];
+    [params setValue:household.idHousehold forKey:@"id"];
+    
+    if (![household.email isEqualToString:@""]) {
+        [params setValue:household.email forKey:@"email"];
+    }
+    
+    [self doPost:@"http://api.guardioesdasaude.org/household/update"
+          header:@{@"user_token": user.user_token, @"app_token": user.app_token}
+       parameter:params
+           start:^(void){
+               
+           }error:^(AFHTTPRequestOperation *request, NSError *error){
+               fail(error);
+           }success:^(AFHTTPRequestOperation *request, id response){
+               success();
+           }];
+}
+
+- (void) createHousehold: (Household *) household
+               onSuccess: (void(^)(void)) success
+                  onFail: (void(^) (NSError *error)) fail{
+    User *user = [User getInstance];
+    
+    NSDictionary *params = @{@"nick": household.nick,
+                             @"client": user.client,
+                             @"dob": household.dob,
+                             @"gender": household.gender,
+                             @"app_token": user.app_token,
+                             @"race": household.race,
+                             @"platform": user.platform,
+                             @"picture": household.picture,
+                             @"user": user.idUser};
+    if (![household.email isEqualToString:@""]) {
+        [params setValue:household.email forKey:@"email"];
+    }
+    
+    [self doPost:@"http://api.guardioesdasaude.org/household/create"
+          header:@{@"user_token": user.user_token, @"app_token": user.app_token}
+       parameter:params
+           start:^(void){
+               
+           }error:^(AFHTTPRequestOperation *request, NSError *error){
+               fail(error);
+           }success:^(AFHTTPRequestOperation *request, id response){
+               success();
+           }];
+}
+
 @end

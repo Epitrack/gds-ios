@@ -7,13 +7,9 @@
 //
 
 #import "SelectAvatarViewController.h"
-#import "User.h"
 #import "ProfileFormViewController.h"
-#import "DTO.h"
 
 @interface SelectAvatarViewController () {
-    User *user;
-    DTO *dto;
 }
 
 @end
@@ -24,9 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    user = [User getInstance];
-    dto = [DTO getInstance];
     
     self.navigationItem.title = @"Editar Foto";
     //self.navigationItem.hidesBackButton = YES;
@@ -66,47 +59,6 @@
     
         [self presentViewController:picker animated:YES completion:NULL];
     }
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    //self.imageView.image = chosenImage;
-    
-    if (chosenImage != nil) {
-        NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-       
-        NSString *timeString = [dateFormatter stringFromDate:[NSDate date]];
-        NSString *idPhoto;
-        
-        if (user.idHousehold != nil && ![user.idHousehold isEqualToString:@""]) {
-            idPhoto = user.idHousehold;
-        } else {
-            idPhoto = user.idUser;
-        }
-        
-        NSString *imageName = [NSString stringWithFormat: @"gdsprofile_%@_%@.png", idPhoto, timeString];
-        
-        
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString* path = [documentsDirectory stringByAppendingPathComponent:imageName];
-        
-        NSData* data = UIImagePNGRepresentation(chosenImage);
-        [data writeToFile:path atomically:YES];
-        
-        UIImage* image = [UIImage imageWithContentsOfFile:path];
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-        
-        user.avatar = @"";
-        user.photo = @"";
-        
-        dto.data = image;
-        
-        [picker dismissViewControllerAnimated:YES completion:NULL];
-    }
-        [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -163,12 +115,8 @@
 }
 
 - (void) setAvatar:(NSString *)idAvatar {
-    user.avatar = @"";
-    user.photo = @"";
+    self.profileFormCtr.pictureSelected = idAvatar;
     
-    //user.avatar = idAvatar;
-    dto.string = idAvatar;
-    dto.data = idAvatar;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

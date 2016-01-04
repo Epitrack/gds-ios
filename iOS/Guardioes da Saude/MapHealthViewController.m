@@ -13,6 +13,10 @@
 #import "DetailMapHealthViewController.h"
 #import "DetailMap.h"
 #import "MapPinAnnotation.h"
+#import "GoogleUtil.h"
+#import "StateUtil.h"
+#import <MRProgress/MRProgress.h>
+#import "ProgressBarUtil.h"
 
 @interface MapHealthViewController ()
 
@@ -56,10 +60,16 @@
     user = [User getInstance];
     detailMap = [DetailMap getInstance];
     
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
+
     [self loadSurvey];
+    self.seach.delegate = self;
 }
 
 - (void) loadSurvey {
+    
+    [ProgressBarUtil showProgressBarOnView:self.view];
     
     if (latitude == 0) {
         latitude = [user.lat doubleValue];
@@ -142,7 +152,6 @@
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mv viewForAnnotation:(id <MKAnnotation> ) annotation {
-    UIImage *anImage = nil;
     MKAnnotationView *pinView = nil;
     if(annotation != mv.userLocation){
         MapPinAnnotation *pinA = (MapPinAnnotation *) annotation;
@@ -211,7 +220,6 @@
 - (void) loadSummary {
     
     NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/surveys/summary/?lon=%f&lat=%f", longitude, latitude];
-    
     AFHTTPRequestOperationManager *managerTotalSurvey;
     managerTotalSurvey = [AFHTTPRequestOperationManager manager];
     [managerTotalSurvey.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
@@ -226,7 +234,7 @@
              if (summary.count > 0) {
              
                  city = location[@"city"];
-                 state = location[@"state"];;
+                 state = [StateUtil getStateByUf:location[@"state"]];
                  totalSurvey = [summary[@"total_surveys"] integerValue];
                  
                  totalNoSymptom = [summary[@"total_no_symptoms"] integerValue];
@@ -255,7 +263,9 @@
                      respiratoria = ((respiratoria * 100) / (totalWithSymptom + totalNoSymptom));
                  }
                  
-                 [self.btnDetailMapHealth setTitle:city];
+                 self.lblCity.text = city;
+                 self.lblState.text = state;
+                 self.lblPaticipation.text = [NSString stringWithFormat:@"%d Participações essa semana", totalSurvey];
                  
                  detailMap.city = city;
                  detailMap.state = state;
@@ -271,8 +281,10 @@
                  
              }
              
+             [ProgressBarUtil hiddenProgressBarOnView:self.view];
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);
+             [ProgressBarUtil hiddenProgressBarOnView:self.view];
          }];
 }
 
@@ -285,5 +297,30 @@
 - (IBAction)showDetailMapPlus:(id)sender {
     DetailMapHealthViewController *detailMapHealthViewController = [[DetailMapHealthViewController alloc] init];
     [self.navigationController pushViewController:detailMapHealthViewController animated:YES];
+}
+
+-(void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.seach resignFirstResponder];
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+    
+    [GoogleUtil getLocationByAddress:self.seach.text onSuccess:^(NSString *lng, NSString *lat, NSString *fullNameCity){
+        //[self.btnDetailMapHealth setTitle:fullNameCity];
+        
+        CLLocationCoordinate2D coordenada = CLLocationCoordinate2DMake([lat doubleValue], [lng doubleValue]);
+        CLLocationDistance distance = 1000;
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordenada, distance, distance);
+        [self.mapHealth setRegion:region animated:YES];
+    }onFail:^(NSError *error){
+        
+    }];
+    
 }
 @end

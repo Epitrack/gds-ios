@@ -7,19 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DateUtil.h"
+#import "RMDateSelectionViewController.h"
+@import DownPicker;
 
-@interface CreateAccountViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface CreateAccountViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentGender;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentRace;
 @property (weak, nonatomic) IBOutlet UITextField *txtDob;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UITextField *txtConfirmPassword;
 - (IBAction)btnAddUser:(id)sender;
-@property (weak, nonatomic) IBOutlet UIDatePicker *dtPikerDob;
 - (IBAction)backButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerGender;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickRace;
+@property (weak, nonatomic) IBOutlet UIDownPicker *downGenre;
+@property (weak, nonatomic) IBOutlet UIDownPicker *downRace;
+@property (weak, nonatomic) IBOutlet UIButton *btnBirthDate;
+- (IBAction)btnBirthDateAction:(id)sender;
 
 @end

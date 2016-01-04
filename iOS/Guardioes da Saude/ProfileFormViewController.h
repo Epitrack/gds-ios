@@ -7,8 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Household.h"
+#import "User.h"
+
+typedef enum operation{
+    EDIT_USER,
+    EDIT_HOUSEHOLD,
+    ADD_HOUSEHOLD
+} Operation;
 
 @interface ProfileFormViewController : UIViewController
+
+@property User *user;
+@property Household *household;
+@property Operation operation;
+@property (weak, nonatomic) NSString *pictureSelected;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentGender;
