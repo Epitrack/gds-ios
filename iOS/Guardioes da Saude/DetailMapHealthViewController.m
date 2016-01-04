@@ -41,12 +41,18 @@
     self.lbPercentExantematica.text = [NSString stringWithFormat:@"%g%%", [detailMap.exantemaica doubleValue]];
     self.lbPercentRespiratoria.text =[NSString stringWithFormat:@"%g%%", [detailMap.respiratoria doubleValue]];
     
-    
+    [self loadPieChart];
+}
+
+-(void) loadPieChart{
     float goodPercent = [detailMap.goodPercent floatValue];
     float badPercent = [detailMap.badPercent floatValue];
     
-    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:goodPercent color:PNGreen],
-                       [PNPieChartDataItem dataItemWithValue:badPercent color:PNRed]];
+    UIColor *goodColor = [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f];
+    UIColor *badColor = [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f];
+    
+    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:goodPercent color:goodColor],
+                       [PNPieChartDataItem dataItemWithValue:badPercent color:badColor]];
     
     CGRect size = self.pieChartView.frame;
     
