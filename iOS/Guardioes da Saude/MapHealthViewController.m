@@ -16,6 +16,7 @@
 #import "GoogleUtil.h"
 #import "StateUtil.h"
 #import <MRProgress/MRProgress.h>
+#import "ProgressBarUtil.h"
 
 @interface MapHealthViewController ()
 
@@ -61,15 +62,14 @@
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
-    
-
-    [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Carregando.." mode:MRProgressOverlayViewModeIndeterminate animated:YES];
 
     [self loadSurvey];
     self.seach.delegate = self;
 }
 
 - (void) loadSurvey {
+    
+    [ProgressBarUtil showProgressBarOnView:self.view];
     
     if (latitude == 0) {
         latitude = [user.lat doubleValue];
@@ -281,10 +281,10 @@
                  
              }
              
-             [MRProgressOverlayView dismissAllOverlaysForView:self.view animated:YES];
+             [ProgressBarUtil hiddenProgressBarOnView:self.view];
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);
-             [MRProgressOverlayView dismissAllOverlaysForView:self.view animated:YES];
+             [ProgressBarUtil hiddenProgressBarOnView:self.view];
          }];
 }
 

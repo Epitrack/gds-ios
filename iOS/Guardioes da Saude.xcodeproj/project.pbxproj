@@ -503,6 +503,7 @@
 		B23CB178C86EEA8A7C4AF3CE /* MapPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */; };
 		B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */; };
 		CB4E68701C39B48700563FB7 /* StateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* StateUtil.m */; };
+		CB8610061C3AF6DB009E63DF /* ProgressBarUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8610051C3AF6DB009E63DF /* ProgressBarUtil.m */; };
 		CB8DA0EF1C35B2D300C16362 /* GoogleUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8DA0EE1C35B2D300C16362 /* GoogleUtil.m */; };
 /* End PBXBuildFile section */
 
@@ -1086,6 +1087,8 @@
 		B23CB8937DECB07E8EB03052 /* MapPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPinAnnotation.h; sourceTree = "<group>"; };
 		CB4E686E1C39B48700563FB7 /* StateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateUtil.h; sourceTree = "<group>"; };
 		CB4E686F1C39B48700563FB7 /* StateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateUtil.m; sourceTree = "<group>"; };
+		CB8610041C3AF6DB009E63DF /* ProgressBarUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarUtil.h; sourceTree = "<group>"; };
+		CB8610051C3AF6DB009E63DF /* ProgressBarUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBarUtil.m; sourceTree = "<group>"; };
 		CB8DA0ED1C35B2D300C16362 /* GoogleUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleUtil.h; sourceTree = "<group>"; };
 		CB8DA0EE1C35B2D300C16362 /* GoogleUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1133,6 +1136,8 @@
 				CB8DA0EE1C35B2D300C16362 /* GoogleUtil.m */,
 				CB4E686E1C39B48700563FB7 /* StateUtil.h */,
 				CB4E686F1C39B48700563FB7 /* StateUtil.m */,
+				CB8610041C3AF6DB009E63DF /* ProgressBarUtil.h */,
+				CB8610051C3AF6DB009E63DF /* ProgressBarUtil.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -2434,6 +2439,7 @@
 				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				52EBA7581C1209EF0019E1FA /* PharmacyGoogleMapsViewController.m in Sources */,
+				CB8610061C3AF6DB009E63DF /* ProgressBarUtil.m in Sources */,
 				529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */,
 				5256481B1BFCF96100FE64AE /* ProfileFormViewController.m in Sources */,
 				52E6F0AA1C20B6AC00C88A08 /* Phones.m in Sources */,

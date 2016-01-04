@@ -32,7 +32,7 @@
                     <rect key="frame" x="0.0" y="507" width="320" height="61"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSu-qQ-lQo" userLabel="LabelCityName">
-                            <rect key="frame" x="8" y="0.0" width="189" height="19.5"/>
+                            <rect key="frame" x="8" y="0.0" width="189" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="19.5" id="Lzp-Oh-aRw"/>
                             </constraints>

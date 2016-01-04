@@ -18,6 +18,7 @@
 #import <JTCalendar/JTCalendar.h>
 #import "HouseholdThumbnail.h"
 #import "Constants.h"
+#import "ProgressBarUtil.h"
 
 @import Charts;
 
@@ -43,6 +44,8 @@
     NSMutableArray *buttons;
     User *user;
     NSString *selectedUser;
+    UserRequester *userRequester;
+    BOOL firstTime;
 }
 
 const float _kCellHeight = 100.0f;
@@ -55,49 +58,107 @@ const float _kCellHeight = 100.0f;
     // We will move this to the top?
     
     user = [User getInstance];
+    userRequester = [[UserRequester alloc] init];
     buttons = [NSMutableArray array];
-//    
+    firstTime = YES;
+    
     [self loadMainUser];
-//    
+    
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
-    CGFloat screenWidth = screenSize.width;
     CGFloat screenHeight = screenSize.height;
-//    
-//    //create table view to contain ASHorizontalScrollView
-//    
+    
+    //create table view to contain ASHorizontalScrollView
+    
     sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 100, self.view.frame.size.width, self.view.frame.size.height)];
     sampleTableView.delegate = self;
     sampleTableView.dataSource = self;
     sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:sampleTableView];
     
-    //[self loadLabels:YES andUser:@""];
-    
-    [self loadChartPie];
-    
     [self loadCalendar];
     
     [self loadChartLine];
     
-    [self requestChartPie:@""];
-    
     [self requestCalendar:@"" andDate:[NSDate date]];
     
     [self requestChartLine: @""];
+    
+    [self refreshSummaryWithUserId:@""];
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
 }
 
--(void) loadRequest {
+- (void) refreshSummaryWithUserId: (NSString *) userId{
+    [ProgressBarUtil showProgressBarOnView:self.view];
+    void(^onSuccess)(Sumary * sumary) = ^(Sumary * sumary){
+        [self populateLabelsWithSummary:sumary];
+        [ProgressBarUtil hiddenProgressBarOnView:self.view];
+    };
     
-    [self requestChartPie:@""];
-    
-    [self requestCalendar:@"" andDate:[NSDate date]];
-    
-    [self requestChartLine: @""];
+    [userRequester getSummary: [User getInstance]
+                                 idHousehold:userId
+                                     onStart: ^{}
+                                     onError: ^(NSString * message) {}
+                                   onSuccess: onSuccess];
 }
+
+-(void) populateLabelsWithSummary:(Sumary *) summary{
+    self.lbTotalParticipation.text = [NSString stringWithFormat:@"%d",summary.total];
+    self.lbTotalReportGood.text = [NSString stringWithFormat:@"%d",summary.noSymptom];
+    self.lbTotalReportBad.text = [NSString stringWithFormat:@"%d",summary.symptom];
+    
+    double goodPercent;
+    double badPercent;
+    
+    if (summary.total == 0) {
+        goodPercent = 0;
+    } else {
+        goodPercent = (summary.noSymptom / summary.total) *100;
+    }
+    
+    if (summary.total == 0) {
+        badPercent = 0;
+    } else {
+        badPercent = (summary.symptom / summary.total)*100;
+    }
+    
+    self.lbPercentGood.text = [NSString stringWithFormat:@"%g%%", goodPercent];
+    self.lbPercentBad.text = [NSString stringWithFormat:@"%g%%", badPercent];
+    
+    [self populateChartWithGoodPercent:goodPercent andBadPercent:badPercent];
+}
+
+-(void) populateChartWithGoodPercent: (int) goodPercent andBadPercent: (int) badPecent{
+    UIColor *goodColor = [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f];
+    UIColor *badColor = [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f];
+    
+    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:goodPercent color:goodColor],
+                       [PNPieChartDataItem dataItemWithValue:badPecent color:badColor]];
+    
+    if (firstTime) {
+        CGRect size = self.chartView.frame;
+        
+        self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(0, 0, size.size.width, size.size.height) items:items];
+        self.pieChart.showOnlyValues = YES;
+        self.pieChart.showAbsoluteValues = NO;
+        [self.pieChart strokeChart];
+        
+        [self.chartView addSubview:self.pieChart];
+        
+        firstTime = NO;
+    }else{
+        [self.pieChart updateChartData:items];
+        [self.pieChart strokeChart];
+    }
+    
+}
+
+
+
+//-----------------
+
 
 -(void) loadLabels:(BOOL)fristLoad andUser:(NSString *)idUSer {
     
@@ -136,17 +197,17 @@ const float _kCellHeight = 100.0f;
                         if (total == 0) {
                             goodPercent = 0;
                         } else {
-                            goodPercent = no_symptom / total;
+                            goodPercent = (no_symptom / total) *100;
                         }
                         
                         if (total == 0) {
                             badPercent = 0;
                         } else {
-                            badPercent = symptom / total;
+                            badPercent = (symptom / total)*100;
                         }
                         
-                        self.lbPercentGood.text = [[NSString stringWithFormat:@"%.02f", goodPercent] stringByAppendingString:@"%"];;
-                        self.lbPercentBad.text = [[NSString stringWithFormat:@"%.02f", badPercent] stringByAppendingString:@"%"];
+                        self.lbPercentGood.text = [NSString stringWithFormat:@"%g%%", goodPercent];
+                        self.lbPercentBad.text = [NSString stringWithFormat:@"%g%%", badPercent];
                         
                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                         NSLog(@"Error: %@", error);
@@ -184,6 +245,7 @@ const float _kCellHeight = 100.0f;
     [label setFont:[UIFont fontWithName:@"Arial" size:10.0]];
     [button addSubview:label];
     [button addSubview:imageView];
+    [button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
     [buttons addObject:button];
 }
 
@@ -255,42 +317,21 @@ const float _kCellHeight = 100.0f;
 
     UIButton *b = (UIButton *) sender;
     HouseholdThumbnail *thumb = (HouseholdThumbnail*) b.superview;
-    NSString *idHousehold = thumb.user_household_id;
-    
-    if ([idHousehold isEqualToString:user.idUser] || [idHousehold isEqualToString:@""]) {
-        [self loadLabels:YES andUser:selectedUser];
-        [self requestChartPie:@""];
-        [self requestCalendar:@"" andDate:[NSDate date]];
-        [self requestChartLine: @""];
-
-        selectedUser = user.idUser;
-    } else {
-        [self loadLabels:NO andUser:selectedUser];
-        [self requestChartPie:idHousehold];
-        [self requestCalendar:idHousehold andDate:[NSDate date]];
-        [self requestChartLine:idHousehold];
-
+    if ([thumb isKindOfClass: [HouseholdThumbnail class]]) {
+        NSString *idHousehold = thumb.user_household_id;
         selectedUser = idHousehold;
+        
+        [self refreshSummaryWithUserId:idHousehold];
+    }else{
+        [self refreshSummaryWithUserId:@""];
+        
+        selectedUser = @"";
     }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSLog(@"didSelectRowAtIndexPath");
-}
-
-- (void) loadChartPie {
-    
-    [self.chartView setUsePercentValuesEnabled: NO];
-    [self.chartView setDescriptionText: @""];
-    [self.chartView setDrawCenterTextEnabled: NO];
-    [self.chartView setDrawSliceTextEnabled: NO];
-    [self.chartView setDrawHoleEnabled: NO];
-    [self.chartView setHoleTransparent: NO];
-    [self.chartView setHoleRadiusPercent: 7];
-    [self.chartView setTransparentCircleRadiusPercent: 10];
-    [self.chartView setRotationAngle: 0];
-    [self.chartView setRotationEnabled: NO];
 }
 
 - (void) loadChartLine {
@@ -317,75 +358,14 @@ const float _kCellHeight = 100.0f;
     
     [self.calendarManager setMenuView: self.calendarMenuView];
     [self.calendarManager setContentView: self.calendarContentView];
-    
+
     [self.calendarManager setDate: [NSDate date]];
 }
 
-- (void) requestChartPie: (NSString *)idHousehold {
-    
-    [[[UserRequester alloc] init] getSummary: [User getInstance]
-     
-                                    idHousehold:idHousehold
-     
-                                     onStart: ^{
-                                         
-                                     }
-     
-                                     onError: ^(NSString * message) {
-                                         
-                                     }
-     
-                                   onSuccess: ^(Sumary * sumary) {
-                                       
-                                       NSArray * xData = @[@"Mal", @"Bem"];
-                                       
-                                       NSArray * yData = @[[NSNumber numberWithInt: sumary.symptom * 100],
-                                                           [NSNumber numberWithInt: sumary.noSymptom * 100]];
-                                       
-                                       NSMutableArray * xArray = [NSMutableArray array];
-                                       
-                                       for (NSString * value in xData) {
-                                           [xArray addObject: value];
-                                       }
-                                       
-                                       NSMutableArray * yArray = [NSMutableArray array];
-                                       
-                                       for (int i = 0; i < yData.count; i++) {
-                                           
-                                           NSNumber * value = [yData objectAtIndex: i];
-                                           
-                                           BarChartDataEntry * entry = [[BarChartDataEntry alloc] initWithValue: [value doubleValue]
-                                                                                                         xIndex: i];
-                                           [yArray addObject: entry];
-                                       }
-                                       
-                                       PieChartDataSet * dataSet = [[PieChartDataSet alloc] initWithYVals: yArray];
-                                       
-                                       [dataSet setSliceSpace: 2];
-                                       [dataSet setSelectionShift: 2];
-                                       
-                                       NSMutableArray * colorArray = [NSMutableArray array];
-                                       
-                                       [colorArray addObject: [DiaryHealthViewController toUiColor: @"#FF0000"]];
-                                       [colorArray addObject: [DiaryHealthViewController toUiColor: @"#CCCC00"]];
-                                       
-                                       [dataSet setColors: colorArray];
-                                       
-                                       PieChartData * data = [[PieChartData alloc] initWithXVals: xArray dataSet: dataSet];
-                                       
-                                       [data setDrawValues: NO];
-                                       [data setHighlightEnabled: NO];
-                                       
-                                       [self.chartView setData: data];
-                                       
-                                       [self.chartView setNeedsDisplay];
-                                   }
-     ];
-}
 
 - (void) requestChartLine: (NSString *)idHousehold {
     
-    [[[UserRequester alloc] init] getSummary: [User getInstance]
+    [userRequester getSummary: [User getInstance]
                                  idHousehold: idHousehold
                                         year: 2015
      
@@ -432,25 +412,20 @@ const float _kCellHeight = 100.0f;
 
 - (void) requestCalendar: (NSString *)idHousehold andDate:(NSDate *) date {
     
-    [[[UserRequester alloc] init] getSummary: [User getInstance]
+    void (^onSuccess)(NSMutableDictionary * sumaryCalendarMap) = ^void(NSMutableDictionary * sumaryCalendarMap){
+        [self.calendarMap removeAllObjects];
+        self.calendarMap = sumaryCalendarMap;
+
+        [self.calendarManager reload];
+    };
+    
+    [userRequester getSummary: [User getInstance]
                                  idHousehold: idHousehold
                                        month: [self getMonth: date]
                                         year: [self getYear: date]
-     
-                                     onStart: ^{
-                                         
-                                     }
-     
-                                     onError: ^(NSString * message) {
-                                         
-                                     }
-     
-                                   onSuccess: ^(NSMutableDictionary * sumaryCalendarMap) {
-                                       
-                                       self.calendarMap = sumaryCalendarMap;
-                                       
-                                       [self.calendarManager reload];
-                                   }
+                                     onStart: ^{}
+                                     onError: ^(NSError * error){}
+                                   onSuccess: onSuccess
      ];
 }
 
@@ -464,14 +439,17 @@ const float _kCellHeight = 100.0f;
             dayView.hidden = YES;
         }
         
-        NSString * key = [NSString stringWithFormat: @"%li-%li-%li",
+        NSString * key = [NSString stringWithFormat: @"%d-%d-%d",
                           [self getDay: dayView.date], [self getMonth: dayView.date], [self getYear: dayView.date]];
         
         SumaryCalendar * sumaryCalendar = [self.calendarMap objectForKey: key];
         
         if (sumaryCalendar) {
-            
+            NSLog(@"key = %@", key);
             [dayView addSubview: [self getState: sumaryCalendar]];
+        }else{
+            UIImageView * view = [[UIImageView alloc] initWithFrame: CGRectMake(9, 0, 23, 23)];
+            [dayView addSubview: view];
         }
     }
 }
