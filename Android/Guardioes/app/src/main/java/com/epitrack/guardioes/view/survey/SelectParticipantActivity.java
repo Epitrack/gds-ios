@@ -147,9 +147,9 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
             e.printStackTrace();
         }
 
+        parentList.add(new User(R.drawable.img_add_profile, "    Adicionar\nnovo membro", "", "-1", "", "", "", ""));
         recyclerView.setAdapter(new ParentAdapter(getApplicationContext(), this, parentList));
     }
-
 
     @Override
     protected void onResume() {
@@ -164,7 +164,7 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         loadHousehold();
     }
 
-    @OnClick(R.id.button_add)
+    //@OnClick(R.id.button_add)
     public void onAdd() {
         final Bundle bundle = new Bundle();
 
@@ -184,10 +184,18 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
 
     @Override
     public void onParentSelect(String id) {
-        final Bundle bundle = new Bundle();
+        if (id.equals("-1")) {
+            final Bundle bundle = new Bundle();
 
-        bundle.putString("id_user", id);
-        bundle.putBoolean(Constants.Bundle.NEW_MEMBER, false);
-        navigateTo(StateActivity.class, bundle);
+            bundle.putBoolean(Constants.Bundle.NEW_MEMBER, true);
+            bundle.putBoolean(Constants.Bundle.SOCIAL_NEW, false);
+            navigateTo(UserActivity.class, bundle);
+        } else {
+            final Bundle bundle = new Bundle();
+
+            bundle.putString("id_user", id);
+            bundle.putBoolean(Constants.Bundle.NEW_MEMBER, false);
+            navigateTo(StateActivity.class, bundle);
+        }
     }
 }

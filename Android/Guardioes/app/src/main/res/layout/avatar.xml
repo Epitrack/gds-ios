@@ -30,7 +30,7 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/selector_button_white_dark"
-            android:text="@string/take_photo"
+            android:text="@string/save"
             android:textColor="@color/primary_light" />
 
     </LinearLayout>

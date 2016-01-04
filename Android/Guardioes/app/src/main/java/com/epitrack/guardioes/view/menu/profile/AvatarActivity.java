@@ -63,7 +63,17 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
         handler.update(view, (Avatar) adapterView.getItemAtPosition(position));
     }
 
-    public void onSave(final MenuItem menuItem) {
+    public void onPhoto(final MenuItem menuItem) {
+        final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getPhotoFile()));
+        intent.putExtra(MediaStore.EXTRA_SCREEN_ORIENTATION, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        startActivityForResult(intent, Constants.RequestCode.IMAGE);
+    }
+
+    @OnClick(R.id.button_photo)
+    public void onSave() {
 
         if (handler.getAvatar() == null) {
 
@@ -79,17 +89,6 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
 
             finish();
         }
-    }
-
-    @OnClick(R.id.button_photo)
-    public void onPhoto() {
-
-        final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getPhotoFile()));
-        intent.putExtra(MediaStore.EXTRA_SCREEN_ORIENTATION, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        startActivityForResult(intent, Constants.RequestCode.IMAGE);
     }
 
     @Override
