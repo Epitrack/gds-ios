@@ -46,6 +46,7 @@
     NSString *selectedUser;
     UserRequester *userRequester;
     BOOL firstTime;
+    int requestsInProcess;
 }
 
 const float _kCellHeight = 100.0f;
@@ -80,27 +81,26 @@ const float _kCellHeight = 100.0f;
     
     [self loadChartLine];
     
+    [self refreshSummaryWithUserId:@""];
+    
     [self requestCalendar:@"" andDate:[NSDate date]];
     
     [self requestChartLine: @""];
-    
-    [self refreshSummaryWithUserId:@""];
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void) refreshSummaryWithUserId: (NSString *) userId{
-    [ProgressBarUtil showProgressBarOnView:self.view];
     void(^onSuccess)(Sumary * sumary) = ^(Sumary * sumary){
         [self populateLabelsWithSummary:sumary];
-        [ProgressBarUtil hiddenProgressBarOnView:self.view];
+        [self hiddenProgressBar];
     };
     
     [userRequester getSummary: [User getInstance]
                                  idHousehold:userId
-                                     onStart: ^{}
-                                     onError: ^(NSString * message) {}
+                                     onStart: ^{[self showProgressBar];}
+                                     onError: ^(NSString * message) {[self hiddenProgressBar];}
                                    onSuccess: onSuccess];
 }
 
@@ -115,13 +115,13 @@ const float _kCellHeight = 100.0f;
     if (summary.total == 0) {
         goodPercent = 0;
     } else {
-        goodPercent = (summary.noSymptom / summary.total) *100;
+        goodPercent = (summary.noSymptom * 100) / summary.total;
     }
     
     if (summary.total == 0) {
         badPercent = 0;
     } else {
-        badPercent = (summary.symptom / summary.total)*100;
+        badPercent = (summary.symptom * 100) / summary.total;
     }
     
     self.lbPercentGood.text = [NSString stringWithFormat:@"%g%%", goodPercent];
@@ -130,7 +130,15 @@ const float _kCellHeight = 100.0f;
     [self populateChartWithGoodPercent:goodPercent andBadPercent:badPercent];
 }
 
--(void) populateChartWithGoodPercent: (int) goodPercent andBadPercent: (int) badPecent{
+-(void) populateChartWithGoodPercent: (double) goodPercent andBadPercent: (double) badPecent{
+    
+    if(goodPercent == 0 && badPecent == 0){
+        self.chartView.hidden = YES;
+        return;
+    }
+    
+    self.chartView.hidden = NO;
+    
     UIColor *goodColor = [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f];
     UIColor *badColor = [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f];
     
@@ -153,65 +161,6 @@ const float _kCellHeight = 100.0f;
         [self.pieChart strokeChart];
     }
     
-}
-
-
-
-//-----------------
-
-
--(void) loadLabels:(BOOL)fristLoad andUser:(NSString *)idUSer {
-    
-    NSString * url;
-    
-    if (fristLoad) {
-        url = [NSString stringWithFormat: @"%@/user/survey/summary", Url];
-    } else {
-        if ([selectedUser isEqualToString:user.idUser]) {
-            url = [NSString stringWithFormat: @"%@/user/survey/summary", Url];
-        } else {
-            url = [NSString stringWithFormat: @"%@/household/survey/summary?household_id=%@", Url, selectedUser];
-        }
-    }
-    
-    AFHTTPRequestOperationManager *managerTotalSurvey;
-    managerTotalSurvey = [AFHTTPRequestOperationManager manager];
-    [managerTotalSurvey.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [managerTotalSurvey.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
-    [managerTotalSurvey GET:url
-                 parameters:nil
-                    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                        NSDictionary *summary = responseObject[@"data"];
-                       
-                        long total = [summary[@"total"] integerValue];
-                        long no_symptom = [summary[@"no_symptom"] integerValue];
-                        long symptom = [summary[@"symptom"] integerValue];
-                        
-                        self.lbTotalParticipation.text = [NSString stringWithFormat:@"%ld",total];
-                        self.lbTotalReportGood.text = [NSString stringWithFormat:@"%ld",no_symptom];
-                        self.lbTotalReportBad.text = [NSString stringWithFormat:@"%ld",symptom];
-                        
-                        double goodPercent;
-                        double badPercent;
-                        
-                        if (total == 0) {
-                            goodPercent = 0;
-                        } else {
-                            goodPercent = (no_symptom / total) *100;
-                        }
-                        
-                        if (total == 0) {
-                            badPercent = 0;
-                        } else {
-                            badPercent = (symptom / total)*100;
-                        }
-                        
-                        self.lbPercentGood.text = [NSString stringWithFormat:@"%g%%", goodPercent];
-                        self.lbPercentBad.text = [NSString stringWithFormat:@"%g%%", badPercent];
-                        
-                    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                        NSLog(@"Error: %@", error);
-                    }];
 }
 
 #pragma tableview datasource
@@ -238,7 +187,7 @@ const float _kCellHeight = 100.0f;
     [imageView setImage:[UIImage imageNamed:avatar]];
     
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 50, button.bounds.size.width/2, button.bounds.size.height/2)];
-    label.text= user.nick;
+    label.text= [user.nick componentsSeparatedByString:@" "][0];
     label.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
     label.textColor = [UIColor whiteColor];
     [label setTextAlignment:NSTextAlignmentCenter];
@@ -322,8 +271,16 @@ const float _kCellHeight = 100.0f;
         selectedUser = idHousehold;
         
         [self refreshSummaryWithUserId:idHousehold];
+        
+        [self requestCalendar:idHousehold andDate:[NSDate date]];
+        
+        [self requestChartLine: idHousehold];
     }else{
         [self refreshSummaryWithUserId:@""];
+        
+        [self requestCalendar:@"" andDate:[NSDate date]];
+        
+        [self requestChartLine: @""];
         
         selectedUser = @"";
     }
@@ -364,21 +321,14 @@ const float _kCellHeight = 100.0f;
 
 
 - (void) requestChartLine: (NSString *)idHousehold {
-    
+
     [userRequester getSummary: [User getInstance]
                                  idHousehold: idHousehold
                                         year: 2015
-     
-                                     onStart: ^{
-                                         
-                                     }
-     
-                                     onError: ^(NSString * message) {
-                                         
-                                     }
-     
+                                     onStart: ^{[self showProgressBar];}
+                                     onError: ^(NSString * message) {[self hiddenProgressBar];}
                                    onSuccess: ^(NSMutableDictionary * sumaryGraphMap) {
-                                       
+                                       [self hiddenProgressBar];
                                        for (int i = 1; i <= 12; i++) {
                                            
                                            if (![sumaryGraphMap objectForKey: [NSNumber numberWithInt: i]]) {
@@ -406,25 +356,25 @@ const float _kCellHeight = 100.0f;
                                        self.graphView.graphDataLabels = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dev"];
                                        
                                        [self.graphView plotGraphData];
+                                       
                                    }
      ];
 }
 
 - (void) requestCalendar: (NSString *)idHousehold andDate:(NSDate *) date {
-    
     void (^onSuccess)(NSMutableDictionary * sumaryCalendarMap) = ^void(NSMutableDictionary * sumaryCalendarMap){
-        [self.calendarMap removeAllObjects];
         self.calendarMap = sumaryCalendarMap;
 
         [self.calendarManager reload];
+        [self hiddenProgressBar];
     };
     
     [userRequester getSummary: [User getInstance]
                                  idHousehold: idHousehold
                                        month: [self getMonth: date]
                                         year: [self getYear: date]
-                                     onStart: ^{}
-                                     onError: ^(NSError * error){}
+                                     onStart: ^{[self showProgressBar];}
+                                     onError: ^(NSError * error){[self hiddenProgressBar];}
                                    onSuccess: onSuccess
      ];
 }
@@ -537,6 +487,22 @@ const float _kCellHeight = 100.0f;
                            green: ((rgbValue & 0xFF00) >> 8) / 255.0
                             blue: (rgbValue & 0xFF) / 255.0
                            alpha: 1.0];
+}
+
+-(void) showProgressBar{
+    if (requestsInProcess == 0) {
+        [ProgressBarUtil showProgressBarOnView:self.view];
+    }
+    
+    requestsInProcess ++;
+}
+
+-(void) hiddenProgressBar{
+    requestsInProcess --;
+    
+    if (requestsInProcess == 0) {
+        [ProgressBarUtil hiddenProgressBarOnView:self.view];
+    }
 }
 
 @end
