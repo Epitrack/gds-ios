@@ -313,10 +313,29 @@ const float _kCellHeight = 100.0f;
     
     self.calendarManager.delegate = self;
     
+    self.calendarMenuView.contentRatio = .75;
+    self.calendarManager.settings.weekDayFormat = JTCalendarWeekDayFormatShort;
+    self.calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"pt_Br"];
+    
     [self.calendarManager setMenuView: self.calendarMenuView];
+
     [self.calendarManager setContentView: self.calendarContentView];
 
     [self.calendarManager setDate: [NSDate date]];
+}
+
+- (void)calendar:(JTCalendarManager *)calendar prepareMenuItemView:(UILabel *)menuItemView date:(NSDate *)date
+{
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"MMMM yyyy";
+        
+        dateFormatter.locale = _calendarManager.dateHelper.calendar.locale;
+        dateFormatter.timeZone = _calendarManager.dateHelper.calendar.timeZone;
+    }
+    
+    menuItemView.text = [[dateFormatter stringFromDate:date] capitalizedString];
 }
 
 
