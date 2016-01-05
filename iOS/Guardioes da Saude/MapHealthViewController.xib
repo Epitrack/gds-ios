@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapHealthViewController">
@@ -46,7 +45,7 @@
                                 <constraint firstAttribute="height" constant="21" id="2sE-Kj-wtn"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-dg-bQ6">
@@ -55,7 +54,7 @@
                                 <constraint firstAttribute="height" constant="21" id="7KY-Q8-dGP"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -75,6 +74,10 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3m-j6-9yR">
                     <rect key="frame" x="250" y="469" width="62" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="62" id="AVG-s4-3SG"/>
+                        <constraint firstAttribute="width" constant="62" id="Qrr-oj-tMa"/>
+                    </constraints>
                     <state key="normal" backgroundImage="fab_plus.png"/>
                     <connections>
                         <action selector="showDetailMapPlus:" destination="-1" eventType="touchUpInside" id="vff-2M-Wa6"/>
@@ -85,7 +88,6 @@
             <constraints>
                 <constraint firstItem="d2g-yO-efd" firstAttribute="top" secondItem="s3m-j6-9yR" secondAttribute="bottom" constant="-24" id="BKH-gR-Tyr"/>
                 <constraint firstItem="zon-Qs-2fy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="63" id="D9g-J0-NIk"/>
-                <constraint firstItem="s3m-j6-9yR" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="31:284" id="ECI-sK-v3i"/>
                 <constraint firstItem="d2g-yO-efd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Nuk-Zv-0TB"/>
                 <constraint firstAttribute="bottom" secondItem="d2g-yO-efd" secondAttribute="bottom" id="Tdg-5e-d4t"/>
                 <constraint firstItem="8S8-Jl-wxO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Uw6-2L-CPU"/>

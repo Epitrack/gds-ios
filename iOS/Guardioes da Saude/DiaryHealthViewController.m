@@ -408,7 +408,7 @@ const float _kCellHeight = 100.0f;
             dayView.hidden = YES;
         }
         
-        NSString * key = [NSString stringWithFormat: @"%d-%d-%d",
+        NSString * key = [NSString stringWithFormat: @"%li-%li-%li",
                           [self getDay: dayView.date], [self getMonth: dayView.date], [self getYear: dayView.date]];
         
         SumaryCalendar * sumaryCalendar = [self.calendarMap objectForKey: key];
