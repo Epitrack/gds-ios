@@ -58,7 +58,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recife" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PA-Yq-vsC">
-                    <rect key="frame" x="15" y="70" width="289.5" height="25"/>
+                    <rect key="frame" x="15" y="65" width="289.5" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="aaR-VZ-sKI"/>
                     </constraints>
@@ -67,37 +67,37 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exantemáica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5x-Ad-xIf">
-                    <rect key="frame" x="15" y="386" width="89" height="20.5"/>
+                    <rect key="frame" x="15" y="381" width="89" height="20.5"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diarreica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyI-LA-OAn">
-                    <rect key="frame" x="15" y="345" width="62" height="20.5"/>
+                    <rect key="frame" x="15" y="340" width="62" height="20.5"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Respiratória" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlE-SP-qKp">
-                    <rect key="frame" x="15" y="426" width="83" height="20.5"/>
+                    <rect key="frame" x="15" y="421" width="83" height="20.5"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999.999" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D49-qF-Qyx">
-                    <rect key="frame" x="15" y="124" width="61.5" height="20.5"/>
+                    <rect key="frame" x="15" y="119" width="61.5" height="20.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participações essa semana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvU-gR-JXp">
-                    <rect key="frame" x="87" y="126" width="167" height="18"/>
+                    <rect key="frame" x="87" y="121" width="167" height="18"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egE-rj-4tt">
-                    <rect key="frame" x="15" y="152" width="38.5" height="20.5"/>
+                    <rect key="frame" x="15" y="147" width="38.5" height="20.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20.5" id="3bz-x4-USs"/>
                     </constraints>
@@ -106,7 +106,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_well.png" translatesAutoresizingMaskIntoConstraints="NO" id="s39-SS-Dhp">
-                    <rect key="frame" x="15" y="180" width="57" height="56"/>
+                    <rect key="frame" x="15" y="175" width="57" height="56"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="eBu-wg-52M"/>
                         <constraint firstAttribute="width" secondItem="s39-SS-Dhp" secondAttribute="height" multiplier="1:1" id="hKh-d5-74T"/>
@@ -119,7 +119,7 @@
                     </variation>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_bad.png" translatesAutoresizingMaskIntoConstraints="NO" id="WUg-BP-v5e">
-                    <rect key="frame" x="15" y="251" width="57" height="57"/>
+                    <rect key="frame" x="15" y="246" width="57" height="57"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="WUg-BP-v5e" secondAttribute="height" multiplier="1:1" id="OIz-Xx-dbF"/>
                         <constraint firstAttribute="width" constant="57" id="wc8-jQ-bdd"/>
@@ -127,13 +127,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6p-2s-jEC">
-                    <rect key="frame" x="128" y="251" width="22.5" height="18"/>
+                    <rect key="frame" x="128" y="246" width="22.5" height="18"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIB-f1-Bhb">
-                    <rect key="frame" x="80" y="180" width="37.5" height="18"/>
+                    <rect key="frame" x="80" y="175" width="37.5" height="18"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="tIB-f1-Bhb" secondAttribute="height" multiplier="2:1" id="ssi-rg-dGg"/>
                     </constraints>
@@ -147,76 +147,76 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OG-v3-zgD">
-                    <rect key="frame" x="80" y="251" width="37.5" height="18"/>
+                    <rect key="frame" x="80" y="246" width="37.5" height="18"/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izc-0j-mfJ">
-                    <rect key="frame" x="125" y="180" width="28.5" height="18"/>
+                    <rect key="frame" x="125" y="175" width="28.5" height="18"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="292.800" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJY-g6-YiJ">
-                    <rect key="frame" x="82" y="296" width="35" height="12"/>
+                    <rect key="frame" x="82" y="291" width="35" height="12"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="10"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="292.800" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO5-Gh-Sn0">
-                    <rect key="frame" x="86" y="224" width="35" height="12"/>
+                    <rect key="frame" x="86" y="219" width="35" height="12"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="10"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Síndromes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbf-uo-6JT">
-                    <rect key="frame" x="15" y="316" width="75" height="20.5"/>
+                    <rect key="frame" x="15" y="311" width="75" height="20.5"/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
                     <color key="textColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="eH5-am-Zro">
-                    <rect key="frame" x="15" y="447" width="290" height="2"/>
+                    <rect key="frame" x="15" y="442" width="290" height="2"/>
                 </progressView>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="dgX-C1-R58">
-                    <rect key="frame" x="15" y="369" width="290" height="2"/>
+                    <rect key="frame" x="15" y="364" width="290" height="2"/>
                 </progressView>
                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LS0-WN-wrD">
-                    <rect key="frame" x="15" y="412" width="290" height="2"/>
+                    <rect key="frame" x="15" y="407" width="290" height="2"/>
                 </progressView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relatórios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9M-LA-Vkp">
-                    <rect key="frame" x="126" y="224" width="41" height="12"/>
+                    <rect key="frame" x="126" y="219" width="41" height="12"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="10"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relatórios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXf-Eo-S89">
-                    <rect key="frame" x="125" y="296" width="41" height="12"/>
+                    <rect key="frame" x="125" y="291" width="41" height="12"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="10"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCE-ha-b97">
-                    <rect key="frame" x="271.5" y="347" width="33.5" height="17"/>
+                    <rect key="frame" x="271.5" y="342" width="33.5" height="17"/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
                     <color key="textColor" red="0.073835509879999997" green="0.3219764182" blue="0.63230698529999996" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4p-LY-TyW">
-                    <rect key="frame" x="271" y="388" width="33.5" height="17"/>
+                    <rect key="frame" x="271" y="383" width="33.5" height="17"/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
                     <color key="textColor" red="0.073835509879999997" green="0.3219764182" blue="0.63230698529999996" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtx-CD-dVu">
-                    <rect key="frame" x="271" y="428" width="33.5" height="17"/>
+                    <rect key="frame" x="271" y="423" width="33.5" height="17"/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
                     <color key="textColor" red="0.073835509879999997" green="0.3219764182" blue="0.63230698529999996" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuI-qc-Tt9">
-                    <rect key="frame" x="98" y="318" width="16" height="16"/>
+                    <rect key="frame" x="98" y="313" width="16" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="MVk-lL-BvK"/>
                         <constraint firstAttribute="width" constant="16" id="N52-yf-yEK"/>
@@ -227,7 +227,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lo-Kz-BAj" userLabel="View Chart">
-                    <rect key="frame" x="189" y="180" width="116" height="128"/>
+                    <rect key="frame" x="189" y="175" width="116" height="128"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8Lo-Kz-BAj" secondAttribute="height" multiplier="29:32" id="2yW-B0-iyi"/>
@@ -236,7 +236,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pernanbuco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcC-bU-tJ5">
-                    <rect key="frame" x="15" y="96" width="289.5" height="20.5"/>
+                    <rect key="frame" x="15" y="91" width="289.5" height="20.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20.5" id="TaJ-L0-Ahd"/>
                     </constraints>
@@ -249,7 +249,7 @@
             <constraints>
                 <constraint firstItem="8Lo-Kz-BAj" firstAttribute="top" secondItem="TvU-gR-JXp" secondAttribute="bottom" constant="36" id="1dd-Ur-DeE"/>
                 <constraint firstItem="eH5-am-Zro" firstAttribute="trailing" secondItem="LS0-WN-wrD" secondAttribute="trailing" id="2dm-lc-nuI"/>
-                <constraint firstItem="1PA-Yq-vsC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="3HG-TL-TYB"/>
+                <constraint firstItem="1PA-Yq-vsC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="3HG-TL-TYB"/>
                 <constraint firstItem="8OG-v3-zgD" firstAttribute="top" secondItem="WUg-BP-v5e" secondAttribute="top" id="3Np-Da-c7u"/>
                 <constraint firstItem="WUg-BP-v5e" firstAttribute="top" secondItem="s39-SS-Dhp" secondAttribute="bottom" constant="15" id="54F-16-U2F"/>
                 <constraint firstItem="Q4p-LY-TyW" firstAttribute="centerY" secondItem="x5x-Ad-xIf" secondAttribute="centerY" id="5MN-Jk-HDB"/>
