@@ -59,7 +59,7 @@ public class ImageActivity extends BaseAppCompatActivity {
 
             cropImageView.setImageBitmap(BitmapUtility.scale(width, height, uri.getPath()));
 
-            super.onBackPressed();
+            //super.onBackPressed();
         }
     }
 

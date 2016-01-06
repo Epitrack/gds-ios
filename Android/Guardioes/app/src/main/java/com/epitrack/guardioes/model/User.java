@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 
 import org.json.JSONArray;
 
+import android.net.Uri;
+
 public class User {
 
     // TODO: This is for stub only.
@@ -34,6 +36,7 @@ public class User {
     private JSONArray hashtags;
     private int widthImageProfile;
     private int heightImageProfile;
+    private Uri uri;
 
     public User() {
 
@@ -272,5 +275,13 @@ public class User {
 
     public void setHeightImageProfile(int heightImageProfile) {
         this.heightImageProfile = heightImageProfile;
+    }
+
+    public Uri getUri() {
+        return uri;
+    }
+
+    public void setUri(Uri uri) {
+        this.uri = uri;
     }
 }

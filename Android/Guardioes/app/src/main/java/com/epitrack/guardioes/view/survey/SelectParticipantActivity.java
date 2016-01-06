@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.survey;
 
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -73,7 +74,8 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         if (singleUser.getImageResource().equals("")) {
 
             if (singleUser.getPicture().length() > 2) {
-                singleUser.setPicture("0");
+                Uri uri = Uri.parse(singleUser.getPicture());
+                imageViewAvatar.setImageURI(uri);
             }
 
             if (Integer.parseInt(singleUser.getPicture()) == 0) {
