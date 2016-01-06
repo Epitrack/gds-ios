@@ -10,11 +10,14 @@
 #import "AFNetworking/AFNetworking.h"
 #import "DetailMap.h"
 #import "MapHealthViewController.h"
+@import Charts;
 
 @interface DetailMapHealthViewController () {
     
     DetailMap *detailMap;
 }
+@property (nonatomic, weak) IBOutlet PieChartView * pieChartView;
+
 @end
 
 @implementation DetailMapHealthViewController
@@ -48,20 +51,57 @@
     float goodPercent = [detailMap.goodPercent floatValue];
     float badPercent = [detailMap.badPercent floatValue];
     
-    UIColor *goodColor = [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f];
-    UIColor *badColor = [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f];
+    [self.pieChartView setUsePercentValuesEnabled: NO];
+    [self.pieChartView setDescriptionText: @""];
+    [self.pieChartView setDrawCenterTextEnabled: NO];
+    [self.pieChartView setDrawSliceTextEnabled: NO];
+    [self.pieChartView setHoleTransparent: NO];
+    [self.pieChartView setDrawHoleEnabled: NO];
+    [self.pieChartView setRotationEnabled: NO];
+    self.pieChartView.legend.enabled = NO;
+
     
-    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:goodPercent color:goodColor],
-                       [PNPieChartDataItem dataItemWithValue:badPercent color:badColor]];
+    NSArray * xData = @[@"Mal", @"Bem"];
     
-    CGRect size = self.pieChartView.frame;
+    NSArray * yData = @[[NSNumber numberWithInt: goodPercent],
+                        [NSNumber numberWithInt: badPercent]];
     
-    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(0, 0, size.size.width, size.size.height) items:items];
-    self.pieChart.showOnlyValues = YES;
-    self.pieChart.showAbsoluteValues = NO;
-    [self.pieChart strokeChart];
+    NSMutableArray * xArray = [NSMutableArray array];
     
-    [self.pieChartView addSubview:self.pieChart];
+    for (NSString * value in xData) {
+        [xArray addObject: value];
+    }
+    
+    NSMutableArray * yArray = [NSMutableArray array];
+    
+    for (int i = 0; i < yData.count; i++) {
+        
+        NSNumber * value = [yData objectAtIndex: i];
+        
+        BarChartDataEntry * entry = [[BarChartDataEntry alloc] initWithValue: [value doubleValue]
+                                                                      xIndex: i];
+        [yArray addObject: entry];
+    }
+    
+    PieChartDataSet * dataSet = [[PieChartDataSet alloc] initWithYVals: yArray];
+    
+    [dataSet setSliceSpace: 2];
+    [dataSet setSelectionShift: 2];
+    
+    NSMutableArray * colorArray = [NSMutableArray array];
+    
+    [colorArray addObject: [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f]];
+    [colorArray addObject: [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f]];
+    
+    [dataSet setColors: colorArray];
+    
+    PieChartData * data = [[PieChartData alloc] initWithXVals: xArray dataSet: dataSet];
+    
+    [data setDrawValues: NO];
+    [data setHighlightEnabled: NO];
+    
+    [self.pieChartView setData: data];
+    [self.pieChartView setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning {

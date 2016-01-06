@@ -139,27 +139,60 @@ const float _kCellHeight = 100.0f;
     
     self.chartView.hidden = NO;
     
-    UIColor *goodColor = [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f];
-    UIColor *badColor = [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f];
+    [self.chartView setUsePercentValuesEnabled: NO];
+    [self.chartView setDescriptionText: @""];
+    [self.chartView setDrawCenterTextEnabled: NO];
+    [self.chartView setDrawSliceTextEnabled: NO];
+    [self.chartView setDrawHoleEnabled: NO];
+    [self.chartView setHoleTransparent: NO];
+    [self.chartView setHoleRadiusPercent: 7];
+    [self.chartView setTransparentCircleRadiusPercent: 10];
+    [self.chartView setRotationAngle: 0];
+    [self.chartView setRotationEnabled: NO];
+    self.chartView.legend.enabled = NO;
     
-    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:goodPercent color:goodColor],
-                       [PNPieChartDataItem dataItemWithValue:badPecent color:badColor]];
+    NSArray * xData = @[@"Mal", @"Bem"];
     
-    if (firstTime) {
-        CGRect size = self.chartView.frame;
-        
-        self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(0, 0, size.size.width, size.size.height) items:items];
-        self.pieChart.showOnlyValues = YES;
-        self.pieChart.showAbsoluteValues = NO;
-        [self.pieChart strokeChart];
-        
-        [self.chartView addSubview:self.pieChart];
-        
-        firstTime = NO;
-    }else{
-        [self.pieChart updateChartData:items];
-        [self.pieChart strokeChart];
+    NSArray * yData = @[[NSNumber numberWithInt: badPecent],
+                        [NSNumber numberWithInt: goodPercent]];
+    
+    NSMutableArray * xArray = [NSMutableArray array];
+    
+    for (NSString * value in xData) {
+        [xArray addObject: value];
     }
+    
+    NSMutableArray * yArray = [NSMutableArray array];
+    
+    for (int i = 0; i < yData.count; i++) {
+        
+        NSNumber * value = [yData objectAtIndex: i];
+        
+        BarChartDataEntry * entry = [[BarChartDataEntry alloc] initWithValue: [value doubleValue]
+                                                                      xIndex: i];
+        [yArray addObject: entry];
+    }
+    
+    PieChartDataSet * dataSet = [[PieChartDataSet alloc] initWithYVals: yArray];
+    
+    [dataSet setSliceSpace: 2];
+    [dataSet setSelectionShift: 2];
+    
+    NSMutableArray * colorArray = [NSMutableArray array];
+    
+    [colorArray addObject: [DiaryHealthViewController toUiColor: @"#FF0000"]];
+    [colorArray addObject: [DiaryHealthViewController toUiColor: @"#CCCC00"]];
+    
+    [dataSet setColors: colorArray];
+    
+    PieChartData * data = [[PieChartData alloc] initWithXVals: xArray dataSet: dataSet];
+    
+    [data setDrawValues: NO];
+    [data setHighlightEnabled: NO];
+    
+    [self.chartView setData: data];
+    
+    [self.chartView setNeedsDisplay];
     
 }
 

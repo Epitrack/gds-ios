@@ -24,8 +24,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbPercentExantematica;
 @property (weak, nonatomic) IBOutlet UILabel *lbPercentRespiratoria;
 - (IBAction)btnInfoAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UIView *pieChartView;
-
-@property (nonatomic) PNPieChart *pieChart;
 
 @end
