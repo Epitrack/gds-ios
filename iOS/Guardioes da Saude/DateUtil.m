@@ -20,6 +20,16 @@
     return nil;
 }
 
++ (NSDate *) dateFromStringUS: (NSString *) strDate{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    if (strDate != nil && ![strDate isEqualToString:@""]) {
+        return [formatter dateFromString:[strDate substringToIndex:10]];
+    }
+    
+    return nil;
+}
+
 + (NSString *) stringFromDate: (NSDate *) date{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd/MM/yyyy"];

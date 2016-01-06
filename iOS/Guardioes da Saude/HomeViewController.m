@@ -18,6 +18,7 @@
 #import "DiaryHealthViewController.h"
 #import "NoticeRequester.h"
 #import "SingleNotice.h"
+#import "ProgressBarUtil.h"
 
 @interface HomeViewController ()
 
@@ -162,6 +163,7 @@
 
 - (BOOL) authorizedAutomaticLogin:(NSString *)userToken {
     
+    [ProgressBarUtil showProgressBarOnView:self.view];
     AFHTTPRequestOperationManager *manager;
     
     manager = [AFHTTPRequestOperationManager manager];
@@ -170,6 +172,7 @@
     [manager GET:@"http://api.guardioesdasaude.org/user/lookup/"
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             [ProgressBarUtil hiddenProgressBarOnView:self.view];
              
              if ([responseObject[@"error"] boolValue] == 1) {
                  user.user_token = nil;
@@ -204,6 +207,7 @@
              }
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             [ProgressBarUtil hiddenProgressBarOnView:self.view];
              NSLog(@"Error: %@", error);
              user.user_token = nil;
          }];

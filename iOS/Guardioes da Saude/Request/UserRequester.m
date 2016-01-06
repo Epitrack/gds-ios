@@ -287,7 +287,7 @@
     [params setValue:user.picture forKey:@"picture"];
     [params setValue:user.idUser forKey:@"id"];
     
-    if (![user.password isEqualToString:@""]) {
+    if (user.password) {
         [params setValue:user.password forKey:@"password"];
     }
     

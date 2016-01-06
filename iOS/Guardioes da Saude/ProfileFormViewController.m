@@ -14,10 +14,12 @@
 #import "SelectAvatarViewController.h"
 #import "UserRequester.h"
 #import "HouseholdRequester.h"
+#import "DateUtil.h"
 
 @interface ProfileFormViewController () {
     UserRequester *userRequester;
     HouseholdRequester *householdRequester;
+    NSDate *birthdate;
 }
 
 @end
@@ -73,6 +75,10 @@
     self.txtConfirmPassword.hidden = YES;
     
     self.pictureSelected = @"1";
+
+    birthdate = [DateUtil dateFromString:@"10/10/1990"];
+    [self updateBirthDate];
+
 }
 
 - (void) populateFormWithNick: (NSString *) nick
@@ -82,10 +88,12 @@
                       andRace: (NSString *) race
                    andPicture: (NSString *) picture{
     self.txtNick.text = nick;
-    self.txtDob.text = [self formatterDate:dob];
     self.txtEmail.text = email;
     
-    if ([gender isEqualToString:@"0"]) {
+    birthdate = [DateUtil dateFromStringUS:dob];
+    [self updateBirthDate];
+    
+    if ([gender isEqualToString:@"M"]) {
         self.segmentGender.selectedSegmentIndex = 0;
     } else {
         self.segmentGender.selectedSegmentIndex = 1;
@@ -106,14 +114,6 @@
     [self updatePicture:picture];
 }
 
-- (NSString *) formatterDate: (NSString *) date{
-    NSString *day = [date substringWithRange:NSMakeRange(8, 2)];
-    NSString *month = [date substringWithRange:NSMakeRange(5, 2)];
-    NSString *year = [date substringWithRange:NSMakeRange(0, 4)];
-    
-    return [NSString stringWithFormat:@"%@/%@/%@", day, month, year];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -122,7 +122,6 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.txtNick endEditing:YES];
     [self.txtEmail endEditing:YES];
-    [self.txtDob endEditing:YES];
     [self.txtPassword endEditing:YES];
     [self.txtConfirmPassword endEditing:YES];
     
@@ -132,7 +131,6 @@
     [textField resignFirstResponder];
     [self.txtNick resignFirstResponder];
     [self.txtEmail resignFirstResponder];
-    [self.txtDob resignFirstResponder];
     [self.txtPassword resignFirstResponder];
     [self.txtConfirmPassword resignFirstResponder];
     return TRUE;
@@ -151,65 +149,11 @@
     BOOL fieldsValid = YES;
     if ([self.txtNick.text isEqualToString:@""]) {
         fieldsValid = NO;
-    } else if ([self.txtDob.text isEqualToString:@""]) {
-        fieldsValid = NO;
     } else if ([self.txtEmail.text isEqualToString:@""] && self.operation == EDIT_USER) {
         fieldsValid = NO;
     }
     
     return fieldsValid;
-}
-
-- (BOOL) validateDate{
-    BOOL dateValid = YES;
-    if (![self.txtDob.text isEqualToString:@""]) {
-        if (self.txtDob.text.length == 10) {
-            NSString *bar1 = [self.txtDob.text substringWithRange:NSMakeRange(2, 1)];
-            NSString *bar2 = [self.txtDob.text substringWithRange:NSMakeRange(5, 1)];
-            NSString *day = [self.txtDob.text substringWithRange:NSMakeRange(0, 2)];
-            NSString *month = [self.txtDob.text substringWithRange:NSMakeRange(3, 2)];
-            NSString *year = [self.txtDob.text substringWithRange:NSMakeRange(6, 4)];
-            
-            if (![bar1 isEqualToString:@"/"] || ![bar2 isEqualToString:@"/"]) {
-                dateValid = NO;
-            }
-            
-            @try {
-                int validateDay = [day intValue];
-                
-                if (validateDay <= 0) {
-                    dateValid = NO;
-                }
-                
-                if (validateDay > 31) {
-                    dateValid = NO;
-                }
-                
-                int validateMonth = [month intValue];
-                
-                if (validateMonth <= 0) {
-                    dateValid = NO;
-                }
-                
-                if (validateMonth > 12) {
-                    dateValid = NO;
-                }
-                
-                int validateYear = [year intValue];
-                
-                if (validateYear <= 0) {
-                    dateValid = NO;
-                }
-            }
-            @catch (NSException *exception) {
-                dateValid = NO;
-            }
-        } else {
-            dateValid = NO;
-        }
-    }
-    
-    return dateValid;
 }
 
 -(BOOL) validatePassword{
@@ -242,18 +186,7 @@
 
 - (IBAction)btnAction:(id)sender {
     
-    if (![self validateDate]) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
-                                                                       message:@"Data de nascimento inválida."
-                                                                preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action) {
-                    NSLog(@"You pressed button OK");
-                }];
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
-    } else if (![self validateForm]) {
+    if (![self validateForm]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
                                                                        message:@"Preencha todos os campos do formulário."
                                                                 preferredStyle:UIAlertControllerStyleActionSheet];
@@ -284,7 +217,7 @@
     userUpdater.user_token = self.user.user_token;
     userUpdater.nick = self.txtNick.text;
     userUpdater.email = self.user.email;
-    userUpdater.dob = [self getDob];
+    userUpdater.dob = [NSString stringWithFormat:@"%@", birthdate];
     userUpdater.gender = [self getGender];
     userUpdater.race = [self getRace];
     userUpdater.picture = self.pictureSelected;
@@ -343,7 +276,7 @@
     Household *updaterHousehold = [[Household alloc]init];
     updaterHousehold.nick = self.txtNick.text;
     updaterHousehold.email = self.txtEmail.text;
-    updaterHousehold.dob = [self getDob];
+    updaterHousehold.dob = [DateUtil stringUSFromDate:birthdate];
     updaterHousehold.gender = [self getGender];
     updaterHousehold.race = [self getRace];
     updaterHousehold.picture = self.pictureSelected;
@@ -412,14 +345,6 @@
     return gender;
 }
 
-- (NSString *) getDob{
-    NSString *day = [self.txtDob.text substringWithRange:NSMakeRange(0, 2)];
-    NSString *month = [self.txtDob.text substringWithRange:NSMakeRange(3, 2)];
-    NSString *year = [self.txtDob.text substringWithRange:NSMakeRange(6, 4)];
-    
-    return  [NSString stringWithFormat: @"%@-%@-%@", year, month, day];
-}
-
 - (void) updatePicture: (NSString *) picture{
     self.pictureSelected = picture;
     
@@ -433,5 +358,34 @@
     }
     
     [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
+}
+- (IBAction)btnDobAction:(id)sender {
+    RMActionControllerStyle style = RMActionControllerStyleWhite;
+    
+    RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
+        birthdate = controller.contentView.date;
+        [self updateBirthDate];
+    }];
+    
+    RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
+    dateSelectionController.title = @"Data de nascimento";
+    dateSelectionController.message = @"Selecione sua data de nascimento.";
+    
+    [dateSelectionController addAction:selectAction];
+    
+    dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
+    dateSelectionController.datePicker.minuteInterval = 5;
+    dateSelectionController.datePicker.date = birthdate;
+    
+    if([dateSelectionController respondsToSelector:@selector(popoverPresentationController)] && [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        dateSelectionController.modalPresentationStyle = UIModalPresentationPopover;
+    }
+    
+    [self presentViewController:dateSelectionController animated:YES completion:nil];
+}
+
+- (void) updateBirthDate{
+    NSString *dateFormatted  = [DateUtil stringFromDate:birthdate];
+    [self.btnDob setTitle:dateFormatted forState:UIControlStateNormal];
 }
 @end

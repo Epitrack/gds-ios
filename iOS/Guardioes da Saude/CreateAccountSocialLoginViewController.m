@@ -13,10 +13,7 @@
 #import "SelectTypeCreateAccoutViewController.h"
 
 @interface CreateAccountSocialLoginViewController () {
-    
     User *user;
-    NSArray *pickerDataGender;
-    NSArray *pickerDataRace;
     NSDate *birthdate;
     
 }
@@ -32,26 +29,26 @@
     [self.txtEmail setDelegate:self];
     [self.txtNick setDelegate:self];
     
-    pickerDataGender = @[@"Masculino", @"Feminino"];
-    pickerDataRace = @[@"branco", @"preto", @"pardo", @"amarelo", @"indigena"];
-    
-    (void)[self.downGenre initWithData:pickerDataGender];
-    (void)[self.downRace initWithData:pickerDataRace];
-    
-    NSString *placeHolderDownpicker = @"Toque para selecionar";
-    [self.downRace setPlaceholder:placeHolderDownpicker];
-    [self.downGenre setPlaceholder:placeHolderDownpicker];
-    
     self.txtNick.text = user.nick;
     if(user.email){
         self.txtEmail.text = user.email;
     }
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                   message:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde."
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
     }];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    // Setup down pickers
+    (void)[self.pickerGender initWithData:@[@"Masculino", @"Feminino"]];
+    (void)[self.pickerRace initWithData: @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"]];
     
     birthdate = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
@@ -88,13 +85,6 @@
 - (IBAction)btnCadastrar:(id)sender {
     BOOL fieldNull = NO;
     
-    if ([self.txtEmail.text isEqualToString:@""] ||
-        [self.txtNick.text isEqualToString:@""] ||
-        [self.downGenre.text isEqualToString:@""] ||
-        [self.downGenre.text isEqualToString:@""]) {
-        fieldNull = YES;
-    }
-    
     if (fieldNull) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Preencha todos os campos do formulário." preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -103,27 +93,22 @@
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-        NSString *gender = self.downGenre.text;
-        NSString *race = self.downRace.text;
         
-        if ([gender isEqualToString:@"Masculino"]) {
-            gender = @"M";
-        } else if ([gender isEqualToString:@"Feminino"]) {
-            gender = @"F";
-        }
         
         AFHTTPRequestOperationManager *manager;
         NSDictionary *params;
         
         NSString *dob = [DateUtil stringUSFromDate:birthdate];
+        [user setGenderByString:self.pickerGender.text];
+        user.race = self.pickerRace.text;
         
         NSLog(@"nick %@", self.txtNick.text);
         NSLog(@"email %@", self.txtEmail.text.lowercaseString);
         NSLog(@"client %@", user.client);
         NSLog(@"dob %@", dob);
-        NSLog(@"gender %@", gender);
+        NSLog(@"gender %@", user.gender);
         NSLog(@"app_token %@", user.app_token);
-        NSLog(@"race %@", race);
+        NSLog(@"race %@", user.race);
         NSLog(@"paltform %@", user.platform);
         
         NSString *gl = @"";
@@ -150,9 +135,9 @@
                    @"fb": fb,
                    @"client": user.client,
                    @"dob": dob,
-                   @"gender": gender,
+                   @"gender": user.gender,
                    @"app_token": user.app_token,
-                   @"race": race,
+                   @"race": user.race,
                    @"platform": user.platform,
                    @"picture": @"1",
                    @"lat": @"-8.0464492",

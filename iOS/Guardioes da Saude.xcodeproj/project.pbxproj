@@ -504,6 +504,7 @@
 		B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */; };
 		CB4E68701C39B48700563FB7 /* StateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* StateUtil.m */; };
 		CB8610061C3AF6DB009E63DF /* ProgressBarUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8610051C3AF6DB009E63DF /* ProgressBarUtil.m */; };
+		CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB8610071C3B4BBF009E63DF /* myhouse.gpx */; };
 		CB8DA0EF1C35B2D300C16362 /* GoogleUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8DA0EE1C35B2D300C16362 /* GoogleUtil.m */; };
 /* End PBXBuildFile section */
 
@@ -1089,6 +1090,7 @@
 		CB4E686F1C39B48700563FB7 /* StateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateUtil.m; sourceTree = "<group>"; };
 		CB8610041C3AF6DB009E63DF /* ProgressBarUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarUtil.h; sourceTree = "<group>"; };
 		CB8610051C3AF6DB009E63DF /* ProgressBarUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressBarUtil.m; sourceTree = "<group>"; };
+		CB8610071C3B4BBF009E63DF /* myhouse.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = myhouse.gpx; sourceTree = "<group>"; };
 		CB8DA0ED1C35B2D300C16362 /* GoogleUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleUtil.h; sourceTree = "<group>"; };
 		CB8DA0EE1C35B2D300C16362 /* GoogleUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1331,9 +1333,9 @@
 		5221A82C1BED34E6006659E2 /* Wellcome */ = {
 			isa = PBXGroup;
 			children = (
+				5215BBC51BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.h */,
 				5215BBC31BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m */,
 				5215BBC41BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib */,
-				5215BBC51BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.h */,
 				52D15DCF1BFBCA3E00FC31F3 /* CreateAccountViewController.h */,
 				52D15DD01BFBCA3E00FC31F3 /* CreateAccountViewController.m */,
 				52D15DD11BFBCA3E00FC31F3 /* CreateAccountViewController.xib */,
@@ -1392,6 +1394,7 @@
 		528C8AFB1BB82630003CFC91 /* Guardioes da Saude */ = {
 			isa = PBXGroup;
 			children = (
+				CB8610071C3B4BBF009E63DF /* myhouse.gpx */,
 				5206C42F1C2B1648003D0C83 /* GoogleService-Info.plist */,
 				52E6F0661C1EFC6800C88A08 /* TPKeyboardAvoiding */,
 				AAE38B2F1BF9211D009CD20B /* Request */,
@@ -1902,7 +1905,6 @@
 				TargetAttributes = {
 					528C8AF81BB82630003CFC91 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 6TRJWLUZCF;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -2160,6 +2162,7 @@
 				52E727871BEA93B800B46945 /* icon_logo_splash@3x.png in Resources */,
 				52E727801BEA93B800B46945 /* icon_lock@2x.png in Resources */,
 				52E727BF1BEA93B800B46945 /* img_main_menu@2x.png in Resources */,
+				CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */,
 				528705CA1BF3AB5F00321985 /* iconPMMini.png in Resources */,
 				528705D11BF3C5CA00321985 /* iconSamuMini@2x.png in Resources */,
 				52E727A01BEA93B800B46945 /* icon_problem.png in Resources */,
@@ -2615,7 +2618,7 @@
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.epitrack.gds;
+				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -2637,7 +2640,7 @@
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.epitrack.gds;
+				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

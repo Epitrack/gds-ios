@@ -69,4 +69,8 @@
 @property(nonatomic, retain) NSString *avatar;
 @property(nonatomic, retain) NSString *photo;
 
+- (void) setGenderBySegIndex: (long) segIndex;
+- (void) setRaceBySegIndex: (long) segIndex;
+- (void) setGenderByString: (NSString *) strGender;
+
 @end

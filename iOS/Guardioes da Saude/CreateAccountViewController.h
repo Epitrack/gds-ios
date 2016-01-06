@@ -19,10 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtConfirmPassword;
 - (IBAction)btnAddUser:(id)sender;
 - (IBAction)backButtonAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UIPickerView *pickerGender;
-@property (weak, nonatomic) IBOutlet UIPickerView *pickRace;
-@property (weak, nonatomic) IBOutlet UIDownPicker *downGenre;
-@property (weak, nonatomic) IBOutlet UIDownPicker *downRace;
+@property (weak, nonatomic) IBOutlet UIDownPicker *pickerGender;
+@property (weak, nonatomic) IBOutlet UIDownPicker *pickerRace;
 @property (weak, nonatomic) IBOutlet UIButton *btnBirthDate;
 - (IBAction)btnBirthDateAction:(id)sender;
 
