@@ -36,6 +36,11 @@
     
     birthDate = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
+    
+    self.segGender.layer.cornerRadius = 5;
+    self.segGender.clipsToBounds = YES;
+    self.segRace.layer.cornerRadius = 5;
+    self.segRace.clipsToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {

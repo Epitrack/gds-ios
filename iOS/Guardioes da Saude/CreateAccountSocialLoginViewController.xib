@@ -57,12 +57,12 @@
                             </constraints>
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apelido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2gP-za-RdG">
-                            <rect key="frame" x="23" y="147" width="274" height="30"/>
+                            <rect key="frame" x="16" y="147" width="289" height="30"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@exemplo.com.br" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y5r-E9-s3L">
-                            <rect key="frame" x="23" y="295" width="274" height="30"/>
+                            <rect key="frame" x="16" y="295" width="289" height="30"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                             <variation key="widthClass=compact" misplaced="YES">
@@ -70,7 +70,7 @@
                             </variation>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dt. Nasc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fl-Wu-Vkc">
-                            <rect key="frame" x="23" y="262" width="69" height="20"/>
+                            <rect key="frame" x="16" y="262" width="69" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="69" id="Ft8-DR-sit"/>
                             </constraints>
@@ -82,7 +82,7 @@
                             </variation>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gx9-lG-coH" userLabel="Button Bod">
-                            <rect key="frame" x="100" y="257" width="197" height="30"/>
+                            <rect key="frame" x="93" y="257" width="212" height="30"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="Button"/>
                             <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
@@ -93,7 +93,7 @@
                             </connections>
                         </button>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rEw-wo-rv7">
-                            <rect key="frame" x="23" y="185" width="274" height="29"/>
+                            <rect key="frame" x="16" y="185" width="289" height="29"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="Udm-7p-BwT"/>
@@ -104,7 +104,7 @@
                             </segments>
                         </segmentedControl>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jTG-kD-XQa">
-                            <rect key="frame" x="23" y="221" width="274" height="29"/>
+                            <rect key="frame" x="16" y="221" width="289" height="29"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <segments>
                                 <segment title="Branco"/>
@@ -115,7 +115,7 @@
                             </segments>
                         </segmentedControl>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8B-3f-n1y">
-                            <rect key="frame" x="23" y="340" width="274" height="40"/>
+                            <rect key="frame" x="16" y="340" width="289" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="qRv-bM-CGz"/>
                             </constraints>
@@ -155,11 +155,11 @@
                         <constraint firstItem="rEw-wo-rv7" firstAttribute="leading" secondItem="2gP-za-RdG" secondAttribute="leading" id="aqm-h0-BE4"/>
                         <constraint firstItem="Gx9-lG-coH" firstAttribute="baseline" secondItem="8fl-Wu-Vkc" secondAttribute="baseline" id="dqK-XK-d5p"/>
                         <constraint firstItem="2gP-za-RdG" firstAttribute="centerX" secondItem="uC6-pH-74t" secondAttribute="centerX" id="l4S-2m-Nru"/>
-                        <constraint firstItem="2gP-za-RdG" firstAttribute="leading" secondItem="Po6-KA-bie" secondAttribute="leading" constant="23" id="pVa-sE-Ec0"/>
+                        <constraint firstItem="2gP-za-RdG" firstAttribute="leading" secondItem="Po6-KA-bie" secondAttribute="leading" constant="16" id="pVa-sE-Ec0"/>
                         <constraint firstItem="8fl-Wu-Vkc" firstAttribute="baseline" secondItem="Gx9-lG-coH" secondAttribute="firstBaseline" id="pbj-fu-ZNJ"/>
                         <constraint firstItem="uC6-pH-74t" firstAttribute="width" secondItem="Po6-KA-bie" secondAttribute="height" multiplier="73:160" id="r90-qj-n5G"/>
                         <constraint firstItem="y5r-E9-s3L" firstAttribute="top" secondItem="Gx9-lG-coH" secondAttribute="bottom" constant="8" id="sOx-dS-8ig"/>
-                        <constraint firstAttribute="trailing" secondItem="2gP-za-RdG" secondAttribute="trailing" constant="23" id="uOz-B5-HbL"/>
+                        <constraint firstAttribute="trailing" secondItem="2gP-za-RdG" secondAttribute="trailing" constant="16" id="uOz-B5-HbL"/>
                     </constraints>
                 </scrollView>
             </subviews>

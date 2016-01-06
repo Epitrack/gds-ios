@@ -33,15 +33,25 @@
     if(user.email){
         self.txtEmail.text = user.email;
     }
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                   message:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde."
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
     }];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
     
-    self.segGender.selectedSegmentIndex = 0;
-    self.segRace.selectedSegmentIndex = 0;
+    
+    // Setup segments
+    self.segGender.layer.cornerRadius = 5;
+    self.segGender.clipsToBounds = YES;
+    self.segRace.layer.cornerRadius = 5;
+    self.segRace.clipsToBounds = YES;
+    
     birthdate = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
 }
