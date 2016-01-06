@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -78,21 +79,33 @@ public class HomeFragment extends BaseFragment {
         String text = getString(R.string.message_hello);
         text = text.replace("{0}", singleUser.getNick());
 
-        if (singleUser.getImageResource() == null) {
-            singleUser.setImageResource("");
-        }
+        new ImageUserAsyncTaskRunner().execute(picture);
 
-        if (!singleUser.getImageResource().equals("")) {
+        if (singleUser.getPicture().length() > 2) {
+            Uri uri = Uri.parse(singleUser.getPicture());
 
-            imageViewPhoto.setImageBitmap(BitmapUtility.scale(singleUser.getWidthImageProfile(), singleUser.getHeightImageProfile(), singleUser.getImageResource()));
+            DisplayMetrics metrics = getResources().getDisplayMetrics();
+            int densityDpi = (int) (metrics.density * 160f);
+            int width = 0;
+            int height = 0;
 
-        } else {
-
-            new ImageUserAsyncTaskRunner().execute(picture);
-
-            if (singleUser.getPicture().length() > 2) {
-                singleUser.setPicture("0");
+            if (densityDpi == DisplayMetrics.DENSITY_LOW) {
+                width = 90;
+                height = 90;
+            } else if (densityDpi == DisplayMetrics.DENSITY_MEDIUM) {
+                width = 120;
+                height = 120;
+            } else if (densityDpi == DisplayMetrics.DENSITY_HIGH) {
+                width = 180;
+                height = 180;
+            } else if (densityDpi >= DisplayMetrics.DENSITY_XHIGH) {
+                width = 240;
+                height = 240;
             }
+            imageViewPhoto.getLayoutParams().width = width;
+            imageViewPhoto.getLayoutParams().height = height;
+            imageViewPhoto.setImageURI(uri);
+        } else {
 
             if (Integer.parseInt(singleUser.getPicture()) == 0) {
 

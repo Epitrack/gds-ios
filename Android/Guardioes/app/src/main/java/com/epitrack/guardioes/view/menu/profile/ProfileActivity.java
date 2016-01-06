@@ -93,6 +93,22 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         bundle.putString("id", user.getId());
         bundle.putString("picture", user.getPicture());
 
+        if (Integer.parseInt(user.getPicture()) == 0) {
+            if (user.getGender().equals("M")) {
+                if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                    bundle.putString("picture", "4");
+                } else {
+                    bundle.putString("picture", "3");
+                }
+            } else {
+                if (user.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                    bundle.putString("picture", "8");
+                } else {
+                    bundle.putString("picture", "7");
+                }
+            }
+        }
+
         // TODO: Check if is main member..
         if (singleUser.getId() == user.getId()) {
             bundle.putBoolean(Constants.Bundle.MAIN_MEMBER, true);

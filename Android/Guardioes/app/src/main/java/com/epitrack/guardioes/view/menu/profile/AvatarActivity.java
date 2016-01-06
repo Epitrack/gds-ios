@@ -2,6 +2,7 @@ package com.epitrack.guardioes.view.menu.profile;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -14,6 +15,7 @@ import android.widget.GridView;
 
 import com.epitrack.guardioes.BuildConfig;
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.Extension;
 import com.epitrack.guardioes.utility.Logger;
@@ -22,6 +24,8 @@ import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.menu.ImageActivity;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -39,6 +43,8 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
     private File photoFile;
 
     private final SelectHandler handler = new SelectHandler();
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -64,12 +70,35 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
     }
 
     public void onPhoto(final MenuItem menuItem) {
-        final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        //Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            //startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            //navigateTo(UserActivity.class);
+
+            //camera stuff
+            //Intent imageIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+
+            //folder stuff
+            File imagesFolder = new File(Environment.getExternalStorageDirectory(), "GDS_Images");
+            imagesFolder.mkdirs();
+
+            File image = new File(imagesFolder, "GDS_" + timeStamp + ".png");
+            Uri uriSavedImage = Uri.fromFile(image);
+
+            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedImage);
+            takePictureIntent.putExtra(MediaStore.EXTRA_SCREEN_ORIENTATION, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            startActivityForResult(takePictureIntent, Constants.RequestCode.IMAGE);
+            SingleUser.getInstance().setUri(uriSavedImage);
+        }
+
+        /*final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getPhotoFile()));
         intent.putExtra(MediaStore.EXTRA_SCREEN_ORIENTATION, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        startActivityForResult(intent, Constants.RequestCode.IMAGE);
+        startActivityForResult(intent, Constants.RequestCode.IMAGE);*/
     }
 
     @OnClick(R.id.button_photo)
@@ -94,7 +123,15 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
     @Override
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
 
-        if (requestCode == Constants.RequestCode.IMAGE) {
+        if (requestCode == Constants.RequestCode.IMAGE && resultCode == RESULT_OK) {
+            //Bundle extras = intent.getExtras();
+            //Bitmap imageBitmap = (Bitmap) extras.get("data");
+            //Bitmap imageBitmap2 = imageBitmap;
+            finish();
+            //mImageView.setImageBitmap(imageBitmap);
+        }
+
+        /*if (requestCode == Constants.RequestCode.IMAGE) {
 
             final Bundle bundle = new Bundle();
 
@@ -103,7 +140,7 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
             navigateTo(ImageActivity.class, Intent.FLAG_ACTIVITY_FORWARD_RESULT, bundle);
 
             finish();
-        }
+        }*/
     }
 
     private File getPhotoFile() {

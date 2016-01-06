@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.menu.profile;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -142,15 +143,11 @@ public class UserAdapter extends ArrayAdapter<User> {
         viewHolder.textViewName.setText(user.getNick());
         viewHolder.textViewType.setText(user.getType());
 
-        if (!singleUser.getImageResource().equals("") && singleUser.getId().equals(user.getId())) {
-            viewHolder.imageViewImage.setImageBitmap(BitmapUtility.scale((singleUser.getWidthImageProfile() / 2), (singleUser.getHeightImageProfile() / 2), singleUser.getImageResource()));
+        if (user.getPicture().length() > 2) {
+            Uri uri = Uri.parse(user.getPicture());
+            viewHolder.imageViewImage.setImageURI(uri);
         } else {
-
-            if (user.getPicture().length() > 2) {
-                user.setPicture("0");
-            } else {
-                user.setPicture(user.getPicture());
-            }
+            user.setPicture(user.getPicture());
 
             if (Integer.parseInt(user.getPicture()) == 0) {
 
