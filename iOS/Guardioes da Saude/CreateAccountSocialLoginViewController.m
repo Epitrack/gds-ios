@@ -91,14 +91,16 @@
         NSDictionary *params;
         
         NSString *dob = [DateUtil stringUSFromDate:birthdate];
+        [user setGenderBySegIndex:self.segGender.selectedSegmentIndex];
+        [user setRaceBySegIndex:self.segRace.selectedSegmentIndex];
         
         NSLog(@"nick %@", self.txtNick.text);
         NSLog(@"email %@", self.txtEmail.text.lowercaseString);
         NSLog(@"client %@", user.client);
         NSLog(@"dob %@", dob);
-        //NSLog(@"gender %@", gender);
+        NSLog(@"gender %@", user.gender);
         NSLog(@"app_token %@", user.app_token);
-       // NSLog(@"race %@", race);
+        NSLog(@"race %@", user.race);
         NSLog(@"paltform %@", user.platform);
         
         NSString *gl = @"";
@@ -125,9 +127,9 @@
                    @"fb": fb,
                    @"client": user.client,
                    @"dob": dob,
-                   //@"gender": gender,
+                   @"gender": user.gender,
                    @"app_token": user.app_token,
-                  // @"race": race,
+                   @"race": user.race,
                    @"platform": user.platform,
                    @"picture": @"1",
                    @"lat": @"-8.0464492",

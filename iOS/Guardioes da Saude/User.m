@@ -59,4 +59,26 @@
     return self;
 }
 
+- (void) setGenderBySegIndex: (long) segIndex{
+    if (segIndex == 0) {
+        gender = @"M";
+    } else if (segIndex == 1) {
+        gender = @"F";
+    }
+}
+
+- (void) setRaceBySegIndex: (long) segIndex{
+    if (segIndex == 0) {
+        race = @"branco";
+    } else if (segIndex == 1) {
+        race = @"preto";
+    } else if (segIndex == 2) {
+        race = @"pardo";
+    } else if (segIndex == 3) {
+        race = @"amarelo";
+    } else if (segIndex == 4) {
+        race = @"indigena";
+    }
+}
+
 @end

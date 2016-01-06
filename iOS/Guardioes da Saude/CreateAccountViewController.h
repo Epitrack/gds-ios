@@ -21,9 +21,9 @@
 - (IBAction)backButtonAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerGender;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickRace;
-@property (weak, nonatomic) IBOutlet UIDownPicker *downGenre;
-@property (weak, nonatomic) IBOutlet UIDownPicker *downRace;
 @property (weak, nonatomic) IBOutlet UIButton *btnBirthDate;
 - (IBAction)btnBirthDateAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segRace;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segGender;
 
 @end

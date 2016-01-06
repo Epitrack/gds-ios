@@ -15,8 +15,6 @@
 @interface CreateAccountViewController () {
     
     User *user;
-    NSArray *pickerDataGender;
-    NSArray *pickerDataRace;
     NSDate *birthDate;
 }
 
@@ -35,12 +33,6 @@
     [self.txtDob setDelegate:self];
     [self.txtPassword setDelegate:self];
     [self.txtConfirmPassword setDelegate:self];
-    
-    pickerDataGender = @[@"Masculino", @"Feminino"];
-    (void)[self.downGenre initWithData:pickerDataGender];
-    
-    pickerDataRace = @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"];
-    (void)[self.downRace initWithData:pickerDataRace];
     
     birthDate = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
@@ -92,9 +84,7 @@
     
     if ([self.txtNick.text isEqualToString:@""]||
         [self.txtEmail.text isEqualToString:@""] ||
-        [self.txtPassword.text isEqualToString:@""] ||
-        [self.downGenre.text isEqualToString:@""] ||
-        [self.downRace.text isEqualToString:@""]) {
+        [self.txtPassword.text isEqualToString:@""]) {
         fieldNull = YES;
     }
     
@@ -121,19 +111,12 @@
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
         } else {
-            NSString *gender = self.downGenre.text;
-            NSString *race = [self.downRace.text lowercaseString];;
             NSInteger row;
             
             row = [self.pickerGender selectedRowInComponent:0];
-            gender = [pickerDataGender objectAtIndex:row];
             
-            if ([gender isEqualToString:@"Masculino"]) {
-                gender = @"M";
-            } else if ([gender isEqualToString:@"Feminino"]) {
-                gender = @"F";
-            }
-            
+            [user setGenderBySegIndex:self.segGender.selectedSegmentIndex];
+            [user setRaceBySegIndex:self.segRace.selectedSegmentIndex];
             
             AFHTTPRequestOperationManager *manager;
             NSDictionary *params;
@@ -145,9 +128,9 @@
             NSLog(@"password %@", self.txtPassword.text);
             NSLog(@"client %@", user.client);
             NSLog(@"dob %@", dob);
-            NSLog(@"gender %@", gender);
+            NSLog(@"gender %@", user.gender);
             NSLog(@"app_token %@", user.app_token);
-            NSLog(@"race %@", race);
+            NSLog(@"race %@", user.race);
             NSLog(@"paltform %@", user.platform);
 
             params = @{@"nick":self.txtNick.text,
@@ -155,9 +138,9 @@
                        @"password": self.txtPassword.text,
                        @"client": user.client,
                        @"dob": dob,
-                       @"gender": gender,
+                       @"gender": user.gender,
                        @"app_token": user.app_token,
-                       @"race": race,
+                       @"race": user.race,
                        @"platform": user.platform,
                        @"picture": @"0",
                        @"lat": @"-8.0464492",
