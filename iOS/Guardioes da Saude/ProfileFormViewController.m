@@ -85,7 +85,7 @@
     self.txtDob.text = [self formatterDate:dob];
     self.txtEmail.text = email;
     
-    if ([gender isEqualToString:@"0"]) {
+    if ([gender isEqualToString:@"M"]) {
         self.segmentGender.selectedSegmentIndex = 0;
     } else {
         self.segmentGender.selectedSegmentIndex = 1;

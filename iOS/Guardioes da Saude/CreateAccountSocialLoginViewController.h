@@ -16,8 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 - (IBAction)btnCadastrar:(id)sender;
 - (IBAction)backButtonAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UIDownPicker *downGenre;
-@property (weak, nonatomic) IBOutlet UIDownPicker *downRace;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segGender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segRace;
 @property (weak, nonatomic) IBOutlet UIButton *btnDate;
 - (IBAction)changeBirthDate:(id)sender;
 
