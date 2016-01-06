@@ -75,6 +75,10 @@
     self.txtConfirmPassword.hidden = YES;
     
     self.pictureSelected = @"1";
+
+    birthdate = [DateUtil dateFromString:@"10/10/1990"];
+    [self updateBirthDate];
+
 }
 
 - (void) populateFormWithNick: (NSString *) nick
@@ -87,8 +91,6 @@
     self.txtEmail.text = email;
     
     birthdate = [DateUtil dateFromStringUS:dob];
-    NSLog(@"Data de nascimento %@", birthdate);
-    
     [self updateBirthDate];
     
     if ([gender isEqualToString:@"M"]) {
