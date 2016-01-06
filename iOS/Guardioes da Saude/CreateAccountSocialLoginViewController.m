@@ -33,7 +33,7 @@
     [self.txtNick setDelegate:self];
     
     pickerDataGender = @[@"Masculino", @"Feminino"];
-    pickerDataRace = @[@"branco", @"preto", @"pardo", @"amarelo", @"indigena"];
+    pickerDataRace = @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"];
     
     (void)[self.downGenre initWithData:pickerDataGender];
     (void)[self.downRace initWithData:pickerDataRace];
@@ -104,7 +104,7 @@
         [self presentViewController:alert animated:YES completion:nil];
     } else {
         NSString *gender = self.downGenre.text;
-        NSString *race = self.downRace.text;
+        NSString *race = [self.downRace.text lowercaseString];
         
         if ([gender isEqualToString:@"Masculino"]) {
             gender = @"M";

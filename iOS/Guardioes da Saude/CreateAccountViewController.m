@@ -39,7 +39,7 @@
     pickerDataGender = @[@"Masculino", @"Feminino"];
     (void)[self.downGenre initWithData:pickerDataGender];
     
-    pickerDataRace = @[@"branco", @"preto", @"pardo", @"amarelo", @"indigena"];
+    pickerDataRace = @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"];
     (void)[self.downRace initWithData:pickerDataRace];
     
     birthDate = [DateUtil dateFromString:@"10/10/1990"];
@@ -122,7 +122,7 @@
             [self presentViewController:alert animated:YES completion:nil];
         } else {
             NSString *gender = self.downGenre.text;
-            NSString *race = self.downRace.text;
+            NSString *race = [self.downRace.text lowercaseString];;
             NSInteger row;
             
             row = [self.pickerGender selectedRowInComponent:0];
