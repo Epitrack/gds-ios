@@ -39,8 +39,6 @@ const float kCellHeight = 100.0f;
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     
-    NSMutableDictionary *householdsDictionary = [[NSMutableDictionary alloc] init];
-    i = 0;
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
@@ -49,7 +47,7 @@ const float kCellHeight = 100.0f;
     
     //create table view to contain ASHorizontalScrollView
     
-    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight-95, self.view.frame.size.width, screenWidth)];
+    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight-95, screenWidth, screenHeight)];
     sampleTableView.delegate = self;
     sampleTableView.dataSource = self;
     sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -132,7 +130,7 @@ const float kCellHeight = 100.0f;
             ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kCellHeight)];
             [cell.contentView addSubview:horizontalScrollView];
             horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            horizontalScrollView.uniformItemSize = CGSizeMake(100, 100);
+            horizontalScrollView.uniformItemSize = CGSizeMake(130, 130);
             //this must be called after changing any size or margin property of this class to get acurrate margin
             [horizontalScrollView setItemsMarginOnce];
             NSMutableArray *buttons = [NSMutableArray array];
@@ -146,7 +144,6 @@ const float kCellHeight = 100.0f;
                     NSString *picture = h[@"picture"];
                     NSString *avatar;
                     NSString *idHousehold = h[@"id"];
-                    NSString *dob = h[@"dob"];
                     
                     //picture = @"0";
                     
@@ -162,7 +159,7 @@ const float kCellHeight = 100.0f;
                         }
                     }
                     
-                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
+                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 10, 150, 150) avatar:avatar nick:nick];
                     [buttons addObject:thumb];
                     [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
