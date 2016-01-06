@@ -59,7 +59,7 @@
                     </variation>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notícias" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9t-CS-rTk" userLabel="Label Noticias">
-                    <rect key="frame" x="25" y="225" width="133.5" height="13"/>
+                    <rect key="frame" x="25" y="225" width="134" height="13"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="o9t-CS-rTk" secondAttribute="height" multiplier="45:7" constant="50.142857142857139" id="czA-bu-FN0"/>
                     </constraints>
@@ -71,7 +71,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Mapa da Saúde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3E-wn-XOc" userLabel="Label Mapa">
-                    <rect key="frame" x="159" y="216" width="135.5" height="31"/>
+                    <rect key="frame" x="159" y="216" width="136" height="31"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="E3E-wn-XOc" secondAttribute="height" multiplier="75:17" id="Bce-Ec-xdD"/>
                     </constraints>
@@ -83,7 +83,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dicas de Saúde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB7-Zb-hbF" userLabel="Label Dicas">
-                    <rect key="frame" x="43" y="442" width="115" height="14.5"/>
+                    <rect key="frame" x="43" y="442" width="115" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="PB7-Zb-hbF" secondAttribute="height" multiplier="129:16" id="y9t-b0-smZ"/>
                     </constraints>
@@ -95,7 +95,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diário da Saúde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olw-uU-G9T" userLabel="Label Diario">
-                    <rect key="frame" x="172" y="438" width="123" height="26.5"/>
+                    <rect key="frame" x="172" y="438" width="123" height="27"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="olw-uU-G9T" secondAttribute="height" multiplier="23:5" id="ojL-FI-c9U"/>
                     </constraints>
@@ -208,7 +208,7 @@
                         <action selector="btnJoinNow:" destination="-1" eventType="touchUpInside" id="Het-QS-paj"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participe Agora" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-Ta-mYq" userLabel="Label PaticipeAgora">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participe Agora!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-Ta-mYq" userLabel="Label PaticipeAgora">
                     <rect key="frame" x="125" y="357" width="68" height="39"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Hig-Ta-mYq" secondAttribute="height" multiplier="23:8" constant="-44.125" id="6of-Q5-lZI"/>
