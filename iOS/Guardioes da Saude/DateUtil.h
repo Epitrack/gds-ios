@@ -11,6 +11,7 @@
 @interface DateUtil : NSObject
 
 + (NSDate *) dateFromString: (NSString *) strDate;
++ (NSDate *) dateFromStringUS: (NSString *) strDate;
 + (NSString *) stringFromDate: (NSDate *) date;
 + (NSString *) stringUSFromDate: (NSDate *) date;
 
