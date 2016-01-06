@@ -46,11 +46,9 @@
     [self presentViewController:alert animated:YES completion:nil];
     
     
-    // Setup segments
-    self.segGender.layer.cornerRadius = 5;
-    self.segGender.clipsToBounds = YES;
-    self.segRace.layer.cornerRadius = 5;
-    self.segRace.clipsToBounds = YES;
+    // Setup down pickers
+    (void)[self.pickerGender initWithData:@[@"Masculino", @"Feminino"]];
+    (void)[self.pickerRace initWithData: @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"]];
     
     birthdate = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
@@ -101,8 +99,8 @@
         NSDictionary *params;
         
         NSString *dob = [DateUtil stringUSFromDate:birthdate];
-        [user setGenderBySegIndex:self.segGender.selectedSegmentIndex];
-        [user setRaceBySegIndex:self.segRace.selectedSegmentIndex];
+        [user setGenderByString:self.pickerGender.text];
+        user.race = self.pickerRace.text;
         
         NSLog(@"nick %@", self.txtNick.text);
         NSLog(@"email %@", self.txtEmail.text.lowercaseString);

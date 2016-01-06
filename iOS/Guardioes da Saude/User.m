@@ -81,4 +81,12 @@
     }
 }
 
+- (void) setGenderByString: (NSString *) strGender{
+    if ([strGender isEqualToString:@"Masculino"]) {
+        gender = @"M";
+    } else if ([strGender isEqualToString:@"Feminino"]) {
+        gender = @"F";
+    }
+}
+
 @end

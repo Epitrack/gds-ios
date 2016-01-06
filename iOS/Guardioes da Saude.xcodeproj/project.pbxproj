@@ -1333,9 +1333,9 @@
 		5221A82C1BED34E6006659E2 /* Wellcome */ = {
 			isa = PBXGroup;
 			children = (
+				5215BBC51BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.h */,
 				5215BBC31BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m */,
 				5215BBC41BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib */,
-				5215BBC51BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.h */,
 				52D15DCF1BFBCA3E00FC31F3 /* CreateAccountViewController.h */,
 				52D15DD01BFBCA3E00FC31F3 /* CreateAccountViewController.m */,
 				52D15DD11BFBCA3E00FC31F3 /* CreateAccountViewController.xib */,

@@ -37,10 +37,10 @@
     birthDate = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
     
-    self.segGender.layer.cornerRadius = 5;
-    self.segGender.clipsToBounds = YES;
-    self.segRace.layer.cornerRadius = 5;
-    self.segRace.clipsToBounds = YES;
+    // Setup down pickers
+    (void)[self.pickerGender initWithData:@[@"Masculino", @"Feminino"]];
+    (void)[self.pickerRace initWithData: @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -116,12 +116,8 @@
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
         } else {
-            NSInteger row;
-            
-            row = [self.pickerGender selectedRowInComponent:0];
-            
-            [user setGenderBySegIndex:self.segGender.selectedSegmentIndex];
-            [user setRaceBySegIndex:self.segRace.selectedSegmentIndex];
+            [user setGenderByString:self.pickerGender.text];
+            NSString *race = [self.pickerRace.text lowercaseString];
             
             AFHTTPRequestOperationManager *manager;
             NSDictionary *params;
@@ -145,7 +141,7 @@
                        @"dob": dob,
                        @"gender": user.gender,
                        @"app_token": user.app_token,
-                       @"race": user.race,
+                       @"race": race,
                        @"platform": user.platform,
                        @"picture": @"0",
                        @"lat": @"-8.0464492",
