@@ -17,7 +17,7 @@
     
     AFHTTPRequestOperationManager *manager;
 
-    NSDictionary *params = @{@"address": address,
+    NSDictionary *params = @{@"address": [address stringByAppendingString:@"-BR"],
                              @"key": @"AIzaSyDRoA88MUJbF8TFPnaUXHvIrQzGPU5JC94"};
     manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"https://maps.googleapis.com/maps/api/geocode/json"

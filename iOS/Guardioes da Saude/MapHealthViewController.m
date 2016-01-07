@@ -29,10 +29,10 @@
     double longitude;
     NSString *city;
     NSString *state;
-    int totalSurvey;
-    int totalNoSymptom;
+    NSInteger totalSurvey;
+    NSInteger totalNoSymptom;
     double goodPercent;
-    int totalWithSymptom;
+    NSInteger totalWithSymptom;
     double badPercent;
     double diarreica;
     double exantemaica;
@@ -107,6 +107,7 @@
                  }
              }
              [self addPin];
+             
              [self loadSummary];
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Infelizmente não conseguimos conlcuir esta operação. Tente novamente dentro de alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
@@ -138,7 +139,7 @@
 - (void) mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
     
     MKAnnotationView *v = [views objectAtIndex:0];
-    CLLocationDistance distance = 500;
+    CLLocationDistance distance = 2000;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([v.annotation coordinate], distance, distance);
     [self.mapHealth setRegion:region animated:YES];
 }
@@ -265,15 +266,15 @@
                  
                  self.lblCity.text = city;
                  self.lblState.text = state;
-                 self.lblPaticipation.text = [NSString stringWithFormat:@"%d Participações essa semana", totalSurvey];
+                 self.lblPaticipation.text = [NSString stringWithFormat:@"%ld Participações essa semana", totalSurvey];
                  
                  detailMap.city = city;
                  detailMap.state = state;
-                 detailMap.totalSurvey = [[NSString stringWithFormat:@"%d", totalSurvey] stringByAppendingString:@""];
+                 detailMap.totalSurvey = [[NSString stringWithFormat:@"%ld", totalSurvey] stringByAppendingString:@""];
                  detailMap.goodPercent = [[NSString stringWithFormat:@"%.f", goodPercent] stringByAppendingString:@"%"];
                  detailMap.badPercent = [[NSString stringWithFormat:@"%.f", badPercent] stringByAppendingString:@"%"];
-                 detailMap.totalNoSymptom = [[NSString stringWithFormat:@"%d", totalNoSymptom] stringByAppendingString:@""];
-                 detailMap.totalWithSymptom = [[NSString stringWithFormat:@"%d", totalWithSymptom] stringByAppendingString:@""];
+                 detailMap.totalNoSymptom = [[NSString stringWithFormat:@"%ld", totalNoSymptom] stringByAppendingString:@""];
+                 detailMap.totalWithSymptom = [[NSString stringWithFormat:@"%ld", totalWithSymptom] stringByAppendingString:@""];
                  
                  detailMap.diarreica = [NSString stringWithFormat:@"%f", diarreica];
                  detailMap.exantemaica = [NSString stringWithFormat:@"%f", exantemaica];
@@ -314,8 +315,12 @@
     [GoogleUtil getLocationByAddress:self.seach.text onSuccess:^(NSString *lng, NSString *lat, NSString *fullNameCity){
         //[self.btnDetailMapHealth setTitle:fullNameCity];
         
+        longitude = [lng doubleValue];
+        latitude = [lat doubleValue];
+        [self loadSurvey];
+        
         CLLocationCoordinate2D coordenada = CLLocationCoordinate2DMake([lat doubleValue], [lng doubleValue]);
-        CLLocationDistance distance = 1000;
+        CLLocationDistance distance = 2000;
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordenada, distance, distance);
         [self.mapHealth setRegion:region animated:YES];
     }onFail:^(NSError *error){
