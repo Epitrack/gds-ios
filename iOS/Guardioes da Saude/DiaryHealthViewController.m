@@ -200,7 +200,7 @@ const float _kCellHeight = 100.0f;
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:
                               CGRectMake(button.bounds.size.width/4,
-                                         15,
+                                         5,
                                          button.bounds.size.width/2,
                                          button.bounds.size.height/2)];
     
@@ -218,7 +218,7 @@ const float _kCellHeight = 100.0f;
     
     [imageView setImage:[UIImage imageNamed:avatar]];
     
-    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 60, button.bounds.size.width/2, button.bounds.size.height/2)];
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 50, button.bounds.size.width/2, button.bounds.size.height/2)];
     label.text= [user.nick componentsSeparatedByString:@" "][0];
     label.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
     label.textColor = [UIColor whiteColor];
@@ -253,7 +253,16 @@ const float _kCellHeight = 100.0f;
             ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, _kCellHeight)];
             [cell.contentView addSubview:horizontalScrollView];
             horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            horizontalScrollView.uniformItemSize = CGSizeMake(130, 130);
+            
+            CGFloat widthScreen = [[UIScreen mainScreen] bounds].size.width;
+            CGFloat width;
+            if (widthScreen == 375) {
+                width = 180;
+            }else{
+                width = 120;
+            }
+            NSLog(@"Width: %f", widthScreen);
+            horizontalScrollView.uniformItemSize = CGSizeMake(width, 100);
             //this must be called after changing any size or margin property of this class to get acurrate margin
             [horizontalScrollView setItemsMarginOnce];
             NSDictionary *households = user.household;
@@ -278,7 +287,7 @@ const float _kCellHeight = 100.0f;
                         }
                     }
                     
-                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 10, 150, 150) avatar:avatar nick:nick];
+                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
                     [buttons addObject:thumb];
                     [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
