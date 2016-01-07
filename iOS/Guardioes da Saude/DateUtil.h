@@ -14,5 +14,6 @@
 + (NSDate *) dateFromStringUS: (NSString *) strDate;
 + (NSString *) stringFromDate: (NSDate *) date;
 + (NSString *) stringUSFromDate: (NSDate *) date;
++(NSInteger) getCurrentYear;
 
 @end

@@ -19,6 +19,7 @@
 #import "HouseholdThumbnail.h"
 #import "Constants.h"
 #import "ProgressBarUtil.h"
+#import "DateUtil.h"
 
 @import Charts;
 
@@ -327,7 +328,7 @@ const float _kCellHeight = 100.0f;
 - (void) loadChartLine {
     
     self.graphView.useCurvedLine = YES;
-    self.graphView.graphWidth = 375;
+
     
     self.graphView.tintColor = [UIColor whiteColor];
     self.graphView.labelBackgroundColor = [UIColor whiteColor];
@@ -335,7 +336,7 @@ const float _kCellHeight = 100.0f;
     
     self.graphView.strokeColor = [DiaryHealthViewController toUiColor: @"#186cb7"];
     self.graphView.pointFillColor = [DiaryHealthViewController toUiColor: @"#186cb7"];
-    
+
     self.graphView.barColor = [UIColor clearColor];
     self.graphView.backgroundViewColor = [UIColor whiteColor];
 }
@@ -376,7 +377,7 @@ const float _kCellHeight = 100.0f;
 
     [userRequester getSummary: [User getInstance]
                                  idHousehold: idHousehold
-                                        year: 2015
+                                        year: [DateUtil getCurrentYear]
                                      onStart: ^{[self showProgressBar];}
                                      onError: ^(NSString * message) {[self hiddenProgressBar];}
                                    onSuccess: ^(NSMutableDictionary * sumaryGraphMap) {
@@ -403,10 +404,18 @@ const float _kCellHeight = 100.0f;
                                            [valueArray addObject: [NSNumber numberWithFloat: sumaryGraph.percent]];
                                        }
                                        
-                                       self.graphView.graphData = valueArray;
+                                       
+                                       self.graphView.labelFont = [UIFont fontWithName:@"Foco-Regular" size:11.5];
+                                       self.graphView.graphWidth = self.graphView.frame.size.width;
                                        
                                        self.graphView.graphDataLabels = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dev"];
+                                   
+                                       UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.graphView.frame.size.width, self.graphView.frame.size.height)];
+                                       [blankView setBackgroundColor: [UIColor whiteColor]];
+                                       [self.graphView addSubview:blankView];
                                        
+                                       
+                                       self.graphView.graphData = valueArray;
                                        [self.graphView plotGraphData];
                                        
                                    }
@@ -441,13 +450,12 @@ const float _kCellHeight = 100.0f;
             dayView.hidden = YES;
         }
         
-        NSString * key = [NSString stringWithFormat: @"%li-%li-%li",
+        NSString * key = [NSString stringWithFormat: @"%d-%d-%d",
                           [self getDay: dayView.date], [self getMonth: dayView.date], [self getYear: dayView.date]];
         
         SumaryCalendar * sumaryCalendar = [self.calendarMap objectForKey: key];
         
         if (sumaryCalendar) {
-            NSLog(@"key = %@", key);
             [dayView addSubview: [self getState: sumaryCalendar]];
         }else{
             UIImageView * view = [[UIImageView alloc] initWithFrame: CGRectMake(9, 0, 23, 23)];

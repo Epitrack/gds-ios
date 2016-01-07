@@ -266,15 +266,15 @@
                  
                  self.lblCity.text = city;
                  self.lblState.text = state;
-                 self.lblPaticipation.text = [NSString stringWithFormat:@"%ld Participações essa semana", totalSurvey];
+                 self.lblPaticipation.text = [NSString stringWithFormat:@"%d Participações essa semana", totalSurvey];
                  
                  detailMap.city = city;
                  detailMap.state = state;
-                 detailMap.totalSurvey = [[NSString stringWithFormat:@"%ld", totalSurvey] stringByAppendingString:@""];
-                 detailMap.goodPercent = [[NSString stringWithFormat:@"%.f", goodPercent] stringByAppendingString:@"%"];
-                 detailMap.badPercent = [[NSString stringWithFormat:@"%.f", badPercent] stringByAppendingString:@"%"];
-                 detailMap.totalNoSymptom = [[NSString stringWithFormat:@"%ld", totalNoSymptom] stringByAppendingString:@""];
-                 detailMap.totalWithSymptom = [[NSString stringWithFormat:@"%ld", totalWithSymptom] stringByAppendingString:@""];
+                 detailMap.totalSurvey = [NSString stringWithFormat:@"%d", totalSurvey];
+                 detailMap.goodPercent = [NSString stringWithFormat:@"%f%%", goodPercent];
+                 detailMap.badPercent = [NSString stringWithFormat:@"%f%%", badPercent];
+                 detailMap.totalNoSymptom = [NSString stringWithFormat:@"%d", totalNoSymptom];
+                 detailMap.totalWithSymptom = [NSString stringWithFormat:@"%d", totalWithSymptom];
                  
                  detailMap.diarreica = [NSString stringWithFormat:@"%f", diarreica];
                  detailMap.exantemaica = [NSString stringWithFormat:@"%f", exantemaica];
