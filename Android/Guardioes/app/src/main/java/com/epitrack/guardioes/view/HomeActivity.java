@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.epitrack.guardioes.R;
@@ -21,6 +22,7 @@ import com.epitrack.guardioes.view.account.LoginActivity;
 import com.epitrack.guardioes.view.menu.HomeMenu;
 import com.epitrack.guardioes.view.welcome.WelcomeActivity;
 import com.facebook.AccessToken;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
 import java.util.HashMap;
@@ -113,8 +115,6 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
 
             startActivity(intent);
 
-
-
         } else {
 
             replaceFragment(MAIN_FRAGMENT,
@@ -197,5 +197,11 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
         getFragmentManager().beginTransaction()
                             .replace(R.id.frame_layout, fragment, tag)
                             .commit();
+    }
+
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("HomeActivity");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 }
