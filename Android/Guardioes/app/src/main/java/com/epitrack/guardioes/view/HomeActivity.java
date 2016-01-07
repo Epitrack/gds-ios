@@ -15,11 +15,13 @@ import android.view.MenuItem;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.manager.PrefManager;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.view.account.LoginActivity;
 import com.epitrack.guardioes.view.menu.HomeMenu;
 import com.epitrack.guardioes.view.welcome.WelcomeActivity;
 import com.facebook.AccessToken;
+import com.google.android.gms.analytics.Tracker;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -47,12 +49,19 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
 
     private final Map<String, Fragment> fragmentMap = new HashMap<>();
     public static final String PREFS_NAME = "preferences_user_token";
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.home_activity);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         ButterKnife.bind(this);
 

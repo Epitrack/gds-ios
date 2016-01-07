@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,31 +13,27 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
-import com.epitrack.guardioes.model.DTO;
 import com.epitrack.guardioes.model.SingleUser;
-import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.BitmapUtility;
-import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.Extension;
 import com.epitrack.guardioes.utility.FileUtility;
-import com.epitrack.guardioes.utility.MediaUtility;
 import com.epitrack.guardioes.view.base.BaseFragment;
 import com.epitrack.guardioes.view.diary.DiaryActivity;
 import com.epitrack.guardioes.view.menu.profile.Avatar;
 import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
 import com.epitrack.guardioes.view.tip.TipActivity;
+import com.google.android.gms.analytics.Tracker;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.concurrent.Executors;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -54,7 +49,6 @@ public class HomeFragment extends BaseFragment {
 
     @Bind(R.id.image_view_photo)
     de.hdodenhof.circleimageview.CircleImageView imageViewPhoto;
-    ////ImageView imageViewPhoto;
 
     @Override
     public void onCreate(final Bundle bundle) {
