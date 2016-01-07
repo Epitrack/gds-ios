@@ -14,6 +14,7 @@
         </mutableArray>
         <mutableArray key="Foco_Std_Rg.ttf">
             <string>Foco-Regular</string>
+            <string>Foco-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -21,7 +22,10 @@
             <connections>
                 <outlet property="imgBgTutorial" destination="tFN-vj-bKJ" id="bsV-Kl-fZc"/>
                 <outlet property="imgTutorial" destination="ctv-Wu-AJh" id="GLb-Xv-p15"/>
+                <outlet property="lbDescription" destination="vdV-On-aDO" id="OHo-wm-E0g"/>
                 <outlet property="pageControl" destination="9KC-Jm-W5d" id="gsb-L8-Ieg"/>
+                <outlet property="txtDescription" destination="b4R-zf-kwj" id="iHn-Y0-SWP"/>
+                <outlet property="txtTitle" destination="P4r-TU-uZK" id="Vq0-XL-luJ"/>
                 <outlet property="view" destination="e6e-5v-vmX" id="gD1-Su-HhQ"/>
             </connections>
         </placeholder>
@@ -41,7 +45,7 @@
                     </connections>
                 </button>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9KC-Jm-W5d">
-                    <rect key="frame" x="132" y="392" width="55" height="37"/>
+                    <rect key="frame" x="133" y="392" width="55" height="37"/>
                 </pageControl>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-Wu-AJh">
                     <rect key="frame" x="31" y="105" width="258" height="269"/>
@@ -66,8 +70,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparado para se tornar um Guardião da Saúde?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-On-aDO">
-                    <rect key="frame" x="77" y="62" width="165" height="36"/>
+                    <rect key="frame" x="49" y="61" width="223" height="36"/>
                     <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teste" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4R-zf-kwj">
+                    <rect key="frame" x="31" y="374" width="258" height="21"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -76,13 +86,17 @@
             <constraints>
                 <constraint firstItem="i40-G2-ylt" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" constant="432" id="0aO-wh-q4N"/>
                 <constraint firstItem="P4r-TU-uZK" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" constant="33" id="4EI-cX-lOM"/>
+                <constraint firstItem="b4R-zf-kwj" firstAttribute="leading" secondItem="ctv-Wu-AJh" secondAttribute="leading" id="Cvt-vB-WZl"/>
+                <constraint firstItem="9KC-Jm-W5d" firstAttribute="top" secondItem="b4R-zf-kwj" secondAttribute="bottom" constant="-2" id="E8L-B8-ujC"/>
                 <constraint firstItem="i40-G2-ylt" firstAttribute="width" secondItem="e6e-5v-vmX" secondAttribute="height" multiplier="11:40" id="GEn-yX-lJo"/>
-                <constraint firstItem="vdV-On-aDO" firstAttribute="centerX" secondItem="P4r-TU-uZK" secondAttribute="centerX" id="NwV-mF-PpV"/>
+                <constraint firstItem="b4R-zf-kwj" firstAttribute="trailing" secondItem="ctv-Wu-AJh" secondAttribute="trailing" id="HHB-HE-ume"/>
+                <constraint firstItem="b4R-zf-kwj" firstAttribute="top" secondItem="ctv-Wu-AJh" secondAttribute="bottom" id="MVV-Ho-WAo"/>
+                <constraint firstItem="vdV-On-aDO" firstAttribute="centerX" secondItem="P4r-TU-uZK" secondAttribute="centerX" constant="1" id="NwV-mF-PpV"/>
                 <constraint firstAttribute="trailing" secondItem="TOh-dH-CHU" secondAttribute="trailing" constant="31" id="O6x-Eq-xuC"/>
                 <constraint firstAttribute="trailing" secondItem="tFN-vj-bKJ" secondAttribute="trailing" id="QPr-4D-2TL"/>
                 <constraint firstItem="i40-G2-ylt" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="31" id="Rgm-Ws-hAo"/>
                 <constraint firstItem="TOh-dH-CHU" firstAttribute="leading" secondItem="i40-G2-ylt" secondAttribute="trailing" constant="21" id="S98-4H-nEt"/>
-                <constraint firstAttribute="trailing" secondItem="vdV-On-aDO" secondAttribute="trailing" constant="78" id="U5q-pk-Mm7"/>
+                <constraint firstAttribute="trailing" secondItem="vdV-On-aDO" secondAttribute="trailing" constant="48" id="U5q-pk-Mm7"/>
                 <constraint firstItem="i40-G2-ylt" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" constant="432" id="Uvz-a6-EdQ"/>
                 <constraint firstItem="9KC-Jm-W5d" firstAttribute="centerX" secondItem="ctv-Wu-AJh" secondAttribute="centerX" id="Wz4-C6-P0d"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" id="X8D-Nr-0xX"/>
@@ -90,7 +104,7 @@
                 <constraint firstAttribute="bottom" secondItem="i40-G2-ylt" secondAttribute="bottom" constant="16" id="Yoz-Zk-98B"/>
                 <constraint firstItem="ctv-Wu-AJh" firstAttribute="width" secondItem="e6e-5v-vmX" secondAttribute="height" multiplier="43:80" id="aU9-cH-tfp"/>
                 <constraint firstItem="9KC-Jm-W5d" firstAttribute="top" secondItem="ctv-Wu-AJh" secondAttribute="bottom" constant="18" id="dR0-qV-eny"/>
-                <constraint firstItem="vdV-On-aDO" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="77" id="du3-JZ-xk5"/>
+                <constraint firstItem="vdV-On-aDO" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="49" id="du3-JZ-xk5"/>
                 <constraint firstItem="vdV-On-aDO" firstAttribute="top" secondItem="P4r-TU-uZK" secondAttribute="bottom" constant="8" id="i68-IJ-Zbd"/>
                 <constraint firstItem="TOh-dH-CHU" firstAttribute="width" secondItem="e6e-5v-vmX" secondAttribute="height" multiplier="7:32" id="ioN-T6-YOH"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" id="mau-U2-Qlr"/>
@@ -105,6 +119,7 @@
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="w0L-yd-4Fz"/>
+                    <exclude reference="dR0-qV-eny"/>
                     <exclude reference="0aO-wh-q4N"/>
                     <exclude reference="GEn-yX-lJo"/>
                     <exclude reference="Uvz-a6-EdQ"/>
