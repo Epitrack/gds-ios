@@ -68,14 +68,16 @@ const float _kCellHeight = 100.0f;
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
+    CGFloat screenWidth = screenSize.width;
     CGFloat screenHeight = screenSize.height;
     
     //create table view to contain ASHorizontalScrollView
     
-    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 100, self.view.frame.size.width, self.view.frame.size.height)];
+    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 95, self.view.frame.size.width, self.view.frame.size.height)];
     sampleTableView.delegate = self;
     sampleTableView.dataSource = self;
     sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    sampleTableView.alwaysBounceVertical = NO;
     [self.view addSubview:sampleTableView];
     
     [self loadCalendar];
@@ -146,10 +148,6 @@ const float _kCellHeight = 100.0f;
     [self.chartView setDrawSliceTextEnabled: NO];
     [self.chartView setDrawHoleEnabled: NO];
     [self.chartView setHoleTransparent: NO];
-    [self.chartView setHoleRadiusPercent: 7];
-    [self.chartView setTransparentCircleRadiusPercent: 10];
-    [self.chartView setRotationAngle: 0];
-    [self.chartView setRotationEnabled: NO];
     self.chartView.legend.enabled = NO;
     
     NSArray * xData = @[@"Mal", @"Bem"];
@@ -202,7 +200,7 @@ const float _kCellHeight = 100.0f;
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:
                               CGRectMake(button.bounds.size.width/4,
-                                         5,
+                                         15,
                                          button.bounds.size.width/2,
                                          button.bounds.size.height/2)];
     
@@ -220,7 +218,7 @@ const float _kCellHeight = 100.0f;
     
     [imageView setImage:[UIImage imageNamed:avatar]];
     
-    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 50, button.bounds.size.width/2, button.bounds.size.height/2)];
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 60, button.bounds.size.width/2, button.bounds.size.height/2)];
     label.text= [user.nick componentsSeparatedByString:@" "][0];
     label.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
     label.textColor = [UIColor whiteColor];
@@ -255,7 +253,7 @@ const float _kCellHeight = 100.0f;
             ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, _kCellHeight)];
             [cell.contentView addSubview:horizontalScrollView];
             horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            horizontalScrollView.uniformItemSize = CGSizeMake(100, 100);
+            horizontalScrollView.uniformItemSize = CGSizeMake(130, 130);
             //this must be called after changing any size or margin property of this class to get acurrate margin
             [horizontalScrollView setItemsMarginOnce];
             NSDictionary *households = user.household;
@@ -280,7 +278,7 @@ const float _kCellHeight = 100.0f;
                         }
                     }
                     
-                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
+                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 10, 150, 150) avatar:avatar nick:nick];
                     [buttons addObject:thumb];
                     [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
