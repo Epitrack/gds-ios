@@ -539,7 +539,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
             singleDTO.setDto(null);
             singleDTO.setLatLng(null);
         } else {
-            singleDTO.setDto(query);
+            singleDTO.setDto(query+"BR");
             setLocationBySearch();
         }
 
