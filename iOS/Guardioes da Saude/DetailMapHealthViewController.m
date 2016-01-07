@@ -123,7 +123,7 @@
 */
 - (IBAction)btnInfoAction:(id)sender {
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: diarreica (febre, diarreia, náusea ou vômito), respiratória (febre, tosse e dor de garganta) e exantemática (febre, exantema, tosse, dor nas articulações e dor de cabeça)." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \nDiarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\nRespiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\nExantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)" preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
     }];
