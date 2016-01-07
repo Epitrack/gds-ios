@@ -23,6 +23,8 @@
 - (id) initWithNick:(NSString *) nick andDob:(NSString *) dob andGender:(NSString *) gender andRace:(NSString *) race andIdUser:(NSString *) idUser
          andPicture:(NSString *) picture andIdHousehold:(NSString *) idHousehold andIdPicture:(NSString *) idPicture;
 
+- (void) setGenderByString: (NSString *) strGender;
+
 @property(nonatomic, retain) NSString *nick;
 @property(nonatomic, retain) NSString *dob;
 @property(nonatomic, retain) NSString *email;
