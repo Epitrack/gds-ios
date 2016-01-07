@@ -31,6 +31,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
+    
     userRequester = [[UserRequester alloc] init];
     householdRequester = [[HouseholdRequester alloc] init];
     
