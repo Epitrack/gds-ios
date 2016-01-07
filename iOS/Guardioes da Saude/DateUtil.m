@@ -50,4 +50,9 @@
     return nil;
 }
 
++(NSInteger) getCurrentYear{
+    NSCalendar *gregorian = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    return [gregorian component:NSCalendarUnitYear fromDate:NSDate.date];
+}
+
 @end

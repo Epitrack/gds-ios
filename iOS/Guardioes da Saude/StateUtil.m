@@ -41,11 +41,11 @@
     } else if ([uf isEqualToString:@"MG"]) {
         stateDiscription = @"Minas Gerais";
     } else if ([uf isEqualToString:@"PR"]) {
-        stateDiscription = @"Pará";
+        stateDiscription = @"Paraná";
     } else if ([uf isEqualToString:@"PB"]) {
         stateDiscription = @"Paraiba";
     } else if ([uf isEqualToString:@"PA"]) {
-        stateDiscription = @"Paraná";
+        stateDiscription = @"Pará";
     } else if ([uf isEqualToString:@"PE"]) {
         stateDiscription = @"Pernambuco";
     } else if ([uf isEqualToString:@"PI"]) {

@@ -10,11 +10,14 @@
 #import "AFNetworking/AFNetworking.h"
 #import "DetailMap.h"
 #import "MapHealthViewController.h"
+@import Charts;
 
 @interface DetailMapHealthViewController () {
     
     DetailMap *detailMap;
 }
+@property (nonatomic, weak) IBOutlet PieChartView * pieChartView;
+
 @end
 
 @implementation DetailMapHealthViewController
@@ -42,26 +45,66 @@
     self.lbPercentRespiratoria.text =[NSString stringWithFormat:@"%g%%", [detailMap.respiratoria doubleValue]];
     
     [self loadPieChart];
+    
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
 }
 
 -(void) loadPieChart{
     float goodPercent = [detailMap.goodPercent floatValue];
     float badPercent = [detailMap.badPercent floatValue];
     
-    UIColor *goodColor = [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f];
-    UIColor *badColor = [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f];
+    [self.pieChartView setUsePercentValuesEnabled: NO];
+    [self.pieChartView setDescriptionText: @""];
+    [self.pieChartView setDrawCenterTextEnabled: NO];
+    [self.pieChartView setDrawSliceTextEnabled: NO];
+    [self.pieChartView setHoleTransparent: NO];
+    [self.pieChartView setDrawHoleEnabled: NO];
+    [self.pieChartView setRotationEnabled: NO];
+    self.pieChartView.legend.enabled = NO;
+
     
-    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:goodPercent color:goodColor],
-                       [PNPieChartDataItem dataItemWithValue:badPercent color:badColor]];
+    NSArray * xData = @[@"Mal", @"Bem"];
     
-    CGRect size = self.pieChartView.frame;
+    NSArray * yData = @[[NSNumber numberWithInt: goodPercent],
+                        [NSNumber numberWithInt: badPercent]];
     
-    self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(0, 0, size.size.width, size.size.height) items:items];
-    self.pieChart.showOnlyValues = YES;
-    self.pieChart.showAbsoluteValues = NO;
-    [self.pieChart strokeChart];
+    NSMutableArray * xArray = [NSMutableArray array];
     
-    [self.pieChartView addSubview:self.pieChart];
+    for (NSString * value in xData) {
+        [xArray addObject: value];
+    }
+    
+    NSMutableArray * yArray = [NSMutableArray array];
+    
+    for (int i = 0; i < yData.count; i++) {
+        
+        NSNumber * value = [yData objectAtIndex: i];
+        
+        BarChartDataEntry * entry = [[BarChartDataEntry alloc] initWithValue: [value doubleValue]
+                                                                      xIndex: i];
+        [yArray addObject: entry];
+    }
+    
+    PieChartDataSet * dataSet = [[PieChartDataSet alloc] initWithYVals: yArray];
+    
+    [dataSet setSliceSpace: 2];
+    [dataSet setSelectionShift: 2];
+    
+    NSMutableArray * colorArray = [NSMutableArray array];
+    
+    [colorArray addObject: [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f]];
+    [colorArray addObject: [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f]];
+    
+    [dataSet setColors: colorArray];
+    
+    PieChartData * data = [[PieChartData alloc] initWithXVals: xArray dataSet: dataSet];
+    
+    [data setDrawValues: NO];
+    [data setHighlightEnabled: NO];
+    
+    [self.pieChartView setData: data];
+    [self.pieChartView setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,7 +123,7 @@
 */
 - (IBAction)btnInfoAction:(id)sender {
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: diarreica (febre, diarreia, náusea ou vômito), respiratória (febre, tosse e dor de garganta) e exantemática (febre, exantema, tosse, dor nas articulações e dor de cabeça)." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \nDiarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\nRespiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\nExantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)" preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
     }];

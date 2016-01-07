@@ -19,6 +19,7 @@
 #import "HouseholdThumbnail.h"
 #import "Constants.h"
 #import "ProgressBarUtil.h"
+#import "DateUtil.h"
 
 @import Charts;
 
@@ -67,14 +68,16 @@ const float _kCellHeight = 100.0f;
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
+    CGFloat screenWidth = screenSize.width;
     CGFloat screenHeight = screenSize.height;
     
     //create table view to contain ASHorizontalScrollView
     
-    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 100, self.view.frame.size.width, self.view.frame.size.height)];
+    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 95, self.view.frame.size.width, self.view.frame.size.height)];
     sampleTableView.delegate = self;
     sampleTableView.dataSource = self;
     sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    sampleTableView.alwaysBounceVertical = NO;
     [self.view addSubview:sampleTableView];
     
     [self loadCalendar];
@@ -139,27 +142,56 @@ const float _kCellHeight = 100.0f;
     
     self.chartView.hidden = NO;
     
-    UIColor *goodColor = [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f];
-    UIColor *badColor = [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f];
+    [self.chartView setUsePercentValuesEnabled: NO];
+    [self.chartView setDescriptionText: @""];
+    [self.chartView setDrawCenterTextEnabled: NO];
+    [self.chartView setDrawSliceTextEnabled: NO];
+    [self.chartView setDrawHoleEnabled: NO];
+    [self.chartView setHoleTransparent: NO];
+    self.chartView.legend.enabled = NO;
     
-    NSArray *items = @[[PNPieChartDataItem dataItemWithValue:goodPercent color:goodColor],
-                       [PNPieChartDataItem dataItemWithValue:badPecent color:badColor]];
+    NSArray * xData = @[@"Mal", @"Bem"];
     
-    if (firstTime) {
-        CGRect size = self.chartView.frame;
-        
-        self.pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(0, 0, size.size.width, size.size.height) items:items];
-        self.pieChart.showOnlyValues = YES;
-        self.pieChart.showAbsoluteValues = NO;
-        [self.pieChart strokeChart];
-        
-        [self.chartView addSubview:self.pieChart];
-        
-        firstTime = NO;
-    }else{
-        [self.pieChart updateChartData:items];
-        [self.pieChart strokeChart];
+    NSArray * yData = @[[NSNumber numberWithInt: badPecent],
+                        [NSNumber numberWithInt: goodPercent]];
+    
+    NSMutableArray * xArray = [NSMutableArray array];
+    
+    for (NSString * value in xData) {
+        [xArray addObject: value];
     }
+    
+    NSMutableArray * yArray = [NSMutableArray array];
+    
+    for (int i = 0; i < yData.count; i++) {
+        
+        NSNumber * value = [yData objectAtIndex: i];
+        
+        BarChartDataEntry * entry = [[BarChartDataEntry alloc] initWithValue: [value doubleValue]
+                                                                      xIndex: i];
+        [yArray addObject: entry];
+    }
+    
+    PieChartDataSet * dataSet = [[PieChartDataSet alloc] initWithYVals: yArray];
+    
+    [dataSet setSliceSpace: 2];
+    [dataSet setSelectionShift: 2];
+    
+    NSMutableArray * colorArray = [NSMutableArray array];
+    
+    [colorArray addObject: [DiaryHealthViewController toUiColor: @"#FF0000"]];
+    [colorArray addObject: [DiaryHealthViewController toUiColor: @"#CCCC00"]];
+    
+    [dataSet setColors: colorArray];
+    
+    PieChartData * data = [[PieChartData alloc] initWithXVals: xArray dataSet: dataSet];
+    
+    [data setDrawValues: NO];
+    [data setHighlightEnabled: NO];
+    
+    [self.chartView setData: data];
+    
+    [self.chartView setNeedsDisplay];
     
 }
 
@@ -168,7 +200,7 @@ const float _kCellHeight = 100.0f;
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:
                               CGRectMake(button.bounds.size.width/4,
-                                         5,
+                                         15,
                                          button.bounds.size.width/2,
                                          button.bounds.size.height/2)];
     
@@ -186,7 +218,7 @@ const float _kCellHeight = 100.0f;
     
     [imageView setImage:[UIImage imageNamed:avatar]];
     
-    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 50, button.bounds.size.width/2, button.bounds.size.height/2)];
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 60, button.bounds.size.width/2, button.bounds.size.height/2)];
     label.text= [user.nick componentsSeparatedByString:@" "][0];
     label.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
     label.textColor = [UIColor whiteColor];
@@ -221,7 +253,7 @@ const float _kCellHeight = 100.0f;
             ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, _kCellHeight)];
             [cell.contentView addSubview:horizontalScrollView];
             horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            horizontalScrollView.uniformItemSize = CGSizeMake(100, 100);
+            horizontalScrollView.uniformItemSize = CGSizeMake(130, 130);
             //this must be called after changing any size or margin property of this class to get acurrate margin
             [horizontalScrollView setItemsMarginOnce];
             NSDictionary *households = user.household;
@@ -246,7 +278,7 @@ const float _kCellHeight = 100.0f;
                         }
                     }
                     
-                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
+                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 10, 150, 150) avatar:avatar nick:nick];
                     [buttons addObject:thumb];
                     [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
@@ -294,7 +326,7 @@ const float _kCellHeight = 100.0f;
 - (void) loadChartLine {
     
     self.graphView.useCurvedLine = YES;
-    self.graphView.graphWidth = 375;
+
     
     self.graphView.tintColor = [UIColor whiteColor];
     self.graphView.labelBackgroundColor = [UIColor whiteColor];
@@ -302,7 +334,7 @@ const float _kCellHeight = 100.0f;
     
     self.graphView.strokeColor = [DiaryHealthViewController toUiColor: @"#186cb7"];
     self.graphView.pointFillColor = [DiaryHealthViewController toUiColor: @"#186cb7"];
-    
+
     self.graphView.barColor = [UIColor clearColor];
     self.graphView.backgroundViewColor = [UIColor whiteColor];
 }
@@ -343,7 +375,7 @@ const float _kCellHeight = 100.0f;
 
     [userRequester getSummary: [User getInstance]
                                  idHousehold: idHousehold
-                                        year: 2015
+                                        year: [DateUtil getCurrentYear]
                                      onStart: ^{[self showProgressBar];}
                                      onError: ^(NSString * message) {[self hiddenProgressBar];}
                                    onSuccess: ^(NSMutableDictionary * sumaryGraphMap) {
@@ -370,10 +402,18 @@ const float _kCellHeight = 100.0f;
                                            [valueArray addObject: [NSNumber numberWithFloat: sumaryGraph.percent]];
                                        }
                                        
-                                       self.graphView.graphData = valueArray;
+                                       
+                                       self.graphView.labelFont = [UIFont fontWithName:@"Foco-Regular" size:11.5];
+                                       self.graphView.graphWidth = self.graphView.frame.size.width;
                                        
                                        self.graphView.graphDataLabels = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dev"];
+                                   
+                                       UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.graphView.frame.size.width, self.graphView.frame.size.height)];
+                                       [blankView setBackgroundColor: [UIColor whiteColor]];
+                                       [self.graphView addSubview:blankView];
                                        
+                                       
+                                       self.graphView.graphData = valueArray;
                                        [self.graphView plotGraphData];
                                        
                                    }
@@ -408,13 +448,12 @@ const float _kCellHeight = 100.0f;
             dayView.hidden = YES;
         }
         
-        NSString * key = [NSString stringWithFormat: @"%li-%li-%li",
+        NSString * key = [NSString stringWithFormat: @"%d-%d-%d",
                           [self getDay: dayView.date], [self getMonth: dayView.date], [self getYear: dayView.date]];
         
         SumaryCalendar * sumaryCalendar = [self.calendarMap objectForKey: key];
         
         if (sumaryCalendar) {
-            NSLog(@"key = %@", key);
             [dayView addSubview: [self getState: sumaryCalendar]];
         }else{
             UIImageView * view = [[UIImageView alloc] initWithFrame: CGRectMake(9, 0, 23, 23)];

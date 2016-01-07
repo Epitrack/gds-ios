@@ -176,7 +176,7 @@
                                 <rect key="frame" x="136" y="131" width="46" height="20"/>
                             </variation>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xj-Lm-wip">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xj-Lm-wip" customClass="PieChartView" customModule="Charts">
                             <rect key="frame" x="282" y="71" width="112" height="113"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -210,7 +210,7 @@
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9F-rp-6Vs" customClass="JYGraphView">
                             <rect key="frame" x="16" y="456" width="392" height="125"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="125" id="IMs-Sl-ZRJ"/>
                             </constraints>

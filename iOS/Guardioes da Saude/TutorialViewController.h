@@ -12,8 +12,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgBgTutorial;
 @property (strong, nonatomic) IBOutlet UIImageView *imgTutorial;
 @property NSInteger indexTutorial;
-@property (strong, nonatomic) IBOutlet UITextView *txtDescription;
-@property (strong, nonatomic) IBOutlet UITextView *txtTitle;
+@property (strong, nonatomic) IBOutlet UILabel *txtDescription;
+@property (strong, nonatomic) IBOutlet UILabel *txtTitle;
 - (IBAction)btnEnter:(id)sender;
 - (IBAction)btnNewUser:(id)sender;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;

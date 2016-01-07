@@ -20,6 +20,8 @@
     UserRequester *userRequester;
     HouseholdRequester *householdRequester;
     NSDate *birthdate;
+    NSArray *listRace;
+    NSArray *listGender;
 }
 
 @end
@@ -29,8 +31,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
+    
     userRequester = [[UserRequester alloc] init];
     householdRequester = [[HouseholdRequester alloc] init];
+    
+    listGender = @[@"Masculino", @"Feminino"];
+    listRace = @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"];
+    
+    // Setup down pickers
+    (void)[self.pickerGender initWithData:listGender];
+    (void)[self.pickerRace initWithData: listRace];
+    
     if (self.operation == EDIT_USER) {
         [self loadEditUser];
     } else if (self.operation == EDIT_HOUSEHOLD){
@@ -94,21 +108,21 @@
     [self updateBirthDate];
     
     if ([gender isEqualToString:@"M"]) {
-        self.segmentGender.selectedSegmentIndex = 0;
+        self.pickerGender.text = listGender[0];
     } else {
-        self.segmentGender.selectedSegmentIndex = 1;
+        self.pickerGender.text = listGender[1];
     }
     
     if ([race isEqualToString:@"branco"]) {
-        self.segmentRace.selectedSegmentIndex = 0;
+        self.pickerRace.text = listRace[0];
     } else if ([race isEqualToString:@"preto"]) {
-        self.segmentRace.selectedSegmentIndex = 1;
+        self.pickerRace.text = listRace[1];
     } else if ([race isEqualToString:@"pardo"]) {
-        self.segmentRace.selectedSegmentIndex = 2;
+        self.pickerRace.text = listRace[2];
     } else if ([race isEqualToString:@"amarelo"]) {
-        self.segmentRace.selectedSegmentIndex = 3;
+        self.pickerRace.text = listRace[3];
     } else if ([race isEqualToString:@"indigena"]) {
-        self.segmentRace.selectedSegmentIndex = 4;
+        self.pickerRace.text = listRace[4];
     }
     
     [self updatePicture:picture];
@@ -218,8 +232,8 @@
     userUpdater.nick = self.txtNick.text;
     userUpdater.email = self.user.email;
     userUpdater.dob = [NSString stringWithFormat:@"%@", birthdate];
-    userUpdater.gender = [self getGender];
-    userUpdater.race = [self getRace];
+    [userUpdater setGenderByString:self.pickerGender.text];
+    userUpdater.race = [self.pickerRace.text lowercaseString];
     userUpdater.picture = self.pictureSelected;
     
     if (![self.txtPassword.text isEqualToString:@""]) {
@@ -277,8 +291,8 @@
     updaterHousehold.nick = self.txtNick.text;
     updaterHousehold.email = self.txtEmail.text;
     updaterHousehold.dob = [DateUtil stringUSFromDate:birthdate];
-    updaterHousehold.gender = [self getGender];
-    updaterHousehold.race = [self getRace];
+    [updaterHousehold setGenderByString:self.pickerGender.text];
+    updaterHousehold.race = [self.pickerRace.text lowercaseString];
     updaterHousehold.picture = self.pictureSelected;
     
     if (self.operation == EDIT_HOUSEHOLD) {
@@ -314,35 +328,6 @@
     selectAvatarViewController.profileFormCtr = self;
 
     [self.navigationController pushViewController:selectAvatarViewController animated:YES];
-}
-
-- (NSString *) getRace{
-    NSString *race;
-    
-    if (self.segmentRace.selectedSegmentIndex == 0) {
-        race = @"branco";
-    } else if (self.segmentRace.selectedSegmentIndex == 1) {
-        race = @"preto";
-    } else if (self.segmentRace.selectedSegmentIndex == 2) {
-        race = @"pardo";
-    } else if (self.segmentRace.selectedSegmentIndex == 3) {
-        race = @"amarelo";
-    } else if (self.segmentRace.selectedSegmentIndex == 4) {
-        race = @"indigena";
-    }
-    
-    return race;
-}
-
-- (NSString *) getGender{
-    NSString *gender;
-    if (self.segmentGender.selectedSegmentIndex == 0) {
-        gender = @"M";
-    } else if (self.segmentGender.selectedSegmentIndex == 1) {
-        gender = @"F";
-    }
-    
-    return gender;
 }
 
 - (void) updatePicture: (NSString *) picture{

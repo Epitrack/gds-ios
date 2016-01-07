@@ -10,6 +10,7 @@
 #import "Household.h"
 #import "User.h"
 #import "RMDateSelectionViewController.h"
+@import DownPicker;
 
 typedef enum operation{
     EDIT_USER,
@@ -25,8 +26,6 @@ typedef enum operation{
 @property (weak, nonatomic) NSString *pictureSelected;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentGender;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentRace;
 @property (weak, nonatomic) IBOutlet UIButton *btnDob;
 - (IBAction)btnDobAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
@@ -39,5 +38,7 @@ typedef enum operation{
 @property (weak, nonatomic) IBOutlet UIButton *btnPicture;
 - (IBAction)btnSelectPicture:(id)sender;
 @property (nonatomic, assign) NSInteger *editProfile;
+@property (weak, nonatomic) IBOutlet UIDownPicker *pickerRace;
+@property (weak, nonatomic) IBOutlet UIDownPicker *pickerGender;
 
 @end
