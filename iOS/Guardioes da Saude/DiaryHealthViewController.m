@@ -254,15 +254,7 @@ const float _kCellHeight = 100.0f;
             [cell.contentView addSubview:horizontalScrollView];
             horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             
-            CGFloat widthScreen = [[UIScreen mainScreen] bounds].size.width;
-            CGFloat width;
-            if (widthScreen == 375) {
-                width = 180;
-            }else{
-                width = 120;
-            }
-            NSLog(@"Width: %f", widthScreen);
-            horizontalScrollView.uniformItemSize = CGSizeMake(width, 100);
+            horizontalScrollView.uniformItemSize = CGSizeMake(120, 100);
             //this must be called after changing any size or margin property of this class to get acurrate margin
             [horizontalScrollView setItemsMarginOnce];
             NSDictionary *households = user.household;
@@ -291,6 +283,12 @@ const float _kCellHeight = 100.0f;
                     [buttons addObject:thumb];
                     [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
+                
+                if ([UIScreen mainScreen].bounds.size.width >= 375 ) {
+                    UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 150)];
+                    [buttons addObject:blankView];
+                }
+                
                 [horizontalScrollView addItems:buttons];
             }
         }
