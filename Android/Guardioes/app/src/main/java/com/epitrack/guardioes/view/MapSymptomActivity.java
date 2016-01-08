@@ -398,7 +398,12 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                 JSONObject jsonObjectData = jsonObject.getJSONObject("data");
                 JSONObject jsonObjectLocation = jsonObjectData.getJSONObject("location");
 
-                textViewCity.setText(jsonObjectLocation.get("city").toString());
+                try {
+                    textViewCity.setText(jsonObjectLocation.get("city").toString());
+                } catch (Exception e) {
+                    textViewCity.setText("");
+                }
+
                 textViewState.setText(getStateDescription(jsonObjectLocation.get("state").toString().toUpperCase()));
                 textViewParticipation.setText(jsonObjectData.get("total_surveys").toString() + " Participações essa semana.");
 
