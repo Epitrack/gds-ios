@@ -387,6 +387,9 @@ const float _kCellHeight = 100.0f;
                                      onError: ^(NSString * message) {[self hiddenProgressBar];}
                                    onSuccess: ^(NSMutableDictionary * sumaryGraphMap) {
                                        [self hiddenProgressBar];
+                                       
+                                       self.lbFrequencyYear.text = [NSString stringWithFormat:@"Frequência %d", [DateUtil getCurrentYear]];
+                                       
                                        for (int i = 1; i <= 12; i++) {
                                            
                                            if (![sumaryGraphMap objectForKey: [NSNumber numberWithInt: i]]) {
