@@ -133,7 +133,7 @@
         
         phonesLocal.lbHeader = @"SAMU";
         phonesLocal.lbBody = @"SAMU";
-        phonesLocal.lbDetailBody = @"Serviço de Atendimento Médico de ";
+        phonesLocal.lbDetailBody = @"Serviço de Atendimento Médico de Urgência";
         phonesLocal.lbPhone = @"192";
         phonesLocal.imgDetail = @"iconSamu.png";
     } else if (indexPath.row == 1) {
