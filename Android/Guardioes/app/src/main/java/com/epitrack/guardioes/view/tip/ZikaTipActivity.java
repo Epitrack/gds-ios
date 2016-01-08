@@ -5,7 +5,9 @@ import android.text.Html;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+import com.google.android.gms.analytics.Tracker;
 
 import butterknife.Bind;
 
@@ -17,11 +19,19 @@ public class ZikaTipActivity extends BaseAppCompatActivity {
     @Bind(R.id.zika_content)
     TextView zikaContent;
 
+    private Tracker mTracker;
+
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.zika_info);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
 
         zikaContent.setText(Html.fromHtml("<p>&nbsp;&nbsp;&#8226;&nbsp;Os vírus da Dengue, Zika e Chikungunya são transmitidos pelo mosquito <i>Aedes aegypti</i> e apresentam sinais e sintomas parecidos.</p>\n" +

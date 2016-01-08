@@ -6,9 +6,12 @@ import android.view.View;
 import android.widget.ExpandableListView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.IMenu;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,11 +26,19 @@ public class TipActivity extends BaseAppCompatActivity implements ExpandableList
     @Bind(R.id.expandable_list_view)
     ExpandableListView expandableListView;
 
+    private Tracker mTracker;
+
     @Override
     protected void onCreate(final android.os.Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.tip);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         final Map<Integer, IMenu[]> menuMap = new HashMap<>();
 
@@ -61,6 +72,12 @@ public class TipActivity extends BaseAppCompatActivity implements ExpandableList
             final Intent intent = new Intent(this, tip.getMenuClass());
 
             if (tip == Tip.HOSPITAL || tip == Tip.PHARMACY) {
+
+                mTracker.send(new HitBuilders.EventBuilder()
+                        .setCategory("Action")
+                        .setAction(tip.getName() + " Button")
+                        .build());
+
                 intent.putExtra(Constants.Bundle.TIP, tip.getId());
             }
 

@@ -17,6 +17,7 @@ import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.utility.DialogBuilder;
@@ -38,6 +39,8 @@ import com.facebook.ProfileTracker;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.Scopes;
@@ -104,7 +107,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
     private ProfileTracker profileTracker;
 
     SingleUser singleUser = SingleUser.getInstance();
-
+    private Tracker mTracker;
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -118,9 +121,20 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
 
         actionBar.setDisplayShowTitleEnabled(false);
 
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
+
         modeSociaLogin = (String)DTO.object;
 
         if (modeSociaLogin == Constants.Bundle.TWITTER) {
+
+            mTracker.send(new HitBuilders.EventBuilder()
+                    .setCategory("Action")
+                    .setAction("Twitter Button")
+                    .build());
 
             TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
             Fabric.with(this, new Twitter(authConfig));
@@ -160,6 +174,11 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
              buttonTwitter.callOnClick();
         } else if (modeSociaLogin == Constants.Bundle.GOOGLE) {
 
+            mTracker.send(new HitBuilders.EventBuilder()
+                    .setCategory("Action")
+                    .setAction("Google Button")
+                    .build());
+
             buttonGoogle.setOnClickListener(this);
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
@@ -173,22 +192,11 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             buttonGoogle.callOnClick();
         } else if (modeSociaLogin == Constants.Bundle.FACEBOOK) {
 
-            //if (AccessToken.getCurrentAccessToken() != null) {
+            mTracker.send(new HitBuilders.EventBuilder()
+                    .setCategory("Action")
+                    .setAction("Facebook Button")
+                    .build());
 
-                //userExistSocial(AccessToken.getCurrentAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
-
-                /*new DialogBuilder(SocialLoginActivity.this).load()
-                        .title(R.string.attention)
-                        .content(R.string.facebook_fail)
-                        .positiveText(R.string.ok)
-                        .callback(new MaterialDialog.ButtonCallback() {
-                            @Override
-                            public void onPositive(final MaterialDialog dialog) {
-                                //navigateTo(CreateAccountActivity.class);
-                                onBackPressed();
-                            }
-                        }).show();*/
-            //}
             FacebookSdk.sdkInitialize(getApplicationContext());
             callbackManager = CallbackManager.Factory.create();
 
@@ -327,89 +335,6 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                 break;
         }
     }
-
-    /*private void executeSocialLogin(boolean loginFail) {
-
-        if (loginFail) {
-
-            new DialogBuilder(SocialLoginActivity.this).load()
-                    .title(R.string.attention)
-                    .content(R.string.google_fail)
-                    .positiveText(R.string.ok)
-                    .callback(new MaterialDialog.ButtonCallback() {
-                        @Override
-                        public void onPositive(final MaterialDialog dialog) {
-                            //navigateTo(CreateAccountActivity.class);
-                            onBackPressed();
-                        }
-                    }).show();
-        } else  {
-
-            if (userExist(singleUser.getEmail())) {
-
-                new DialogBuilder(SocialLoginActivity.this).load()
-                        .title(R.string.attention)
-                        .content(R.string.user_exist)
-                        .positiveText(R.string.ok)
-                        .callback(new MaterialDialog.ButtonCallback() {
-                            @Override
-                            public void onPositive(final MaterialDialog dialog) {
-                                //navigateTo(CreateAccountActivity.class);
-                                onBackPressed();
-                            }
-                        }).show();
-            } else {
-
-                Bundle dtoBundle = new Bundle();
-
-                dtoBundle.putBoolean(Constants.Bundle.SOCIAL_NEW, true);
-                dtoBundle.putBoolean(Constants.Bundle.NEW_MEMBER, false);
-                dtoBundle.putBoolean(Constants.Bundle.MAIN_MEMBER, false);
-
-                DTO.object = null;
-                navigateTo(UserActivity.class, dtoBundle);
-            }
-        }
-    }*/
-
-    /*private boolean userExist(String email) {
-
-        boolean bReturn = false;
-
-        SimpleRequester simpleRequester = new SimpleRequester();
-        JSONObject jsonObject = new JSONObject();
-
-        simpleRequester.setUrl(Requester.API_URL + "user/get?email=" + email);
-        simpleRequester.setMethod(Method.GET);
-        simpleRequester.setJsonObject(jsonObject);
-
-        try {
-            String jsonStr = simpleRequester.execute(simpleRequester).get();
-
-            jsonObject = new JSONObject(jsonStr);
-
-            if (jsonObject.get("error").toString() == "true") {
-                bReturn = true;
-            } else {
-
-                JSONArray jsonArray = jsonObject.getJSONArray("data");
-
-                if (jsonArray.length() > 0) {
-                    bReturn = true;
-                } else {
-                    bReturn = false;
-                }
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return bReturn;
-    }*/
 
     private void userExistSocial(String token, String type) {
 

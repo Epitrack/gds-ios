@@ -27,6 +27,7 @@ import com.epitrack.guardioes.view.diary.DiaryActivity;
 import com.epitrack.guardioes.view.menu.profile.Avatar;
 import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
 import com.epitrack.guardioes.view.tip.TipActivity;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
 import java.io.IOException;
@@ -50,9 +51,17 @@ public class HomeFragment extends BaseFragment {
     @Bind(R.id.image_view_photo)
     de.hdodenhof.circleimageview.CircleImageView imageViewPhoto;
 
+    private Tracker mTracker;
+
     @Override
     public void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         setDisplayTitle(false);
         setDisplayLogo(true);
@@ -130,26 +139,51 @@ public class HomeFragment extends BaseFragment {
 
     @OnClick(R.id.text_view_notice)
     public void onNews() {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Notice Button")
+                .build());
+
         navigateTo(NoticeActivity.class);
     }
 
     @OnClick(R.id.text_view_map)
     public void onMap() {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Notice Button")
+                .build());
+
         navigateTo(MapSymptomActivity.class);
     }
 
     @OnClick(R.id.text_view_tip)
     public void onTip() {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Tip Button")
+                .build());
+
         navigateTo(TipActivity.class);
     }
 
     @OnClick(R.id.text_view_diary)
     public void onDiary() {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Diary of Health Button")
+                .build());
+
         navigateTo(DiaryActivity.class);
     }
 
     @OnClick(R.id.text_view_join)
     public void onJoin() {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Survey Button")
+                .build());
+
         navigateTo(SelectParticipantActivity.class);
     }
 
