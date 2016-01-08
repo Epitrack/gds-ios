@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbPercentBad;
 @property (weak, nonatomic) IBOutlet UILabel *lbTotalReportGood;
 @property (weak, nonatomic) IBOutlet UILabel *lbTotalReportBad;
+@property (weak, nonatomic) IBOutlet UILabel *lbFrequencyYear;
 
 @property (nonatomic) PNPieChart *pieChart;
 

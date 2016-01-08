@@ -254,15 +254,7 @@ const float _kCellHeight = 100.0f;
             [cell.contentView addSubview:horizontalScrollView];
             horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             
-            CGFloat widthScreen = [[UIScreen mainScreen] bounds].size.width;
-            CGFloat width;
-            if (widthScreen == 375) {
-                width = 180;
-            }else{
-                width = 120;
-            }
-            NSLog(@"Width: %f", widthScreen);
-            horizontalScrollView.uniformItemSize = CGSizeMake(width, 100);
+            horizontalScrollView.uniformItemSize = CGSizeMake(120, 100);
             //this must be called after changing any size or margin property of this class to get acurrate margin
             [horizontalScrollView setItemsMarginOnce];
             NSDictionary *households = user.household;
@@ -291,6 +283,12 @@ const float _kCellHeight = 100.0f;
                     [buttons addObject:thumb];
                     [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
+                
+                if ([UIScreen mainScreen].bounds.size.width >= 375 ) {
+                    UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 150)];
+                    [buttons addObject:blankView];
+                }
+                
                 [horizontalScrollView addItems:buttons];
             }
         }
@@ -389,6 +387,9 @@ const float _kCellHeight = 100.0f;
                                      onError: ^(NSString * message) {[self hiddenProgressBar];}
                                    onSuccess: ^(NSMutableDictionary * sumaryGraphMap) {
                                        [self hiddenProgressBar];
+                                       
+                                       self.lbFrequencyYear.text = [NSString stringWithFormat:@"Frequência %d", [DateUtil getCurrentYear]];
+                                       
                                        for (int i = 1; i <= 12; i++) {
                                            
                                            if (![sumaryGraphMap objectForKey: [NSNumber numberWithInt: i]]) {
@@ -415,7 +416,7 @@ const float _kCellHeight = 100.0f;
                                        self.graphView.labelFont = [UIFont fontWithName:@"Foco-Regular" size:11.5];
                                        self.graphView.graphWidth = self.graphView.frame.size.width;
                                        
-                                       self.graphView.graphDataLabels = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dev"];
+                                       self.graphView.graphDataLabels = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dez"];
                                    
                                        UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.graphView.frame.size.width, self.graphView.frame.size.height)];
                                        [blankView setBackgroundColor: [UIColor whiteColor]];

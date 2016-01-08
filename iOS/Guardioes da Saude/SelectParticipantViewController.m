@@ -130,7 +130,8 @@ const float kCellHeight = 100.0f;
             ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kCellHeight)];
             [cell.contentView addSubview:horizontalScrollView];
             horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-            horizontalScrollView.uniformItemSize = CGSizeMake(130, 130);
+            
+            horizontalScrollView.uniformItemSize = CGSizeMake(120, 100);
             //this must be called after changing any size or margin property of this class to get acurrate margin
             [horizontalScrollView setItemsMarginOnce];
             NSMutableArray *buttons = [NSMutableArray array];
@@ -159,12 +160,16 @@ const float kCellHeight = 100.0f;
                         }
                     }
                     
-                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 10, 150, 150) avatar:avatar nick:nick];
+                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
                     [buttons addObject:thumb];
                     [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
                 
                 if (buttons.count > 0) {
+                    if ([UIScreen mainScreen].bounds.size.width >= 375 ) {
+                        UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 120, 150)];
+                        [buttons addObject:blankView];
+                    }
                     [horizontalScrollView addItems:buttons];
                 }
             }
