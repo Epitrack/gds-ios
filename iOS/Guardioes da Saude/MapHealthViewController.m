@@ -271,8 +271,8 @@
                  detailMap.city = city;
                  detailMap.state = state;
                  detailMap.totalSurvey = [NSString stringWithFormat:@"%d", totalSurvey];
-                 detailMap.goodPercent = [NSString stringWithFormat:@"%f%%", goodPercent];
-                 detailMap.badPercent = [NSString stringWithFormat:@"%f%%", badPercent];
+                 detailMap.goodPercent = [NSString stringWithFormat:@"%g%%", goodPercent];
+                 detailMap.badPercent = [NSString stringWithFormat:@"%g%%", badPercent];
                  detailMap.totalNoSymptom = [NSString stringWithFormat:@"%ld", totalNoSymptom];
                  detailMap.totalWithSymptom = [NSString stringWithFormat:@"%ld", totalWithSymptom];
                  
