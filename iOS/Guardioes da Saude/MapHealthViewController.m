@@ -273,8 +273,8 @@
                  detailMap.totalSurvey = [NSString stringWithFormat:@"%d", totalSurvey];
                  detailMap.goodPercent = [NSString stringWithFormat:@"%f%%", goodPercent];
                  detailMap.badPercent = [NSString stringWithFormat:@"%f%%", badPercent];
-                 detailMap.totalNoSymptom = [NSString stringWithFormat:@"%d", totalNoSymptom];
-                 detailMap.totalWithSymptom = [NSString stringWithFormat:@"%d", totalWithSymptom];
+                 detailMap.totalNoSymptom = [NSString stringWithFormat:@"%ld", totalNoSymptom];
+                 detailMap.totalWithSymptom = [NSString stringWithFormat:@"%ld", totalWithSymptom];
                  
                  detailMap.diarreica = [NSString stringWithFormat:@"%f", diarreica];
                  detailMap.exantemaica = [NSString stringWithFormat:@"%f", exantemaica];
