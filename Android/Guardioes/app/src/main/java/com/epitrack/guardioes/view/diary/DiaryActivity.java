@@ -22,6 +22,7 @@ import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.MySelectorDecoratorEquals;
 import com.epitrack.guardioes.utility.MySelectorDecoratorGood;
 import com.epitrack.guardioes.utility.MySelectorDecoratorBad;
@@ -33,6 +34,7 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
+import com.google.android.gms.analytics.Tracker;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.helper.StaticLabelsFormatter;
@@ -141,6 +143,7 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
     private DiaryActivity context;
     private CalendarDay calendarDay;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -150,6 +153,12 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         context = DiaryActivity.this;
 

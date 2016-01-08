@@ -16,12 +16,15 @@ import android.widget.GridView;
 import com.epitrack.guardioes.BuildConfig;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.SingleUser;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.Extension;
 import com.epitrack.guardioes.utility.Logger;
 import com.epitrack.guardioes.utility.MediaUtility;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.menu.ImageActivity;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -45,12 +48,19 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
     private final SelectHandler handler = new SelectHandler();
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.avatar);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         gridView.setAdapter(new AvatarAdapter(this, Avatar.values()));
 
@@ -70,17 +80,17 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
     }
 
     public void onPhoto(final MenuItem menuItem) {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        //Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            //startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-            //navigateTo(UserActivity.class);
 
-            //camera stuff
-            //Intent imageIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+
+            mTracker.send(new HitBuilders.EventBuilder()
+                    .setCategory("Action")
+                    .setAction("Take Photo Button")
+                    .build());
+
             String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 
-            //folder stuff
             File imagesFolder = new File(Environment.getExternalStorageDirectory(), "GDS_Images");
             imagesFolder.mkdirs();
 
@@ -92,17 +102,14 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
             startActivityForResult(takePictureIntent, Constants.RequestCode.IMAGE);
             SingleUser.getInstance().setUri(uriSavedImage);
         }
-
-        /*final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getPhotoFile()));
-        intent.putExtra(MediaStore.EXTRA_SCREEN_ORIENTATION, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        startActivityForResult(intent, Constants.RequestCode.IMAGE);*/
     }
 
     @OnClick(R.id.button_photo)
     public void onSave() {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Select Avatar Button")
+                .build());
 
         if (handler.getAvatar() == null) {
 
@@ -124,23 +131,8 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent intent) {
 
         if (requestCode == Constants.RequestCode.IMAGE && resultCode == RESULT_OK) {
-            //Bundle extras = intent.getExtras();
-            //Bitmap imageBitmap = (Bitmap) extras.get("data");
-            //Bitmap imageBitmap2 = imageBitmap;
             finish();
-            //mImageView.setImageBitmap(imageBitmap);
         }
-
-        /*if (requestCode == Constants.RequestCode.IMAGE) {
-
-            final Bundle bundle = new Bundle();
-
-            bundle.putParcelable(Constants.Bundle.URI, Uri.fromFile(getPhotoFile()));
-
-            navigateTo(ImageActivity.class, Intent.FLAG_ACTIVITY_FORWARD_RESULT, bundle);
-
-            finish();
-        }*/
     }
 
     private File getPhotoFile() {

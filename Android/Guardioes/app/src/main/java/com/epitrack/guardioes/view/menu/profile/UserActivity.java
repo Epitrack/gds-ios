@@ -22,6 +22,7 @@ import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.BitmapUtility;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DateFormat;
@@ -30,6 +31,8 @@ import com.epitrack.guardioes.utility.Mask;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.welcome.WelcomeActivity;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -90,10 +93,17 @@ public class UserActivity extends BaseAppCompatActivity {
     SingleUser singleUser = SingleUser.getInstance();
     private int userAvatar = 0;
     String photoPath = "";
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         socialNew = getIntent().getBooleanExtra(Constants.Bundle.SOCIAL_NEW, false);
         newMenber = getIntent().getBooleanExtra(Constants.Bundle.NEW_MEMBER, false);
@@ -249,6 +259,10 @@ public class UserActivity extends BaseAppCompatActivity {
     @OnClick(R.id.button_add)
     public void onAdd() {
         //Miquéias Lopes
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Create New Member/User Button")
+                .build());
         User user = new User();
 
         //final boolean newMenber = getIntent().getBooleanExtra(Constants.Bundle.NEW_MEMBER, false);

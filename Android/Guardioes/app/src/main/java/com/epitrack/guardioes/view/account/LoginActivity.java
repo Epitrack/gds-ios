@@ -23,10 +23,13 @@ import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.Email;
@@ -64,6 +67,7 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
     private boolean inLogin;
     private Validator validator;
     SharedPreferences sharedPreferences = null;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -76,6 +80,12 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
         if (actionBar == null) {
             throw new IllegalArgumentException("The actionBar is null.");
         }
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         actionBar.setDisplayShowTitleEnabled(false);
 
@@ -183,6 +193,11 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
 
     @OnClick(R.id.text_view_forgot_password)
     public void onForgotPassword() {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Forgot Password Button")
+                .build());
+
         final String[] str = {""};
         new DialogBuilder(LoginActivity.this).load()
                 .title("E-mail")
@@ -316,6 +331,10 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
 
     @OnClick(R.id.button_login)
     public void onLogin(final View view) {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Login by Email Button")
+                .build());
 
         validator.validate();
 

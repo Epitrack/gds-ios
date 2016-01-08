@@ -65,6 +65,7 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
         mTracker = application.getDefaultTracker();
         // [END shared_tracker]
 
+
         ButterKnife.bind(this);
 
         setupViews();

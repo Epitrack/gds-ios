@@ -13,9 +13,12 @@ import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,11 +42,19 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
     SingleUser singleUser = SingleUser.getInstance();
     private final Map<String, Fragment> fragmentMap = new HashMap<>();
 
+    private Tracker mTracker;
+
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.profile_activity);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
     }
@@ -70,6 +81,12 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
     @Override
     @OnClick(R.id.button_add)
     public void onAdd() {
+
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Add New Member Button")
+                .build());
+
         final Bundle bundle = new Bundle();
 
         bundle.putBoolean(Constants.Bundle.NEW_MEMBER, true);
@@ -79,6 +96,11 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
 
     @Override
     public void onEdit(final User user) {
+
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Edit Profile Button")
+                .build());
 
         final Bundle bundle = new Bundle();
 
@@ -120,6 +142,11 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
     public void onDelete(final User user) {
         //Miquéias Lopes
 
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Delete Member Button")
+                .build());
+
         if (singleUser.getId() == user.getId()) {
 
             new DialogBuilder(ProfileActivity.this).load()
@@ -127,8 +154,6 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
                     .content(R.string.not_remove_member)
                     .positiveText(R.string.ok)
                     .show();
-
-            //Toast.makeText(getApplicationContext(), R.string.not_remove_member, Toast.LENGTH_SHORT).show();
         } else {
 
             new DialogBuilder(ProfileActivity.this).load()

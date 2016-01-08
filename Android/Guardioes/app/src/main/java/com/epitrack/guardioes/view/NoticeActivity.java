@@ -20,7 +20,10 @@ import com.epitrack.guardioes.model.Notice;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,11 +62,19 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
     @Bind(R.id.recycler_view)
     RecyclerView recyclerView;
 
+    private Tracker mTracker;
+
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.notice);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         ButterKnife.bind(this);
 
@@ -136,18 +147,16 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
     private void setupHeader(final Notice notice) {
 
         // TODO: Stub only
-        //notice.setTitle("Campanha de vacinação contra gripe começa em 4 de maio, diz ministro.");
-        //notice.setSource("saude.estadao.com.br");
-        //notice.setPublicationDate("10:20");
-
-        /*textViewTitle.setText(notice.getTitle());
-        textViewSource.setText(notice.getSource());
-        textViewDate.setText(notice.getPublicationDate());*/
         imageView.setImageResource(R.drawable.img_news);
     }
 
     @Override
     public void onNoticeSelect(final Notice notice) {
+
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Show Notice")
+                .build());
 
         new DialogBuilder(NoticeActivity.this).load()
                 .title(R.string.attention)

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.utility.SocialShare;
@@ -28,6 +29,8 @@ import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.MessageDialog;
 import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.twitter.sdk.android.tweetcomposer.TweetComposer;
 
 import butterknife.Bind;
@@ -58,12 +61,20 @@ public class ShareActivity extends BaseActivity {
     ShareButton shareButton;
     ShareDialog shareDialog;
     CallbackManager callbackManager;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.share);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
+
         FacebookSdk.sdkInitialize(getApplicationContext());
         callbackManager = CallbackManager.Factory.create();
         //shareDialog = new ShareDialog(this);
@@ -112,6 +123,10 @@ public class ShareActivity extends BaseActivity {
 
     @OnClick(R.id.button_confirm)
     public void onConfirm() {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Survey Confirm Button")
+                .build());
         navigateTo();
     }
 
@@ -123,6 +138,11 @@ public class ShareActivity extends BaseActivity {
 
     @OnClick(R.id.share_facebook)
     public void shareFacebook() {
+
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Survey Share Facebook Button")
+                .build());
 
         ShareLinkContent content = new ShareLinkContent.Builder()
                 .setContentDescription("Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org")
@@ -137,6 +157,12 @@ public class ShareActivity extends BaseActivity {
     @OnClick(R.id.share_twitter)
     public void sahreTwitter() {
 
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Survey Share Twitter Button")
+                .build());
+
+
         TweetComposer.Builder builder = new TweetComposer.Builder(this)
                 .text("Acabei de participar do Guardiões da Saúde, participe você também: http://www.guardioesdasaude.org");
         builder.show();
@@ -146,6 +172,10 @@ public class ShareActivity extends BaseActivity {
 
     @OnClick(R.id.share_whatsapp)
     public void shareWhatsApp() {
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("WhatsApp Share Twitter Button")
+                .build());
 
         PackageManager pm=getPackageManager();
         try {
