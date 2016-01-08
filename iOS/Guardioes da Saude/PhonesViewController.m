@@ -31,6 +31,9 @@
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     
+    [self.tableViewPhones setSeparatorColor:[UIColor blackColor]];
+    self.tableViewPhones.tableFooterView = [UIView new];
+    
     [self loadPhones];
 }
 
@@ -95,45 +98,64 @@
     return cell;
 }
 
+
+-(void)viewDidLayoutSubviews
+{
+    if ([self.tableViewPhones respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableViewPhones setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([self.tableViewPhones respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.tableViewPhones setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSLog(@"didSelectRowAtIndexPath");
     //NSString *text;
     
     
-    
+    Phones *phonesLocal = [Phones getInstance];
     if (indexPath.row == 0) {
         //text = @"Ligag para o SAMU";
-        Phones *phones = [Phones getInstance];
-        phones.lbHeader = @"SAMU";
-        phones.lbBody = @"SAMU";
-        phones.lbDetailBody = @"Serviço de Atendimento Médico de ";
-        phones.lbPhone = @"192";
-        phones.imgDetail = @"iconSamu.png";
+        
+        phonesLocal.lbHeader = @"SAMU";
+        phonesLocal.lbBody = @"SAMU";
+        phonesLocal.lbDetailBody = @"Serviço de Atendimento Médico de ";
+        phonesLocal.lbPhone = @"192";
+        phonesLocal.imgDetail = @"iconSamu.png";
     } else if (indexPath.row == 1) {
         //text = @"Ligar para a Polícia Militar";
-        Phones *phones = [Phones getInstance];
-        phones.lbHeader = @"Polícia Militar";
-        phones.lbBody = @"Polícia Militar";
-        phones.lbDetailBody = @"";
-        phones.lbPhone = @"192";
-        phones.imgDetail = @"iconPM.png";
+        phonesLocal.lbHeader = @"Polícia Militar";
+        phonesLocal.lbBody = @"Polícia Militar";
+        phonesLocal.lbDetailBody = @"";
+        phonesLocal.lbPhone = @"192";
+        phonesLocal.imgDetail = @"iconPM.png";
     } else if (indexPath.row == 2) {
         //text = @"Ligar para os Bombeiros";
-        Phones *phones = [Phones getInstance];
-        phones.lbHeader = @"Bombeiros";
-        phones.lbBody = @"Bombeiros";
-        phones.lbDetailBody = @"";
-        phones.lbPhone = @"192";
-        phones.imgDetail = @"iconBombeiros.png";
+        phonesLocal.lbHeader = @"Bombeiros";
+        phonesLocal.lbBody = @"Bombeiros";
+        phonesLocal.lbDetailBody = @"";
+        phonesLocal.lbPhone = @"192";
+        phonesLocal.imgDetail = @"iconBombeiros.png";
     } else if (indexPath.row == 3) {
-        //text = @"Ligar para a Defesa Civil";
-        Phones *phones = [Phones getInstance];
-        phones.lbHeader = @"Defesa Civil";
-        phones.lbBody = @"Defesa Civil";
-        phones.lbDetailBody = @"";
-        phones.lbPhone = @"192";
-        phones.imgDetail = @"iconDefesacivil.png";
+        //text = @"Ligar para a Defesa Civil";        phones.lbHeader = @"Defesa Civil";
+        phonesLocal.lbBody = @"Defesa Civil";
+        phonesLocal.lbDetailBody = @"";
+        phonesLocal.lbPhone = @"192";
+        phonesLocal.imgDetail = @"iconDefesacivil.png";
     }
     
     DetailPhoneViewController *detailPhoneViewController = [[DetailPhoneViewController alloc] init];
