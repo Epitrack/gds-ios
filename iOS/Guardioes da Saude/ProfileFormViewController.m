@@ -236,6 +236,8 @@
     userUpdater.race = [self.pickerRace.text lowercaseString];
     userUpdater.picture = self.pictureSelected;
     
+    NSInteger diffDay = [DateUtil diffInDaysDate:[NSDate date] andDate:birthdate];
+    
     if (![self.txtPassword.text isEqualToString:@""]) {
         if (self.txtPassword.text.length < 6) {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A senha precisa ter pelo menos 6 carcteres." preferredStyle:UIAlertControllerStyleActionSheet];
@@ -258,6 +260,13 @@
         }else {
             userUpdater.password = self.txtPassword.text;
         }
+    } else if((diffDay/365) < 13){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A idade mínima para o usuário principal é 13 anos." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button OK");
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
     
     [userRequester updateUser:userUpdater onSuccess:^(User *user){

@@ -85,6 +85,13 @@
 - (IBAction)btnCadastrar:(id)sender {
     BOOL fieldNull = NO;
     
+    if ([self.txtNick.text isEqualToString:@""]||
+        [self.txtEmail.text isEqualToString:@""]) {
+        fieldNull = YES;
+    }
+    
+    NSInteger diffDay = [DateUtil diffInDaysDate:[NSDate date] andDate:birthdate];
+    
     if (fieldNull) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Preencha todos os campos do formulário." preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -92,7 +99,15 @@
         }];
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
-    } else {
+        
+    } else if((diffDay/365) < 13){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A idade mínima para o usuário principal é 13 anos." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button OK");
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else {
         
         
         AFHTTPRequestOperationManager *manager;

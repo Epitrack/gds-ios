@@ -55,4 +55,13 @@
     return [gregorian component:NSCalendarUnitYear fromDate:NSDate.date];
 }
 
++(NSInteger) diffInDaysDate: (NSDate *) startDate andDate: (NSDate *) endDate{
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitDay
+                                                        fromDate:startDate
+                                                          toDate:endDate
+                                                         options:NSCalendarWrapComponents];
+    return [components day];
+}
+
 @end
