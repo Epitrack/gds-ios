@@ -413,7 +413,7 @@ const float _kCellHeight = 100.0f;
                                        self.graphView.labelFont = [UIFont fontWithName:@"Foco-Regular" size:11.5];
                                        self.graphView.graphWidth = self.graphView.frame.size.width;
                                        
-                                       self.graphView.graphDataLabels = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dev"];
+                                       self.graphView.graphDataLabels = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dez"];
                                    
                                        UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.graphView.frame.size.width, self.graphView.frame.size.height)];
                                        [blankView setBackgroundColor: [UIColor whiteColor]];
