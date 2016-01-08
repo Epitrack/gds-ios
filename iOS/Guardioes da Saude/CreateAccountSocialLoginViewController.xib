@@ -34,19 +34,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_blur_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="iNa-7M-nfR">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcn-C1-IRT" userLabel="Button Back">
-                    <rect key="frame" x="8" y="16" width="25" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="vcn-C1-IRT" secondAttribute="height" multiplier="1:1" id="Tr0-zl-gKC"/>
-                    </constraints>
-                    <state key="normal" image="iconBack.png"/>
-                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                        <rect key="frame" x="8" y="25" width="25" height="25"/>
-                    </variation>
-                    <connections>
-                        <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="9dB-vS-D00"/>
-                    </connections>
-                </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Po6-KA-bie" customClass="TPKeyboardAvoidingScrollView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <subviews>
@@ -184,6 +171,19 @@
                         </mask>
                     </variation>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcn-C1-IRT" userLabel="Button Back">
+                    <rect key="frame" x="8" y="16" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="vcn-C1-IRT" secondAttribute="height" multiplier="1:1" id="Tr0-zl-gKC"/>
+                    </constraints>
+                    <state key="normal" image="iconBack.png"/>
+                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                        <rect key="frame" x="8" y="25" width="25" height="25"/>
+                    </variation>
+                    <connections>
+                        <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="9dB-vS-D00"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>

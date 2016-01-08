@@ -87,6 +87,8 @@
     
     BOOL fieldNull = NO;
     
+    NSInteger diffDay = [DateUtil diffInDaysDate:birthDate andDate: [NSDate date]];
+    
     if ([self.txtNick.text isEqualToString:@""]||
         [self.txtEmail.text isEqualToString:@""] ||
         [self.txtPassword.text isEqualToString:@""]) {
@@ -100,7 +102,14 @@
         }];
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
-    } else {
+    } else if((diffDay/365) < 13){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A idade mínima para o usuário principal é 13 anos." preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button OK");
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else {
         if (self.txtPassword.text.length < 6) {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A senha precisa ter pelo menos 6 carcteres." preferredStyle:UIAlertControllerStyleActionSheet];
             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
