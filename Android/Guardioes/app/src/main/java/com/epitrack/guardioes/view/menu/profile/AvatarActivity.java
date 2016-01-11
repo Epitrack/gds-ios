@@ -15,6 +15,7 @@ import android.widget.GridView;
 
 import com.epitrack.guardioes.BuildConfig;
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.ProfileImage;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
@@ -49,6 +50,7 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private Tracker mTracker;
+    private ProfileImage profileImage = ProfileImage.getInstance();
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -61,6 +63,9 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
         AnalyticsApplication application = (AnalyticsApplication) getApplication();
         mTracker = application.getDefaultTracker();
         // [END shared_tracker]
+
+        profileImage.setAvatar("");
+        profileImage.setUri(null);
 
         gridView.setAdapter(new AvatarAdapter(this, Avatar.values()));
 
@@ -101,6 +106,13 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
             takePictureIntent.putExtra(MediaStore.EXTRA_SCREEN_ORIENTATION, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             startActivityForResult(takePictureIntent, Constants.RequestCode.IMAGE);
             SingleUser.getInstance().setUri(uriSavedImage);
+            profileImage.setUri(uriSavedImage);
+
+            final Intent intent = new Intent();
+
+            intent.putExtra(Constants.Bundle.URI, "");
+            setResult(RESULT_OK, intent);
+            finish();
         }
     }
 
@@ -114,8 +126,11 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
         if (handler.getAvatar() == null) {
 
             // Mostrar messagem
+            profileImage.setAvatar("");
 
         } else {
+
+            profileImage.setAvatar(String.valueOf(handler.getAvatar().getId()));
 
             final Intent intent = new Intent();
 

@@ -21,6 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.spec.ECField;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -137,13 +138,22 @@ public class UserAdapter extends ArrayAdapter<User> {
             viewHolder.imageTrash.setVisibility(View.INVISIBLE);
         }
 
-
         viewHolder.textViewName.setText(user.getNick());
         viewHolder.textViewType.setText(user.getType());
 
+        if (user.getPicture() == null) {
+            user.setPicture("0");
+        }
+
         if (user.getPicture().length() > 2) {
-            Uri uri = Uri.parse(user.getPicture());
-            viewHolder.imageViewImage.setImageURI(uri);
+            try {
+                Uri uri = Uri.parse(user.getPicture());
+                viewHolder.imageViewImage.setImageURI(uri);
+            } catch (Exception e) {
+                user.setPicture("0");
+                viewHolder.imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(user.getPicture())).getSmall());
+            }
+
         } else {
             user.setPicture(user.getPicture());
 
