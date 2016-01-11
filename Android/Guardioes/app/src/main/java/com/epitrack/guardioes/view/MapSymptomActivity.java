@@ -383,7 +383,11 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                 simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
             }
         } else {
-            simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
+            if (singleDTO.getLatLng() != null) {
+                simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + singleDTO.getLatLng().longitude + "&lat=" + singleDTO.getLatLng().latitude);
+            } else {
+                simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
+            }
         }
         //simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
 
@@ -554,7 +558,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
             singleDTO.setDto(null);
             singleDTO.setLatLng(null);
         } else {
-            singleDTO.setDto(query);
+            singleDTO.setDto(query+"-BR");
             setLocationBySearch();
         }
 
