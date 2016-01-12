@@ -57,6 +57,8 @@
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
+    
+    [self setTableSeparator];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -230,15 +232,15 @@
 
     NSLog(@"didSelectRowAtIndexPath");
     @try {
-        UIView *bgColorView = [[UIView alloc] init];
+        [self.tableSymptoms deselectRowAtIndexPath:indexPath animated:YES];
+        
+        UITableViewCell *cell = [self.tableSymptoms cellForRowAtIndexPath:indexPath];
+        
+        UIView *bgColorView = [[UIView alloc] initWithFrame:cell.frame];
         bgColorView.backgroundColor = bgCellColor;
+
+        cell.selectedBackgroundView = bgColorView;
         
-        [self.tableSymptoms setSeparatorColor:bgCellColor];
-        [self.tableSymptoms cellForRowAtIndexPath:indexPath].selectedBackgroundView = bgColorView;
-        
-        //CGSize tableViewSize = self.tableSymptoms.contentSize;
-        //CGFloat tableWidth = tableViewSize.width;
-        //CGFloat tableHeight = tableViewSize.height;
         
         if (indexPath.row == 16) {
             if ([selected containsIndex:indexPath.row]) {
@@ -265,6 +267,7 @@
                 [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = checkmark;
             }
         }
+
     }
     @catch (NSException *exception) {
         NSLog(@"Error: %@", exception.description);
@@ -278,5 +281,34 @@
     latitude = currentLocation.coordinate.latitude;
     longitude = currentLocation.coordinate.longitude;
     
+}
+
+-(void)viewDidLayoutSubviews
+{
+    if ([self.tableSymptoms respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableSymptoms setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([self.tableSymptoms respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.tableSymptoms setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
+- (void) setTableSeparator{
+    UIColor *color = [UIColor whiteColor];
+//    UIColor *color = [UIColor colorWithRed:(0/255.0) green:(105/255.0) blue:(216/255.0) alpha:1];
+    [self.tableSymptoms setSeparatorColor:color];
+    self.tableSymptoms.tableFooterView = [UIView new];
 }
 @end
