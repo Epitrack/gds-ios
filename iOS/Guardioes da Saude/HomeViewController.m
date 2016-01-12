@@ -19,6 +19,7 @@
 #import "NoticeRequester.h"
 #import "SingleNotice.h"
 #import "ProgressBarUtil.h"
+#import "ProfileListViewController.h"
 
 @interface HomeViewController ()
 
@@ -47,7 +48,7 @@
         NSString *userToken = [preferences valueForKey:userTokenKey];
         [self authorizedAutomaticLogin:userToken];
     } else {
-        [self.imgUser setImage:[UIImage imageNamed:@"img_profile01.png"]];
+        [self.btnProfile setImage:[UIImage imageNamed:@"img_profile01.png"] forState:UIControlStateNormal];
     }
     
     self.navigationItem.hidesBackButton = YES;
@@ -101,7 +102,7 @@
             avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
         }
     }
-    [self.imgUser setImage:[UIImage imageNamed:avatar]];
+    [self.btnProfile setImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -151,6 +152,11 @@
 - (IBAction)diaryHealth:(id)sender {
     DiaryHealthViewController *diaryHealthViewController = [[DiaryHealthViewController alloc] init];
     [self.navigationController pushViewController:diaryHealthViewController animated:YES];
+}
+
+- (IBAction)btnProfileAction:(id)sender {
+    ProfileListViewController *profileListView = [[ProfileListViewController alloc] init];
+    [self.navigationController pushViewController:profileListView animated:YES];
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
