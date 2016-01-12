@@ -122,6 +122,28 @@
         <item>Amarelo</item>
         <item>Indigena</item>
     </string-array>
+    
+    <string-array name="relationship">
+        <item>Pai</item>
+        <item>Mãe</item>
+        <item>Filho</item>
+        <item>Irmão</item>
+        <item>Avô</item>
+        <item>Neto</item>
+        <item>Tio</item>
+        <item>Sobrinho</item>
+        <item>Bisavô</item>
+        <item>Bisneto</item>
+        <item>Primo</item>
+        <item>Sogro</item>
+        <item>Genro</item>
+        <item>Nora</item>
+        <item>Padrasto</item>
+        <item>Madrasta</item>
+        <item>Enteado</item>
+        <item>Cônjuge</item>
+        <item>Outros</item>
+    </string-array>
 
     <string name="generic_error">Não foi possível executar a operação. Tente novamente em alguns instantes.</string>
     <string name="generic_error_login">Não foi possível executar a operação. Verifique se todos os campos estão preenchidos corretamente e tente novamente.</string>
