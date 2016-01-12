@@ -15,13 +15,11 @@ import com.epitrack.guardioes.model.User;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
-import com.epitrack.guardioes.utility.BitmapUtility;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.security.spec.ECField;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -147,13 +145,49 @@ public class UserAdapter extends ArrayAdapter<User> {
 
         if (user.getPicture().length() > 2) {
             try {
-                Uri uri = Uri.parse(user.getPicture());
-                viewHolder.imageViewImage.setImageURI(uri);
+                String url = user.getPicture();
+
+                if (url.substring(0, 4).toLowerCase().equals("http")) {
+                    user.setPicture("0");
+                    //viewHolder.imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(user.getPicture())).getSmall());
+                    if (user.getGender().equals("M")) {
+
+                        if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                            viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_6);
+                        } else {
+                            viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_4);
+                        }
+                    } else {
+
+                        if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                            viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_8);
+                        } else {
+                            viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_7);
+                        }
+                    }
+                } else {
+                    Uri uri = Uri.parse(user.getPicture());
+                    viewHolder.imageViewImage.setImageURI(uri);
+                }
             } catch (Exception e) {
                 user.setPicture("0");
-                viewHolder.imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(user.getPicture())).getSmall());
-            }
+                //viewHolder.imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(user.getPicture())).getSmall());
+                if (user.getGender().equals("M")) {
 
+                    if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                        viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_6);
+                    } else {
+                        viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_4);
+                    }
+                } else {
+
+                    if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                        viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_8);
+                    } else {
+                        viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_7);
+                    }
+                }
+            }
         } else {
             user.setPicture(user.getPicture());
 
