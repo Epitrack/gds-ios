@@ -17,9 +17,10 @@
 #import "StateUtil.h"
 #import <MRProgress/MRProgress.h>
 #import "ProgressBarUtil.h"
+@import Charts;
 
 @interface MapHealthViewController ()
-
+@property (nonatomic, weak) IBOutlet PieChartView * pieChartView;
 @end
 
 @implementation MapHealthViewController {
@@ -39,6 +40,13 @@
     double respiratoria;
     User *user;
     DetailMap *detailMap;
+    BOOL showDetails;
+    
+    //Animation slide values
+    CGRect startBtnRect;
+    NSNumber *slidePositionView;
+    NSNumber *slidePositionButton;
+    UIImage *imgFabCancel;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,9 +67,13 @@
     
     user = [User getInstance];
     detailMap = [DetailMap getInstance];
-    
+    showDetails = NO;
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
+    
+    startBtnRect = self.btnDetails.frame;
+    
+    imgFabCancel = [UIImage imageNamed:@"fab_cancel"];
 
     [self loadSurvey];
     self.seach.delegate = self;
@@ -266,19 +278,22 @@
                  
                  self.lblCity.text = city;
                  self.lblState.text = state;
-                 self.lblPaticipation.text = [NSString stringWithFormat:@"%d Participações essa semana", totalSurvey];
+                 self.lblPaticipation.text = [NSString stringWithFormat:@"%d Participações essa semana", (int)totalSurvey];
                  
                  detailMap.city = city;
                  detailMap.state = state;
-                 detailMap.totalSurvey = [NSString stringWithFormat:@"%d", totalSurvey];
-                 detailMap.goodPercent = [NSString stringWithFormat:@"%g%%", goodPercent];
-                 detailMap.badPercent = [NSString stringWithFormat:@"%g%%", badPercent];
-                 detailMap.totalNoSymptom = [NSString stringWithFormat:@"%ld", totalNoSymptom];
-                 detailMap.totalWithSymptom = [NSString stringWithFormat:@"%ld", totalWithSymptom];
+                 detailMap.totalSurvey = [NSString stringWithFormat:@"%d", (int)totalSurvey];
+                 detailMap.goodPercent = [NSString stringWithFormat:@"%d%%", (int)goodPercent];
+                 detailMap.badPercent = [NSString stringWithFormat:@"%d%%", (int)badPercent];
+                 detailMap.totalNoSymptom = [NSString stringWithFormat:@"%d", totalNoSymptom];
+                 detailMap.totalWithSymptom = [NSString stringWithFormat:@"%d", totalWithSymptom];
                  
                  detailMap.diarreica = [NSString stringWithFormat:@"%f", diarreica];
                  detailMap.exantemaica = [NSString stringWithFormat:@"%f", exantemaica];
                  detailMap.respiratoria = [NSString stringWithFormat:@"%f", respiratoria];
+                 
+                 [self loadDetails];
+                 [self loadPieChart];
                  
              }
              
@@ -289,6 +304,77 @@
          }];
 }
 
+- (void) loadDetails{
+    self.txtPercentGood.text = detailMap.goodPercent;
+    self.txtPercentBad.text = detailMap.badPercent;
+    self.txtCountGood.text = detailMap.totalNoSymptom;
+    self.txtCountBad.text = detailMap.totalWithSymptom;
+    self.progressViewDiarreica.progress = ([detailMap.diarreica doubleValue]/100);
+    self.progressViewExantematica.progress = ([detailMap.exantemaica doubleValue]/100);
+    self.progessViewRespiratoria.progress = ([detailMap.respiratoria doubleValue]/100);
+    
+    self.lbPercentDiareica.text = [NSString stringWithFormat:@"%g%%", [detailMap.diarreica doubleValue]];
+    self.lbPercentExantematica.text = [NSString stringWithFormat:@"%g%%", [detailMap.exantemaica doubleValue]];
+    self.lbPercentRespiratoria.text =[NSString stringWithFormat:@"%g%%", [detailMap.respiratoria doubleValue]];
+}
+
+-(void) loadPieChart{
+    float goodPercentLocal = [detailMap.goodPercent floatValue];
+    float badPercentLocal = [detailMap.badPercent floatValue];
+    
+    [self.pieChartView setUsePercentValuesEnabled: NO];
+    [self.pieChartView setDescriptionText: @""];
+    [self.pieChartView setDrawCenterTextEnabled: NO];
+    [self.pieChartView setDrawSliceTextEnabled: NO];
+    [self.pieChartView setHoleTransparent: NO];
+    [self.pieChartView setDrawHoleEnabled: NO];
+    [self.pieChartView setRotationEnabled: NO];
+    self.pieChartView.legend.enabled = NO;
+    
+    
+    NSArray * xData = @[@"Mal", @"Bem"];
+    
+    NSArray * yData = @[[NSNumber numberWithInt: goodPercentLocal],
+                        [NSNumber numberWithInt: badPercentLocal]];
+    
+    NSMutableArray * xArray = [NSMutableArray array];
+    
+    for (NSString * value in xData) {
+        [xArray addObject: value];
+    }
+    
+    NSMutableArray * yArray = [NSMutableArray array];
+    
+    for (int i = 0; i < yData.count; i++) {
+        
+        NSNumber * value = [yData objectAtIndex: i];
+        
+        BarChartDataEntry * entry = [[BarChartDataEntry alloc] initWithValue: [value doubleValue]
+                                                                      xIndex: i];
+        [yArray addObject: entry];
+    }
+    
+    PieChartDataSet * dataSet = [[PieChartDataSet alloc] initWithYVals: yArray];
+    
+    [dataSet setSliceSpace: 2];
+    [dataSet setSelectionShift: 2];
+    
+    NSMutableArray * colorArray = [NSMutableArray array];
+    
+    [colorArray addObject: [UIColor colorWithRed:196.0f/255.0f green:209.0f/255.0f blue:28.0f/255.0f alpha:1.0f]];
+    [colorArray addObject: [UIColor colorWithRed:200.0f/255.0f green:18.0f/255.0f blue:4.0f/255.0f alpha:1.0f]];
+    
+    [dataSet setColors: colorArray];
+    
+    PieChartData * data = [[PieChartData alloc] initWithXVals: xArray dataSet: dataSet];
+    
+    [data setDrawValues: NO];
+    [data setHighlightEnabled: NO];
+    
+    [self.pieChartView setData: data];
+    [self.pieChartView setNeedsDisplay];
+}
+
 - (IBAction)showDetailMapHealth:(id)sender {
     DetailMapHealthViewController *detailMapHealthViewController = [[DetailMapHealthViewController alloc] init];
     [self.navigationController pushViewController:detailMapHealthViewController animated:YES];
@@ -296,8 +382,30 @@
 }
 
 - (IBAction)showDetailMapPlus:(id)sender {
-    DetailMapHealthViewController *detailMapHealthViewController = [[DetailMapHealthViewController alloc] init];
-    [self.navigationController pushViewController:detailMapHealthViewController animated:YES];
+    CABasicAnimation *animationView = [CABasicAnimation animationWithKeyPath:@"position.y"];
+    showDetails = !showDetails;
+    
+    if (showDetails) {
+        animationView.toValue = @(([UIScreen mainScreen].bounds.size.height*.3)+(self.detailsView.frame.size.height/2));
+        [self.seach setUserInteractionEnabled:NO];
+        [UIView animateWithDuration:.25 animations:^{
+            CGRect rect = self.btnDetails.frame;
+            self.btnDetails.frame = CGRectMake(rect.origin.x, ([UIScreen mainScreen].bounds.size.height * .3)-(self.btnDetails.frame.size.height/2), rect.size.width, rect.size.height);
+        }];
+    }else{
+        animationView.fromValue = @(([UIScreen mainScreen].bounds.size.height*.3)+(self.detailsView.frame.size.height/2));
+        animationView.toValue = 0;
+        [self.seach setUserInteractionEnabled:YES];
+        [UIView animateWithDuration:.25 animations:^{
+            CGRect rect = self.btnDetails.frame;
+            self.btnDetails.frame = CGRectMake(rect.origin.x, self.detailsView.frame.origin.y - (self.btnDetails.frame.size.height/2), rect.size.width, rect.size.height);
+        }];
+    }
+    
+    animationView.removedOnCompletion = NO;
+    animationView.fillMode = kCAFillModeForwards;
+
+    [self.detailsView.layer addAnimation:animationView forKey:@"position.y"];
 }
 
 -(void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
