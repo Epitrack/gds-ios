@@ -12,6 +12,7 @@ import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.base.BaseFragmentActivity;
 import com.epitrack.guardioes.view.welcome.Welcome;
 import com.epitrack.guardioes.view.welcome.WelcomePagerAdapter;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.viewpagerindicator.CirclePageIndicator;
 
@@ -54,6 +55,14 @@ public class TutorialActivity extends BaseAppCompatActivity {
 
         buttonLogin.setVisibility(View.INVISIBLE);
         buttonCreateAccount.setVisibility(View.INVISIBLE);
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Tutorial Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override

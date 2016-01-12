@@ -47,6 +47,13 @@ public class HelpFragment extends BaseFragment implements MenuListener {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Help Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {

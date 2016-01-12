@@ -129,8 +129,14 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
         return noticeList;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Notice Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override

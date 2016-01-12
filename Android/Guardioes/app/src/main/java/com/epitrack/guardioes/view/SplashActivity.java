@@ -12,9 +12,12 @@ import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.view.base.BaseActivity;
 import com.epitrack.guardioes.view.welcome.WelcomeActivity;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,12 +34,18 @@ public class SplashActivity extends BaseActivity implements Runnable {
     private final Handler handler = new Handler();
     SharedPreferences sharedPreferences = null;
 
-
+    private Tracker mTracker;
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
 
         setContentView(R.layout.splash);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         handler.postDelayed(this, WAIT_TIME);
     }
@@ -46,6 +55,13 @@ public class SplashActivity extends BaseActivity implements Runnable {
         super.onPause();
 
         handler.removeCallbacks(this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Splash Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override

@@ -167,6 +167,8 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
     @Override
     protected void onResume() {
         super.onResume();
+        mTracker.setScreenName("Select Participant Survey Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
         loadHousehold();
 
     }

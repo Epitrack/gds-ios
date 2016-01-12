@@ -29,6 +29,7 @@ import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.utility.SocialShare;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONArray;
@@ -172,6 +173,13 @@ public class SymptomActivity extends BaseAppCompatActivity {
         }
 
         listView.setAdapter(new SymptomAdapter(this, symptomArray));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Symptom Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
 

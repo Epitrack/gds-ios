@@ -60,11 +60,13 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
     }
 
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
+        mTracker.setScreenName("List Profile Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
         listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
     }
+
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {

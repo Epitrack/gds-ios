@@ -70,6 +70,13 @@ public class WelcomeActivity extends BaseFragmentActivity {
         }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Welcome Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
     @OnClick(R.id.button_create_account)
     public void onCreateAccount() {
 

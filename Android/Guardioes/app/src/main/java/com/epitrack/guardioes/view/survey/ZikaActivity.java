@@ -36,6 +36,13 @@ public class ZikaActivity extends BaseActivity {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Zika Survey Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+    @Override
     public void onBackPressed() {
         navigateTo(HomeActivity.class);
     }

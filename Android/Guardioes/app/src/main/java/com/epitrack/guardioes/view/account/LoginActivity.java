@@ -162,6 +162,13 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Login Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+    @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
 
         if (item.getItemId() == android.R.id.home) {

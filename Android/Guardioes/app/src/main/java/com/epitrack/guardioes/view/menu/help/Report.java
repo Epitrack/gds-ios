@@ -58,6 +58,13 @@ public class Report extends BaseAppCompatActivity {
         // [END shared_tracker]
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Report Problem Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
     @OnClick(R.id.button_send_email)
     public void sendEmail() {
 

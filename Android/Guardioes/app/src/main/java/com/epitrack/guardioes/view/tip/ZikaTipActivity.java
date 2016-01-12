@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
 import butterknife.Bind;
@@ -59,5 +60,12 @@ public class ZikaTipActivity extends BaseAppCompatActivity {
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Os repelentes para uso sobre a pele podem ser utilizados por gestantes, desde que estejam devidamente registrados na ANVISA e que sejam seguidas as instruções de uso descritas no rótulo.</p>\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Produtos à base de DEET não devem ser usados em crianças menores de 2 anos. Em crianças entre 2 e 12 anos, a concentração dever ser no máximo 10% e a aplicação deve se restringir a 3 vezes por dia. Concentrações superiores a 10% são permitidas para maiores de 12 anos.</p>\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Os repelentes de ambiente, como aqueles de parede (aparelhos elétricos) ou espirais não devem ser utilizados em locais com pouca ventilação nem na presença de pessoas asmáticas ou com alergias respiratórias; podendo ser utilizados em qualquer ambiente da casa desde que estejam no mínimo a 2 metros de distância das pessoas.</p>"));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Zika Tip Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 }

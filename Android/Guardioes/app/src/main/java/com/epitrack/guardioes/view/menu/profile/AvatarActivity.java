@@ -73,6 +73,13 @@ public class AvatarActivity extends BaseAppCompatActivity implements AdapterView
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Select Avatar Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.avatar, menu);
 
