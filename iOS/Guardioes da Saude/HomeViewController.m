@@ -30,13 +30,11 @@
     CLLocationManager *locationManager;
     User *user;
     SingleNotice *singleNotice;
+    UIImage *_defaultImage;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"GUARDIÕES DA SAÚDE";
-
-    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"gdSToolbar.png"] forBarMetrics:UIBarMetricsDefault];
 
     user = [User getInstance];
     
@@ -112,8 +110,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.revealViewController.panGestureRecognizer.enabled=NO;
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
+    UINavigationController *navCtr = self.navigationController;
+    [navCtr setNavigationBarHidden:NO animated:animated];
+    
+    UIImage *imgTitleBar = [UIImage imageNamed:@"gdSToolbar"];
+    [navCtr.navigationBar setBackgroundImage:imgTitleBar forBarMetrics:UIBarMetricsDefault];
+    
     [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [self.navigationController.navigationBar setBackgroundImage:_defaultImage forBarMetrics:UIBarMetricsDefault];
 }
 /*
 #pragma mark - Navigation
