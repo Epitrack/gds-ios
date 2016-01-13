@@ -83,8 +83,6 @@ public class HomeFragment extends BaseFragment {
         String text = getString(R.string.message_hello);
         text = text.replace("{0}", singleUser.getNick());
 
-        new ImageUserAsyncTaskRunner().execute(picture);
-
         if (singleUser.getPicture().length() > 2) {
             Uri uri = Uri.parse(singleUser.getPicture());
 
@@ -191,87 +189,5 @@ public class HomeFragment extends BaseFragment {
                 .build());
 
         navigateTo(SelectParticipantActivity.class);
-    }
-
-    private class ImageUserAsyncTaskRunner extends AsyncTask<String, Void, String> {
-
-        private ProgressDialog progressDialog;
-
-        @Override
-        protected String doInBackground(String... imageUrl) {
-            String saveImage = "";
-            try {
-                if (imageUrl[0].equals("")) {
-                    return null;
-                } else if (imageUrl[0].equals("0")) {
-                    return null;
-                }else{
-                    String file = imageUrl[0];
-                    String fileName[] = file.toString().split("/");
-
-                    URL url = new URL(Requester.API_URL_PHOTO + imageUrl[0]);
-                    URLConnection urlConnection = url.openConnection();
-
-                    InputStream is = urlConnection.getInputStream();
-                    Bitmap bitmap = BitmapFactory.decodeStream(is);
-
-                    saveImage = FileUtility.save(getActivity().getApplicationContext(), fileName[fileName.length - 1], Extension.BITMAP, bitmap);
-                    return saveImage;
-                }
-        } catch (MalformedURLException e) {
-            return null;
-        } catch (IOException e) {
-            if (saveImage.equals("")) {
-                return null;
-            } else {
-                return saveImage;
-            }
-        }
-    }
-
-        @Override
-        protected void onPostExecute(String saveFile) {
-            if (saveFile != null) {
-                if (!saveFile.equals("")) {
-                    int width = 0;
-                    int height = 0;
-
-                    DisplayMetrics metrics = getResources().getDisplayMetrics();
-                    int densityDpi = (int) (metrics.density * 160f);
-
-                    if (densityDpi == DisplayMetrics.DENSITY_LOW) {
-                        width = 90;
-                        height = 90;
-                    } else if (densityDpi == DisplayMetrics.DENSITY_MEDIUM) {
-                        width = 120;
-                        height = 120;
-                    } else if (densityDpi == DisplayMetrics.DENSITY_HIGH) {
-                        width = 180;
-                        height = 180;
-                    } else if (densityDpi >= DisplayMetrics.DENSITY_XHIGH) {
-                        width = 240;
-                        height = 240;
-                    }
-
-                    if (width > 0 && height > 0) {
-                        SingleUser.getInstance().setWidthImageProfile(width);
-                        SingleUser.getInstance().setHeightImageProfile(height);
-                        SingleUser.getInstance().setImageResource(saveFile);
-                        imageViewPhoto.setImageBitmap(BitmapUtility.scale(width, height, saveFile));
-                    }
-                }
-            }
-            progressDialog.dismiss();
-        }
-
-        @Override
-        protected void onPreExecute() {
-            progressDialog = new ProgressDialog(getActivity());
-            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(30, 136, 229)));
-            progressDialog.getWindow().setTitleColor(Color.rgb(255, 255, 255));
-            progressDialog.setTitle(R.string.app_name);
-            progressDialog.setMessage("Estamos atualizando seus dados...");
-            progressDialog.show();
-        }
     }
 }

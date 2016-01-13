@@ -135,6 +135,20 @@
                     android:hint="Ex: 01/01/1981"
                     android:inputType="date" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/relationship"
+                    android:textColor="@color/bluish"
+                    android:textSize="13dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_relationship"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/relationship_array" />
+
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout

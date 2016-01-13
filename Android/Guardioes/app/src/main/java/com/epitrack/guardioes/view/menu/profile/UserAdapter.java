@@ -63,10 +63,17 @@ public class UserAdapter extends ArrayAdapter<User> {
 
                         jsonObjectHousehold = jsonArray.getJSONObject(i);
 
-                        userList.add(new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
-                                /*jsonObjectHousehold.get("email").toString()*/"", jsonObjectHousehold.get("id").toString(),
-                                jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
-                                jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString()));
+                        User user = new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
+                                        "", jsonObjectHousehold.get("id").toString(),
+                                        jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
+                                        jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString());
+                        try {
+                            user.setRelationship(jsonObjectHousehold.get("relationship").toString());
+                        } catch (Exception e) {
+                            user.setRelationship("");
+                        }
+
+                        userList.add(user);
                     }
                 }
             }

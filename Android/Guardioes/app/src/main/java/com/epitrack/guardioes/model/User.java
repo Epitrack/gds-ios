@@ -37,6 +37,7 @@ public class User {
     private int widthImageProfile;
     private int heightImageProfile;
     private Uri uri;
+    private String relationship;
 
     public User() {
 
@@ -67,6 +68,18 @@ public class User {
         this.race = race;
         this.gender = gender;
         this.picture = picture;
+    }
+
+    public User(int image, String nick, String email, String id, String dob, String race, String gender, String picture, String relationship) {
+        this.image = image;
+        this.nick = nick;
+        this.email = email;
+        this.id = id;
+        this.dob = dob;
+        this.race = race;
+        this.gender = gender;
+        this.picture = picture;
+        this.relationship = relationship;
     }
 
     public int getImage() {
@@ -283,5 +296,13 @@ public class User {
 
     public void setUri(Uri uri) {
         this.uri = uri;
+    }
+
+    public String getRelationship() {
+        return relationship;
+    }
+
+    public void setRelationship(String relationship) {
+        this.relationship = relationship;
     }
 }
