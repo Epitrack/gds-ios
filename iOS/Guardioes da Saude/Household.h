@@ -18,12 +18,16 @@
          andIdUser:(NSString *)idUser
         andPicture:(NSString *)picture
       andIdPicture:(NSString *)idPicture
-    andIdHousehold:(NSString *)idHousehold;
+    andIdHousehold:(NSString *)idHousehold
+   andRelationship:(NSString *) relationship;
 
 - (id) initWithNick:(NSString *) nick andDob:(NSString *) dob andGender:(NSString *) gender andRace:(NSString *) race andIdUser:(NSString *) idUser
          andPicture:(NSString *) picture andIdHousehold:(NSString *) idHousehold andIdPicture:(NSString *) idPicture;
 
 - (void) setGenderByString: (NSString *) strGender;
+
++ (NSDictionary *) getRelationshipsDictonary;
++ (NSArray *) getRelationshipArray;
 
 @property(nonatomic, retain) NSString *nick;
 @property(nonatomic, retain) NSString *dob;
@@ -34,5 +38,6 @@
 @property(nonatomic, retain) NSString *picture;
 @property(nonatomic, retain) NSString *idHousehold;
 @property(nonatomic, retain) NSString *idPicture;
+@property(nonatomic, retain) NSString *relationship;
 
 @end
