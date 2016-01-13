@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
 import butterknife.Bind;
@@ -79,5 +80,12 @@ public class PreventionActivity extends BaseAppCompatActivity {
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;No Brasil, a camisinha é distribuída gratuitamente pelo governo e está disponível em postos de saúde, unidades de pronto atendimento, albergues, Centros de Atendimento ao Turista e em outros pontos de distribuição espalhados pelas cidades. Leve sempre consigo os preservativos para facilitar a sua utilização e a prevenção de doenças sexualmente transmissíveis.<br>"));
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Prevention Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 }

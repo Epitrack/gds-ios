@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
 import butterknife.Bind;
@@ -60,5 +61,12 @@ public class CareActivity extends BaseAppCompatActivity {
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;Lave as mãos com água e sabão várias vezes ao dia, principalmente antes de ingerir alimentos, após utilizar conduções públicas, visitar mercados ou locais com grande fluxo de pessoas;</p>\n" +
                 "\n" +
                 "<p>&nbsp;&nbsp;&#8226;&nbsp;No Brasil, é proibido por lei dirigir após o consumo de bebida alcoólica, mesmo em pequenas quantidades.</p>"));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Basic Care Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 }

@@ -264,6 +264,13 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Social Access Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 

@@ -34,6 +34,7 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
@@ -208,6 +209,13 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
         recyclerView.setAdapter(new MemberAdapter(getApplicationContext(), this, parentList));
         setupView(null);
         setDataLineChart();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Diary of Health Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     private void setupView(String idHouseHold) {

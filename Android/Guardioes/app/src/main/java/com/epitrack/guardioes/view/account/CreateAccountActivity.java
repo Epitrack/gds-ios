@@ -149,6 +149,13 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Create Account Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+    @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
 
         if (item.getItemId() == android.R.id.home) {

@@ -144,4 +144,11 @@ public class StateActivity extends BaseAppCompatActivity {
                     }).show();
         }
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Select State Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
 }

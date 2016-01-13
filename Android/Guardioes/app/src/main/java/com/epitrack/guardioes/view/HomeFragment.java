@@ -25,6 +25,7 @@ import com.epitrack.guardioes.utility.FileUtility;
 import com.epitrack.guardioes.view.base.BaseFragment;
 import com.epitrack.guardioes.view.diary.DiaryActivity;
 import com.epitrack.guardioes.view.menu.profile.Avatar;
+import com.epitrack.guardioes.view.menu.profile.ProfileActivity;
 import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
 import com.epitrack.guardioes.view.tip.TipActivity;
 import com.google.android.gms.analytics.HitBuilders;
@@ -135,6 +136,11 @@ public class HomeFragment extends BaseFragment {
         textViewName.setText(text);
 
         return view;
+    }
+
+    @OnClick(R.id.image_view_photo)
+    public void showProfile() {
+        navigateTo(ProfileActivity.class);
     }
 
     @OnClick(R.id.text_view_notice)

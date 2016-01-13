@@ -32,6 +32,7 @@ import com.epitrack.guardioes.view.base.AbstractBaseMapActivity;
 import com.epitrack.guardioes.view.tip.Tip;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -123,6 +124,17 @@ public class MapPointActivity extends AbstractBaseMapActivity {
                 getSupportActionBar().setTitle(R.string.hospital);
             }
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(Tip.getBy(tip) == Tip.PHARMACY) {
+            mTracker.setScreenName("Pharmacy Screen - " + this.getClass().getSimpleName());
+        } else {
+            mTracker.setScreenName("UPAs Screen - " + this.getClass().getSimpleName());
+        }
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override

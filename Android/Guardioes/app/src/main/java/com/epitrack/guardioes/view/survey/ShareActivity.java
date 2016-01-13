@@ -111,6 +111,13 @@ public class ShareActivity extends BaseActivity {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Share Survey Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);

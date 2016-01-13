@@ -137,6 +137,8 @@ public class UserActivity extends BaseAppCompatActivity {
 
     public void onResume() {
         super.onResume();
+        mTracker.setScreenName("User Form Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
         loadUser();
     }
 
@@ -596,6 +598,8 @@ public class UserActivity extends BaseAppCompatActivity {
             }
         }
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {

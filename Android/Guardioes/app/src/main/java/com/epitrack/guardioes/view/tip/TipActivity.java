@@ -51,6 +51,13 @@ public class TipActivity extends BaseAppCompatActivity implements ExpandableList
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Health Tips Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+    @Override
     public boolean onChildClick(final ExpandableListView listView, final View view, final int groupPosition, final int childPosition, final long id) {
 
         final int phone = Phone.getBy(id).getId();

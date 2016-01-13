@@ -9,7 +9,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.view.base.BaseFragment;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,6 +24,7 @@ public class AboutFragment extends BaseFragment {
 
     @Bind(R.id.message_about_content_01)
     TextView textViewAbout;
+    private Tracker mTracker;
 
     @Override
     public void onCreate(final Bundle bundle) {
@@ -29,11 +33,24 @@ public class AboutFragment extends BaseFragment {
         getSupportActionBar().setTitle(R.string.about);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("About Screen - " + this.getClass().getSimpleName());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup viewGroup, final Bundle bundle) {
 
         final View view = inflater.inflate(R.layout.about, viewGroup, false);
+
+        // [START shared_tracker]
+        // Obtain the shared Tracker instance.
+        AnalyticsApplication application = (AnalyticsApplication) getActivity().getApplication();
+        mTracker = application.getDefaultTracker();
+        // [END shared_tracker]
 
         ButterKnife.bind(this, view);
 

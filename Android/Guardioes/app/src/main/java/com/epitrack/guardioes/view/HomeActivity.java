@@ -200,9 +200,11 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
                             .commit();
     }
 
+    @Override
     public void onResume() {
         super.onResume();
-        mTracker.setScreenName("HomeActivity");
+        mTracker.setScreenName("Home Screen - " + this.getClass().getSimpleName());
         mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
     }
 }
