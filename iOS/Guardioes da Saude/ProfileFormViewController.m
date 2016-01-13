@@ -185,7 +185,7 @@
 }
 */
 
-- (BOOL) validateForm{
+- (BOOL) isFormValid{
     BOOL fieldsValid = YES;
     if ([self.txtNick.text isEqualToString:@""]) {
         fieldsValid = NO;
@@ -196,37 +196,18 @@
     return fieldsValid;
 }
 
--(BOOL) validatePassword{
-    BOOL isPasswordValid = YES;
-    
-    if (![self.txtPassword.text isEqualToString:@""]) {
-        if (self.txtPassword.text.length < 6) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A senha precisa ter pelo menos 6 carcteres." preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-            isPasswordValid = NO;
-        } else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Senha inválida" preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-            isPasswordValid = NO;
-        }
+- (BOOL) isDobValid{
+    NSInteger diffDay = [DateUtil diffInDaysDate:[NSDate date] andDate:birthdate];
+    if (diffDay > 0) {
+        return NO;
     }
     
-    return isPasswordValid;
+    return YES;
 }
 
 - (IBAction)btnAction:(id)sender {
     
-    if (![self validateForm]) {
+    if (![self isFormValid]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
                                                                        message:@"Preencha todos os campos do formulário."
                                                                 preferredStyle:UIAlertControllerStyleActionSheet];
@@ -235,6 +216,17 @@
                                                               handler:^(UIAlertAction * action) {
                     NSLog(@"You pressed button OK");
                 }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else if(![self isDobValid]){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                       message:@"A data de aniversário deve ser menor que hoje."
+                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  NSLog(@"You pressed button OK");
+                                                              }];
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
     }else{
