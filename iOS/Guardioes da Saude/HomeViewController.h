@@ -18,5 +18,6 @@
 - (IBAction)healthTips:(id)sender;
 - (IBAction)diaryHealth:(id)sender;
 - (IBAction)btnProfileAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *lblOla;
 
 @end
