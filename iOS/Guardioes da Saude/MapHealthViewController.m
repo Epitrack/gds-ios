@@ -16,7 +16,6 @@
 #import "LocationUtil.h"
 #import "LocationUtil.h"
 #import <MRProgress/MRProgress.h>
-#import "ProgressBarUtil.h"
 @import Charts;
 
 @interface MapHealthViewController ()
@@ -80,9 +79,6 @@
 }
 
 - (void) loadSurvey {
-    
-    [ProgressBarUtil showProgressBarOnView:self.view];
-    
     if (latitude == 0) {
         latitude = [user.lat doubleValue];
     }
@@ -296,11 +292,8 @@
                  [self loadPieChart];
                  
              }
-             
-             [ProgressBarUtil hiddenProgressBarOnView:self.view];
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);
-             [ProgressBarUtil hiddenProgressBarOnView:self.view];
          }];
 }
 
@@ -433,5 +426,15 @@
         
     }];
     
+}
+
+- (IBAction)btnInfoAction:(id)sender {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \nDiarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\nRespiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\nExantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"You pressed button OK");
+    }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end

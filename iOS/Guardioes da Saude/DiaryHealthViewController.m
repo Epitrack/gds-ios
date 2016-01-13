@@ -18,7 +18,6 @@
 #import <JTCalendar/JTCalendar.h>
 #import "HouseholdThumbnail.h"
 #import "Constants.h"
-#import "ProgressBarUtil.h"
 #import "DateUtil.h"
 
 @import Charts;
@@ -559,7 +558,7 @@ const float _kCellHeight = 100.0f;
 
 -(void) showProgressBar{
     if (requestsInProcess == 0) {
-        [ProgressBarUtil showProgressBarOnView:self.view];
+        
     }
     
     requestsInProcess ++;
@@ -569,7 +568,7 @@ const float _kCellHeight = 100.0f;
     requestsInProcess --;
     
     if (requestsInProcess == 0) {
-        [ProgressBarUtil hiddenProgressBarOnView:self.view];
+//        [ProgressBarUtil hiddenProgressBarOnView:self.view];
     }
 }
 
