@@ -88,6 +88,9 @@ public class UserActivity extends BaseAppCompatActivity {
     @Bind(R.id.edit_text_confirm_password)
     EditText editTextConfirmPassword;
 
+    @Bind(R.id.spinner_relationship)
+    Spinner spinnerRelationship;
+
     boolean socialNew;
     boolean newMenber;
     boolean mainMember;
@@ -116,6 +119,10 @@ public class UserActivity extends BaseAppCompatActivity {
         setContentView(R.layout.user);
 
         editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
+
+        if (mainMember || socialNew) {
+            spinnerRelationship.setVisibility(View.INVISIBLE);
+        }
 
         if (socialNew) {
             imageViewImage.setVisibility(View.INVISIBLE);
@@ -149,7 +156,7 @@ public class UserActivity extends BaseAppCompatActivity {
         String race;
         String email;
         String picture;
-        Uri image;
+        String relationship;
 
         if (socialNew) {
             nick = singleUser.getNick();
@@ -158,6 +165,7 @@ public class UserActivity extends BaseAppCompatActivity {
             race = singleUser.getRace();
             email = singleUser.getEmail();
             picture = singleUser.getPicture();
+            relationship = null;
         } else {
             nick = getIntent().getStringExtra("nick");
             dob = getIntent().getStringExtra("dob");
@@ -165,10 +173,10 @@ public class UserActivity extends BaseAppCompatActivity {
             race = getIntent().getStringExtra("race");
             email = getIntent().getStringExtra("email");
             picture = getIntent().getStringExtra("picture");
+            relationship = getIntent().getStringExtra("relationship");
         }
 
         if (!newMenber || socialNew) {
-
             try {
                     editTextNickname.setText(nick);
 
@@ -193,6 +201,71 @@ public class UserActivity extends BaseAppCompatActivity {
 
                     if (race == null) {
                         race = "branco";
+                    }
+
+                    if (relationship != null) {
+                        switch (relationship) {
+                            case "pai":
+                                spinnerRelationship.setSelection(0);
+                                break;
+                            case "mae":
+                                spinnerRelationship.setSelection(1);
+                                break;
+                            case "filho":
+                                spinnerRelationship.setSelection(2);
+                                break;
+                            case "irmao":
+                                spinnerRelationship.setSelection(3);
+                                break;
+                            case "avo":
+                                spinnerRelationship.setSelection(4);
+                                break;
+                            case "neto":
+                                spinnerRelationship.setSelection(5);
+                                break;
+                            case "tio":
+                                spinnerRelationship.setSelection(6);
+                                break;
+                            case "sobrinho":
+                                spinnerRelationship.setSelection(7);
+                                break;
+                            case "bisavo":
+                                spinnerRelationship.setSelection(8);
+                                break;
+                            case "bisneto":
+                                spinnerRelationship.setSelection(9);
+                                break;
+                            case "primo":
+                                spinnerRelationship.setSelection(10);
+                                break;
+                            case "sogro":
+                                spinnerRelationship.setSelection(11);
+                                break;
+                            case "genro":
+                                spinnerRelationship.setSelection(12);
+                                break;
+                            case "nora":
+                                spinnerRelationship.setSelection(13);
+                                break;
+                            case "padrasto":
+                                spinnerRelationship.setSelection(14);
+                                break;
+                            case "madrasta":
+                                spinnerRelationship.setSelection(15);
+                                break;
+                            case "enteado":
+                                spinnerRelationship.setSelection(16);
+                                break;
+                            case "conjuge":
+                                spinnerRelationship.setSelection(17);
+                                break;
+                            case "outros":
+                                spinnerRelationship.setSelection(18);
+                                break;
+                            default:
+                                spinnerRelationship.setSelection(18);
+                                break;
+                        }
                     }
 
                     if (gender != null) {
@@ -302,7 +375,13 @@ public class UserActivity extends BaseAppCompatActivity {
         String gender = spinnerGender.getSelectedItem().toString();
         gender = gender.substring(0, 1);
         user.setGender(gender.toUpperCase());
-        user.setRace(spinnerRace.getSelectedItem().toString().toLowerCase());
+
+        String relationship = spinnerRelationship.getSelectedItem().toString().toLowerCase();
+        relationship = relationship.replace("ô", "o");
+        relationship = relationship.replace("ã", "a");
+        relationship = relationship.replace("ã", "a");
+
+        user.setRelationship(relationship.toLowerCase());
 
         if (!DateFormat.isDate(user.getDob())) {
 
@@ -339,6 +418,7 @@ public class UserActivity extends BaseAppCompatActivity {
                 jsonObject.put("race", user.getRace());
                 jsonObject.put("client", user.getClient());
                 jsonObject.put("race", user.getRace());
+                jsonObject.put("relationship", user.getRelationship());
 
                 if (singleUser.getUri() != null && (user.getNick().equals(singleUser.getNick()))) {
                     jsonObject.put("picture", singleUser.getUri().toString());
@@ -362,7 +442,6 @@ public class UserActivity extends BaseAppCompatActivity {
                                         .content(R.string.password_fail)
                                         .positiveText(R.string.ok)
                                         .show();
-
                                 return;
                             }
 
@@ -373,7 +452,6 @@ public class UserActivity extends BaseAppCompatActivity {
                                         .content(R.string.password_not_equal)
                                         .positiveText(R.string.ok)
                                         .show();
-
                                 return;
                             }
 

@@ -82,13 +82,10 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         textViewAge.setText(j + " Anos");
         textViewId.setText(singleUser.getId());
 
-        if (singleUser.getImageResource() == null) {
-
-            if (singleUser.getPicture().length() > 2) {
-                Uri uri = Uri.parse(singleUser.getPicture());
-                imageViewAvatar.setImageURI(uri);
-            }
-
+        if (singleUser.getPicture().length() > 2) {
+            Uri uri = Uri.parse(singleUser.getPicture());
+            imageViewAvatar.setImageURI(uri);
+        } else {
             if (Integer.parseInt(singleUser.getPicture()) == 0) {
 
                 if (singleUser.getGender().equals("M")) {
@@ -109,8 +106,6 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
             } else {
                 imageViewAvatar.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getLarge());
             }
-        } else {
-            imageViewAvatar.setImageBitmap(BitmapUtility.scale(singleUser.getWidthImageProfile(), singleUser.getHeightImageProfile(), singleUser.getImageResource()));
         }
 
         recyclerView.setHasFixedSize(true);

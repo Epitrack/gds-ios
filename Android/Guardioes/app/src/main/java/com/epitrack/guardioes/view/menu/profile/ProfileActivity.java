@@ -116,6 +116,7 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         bundle.putString("password", user.getPassword());
         bundle.putString("id", user.getId());
         bundle.putString("picture", user.getPicture());
+        bundle.putString("relationship", user.getRelationship());
 
         if (Integer.parseInt(user.getPicture()) == 0) {
             if (user.getGender().equals("M")) {
