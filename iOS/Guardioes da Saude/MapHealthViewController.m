@@ -13,8 +13,8 @@
 #import "DetailMapHealthViewController.h"
 #import "DetailMap.h"
 #import "MapPinAnnotation.h"
-#import "GoogleUtil.h"
-#import "StateUtil.h"
+#import "LocationUtil.h"
+#import "LocationUtil.h"
 #import <MRProgress/MRProgress.h>
 #import "ProgressBarUtil.h"
 @import Charts;
@@ -247,7 +247,7 @@
              if (summary.count > 0) {
              
                  city = location[@"city"];
-                 state = [StateUtil getStateByUf:location[@"state"]];
+                 state = [LocationUtil getStateByUf:location[@"state"]];
                  totalSurvey = [summary[@"total_surveys"] integerValue];
                  
                  totalNoSymptom = [summary[@"total_no_symptoms"] integerValue];
@@ -420,9 +420,7 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
     
-    [GoogleUtil getLocationByAddress:self.seach.text onSuccess:^(NSString *lng, NSString *lat, NSString *fullNameCity){
-        //[self.btnDetailMapHealth setTitle:fullNameCity];
-        
+    [LocationUtil getLocationByAddress:self.seach.text onSuccess:^(NSString *lng, NSString *lat, NSString *fullNameCity){
         longitude = [lng doubleValue];
         latitude = [lat doubleValue];
         [self loadSurvey];
