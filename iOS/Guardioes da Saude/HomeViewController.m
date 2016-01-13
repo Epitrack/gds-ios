@@ -18,7 +18,6 @@
 #import "DiaryHealthViewController.h"
 #import "NoticeRequester.h"
 #import "SingleNotice.h"
-#import "ProgressBarUtil.h"
 #import "ProfileListViewController.h"
 
 @interface HomeViewController ()
@@ -30,13 +29,11 @@
     CLLocationManager *locationManager;
     User *user;
     SingleNotice *singleNotice;
+    UIImage *_defaultImage;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"GUARDIÕES DA SAÚDE";
-
-    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"gdSToolbar.png"] forBarMetrics:UIBarMetricsDefault];
 
     user = [User getInstance];
     
@@ -112,8 +109,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.revealViewController.panGestureRecognizer.enabled=NO;
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
+    UINavigationController *navCtr = self.navigationController;
+    [navCtr setNavigationBarHidden:NO animated:animated];
+    
+    UIImage *imgTitleBar = [UIImage imageNamed:@"gdSToolbar"];
+    [navCtr.navigationBar setBackgroundImage:imgTitleBar forBarMetrics:UIBarMetricsDefault];
+    
     [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [self.navigationController.navigationBar setBackgroundImage:_defaultImage forBarMetrics:UIBarMetricsDefault];
 }
 /*
 #pragma mark - Navigation
@@ -169,7 +176,6 @@
 
 - (BOOL) authorizedAutomaticLogin:(NSString *)userToken {
     
-    [ProgressBarUtil showProgressBarOnView:self.view];
     AFHTTPRequestOperationManager *manager;
     
     manager = [AFHTTPRequestOperationManager manager];
@@ -178,8 +184,6 @@
     [manager GET:@"http://api.guardioesdasaude.org/user/lookup/"
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             [ProgressBarUtil hiddenProgressBarOnView:self.view];
-             
              if ([responseObject[@"error"] boolValue] == 1) {
                  user.user_token = nil;
              } else {
@@ -213,7 +217,6 @@
              }
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             [ProgressBarUtil hiddenProgressBarOnView:self.view];
              NSLog(@"Error: %@", error);
              user.user_token = nil;
          }];

@@ -18,7 +18,8 @@
          andIdUser:(NSString *)idUser
         andPicture:(NSString *)picture
       andIdPicture:(NSString *)idPicture
-    andIdHousehold:(NSString *)idHousehold {
+    andIdHousehold:(NSString *)idHousehold
+   andRelationship:(NSString *) relationship {
     
     if (self == [super init]) {
 
@@ -31,6 +32,7 @@
         self.picture = picture;
         self.idPicture = idPicture;
         self.idHousehold = idHousehold;
+        self.relationship = relationship;
     }
     return self;
 }
@@ -58,5 +60,53 @@
     } else if ([strGender isEqualToString:@"Feminino"]) {
         self.gender = @"F";
     }
+}
+
++ (NSDictionary *) getRelationshipsDictonary{
+    NSArray *relationshipsArray = [self getRelationshipArray];
+    
+    return @{@"pai": relationshipsArray[0],
+             @"mae": relationshipsArray[1],
+             @"filho": relationshipsArray[2],
+             @"irmao": relationshipsArray[3],
+             @"avo": relationshipsArray[4],
+             @"neto": relationshipsArray[5],
+             @"tio": relationshipsArray[6],
+             @"sobrinho": relationshipsArray[7],
+             @"bisavo": relationshipsArray[8],
+             @"bisneto": relationshipsArray[9],
+             @"primo": relationshipsArray[10],
+             @"sogro": relationshipsArray[11],
+             @"genro-nora": relationshipsArray[12],
+             @"padrasto": relationshipsArray[13],
+             @"madrasta": relationshipsArray[14],
+             @"enteado": relationshipsArray[15],
+             @"conjuge": relationshipsArray[16],
+             @"outro": relationshipsArray[17]};
+}
+
++ (NSArray *) getRelationshipArray{
+    NSArray *relationships = @[@"Pai",
+                               @"Mãe",
+                               @"Filho",
+                               @"Irmão(ã)",
+                               @"Avô(ó)",
+                               @"Neto(a)",
+                               @"Tio(a)",
+                               @"Sobrinho(a)",
+                               @"Bisavo(a)",
+                               @"Bisneto(a)",
+                               @"Primo(a)",
+                               @"Sogro(a)",
+                               @"Genro/Nora",
+                               @"Padrasto",
+                               @"Madrasta",
+                               @"Enteado(a)",
+                               @"Conjuge",
+                               @"Outros"];
+    
+    
+    
+    return relationships;
 }
 @end

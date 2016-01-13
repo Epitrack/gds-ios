@@ -225,7 +225,8 @@
                                                               andIdUser:dicHousehold[@"user"][@"id"]
                                                              andPicture:avatar
                                                            andIdPicture: picture
-                                                         andIdHousehold:dicHousehold[@"id"]];
+                                                         andIdHousehold:dicHousehold[@"id"]
+                                                        andRelationship:dicHousehold[@"relationship"]];
                  [houseHolds addObject:household];
              }
              
@@ -251,6 +252,7 @@
     [params setValue:user.platform forKey:@"platform"];
     [params setValue:household.picture forKey:@"picture"];
     [params setValue:household.idHousehold forKey:@"id"];
+    [params setValue:household.relationship forKey:@"relationship"];
     
     if (![household.email isEqualToString:@""]) {
         [params setValue:household.email forKey:@"email"];
@@ -273,21 +275,23 @@
                   onFail: (void(^) (NSError *error)) fail{
     User *user = [User getInstance];
     
-    NSDictionary *params = @{@"nick": household.nick,
-                             @"client": user.client,
-                             @"dob": household.dob,
-                             @"gender": household.gender,
-                             @"app_token": user.app_token,
-                             @"race": household.race,
-                             @"platform": user.platform,
-                             @"picture": household.picture,
-                             @"user": user.idUser};
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setValue:household.nick forKey:@"nick"];
+    [params setValue:user.client forKey:@"client"];
+    [params setValue:household.dob forKey:@"dob"];
+    [params setValue:household.gender forKey:@"gender"];
+    [params setValue:household.race forKey:@"race"];
+    [params setValue:user.platform forKey:@"platform"];
+    [params setValue:household.picture forKey:@"picture"];
+    [params setValue:household.relationship forKey:@"relationship"];
+    [params setValue:user.idUser forKey:@"user"];
+    
     if (![household.email isEqualToString:@""]) {
         [params setValue:household.email forKey:@"email"];
     }
     
     [self doPost:@"http://api.guardioesdasaude.org/household/create"
-          header:@{@"user_token": user.user_token, @"app_token": user.app_token}
+          header:@{@"app_token": user.user_token}
        parameter:params
            start:^(void){
                

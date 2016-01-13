@@ -18,7 +18,6 @@
 #import <JTCalendar/JTCalendar.h>
 #import "HouseholdThumbnail.h"
 #import "Constants.h"
-#import "ProgressBarUtil.h"
 #import "DateUtil.h"
 
 @import Charts;
@@ -254,7 +253,7 @@ const float _kCellHeight = 100.0f;
             [cell.contentView addSubview:horizontalScrollView];
             horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             
-            horizontalScrollView.uniformItemSize = CGSizeMake(120, 100);
+            horizontalScrollView.uniformItemSize = CGSizeMake(150, 100);
             //this must be called after changing any size or margin property of this class to get acurrate margin
             [horizontalScrollView setItemsMarginOnce];
             NSDictionary *households = user.household;
@@ -559,7 +558,7 @@ const float _kCellHeight = 100.0f;
 
 -(void) showProgressBar{
     if (requestsInProcess == 0) {
-        [ProgressBarUtil showProgressBarOnView:self.view];
+        
     }
     
     requestsInProcess ++;
@@ -569,7 +568,7 @@ const float _kCellHeight = 100.0f;
     requestsInProcess --;
     
     if (requestsInProcess == 0) {
-        [ProgressBarUtil hiddenProgressBarOnView:self.view];
+//        [ProgressBarUtil hiddenProgressBarOnView:self.view];
     }
 }
 

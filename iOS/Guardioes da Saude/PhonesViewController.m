@@ -126,6 +126,7 @@
     NSLog(@"didSelectRowAtIndexPath");
     //NSString *text;
     
+    [self.tableViewPhones deselectRowAtIndexPath:indexPath animated:NO];
     
     Phones *phonesLocal = [Phones getInstance];
     if (indexPath.row == 0) {

@@ -44,6 +44,7 @@
     // Setup down pickers
     (void)[self.pickerGender initWithData:listGender];
     (void)[self.pickerRace initWithData: listRace];
+    (void)[self.pickerRelationship initWithData:[Household getRelationshipArray]];
     
     if (self.operation == EDIT_USER) {
         [self loadEditUser];
@@ -63,6 +64,11 @@
 - (void) loadEditUser{
     self.navigationItem.title = @"Editar Perfil";
     self.txtEmail.enabled = NO;
+    
+    //Hide relationship
+    [self.pickerRelationship removeFromSuperview];
+    self.topTxtEmailContraint.constant = 8;
+    
     [self populateFormWithNick:self.user.nick
                         andDob:self.user.dob
                       andEmail:self.user.email
@@ -75,12 +81,13 @@
     self.navigationItem.title = @"Editar Perfil";
     self.txtPassword.hidden = YES;
     self.txtConfirmPassword.hidden = YES;
-    [self populateFormWithNick:self.household.nick
-                        andDob:self.household.dob
-                      andEmail:self.household.email
-                     andGender:self.household.gender
-                       andRace:self.household.race
-                    andPicture:self.household.idPicture];
+    [self populateFormToHouseholdWithNick:self.household.nick
+                                   andDob:self.household.dob
+                                 andEmail:self.household.email
+                                andGender:self.household.gender
+                                  andRace:self.household.race
+                               andPicture:self.household.idPicture
+                          andRelationship:self.household.relationship];
 }
 
 - (void) loadAddHousehold{
@@ -93,6 +100,25 @@
     birthdate = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
 
+}
+
+- (void) populateFormToHouseholdWithNick: (NSString *) nick
+                                  andDob: (NSString *) dob
+                                andEmail: (NSString *) email
+                               andGender: (NSString *) gender
+                                 andRace: (NSString *) race
+                              andPicture: (NSString *) picture
+                         andRelationship: (NSString *) relationship{
+    self.pickerRelationship.text = [Household getRelationshipsDictonary][relationship];
+
+    
+    [self populateFormWithNick:nick
+                        andDob:dob
+                      andEmail:email
+                     andGender:gender
+                       andRace:race
+                    andPicture:picture];
+    
 }
 
 - (void) populateFormWithNick: (NSString *) nick
@@ -159,7 +185,7 @@
 }
 */
 
-- (BOOL) validateForm{
+- (BOOL) isFormValid{
     BOOL fieldsValid = YES;
     if ([self.txtNick.text isEqualToString:@""]) {
         fieldsValid = NO;
@@ -170,37 +196,18 @@
     return fieldsValid;
 }
 
--(BOOL) validatePassword{
-    BOOL isPasswordValid = YES;
-    
-    if (![self.txtPassword.text isEqualToString:@""]) {
-        if (self.txtPassword.text.length < 6) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A senha precisa ter pelo menos 6 carcteres." preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-            isPasswordValid = NO;
-        } else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Senha inválida" preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-            isPasswordValid = NO;
-        }
+- (BOOL) isDobValid{
+    NSInteger diffDay = [DateUtil diffInDaysDate:[NSDate date] andDate:birthdate];
+    if (diffDay > 0) {
+        return NO;
     }
     
-    return isPasswordValid;
+    return YES;
 }
 
 - (IBAction)btnAction:(id)sender {
     
-    if (![self validateForm]) {
+    if (![self isFormValid]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
                                                                        message:@"Preencha todos os campos do formulário."
                                                                 preferredStyle:UIAlertControllerStyleActionSheet];
@@ -209,6 +216,17 @@
                                                               handler:^(UIAlertAction * action) {
                     NSLog(@"You pressed button OK");
                 }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else if(![self isDobValid]){
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                       message:@"A data de aniversário deve ser menor que hoje."
+                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  NSLog(@"You pressed button OK");
+                                                              }];
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
     }else{
@@ -296,19 +314,20 @@
 }
 
 - (Household *) populateHousehold{
-    Household *updaterHousehold = [[Household alloc]init];
-    updaterHousehold.nick = self.txtNick.text;
-    updaterHousehold.email = self.txtEmail.text;
-    updaterHousehold.dob = [DateUtil stringUSFromDate:birthdate];
-    [updaterHousehold setGenderByString:self.pickerGender.text];
-    updaterHousehold.race = [self.pickerRace.text lowercaseString];
-    updaterHousehold.picture = self.pictureSelected;
+    Household *household = [[Household alloc]init];
+    household.nick = self.txtNick.text;
+    household.email = self.txtEmail.text;
+    household.dob = [DateUtil stringUSFromDate:birthdate];
+    [household setGenderByString:self.pickerGender.text];
+    household.race = [self.pickerRace.text lowercaseString];
+    household.picture = self.pictureSelected;
+    household.relationship = [self getRelationship];
     
     if (self.operation == EDIT_HOUSEHOLD) {
-        updaterHousehold.idHousehold = self.household.idHousehold;
+        household.idHousehold = self.household.idHousehold;
     }
     
-    return updaterHousehold;
+    return household;
 }
 
 - (void) showSuccessMsg{
@@ -381,5 +400,16 @@
 - (void) updateBirthDate{
     NSString *dateFormatted  = [DateUtil stringFromDate:birthdate];
     [self.btnDob setTitle:dateFormatted forState:UIControlStateNormal];
+}
+
+- (NSString *) getRelationship{
+    for(NSString *relationshipKey in [Household getRelationshipsDictonary]){
+        NSString *relationship = [[Household getRelationshipsDictonary] objectForKey:relationshipKey];
+        if ([relationship isEqualToString:self.pickerRelationship.text]) {
+            return relationshipKey;
+        }
+    }
+    
+    return nil;
 }
 @end

@@ -14,6 +14,7 @@
 #import "UserRequester.h"
 #import "SelectTypeLoginViewController.h"
 #import "ForgotPasswordViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface EnterViewController ()
 
@@ -84,9 +85,6 @@
 
 - (IBAction)btnEnter:(id)sender {
     
-    /*[self.txtEmail resignFirstResponder];
-    [self.txtPassword resignFirstResponder];*/
-    
     if (([self.txtEmail.text isEqualToString: @""]) || ([self.txtPassword.text isEqualToString: @""])) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"E-mail e/ou senha não informados." preferredStyle:UIAlertControllerStyleActionSheet];
@@ -124,13 +122,27 @@
 
 - (void) requestLogin: (User *) user {
     
-    [[[UserRequester alloc] init] login: user
-     
-        onStart: ^{
+    // CALL BACK START
+    void (^onStart)() = ^void(){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    };
     
-        }
-    
-        onError: ^(NSString * message) {
+    // CALL BACK SUCCESS
+    void (^onSuccess)(User *user) = ^void(User *user){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        if (user.user_token) {
+            NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+            NSString *userKey = user.user_token;
+            
+            [preferences setValue:userKey forKey:@"userTokenKey"];
+            [preferences synchronize];
+            [self.indicatorAct stopAnimating];
+            self.indicatorAct.hidden = YES;
+            
+            [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
+            
+        } else {
             
             UIAlertController * alert = [UIAlertController alertControllerWithTitle: @"Guardiões da Saúde"
                                                                             message: @"Não foi possível fazer o login. E-mail e/ou senha inválidos."
@@ -145,106 +157,37 @@
                                              ];
             
             [alert addAction: defaultAction];
+            
             [self presentViewController: alert animated: YES completion: nil];
-    
         }
+    };
     
-        onSuccess: ^(User * user) {
-            
-            if (user.user_token) {
-                NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-                NSString *userKey = user.user_token;
-                
-                [preferences setValue:userKey forKey:@"userTokenKey"];
-                [preferences synchronize];
-                [self.indicatorAct stopAnimating];
-                self.indicatorAct.hidden = YES;
-                
-                [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
-            
-            } else {
-                
-                UIAlertController * alert = [UIAlertController alertControllerWithTitle: @"Guardiões da Saúde"
-                                                                                message: @"Não foi possível fazer o login. E-mail e/ou senha inválidos."
-                                                                         preferredStyle: UIAlertControllerStyleActionSheet];
-                
-                UIAlertAction * defaultAction = [UIAlertAction actionWithTitle: @"OK"
-                                                                         style: UIAlertActionStyleDefault
-                                                                       handler: ^(UIAlertAction * action) {
-                                                                           
-                                                                           NSLog(@"You pressed button OK");
-                                                                       }
-                ];
-                
-                [alert addAction: defaultAction];
-                
-                [self presentViewController: alert animated: YES completion: nil];
-            }
-        }
-    ];
-}
-
-- (void) requestLoginOld {
+    // CALL BACK FAIL
+    void (^onFail)(NSString *) = ^void(NSString *message){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle: @"Guardiões da Saúde"
+                                                                        message: @"Não foi possível fazer o login. E-mail e/ou senha inválidos."
+                                                                 preferredStyle: UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction * defaultAction = [UIAlertAction actionWithTitle: @"OK"
+                                                                 style: UIAlertActionStyleDefault
+                                                               handler: ^(UIAlertAction * action) {
+                                                                   
+                                                                   NSLog(@"You pressed button OK");
+                                                               }
+                                         ];
+        
+        [alert addAction: defaultAction];
+        [self presentViewController: alert animated: YES completion: nil];
+    };
     
-    AFHTTPRequestOperationManager *manager;
-    NSDictionary *params;
     
-    NSLog(@"Email: %@", self.txtEmail.text);
-    NSLog(@"Password: %@", self.txtPassword.text);
-    
-    params = @{@"email":self.txtEmail.text.lowercaseString,
-               @"password": self.txtPassword.text};
-    
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:@"http://api.guardioesdasaude.org/user/login"
-       parameters:params
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              
-              if ([responseObject[@"error"] boolValue] == 1) {
-                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível fazer o login. E-mail e/ou senha inválidos." preferredStyle:UIAlertControllerStyleActionSheet];
-                  UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                      NSLog(@"You pressed button OK");
-                  }];
-                  [alert addAction:defaultAction];
-                  [self presentViewController:alert animated:YES completion:nil];
-              } else {
-                  
-                  Facade *facade = [[Facade alloc] init];
-                  facade.action = @"LOGIN";
-                  facade.dictionary = responseObject;
-                  [facade run];
-                  
-                  User *user = [User getInstance];
-                  
-                  if (user.user_token == NULL) {
-                      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível fazer o login. E-mail e/ou senha inválidos." preferredStyle:UIAlertControllerStyleActionSheet];
-                      UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                          NSLog(@"You pressed button OK");
-                      }];
-                      [alert addAction:defaultAction];
-                      [self presentViewController:alert animated:YES completion:nil];
-                  } else {
-                      
-                      NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-                      NSString *userKey = user.user_token;
-                      
-                      [preferences setValue:userKey forKey:@"userTokenKey"];
-                      [preferences synchronize];
-                      
-                      HomeViewController *homeViewController = [[HomeViewController alloc] init];
-                      [self.navigationController pushViewController:homeViewController animated:YES];
-                  }
-              }
-              
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível fazer o login. E-mail e/ou senha inválidos." preferredStyle:UIAlertControllerStyleActionSheet];
-              UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                  NSLog(@"You pressed button OK");
-              }];
-              [alert addAction:defaultAction];
-              [self presentViewController:alert animated:YES completion:nil];
-          }];
-
+    // CALL REQUEST
+    [[[UserRequester alloc] init] login: user
+                                onStart: onStart
+                                onError: onFail
+                              onSuccess: onSuccess];
 }
 
 @end
