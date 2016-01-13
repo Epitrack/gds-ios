@@ -45,8 +45,6 @@
     
     if (result.height < 568) {
         [self.txtDescription setFont:[UIFont fontWithName:@"Foco-Regular" size:10]];
-        [self.lbDescription setFont:[UIFont fontWithName:@"Foco-Regular" size:10]];
-        [self.txtTitle setFont:[UIFont fontWithName:@"Foco-Bold" size:14]];
     }
     
     self.lbDescription.hidden = NO;
@@ -159,8 +157,8 @@
 }
 
 -(void) setConstraintsDefault{
-    self.titleConstraint.constant = 34;
-    self.imageConstraint.constant = -36;
+    self.titleConstraint.constant = 70;
+    self.imageConstraint.constant = 0;
 }
 
 -(void) setContraintCustom{
