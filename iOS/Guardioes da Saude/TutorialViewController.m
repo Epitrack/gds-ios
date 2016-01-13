@@ -88,6 +88,8 @@
                 self.lbDescription.hidden = YES;
                 self.indexTutorial += 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
+                
+                [self setContraintCustom];
                 break;
             case 1:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[2]];
@@ -96,6 +98,8 @@
                 self.lbDescription.hidden = YES;
                 self.indexTutorial += 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
+                
+                [self setContraintCustom];
                 break;
             case 2:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[3]];
@@ -104,6 +108,8 @@
                 self.lbDescription.hidden = YES;
                 self.indexTutorial += 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
+                
+                [self setContraintCustom];
                 break;
             case 3:
                 
@@ -121,6 +127,7 @@
                 self.lbDescription.hidden = YES;
                 self.indexTutorial -= 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
+                [self setContraintCustom];
                 break;
             case 2:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[1]];
@@ -129,6 +136,8 @@
                 self.lbDescription.hidden = YES;
                 self.indexTutorial -= 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
+                
+                [self setContraintCustom];
                 break;
             case 1:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[0]];
@@ -137,6 +146,8 @@
                 self.lbDescription.hidden = NO;
                 self.indexTutorial -= 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
+                
+                [self setConstraintsDefault];
                 break;
             case 0:
                 
@@ -145,6 +156,16 @@
                 break;
         }
     }
+}
+
+-(void) setConstraintsDefault{
+    self.titleConstraint.constant = 34;
+    self.imageConstraint.constant = -36;
+}
+
+-(void) setContraintCustom{
+    self.titleConstraint.constant = 8;
+    self.imageConstraint.constant = -50;
 }
 
 - (void)didReceiveMemoryWarning {

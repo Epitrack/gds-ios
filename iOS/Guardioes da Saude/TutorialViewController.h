@@ -18,5 +18,8 @@
 - (IBAction)btnNewUser:(id)sender;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UILabel *lbDescription;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageConstraint;
+
 
 @end

@@ -20,10 +20,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TutorialViewController">
             <connections>
+                <outlet property="imageConstraint" destination="XHm-v8-jBb" id="Tbw-bW-hsa"/>
                 <outlet property="imgBgTutorial" destination="tFN-vj-bKJ" id="bsV-Kl-fZc"/>
                 <outlet property="imgTutorial" destination="ctv-Wu-AJh" id="GLb-Xv-p15"/>
                 <outlet property="lbDescription" destination="vdV-On-aDO" id="OHo-wm-E0g"/>
-                <outlet property="pageControl" destination="9KC-Jm-W5d" id="gsb-L8-Ieg"/>
+                <outlet property="pageControl" destination="9KC-Jm-W5d" id="M9t-uu-sZc"/>
+                <outlet property="titleConstraint" destination="muJ-9O-EL6" id="G4x-0k-2bF"/>
                 <outlet property="txtDescription" destination="b4R-zf-kwj" id="iHn-Y0-SWP"/>
                 <outlet property="txtTitle" destination="P4r-TU-uZK" id="Vq0-XL-luJ"/>
                 <outlet property="view" destination="e6e-5v-vmX" id="gD1-Su-HhQ"/>
@@ -44,9 +46,6 @@
                         <action selector="btnNewUser:" destination="-1" eventType="touchUpInside" id="C0o-ei-rNh"/>
                     </connections>
                 </button>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9KC-Jm-W5d">
-                    <rect key="frame" x="133" y="376" width="55" height="37"/>
-                </pageControl>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-Wu-AJh">
                     <rect key="frame" x="49" y="70" width="223" height="269"/>
                 </imageView>
@@ -76,7 +75,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparado para se tornar um Guardião da Saúde?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-On-aDO">
-                    <rect key="frame" x="62" y="37" width="195" height="36"/>
+                    <rect key="frame" x="62" y="36" width="195" height="36"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="195" id="Z6f-j2-NEr"/>
                     </constraints>
@@ -84,6 +83,9 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9KC-Jm-W5d">
+                    <rect key="frame" x="133" y="376" width="55" height="37"/>
+                </pageControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -96,18 +98,15 @@
                 <constraint firstAttribute="trailing" secondItem="tFN-vj-bKJ" secondAttribute="trailing" id="QPr-4D-2TL"/>
                 <constraint firstItem="i40-G2-ylt" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="31" id="Rgm-Ws-hAo"/>
                 <constraint firstItem="TOh-dH-CHU" firstAttribute="leading" secondItem="i40-G2-ylt" secondAttribute="trailing" constant="21" id="S98-4H-nEt"/>
-                <constraint firstAttribute="trailing" secondItem="vdV-On-aDO" secondAttribute="trailing" constant="63" id="U5q-pk-Mm7"/>
                 <constraint firstItem="vdV-On-aDO" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" id="WZR-LW-HVf"/>
                 <constraint firstItem="9KC-Jm-W5d" firstAttribute="centerX" secondItem="ctv-Wu-AJh" secondAttribute="centerX" id="Wz4-C6-P0d"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" id="X8D-Nr-0xX"/>
-                <constraint firstItem="ctv-Wu-AJh" firstAttribute="centerY" secondItem="e6e-5v-vmX" secondAttribute="centerY" constant="-35.5" id="XHm-v8-jBb"/>
+                <constraint firstItem="ctv-Wu-AJh" firstAttribute="centerY" secondItem="e6e-5v-vmX" secondAttribute="centerY" constant="-36" id="XHm-v8-jBb"/>
                 <constraint firstItem="i40-G2-ylt" firstAttribute="top" secondItem="9KC-Jm-W5d" secondAttribute="bottom" constant="7" id="YIM-OI-7Te"/>
                 <constraint firstAttribute="bottom" secondItem="i40-G2-ylt" secondAttribute="bottom" constant="20" id="Yoz-Zk-98B"/>
                 <constraint firstItem="ctv-Wu-AJh" firstAttribute="width" secondItem="e6e-5v-vmX" secondAttribute="height" multiplier="43:80" constant="-35" id="aU9-cH-tfp"/>
-                <constraint firstItem="9KC-Jm-W5d" firstAttribute="centerY" secondItem="e6e-5v-vmX" secondAttribute="centerY" constant="165.5" id="dVf-wV-2t2"/>
-                <constraint firstItem="vdV-On-aDO" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="62" id="du3-JZ-xk5"/>
-                <constraint firstItem="vdV-On-aDO" firstAttribute="top" secondItem="P4r-TU-uZK" secondAttribute="bottom" constant="1" id="i68-IJ-Zbd"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" id="mau-U2-Qlr"/>
+                <constraint firstItem="ctv-Wu-AJh" firstAttribute="top" secondItem="P4r-TU-uZK" secondAttribute="bottom" constant="34" id="muJ-9O-EL6"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="centerY" secondItem="e6e-5v-vmX" secondAttribute="centerY" id="ole-ui-fZ4"/>
                 <constraint firstAttribute="bottom" secondItem="TOh-dH-CHU" secondAttribute="bottom" constant="20" id="r2Y-lY-A3i"/>
                 <constraint firstAttribute="bottom" secondItem="tFN-vj-bKJ" secondAttribute="bottom" id="uPB-tP-QoD"/>
@@ -115,13 +114,6 @@
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" id="xUb-15-Heb"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="U5q-pk-Mm7"/>
-                    <exclude reference="du3-JZ-xk5"/>
-                    <exclude reference="dVf-wV-2t2"/>
-                </mask>
-            </variation>
         </view>
     </objects>
     <resources>
