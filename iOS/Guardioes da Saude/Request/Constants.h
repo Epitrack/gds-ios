@@ -4,4 +4,6 @@ extern NSString * const Url;
 
 @interface Constants : NSObject
 
++ (NSArray *) getGenders;
++ (NSArray *) getRaces;
 @end

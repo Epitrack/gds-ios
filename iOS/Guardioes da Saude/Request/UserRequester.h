@@ -10,10 +10,10 @@
        onError: (Error) onError
      onSuccess: (Success) onSuccess;
 
-- (void) createAccount: (User *) user
-               onStart: (Start) onStart
-               onError: (Error) onError
-             onSuccess: (Success) onSuccess;
+- (void) createAccountWithUser: (User *) user
+                    andOnStart: (void(^)()) onStart
+                  andOnSuccess: (void(^)()) onSuccess
+                    andOnError: (void(^)(NSError *)) onError ;
 
 /*- (void) getSummary: (User *) user
             onStart: (Start) onStart

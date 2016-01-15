@@ -504,6 +504,7 @@
 		B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */; };
 		CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* LocationUtil.m */; };
 		CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB8610071C3B4BBF009E63DF /* myhouse.gpx */; };
+		CB9387431C491AE900446842 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9387421C491AE900446842 /* ViewUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1087,6 +1088,8 @@
 		CB4E686E1C39B48700563FB7 /* LocationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtil.h; sourceTree = "<group>"; };
 		CB4E686F1C39B48700563FB7 /* LocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtil.m; sourceTree = "<group>"; };
 		CB8610071C3B4BBF009E63DF /* myhouse.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = myhouse.gpx; sourceTree = "<group>"; };
+		CB9387411C491AE900446842 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtil.h; sourceTree = "<group>"; };
+		CB9387421C491AE900446842 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1130,6 +1133,8 @@
 				52EC0D7A1C31626800EC8908 /* DateUtil.m */,
 				CB4E686E1C39B48700563FB7 /* LocationUtil.h */,
 				CB4E686F1C39B48700563FB7 /* LocationUtil.m */,
+				CB9387411C491AE900446842 /* ViewUtil.h */,
+				CB9387421C491AE900446842 /* ViewUtil.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -2424,6 +2429,7 @@
 				524C14361BEBE533003A6C2D /* BasicCareViewController.m in Sources */,
 				524C14461BECE363003A6C2D /* SWRevealViewController.m in Sources */,
 				2548B9E91BDEB3C80004E00F /* ThankYouForParticipatingViewController.m in Sources */,
+				CB9387431C491AE900446842 /* ViewUtil.m in Sources */,
 				52E6F0701C1EFE8F00C88A08 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				25630CF61BDF96F90047FF07 /* ListSymptomsViewController.m in Sources */,
 				527782CA1C04CEB700251BF8 /* SelectAvatarViewController.m in Sources */,
