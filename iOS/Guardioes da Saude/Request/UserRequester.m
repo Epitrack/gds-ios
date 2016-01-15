@@ -66,10 +66,75 @@
     ];
 }
 
-- (void) createAccount: (User *) user
-               onStart: (Start) onStart
-               onError: (Error) onError
-             onSuccess: (Success) onSuccess {
+- (void) createAccountWithUser: (User *) user
+                       andOnStart: (void(^)()) onStart
+                  andOnSuccess: (void(^)()) onSuccess
+                    andOnError: (void(^)(NSError *)) onError {
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:user.nick forKey:@"nick"];
+    [params setObject:user.email forKey:@"email"];
+    [params setObject:user.client forKey:@"client"];
+    [params setObject:user.dob forKey:@"dob"];
+    [params setObject:user.gender forKey:@"gender"];
+    [params setObject:user.app_token forKey:@"app_token"];
+    [params setObject:user.race forKey:@"race"];
+    [params setObject:user.platform forKey:@"platform"];
+    [params setObject:@"1" forKey:@"picture"];
+    [params setObject:@"-8.0464492" forKey:@"lat"];
+    [params setObject:@"-34.9324883" forKey:@"lon"];
+    
+    if (user.password) {
+        [params setObject:user.password forKey:@"password"];
+    }
+    
+    if (user.gl) {
+        [params setObject:user.gl forKey:@"gl"];
+    }
+    
+    if (user.fb) {
+        [params setObject:user.fb forKey:@"fb"];
+    }
+    
+    if (user.tw) {
+        [params setObject:user.tw forKey:@"tw"];
+    }
+    
+    [self doPost:[Url stringByAppendingString:@"/user/create"]
+          header:@{@"app_token": user.app_token}
+       parameter:params
+           start:onStart
+           error:^(AFHTTPRequestOperation *operation, NSError *error){
+               onError(error);
+           }
+         success:^(AFHTTPRequestOperation *operation, id responseObject){
+             if ([responseObject[@"error"] boolValue] == 1) {
+                 onError(nil);
+             }else{
+                 NSDictionary *userRequest = responseObject[@"user"];
+                 
+                 user.nick = userRequest[@"nick"];
+                 user.email = userRequest[@"email"];
+                 user.gender = userRequest[@"gender"];
+                 
+                 @try {
+                     user.picture = userRequest[@"picture"];
+                 }
+                 @catch (NSException *exception) {
+                     user.picture = @"0";
+                 }
+                 
+                 user.idUser=  userRequest[@"id"];
+                 user.race = userRequest[@"race"];
+                 user.dob = userRequest[@"dob"];
+                 user.user_token = userRequest[@"token"];
+                 user.hashtag = userRequest[@"hashtags"];
+                 user.household = userRequest[@"household"];
+                 user.survey = userRequest[@"surveys"];
+                 
+                 onSuccess();
+             }
+         }];
 }
 
 - (void) getSummary: (User *) user

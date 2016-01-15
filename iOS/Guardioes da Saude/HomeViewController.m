@@ -51,6 +51,7 @@
         NSString *userToken = [preferences valueForKey:userTokenKey];
         [self authorizedAutomaticLogin:userToken];
     } else {
+        [self showInformations];
         [self.btnProfile setImage:[UIImage imageNamed:@"img_profile01.png"] forState:UIControlStateNormal];
     }
     

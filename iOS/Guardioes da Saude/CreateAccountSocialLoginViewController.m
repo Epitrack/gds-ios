@@ -11,11 +11,15 @@
 #import "AFNetworking/AFNetworking.h"
 #import "HomeViewController.h"
 #import "SelectTypeCreateAccoutViewController.h"
+#import "Constants.h"
+#import "ViewUtil.h"
+#import "UserRequester.h"
+#import "MBProgressHUD.h"
 
 @interface CreateAccountSocialLoginViewController () {
     User *user;
-    NSDate *birthdate;
-    
+    NSDate *dob;
+    UserRequester *userRequester;
 }
 @end
 
@@ -25,6 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     user = [User getInstance];
+    userRequester = [[UserRequester alloc] init];
     
     [self.txtEmail setDelegate:self];
     [self.txtNick setDelegate:self];
@@ -33,24 +38,19 @@
     if(user.email){
         self.txtEmail.text = user.email;
     }
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
-                                                                   message:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde."
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
-
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {
-        NSLog(@"You pressed button OK");
-    }];
-    [alert addAction:defaultAction];
+    
+    UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde."];
     [self presentViewController:alert animated:YES completion:nil];
     
     
     // Setup down pickers
-    (void)[self.pickerGender initWithData:@[@"Masculino", @"Feminino"]];
-    (void)[self.pickerRace initWithData: @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"]];
+    (void)[self.pickerGender initWithData:[Constants getGenders]];
+    [self.pickerGender setPlaceholder:@"Selecione seu sexo"];
+    (void)[self.pickerRace initWithData: [Constants getRaces]];
+    [self.pickerRace setPlaceholder:@"Selecione sua Cor/Raça"];
     
-    birthdate = [DateUtil dateFromString:@"10/10/1990"];
+    // Setup Dob
+    dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
 }
 
@@ -90,122 +90,38 @@
         fieldNull = YES;
     }
     
-    NSInteger diffDay = [DateUtil diffInDaysDate:[NSDate date] andDate:birthdate];
+    NSInteger diffDay = [DateUtil diffInDaysDate:dob andDate:[NSDate date]];
     
     if (fieldNull) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Preencha todos os campos do formulário." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            NSLog(@"You pressed button OK");
-        }];
-        [alert addAction:defaultAction];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Preencha todos os campos do formulário."];
         [self presentViewController:alert animated:YES completion:nil];
         
     } else if((diffDay/365) < 13){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A idade mínima para o usuário principal é 13 anos." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            NSLog(@"You pressed button OK");
-        }];
-        [alert addAction:defaultAction];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade mínima para o usuário principal é 13 anos."];
         [self presentViewController:alert animated:YES completion:nil];
     }else {
-        
-        
-        AFHTTPRequestOperationManager *manager;
-        NSDictionary *params;
-        
-        NSString *dob = [DateUtil stringUSFromDate:birthdate];
         [user setGenderByString:self.pickerGender.text];
-        user.race = self.pickerRace.text;
+        user.race = [self.pickerRace.text lowercaseString];
+        user.nick = self.txtNick.text;
+        user.email = [self.txtEmail.text lowercaseString];
+        user.dob = [DateUtil stringUSFromDate:dob];
         
-        NSLog(@"nick %@", self.txtNick.text);
-        NSLog(@"email %@", self.txtEmail.text.lowercaseString);
-        NSLog(@"client %@", user.client);
-        NSLog(@"dob %@", dob);
-        NSLog(@"gender %@", user.gender);
-        NSLog(@"app_token %@", user.app_token);
-        NSLog(@"race %@", user.race);
-        NSLog(@"paltform %@", user.platform);
-        
-        NSString *gl = @"";
-        NSString *tw = @"";
-        NSString *fb = @"";
-        
-        if (user.gl != nil) {
-            gl = user.gl;
-        }
-        
-        if (user.fb != nil) {
-            fb = user.fb;
-        }
-        
-        if (user.tw != nil) {
-            tw = user.tw;
-        }
-        
-        params = @{@"nick":self.txtNick.text,
-                   @"email": self.txtEmail.text.lowercaseString,
-                   @"password": self.txtEmail.text.lowercaseString,
-                   @"gl": gl,
-                   @"tw": tw,
-                   @"fb": fb,
-                   @"client": user.client,
-                   @"dob": dob,
-                   @"gender": user.gender,
-                   @"app_token": user.app_token,
-                   @"race": user.race,
-                   @"platform": user.platform,
-                   @"picture": @"1",
-                   @"lat": @"-8.0464492",
-                   @"lon": @"-34.9324883"};
-        
-        manager = [AFHTTPRequestOperationManager manager];
-        [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-        [manager POST:@"http://api.guardioesdasaude.org/user/create"
-           parameters:params
-              success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                  
-                  if ([responseObject[@"error"] boolValue] == 1) {
-                      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso." preferredStyle:UIAlertControllerStyleActionSheet];
-                      UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                          NSLog(@"You pressed button OK");
-                      }];
-                      [alert addAction:defaultAction];
-                      [self presentViewController:alert animated:YES completion:nil];
-                  } else {
-                      
-                      NSDictionary *userRequest = responseObject[@"user"];
-                      
-                      user.nick = userRequest[@"nick"];
-                      user.email = userRequest[@"email"];
-                      user.gender = userRequest[@"gender"];
-                      
-                      @try {
-                          user.picture = userRequest[@"picture"];
-                      }
-                      @catch (NSException *exception) {
-                          user.picture = @"0";
-                      }
-                      
-                      user.idUser=  userRequest[@"id"];
-                      user.race = userRequest[@"race"];
-                      user.dob = userRequest[@"dob"];
-                      user.user_token = userRequest[@"token"];
-                      user.hashtag = userRequest[@"hashtags"];
-                      user.household = userRequest[@"household"];
-                      user.survey = userRequest[@"surveys"];
-                      
-                      HomeViewController *homeViewController = [[HomeViewController alloc] init];
-                      [self.navigationController pushViewController:homeViewController animated:YES];
-                  }
-              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  NSLog(@"Error: %@", error);
-                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso." preferredStyle:UIAlertControllerStyleActionSheet];
-                  UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                      NSLog(@"You pressed button OK");
-                  }];
-                  [alert addAction:defaultAction];
-                  [self presentViewController:alert animated:YES completion:nil];
-              }];
+        [userRequester createAccountWithUser:user andOnStart:^{
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        }andOnSuccess:^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            HomeViewController *homeViewController = [[HomeViewController alloc] init];
+            [self.navigationController pushViewController:homeViewController animated:YES];
+        }andOnError:^(NSError *error){
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            UIAlertController *alert;
+            if (error) {
+                alert = [ViewUtil showAlertWithMessage:@"Ocorreu um erro de comunicação. Por favor, verifique sua conexão com a internet!"];
+            }else{
+                alert = [ViewUtil showAlertWithMessage:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso."];
+            }
+            [self presentViewController:alert animated:YES completion:nil];
+        }];
     }
 }
 
@@ -218,7 +134,7 @@
     RMActionControllerStyle style = RMActionControllerStyleWhite;
     
     RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
-        birthdate = controller.contentView.date;
+        dob = controller.contentView.date;
         [self updateBirthDate];
     }];
     
@@ -230,7 +146,7 @@
 
     dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
     dateSelectionController.datePicker.minuteInterval = 5;
-    dateSelectionController.datePicker.date = birthdate;
+    dateSelectionController.datePicker.date = dob;
     
     if([dateSelectionController respondsToSelector:@selector(popoverPresentationController)] && [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         dateSelectionController.modalPresentationStyle = UIModalPresentationPopover;
@@ -240,7 +156,7 @@
 }
 
 - (void) updateBirthDate{
-    NSString *dateFormatted  = [DateUtil stringFromDate:birthdate];
+    NSString *dateFormatted  = [DateUtil stringFromDate:dob];
     [self.btnDate setTitle:dateFormatted forState:UIControlStateNormal];
 }
 @end

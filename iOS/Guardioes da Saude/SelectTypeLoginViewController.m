@@ -210,7 +210,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
               
               NSArray *response = responseObject[@"data"];
               
-              if (response.count > 0) {
+              if ([responseObject[@"error"] boolValue] != 1) {
                   NSDictionary *userObject = [response objectAtIndex:0];
                   
                   NSString *email = userObject[@"email"];
