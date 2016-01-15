@@ -91,6 +91,9 @@ public class UserActivity extends BaseAppCompatActivity {
     @Bind(R.id.spinner_relationship)
     Spinner spinnerRelationship;
 
+    @Bind(R.id.label_relationship)
+    TextView textViewRelationship;
+
     boolean socialNew;
     boolean newMenber;
     boolean mainMember;
@@ -121,7 +124,9 @@ public class UserActivity extends BaseAppCompatActivity {
         editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
 
         if (mainMember || socialNew) {
+            textViewRelationship.setVisibility(View.INVISIBLE);
             spinnerRelationship.setVisibility(View.INVISIBLE);
+
         }
 
         if (socialNew) {
@@ -375,6 +380,7 @@ public class UserActivity extends BaseAppCompatActivity {
         String gender = spinnerGender.getSelectedItem().toString();
         gender = gender.substring(0, 1);
         user.setGender(gender.toUpperCase());
+        user.setRace(spinnerRace.getSelectedItem().toString().toLowerCase());
 
         String relationship = spinnerRelationship.getSelectedItem().toString().toLowerCase();
         relationship = relationship.replace("ô", "o");
