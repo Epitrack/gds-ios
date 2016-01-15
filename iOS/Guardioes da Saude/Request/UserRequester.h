@@ -5,6 +5,12 @@
 
 @interface UserRequester : Requester
 
+typedef enum {
+    GdsGoogle,
+    GdsFacebook,
+    GdsTwitter
+} SocialNetwork;
+
 - (void) login: (User *) user
        onStart: (Start) onStart
        onError: (Error) onError
@@ -53,4 +59,10 @@
                     OnStart: (void(^)()) onStart
                andOnSuccess: (void(^)()) onSuccess
                  andOnError: (void(^)(NSError *)) onError;
+
+- (void) checkSocialLoginWithToken:(NSString *)socialToken
+                         andSocial:(SocialNetwork)socialType
+                          andStart:(void (^)())onStart
+                      andOnSuccess:(void (^)(User *))onSuccess
+                          andError:(void (^)(NSError *))onError;
 @end

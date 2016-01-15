@@ -445,4 +445,80 @@
         }];
 }
 
+- (void) checkSocialLoginWithToken:(NSString *)socialToken
+                         andSocial:(SocialNetwork)socialType
+                          andStart:(void (^)())onStart
+                      andOnSuccess:(void (^)(User *))onSuccess
+                          andError:(void (^)(NSError *))onError{
+    User *user = [User getInstance];
+    NSString *url;
+    
+    
+    switch (socialType) {
+        case GdsGoogle:
+            url = [NSString stringWithFormat:@"%@/user/get?gl=%@", Url, socialToken];
+            break;
+            
+        case GdsTwitter:
+            url = [NSString stringWithFormat:@"%@/user/get?tw=%@", Url, socialToken];
+            break;
+            
+        case GdsFacebook:
+            url = [NSString stringWithFormat:@"%@/user/get?fb=%@", Url, socialToken];
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self doGet:url
+         header:@{@"app_token": user.app_token}
+      parameter:nil
+          start:onStart
+          error:^(AFHTTPRequestOperation *operation, NSError *error){
+              onError(error);
+          }
+        success:^(AFHTTPRequestOperation *operation, id responseObject){
+            NSArray *response = responseObject[@"data"];
+            
+            if ([responseObject[@"error"] boolValue] != 1) {
+                NSDictionary *userObject = [response objectAtIndex:0];
+                User *user = [User getInstance];
+                
+                user.nick = userObject[@"nick"];
+                user.email = userObject[@"email"];
+                user.gender = userObject[@"gender"];
+                user.picture = userObject[@"picture"];
+                user.idUser =  userObject[@"id"];
+                user.race = userObject[@"race"];
+                user.dob = userObject[@"dob"];
+                user.hashtag = userObject[@"hashtags"];
+                user.household = userObject[@"household"];
+                user.survey = userObject[@"surveys"];
+                
+                switch (socialType) {
+                    case GdsGoogle:
+                        user.gl = userObject[@"gl"];
+                        break;
+                        
+                    case GdsTwitter:
+                        user.tw = userObject[@"tw"];
+                        break;
+                        
+                    case GdsFacebook:
+                        user.fb = userObject[@"fb"];
+                        break;
+                        
+                    default:
+                        break;
+                }
+                
+                onSuccess(user);
+                
+            } else {
+                onError(nil);
+            }
+        }];
+}
+
 @end

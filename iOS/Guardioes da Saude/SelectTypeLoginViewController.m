@@ -16,11 +16,15 @@
 #import "NoticeRequester.h"
 #import "SingleNotice.h"
 #import "TutorialViewController.h"
+#import "UserRequester.h"
+#import "MBProgressHUD.h"
+#import "ViewUtil.h"
 
 @interface SelectTypeLoginViewController () {
     
     User *user;
     SingleNotice *singleNotice;
+    UserRequester *userRequester;
 }
 
 @end
@@ -31,6 +35,8 @@
     [super viewDidLoad];
     user = [User getInstance];
     singleNotice = [SingleNotice getInstance];
+    userRequester = [[UserRequester alloc] init];
+    
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"";
 
@@ -100,7 +106,7 @@
     didSignInForUser:(GIDGoogleUser *)userGL
      withError:(NSError *)error {
     if (!error) {
-        [self checkSocialLoginWithToken:userGL.userID andType:@"GOOGLE"];
+        [self checkSocialLoginWithToken:userGL.userID andType:GdsGoogle];
     }
 }
 
@@ -155,7 +161,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                           user.nick = dictUser[@"name"];
                           user.fb = dictUser[@"id"];
                           
-                          [self checkSocialLoginWithToken:user.fb andType:@"FACEBOOK"];
+                          [self checkSocialLoginWithToken:user.fb andType:GdsFacebook];
                       }
                   }];
              }
@@ -172,7 +178,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
             NSLog(@"signed in as %@", [session userName]);
             user.nick = [session userName];
             user.tw = [session userID];
-            [self checkSocialLoginWithToken:user.tw andType:@"TWITTER"];
+            [self checkSocialLoginWithToken:user.tw andType: GdsTwitter];
         } else {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Erro ao logar com o Twitter." preferredStyle:UIAlertControllerStyleActionSheet];
             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -189,54 +195,37 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     [self.navigationController pushViewController:tutorialViewController animated:YES];
 }
 
-- (void) checkSocialLoginWithToken:(NSString *) token andType:(NSString *)type {
-    
-    NSString *url;
-    
-    if ([type isEqualToString:@"GOOGLE"]) {
-        url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/get?gl=%@", token];
-    } else if ([type isEqualToString:@"FACEBOOK"]) {
-        url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/get?fb=%@", token];
-    } else if ([type isEqualToString:@"TWITTER"]) {
-        url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/get?tw=%@", token];
-    }
-    
-    AFHTTPRequestOperationManager *manager;
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [manager GET:url
-       parameters:nil
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              
-              NSArray *response = responseObject[@"data"];
-              
-              if ([responseObject[@"error"] boolValue] != 1) {
-                  NSDictionary *userObject = [response objectAtIndex:0];
-                  
-                  NSString *email = userObject[@"email"];
-                  NSString *passowrd = userObject[@"email"];
-                  
-                  [self loginSocialWithEmail:email andPassword:passowrd];
-                  
-              } else {
-                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não existe cadastro com essa rede social." preferredStyle:UIAlertControllerStyleActionSheet];
-                  UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                      NSLog(@"You pressed button OK");
-                  }];
-                  [alert addAction:defaultAction];
-                  [self presentViewController:alert animated:YES completion:nil];
-              }
-              
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              NSLog(@"Error: %@", error);
-              UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não existe cadastro com essa rede social." preferredStyle:UIAlertControllerStyleActionSheet];
-              UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                  NSLog(@"You pressed button OK");
-              }];
-              [alert addAction:defaultAction];
-              [self presentViewController:alert animated:YES completion:nil];
-              
-          }];
+- (void) checkSocialLoginWithToken:(NSString *) token andType:(SocialNetwork)type {
+    [userRequester checkSocialLoginWithToken:token
+                                   andSocial:type
+                                    andStart:^{
+                                        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                    }
+                                andOnSuccess:^(User *userResponse){
+                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                    
+                                    user = userResponse;
+                                    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                                    NSString *userKey = user.user_token;
+                                    
+                                    [preferences setValue:userKey forKey:@"userTokenKey"];
+                                    [preferences synchronize];
+                                    
+                                    [self loadNotices];
+                                    
+                                    [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
+                                }
+                                    andError:^(NSError *error){
+                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                        NSString *errorMsg;
+                                        if (error) {
+                                            errorMsg = @"Não existe cadastro com essa rede social.";
+                                        } else {
+                                            errorMsg = @"Ocorreu um erro de comunicação. Por favor, verifique sua conexão com a internet!";
+                                        }
+                                        
+                                        [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                                    }];
     
     
 }
