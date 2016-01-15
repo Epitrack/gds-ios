@@ -11,11 +11,16 @@
 #import "AFNetworking/AFNetworking.h"
 #import "HomeViewController.h"
 #import "TutorialViewController.h"
+#import "Constants.h"
+#import "ViewUtil.h"
+#import "UserRequester.h"
+#import "MBProgressHUD.h"
 
 @interface CreateAccountViewController () {
     
     User *user;
-    NSDate *birthDate;
+    NSDate *dob;
+    UserRequester *userRequester;
 }
 
 @end
@@ -27,6 +32,8 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Guardiões da Saúde";
     user = [User getInstance];
+    userRequester = [[UserRequester alloc] init];
+    
     [self.txtNick setDelegate:self];
     [self.txtEmail setDelegate:self];
     [self.txtPassword setDelegate:self];
@@ -34,13 +41,14 @@
     [self.txtPassword setDelegate:self];
     [self.txtConfirmPassword setDelegate:self];
     
-    birthDate = [DateUtil dateFromString:@"10/10/1990"];
+    dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
     
     // Setup down pickers
-    (void)[self.pickerGender initWithData:@[@"Masculino", @"Feminino"]];
-    (void)[self.pickerRace initWithData: @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"]];
-    
+    (void)[self.pickerGender initWithData:[Constants getGenders]];
+    [self.pickerGender setPlaceholder:@"Selecione seu sexo"];
+    (void)[self.pickerRace initWithData: [Constants getRaces]];
+    [self.pickerRace setPlaceholder:@"Seleciona sua Cor/Raça"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,7 +95,7 @@
     
     BOOL fieldNull = NO;
     
-    NSInteger diffDay = [DateUtil diffInDaysDate:birthDate andDate: [NSDate date]];
+    NSInteger diffDay = [DateUtil diffInDaysDate:dob andDate: [NSDate date]];
     
     if ([self.txtNick.text isEqualToString:@""]||
         [self.txtEmail.text isEqualToString:@""] ||
@@ -96,115 +104,44 @@
     }
     
     if (fieldNull) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Preencha todos os campos do formulário." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            NSLog(@"You pressed button OK");
-        }];
-        [alert addAction:defaultAction];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Preencha todos os campos do formulário."];
         [self presentViewController:alert animated:YES completion:nil];
     } else if((diffDay/365) < 13){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A idade mínima para o usuário principal é 13 anos." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            NSLog(@"You pressed button OK");
-        }];
-        [alert addAction:defaultAction];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade mínima para o usuário principal é 13 anos."];
         [self presentViewController:alert animated:YES completion:nil];
     }else {
         if (self.txtPassword.text.length < 6) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A senha precisa ter pelo menos 6 carcteres." preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A senha precisa ter pelo menos 6 carcteres."];
             [self presentViewController:alert animated:YES completion:nil];
         } else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Senha inválida" preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Suas senhas não estão iguais!"];
             [self presentViewController:alert animated:YES completion:nil];
         } else {
+            user.nick = self.txtNick.text;
+            user.email = [self.txtEmail.text lowercaseString];
             [user setGenderByString:self.pickerGender.text];
-            NSString *race = [self.pickerRace.text lowercaseString];
+            user.race = [self.pickerRace.text lowercaseString];
+            user.dob = [DateUtil stringUSFromDate:dob];
+            user.password = self.txtPassword.text;
             
-            AFHTTPRequestOperationManager *manager;
-            NSDictionary *params;
-            
-            NSString *dob = [DateUtil stringUSFromDate:birthDate];
-            
-            NSLog(@"nick %@", self.txtNick.text);
-            NSLog(@"email %@", self.txtEmail.text.lowercaseString);
-            NSLog(@"password %@", self.txtPassword.text);
-            NSLog(@"client %@", user.client);
-            NSLog(@"dob %@", dob);
-            NSLog(@"gender %@", user.gender);
-            NSLog(@"app_token %@", user.app_token);
-            NSLog(@"race %@", user.race);
-            NSLog(@"paltform %@", user.platform);
-
-            params = @{@"nick":self.txtNick.text,
-                       @"email": self.txtEmail.text.lowercaseString,
-                       @"password": self.txtPassword.text,
-                       @"client": user.client,
-                       @"dob": dob,
-                       @"gender": user.gender,
-                       @"app_token": user.app_token,
-                       @"race": race,
-                       @"platform": user.platform,
-                       @"picture": @"0",
-                       @"lat": @"-8.0464492",
-                       @"lon": @"-34.9324883"};
-            
-            manager = [AFHTTPRequestOperationManager manager];
-            [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-            [manager POST:@"http://api.guardioesdasaude.org/user/create"
-               parameters:params
-                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                      NSLog(@"responseObject: %@", responseObject);
-                      if ([responseObject[@"error"] boolValue] == 1) {
-                          UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso." preferredStyle:UIAlertControllerStyleActionSheet];
-                          UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                              NSLog(@"You pressed button OK");
-                          }];
-                          [alert addAction:defaultAction];
-                          [self presentViewController:alert animated:YES completion:nil];
-                      } else {
-                          
-                          NSDictionary *userRequest = responseObject[@"user"];
-                          
-                          user.nick = userRequest[@"nick"];
-                          user.email = userRequest[@"email"];
-                          user.gender = userRequest[@"gender"];
-                          
-                          @try {
-                              user.picture = userRequest[@"picture"];
-                          }
-                          @catch (NSException *exception) {
-                              user.picture = @"0";
-                          }
-                          
-                          user.idUser=  userRequest[@"id"];
-                          user.race = userRequest[@"race"];
-                          user.dob = userRequest[@"dob"];
-                          user.user_token = userRequest[@"token"];
-                          user.hashtag = userRequest[@"hashtags"];
-                          user.household = userRequest[@"household"];
-                          user.survey = userRequest[@"surveys"];
-                       
-                          HomeViewController *homeViewController = [[HomeViewController alloc] init];
-                          [self.navigationController pushViewController:homeViewController animated:YES];
-                      }
-                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                      NSLog(@"Error: %@", error);
-                      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso." preferredStyle:UIAlertControllerStyleActionSheet];
-                      UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                          NSLog(@"You pressed button OK");
-                      }];
-                      [alert addAction:defaultAction];
-                      [self presentViewController:alert animated:YES completion:nil];
-                  }];
-            }
+            [userRequester createAccountWithUser:user andOnStart:^{
+                [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            }andOnSuccess:^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                HomeViewController *homeViewController = [[HomeViewController alloc] init];
+                [self.navigationController pushViewController:homeViewController animated:YES];
+            }andOnError:^(NSError *error){
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                NSString *msgError;
+                if (error) {
+                    msgError = @"Ocorreu um erro de comunicação. Por favor, verifique sua conexão com a internet!";
+                }else{
+                    msgError =@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso.";
+                }
+                
+                [self presentViewController:[ViewUtil showAlertWithMessage:msgError] animated:YES completion:nil];
+            }];
+        }
     }
 }
 - (IBAction)backButtonAction:(id)sender {
@@ -215,7 +152,7 @@
     RMActionControllerStyle style = RMActionControllerStyleWhite;
     
     RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
-        birthDate = controller.contentView.date;
+        dob = controller.contentView.date;
         [self updateBirthDate];
     }];
     
@@ -227,7 +164,7 @@
     
     dateSelectionController.datePicker.datePickerMode = UIDatePickerModeDate;
     dateSelectionController.datePicker.minuteInterval = 5;
-    dateSelectionController.datePicker.date = birthDate;
+    dateSelectionController.datePicker.date = dob;
     
     if([dateSelectionController respondsToSelector:@selector(popoverPresentationController)] && [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
         dateSelectionController.modalPresentationStyle = UIModalPresentationPopover;
@@ -237,7 +174,7 @@
 }
 
 - (void) updateBirthDate{
-    NSString *dateFormatted  = [DateUtil stringFromDate:birthDate];
+    NSString *dateFormatted  = [DateUtil stringFromDate:dob];
     [self.btnBirthDate setTitle:dateFormatted forState:UIControlStateNormal];
 }
 @end
