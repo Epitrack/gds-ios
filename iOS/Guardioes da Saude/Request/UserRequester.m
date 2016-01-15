@@ -104,30 +104,36 @@
           header:@{@"app_token": user.app_token}
        parameter:params
            start:onStart
-           error:^(AFHTTPRequestOperation *operation, NSError *error){}
+           error:^(AFHTTPRequestOperation *operation, NSError *error){
+               onError(error);
+           }
          success:^(AFHTTPRequestOperation *operation, id responseObject){
-             NSDictionary *userRequest = responseObject[@"user"];
-             
-             user.nick = userRequest[@"nick"];
-             user.email = userRequest[@"email"];
-             user.gender = userRequest[@"gender"];
-             
-             @try {
-                 user.picture = userRequest[@"picture"];
+             if ([responseObject[@"error"] boolValue] == 1) {
+                 onError(nil);
+             }else{
+                 NSDictionary *userRequest = responseObject[@"user"];
+                 
+                 user.nick = userRequest[@"nick"];
+                 user.email = userRequest[@"email"];
+                 user.gender = userRequest[@"gender"];
+                 
+                 @try {
+                     user.picture = userRequest[@"picture"];
+                 }
+                 @catch (NSException *exception) {
+                     user.picture = @"0";
+                 }
+                 
+                 user.idUser=  userRequest[@"id"];
+                 user.race = userRequest[@"race"];
+                 user.dob = userRequest[@"dob"];
+                 user.user_token = userRequest[@"token"];
+                 user.hashtag = userRequest[@"hashtags"];
+                 user.household = userRequest[@"household"];
+                 user.survey = userRequest[@"surveys"];
+                 
+                 onSuccess();
              }
-             @catch (NSException *exception) {
-                 user.picture = @"0";
-             }
-             
-             user.idUser=  userRequest[@"id"];
-             user.race = userRequest[@"race"];
-             user.dob = userRequest[@"dob"];
-             user.user_token = userRequest[@"token"];
-             user.hashtag = userRequest[@"hashtags"];
-             user.household = userRequest[@"household"];
-             user.survey = userRequest[@"surveys"];
-             
-             onSuccess();
          }];
 }
 

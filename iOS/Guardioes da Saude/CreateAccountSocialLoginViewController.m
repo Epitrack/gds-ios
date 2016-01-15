@@ -90,13 +90,13 @@
         fieldNull = YES;
     }
     
-    NSInteger diffDay = [DateUtil diffInDaysDate:[NSDate date] andDate:dob];
+    NSInteger diffDay = [DateUtil diffInDaysDate:dob andDate:[NSDate date]];
     
     if (fieldNull) {
         UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Preencha todos os campos do formulário."];
         [self presentViewController:alert animated:YES completion:nil];
         
-    } else if(((diffDay/365)*-1) < 13){
+    } else if((diffDay/365) < 13){
         UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade mínima para o usuário principal é 13 anos."];
         [self presentViewController:alert animated:YES completion:nil];
     }else {
