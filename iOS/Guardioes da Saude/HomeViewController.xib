@@ -9,6 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
                 <outlet property="btnProfile" destination="Dyo-yR-Gd4" id="CEY-4L-Qqk"/>
+                <outlet property="lblOla" destination="Ehf-QY-O6S" id="47B-Qw-cia"/>
                 <outlet property="txtNameUser" destination="Ag8-Nd-VOm" id="cPq-lu-KqV"/>
                 <outlet property="view" destination="Cds-EH-tEM" id="rid-2K-ECk"/>
             </connections>
@@ -22,7 +23,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aninha!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ag8-Nd-VOm" userLabel="Label Name">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ag8-Nd-VOm" userLabel="Label Name">
                     <rect key="frame" x="25" y="188" width="270" height="27"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Ag8-Nd-VOm" secondAttribute="height" multiplier="10:1" id="4xg-52-Zer"/>
@@ -34,7 +35,7 @@
                         <rect key="frame" x="20" y="190" width="280" height="22"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehf-QY-O6S" userLabel="Label Ola">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehf-QY-O6S" userLabel="Label Ola">
                     <rect key="frame" x="25" y="164" width="40" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Ehf-QY-O6S" secondAttribute="height" multiplier="20:13" id="LVR-zj-DQJ"/>
@@ -217,7 +218,7 @@
                         <rect key="frame" x="115" y="376" width="92" height="32"/>
                     </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-yR-Gd4" userLabel="Button Profile">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-yR-Gd4" userLabel="Button Profile">
                     <rect key="frame" x="95" y="63" width="130" height="130"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="74:71" id="5Jf-t5-GZT"/>

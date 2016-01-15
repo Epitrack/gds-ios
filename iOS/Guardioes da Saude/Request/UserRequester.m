@@ -314,4 +314,70 @@
     }];
 }
 
+-(void) getSymptonsOnStart: (void(^)()) onStart
+                andSuccess: (void(^)()) onSuccess
+                andOnError: (void(^)(NSError *)) onError{
+    User *user = [User getInstance];
+    
+    [self doGet:[Url stringByAppendingString:@"/symptoms"]
+         header:@{@"app_token": user.app_token,
+                  @"user_token": user.user_token}
+      parameter:nil
+          start:onStart
+          error:^(AFHTTPRequestOperation *operation, NSError *error){
+            onError(error);
+          }
+        success:^(AFHTTPRequestOperation * request, id response){
+            user.symptoms = response[@"data"];
+            onSuccess();
+        }];
+}
+
+-(void) lookupWithUsertoken: (NSString *) userToken
+                    OnStart: (void(^)()) onStart
+               andOnSuccess: (void(^)()) onSuccess
+                 andOnError: (void(^)(NSError *)) onError{
+    User * user = [User getInstance];
+    
+    [self doGet:[Url stringByAppendingString:@"/user/lookup/"]
+         header:@{@"app_token": user.app_token,
+                  @"user_token": userToken}
+      parameter:nil
+          start:onStart
+          error:^(AFHTTPRequestOperation *operation, NSError *error){
+              onError(error);
+          }
+        success:^(AFHTTPRequestOperation *operation, id responseObject){
+            if ([responseObject[@"error"] boolValue] == 1) {
+                user.user_token = nil;
+            } else {
+                NSDictionary *response = responseObject[@"data"];
+                
+                user.nick = response[@"nick"];
+                user.email = response[@"email"];
+                user.gender = response[@"gender"];
+                user.picture = response[@"picture"];
+                user.idUser =  response[@"id"];
+                user.race = response[@"race"];
+                user.dob = response[@"dob"];
+                user.user_token = response[@"token"];
+                user.hashtag = response[@"hashtags"];
+                user.household = response[@"household"];
+                user.survey = response[@"surveys"];
+                
+                NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                NSString *userKey = user.user_token;
+                
+                [preferences setValue:userKey forKey:@"userTokenKey"];
+                BOOL didSave = [preferences synchronize];
+                
+                if (!didSave) {
+                    user.user_token = nil;
+                }
+                
+                onSuccess();
+            }
+        }];
+}
+
 @end

@@ -253,7 +253,15 @@ const float _kCellHeight = 100.0f;
             [cell.contentView addSubview:horizontalScrollView];
             horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
             
-            horizontalScrollView.uniformItemSize = CGSizeMake(150, 100);
+            CGFloat widthScreen = [UIScreen mainScreen].bounds.size.width;
+            
+            int width = 150;
+            if (widthScreen <= 320) {
+                width = 120;
+            }
+            
+            
+            horizontalScrollView.uniformItemSize = CGSizeMake(width, 100);
             //this must be called after changing any size or margin property of this class to get acurrate margin
             [horizontalScrollView setItemsMarginOnce];
             NSDictionary *households = user.household;

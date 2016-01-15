@@ -9,7 +9,6 @@
 #import "HomeViewController.h"
 #import "User.h"
 #import "SelectParticipantViewController.h"
-#import "AFNetworking/AFNetworking.h"
 #import "MapHealthViewController.h"
 #import "NoticeViewController.h"
 #import "HealthTipsViewController.h"
@@ -19,6 +18,8 @@
 #import "NoticeRequester.h"
 #import "SingleNotice.h"
 #import "ProfileListViewController.h"
+#import "UserRequester.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface HomeViewController ()
 
@@ -30,14 +31,19 @@
     User *user;
     SingleNotice *singleNotice;
     UIImage *_defaultImage;
+    UserRequester *userRequester;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationItem.hidesBackButton = YES;
+    
     user = [User getInstance];
     
     singleNotice = [SingleNotice getInstance];
+    userRequester = [[UserRequester alloc] init];
+    
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *userTokenKey = @"userTokenKey";
     
@@ -48,14 +54,14 @@
         [self.btnProfile setImage:[UIImage imageNamed:@"img_profile01.png"] forState:UIControlStateNormal];
     }
     
-    self.navigationItem.hidesBackButton = YES;
+
     
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
 
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
-                                                                         style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
+                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
 
     // Do any additional setup after loading the view from its nib.
@@ -67,26 +73,14 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     
-    AFHTTPRequestOperationManager *manager;
-
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [manager.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
-    [manager GET:@"http://api.guardioesdasaude.org/symptoms"
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             user.symptoms = responseObject[@"data"];
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error: %@", error);
-         }];
-    
-    NSLog(@"Nick: %@", user.nick);
-    self.txtNameUser.text = user.nick;
-    
 }
 
-- (void) loadAvatar {
+- (void) showInformations {
     NSString *avatar;
+    
+    self.txtNameUser.text = user.nick;
+    self.lblOla.hidden = NO;
+    self.btnProfile.hidden = NO;
     
     if ([user.picture isEqualToString:@"0"] || user.picture == nil) {
         user.picture = @"1";
@@ -174,58 +168,30 @@
     user.lon = [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude];
 }
 
-- (BOOL) authorizedAutomaticLogin:(NSString *)userToken {
+- (void) authorizedAutomaticLogin:(NSString *)userToken {
     
-    AFHTTPRequestOperationManager *manager;
-    
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [manager.requestSerializer setValue:userToken forHTTPHeaderField:@"user_token"];
-    [manager GET:@"http://api.guardioesdasaude.org/user/lookup/"
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             if ([responseObject[@"error"] boolValue] == 1) {
-                 user.user_token = nil;
-             } else {
-                 NSDictionary *response = responseObject[@"data"];
-                 
-                 user.nick = response[@"nick"];
-                 user.email = response[@"email"];
-                 user.gender = response[@"gender"];
-                 user.picture = response[@"picture"];
-                 user.idUser =  response[@"id"];
-                 user.race = response[@"race"];
-                 user.dob = response[@"dob"];
-                 user.user_token = response[@"token"];
-                 user.hashtag = response[@"hashtags"];
-                 user.household = response[@"household"];
-                 user.survey = response[@"surveys"];
-                 
-                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-                 NSString *userKey = user.user_token;
-                 
-                 [preferences setValue:userKey forKey:@"userTokenKey"];
-                 BOOL didSave = [preferences synchronize];
-                 
-                 if (!didSave) {
-                     user.user_token = nil;
-                 }
-                 
-                 self.txtNameUser.text = user.nick;
-                [self loadAvatar];
-                 [self loadNotices];
-             }
-             
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error: %@", error);
-             user.user_token = nil;
-         }];
-    
-    if (user.user_token == nil) {
-        return NO;
-    } else {
-        return YES;
-    }
+    [userRequester lookupWithUsertoken:userToken
+                               OnStart:^{
+                                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                }andOnSuccess:^{
+                                    [self loadSymptons];
+                                    [self showInformations];
+                                    [self loadNotices];
+                                }andOnError:^(NSError *error){
+                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                    NSLog(@"Error: %@", error);
+                                }];
+}
+
+-(void) loadSymptons{
+    [userRequester getSymptonsOnStart:^{}
+                           andSuccess:^{
+                               [MBProgressHUD hideHUDForView:self.view animated:YES];
+                           }
+                           andOnError:^(NSError *error){
+                               [MBProgressHUD hideHUDForView:self.view animated:YES];
+                               NSLog(@"Error: %@", error);
+                           }];
 }
 
 - (void) loadNotices {

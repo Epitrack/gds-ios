@@ -44,4 +44,13 @@
 - (void) updateUser: (User *) user
           onSuccess: (void(^)(User* user)) success
              onFail: (void(^) (NSError *error)) fail;
+
+-(void) getSymptonsOnStart: (void(^)()) onStart
+                andSuccess: (void(^)()) onSuccess
+                andOnError: (void(^)(NSError *)) onError;
+
+-(void) lookupWithUsertoken: (NSString *) userToken
+                    OnStart: (void(^)()) onStart
+               andOnSuccess: (void(^)()) onSuccess
+                 andOnError: (void(^)(NSError *)) onError;
 @end
