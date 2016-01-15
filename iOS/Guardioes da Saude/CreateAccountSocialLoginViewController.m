@@ -101,9 +101,9 @@
         [self presentViewController:alert animated:YES completion:nil];
     }else {
         [user setGenderByString:self.pickerGender.text];
-        user.race = self.pickerRace.text;
+        user.race = [self.pickerRace.text lowercaseString];
         user.nick = self.txtNick.text;
-        user.email = self.txtEmail.text;
+        user.email = [self.txtEmail.text lowercaseString];
         user.dob = [DateUtil stringUSFromDate:dob];
         
         [userRequester createAccountWithUser:user andOnStart:^{

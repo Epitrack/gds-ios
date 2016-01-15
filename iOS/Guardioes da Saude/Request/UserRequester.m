@@ -100,7 +100,7 @@
         [params setObject:user.tw forKey:@"tw"];
     }
     
-    [self doPost:@"http://api.guardioesdasaude.org/user/create"
+    [self doPost:[Url stringByAppendingString:@"/user/create"]
           header:@{@"app_token": user.app_token}
        parameter:params
            start:onStart
