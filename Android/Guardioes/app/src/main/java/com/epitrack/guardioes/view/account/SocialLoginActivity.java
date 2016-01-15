@@ -200,7 +200,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             FacebookSdk.sdkInitialize(getApplicationContext());
             callbackManager = CallbackManager.Factory.create();
 
-            if (AccessToken.getCurrentAccessToken().getUserId() != null) {
+            if (AccessToken.getCurrentAccessToken() != null) {
                 userExistSocial(AccessToken.getCurrentAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
             }
             buttonFaceBook.setReadPermissions(Arrays.asList("public_profile", "email"));
