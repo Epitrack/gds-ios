@@ -11,6 +11,7 @@
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
 #import "ThankYouForParticipatingViewController.h"
+#import "ViewUtil.h"
 
 @interface ListSymptomsViewController () {
     
@@ -78,8 +79,22 @@
 
 - (IBAction)btnConfirmSurvey:(id)sender {
     
+    BOOL isTxtPaisValid = YES;
     
-    if (selected.count > 0) {
+    for (int i=0; i < symptoms.count; i++) {
+        
+        if ([selected containsIndex:i]) {
+            Symptom *symptom = [symptoms objectAtIndex:i];
+            if([symptom.code isEqualToString:@"hadTravelledAbroad"] && [self.txtPais.text isEqualToString:@""]) {
+                isTxtPaisValid = NO;
+            }
+        }
+    }
+    
+    if (!isTxtPaisValid) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Por favor, preencha o nome do pais!"];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else if (selected.count > 0) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Deseja registrar suas informações?" preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
