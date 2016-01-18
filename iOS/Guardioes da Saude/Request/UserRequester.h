@@ -70,4 +70,10 @@ typedef enum {
                       andOnStart:(void(^)())onStart
                     andOnSuccess:(void(^)())onSuccess
                       andOnError:(void(^)(NSError *))onError;
-@end
+
+- (void) reportBugWithTitle:(NSString *) title
+                    andText:(NSString *) text
+                 andOnStart:(void(^)())onStart
+               andOnSuccess:(void(^)())onSuccess
+                 andOnError:(void(^)(NSError *))onError;
+ @end
