@@ -521,4 +521,50 @@
         }];
 }
 
+- (void)forgotPasswordWithEmail:(NSString *)email
+                     andOnStart:(void (^)())onStart
+                   andOnSuccess:(void (^)())onSuccess
+                     andOnError:(void (^)(NSError *))onError{
+    
+    [self doPost:@"http://api.guardioesdasaude.org/user/forgot-password"
+          header:@{}
+       parameter:@{@"email":email}
+           start:^{
+               onStart();
+           }
+           error:^(AFHTTPRequestOperation *operation, NSError *error){
+               onError(error);
+           }
+         success:^(AFHTTPRequestOperation *operation, id response){
+             if ([response[@"error"] boolValue] == 1) {
+                 onError(nil);
+             }else{
+                 onSuccess();
+             }
+         }];
+}
+
+- (void)reportBugWithTitle:(NSString *)title
+                   andText:(NSString *)text
+                andOnStart:(void (^)())onStart
+              andOnSuccess:(void (^)())onSuccess
+                andOnError:(void (^)(NSError *))onError{
+    
+    [self doPost:@"http://api.guardioesdasaude.org/email/log"
+          header:@{@"user_token": [User getInstance].user_token}
+       parameter:@{@"title":title,
+                   @"text": text}
+           start:onStart
+           error:^(AFHTTPRequestOperation *operation, NSError *error){
+               onError(error);
+           }
+         success:^(AFHTTPRequestOperation *operation, id response){
+             if ([response[@"error"] boolValue] == 1) {
+                 onError(nil);
+             }else{
+                 onSuccess();
+             }
+         }];
+}
+
 @end

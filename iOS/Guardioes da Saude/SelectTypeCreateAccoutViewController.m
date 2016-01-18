@@ -121,7 +121,7 @@ dismissViewController:(UIViewController *)viewController {
     ModalPrivViewController *modalPrivController = [[ModalPrivViewController alloc] init];
     modalPrivController.modalPresentationStyle = UIModalPresentationFormSheet;
     modalPrivController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self.navigationController presentModalViewController:modalPrivController animated:YES];
+    [self.navigationController pushViewController:modalPrivController animated:NO];
 
 }
 

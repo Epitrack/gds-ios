@@ -9,6 +9,9 @@
 #import "ReportViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "User.h"
+#import "ViewUtil.h"
+#import "UserRequester.h"
+#import "MBProgressHUD.h"
 
 @interface ReportViewController ()
 
@@ -77,48 +80,22 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     } else {
-        
-        AFHTTPRequestOperationManager *manager;
-        NSDictionary *params;
-        
-        params = @{@"title":self.txtSubject.text.lowercaseString,
-                   @"text": self.txtMessage.text};
-        
-        manager = [AFHTTPRequestOperationManager manager];
-        [manager.requestSerializer setValue: [User getInstance].user_token forHTTPHeaderField: @"user_token"];
-        [manager POST:@"http://api.guardioesdasaude.org/email/log"
-           parameters:params
-              success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                  
-                  if ([responseObject[@"error"] boolValue] == 1) {
-                      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível enviar sua mensagem. Tente novamente em alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
-                      UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                          NSLog(@"You pressed button OK");
-                      }];
-                      [alert addAction:defaultAction];
-                      [self presentViewController:alert animated:YES completion:nil];
-                  } else {
-                      
-                      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Mensagem enviada com sucesso. Obrigado!" preferredStyle:UIAlertControllerStyleActionSheet];
-                      UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                          NSLog(@"You pressed button OK");
-                          }];
-                      [alert addAction:defaultAction];
-                      [self presentViewController:alert animated:YES completion:nil];
-                      
-                      self.txtSubject.text = @"";
-                      self.txtMessage.text = @"";
-                  }
-                  
-              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível enviar sua mensagem. Tente novamente em alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
-                  UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                      NSLog(@"You pressed button OK");
-                  }];
-                  [alert addAction:defaultAction];
-                  [self presentViewController:alert animated:YES completion:nil];
-              }];
-        
+         [[[UserRequester alloc] init] reportBugWithTitle:self.txtSubject.text
+                                                  andText:self.txtMessage.text andOnStart:^{
+                                                      [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                  } andOnSuccess:^{
+                                                      [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                      UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Mensagem enviada com sucesso. Obrigado!"];
+                                                      [self presentViewController:alert animated:YES completion:nil];
+                                                      
+                                                      self.txtSubject.text = @"";
+                                                      self.txtMessage.text = @"";
+                                                  }
+                                               andOnError:^(NSError *error){
+                                                   [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                   UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Não foi possível enviar sua mensagem. Tente novamente em alguns minutos."];
+                                                   [self presentViewController:alert animated:YES completion:nil];
+                                               }];
     }
     
 }
