@@ -28,6 +28,7 @@ import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.Extension;
 import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.view.base.AbstractBaseMapActivity;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -406,7 +407,15 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                 try {
                     textViewCity.setText(jsonObjectLocation.get("city").toString());
                 } catch (Exception e) {
-                    textViewCity.setText("");
+                    try {
+                        String formattedAddress = jsonObjectLocation.get("city").toString();
+                        String formattedAddressParts[] = formattedAddress.split(",");
+                        String cityUf = formattedAddressParts[2];
+                        String cityUfParts[] = cityUf.split("-");
+                        textViewCity.setText(cityUfParts[0].trim());
+                    } catch (Exception e1) {
+                        textViewCity.setText("");
+                    }
                 }
 
                 textViewState.setText(getStateDescription(jsonObjectLocation.get("state").toString().toUpperCase()));
