@@ -60,6 +60,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent.ActionBar" />
         <activity
+            android:name=".view.account.ForgotPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".view.account.LoginActivity"
+            android:theme="@style/Theme.Transparent.ActionBar" />
+        <activity
             android:name=".view.account.CreateAccountActivity"
             android:exported="false"
             android:parentActivityName=".view.welcome.WelcomeActivity"
