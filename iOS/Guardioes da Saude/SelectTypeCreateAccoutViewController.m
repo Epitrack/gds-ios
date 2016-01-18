@@ -10,18 +10,21 @@
 #import "CreateAccountViewController.h"
 #import "CreateAccountSocialLoginViewController.h"
 #import "User.h"
+#import "UserRequester.h"
 #import "AFNetworking/AFNetworking.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "TermsViewController.h"
 #import "ModalPrivViewController.h"
 #import "TutorialViewController.h"
+#import "MBProgressHUD.h"
 #import <Google/SignIn.h>
+#import "ViewUtil.h"
 
 @interface SelectTypeCreateAccoutViewController () {
     
     User *user;
-    BOOL userExists;
+    UserRequester *userRequester;
     NSString *signInAuthStatus;
     BOOL isEnabled;
 }
@@ -48,7 +51,8 @@
     self.navigationItem.title = @"";
     
     user = [User getInstance];
-    userExists = NO;
+    userRequester = [[UserRequester alloc] init];
+
     isEnabled = NO;
     [self desableButtons];
     
@@ -60,44 +64,16 @@
     //[signIn signInSilently];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.login"]];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.me"]];
-    
-    //FACEBOOK
-    //FBSDKLoginButton *btnFacebook = [[FBSDKLoginButton alloc] init];
-    //self.btnFacebook = btnFacebook;
-    //self.btnFacebook.readPermissions = @[@"public_profile", @"email", @"user_friends"];
-    
-    //TWITTER
-//    TWTRLogInButton* logInButton = [TWTRLogInButton buttonWithLogInCompletion:^(TWTRSession* session, NSError* error) {
-//        if (session) {
-//            NSLog(@"signed in as %@", [session userName]);
-//        } else {
-//            NSLog(@"error: %@", [error localizedDescription]);
-//        }
-//    }];
-    
-    //self.btnTwitter = logInButton;
 }
 
 - (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)userGl withError:(NSError *)error {
     if (!error) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         user.email = userGl.profile.email;
         user.gl = userGl.userID;
         user.nick = userGl.profile.name;
         
-        [self checkSocialLoginWithToken:user.gl andType:@"GOOGLE" andCompletion:^(BOOL isAlready){
-            if (isAlready) {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Cadastro realizado anterioremente com essa rede social ou e-mail." preferredStyle:UIAlertControllerStyleActionSheet];
-                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                    NSLog(@"You pressed button OK");
-                }];
-                [alert addAction:defaultAction];
-                [self presentViewController:alert animated:YES completion:nil];
-            } else {
-                CreateAccountSocialLoginViewController *createAccountSocialLoginViewController = [[CreateAccountSocialLoginViewController alloc] init];
-                [self.navigationController pushViewController:createAccountSocialLoginViewController animated:YES];
-            }
-            
-        }];
+        [self checkSocialLoginWithToken:user.gl andType:GdsGoogle];
     }
 }
 
@@ -223,11 +199,16 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 - (IBAction)btnFacebookAction:(id)sender {
     if (isEnabled) {
         FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
         [login
          logInWithReadPermissions: @[@"public_profile", @"email"]
          fromViewController:self
          handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
              if (error) {
+                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                 
                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Erro ao logar com o Facebook." preferredStyle:UIAlertControllerStyleActionSheet];
                  UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                      NSLog(@"You pressed button OK");
@@ -235,6 +216,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                  [alert addAction:defaultAction];
                  [self presentViewController:alert animated:YES completion:nil];
              } else if (result.isCancelled) {
+                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                 
                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação cancelada." preferredStyle:UIAlertControllerStyleActionSheet];
                  UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                      NSLog(@"You pressed button OK");
@@ -254,21 +237,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                               
                               user.nick = dictUser[@"name"];
                               user.fb = dictUser[@"id"];
-                              
-                              [self checkSocialLoginWithToken:user.fb andType:@"FACEBOOK" andCompletion:^(BOOL isAlready){
-                                  if (isAlready) {
-                                      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Cadastro realizado anterioremente com essa rede social ou e-mail." preferredStyle:UIAlertControllerStyleActionSheet];
-                                      UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                                          NSLog(@"You pressed button OK");
-                                      }];
-                                      [alert addAction:defaultAction];
-                                      [self presentViewController:alert animated:YES completion:nil];
-                                  } else {
-                                      CreateAccountSocialLoginViewController *createAccountSocialLoginViewController = [[CreateAccountSocialLoginViewController alloc] init];
-                                      [self.navigationController pushViewController:createAccountSocialLoginViewController animated:YES];
-                                  }
-                                  
-                              }];
+                              [self checkSocialLoginWithToken:user.fb andType:GdsFacebook];
                           }
                       }];
                  }
@@ -290,32 +259,19 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 
 - (IBAction)btnTwitterAction:(id)sender {
     if (isEnabled) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
         [[Twitter sharedInstance] logInWithCompletion:^(TWTRSession *session, NSError *error) {
             if (session) {
                 NSLog(@"signed in as %@", [session userName]);
                 user.nick = [session userName];
                 user.tw = [session userID];
-                                
-                [self checkSocialLoginWithToken:user.tw andType:@"TWITTER" andCompletion:^(BOOL isAlready){
-                    if (isAlready			) {
-                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Cadastro realizado anterioremente com essa rede social ou e-mail." preferredStyle:UIAlertControllerStyleActionSheet];
-                        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                            NSLog(@"You pressed button OK");
-                        }];
-                        [alert addAction:defaultAction];
-                        [self presentViewController:alert animated:YES completion:nil];
-                    } else {
-                        CreateAccountSocialLoginViewController *createAccountSocialLoginViewController = [[CreateAccountSocialLoginViewController alloc] init];
-                        [self.navigationController pushViewController:createAccountSocialLoginViewController animated:YES];
-                    }
-                }];
                 
+                [self checkSocialLoginWithToken:user.tw andType:GdsTwitter];
             } else {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Erro ao logar com o Twitter." preferredStyle:UIAlertControllerStyleActionSheet];
-                UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                    NSLog(@"You pressed button OK");
-                }];
-                [alert addAction:defaultAction];
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                
+                UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Erro ao logar com o Twitter."];
                 [self presentViewController:alert animated:YES completion:nil];
             }
         }];
@@ -338,43 +294,27 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     [self.navigationController pushViewController:termsViewController animated:YES];
 }
 
-- (void) checkSocialLoginWithToken:(NSString *) token andType:(NSString *)type andCompletion: (void (^)(BOOL isAlready)) block {
-    NSString *url;
-
-    if ([type isEqualToString:@"GOOGLE"]) {
-        url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/get?gl=%@", token];
-    } else if ([type isEqualToString:@"FACEBOOK"]) {
-        url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/get?fb=%@", token];
-    } else if ([type isEqualToString:@"TWITTER"]) {
-        url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/get?tw=%@", token];
-    }
-    
-    AFHTTPRequestOperationManager *manager;
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [manager GET:url
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             
-             NSArray *response = responseObject[@"data"];
-             
-             if (response.count > 0) {
-                 NSDictionary *userObject = [response objectAtIndex:0];
-                 NSString *email = userObject[@"email"];
-                 
-                 if (![email isEqualToString:@""]) {
-                     userExists = YES;
-                 }
-             } else {
-                 userExists = NO;
-             }
-             
-             block(userExists);
-             
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error: %@", error);
-             block(NO);
-         }];
+- (void) checkSocialLoginWithToken:(NSString *) token andType:(SocialNetwork) type{
+    [userRequester checkSocialLoginWithToken:token
+                                   andSocial:type
+                                    andStart:^(){
+                                        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                    }
+                                andOnSuccess:^(User *user){
+                                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                    UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Cadastro realizado anterioremente com essa rede social ou e-mail."];
+                                    [self presentViewController:alert animated:YES completion:nil];
+                                }
+                                    andError:^(NSError *error){
+                                        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                        if (error) {
+                                            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso."];
+                                            [self presentViewController:alert animated:YES completion:nil];
+                                        } else {
+                                            CreateAccountSocialLoginViewController *createAccountSocialLoginViewController = [[CreateAccountSocialLoginViewController alloc] init];
+                                            [self.navigationController pushViewController:createAccountSocialLoginViewController animated:YES];
+                                        }
+                                    }];
 }
 
 - (IBAction)btnCheckTermsAction:(id)sender {
@@ -395,7 +335,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     ModalPrivViewController *modalPrivController = [[ModalPrivViewController alloc] init];
     modalPrivController.modalPresentationStyle = UIModalPresentationFormSheet;
     modalPrivController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self.navigationController presentModalViewController:modalPrivController animated:YES];
+    [self.navigationController pushViewController:modalPrivController animated:NO];
 }
 
 - (IBAction)btnBackAction:(id)sender {

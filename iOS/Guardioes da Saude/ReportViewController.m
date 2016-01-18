@@ -8,6 +8,7 @@
 
 #import "ReportViewController.h"
 #import "AFNetworking/AFNetworking.h"
+#import "User.h"
 
 @interface ReportViewController ()
 
@@ -84,6 +85,7 @@
                    @"text": self.txtMessage.text};
         
         manager = [AFHTTPRequestOperationManager manager];
+        [manager.requestSerializer setValue: [User getInstance].user_token forHTTPHeaderField: @"user_token"];
         [manager POST:@"http://api.guardioesdasaude.org/email/log"
            parameters:params
               success:^(AFHTTPRequestOperation *operation, id responseObject) {

@@ -36,9 +36,8 @@
 */
 
 - (IBAction)btnOK:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
     SelectTypeCreateAccoutViewController *selectTypeCreateAccountViewController = [[SelectTypeCreateAccoutViewController alloc] init];
-    [self.navigationController pushViewController:selectTypeCreateAccountViewController animated:YES];
+    [self.navigationController pushViewController:selectTypeCreateAccountViewController animated:NO];
     
 }
 @end

@@ -137,8 +137,6 @@
             
             [preferences setValue:userKey forKey:@"userTokenKey"];
             [preferences synchronize];
-            [self.indicatorAct stopAnimating];
-            self.indicatorAct.hidden = YES;
             
             [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
             
