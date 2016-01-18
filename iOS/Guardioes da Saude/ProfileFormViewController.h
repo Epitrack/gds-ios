@@ -42,5 +42,6 @@ typedef enum operation{
 @property (weak, nonatomic) IBOutlet UIDownPicker *pickerGender;
 @property (weak, nonatomic) IBOutlet UIDownPicker *pickerRelationship;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTxtEmailContraint;
+@property (weak, nonatomic) IBOutlet UILabel *lbParentesco;
 
 @end
