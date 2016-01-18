@@ -14,6 +14,7 @@
 #import "ProfileFormViewController.h"
 #import "SingleHousehold.h"
 #import "HouseholdRequester.h"
+#import "MBProgressHUD.h"
 
 @interface ProfileListViewController () {
     User *user;
@@ -161,29 +162,16 @@
         
         Household *household = [users objectAtIndex:indexPath.row];
         
-        NSString *idHousehold = household.idHousehold;
-        NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/household/delete/%@?client=api", idHousehold];
-        
-        AFHTTPRequestOperationManager *manager;
-        manager = [AFHTTPRequestOperationManager manager];
-        [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-        [manager.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
-        [manager GET:url
-          parameters:nil
-             success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                 [self loadHouseholds];
-                 [users removeObjectAtIndex:indexPath.row];
-                 [self.tableViewProfile reloadData];
-                 
-             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 NSLog(@"Error: %@", error);
-                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível executar a operação. Tente novamente em alguns instantes." preferredStyle:UIAlertControllerStyleActionSheet];
-                 UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                     NSLog(@"You pressed button OK");
-                 }];
-                 [alert addAction:defaultAction];
-                 [self presentViewController:alert animated:YES completion:nil];
-             }];
+        [householdeRequest deleteHouseholdWithId:household.idHousehold
+                                      andOnStart:^{ [MBProgressHUD showHUDAddedTo:self.view animated:YES];}
+                                    andOnSuccess:^{
+                                        [self loadHouseholds];
+                                        [users removeObjectAtIndex:indexPath.row];
+                                        [self.tableViewProfile reloadData];
+                                    }
+                                      andOnError:^(NSError *error){
+                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                      }];
     }];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"NÃO" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button NO");
@@ -214,10 +202,14 @@
 }
 
 - (void) loadHouseholds {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [householdeRequest getHouseholdsByUser:user onSuccess:^(NSMutableArray *householdes){
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         users = [[NSMutableArray alloc] initWithArray:householdes];
         [self.tableViewProfile reloadData];
     }onFail:^(NSError *error){
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Ocorreu um erro ao carregar os households");
     }];
 }

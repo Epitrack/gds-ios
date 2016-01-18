@@ -302,4 +302,23 @@
            }];
 }
 
+- (void) deleteHouseholdWithId:(NSString *)idHousehold
+                   andOnStart:(void (^)())onStart
+                 andOnSuccess:(void (^)())onSuccess
+                   andOnError:(void (^)(NSError *))onError{
+    User *user = [User getInstance];
+    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/household/delete/%@?client=api", idHousehold];
+    [self doGet:url
+         header:@{@"user_token": user.user_token,
+                  @"app_token": user.app_token}
+      parameter:@{}
+          start:onStart
+          error:^(AFHTTPRequestOperation *operation, NSError *error){
+              onError(error);
+          }
+        success:^(AFHTTPRequestOperation *operation, id response){
+            onSuccess();
+        }];
+}
+
 @end
