@@ -200,67 +200,135 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             FacebookSdk.sdkInitialize(getApplicationContext());
             callbackManager = CallbackManager.Factory.create();
 
-            if (AccessToken.getCurrentAccessToken() != null) {
-                userExistSocial(AccessToken.getCurrentAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
-            }
-            buttonFaceBook.setReadPermissions(Arrays.asList("public_profile", "email"));
+            LoginManager.getInstance().logInWithReadPermissions(SocialLoginActivity.this, Arrays.asList("public_profile", "email", "user_birthday"));
+            loginFacebook();
+
+            //if (AccessToken.getCurrentAccessToken() != null) {
+            //    userExistSocial(AccessToken.getCurrentAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
+            //}
+
+            /*buttonFaceBook.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday"));
             buttonFaceBook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-               @Override
-               public void onSuccess(final LoginResult loginResult) {
+                @Override
+                public void onSuccess(final LoginResult loginResult) {
 
-                   GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-                       @Override
-                       public void onCompleted(JSONObject object, GraphResponse response) {
+                    GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                        @Override
+                        public void onCompleted(JSONObject object, GraphResponse response) {
 
-                           JSONObject jsonObject = response.getJSONObject();
+                            JSONObject jsonObject = response.getJSONObject();
 
-                           try {
+                            try {
 
-                               String user = jsonObject.getString("name");
-                               singleUser.setFb(loginResult.getAccessToken().getUserId());
-                               singleUser.setNick(user);
-                               userExistSocial(loginResult.getAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
-                           } catch (JSONException e) {
-                               e.printStackTrace();
-                           }
-                       }
-                   });
-                   request.executeAsync();
-               }
+                                String user = jsonObject.getString("name");
+                                String gender = jsonObject.getString("gender");
+                                if (gender.equals("male")) {
+                                    singleUser.setGender("M");
+                                } else {
+                                    singleUser.setGender("F");
+                                }
+                                singleUser.setFb(loginResult.getAccessToken().getUserId());
+                                singleUser.setNick(user);
+                                userExistSocial(loginResult.getAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    request.executeAsync();
+                }
 
-               @Override
-               public void onCancel() {
-                   //executeSocialLogin(true);
-                   new DialogBuilder(SocialLoginActivity.this).load()
-                           .title(R.string.attention)
-                           .content(R.string.facebook_cancel)
-                           .positiveText(R.string.ok)
-                           .callback(new MaterialDialog.ButtonCallback() {
+                @Override
+                public void onCancel() {
+                    //executeSocialLogin(true);
+                    new DialogBuilder(SocialLoginActivity.this).load()
+                            .title(R.string.attention)
+                            .content(R.string.facebook_cancel)
+                            .positiveText(R.string.ok)
+                            .callback(new MaterialDialog.ButtonCallback() {
+                                @Override
+                                public void onPositive(final MaterialDialog dialog) {
+                                    onBackPressed();
+                                }
+                            }).show();
+                }
+
+                @Override
+                public void onError(FacebookException exception) {
+                    //executeSocialLogin(true);
+                    new DialogBuilder(SocialLoginActivity.this).load()
+                            .title(R.string.attention)
+                            .content(R.string.facebook_error)
+                            .positiveText(R.string.ok)
+                            .callback(new MaterialDialog.ButtonCallback() {
                                @Override
                                public void onPositive(final MaterialDialog dialog) {
                                    onBackPressed();
                                }
                            }).show();
                }
+           });*/
 
-               @Override
-               public void onError(FacebookException exception) {
-                   //executeSocialLogin(true);
-                   new DialogBuilder(SocialLoginActivity.this).load()
-                           .title(R.string.attention)
-                           .content(R.string.facebook_error)
-                           .positiveText(R.string.ok)
-                           .callback(new MaterialDialog.ButtonCallback() {
-                               @Override
-                               public void onPositive(final MaterialDialog dialog) {
-                                   onBackPressed();
-                               }
-                           }).show();
-               }
-           });
-
-            buttonFaceBook.callOnClick();
+            //buttonFaceBook.callOnClick();
         }
+    }
+
+    private void loginFacebook() {
+        //buttonFaceBook.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday"));
+        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(final LoginResult loginResult) {
+
+                GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+
+                        JSONObject jsonObject = response.getJSONObject();
+
+                        try {
+
+                            String user = jsonObject.getString("name");
+                            singleUser.setFb(loginResult.getAccessToken().getUserId());
+                            singleUser.setNick(user);
+                            userExistSocial(loginResult.getAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                request.executeAsync();
+            }
+
+            @Override
+            public void onCancel() {
+                //executeSocialLogin(true);
+                new DialogBuilder(SocialLoginActivity.this).load()
+                        .title(R.string.attention)
+                        .content(R.string.facebook_cancel)
+                        .positiveText(R.string.ok)
+                        .callback(new MaterialDialog.ButtonCallback() {
+                            @Override
+                            public void onPositive(final MaterialDialog dialog) {
+                                onBackPressed();
+                            }
+                        }).show();
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                //executeSocialLogin(true);
+                new DialogBuilder(SocialLoginActivity.this).load()
+                        .title(R.string.attention)
+                        .content(R.string.facebook_error)
+                        .positiveText(R.string.ok)
+                        .callback(new MaterialDialog.ButtonCallback() {
+                            @Override
+                            public void onPositive(final MaterialDialog dialog) {
+                                onBackPressed();
+                            }
+                        }).show();
+            }
+        });
     }
 
     @Override
@@ -412,14 +480,16 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                     navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
                             Intent.FLAG_ACTIVITY_NEW_TASK);
                 } else {
-                    Bundle dtoBundle = new Bundle();
+                    //if (type != Constants.Bundle.FACEBOOK) {
+                        Bundle dtoBundle = new Bundle();
 
-                    dtoBundle.putBoolean(Constants.Bundle.SOCIAL_NEW, true);
-                    dtoBundle.putBoolean(Constants.Bundle.NEW_MEMBER, false);
-                    dtoBundle.putBoolean(Constants.Bundle.MAIN_MEMBER, false);
+                        dtoBundle.putBoolean(Constants.Bundle.SOCIAL_NEW, true);
+                        dtoBundle.putBoolean(Constants.Bundle.NEW_MEMBER, false);
+                        dtoBundle.putBoolean(Constants.Bundle.MAIN_MEMBER, false);
 
-                    DTO.object = null;
-                    navigateTo(UserActivity.class, dtoBundle);
+                        DTO.object = null;
+                        navigateTo(UserActivity.class, dtoBundle);
+                    //}
                 }
             }
 
@@ -482,23 +552,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             mConnectionResult = result;
 
             if (result.getErrorCode() > 0) {
-
                 resolveSignInError();
-
-                /*String errorMessage = getMessageConnectionFailedGoogle(result.getErrorCode());
-
-                new DialogBuilder(SocialLoginActivity.this).load()
-                        .title(R.string.attention)
-                        .content(errorMessage)
-                        .positiveText(R.string.ok)
-                        .callback(new MaterialDialog.ButtonCallback() {
-
-                            @Override
-                            public void onPositive(final MaterialDialog dialog) {
-                                resolveSignInError();
-                            }
-
-                        }).show();*/
             }
 
             if (mSignInClicked) {

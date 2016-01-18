@@ -141,6 +141,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="@string/relationship"
                     android:textColor="@color/bluish"
+                    android:id="@+id/label_relationship"
                     android:textSize="13dp" />
 
                 <Spinner
