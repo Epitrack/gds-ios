@@ -205,7 +205,9 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                 .setAction("Forgot Password Button")
                 .build());
 
-        final String[] str = {""};
+        navigateTo(ForgotPasswordActivity.class);
+
+        /*final String[] str = {""};
         new DialogBuilder(LoginActivity.this).load()
                 .title("E-mail")
                 //.content(R.string.network_disable)
@@ -227,7 +229,7 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
 
 
                 }).negativeText("FECHAR")
-                .show();
+                .show();*/
     }
 
 

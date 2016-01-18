@@ -190,6 +190,7 @@
     # Message
 
     <string name="message_use_mail">Ou use o seu email:</string>
+    <string name="forgot_password">Digite seu email e siga as instruções em seu email.</string>
 
     # Welcome
 
