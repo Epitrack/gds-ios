@@ -65,4 +65,9 @@ typedef enum {
                           andStart:(void (^)())onStart
                       andOnSuccess:(void (^)(User *))onSuccess
                           andError:(void (^)(NSError *))onError;
+
+- (void) forgotPasswordWithEmail: (NSString *)email
+                      andOnStart:(void(^)())onStart
+                    andOnSuccess:(void(^)())onSuccess
+                      andOnError:(void(^)(NSError *))onError;
 @end

@@ -521,4 +521,27 @@
         }];
 }
 
+- (void)forgotPasswordWithEmail:(NSString *)email
+                     andOnStart:(void (^)())onStart
+                   andOnSuccess:(void (^)())onSuccess
+                     andOnError:(void (^)(NSError *))onError{
+    
+    [self doPost:@"http://api.guardioesdasaude.org/user/forgot-password"
+          header:@{}
+       parameter:@{@"email":email}
+           start:^{
+               onStart();
+           }
+           error:^(AFHTTPRequestOperation *operation, NSError *error){
+               onError(error);
+           }
+         success:^(AFHTTPRequestOperation *operation, id response){
+             if ([response[@"error"] boolValue] == 1) {
+                 onError(nil);
+             }else{
+                 onSuccess();
+             }
+         }];
+}
+
 @end

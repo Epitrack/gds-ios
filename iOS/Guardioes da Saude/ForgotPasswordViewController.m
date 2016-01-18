@@ -9,6 +9,9 @@
 #import "ForgotPasswordViewController.h"
 #import "EnterViewController.h"
 #import "AFNetworking/AFNetworking.h"
+#import "ViewUtil.h"
+#import "UserRequester.h"
+#import "MBProgressHUD.h"
 
 @interface ForgotPasswordViewController ()
 
@@ -64,41 +67,20 @@
         [self presentViewController:alert animated:YES completion:nil];
     } else {
     
-    AFHTTPRequestOperationManager *manager;
-    NSDictionary *params;
-    
-    params = @{@"email":self.txtEmail.text.lowercaseString};
-    
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:@"http://api.guardioesdasaude.org/user/forgot-password"
-       parameters:params
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              
-              if ([responseObject[@"error"] boolValue] == 1) {
-                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível enviar o e-mail. Tente novamente em alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
-                  UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                      NSLog(@"You pressed button OK");
-                  }];
-                  [alert addAction:defaultAction];
-                  [self presentViewController:alert animated:YES completion:nil];
-              } else {
-                  self.txtEmail.text = @"";
-                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Email enviado com sucesso." preferredStyle:UIAlertControllerStyleActionSheet];
-                  UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                      NSLog(@"You pressed button OK");
-                  }];
-                  [alert addAction:defaultAction];
-                  [self presentViewController:alert animated:YES completion:nil];
-              }
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível enviar o e-mail. Tente novamente em alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
-              UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                  NSLog(@"You pressed button OK");
-              }];
-              [alert addAction:defaultAction];
-              [self presentViewController:alert animated:YES completion:nil];
-          }];
-
+        [[[UserRequester alloc] init] forgotPasswordWithEmail:self.txtEmail.text.lowercaseString
+                                                   andOnStart:^{
+                                                       [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                   }
+                                                 andOnSuccess:^{
+                                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                     UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Email enviado com sucesso."];
+                                                     [self presentViewController:alert animated:YES completion:nil];
+                                                 }
+                                                   andOnError:^(NSError *error){
+                                                       [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                       UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Não foi possível enviar o e-mail. Tente novamente em alguns minutos."];
+                                                       [self presentViewController:alert animated:YES completion:nil];
+                                                   }];
     }
 }
 
