@@ -12,6 +12,15 @@
 #import <TwitterKit/TwitterKit.h>
 
 @interface ThankYouForParticipatingViewController : UIViewController<FBSDKSharingDelegate>
+
+typedef enum{
+    GOOD_SYMPTON,
+    BAD_SYMPTON,
+    ZIKA
+} ScreenType;
+
+- (id) initWithType:(ScreenType) type;
+
 - (IBAction)btnContinue:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *txtBadSurvey;
 @property (weak, nonatomic) IBOutlet UIImageView *imgCheckSurvey;
@@ -20,5 +29,8 @@
 - (IBAction)btnFacebookAction:(id)sender;
 - (IBAction)btnTwitterAction:(id)sender;
 - (IBAction)btnWhatsappAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *defaultView;
+@property (weak, nonatomic) IBOutlet UIView *zicaView;
+- (IBAction)findUPAs:(id)sender;
 
 @end

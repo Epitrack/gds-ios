@@ -97,7 +97,7 @@
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               
               user.idHousehold = @"";
-              ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] init];
+              ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] initWithType:GOOD_SYMPTON];
               thankYouForParticipatingViewController.txtBadSurvey.hidden = YES;
               [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
           
