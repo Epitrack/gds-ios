@@ -408,7 +408,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     textViewCity.setText(jsonObjectLocation.get("city").toString());
                 } catch (Exception e) {
                     try {
-                        String formattedAddress = jsonObjectLocation.get("city").toString();
+                        String formattedAddress = jsonObjectLocation.get("formattedAddress").toString();
                         String formattedAddressParts[] = formattedAddress.split(",");
                         String cityUf = formattedAddressParts[2];
                         String cityUfParts[] = cityUf.split("-");
