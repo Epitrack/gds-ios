@@ -45,7 +45,6 @@
     listRace = [Constants getRaces];
     
     // Setup down pickers
-    // Setup down pickers
     (void)[self.pickerGender initWithData:[Constants getGenders]];
     [self.pickerGender setPlaceholder:@"Selecione seu sexo"];
     (void)[self.pickerRace initWithData: [Constants getRaces]];
