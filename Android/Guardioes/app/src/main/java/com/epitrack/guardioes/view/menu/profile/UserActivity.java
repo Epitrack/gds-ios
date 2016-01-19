@@ -129,6 +129,12 @@ public class UserActivity extends BaseAppCompatActivity {
 
         }
 
+        if (newMenber) {
+            textLayoutMail.setVisibility(View.VISIBLE);
+            editTextMail.setEnabled(true);
+            editTextMail.setVisibility(View.VISIBLE);
+        }
+
         if (socialNew) {
             imageViewImage.setVisibility(View.INVISIBLE);
             new DialogBuilder(UserActivity.this).load()
@@ -341,9 +347,17 @@ public class UserActivity extends BaseAppCompatActivity {
                     } else if (socialNew) {
                         if (singleUser.getEmail() == null) {
                             textLayoutMail.setVisibility(View.VISIBLE);
-                            editTextMail.setVisibility(View.VISIBLE);
                             editTextMail.setEnabled(true);
+                            editTextMail.setVisibility(View.VISIBLE);
                         }
+                    } else if (newMenber) {
+                        textLayoutMail.setVisibility(View.VISIBLE);
+                        editTextMail.setEnabled(true);
+                        editTextMail.setVisibility(View.VISIBLE);
+                    } else {
+                        textLayoutMail.setVisibility(View.VISIBLE);
+                        editTextMail.setEnabled(true);
+                        editTextMail.setVisibility(View.VISIBLE);
                     }
 
                 } catch (Exception e) {
@@ -381,6 +395,7 @@ public class UserActivity extends BaseAppCompatActivity {
         gender = gender.substring(0, 1);
         user.setGender(gender.toUpperCase());
         user.setRace(spinnerRace.getSelectedItem().toString().toLowerCase());
+        user.setEmail(editTextMail.getText().toString().toLowerCase().trim());
 
         String relationship = spinnerRelationship.getSelectedItem().toString().toLowerCase();
         relationship = relationship.replace("ô", "o");
@@ -425,6 +440,7 @@ public class UserActivity extends BaseAppCompatActivity {
                 jsonObject.put("client", user.getClient());
                 jsonObject.put("race", user.getRace());
                 jsonObject.put("relationship", user.getRelationship());
+                jsonObject.put("email", user.getEmail());
 
                 if (singleUser.getUri() != null && (user.getNick().equals(singleUser.getNick()))) {
                     jsonObject.put("picture", singleUser.getUri().toString());
