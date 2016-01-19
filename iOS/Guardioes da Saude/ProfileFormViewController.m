@@ -45,10 +45,13 @@
     listRace = [Constants getRaces];
     
     // Setup down pickers
-    (void)[self.pickerGender initWithData:listGender];
-    (void)[self.pickerRace initWithData: listRace];
+    // Setup down pickers
+    (void)[self.pickerGender initWithData:[Constants getGenders]];
+    [self.pickerGender setPlaceholder:@"Selecione seu sexo"];
+    (void)[self.pickerRace initWithData: [Constants getRaces]];
+    [self.pickerRace setPlaceholder:@"Seleciona sua cor/raça"];
     (void)[self.pickerRelationship initWithData:[Household getRelationshipArray]];
-    
+    [self.pickerRelationship setPlaceholder:@"Selecione o parentesco"];
     if (self.operation == EDIT_USER) {
         [self loadEditUser];
     } else if (self.operation == EDIT_HOUSEHOLD){
