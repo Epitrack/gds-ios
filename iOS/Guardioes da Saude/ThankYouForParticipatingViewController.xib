@@ -114,7 +114,7 @@
                         <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="btnTwitterAction:" destination="-1" eventType="touchUpInside" id="ihJ-Rb-dIh"/>
+                        <action selector="btnWhatsappAction:" destination="-1" eventType="touchUpInside" id="K8H-D6-LeX"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypd-vZ-RP9">

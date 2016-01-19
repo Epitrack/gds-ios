@@ -8,6 +8,9 @@
 
 #import "ThankYouForParticipatingViewController.h"
 #import "HomeViewController.h"
+#import "ViewUtil.h"
+
+NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org";
 
 
 @interface ThankYouForParticipatingViewController ()
@@ -94,14 +97,14 @@
 - (IBAction)btnTwitterAction:(id)sender {
     TWTRComposer *composer = [[TWTRComposer alloc] init];
     
-    [composer setText:@"Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org"];
+    [composer setText:shareMsg];
     //[composer setImage:[UIImage imageNamed:@"fabric"]];
     
    
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org"];
+        [tweetSheet setInitialText:shareMsg];
         [tweetSheet addImage:[UIImage imageNamed:@"icon_logo_splash.png"]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
         
@@ -132,6 +135,17 @@
         }
     }];
     
+}
+
+- (IBAction)btnWhatsappAction:(id)sender {
+    NSString * urlWhats = [NSString stringWithFormat:@"whatsapp://send?text=%@",shareMsg];
+    NSURL * whatsappURL = [NSURL URLWithString:[urlWhats stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    if ([[UIApplication sharedApplication] canOpenURL: whatsappURL]) {
+        [[UIApplication sharedApplication] openURL: whatsappURL];
+    } else {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"O Whatsapp não está instalado neste dispositivo."];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (void) ThankyouForSharing:(BOOL)done {
