@@ -8,8 +8,11 @@
 
 #import "LocationUtil.h"
 #import "AFNetworking/AFNetworking.h"
+#import <MapKit/MapKit.h>
 
 @implementation LocationUtil
+
+NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
 
 + (NSString *) getStateByUf: (NSString *) uf{
         
@@ -83,7 +86,7 @@
     NSDictionary *params = @{@"address": [address stringByAppendingString:@"-BR"],
                              @"key": @"AIzaSyDRoA88MUJbF8TFPnaUXHvIrQzGPU5JC94"};
     manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"https://maps.googleapis.com/maps/api/geocode/json"
+    [manager GET:[NSString stringWithFormat:@"%@/geocode/json", googleUrl ]
       parameters:params
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSDictionary *location = responseObject[@"results"][0][@"geometry"][@"location"];
@@ -98,4 +101,50 @@
     
 }
 
++ (void)loadPharmacyWithLat:(double)lat andLog:(double)log andOnSuccess:(void (^)(NSArray *))onSuccess andOnError:(void (^)())onError{
+    
+    NSDictionary *params = @{@"query": @"pharmacy",
+                             @"location": [NSString stringWithFormat:@"%f,%f", lat, log],
+                             @"radius": @"10000",
+                             @"key": @"AIzaSyDYl7spN_NpAjAWL7Hi183SK2cApiIS3Eg"};
+    
+    AFHTTPRequestOperationManager *manager;
+    manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:[NSString stringWithFormat:@"%@/place/textsearch/json", googleUrl ]
+      parameters:params
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSDictionary *results = responseObject[@"results"];
+             NSMutableArray *pins = [[NSMutableArray alloc] init];
+             
+             for (NSDictionary *item in results) {
+                 
+                 NSDictionary *geometry = item[@"geometry"];
+                 NSDictionary *location = geometry[@"location"];
+                 
+                 
+                 NSString *latitudePharmacy = location[@"lat"];
+                 NSString *longitudePharmacy = location[@"lng"];
+                 NSString *name = item[@"name"];
+                 
+                 if (![latitudePharmacy isKindOfClass:[NSNull class]] && ![longitudePharmacy isKindOfClass:[NSNull class]]) {
+                     CLLocationCoordinate2D annotationCoord;
+                     annotationCoord.latitude = [latitudePharmacy doubleValue];
+                     annotationCoord.longitude = [longitudePharmacy doubleValue];
+                     
+                     MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
+                     pin.coordinate = annotationCoord;
+                     pin.title = name;
+                     pin.subtitle = @"Ver no Google Maps";
+                     
+                     [pins addObject:pin];
+                 }
+                 
+             }
+             
+             onSuccess(pins);
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             onError();
+         }];
+    
+}
 @end
