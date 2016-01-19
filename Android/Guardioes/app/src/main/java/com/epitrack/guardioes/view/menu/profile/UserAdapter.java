@@ -73,6 +73,12 @@ public class UserAdapter extends ArrayAdapter<User> {
                             user.setRelationship("");
                         }
 
+                        try {
+                            user.setEmail(jsonObjectHousehold.get("email").toString());
+                        } catch (Exception e) {
+                            user.setEmail("");
+                        }
+
                         userList.add(user);
                     }
                 }
