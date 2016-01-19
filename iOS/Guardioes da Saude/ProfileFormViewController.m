@@ -15,6 +15,9 @@
 #import "UserRequester.h"
 #import "HouseholdRequester.h"
 #import "DateUtil.h"
+#import "ViewUtil.h"
+#import "MBProgressHUD.h"
+#import "Constants.h"
 
 @interface ProfileFormViewController () {
     UserRequester *userRequester;
@@ -38,8 +41,8 @@
     userRequester = [[UserRequester alloc] init];
     householdRequester = [[HouseholdRequester alloc] init];
     
-    listGender = @[@"Masculino", @"Feminino"];
-    listRace = @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"];
+    listGender = [Constants getGenders];
+    listRace = [Constants getRaces];
     
     // Setup down pickers
     (void)[self.pickerGender initWithData:listGender];
@@ -67,6 +70,7 @@
     
     //Hide relationship
     [self.pickerRelationship removeFromSuperview];
+    self.lbParentesco.hidden = YES;
     self.topTxtEmailContraint.constant = 8;
     
     [self populateFormWithNick:self.user.nick
@@ -230,6 +234,8 @@
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
     }else{
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
         if (self.operation == EDIT_USER) {
             [self updateUser];
         } else if(self.operation == EDIT_HOUSEHOLD){
@@ -254,24 +260,17 @@
     userUpdater.race = [self.pickerRace.text lowercaseString];
     userUpdater.picture = self.pictureSelected;
     
-    NSInteger diffDay = [DateUtil diffInDaysDate:[NSDate date] andDate:birthdate];
+    NSInteger diffDay = [DateUtil diffInDaysDate:birthdate andDate:[NSDate date]];
     
     if (![self.txtPassword.text isEqualToString:@""]) {
         if (self.txtPassword.text.length < 6) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A senha precisa ter pelo menos 6 carcteres." preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
+            
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A senha precisa ter pelo menos 6 carcteres."];
             [self presentViewController:alert animated:YES completion:nil];
             
             return;
         } else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Senha inválida" preferredStyle:UIAlertControllerStyleActionSheet];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                NSLog(@"You pressed button OK");
-            }];
-            [alert addAction:defaultAction];
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Senha inválida."];
             [self presentViewController:alert animated:YES completion:nil];
             
             return;
@@ -279,11 +278,7 @@
             userUpdater.password = self.txtPassword.text;
         }
     } else if((diffDay/365) < 13){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"A idade mínima para o usuário principal é 13 anos." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            NSLog(@"You pressed button OK");
-        }];
-        [alert addAction:defaultAction];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade mínima para o usuário principal é 13 anos."];
         [self presentViewController:alert animated:YES completion:nil];
     }
     
@@ -331,6 +326,8 @@
 }
 
 - (void) showSuccessMsg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação realizada com sucesso." preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
@@ -341,13 +338,10 @@
 }
 
 - (void) showErrorMsg: (NSError *) error{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
     NSLog(@"Error: %@", error);
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"You pressed button OK");
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
-    [alert addAction:defaultAction];
+    UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Ocorreu um problema de comunicação, por favor verifique sua conexão!"];
     [self presentViewController:alert animated:YES completion:nil];
 }
 

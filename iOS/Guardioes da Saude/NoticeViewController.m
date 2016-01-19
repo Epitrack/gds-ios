@@ -53,36 +53,6 @@
 }
 */
 
-- (void) loadNoticesOld {
-    
-    NSString *url = @"http://api.guardioesdasaude.org/news/get";
-    
-    AFHTTPRequestOperationManager *manager;
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSDictionary *response = responseObject;
-             NSDictionary *data = response[@"data"];
-             NSMutableArray *statuses = data[@"statuses"];
-             //JSONArray jsonArray = new JSONObject(jsonStr).getJSONObject("data").getJSONArray("statuses");
-             
-             for (NSDictionary *item in statuses) {
-                 
-                 NSString *text = item[@"text"];
-                 NSString *source = @"via @minsaude";
-                 NSString *link = [NSString stringWithFormat: @"https://twitter.com/minsaude/status/%@", item[@"id_str"]];
-                 
-                 Notice *notice = [[Notice alloc] initWithName:text andSource:source andLink:link];
-                 
-                 //[notices addObject:notice];
-                 
-             }
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"You pressed button OK");
-         }];    
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }

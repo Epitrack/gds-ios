@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnTwitter;
 - (IBAction)btnFacebookAction:(id)sender;
 - (IBAction)btnTwitterAction:(id)sender;
+- (IBAction)btnWhatsappAction:(id)sender;
 
 @end

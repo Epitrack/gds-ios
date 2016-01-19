@@ -37,4 +37,9 @@
                onSuccess: (void(^)(void)) success
                   onFail: (void(^) (NSError *error)) fail;
 
+- (void) deleteHouseholdWithId:(NSString *)idHousehold
+                   andOnStart:(void (^)())onStart
+                 andOnSuccess:(void (^)())onSuccess
+                   andOnError:(void (^)(NSError *))onError;
+
 @end

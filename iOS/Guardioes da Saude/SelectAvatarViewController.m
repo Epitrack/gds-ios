@@ -8,6 +8,7 @@
 
 #import "SelectAvatarViewController.h"
 #import "ProfileFormViewController.h"
+#import "ViewUtil.h"
 
 @interface SelectAvatarViewController () {
 }
@@ -44,12 +45,9 @@
 - (IBAction)btnPhotoAction:(id)sender {
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Aparelho não possui câmera."];
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Aparelho não possui câmera." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            NSLog(@"You pressed button OK");
-        }];
-        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
     } else {
     
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
