@@ -43,11 +43,11 @@
                     </constraints>
                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="26"/>
+                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq">
-                    <rect key="frame" x="39" y="218" width="243" height="61"/>
+                    <rect key="frame" x="39" y="204" width="243" height="61"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="61" id="2cY-gZ-FTv"/>
                         <constraint firstAttribute="width" secondItem="yjK-KE-wnq" secondAttribute="height" multiplier="243:61" id="829-C6-jne"/>
@@ -57,7 +57,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqY-3s-F0Z">
-                    <rect key="frame" x="31" y="312" width="258" height="38"/>
+                    <rect key="frame" x="31" y="298" width="258" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="QqY-3s-F0Z" secondAttribute="height" multiplier="129:19" id="Y6L-kK-H1o"/>
                     </constraints>
@@ -70,7 +70,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0U-C0-bM8">
-                    <rect key="frame" x="31" y="442" width="258" height="38"/>
+                    <rect key="frame" x="31" y="428" width="258" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="a0U-C0-bM8" secondAttribute="height" multiplier="129:19" id="DBY-wL-eic"/>
                     </constraints>
@@ -83,7 +83,7 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Convide seus amigos para serem Guardiões." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
-                    <rect key="frame" x="20" y="279" width="281" height="31"/>
+                    <rect key="frame" x="20" y="265" width="281" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="1Xq-LP-73E"/>
                         <constraint firstAttribute="width" secondItem="XwE-05-RnE" secondAttribute="height" multiplier="281:31" id="VwB-Lv-YIB"/>
@@ -93,9 +93,9 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check_survey.png" translatesAutoresizingMaskIntoConstraints="NO" id="zIx-1e-Tfy">
-                    <rect key="frame" x="92" y="89" width="136" height="129"/>
+                    <rect key="frame" x="92" y="89" width="136" height="115"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="169:175" constant="11.42285714285714" id="GOK-aV-7Cx"/>
+                        <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="190:175" constant="11" id="GOK-aV-7Cx"/>
                         <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="169:175" id="Jct-Fk-HyJ"/>
                     </constraints>
                     <variation key="default">
@@ -105,12 +105,12 @@
                     </variation>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWh-ms-Kei">
-                    <rect key="frame" x="31" y="395" width="258" height="38"/>
+                    <rect key="frame" x="31" y="381" width="258" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="VWh-ms-Kei" secondAttribute="height" multiplier="129:19" id="sa7-Z5-ufZ"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" title="Twitter" backgroundImage="btn_whatsapp">
+                    <state key="normal" backgroundImage="btn_whatsapp">
                         <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -118,7 +118,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypd-vZ-RP9">
-                    <rect key="frame" x="31" y="354" width="258" height="38"/>
+                    <rect key="frame" x="31" y="340" width="258" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="ypd-vZ-RP9" secondAttribute="height" multiplier="129:19" id="03G-Bj-GbT"/>
                     </constraints>
