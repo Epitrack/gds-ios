@@ -62,6 +62,11 @@ public class UsefulPhonesActivity extends BaseAppCompatActivity {
             textViewTitle.setText(R.string.defense_text);
             textViewNumber.setText("0800 644 0199");
             textViewDesc.setText("");
+        } else if (phoneId == Phone.SUS.getId()) {
+            imageView.setImageResource(R.drawable.img_s_u_s);
+            textViewTitle.setText(R.string.sus);
+            textViewNumber.setText("136");
+            textViewDesc.setText("");
         }
     }
 
@@ -76,6 +81,8 @@ public class UsefulPhonesActivity extends BaseAppCompatActivity {
             mTracker.setScreenName("Fireman Screen - " + this.getClass().getSimpleName());
         } else if (phoneId == Phone.DEFENSE.getId()) {
             mTracker.setScreenName("Civil Defense Screen - " + this.getClass().getSimpleName());
+        } else if (phoneId == Phone.SUS.getId()) {
+            mTracker.setScreenName("SUS Screen - " + this.getClass().getSimpleName());
         }
         mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
@@ -103,6 +110,11 @@ public class UsefulPhonesActivity extends BaseAppCompatActivity {
                     .setCategory("Action")
                     .setAction("Call Civil Defense Button")
                     .build());
+        } else if (phoneId == Phone.SUS.getId()) {
+            mTracker.send(new HitBuilders.EventBuilder()
+                    .setCategory("Action")
+                    .setAction("Call SUS Defense Button")
+                    .build());
         }
 
         Intent intent;
@@ -116,7 +128,10 @@ public class UsefulPhonesActivity extends BaseAppCompatActivity {
             uri = Uri.parse("tel:193");
         } else if (phoneId == Phone.DEFENSE.getId()) {
             uri = Uri.parse("tel:08006440199");
+        } else if (phoneId == Phone.SUS.getId()) {
+            uri = Uri.parse("tel:136");
         }
+
         intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(uri);
         startActivity(intent);
