@@ -11,6 +11,9 @@
 #import "User.h"
 #import "PharmacyGoogleMapsViewController.h"
 #import "SingleLocation.h"
+#import "LocationUtil.h"
+#import "ViewUtil.h"
+#import "MBProgressHUD.h"
 
 @interface PharmacyViewController () {
     
@@ -54,8 +57,6 @@
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
-    
-    [self loadPharmacy];
     
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Algumas farmácias podem não ser exibidas no mapa." preferredStyle:UIAlertControllerStyleActionSheet];
@@ -156,54 +157,19 @@
 }
 
 - (void) loadPharmacy {
-    
-    NSString *url = [NSString stringWithFormat: @"https://maps.googleapis.com/maps/api/place/textsearch/json?query=pharmacy&location=%f,%f&radius=10000&key=AIzaSyDYl7spN_NpAjAWL7Hi183SK2cApiIS3Eg", [user.lat doubleValue], [user.lon doubleValue]];
-    
-    AFHTTPRequestOperationManager *manager;
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:url
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSDictionary *results = responseObject[@"results"];
-             NSLog(@"Results: %@", results);
-             
-             for (NSDictionary *item in results) {
-                 
-                 NSDictionary *geometry = item[@"geometry"];
-                 NSLog(@"geometry: %@", geometry);
-                 NSDictionary *location = geometry[@"location"];
-                 NSLog(@"location: %@", location);
-                 
-                 
-                 NSString *latitudePharmacy = location[@"lat"];
-                 NSString *longitudePharmacy = location[@"lng"];
-                 NSString *name = item[@"name"];
-                 NSString *logradouro = item[@"formatted_address"];
-                 
-                 if (![latitudePharmacy isKindOfClass:[NSNull class]] && ![longitudePharmacy isKindOfClass:[NSNull class]]) {
-                     CLLocationCoordinate2D annotationCoord;
-                     annotationCoord.latitude = [latitudePharmacy doubleValue];
-                     annotationCoord.longitude = [longitudePharmacy doubleValue];
-                     
-                     MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
-                     pin.coordinate = annotationCoord;
-                     pin.title = name;
-                     //pin.subtitle = logradouro;
-                     pin.subtitle = @"Ver no Google Maps";
-                     
-                     [self.mapPharmacy addAnnotation:pin];
-                 }
-                 
-             }
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Infelizmente não conseguimos conlcuir esta operação. Tente novamente dentro de alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
-             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                 NSLog(@"You pressed button OK");
-             }];
-             [alert addAction:defaultAction];
-             [self presentViewController:alert animated:YES completion:nil];
-             NSLog(@"Error: %@", error);
-         }];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [LocationUtil loadPharmacyWithLat:latitude
+                               andLog:longitude
+                         andOnSuccess:^(NSArray *pins){
+                             [MBProgressHUD hideHUDForView:self.view animated:YES];
+                             [self.mapPharmacy addAnnotations:pins];
+                         }
+                           andOnError:^{
+                               [MBProgressHUD hideHUDForView:self.view animated:YES];
+                               
+                               UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Infelizmente não conseguimos conlcuir esta operação. Tente novamente dentro de alguns minutos."];
+                               [self presentViewController:alert animated:YES completion:nil];
+                           }];
     
 }
 
@@ -211,9 +177,13 @@
     NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
     
-    latitude = currentLocation.coordinate.latitude;
-    longitude = currentLocation.coordinate.longitude;
-
+    if (!latitude && !longitude) {
+        latitude = currentLocation.coordinate.latitude;
+        longitude = currentLocation.coordinate.longitude;
+        
+        [self loadPharmacy];
+    }
+    
     user.lat = [NSString stringWithFormat:@"%f", latitude];
     user.lon = [NSString stringWithFormat:@"%f", longitude];
 }

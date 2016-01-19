@@ -14,4 +14,9 @@
 + (void) getLocationByAddress: (NSString *) address
                     onSuccess: (void(^)(NSString *lng, NSString *lat, NSString *fullNameCity)) success
                        onFail: (void(^)(NSError *error)) fail;
+
++ (void) loadPharmacyWithLat:(double) lat
+                      andLog:(double) log
+                andOnSuccess:(void(^)(NSArray *)) onSuccess
+                  andOnError:(void(^)()) onError;
 @end

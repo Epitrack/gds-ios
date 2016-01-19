@@ -141,7 +141,15 @@
                   success:^(AFHTTPRequestOperation *operation, id responseObject) {
                       
                       user.idHousehold = @"";
-                      ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] init];
+                      
+                      ScreenType type;
+                      if ([responseObject[@"exantematica"] integerValue] == 0) {
+                          type = BAD_SYMPTON;
+                      }else{
+                          type = ZIKA;
+                      }
+                      
+                      ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] initWithType:type];
                       [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
                       
                   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

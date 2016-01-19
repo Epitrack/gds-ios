@@ -25,9 +25,11 @@
             <connections>
                 <outlet property="btnFacebook" destination="QqY-3s-F0Z" id="bRi-DV-FRB"/>
                 <outlet property="btnTwitter" destination="ypd-vZ-RP9" id="dOb-0d-low"/>
+                <outlet property="defaultView" destination="1co-Rv-BDI" id="cTr-k9-NHJ"/>
                 <outlet property="imgCheckSurvey" destination="zIx-1e-Tfy" id="SPG-q6-HyG"/>
                 <outlet property="txtBadSurvey" destination="yjK-KE-wnq" id="zUh-5y-NCF"/>
                 <outlet property="view" destination="P0O-cc-Vgz" id="ypd-9p-a6b"/>
+                <outlet property="zicaView" destination="RL8-hH-Swl" id="otH-ci-aAV"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -46,31 +48,144 @@
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq">
-                    <rect key="frame" x="39" y="204" width="243" height="61"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1co-Rv-BDI">
+                    <rect key="frame" x="0.0" y="84" width="320" height="336"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq">
+                            <rect key="frame" x="39" y="113" width="243" height="61"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="61" id="2cY-gZ-FTv"/>
+                                <constraint firstAttribute="width" secondItem="yjK-KE-wnq" secondAttribute="height" multiplier="243:61" id="829-C6-jne"/>
+                            </constraints>
+                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqY-3s-F0Z">
+                            <rect key="frame" x="32" y="206" width="258" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="QqY-3s-F0Z" secondAttribute="height" multiplier="129:19" id="Y6L-kK-H1o"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
+                            <state key="normal" title="Facebook" backgroundImage="button_facebook.png">
+                                <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnFacebookAction:" destination="-1" eventType="touchUpInside" id="POI-bp-3eD"/>
+                            </connections>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Convide seus amigos para serem Guardiões." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
+                            <rect key="frame" x="20" y="167" width="281" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="1Xq-LP-73E"/>
+                                <constraint firstAttribute="width" secondItem="XwE-05-RnE" secondAttribute="height" multiplier="281:31" id="VwB-Lv-YIB"/>
+                            </constraints>
+                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWh-ms-Kei">
+                            <rect key="frame" x="32" y="298" width="258" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="VWh-ms-Kei" secondAttribute="height" multiplier="129:19" id="sa7-Z5-ufZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
+                            <state key="normal" backgroundImage="btn_whatsapp">
+                                <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnWhatsappAction:" destination="-1" eventType="touchUpInside" id="K8H-D6-LeX"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypd-vZ-RP9">
+                            <rect key="frame" x="32" y="252" width="258" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ypd-vZ-RP9" secondAttribute="height" multiplier="129:19" id="03G-Bj-GbT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
+                            <state key="normal" title="Twitter" backgroundImage="button_twitter.png">
+                                <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnTwitterAction:" destination="-1" eventType="touchUpInside" id="GN6-li-tcb"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check_survey.png" translatesAutoresizingMaskIntoConstraints="NO" id="zIx-1e-Tfy">
+                            <rect key="frame" x="90" y="0.0" width="140" height="118"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="190:175" constant="11" id="GOK-aV-7Cx"/>
+                                <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="169:175" id="Jct-Fk-HyJ"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Jct-Fk-HyJ"/>
+                                </mask>
+                            </variation>
+                        </imageView>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="61" id="2cY-gZ-FTv"/>
-                        <constraint firstAttribute="width" secondItem="yjK-KE-wnq" secondAttribute="height" multiplier="243:61" id="829-C6-jne"/>
+                        <constraint firstItem="XwE-05-RnE" firstAttribute="centerX" secondItem="yjK-KE-wnq" secondAttribute="centerX" id="10f-PY-L8g"/>
+                        <constraint firstItem="yjK-KE-wnq" firstAttribute="width" secondItem="1co-Rv-BDI" secondAttribute="height" multiplier="243:367" constant="20.525885558583099" id="4Tp-V2-kJI"/>
+                        <constraint firstItem="VWh-ms-Kei" firstAttribute="centerX" secondItem="ypd-vZ-RP9" secondAttribute="centerX" id="Bh1-ex-EkS"/>
+                        <constraint firstItem="yjK-KE-wnq" firstAttribute="top" secondItem="zIx-1e-Tfy" secondAttribute="bottom" constant="-5" id="BhZ-Hk-I2Q"/>
+                        <constraint firstItem="XwE-05-RnE" firstAttribute="top" secondItem="yjK-KE-wnq" secondAttribute="bottom" constant="-7" id="Bsf-Ty-V3y"/>
+                        <constraint firstItem="zIx-1e-Tfy" firstAttribute="centerX" secondItem="1co-Rv-BDI" secondAttribute="centerX" id="CCV-Yv-orz"/>
+                        <constraint firstItem="ypd-vZ-RP9" firstAttribute="width" secondItem="1co-Rv-BDI" secondAttribute="height" multiplier="258:367" constant="21.792915531335126" id="DJp-Vg-pGd"/>
+                        <constraint firstItem="ypd-vZ-RP9" firstAttribute="centerX" secondItem="QqY-3s-F0Z" secondAttribute="centerX" id="KM1-ck-dqz"/>
+                        <constraint firstItem="QqY-3s-F0Z" firstAttribute="centerX" secondItem="XwE-05-RnE" secondAttribute="centerX" id="KfK-lz-HGw"/>
+                        <constraint firstItem="ypd-vZ-RP9" firstAttribute="top" secondItem="QqY-3s-F0Z" secondAttribute="bottom" constant="8" id="LsP-sK-RsK"/>
+                        <constraint firstItem="zIx-1e-Tfy" firstAttribute="width" secondItem="1co-Rv-BDI" secondAttribute="height" multiplier="20:42" constant="-20" id="Qp1-xf-5pf"/>
+                        <constraint firstItem="QqY-3s-F0Z" firstAttribute="top" secondItem="XwE-05-RnE" secondAttribute="bottom" constant="8" id="V9J-f8-yyL"/>
+                        <constraint firstItem="VWh-ms-Kei" firstAttribute="top" secondItem="ypd-vZ-RP9" secondAttribute="bottom" constant="8" id="VIG-Wr-itA"/>
+                        <constraint firstItem="yjK-KE-wnq" firstAttribute="centerX" secondItem="zIx-1e-Tfy" secondAttribute="centerX" id="fFa-HK-viz"/>
+                        <constraint firstItem="QqY-3s-F0Z" firstAttribute="width" secondItem="1co-Rv-BDI" secondAttribute="height" multiplier="258:367" constant="21.792915531335126" id="oP9-oc-bBJ"/>
+                        <constraint firstItem="zIx-1e-Tfy" firstAttribute="top" secondItem="1co-Rv-BDI" secondAttribute="top" id="tzu-Dg-SWk"/>
+                        <constraint firstItem="VWh-ms-Kei" firstAttribute="width" secondItem="1co-Rv-BDI" secondAttribute="height" multiplier="258:367" constant="21.792915531335126" id="zFV-f6-Ix2"/>
                     </constraints>
-                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="13"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqY-3s-F0Z">
-                    <rect key="frame" x="31" y="298" width="258" height="38"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RL8-hH-Swl">
+                    <rect key="frame" x="0.0" y="84" width="320" height="336"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_exclamation" translatesAutoresizingMaskIntoConstraints="NO" id="dz9-zT-zhS">
+                            <rect key="frame" x="87" y="13" width="147" height="146"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Run-7A-im4">
+                            <rect key="frame" x="28" y="177" width="265" height="43"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Run-7A-im4" secondAttribute="height" multiplier="265:43" id="Aet-LU-KAA"/>
+                            </constraints>
+                            <string key="text">Atenção: Os sintomas informados podem estar
+relacionados ao Zika vírus. Procure a unidade
+de pronto atendimento mais próxima.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvU-Wf-7OH">
+                            <rect key="frame" x="33" y="290" width="255" height="38"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
+                            <state key="normal" backgroundImage="btn_procurarupas">
+                                <color key="titleColor" red="0.10588235294117647" green="0.44313725490196076" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="findUPAs:" destination="-1" eventType="touchUpInside" id="bPN-1E-O4S"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="QqY-3s-F0Z" secondAttribute="height" multiplier="129:19" id="Y6L-kK-H1o"/>
+                        <constraint firstItem="dz9-zT-zhS" firstAttribute="top" secondItem="RL8-hH-Swl" secondAttribute="top" constant="13" id="0Zr-72-v32"/>
+                        <constraint firstItem="LvU-Wf-7OH" firstAttribute="top" secondItem="Run-7A-im4" secondAttribute="bottom" constant="70" id="NRX-iV-rHF"/>
+                        <constraint firstItem="Run-7A-im4" firstAttribute="centerX" secondItem="dz9-zT-zhS" secondAttribute="centerX" id="dIV-2v-h8Q"/>
+                        <constraint firstItem="dz9-zT-zhS" firstAttribute="width" secondItem="RL8-hH-Swl" secondAttribute="height" multiplier="73:167" id="dWQ-Rz-Oan"/>
+                        <constraint firstItem="LvU-Wf-7OH" firstAttribute="width" secondItem="RL8-hH-Swl" secondAttribute="height" multiplier="127:168" constant="1" id="gCr-XB-wBj"/>
+                        <constraint firstItem="Run-7A-im4" firstAttribute="top" secondItem="dz9-zT-zhS" secondAttribute="bottom" constant="18" id="iqq-Qf-EYT"/>
+                        <constraint firstItem="LvU-Wf-7OH" firstAttribute="centerX" secondItem="Run-7A-im4" secondAttribute="centerX" id="lkK-WB-n8l"/>
+                        <constraint firstItem="dz9-zT-zhS" firstAttribute="centerX" secondItem="RL8-hH-Swl" secondAttribute="centerX" id="vW9-FM-DM8"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" title="Facebook" backgroundImage="button_facebook.png">
-                        <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnFacebookAction:" destination="-1" eventType="touchUpInside" id="POI-bp-3eD"/>
-                    </connections>
-                </button>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0U-C0-bM8">
-                    <rect key="frame" x="31" y="428" width="258" height="38"/>
+                    <rect key="frame" x="32" y="428" width="257" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="a0U-C0-bM8" secondAttribute="height" multiplier="129:19" id="DBY-wL-eic"/>
                     </constraints>
@@ -82,98 +197,38 @@
                         <action selector="btnContinue:" destination="-1" eventType="touchUpInside" id="qqh-Ab-mbA"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Convide seus amigos para serem Guardiões." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
-                    <rect key="frame" x="20" y="265" width="281" height="31"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="31" id="1Xq-LP-73E"/>
-                        <constraint firstAttribute="width" secondItem="XwE-05-RnE" secondAttribute="height" multiplier="281:31" id="VwB-Lv-YIB"/>
-                    </constraints>
-                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check_survey.png" translatesAutoresizingMaskIntoConstraints="NO" id="zIx-1e-Tfy">
-                    <rect key="frame" x="92" y="89" width="136" height="115"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="190:175" constant="11" id="GOK-aV-7Cx"/>
-                        <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="169:175" id="Jct-Fk-HyJ"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Jct-Fk-HyJ"/>
-                        </mask>
-                    </variation>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWh-ms-Kei">
-                    <rect key="frame" x="31" y="381" width="258" height="38"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="VWh-ms-Kei" secondAttribute="height" multiplier="129:19" id="sa7-Z5-ufZ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" backgroundImage="btn_whatsapp">
-                        <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnWhatsappAction:" destination="-1" eventType="touchUpInside" id="K8H-D6-LeX"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypd-vZ-RP9">
-                    <rect key="frame" x="31" y="340" width="258" height="38"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="ypd-vZ-RP9" secondAttribute="height" multiplier="129:19" id="03G-Bj-GbT"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" title="Twitter" backgroundImage="button_twitter.png">
-                        <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnTwitterAction:" destination="-1" eventType="touchUpInside" id="GN6-li-tcb"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="a0U-C0-bM8" firstAttribute="centerX" secondItem="1co-Rv-BDI" secondAttribute="centerX" id="0do-ku-6q8"/>
                 <constraint firstItem="Pe7-h0-q1G" firstAttribute="top" secondItem="P0O-cc-Vgz" secondAttribute="top" constant="8" id="0sK-Oo-0dJ"/>
-                <constraint firstItem="ypd-vZ-RP9" firstAttribute="leading" secondItem="QqY-3s-F0Z" secondAttribute="leading" id="6fo-5k-QbM"/>
-                <constraint firstItem="a0U-C0-bM8" firstAttribute="top" secondItem="ypd-vZ-RP9" secondAttribute="bottom" constant="30" id="7IX-sM-sxu"/>
-                <constraint firstItem="ypd-vZ-RP9" firstAttribute="top" secondItem="QqY-3s-F0Z" secondAttribute="bottom" constant="4" id="7zG-cv-Num"/>
-                <constraint firstItem="QqY-3s-F0Z" firstAttribute="top" secondItem="XwE-05-RnE" secondAttribute="bottom" constant="2" id="AiF-VL-HuT"/>
-                <constraint firstItem="VWh-ms-Kei" firstAttribute="width" secondItem="VWh-ms-Kei" secondAttribute="height" multiplier="129:19" id="ECC-lS-eLI"/>
-                <constraint firstItem="zIx-1e-Tfy" firstAttribute="width" secondItem="P0O-cc-Vgz" secondAttribute="height" multiplier="31:120" constant="11.999999999999986" id="Fa2-6m-LlC"/>
-                <constraint firstItem="yjK-KE-wnq" firstAttribute="centerX" secondItem="zIx-1e-Tfy" secondAttribute="centerX" id="GcJ-Ms-LeA"/>
-                <constraint firstItem="XwE-05-RnE" firstAttribute="centerX" secondItem="yjK-KE-wnq" secondAttribute="centerX" id="MAY-yl-kyS"/>
+                <constraint firstItem="RL8-hH-Swl" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" id="F8n-3F-8PQ"/>
                 <constraint firstItem="a0U-C0-bM8" firstAttribute="width" secondItem="P0O-cc-Vgz" secondAttribute="height" multiplier="43:80" id="Pn9-dd-Vyd"/>
-                <constraint firstItem="a0U-C0-bM8" firstAttribute="top" secondItem="VWh-ms-Kei" secondAttribute="bottom" constant="9" id="QZ0-15-bwY"/>
-                <constraint firstItem="zIx-1e-Tfy" firstAttribute="top" secondItem="Pe7-h0-q1G" secondAttribute="bottom" constant="13" id="QaI-zI-VUa"/>
-                <constraint firstItem="ypd-vZ-RP9" firstAttribute="leading" secondItem="a0U-C0-bM8" secondAttribute="leading" id="Yi3-1q-yGB"/>
-                <constraint firstItem="a0U-C0-bM8" firstAttribute="centerX" secondItem="VWh-ms-Kei" secondAttribute="centerX" id="Zhm-oV-4gf"/>
-                <constraint firstItem="ypd-vZ-RP9" firstAttribute="centerX" secondItem="XwE-05-RnE" secondAttribute="centerX" id="eH2-3I-mgR"/>
-                <constraint firstItem="ypd-vZ-RP9" firstAttribute="width" secondItem="P0O-cc-Vgz" secondAttribute="height" multiplier="43:80" id="lez-xl-Lnw"/>
-                <constraint firstItem="VWh-ms-Kei" firstAttribute="top" secondItem="ypd-vZ-RP9" secondAttribute="bottom" constant="3" id="lfM-1f-gSq"/>
+                <constraint firstAttribute="trailing" secondItem="1co-Rv-BDI" secondAttribute="trailing" id="R31-CV-X0Z"/>
+                <constraint firstAttribute="trailing" secondItem="RL8-hH-Swl" secondAttribute="trailing" id="TmA-0h-EcM"/>
+                <constraint firstItem="RL8-hH-Swl" firstAttribute="top" secondItem="Pe7-h0-q1G" secondAttribute="bottom" constant="8" id="Ukd-yF-78I"/>
+                <constraint firstItem="a0U-C0-bM8" firstAttribute="width" secondItem="P0O-cc-Vgz" secondAttribute="height" multiplier="257:480" id="YUW-Tl-uUC"/>
                 <constraint firstItem="Pe7-h0-q1G" firstAttribute="centerX" secondItem="P0O-cc-Vgz" secondAttribute="centerX" id="m5z-Lp-PhN"/>
-                <constraint firstItem="yjK-KE-wnq" firstAttribute="top" secondItem="zIx-1e-Tfy" secondAttribute="bottom" id="mbe-mj-q9P"/>
-                <constraint firstItem="VWh-ms-Kei" firstAttribute="width" secondItem="P0O-cc-Vgz" secondAttribute="height" multiplier="43:80" id="pdR-86-rp1"/>
-                <constraint firstItem="VWh-ms-Kei" firstAttribute="centerX" secondItem="ypd-vZ-RP9" secondAttribute="centerX" id="scW-qN-CEx"/>
-                <constraint firstItem="ypd-vZ-RP9" firstAttribute="trailing" secondItem="a0U-C0-bM8" secondAttribute="trailing" id="une-jh-fdc"/>
-                <constraint firstItem="XwE-05-RnE" firstAttribute="top" secondItem="yjK-KE-wnq" secondAttribute="bottom" id="v2F-7Z-Ihb"/>
-                <constraint firstItem="QqY-3s-F0Z" firstAttribute="width" secondItem="P0O-cc-Vgz" secondAttribute="height" multiplier="43:80" id="vGd-Bc-3Zv"/>
-                <constraint firstItem="zIx-1e-Tfy" firstAttribute="centerX" secondItem="Pe7-h0-q1G" secondAttribute="centerX" id="wER-vF-Kn4"/>
+                <constraint firstItem="a0U-C0-bM8" firstAttribute="top" secondItem="RL8-hH-Swl" secondAttribute="bottom" constant="8" id="n8K-mG-hDf"/>
+                <constraint firstItem="1co-Rv-BDI" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" id="owQ-Xb-yhR"/>
+                <constraint firstItem="1co-Rv-BDI" firstAttribute="top" secondItem="Pe7-h0-q1G" secondAttribute="bottom" constant="8" id="v8z-jG-p0r"/>
+                <constraint firstItem="a0U-C0-bM8" firstAttribute="top" secondItem="1co-Rv-BDI" secondAttribute="bottom" constant="8" id="wAJ-td-Sgd"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="Yi3-1q-yGB"/>
-                    <exclude reference="une-jh-fdc"/>
-                    <exclude reference="7IX-sM-sxu"/>
+                    <exclude reference="Pn9-dd-Vyd"/>
                 </mask>
             </variation>
         </view>
     </objects>
     <resources>
+        <image name="btn_procurarupas" width="267" height="38"/>
         <image name="btn_whatsapp" width="267" height="38"/>
         <image name="button_default_white.png" width="268" height="38"/>
         <image name="button_facebook.png" width="267" height="38"/>
         <image name="button_twitter.png" width="267" height="38"/>
         <image name="icon_check_survey.png" width="169" height="150"/>
+        <image name="icon_exclamation" width="146" height="146"/>
     </resources>
 </document>

@@ -9,15 +9,25 @@
 #import "ThankYouForParticipatingViewController.h"
 #import "HomeViewController.h"
 #import "ViewUtil.h"
+#import "EmergencyViewController.h"
 
 NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org";
 
 
-@interface ThankYouForParticipatingViewController ()
+@interface ThankYouForParticipatingViewController (){
+    ScreenType screenType;
+}
 
 @end
 
 @implementation ThankYouForParticipatingViewController
+
+- (id)initWithType:(ScreenType)type{
+    self = [super init];
+    screenType = type;
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,11 +35,23 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
     self.navigationItem.title = @"Guardiões da Saúde";
     self.navigationItem.hidesBackButton = YES;
     
-    /*CGSize result = [[UIScreen mainScreen] bounds].size;
-    
-    if (result.height < 568) {
-        self.imgCheckSurvey.hidden = YES;
-    }*/
+    switch (screenType) {
+        case GOOD_SYMPTON:
+            self.zicaView.hidden = YES;
+            self.defaultView.hidden = NO;
+            self.txtBadSurvey.hidden = YES;
+            break;
+        case BAD_SYMPTON:
+            self.zicaView.hidden = YES;
+            self.defaultView.hidden = NO;
+            break;
+        case ZIKA:
+            self.zicaView.hidden = NO;
+            self.defaultView.hidden = YES;
+            break;
+        default:
+            break;
+    }
         
 }
 
@@ -209,5 +231,9 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
 - (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error {
     NSLog(@"sharing error:%@", error);
    
+}
+- (IBAction)findUPAs:(id)sender {
+    EmergencyViewController *emergencyViewController = [[EmergencyViewController alloc] init];
+    [self.navigationController pushViewController:emergencyViewController animated:YES];
 }
 @end
