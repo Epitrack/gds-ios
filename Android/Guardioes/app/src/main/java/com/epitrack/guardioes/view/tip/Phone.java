@@ -11,7 +11,8 @@ public enum Phone implements IMenu {
     EMERGENCY       (1, R.string.emergency, ""),
     POLICE          (2, R.string.police, ""),
     FIREMAN         (3, R.string.fireman, ""),
-    DEFENSE         (4, R.string.defense, "");
+    DEFENSE         (4, R.string.defense, ""),
+    SUS            (5, R.string.sus, "");
 
     private final int id;
     private final int name;

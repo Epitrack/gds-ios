@@ -163,6 +163,7 @@
     <string name="police">Polícia Militar</string>
     <string name="fireman">Bombeiros</string>
     <string name="defense">Defesa Civil</string>
+    <string name="sus">SUS</string>
     <string name="useful_phones">Telefones Úteis</string>
 
     <string name="emergence_text">Serviço de Atendimento Móvel de Urgência</string>
