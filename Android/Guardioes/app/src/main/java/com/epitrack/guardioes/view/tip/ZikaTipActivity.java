@@ -35,31 +35,35 @@ public class ZikaTipActivity extends BaseAppCompatActivity {
         // [END shared_tracker]
 
 
-        zikaContent.setText(Html.fromHtml("<p>&nbsp;&nbsp;&#8226;&nbsp;Os vírus da Dengue, Zika e Chikungunya são transmitidos pelo mosquito <i>Aedes aegypti</i> e apresentam sinais e sintomas parecidos.</p>\n" +
+        zikaContent.setText(Html.fromHtml("<p>&#8226;&nbsp;Os vírus da Dengue, Zika e Chikungunya são transmitidos pelo mosquito Aedes aegypti e apresentam sinais e sintomas parecidos.</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;É importante que você procure o serviço de saúde mais próximo quando apresentar febre, manchas vermelhas pelo corpo seguida de febre, dores no corpo, dor nas juntas (articulações) ou coceira.</p>\n" +
+                "<p>&#8226;&nbsp;É importante que você procure o serviço de saúde mais próximo quando apresentar febre, manchas vermelhas pelo corpo, dores no corpo ou dor nas juntas (articulações) ou coceira.</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;As infecções pelos vírus Zika e Chikungunya começaram a ocorrer no Brasil nos últimos dois anos.</p>\n" +
+                "<p>&#8226;&nbsp;Procure se informar se no seu bairro ou cidade estão acontecendo casos de Dengue, Zika ou Chikungunya.</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;Procure informações sobre a ocorrência de casos de Dengue, Zika ou Chikungunya no seu bairro ou cidade.</p>\n" +
+                "<p>&#8226;&nbsp;A Dengue é a doença mais comum entre as três, já sendo bem conhecida pela população brasileira.</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;No caso da infecção pelo vírus Zika, a maior parte das pessoas (mais de 80%), não ficarão doentes ou apresentarão sinais e sintomas.</p>\n" +
+                "<p>&#8226;&nbsp;Os primeiros casos de infecção pelo Chikungunya ocorreram em 2014 e os de Zika em fevereiro de 2015.</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;É muito raro acontecer complicações devido infecção pelo vírus Zika, como a síndrome neurológica (exemplo: síndrome de Guillain-Barré) ou malformações congênitas (ex.: microcefalia).</p>\n" +
+                "<p>&#8226;&nbsp;No caso da infecção pelo vírus Zika, a maior parte das pessoas (mais de 80%) não apresenta sinais e sintomas. As que apresentam a doença não necessitam de atendimento médico e hospitalização.</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;Não existe tratamento específico para a infecção pelo vírus Zika.</p>\n" +
+                "<p>&#8226;&nbsp;As complicações causadas pela infecção pelo vírus Zika são pouco conhecidas. Manifestações neurológicas (paralisia facial, fraqueza nas pernas e Síndrome de Guillain-Barré) raramente podem ocorrer alguns dias depois do quadro agudo. A infecção durante a gestação pode levar a malformações congênitas graves, em especial a microcefalia.</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;Não se recomenda o uso de medicamentos sem prescrição médica, em função do risco aumentado de complicações hemorrágicas (sangramento).</p>\n" +
+                "<p>&#8226;&nbsp;Não existe tratamento específico para a infecção pelo vírus Zika.</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;Não se deve utilizar os medicamentos a base de ácido acetilsalicílico (ex.: AAS, Aspirina entre outros), nem anti-inflamatórios.</p>\n" +
+                "<p>&#8226;&nbsp;Se estiver com suspeita dessas doenças, tome líquidos em abundância.</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;A principal medida de prevenção é evitar a reprodução dos mosquitos, evitando deixar água parada em pratinhos de plantas, jogando o lixo na lixeira, tampando as caixas de água e outros recipientes.</p>\n" +
+                "<p>&#8226;&nbsp;Não é aconselhável o uso de medicamentos à base de ácido acetilsalicílico (ex.: AAS, Aspirina entre outros) e nem de anti-inflamatórios, em função do risco aumentado de complicações hemorrágicas (sangramento) no caso de doenças como a Dengue.</p>\n" +
                 "\n" +
-                "<p><b>Repelentes:</b></p>\n" +
+                "<p>&#8226;&nbsp;A principal medida de prevenção é evitar a reprodução dos mosquitos Aedes aegypti, transmissores das três doenças: não deixar água parada em pratinhos de plantas, pneus, garrafas, copos ou outros recipientes ou depósitos; jogar o lixo na lixeira e tampar as caixas de água.</p>\n" +
                 "\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;Os repelentes para uso sobre a pele podem ser utilizados por gestantes, desde que estejam devidamente registrados na ANVISA e que sejam seguidas as instruções de uso descritas no rótulo.</p>\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;Produtos à base de DEET não devem ser usados em crianças menores de 2 anos. Em crianças entre 2 e 12 anos, a concentração dever ser no máximo 10% e a aplicação deve se restringir a 3 vezes por dia. Concentrações superiores a 10% são permitidas para maiores de 12 anos.</p>\n" +
-                "<p>&nbsp;&nbsp;&#8226;&nbsp;Os repelentes de ambiente, como aqueles de parede (aparelhos elétricos) ou espirais não devem ser utilizados em locais com pouca ventilação nem na presença de pessoas asmáticas ou com alergias respiratórias; podendo ser utilizados em qualquer ambiente da casa desde que estejam no mínimo a 2 metros de distância das pessoas.</p>"));
+                "<p>&#8226;&nbsp;Os repelentes para uso sobre a pele podem ser utilizados por gestantes, desde que estejam devidamente registrados na ANVISA e que sejam seguidas as instruções de uso descritas no rótulo. Produtos à base de DEET, Icaridin (Picaridin), EBAAP (IR3535) são considerados seguros para serem utilizados por gestantes.</p>\n" +
+                "\n" +
+                "<p>&#8226;&nbsp;Produtos à base DEET não devem ser usados em crianças menores de 2 anos. Em crianças entre 2 e 12 anos, a concentração dever ser no máximo 10% e a aplicação deve se restringir a 3 vezes por dia. Para maiores de 12 anos, são permitidas as concentrações superiores a 10%.</p>\n" +
+                "\n" +
+                "<p>&#8226;&nbsp;Os repelentes de ambiente, como aqueles de parede (aparelhos elétricos) ou espirais não devem ser utilizados em locais com pouca ventilação nem na presença de pessoas asmáticas ou com alergias respiratórias. Estes podem ser utilizados em qualquer ambiente da casa desde que estejam, no mínimo, a 2 metros de distância das pessoas.</p>\n" +
+                "\n" +
+                "<p>&#8226;&nbsp;Atenção para sinais que podem indicar agravamento da Dengue: falta de ar, tontura, dores abdominais ou sangramentos. Independentemente de os sintomas anteriores terem sido sugestivos de Dengue, Zika e Chikungunya, frente a um desses sinais, procure um serviço de saúde imediatamente.</p>\n"));
     }
 
     @Override
