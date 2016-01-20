@@ -502,6 +502,7 @@
 		AAE38B501BFAA1D8009CD20B /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE38B4F1BFAA1D8009CD20B /* ChartViewController.xib */; };
 		B23CB178C86EEA8A7C4AF3CE /* MapPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */; };
 		B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */; };
+		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* LocationUtil.m */; };
 		CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB8610071C3B4BBF009E63DF /* myhouse.gpx */; };
 		CB9387431C491AE900446842 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9387421C491AE900446842 /* ViewUtil.m */; };
@@ -1085,6 +1086,8 @@
 		B23CB416A647D5FE2D95B7D9 /* HouseholdThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseholdThumbnail.h; sourceTree = "<group>"; };
 		B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPinAnnotation.m; sourceTree = "<group>"; };
 		B23CB8937DECB07E8EB03052 /* MapPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPinAnnotation.h; sourceTree = "<group>"; };
+		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
+		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
 		CB4E686E1C39B48700563FB7 /* LocationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtil.h; sourceTree = "<group>"; };
 		CB4E686F1C39B48700563FB7 /* LocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtil.m; sourceTree = "<group>"; };
 		CB8610071C3B4BBF009E63DF /* myhouse.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = myhouse.gpx; sourceTree = "<group>"; };
@@ -1838,6 +1841,8 @@
 				52DBBA701BFE6CCC00900D22 /* NewsRequester.m */,
 				527782D61C0CC9FD00251BF8 /* NoticeRequester.h */,
 				527782D71C0CC9FD00251BF8 /* NoticeRequester.m */,
+				CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */,
+				CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2486,6 +2491,7 @@
 				52EC50411BF02200002FEACE /* Household.m in Sources */,
 				522360BF1BE9176D006D0598 /* DetailMap.m in Sources */,
 				524C14311BEBE043003A6C2D /* PharmacyViewController.m in Sources */,
+				CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */,
 				528705B91BF3744600321985 /* PhonesViewController.m in Sources */,
 				B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */,
 				5215BBC61BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m in Sources */,

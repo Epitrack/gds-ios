@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import "DateUtil.h"
 
 @implementation User
 
@@ -88,4 +89,71 @@
         gender = @"F";
     }
 }
+
+- (UIImage *)getAvatarImage{
+    if ([self.picture isEqualToString:@"0"] || self.picture == nil) {
+        long diffYears = ([DateUtil diffInDaysDate:[NSDate new] andDate:[DateUtil dateFromStringUS:self.dob]]/360);
+        
+        if ([self.gender isEqualToString:@"M"]) {
+            if (diffYears > 50) {
+                if ([self.race isEqualToString:@"preto"] || [self.race isEqualToString:@"indigena"]) {
+                    self.picture = @"11";
+                    avatar = @"img_profile11.png";
+                } else {
+                    self.picture = @"9";
+                    avatar = @"img_profile09.png";
+                }
+            }else{
+                if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"pardo"]) {
+                    self.picture = @"5";
+                    avatar = @"img_profile05.png";
+                }else if([self.race isEqualToString:@"negro"]){
+                    self.picture = @"4";
+                    avatar = @"img_profile04.png";
+                }else if([self.race isEqualToString:@"indigena"]){
+                    self.picture = @"6";
+                    avatar = @"img_profile06.png";
+                }else if([self.race isEqualToString:@"amarelo"]){
+                    self.picture = @"7";
+                    avatar = @"img_profile07.png";
+                }
+            }
+        } else {
+            if (diffYears > 50) {
+                if ([self.race isEqualToString:@"preto"] || [self.race isEqualToString:@"indigena"]) {
+                    self.picture = @"12";
+                    avatar = @"img_profile12.png";
+                } else {
+                    self.picture = @"10";
+                    avatar = @"img_profile10.png";
+                }
+            }else{
+                if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"pardo"]) {
+                    self.picture = @"8";
+                    avatar = @"img_profile08.png";
+                }else if([self.race isEqualToString:@"negro"]){
+                    self.picture = @"2";
+                    avatar = @"img_profile02.png";
+                }else if([self.race isEqualToString:@"indigena"]){
+                    self.picture = @"1";
+                    avatar = @"img_profile01.png";
+                }else if([self.race isEqualToString:@"amarelo"]){
+                    self.picture = @"3";
+                    avatar = @"img_profile03.png";
+                }
+            }
+        }
+        
+    } else {
+        
+        if (self.picture.length == 1) {
+            avatar = [NSString stringWithFormat: @"img_profile0%@.png", self.picture];
+        } else if (self.picture.length == 2) {
+            avatar = [NSString stringWithFormat: @"img_profile%@.png", self.picture];
+        }
+    }
+    
+    return [UIImage imageNamed:avatar];
+}
+
 @end

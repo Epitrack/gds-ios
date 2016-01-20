@@ -8,7 +8,9 @@
 
 #import "EmergencyViewController.h"
 #import "User.h"
-#import "AFNetworking/AFNetworking.h"
+#import "TipsRequester.h"
+#import "MBProgressHUD.h"
+#import "ViewUtil.h"
 
 @interface EmergencyViewController () {
 
@@ -72,7 +74,7 @@
     
     MKAnnotationView *v = [views objectAtIndex:0];
     if ([v.reuseIdentifier isEqualToString:@"user"]) {
-        CLLocationDistance distance = 400;
+        CLLocationDistance distance = 3000;
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([v.annotation coordinate], distance, distance);
         
         [self.mapEmergency setRegion:region animated:YES];
@@ -113,46 +115,17 @@
 }
 
 -(void) loadUpas {
-    
-    user = [User getInstance];
-    NSString *url = @"http://api.guardioesdasaude.org/content/upas.json";
-    
-    AFHTTPRequestOperationManager *manager;
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [manager.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
-    [manager GET:url
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSDictionary *upas = responseObject;
-             
-             NSLog(@"UPAS %@", upas);
-             
-             for (NSDictionary *item in upas) {
-                 
-                 NSString *latitude = item[@"latitude"];
-                 NSString *longitude = item[@"longitude"];
-                 NSString *name = item[@"name"];
-                 NSString *logradouro = item[@"logradouro"];
-                 
-                 if (![latitude isKindOfClass:[NSNull class]] && ![longitude isKindOfClass:[NSNull class]]) {
-                     CLLocationCoordinate2D annotationCoord;
-                     annotationCoord.latitude = [latitude doubleValue];
-                     annotationCoord.longitude = [longitude doubleValue];
-                     
-                     MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
-                     pin.coordinate = annotationCoord;
-                     pin.title = name;
-                     pin.subtitle = logradouro;
-                     
-                     [self.mapEmergency addAnnotation:pin];
-                 }
-                 
-             }
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"You pressed button OK");
-         }];
-    
+    [[[TipsRequester alloc] init] loadUpasOnStart:^{
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    } andOnSuccess:^(NSArray *upasPin){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        [self.mapEmergency addAnnotations:upasPin];
+    } andOnError:^(NSError *error){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Ocorreu um problema de comunicação, por favor verifique sua conexão!"];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 @end
