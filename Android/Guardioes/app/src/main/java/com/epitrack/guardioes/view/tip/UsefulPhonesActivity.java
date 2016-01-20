@@ -66,7 +66,7 @@ public class UsefulPhonesActivity extends BaseAppCompatActivity {
             imageView.setImageResource(R.drawable.img_s_u_s);
             textViewTitle.setText(R.string.sus);
             textViewNumber.setText("136");
-            textViewDesc.setText("");
+            textViewDesc.setText("Sistema Único de Saúde");
         }
     }
 
