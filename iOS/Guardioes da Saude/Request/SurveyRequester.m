@@ -5,6 +5,47 @@
 
 @implementation SurveyRequester
 
+- (void)createSurvey:(SurveyMap *)survey
+          andOnStart:(void (^)())onStart
+        andOnSuccess:(void (^)(bool))onSuccess
+          andOnError:(void (^)(NSError *))onError{
+    
+    User *user = [User getInstance];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    
+    [params setValue:user.idUser forKey:@"user_id"];
+    [params setValue:survey.latitude forKey:@"lat"];
+    [params setValue:survey.longitude forKey:@"lon"];
+    [params setValue:user.app_token forKey:@"app_token"];
+    [params setValue:user.client forKey:@"client"];
+    [params setValue:user.platform forKey:@"platform"];
+    [params setValue:user.user_token forKey:@"token"];
+    [params setObject:survey.travelLocation forKey:@"travelLocation"];
+
+    if ([survey.isSymptom isEqualToString:@"Y"]) {
+        [params setValue:@"N" forKey:@"no_symptom"];
+    } else {
+        [params setValue:@"Y" forKey:@"no_symptom"];
+    }
+    
+    
+    if (![user.idHousehold isEqualToString:@""] && user.idHousehold  != nil) {
+        [params setValue:user.idHousehold forKey:@"household_id"];
+    }
+    
+    [params addEntriesFromDictionary:survey.symptoms];
+    
+    [self doPost:[NSString stringWithFormat:@"%@/survey/create", Url]
+          header:@{@"app_token": user.app_token}
+       parameter:params
+           start:onStart
+   error:^(AFHTTPRequestOperation *operation, NSError *error){
+       onError(error);
+    }success:^(AFHTTPRequestOperation *operation, id responseObject){
+        onSuccess([responseObject[@"exantematica"] integerValue] != 0);
+    }];
+}
+
 - (void) getSummary: (User *) user
            location: (NSString *) location
             onStart: (Start) onStart

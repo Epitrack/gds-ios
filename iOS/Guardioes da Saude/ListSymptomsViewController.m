@@ -12,6 +12,12 @@
 #import "AFNetworking/AFNetworking.h"
 #import "ThankYouForParticipatingViewController.h"
 #import "ViewUtil.h"
+#import "UserRequester.h"
+#import "MBProgressHUD.h"
+#import "SurveyMap.h"
+#import "SurveyRequester.h"
+#import "MBProgressHUD.h"
+#import "ViewUtil.h"
 
 @interface ListSymptomsViewController () {
     
@@ -19,6 +25,7 @@
     double latitude;
     double longitude;
     User *user;
+    SurveyRequester *surveyRequester;
     NSIndexPath *oldIndexPath;
     NSMutableIndexSet *selected;
     UIColor *bgCellColor;
@@ -37,6 +44,7 @@
     self.txtPais.hidden = YES;
     selected = [[NSMutableIndexSet alloc] init];
     user = [User getInstance];
+    surveyRequester = [[SurveyRequester alloc] init];
     [self loadSymptoms];
     
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
@@ -100,68 +108,45 @@
         UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button YES");
             
-            
-            NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-            
-            [params setValue:user.idUser forKey:@"user_id"];
-            [params setValue:[NSString stringWithFormat:@"%.8f" , latitude] forKey:@"lat"];
-            [params setValue:[NSString stringWithFormat:@"%.8f", longitude] forKey:@"lon"];
-            [params setValue:user.app_token forKey:@"app_token"];
-            [params setValue:user.client forKey:@"client"];
-            [params setValue:user.platform forKey:@"platform"];
-            [params setValue:@"N" forKey:@"no_symptom"];
-            [params setValue:user.user_token forKey:@"token"];
-            [params setObject:self.txtPais.text forKey:@"travelLocation"];
-            
-            if (![user.idHousehold isEqualToString:@""] && user.idHousehold  != nil) {
-                [params setValue:user.idHousehold forKey:@"household_id"];
-            }
-            
+            SurveyMap *survey = [[SurveyMap alloc] init];
+            NSMutableDictionary *surveySymptoms = [[NSMutableDictionary alloc] init];
             for (int i=0; i < 17; i++) {
-                
                 if ([selected containsIndex:i]) {
                     Symptom *symptom = [symptoms objectAtIndex:i];
                     if([symptom.code isEqualToString:@"hadContagiousContact"] || [symptom.code isEqualToString:@"hadHealthCare"] || [symptom.code isEqualToString:@"hadTravelledAbroad"]) {
-                        [params setValue:@"true" forKey:symptom.code];
+                        [surveySymptoms setValue:@"true" forKey:symptom.code];
                     } else {
-                        [params setValue:@"Y" forKey:symptom.code];
+                        [surveySymptoms setValue:@"Y" forKey:symptom.code];
                     }
-                    
                 }
             }
             
-            NSLog(@"params %@", params);
+            [survey setSymptoms:surveySymptoms];
+            [survey setLatitude:[NSString stringWithFormat:@"%.8f" , latitude]];
+            [survey setLongitude:[NSString stringWithFormat:@"%.8f" , longitude]];
+            [survey setTravelLocation:self.txtPais.text];
+            [survey setIsSymptom:@"Y"];
+            if (![user.idHousehold isEqualToString:@""] && user.idHousehold  != nil) {
+                [survey setIdHousehold:user.idHousehold];
+            }
             
-            AFHTTPRequestOperationManager *manager;
-            
-            manager = [AFHTTPRequestOperationManager manager];
-            [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-            [manager POST:@"http://api.guardioesdasaude.org/survey/create"
-               parameters:params
-                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                      
-                      user.idHousehold = @"";
-                      
-                      ScreenType type;
-                      if ([responseObject[@"exantematica"] integerValue] == 0) {
-                          type = BAD_SYMPTON;
-                      }else{
-                          type = ZIKA;
-                      }
-                      
-                      ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] initWithType:type];
-                      [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
-                      
-                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                      NSLog(@"error %@", error);
-                      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Infelizmente não conseguimos conlcuir esta operação. Tente novamente dentro de alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
-                      UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                          NSLog(@"You pressed button OK");
-                      }];
-                      [alert addAction:defaultAction];
-                      [self presentViewController:alert animated:YES completion:nil];
-                      
-                  }];
+            [surveyRequester createSurvey:survey
+                               andOnStart:^{
+                                   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                               }
+                             andOnSuccess:^(bool isZika){
+                                 ScreenType type = BAD_SYMPTON;
+                                 if (isZika) {
+                                     type = ZIKA;
+                                 }
+             
+                                 ThankYouForParticipatingViewController *thanksViewCtrl = [[ThankYouForParticipatingViewController alloc] initWithType:type];
+                                 [self.navigationController pushViewController:thanksViewCtrl animated:YES];
+                             }
+                               andOnError:^(NSError *error){
+                                   UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Infelizmente não conseguimos conlcuir esta operação. Por favor verifique sua conexão."];
+                                   [self presentViewController:alert animated:YES completion:nil];
+                               }];
         }];
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Não" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button NO");
@@ -171,11 +156,7 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     } else {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Escolha algum sintoma antes de confirmar.." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            NSLog(@"You pressed button OK");
-        }];
-        [alert addAction:defaultAction];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Escolha algum sintoma antes de confirmar."];
         [self presentViewController:alert animated:YES completion:nil];
 
     }
