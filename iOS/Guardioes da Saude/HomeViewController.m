@@ -52,7 +52,7 @@
         [self authorizedAutomaticLogin:userToken];
     } else {
         [self showInformations];
-        [self.btnProfile setImage:[UIImage imageNamed:@"img_profile01.png"] forState:UIControlStateNormal];
+        [self.btnProfile setImage:[user getAvatarImage] forState:UIControlStateNormal];
     }
     
 
@@ -77,24 +77,12 @@
 }
 
 - (void) showInformations {
-    NSString *avatar;
     
     self.txtNameUser.text = user.nick;
     self.lblOla.hidden = NO;
     self.btnProfile.hidden = NO;
     
-    if ([user.picture isEqualToString:@"0"] || user.picture == nil) {
-        user.picture = @"1";
-        avatar = @"img_profile01.png";
-    } else {
-        
-        if (user.picture.length == 1) {
-            avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
-        } else if (user.picture.length == 2) {
-            avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
-        }
-    }
-    [self.btnProfile setImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
+    [self.btnProfile setImage:[user getAvatarImage] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

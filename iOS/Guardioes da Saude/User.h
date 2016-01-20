@@ -8,6 +8,7 @@
 
 #import "JSONModel.h"
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface User : JSONModel {
     NSString *nick;
@@ -72,5 +73,6 @@
 - (void) setGenderBySegIndex: (long) segIndex;
 - (void) setRaceBySegIndex: (long) segIndex;
 - (void) setGenderByString: (NSString *) strGender;
+- (UIImage *) getAvatarImage;
 
 @end

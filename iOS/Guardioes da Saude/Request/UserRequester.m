@@ -80,7 +80,7 @@
     [params setObject:user.app_token forKey:@"app_token"];
     [params setObject:user.race forKey:@"race"];
     [params setObject:user.platform forKey:@"platform"];
-    [params setObject:@"1" forKey:@"picture"];
+    [params setObject:@"0" forKey:@"picture"];
     [params setObject:@"-8.0464492" forKey:@"lat"];
     [params setObject:@"-34.9324883" forKey:@"lon"];
     
