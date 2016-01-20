@@ -19,6 +19,7 @@
 #import "HouseholdThumbnail.h"
 #import "Constants.h"
 #import "DateUtil.h"
+#import "MBProgressHUD.h"
 
 @import Charts;
 
@@ -566,7 +567,7 @@ const float _kCellHeight = 100.0f;
 
 -(void) showProgressBar{
     if (requestsInProcess == 0) {
-        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }
     
     requestsInProcess ++;
@@ -576,7 +577,7 @@ const float _kCellHeight = 100.0f;
     requestsInProcess --;
     
     if (requestsInProcess == 0) {
-//        [ProgressBarUtil hiddenProgressBarOnView:self.view];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }
 }
 
