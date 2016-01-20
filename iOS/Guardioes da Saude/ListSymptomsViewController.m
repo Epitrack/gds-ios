@@ -135,15 +135,19 @@
                                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                }
                              andOnSuccess:^(bool isZika){
+                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                 
                                  ScreenType type = BAD_SYMPTON;
                                  if (isZika) {
                                      type = ZIKA;
                                  }
-             
+                                 
+                                 user.idHousehold = @"";
                                  ThankYouForParticipatingViewController *thanksViewCtrl = [[ThankYouForParticipatingViewController alloc] initWithType:type];
                                  [self.navigationController pushViewController:thanksViewCtrl animated:YES];
                              }
                                andOnError:^(NSError *error){
+                                   [MBProgressHUD hideHUDForView:self.view animated:YES];
                                    UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Infelizmente não conseguimos conlcuir esta operação. Por favor verifique sua conexão."];
                                    [self presentViewController:alert animated:YES completion:nil];
                                }];

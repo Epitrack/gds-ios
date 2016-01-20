@@ -20,7 +20,10 @@
     [params setValue:user.client forKey:@"client"];
     [params setValue:user.platform forKey:@"platform"];
     [params setValue:user.user_token forKey:@"token"];
-    [params setObject:survey.travelLocation forKey:@"travelLocation"];
+    
+    if (survey.travelLocation && ![survey.travelLocation isEqualToString:@""]) {
+        [params setObject:survey.travelLocation forKey:@"travelLocation"];
+    }
 
     if ([survey.isSymptom isEqualToString:@"Y"]) {
         [params setValue:@"N" forKey:@"no_symptom"];
@@ -29,8 +32,8 @@
     }
     
     
-    if (![user.idHousehold isEqualToString:@""] && user.idHousehold  != nil) {
-        [params setValue:user.idHousehold forKey:@"household_id"];
+    if (survey.idHousehold && ![survey.idHousehold isEqualToString:@""]) {
+        [params setValue:survey.idHousehold forKey:@"household_id"];
     }
     
     [params addEntriesFromDictionary:survey.symptoms];
@@ -60,7 +63,6 @@
           start: onStart
      
           error: ^(AFHTTPRequestOperation * request, NSError * error) {
-              
               onError(error);
           }
      
