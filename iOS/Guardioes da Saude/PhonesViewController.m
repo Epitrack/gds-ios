@@ -49,6 +49,7 @@
     [phones addObject:@"Polícia Militar"];
     [phones addObject:@"Bombeiros"];
     [phones addObject:@"Defesa Civil"];
+    [phones addObject:@"SUS"];
 }
 
 /*
@@ -81,19 +82,7 @@
     
     cell.tag = indexPath.row;
     cell.textLabel.text = [phones objectAtIndex:indexPath.row];
-    if (indexPath.row == 0) {
-        //cell.imageView.image = [UIImage imageNamed:@"iconSamuMini.png"];
-        cell.detailTextLabel.text = @">";
-    } else if (indexPath.row == 1) {
-        //cell.imageView.image = [UIImage imageNamed:@"iconPMMini.png"];
-        cell.detailTextLabel.text = @">";
-    } else if (indexPath.row == 2) {
-        //cell.imageView.image = [UIImage imageNamed:@"iconBombeirosMini.png"];
-        cell.detailTextLabel.text = @">";
-    } else if (indexPath.row == 3) {
-        //cell.imageView.image = [UIImage imageNamed:@"iconDefesacivilMini.png"];
-        cell.detailTextLabel.text = @">";
-    }
+    cell.detailTextLabel.text = @">";
     
     return cell;
 }
@@ -157,6 +146,11 @@
         phonesLocal.lbDetailBody = @"";
         phonesLocal.lbPhone = @"192";
         phonesLocal.imgDetail = @"iconDefesacivil.png";
+    } else if (indexPath.row == 4) {
+        phonesLocal.lbBody = @"SUS";
+        phonesLocal.lbDetailBody = @"";
+        phonesLocal.lbPhone = @"136";
+        phonesLocal.imgDetail = @"iconSUS";
     }
     
     DetailPhoneViewController *detailPhoneViewController = [[DetailPhoneViewController alloc] init];
