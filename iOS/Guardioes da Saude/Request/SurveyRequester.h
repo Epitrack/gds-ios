@@ -18,8 +18,14 @@
 - (void) getSummary: (User *) user
            latitude: (double) latitude
           longitude: (double) longitude
-            onStart: (Start) onStart
-            onError: (Error) onError
-          onSuccess: (Success) onSuccess;
+            onStart: (void(^)()) onStart
+            onError: (void(^)(NSError *)) onError
+          onSuccess: (void(^)(NSDictionary *)) onSuccess;
+
+- (void) getSurveyByLatitude:(double) latitude
+                andLongitude:(double) longitude
+                     onStart:(void(^)())onStart
+                   onSuccess:(void(^)(NSArray *)) onSuccess
+                     onError:(void(^)(NSError *)) onError;
 
 @end

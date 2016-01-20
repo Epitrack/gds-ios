@@ -13,7 +13,7 @@
 
 @interface MapHealthViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate> {
     
-    NSMutableArray *surveysMap;
+    NSArray *surveysMap;
 }
 
 @property (retain, nonatomic) IBOutlet MKMapView *mapHealth;
