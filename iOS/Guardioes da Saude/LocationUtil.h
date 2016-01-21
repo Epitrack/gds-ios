@@ -18,7 +18,7 @@
 + (void) loadPharmacyWithLat:(double) lat
                       andLog:(double) log
                 andOnSuccess:(void(^)(NSArray *)) onSuccess
-                  andOnError:(void(^)()) onError;
+                  andOnError:(void(^)(NSError *)) onError;
 
 + (NSArray *) getCountries;
 @end

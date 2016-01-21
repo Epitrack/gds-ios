@@ -20,6 +20,7 @@
 #import "Constants.h"
 #import "DateUtil.h"
 #import "MBProgressHUD.h"
+#import "ViewUtil.h"
 
 @import Charts;
 
@@ -103,7 +104,17 @@ const float _kCellHeight = 100.0f;
     [userRequester getSummary: [User getInstance]
                                  idHousehold:userId
                                      onStart: ^{[self showProgressBar];}
-                                     onError: ^(NSString * message) {[self hiddenProgressBar];}
+                                     onError: ^(NSError * error) {
+                                         [self hiddenProgressBar];
+                                         NSString *errorMsg;
+                                         if (error && error.code == -1009) {
+                                             errorMsg = kMsgConnectionError;
+                                         } else {
+                                             errorMsg = kMsgApiError;
+                                         }
+                                         
+                                         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                                     }
                                    onSuccess: onSuccess];
 }
 
@@ -392,7 +403,17 @@ const float _kCellHeight = 100.0f;
                                  idHousehold: idHousehold
                                         year: [DateUtil getCurrentYear]
                                      onStart: ^{[self showProgressBar];}
-                                     onError: ^(NSString * message) {[self hiddenProgressBar];}
+                                     onError: ^(NSError * error) {
+                                         [self hiddenProgressBar];
+                                         NSString *errorMsg;
+                                         if (error && error.code == -1009) {
+                                             errorMsg = kMsgConnectionError;
+                                         } else {
+                                             errorMsg = kMsgApiError;
+                                         }
+                                         
+                                         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                                     }
                                    onSuccess: ^(NSMutableDictionary * sumaryGraphMap) {
                                        [self hiddenProgressBar];
                                        
@@ -451,7 +472,17 @@ const float _kCellHeight = 100.0f;
                                        month: [self getMonth: date]
                                         year: [self getYear: date]
                                      onStart: ^{[self showProgressBar];}
-                                     onError: ^(NSError * error){[self hiddenProgressBar];}
+                                     onError: ^(NSError * error){
+                                         [self hiddenProgressBar];
+                                         NSString *errorMsg;
+                                         if (error && error.code == -1009) {
+                                             errorMsg = kMsgConnectionError;
+                                         } else {
+                                             errorMsg = kMsgApiError;
+                                         }
+                                         
+                                         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                                     }
                                    onSuccess: onSuccess
      ];
 }

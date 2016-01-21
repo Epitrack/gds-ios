@@ -115,8 +115,8 @@
         }andOnError:^(NSError *error){
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             UIAlertController *alert;
-            if (error) {
-                alert = [ViewUtil showAlertWithMessage:@"Ocorreu um erro de comunicação. Por favor, verifique sua conexão com a internet!"];
+            if (error && error.code == -1009) {
+                alert = [ViewUtil showAlertWithMessage:kMsgConnectionError];
             }else{
                 alert = [ViewUtil showAlertWithMessage:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso."];
             }

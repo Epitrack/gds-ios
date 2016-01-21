@@ -14,6 +14,7 @@
 #import "LocationUtil.h"
 #import "ViewUtil.h"
 #import "MBProgressHUD.h"
+#import "Requester.h"
 
 @interface PharmacyViewController () {
     
@@ -164,11 +165,16 @@
                              [MBProgressHUD hideHUDForView:self.view animated:YES];
                              [self.mapPharmacy addAnnotations:pins];
                          }
-                           andOnError:^{
+                           andOnError:^(NSError *error){
                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                               NSString *errorMsg;
+                               if (error && error.code == -1009) {
+                                   errorMsg = kMsgConnectionError;
+                               } else {
+                                   errorMsg = kMsgApiError;
+                               }
                                
-                               UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Infelizmente não conseguimos conlcuir esta operação. Tente novamente dentro de alguns minutos."];
-                               [self presentViewController:alert animated:YES completion:nil];
+                               [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                            }];
     
 }

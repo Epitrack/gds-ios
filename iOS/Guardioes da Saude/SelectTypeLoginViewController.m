@@ -218,10 +218,12 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                     andError:^(NSError *error){
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
                                         NSString *errorMsg;
-                                        if (error) {
-                                            errorMsg = @"Não existe cadastro com essa rede social.";
-                                        } else {
-                                            errorMsg = @"Ocorreu um erro de comunicação. Por favor, verifique sua conexão com a internet!";
+                                        if (error && error.code == -1009) {
+                                            errorMsg = kMsgConnectionError;
+                                        } else if(error) {
+                                            errorMsg = kMsgApiError;
+                                        }else{
+                                            errorMsg = @"Cadastro não encontrado!";
                                         }
                                         
                                         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
@@ -234,7 +236,16 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     
     [[[NoticeRequester alloc] init] getNotices:user
                                        onStart:^{}
-                                       onError:^(NSString * message){}
+                                       onError:^(NSError *error){
+                                           NSString *errorMsg;
+                                           if (error && error.code == -1009) {
+                                               errorMsg = kMsgConnectionError;
+                                           } else {
+                                               errorMsg = kMsgApiError;
+                                           }
+                                           
+                                           [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                                       }
                                      onSuccess:^(NSMutableArray *noticesRequest){
                                          singleNotice.notices = noticesRequest;
                                      }];

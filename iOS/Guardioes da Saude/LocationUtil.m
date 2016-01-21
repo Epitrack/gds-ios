@@ -101,7 +101,7 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
     
 }
 
-+ (void)loadPharmacyWithLat:(double)lat andLog:(double)log andOnSuccess:(void (^)(NSArray *))onSuccess andOnError:(void (^)())onError{
++ (void)loadPharmacyWithLat:(double)lat andLog:(double)log andOnSuccess:(void (^)(NSArray *))onSuccess andOnError:(void (^)(NSError *))onError{
     
     NSDictionary *params = @{@"query": @"pharmacy",
                              @"location": [NSString stringWithFormat:@"%f,%f", lat, log],
@@ -143,7 +143,7 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
              
              onSuccess(pins);
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             onError();
+             onError(error);
          }];
     
 }

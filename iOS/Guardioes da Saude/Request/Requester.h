@@ -4,6 +4,9 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const kMsgConnectionError;
+extern NSString * const kMsgApiError;
+
 @interface Requester : NSObject
 
 typedef void (^ Start) ();

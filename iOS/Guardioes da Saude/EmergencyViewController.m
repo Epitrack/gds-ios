@@ -123,8 +123,14 @@
         [self.mapEmergency addAnnotations:upasPin];
     } andOnError:^(NSError *error){
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Ocorreu um problema de comunicação, por favor verifique sua conexão!"];
-        [self presentViewController:alert animated:YES completion:nil];
+        NSString *errorMsg;
+        if (error && error.code == -1009) {
+            errorMsg = kMsgConnectionError;
+        } else {
+            errorMsg = kMsgApiError;
+        }
+        
+        [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
     }];
 }
 
