@@ -285,7 +285,7 @@ Acompanhar o perfil de saúde dos participantes por meio do website www.guardioe
     # Share
     <string name="message_zika">Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a unidade de pronto atendimento mais próxima.</string>
     <string name="message_hospital">Não deixe de procurar um serviço de saúde mais\npróximo. Continue informando diariamente como\nestá sua saúde.</string>
-    <string name="message_invite_friend">Convidem seus amigos para serem guardiões.</string>
+    <string name="message_invite_friend">Convide seus amigos para serem guardiões.</string>
     <string name="message_thanks">Obrigado pela informação!\nAcompanhe seu histórico no Diário da Saúde</string>
     <string name="message_thanks_zika">Obrigado pela informação!</string>
 
