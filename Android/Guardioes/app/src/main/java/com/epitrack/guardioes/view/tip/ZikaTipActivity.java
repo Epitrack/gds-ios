@@ -63,7 +63,9 @@ public class ZikaTipActivity extends BaseAppCompatActivity {
                 "\n" +
                 "<p>&#8226;&nbsp;Os repelentes de ambiente, como aqueles de parede (aparelhos elétricos) ou espirais não devem ser utilizados em locais com pouca ventilação nem na presença de pessoas asmáticas ou com alergias respiratórias. Estes podem ser utilizados em qualquer ambiente da casa desde que estejam, no mínimo, a 2 metros de distância das pessoas.</p>\n" +
                 "\n" +
-                "<p>&#8226;&nbsp;Atenção para sinais que podem indicar agravamento da Dengue: falta de ar, tontura, dores abdominais ou sangramentos. Independentemente de os sintomas anteriores terem sido sugestivos de Dengue, Zika e Chikungunya, frente a um desses sinais, procure um serviço de saúde imediatamente.</p>\n"));
+                "<p>&#8226;&nbsp;Atenção para sinais que podem indicar agravamento da Dengue: falta de ar, tontura, dores abdominais ou sangramentos. Independentemente de os sintomas anteriores terem sido sugestivos de Dengue, Zika e Chikungunya, frente a um desses sinais, procure um serviço de saúde imediatamente.</p>" +
+                "\n" +
+                "<p>&#8226;&nbsp;Para dúvidas referentes à Dengue, Zica e Chikungunya, favor ligar para o Disque Saúde, por meio do numero 136 e digitar a opção 3.</p>"));
     }
 
     @Override
