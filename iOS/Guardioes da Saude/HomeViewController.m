@@ -20,6 +20,7 @@
 #import "ProfileListViewController.h"
 #import "UserRequester.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "ViewUtil.h"
 
 @interface HomeViewController ()
 
@@ -158,7 +159,6 @@
 }
 
 - (void) authorizedAutomaticLogin:(NSString *)userToken {
-    
     [userRequester lookupWithUsertoken:userToken
                                OnStart:^{
                                     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -168,7 +168,14 @@
                                     [self loadNotices];
                                 }andOnError:^(NSError *error){
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    NSLog(@"Error: %@", error);
+                                    NSString *errorMsg;
+                                    if (error && error.code == -1009) {
+                                        errorMsg = kMsgConnectionError;
+                                    } else {
+                                        errorMsg = kMsgApiError;
+                                    }
+                                    
+                                    [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                 }];
 }
 

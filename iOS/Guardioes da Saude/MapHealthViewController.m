@@ -15,7 +15,6 @@
 #import "MapPinAnnotation.h"
 #import "LocationUtil.h"
 #import "LocationUtil.h"
-#import <MRProgress/MRProgress.h>
 #import "SurveyRequester.h"
 #import "ViewUtil.h"
 #import "MBProgressHUD.h"
@@ -109,8 +108,14 @@
                                }
                                  onError:^(NSError *error){
                                      [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                     UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Infelizmente não conseguimos conlcuir esta operação. Por favor verifique sua conexão."];
-                                     [self presentViewController:alert animated:YES completion:nil];
+                                     NSString *errorMsg;
+                                     if (error && error.code == -1009) {
+                                         errorMsg = kMsgConnectionError;
+                                     } else {
+                                         errorMsg = kMsgApiError;
+                                     }
+                                     
+                                     [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                  }];
 
 }
@@ -221,8 +226,14 @@
                         }
                         onError:^(NSError *error){
                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Infelizmente não conseguimos conlcuir esta operação. Por favor verifique sua conexão."];
-                            [self presentViewController:alert animated:YES completion:nil];
+                            NSString *errorMsg;
+                            if (error && error.code == -1009) {
+                                errorMsg = kMsgConnectionError;
+                            } else {
+                                errorMsg = kMsgApiError;
+                            }
+                            
+                            [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                         }
                       onSuccess:^(NSDictionary *responseObject){
                           [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

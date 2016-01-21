@@ -15,6 +15,7 @@
 #import "SelectTypeLoginViewController.h"
 #import "ForgotPasswordViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "ViewUtil.h"
 
 @interface EnterViewController ()
 
@@ -161,23 +162,17 @@
     };
     
     // CALL BACK FAIL
-    void (^onFail)(NSString *) = ^void(NSString *message){
+    void (^onFail)(NSError *) = ^void(NSError *error){
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
-        UIAlertController * alert = [UIAlertController alertControllerWithTitle: @"Guardiões da Saúde"
-                                                                        message: @"Não foi possível fazer o login. E-mail e/ou senha inválidos."
-                                                                 preferredStyle: UIAlertControllerStyleActionSheet];
+        NSString *msgError;
+        if (error && error.code == -1009) {
+            msgError = kMsgConnectionError;
+        }else{
+            msgError = @"Não foi possível fazer o login. E-mail e/ou senha inválidos.";
+        }
         
-        UIAlertAction * defaultAction = [UIAlertAction actionWithTitle: @"OK"
-                                                                 style: UIAlertActionStyleDefault
-                                                               handler: ^(UIAlertAction * action) {
-                                                                   
-                                                                   NSLog(@"You pressed button OK");
-                                                               }
-                                         ];
-        
-        [alert addAction: defaultAction];
-        [self presentViewController: alert animated: YES completion: nil];
+        [self presentViewController:[ViewUtil showAlertWithMessage:msgError] animated:YES completion:nil];
     };
     
     

@@ -15,6 +15,7 @@
 #import "SingleHousehold.h"
 #import "HouseholdRequester.h"
 #import "MBProgressHUD.h"
+#import "ViewUtil.h"
 
 @interface ProfileListViewController () {
     User *user;
@@ -171,6 +172,14 @@
                                     }
                                       andOnError:^(NSError *error){
                                           [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                          NSString *errorMsg;
+                                          if (error && error.code == -1009) {
+                                              errorMsg = kMsgConnectionError;
+                                          } else {
+                                              errorMsg = kMsgApiError;
+                                          }
+                                          
+                                          [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                       }];
     }];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"NÃO" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {

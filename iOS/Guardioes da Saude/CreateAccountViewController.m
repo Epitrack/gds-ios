@@ -133,8 +133,8 @@
             }andOnError:^(NSError *error){
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 NSString *msgError;
-                if (error) {
-                    msgError = @"Ocorreu um erro de comunicação. Por favor, verifique sua conexão com a internet!";
+                if (error && error.code == -1009) {
+                    msgError = kMsgConnectionError;
                 }else{
                     msgError = @"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso.";
                 }

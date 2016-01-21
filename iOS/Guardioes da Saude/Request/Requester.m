@@ -2,6 +2,9 @@
 
 #import "Requester.h"
 
+NSString * const kMsgConnectionError = @"Por favor verifique sua conexão!";
+NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
+
 @implementation Requester
 
 - (void) doGet: (NSString *) url

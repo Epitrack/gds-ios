@@ -78,8 +78,16 @@
                                                  }
                                                    andOnError:^(NSError *error){
                                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                                       UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Não foi possível enviar o e-mail. Tente novamente em alguns minutos."];
-                                                       [self presentViewController:alert animated:YES completion:nil];
+                                                       NSString *errorMsg;
+                                                       if (error && error.code == -1009) {
+                                                           errorMsg = kMsgConnectionError;
+                                                       } else if(errorMsg){
+                                                           errorMsg = kMsgApiError;
+                                                       }else{
+                                                           errorMsg = @"E-mail não encontrado!";
+                                                       }
+                                                       
+                                                       [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                                    }];
     }
 }
