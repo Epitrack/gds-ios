@@ -53,6 +53,7 @@ public class HomeFragment extends BaseFragment {
     de.hdodenhof.circleimageview.CircleImageView imageViewPhoto;
 
     private Tracker mTracker;
+    SingleUser singleUser = SingleUser.getInstance();
 
     @Override
     public void onCreate(final Bundle bundle) {
@@ -76,12 +77,18 @@ public class HomeFragment extends BaseFragment {
 
         ButterKnife.bind(this, view);
 
-        SingleUser singleUser = SingleUser.getInstance();
-
-        String picture = singleUser.getPicture();
+        loadImageProfile();
 
         String text = getString(R.string.message_hello);
         text = text.replace("{0}", singleUser.getNick());
+        textViewName.setText(text);
+
+        return view;
+    }
+
+    private void loadImageProfile() {
+
+        String picture = singleUser.getPicture();
 
         if (singleUser.getPicture().length() > 2) {
             Uri uri = Uri.parse(singleUser.getPicture());
@@ -134,10 +141,13 @@ public class HomeFragment extends BaseFragment {
                 imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getLarge());
             }
         }
+    }
 
-        textViewName.setText(text);
-
-        return view;
+    public void onResume() {
+        super.onResume();
+        //mTracker.setScreenName("Home Screen - " + this.getClass().getSimpleName());
+        //mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        loadImageProfile();
     }
 
     @OnClick(R.id.image_view_photo)

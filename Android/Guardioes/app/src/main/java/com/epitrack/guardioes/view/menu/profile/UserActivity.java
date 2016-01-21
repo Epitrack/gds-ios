@@ -294,11 +294,11 @@ public class UserActivity extends BaseAppCompatActivity {
 
                         if (profileImage.getAvatar() != null) {
                             if (!profileImage.getAvatar().equals("")) {
-                                imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
+                                imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
+                                //imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
                             }
                         } else if (profileImage.getUri() != null) {
                             imageViewImage.setImageURI(profileImage.getUri());
-
                         } else {
 
                             if (singleUser.getUri() != null && (email.equals(singleUser.getEmail()))) {
@@ -306,20 +306,25 @@ public class UserActivity extends BaseAppCompatActivity {
                             } else {
 
                                 if (!picture.equals("")) {
-                                    imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(picture)).getSmall());
+                                    imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(picture)).getSmall());
+                                    //imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(picture)).getSmall());
                                 } else if (singleUser.getImageResource() == null) {
                                     if (gender.equals("M")) {
                                         if (race.equals("branco") || race.equals("amarelo")) {
-                                            imageViewImage.setImageResource(R.drawable.image_avatar_6);
+                                            imageViewImage.setBackgroundResource(R.drawable.image_avatar_6);
+                                            //imageViewImage.setImageResource(R.drawable.image_avatar_6);
                                         } else {
-                                            imageViewImage.setImageResource(R.drawable.image_avatar_4);
+                                            imageViewImage.setBackgroundResource(R.drawable.image_avatar_4);
+                                            //imageViewImage.setImageResource(R.drawable.image_avatar_4);
                                         }
                                     } else {
 
                                         if (race.equals("branco") || race.equals("amarelo")) {
-                                            imageViewImage.setImageResource(R.drawable.image_avatar_8);
+                                            imageViewImage.setBackgroundResource(R.drawable.image_avatar_8);
+                                            //imageViewImage.setImageResource(R.drawable.image_avatar_8);
                                         } else {
-                                            imageViewImage.setImageResource(R.drawable.image_avatar_7);
+                                            imageViewImage.setBackgroundResource(R.drawable.image_avatar_7);
+                                            //imageViewImage.setImageResource(R.drawable.image_avatar_7);
                                         }
                                     }
                                 } else {
@@ -341,13 +346,15 @@ public class UserActivity extends BaseAppCompatActivity {
 
                         if (profileImage.getAvatar() != null) {
                             if (!profileImage.getAvatar().equals("")) {
-                                imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
+                                imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
+                                //imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
                             }
                         } else if (profileImage.getUri() != null) {
                             imageViewImage.setImageURI(profileImage.getUri());
                         } else {
                             if (Integer.parseInt(singleUser.getPicture()) > 0) {
-                                imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getSmall());
+                                imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getSmall());
+                                //imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getSmall());
                             }
                         }
                     } else if (socialNew) {
@@ -450,7 +457,7 @@ public class UserActivity extends BaseAppCompatActivity {
 
                 if (singleUser.getUri() != null && (user.getNick().equals(singleUser.getNick()))) {
                     jsonObject.put("picture", singleUser.getUri().toString());
-                } else if (photoPath != "'") {
+                } else if (photoPath != "") {
                     jsonObject.put("picture", photoPath);
                 } else if (userAvatar > 0) {
                     jsonObject.put("picture", userAvatar);

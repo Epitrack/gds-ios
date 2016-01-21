@@ -37,8 +37,8 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
-                android:src="@drawable/image_avatar_small_1" />
-                android:src="@drawable/image_avatar_small_1" />
+                android:src="@drawable/mask"
+                android:background="@drawable/image_avatar_small_1"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="0dp"
