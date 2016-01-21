@@ -156,6 +156,10 @@ public class UserAdapter extends ArrayAdapter<User> {
             user.setPicture("0");
         }
 
+        if (user.getPicture().equals("")) {
+            user.setPicture("0");
+        }
+
         if (user.getPicture().length() > 2) {
             try {
                 String url = user.getPicture();
