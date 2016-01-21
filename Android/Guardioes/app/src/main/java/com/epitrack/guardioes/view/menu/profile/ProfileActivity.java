@@ -200,8 +200,6 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
                         }
 
                     }).show();
-
-
         }
     }
 

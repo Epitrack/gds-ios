@@ -145,8 +145,28 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
         }
 
         if (parent.getPicture().length() > 2) {
-            Uri uri = Uri.parse(parent.getPicture());
-            viewHolder.imageViewPhoto.setImageURI(uri);
+            String url = parent.getPicture();
+            if (url.substring(0, 4).toLowerCase().equals("http")) {
+                parent.setPicture("0");
+                if (parent.getGender().equals("M")) {
+
+                    if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+                    } else {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+                    }
+                } else {
+
+                    if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
+                    } else {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
+                    }
+                }
+            } else {
+                Uri uri = Uri.parse(parent.getPicture());
+                viewHolder.imageViewPhoto.setImageURI(uri);
+            }
         } else {
             if (Integer.parseInt(parent.getPicture()) == 0) {
 
