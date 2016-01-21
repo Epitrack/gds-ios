@@ -150,8 +150,8 @@
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="Qp1-xf-5pf"/>
                             <exclude reference="4Tp-V2-kJI"/>
+                            <exclude reference="Qp1-xf-5pf"/>
                             <exclude reference="KfK-lz-HGw"/>
                             <exclude reference="oP9-oc-bBJ"/>
                             <exclude reference="DJp-Vg-pGd"/>

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface VacineViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *txtContent;
 
 @end

@@ -19,4 +19,6 @@
                       andLog:(double) log
                 andOnSuccess:(void(^)(NSArray *)) onSuccess
                   andOnError:(void(^)()) onError;
+
++ (NSArray *) getCountries;
 @end
