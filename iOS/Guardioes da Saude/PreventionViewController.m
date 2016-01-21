@@ -26,6 +26,7 @@
                                 action:nil];
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+    [self.txtContent setContentOffset:CGPointZero];
 }
 
 - (void)didReceiveMemoryWarning {

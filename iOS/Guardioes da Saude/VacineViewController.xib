@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Foco_Std_Rg.ttf">
-            <string>Foco-Regular</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VacineViewController">
             <connections>
+                <outlet property="txtContent" destination="XT1-S2-zf7" id="5qU-8C-Xth"/>
                 <outlet property="view" destination="sn7-cJ-Bld" id="R5u-dn-dNC"/>
             </connections>
         </placeholder>
@@ -20,27 +15,50 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-S2-zf7">
-                    <rect key="frame" x="8" y="88" width="304" height="472"/>
-                    <mutableString key="text">• A Organização Mundial da Saúde (OMS) informa que não há calendário internacional de vacinação para todos os viajantes. Para cada viajante, será adotada recomendação personalizada de acordo com os países a serem visitados, dependendo do tipo, duração e tempo disponível para aplicação da vacina antes da partida;
-
-• O Brasil não exige o Certificado Internacional de Vacinação ou Profilaxia para entrada no país;
-
-• Certifique-se de que suas vacinas de rotina estejam em dia, de acordo com as recomendações de seu país de origem, pois é uma medida eficaz e segura para a prevenção de várias doenças;
-
-• Devido a circulação do sarampo na Europa, África e Ásia recomenda-se que pessoas com origem ou destino a países com ocorrência dessa doença estejam vacinados previamente;
-
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XT1-S2-zf7">
+                    <rect key="frame" x="8" y="0.0" width="304" height="568"/>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">• A Organização Mundial da Saúde (OMS) informa que não há calendário internacional de vacinação para todos os viajantes. Para cada viajante, será adotada recomendação personalizada de acordo com os países a serem visitados, dependendo do tipo, duração e tempo disponível para aplicação da vacina antes da partida.
+ 
+• O Brasil não exige o Certificado Internacional de Vacinação ou Profilaxia para entrada no país.
+ 
+• Certifique-se de que suas vacinas de rotina estejam em dia, de acordo com as recomendações de seu país de origem, pois é uma medida eficaz e segura para a prevenção de várias doenças.
+ 
+• Devido a circulação do sarampo na Europa, África e Ásia recomenda-se que pessoas com origem ou destino a países com ocorrência dessa doença estejam vacinados previamente.
+ 
 • A preparação para a viagem é uma boa oportunidade para verificar o estado vacinal de bebês, crianças, adolescentes, adultos e idosos.
-
-• Todo morador ou visitante de qualquer cidade brasileira tem disponível também as vacinas para influenza e Pólio que são enfermidades relacionadas a possíveis emergências de saúde pública de importância internacional para a Organização Mundial de Saúde. 
-
-• Prevenção contra febre amarela
-
+ 
+• Todo morador ou visitante de qualquer cidade brasileira tem disponível também as vacinas para influenza e Pólio que são enfermidades relacionadas a possíveis emergências de saúde pública de importância internacional para a Organização Mundial de Saúde.
+ 
+</string>
+                            <attributes>
+                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Prevenção contra febre amarela">
+                            <attributes>
+                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                <font key="NSOriginalFont" size="15" name="HelveticaNeue-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">
+ 
 • Previna-se contra febre amarela tomando a vacina 10 dias antes de visitar áreas de mata ou de praticar turismo ecológico ou rural.
-
-Procure seu medico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem;</mutableString>
-                    <color key="textColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
+ 
+• Procure seu medico, pois ele poderá lhe ajudar a decidir se a vacina é necessária, com base em seu plano de viagem.</string>
+                            <attributes>
+                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
@@ -48,8 +66,8 @@ Procure seu medico, pois ele poderá lhe ajudar a decidir se a vacina é necess�
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="XT1-S2-zf7" secondAttribute="trailing" constant="8" id="Icm-ff-Ghe"/>
                 <constraint firstItem="XT1-S2-zf7" firstAttribute="leading" secondItem="sn7-cJ-Bld" secondAttribute="leading" constant="8" id="ZFx-7r-0xk"/>
-                <constraint firstItem="XT1-S2-zf7" firstAttribute="top" secondItem="sn7-cJ-Bld" secondAttribute="top" constant="88" id="bWc-r2-BJV"/>
-                <constraint firstAttribute="bottom" secondItem="XT1-S2-zf7" secondAttribute="bottom" constant="8" id="gdM-6o-4O5"/>
+                <constraint firstItem="XT1-S2-zf7" firstAttribute="top" secondItem="sn7-cJ-Bld" secondAttribute="top" id="bWc-r2-BJV"/>
+                <constraint firstAttribute="bottom" secondItem="XT1-S2-zf7" secondAttribute="bottom" id="gdM-6o-4O5"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BasicCareViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *txtContent;
 
 @end
