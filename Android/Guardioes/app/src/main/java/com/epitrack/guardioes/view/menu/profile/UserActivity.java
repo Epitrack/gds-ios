@@ -192,6 +192,7 @@ public class UserActivity extends BaseAppCompatActivity {
                     editTextNickname.setText(nick);
 
                     if (dob != null) {
+                        Mask.insert("##/##/####", editTextBirthDate);
                         editTextBirthDate.setText(DateFormat.getDate(dob, "dd/MM/yyyy"));
                     }
                     editTextMail.setText(email);
