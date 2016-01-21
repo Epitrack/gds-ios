@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+@import DownPicker;
 
 @interface ListSymptomsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate> {
     
@@ -19,7 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableSymptoms;
 - (IBAction)btnConfirmSurvey:(id)sender;
 - (void) loadSymptoms;
-@property (weak, nonatomic) IBOutlet UITextField *txtPais;
+@property (weak, nonatomic) IBOutlet UIDownPicker *txtPais;
 
 
 @end

@@ -18,6 +18,7 @@
 #import "SurveyRequester.h"
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
+#import "LocationUtil.h"
 
 @interface ListSymptomsViewController () {
     
@@ -67,6 +68,9 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     
+    (void)[self.txtPais initWithData:[LocationUtil getCountries]];
+    [self.txtPais setPlaceholder:@"Selecione o país"];
+    
     [self setTableSeparator];
 }
 
@@ -100,7 +104,7 @@
     }
     
     if (!isTxtPaisValid) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Por favor, preencha o nome do pais!"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Por favor, selecione o  pais!"];
         [self presentViewController:alert animated:YES completion:nil];
     }else if (selected.count > 0) {
         

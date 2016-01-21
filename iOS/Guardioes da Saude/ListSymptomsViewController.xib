@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -27,12 +26,10 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_survey.png" translatesAutoresizingMaskIntoConstraints="NO" id="pZg-ht-pCA">
                     <rect key="frame" x="-6" y="0.0" width="326" height="480"/>
-                    <animations/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Marque abaixo o que você está sentindo neste momento:" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R19-CX-MxJ">
                     <rect key="frame" x="39" y="56" width="243" height="61"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="0lD-sf-fd7"/>
                         <constraint firstAttribute="width" secondItem="R19-CX-MxJ" secondAttribute="height" multiplier="218:77" id="4Nc-m4-oe2"/>
@@ -65,7 +62,6 @@
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQx-nB-0Om">
                     <rect key="frame" x="8" y="434" width="304" height="38"/>
-                    <animations/>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="18"/>
                     <state key="normal" title="Confirmar" backgroundImage="button_default_white.png">
                         <color key="titleColor" red="0.066666666669999999" green="0.31372549020000001" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,15 +70,13 @@
                         <action selector="btnConfirmSurvey:" destination="-1" eventType="touchUpInside" id="2Qs-DI-9S7"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do País" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-VV-WAG">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do País" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6lR-VV-WAG" customClass="UIDownPicker">
                     <rect key="frame" x="8" y="399" width="304" height="30"/>
-                    <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" delaysContentTouches="NO" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pzw-kU-ucB">
                     <rect key="frame" x="0.0" y="141" width="320" height="256"/>
-                    <animations/>
                     <color key="backgroundColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,7 +87,6 @@
                     </connections>
                 </tableView>
             </subviews>
-            <animations/>
             <color key="backgroundColor" red="0.073835509879999997" green="0.3219764182" blue="0.63230698529999996" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="pZg-ht-pCA" firstAttribute="width" secondItem="h7N-fR-oo8" secondAttribute="width" constant="6" id="0Ev-Ja-c7o"/>

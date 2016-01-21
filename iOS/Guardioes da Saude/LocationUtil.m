@@ -147,4 +147,21 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
          }];
     
 }
+
++ (NSArray *) getCountries{
+    NSLocale *locale = [NSLocale currentLocale];
+    NSArray *countryArray = [NSLocale ISOCountryCodes];
+    
+    NSMutableArray *sortedCountryArray = [[NSMutableArray alloc] init];
+    
+    for (NSString *countryCode in countryArray) {
+        
+        NSString *displayNameString = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
+        [sortedCountryArray addObject:displayNameString];
+        
+    }
+    [sortedCountryArray sortUsingSelector:@selector(localizedCompare:)];
+    
+    return sortedCountryArray;
+}
 @end
