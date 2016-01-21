@@ -109,6 +109,10 @@ public class HomeFragment extends BaseFragment {
             imageViewPhoto.setImageURI(uri);
         } else {
 
+            if (singleUser.getPicture().equals("")) {
+                singleUser.setPicture("0");
+            }
+
             if (Integer.parseInt(singleUser.getPicture()) == 0) {
 
                 if (singleUser.getGender().equals("M")) {

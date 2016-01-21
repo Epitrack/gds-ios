@@ -57,7 +57,7 @@ import java.util.concurrent.Executors;
 import butterknife.Bind;
 
 /**
- * @author Igor Morais
+ * @author Igor Morais / Miquéias Lopes
  */
 public class MapPointActivity extends AbstractBaseMapActivity {
 
