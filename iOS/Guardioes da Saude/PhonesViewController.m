@@ -155,27 +155,5 @@
     
     DetailPhoneViewController *detailPhoneViewController = [[DetailPhoneViewController alloc] init];
     [self.navigationController pushViewController:detailPhoneViewController animated:YES];
-    
-    /*UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:text preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"SIM" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"You pressed button YES");
-        if (indexPath.row == 0) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:192"]];
-        } else if (indexPath.row == 1) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:190"]];
-        } else if (indexPath.row == 2) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:193"]];
-        } else if (indexPath.row == 3) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:08006440199"]];
-        }
-    }];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"NÃO" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"You pressed button NO");
-    }];
-    [alert addAction:yesAction];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];*/
-
-    
 }
 @end

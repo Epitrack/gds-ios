@@ -16,6 +16,9 @@
 #import "LocationUtil.h"
 #import "LocationUtil.h"
 #import <MRProgress/MRProgress.h>
+#import "SurveyRequester.h"
+#import "ViewUtil.h"
+#import "MBProgressHUD.h"
 @import Charts;
 
 @interface MapHealthViewController ()
@@ -40,6 +43,7 @@
     User *user;
     DetailMap *detailMap;
     BOOL showDetails;
+    SurveyRequester *surveyRequester;
     
     //Animation slide values
     CGRect startBtnRect;
@@ -51,8 +55,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Mapa da Saúde";
-    //latitude = -22.9035393;
-    //longitude = -22.9035393;
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                         forBarMetrics:UIBarMetricsDefault];
+
     self.mapHealth.showsUserLocation = YES;
     self.mapHealth.delegate = self;
     
@@ -67,8 +72,11 @@
     user = [User getInstance];
     detailMap = [DetailMap getInstance];
     showDetails = NO;
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
-                                                         forBarMetrics:UIBarMetricsDefault];
+    surveyRequester = [[SurveyRequester alloc] init];
+    
+    self.lblCity.hidden = YES;
+    self.lblPaticipation.hidden = YES;
+    self.lblState.hidden = YES;
     
     startBtnRect = self.btnDetails.frame;
     
@@ -87,45 +95,23 @@
         longitude = [user.lon doubleValue];
     }
     
-    surveysMap = [[NSMutableArray alloc] init];
-    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/surveys/l?lon=%f&lat=%f", longitude, latitude];
     
-    AFHTTPRequestOperationManager *manager;
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [manager.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
-    [manager GET:url
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSDictionary *surveys = responseObject[@"data"];
-             
-             for (NSDictionary *item in surveys) {
-                 NSString *surveyLatitude = item[@"lat"];
-                 NSString *surveyLongitude = item[@"lon"];
-                 NSString *isSymptom = item[@"no_symptom"];
-                 NSString *survey_id = item[@"id"];
-
-                 NSLog(@"surveyLatitude: %@", surveyLatitude);
-                 NSLog(@"surveyLongitude: %@", surveyLongitude);
-                 
-                 if (surveyLatitude != 0 || surveyLongitude != 0) {
-                     SurveyMap *s = [[SurveyMap alloc] initWithLatitude:surveyLatitude andLongitude:surveyLongitude andSymptom:isSymptom];
-                     s.survey_id = survey_id;
-                     [surveysMap addObject:s];
-                 }
-             }
-             [self addPin];
-             
-             [self loadSummary];
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Infelizmente não conseguimos conlcuir esta operação. Tente novamente dentro de alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
-             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                 NSLog(@"You pressed button OK");
-             }];
-             [alert addAction:defaultAction];
-             [self presentViewController:alert animated:YES completion:nil];
-             NSLog(@"Error: %@", error);
-         }];
+    [surveyRequester getSurveyByLatitude:longitude
+                            andLongitude:latitude
+                                 onStart:^{
+                                     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                 }
+                               onSuccess:^(NSArray *surveys){
+                                   [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                   surveysMap = surveys;
+                                   [self addPin];
+                                   [self loadSummary];
+                               }
+                                 onError:^(NSError *error){
+                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                     UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Infelizmente não conseguimos conlcuir esta operação. Por favor verifique sua conexão."];
+                                     [self presentViewController:alert animated:YES completion:nil];
+                                 }];
 
 }
 
@@ -227,74 +213,79 @@
 }
 
 - (void) loadSummary {
-    
-    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/surveys/summary/?lon=%f&lat=%f", longitude, latitude];
-    AFHTTPRequestOperationManager *managerTotalSurvey;
-    managerTotalSurvey = [AFHTTPRequestOperationManager manager];
-    [managerTotalSurvey.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [managerTotalSurvey.requestSerializer setValue:user.user_token forHTTPHeaderField:@"user_token"];
-    [managerTotalSurvey GET:url
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSDictionary *summary = responseObject[@"data"];
-             NSDictionary *location = summary[@"location"];
-             NSDictionary *diseases = summary[@"diseases"];
-             
-             if (summary.count > 0) {
-             
-                 city = location[@"city"];
-                 state = [LocationUtil getStateByUf:location[@"state"]];
-                 totalSurvey = [summary[@"total_surveys"] integerValue];
-                 
-                 totalNoSymptom = [summary[@"total_no_symptoms"] integerValue];
-                 
-                 if (totalNoSymptom > 0) {
-                     goodPercent = (((double)totalNoSymptom / (double)totalSurvey) * 100);
-                 } else {
-                     goodPercent = 0;
-                 }
-                 
-                 totalWithSymptom = [summary[@"total_symptoms"] integerValue];
-                 
-                 if (totalWithSymptom > 0) {
-                     badPercent = (((double)totalWithSymptom / (double)totalSurvey) * 100);
-                 } else {
-                     badPercent = 0;
-                 }
-                 
-                 diarreica = [diseases[@"diarreica"] doubleValue];
-                 exantemaica = [diseases[@"exantematica"] doubleValue];
-                 respiratoria = [diseases[@"respiratoria"] doubleValue];
-                 
-                 if (totalWithSymptom > 0) {
-                     diarreica = ((diarreica * 100) / (totalWithSymptom + totalNoSymptom));
-                     exantemaica = ((exantemaica * 100) / (totalWithSymptom + totalNoSymptom));
-                     respiratoria = ((respiratoria * 100) / (totalWithSymptom + totalNoSymptom));
-                 }
-                 
-                 self.lblCity.text = city;
-                 self.lblState.text = state;
-                 self.lblPaticipation.text = [NSString stringWithFormat:@"%d Participações essa semana", (int)totalSurvey];
-                 
-                 detailMap.city = city;
-                 detailMap.state = state;
-                 detailMap.totalSurvey = [NSString stringWithFormat:@"%d", (int)totalSurvey];
-                 detailMap.goodPercent = [NSString stringWithFormat:@"%d%%", (int)goodPercent];
-                 detailMap.badPercent = [NSString stringWithFormat:@"%d%%", (int)badPercent];
-                 detailMap.totalNoSymptom = [NSString stringWithFormat:@"%d", totalNoSymptom];
-                 detailMap.totalWithSymptom = [NSString stringWithFormat:@"%d", totalWithSymptom];
-                 
-                 detailMap.diarreica = [NSString stringWithFormat:@"%f", diarreica];
-                 detailMap.exantemaica = [NSString stringWithFormat:@"%f", exantemaica];
-                 detailMap.respiratoria = [NSString stringWithFormat:@"%f", respiratoria];
-                 
-                 [self loadDetails];
-                 [self loadPieChart];
-                 
-             }
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error: %@", error);
-         }];
+    [surveyRequester getSummary:user
+                       latitude:latitude
+                      longitude:longitude
+                        onStart:^{
+                            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                        }
+                        onError:^(NSError *error){
+                            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Infelizmente não conseguimos conlcuir esta operação. Por favor verifique sua conexão."];
+                            [self presentViewController:alert animated:YES completion:nil];
+                        }
+                      onSuccess:^(NSDictionary *responseObject){
+                          [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                          NSDictionary *summary = responseObject[@"data"];
+                          NSDictionary *location = summary[@"location"];
+                          NSDictionary *diseases = summary[@"diseases"];
+                          
+                          if (summary.count > 0) {
+                              
+                              city = location[@"city"];
+                              state = [LocationUtil getStateByUf:location[@"state"]];
+                              totalSurvey = [summary[@"total_surveys"] integerValue];
+                              
+                              totalNoSymptom = [summary[@"total_no_symptoms"] integerValue];
+                              
+                              if (totalNoSymptom > 0) {
+                                  goodPercent = (((double)totalNoSymptom / (double)totalSurvey) * 100);
+                              } else {
+                                  goodPercent = 0;
+                              }
+                              
+                              totalWithSymptom = [summary[@"total_symptoms"] integerValue];
+                              
+                              if (totalWithSymptom > 0) {
+                                  badPercent = (((double)totalWithSymptom / (double)totalSurvey) * 100);
+                              } else {
+                                  badPercent = 0;
+                              }
+                              
+                              diarreica = [diseases[@"diarreica"] doubleValue];
+                              exantemaica = [diseases[@"exantematica"] doubleValue];
+                              respiratoria = [diseases[@"respiratoria"] doubleValue];
+                              
+                              if (totalWithSymptom > 0) {
+                                  diarreica = ((diarreica * 100) / (totalWithSymptom + totalNoSymptom));
+                                  exantemaica = ((exantemaica * 100) / (totalWithSymptom + totalNoSymptom));
+                                  respiratoria = ((respiratoria * 100) / (totalWithSymptom + totalNoSymptom));
+                              }
+                              
+                              self.lblCity.text = city;
+                              self.lblState.text = state;
+                              self.lblPaticipation.text = [NSString stringWithFormat:@"%d Participações essa semana", (int)totalSurvey];
+                              
+                              self.lblCity.hidden = NO;
+                              self.lblPaticipation.hidden = NO;
+                              self.lblState.hidden = NO;
+                              
+                              detailMap.city = city;
+                              detailMap.state = state;
+                              detailMap.totalSurvey = [NSString stringWithFormat:@"%d", (int)totalSurvey];
+                              detailMap.goodPercent = [NSString stringWithFormat:@"%d%%", (int)goodPercent];
+                              detailMap.badPercent = [NSString stringWithFormat:@"%d%%", (int)badPercent];
+                              detailMap.totalNoSymptom = [NSString stringWithFormat:@"%d", (int)totalNoSymptom];
+                              detailMap.totalWithSymptom = [NSString stringWithFormat:@"%d", (int)totalWithSymptom];
+                              
+                              detailMap.diarreica = [NSString stringWithFormat:@"%f", diarreica];
+                              detailMap.exantemaica = [NSString stringWithFormat:@"%f", exantemaica];
+                              detailMap.respiratoria = [NSString stringWithFormat:@"%f", respiratoria];
+                              
+                              [self loadDetails];
+                              [self loadPieChart];
+                          }
+                      }];
 }
 
 - (void) loadDetails{

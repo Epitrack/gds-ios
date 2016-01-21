@@ -11,6 +11,10 @@
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
 #import "ListSymptomsViewController.h"
+#import "SurveyRequester.h"
+#import "SurveyMap.h"
+#import "ViewUtil.h"
+#import "MBProgressHUD.h"
 
 @interface SelectStateViewController ()
 
@@ -21,6 +25,7 @@
     CLLocationManager *locationManager;
     double latitude;
     double longitude;
+    SurveyRequester *surveyRequester;
 }
 
 - (void)viewDidLoad {
@@ -33,6 +38,8 @@
                                 style:UIBarButtonItemStylePlain
                                 target:self
                                 action:nil];
+    
+    surveyRequester = [[SurveyRequester alloc] init];
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     
@@ -65,52 +72,33 @@
 
 - (IBAction)btnGood:(id)sender {
     
-    NSDictionary *params;
-    AFHTTPRequestOperationManager *manager;
     User *user = [User getInstance];
     
-    if ([user.idHousehold isEqualToString:@""] || user.idHousehold  == nil) {
-        params = @{@"user_id":user.idUser,
-                   @"lat":[NSString stringWithFormat:@"%.8f", latitude],
-                   @"lon":[NSString stringWithFormat:@"%.8f", longitude],
-                   @"app_token":user.app_token,
-                   @"platform":user.platform,
-                   @"client":user.client,
-                   @"no_symptom": @"Y",
-                   @"token":user.user_token};
-    } else {
-        params = @{@"user_id":user.idUser,
-                   @"lat":[NSString stringWithFormat:@"%.8f", latitude],
-                   @"lon":[NSString stringWithFormat:@"%.8f", longitude],
-                   @"app_token":user.app_token,
-                   @"platform":user.platform,
-                   @"client":user.client,
-                   @"no_symptom": @"Y",
-                   @"token":user.user_token,
-                   @"household_id": user.idHousehold};
+    SurveyMap *survey = [[SurveyMap alloc] init];
+    survey.latitude = [NSString stringWithFormat:@"%.8f", latitude];
+    survey.longitude = [NSString stringWithFormat:@"%.8f", longitude];
+    survey.isSymptom = @"N";
+    
+    if (![user.idHousehold isEqualToString:@""]) {
+        survey.idHousehold = user.idHousehold;
     }
     
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [manager POST:@"http://api.guardioesdasaude.org/survey/create"
-       parameters:params
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              
-              user.idHousehold = @"";
-              ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] initWithType:GOOD_SYMPTON];
-              thankYouForParticipatingViewController.txtBadSurvey.hidden = YES;
-              [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
-          
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-          
-              UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Infelizmente não conseguimos conlcuir está operação. Tente novamente dentro de alguns minutos." preferredStyle:UIAlertControllerStyleActionSheet];
-              UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                  NSLog(@"You pressed button OK");
-              }];
-              [alert addAction:defaultAction];
-              [self presentViewController:alert animated:YES completion:nil];
-              
-          }];
+    [surveyRequester createSurvey:survey
+                       andOnStart:^{
+                           [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                       }
+                     andOnSuccess:^(bool isZika){
+                         [MBProgressHUD hideHUDForView:self.view animated:YES];
+                         user.idHousehold = @"";
+                         ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] initWithType:GOOD_SYMPTON];
+                         thankYouForParticipatingViewController.txtBadSurvey.hidden = YES;
+                         [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
+                     }
+                       andOnError:^(NSError *error){
+                           [MBProgressHUD hideHUDForView:self.view animated:YES];
+                           UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Infelizmente não conseguimos conlcuir esta operação. Por favor verifique sua conexão."];
+                           [self presentViewController:alert animated:YES completion:nil];
+                       }];
 }
 
 - (IBAction)btnBad:(id)sender {
