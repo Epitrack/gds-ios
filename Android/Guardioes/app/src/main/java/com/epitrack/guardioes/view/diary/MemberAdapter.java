@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.diary;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -139,14 +140,34 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
         userId = parent.getId();
         viewHolder.textViewId.setText(userId);
 
-        if (!singleUser.getImageResource().equals("") && singleUser.getId() == parent.getId()) {
-                viewHolder.imageViewPhoto.setImageBitmap(BitmapUtility.scale(singleUser.getWidthImageProfile(), singleUser.getHeightImageProfile(), singleUser.getImageResource()));
-        } else {
+        if (parent.getPicture().equals("")) {
+            parent.setPicture("0");
+        }
 
-            if (parent.getPicture().length() > 1) {
+        if (parent.getPicture().length() > 2) {
+            String url = parent.getPicture();
+            if (url.substring(0, 4).toLowerCase().equals("http")) {
                 parent.setPicture("0");
-            }
+                if (parent.getGender().equals("M")) {
 
+                    if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+                    } else {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+                    }
+                } else {
+
+                    if (parent.getRace().equals("branco") || parent.getRace().equals("amarelo")) {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
+                    } else {
+                        viewHolder.imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
+                    }
+                }
+            } else {
+                Uri uri = Uri.parse(parent.getPicture());
+                viewHolder.imageViewPhoto.setImageURI(uri);
+            }
+        } else {
             if (Integer.parseInt(parent.getPicture()) == 0) {
 
                 if (parent.getGender().equals("M")) {
@@ -165,7 +186,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
                     }
                 }
             } else {
-                viewHolder.imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(parent.getPicture())).getSmall());
+                viewHolder.imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(parent.getPicture())).getLarge());
             }
         }
 
