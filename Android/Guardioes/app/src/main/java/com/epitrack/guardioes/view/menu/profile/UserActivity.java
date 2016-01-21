@@ -2,12 +2,14 @@ package com.epitrack.guardioes.view.menu.profile;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -34,6 +36,7 @@ import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.welcome.WelcomeActivity;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,6 +46,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.ExecutionException;
 
@@ -126,7 +130,6 @@ public class UserActivity extends BaseAppCompatActivity {
         if (mainMember || socialNew) {
             textViewRelationship.setVisibility(View.INVISIBLE);
             spinnerRelationship.setVisibility(View.INVISIBLE);
-
         }
 
         if (newMenber) {
@@ -157,6 +160,7 @@ public class UserActivity extends BaseAppCompatActivity {
         super.onResume();
         mTracker.setScreenName("User Form Screen - " + this.getClass().getSimpleName());
         mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
         loadUser();
     }
 
@@ -192,8 +196,9 @@ public class UserActivity extends BaseAppCompatActivity {
                     editTextNickname.setText(nick);
 
                     if (dob != null) {
-                        Mask.insert("##/##/####", editTextBirthDate);
                         editTextBirthDate.setText(DateFormat.getDate(dob, "dd/MM/yyyy"));
+                        //Mask.insert("##/##/####", editTextBirthDate);
+
                     }
                     editTextMail.setText(email);
 

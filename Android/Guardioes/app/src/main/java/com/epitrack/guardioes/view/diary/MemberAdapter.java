@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.diary;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -139,14 +140,14 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
         userId = parent.getId();
         viewHolder.textViewId.setText(userId);
 
-        if (!singleUser.getImageResource().equals("") && singleUser.getId() == parent.getId()) {
-                viewHolder.imageViewPhoto.setImageBitmap(BitmapUtility.scale(singleUser.getWidthImageProfile(), singleUser.getHeightImageProfile(), singleUser.getImageResource()));
+        if (parent.getPicture().equals("")) {
+            parent.setPicture("0");
+        }
+
+        if (parent.getPicture().length() > 2) {
+            Uri uri = Uri.parse(parent.getPicture());
+            viewHolder.imageViewPhoto.setImageURI(uri);
         } else {
-
-            if (parent.getPicture().length() > 1) {
-                parent.setPicture("0");
-            }
-
             if (Integer.parseInt(parent.getPicture()) == 0) {
 
                 if (parent.getGender().equals("M")) {
@@ -165,7 +166,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberAdapter.ViewHolder
                     }
                 }
             } else {
-                viewHolder.imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(parent.getPicture())).getSmall());
+                viewHolder.imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(parent.getPicture())).getLarge());
             }
         }
 
