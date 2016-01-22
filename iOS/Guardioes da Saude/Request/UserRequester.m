@@ -86,6 +86,8 @@
     
     if (user.password) {
         [params setObject:user.password forKey:@"password"];
+    }else{
+        [params setObject:user.email forKey:@"password"];
     }
     
     if (user.gl) {
@@ -433,7 +435,7 @@
                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
                 NSString *userKey = user.user_token;
                 
-                [preferences setValue:userKey forKey:@"userTokenKey"];
+                [preferences setValue:userKey forKey:kUserTokenKey];
                 BOOL didSave = [preferences synchronize];
                 
                 if (!didSave) {
@@ -481,7 +483,7 @@
         success:^(AFHTTPRequestOperation *operation, id responseObject){
             NSArray *response = responseObject[@"data"];
             
-            if ([responseObject[@"error"] boolValue] != 1) {
+            if ([responseObject[@"error"] boolValue] != 1 && response.count != 0) {
                 NSDictionary *userObject = [response objectAtIndex:0];
                 User *user = [User getInstance];
                 

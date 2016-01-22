@@ -202,19 +202,9 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                     }
                                 andOnSuccess:^(User *userResponse){
-                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                    userResponse.password = userResponse.email;
                                     
-                                    user = userResponse;
-                                    
-                                    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-                                    [preferences setValue:user.app_token forKey:kAppTokenKey];
-                                    [preferences setValue:user.user_token forKey:kUserTokenKey];
-                                    [preferences setValue:user.nick forKey:kNickKey];
-                                    [preferences setValue:user.picture forKey:kPictureKey];
-                                    
-                                    [self loadNotices];
-                                    
-                                    [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
+                                    [self doLoginWithUser:userResponse];
                                 }
                                     andError:^(NSError *error){
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -231,6 +221,37 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                     }];
     
     
+}
+
+- (void) doLoginWithUser:(User *) userLogin{
+    [userRequester login:userLogin onStart:^{}
+                 onError:^(NSError *error){
+                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                     NSString *errorMsg;
+                     if (error && error.code == -1009) {
+                         errorMsg = kMsgConnectionError;
+                     } else if(error) {
+                         errorMsg = kMsgApiError;
+                     }else{
+                         errorMsg = @"Cadastro não encontrado!";
+                     }
+                     
+                     [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                 }
+               onSuccess:^(User *userResponse){
+                   [MBProgressHUD hideHUDForView:self.view animated:YES];
+                   user = userResponse;
+                   
+                   NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                   [preferences setValue:user.app_token forKey:kAppTokenKey];
+                   [preferences setValue:user.user_token forKey:kUserTokenKey];
+                   [preferences setValue:user.nick forKey:kNickKey];
+                   [preferences setValue:user.picture forKey:kPictureKey];
+                   
+                   [self loadNotices];
+                   
+                   [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
+               }];
 }
 
 - (void) loadNotices {

@@ -289,6 +289,8 @@
         if (user && user.user_token) {
             [preferences setValue:user.picture forKey:kPictureKey];
             [preferences setValue:user.nick forKey:kNickKey];
+            
+            [preferences synchronize];
         }
         
         [self showSuccessMsg];

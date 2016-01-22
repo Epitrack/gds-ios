@@ -251,6 +251,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 
 - (IBAction)btnGoogleAction:(id)sender {
     if(isEnabled){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[GIDSignIn sharedInstance] signIn];
     }else{
         [self showTermsRequiredMsg];
@@ -298,17 +299,17 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     [userRequester checkSocialLoginWithToken:token
                                    andSocial:type
                                     andStart:^(){
-                                        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                        
                                     }
                                 andOnSuccess:^(User *user){
                                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                                    UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Cadastro realizado anterioremente com essa rede social ou e-mail."];
+                                    UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Cadastro realizado anterioremente com essa rede social."];
                                     [self presentViewController:alert animated:YES completion:nil];
                                 }
                                     andError:^(NSError *error){
                                         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                         if (error) {
-                                            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso."];
+                                            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Não foi possível realizar o cadastro. Tente novamente em alguns minutos!"];
                                             [self presentViewController:alert animated:YES completion:nil];
                                         } else {
                                             CreateAccountSocialLoginViewController *createAccountSocialLoginViewController = [[CreateAccountSocialLoginViewController alloc] init];

@@ -135,6 +135,8 @@
                 [preferences setValue:user.nick forKey:kNickKey];
                 [preferences setValue:user.picture forKey:kPictureKey];
                 
+                [preferences synchronize];
+                
                 HomeViewController *homeViewController = [[HomeViewController alloc] init];
                 [self.navigationController pushViewController:homeViewController animated:YES];
             }andOnError:^(NSError *error){
