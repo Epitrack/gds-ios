@@ -15,6 +15,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+#import "User.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
@@ -22,6 +23,8 @@
 @end
 
 @implementation AppDelegate
+
+NSUserDefaults *preferences;
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
@@ -38,10 +41,9 @@
     
     SWRevealViewController *revealController;
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    NSString *userTokenKey = @"userTokenKey";
+    preferences = [NSUserDefaults standardUserDefaults];
     
-    if ([preferences objectForKey:userTokenKey] != nil) {
+    if ([preferences objectForKey:kUserTokenKey] != nil) {
         HomeViewController *frontViewController = [[HomeViewController alloc] init];
         UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
         UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
@@ -138,7 +140,7 @@ didSignInForUser:(GIDGoogleUser *)user
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
 }
 
 #pragma mark - SWRevealViewDelegate
