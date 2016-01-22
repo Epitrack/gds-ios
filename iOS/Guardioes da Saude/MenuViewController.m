@@ -14,6 +14,8 @@
 #import "ProfileListViewController.h"
 #import "User.h"
 #import "TutorialViewController.h"
+#import "Requester.h"
+#import "ViewUtil.m"
 
 @interface MenuViewController () {
     
@@ -113,11 +115,14 @@
 }
 
 - (IBAction)btnProfile:(id)sender {
-    
-    ProfileListViewController *profileListController = [[ProfileListViewController alloc] init];
-    newFrontController = [[UINavigationController alloc] initWithRootViewController:profileListController];
-    SWRevealViewController *revealController = self.revealViewController;
-    [revealController pushFrontViewController:newFrontController animated:YES];
+    if ([Requester isConnected]){
+        ProfileListViewController *profileListController = [[ProfileListViewController alloc] init];
+        newFrontController = [[UINavigationController alloc] initWithRootViewController:profileListController];
+        SWRevealViewController *revealController = self.revealViewController;
+        [revealController pushFrontViewController:newFrontController animated:YES];
+    }else{
+        [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+    }
 }
 
 - (IBAction)btnExit:(id)sender {
@@ -129,7 +134,11 @@
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     
-    [preferences setValue:nil forKey:@"userTokenKey"];
+    [preferences setValue:nil forKey:kUserTokenKey];
+    [preferences setValue:nil forKey:kAppTokenKey];
+    [preferences setValue:nil forKey:kPictureKey];
+    [preferences setValue:nil forKey:kNickKey];
+    
     [preferences synchronize];
     
     TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];

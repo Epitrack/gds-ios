@@ -16,6 +16,8 @@
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
 #import "User.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "AFNetworkActivityIndicatorManager.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
@@ -31,6 +33,9 @@ NSUserDefaults *preferences;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     [GMSServices provideAPIKey:@"AIzaSyBKd0Hwx2SLZYgvE6vh2pRXjAs5JkipvqI"];
     

@@ -14,6 +14,8 @@
 #import "PreventionViewController.h"
 #import "PhonesViewController.h"
 #import "ZikaViewController.h"
+#import "Requester.h"
+#import "ViewUtil.m"
 
 @interface HealthTipsViewController ()
 
@@ -51,8 +53,13 @@
 */
 
 - (IBAction)emergency:(id)sender {
-    EmergencyViewController *emergencyViewController = [[EmergencyViewController alloc] init];
-    [self.navigationController pushViewController:emergencyViewController animated:YES];
+    if ([Requester isConnected]) {
+        EmergencyViewController *emergencyViewController = [[EmergencyViewController alloc] init];
+        [self.navigationController pushViewController:emergencyViewController animated:YES];
+    }else{
+        [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+    }
+    
 }
 
 - (IBAction)vacine:(id)sender {
@@ -61,8 +68,12 @@
 }
 
 - (IBAction)pharmacy:(id)sender {
-    PharmacyViewController *pharmacyViewConroller = [[PharmacyViewController alloc] init];
-    [self.navigationController pushViewController:pharmacyViewConroller animated:YES];
+    if([Requester isConnected]){
+        PharmacyViewController *pharmacyViewConroller = [[PharmacyViewController alloc] init];
+        [self.navigationController pushViewController:pharmacyViewConroller animated:YES];
+    }else{
+        [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+    }
 }
 
 - (IBAction)basicCare:(id)sender {

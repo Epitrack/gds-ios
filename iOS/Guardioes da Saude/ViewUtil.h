@@ -12,5 +12,6 @@
 @interface ViewUtil : NSObject
 
 + (UIAlertController *) showAlertWithMessage: (NSString *) message;
++ (UIAlertController *) showNoConnectionAlert;
 
 @end

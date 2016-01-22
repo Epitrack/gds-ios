@@ -137,4 +137,8 @@ NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
      ];
 }
 
++ (bool) isConnected{
+    return [AFNetworkReachabilityManager sharedManager].reachable;
+}
+
 @end

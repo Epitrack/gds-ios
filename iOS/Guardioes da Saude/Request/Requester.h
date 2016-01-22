@@ -43,4 +43,6 @@ typedef void (^ Success) (id);
           error: (void (^)(AFHTTPRequestOperation * request, NSError * error)) onError
         success: (void (^)(AFHTTPRequestOperation * request, id response)) onSuccess;
 
++ (bool) isConnected;
+
 @end
