@@ -46,10 +46,17 @@
     userRequester = [[UserRequester alloc] init];
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    NSString *userTokenKey = @"userTokenKey";
     
-    if ([preferences objectForKey:userTokenKey] != nil) {
-        NSString *userToken = [preferences valueForKey:userTokenKey];
+    if ([preferences objectForKey:kUserTokenKey] != nil) {
+        NSString *userToken = [preferences valueForKey:kUserTokenKey];
+        
+        user.user_token = [preferences valueForKey:kUserTokenKey];
+        user.app_token = [preferences valueForKey:kAppTokenKey];
+        user.picture = [preferences valueForKey:kPictureKey];
+        user.nick = [preferences valueForKey:kNickKey];
+        
+        [self showInformations];
+        
         [self authorizedAutomaticLogin:userToken];
     } else {
         [self showInformations];
@@ -168,6 +175,7 @@
                                     [self loadNotices];
                                 }andOnError:^(NSError *error){
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                    
                                     NSString *errorMsg;
                                     if (error && error.code == -1009) {
                                         errorMsg = kMsgConnectionError;

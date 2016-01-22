@@ -110,6 +110,13 @@
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         }andOnSuccess:^{
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+            [preferences setValue:user.app_token forKey:kAppTokenKey];
+            [preferences setValue:user.user_token forKey:kUserTokenKey];
+            [preferences setValue:user.nick forKey:kNickKey];
+            [preferences setValue:user.picture forKey:kPictureKey];
+            
             HomeViewController *homeViewController = [[HomeViewController alloc] init];
             [self.navigationController pushViewController:homeViewController animated:YES];
         }andOnError:^(NSError *error){

@@ -9,6 +9,11 @@
 #import "User.h"
 #import "DateUtil.h"
 
+NSString *const kAppTokenKey = @"appTokenKey";
+NSString *const kUserTokenKey = @"userTokenKey";
+NSString *const kPictureKey = @"pictureKey";
+NSString *const kNickKey = @"nickKey";
+
 @implementation User
 
 @synthesize nick;

@@ -136,7 +136,10 @@
             NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
             NSString *userKey = user.user_token;
             
-            [preferences setValue:userKey forKey:@"userTokenKey"];
+            [preferences setValue:user.app_token forKey:kAppTokenKey];
+            [preferences setValue:userKey forKey:kUserTokenKey];
+            [preferences setValue:user.nick forKey:kNickKey];
+            [preferences setValue:user.picture forKey:kPictureKey];
             [preferences synchronize];
             
             [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
