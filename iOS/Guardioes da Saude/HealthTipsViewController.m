@@ -15,7 +15,7 @@
 #import "PhonesViewController.h"
 #import "ZikaViewController.h"
 #import "Requester.h"
-#import "ViewUtil.m"
+#import "ViewUtil.h"
 
 @interface HealthTipsViewController ()
 

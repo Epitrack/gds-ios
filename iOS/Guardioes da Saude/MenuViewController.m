@@ -15,7 +15,7 @@
 #import "User.h"
 #import "TutorialViewController.h"
 #import "Requester.h"
-#import "ViewUtil.m"
+#import "ViewUtil.h"
 
 @interface MenuViewController () {
     
