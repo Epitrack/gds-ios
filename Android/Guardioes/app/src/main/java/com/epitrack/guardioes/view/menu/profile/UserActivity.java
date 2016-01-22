@@ -684,12 +684,10 @@ public class UserActivity extends BaseAppCompatActivity {
                     //imageViewImage.setImageResource(avatar.getSmall());
                     userAvatar = avatar.getId();
 
-                    /*if (profileImage.getAvatar() != null) {
-                        if (!profileImage.getAvatar().equals("")) {
-                            imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
-                            userAvatar = Integer.parseInt(profileImage.getAvatar());
-                        }
-                    }*/
+                    if(userAvatar > 0) {
+                        imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
+                        userAvatar = Integer.parseInt(profileImage.getAvatar());
+                    }
                 } else if (intent.hasExtra(Constants.Bundle.URI)) {
 
                     photoPath = "";
