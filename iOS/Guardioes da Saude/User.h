@@ -10,6 +10,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+extern NSString *const kAppTokenKey;
+extern NSString *const kUserTokenKey;
+extern NSString *const kPictureKey;
+extern NSString *const kNickKey;
+
 @interface User : JSONModel {
     NSString *nick;
     NSString *email;

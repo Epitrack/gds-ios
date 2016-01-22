@@ -205,11 +205,12 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                                     
                                     user = userResponse;
-                                    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-                                    NSString *userKey = user.user_token;
                                     
-                                    [preferences setValue:userKey forKey:@"userTokenKey"];
-                                    [preferences synchronize];
+                                    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                                    [preferences setValue:user.app_token forKey:kAppTokenKey];
+                                    [preferences setValue:user.user_token forKey:kUserTokenKey];
+                                    [preferences setValue:user.nick forKey:kNickKey];
+                                    [preferences setValue:user.picture forKey:kPictureKey];
                                     
                                     [self loadNotices];
                                     
