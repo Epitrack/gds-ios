@@ -50,7 +50,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>997</string>
+	<string>998</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -76,6 +76,7 @@
 	<string>Guardioes da Saude</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>whatsapp</string>
 		<string>googlechromes</string>
 		<string>comgooglemaps</string>
 		<string>fbauth2</string>
