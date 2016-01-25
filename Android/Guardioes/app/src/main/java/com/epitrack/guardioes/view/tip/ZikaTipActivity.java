@@ -2,6 +2,7 @@ package com.epitrack.guardioes.view.tip;
 
 import android.os.Bundle;
 import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
@@ -34,8 +35,7 @@ public class ZikaTipActivity extends BaseAppCompatActivity {
         mTracker = application.getDefaultTracker();
         // [END shared_tracker]
 
-
-        zikaContent.setText(Html.fromHtml("<p>&#8226;&nbsp;Os vírus da Dengue, Zika e Chikungunya são transmitidos pelo mosquito Aedes aegypti e apresentam sinais e sintomas parecidos.</p>\n" +
+        zikaContent.setText(Html.fromHtml("<p>&#8226;&nbsp;Os vírus da Dengue, Zika e Chikungunya são transmitidos pelo mosquito Aedes <i>aegypti</i> e apresentam sinais e sintomas parecidos.</p>\n" +
                 "\n" +
                 "<p>&#8226;&nbsp;É importante que você procure o serviço de saúde mais próximo quando apresentar febre, manchas vermelhas pelo corpo, dores no corpo ou dor nas juntas (articulações) ou coceira.</p>\n" +
                 "\n" +
@@ -55,7 +55,7 @@ public class ZikaTipActivity extends BaseAppCompatActivity {
                 "\n" +
                 "<p>&#8226;&nbsp;Não é aconselhável o uso de medicamentos à base de ácido acetilsalicílico (ex.: AAS, Aspirina entre outros) e nem de anti-inflamatórios, em função do risco aumentado de complicações hemorrágicas (sangramento) no caso de doenças como a Dengue.</p>\n" +
                 "\n" +
-                "<p>&#8226;&nbsp;A principal medida de prevenção é evitar a reprodução dos mosquitos Aedes aegypti, transmissores das três doenças: não deixar água parada em pratinhos de plantas, pneus, garrafas, copos ou outros recipientes ou depósitos; jogar o lixo na lixeira e tampar as caixas de água.</p>\n" +
+                "<p>&#8226;&nbsp;A principal medida de prevenção é evitar a reprodução dos mosquitos Aedes <i>aegypti</i>, transmissores das três doenças: não deixar água parada em pratinhos de plantas, pneus, garrafas, copos ou outros recipientes ou depósitos; jogar o lixo na lixeira e tampar as caixas de água.</p>\n" +
                 "\n" +
                 "<p>&#8226;&nbsp;Os repelentes para uso sobre a pele podem ser utilizados por gestantes, desde que estejam devidamente registrados na ANVISA e que sejam seguidas as instruções de uso descritas no rótulo. Produtos à base de DEET, Icaridin (Picaridin), EBAAP (IR3535) são considerados seguros para serem utilizados por gestantes.</p>\n" +
                 "\n" +
@@ -65,7 +65,10 @@ public class ZikaTipActivity extends BaseAppCompatActivity {
                 "\n" +
                 "<p>&#8226;&nbsp;Atenção para sinais que podem indicar agravamento da Dengue: falta de ar, tontura, dores abdominais ou sangramentos. Independentemente de os sintomas anteriores terem sido sugestivos de Dengue, Zika e Chikungunya, frente a um desses sinais, procure um serviço de saúde imediatamente.</p>" +
                 "\n" +
-                "<p>&#8226;&nbsp;Para dúvidas referentes à Dengue, Zica e Chikungunya, favor ligar para o Disque Saúde, por meio do numero 136 e digitar a opção 3.</p>"));
+                "<p>&#8226;&nbsp;Para dúvidas referentes à Dengue, Zika e Chikungunya, favor ligar para o Disque Saúde, por meio do numero <b><a href=\"tel:136\">136</a></b> e digitar a opção 3.</p>"));
+
+        zikaContent.setMovementMethod(LinkMovementMethod.getInstance());
+
     }
 
     @Override
