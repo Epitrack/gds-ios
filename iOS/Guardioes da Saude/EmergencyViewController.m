@@ -95,9 +95,6 @@
         // Add a detail disclosure button to the callout.
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         pinView.rightCalloutAccessoryView = rightButton;
-        // Add an image to the left callout.
-        UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_pin_urgency.png"]];
-        pinView.leftCalloutAccessoryView = iconView;
         
     } else {
         [mV.userLocation setTitle:user.nick];
