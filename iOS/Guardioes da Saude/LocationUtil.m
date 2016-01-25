@@ -134,7 +134,7 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
                      MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
                      pin.coordinate = annotationCoord;
                      pin.title = name;
-                     pin.subtitle = @"Ver no Google Maps";
+                     pin.subtitle = @"Ver rota";
                      
                      [pins addObject:pin];
                  }
