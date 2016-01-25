@@ -23,4 +23,8 @@
     
     return alert;
 }
+
++(UIAlertController *)showNoConnectionAlert{
+    return [self showAlertWithMessage:@"É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!"];
+}
 @end

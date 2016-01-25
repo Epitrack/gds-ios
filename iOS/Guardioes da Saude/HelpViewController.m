@@ -11,6 +11,8 @@
 #import "TermsViewController.h"
 #import "TutorialHelpViewController.h"
 #import "ReportViewController.h"
+#import "ViewUtil.h"
+#import "Requester.h"
 
 @interface HelpViewController ()
 
@@ -73,9 +75,11 @@
 }
 
 - (IBAction)btnReport:(id)sender {
-    
+    if([Requester isConnected]){
     ReportViewController *reportViewController = [[ReportViewController alloc] init];
     [self.navigationController pushViewController:reportViewController animated:YES];
-    
+    }else{
+        [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+    }
 }
 @end

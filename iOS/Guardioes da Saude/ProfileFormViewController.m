@@ -285,6 +285,14 @@
     }
     
     [userRequester updateUser:userUpdater onSuccess:^(User *user){
+        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+        if (user && user.user_token) {
+            [preferences setValue:user.picture forKey:kPictureKey];
+            [preferences setValue:user.nick forKey:kNickKey];
+            
+            [preferences synchronize];
+        }
+        
         [self showSuccessMsg];
     }onFail:^(NSError *error){
         [self showErrorMsg:error];

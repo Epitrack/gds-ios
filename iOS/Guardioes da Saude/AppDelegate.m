@@ -15,6 +15,9 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+#import "User.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "AFNetworkActivityIndicatorManager.h"
 @import GoogleMaps;
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
@@ -23,11 +26,16 @@
 
 @implementation AppDelegate
 
+NSUserDefaults *preferences;
+
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     [GMSServices provideAPIKey:@"AIzaSyBKd0Hwx2SLZYgvE6vh2pRXjAs5JkipvqI"];
     
@@ -38,10 +46,9 @@
     
     SWRevealViewController *revealController;
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    NSString *userTokenKey = @"userTokenKey";
+    preferences = [NSUserDefaults standardUserDefaults];
     
-    if ([preferences objectForKey:userTokenKey] != nil) {
+    if ([preferences objectForKey:kUserTokenKey] != nil) {
         HomeViewController *frontViewController = [[HomeViewController alloc] init];
         UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
         UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
@@ -138,7 +145,7 @@ didSignInForUser:(GIDGoogleUser *)user
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
 }
 
 #pragma mark - SWRevealViewDelegate

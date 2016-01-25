@@ -128,13 +128,21 @@
 }
 
 - (IBAction)btnJoinNow:(id)sender {
-    SelectParticipantViewController *selectParticipantViewController = [[SelectParticipantViewController alloc] init];
-    [self.navigationController pushViewController:selectParticipantViewController animated:YES];
+    if([UserRequester isConnected]){
+        SelectParticipantViewController *selectParticipantViewController = [[SelectParticipantViewController alloc] init];
+        [self.navigationController pushViewController:selectParticipantViewController animated:YES];
+    }else{
+        [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+    }
 }
 
 - (IBAction)btnMapHealth:(id)sender {
-    MapHealthViewController *mapHealthViewController = [[MapHealthViewController alloc] init];
-    [self.navigationController pushViewController:mapHealthViewController animated:YES];
+    if ([UserRequester isConnected]) {
+        MapHealthViewController *mapHealthViewController = [[MapHealthViewController alloc] init];
+        [self.navigationController pushViewController:mapHealthViewController animated:YES];
+    }else{
+        [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+    }
 }
 
 - (IBAction)notice:(id)sender {
@@ -148,13 +156,21 @@
 }
 
 - (IBAction)diaryHealth:(id)sender {
-    DiaryHealthViewController *diaryHealthViewController = [[DiaryHealthViewController alloc] init];
-    [self.navigationController pushViewController:diaryHealthViewController animated:YES];
+    if ([UserRequester isConnected]) {
+        DiaryHealthViewController *diaryHealthViewController = [[DiaryHealthViewController alloc] init];
+        [self.navigationController pushViewController:diaryHealthViewController animated:YES];
+    }else{
+        [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+    }
 }
 
 - (IBAction)btnProfileAction:(id)sender {
-    ProfileListViewController *profileListView = [[ProfileListViewController alloc] init];
-    [self.navigationController pushViewController:profileListView animated:YES];
+    if ([UserRequester isConnected]) {
+        ProfileListViewController *profileListView = [[ProfileListViewController alloc] init];
+        [self.navigationController pushViewController:profileListView animated:YES];
+    }else{
+        [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+    }
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {

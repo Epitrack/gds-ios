@@ -97,7 +97,7 @@ NSString *const kNickKey = @"nickKey";
 
 - (UIImage *)getAvatarImage{
     if ([self.picture isEqualToString:@"0"] || self.picture == nil) {
-        long diffYears = ([DateUtil diffInDaysDate:[NSDate new] andDate:[DateUtil dateFromStringUS:self.dob]]/360);
+        long diffYears = ([DateUtil diffInDaysDate:[DateUtil dateFromStringUS:self.dob] andDate:[NSDate new]]/360);
         
         if ([self.gender isEqualToString:@"M"]) {
             if (diffYears > 50) {
@@ -112,7 +112,7 @@ NSString *const kNickKey = @"nickKey";
                 if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"pardo"]) {
                     self.picture = @"5";
                     avatar = @"img_profile05.png";
-                }else if([self.race isEqualToString:@"negro"]){
+                }else if([self.race isEqualToString:@"preto"]){
                     self.picture = @"4";
                     avatar = @"img_profile04.png";
                 }else if([self.race isEqualToString:@"indigena"]){
@@ -136,7 +136,7 @@ NSString *const kNickKey = @"nickKey";
                 if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"pardo"]) {
                     self.picture = @"8";
                     avatar = @"img_profile08.png";
-                }else if([self.race isEqualToString:@"negro"]){
+                }else if([self.race isEqualToString:@"preto"]){
                     self.picture = @"2";
                     avatar = @"img_profile02.png";
                 }else if([self.race isEqualToString:@"indigena"]){
@@ -148,6 +148,11 @@ NSString *const kNickKey = @"nickKey";
                 }
             }
         }
+        
+        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+        [preferences setValue:self.picture forKey:kPictureKey];
+        
+        [preferences synchronize];
         
     } else {
         
