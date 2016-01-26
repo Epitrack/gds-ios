@@ -140,7 +140,9 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         bundle.putString("picture", user.getPicture());
         bundle.putString("relationship", user.getRelationship());
 
-        if (Integer.parseInt(user.getPicture()) == 0) {
+        if (user.getPicture().length() > 2) {
+            bundle.putString("picture", user.getPicture());
+        } else if (Integer.parseInt(user.getPicture()) == 0) {
             if (user.getGender().equals("M")) {
                 if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
                     bundle.putString("picture", "4");
@@ -154,6 +156,8 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
                     bundle.putString("picture", "7");
                 }
             }
+        } else {
+            bundle.putString("picture", user.getPicture());
         }
 
         // TODO: Check if is main member..
