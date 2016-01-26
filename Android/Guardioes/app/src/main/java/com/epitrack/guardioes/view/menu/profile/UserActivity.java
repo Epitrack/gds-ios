@@ -125,7 +125,9 @@ public class UserActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.user);
 
-        editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
+        if (newMenber) {
+            editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
+        }
 
         if (mainMember || socialNew) {
             textViewRelationship.setVisibility(View.INVISIBLE);
@@ -196,7 +198,8 @@ public class UserActivity extends BaseAppCompatActivity {
                     editTextNickname.setText(nick);
 
                     if (dob != null) {
-                        editTextBirthDate.setText(DateFormat.getDate(dob, "dd/MM/yyyy"));
+                        String dateFormat = DateFormat.getDate(dob, "dd/MM/yyyy");
+                        editTextBirthDate.setText(dateFormat);
                         //Mask.insert("##/##/####", editTextBirthDate);
 
                     }
