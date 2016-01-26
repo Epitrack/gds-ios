@@ -85,14 +85,43 @@
 */
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    id <MKAnnotation> annotation = [view annotation];
+    MKPointAnnotation *annotation = (MKPointAnnotation *)[view annotation];
+
+    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
     
-    if ([annotation isKindOfClass:[MKPointAnnotation class]]){
-        PharmacyGoogleMapsViewController *pharmacyGoogleMapsViewController = [[PharmacyGoogleMapsViewController alloc] init];
-        [self.navigationController pushViewController:pharmacyGoogleMapsViewController animated:YES];
-   }
-    //UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    //[alertView show];
+    request.source = [MKMapItem mapItemForCurrentLocation];
+    
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(annotation.coordinate.latitude, annotation.coordinate.longitude) addressDictionary:nil];
+    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    [mapItem setName:annotation.title];
+    [mapItem openInMapsWithLaunchOptions:nil];
+    
+    request.destination = mapItem;
+    request.requestsAlternateRoutes = YES;
+    MKDirections *directions =
+    [[MKDirections alloc] initWithRequest:request];
+    
+    [directions calculateDirectionsWithCompletionHandler:
+     ^(MKDirectionsResponse *response, NSError *error) {
+     }];
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
+{
+    MKPolylineRenderer *renderer =
+    [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+    renderer.strokeColor = [UIColor blueColor];
+    renderer.lineWidth = 5.0;
+    return renderer;
+}
+
+-(void)showRoute:(MKDirectionsResponse *)response
+{
+    for (MKRoute *route in response.routes)
+    {
+        [self.mapPharmacy
+         addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
+    }
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
@@ -110,13 +139,9 @@
     SingleLocation *singleLocation = [SingleLocation getInstance];
     singleLocation.lat = [NSString stringWithFormat:@"%f", touchMapCoordinate.latitude];
     singleLocation.lon = [NSString stringWithFormat:@"%f", touchMapCoordinate.longitude];
-    
-    //PharmacyGoogleMapsViewController *pharmacyGoogleMapsViewController = [[PharmacyGoogleMapsViewController alloc] init];
-    //[self.navigationController pushViewController:pharmacyGoogleMapsViewController animated:YES];
 }
 
 - (void) mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
-    //NSLog(@"didUpdateUserLocation just got called!");
     
     MKAnnotationView *v = [views objectAtIndex:0];
     if ([v.reuseIdentifier isEqualToString:@"user"]) {

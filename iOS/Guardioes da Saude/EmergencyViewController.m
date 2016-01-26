@@ -68,6 +68,28 @@
 }
 */
 
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    MKPointAnnotation *annotation = (MKPointAnnotation *)[view annotation];
+    
+    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
+    
+    request.source = [MKMapItem mapItemForCurrentLocation];
+    
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(annotation.coordinate.latitude, annotation.coordinate.longitude) addressDictionary:nil];
+    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    [mapItem setName:annotation.title];
+    [mapItem openInMapsWithLaunchOptions:nil];
+    
+    request.destination = mapItem;
+    request.requestsAlternateRoutes = YES;
+    MKDirections *directions =
+    [[MKDirections alloc] initWithRequest:request];
+    
+    [directions calculateDirectionsWithCompletionHandler:
+     ^(MKDirectionsResponse *response, NSError *error) {
+     }];
+}
+
 
 - (void) mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
      //NSLog(@"didUpdateUserLocation just got called!");
@@ -95,9 +117,6 @@
         // Add a detail disclosure button to the callout.
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         pinView.rightCalloutAccessoryView = rightButton;
-        // Add an image to the left callout.
-        UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_pin_urgency.png"]];
-        pinView.leftCalloutAccessoryView = iconView;
         
     } else {
         [mV.userLocation setTitle:user.nick];

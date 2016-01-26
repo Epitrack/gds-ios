@@ -125,6 +125,7 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
                  NSString *latitudePharmacy = location[@"lat"];
                  NSString *longitudePharmacy = location[@"lng"];
                  NSString *name = item[@"name"];
+                 NSString *address = item[@"formatted_address"];
                  
                  if (![latitudePharmacy isKindOfClass:[NSNull class]] && ![longitudePharmacy isKindOfClass:[NSNull class]]) {
                      CLLocationCoordinate2D annotationCoord;
@@ -134,7 +135,7 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
                      MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
                      pin.coordinate = annotationCoord;
                      pin.title = name;
-                     pin.subtitle = @"Ver no Google Maps";
+                     pin.subtitle = address;
                      
                      [pins addObject:pin];
                  }
