@@ -13,9 +13,12 @@ import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.service.AnalyticsApplication;
+import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.NetworkUtility;
 import com.epitrack.guardioes.view.base.BaseFragment;
 import com.epitrack.guardioes.view.IMenu;
 import com.epitrack.guardioes.view.MenuListener;
+import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
 import com.epitrack.guardioes.view.welcome.WelcomeActivity;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
@@ -135,7 +138,18 @@ public class HelpFragment extends BaseFragment implements MenuListener {
                             .setAction("Help Contact Report Button")
                             .build());
 
-                    navigateTo(Report.class);
+                    if (NetworkUtility.isOnline(getActivity().getApplication())) {
+
+                        navigateTo(Report.class);
+
+                    } else {
+
+                        new DialogBuilder(getActivity()).load()
+                                .title(R.string.attention)
+                                .content(R.string.network_fail)
+                                .positiveText(R.string.ok)
+                                .show();
+                    }
                 }
             }
         });
