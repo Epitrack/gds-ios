@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import "DateUtil.h"
+#import "AssetsLibrary/AssetsLibrary.h"
 
 NSString *const kAppTokenKey = @"appTokenKey";
 NSString *const kUserTokenKey = @"userTokenKey";
@@ -96,7 +97,7 @@ NSString *const kNickKey = @"nickKey";
 }
 
 - (UIImage *)getAvatarImage{
-    if ([self.picture isEqualToString:@"0"] || self.picture == nil) {
+     if ([self.picture isEqualToString:@"0"] || self.picture == nil) {
         long diffYears = ([DateUtil diffInDaysDate:[DateUtil dateFromStringUS:self.dob] andDate:[NSDate new]]/360);
         
         if ([self.gender isEqualToString:@"M"]) {

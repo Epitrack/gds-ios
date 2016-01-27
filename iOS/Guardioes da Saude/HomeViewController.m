@@ -21,6 +21,7 @@
 #import "UserRequester.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "ViewUtil.h"
+@import Photos;
 
 @interface HomeViewController ()
 
@@ -60,7 +61,6 @@
         [self authorizedAutomaticLogin:userToken];
     } else {
         [self showInformations];
-        [self.btnProfile setImage:[user getAvatarImage] forState:UIControlStateNormal];
     }
     
 
@@ -90,7 +90,26 @@
     self.lblOla.hidden = NO;
     self.btnProfile.hidden = NO;
     
-    [self.btnProfile setImage:[user getAvatarImage] forState:UIControlStateNormal];
+    if (user.picture.length > 2) {
+        PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[user.picture] options:nil];
+        PHAsset *asset = [assetResult firstObject];
+        [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
+            UIImage* newImage = [UIImage imageWithData:imageData];
+            
+            CGRect btRect = self.btnProfile.bounds;
+            
+            UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(btRect.origin.x+15, btRect.origin.y+15, btRect.size.width-30, btRect.size.height-30)];
+            CAShapeLayer *maskLayer = [CAShapeLayer layer];
+            maskLayer.path = path.CGPath;
+            self.btnProfile.layer.mask = maskLayer;
+            
+            [self.btnProfile setImage:newImage forState:UIControlStateNormal];
+        }];
+    } else {
+        [self.btnProfile setImage:[user getAvatarImage] forState:UIControlStateNormal];
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

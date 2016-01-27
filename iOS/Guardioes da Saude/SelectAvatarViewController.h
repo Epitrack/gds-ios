@@ -12,6 +12,8 @@
 
 @interface SelectAvatarViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+- (instancetype)initWithBtnCamera: (bool) showBtnCamera;
+
 @property ProfileFormViewController *profileFormCtr;
 
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
@@ -40,6 +42,5 @@
 - (IBAction)btn7Action:(id)sender;
 - (IBAction)btn11Action:(id)sender;
 - (IBAction)btn12Action:(id)sender;
-@property (strong, atomic) ALAssetsLibrary* library;
 
 @end

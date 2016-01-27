@@ -42,7 +42,7 @@ extern NSString *const kNickKey;
     NSString *idHousehold;
     NSString *avatar;
     NSString *photo;
-    
+    NSString *url;
     
 }
 

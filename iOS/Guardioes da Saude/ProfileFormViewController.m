@@ -18,6 +18,7 @@
 #import "ViewUtil.h"
 #import "MBProgressHUD.h"
 #import "Constants.h"
+@import Photos;
 
 @interface ProfileFormViewController () {
     UserRequester *userRequester;
@@ -291,6 +292,10 @@
             [preferences setValue:user.nick forKey:kNickKey];
             
             [preferences synchronize];
+
+            User *user = [User getInstance];
+            user.picture = self.pictureSelected;
+
         }
         
         [self showSuccessMsg];
@@ -356,7 +361,14 @@
 }
 
 - (IBAction)btnSelectPicture:(id)sender {
-    SelectAvatarViewController *selectAvatarViewController = [[SelectAvatarViewController alloc] init];
+    BOOL showCamaraButton = NO;
+    
+    if (self.operation == EDIT_USER) {
+        showCamaraButton = YES;
+    }
+    
+    
+    SelectAvatarViewController *selectAvatarViewController = [[SelectAvatarViewController alloc] initWithBtnCamera:showCamaraButton];
     selectAvatarViewController.profileFormCtr = self;
 
     [self.navigationController pushViewController:selectAvatarViewController animated:YES];
@@ -365,16 +377,32 @@
 - (void) updatePicture: (NSString *) picture{
     self.pictureSelected = picture;
     
-    NSString *avatar = @"img_profile01.png";
-    if ([picture isEqualToString:@"0"]) {
-        avatar = @"img_profile01.png";
-    } else if (picture.length == 1) {
-        avatar = [NSString stringWithFormat:@"img_profile0%@.png", picture];
-    } else if (picture.length == 2) {
-        avatar = [NSString stringWithFormat:@"img_profile%@.png", picture];
-    }
+    if ([picture length] > 2) {
+        
+        PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[picture] options:nil];
+        PHAsset *asset = [assetResult firstObject];
+        [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
+            UIImage* newImage = [UIImage imageWithData:imageData];
+            UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:self.btnPicture.bounds];
+            CAShapeLayer *maskLayer = [CAShapeLayer layer];
+            maskLayer.path = path.CGPath;
+            self.btnPicture.layer.mask = maskLayer;
+            
+            [self.btnPicture setBackgroundImage:newImage forState:UIControlStateNormal];
+        }];
+    }else{
     
-    [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
+        NSString *avatar = @"img_profile01.png";
+        if ([picture isEqualToString:@"0"]) {
+            avatar = @"img_profile01.png";
+        } else if (picture.length == 1) {
+            avatar = [NSString stringWithFormat:@"img_profile0%@.png", picture];
+        } else if (picture.length == 2) {
+            avatar = [NSString stringWithFormat:@"img_profile%@.png", picture];
+        }
+        
+        [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
+    }
 }
 - (IBAction)btnDobAction:(id)sender {
     RMActionControllerStyle style = RMActionControllerStyleWhite;

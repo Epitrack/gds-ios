@@ -9,22 +9,31 @@
 #import "SelectAvatarViewController.h"
 #import "ProfileFormViewController.h"
 #import "ViewUtil.h"
+#import "AssetsLibrary/AssetsLibrary.h"
+#import "MBProgressHUD.h"
+@import PhotosUI;
 
 @interface SelectAvatarViewController () {
+    BOOL showCameraBtn;
 }
 
 @end
 
 @implementation SelectAvatarViewController
 
-@synthesize library;
+
+- (instancetype)initWithBtnCamera: (bool) showBtnCamera{
+    showCameraBtn = showBtnCamera;
+    
+    return [super init];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationItem.title = @"Editar Foto";
-    //self.navigationItem.hidesBackButton = YES;
-    self.library = [[ALAssetsLibrary alloc] init];
+    
+    self.btnPhoto.hidden = !showCameraBtn;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,6 +71,27 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    UIImage *image = (UIImage *) [info objectForKey: UIImagePickerControllerEditedImage];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    __block NSString *url;
+    
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+        url = [[assetChangeRequest placeholderForCreatedAsset] localIdentifier];
+    } completionHandler:^(BOOL success, NSError *error){
+        if (!success) {
+            NSLog(@"Error creating asset: %@", error);
+        } else {
+            [self.profileFormCtr updatePicture:url];
+            [picker dismissViewControllerAnimated:YES completion:nil];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
 }
 
 - (IBAction)btn1Action:(id)sender {
