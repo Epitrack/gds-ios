@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -84,6 +85,27 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
 
         if (singleUser.getPicture().length() > 2) {
             Uri uri = Uri.parse(singleUser.getPicture());
+
+            DisplayMetrics metrics = getResources().getDisplayMetrics();
+            int densityDpi = (int) (metrics.density * 160f);
+            int width = 0;
+            int height = 0;
+
+            if (densityDpi == DisplayMetrics.DENSITY_LOW) {
+                width = 90;
+                height = 90;
+            } else if (densityDpi == DisplayMetrics.DENSITY_MEDIUM) {
+                width = 120;
+                height = 120;
+            } else if (densityDpi == DisplayMetrics.DENSITY_HIGH) {
+                width = 180;
+                height = 180;
+            } else if (densityDpi >= DisplayMetrics.DENSITY_XHIGH) {
+                width = 240;
+                height = 240;
+            }
+            imageViewAvatar.getLayoutParams().width = width;
+            imageViewAvatar.getLayoutParams().height = height;
             imageViewAvatar.setImageURI(uri);
         } else {
             if (Integer.parseInt(singleUser.getPicture()) == 0) {
