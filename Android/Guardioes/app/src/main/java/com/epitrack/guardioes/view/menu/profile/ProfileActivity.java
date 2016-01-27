@@ -16,7 +16,10 @@ import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.NetworkUtility;
+import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
+import com.epitrack.guardioes.view.menu.help.Report;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
@@ -56,7 +59,27 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         mTracker = application.getDefaultTracker();
         // [END shared_tracker]
 
-        listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
+        if (NetworkUtility.isOnline(getApplicationContext())) {
+
+            listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
+
+        } else {
+
+            new DialogBuilder(ProfileActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.network_fail)
+                    .positiveText(R.string.ok)
+                    .callback(new MaterialDialog.ButtonCallback() {
+                        @Override
+                        public void onPositive(final MaterialDialog dialog) {
+                            back();
+                        }
+                    }).show();
+        }
+    }
+
+    private void back() {
+        super.onBackPressed();
     }
 
     @Override
@@ -66,7 +89,6 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         mTracker.send(new HitBuilders.ScreenViewBuilder().build());
         listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
     }
-
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
@@ -118,7 +140,9 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         bundle.putString("picture", user.getPicture());
         bundle.putString("relationship", user.getRelationship());
 
-        if (Integer.parseInt(user.getPicture()) == 0) {
+        if (user.getPicture().length() > 2) {
+            bundle.putString("picture", user.getPicture());
+        } else if (Integer.parseInt(user.getPicture()) == 0) {
             if (user.getGender().equals("M")) {
                 if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
                     bundle.putString("picture", "4");
@@ -132,6 +156,8 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
                     bundle.putString("picture", "7");
                 }
             }
+        } else {
+            bundle.putString("picture", user.getPicture());
         }
 
         // TODO: Check if is main member..

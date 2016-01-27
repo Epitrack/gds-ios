@@ -3,6 +3,7 @@ package com.epitrack.guardioes.view.menu.profile;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
@@ -125,7 +126,9 @@ public class UserActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.user);
 
-        editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
+        if (newMenber) {
+            editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
+        }
 
         if (mainMember || socialNew) {
             textViewRelationship.setVisibility(View.INVISIBLE);
@@ -196,7 +199,8 @@ public class UserActivity extends BaseAppCompatActivity {
                     editTextNickname.setText(nick);
 
                     if (dob != null) {
-                        editTextBirthDate.setText(DateFormat.getDate(dob, "dd/MM/yyyy"));
+                        String dateFormat = DateFormat.getDate(dob, "dd/MM/yyyy");
+                        editTextBirthDate.setText(dateFormat);
                         //Mask.insert("##/##/####", editTextBirthDate);
 
                     }
@@ -295,7 +299,6 @@ public class UserActivity extends BaseAppCompatActivity {
                         if (profileImage.getAvatar() != null) {
                             if (!profileImage.getAvatar().equals("")) {
                                 imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
-                                //imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
                             }
                         } else if (profileImage.getUri() != null) {
                             imageViewImage.setImageURI(profileImage.getUri());
@@ -306,25 +309,46 @@ public class UserActivity extends BaseAppCompatActivity {
                             } else {
 
                                 if (!picture.equals("")) {
-                                    imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(picture)).getSmall());
-                                    //imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(picture)).getSmall());
+                                    if (picture.length() > 2) {
+                                        if (picture.substring(0, 4).toLowerCase().equals("http")) {
+                                            if (gender.equals("M")) {
+                                                if (race.equals("branco") || race.equals("amarelo")) {
+                                                    imageViewImage.setBackgroundResource(R.drawable.image_avatar_6);
+                                                } else {
+                                                    imageViewImage.setBackgroundResource(R.drawable.image_avatar_4);
+                                                }
+                                            } else {
+
+                                                if (race.equals("branco") || race.equals("amarelo")) {
+                                                    imageViewImage.setBackgroundResource(R.drawable.image_avatar_8);
+                                                } else {
+                                                    imageViewImage.setBackgroundResource(R.drawable.image_avatar_7);
+                                                }
+                                            }
+                                        } else {
+                                            Uri uri = Uri.parse(picture);
+                                            imageViewImage.setImageURI(uri);
+
+                                            Drawable drawable = imageViewImage.getDrawable();
+                                            imageViewImage.setBackground(drawable);
+                                            imageViewImage.setImageResource(R.drawable.mask);
+                                        }
+                                    } else {
+                                        imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(picture)).getSmall());
+                                    }
                                 } else if (singleUser.getImageResource() == null) {
                                     if (gender.equals("M")) {
                                         if (race.equals("branco") || race.equals("amarelo")) {
                                             imageViewImage.setBackgroundResource(R.drawable.image_avatar_6);
-                                            //imageViewImage.setImageResource(R.drawable.image_avatar_6);
                                         } else {
                                             imageViewImage.setBackgroundResource(R.drawable.image_avatar_4);
-                                            //imageViewImage.setImageResource(R.drawable.image_avatar_4);
                                         }
                                     } else {
 
                                         if (race.equals("branco") || race.equals("amarelo")) {
                                             imageViewImage.setBackgroundResource(R.drawable.image_avatar_8);
-                                            //imageViewImage.setImageResource(R.drawable.image_avatar_8);
                                         } else {
                                             imageViewImage.setBackgroundResource(R.drawable.image_avatar_7);
-                                            //imageViewImage.setImageResource(R.drawable.image_avatar_7);
                                         }
                                     }
                                 } else {
@@ -347,14 +371,12 @@ public class UserActivity extends BaseAppCompatActivity {
                         if (profileImage.getAvatar() != null) {
                             if (!profileImage.getAvatar().equals("")) {
                                 imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
-                                //imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
                             }
                         } else if (profileImage.getUri() != null) {
                             imageViewImage.setImageURI(profileImage.getUri());
                         } else {
                             if (Integer.parseInt(singleUser.getPicture()) > 0) {
                                 imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getSmall());
-                                //imageViewImage.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getSmall());
                             }
                         }
                     } else if (socialNew) {
@@ -400,9 +422,9 @@ public class UserActivity extends BaseAppCompatActivity {
                 .setCategory("Action")
                 .setAction("Create New Member/User Button")
                 .build());
-        User user = new User();
+            User user = new User();
 
-        user.setNick(editTextNickname.getText().toString().trim());
+            user.setNick(editTextNickname.getText().toString().trim());
         user.setDob(editTextBirthDate.getText().toString().trim().toLowerCase());
         String gender = spinnerGender.getSelectedItem().toString();
         gender = gender.substring(0, 1);

@@ -20,8 +20,11 @@ import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.BitmapUtility;
+import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.utility.Extension;
 import com.epitrack.guardioes.utility.FileUtility;
+import com.epitrack.guardioes.utility.NetworkUtility;
+import com.epitrack.guardioes.view.account.CreateAccountActivity;
 import com.epitrack.guardioes.view.base.BaseFragment;
 import com.epitrack.guardioes.view.diary.DiaryActivity;
 import com.epitrack.guardioes.view.menu.profile.Avatar;
@@ -152,7 +155,19 @@ public class HomeFragment extends BaseFragment {
 
     @OnClick(R.id.image_view_photo)
     public void showProfile() {
-        navigateTo(ProfileActivity.class);
+
+        if (NetworkUtility.isOnline(getActivity().getApplication())) {
+
+            navigateTo(ProfileActivity.class);
+
+        } else {
+
+            new DialogBuilder(getActivity()).load()
+                    .title(R.string.attention)
+                    .content(R.string.network_fail)
+                    .positiveText(R.string.ok)
+                    .show();
+        }
     }
 
     @OnClick(R.id.text_view_notice)
@@ -162,7 +177,18 @@ public class HomeFragment extends BaseFragment {
                 .setAction("Notice Button")
                 .build());
 
-        navigateTo(NoticeActivity.class);
+        if (NetworkUtility.isOnline(getActivity().getApplication())) {
+
+            navigateTo(NoticeActivity.class);
+
+        } else {
+
+            new DialogBuilder(getActivity()).load()
+                    .title(R.string.attention)
+                    .content(R.string.network_fail)
+                    .positiveText(R.string.ok)
+                    .show();
+        }
     }
 
     @OnClick(R.id.text_view_map)
@@ -172,7 +198,18 @@ public class HomeFragment extends BaseFragment {
                 .setAction("Notice Button")
                 .build());
 
-        navigateTo(MapSymptomActivity.class);
+        if (NetworkUtility.isOnline(getActivity().getApplication())) {
+
+            navigateTo(MapSymptomActivity.class);
+
+        } else {
+
+            new DialogBuilder(getActivity()).load()
+                    .title(R.string.attention)
+                    .content(R.string.network_fail)
+                    .positiveText(R.string.ok)
+                    .show();
+        }
     }
 
     @OnClick(R.id.text_view_tip)
@@ -192,7 +229,19 @@ public class HomeFragment extends BaseFragment {
                 .setAction("Diary of Health Button")
                 .build());
 
-        navigateTo(DiaryActivity.class);
+        if (NetworkUtility.isOnline(getActivity().getApplication())) {
+
+            navigateTo(DiaryActivity.class);
+
+        } else {
+
+            new DialogBuilder(getActivity()).load()
+                    .title(R.string.attention)
+                    .content(R.string.network_fail)
+                    .positiveText(R.string.ok)
+                    .show();
+        }
+
     }
 
     @OnClick(R.id.text_view_join)
@@ -202,6 +251,17 @@ public class HomeFragment extends BaseFragment {
                 .setAction("Survey Button")
                 .build());
 
-        navigateTo(SelectParticipantActivity.class);
+        if (NetworkUtility.isOnline(getActivity().getApplication())) {
+
+            navigateTo(SelectParticipantActivity.class);
+
+        } else {
+
+            new DialogBuilder(getActivity()).load()
+                    .title(R.string.attention)
+                    .content(R.string.network_fail)
+                    .positiveText(R.string.ok)
+                    .show();
+        }
     }
 }
