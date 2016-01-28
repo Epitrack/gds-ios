@@ -12,6 +12,7 @@
 #import "ViewUtil.h"
 #import "UserRequester.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 
 @interface ReportViewController ()
 
@@ -42,6 +43,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Report Error Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -66,6 +74,13 @@
 }
 
 - (IBAction)btSendReport:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_send_report"
+                                                           label:@"Send Report"
+                                                           value:nil] build]];
+    
     
     [self.txtSubject resignFirstResponder];
     [self.txtMessage resignFirstResponder];

@@ -18,6 +18,7 @@
 #import "SurveyRequester.h"
 #import "ViewUtil.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 @import Charts;
 
 @interface MapHealthViewController ()
@@ -83,6 +84,13 @@
 
     [self loadSurvey];
     self.seach.delegate = self;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Map Health Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void) loadSurvey {
@@ -377,6 +385,13 @@
 }
 
 - (IBAction)showDetailMapPlus:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_show_details"
+                                                           label:@"Show Details"
+                                                           value:nil] build]];
+    
     CABasicAnimation *animationView = [CABasicAnimation animationWithKeyPath:@"position.y"];
     showDetails = !showDetails;
     

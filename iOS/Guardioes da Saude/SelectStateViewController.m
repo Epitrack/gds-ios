@@ -15,6 +15,7 @@
 #import "SurveyMap.h"
 #import "ViewUtil.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 
 @interface SelectStateViewController ()
 
@@ -60,6 +61,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Select State Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -71,6 +79,12 @@
 */
 
 - (IBAction)btnGood:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_good"
+                                                           label:@"Good"
+                                                           value:nil] build]];
     
     User *user = [User getInstance];
     
@@ -108,6 +122,12 @@
 }
 
 - (IBAction)btnBad:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_bad"
+                                                           label:@"Bad"
+                                                           value:nil] build]];
     
     ListSymptomsViewController *listSymptomsViewController = [[ListSymptomsViewController alloc] init];
     [self.navigationController pushViewController:listSymptomsViewController animated:YES];

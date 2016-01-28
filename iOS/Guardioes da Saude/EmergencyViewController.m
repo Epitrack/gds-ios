@@ -11,6 +11,7 @@
 #import "TipsRequester.h"
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 
 @interface EmergencyViewController () {
 
@@ -51,6 +52,13 @@
     
     [self loadUpas];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Emergency Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

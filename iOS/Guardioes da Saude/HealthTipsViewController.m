@@ -16,6 +16,7 @@
 #import "ZikaViewController.h"
 #import "Requester.h"
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 
 @interface HealthTipsViewController ()
 
@@ -37,6 +38,13 @@
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Health Tips Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -53,6 +61,13 @@
 */
 
 - (IBAction)emergency:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_emergency"
+                                                           label:@"Emergency"
+                                                           value:nil] build]];
+    
     if ([Requester isConnected]) {
         EmergencyViewController *emergencyViewController = [[EmergencyViewController alloc] init];
         [self.navigationController pushViewController:emergencyViewController animated:YES];
@@ -63,11 +78,25 @@
 }
 
 - (IBAction)vacine:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_vacine"
+                                                           label:@"Vacine"
+                                                           value:nil] build]];
+    
     VacineViewController *vacineViewController = [[VacineViewController alloc] init];
     [self.navigationController pushViewController:vacineViewController animated:YES];
 }
 
 - (IBAction)pharmacy:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_pharmacy"
+                                                           label:@"Pharmacy"
+                                                           value:nil] build]];
+    
     if([Requester isConnected]){
         PharmacyViewController *pharmacyViewConroller = [[PharmacyViewController alloc] init];
         [self.navigationController pushViewController:pharmacyViewConroller animated:YES];
@@ -77,16 +106,37 @@
 }
 
 - (IBAction)basicCare:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_basic_care"
+                                                           label:@"Basic care"
+                                                           value:nil] build]];
+    
     BasicCareViewController *basicCareViewController = [[BasicCareViewController alloc] init];
     [self.navigationController pushViewController:basicCareViewController animated:YES];
 }
 
 - (IBAction)prevention:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_prevention"
+                                                           label:@"Prevention"
+                                                           value:nil] build]];
+    
     PreventionViewController *preventionViewController = [[PreventionViewController alloc] init];
     [self.navigationController pushViewController:preventionViewController animated:YES];
 }
 
 - (IBAction)phones:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_phones"
+                                                           label:@"Phones"
+                                                           value:nil] build]];
+    
     PhonesViewController *phonesViewController = [[PhonesViewController alloc] init];
     [self.navigationController pushViewController:phonesViewController animated:YES];
 }

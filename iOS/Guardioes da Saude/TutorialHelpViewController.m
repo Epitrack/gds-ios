@@ -7,6 +7,7 @@
 //
 
 #import "TutorialHelpViewController.h"
+#import <Google/Analytics.h>
 
 @interface TutorialHelpViewController ()
 
@@ -40,6 +41,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Tutorial Help Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didSwipe: (UISwipeGestureRecognizer *) sender {

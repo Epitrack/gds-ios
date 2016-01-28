@@ -16,6 +16,7 @@
 #import "HouseholdRequester.h"
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 @import Photos;
 
 @interface ProfileListViewController () {
@@ -50,6 +51,11 @@
 }
 
 - (void)  viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Profile List Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     user = [User getInstance];
     [self.btnMainUser setTitle:user.nick forState:UIControlStateNormal];
     
@@ -211,6 +217,13 @@
 }
 
 - (IBAction)btnEditMainUser:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_edit_main_user"
+                                                           label:@"Edit Main User"
+                                                           value:nil] build]];
+    
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
     [profileFormViewController setOperation:EDIT_USER];
     [profileFormViewController setUser:user];
@@ -219,6 +232,13 @@
 }
 
 - (IBAction)btnAddHousehold:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_edit_household"
+                                                           label:@"Edit Household"
+                                                           value:nil] build]];
+    
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
     [profileFormViewController setOperation:ADD_HOUSEHOLD];
     

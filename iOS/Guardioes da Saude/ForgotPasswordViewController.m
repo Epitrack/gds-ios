@@ -12,6 +12,7 @@
 #import "ViewUtil.h"
 #import "UserRequester.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 
 @interface ForgotPasswordViewController ()
 
@@ -31,6 +32,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Forgot Passwords Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
@@ -57,6 +63,12 @@
 */
 
 - (IBAction)btnSendAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_send"
+                                                           label:@"Send"
+                                                           value:nil] build]];
     
     if ([self.txtEmail.text isEqualToString:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"E-mail não informado." preferredStyle:UIAlertControllerStyleActionSheet];

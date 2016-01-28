@@ -18,6 +18,7 @@
 #import "User.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "AFNetworkActivityIndicatorManager.h"
+#import <Google/Analytics.h>
 @import GoogleMaps;
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
@@ -83,6 +84,12 @@ NSUserDefaults *preferences;
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     
     [GIDSignIn sharedInstance].delegate = self;
+    
+    
+    // Optional: configure GAI options.
+    GAI *gai = [GAI sharedInstance];
+    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
     
     //FACEBOOK
     [[FBSDKApplicationDelegate sharedInstance] application:application

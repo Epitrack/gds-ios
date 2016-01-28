@@ -21,6 +21,7 @@
 #import "DateUtil.h"
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 @import Photos;
 
 @import Charts;
@@ -94,6 +95,13 @@ const float _kCellHeight = 100.0f;
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Diary Health Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void) refreshSummaryWithUserId: (NSString *) userId{

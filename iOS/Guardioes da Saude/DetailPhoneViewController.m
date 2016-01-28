@@ -8,6 +8,7 @@
 
 #import "DetailPhoneViewController.h"
 #import "Phones.h"
+#import <Google/Analytics.h>
 
 @interface DetailPhoneViewController ()
 
@@ -38,6 +39,13 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Detail Phone Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -54,6 +62,12 @@
 */
 
 - (IBAction)btnCallAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_show_phone"
+                                                           label:@"Show phone"
+                                                           value:nil] build]];
     
     NSString *text;
     

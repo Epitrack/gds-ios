@@ -8,6 +8,7 @@
 
 #import "ModalPrivViewController.h"
 #import "SelectTypeCreateAccoutViewController.h"
+#import <Google/Analytics.h>
 
 @interface ModalPrivViewController ()
 
@@ -18,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"App Description Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

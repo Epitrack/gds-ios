@@ -11,6 +11,7 @@
 #import "ViewUtil.h"
 #import "AssetsLibrary/AssetsLibrary.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 @import PhotosUI;
 
 @interface SelectAvatarViewController () {
@@ -39,6 +40,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Select Avatar Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 /*
@@ -74,6 +82,13 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_change_avatar"
+                                                           label:@"Change avatar"
+                                                           value:nil] build]];
+    
     UIImage *image = (UIImage *) [info objectForKey: UIImagePickerControllerEditedImage];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -143,6 +158,13 @@
 }
 
 - (void) setAvatar:(NSString *)idAvatar {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_change_avatar"
+                                                           label:@"Change avatar"
+                                                           value:nil] build]];
+    
     self.profileFormCtr.pictureSelected = idAvatar;
     
     [self.navigationController popViewControllerAnimated:YES];

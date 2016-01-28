@@ -7,6 +7,7 @@
 //
 
 #import "BasicCareViewController.h"
+#import <Google/Analytics.h>
 
 @interface BasicCareViewController ()
 
@@ -27,6 +28,13 @@
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     [self.txtContent setContentOffset:CGPointZero];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Basic Care Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

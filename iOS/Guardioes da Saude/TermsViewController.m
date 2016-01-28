@@ -7,6 +7,7 @@
 //
 
 #import "TermsViewController.h"
+#import <Google/Analytics.h>
 
 @interface TermsViewController ()
 
@@ -26,6 +27,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Terms Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillAppear:animated];
 }

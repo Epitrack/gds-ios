@@ -16,6 +16,7 @@
 #import "ForgotPasswordViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 
 @interface EnterViewController ()
 
@@ -67,6 +68,11 @@
 */
 
 - (void)viewWillAppear:(BOOL)animated {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Login with E-mail Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
@@ -85,6 +91,12 @@
 }
 
 - (IBAction)btnEnter:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_enter"
+                                                           label:@"Enter"
+                                                           value:nil] build]];
     
     if (([self.txtEmail.text isEqualToString: @""]) || ([self.txtPassword.text isEqualToString: @""])) {
         
@@ -115,6 +127,12 @@
 }
 
 - (IBAction)forgotPasswordAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_forgot_password"
+                                                           label:@"Forgot Password"
+                                                           value:nil] build]];
     
     ForgotPasswordViewController *forgotPasswordViewController = [[ForgotPasswordViewController alloc] init];
     [self.navigationController pushViewController:forgotPasswordViewController animated:YES];

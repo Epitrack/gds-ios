@@ -11,6 +11,7 @@
 #import "SelectStateViewController.h"
 #import "Household.h"
 #import "HouseholdThumbnail.h"
+#import <Google/Analytics.h>
 @import Photos;
 
 @interface SelectParticipantViewController ()
@@ -69,6 +70,13 @@ const float kCellHeight = 100.0f;
     [self loadAvatar];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Select Participant Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 - (void) loadAvatar {
     if (user.picture.length > 2) {
         PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[user.picture] options:nil];
@@ -115,6 +123,13 @@ const float kCellHeight = 100.0f;
 */
 
 - (IBAction)btnSelectMainMember:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_select_main_user"
+                                                           label:@"Select Main User"
+                                                           value:nil] build]];
+    
     
     SelectStateViewController *selectStateViewController = [[SelectStateViewController alloc] init];
     [self.navigationController pushViewController:selectStateViewController animated:YES];

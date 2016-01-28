@@ -19,6 +19,7 @@
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
 #import "LocationUtil.h"
+#import <Google/Analytics.h>
 
 @interface ListSymptomsViewController () {
     
@@ -74,6 +75,13 @@
     [self setTableSeparator];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"List Symptoms Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -90,6 +98,12 @@
 */
 
 - (IBAction)btnConfirmSurvey:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_confirm_survey"
+                                                           label:@"Confirm Survey"
+                                                           value:nil] build]];
     
     BOOL isTxtPaisValid = YES;
     

@@ -19,6 +19,7 @@
 #import "UserRequester.h"
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 
 @interface SelectTypeLoginViewController () {
     
@@ -53,7 +54,7 @@
     GIDSignIn *signIn = [GIDSignIn sharedInstance];
     signIn.delegate = self;
     signIn.uiDelegate = self;
-    signIn.clientID = @"783481918318-of721315npktlthk9fic2u02sp2psa9h.apps.googleusercontent.com";
+    signIn.clientID = @"997325640691-65rupglfegtkeqs5rf5n0i99sjn17938.apps.googleusercontent.com";
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.login"]];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.me"]];
 
@@ -90,11 +91,23 @@
 */
 
 - (void)viewWillAppear:(BOOL)animated {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Select Type Login Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
 
 - (IBAction)btnLoginEmail:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_login_email"
+                                                           label:@"Login with email"
+                                                           value:nil] build]];
+    
     EnterViewController *enterViewController = [[EnterViewController alloc] init];
     [self.navigationController pushViewController:enterViewController animated:YES];
 }
@@ -118,7 +131,12 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnGoogleAction:(id)sender {
-    
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_login_google"
+                                                           label:@"Login with Google"
+                                                           value:nil] build]];
     //GOOGLE
     [[GIDSignIn sharedInstance] signIn];
 }
@@ -127,6 +145,13 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 //FACEBOOK
 // Once the button is clicked, show the login dialog
 - (IBAction)btnFacebookAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_login_facebook"
+                                                           label:@"Login with Facebook"
+                                                           value:nil] build]];
+    
     
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login
@@ -172,6 +197,12 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnTwitterAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_login_twitter"
+                                                           label:@"Login with Twitter"
+                                                           value:nil] build]];
     
     [[Twitter sharedInstance] logInWithCompletion:^(TWTRSession *session, NSError *error) {
         if (session) {

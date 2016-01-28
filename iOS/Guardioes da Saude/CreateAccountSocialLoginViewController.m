@@ -15,6 +15,7 @@
 #import "ViewUtil.h"
 #import "UserRequester.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 
 @interface CreateAccountSocialLoginViewController () {
     User *user;
@@ -54,6 +55,13 @@
     [self updateBirthDate];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Create Account with Social Network Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -83,6 +91,15 @@
 }
 
 - (IBAction)btnCadastrar:(id)sender {
+    
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_create_account"
+                                                           label:@"Create Account With Socil Network"
+                                                           value:nil] build]];
+    
+    
     BOOL fieldNull = NO;
     
     if ([self.txtNick.text isEqualToString:@""]||

@@ -9,6 +9,7 @@
 #import "PharmacyGoogleMapsViewController.h"
 #import "User.h"
 #import "SingleLocation.h"
+#import <Google/Analytics.h>
 @import GoogleMaps;
 
 @interface PharmacyGoogleMapsViewController () {
@@ -32,6 +33,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Phamacy Google Maps Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void) loadMap {

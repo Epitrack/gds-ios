@@ -10,6 +10,7 @@
 #import "HomeViewController.h"
 #import "ViewUtil.h"
 #import "EmergencyViewController.h"
+#import <Google/Analytics.h>
 
 NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org";
 
@@ -71,23 +72,33 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
 */
 
 - (void)viewWillAppear:(BOOL)animated {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Thank You For Participating Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
 - (IBAction)btnContinue:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_continue"
+                                                           label:@"Continue"
+                                                           value:nil] build]];
+    
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
     [self.navigationController pushViewController:homeViewController animated:YES];
     
 }
 - (IBAction)btnFacebookAction:(id)sender {
-    /*FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-    content.contentURL = [NSURL URLWithString:@"http://www.guardioesdasaude.org"];
-    content.contentTitle= @"Guardiões da Saúde";
-    content.contentDescription= @"Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org";
-    
-    [FBSDKShareDialog showFromViewController:self
-                                 withContent:content
-                                    delegate:self];*/
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_share_facebook"
+                                                           label:@"Share facebook"
+                                                           value:nil] build]];
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *faceSheet = [SLComposeViewController
@@ -117,6 +128,13 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
 }
 
 - (IBAction)btnTwitterAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_share_twitter"
+                                                           label:@"Share Twitter"
+                                                           value:nil] build]];
+    
     TWTRComposer *composer = [[TWTRComposer alloc] init];
     
     [composer setText:shareMsg];
@@ -160,6 +178,13 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
 }
 
 - (IBAction)btnWhatsappAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_share_Whatsapp"
+                                                           label:@"Share Whatsapp"
+                                                           value:nil] build]];
+    
     NSString * urlWhats = [NSString stringWithFormat:@"whatsapp://send?text=%@",shareMsg];
     NSURL * whatsappURL = [NSURL URLWithString:[urlWhats stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     if ([[UIApplication sharedApplication] canOpenURL: whatsappURL]) {
