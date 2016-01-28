@@ -123,6 +123,13 @@ const float kCellHeight = 100.0f;
 */
 
 - (IBAction)btnSelectMainMember:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_select_main_user"
+                                                           label:@"Select Main User"
+                                                           value:nil] build]];
+    
     
     SelectStateViewController *selectStateViewController = [[SelectStateViewController alloc] init];
     [self.navigationController pushViewController:selectStateViewController animated:YES];

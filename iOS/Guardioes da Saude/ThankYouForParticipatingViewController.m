@@ -131,8 +131,8 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
     // GOOGLE ANALYTICS
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
-                                                          action:@"button_share"
-                                                           label:@"Change avatar"
+                                                          action:@"button_share_twitter"
+                                                           label:@"Share Twitter"
                                                            value:nil] build]];
     
     TWTRComposer *composer = [[TWTRComposer alloc] init];
@@ -178,6 +178,13 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
 }
 
 - (IBAction)btnWhatsappAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_share_Whatsapp"
+                                                           label:@"Share Whatsapp"
+                                                           value:nil] build]];
+    
     NSString * urlWhats = [NSString stringWithFormat:@"whatsapp://send?text=%@",shareMsg];
     NSURL * whatsappURL = [NSURL URLWithString:[urlWhats stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     if ([[UIApplication sharedApplication] canOpenURL: whatsappURL]) {

@@ -385,6 +385,13 @@
 }
 
 - (IBAction)showDetailMapPlus:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_show_details"
+                                                           label:@"Show Details"
+                                                           value:nil] build]];
+    
     CABasicAnimation *animationView = [CABasicAnimation animationWithKeyPath:@"position.y"];
     showDetails = !showDetails;
     
