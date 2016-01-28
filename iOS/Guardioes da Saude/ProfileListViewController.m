@@ -217,6 +217,13 @@
 }
 
 - (IBAction)btnEditMainUser:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_edit_main_user"
+                                                           label:@"Edit Main User"
+                                                           value:nil] build]];
+    
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
     [profileFormViewController setOperation:EDIT_USER];
     [profileFormViewController setUser:user];
@@ -225,6 +232,13 @@
 }
 
 - (IBAction)btnAddHousehold:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_edit_household"
+                                                           label:@"Edit Household"
+                                                           value:nil] build]];
+    
     ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
     [profileFormViewController setOperation:ADD_HOUSEHOLD];
     

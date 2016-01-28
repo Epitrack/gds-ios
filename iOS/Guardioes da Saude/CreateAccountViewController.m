@@ -99,6 +99,13 @@
 
 - (IBAction)btnAddUser:(id)sender {
     
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_create_account"
+                                                           label:@"Create Account"
+                                                           value:nil] build]];
+    
     BOOL fieldNull = NO;
     
     NSInteger diffDay = [DateUtil diffInDaysDate:dob andDate: [NSDate date]];

@@ -153,6 +153,13 @@
 }
 
 - (IBAction)btnJoinNow:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_join_now"
+                                                           label:@"Join Now"
+                                                           value:nil] build]];
+    
     if([UserRequester isConnected]){
         SelectParticipantViewController *selectParticipantViewController = [[SelectParticipantViewController alloc] init];
         [self.navigationController pushViewController:selectParticipantViewController animated:YES];
@@ -162,6 +169,13 @@
 }
 
 - (IBAction)btnMapHealth:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_map_health"
+                                                           label:@"Map Health"
+                                                           value:nil] build]];
+    
     if ([UserRequester isConnected]) {
         MapHealthViewController *mapHealthViewController = [[MapHealthViewController alloc] init];
         [self.navigationController pushViewController:mapHealthViewController animated:YES];
@@ -171,16 +185,37 @@
 }
 
 - (IBAction)notice:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_notice"
+                                                           label:@"Notice"
+                                                           value:nil] build]];
+    
     NoticeViewController *noticeViewController = [[NoticeViewController alloc] init];
     [self.navigationController pushViewController:noticeViewController animated:YES];
 }
 
 - (IBAction)healthTips:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_health_tips"
+                                                           label:@"Health Tips"
+                                                           value:nil] build]];
+    
     HealthTipsViewController *healthTipsViewController = [[HealthTipsViewController alloc] init];
     [self.navigationController pushViewController:healthTipsViewController animated:YES];
 }
 
 - (IBAction)diaryHealth:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_diary_health"
+                                                           label:@"Diary Health"
+                                                           value:nil] build]];
+    
     if ([UserRequester isConnected]) {
         DiaryHealthViewController *diaryHealthViewController = [[DiaryHealthViewController alloc] init];
         [self.navigationController pushViewController:diaryHealthViewController animated:YES];
@@ -190,6 +225,13 @@
 }
 
 - (IBAction)btnProfileAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_profile"
+                                                           label:@"Profile"
+                                                           value:nil] build]];
+    
     if ([UserRequester isConnected]) {
         ProfileListViewController *profileListView = [[ProfileListViewController alloc] init];
         [self.navigationController pushViewController:profileListView animated:YES];

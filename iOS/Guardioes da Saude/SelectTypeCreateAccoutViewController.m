@@ -61,7 +61,7 @@
     GIDSignIn *signIn = [GIDSignIn sharedInstance];
     signIn.delegate = self;
     signIn.uiDelegate = self;
-    signIn.clientID = @"783481918318-of721315npktlthk9fic2u02sp2psa9h.apps.googleusercontent.com";
+    signIn.clientID = @"997325640691-65rupglfegtkeqs5rf5n0i99sjn17938.apps.googleusercontent.com";
     //[signIn signInSilently];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.login"]];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.me"]];
@@ -203,6 +203,13 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnFacebookAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_create_account_facebook"
+                                                           label:@"Create account with Facebook"
+                                                           value:nil] build]];
+    
     if (isEnabled) {
         FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
         
@@ -256,6 +263,13 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnGoogleAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_create_account_google"
+                                                           label:@"Create account With Google"
+                                                           value:nil] build]];
+    
     if(isEnabled){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[GIDSignIn sharedInstance] signIn];
@@ -265,6 +279,13 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnTwitterAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_create_account_twitter"
+                                                           label:@"Create account With Twitter"
+                                                           value:nil] build]];
+    
     if (isEnabled) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
@@ -288,6 +309,13 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnEmailAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_create_account_email"
+                                                           label:@"Create account With Email"
+                                                           value:nil] build]];
+    
     if (isEnabled) {
         CreateAccountViewController *createAccountViewController = [[CreateAccountViewController alloc] init];
         [self.navigationController pushViewController:createAccountViewController animated:YES];
@@ -297,6 +325,13 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnTermsAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_terms"
+                                                           label:@"See terms"
+                                                           value:nil] build]];
+    
     TermsViewController *termsViewController = [[TermsViewController alloc] init];
     [self.navigationController pushViewController:termsViewController animated:YES];
 }
@@ -339,6 +374,13 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnInfoAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_information"
+                                                           label:@"See informations"
+                                                           value:nil] build]];
+    
     ModalPrivViewController *modalPrivController = [[ModalPrivViewController alloc] init];
     modalPrivController.modalPresentationStyle = UIModalPresentationFormSheet;
     modalPrivController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

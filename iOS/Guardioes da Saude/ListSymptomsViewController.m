@@ -98,6 +98,12 @@
 */
 
 - (IBAction)btnConfirmSurvey:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_confirm_survey"
+                                                           label:@"Confirm Survey"
+                                                           value:nil] build]];
     
     BOOL isTxtPaisValid = YES;
     

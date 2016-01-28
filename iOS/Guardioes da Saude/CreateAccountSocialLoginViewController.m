@@ -91,6 +91,15 @@
 }
 
 - (IBAction)btnCadastrar:(id)sender {
+    
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_create_account"
+                                                           label:@"Create Account With Socil Network"
+                                                           value:nil] build]];
+    
+    
     BOOL fieldNull = NO;
     
     if ([self.txtNick.text isEqualToString:@""]||

@@ -82,6 +82,13 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_change_avatar"
+                                                           label:@"Change avatar"
+                                                           value:nil] build]];
+    
     UIImage *image = (UIImage *) [info objectForKey: UIImagePickerControllerEditedImage];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -151,6 +158,13 @@
 }
 
 - (void) setAvatar:(NSString *)idAvatar {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_change_avatar"
+                                                           label:@"Change avatar"
+                                                           value:nil] build]];
+    
     self.profileFormCtr.pictureSelected = idAvatar;
     
     [self.navigationController popViewControllerAnimated:YES];

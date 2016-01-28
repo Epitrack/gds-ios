@@ -97,6 +97,12 @@
 */
 
 - (IBAction)btnHome:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_home"
+                                                           label:@"Home"
+                                                           value:nil] build]];
     
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
     newFrontController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
@@ -105,6 +111,12 @@
 }
 
 - (IBAction)btnAbout:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_about"
+                                                           label:@"About"
+                                                           value:nil] build]];
     
     AboutViewController *aboutViewController = [[AboutViewController alloc] init];
     newFrontController = [[UINavigationController alloc] initWithRootViewController:aboutViewController];
@@ -113,6 +125,12 @@
 }
 
 - (IBAction)btnHelp:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_help"
+                                                           label:@"Help"
+                                                           value:nil] build]];
     
     HelpViewController *helpViewController = [[HelpViewController alloc] init];
     newFrontController = [[UINavigationController alloc] initWithRootViewController:helpViewController];
@@ -121,6 +139,13 @@
 }
 
 - (IBAction)btnProfile:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_profile"
+                                                           label:@"Profile"
+                                                           value:nil] build]];
+    
     if ([Requester isConnected]){
         ProfileListViewController *profileListController = [[ProfileListViewController alloc] init];
         newFrontController = [[UINavigationController alloc] initWithRootViewController:profileListController];
@@ -132,6 +157,13 @@
 }
 
 - (IBAction)btnExit:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_exit"
+                                                           label:@"Exit"
+                                                           value:nil] build]];
+    
     
     User *user;
     

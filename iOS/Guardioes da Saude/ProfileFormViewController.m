@@ -220,6 +220,13 @@
 
 - (IBAction)btnAction:(id)sender {
     
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_exec_form"
+                                                           label:@"Execute Profile form"
+                                                           value:nil] build]];
+    
     if (![self isFormValid]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
                                                                        message:@"Preencha todos os campos do formulário."
@@ -367,6 +374,13 @@
 }
 
 - (IBAction)btnSelectPicture:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_edit_avatar"
+                                                           label:@"Edit avatar"
+                                                           value:nil] build]];
+    
     BOOL showCamaraButton = NO;
     
     if (self.operation == EDIT_USER) {

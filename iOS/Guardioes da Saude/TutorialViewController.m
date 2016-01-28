@@ -193,6 +193,12 @@
     self.imgTutorial.image = [UIImage imageNamed:self.arrImg[index]];
 }
 - (IBAction)btnEnter:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_enter"
+                                                           label:@"Enter"
+                                                           value:nil] build]];
     
     SelectTypeLoginViewController *selectTypeLoginViewController = [[SelectTypeLoginViewController alloc] init];
     [self.navigationController pushViewController:selectTypeLoginViewController animated:YES];

@@ -81,19 +81,24 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
     [super viewWillAppear:animated];
 }
 - (IBAction)btnContinue:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_continue"
+                                                           label:@"Continue"
+                                                           value:nil] build]];
+    
     HomeViewController *homeViewController = [[HomeViewController alloc] init];
     [self.navigationController pushViewController:homeViewController animated:YES];
     
 }
 - (IBAction)btnFacebookAction:(id)sender {
-    /*FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
-    content.contentURL = [NSURL URLWithString:@"http://www.guardioesdasaude.org"];
-    content.contentTitle= @"Guardiões da Saúde";
-    content.contentDescription= @"Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org";
-    
-    [FBSDKShareDialog showFromViewController:self
-                                 withContent:content
-                                    delegate:self];*/
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_share_facebook"
+                                                           label:@"Share facebook"
+                                                           value:nil] build]];
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *faceSheet = [SLComposeViewController
@@ -123,6 +128,13 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
 }
 
 - (IBAction)btnTwitterAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_share"
+                                                           label:@"Change avatar"
+                                                           value:nil] build]];
+    
     TWTRComposer *composer = [[TWTRComposer alloc] init];
     
     [composer setText:shareMsg];

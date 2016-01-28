@@ -91,6 +91,12 @@
 }
 
 - (IBAction)btnEnter:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_enter"
+                                                           label:@"Enter"
+                                                           value:nil] build]];
     
     if (([self.txtEmail.text isEqualToString: @""]) || ([self.txtPassword.text isEqualToString: @""])) {
         
@@ -121,6 +127,12 @@
 }
 
 - (IBAction)forgotPasswordAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_forgot_password"
+                                                           label:@"Forgot Password"
+                                                           value:nil] build]];
     
     ForgotPasswordViewController *forgotPasswordViewController = [[ForgotPasswordViewController alloc] init];
     [self.navigationController pushViewController:forgotPasswordViewController animated:YES];

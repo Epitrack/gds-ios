@@ -62,6 +62,12 @@
 */
 
 - (IBAction)btnCallAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_show_phone"
+                                                           label:@"Show phone"
+                                                           value:nil] build]];
     
     NSString *text;
     

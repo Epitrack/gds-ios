@@ -63,6 +63,12 @@
 */
 
 - (IBAction)btnSendAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_send"
+                                                           label:@"Send"
+                                                           value:nil] build]];
     
     if ([self.txtEmail.text isEqualToString:@""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"E-mail não informado." preferredStyle:UIAlertControllerStyleActionSheet];

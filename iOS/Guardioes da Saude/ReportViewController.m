@@ -74,6 +74,13 @@
 }
 
 - (IBAction)btSendReport:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_send_report"
+                                                           label:@"Send Report"
+                                                           value:nil] build]];
+    
     
     [self.txtSubject resignFirstResponder];
     [self.txtMessage resignFirstResponder];
