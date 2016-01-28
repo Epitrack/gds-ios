@@ -201,7 +201,7 @@
     <string name="message_follow">Acompanhe os casos de doenças em seu bairro\nou em um determinado local.</string>
     <string name="message_health">Como está sua saúde?</string>
     <string name="message_prepared">Preparado para se tornar um\nGuardião da Saúde?</string>
-    <string name="message_prevent">Veja como se prevenir de doenças, quais UPAs e\nfarmácias mais próximas de vocês e\ntelefones úteis para caso de emergência.</string>
+    <string name="message_prevent">Veja como se prevenir de doenças, quais UPAs e\nfarmácias mais próximas de você e\ntelefones úteis para caso de emergência.</string>
     <string name="message_symptom">Marque na lista os sintomas que\nvocê apresenta.</string>
 
     # Login
