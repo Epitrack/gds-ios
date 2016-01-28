@@ -56,13 +56,6 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
         
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    // GOOGLE ANALYTICS
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Thank You For Participating Screen"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -79,6 +72,11 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
 */
 
 - (void)viewWillAppear:(BOOL)animated {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Thank You For Participating Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }
