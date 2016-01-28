@@ -11,6 +11,7 @@
 #import "SelectStateViewController.h"
 #import "Household.h"
 #import "HouseholdThumbnail.h"
+#import <Google/Analytics.h>
 @import Photos;
 
 @interface SelectParticipantViewController ()
@@ -67,6 +68,13 @@ const float kCellHeight = 100.0f;
     
     self.txtDobMainMember.text = [NSString stringWithFormat:@"%ld Anos", (long)ageUser];
     [self loadAvatar];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Select Participant Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void) loadAvatar {

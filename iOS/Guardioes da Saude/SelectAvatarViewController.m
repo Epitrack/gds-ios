@@ -11,6 +11,7 @@
 #import "ViewUtil.h"
 #import "AssetsLibrary/AssetsLibrary.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 @import PhotosUI;
 
 @interface SelectAvatarViewController () {
@@ -39,6 +40,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Select Avatar Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 /*

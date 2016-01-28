@@ -8,6 +8,7 @@
 
 #import "AboutViewController.h"
 #import "SWRevealViewController.h"
+#import <Google/Analytics.h>
 
 @interface AboutViewController ()
 
@@ -34,6 +35,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"About Screen Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 /*

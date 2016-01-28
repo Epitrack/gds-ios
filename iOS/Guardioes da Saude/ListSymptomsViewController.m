@@ -19,6 +19,7 @@
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
 #import "LocationUtil.h"
+#import <Google/Analytics.h>
 
 @interface ListSymptomsViewController () {
     
@@ -72,6 +73,13 @@
     [self.txtPais setPlaceholder:@"Selecione o país"];
     
     [self setTableSeparator];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"List Symptoms Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

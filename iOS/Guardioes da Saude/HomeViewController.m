@@ -21,6 +21,7 @@
 #import "UserRequester.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 @import Photos;
 
 @interface HomeViewController ()
@@ -125,6 +126,11 @@
     
     UIImage *imgTitleBar = [UIImage imageNamed:@"gdSToolbar"];
     [navCtr.navigationBar setBackgroundImage:imgTitleBar forBarMetrics:UIBarMetricsDefault];
+    
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Home Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
     [super viewWillAppear:animated];
 }

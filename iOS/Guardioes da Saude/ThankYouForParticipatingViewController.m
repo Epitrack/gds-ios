@@ -10,6 +10,7 @@
 #import "HomeViewController.h"
 #import "ViewUtil.h"
 #import "EmergencyViewController.h"
+#import <Google/Analytics.h>
 
 NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org";
 
@@ -53,6 +54,13 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
             break;
     }
         
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Thank You For Participating Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

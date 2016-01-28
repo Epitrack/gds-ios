@@ -16,6 +16,7 @@
 #import "HouseholdRequester.h"
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 @import Photos;
 
 @interface ProfileListViewController () {
@@ -50,6 +51,11 @@
 }
 
 - (void)  viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Profile List Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     user = [User getInstance];
     [self.btnMainUser setTitle:user.nick forState:UIControlStateNormal];
     

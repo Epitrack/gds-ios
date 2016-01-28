@@ -12,6 +12,7 @@
 #import "ViewUtil.h"
 #import "UserRequester.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 
 @interface ReportViewController ()
 
@@ -40,6 +41,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Report Error Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 /*

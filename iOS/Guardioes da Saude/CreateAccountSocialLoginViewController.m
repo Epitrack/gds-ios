@@ -15,6 +15,7 @@
 #import "ViewUtil.h"
 #import "UserRequester.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 
 @interface CreateAccountSocialLoginViewController () {
     User *user;
@@ -52,6 +53,13 @@
     // Setup Dob
     dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Create Account with Social Network Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

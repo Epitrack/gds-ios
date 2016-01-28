@@ -9,6 +9,7 @@
 #import "PhonesViewController.h"
 #import "DetailPhoneViewController.h"
 #import "Phones.h"
+#import <Google/Analytics.h>
 
 @interface PhonesViewController () {
     
@@ -40,6 +41,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Phones Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void) loadPhones {

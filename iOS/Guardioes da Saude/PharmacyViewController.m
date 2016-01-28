@@ -15,6 +15,7 @@
 #import "ViewUtil.h"
 #import "MBProgressHUD.h"
 #import "Requester.h"
+#import <Google/Analytics.h>
 
 @interface PharmacyViewController () {
     
@@ -67,6 +68,13 @@
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Pharmacy Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

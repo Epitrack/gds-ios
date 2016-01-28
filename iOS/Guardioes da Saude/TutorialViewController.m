@@ -14,6 +14,7 @@
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
 #import "HomeViewController.h"
+#import <Google/Analytics.h>
 
 @interface TutorialViewController () {
     
@@ -67,6 +68,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Tutorial Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
     self.revealViewController.panGestureRecognizer.enabled=NO;

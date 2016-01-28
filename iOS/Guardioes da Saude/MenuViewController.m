@@ -16,6 +16,7 @@
 #import "TutorialViewController.h"
 #import "Requester.h"
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 
 @interface MenuViewController () {
     
@@ -67,6 +68,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Menu Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
     SWRevealViewController *grandParentRevealController = self.revealViewController.revealViewController;
     grandParentRevealController.bounceBackOnOverdraw = NO;

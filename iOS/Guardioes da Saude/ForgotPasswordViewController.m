@@ -12,6 +12,7 @@
 #import "ViewUtil.h"
 #import "UserRequester.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 
 @interface ForgotPasswordViewController ()
 
@@ -31,6 +32,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Forgot Passwords Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }

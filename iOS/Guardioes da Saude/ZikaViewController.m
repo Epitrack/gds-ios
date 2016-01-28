@@ -7,6 +7,7 @@
 //
 
 #import "ZikaViewController.h"
+#import <Google/Analytics.h>
 
 @interface ZikaViewController ()
 
@@ -32,6 +33,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Zika Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 /*

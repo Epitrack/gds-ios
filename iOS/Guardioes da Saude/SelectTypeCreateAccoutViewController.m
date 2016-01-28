@@ -20,6 +20,7 @@
 #import "MBProgressHUD.h"
 #import <Google/SignIn.h>
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 
 @interface SelectTypeCreateAccoutViewController () {
     
@@ -104,6 +105,11 @@ dismissViewController:(UIViewController *)viewController {
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Select Type Create Account Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }

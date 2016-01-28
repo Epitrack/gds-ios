@@ -15,6 +15,7 @@
 #import "SurveyMap.h"
 #import "ViewUtil.h"
 #import "MBProgressHUD.h"
+#import <Google/Analytics.h>
 
 @interface SelectStateViewController ()
 
@@ -58,6 +59,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Select State Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 /*

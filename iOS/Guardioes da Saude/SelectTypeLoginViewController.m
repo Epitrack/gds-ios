@@ -19,6 +19,7 @@
 #import "UserRequester.h"
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 
 @interface SelectTypeLoginViewController () {
     
@@ -90,6 +91,11 @@
 */
 
 - (void)viewWillAppear:(BOOL)animated {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Select Type Login Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
 }

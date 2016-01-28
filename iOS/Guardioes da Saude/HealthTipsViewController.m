@@ -16,6 +16,7 @@
 #import "ZikaViewController.h"
 #import "Requester.h"
 #import "ViewUtil.h"
+#import <Google/Analytics.h>
 
 @interface HealthTipsViewController ()
 
@@ -35,6 +36,13 @@
                                 action:nil];
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Health Tips Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

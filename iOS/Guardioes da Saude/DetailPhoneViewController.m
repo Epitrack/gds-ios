@@ -8,6 +8,7 @@
 
 #import "DetailPhoneViewController.h"
 #import "Phones.h"
+#import <Google/Analytics.h>
 
 @interface DetailPhoneViewController ()
 
@@ -36,6 +37,13 @@
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Detail Phone Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)didReceiveMemoryWarning {

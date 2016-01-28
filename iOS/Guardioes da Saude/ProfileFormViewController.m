@@ -18,6 +18,7 @@
 #import "ViewUtil.h"
 #import "MBProgressHUD.h"
 #import "Constants.h"
+#import <Google/Analytics.h>
 @import Photos;
 
 @interface ProfileFormViewController () {
@@ -62,6 +63,11 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Profile Form Screen"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
     if (self.pictureSelected) {
         [self updatePicture:self.pictureSelected];
     }
