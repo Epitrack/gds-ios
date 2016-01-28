@@ -16,6 +16,7 @@
 #import "HouseholdRequester.h"
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
+@import Photos;
 
 @interface ProfileListViewController () {
     User *user;
@@ -40,7 +41,7 @@
     [revealController tapGestureRecognizer];
     
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
-                                                                         style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
+                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
     
@@ -54,18 +55,32 @@
     
     NSString *avatar;
     
-    if ([user.picture isEqualToString:@"0"]) {
-        avatar = @"img_profile01.png";
+    if ([user.picture length] > 2) {
+        PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[user.picture] options:nil];
+        PHAsset *asset = [assetResult firstObject];
+        [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
+            UIImage* newImage = [UIImage imageWithData:imageData];
+            UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:self.imgMainUser.bounds];
+            CAShapeLayer *maskLayer = [CAShapeLayer layer];
+            maskLayer.path = path.CGPath;
+            self.imgMainUser.layer.mask = maskLayer;
+            
+            [self.imgMainUser setBackgroundImage:newImage forState:UIControlStateNormal];
+        }];
     } else {
-        
-        if (user.picture.length == 1) {
-            avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
-        } else if (user.picture.length == 2) {
-            avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
+        if ([user.picture isEqualToString:@"0"]) {
+            avatar = @"img_profile01.png";
+        } else {
+            
+            if (user.picture.length == 1) {
+                avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
+            } else if (user.picture.length == 2) {
+                avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
+            }
         }
+        
+        [self.imgMainUser setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
     }
-    
-    [self.imgMainUser setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
     
     [self loadHouseholds];
 }

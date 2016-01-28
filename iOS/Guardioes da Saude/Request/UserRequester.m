@@ -351,11 +351,14 @@
     [params setValue:user.app_token forKey:@"app_token"];
     [params setValue:user.race forKey:@"race"];
     [params setValue:user.platform forKey:@"platform"];
-    [params setValue:user.picture forKey:@"picture"];
     [params setValue:user.idUser forKey:@"id"];
     
     if (user.password) {
         [params setValue:user.password forKey:@"password"];
+    }
+    
+    if (user.picture.length <= 2) {
+        [params setValue:user.picture forKey:@"picture"];
     }
     
     
@@ -374,7 +377,10 @@
         sysUser.dob = user.dob;
         sysUser.gender = user.gender;
         sysUser.race = user.race;
-        sysUser.picture = user.picture;
+        
+        if (sysUser.picture.length <= 2) {
+            sysUser.picture = user.picture;
+        }
         
         //Call back success
         success(user);
@@ -423,7 +429,6 @@
                 user.nick = response[@"nick"];
                 user.email = response[@"email"];
                 user.gender = response[@"gender"];
-                user.picture = response[@"picture"];
                 user.idUser =  response[@"id"];
                 user.race = response[@"race"];
                 user.dob = response[@"dob"];
@@ -434,6 +439,12 @@
                 
                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
                 NSString *userKey = user.user_token;
+                
+                if ([preferences valueForKey:kPictureKey] != nil) {
+                    user.picture = [preferences valueForKey:kPictureKey];
+                }else{
+                    user.picture = response[@"picture"];
+                }
                 
                 [preferences setValue:userKey forKey:kUserTokenKey];
                 BOOL didSave = [preferences synchronize];
