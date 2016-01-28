@@ -301,7 +301,26 @@ public class UserActivity extends BaseAppCompatActivity {
                                 imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(profileImage.getAvatar())).getSmall());
                             }
                         } else if (profileImage.getUri() != null) {
-                            imageViewImage.setImageURI(profileImage.getUri());
+                            File file = new File(profileImage.getUri().getPath());
+
+                            if (!file.exists()) {
+                                if (gender.equals("M")) {
+                                    if (race.equals("branco") || race.equals("amarelo")) {
+                                        imageViewImage.setBackgroundResource(R.drawable.image_avatar_6);
+                                    } else {
+                                        imageViewImage.setBackgroundResource(R.drawable.image_avatar_4);
+                                    }
+                                } else {
+
+                                    if (race.equals("branco") || race.equals("amarelo")) {
+                                        imageViewImage.setBackgroundResource(R.drawable.image_avatar_8);
+                                    } else {
+                                        imageViewImage.setBackgroundResource(R.drawable.image_avatar_7);
+                                    }
+                                }
+                            } else {
+                                imageViewImage.setImageURI(profileImage.getUri());
+                            }
                         } else {
 
                             if (singleUser.getUri() != null && (email.equals(singleUser.getEmail()))) {

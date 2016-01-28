@@ -31,6 +31,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -107,24 +108,20 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
             imageViewAvatar.getLayoutParams().width = width;
             imageViewAvatar.getLayoutParams().height = height;
             imageViewAvatar.setImageURI(uri);
+
+            File file = new File(singleUser.getPicture());
+
+            if (!file.exists()) {
+                //setDefaultAvatar();
+                imageViewAvatar.setImageURI(uri);
+                Drawable drawable = imageViewAvatar.getDrawable();
+                imageViewAvatar.setImageDrawable(drawable);
+            } else {
+                imageViewAvatar.setImageURI(uri);
+            }
         } else {
             if (Integer.parseInt(singleUser.getPicture()) == 0) {
-
-                if (singleUser.getGender().equals("M")) {
-
-                    if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
-                        imageViewAvatar.setImageResource(R.drawable.image_avatar_6);
-                    } else {
-                        imageViewAvatar.setImageResource(R.drawable.image_avatar_4);
-                    }
-                } else {
-
-                    if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
-                        imageViewAvatar.setImageResource(R.drawable.image_avatar_8);
-                    } else {
-                        imageViewAvatar.setImageResource(R.drawable.image_avatar_7);
-                    }
-                }
+                setDefaultAvatar();
             } else {
                 imageViewAvatar.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getLarge());
             }
@@ -135,6 +132,24 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         loadHousehold();
+    }
+
+    private void setDefaultAvatar() {
+        if (singleUser.getGender().equals("M")) {
+
+            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                imageViewAvatar.setImageResource(R.drawable.image_avatar_6);
+            } else {
+                imageViewAvatar.setImageResource(R.drawable.image_avatar_4);
+            }
+        } else {
+
+            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                imageViewAvatar.setImageResource(R.drawable.image_avatar_8);
+            } else {
+                imageViewAvatar.setImageResource(R.drawable.image_avatar_7);
+            }
+        }
     }
 
     private void loadHousehold() {

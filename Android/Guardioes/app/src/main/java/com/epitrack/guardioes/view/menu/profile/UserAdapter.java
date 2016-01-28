@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view.menu.profile;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -184,7 +186,15 @@ public class UserAdapter extends ArrayAdapter<User> {
                     }
                 } else {
                     Uri uri = Uri.parse(user.getPicture());
-                    viewHolder.imageViewImage.setImageURI(uri);
+                    File file = new File(user.getPicture());
+
+                    if (!file.exists()) {
+                        viewHolder.imageViewImage.setImageURI(uri);
+                        Drawable drawable = viewHolder.imageViewImage.getDrawable();
+                        viewHolder.imageViewImage.setImageDrawable(drawable);
+                    } else {
+                        viewHolder.imageViewImage.setImageURI(uri);
+                    }
                 }
             } catch (Exception e) {
                 user.setPicture("0");
