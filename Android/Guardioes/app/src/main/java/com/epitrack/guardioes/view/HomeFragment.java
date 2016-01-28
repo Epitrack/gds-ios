@@ -5,11 +5,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +36,7 @@ import com.epitrack.guardioes.view.tip.TipActivity;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -94,6 +97,7 @@ public class HomeFragment extends BaseFragment {
         String picture = singleUser.getPicture();
 
         if (singleUser.getPicture().length() > 2) {
+
             Uri uri = Uri.parse(singleUser.getPicture());
 
             DisplayMetrics metrics = getResources().getDisplayMetrics();
@@ -116,7 +120,19 @@ public class HomeFragment extends BaseFragment {
             }
             imageViewPhoto.getLayoutParams().width = width;
             imageViewPhoto.getLayoutParams().height = height;
-            imageViewPhoto.setImageURI(uri);
+
+            File file = new File(singleUser.getPicture());
+
+            if (!file.exists()) {
+                imageViewPhoto.setImageURI(uri);
+                Drawable drawable = imageViewPhoto.getDrawable();
+                imageViewPhoto.setImageDrawable(drawable);
+
+            } else {
+                imageViewPhoto.setImageURI(uri);
+
+            }
+
         } else {
 
             if (singleUser.getPicture().equals("")) {
@@ -124,24 +140,27 @@ public class HomeFragment extends BaseFragment {
             }
 
             if (Integer.parseInt(singleUser.getPicture()) == 0) {
-
-                if (singleUser.getGender().equals("M")) {
-
-                    if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
-                        imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
-                    } else {
-                        imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
-                    }
-                } else {
-
-                    if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
-                        imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
-                    } else {
-                        imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
-                    }
-                }
+                setDefaultAvatar();
             } else {
                 imageViewPhoto.setImageResource(Avatar.getBy(Integer.parseInt(singleUser.getPicture())).getLarge());
+            }
+        }
+    }
+
+    private void setDefaultAvatar() {
+        if (singleUser.getGender().equals("M")) {
+
+            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                imageViewPhoto.setImageResource(R.drawable.image_avatar_6);
+            } else {
+                imageViewPhoto.setImageResource(R.drawable.image_avatar_4);
+            }
+        } else {
+
+            if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {
+                imageViewPhoto.setImageResource(R.drawable.image_avatar_8);
+            } else {
+                imageViewPhoto.setImageResource(R.drawable.image_avatar_7);
             }
         }
     }
