@@ -112,10 +112,13 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
             File file = new File(singleUser.getPicture());
 
             if (!file.exists()) {
-                //setDefaultAvatar();
                 imageViewAvatar.setImageURI(uri);
                 Drawable drawable = imageViewAvatar.getDrawable();
                 imageViewAvatar.setImageDrawable(drawable);
+
+                if (drawable == null) {
+                    setDefaultAvatar();
+                }
             } else {
                 imageViewAvatar.setImageURI(uri);
             }

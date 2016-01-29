@@ -192,6 +192,24 @@ public class UserAdapter extends ArrayAdapter<User> {
                         viewHolder.imageViewImage.setImageURI(uri);
                         Drawable drawable = viewHolder.imageViewImage.getDrawable();
                         viewHolder.imageViewImage.setImageDrawable(drawable);
+
+                        if (drawable == null) {
+                            if (user.getGender().equals("M")) {
+
+                                if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_6);
+                                } else {
+                                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_4);
+                                }
+                            } else {
+
+                                if (user.getRace().equals("branco") || user.getRace().equals("amarelo")) {
+                                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_8);
+                                } else {
+                                    viewHolder.imageViewImage.setImageResource(R.drawable.image_avatar_small_7);
+                                }
+                            }
+                        }
                     } else {
                         viewHolder.imageViewImage.setImageURI(uri);
                     }

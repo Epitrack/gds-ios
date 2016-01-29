@@ -128,6 +128,9 @@ public class HomeFragment extends BaseFragment {
                 Drawable drawable = imageViewPhoto.getDrawable();
                 imageViewPhoto.setImageDrawable(drawable);
 
+                if (drawable == null) {
+                    setDefaultAvatar();
+                }
             } else {
                 imageViewPhoto.setImageURI(uri);
 

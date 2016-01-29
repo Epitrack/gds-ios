@@ -351,6 +351,24 @@ public class UserActivity extends BaseAppCompatActivity {
                                             Drawable drawable = imageViewImage.getDrawable();
                                             imageViewImage.setBackground(drawable);
                                             imageViewImage.setImageResource(R.drawable.mask);
+
+                                            if (drawable == null) {
+                                                imageViewImage.setImageResource(R.drawable.mask);
+                                                if (gender.equals("M")) {
+                                                    if (race.equals("branco") || race.equals("amarelo")) {
+                                                        imageViewImage.setBackgroundResource(R.drawable.image_avatar_6);
+                                                    } else {
+                                                        imageViewImage.setBackgroundResource(R.drawable.image_avatar_4);
+                                                    }
+                                                } else {
+
+                                                    if (race.equals("branco") || race.equals("amarelo")) {
+                                                        imageViewImage.setBackgroundResource(R.drawable.image_avatar_8);
+                                                    } else {
+                                                        imageViewImage.setBackgroundResource(R.drawable.image_avatar_7);
+                                                    }
+                                                }
+                                            }
                                         }
                                     } else {
                                         imageViewImage.setBackgroundResource(Avatar.getBy(Integer.parseInt(picture)).getSmall());
