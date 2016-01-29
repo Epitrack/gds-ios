@@ -10,7 +10,9 @@
 #import "Phones.h"
 #import <Google/Analytics.h>
 
-@interface DetailPhoneViewController ()
+@interface DetailPhoneViewController (){
+    Phones *phones;
+}
 
 @end
 
@@ -21,12 +23,13 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Dicas de Saúde";
     
-    Phones *phones = [Phones getInstance];
+    phones = [Phones getInstance];
     
     self.lbBody.text = phones.lbBody;
     self.lbDetailBody.text = phones.lbDetailBody;
     self.lbHeader.text = phones.lbHeader;
     self.imgDetail.image = [UIImage imageNamed:phones.imgDetail];
+    self.lbPhone.text = phones.lbPhone;
     
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
                                 initWithTitle:@""
@@ -69,31 +72,15 @@
                                                            label:@"Show phone"
                                                            value:nil] build]];
     
-    NSString *text;
-    
-    if ([self.lbBody.text isEqualToString:@"SAMU"]) {
-        text = @"Ligar para o SAMU";
-    } else if ([self.lbBody.text isEqualToString:@"Polícia Militar"]) {
-        text = @"Ligar para o Polícia Militar";
-    } else if ([self.lbBody.text isEqualToString:@"Bombeiros"]) {
-        text = @"Ligar para o Polícia Bombeiros";
-    } else if ([self.lbBody.text isEqualToString:@"Defesa Civil"]) {
-        text = @"Ligar para o Polícia Defesa Civil";
-    }
+    NSString *text = [NSString stringWithFormat:@"Ligar para o %@", phones.lbPhone];
     
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:text preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button YES");
-        if ([self.lbBody.text isEqualToString:@"SAMU"]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:192"]];
-        } else if ([self.lbBody.text isEqualToString:@"Polícia Militar"]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:190"]];
-        } else if ([self.lbBody.text isEqualToString:@"Bombeiros"]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:193"]];
-        } else if ([self.lbBody.text isEqualToString:@"Defesa Civil"]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:08006440199"]];
-        }
+        
+        NSString *tel = [NSString stringWithFormat:@"tel:%@", phones.lbPhone];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:tel]];
     }];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Não" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button NO");

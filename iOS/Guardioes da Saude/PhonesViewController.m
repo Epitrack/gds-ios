@@ -53,11 +53,11 @@
 - (void) loadPhones {
     
     phones = [[NSMutableArray alloc] init];
+    [phones addObject:@"SUS"];
     [phones addObject:@"SAMU"];
     [phones addObject:@"Polícia Militar"];
     [phones addObject:@"Bombeiros"];
     [phones addObject:@"Defesa Civil"];
-    [phones addObject:@"SUS"];
 }
 
 /*
@@ -126,7 +126,13 @@
     [self.tableViewPhones deselectRowAtIndexPath:indexPath animated:NO];
     
     Phones *phonesLocal = [Phones getInstance];
+    
     if (indexPath.row == 0) {
+        phonesLocal.lbBody = @"SUS";
+        phonesLocal.lbDetailBody = @"";
+        phonesLocal.lbPhone = @"136";
+        phonesLocal.imgDetail = @"iconSUS";
+    }else if (indexPath.row == 1) {
         //text = @"Ligag para o SAMU";
         
         phonesLocal.lbHeader = @"SAMU";
@@ -134,31 +140,26 @@
         phonesLocal.lbDetailBody = @"Serviço de Atendimento Médico de Urgência";
         phonesLocal.lbPhone = @"192";
         phonesLocal.imgDetail = @"iconSamu.png";
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.row == 2) {
         //text = @"Ligar para a Polícia Militar";
         phonesLocal.lbHeader = @"Polícia Militar";
         phonesLocal.lbBody = @"Polícia Militar";
         phonesLocal.lbDetailBody = @"";
-        phonesLocal.lbPhone = @"192";
+        phonesLocal.lbPhone = @"190";
         phonesLocal.imgDetail = @"iconPM.png";
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == 3) {
         //text = @"Ligar para os Bombeiros";
         phonesLocal.lbHeader = @"Bombeiros";
         phonesLocal.lbBody = @"Bombeiros";
         phonesLocal.lbDetailBody = @"";
-        phonesLocal.lbPhone = @"192";
+        phonesLocal.lbPhone = @"193";
         phonesLocal.imgDetail = @"iconBombeiros.png";
-    } else if (indexPath.row == 3) {
+    } else if (indexPath.row == 4) {
         //text = @"Ligar para a Defesa Civil";        phones.lbHeader = @"Defesa Civil";
         phonesLocal.lbBody = @"Defesa Civil";
         phonesLocal.lbDetailBody = @"";
         phonesLocal.lbPhone = @"192";
         phonesLocal.imgDetail = @"iconDefesacivil.png";
-    } else if (indexPath.row == 4) {
-        phonesLocal.lbBody = @"SUS";
-        phonesLocal.lbDetailBody = @"";
-        phonesLocal.lbPhone = @"136";
-        phonesLocal.imgDetail = @"iconSUS";
     }
     
     DetailPhoneViewController *detailPhoneViewController = [[DetailPhoneViewController alloc] init];
