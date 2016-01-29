@@ -59,6 +59,8 @@
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Emergency Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)didReceiveMemoryWarning {
