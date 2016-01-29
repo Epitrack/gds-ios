@@ -21,6 +21,9 @@
 #import <Google/Analytics.h>
 @import GoogleMaps;
 
+NSString *const kPreferencesVersionKey = @"preferenceVersionKey";
+NSString *const kCurrentVersionPreferences = @"001";
+
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
 
 @end
@@ -48,6 +51,8 @@ NSUserDefaults *preferences;
     SWRevealViewController *revealController;
     
     preferences = [NSUserDefaults standardUserDefaults];
+    
+    [self checkPreferencesVersion:preferences];
     
     if ([preferences objectForKey:kUserTokenKey] != nil) {
         HomeViewController *frontViewController = [[HomeViewController alloc] init];
@@ -101,6 +106,22 @@ NSUserDefaults *preferences;
     [Fabric with:@[[Twitter sharedInstance]]];
     
     return YES;
+}
+
+- (void)checkPreferencesVersion: (NSUserDefaults *) preferences{
+    NSString *version = [preferences objectForKey:kPreferencesVersionKey];
+    if (version == nil || ![version isEqualToString:kCurrentVersionPreferences]) {
+        //Clean preferences
+        [preferences setValue:nil forKey:kUserTokenKey];
+        [preferences setValue:nil forKey:kAppTokenKey];
+        [preferences setValue:nil forKey:kPictureKey];
+        [preferences setValue:nil forKey:kNickKey];
+        
+        //Set current version
+        [preferences setValue:kCurrentVersionPreferences forKey:kPreferencesVersionKey];
+        
+        [preferences synchronize];
+    }
 }
 
 - (void)signIn:(GIDSignIn *)signIn
