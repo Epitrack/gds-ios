@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -41,6 +43,10 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.Scopes;
@@ -88,7 +94,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
     //Google
     private static final int RC_SIGN_IN = 0;
     private GoogleApiClient mGoogleApiClient;
-    private static final int PROFILE_PIC_SIZE = 400;
+    private GoogleSignInOptions mGoogleSignInOptions;
     private ConnectionResult mConnectionResult;
 
     /**
@@ -179,17 +185,32 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                     .setAction("Google Button")
                     .build());
 
-            buttonGoogle.setOnClickListener(this);
+            // Configure sign-in to request the user's ID, email address, and basic
+            // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+            mGoogleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestEmail()
+                    .requestId()
+                    .requestProfile()
+                    .build();
+
             mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
+                    .addApi(Auth.GOOGLE_SIGN_IN_API, mGoogleSignInOptions)
+                    .build();
+
+            buttonGoogle.setScopes(mGoogleSignInOptions.getScopeArray());
+            buttonGoogle.setOnClickListener(this);
+            /*mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
                     .addOnConnectionFailedListener(this)
                     .addApi(Plus.API)
                     .addScope(new Scope(Scopes.PROFILE))
                     .addScope(new Scope(Scopes.EMAIL))
                     .addScope(Plus.SCOPE_PLUS_LOGIN)
-                    .build();
+                    .build();*/
 
-            buttonGoogle.callOnClick();
+            //buttonGoogle.callOnClick();
+            signIn();
         } else if (modeSociaLogin == Constants.Bundle.FACEBOOK) {
 
             mTracker.send(new HitBuilders.EventBuilder()
@@ -200,81 +221,13 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             FacebookSdk.sdkInitialize(getApplicationContext());
             callbackManager = CallbackManager.Factory.create();
 
-            LoginManager.getInstance().logInWithReadPermissions(SocialLoginActivity.this, Arrays.asList("public_profile", "email", "user_birthday"));
+            LoginManager.getInstance().logInWithReadPermissions(SocialLoginActivity.this, Arrays.asList("public_profile", "email"));
             loginFacebook();
-
-            //if (AccessToken.getCurrentAccessToken() != null) {
-            //    userExistSocial(AccessToken.getCurrentAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
-            //}
-
-            /*buttonFaceBook.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday"));
-            buttonFaceBook.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-                @Override
-                public void onSuccess(final LoginResult loginResult) {
-
-                    GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-                        @Override
-                        public void onCompleted(JSONObject object, GraphResponse response) {
-
-                            JSONObject jsonObject = response.getJSONObject();
-
-                            try {
-
-                                String user = jsonObject.getString("name");
-                                String gender = jsonObject.getString("gender");
-                                if (gender.equals("male")) {
-                                    singleUser.setGender("M");
-                                } else {
-                                    singleUser.setGender("F");
-                                }
-                                singleUser.setFb(loginResult.getAccessToken().getUserId());
-                                singleUser.setNick(user);
-                                userExistSocial(loginResult.getAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    });
-                    request.executeAsync();
-                }
-
-                @Override
-                public void onCancel() {
-                    //executeSocialLogin(true);
-                    new DialogBuilder(SocialLoginActivity.this).load()
-                            .title(R.string.attention)
-                            .content(R.string.facebook_cancel)
-                            .positiveText(R.string.ok)
-                            .callback(new MaterialDialog.ButtonCallback() {
-                                @Override
-                                public void onPositive(final MaterialDialog dialog) {
-                                    onBackPressed();
-                                }
-                            }).show();
-                }
-
-                @Override
-                public void onError(FacebookException exception) {
-                    //executeSocialLogin(true);
-                    new DialogBuilder(SocialLoginActivity.this).load()
-                            .title(R.string.attention)
-                            .content(R.string.facebook_error)
-                            .positiveText(R.string.ok)
-                            .callback(new MaterialDialog.ButtonCallback() {
-                               @Override
-                               public void onPositive(final MaterialDialog dialog) {
-                                   onBackPressed();
-                               }
-                           }).show();
-               }
-           });*/
-
-            //buttonFaceBook.callOnClick();
         }
     }
 
     private void loginFacebook() {
-        //buttonFaceBook.setReadPermissions(Arrays.asList("public_profile", "email", "user_birthday"));
+        buttonFaceBook.setReadPermissions(Arrays.asList("public_profile", "email"));
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(final LoginResult loginResult) {
@@ -288,6 +241,12 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                         try {
 
                             String user = jsonObject.getString("name");
+                            try {
+                                singleUser.setEmail(object.getString("email"));
+                            } catch (Exception ex) {
+
+                            }
+
                             singleUser.setFb(loginResult.getAccessToken().getUserId());
                             singleUser.setNick(user);
                             userExistSocial(loginResult.getAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
@@ -319,7 +278,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                 //executeSocialLogin(true);
                 new DialogBuilder(SocialLoginActivity.this).load()
                         .title(R.string.attention)
-                        .content(R.string.facebook_error)
+                        .content(exception.getMessage())
                         .positiveText(R.string.ok)
                         .callback(new MaterialDialog.ButtonCallback() {
                             @Override
@@ -343,7 +302,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
         super.onActivityResult(requestCode, resultCode, data);
 
         if (modeSociaLogin == Constants.Bundle.GOOGLE) {
-            if (requestCode == RC_SIGN_IN) {
+            /*if (requestCode == RC_SIGN_IN) {
                 if (requestCode != RESULT_OK) {
                     mSignInClicked = false;
                 }
@@ -353,11 +312,77 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                 if (!mGoogleApiClient.isConnecting()) {
                     mGoogleApiClient.connect();
                 }
+            }*/
+            // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+            if (requestCode == RC_SIGN_IN) {
+                GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+                handleSignInResult(result);
             }
+
         } else if (modeSociaLogin == Constants.Bundle.FACEBOOK) {
             callbackManager.onActivityResult(requestCode, resultCode, data);
         } else if (modeSociaLogin == Constants.Bundle.TWITTER) {
             buttonTwitter.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    private void signIn() {
+        try {
+            Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+            startActivityForResult(signInIntent, RC_SIGN_IN);
+        } catch (Exception e) {
+            new DialogBuilder(SocialLoginActivity.this).load()
+                    .title(R.string.attention)
+                    .content(e.getMessage())
+                    .positiveText(R.string.ok)
+                    .callback(new MaterialDialog.ButtonCallback() {
+                        @Override
+                        public void onPositive(final MaterialDialog dialog) {
+                            onBackPressed();
+                        }
+                    }).show();
+        }
+    }
+
+    private void handleSignInResult(GoogleSignInResult result) {
+        if (result.isSuccess()) {
+            // Signed in successfully, show authenticated UI.
+            //GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            GoogleSignInAccount acct = result.getSignInAccount();
+            assert acct != null;
+            String personName = acct.getDisplayName();
+            String personEmail = acct.getEmail();
+            String personId = acct.getId();
+            //Uri personPhoto = acct.getPhotoUrl();
+            int genderInt = 0;//0 for male, and 1 for female
+
+            updateUI(true);
+            singleUser.setGl(personId);
+            singleUser.setEmail(personEmail);
+            singleUser.setPassword(personEmail);
+            singleUser.setNick(personName);
+
+            if (genderInt == 0) {
+                singleUser.setGender("M");
+            } else {
+                singleUser.setGender("F");
+            }
+
+            userExistSocial(personId, Constants.Bundle.GOOGLE);
+
+        } else {
+            // Signed out, show unauthenticated UI.
+            updateUI(false);
+            new DialogBuilder(SocialLoginActivity.this).load()
+                    .title(R.string.attention)
+                    .content(R.string.google_access_error)
+                    .positiveText(R.string.ok)
+                    .callback(new MaterialDialog.ButtonCallback() {
+                        @Override
+                        public void onPositive(final MaterialDialog dialog) {
+                            onBackPressed();
+                        }
+                    }).show();
         }
     }
 
@@ -366,6 +391,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
 
             if (mGoogleApiClient.isConnected()) {
                 Person person = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
+
 
                 if (person != null) {
 
@@ -406,7 +432,8 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_google:
-                signInWithGplus();
+                //signInWithGplus();
+                signIn();
                 break;
         }
     }

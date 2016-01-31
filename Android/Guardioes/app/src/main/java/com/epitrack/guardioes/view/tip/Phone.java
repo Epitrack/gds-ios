@@ -8,11 +8,12 @@ import com.epitrack.guardioes.view.IMenu;
  */
 public enum Phone implements IMenu {
 
-    EMERGENCY       (1, R.string.emergency, ""),
-    POLICE          (2, R.string.police, ""),
-    FIREMAN         (3, R.string.fireman, ""),
-    DEFENSE         (4, R.string.defense, ""),
-    SUS            (5, R.string.sus, "");
+    SUS             (1, R.string.sus, ""),
+    EMERGENCY       (2, R.string.emergency, ""),
+    POLICE          (3, R.string.police, ""),
+    FIREMAN         (4, R.string.fireman, ""),
+    DEFENSE         (5, R.string.defense, "");
+
 
     private final int id;
     private final int name;
