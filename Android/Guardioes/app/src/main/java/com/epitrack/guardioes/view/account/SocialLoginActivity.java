@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -369,13 +370,12 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             }
 
             userExistSocial(personId, Constants.Bundle.GOOGLE);
-
         } else {
             // Signed out, show unauthenticated UI.
             updateUI(false);
             new DialogBuilder(SocialLoginActivity.this).load()
                     .title(R.string.attention)
-                    .content(R.string.google_access_error)
+                    .content("status: " + result.getStatus()  + "isSuccess: " + result.isSuccess())
                     .positiveText(R.string.ok)
                     .callback(new MaterialDialog.ButtonCallback() {
                         @Override
@@ -694,5 +694,12 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
         }
 
         return strReturn;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+
+        onBackPressed();
+        return true;
     }
 }
