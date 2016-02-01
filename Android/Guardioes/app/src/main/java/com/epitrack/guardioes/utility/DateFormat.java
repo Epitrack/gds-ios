@@ -1,5 +1,8 @@
 package com.epitrack.guardioes.utility;
 
+import com.epitrack.guardioes.view.menu.profile.InterestActivity;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -44,16 +47,29 @@ public final class DateFormat {
 
     public static int getDateDiff(String date) {
 
-        SimpleDateFormat userFormat = new SimpleDateFormat("yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
+        //int year = calendar.get(Calendar.YEAR);
 
         Date userDate = null;
+        Date today = null;
         int diffDate = -1;
 
         try {
-            userDate = userFormat.parse(date);
-            diffDate = year - Integer.parseInt(userFormat.format(userDate).toString());
+            userDate = format.parse(date);
+            today = CalendarDay.today().getDate();
+            //today = format.parse(today.toString());
+
+            long diff = today.getTime() - userDate.getTime();
+
+            //long diffSeconds = diff / 1000 % 60;
+            //long diffMinutes = diff / (60 * 1000) % 60;
+            //long diffHours = diff / (60 * 60 * 1000) % 24;
+            long diffDays = diff / (24 * 60 * 60 * 1000);
+            long diffYears = diffDays / 365;
+            diffDate = ((int) diffYears);
+
+            //diffDate = year - Integer.parseInt(userFormat.format(userDate).toString());
         } catch (ParseException e) {
             e.printStackTrace();
         }

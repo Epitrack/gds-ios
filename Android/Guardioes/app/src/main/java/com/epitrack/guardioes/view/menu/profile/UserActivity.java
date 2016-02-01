@@ -126,7 +126,7 @@ public class UserActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.user);
 
-        if (newMenber) {
+        if (mainMember || socialNew) {
             editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
         }
 
