@@ -8,6 +8,7 @@
 
 #import "TipsRequester.h"
 #import "User.h"
+#import "Constants.h"
 #import <MapKit/MapKit.h>
 
 @implementation TipsRequester
@@ -15,7 +16,7 @@
 - (void)loadUpasOnStart:(void (^)())onStart andOnSuccess:(void (^)(NSArray *))onSuccess andOnError:(void(^)(NSError *))onError{
     User *user = [User getInstance];
     
-    [self doGet:@"http://api.guardioesdasaude.org/content/upas.json"
+    [self doGet:[Url stringByAppendingString:@"/content/upas.json"]
          header:@{@"app_token": user.app_token,
                   @"user_token": user.user_token}
       parameter:nil

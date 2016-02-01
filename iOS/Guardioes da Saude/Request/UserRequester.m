@@ -362,7 +362,7 @@
     }
     
     
-    [self doPost:@"http://api.guardioesdasaude.org/user/update"
+    [self doPost:[Url stringByAppendingString:@"/user/update"]
           header:@{@"user_token": user.user_token, @"app_token": user.app_token}
        parameter:params
            start:^(void){
@@ -539,7 +539,7 @@
                    andOnSuccess:(void (^)())onSuccess
                      andOnError:(void (^)(NSError *))onError{
     
-    [self doPost:@"http://api.guardioesdasaude.org/user/forgot-password"
+    [self doPost:[Url stringByAppendingString:@"/user/forgot-password"]
           header:@{}
        parameter:@{@"email":email}
            start:^{
@@ -563,7 +563,7 @@
               andOnSuccess:(void (^)())onSuccess
                 andOnError:(void (^)(NSError *))onError{
     
-    [self doPost:@"http://api.guardioesdasaude.org/email/log"
+    [self doPost:[Url stringByAppendingString:@"/email/log"]
           header:@{@"user_token": [User getInstance].user_token}
        parameter:@{@"title":title,
                    @"text": text}
