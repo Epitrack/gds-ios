@@ -42,5 +42,10 @@
 - (IBAction)btn7Action:(id)sender;
 - (IBAction)btn11Action:(id)sender;
 - (IBAction)btn12Action:(id)sender;
+- (IBAction)btn13Action:(id)sender;
+- (IBAction)btn14Action:(id)sender;
+- (IBAction)btn15Action:(id)sender;
+- (IBAction)btn16Action:(id)sender;
+- (IBAction)btn17Action:(id)sender;
 
 @end

@@ -153,6 +153,26 @@
     [self setAvatar:@"12"];
 }
 
+- (IBAction)btn13Action:(id)sender {
+    [self setAvatar:@"13"];
+}
+
+- (IBAction)btn14Action:(id)sender {
+    [self setAvatar:@"14"];
+}
+
+- (IBAction)btn15Action:(id)sender {
+    [self setAvatar:@"15"];
+}
+
+- (IBAction)btn16Action:(id)sender {
+    [self setAvatar:@"16"];
+}
+
+- (IBAction)btn17Action:(id)sender {
+    [self setAvatar:@"17"];
+}
+
 - (IBAction)btn3Action:(id)sender {
     [self setAvatar:@"3"];
 }

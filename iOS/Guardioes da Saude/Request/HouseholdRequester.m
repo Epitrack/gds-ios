@@ -192,7 +192,7 @@
                         onSuccess: (void (^)(NSMutableArray *households)) success
                            onFail: (void (^)(NSError * erro)) failure{
     NSString *idUSer = user.idUser;
-    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/user/household/%@", idUSer];
+    NSString *url = [NSString stringWithFormat: @"%@/user/household/%@", Url, idUSer];
     
     AFHTTPRequestOperationManager *manager;
     manager = [AFHTTPRequestOperationManager manager];
@@ -258,7 +258,7 @@
         [params setValue:household.email forKey:@"email"];
     }
     
-    [self doPost:@"http://api.guardioesdasaude.org/household/update"
+    [self doPost:[Url stringByAppendingString:@"/household/update"]
           header:@{@"user_token": user.user_token, @"app_token": user.app_token}
        parameter:params
            start:^(void){
@@ -290,7 +290,7 @@
         [params setValue:household.email forKey:@"email"];
     }
     
-    [self doPost:@"http://api.guardioesdasaude.org/household/create"
+    [self doPost:[Url stringByAppendingString:@"/household/create"]
           header:@{@"app_token": user.user_token}
        parameter:params
            start:^(void){
@@ -307,7 +307,7 @@
                  andOnSuccess:(void (^)())onSuccess
                    andOnError:(void (^)(NSError *))onError{
     User *user = [User getInstance];
-    NSString *url = [NSString stringWithFormat: @"http://api.guardioesdasaude.org/household/delete/%@?client=api", idHousehold];
+    NSString *url = [NSString stringWithFormat: @"%@/household/delete/%@?client=api", Url, idHousehold];
     [self doGet:url
          header:@{@"user_token": user.user_token,
                   @"app_token": user.app_token}

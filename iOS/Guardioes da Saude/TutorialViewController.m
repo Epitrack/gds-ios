@@ -15,6 +15,7 @@
 #import "AFNetworking/AFNetworking.h"
 #import "HomeViewController.h"
 #import <Google/Analytics.h>
+#import "Constants.h"
 
 @interface TutorialViewController () {
     
@@ -217,7 +218,7 @@
     manager = [AFHTTPRequestOperationManager manager];
     [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
     [manager.requestSerializer setValue:userToken forHTTPHeaderField:@"user_token"];
-    [manager GET:@"http://api.guardioesdasaude.org/user/lookup/"
+    [manager GET:[Url stringByAppendingString:@"/user/lookup/"]
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              

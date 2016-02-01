@@ -20,6 +20,7 @@
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
+#import "MBProgressHUD.h"
 
 @interface SelectTypeLoginViewController () {
     
@@ -118,6 +119,8 @@
 - (void)signIn:(GIDSignIn *)signIn
     didSignInForUser:(GIDGoogleUser *)userGL
      withError:(NSError *)error {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
     if (!error) {
         [self checkSocialLoginWithToken:userGL.userID andType:GdsGoogle];
     }
@@ -137,6 +140,9 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                                           action:@"button_login_google"
                                                            label:@"Login with Google"
                                                            value:nil] build]];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     //GOOGLE
     [[GIDSignIn sharedInstance] signIn];
 }
@@ -151,7 +157,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                                           action:@"button_login_facebook"
                                                            label:@"Login with Facebook"
                                                            value:nil] build]];
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login
@@ -159,6 +165,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
      fromViewController:self
      handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          if (error) {
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
+             
              UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Erro ao logar com o Facebook." preferredStyle:UIAlertControllerStyleActionSheet];
              UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                  NSLog(@"You pressed button OK");
@@ -166,6 +174,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
              [alert addAction:defaultAction];
              [self presentViewController:alert animated:YES completion:nil];
          } else if (result.isCancelled) {
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
+             
              UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação cancelada." preferredStyle:UIAlertControllerStyleActionSheet];
              UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                  NSLog(@"You pressed button OK");
@@ -173,6 +183,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
              [alert addAction:defaultAction];
              [self presentViewController:alert animated:YES completion:nil];
          } else {
+             [MBProgressHUD hideHUDForView:self.view animated:YES];
              if ([FBSDKAccessToken currentAccessToken])
              {
                  [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
@@ -204,13 +215,18 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                                            label:@"Login with Twitter"
                                                            value:nil] build]];
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [[Twitter sharedInstance] logInWithCompletion:^(TWTRSession *session, NSError *error) {
         if (session) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             NSLog(@"signed in as %@", [session userName]);
             user.nick = [session userName];
             user.tw = [session userID];
             [self checkSocialLoginWithToken:user.tw andType: GdsTwitter];
         } else {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Erro ao logar com o Twitter." preferredStyle:UIAlertControllerStyleActionSheet];
             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                 NSLog(@"You pressed button OK");
