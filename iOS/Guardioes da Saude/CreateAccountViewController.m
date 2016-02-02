@@ -124,7 +124,7 @@
         [self presentViewController:alert animated:YES completion:nil];
     }else {
         if (self.txtPassword.text.length < 6) {
-            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A senha precisa ter pelo menos 6 carcteres."];
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A senha precisa ter pelo menos 6 caracteres."];
             [self presentViewController:alert animated:YES completion:nil];
         } else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
             UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Suas senhas não estão iguais!"];
