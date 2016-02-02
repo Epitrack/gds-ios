@@ -103,6 +103,7 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
             sendPostRequest.setUrl(Requester.API_URL + "user/lookup/");
             sendPostRequest.setJsonObject(jsonObject);
             sendPostRequest.setMethod(Method.GET);
+            sendPostRequest.setContext(this);
 
             String jsonStr;
             try {
@@ -150,6 +151,9 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
             }
 
         } else {
+            SimpleRequester sendPostRequest = new SimpleRequester();
+            sendPostRequest.setContext(this);
+            sendPostRequest.updateContext();
             validator = new Validator(this);
             validator.setValidationListener(new ValidationHandler());
         }
@@ -206,30 +210,6 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                 .build());
 
         navigateTo(ForgotPasswordActivity.class);
-
-        /*final String[] str = {""};
-        new DialogBuilder(LoginActivity.this).load()
-                .title("E-mail")
-                //.content(R.string.network_disable)
-                .positiveText(R.string.ok)
-                //.inputMaxLength(30, R.color.material_blue_grey_950)
-                .inputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
-                .input("email@exemplo.com", "", new MaterialDialog.InputCallback() {
-                    @Override
-
-                    public void onInput(MaterialDialog dialog, CharSequence input) {
-                        str[0] = input.toString();
-
-                        new DialogBuilder(LoginActivity.this).load()
-                                    .title(R.string.app_name)
-                                    .content(forgotPassword(str[0]))
-                                    .positiveText(R.string.ok)
-                                    .show();
-                    }
-
-
-                }).negativeText("FECHAR")
-                .show();*/
     }
 
 
@@ -245,6 +225,7 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
             sendPostRequest.setUrl(Requester.API_URL + "user/forgot-password");
             sendPostRequest.setJsonObject(jsonObject);
             sendPostRequest.setMethod(Method.POST);
+            sendPostRequest.setContext(this);
 
             String jsonStr = sendPostRequest.execute(sendPostRequest).get();
 
@@ -346,9 +327,6 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                 .build());
 
         validator.validate();
-
-        /*navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                                       Intent.FLAG_ACTIVITY_NEW_TASK);*/
     }
 
     private class ValidationHandler implements Validator.ValidationListener {

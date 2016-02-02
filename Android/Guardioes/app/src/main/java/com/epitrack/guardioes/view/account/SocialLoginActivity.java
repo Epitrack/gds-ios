@@ -453,6 +453,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
         SimpleRequester simpleRequester = new SimpleRequester();
         simpleRequester.setMethod(Method.GET);
         simpleRequester.setUrl(Requester.API_URL + url + token);
+        simpleRequester.setContext(this);
 
         try {
             String jsonStr = simpleRequester.execute(simpleRequester).get();
@@ -478,6 +479,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                     simpleRequester.setUrl(Requester.API_URL + "user/login");
                     simpleRequester.setJsonObject(jsonObject);
                     simpleRequester.setMethod(Method.POST);
+                    simpleRequester.setContext(this);
 
                     jsonStr = simpleRequester.execute(simpleRequester).get();
 
