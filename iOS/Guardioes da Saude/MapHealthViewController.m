@@ -103,8 +103,8 @@
     }
     
     
-    [surveyRequester getSurveyByLatitude:longitude
-                            andLongitude:latitude
+    [surveyRequester getSurveyByLatitude:latitude
+                            andLongitude:longitude
                                  onStart:^{
                                      [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                  }
@@ -203,7 +203,6 @@
                 annotationCoord.latitude = surveyLatitude;
                 annotationCoord.longitude = surveyLongitude;
                 
-//                MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
                 MapPinAnnotation *pin = [[MapPinAnnotation alloc] init];
                 pin.coordinate = annotationCoord;
                 pin.isSymptom = isSymptom;
