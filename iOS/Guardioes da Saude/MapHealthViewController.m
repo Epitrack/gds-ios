@@ -276,9 +276,9 @@
                               respiratoria = [diseases[@"respiratoria"] doubleValue];
                               
                               if (totalWithSymptom > 0) {
-                                  diarreica = ((diarreica * 100) / (totalWithSymptom + totalNoSymptom));
-                                  exantemaica = ((exantemaica * 100) / (totalWithSymptom + totalNoSymptom));
-                                  respiratoria = ((respiratoria * 100) / (totalWithSymptom + totalNoSymptom));
+                                  diarreica = ((diarreica * 100) / totalWithSymptom);
+                                  exantemaica = ((exantemaica * 100) / totalWithSymptom);
+                                  respiratoria = ((respiratoria * 100) / totalWithSymptom);
                               }
                               
                               self.lblCity.text = city;
@@ -297,9 +297,9 @@
                               detailMap.totalNoSymptom = [NSString stringWithFormat:@"%d", (int)totalNoSymptom];
                               detailMap.totalWithSymptom = [NSString stringWithFormat:@"%d", (int)totalWithSymptom];
                               
-                              detailMap.diarreica = [NSString stringWithFormat:@"%f", diarreica];
-                              detailMap.exantemaica = [NSString stringWithFormat:@"%f", exantemaica];
-                              detailMap.respiratoria = [NSString stringWithFormat:@"%f", respiratoria];
+                              detailMap.diarreica = [NSString stringWithFormat:@"%.2f", diarreica];
+                              detailMap.exantemaica = [NSString stringWithFormat:@"%.2f", exantemaica];
+                              detailMap.respiratoria = [NSString stringWithFormat:@"%.2f", respiratoria];
                               
                               [self loadDetails];
                               [self loadPieChart];

@@ -16,7 +16,10 @@ NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
     
     onStart();
     
-    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager * manager = [self configRequestOperationManager];
+    
+    [manager.securityPolicy setAllowInvalidCertificates:YES];
+    [manager.securityPolicy setValidatesDomainName:NO];
     
     for (NSString * key in headerMap) {
         
@@ -48,7 +51,7 @@ NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
     
     onStart();
     
-    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager * manager = [self configRequestOperationManager];
     
     manager.responseSerializer = serializer;
     
@@ -81,7 +84,7 @@ NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
     
     onStart();
     
-    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager * manager = [self configRequestOperationManager];
     
     for (NSString * key in headerMap) {
         
@@ -113,7 +116,7 @@ NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
     
     onStart();
     
-    AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager * manager = [self configRequestOperationManager];
     
     manager.responseSerializer = serializer;
     
@@ -139,6 +142,14 @@ NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
 
 + (bool) isConnected{
     return [AFNetworkReachabilityManager sharedManager].reachable;
+}
+
+- (AFHTTPRequestOperationManager *) configRequestOperationManager{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager.securityPolicy setAllowInvalidCertificates:YES];
+    [manager.securityPolicy setValidatesDomainName:NO];
+    
+    return manager;
 }
 
 @end
