@@ -505,6 +505,7 @@
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* LocationUtil.m */; };
 		CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB8610071C3B4BBF009E63DF /* myhouse.gpx */; };
+		CB8FBADA1C60E1BC00696F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB8FBADC1C60E1BC00696F17 /* Localizable.strings */; };
 		CB9387431C491AE900446842 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9387421C491AE900446842 /* ViewUtil.m */; };
 		CBA0E52A1C5FA5EC0086315B /* img_profile13.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50C1C5FA5EC0086315B /* img_profile13.png */; };
 		CBA0E52B1C5FA5EC0086315B /* img_profile13@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50D1C5FA5EC0086315B /* img_profile13@2x.png */; };
@@ -1120,6 +1121,10 @@
 		CB4E686E1C39B48700563FB7 /* LocationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtil.h; sourceTree = "<group>"; };
 		CB4E686F1C39B48700563FB7 /* LocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtil.m; sourceTree = "<group>"; };
 		CB8610071C3B4BBF009E63DF /* myhouse.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = myhouse.gpx; sourceTree = "<group>"; };
+		CB8FBADE1C60E1D500696F17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CB8FBADF1C60E2C900696F17 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		CB8FBAE01C60E2C900696F17 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CB8FBAE11C60E2C900696F17 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CB9387411C491AE900446842 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtil.h; sourceTree = "<group>"; };
 		CB9387421C491AE900446842 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
 		CBA0E50C1C5FA5EC0086315B /* img_profile13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_profile13.png; sourceTree = "<group>"; };
@@ -1453,6 +1458,7 @@
 		528C8AFB1BB82630003CFC91 /* Guardioes da Saude */ = {
 			isa = PBXGroup;
 			children = (
+				CB8FBADC1C60E1BC00696F17 /* Localizable.strings */,
 				CB8610071C3B4BBF009E63DF /* myhouse.gpx */,
 				CB14A0431C5A4CB0007E8070 /* GoogleService-Info.plist */,
 				52E6F0661C1EFC6800C88A08 /* TPKeyboardAvoiding */,
@@ -2013,6 +2019,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 528C8AF01BB82630003CFC91;
 			productRefGroup = 528C8AFA1BB82630003CFC91 /* Products */;
@@ -2192,6 +2199,7 @@
 				52E727831BEA93B800B46945 /* icon_logo_horizontal@2x.png in Resources */,
 				52E727991BEA93B800B46945 /* icon_participeagora@3x.png in Resources */,
 				52E727C31BEA93B800B46945 /* img_profile01@3x.png in Resources */,
+				CB8FBADA1C60E1BC00696F17 /* Localizable.strings in Resources */,
 				52E6F0821C20994400C88A08 /* cardPhones@2x.png in Resources */,
 				52E7276D1BEA93B800B46945 /* icon_facebook.png in Resources */,
 				52E6F09C1C20B18E00C88A08 /* iconPM@2x.png in Resources */,
@@ -2629,6 +2637,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				528C8B061BB82630003CFC91 /* Base */,
+				CB8FBADF1C60E2C900696F17 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -2637,8 +2646,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				528C8B0B1BB82630003CFC91 /* Base */,
+				CB8FBAE01C60E2C900696F17 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CB8FBADC1C60E1BC00696F17 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB8FBADE1C60E1D500696F17 /* en */,
+				CB8FBAE11C60E2C900696F17 /* pt-BR */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
