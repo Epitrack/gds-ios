@@ -26,3 +26,15 @@ DerivedData
 Pods/
 .DS_Store
 .idea
+*.bak
+thumbs.db
+
+App_Data/
+bin/
+obj/
+Bin/
+_ReSharper.*/
+tmp/
+
+*.user
+*.suo
