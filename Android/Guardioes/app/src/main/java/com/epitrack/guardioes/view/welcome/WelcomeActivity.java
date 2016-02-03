@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.request.Method;
+import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.DialogBuilder;
 import com.epitrack.guardioes.utility.NetworkUtility;
@@ -41,6 +44,10 @@ public class WelcomeActivity extends BaseFragmentActivity {
         AnalyticsApplication application = (AnalyticsApplication) getApplication();
         mTracker = application.getDefaultTracker();
         // [END shared_tracker]
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setContext(this);
+        simpleRequester.updateContext();
 
         viewPager.setAdapter(new WelcomePagerAdapter(getSupportFragmentManager(), this, Welcome.values()));
 

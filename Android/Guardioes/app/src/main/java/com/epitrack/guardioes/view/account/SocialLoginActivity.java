@@ -189,6 +189,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             // Configure sign-in to request the user's ID, email address, and basic
             // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
             mGoogleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestIdToken(SocialLoginActivity.this.getResources().getString(R.string.google_client_id))
                     .requestEmail()
                     .requestId()
                     .requestProfile()

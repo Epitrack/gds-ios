@@ -151,6 +151,27 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void setDefaultAvatar() {
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        int densityDpi = (int) (metrics.density * 160f);
+        int width = 0;
+        int height = 0;
+
+        if (densityDpi == DisplayMetrics.DENSITY_LOW) {
+            width = 90;
+            height = 90;
+        } else if (densityDpi == DisplayMetrics.DENSITY_MEDIUM) {
+            width = 120;
+            height = 120;
+        } else if (densityDpi == DisplayMetrics.DENSITY_HIGH) {
+            width = 180;
+            height = 180;
+        } else if (densityDpi >= DisplayMetrics.DENSITY_XHIGH) {
+            width = 240;
+            height = 240;
+        }
+        imageViewPhoto.getLayoutParams().width = width;
+        imageViewPhoto.getLayoutParams().height = height;
+
         if (singleUser.getGender().equals("M")) {
 
             if (singleUser.getRace().equals("branco") || singleUser.getRace().equals("amarelo")) {

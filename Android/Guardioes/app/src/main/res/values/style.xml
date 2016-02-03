@@ -229,6 +229,7 @@
         <item name="android:textSize">15dp</item>
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 
     <style name="TextHintLight">

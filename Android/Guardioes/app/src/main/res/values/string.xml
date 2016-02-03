@@ -5,6 +5,7 @@
 
     # Common
 
+    <string name="google_client_id">997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com</string>
     <string name="about">Sobre</string>
     <string name="alert">Alertas</string>
     <string name="attention">Atenção</string>
