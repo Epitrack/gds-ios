@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZikaViewController : UIViewController
+@interface ZikaViewController : UIViewController <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *txtContent;
 
 @end
