@@ -44,11 +44,6 @@
     
     user = [User getInstance];
     
-    UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self action:@selector(tapGestureHandler:)];
-    tgr.delegate = self;  //also add <UIGestureRecognizerDelegate> to @interface
-    [self.mapPharmacy addGestureRecognizer:tgr];
-    
     self.mapPharmacy.showsUserLocation = YES;
     self.mapPharmacy.delegate = self;
     
@@ -112,41 +107,6 @@
     [directions calculateDirectionsWithCompletionHandler:
      ^(MKDirectionsResponse *response, NSError *error) {
      }];
-}
-
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
-{
-    MKPolylineRenderer *renderer =
-    [[MKPolylineRenderer alloc] initWithOverlay:overlay];
-    renderer.strokeColor = [UIColor blueColor];
-    renderer.lineWidth = 5.0;
-    return renderer;
-}
-
--(void)showRoute:(MKDirectionsResponse *)response
-{
-    for (MKRoute *route in response.routes)
-    {
-        [self.mapPharmacy
-         addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
-    }
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-    return YES;
-}
-
-- (void)tapGestureHandler:(UITapGestureRecognizer *)tgr {
-    
-    CGPoint touchPoint = [tgr locationInView:self.mapPharmacy];
-    CLLocationCoordinate2D touchMapCoordinate = [self.mapPharmacy convertPoint:touchPoint toCoordinateFromView:self.mapPharmacy];
-    
-    NSLog(@"tapGestureHandler: touchMapCoordinate = %f,%f",
-          touchMapCoordinate.latitude, touchMapCoordinate.longitude);
-
-    SingleLocation *singleLocation = [SingleLocation getInstance];
-    singleLocation.lat = [NSString stringWithFormat:@"%f", touchMapCoordinate.latitude];
-    singleLocation.lon = [NSString stringWithFormat:@"%f", touchMapCoordinate.longitude];
 }
 
 - (void) mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
