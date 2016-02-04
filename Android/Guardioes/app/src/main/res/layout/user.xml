@@ -3,7 +3,8 @@
     xmlns:layout="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_blue">
+    android:background="@drawable/background_blue"
+    >
 
     <TextView
         android:id="@+id/text_view_message"
@@ -128,6 +129,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Ex: 01/01/1981"
                     android:inputType="date" />
+
 
                 <TextView
                     android:layout_width="wrap_content"

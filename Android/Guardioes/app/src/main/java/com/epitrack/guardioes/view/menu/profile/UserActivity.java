@@ -31,6 +31,7 @@ import com.epitrack.guardioes.utility.BitmapUtility;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.utility.Mask;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
@@ -126,11 +127,7 @@ public class UserActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.user);
 
-        if (mainMember || socialNew) {
-            if (socialNew && singleUser.getDob() == "") {
-                editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
-            }
-        }
+        editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
 
         if (mainMember || socialNew) {
             textViewRelationship.setVisibility(View.INVISIBLE);
@@ -463,7 +460,7 @@ public class UserActivity extends BaseAppCompatActivity {
                 .build());
             User user = new User();
 
-            user.setNick(editTextNickname.getText().toString().trim());
+        user.setNick(editTextNickname.getText().toString().trim());
         user.setDob(editTextBirthDate.getText().toString().trim().toLowerCase());
         String gender = spinnerGender.getSelectedItem().toString();
         gender = gender.substring(0, 1);
@@ -515,6 +512,18 @@ public class UserActivity extends BaseAppCompatActivity {
                 jsonObject.put("race", user.getRace());
                 jsonObject.put("relationship", user.getRelationship());
                 jsonObject.put("email", user.getEmail());
+
+                LocationUtility locationUtility;
+                try {
+                    locationUtility = new LocationUtility(getApplicationContext());
+
+                    if (locationUtility.getLocation() != null) {
+                        jsonObject.put("lat", locationUtility.getLatitude());
+                        jsonObject.put("lon", locationUtility.getLongitude());
+                    }
+                } catch (Exception e) {
+
+                }
 
                 if (singleUser.getUri() != null && (user.getNick().equals(singleUser.getNick()))) {
                     jsonObject.put("picture", singleUser.getUri().toString());
@@ -583,6 +592,17 @@ public class UserActivity extends BaseAppCompatActivity {
                     jsonObject.put("tw", singleUser.getTw());
                     jsonObject.put("fb", singleUser.getFb());
                     jsonObject.put("picture", "0");
+
+                    try {
+                        locationUtility = new LocationUtility(getApplicationContext());
+
+                        if (locationUtility.getLocation() != null) {
+                            jsonObject.put("lat", locationUtility.getLatitude());
+                            jsonObject.put("lon", locationUtility.getLongitude());
+                        }
+                    } catch (Exception e) {
+
+                    }
 
                     if (singleUser.getEmail() == null || singleUser.getEmail() == "") {
                         jsonObject.put("email", editTextMail.getText().toString().toLowerCase());

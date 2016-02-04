@@ -169,6 +169,7 @@ public class HomeFragment extends BaseFragment {
             width = 240;
             height = 240;
         }
+
         imageViewPhoto.getLayoutParams().width = width;
         imageViewPhoto.getLayoutParams().height = height;
 
