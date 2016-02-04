@@ -127,11 +127,7 @@ public class UserActivity extends BaseAppCompatActivity {
 
         setContentView(R.layout.user);
 
-        if (mainMember || socialNew) {
-            if (socialNew && singleUser.getDob() == "") {
-                editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
-            }
-        }
+        editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
 
         if (mainMember || socialNew) {
             textViewRelationship.setVisibility(View.INVISIBLE);
