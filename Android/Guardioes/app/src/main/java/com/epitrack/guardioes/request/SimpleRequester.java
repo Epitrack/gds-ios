@@ -2,17 +2,23 @@ package com.epitrack.guardioes.request;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 
 import com.epitrack.guardioes.R;
 import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.utility.Logger;
 import com.epitrack.guardioes.utility.MessageText;
+import com.epitrack.guardioes.utility.SingleContext;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -23,8 +29,20 @@ import java.net.URL;
 
 import java.net.HttpURLConnection;
 import java.net.URLConnection;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.text.SimpleDateFormat;
 import java.util.Objects;
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManagerFactory;
 
 /**
  * @author Miquéias Lopes on 09/09/15.
@@ -64,6 +82,10 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Object, String> 
         this.context = context;
     }
 
+    public Context getContext() {
+        return context;
+    }
+
     public String getStrReturn() {
         return this.strReturn;
     }
@@ -98,15 +120,30 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Object, String> 
     protected String doInBackground(SimpleRequester... params) {
         try {
             publishProgress();
-            //strReturn = SendPostRequest(this.url, this.method, this.jsonObject, this.otherAPI);
-            //return strReturn;
-            return SendPostRequest(this.url, this.method, this.jsonObject, this.otherAPI);
+            SingleContext singleContext = SingleContext.getInstance();
+            Context localContext;
+
+            if (this.context != null) {
+                singleContext.setContext(this.context);
+            }
+
+            localContext = singleContext.getContext();
+
+            return SendPostRequest(this.url, this.method, this.jsonObject, this.otherAPI, localContext);
         } catch (Exception e) {
             return e.getMessage();
         }
     }
 
-    private static String SendPostRequest(String apiUrl, Method method, JSONObject jsonObjSend, boolean otherAPI) throws JSONException, IOException, SimpleRequesterException {
+    public void updateContext() {
+        SingleContext singleContext = SingleContext.getInstance();
+
+        if (!this.context.equals(null)) {
+            singleContext.setContext(this.context);
+        }
+    }
+
+    private static String SendPostRequest(String apiUrl, Method method, JSONObject jsonObjSend, boolean otherAPI, Context context) throws JSONException, IOException, SimpleRequesterException {
 
         URL url;
         String returnStr = "";
@@ -120,9 +157,11 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Object, String> 
 
         if (method == Method.POST) {
 
-            HttpURLConnection conn = null;
+            HttpsURLConnection conn = null;
             byte[] bytes = null;
-            conn = (HttpURLConnection) url.openConnection();
+            conn = (HttpsURLConnection) url.openConnection();
+            //HTTPS
+            conn.setSSLSocketFactory(generateCertificate(context).getSocketFactory());
 
             String body = "";
             if (jsonObjSend != null) {
@@ -150,17 +189,21 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Object, String> 
                 return MessageText.ERROR_SERVER.toString();
             }
 
-
             String convertStreamToString = "";
             if (conn != null) {
                 convertStreamToString = convertStreamToString(conn.getInputStream(), /*HTTP.UTF_8*/"UTF-8");
                 conn.disconnect();
             }
-            returnStr = convertStreamToString;
             return convertStreamToString;
         } else if (method == Method.GET) {
-            url = new URL(apiUrl);
-            URLConnection urlConnection = url.openConnection();
+            //url = new URL(apiUrl);
+            //URLConnection urlConnection = url.openConnection();
+
+            HttpsURLConnection urlConnection;
+            urlConnection = (HttpsURLConnection) url.openConnection();
+            //HTTPS
+            urlConnection.setSSLSocketFactory(generateCertificate(context).getSocketFactory());
+
 
             if (!otherAPI) {
                 urlConnection.setRequestProperty("app_token", singleUser.getApp_token());
@@ -211,5 +254,81 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Object, String> 
         return sb.toString();
     }
 
+    private static SSLContext generateCertificate(Context context) {
 
+        // Load CAs from an InputStream
+        // (could be from a resource or ByteArrayInputStream or ...)
+        CertificateFactory cf = null;
+        try {
+            cf = CertificateFactory.getInstance("X.509");
+        } catch (CertificateException e) {
+            e.printStackTrace();
+        }
+
+        InputStream caInput = null;
+        try {
+
+            caInput = context.getAssets().open("47b83fbefd5092a.crt");
+            //caInput = new BufferedInputStream(new FileInputStream(context.getAssets().open("47b83fbefd5092a.crt")));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Certificate ca = null;
+        try {
+            ca = cf.generateCertificate(caInput);
+            System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
+        } catch (CertificateException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                caInput.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // Create a KeyStore containing our trusted CAs
+        String keyStoreType = KeyStore.getDefaultType();
+        KeyStore keyStore = null;
+        try {
+            keyStore = KeyStore.getInstance(keyStoreType);
+            keyStore.load(null, null);
+            keyStore.setCertificateEntry("ca", ca);
+        } catch (KeyStoreException e) {
+            e.printStackTrace();
+        } catch (CertificateException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Create a TrustManager that trusts the CAs in our KeyStore
+        String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
+        TrustManagerFactory tmf = null;
+        try {
+            tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
+            tmf.init(keyStore);
+        } catch (KeyStoreException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        // Create an SSLContext that uses our TrustManager
+        SSLContext SSLcontext = null;
+        try {
+            SSLcontext = SSLContext.getInstance("TLS");
+            SSLcontext.init(null, tmf.getTrustManagers(), null);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (KeyManagementException e) {
+            e.printStackTrace();
+        }
+
+        return SSLcontext;
+    }
 }

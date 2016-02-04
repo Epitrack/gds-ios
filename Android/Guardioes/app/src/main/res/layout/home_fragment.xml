@@ -15,11 +15,12 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_view_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:src="@drawable/image_avatar_3"
+        android:layout_weight="4"
         />
 
     <TextView
@@ -31,83 +32,93 @@
         android:text="@string/message_hello"
         android:textColor="@android:color/white"
         android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_weight="1"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="5dp">
+        android:background="@drawable/background_home_menu"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:layout_weight="900">
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/background_home_menu" />
-
-        <TextView
-            android:id="@+id/text_view_notice"
-            style="@style/TextHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="25dp"
-            android:drawablePadding="10dp"
-            android:drawableTop="@drawable/icon_notice"
             android:gravity="center"
-            android:text="@string/notice" />
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/text_view_map"
-            style="@style/TextHome"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/text_view_notice"
+                style="@style/TextHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/icon_notice"
+                android:text="@string/notice"
+                android:layout_weight="1"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/text_view_map"
+                style="@style/TextHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/icon_map"
+                android:text="@string/map_health_1"
+                android:layout_weight="1"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="70dp"
-            android:layout_marginTop="20dp"
-            android:drawablePadding="10dp"
-            android:drawableTop="@drawable/icon_map"
+            android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/map_health_1" />
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
-        <TextView
-            android:id="@+id/text_view_tip"
-            style="@style/TextHome"
-            android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/text_view_join"
+                    style="@style/TextHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/icon_join"
+                    android:text="@string/join"
+                    />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="28dp"
-            android:layout_marginLeft="70dp"
-            android:drawablePadding="10dp"
-            android:drawableTop="@drawable/icon_tip"
-            android:gravity="center"
-            android:text="@string/tip_health_1" />
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/text_view_diary"
-            style="@style/TextHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="35dp"
-            android:layout_marginRight="70dp"
-            android:drawablePadding="10dp"
-            android:drawableTop="@drawable/icon_diary"
-            android:gravity="center"
-            android:text="@string/diary_health_1" />
+            <TextView
+                android:id="@+id/text_view_tip"
+                style="@style/TextHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/icon_tip"
+                android:text="@string/tip_health_1"
+                android:layout_weight="1"
+                android:gravity="center"/>
 
-        <TextView
-            android:id="@+id/text_view_join"
-            style="@style/TextHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:drawablePadding="10dp"
-            android:drawableTop="@drawable/icon_join"
-            android:gravity="center"
-            android:text="@string/join" />
+            <TextView
+                android:id="@+id/text_view_diary"
+                style="@style/TextHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/icon_diary"
+                android:text="@string/diary_health_1"
+                android:layout_weight="1"
+                android:gravity="center"/>
 
-    </RelativeLayout>
-
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

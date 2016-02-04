@@ -189,6 +189,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             // Configure sign-in to request the user's ID, email address, and basic
             // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
             mGoogleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestIdToken(SocialLoginActivity.this.getResources().getString(R.string.google_client_id))
                     .requestEmail()
                     .requestId()
                     .requestProfile()
@@ -201,15 +202,6 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
 
             buttonGoogle.setScopes(mGoogleSignInOptions.getScopeArray());
             buttonGoogle.setOnClickListener(this);
-            /*mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .addApi(Plus.API)
-                    .addScope(new Scope(Scopes.PROFILE))
-                    .addScope(new Scope(Scopes.EMAIL))
-                    .addScope(Plus.SCOPE_PLUS_LOGIN)
-                    .build();*/
-
             //buttonGoogle.callOnClick();
             signIn();
         } else if (modeSociaLogin == Constants.Bundle.FACEBOOK) {
@@ -303,23 +295,11 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
         super.onActivityResult(requestCode, resultCode, data);
 
         if (modeSociaLogin == Constants.Bundle.GOOGLE) {
-            /*if (requestCode == RC_SIGN_IN) {
-                if (requestCode != RESULT_OK) {
-                    mSignInClicked = false;
-                }
-
-                mIntentInProgress = false;
-
-                if (!mGoogleApiClient.isConnecting()) {
-                    mGoogleApiClient.connect();
-                }
-            }*/
             // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
             if (requestCode == RC_SIGN_IN) {
                 GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
                 handleSignInResult(result);
             }
-
         } else if (modeSociaLogin == Constants.Bundle.FACEBOOK) {
             callbackManager.onActivityResult(requestCode, resultCode, data);
         } else if (modeSociaLogin == Constants.Bundle.TWITTER) {
@@ -375,7 +355,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             updateUI(false);
             new DialogBuilder(SocialLoginActivity.this).load()
                     .title(R.string.attention)
-                    .content("status: " + result.getStatus()  + "isSuccess: " + result.isSuccess())
+                    .content(R.string.google_access_error)
                     .positiveText(R.string.ok)
                     .callback(new MaterialDialog.ButtonCallback() {
                         @Override
@@ -453,6 +433,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
         SimpleRequester simpleRequester = new SimpleRequester();
         simpleRequester.setMethod(Method.GET);
         simpleRequester.setUrl(Requester.API_URL + url + token);
+        simpleRequester.setContext(this);
 
         try {
             String jsonStr = simpleRequester.execute(simpleRequester).get();
@@ -478,6 +459,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                     simpleRequester.setUrl(Requester.API_URL + "user/login");
                     simpleRequester.setJsonObject(jsonObject);
                     simpleRequester.setMethod(Method.POST);
+                    simpleRequester.setContext(this);
 
                     jsonStr = simpleRequester.execute(simpleRequester).get();
 

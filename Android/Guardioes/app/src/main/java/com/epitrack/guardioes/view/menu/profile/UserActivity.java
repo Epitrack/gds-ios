@@ -127,7 +127,9 @@ public class UserActivity extends BaseAppCompatActivity {
         setContentView(R.layout.user);
 
         if (mainMember || socialNew) {
-            editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
+            if (socialNew && singleUser.getDob() == "") {
+                editTextBirthDate.addTextChangedListener(Mask.insert("##/##/####", editTextBirthDate));
+            }
         }
 
         if (mainMember || socialNew) {
@@ -135,7 +137,7 @@ public class UserActivity extends BaseAppCompatActivity {
             spinnerRelationship.setVisibility(View.INVISIBLE);
         }
 
-        if (newMenber) {
+        if (newMenber || socialNew) {
             textLayoutMail.setVisibility(View.VISIBLE);
             editTextMail.setEnabled(true);
             editTextMail.setVisibility(View.VISIBLE);
@@ -582,7 +584,7 @@ public class UserActivity extends BaseAppCompatActivity {
                     jsonObject.put("fb", singleUser.getFb());
                     jsonObject.put("picture", "0");
 
-                    if (singleUser.getEmail() == null) {
+                    if (singleUser.getEmail() == null || singleUser.getEmail() == "") {
                         jsonObject.put("email", editTextMail.getText().toString().toLowerCase());
                         jsonObject.put("password", editTextMail.getText().toString().toLowerCase());
 
