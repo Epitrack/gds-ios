@@ -27,7 +27,32 @@
                                 action:nil];
     
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+    
+    NSString *text = self.txtContent.text;
+    
+    NSRange rangeBold = [text rangeOfString:@"aegypti"];
+    NSRange rangeBold2 = [text rangeOfString:@"aegypti,"];
+    
+    UIFont *fontText = [UIFont italicSystemFontOfSize:12];
+    NSDictionary *dictBoldText = [NSDictionary dictionaryWithObjectsAndKeys:fontText, NSFontAttributeName, nil];
+
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.txtContent.text];
+    [attributedString addAttribute:NSLinkAttributeName
+                             value:@"tel://136"
+                             range:[[attributedString string] rangeOfString:@"136"]];
+    [attributedString setAttributes:dictBoldText range:rangeBold];
+    [attributedString setAttributes:dictBoldText range:rangeBold2];
+    
+    self.txtContent.attributedText = attributedString;
+    self.txtContent.textColor = [UIColor colorWithRed:15.0/255.0 green:76.0/255.0 blue:153.0/255.0 alpha:1];
+
+    self.txtContent.delegate = self;
+    
     [self.txtContent setContentOffset:CGPointZero];
+}
+
+- (IBAction)basicCare:(id)sender{
+    
 }
 
 - (void)didReceiveMemoryWarning {
