@@ -62,6 +62,7 @@ const float _kCellHeight = 100.0f;
     
     // We will move this to the top?
     
+    selectedUser = @"";
     user = [User getInstance];
     userRequester = [[UserRequester alloc] init];
     buttons = [NSMutableArray array];
