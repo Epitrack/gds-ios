@@ -22,7 +22,7 @@
 @import GoogleMaps;
 
 NSString *const kPreferencesVersionKey = @"preferenceVersionKey";
-NSString *const kCurrentVersionPreferences = @"001";
+NSString *const kCurrentVersionPreferences = @"002";
 
 @interface AppDelegate ()<SWRevealViewControllerDelegate>
 
@@ -114,7 +114,8 @@ NSUserDefaults *preferences;
         //Clean preferences
         [preferences setValue:nil forKey:kUserTokenKey];
         [preferences setValue:nil forKey:kAppTokenKey];
-        [preferences setValue:nil forKey:kPictureKey];
+        [preferences setValue:nil forKey:kAvatarNumberKey];
+        [preferences setValue:nil forKey:kPhotoKey];
         [preferences setValue:nil forKey:kNickKey];
         
         //Set current version

@@ -9,10 +9,12 @@
 #import "User.h"
 #import "DateUtil.h"
 #import "AssetsLibrary/AssetsLibrary.h"
+#import <UIKit/UIKit.h>
 
 NSString *const kAppTokenKey = @"appTokenKey";
 NSString *const kUserTokenKey = @"userTokenKey";
-NSString *const kPictureKey = @"pictureKey";
+NSString *const kPhotoKey = @"photoKey";
+NSString *const kAvatarNumberKey = @"avatarNumberKey";
 NSString *const kNickKey = @"nickKey";
 
 @implementation User
@@ -31,7 +33,7 @@ NSString *const kNickKey = @"nickKey";
 @synthesize type;
 @synthesize zip;
 @synthesize idUser;
-@synthesize picture;
+@synthesize avatarNumber;
 @synthesize user_token;
 @synthesize tw;
 @synthesize fb;
@@ -96,75 +98,118 @@ NSString *const kNickKey = @"nickKey";
     }
 }
 
-- (UIImage *)getAvatarImage{
-     if ([self.picture isEqualToString:@"0"] || self.picture == nil) {
-        long diffYears = ([DateUtil diffInDaysDate:[DateUtil dateFromStringUS:self.dob] andDate:[NSDate new]]/360);
-        
-        if ([self.gender isEqualToString:@"M"]) {
-            if (diffYears > 50) {
-                if ([self.race isEqualToString:@"preto"] || [self.race isEqualToString:@"indigena"]) {
-                    self.picture = @"11";
-                    avatar = @"img_profile11.png";
+- (void)setAvatarImageAtButton: (UIButton *) button orImageView:(UIImageView *) imageView onBackground: (bool) onBackground isSmall: (BOOL) isSmall {
+    if(self.photo){
+        PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[self.photo] options:nil];
+        PHAsset *asset = [assetResult firstObject];
+        [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
+            UIImage* photoImage = [UIImage imageWithData:imageData];
+            
+            UIBezierPath *path;
+            
+            CGRect rect;
+            
+            if (button) {
+                rect = button.bounds;
+            } else {
+                rect = imageView.bounds;
+            }
+            
+            if (isSmall) {
+                path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(rect.origin.x+15, rect.origin.y+15, rect.size.width-30, rect.size.height-30)];
+            } else {
+                path = [UIBezierPath bezierPathWithOvalInRect:rect];
+            }
+            
+            CAShapeLayer *maskLayer = [CAShapeLayer layer];
+            maskLayer.path = path.CGPath;
+            
+            if (button) {
+                button.layer.mask = maskLayer;
+                
+                if (onBackground) {
+                    [button setBackgroundImage:photoImage forState:UIControlStateNormal];
                 } else {
-                    self.picture = @"9";
-                    avatar = @"img_profile09.png";
+                    [button setImage:photoImage forState:UIControlStateNormal];
                 }
+            } else {
+                imageView.layer.mask = maskLayer;
+                [imageView setImage:photoImage];
+            }
+        }];
+    }else{
+        if (self.avatarNumber == 0 || self.avatarNumber == nil) {
+            long diffYears = ([DateUtil diffInDaysDate:[DateUtil dateFromStringUS:self.dob] andDate:[NSDate new]]/360);
+            
+            if ([self.gender isEqualToString:@"M"]) {
+                if (diffYears > 50) {
+                    if ([self.race isEqualToString:@"preto"] || [self.race isEqualToString:@"indigena"]) {
+                        self.avatarNumber = @11;
+                        avatar = @"img_profile11.png";
+                    } else {
+                        self.avatarNumber = @9;
+                        avatar = @"img_profile09.png";
+                    }
+                }else{
+                    if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"pardo"]) {
+                        self.avatarNumber = @5;
+                        avatar = @"img_profile05.png";
+                    }else if([self.race isEqualToString:@"preto"]){
+                        self.avatarNumber = @4;
+                        avatar = @"img_profile04.png";
+                    }else if([self.race isEqualToString:@"indigena"]){
+                        self.avatarNumber = @6;
+                        avatar = @"img_profile06.png";
+                    }else if([self.race isEqualToString:@"amarelo"]){
+                        self.avatarNumber = @7;
+                        avatar = @"img_profile07.png";
+                    }
+                }
+            } else {
+                if (diffYears > 50) {
+                    if ([self.race isEqualToString:@"preto"] || [self.race isEqualToString:@"indigena"]) {
+                        self.avatarNumber = @12;
+                        avatar = @"img_profile12.png";
+                    } else {
+                        self.avatarNumber = @10;
+                        avatar = @"img_profile10.png";
+                    }
+                }else{
+                    if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"pardo"]) {
+                        self.avatarNumber = @8;
+                        avatar = @"img_profile08.png";
+                    }else if([self.race isEqualToString:@"preto"]){
+                        self.avatarNumber = @2;
+                        avatar = @"img_profile02.png";
+                    }else if([self.race isEqualToString:@"indigena"]){
+                        self.avatarNumber = @1;
+                        avatar = @"img_profile01.png";
+                    }else if([self.race isEqualToString:@"amarelo"]){
+                        self.avatarNumber = @3;
+                        avatar = @"img_profile03.png";
+                    }
+                }
+            }
+            
+            NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+            [preferences setValue:self.avatarNumber forKey:kAvatarNumberKey];
+            
+            [preferences synchronize];
+            
+        } else {
+            avatar = [NSString stringWithFormat:@"img_profile%02d.png", [self.avatarNumber integerValue]];
+        }
+        
+        if (button) {
+            if (onBackground) {
+                [button setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
             }else{
-                if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"pardo"]) {
-                    self.picture = @"5";
-                    avatar = @"img_profile05.png";
-                }else if([self.race isEqualToString:@"preto"]){
-                    self.picture = @"4";
-                    avatar = @"img_profile04.png";
-                }else if([self.race isEqualToString:@"indigena"]){
-                    self.picture = @"6";
-                    avatar = @"img_profile06.png";
-                }else if([self.race isEqualToString:@"amarelo"]){
-                    self.picture = @"7";
-                    avatar = @"img_profile07.png";
-                }
+                [button setImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
             }
         } else {
-            if (diffYears > 50) {
-                if ([self.race isEqualToString:@"preto"] || [self.race isEqualToString:@"indigena"]) {
-                    self.picture = @"12";
-                    avatar = @"img_profile12.png";
-                } else {
-                    self.picture = @"10";
-                    avatar = @"img_profile10.png";
-                }
-            }else{
-                if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"pardo"]) {
-                    self.picture = @"8";
-                    avatar = @"img_profile08.png";
-                }else if([self.race isEqualToString:@"preto"]){
-                    self.picture = @"2";
-                    avatar = @"img_profile02.png";
-                }else if([self.race isEqualToString:@"indigena"]){
-                    self.picture = @"1";
-                    avatar = @"img_profile01.png";
-                }else if([self.race isEqualToString:@"amarelo"]){
-                    self.picture = @"3";
-                    avatar = @"img_profile03.png";
-                }
-            }
-        }
-        
-        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-        [preferences setValue:self.picture forKey:kPictureKey];
-        
-        [preferences synchronize];
-        
-    } else {
-        
-        if (self.picture.length == 1) {
-            avatar = [NSString stringWithFormat: @"img_profile0%@.png", self.picture];
-        } else if (self.picture.length == 2) {
-            avatar = [NSString stringWithFormat: @"img_profile%@.png", self.picture];
+            [imageView setImage:[UIImage imageNamed:avatar]];
         }
     }
-    
-    return [UIImage imageNamed:avatar];
 }
 
 @end

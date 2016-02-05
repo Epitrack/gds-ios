@@ -78,33 +78,7 @@ const float kCellHeight = 100.0f;
 }
 
 - (void) loadAvatar {
-    if (user.picture.length > 2) {
-        PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[user.picture] options:nil];
-        PHAsset *asset = [assetResult firstObject];
-        [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
-            UIImage* newImage = [UIImage imageWithData:imageData];
-            UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:self.imgMainMember.bounds];
-            CAShapeLayer *maskLayer = [CAShapeLayer layer];
-            maskLayer.path = path.CGPath;
-            self.imgMainMember.layer.mask = maskLayer;
-            
-            [self.imgMainMember setBackgroundImage:newImage forState:UIControlStateNormal];
-        }];
-    }else{
-        NSString *avatar;
-        
-        if ([user.picture isEqualToString:@"0"]) {
-            avatar = @"img_profile01.png";
-        } else {
-            
-            if (user.picture.length == 1) {
-                avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
-            } else if (user.picture.length == 2) {
-                avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
-            }
-        }
-        [self.imgMainMember setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-    }
+    [user setAvatarImageAtButton:self.imgMainMember orImageView:nil onBackground:YES isSmall:NO];
 }
 
 - (void)didReceiveMemoryWarning {

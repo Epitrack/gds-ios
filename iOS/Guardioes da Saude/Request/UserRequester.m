@@ -46,7 +46,7 @@
                      user.nick = paramMap[@"nick"];
                      user.email = paramMap[@"email"];
                      user.gender = paramMap[@"gender"];
-                     user.picture = paramMap[@"picture"];
+                     user.avatarNumber = paramMap[@"picture"];
                      user.idUser =  paramMap[@"id"];
                      user.race = paramMap[@"race"];
                      user.dob = paramMap[@"dob"];
@@ -120,10 +120,10 @@
                  user.gender = userRequest[@"gender"];
                  
                  @try {
-                     user.picture = userRequest[@"picture"];
+                     user.avatarNumber = userRequest[@"picture"];
                  }
                  @catch (NSException *exception) {
-                     user.picture = @"0";
+                     user.avatarNumber = @0;
                  }
                  
                  user.idUser=  userRequest[@"id"];
@@ -357,9 +357,8 @@
         [params setValue:user.password forKey:@"password"];
     }
     
-    if (user.picture.length <= 2) {
-        [params setValue:user.picture forKey:@"picture"];
-    }
+
+    [params setValue:user.avatarNumber forKey:@"picture"];
     
     
     [self doPost:[Url stringByAppendingString:@"/user/update"]
@@ -377,10 +376,7 @@
         sysUser.dob = user.dob;
         sysUser.gender = user.gender;
         sysUser.race = user.race;
-        
-        if (sysUser.picture.length <= 2) {
-            sysUser.picture = user.picture;
-        }
+        sysUser.avatarNumber = user.avatarNumber;
         
         //Call back success
         success(user);
@@ -440,11 +436,11 @@
                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
                 NSString *userKey = user.user_token;
                 
-                if ([preferences valueForKey:kPictureKey] != nil) {
-                    user.picture = [preferences valueForKey:kPictureKey];
-                }else{
-                    user.picture = response[@"picture"];
+                if ([preferences valueForKey:kPhotoKey] != nil) {
+                    user.photo = [preferences valueForKey:kPhotoKey];
                 }
+                
+                user.avatarNumber = response[@"picture"];
                 
                 [preferences setValue:userKey forKey:kUserTokenKey];
                 BOOL didSave = [preferences synchronize];
@@ -501,7 +497,7 @@
                 user.nick = userObject[@"nick"];
                 user.email = userObject[@"email"];
                 user.gender = userObject[@"gender"];
-                user.picture = userObject[@"picture"];
+                user.avatarNumber = userObject[@"picture"];
                 user.idUser =  userObject[@"id"];
                 user.race = userObject[@"race"];
                 user.dob = userObject[@"dob"];

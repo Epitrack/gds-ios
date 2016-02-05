@@ -23,7 +23,7 @@ typedef enum operation{
 @property User *user;
 @property Household *household;
 @property Operation operation;
-@property (strong, nonatomic) NSString *pictureSelected;
+@property (strong, nonatomic) NSNumber *pictureSelected;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
 @property (weak, nonatomic) IBOutlet UIButton *btnDob;
@@ -44,6 +44,7 @@ typedef enum operation{
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topTxtEmailContraint;
 @property (weak, nonatomic) IBOutlet UILabel *lbParentesco;
 
-- (void) updatePicture: (NSString *) picture;
+- (void) setAvatarNumber: (NSNumber *) avatarNumber;
+- (void) setPhoto: (NSString *) photoUrl;
 
 @end

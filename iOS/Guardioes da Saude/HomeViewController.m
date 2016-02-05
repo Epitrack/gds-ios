@@ -54,7 +54,8 @@
         
         user.user_token = [preferences valueForKey:kUserTokenKey];
         user.app_token = [preferences valueForKey:kAppTokenKey];
-        user.picture = [preferences valueForKey:kPictureKey];
+        user.photo = [preferences valueForKey:kPhotoKey];
+        user.avatarNumber = [preferences valueForKey:kAvatarNumberKey];
         user.nick = [preferences valueForKey:kNickKey];
         
         [self showInformations];
@@ -90,27 +91,7 @@
     self.txtNameUser.text = user.nick;
     self.lblOla.hidden = NO;
     self.btnProfile.hidden = NO;
-    
-    if (user.picture.length > 2) {
-        PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[user.picture] options:nil];
-        PHAsset *asset = [assetResult firstObject];
-        [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
-            UIImage* newImage = [UIImage imageWithData:imageData];
-            
-            CGRect btRect = self.btnProfile.bounds;
-            
-            UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(btRect.origin.x+15, btRect.origin.y+15, btRect.size.width-30, btRect.size.height-30)];
-            CAShapeLayer *maskLayer = [CAShapeLayer layer];
-            maskLayer.path = path.CGPath;
-            self.btnProfile.layer.mask = maskLayer;
-            
-            [self.btnProfile setImage:newImage forState:UIControlStateNormal];
-        }];
-    } else {
-        [self.btnProfile setImage:[user getAvatarImage] forState:UIControlStateNormal];
-    }
-    
-    
+    [user setAvatarImageAtButton:self.btnProfile orImageView:nil onBackground:NO isSmall:YES];
 }
 
 - (void)didReceiveMemoryWarning {

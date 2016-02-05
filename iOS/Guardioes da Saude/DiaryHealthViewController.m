@@ -224,34 +224,7 @@ const float _kCellHeight = 100.0f;
                                          button.bounds.size.width/2,
                                          button.bounds.size.height/2)];
     
-    
-    if (user.picture.length > 2) {
-        PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[user.picture] options:nil];
-        PHAsset *asset = [assetResult firstObject];
-        [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
-            UIImage* newImage = [UIImage imageWithData:imageData];
-            UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect: imageView.bounds];
-            CAShapeLayer *maskLayer = [CAShapeLayer layer];
-            maskLayer.path = path.CGPath;
-            imageView.layer.mask = maskLayer;
-            
-            [imageView setImage:newImage];
-        }];
-    }else{
-        NSString *avatar;
-        
-        if ([user.picture isEqualToString:@"0"]) {
-            avatar = @"img_profile01.png";
-        } else {
-            if (user.picture.length == 1) {
-                avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
-            } else if (user.picture.length == 2) {
-                avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
-            }
-        }
-        
-        [imageView setImage:[UIImage imageNamed:avatar]];
-    }
+    [user setAvatarImageAtButton:nil orImageView:imageView onBackground:NO isSmall:NO];
     
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 50, button.bounds.size.width/2, button.bounds.size.height/2)];
     label.text= [user.nick componentsSeparatedByString:@" "][0];

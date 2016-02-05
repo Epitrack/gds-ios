@@ -157,7 +157,7 @@
             [preferences setValue:user.app_token forKey:kAppTokenKey];
             [preferences setValue:userKey forKey:kUserTokenKey];
             [preferences setValue:user.nick forKey:kNickKey];
-            [preferences setValue:user.picture forKey:kPictureKey];
+            [preferences setValue:user.avatarNumber forKey:kAvatarNumberKey];
             [preferences synchronize];
             
             [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];

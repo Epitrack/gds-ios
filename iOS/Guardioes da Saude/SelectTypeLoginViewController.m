@@ -293,7 +293,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                    [preferences setValue:user.app_token forKey:kAppTokenKey];
                    [preferences setValue:user.user_token forKey:kUserTokenKey];
                    [preferences setValue:user.nick forKey:kNickKey];
-                   [preferences setValue:user.picture forKey:kPictureKey];
+                   [preferences setValue:user.avatarNumber forKey:kAvatarNumberKey];
                    
                    [self loadNotices];
                    
