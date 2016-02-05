@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -25,6 +26,7 @@ import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
 import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.utility.DialogBuilder;
+import com.epitrack.guardioes.utility.LocationUtility;
 import com.epitrack.guardioes.utility.Mask;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.HomeActivity;
@@ -158,6 +160,8 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
 
+        hideSoftKeyboard();
+
         if (item.getItemId() == android.R.id.home) {
 
             if (state == State.SOCIAL) {
@@ -212,8 +216,20 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
         navigateTo(Term.class);
     }
 
+    /**
+     * Hides the soft keyboard
+     */
+    public void hideSoftKeyboard() {
+        if(getCurrentFocus()!=null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+    }
+
     @Override
     public void onBackPressed() {
+
+        hideSoftKeyboard();
 
         if (state == State.SOCIAL) {
             super.onBackPressed();
@@ -480,8 +496,18 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                         jRoot.put("race", user.getRace());
                         jRoot.put("platform", user.getPlatform());
                         jRoot.put("picture", "0");
-                        jRoot.put("lat", -8.0464492);
-                        jRoot.put("lon", -34.9324883);
+
+                        LocationUtility locationUtility = new LocationUtility(getApplicationContext());
+
+                        try {
+                            if (locationUtility.getLocation() != null) {
+                                jRoot.put("lat", locationUtility.getLatitude());
+                                jRoot.put("lon", locationUtility.getLongitude());
+                            }
+                        } catch (Exception e) {
+                            jRoot.put("lat", -8.0464492);
+                            jRoot.put("lon", -34.9324883);
+                        }
 
                         SimpleRequester simpleRequester = new SimpleRequester();
                         simpleRequester.setUrl(Requester.API_URL + "user/create");
