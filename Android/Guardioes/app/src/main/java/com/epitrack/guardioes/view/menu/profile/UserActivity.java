@@ -528,7 +528,15 @@ public class UserActivity extends BaseAppCompatActivity {
                 if (singleUser.getUri() != null && (user.getNick().equals(singleUser.getNick()))) {
                     jsonObject.put("picture", singleUser.getUri().toString());
                 } else if (photoPath != "") {
-                    jsonObject.put("picture", photoPath);
+                    //jsonObject.put("picture", photoPath);
+                    SharedPreferences settingsImage = getSharedPreferences(Constants.Pref.PREFS_IMAGE, 0);
+                    SharedPreferences.Editor editorImage = settingsImage.edit();
+                    editorImage.putString(Constants.Pref.PREFS_IMAGE, photoPath);
+                    editorImage.apply();
+                    SharedPreferences settingsImageUserToken = getSharedPreferences(Constants.Pref.PREFS_IMAGE_USER_TOKEN, 0);
+                    SharedPreferences.Editor editorImageUserToken = settingsImageUserToken.edit();
+                    editorImageUserToken.putString(Constants.Pref.PREFS_IMAGE_USER_TOKEN, photoPath);
+                    editorImageUserToken.apply();
                 } else if (userAvatar > 0) {
                     jsonObject.put("picture", userAvatar);
                 }
@@ -698,6 +706,7 @@ public class UserActivity extends BaseAppCompatActivity {
                     } else {
                         if (newMenber) {
                             lookup();
+
                             new DialogBuilder(UserActivity.this).load()
                                     .title(R.string.attention)
                                     .content(R.string.new_member_ok)

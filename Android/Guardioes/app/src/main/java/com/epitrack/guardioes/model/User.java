@@ -38,6 +38,7 @@ public class User {
     private int heightImageProfile;
     private Uri uri;
     private String relationship;
+    private String versionBuild;
 
     public User() {
 
@@ -304,5 +305,13 @@ public class User {
 
     public void setRelationship(String relationship) {
         this.relationship = relationship;
+    }
+
+    public String getVersionBuild() {
+        return versionBuild;
+    }
+
+    public void setVersionBuild(String versionBuild) {
+        this.versionBuild = versionBuild;
     }
 }

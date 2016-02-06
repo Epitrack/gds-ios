@@ -92,6 +92,12 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
         sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
         String prefUserToken = sharedPreferences.getString(Constants.Pref.PREFS_NAME, "");
 
+        sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_IMAGE, 0);
+        String preImage = sharedPreferences.getString(Constants.Pref.PREFS_IMAGE, "");
+
+        sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_IMAGE_USER_TOKEN, 0);
+        String prefImagUserToken = sharedPreferences.getString(Constants.Pref.PREFS_IMAGE_USER_TOKEN, "");
+
         if (!prefUserToken.equals("")) {
 
             SingleUser singleUser = SingleUser.getInstance();
@@ -126,10 +132,14 @@ public class LoginActivity extends BaseAppCompatActivity implements SocialAccoun
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
                     singleUser.setUser_token(jsonObjectUser.get("token").toString());
 
-                    try {
-                        singleUser.setPicture(jsonObjectUser.get("picture").toString());
-                    } catch (Exception e) {
-                        singleUser.setPicture("0");
+                    if (prefUserToken == prefImagUserToken) {
+                        singleUser.setPicture(prefUserToken);
+                    } else {
+                        try {
+                            singleUser.setPicture(jsonObjectUser.get("picture").toString());
+                        } catch (Exception e) {
+                            singleUser.setPicture("0");
+                        }
                     }
 
                     singleUser.setHashtags(jsonObjectUser.getJSONArray("hashtags"));

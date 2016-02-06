@@ -1,5 +1,6 @@
 package com.epitrack.guardioes.view.menu;
 
+import android.content.pm.PackageInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Html;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.SingleUser;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.view.base.BaseFragment;
 import com.google.android.gms.analytics.HitBuilders;
@@ -25,6 +27,9 @@ public class AboutFragment extends BaseFragment {
     @Bind(R.id.message_about_content_01)
     TextView textViewAbout;
     private Tracker mTracker;
+
+    @Bind(R.id.txt_version_build)
+    TextView textViewVersionBuild;
 
     @Override
     public void onCreate(final Bundle bundle) {
@@ -53,6 +58,8 @@ public class AboutFragment extends BaseFragment {
         // [END shared_tracker]
 
         ButterKnife.bind(this, view);
+
+        textViewVersionBuild.setText("Versão " + SingleUser.getInstance().getVersionBuild());
 
         textViewAbout.setText(Html.fromHtml("<p>&nbsp;&nbsp;&#8226;&nbsp;O GUARDIÕES DA SAÚDE é um aplicativo projetado para dispositivos móveis e faz parte do projeto inovador de aprimoramento da vigilância em saúde no Sistema Único de Saúde (SUS), denominado Vigilância Participativa.</p>\n" +
                 "\n" +

@@ -2,6 +2,8 @@ package com.epitrack.guardioes.view;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
@@ -47,6 +49,18 @@ public class SplashActivity extends BaseActivity implements Runnable {
         mTracker = application.getDefaultTracker();
         // [END shared_tracker]
 
+        PackageInfo pInfo = null;
+        try {
+            pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            String version = pInfo.versionName;
+
+            SingleUser.getInstance().setVersionBuild(version);
+
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
         handler.postDelayed(this, WAIT_TIME);
     }
 
@@ -69,6 +83,12 @@ public class SplashActivity extends BaseActivity implements Runnable {
 
         sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
         String prefUserToken = sharedPreferences.getString(Constants.Pref.PREFS_NAME, "");
+
+        sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_IMAGE, 0);
+        String preImage = sharedPreferences.getString(Constants.Pref.PREFS_IMAGE, "");
+
+        sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_IMAGE_USER_TOKEN, 0);
+        String prefImagUserToken = sharedPreferences.getString(Constants.Pref.PREFS_IMAGE_USER_TOKEN, "");
 
         if (!prefUserToken.equals("")) {
 
@@ -102,10 +122,14 @@ public class SplashActivity extends BaseActivity implements Runnable {
                     singleUser.setDob(jsonObjectUser.getString("dob").toString());
                     singleUser.setUser_token(jsonObjectUser.get("token").toString());
 
-                    try {
-                        singleUser.setPicture(jsonObjectUser.get("picture").toString());
-                    } catch (Exception e) {
-                        singleUser.setPicture("0");
+                    if (prefUserToken == prefImagUserToken) {
+                        singleUser.setPicture(prefUserToken);
+                    } else {
+                        try {
+                            singleUser.setPicture(jsonObjectUser.get("picture").toString());
+                        } catch (Exception e) {
+                            singleUser.setPicture("0");
+                        }
                     }
 
                     singleUser.setHashtags(jsonObjectUser.getJSONArray("hashtags"));
