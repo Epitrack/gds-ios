@@ -230,7 +230,7 @@
                  user.nick = response[@"nick"];
                  user.email = response[@"email"];
                  user.gender = response[@"gender"];
-                 user.picture = response[@"picture"];
+                 user.avatarNumber = response[@"picture"];
                  user.idUser =  response[@"id"];
                  user.race = response[@"race"];
                  user.dob = response[@"dob"];

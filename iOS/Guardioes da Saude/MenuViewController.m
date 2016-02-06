@@ -174,7 +174,8 @@
     
     [preferences setValue:nil forKey:kUserTokenKey];
     [preferences setValue:nil forKey:kAppTokenKey];
-    [preferences setValue:nil forKey:kPictureKey];
+    [preferences setValue:nil forKey:kAvatarNumberKey];
+        [preferences setValue:nil forKey:kPhotoKey];
     [preferences setValue:nil forKey:kNickKey];
     
     [preferences synchronize];

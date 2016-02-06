@@ -58,35 +58,7 @@
     
     user = [User getInstance];
     [self.btnMainUser setTitle:user.nick forState:UIControlStateNormal];
-    
-    NSString *avatar;
-    
-    if ([user.picture length] > 2) {
-        PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[user.picture] options:nil];
-        PHAsset *asset = [assetResult firstObject];
-        [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
-            UIImage* newImage = [UIImage imageWithData:imageData];
-            UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:self.imgMainUser.bounds];
-            CAShapeLayer *maskLayer = [CAShapeLayer layer];
-            maskLayer.path = path.CGPath;
-            self.imgMainUser.layer.mask = maskLayer;
-            
-            [self.imgMainUser setBackgroundImage:newImage forState:UIControlStateNormal];
-        }];
-    } else {
-        if ([user.picture isEqualToString:@"0"]) {
-            avatar = @"img_profile01.png";
-        } else {
-            
-            if (user.picture.length == 1) {
-                avatar = [NSString stringWithFormat: @"img_profile0%@.png", user.picture];
-            } else if (user.picture.length == 2) {
-                avatar = [NSString stringWithFormat: @"img_profile%@.png", user.picture];
-            }
-        }
-        
-        [self.imgMainUser setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-    }
+    [user setAvatarImageAtButton:self.imgMainUser orImageView:nil onBackground:YES isSmall:NO];
     
     [self loadHouseholds];
 }

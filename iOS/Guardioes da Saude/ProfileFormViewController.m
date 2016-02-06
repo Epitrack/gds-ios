@@ -27,6 +27,7 @@
     NSDate *birthdate;
     NSArray *listRace;
     NSArray *listGender;
+    NSString *photo;
 }
 
 @end
@@ -67,10 +68,6 @@
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Profile Form Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
-    
-    if (self.pictureSelected) {
-        [self updatePicture:self.pictureSelected];
-    }
 }
 
 - (void) loadEditUser{
@@ -86,8 +83,13 @@
                         andDob:self.user.dob
                       andEmail:self.user.email
                      andGender:self.user.gender
-                       andRace:self.user.race
-                    andPicture:self.user.picture];
+                       andRace:self.user.race];
+    
+    if (self.user.photo) {
+        [self setPhoto:self.user.photo];
+    }else{
+        [self setAvatarNumber:self.user.avatarNumber];
+    }
 }
 
 - (void) loadEditHousehold{
@@ -99,8 +101,11 @@
                                  andEmail:self.household.email
                                 andGender:self.household.gender
                                   andRace:self.household.race
-                               andPicture:self.household.idPicture
                           andRelationship:self.household.relationship];
+    
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    [self setAvatarNumber:[f numberFromString:self.household.idPicture]];
 }
 
 - (void) loadAddHousehold{
@@ -108,7 +113,7 @@
     self.txtPassword.hidden = YES;
     self.txtConfirmPassword.hidden = YES;
     
-    self.pictureSelected = @"1";
+    self.pictureSelected = @1;
 
     birthdate = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
@@ -120,7 +125,6 @@
                                 andEmail: (NSString *) email
                                andGender: (NSString *) gender
                                  andRace: (NSString *) race
-                              andPicture: (NSString *) picture
                          andRelationship: (NSString *) relationship{
     self.pickerRelationship.text = [Household getRelationshipsDictonary][relationship];
 
@@ -129,8 +133,7 @@
                         andDob:dob
                       andEmail:email
                      andGender:gender
-                       andRace:race
-                    andPicture:picture];
+                       andRace:race];
     
 }
 
@@ -138,8 +141,7 @@
                        andDob: (NSString *) dob
                      andEmail: (NSString *) email
                     andGender: (NSString *) gender
-                      andRace: (NSString *) race
-                   andPicture: (NSString *) picture{
+                      andRace: (NSString *) race{
     self.txtNick.text = nick;
     self.txtEmail.text = email;
     
@@ -163,8 +165,6 @@
     } else if ([race isEqualToString:@"indigena"]) {
         self.pickerRace.text = listRace[4];
     }
-    
-    [self updatePicture:picture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -274,7 +274,7 @@
     userUpdater.dob = [NSString stringWithFormat:@"%@", birthdate];
     [userUpdater setGenderByString:self.pickerGender.text];
     userUpdater.race = [self.pickerRace.text lowercaseString];
-    userUpdater.picture = self.pictureSelected;
+    userUpdater.avatarNumber = self.pictureSelected;
     
     NSInteger diffDay = [DateUtil diffInDaysDate:birthdate andDate:[NSDate date]];
     
@@ -301,13 +301,15 @@
     [userRequester updateUser:userUpdater onSuccess:^(User *user){
         NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
         if (user && user.user_token) {
-            [preferences setValue:user.picture forKey:kPictureKey];
+            [preferences setValue:user.avatarNumber forKey:kAvatarNumberKey];
+            [preferences setValue:photo forKey:kPhotoKey];
             [preferences setValue:user.nick forKey:kNickKey];
             
             [preferences synchronize];
 
             User *user = [User getInstance];
-            user.picture = self.pictureSelected;
+            user.avatarNumber = self.pictureSelected;
+            user.photo = photo;
 
         }
         
@@ -343,7 +345,7 @@
     household.dob = [DateUtil stringUSFromDate:birthdate];
     [household setGenderByString:self.pickerGender.text];
     household.race = [self.pickerRace.text lowercaseString];
-    household.picture = self.pictureSelected;
+    household.picture = [self.pictureSelected stringValue];
     household.relationship = [self getRelationship];
     
     if (self.operation == EDIT_HOUSEHOLD) {
@@ -394,36 +396,34 @@
     [self.navigationController pushViewController:selectAvatarViewController animated:YES];
 }
 
-- (void) updatePicture: (NSString *) picture{
-    self.pictureSelected = picture;
+- (void) setAvatarNumber: (NSNumber *) avatarNumber{
+    self.pictureSelected = avatarNumber;
+
+    photo = nil;
     
-    if ([picture length] > 2) {
-        
-        PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[picture] options:nil];
-        PHAsset *asset = [assetResult firstObject];
-        [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
-            UIImage* newImage = [UIImage imageWithData:imageData];
-            UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:self.btnPicture.bounds];
-            CAShapeLayer *maskLayer = [CAShapeLayer layer];
-            maskLayer.path = path.CGPath;
-            self.btnPicture.layer.mask = maskLayer;
-            
-            [self.btnPicture setBackgroundImage:newImage forState:UIControlStateNormal];
-        }];
-    }else{
-    
-        NSString *avatar = @"img_profile01.png";
-        if ([picture isEqualToString:@"0"]) {
-            avatar = @"img_profile01.png";
-        } else if (picture.length == 1) {
-            avatar = [NSString stringWithFormat:@"img_profile0%@.png", picture];
-        } else if (picture.length == 2) {
-            avatar = [NSString stringWithFormat:@"img_profile%@.png", picture];
-        }
-        
-        [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-    }
+    NSString *avatar = [NSString stringWithFormat:@"img_profile%02d.png", [avatarNumber integerValue]];
+    [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
 }
+
+- (void) setPhoto: (NSString *) photoUrl{
+    photo = photoUrl;
+    
+    PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[photo] options:nil];
+    PHAsset *asset = [assetResult firstObject];
+    [[PHImageManager defaultManager] requestImageDataForAsset:asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
+        UIImage* photoImage = [UIImage imageWithData:imageData];
+        
+        
+        UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:self.btnPicture.bounds];
+        CAShapeLayer *maskLayer = [CAShapeLayer layer];
+        maskLayer.path = path.CGPath;
+        self.btnPicture.layer.mask = maskLayer;
+        
+        [self.btnPicture setBackgroundImage:photoImage forState:UIControlStateNormal];
+    }];
+}
+
+
 - (IBAction)btnDobAction:(id)sender {
     RMActionControllerStyle style = RMActionControllerStyleWhite;
     

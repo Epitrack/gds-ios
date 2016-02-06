@@ -9,10 +9,12 @@
 #import "JSONModel.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+@import Photos;
 
 extern NSString *const kAppTokenKey;
 extern NSString *const kUserTokenKey;
-extern NSString *const kPictureKey;
+extern NSString *const kPhotoKey;
+extern NSString *const kAvatarNumberKey;
 extern NSString *const kNickKey;
 
 @interface User : JSONModel {
@@ -30,7 +32,7 @@ extern NSString *const kNickKey;
     NSString *type;
     NSString *zip;
     NSString *idUser;
-    NSString *picture;
+    NSNumber *avatarNumber;
     NSString *user_token;
     NSString *tw;
     NSString *fb;
@@ -62,7 +64,7 @@ extern NSString *const kNickKey;
 @property(nonatomic, retain) NSString *type;
 @property(nonatomic, retain) NSString *zip;
 @property(nonatomic, retain) NSString *idUser;
-@property(nonatomic, retain) NSString *picture;
+@property(nonatomic, retain) NSNumber *avatarNumber;
 @property(nonatomic, retain) NSString *user_token;
 @property(nonatomic, retain) NSString *tw;
 @property(nonatomic, retain) NSString *fb;
@@ -78,6 +80,6 @@ extern NSString *const kNickKey;
 - (void) setGenderBySegIndex: (long) segIndex;
 - (void) setRaceBySegIndex: (long) segIndex;
 - (void) setGenderByString: (NSString *) strGender;
-- (UIImage *) getAvatarImage;
+- (void)setAvatarImageAtButton: (UIButton *) button orImageView:(UIImageView *) imageView onBackground: (bool) onBackground isSmall: (BOOL) isSmall;
 
 @end
