@@ -28,8 +28,16 @@
     [revealController tapGestureRecognizer];
     
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
-                                                                         style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
+                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
+    
+    [self.txtAbout setContentOffset:CGPointZero];
+    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    self.lbVersion.text = [NSString stringWithFormat:@"v %@", version];
+    
+    NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+    self.lbBuild.text = [NSString stringWithFormat:@"b %@", build];
 }
 
 - (void)didReceiveMemoryWarning {
