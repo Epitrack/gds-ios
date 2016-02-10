@@ -10,5 +10,7 @@
 
 @interface NoticeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> 
 @property (strong, nonatomic) IBOutlet UITableView *tableViewNotice;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewNotice;
+@property (weak, nonatomic) IBOutlet UIView *viewMain;
 
 @end
