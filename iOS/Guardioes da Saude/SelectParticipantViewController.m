@@ -11,6 +11,7 @@
 #import "SelectStateViewController.h"
 #import "Household.h"
 #import "HouseholdThumbnail.h"
+#import "DateUtil.h"
 #import <Google/Analytics.h>
 @import Photos;
 
@@ -59,12 +60,9 @@ const float kCellHeight = 100.0f;
     
     self.txtNameMainMember.text = user.nick;
     
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"yyyy"];
-    
-    NSString *dobUser = [user.dob componentsSeparatedByString:@"-"][0];
-    NSString *currentDate = [format stringFromDate:[NSDate date]];
-    NSInteger ageUser= [currentDate intValue] - [dobUser intValue];
+    NSDate *dateDob = [DateUtil dateFromStringUS:user.dob];
+    long days = [DateUtil diffInDaysDate:dateDob andDate:[[NSDate alloc] init]];
+    long ageUser = days/360;
     
     self.txtDobMainMember.text = [NSString stringWithFormat:@"%ld Anos", (long)ageUser];
     [self loadAvatar];
