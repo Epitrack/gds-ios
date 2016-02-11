@@ -180,7 +180,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
 
     public void onPrivacy(final MenuItem item) {
 
-        new NotifyDialog() {
+        /*new NotifyDialog() {
 
             @Override
             public int getLayout() {
@@ -200,7 +200,7 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
                 });
             }
 
-        }.show(getFragmentManager(), NotifyDialog.TAG);
+        }.show(getFragmentManager(), NotifyDialog.TAG);*/
     }
 
     @OnCheckedChanged(R.id.check_box_term)

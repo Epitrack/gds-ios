@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.epitrack.guardioes.R;
@@ -186,13 +187,13 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                     .setAction("Google Button")
                     .build());
 
+            validateServerClientID();
+
             // Configure sign-in to request the user's ID, email address, and basic
             // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
             mGoogleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestIdToken(SocialLoginActivity.this.getResources().getString(R.string.google_client_id))
+                    .requestIdToken(getString(R.string.google_client_id))
                     .requestEmail()
-                    .requestId()
-                    .requestProfile()
                     .build();
 
             mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -366,45 +367,14 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
         }
     }
 
-    private void getProfileInformation() {
-        try {
+    private void validateServerClientID() {
+        String serverClientId = getString(R.string.google_client_id);
+        String suffix = ".apps.googleusercontent.com";
+        if (!serverClientId.trim().endsWith(suffix)) {
+            String message = "Invalid server client ID in strings.xml, must end with " + suffix;
 
-            if (mGoogleApiClient.isConnected()) {
-                Person person = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
-
-
-                if (person != null) {
-
-                    String personName = person.getDisplayName();
-                    int genderInt = person.getGender();//0 for male, and 1 for female
-                    String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
-
-                    singleUser.setGl(person.getId());
-                    singleUser.setEmail(email);
-                    singleUser.setPassword(email);
-                    singleUser.setNick(personName);
-                    if (genderInt == 0) {
-                        singleUser.setGender("M");
-                    } else {
-                        singleUser.setGender("F");
-                    }
-                    userExistSocial(person.getId(), Constants.Bundle.GOOGLE);
-                    //executeSocialLogin(false);
-                } else {
-                    new DialogBuilder(SocialLoginActivity.this).load()
-                            .title(R.string.attention)
-                            .content(R.string.google_access_error)
-                            .positiveText(R.string.ok)
-                            .callback(new MaterialDialog.ButtonCallback() {
-                                @Override
-                                public void onPositive(final MaterialDialog dialog) {
-                                    onBackPressed();
-                                }
-                            }).show();
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+            //Log.w(TAG, message);
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -521,36 +491,36 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
 
     protected void onStart() {
         super.onStart();
-        if (mGoogleApiClient != null) {
+        /*if (mGoogleApiClient != null) {
             mGoogleApiClient.connect();
-        }
+        }*/
     }
 
     protected void onStop() {
         super.onStop();
-        if (mGoogleApiClient != null) {
+        /*if (mGoogleApiClient != null) {
             if (mGoogleApiClient.isConnected()) {
                 mGoogleApiClient.disconnect();
             }
-        }
+        }*/
     }
 
     @Override
     public void onConnected(Bundle bundle) {
-        mSignInClicked = false;
-        getProfileInformation();
-        updateUI(true);
+        //mSignInClicked = false;
+        //getProfileInformation();
+        //updateUI(true);
     }
 
     @Override
     public void onConnectionSuspended(int i) {
-        mGoogleApiClient.connect();
-        updateUI(false);
+        //mGoogleApiClient.connect();
+        //updateUI(false);
     }
 
     @Override
     public void onConnectionFailed(ConnectionResult result) {
-        if (!result.hasResolution()) {
+        /*if (!result.hasResolution()) {
             GooglePlayServicesUtil.getErrorDialog(result.getErrorCode(), this,
                     0).show();
             return;
@@ -570,16 +540,16 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                 // errors until the user is signed in, or they cancel.
                 resolveSignInError();
             }
-        }
+        }*/
     }
 
     private void signInWithGplus() {
-        if (!mGoogleApiClient.isConnecting()) {
+        /*if (!mGoogleApiClient.isConnecting()) {
             mSignInClicked = true;
             resolveSignInError();
         }
 
-        getProfileInformation();
+        getProfileInformation();*/
     }
 
     private void resolveSignInError() {

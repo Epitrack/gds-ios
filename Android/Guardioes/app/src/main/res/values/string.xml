@@ -150,7 +150,7 @@
     </string-array>
 
     <string name="generic_error">Não foi possível executar a operação. Tente novamente em alguns instantes.</string>
-    <string name="generic_error_login">Não foi possível executar a operação. Verifique se todos os campos estão preenchidos corretamente e tente novamente.</string>
+    <string name="generic_error_login">Não foi possível executar a operação. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso.</string>
     <string name="erro_new_user">Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso.</string>
     <string name="generic_update_data_ok">Dados alterados com sucesso.</string>
 
