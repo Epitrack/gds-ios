@@ -138,7 +138,7 @@ NSString *const kNickKey = @"nickKey";
             }
         }];
     }else{
-        if (self.avatarNumber == 0 || self.avatarNumber == nil) {
+        if ([self.avatarNumber intValue] == 0 || self.avatarNumber == nil) {
             long diffYears = ([DateUtil diffInDaysDate:[DateUtil dateFromStringUS:self.dob] andDate:[NSDate new]]/360);
             
             if ([self.gender isEqualToString:@"M"]) {

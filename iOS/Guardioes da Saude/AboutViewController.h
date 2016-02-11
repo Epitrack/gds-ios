@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface AboutViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *lbVersion;
+@property (weak, nonatomic) IBOutlet UILabel *lbBuild;
+@property (weak, nonatomic) IBOutlet UITextView *txtAbout;
 
 @end

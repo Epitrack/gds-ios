@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
             <connections>
+                <outlet property="lbBuild" destination="4nF-dU-Nq6" id="6yx-Ey-NsY"/>
+                <outlet property="lbVersion" destination="zMz-dq-Xeo" id="dcD-Wh-ah6"/>
+                <outlet property="txtAbout" destination="zLs-iT-GZz" id="LbN-fn-3KK"/>
                 <outlet property="view" destination="uSQ-Le-R4M" id="9cc-qM-48j"/>
             </connections>
         </placeholder>
@@ -19,11 +22,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-yX-hgD">
-                    <rect key="frame" x="40" y="66" width="240" height="100"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-yX-hgD">
+                    <rect key="frame" x="40" y="74" width="240" height="100"/>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="zLs-iT-GZz">
-                    <rect key="frame" x="24" y="169" width="272" height="391"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="zLs-iT-GZz">
+                    <rect key="frame" x="24" y="223.5" width="272" height="336"/>
                     <string key="text">Sobre o “Guardiões da Saúde”
 
     • O GUARDIÕES DA SAÚDE é um aplicativo projetado para dispositivos móveis e faz parte do projeto inovador de aprimoramento da vigilância em saúde no Sistema Único de Saúde (SUS), denominado Vigilância Participativa.
@@ -67,18 +70,40 @@ Custo
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMz-dq-Xeo">
+                    <rect key="frame" x="147" y="182" width="26" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="b 1004" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-dU-Nq6">
+                    <rect key="frame" x="140" y="198.5" width="39.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="4nF-dU-Nq6" firstAttribute="top" secondItem="zMz-dq-Xeo" secondAttribute="bottom" constant="2" id="7MO-lJ-fWa"/>
                 <constraint firstAttribute="trailing" secondItem="zLs-iT-GZz" secondAttribute="trailing" constant="24" id="DmJ-5J-L9B"/>
                 <constraint firstItem="b3w-yX-hgD" firstAttribute="leading" secondItem="uSQ-Le-R4M" secondAttribute="leading" constant="40" id="F64-4u-KEF"/>
+                <constraint firstItem="zMz-dq-Xeo" firstAttribute="centerX" secondItem="b3w-yX-hgD" secondAttribute="centerX" id="LPF-O7-vUH"/>
                 <constraint firstAttribute="trailing" secondItem="b3w-yX-hgD" secondAttribute="trailing" constant="40" id="StY-Vt-2US"/>
                 <constraint firstAttribute="bottom" secondItem="zLs-iT-GZz" secondAttribute="bottom" constant="8" id="bEq-01-KCU"/>
-                <constraint firstItem="b3w-yX-hgD" firstAttribute="top" secondItem="uSQ-Le-R4M" secondAttribute="top" constant="66" id="f2v-N0-WrE"/>
+                <constraint firstItem="4nF-dU-Nq6" firstAttribute="centerX" secondItem="zMz-dq-Xeo" secondAttribute="centerX" id="etv-j0-nBW"/>
+                <constraint firstItem="b3w-yX-hgD" firstAttribute="top" secondItem="uSQ-Le-R4M" secondAttribute="top" constant="74" id="f2v-N0-WrE"/>
                 <constraint firstItem="zLs-iT-GZz" firstAttribute="leading" secondItem="uSQ-Le-R4M" secondAttribute="leading" constant="24" id="hiV-0q-KlL"/>
+                <constraint firstItem="zLs-iT-GZz" firstAttribute="top" secondItem="4nF-dU-Nq6" secondAttribute="bottom" constant="10" id="n80-iu-UHE"/>
                 <constraint firstItem="zLs-iT-GZz" firstAttribute="top" secondItem="b3w-yX-hgD" secondAttribute="bottom" constant="3" id="srR-2U-t1Q"/>
+                <constraint firstItem="zMz-dq-Xeo" firstAttribute="top" secondItem="b3w-yX-hgD" secondAttribute="bottom" constant="8" id="tKw-YU-lHM"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="srR-2U-t1Q"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>
