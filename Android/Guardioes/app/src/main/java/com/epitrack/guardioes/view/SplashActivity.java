@@ -101,6 +101,7 @@ public class SplashActivity extends BaseActivity implements Runnable {
             sendPostRequest.setUrl(Requester.API_URL + "user/lookup/");
             sendPostRequest.setJsonObject(jsonObject);
             sendPostRequest.setMethod(Method.GET);
+            sendPostRequest.setContext(SplashActivity.this);
 
             String jsonStr;
             try {

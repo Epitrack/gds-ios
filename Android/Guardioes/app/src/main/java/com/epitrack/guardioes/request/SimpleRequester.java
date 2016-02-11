@@ -196,23 +196,26 @@ public class SimpleRequester extends AsyncTask<SimpleRequester, Object, String> 
             }
             return convertStreamToString;
         } else if (method == Method.GET) {
-            //url = new URL(apiUrl);
-            //URLConnection urlConnection = url.openConnection();
 
             HttpsURLConnection urlConnection;
-            urlConnection = (HttpsURLConnection) url.openConnection();
-            //HTTPS
-            urlConnection.setSSLSocketFactory(generateCertificate(context).getSocketFactory());
+            BufferedReader br;
 
+            if (url.toString().substring(0, 12).equals("https://maps")) {
+                url = new URL(apiUrl);
+                URLConnection urlConn  = url.openConnection();
 
-            if (!otherAPI) {
-                urlConnection.setRequestProperty("app_token", singleUser.getApp_token());
-                urlConnection.setRequestProperty("user_token", singleUser.getUser_token());
-                //urlConnection.setRequestProperty("Content-Type", "application/json");
+                br = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
+            } else {
+                urlConnection = (HttpsURLConnection) url.openConnection();
+                //HTTPS
+                urlConnection.setSSLSocketFactory(generateCertificate(context).getSocketFactory());
+
+                if (!otherAPI) {
+                    urlConnection.setRequestProperty("app_token", singleUser.getApp_token());
+                    urlConnection.setRequestProperty("user_token", singleUser.getUser_token());
+                }
+                br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             }
-
-            StringBuilder stringBuilder = null;
-            BufferedReader br = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
 
             String inputLine;
             String jsonStr = "";

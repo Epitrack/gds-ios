@@ -1,5 +1,6 @@
 package com.epitrack.guardioes.view.account;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,8 +13,11 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.epitrack.guardioes.R;
@@ -201,6 +205,28 @@ public class CreateAccountActivity extends BaseAppCompatActivity implements Soci
             }
 
         }.show(getFragmentManager(), NotifyDialog.TAG);*/
+
+        // custom dialog
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.privacy);
+        //dialog.setTitle("Title...");
+
+        // set the custom dialog components - text, image and button
+        //TextView text = (TextView) dialog.findViewById(R.id.text);
+        //text.setText("Android custom dialog example!");
+        //ImageView image = (ImageView) dialog.findViewById(R.id.image);
+        //image.setImageResource(R.drawable.ic_launcher);
+
+        ImageButton dialogButton = (ImageButton) dialog.findViewById(R.id.image_button_close);
+        // if button is clicked, close the custom dialog
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 
     @OnCheckedChanged(R.id.check_box_term)

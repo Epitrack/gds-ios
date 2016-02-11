@@ -14,7 +14,12 @@
           "package_name": "com.epitrack.guardioes"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "997325640691-p7453ssirrdtkoh51tlphdmbb0lfdkg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [],
       "services": {
         "analytics_service": {
