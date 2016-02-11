@@ -503,6 +503,7 @@
 		B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */; };
 		CB14A0441C5A4CB0007E8070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB14A0431C5A4CB0007E8070 /* GoogleService-Info.plist */; };
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
+		CB4DD1201C6CDD52002855C2 /* img_news.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4DD11F1C6CDD52002855C2 /* img_news.png */; };
 		CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* LocationUtil.m */; };
 		CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB8610071C3B4BBF009E63DF /* myhouse.gpx */; };
 		CB8FBADA1C60E1BC00696F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB8FBADC1C60E1BC00696F17 /* Localizable.strings */; };
@@ -1118,6 +1119,7 @@
 		CB14A0431C5A4CB0007E8070 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
 		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
+		CB4DD11F1C6CDD52002855C2 /* img_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_news.png; sourceTree = "<group>"; };
 		CB4E686E1C39B48700563FB7 /* LocationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtil.h; sourceTree = "<group>"; };
 		CB4E686F1C39B48700563FB7 /* LocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtil.m; sourceTree = "<group>"; };
 		CB8610071C3B4BBF009E63DF /* myhouse.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = myhouse.gpx; sourceTree = "<group>"; };
@@ -1534,6 +1536,7 @@
 				52E6F07A1C208E6600C88A08 /* cardList@3x.png */,
 				52E6F07B1C208E6600C88A08 /* cardList.png */,
 				52E6F0731C20528400C88A08 /* iconZika.png */,
+				CB4DD11F1C6CDD52002855C2 /* img_news.png */,
 				52E6F0741C20528400C88A08 /* iconZika@2x.png */,
 				52E6F0751C20528400C88A08 /* iconZika@3x.png */,
 				52518A231C1A020200B86D5E /* imgDialogTerms@2x.png */,
@@ -2464,6 +2467,7 @@
 				52E727D41BEA93B800B46945 /* img_profile07@2x.png in Resources */,
 				CBA0E53A1C5FA5EC0086315B /* img_profile15Mini@2x.png in Resources */,
 				CBA0E5371C5FA5EC0086315B /* img_profile15@2x.png in Resources */,
+				CB4DD1201C6CDD52002855C2 /* img_news.png in Resources */,
 				52E7271F1BEA93B800B46945 /* BG_survey.png in Resources */,
 				52E727C71BEA93B800B46945 /* img_profile03.png in Resources */,
 				52E6F0651C1B5AA900C88A08 /* ForgotPasswordViewController.xib in Resources */,
