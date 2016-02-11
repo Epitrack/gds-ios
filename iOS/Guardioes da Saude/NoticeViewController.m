@@ -82,15 +82,13 @@
     
     Notice *notice = [singleNotice.notices objectAtIndex:indexPath.row];
     
-//    UIFont *textFont = [UIFont fontWithName: @"Arial" size: 9.0];
-//    UIFont *detailFont = [UIFont fontWithName: @"Arial" size: 7.0];
+    UIFont *detailFont = [UIFont fontWithName: @"Arial" size: 14.0];
     
-    cell.tag = indexPath.row;
-    
-    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.textLabel.numberOfLines = 2;
     cell.textLabel.text = notice.title;
-
+    cell.detailTextLabel.textColor = [UIColor grayColor];
+    cell.detailTextLabel.font = detailFont;
+    cell.detailTextLabel.text = notice.source;
     
     return cell;
 }
@@ -119,7 +117,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 80;
 }
 
 

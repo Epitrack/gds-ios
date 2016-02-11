@@ -70,7 +70,9 @@
     [locationManager startUpdatingLocation];
     
     (void)[self.txtPais initWithData:[LocationUtil getCountries]];
-    [self.txtPais setPlaceholder:@"Selecione o país"];
+    [self.txtPais.DownPicker setPlaceholder:@"Selecione o país"];
+    [self.txtPais.DownPicker setToolbarCancelButtonText:@"Cancelar"];
+    [self.txtPais.DownPicker setToolbarDoneButtonText:@"Selecionar"];
     
     [self setTableSeparator];
 }
