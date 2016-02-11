@@ -164,18 +164,18 @@
                                                            label:@"Exit"
                                                            value:nil] build]];
     
-    
-    User *user;
-    
-    user = [User getInstance];
-    user = nil;
+    User *user = [User getInstance];
+    user.user_token = nil;
+    user.avatarNumber = nil;
+    user.photo = nil;
+    user.nick = nil;
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     
     [preferences setValue:nil forKey:kUserTokenKey];
     [preferences setValue:nil forKey:kAppTokenKey];
     [preferences setValue:nil forKey:kAvatarNumberKey];
-        [preferences setValue:nil forKey:kPhotoKey];
+    [preferences setValue:nil forKey:kPhotoKey];
     [preferences setValue:nil forKey:kNickKey];
     
     [preferences synchronize];
