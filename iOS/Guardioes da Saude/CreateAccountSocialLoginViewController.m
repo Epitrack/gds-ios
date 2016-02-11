@@ -46,9 +46,14 @@
     
     // Setup down pickers
     (void)[self.pickerGender initWithData:[Constants getGenders]];
-    [self.pickerGender setPlaceholder:@"Selecione seu sexo"];
+    [self.pickerGender.DownPicker setPlaceholder:@"Selecione seu sexo"];
+    [self.pickerGender.DownPicker setToolbarCancelButtonText:@"Cancelar"];
+    [self.pickerGender.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    
     (void)[self.pickerRace initWithData: [Constants getRaces]];
-    [self.pickerRace setPlaceholder:@"Selecione sua Cor/Raça"];
+    [self.pickerRace.DownPicker setPlaceholder:@"Selecione sua Cor/Raça"];
+    [self.pickerRace.DownPicker setToolbarCancelButtonText:@"Cancelar"];
+    [self.pickerRace.DownPicker setToolbarDoneButtonText:@"Selecionar"];
     
     // Setup Dob
     dob = [DateUtil dateFromString:@"10/10/1990"];

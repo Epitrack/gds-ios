@@ -49,11 +49,20 @@
     
     // Setup down pickers
     (void)[self.pickerGender initWithData:[Constants getGenders]];
-    [self.pickerGender setPlaceholder:@"Selecione seu sexo"];
+    [self.pickerGender.DownPicker setPlaceholder:@"Selecione seu sexo"];
+    [self.pickerGender.DownPicker setToolbarCancelButtonText:@"Cancelar"];
+    [self.pickerGender.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    
     (void)[self.pickerRace initWithData: [Constants getRaces]];
-    [self.pickerRace setPlaceholder:@"Seleciona sua cor/raça"];
+    [self.pickerRace.DownPicker setPlaceholder:@"Seleciona sua cor/raça"];
+    [self.pickerRace.DownPicker setToolbarCancelButtonText:@"Cancelar"];
+    [self.pickerRace.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    
     (void)[self.pickerRelationship initWithData:[Household getRelationshipArray]];
-    [self.pickerRelationship setPlaceholder:@"Selecione o parentesco"];
+    [self.pickerRelationship.DownPicker setPlaceholder:@"Selecione o parentesco"];
+    [self.pickerRelationship.DownPicker setToolbarCancelButtonText:@"Cancelar"];
+    [self.pickerRelationship.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    
     if (self.operation == EDIT_USER) {
         [self loadEditUser];
     } else if (self.operation == EDIT_HOUSEHOLD){
