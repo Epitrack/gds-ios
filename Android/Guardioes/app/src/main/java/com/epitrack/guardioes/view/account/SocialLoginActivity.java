@@ -356,7 +356,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
             updateUI(false);
             new DialogBuilder(SocialLoginActivity.this).load()
                     .title(R.string.attention)
-                    .content(R.string.google_access_error)
+                    .content("Status: " + result.getStatus() + "Status Code: " + result.getStatus().getStatusCode() + "Status Message: " + result.getStatus().getStatusMessage())
                     .positiveText(R.string.ok)
                     .callback(new MaterialDialog.ButtonCallback() {
                         @Override
