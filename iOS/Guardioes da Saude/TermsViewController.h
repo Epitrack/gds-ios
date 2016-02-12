@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TermsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *txtContent;
 
 @end

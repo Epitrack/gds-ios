@@ -21,6 +21,8 @@
     self.navigationItem.title = @"Termos e Políticas";
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
+    
+    [self.txtContent setContentOffset:CGPointZero];
 }
 
 - (void)didReceiveMemoryWarning {
