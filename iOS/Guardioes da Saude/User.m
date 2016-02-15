@@ -116,7 +116,7 @@ NSString *const kNickKey = @"nickKey";
             }
             
             if (isSmall) {
-                path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(rect.origin.x+15, rect.origin.y+15, rect.size.width-30, rect.size.height-30)];
+                path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(rect.origin.x+5, rect.origin.y+5, rect.size.width-10, rect.size.height-10)];
             } else {
                 path = [UIBezierPath bezierPathWithOvalInRect:rect];
             }

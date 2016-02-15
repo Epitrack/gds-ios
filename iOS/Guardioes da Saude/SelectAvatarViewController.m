@@ -68,23 +68,82 @@
         
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-        self.picker = [[UIImagePickerController alloc] init];
-        self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-        self.picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-        self.picker.showsCameraControls = NO;
-        self.picker.navigationBarHidden = YES;
-        self.picker.toolbarHidden = YES;
+        // Init Picker
+        UIImagePickerController* picker = [[UIImagePickerController alloc] init];
         
-        // Insert the overlay
-        self.overlay = [[OverlayViewController alloc] initWithNibName:@"OverlayViewController" bundle:nil];
-        self.overlay.profileFormReference = self.profileFormCtr;
-        self.overlay.pickerReference = self.picker;
-        self.picker.cameraOverlayView = self.overlay.view;
-        self.picker.delegate = self.overlay;
+        //Create camera overlay for square pictures
+        CGFloat navigationBarHeight = picker.navigationBar.bounds.size.height-10;
+        CGFloat height = picker.view.bounds.size.height - navigationBarHeight;
+        CGFloat width = picker.view.bounds.size.width;
+        CGRect f = CGRectMake(0, navigationBarHeight, width, height);
+        CGFloat barHeight = (f.size.height - f.size.width) / 2;
+        UIGraphicsBeginImageContext(f.size);
+        [[UIColor colorWithRed:0 green:0 blue:0 alpha:1] set];
+        UIRectFillUsingBlendMode(CGRectMake(0, 0, f.size.width, barHeight), kCGBlendModeNormal);
+        UIRectFillUsingBlendMode(CGRectMake(0, f.size.height - barHeight, f.size.width, barHeight - 4), kCGBlendModeNormal);
+
         
-        [self presentModalViewController:self.picker animated:NO];
+        UIImageView *overlayIV = [[UIImageView alloc] initWithFrame:f];
+        
+        // Disable all user interaction on overlay
+        [overlayIV setUserInteractionEnabled:NO];
+        [overlayIV setExclusiveTouch:NO];
+        [overlayIV setMultipleTouchEnabled:NO];
+        
+        // Map generated image to overlay
+        //overlayIV.image = overlayImage;
+        [overlayIV.layer addSublayer:[self doMakeLayerWithDiffHeight:navigationBarHeight+barHeight-37]];
+        
+        // Present Picker
+//        picker.modalPresentationStyle = UIModalPresentationCurrentContext;
+        picker.delegate = self;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.allowsEditing = YES;
+        if([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
+            picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+        }
+        [picker setCameraOverlayView:overlayIV];
+        
+        [self presentViewController:picker animated:YES completion:nil];
     }
+}
+
+- (CAShapeLayer *) doMakeLayerWithDiffHeight: (double) diffHeight{
+    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    
+    
+    int position = 0;
+    
+    if (screenHeight == 568)
+    {
+        position = 124;
+    }
+    else
+    {
+        position = 80;
+    }
+    
+    CAShapeLayer *circleLayer = [CAShapeLayer layer];
+    
+    UIBezierPath *path2 = [UIBezierPath bezierPathWithOvalInRect:
+                           CGRectMake(0.0f, 55.0f, 320.0f, 320.0f)];
+    [path2 setUsesEvenOddFillRule:YES];
+    
+    [circleLayer setPath:[path2 CGPath]];
+    
+    [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 320, screenHeight-diffHeight) cornerRadius:0];
+    
+    [path appendPath:path2];
+    [path setUsesEvenOddFillRule:YES];
+    
+    CAShapeLayer *fillLayer = [CAShapeLayer layer];
+    fillLayer.path = path.CGPath;
+    fillLayer.fillRule = kCAFillRuleEvenOdd;
+    fillLayer.fillColor = [UIColor blackColor].CGColor;
+    fillLayer.opacity = 0.8;
+    
+    return fillLayer;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -123,6 +182,26 @@
             [self.navigationController popViewControllerAnimated:YES];
         }
     }];
+}
+
+- (UIImage *)imageByCroppingImage:(UIImage *)image
+{
+    // not equivalent to image.size (which depends on the imageOrientation)!
+    double refWidth = CGImageGetWidth(image.CGImage);
+    double refHeight = CGImageGetHeight(image.CGImage);
+    CGSize size = image.size;
+    
+    double x = (refWidth - size.width) / 2.0;
+    double y = (refHeight - size.height) / 2.0;
+    
+
+    CGRect cropRect = CGRectMake(x, y, size.width, size.width);
+    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
+    
+    UIImage *cropped = [UIImage imageWithCGImage:imageRef scale:0.0 orientation:UIImageOrientationRight];
+    CGImageRelease(imageRef);
+    
+    return cropped;
 }
 
 - (IBAction)btn1Action:(id)sender {
