@@ -127,7 +127,7 @@
                     android:id="@+id/edit_text_birth_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Ex: 01/01/1981"
+                    android:hint="@string/hint_birth_date"
                     android:inputType="date" />
 
 
