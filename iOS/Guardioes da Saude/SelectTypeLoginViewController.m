@@ -186,9 +186,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
              [MBProgressHUD hideHUDForView:self.view animated:YES];
              if ([FBSDKAccessToken currentAccessToken])
              {
-                 
-                 //@{@"fields": @"id,name,token_for_business"}
-                 [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+                 [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id,name,token_for_business"}]
                   startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id userFacebook, NSError *error)
                   {
                       NSLog(@"Logged in: %@", userFacebook);
@@ -197,7 +195,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                           NSDictionary *dictUser = (NSDictionary *)userFacebook;
                           
                           user.nick = dictUser[@"name"];
-                          user.fb = dictUser[@"id"];
+                          user.fb = dictUser[@"token_for_business"];
                           
                           [self checkSocialLoginWithToken:user.fb andType:GdsFacebook];
                       }

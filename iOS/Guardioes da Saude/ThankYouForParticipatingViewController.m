@@ -118,7 +118,6 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
                     NSLog(@"Post Sucessful");
                     [self ThankyouForSharing:YES];
                     break;
-                    
                 default:
                     break;
             }
