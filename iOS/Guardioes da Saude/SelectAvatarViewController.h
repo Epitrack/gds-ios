@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "ProfileFormViewController.h"
+#import "OverlayViewController.h"
 
 @interface SelectAvatarViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 - (instancetype)initWithBtnCamera: (bool) showBtnCamera;
 
 @property ProfileFormViewController *profileFormCtr;
+
+@property UIImagePickerController *picker;
+@property OverlayViewController *overlay;
 
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
 @property (weak, nonatomic) IBOutlet UIButton *btn2;
@@ -47,5 +51,7 @@
 - (IBAction)btn15Action:(id)sender;
 - (IBAction)btn16Action:(id)sender;
 - (IBAction)btn17Action:(id)sender;
+
+-(void) setUrlPhoto: (NSString *) urlPhoto;
 
 @end

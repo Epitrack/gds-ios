@@ -186,6 +186,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
              [MBProgressHUD hideHUDForView:self.view animated:YES];
              if ([FBSDKAccessToken currentAccessToken])
              {
+                 
+                 //@{@"fields": @"id,name,token_for_business"}
                  [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
                   startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id userFacebook, NSError *error)
                   {

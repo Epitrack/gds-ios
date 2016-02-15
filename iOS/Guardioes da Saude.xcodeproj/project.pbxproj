@@ -504,6 +504,8 @@
 		CB14A0441C5A4CB0007E8070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB14A0431C5A4CB0007E8070 /* GoogleService-Info.plist */; };
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB4DD1201C6CDD52002855C2 /* img_news.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4DD11F1C6CDD52002855C2 /* img_news.png */; };
+		CB4DD13D1C6E600E002855C2 /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4DD13B1C6E600E002855C2 /* OverlayViewController.m */; };
+		CB4DD13E1C6E600E002855C2 /* OverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4DD13C1C6E600E002855C2 /* OverlayViewController.xib */; };
 		CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* LocationUtil.m */; };
 		CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB8610071C3B4BBF009E63DF /* myhouse.gpx */; };
 		CB8FBADA1C60E1BC00696F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB8FBADC1C60E1BC00696F17 /* Localizable.strings */; };
@@ -1120,6 +1122,9 @@
 		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
 		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
 		CB4DD11F1C6CDD52002855C2 /* img_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_news.png; sourceTree = "<group>"; };
+		CB4DD13A1C6E600D002855C2 /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayViewController.h; sourceTree = "<group>"; };
+		CB4DD13B1C6E600E002855C2 /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayViewController.m; sourceTree = "<group>"; };
+		CB4DD13C1C6E600E002855C2 /* OverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayViewController.xib; sourceTree = "<group>"; };
 		CB4E686E1C39B48700563FB7 /* LocationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtil.h; sourceTree = "<group>"; };
 		CB4E686F1C39B48700563FB7 /* LocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtil.m; sourceTree = "<group>"; };
 		CB8610071C3B4BBF009E63DF /* myhouse.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = myhouse.gpx; sourceTree = "<group>"; };
@@ -1392,6 +1397,9 @@
 				527782C71C04CEB700251BF8 /* SelectAvatarViewController.h */,
 				527782C81C04CEB700251BF8 /* SelectAvatarViewController.m */,
 				527782C91C04CEB700251BF8 /* SelectAvatarViewController.xib */,
+				CB4DD13A1C6E600D002855C2 /* OverlayViewController.h */,
+				CB4DD13B1C6E600E002855C2 /* OverlayViewController.m */,
+				CB4DD13C1C6E600E002855C2 /* OverlayViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -2286,6 +2294,7 @@
 				CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */,
 				528705CA1BF3AB5F00321985 /* iconPMMini.png in Resources */,
 				528705D11BF3C5CA00321985 /* iconSamuMini@2x.png in Resources */,
+				CB4DD13E1C6E600E002855C2 /* OverlayViewController.xib in Resources */,
 				52E727A01BEA93B800B46945 /* icon_problem.png in Resources */,
 				527782CF1C062DC100251BF8 /* gdSToolbar.png in Resources */,
 				52D2BCA01BF12EBF007C9C09 /* img_profile06_mini@3x.png in Resources */,
@@ -2579,6 +2588,7 @@
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				52EBA7581C1209EF0019E1FA /* PharmacyGoogleMapsViewController.m in Sources */,
 				529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */,
+				CB4DD13D1C6E600E002855C2 /* OverlayViewController.m in Sources */,
 				5256481B1BFCF96100FE64AE /* ProfileFormViewController.m in Sources */,
 				52E6F0AA1C20B6AC00C88A08 /* Phones.m in Sources */,
 				2548B9E41BDEA8750004E00F /* SelectStateViewController.m in Sources */,
