@@ -181,7 +181,8 @@
     <string name="hint_mail">Email</string>
     <string name="hint_nickname">Apelido</string>
     <string name="hint_password">Senha - Mínimo de 6 caracteres</string>
-    <string name="hint_repeat_password">Repetir senha</string>
+    <string name="hint_repeat_password">Repita sua senha</string>
+    <string name="hint_redefine_password">Redefinir senha</string>
     <string name="hint_country_name">Informe o nome do país que você esteve</string>
 
     # Validation
