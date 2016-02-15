@@ -460,29 +460,29 @@
                       andOnSuccess:(void (^)(User *))onSuccess
                           andError:(void (^)(NSError *))onError{
     User *user = [User getInstance];
-    NSString *url;
+    NSDictionary *params;
     
     
     switch (socialType) {
         case GdsGoogle:
-            url = [NSString stringWithFormat:@"%@/user/get?gl=%@", Url, socialToken];
+            params = @{@"gl": socialToken};
             break;
             
         case GdsTwitter:
-            url = [NSString stringWithFormat:@"%@/user/get?tw=%@", Url, socialToken];
+            params = @{@"tw": socialToken};
             break;
             
         case GdsFacebook:
-            url = [NSString stringWithFormat:@"%@/user/get?fb=%@", Url, socialToken];
+            params = @{@"fb": socialToken};
             break;
             
         default:
             break;
     }
     
-    [self doGet:url
+    [self doGet:[Url stringByAppendingString:@"/user/get"]
          header:@{@"app_token": user.app_token}
-      parameter:nil
+      parameter:params
           start:onStart
           error:^(AFHTTPRequestOperation *operation, NSError *error){
               onError(error);

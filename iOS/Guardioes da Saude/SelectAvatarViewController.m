@@ -18,6 +18,8 @@
     BOOL showCameraBtn;
 }
 
+
+
 @end
 
 @implementation SelectAvatarViewController
@@ -66,19 +68,33 @@
         
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-    
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.delegate = self;
-        picker.allowsEditing = YES;
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
-        [self presentViewController:picker animated:YES completion:NULL];
+        self.picker = [[UIImagePickerController alloc] init];
+        self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+        self.picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+        self.picker.showsCameraControls = NO;
+        self.picker.navigationBarHidden = YES;
+        self.picker.toolbarHidden = YES;
+        
+        // Insert the overlay
+        self.overlay = [[OverlayViewController alloc] initWithNibName:@"OverlayViewController" bundle:nil];
+        self.overlay.profileFormReference = self.profileFormCtr;
+        self.overlay.pickerReference = self.picker;
+        self.picker.cameraOverlayView = self.overlay.view;
+        self.picker.delegate = self.overlay;
+        
+        [self presentModalViewController:self.picker animated:NO];
     }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(void)setUrlPhoto:(NSString *)urlPhoto{
+    [self.profileFormCtr setPhoto:urlPhoto];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
