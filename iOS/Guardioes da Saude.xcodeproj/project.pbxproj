@@ -538,6 +538,7 @@
 		CBA0E5451C5FA5EC0086315B /* img_profile17Mini.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5271C5FA5EC0086315B /* img_profile17Mini.png */; };
 		CBA0E5461C5FA5EC0086315B /* img_profile17Mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5281C5FA5EC0086315B /* img_profile17Mini@2x.png */; };
 		CBA0E5471C5FA5EC0086315B /* img_profile17Mini@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5291C5FA5EC0086315B /* img_profile17Mini@3x.png */; };
+		CBA4F47C1C73673200B6A99C /* logo_horizontal_about.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1159,6 +1160,7 @@
 		CBA0E5271C5FA5EC0086315B /* img_profile17Mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_profile17Mini.png; sourceTree = "<group>"; };
 		CBA0E5281C5FA5EC0086315B /* img_profile17Mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile17Mini@2x.png"; sourceTree = "<group>"; };
 		CBA0E5291C5FA5EC0086315B /* img_profile17Mini@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile17Mini@3x.png"; sourceTree = "<group>"; };
+		CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_horizontal_about.png; sourceTree = "<group>"; };
 		DFD606A5982C329F428410B6 /* Pods-Guardioes da Saude.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guardioes da Saude.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude.debug.xcconfig"; sourceTree = "<group>"; };
 		EA543D68390B8A7751226DD2 /* Pods-Guardioes da Saude.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guardioes da Saude.release.xcconfig"; path = "Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1908,6 +1910,7 @@
 				8829B5F41BB9D5A500F4C75A /* input_floatbox_register_email@2x.png */,
 				8829B5F51BB9D5A500F4C75A /* input_floatbox_register_email@3x.png */,
 				8829B5F61BB9D5A500F4C75A /* modal_ui_alert.png */,
+				CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */,
 				8829B5F71BB9D5A500F4C75A /* modal_ui_alert@2x.png */,
 				8829B5F81BB9D5A500F4C75A /* modal_ui_alert@3x.png */,
 			);
@@ -2050,6 +2053,7 @@
 				52E727DA1BEA93B800B46945 /* img_profile09@2x.png in Resources */,
 				52E727D51BEA93B800B46945 /* img_profile07@3x.png in Resources */,
 				52E7279B1BEA93B800B46945 /* icon_pin_pharmacy@2x.png in Resources */,
+				CBA4F47C1C73673200B6A99C /* logo_horizontal_about.png in Resources */,
 				52E727AC1BEA93B800B46945 /* icon_tutorial.png in Resources */,
 				52E6F0A41C20B18E00C88A08 /* iconSamu.png in Resources */,
 				52E7276A1BEA93B800B46945 /* icon_dicasdesaude.png in Resources */,

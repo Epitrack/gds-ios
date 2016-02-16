@@ -22,11 +22,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-yX-hgD">
-                    <rect key="frame" x="40" y="74" width="240" height="100"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_horizontal_about.png" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-yX-hgD">
+                    <rect key="frame" x="40" y="74" width="240" height="105"/>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="zLs-iT-GZz">
-                    <rect key="frame" x="24" y="223.5" width="272" height="336"/>
+                    <rect key="frame" x="24" y="228" width="272" height="332"/>
                     <string key="text">Sobre o “Guardiões da Saúde”
 
     • O GUARDIÕES DA SAÚDE é um aplicativo projetado para dispositivos móveis e faz parte do projeto inovador de aprimoramento da vigilância em saúde no Sistema Único de Saúde (SUS), denominado Vigilância Participativa.
@@ -71,13 +71,13 @@ Custo
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMz-dq-Xeo">
-                    <rect key="frame" x="147" y="182" width="26" height="14.5"/>
+                    <rect key="frame" x="147" y="187" width="26" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="b 1004" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-dU-Nq6">
-                    <rect key="frame" x="140" y="198.5" width="39.5" height="14.5"/>
+                    <rect key="frame" x="140" y="203" width="40" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -107,6 +107,6 @@ Custo
         </view>
     </objects>
     <resources>
-        <image name="icon_logo_horizontal.png" width="219" height="100"/>
+        <image name="logo_horizontal_about.png" width="238" height="105"/>
     </resources>
 </document>
