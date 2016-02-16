@@ -39,6 +39,36 @@
     self.btnPhoto.hidden = !showCameraBtn;
 }
 
+- (void)requestPermissions:(void(^)(bool)) block
+{
+    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+    
+    switch (status)
+    {
+        case PHAuthorizationStatusAuthorized:
+            block(YES);
+            break;
+        case PHAuthorizationStatusNotDetermined:
+        {
+            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus authorizationStatus)
+             {
+                 if (authorizationStatus == PHAuthorizationStatusAuthorized)
+                 {
+                     block(YES);
+                 }
+                 else
+                 {
+                     block(NO);
+                 }
+             }];
+            break;
+        }
+        default:
+            block(NO);
+            break;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -63,49 +93,55 @@
 
 - (IBAction)btnPhotoAction:(id)sender {
     
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Aparelho não possui câmera."];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-    } else {
-        // Init Picker
-        UIImagePickerController* picker = [[UIImagePickerController alloc] init];
-        
-        //Create camera overlay for square pictures
-        CGFloat navigationBarHeight = picker.navigationBar.bounds.size.height-10;
-        CGFloat height = picker.view.bounds.size.height - navigationBarHeight;
-        CGFloat width = picker.view.bounds.size.width;
-        CGRect f = CGRectMake(0, navigationBarHeight, width, height);
-        CGFloat barHeight = (f.size.height - f.size.width) / 2;
-        UIGraphicsBeginImageContext(f.size);
-        [[UIColor colorWithRed:0 green:0 blue:0 alpha:1] set];
-        UIRectFillUsingBlendMode(CGRectMake(0, 0, f.size.width, barHeight), kCGBlendModeNormal);
-        UIRectFillUsingBlendMode(CGRectMake(0, f.size.height - barHeight, f.size.width, barHeight - 4), kCGBlendModeNormal);
+    [self requestPermissions:^(bool authorized){
+        if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Aparelho não possui câmera."];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        } else if(!authorized){
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Verifique as permissões da galeria 'Fotos'."];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }else {
+            // Init Picker
+            UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+            
+            //Create camera overlay for square pictures
+            CGFloat navigationBarHeight = picker.navigationBar.bounds.size.height-10;
+            CGFloat height = picker.view.bounds.size.height - navigationBarHeight;
+            CGFloat width = picker.view.bounds.size.width;
+            CGRect f = CGRectMake(0, navigationBarHeight, width, height);
+            CGFloat barHeight = (f.size.height - f.size.width) / 2;
+            UIGraphicsBeginImageContext(f.size);
+            [[UIColor colorWithRed:0 green:0 blue:0 alpha:1] set];
+            UIRectFillUsingBlendMode(CGRectMake(0, 0, f.size.width, barHeight), kCGBlendModeNormal);
+            UIRectFillUsingBlendMode(CGRectMake(0, f.size.height - barHeight, f.size.width, barHeight - 4), kCGBlendModeNormal);
 
-        
-        UIImageView *overlayIV = [[UIImageView alloc] initWithFrame:f];
-        
-        // Disable all user interaction on overlay
-        [overlayIV setUserInteractionEnabled:NO];
-        [overlayIV setExclusiveTouch:NO];
-        [overlayIV setMultipleTouchEnabled:NO];
-        
-        // Map generated image to overlay
-        //overlayIV.image = overlayImage;
-        [overlayIV.layer addSublayer:[self doMakeLayerWithDiffHeight:navigationBarHeight+barHeight-37]];
-        
-        // Present Picker
-//        picker.modalPresentationStyle = UIModalPresentationCurrentContext;
-        picker.delegate = self;
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        picker.allowsEditing = YES;
-        if([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
-            picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+            
+            UIImageView *overlayIV = [[UIImageView alloc] initWithFrame:f];
+            
+            // Disable all user interaction on overlay
+            [overlayIV setUserInteractionEnabled:NO];
+            [overlayIV setExclusiveTouch:NO];
+            [overlayIV setMultipleTouchEnabled:NO];
+            
+            // Map generated image to overlay
+            //overlayIV.image = overlayImage;
+            [overlayIV.layer addSublayer:[self doMakeLayerWithDiffHeight:navigationBarHeight+barHeight-37]];
+            
+            // Present Picker
+    //        picker.modalPresentationStyle = UIModalPresentationCurrentContext;
+            picker.delegate = self;
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            picker.allowsEditing = YES;
+            if([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
+                picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+            }
+            [picker setCameraOverlayView:overlayIV];
+            
+            [self presentViewController:picker animated:YES completion:nil];
         }
-        [picker setCameraOverlayView:overlayIV];
-        
-        [self presentViewController:picker animated:YES completion:nil];
-    }
+    }];
 }
 
 - (CAShapeLayer *) doMakeLayerWithDiffHeight: (double) diffHeight{
