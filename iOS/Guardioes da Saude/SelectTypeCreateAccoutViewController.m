@@ -249,7 +249,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                               NSDictionary *dictUser = (NSDictionary *)userFacebook;
                               
                               user.nick = dictUser[@"name"];
-                              user.fb = dictUser[@"token_for_business"];
+                              user.fb = dictUser[@"id"];
                               [self checkSocialLoginWithToken:user.fb andType:GdsFacebook];
                           }
                       }];

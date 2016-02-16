@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "ProfileFormViewController.h"
-#import "OverlayViewController.h"
 
 @interface SelectAvatarViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -18,7 +17,6 @@
 @property ProfileFormViewController *profileFormCtr;
 
 @property UIImagePickerController *picker;
-@property OverlayViewController *overlay;
 
 @property (weak, nonatomic) IBOutlet UIButton *btn1;
 @property (weak, nonatomic) IBOutlet UIButton *btn2;

@@ -504,8 +504,6 @@
 		CB14A0441C5A4CB0007E8070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB14A0431C5A4CB0007E8070 /* GoogleService-Info.plist */; };
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB4DD1201C6CDD52002855C2 /* img_news.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4DD11F1C6CDD52002855C2 /* img_news.png */; };
-		CB4DD13D1C6E600E002855C2 /* OverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4DD13B1C6E600E002855C2 /* OverlayViewController.m */; };
-		CB4DD13E1C6E600E002855C2 /* OverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4DD13C1C6E600E002855C2 /* OverlayViewController.xib */; };
 		CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* LocationUtil.m */; };
 		CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB8610071C3B4BBF009E63DF /* myhouse.gpx */; };
 		CB8FBADA1C60E1BC00696F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB8FBADC1C60E1BC00696F17 /* Localizable.strings */; };
@@ -540,6 +538,7 @@
 		CBA0E5451C5FA5EC0086315B /* img_profile17Mini.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5271C5FA5EC0086315B /* img_profile17Mini.png */; };
 		CBA0E5461C5FA5EC0086315B /* img_profile17Mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5281C5FA5EC0086315B /* img_profile17Mini@2x.png */; };
 		CBA0E5471C5FA5EC0086315B /* img_profile17Mini@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5291C5FA5EC0086315B /* img_profile17Mini@3x.png */; };
+		CBA4F47C1C73673200B6A99C /* logo_horizontal_about.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1122,9 +1121,6 @@
 		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
 		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
 		CB4DD11F1C6CDD52002855C2 /* img_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_news.png; sourceTree = "<group>"; };
-		CB4DD13A1C6E600D002855C2 /* OverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayViewController.h; sourceTree = "<group>"; };
-		CB4DD13B1C6E600E002855C2 /* OverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayViewController.m; sourceTree = "<group>"; };
-		CB4DD13C1C6E600E002855C2 /* OverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayViewController.xib; sourceTree = "<group>"; };
 		CB4E686E1C39B48700563FB7 /* LocationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtil.h; sourceTree = "<group>"; };
 		CB4E686F1C39B48700563FB7 /* LocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtil.m; sourceTree = "<group>"; };
 		CB8610071C3B4BBF009E63DF /* myhouse.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = myhouse.gpx; sourceTree = "<group>"; };
@@ -1164,6 +1160,7 @@
 		CBA0E5271C5FA5EC0086315B /* img_profile17Mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_profile17Mini.png; sourceTree = "<group>"; };
 		CBA0E5281C5FA5EC0086315B /* img_profile17Mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile17Mini@2x.png"; sourceTree = "<group>"; };
 		CBA0E5291C5FA5EC0086315B /* img_profile17Mini@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile17Mini@3x.png"; sourceTree = "<group>"; };
+		CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_horizontal_about.png; sourceTree = "<group>"; };
 		DFD606A5982C329F428410B6 /* Pods-Guardioes da Saude.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guardioes da Saude.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude.debug.xcconfig"; sourceTree = "<group>"; };
 		EA543D68390B8A7751226DD2 /* Pods-Guardioes da Saude.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guardioes da Saude.release.xcconfig"; path = "Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1397,9 +1394,6 @@
 				527782C71C04CEB700251BF8 /* SelectAvatarViewController.h */,
 				527782C81C04CEB700251BF8 /* SelectAvatarViewController.m */,
 				527782C91C04CEB700251BF8 /* SelectAvatarViewController.xib */,
-				CB4DD13A1C6E600D002855C2 /* OverlayViewController.h */,
-				CB4DD13B1C6E600E002855C2 /* OverlayViewController.m */,
-				CB4DD13C1C6E600E002855C2 /* OverlayViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1916,6 +1910,7 @@
 				8829B5F41BB9D5A500F4C75A /* input_floatbox_register_email@2x.png */,
 				8829B5F51BB9D5A500F4C75A /* input_floatbox_register_email@3x.png */,
 				8829B5F61BB9D5A500F4C75A /* modal_ui_alert.png */,
+				CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */,
 				8829B5F71BB9D5A500F4C75A /* modal_ui_alert@2x.png */,
 				8829B5F81BB9D5A500F4C75A /* modal_ui_alert@3x.png */,
 			);
@@ -2058,6 +2053,7 @@
 				52E727DA1BEA93B800B46945 /* img_profile09@2x.png in Resources */,
 				52E727D51BEA93B800B46945 /* img_profile07@3x.png in Resources */,
 				52E7279B1BEA93B800B46945 /* icon_pin_pharmacy@2x.png in Resources */,
+				CBA4F47C1C73673200B6A99C /* logo_horizontal_about.png in Resources */,
 				52E727AC1BEA93B800B46945 /* icon_tutorial.png in Resources */,
 				52E6F0A41C20B18E00C88A08 /* iconSamu.png in Resources */,
 				52E7276A1BEA93B800B46945 /* icon_dicasdesaude.png in Resources */,
@@ -2294,7 +2290,6 @@
 				CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */,
 				528705CA1BF3AB5F00321985 /* iconPMMini.png in Resources */,
 				528705D11BF3C5CA00321985 /* iconSamuMini@2x.png in Resources */,
-				CB4DD13E1C6E600E002855C2 /* OverlayViewController.xib in Resources */,
 				52E727A01BEA93B800B46945 /* icon_problem.png in Resources */,
 				527782CF1C062DC100251BF8 /* gdSToolbar.png in Resources */,
 				52D2BCA01BF12EBF007C9C09 /* img_profile06_mini@3x.png in Resources */,
@@ -2588,7 +2583,6 @@
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				52EBA7581C1209EF0019E1FA /* PharmacyGoogleMapsViewController.m in Sources */,
 				529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */,
-				CB4DD13D1C6E600E002855C2 /* OverlayViewController.m in Sources */,
 				5256481B1BFCF96100FE64AE /* ProfileFormViewController.m in Sources */,
 				52E6F0AA1C20B6AC00C88A08 /* Phones.m in Sources */,
 				2548B9E41BDEA8750004E00F /* SelectStateViewController.m in Sources */,

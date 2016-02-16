@@ -18,6 +18,7 @@
     SingleNotice *singleNotice;
     NSMutableArray *notices;
 }
+@property (weak, nonatomic) IBOutlet UIImageView *imgHeader;
 
 @end
 
@@ -36,6 +37,13 @@
                                 target:self
                                 action:nil];
     
+    
+    CGRect recScreen = [[UIScreen mainScreen] bounds];
+    CGRect recImg = [self.imgHeader frame];
+    UIView *overlay = [[UIView alloc] initWithFrame: CGRectMake(0, 0, recScreen.size.width, recImg.size.height)];
+    [overlay setBackgroundColor:[UIColor colorWithRed:(10/255.0) green:(88/255.0) blue:(163/255.0) alpha:0.7]];
+    
+    [self.imgHeader addSubview:overlay];
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
 }
 

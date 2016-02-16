@@ -118,7 +118,7 @@
 }
 
 - (void) loadAddHousehold{
-    self.navigationItem.title = @"Adicionar Membro";
+    self.navigationItem.title = @"Adicionar Novo Membro";
     self.txtPassword.hidden = YES;
     self.txtConfirmPassword.hidden = YES;
     
