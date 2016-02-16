@@ -121,13 +121,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/bluish"
                 layout:hintTextAppearance="@style/Text.EditText.Label">
 
                 <android.support.v7.widget.AppCompatEditText
                     android:id="@+id/edit_text_birth_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hint_birth_date"
+                    android:hint="@string/hint_birth_date_dt"
                     android:inputType="date" />
 
 
