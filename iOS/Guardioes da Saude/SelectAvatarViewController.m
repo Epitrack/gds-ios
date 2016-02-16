@@ -176,6 +176,10 @@
     } completionHandler:^(BOOL success, NSError *error){
         if (!success) {
             NSLog(@"Error creating asset: %@", error);
+            if (error.code == 2047) {
+                UIAlertController *alert = [ViewUtil showAlertWithMessage:@"O Aplicativo não tem permissão para gravar a foto."];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
         } else {
             [self.profileFormCtr setPhoto:url];
             [picker dismissViewControllerAnimated:YES completion:nil];
