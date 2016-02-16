@@ -24,7 +24,9 @@
 #import <Google/Analytics.h>
 @import Photos;
 
-@interface HomeViewController ()
+@interface HomeViewController (){
+    UIImageView *titleImgView;
+}
 
 @end
 
@@ -93,12 +95,12 @@
 //    // setContent mode aspect fit
 //    [imgView setContentMode:UIViewContentModeScaleAspectFit];
 //    self.navigationItem.titleView = imgView;
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gdSToolbar"]];
+    titleImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gdSToolbar"]];
     CGSize imageSize = CGSizeMake(400, 70);
     CGFloat marginX = (self.navigationController.navigationBar.frame.size.width / 2) - (imageSize.width / 2);
     
-    imageView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
-    [self.navigationController.navigationBar addSubview:imageView];
+    titleImgView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
+    [self.navigationController.navigationBar addSubview:titleImgView];
 }
 
 - (void) showInformations {
@@ -123,11 +125,21 @@
     [tracker set:kGAIScreenName value:@"Home Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
+    if (!titleImgView) {
+        titleImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gdSToolbar"]];
+        CGSize imageSize = CGSizeMake(400, 70);
+        CGFloat marginX = (self.navigationController.navigationBar.frame.size.width / 2) - (imageSize.width / 2);
+        
+        titleImgView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
+    }
+    
+    [self.navigationController.navigationBar addSubview:titleImgView];
+    
     [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
-    [self.navigationController.navigationBar setBackgroundImage:_defaultImage forBarMetrics:UIBarMetricsDefault];
+    [titleImgView removeFromSuperview];
 }
 /*
 #pragma mark - Navigation
