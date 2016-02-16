@@ -84,6 +84,21 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     
+    UINavigationController *navCtr = self.navigationController;
+    [navCtr setNavigationBarHidden:NO animated:NO];
+    
+//    UIImage *imgTitleBar = [UIImage imageNamed:@"gdSToolbar"];
+//    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, 120, 120)];
+//    [imgView setImage:imgTitleBar];
+//    // setContent mode aspect fit
+//    [imgView setContentMode:UIViewContentModeScaleAspectFit];
+//    self.navigationItem.titleView = imgView;
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gdSToolbar"]];
+    CGSize imageSize = CGSizeMake(400, 70);
+    CGFloat marginX = (self.navigationController.navigationBar.frame.size.width / 2) - (imageSize.width / 2);
+    
+    imageView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
+    [self.navigationController.navigationBar addSubview:imageView];
 }
 
 - (void) showInformations {
@@ -102,11 +117,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     self.revealViewController.panGestureRecognizer.enabled=NO;
     
-    UINavigationController *navCtr = self.navigationController;
-    [navCtr setNavigationBarHidden:NO animated:animated];
-    
-    UIImage *imgTitleBar = [UIImage imageNamed:@"gdSToolbar"];
-    [navCtr.navigationBar setBackgroundImage:imgTitleBar forBarMetrics:UIBarMetricsDefault];
     
     // GOOGLE ANALYTICS
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
