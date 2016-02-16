@@ -1,17 +1,12 @@
 package com.epitrack.guardioes.view.account;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -23,13 +18,10 @@ import com.epitrack.guardioes.request.Requester;
 import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.Constants;
-import com.epitrack.guardioes.utility.DateFormat;
 import com.epitrack.guardioes.utility.DialogBuilder;
-import com.epitrack.guardioes.utility.Utility;
 import com.epitrack.guardioes.view.HomeActivity;
 import com.epitrack.guardioes.view.base.BaseAppCompatActivity;
 import com.epitrack.guardioes.view.menu.profile.UserActivity;
-import com.epitrack.guardioes.view.welcome.WelcomeActivity;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -38,7 +30,6 @@ import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.HttpMethod;
-import com.facebook.Profile;
 import com.facebook.ProfileTracker;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
@@ -50,13 +41,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.plus.Plus;
-import com.google.android.gms.plus.model.people.Person;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
@@ -74,7 +60,6 @@ import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
-import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
 /**
@@ -221,7 +206,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
     }
 
     private void loginFacebook() {
-        buttonFaceBook.setReadPermissions(Arrays.asList("public_profile", "email"));
+        buttonFaceBook.setReadPermissions(Arrays.asList("public_profile", "email", "token_for_business"));
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(final LoginResult loginResult) {
@@ -230,7 +215,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                     @Override
                     public void onCompleted(JSONObject object, GraphResponse response) {
 
-                        JSONObject jsonObject = response.getJSONObject();
+                        final JSONObject jsonObject = response.getJSONObject();
 
                         try {
 
@@ -240,9 +225,32 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                             } catch (Exception ex) {
 
                             }
-
-                            singleUser.setFb(loginResult.getAccessToken().getUserId());
                             singleUser.setNick(user);
+
+                            Bundle bundle = new Bundle();
+                            bundle.putString("fields", "token_for_business");
+
+                            /* make the API call */
+                            new GraphRequest(
+                                    AccessToken.getCurrentAccessToken(),
+                                    "/"+ AccessToken.getCurrentAccessToken().getUserId() +"/ids_for_business",
+                                    null,
+                                    HttpMethod.GET,
+                                    new GraphRequest.Callback() {
+                                        public void onCompleted(GraphResponse response) {
+                                        /* handle the result */
+                                            JSONObject jsonObjectBusiness = response.getJSONObject();
+                                            try {
+                                                JSONObject jsonObject1 = jsonObjectBusiness.getJSONArray("data").getJSONObject(0);
+                                                singleUser.setFb(jsonObject1.getString("id"));
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    }
+                            ).executeAsync();
+
+
                             userExistSocial(loginResult.getAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
                         } catch (JSONException e) {
                             e.printStackTrace();
