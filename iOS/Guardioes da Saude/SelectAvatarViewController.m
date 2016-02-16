@@ -109,30 +109,19 @@
 }
 
 - (CAShapeLayer *) doMakeLayerWithDiffHeight: (double) diffHeight{
-    CGFloat screenHeight = [[UIScreen mainScreen] bounds].size.height;
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
-    
-    int position = 0;
-    
-    if (screenHeight == 568)
-    {
-        position = 124;
-    }
-    else
-    {
-        position = 80;
-    }
     
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
     
     UIBezierPath *path2 = [UIBezierPath bezierPathWithOvalInRect:
-                           CGRectMake(0.0f, 55.0f, 320.0f, 320.0f)];
+                           CGRectMake(0.0f, 55.0f, screenSize.width, screenSize.width)];
     [path2 setUsesEvenOddFillRule:YES];
     
     [circleLayer setPath:[path2 CGPath]];
     
     [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 320, screenHeight-diffHeight) cornerRadius:0];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, screenSize.width, screenSize.height-diffHeight) cornerRadius:0];
     
     [path appendPath:path2];
     [path setUsesEvenOddFillRule:YES];
