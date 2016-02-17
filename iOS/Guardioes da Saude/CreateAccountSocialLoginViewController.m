@@ -18,6 +18,10 @@
 #import <Google/Analytics.h>
 
 @interface CreateAccountSocialLoginViewController () {
+    
+    CLLocationManager *locationManager;
+    double latitude;
+    double longitude;
     User *user;
     NSDate *dob;
     UserRequester *userRequester;
@@ -58,6 +62,17 @@
     // Setup Dob
     dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
+    
+    locationManager = [[CLLocationManager alloc] init];
+    
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startMonitoringSignificantLocationChanges];
+    [locationManager startUpdatingLocation];
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -127,6 +142,8 @@
         user.nick = self.txtNick.text;
         user.email = [self.txtEmail.text lowercaseString];
         user.dob = [DateUtil stringUSFromDate:dob];
+        user.lon = [NSString stringWithFormat:@"%g", longitude];
+        user.lat = [NSString stringWithFormat:@"%g", latitude];
         
         [userRequester createAccountWithUser:user andOnStart:^{
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -189,5 +206,27 @@
 - (void) updateBirthDate{
     NSString *dateFormatted  = [DateUtil stringFromDate:dob];
     [self.btnDate setTitle:dateFormatted forState:UIControlStateNormal];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"You pressed button OK");
+    }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    latitude = currentLocation.coordinate.latitude;
+    longitude = currentLocation.coordinate.longitude;
+    [locationManager stopUpdatingLocation];
 }
 @end

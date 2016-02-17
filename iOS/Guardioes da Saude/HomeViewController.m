@@ -51,7 +51,7 @@
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     
-    if ([preferences objectForKey:kUserTokenKey] != nil) {
+    if ([preferences objectForKey:kUserTokenKey] != nil && !user.user_token) {
         NSString *userToken = [preferences valueForKey:kUserTokenKey];
         
         user.user_token = [preferences valueForKey:kUserTokenKey];

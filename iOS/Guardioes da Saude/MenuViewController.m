@@ -169,6 +169,7 @@
     user.avatarNumber = nil;
     user.photo = nil;
     user.nick = nil;
+    user.email = nil;
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     

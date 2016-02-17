@@ -81,8 +81,8 @@
     [params setObject:user.race forKey:@"race"];
     [params setObject:user.platform forKey:@"platform"];
     [params setObject:@"0" forKey:@"picture"];
-    [params setObject:@"-8.0464492" forKey:@"lat"];
-    [params setObject:@"-34.9324883" forKey:@"lon"];
+    [params setObject:user.lat forKey:@"lat"];
+    [params setObject:user.lon forKey:@"lon"];
     
     if (user.password) {
         [params setObject:user.password forKey:@"password"];

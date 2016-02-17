@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "DateUtil.h"
 #import "RMDateSelectionViewController.h"
+#import <CoreLocation/CoreLocation.h>
 @import DownPicker;
 
-@interface CreateAccountViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
+@interface CreateAccountViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate, CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
 @property (weak, nonatomic) IBOutlet UITextField *txtDob;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
