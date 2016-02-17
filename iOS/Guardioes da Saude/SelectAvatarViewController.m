@@ -35,6 +35,11 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Editar Foto";
+    UIBarButtonItem *navBarButtonAppearance = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]];
+    [navBarButtonAppearance setTitleTextAttributes:@{
+                                                     NSFontAttributeName:            [UIFont systemFontOfSize:0.1],
+                                                     NSForegroundColorAttributeName: [UIColor clearColor] }
+                                          forState:UIControlStateNormal];
     
     self.btnPhoto.hidden = !showCameraBtn;
 }
