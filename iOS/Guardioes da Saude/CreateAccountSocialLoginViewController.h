@@ -9,10 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "RMDateSelectionViewController.h"
 #import "DateUtil.h"
+#import "UserRequester.h"
 #import <CoreLocation/CoreLocation.h>
 @import DownPicker;
 
 @interface CreateAccountSocialLoginViewController : UIViewController<UITextFieldDelegate, UITextViewDelegate, CLLocationManagerDelegate>
+
+@property NSString *socialNetworkId;
+@property SocialNetwork socialNetwork;
+@property NSString *nick;
+@property NSString *email;
+
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 - (IBAction)btnCadastrar:(id)sender;

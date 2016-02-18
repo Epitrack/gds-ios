@@ -18,7 +18,7 @@ typedef enum {
 
 - (void) createAccountWithUser: (User *) user
                     andOnStart: (void(^)()) onStart
-                  andOnSuccess: (void(^)()) onSuccess
+                  andOnSuccess: (void(^)(User *user)) onSuccess
                     andOnError: (void(^)(NSError *)) onError ;
 
 /*- (void) getSummary: (User *) user

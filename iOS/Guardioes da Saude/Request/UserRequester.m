@@ -68,7 +68,7 @@
 
 - (void) createAccountWithUser: (User *) user
                        andOnStart: (void(^)()) onStart
-                  andOnSuccess: (void(^)()) onSuccess
+                  andOnSuccess: (void(^)(User *user)) onSuccess
                     andOnError: (void(^)(NSError *)) onError {
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
@@ -134,7 +134,7 @@
                  user.household = userRequest[@"household"];
                  user.survey = userRequest[@"surveys"];
                  
-                 onSuccess();
+                 onSuccess(user);
              }
          }];
 }
@@ -492,7 +492,7 @@
             
             if ([responseObject[@"error"] boolValue] != 1 && response.count != 0) {
                 NSDictionary *userObject = [response objectAtIndex:0];
-                User *user = [User getInstance];
+                User *user = [[User alloc] init];
                 
                 user.nick = userObject[@"nick"];
                 user.email = userObject[@"email"];

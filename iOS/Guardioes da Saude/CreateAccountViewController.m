@@ -149,19 +149,25 @@
             UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Suas senhas não estão iguais!"];
             [self presentViewController:alert animated:YES completion:nil];
         } else {
-            user.nick = self.txtNick.text;
-            user.email = [self.txtEmail.text lowercaseString];
-            [user setGenderByString:self.pickerGender.text];
-            user.race = [self.pickerRace.text lowercaseString];
-            user.dob = [DateUtil stringUSFromDate:dob];
-            user.password = self.txtPassword.text;
-            user.lon = [NSString stringWithFormat:@"%g", longitude];
-            user.lat = [NSString stringWithFormat:@"%g", latitude];
+            User *userCreated = [[User alloc] init];
+            userCreated.nick = self.txtNick.text;
+            userCreated.email = [self.txtEmail.text lowercaseString];
+            [userCreated setGenderByString:self.pickerGender.text];
+            userCreated.race = [self.pickerRace.text lowercaseString];
+            userCreated.dob = [DateUtil stringUSFromDate:dob];
+            userCreated.password = self.txtPassword.text;
+            userCreated.lon = [NSString stringWithFormat:@"%g", longitude];
+            userCreated.lat = [NSString stringWithFormat:@"%g", latitude];
+            userCreated.app_token = user.app_token;
+            userCreated.platform = user.platform;
+            userCreated.client = user.client;
             
-            [userRequester createAccountWithUser:user andOnStart:^{
+            [userRequester createAccountWithUser:userCreated andOnStart:^{
                 [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            }andOnSuccess:^{
+            }andOnSuccess:^(User *userResponse){
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                
+                [user cloneUser:userResponse];
                 
                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
                 [preferences setValue:user.app_token forKey:kAppTokenKey];

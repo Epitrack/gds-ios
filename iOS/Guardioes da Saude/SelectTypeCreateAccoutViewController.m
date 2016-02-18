@@ -51,7 +51,7 @@
     self.navigationItem.rightBarButtonItems = actionButtonItems;
     self.navigationItem.title = @"";
     
-    user = [User getInstance];
+    user = [[User alloc] init];
     userRequester = [[UserRequester alloc] init];
 
     isEnabled = NO;
@@ -354,6 +354,11 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                             [self presentViewController:alert animated:YES completion:nil];
                                         } else {
                                             CreateAccountSocialLoginViewController *createAccountSocialLoginViewController = [[CreateAccountSocialLoginViewController alloc] init];
+                                            createAccountSocialLoginViewController.socialNetwork = type;
+                                            createAccountSocialLoginViewController.socialNetworkId = token;
+                                            createAccountSocialLoginViewController.nick = user.nick;
+                                            createAccountSocialLoginViewController.email = user.email;
+                                            
                                             [self.navigationController pushViewController:createAccountSocialLoginViewController animated:YES];
                                         }
                                     }];

@@ -164,12 +164,7 @@
                                                            label:@"Exit"
                                                            value:nil] build]];
     
-    User *user = [User getInstance];
-    user.user_token = nil;
-    user.avatarNumber = nil;
-    user.photo = nil;
-    user.nick = nil;
-    user.email = nil;
+    [[User getInstance] clearUser];
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     
