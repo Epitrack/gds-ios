@@ -539,6 +539,8 @@
 		CBA0E5461C5FA5EC0086315B /* img_profile17Mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5281C5FA5EC0086315B /* img_profile17Mini@2x.png */; };
 		CBA0E5471C5FA5EC0086315B /* img_profile17Mini@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5291C5FA5EC0086315B /* img_profile17Mini@3x.png */; };
 		CBA4F47C1C73673200B6A99C /* logo_horizontal_about.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */; };
+		CBEF9AD21C75FD8800A0B036 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */; };
+		CBEF9AD31C75FD8800A0B036 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1161,6 +1163,9 @@
 		CBA0E5281C5FA5EC0086315B /* img_profile17Mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile17Mini@2x.png"; sourceTree = "<group>"; };
 		CBA0E5291C5FA5EC0086315B /* img_profile17Mini@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile17Mini@3x.png"; sourceTree = "<group>"; };
 		CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_horizontal_about.png; sourceTree = "<group>"; };
+		CBEF9ACF1C75FD8800A0B036 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		DFD606A5982C329F428410B6 /* Pods-Guardioes da Saude.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guardioes da Saude.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude.debug.xcconfig"; sourceTree = "<group>"; };
 		EA543D68390B8A7751226DD2 /* Pods-Guardioes da Saude.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guardioes da Saude.release.xcconfig"; path = "Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1394,6 +1399,9 @@
 				527782C71C04CEB700251BF8 /* SelectAvatarViewController.h */,
 				527782C81C04CEB700251BF8 /* SelectAvatarViewController.m */,
 				527782C91C04CEB700251BF8 /* SelectAvatarViewController.xib */,
+				CBEF9ACF1C75FD8800A0B036 /* ChangePasswordViewController.h */,
+				CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */,
+				CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -2114,6 +2122,7 @@
 				52E727561BEA93B800B46945 /* icon_about@2x.png in Resources */,
 				52E727C61BEA93B800B46945 /* img_profile02@3x.png in Resources */,
 				52E727241BEA93B800B46945 /* BG_blur_menu@3x.png in Resources */,
+				CBEF9AD31C75FD8800A0B036 /* ChangePasswordViewController.xib in Resources */,
 				52E7271A1BEA93B800B46945 /* icon_check_survey@2x.png in Resources */,
 				52EBA7591C1209EF0019E1FA /* PharmacyGoogleMapsViewController.xib in Resources */,
 				52E727601BEA93B800B46945 /* icon_checkbok_true@3x.png in Resources */,
@@ -2595,6 +2604,7 @@
 				524C14271BEBD89C003A6C2D /* EmergencyViewController.m in Sources */,
 				256DBA941BD0399D0029A569 /* DTO.m in Sources */,
 				5215BBBC1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m in Sources */,
+				CBEF9AD21C75FD8800A0B036 /* ChangePasswordViewController.m in Sources */,
 				527D033D1C15C9AB00349551 /* SingleLocation.m in Sources */,
 				529BE1D81BF65ECE00692EEC /* TermsViewController.m in Sources */,
 				528C8B041BB82630003CFC91 /* ViewController.m in Sources */,
