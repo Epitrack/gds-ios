@@ -14,13 +14,12 @@
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
-            <string>Foco-Regular</string>
-            <string>Foco-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileFormViewController">
             <connections>
+                <outlet property="btnChangePasswd" destination="lBI-sh-MgF" id="JWl-th-2wr"/>
                 <outlet property="btnDob" destination="Kad-j5-vh8" id="WJo-dn-bIU"/>
                 <outlet property="btnPicture" destination="DZR-Ih-Yms" id="hOZ-em-B3Z"/>
                 <outlet property="lbParentesco" destination="wzc-Dg-npY" id="Ryl-ul-THe"/>
@@ -28,10 +27,8 @@
                 <outlet property="pickerRace" destination="8rT-CC-u42" id="nbj-CT-Xhv"/>
                 <outlet property="pickerRelationship" destination="piC-OE-8S0" id="38Z-PR-vrw"/>
                 <outlet property="topTxtEmailContraint" destination="x8v-nr-ie8" id="DsM-Qx-F2E"/>
-                <outlet property="txtConfirmPassword" destination="6sK-1B-A9r" id="wGP-QG-xem"/>
                 <outlet property="txtEmail" destination="izN-6m-mbW" id="4le-GI-jyk"/>
                 <outlet property="txtNick" destination="stU-B6-9Lb" id="8Cx-zb-8nC"/>
-                <outlet property="txtPassword" destination="wxn-ne-Zt8" id="nCJ-Kw-8X2"/>
                 <outlet property="view" destination="7yH-EU-eag" id="u2V-Gj-R00"/>
             </connections>
         </placeholder>
@@ -59,7 +56,7 @@
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kad-j5-vh8" userLabel="Button Bod">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kad-j5-vh8" userLabel="Button Bod">
                             <rect key="frame" x="103" y="230" width="209" height="30"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="Button"/>
@@ -70,7 +67,7 @@
                                 <action selector="btnDobAction:" destination="-1" eventType="touchUpInside" id="pwZ-Ig-stp"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Dt. Nasc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tM2-Mj-ciw">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Dt. Nasc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tM2-Mj-ciw">
                             <rect key="frame" x="8" y="235" width="63" height="21"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -79,12 +76,12 @@
                                 <rect key="frame" x="25" y="258" width="69" height="20"/>
                             </variation>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8rT-CC-u42" customClass="UIDownPicker">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8rT-CC-u42" customClass="UIDownPicker">
                             <rect key="frame" x="103" y="192" width="209" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Sexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9So-BD-cIf">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Sexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9So-BD-cIf">
                             <rect key="frame" x="8" y="159" width="33" height="21"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,7 +90,7 @@
                                 <rect key="frame" x="25" y="258" width="69" height="20"/>
                             </variation>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raça/Cor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpx-LK-3Cp">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Raça/Cor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpx-LK-3Cp">
                             <rect key="frame" x="8" y="197" width="65" height="21"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -115,12 +112,12 @@
                                 </mask>
                             </variation>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piC-OE-8S0" customClass="UIDownPicker">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piC-OE-8S0" customClass="UIDownPicker">
                             <rect key="frame" x="103" y="268" width="209" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parentesco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzc-Dg-npY">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Parentesco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzc-Dg-npY">
                             <rect key="frame" x="8" y="273" width="79" height="21"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -129,23 +126,13 @@
                                 <rect key="frame" x="25" y="258" width="69" height="20"/>
                             </variation>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@exemplo.com.br" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izN-6m-mbW">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@exemplo.com.br" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izN-6m-mbW">
                             <rect key="frame" x="8" y="306" width="304" height="30"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Redefina senha (Opicional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wxn-ne-Zt8">
-                            <rect key="frame" x="8" y="344" width="304" height="30"/>
-                            <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repita senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6sK-1B-A9r">
-                            <rect key="frame" x="8" y="382" width="304" height="30"/>
-                            <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                        </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcD-Sb-OPF">
-                            <rect key="frame" x="8" y="420" width="304" height="38"/>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcD-Sb-OPF">
+                            <rect key="frame" x="8" y="393" width="304" height="38"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                             <state key="normal" title="Salvar" backgroundImage="button_default.png">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -154,11 +141,21 @@
                                 <action selector="btnAction:" destination="-1" eventType="touchUpInside" id="d6V-Ls-keP"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBI-sh-MgF">
+                            <rect key="frame" x="8" y="344" width="304" height="38"/>
+                            <state key="normal" title="Mudar senha" backgroundImage="button_default.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btnChangePasswdAction:" destination="-1" eventType="touchUpInside" id="WL4-hl-KCq"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="izN-6m-mbW" firstAttribute="leading" secondItem="tM2-Mj-ciw" secondAttribute="leading" id="0jM-Do-8wf"/>
                         <constraint firstItem="8rT-CC-u42" firstAttribute="leading" secondItem="tpx-LK-3Cp" secondAttribute="trailing" constant="30" id="1OG-D2-5dx"/>
                         <constraint firstItem="izN-6m-mbW" firstAttribute="trailing" secondItem="Kad-j5-vh8" secondAttribute="trailing" id="4av-LS-vjj"/>
+                        <constraint firstItem="tcD-Sb-OPF" firstAttribute="leading" secondItem="lBI-sh-MgF" secondAttribute="leading" id="5h4-q8-Fxk"/>
                         <constraint firstItem="wzc-Dg-npY" firstAttribute="centerY" secondItem="piC-OE-8S0" secondAttribute="centerY" id="5tV-UM-FqI"/>
                         <constraint firstItem="izN-6m-mbW" firstAttribute="top" secondItem="Kad-j5-vh8" secondAttribute="bottom" constant="6" id="7Th-Zo-ccL"/>
                         <constraint firstItem="tM2-Mj-ciw" firstAttribute="leading" secondItem="stU-B6-9Lb" secondAttribute="leading" id="A44-gq-oJe"/>
@@ -168,30 +165,26 @@
                         <constraint firstItem="KcT-8D-vVK" firstAttribute="top" secondItem="stU-B6-9Lb" secondAttribute="bottom" constant="8" id="GYa-f8-HAf"/>
                         <constraint firstAttribute="bottom" secondItem="tcD-Sb-OPF" secondAttribute="bottom" id="H3p-cd-m6j"/>
                         <constraint firstItem="Kad-j5-vh8" firstAttribute="top" secondItem="8rT-CC-u42" secondAttribute="bottom" constant="8" id="Iwn-8d-nBg"/>
+                        <constraint firstItem="lBI-sh-MgF" firstAttribute="top" secondItem="izN-6m-mbW" secondAttribute="bottom" constant="8" id="Iy3-i8-VDo"/>
                         <constraint firstItem="stU-B6-9Lb" firstAttribute="centerX" secondItem="jrc-lI-pRd" secondAttribute="centerX" id="JNz-4d-WAk"/>
+                        <constraint firstItem="tcD-Sb-OPF" firstAttribute="trailing" secondItem="lBI-sh-MgF" secondAttribute="trailing" id="K0k-z8-6C5"/>
                         <constraint firstItem="stU-B6-9Lb" firstAttribute="top" secondItem="DZR-Ih-Yms" secondAttribute="bottom" constant="8" id="Kh7-65-4Te"/>
                         <constraint firstItem="9So-BD-cIf" firstAttribute="leading" secondItem="stU-B6-9Lb" secondAttribute="leading" id="Ldj-7n-oIO"/>
                         <constraint firstItem="9So-BD-cIf" firstAttribute="centerY" secondItem="KcT-8D-vVK" secondAttribute="centerY" id="NX5-Xm-aMI"/>
                         <constraint firstItem="Kad-j5-vh8" firstAttribute="width" secondItem="8rT-CC-u42" secondAttribute="height" multiplier="209:30" id="Ncu-Oh-doJ"/>
                         <constraint firstItem="piC-OE-8S0" firstAttribute="top" secondItem="Kad-j5-vh8" secondAttribute="bottom" constant="8" id="Nin-Ag-Q8x"/>
                         <constraint firstItem="Kad-j5-vh8" firstAttribute="trailing" secondItem="8rT-CC-u42" secondAttribute="trailing" id="Ol4-qc-vw3"/>
-                        <constraint firstItem="6sK-1B-A9r" firstAttribute="trailing" secondItem="wxn-ne-Zt8" secondAttribute="trailing" id="P6L-va-ehO"/>
                         <constraint firstItem="KcT-8D-vVK" firstAttribute="trailing" secondItem="stU-B6-9Lb" secondAttribute="trailing" id="Sn8-Uh-Kaz"/>
                         <constraint firstItem="tM2-Mj-ciw" firstAttribute="centerY" secondItem="Kad-j5-vh8" secondAttribute="centerY" id="TIw-8C-f48"/>
-                        <constraint firstItem="tcD-Sb-OPF" firstAttribute="trailing" secondItem="6sK-1B-A9r" secondAttribute="trailing" id="U4q-aw-C7C"/>
-                        <constraint firstItem="tcD-Sb-OPF" firstAttribute="top" secondItem="6sK-1B-A9r" secondAttribute="bottom" constant="8" id="UOX-kc-PoC"/>
+                        <constraint firstItem="lBI-sh-MgF" firstAttribute="trailing" secondItem="izN-6m-mbW" secondAttribute="trailing" id="WDw-HC-NQC"/>
                         <constraint firstItem="tpx-LK-3Cp" firstAttribute="leading" secondItem="9So-BD-cIf" secondAttribute="leading" id="YSF-Bx-PV6"/>
-                        <constraint firstItem="6sK-1B-A9r" firstAttribute="leading" secondItem="wxn-ne-Zt8" secondAttribute="leading" id="c1O-t0-Hlp"/>
+                        <constraint firstItem="tcD-Sb-OPF" firstAttribute="top" secondItem="lBI-sh-MgF" secondAttribute="bottom" constant="11" id="YqK-2a-62a"/>
                         <constraint firstItem="wzc-Dg-npY" firstAttribute="leading" secondItem="tM2-Mj-ciw" secondAttribute="leading" id="cOh-fh-syM"/>
                         <constraint firstItem="stU-B6-9Lb" firstAttribute="trailing" secondItem="jrc-lI-pRd" secondAttribute="trailingMargin" id="cgP-gs-A5M"/>
-                        <constraint firstItem="tcD-Sb-OPF" firstAttribute="leading" secondItem="6sK-1B-A9r" secondAttribute="leading" id="g7F-bw-xZB"/>
                         <constraint firstItem="8rT-CC-u42" firstAttribute="top" secondItem="KcT-8D-vVK" secondAttribute="bottom" constant="8" id="itp-56-cg6"/>
-                        <constraint firstItem="wxn-ne-Zt8" firstAttribute="leading" secondItem="izN-6m-mbW" secondAttribute="leading" id="kEe-l3-XRB"/>
-                        <constraint firstItem="wxn-ne-Zt8" firstAttribute="trailing" secondItem="izN-6m-mbW" secondAttribute="trailing" id="mCg-Ri-tgh"/>
+                        <constraint firstItem="lBI-sh-MgF" firstAttribute="leading" secondItem="izN-6m-mbW" secondAttribute="leading" id="mIx-1o-zdm"/>
                         <constraint firstItem="DZR-Ih-Yms" firstAttribute="top" secondItem="jrc-lI-pRd" secondAttribute="top" constant="8" id="nh8-JK-iOt"/>
                         <constraint firstItem="tpx-LK-3Cp" firstAttribute="centerY" secondItem="8rT-CC-u42" secondAttribute="centerY" id="oGu-Ru-j4x"/>
-                        <constraint firstItem="6sK-1B-A9r" firstAttribute="top" secondItem="wxn-ne-Zt8" secondAttribute="bottom" constant="8" id="ogd-Z2-0KK"/>
-                        <constraint firstItem="wxn-ne-Zt8" firstAttribute="top" secondItem="izN-6m-mbW" secondAttribute="bottom" constant="8" id="qjH-n7-rjZ"/>
                         <constraint firstItem="8rT-CC-u42" firstAttribute="trailing" secondItem="KcT-8D-vVK" secondAttribute="trailing" id="uMV-nF-ahT"/>
                         <constraint firstItem="KcT-8D-vVK" firstAttribute="leading" secondItem="stU-B6-9Lb" secondAttribute="leading" constant="95" id="w0L-T5-DLs"/>
                         <constraint firstItem="piC-OE-8S0" firstAttribute="leading" secondItem="Kad-j5-vh8" secondAttribute="leading" id="wrf-oX-D5M"/>

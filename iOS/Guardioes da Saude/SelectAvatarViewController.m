@@ -35,6 +35,11 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Editar Foto";
+    UIBarButtonItem *navBarButtonAppearance = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]];
+    [navBarButtonAppearance setTitleTextAttributes:@{
+                                                     NSFontAttributeName:            [UIFont systemFontOfSize:0.1],
+                                                     NSForegroundColorAttributeName: [UIColor clearColor] }
+                                          forState:UIControlStateNormal];
     
     self.btnPhoto.hidden = !showCameraBtn;
 }
@@ -107,15 +112,10 @@
             UIImagePickerController* picker = [[UIImagePickerController alloc] init];
             
             //Create camera overlay for square pictures
-            CGFloat navigationBarHeight = picker.navigationBar.bounds.size.height-10;
+            CGFloat navigationBarHeight = picker.navigationBar.bounds.size.height;
             CGFloat height = picker.view.bounds.size.height - navigationBarHeight;
             CGFloat width = picker.view.bounds.size.width;
-            CGRect f = CGRectMake(0, navigationBarHeight, width, height);
-            CGFloat barHeight = (f.size.height - f.size.width) / 2;
-            UIGraphicsBeginImageContext(f.size);
-            [[UIColor colorWithRed:0 green:0 blue:0 alpha:1] set];
-            UIRectFillUsingBlendMode(CGRectMake(0, 0, f.size.width, barHeight), kCGBlendModeNormal);
-            UIRectFillUsingBlendMode(CGRectMake(0, f.size.height - barHeight, f.size.width, barHeight - 4), kCGBlendModeNormal);
+            CGRect f = CGRectMake(0, navigationBarHeight-10, width, height);
 
             
             UIImageView *overlayIV = [[UIImageView alloc] initWithFrame:f];
@@ -127,7 +127,7 @@
             
             // Map generated image to overlay
             //overlayIV.image = overlayImage;
-            [overlayIV.layer addSublayer:[self doMakeLayerWithDiffHeight:navigationBarHeight+barHeight-37]];
+            [overlayIV.layer addSublayer:[self doMakeLayerWithDiffHeight:navigationBarHeight+navigationBarHeight]];
             
             // Present Picker
     //        picker.modalPresentationStyle = UIModalPresentationCurrentContext;
@@ -157,7 +157,7 @@
     [circleLayer setPath:[path2 CGPath]];
     
     [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, screenSize.width, screenSize.height-diffHeight) cornerRadius:0];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, screenSize.width, screenSize.height-(diffHeight+15)) cornerRadius:0];
     
     [path appendPath:path2];
     [path setUsesEvenOddFillRule:YES];

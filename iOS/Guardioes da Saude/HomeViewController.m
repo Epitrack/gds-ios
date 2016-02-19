@@ -24,7 +24,9 @@
 #import <Google/Analytics.h>
 @import Photos;
 
-@interface HomeViewController ()
+@interface HomeViewController (){
+    UIImageView *titleImgView;
+}
 
 @end
 
@@ -49,8 +51,14 @@
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     
-    if ([preferences objectForKey:kUserTokenKey] != nil) {
-        NSString *userToken = [preferences valueForKey:kUserTokenKey];
+    if ([preferences objectForKey:kUserTokenKey] != nil && !user.user_token) {
+        NSString *userToken;
+        
+        if (user.user_token) {
+            userToken = user.user_token;
+        }else{
+            userToken = [preferences valueForKey:kUserTokenKey];
+        }
         
         user.user_token = [preferences valueForKey:kUserTokenKey];
         user.app_token = [preferences valueForKey:kAppTokenKey];
@@ -84,6 +92,21 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     
+    UINavigationController *navCtr = self.navigationController;
+    [navCtr setNavigationBarHidden:NO animated:NO];
+    
+//    UIImage *imgTitleBar = [UIImage imageNamed:@"gdSToolbar"];
+//    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, 120, 120)];
+//    [imgView setImage:imgTitleBar];
+//    // setContent mode aspect fit
+//    [imgView setContentMode:UIViewContentModeScaleAspectFit];
+//    self.navigationItem.titleView = imgView;
+    titleImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gdSToolbar"]];
+    CGSize imageSize = CGSizeMake(400, 70);
+    CGFloat marginX = (self.navigationController.navigationBar.frame.size.width / 2) - (imageSize.width / 2);
+    
+    titleImgView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
+    [self.navigationController.navigationBar addSubview:titleImgView];
 }
 
 - (void) showInformations {
@@ -102,22 +125,27 @@
 - (void)viewWillAppear:(BOOL)animated {
     self.revealViewController.panGestureRecognizer.enabled=NO;
     
-    UINavigationController *navCtr = self.navigationController;
-    [navCtr setNavigationBarHidden:NO animated:animated];
-    
-    UIImage *imgTitleBar = [UIImage imageNamed:@"gdSToolbar"];
-    [navCtr.navigationBar setBackgroundImage:imgTitleBar forBarMetrics:UIBarMetricsDefault];
     
     // GOOGLE ANALYTICS
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Home Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
+    if (!titleImgView) {
+        titleImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gdSToolbar"]];
+        CGSize imageSize = CGSizeMake(400, 70);
+        CGFloat marginX = (self.navigationController.navigationBar.frame.size.width / 2) - (imageSize.width / 2);
+        
+        titleImgView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
+    }
+    
+    [self.navigationController.navigationBar addSubview:titleImgView];
+    
     [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
-    [self.navigationController.navigationBar setBackgroundImage:_defaultImage forBarMetrics:UIBarMetricsDefault];
+    [titleImgView removeFromSuperview];
 }
 /*
 #pragma mark - Navigation
@@ -234,9 +262,8 @@
                                OnStart:^{
                                     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                 }andOnSuccess:^{
-                                    [self loadSymptons];
                                     [self showInformations];
-                                    [self loadNotices];
+                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
                                 }andOnError:^(NSError *error){
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                                     
@@ -249,26 +276,5 @@
                                     
                                     [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                 }];
-}
-
--(void) loadSymptons{
-    [userRequester getSymptonsOnStart:^{}
-                           andSuccess:^{
-                               [MBProgressHUD hideHUDForView:self.view animated:YES];
-                           }
-                           andOnError:^(NSError *error){
-                               [MBProgressHUD hideHUDForView:self.view animated:YES];
-                               NSLog(@"Error: %@", error);
-                           }];
-}
-
-- (void) loadNotices {
-    
-    [[[NoticeRequester alloc] init] getNotices:user
-                                       onStart:^{}
-                                       onError:^(NSString * message){}
-                                     onSuccess:^(NSMutableArray *noticesRequest){
-                                         singleNotice.notices = noticesRequest;
-                                     }];
 }
 @end

@@ -18,7 +18,9 @@
 #import <Google/Analytics.h>
 
 @interface CreateAccountViewController () {
-    
+    CLLocationManager *locationManager;
+    double latitude;
+    double longitude;
     User *user;
     NSDate *dob;
     UserRequester *userRequester;
@@ -56,6 +58,17 @@
     [self.pickerRace.DownPicker setPlaceholder:@"Seleciona sua Cor/Raça"];
     [self.pickerRace.DownPicker setToolbarCancelButtonText:@"Cancelar"];
     [self.pickerRace.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    
+    locationManager = [[CLLocationManager alloc] init];
+    
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startMonitoringSignificantLocationChanges];
+    [locationManager startUpdatingLocation];
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -136,17 +149,25 @@
             UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Suas senhas não estão iguais!"];
             [self presentViewController:alert animated:YES completion:nil];
         } else {
-            user.nick = self.txtNick.text;
-            user.email = [self.txtEmail.text lowercaseString];
-            [user setGenderByString:self.pickerGender.text];
-            user.race = [self.pickerRace.text lowercaseString];
-            user.dob = [DateUtil stringUSFromDate:dob];
-            user.password = self.txtPassword.text;
+            User *userCreated = [[User alloc] init];
+            userCreated.nick = self.txtNick.text;
+            userCreated.email = [self.txtEmail.text lowercaseString];
+            [userCreated setGenderByString:self.pickerGender.text];
+            userCreated.race = [self.pickerRace.text lowercaseString];
+            userCreated.dob = [DateUtil stringUSFromDate:dob];
+            userCreated.password = self.txtPassword.text;
+            userCreated.lon = [NSString stringWithFormat:@"%g", longitude];
+            userCreated.lat = [NSString stringWithFormat:@"%g", latitude];
+            userCreated.app_token = user.app_token;
+            userCreated.platform = user.platform;
+            userCreated.client = user.client;
             
-            [userRequester createAccountWithUser:user andOnStart:^{
+            [userRequester createAccountWithUser:userCreated andOnStart:^{
                 [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            }andOnSuccess:^{
+            }andOnSuccess:^(User *userResponse){
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
+                
+                [user cloneUser:userResponse];
                 
                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
                 [preferences setValue:user.app_token forKey:kAppTokenKey];
@@ -204,5 +225,29 @@
 - (void) updateBirthDate{
     NSString *dateFormatted  = [DateUtil stringFromDate:dob];
     [self.btnBirthDate setTitle:dateFormatted forState:UIControlStateNormal];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"You pressed button OK");
+    }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    latitude = currentLocation.coordinate.latitude;
+    longitude = currentLocation.coordinate.longitude;
+    
+    [locationManager stopUpdatingLocation];
+    
 }
 @end

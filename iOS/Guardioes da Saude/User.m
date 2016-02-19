@@ -212,4 +212,42 @@ NSString *const kNickKey = @"nickKey";
     }
 }
 
+- (void) cloneUser: (User *) user{
+    self.nick = user.nick;
+    self.email = user.email;
+    self.dob = user.dob;
+    self.gender = user.gender;
+    self.lon = user.lon;
+    self.lat = user.lat;
+    self.race = user.race;
+    self.zip = user.zip;
+    self.idUser = user.idUser;
+    self.avatarNumber = user.avatarNumber;
+    self.user_token = user.user_token;
+    self.tw = user.tw;
+    self.fb = user.fb;
+    self.gl = user.gl;
+    self.photo = user.photo;
+    self.app_token = user.app_token;
+}
+
+- (void) clearUser{
+    self.nick = nil;
+    self.email = nil;
+    self.password = nil;
+    self.dob = nil;
+    self.gender = nil;
+    self.lon = nil;
+    self.lat = nil;
+    self.race = nil;
+    self.zip = nil;
+    self.idUser = nil;
+    self.avatarNumber = nil;
+    self.user_token = nil;
+    self.tw = nil;
+    self.fb = nil;
+    self.gl = nil;
+    self.photo = nil;
+}
+
 @end

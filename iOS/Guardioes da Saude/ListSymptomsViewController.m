@@ -31,6 +31,7 @@
     NSIndexPath *oldIndexPath;
     NSMutableIndexSet *selected;
     UIColor *bgCellColor;
+    UserRequester *userRequester;
 }
 
 @end
@@ -46,6 +47,7 @@
     self.txtPais.hidden = YES;
     selected = [[NSMutableIndexSet alloc] init];
     user = [User getInstance];
+    userRequester = [[UserRequester alloc] init];
     surveyRequester = [[SurveyRequester alloc] init];
     [self loadSymptoms];
     
@@ -193,20 +195,25 @@
 }
 
 - (void) loadSymptoms {
+    [userRequester getSymptonsOnStart:^{
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }andSuccess:^(NSMutableArray *symptomsResponse){
+        symptoms = symptomsResponse;
+        [symptoms addObject:[[Symptom alloc] initWithName:@"Outros" andCode:@"outros"]];
+        [symptoms addObject:[[Symptom alloc] initWithName:@"Tive contato com alguém com um desses sintomas" andCode:@"hadContagiousContact"]];
+        [symptoms addObject:[[Symptom alloc] initWithName:@"Procurei um serviço de saúde" andCode:@"hadHealthCare"]];
+        [symptoms addObject:[[Symptom alloc] initWithName:@"Estive fora do Brasil nos últimos 14 dias" andCode:@"hadTravelledAbroad"]];
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self.tableSymptoms reloadData];
+    } andOnError:^(NSError *error){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
     
     symptoms = [[NSMutableArray alloc] init];
     
     Symptom *others;
-
-    for (NSDictionary *item in user.symptoms) {
-        NSString *name = item[@"name"];
-        NSString *code = item[@"code"];
-        
-        NSLog(@"Name = %@ and code = %@", name, code);
-        
-        Symptom *s = [[Symptom alloc] initWithName:name andCode:code];
-        [symptoms addObject:s];
-    }
     
     others = [[Symptom alloc] initWithName:@"Outros" andCode:@"outros"];
     [symptoms addObject:others];

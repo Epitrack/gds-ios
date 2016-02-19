@@ -79,18 +79,18 @@
 */
 - (void) loadUsers {
     
-    NSDictionary *households = user.household;
+    NSMutableArray *households = user.household;
     users = [[NSMutableArray alloc] init];
     
     if (households.count > 0) {
-        for (NSDictionary *h in households) {
+        for (Household *h in households) {
             
-            NSString *nick = h[@"nick"];
-            NSString *picture = h[@"picture"];
-            NSString *idHousehold = h[@"id"];
-            NSString *dob = h[@"dob"];
-            NSString *gender = h[@"gender"];
-            NSString *race = h[@"race"];
+            NSString *nick = h.nick;
+            NSString *picture = h.picture;
+            NSString *idHousehold = h.idHousehold;
+            NSString *dob = h.dob;
+            NSString *gender = h.gender;
+            NSString *race = h.race;
             NSString *avatar;
             
             //NSString *p = [NSString stringWithFormat:@"%@", picture];

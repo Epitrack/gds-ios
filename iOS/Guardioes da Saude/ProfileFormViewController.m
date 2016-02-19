@@ -19,6 +19,7 @@
 #import "MBProgressHUD.h"
 #import "Constants.h"
 #import <Google/Analytics.h>
+#import "ChangePasswordViewController.h"
 @import Photos;
 
 @interface ProfileFormViewController () {
@@ -103,8 +104,7 @@
 
 - (void) loadEditHousehold{
     self.navigationItem.title = @"Editar Perfil";
-    self.txtPassword.hidden = YES;
-    self.txtConfirmPassword.hidden = YES;
+    self.btnChangePasswd.hidden = YES;
     [self populateFormToHouseholdWithNick:self.household.nick
                                    andDob:self.household.dob
                                  andEmail:self.household.email
@@ -119,8 +119,7 @@
 
 - (void) loadAddHousehold{
     self.navigationItem.title = @"Adicionar Novo Membro";
-    self.txtPassword.hidden = YES;
-    self.txtConfirmPassword.hidden = YES;
+    self.btnChangePasswd.hidden = YES;
     
     self.pictureSelected = @1;
 
@@ -184,8 +183,6 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.txtNick endEditing:YES];
     [self.txtEmail endEditing:YES];
-    [self.txtPassword endEditing:YES];
-    [self.txtConfirmPassword endEditing:YES];
     
 }
 
@@ -193,8 +190,6 @@
     [textField resignFirstResponder];
     [self.txtNick resignFirstResponder];
     [self.txtEmail resignFirstResponder];
-    [self.txtPassword resignFirstResponder];
-    [self.txtConfirmPassword resignFirstResponder];
     return TRUE;
 }
 /*
@@ -287,22 +282,7 @@
     
     NSInteger diffDay = [DateUtil diffInDaysDate:birthdate andDate:[NSDate date]];
     
-    if (![self.txtPassword.text isEqualToString:@""]) {
-        if (self.txtPassword.text.length < 6) {
-            
-            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A senha precisa ter pelo menos 6 carcteres."];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-            return;
-        } else if (![self.txtPassword.text isEqualToString:self.txtConfirmPassword.text]) {
-            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Senha inválida."];
-            [self presentViewController:alert animated:YES completion:nil];
-            
-            return;
-        }else {
-            userUpdater.password = self.txtPassword.text;
-        }
-    } else if((diffDay/365) < 13){
+    if((diffDay/365) < 13){
         UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade mínima para o usuário principal é 13 anos."];
         [self presentViewController:alert animated:YES completion:nil];
     }
@@ -410,7 +390,7 @@
 
     photo = nil;
     
-    NSString *avatar = [NSString stringWithFormat:@"img_profile%02d.png", [avatarNumber integerValue]];
+    NSString *avatar = [NSString stringWithFormat:@"img_profile%02ld.png", (long)[avatarNumber integerValue]];
     [self.btnPicture setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
 }
 
@@ -472,5 +452,9 @@
     }
     
     return nil;
+}
+- (void)btnChangePasswdAction:(id)sender{
+    ChangePasswordViewController *changePasswdViewCtrl = [[ChangePasswordViewController alloc] init];\
+    [self.navigationController pushViewController:changePasswdViewCtrl animated:YES];
 }
 @end

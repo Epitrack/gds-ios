@@ -13,11 +13,14 @@
 #import "SelectTypeCreateAccoutViewController.h"
 #import "Constants.h"
 #import "ViewUtil.h"
-#import "UserRequester.h"
 #import "MBProgressHUD.h"
 #import <Google/Analytics.h>
 
 @interface CreateAccountSocialLoginViewController () {
+    
+    CLLocationManager *locationManager;
+    double latitude;
+    double longitude;
     User *user;
     NSDate *dob;
     UserRequester *userRequester;
@@ -35,10 +38,8 @@
     [self.txtEmail setDelegate:self];
     [self.txtNick setDelegate:self];
     
-    self.txtNick.text = user.nick;
-    if(user.email){
-        self.txtEmail.text = user.email;
-    }
+    self.txtNick.text = self.nick;
+    self.txtEmail.text = self.email;
     
     UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Complete o cadastro a seguir para acessar o Guardiões da Saúde."];
     [self presentViewController:alert animated:YES completion:nil];
@@ -58,6 +59,17 @@
     // Setup Dob
     dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
+    
+    locationManager = [[CLLocationManager alloc] init];
+    
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startMonitoringSignificantLocationChanges];
+    [locationManager startUpdatingLocation];
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -122,16 +134,38 @@
         UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade mínima para o usuário principal é 13 anos."];
         [self presentViewController:alert animated:YES completion:nil];
     }else {
-        [user setGenderByString:self.pickerGender.text];
-        user.race = [self.pickerRace.text lowercaseString];
-        user.nick = self.txtNick.text;
-        user.email = [self.txtEmail.text lowercaseString];
-        user.dob = [DateUtil stringUSFromDate:dob];
+        User *userCreated = [[User alloc] init];
+        [userCreated setGenderByString:self.pickerGender.text];
+        userCreated.race = [self.pickerRace.text lowercaseString];
+        userCreated.nick = self.txtNick.text;
+        userCreated.email = [self.txtEmail.text lowercaseString];
+        userCreated.dob = [DateUtil stringUSFromDate:dob];
+        userCreated.lon = [NSString stringWithFormat:@"%g", longitude];
+        userCreated.lat = [NSString stringWithFormat:@"%g", latitude];
+        userCreated.app_token = user.app_token;
+        userCreated.platform = user.platform;
+        userCreated.client = user.client;
         
-        [userRequester createAccountWithUser:user andOnStart:^{
+        switch (self.socialNetwork) {
+            case GdsFacebook:
+                userCreated.fb = self.socialNetworkId;
+                break;
+            case GdsGoogle:
+                userCreated.gl = self.socialNetworkId;
+                break;
+            case GdsTwitter:
+                userCreated.tw = self.socialNetworkId;
+                break;
+            default:
+                break;
+        }
+        
+        [userRequester createAccountWithUser:userCreated andOnStart:^{
             [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        }andOnSuccess:^{
+        }andOnSuccess:^(User *userResponse){
             [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            [[User getInstance] cloneUser:userResponse];
             
             NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
             [preferences setValue:user.app_token forKey:kAppTokenKey];
@@ -189,5 +223,27 @@
 - (void) updateBirthDate{
     NSString *dateFormatted  = [DateUtil stringFromDate:dob];
     [self.btnDate setTitle:dateFormatted forState:UIControlStateNormal];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"You pressed button OK");
+    }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    latitude = currentLocation.coordinate.latitude;
+    longitude = currentLocation.coordinate.longitude;
+    [locationManager stopUpdatingLocation];
 }
 @end
