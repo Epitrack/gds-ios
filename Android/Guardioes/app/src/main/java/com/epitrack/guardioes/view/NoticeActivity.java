@@ -63,6 +63,7 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
     RecyclerView recyclerView;
 
     private Tracker mTracker;
+    public static List<Notice> noticeList;
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -89,47 +90,10 @@ public class NoticeActivity extends AppCompatActivity implements NoticeListener 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        recyclerView.setAdapter(new NoticeAdapter(this, getNoticeList()));
+        recyclerView.setAdapter(new NoticeAdapter(this, noticeList));
 
         getSupportActionBar().setTitle(R.string.notice);
 
-    }
-
-    private List<Notice> getNoticeList() {
-
-        List<Notice> noticeList = new ArrayList<>();
-
-        SimpleRequester simpleRequester = new SimpleRequester();
-        simpleRequester.setMethod(Method.GET);
-        simpleRequester.setUrl(Requester.API_URL + "news/get");
-
-        try {
-            String jsonStr = simpleRequester.execute(simpleRequester).get();
-            JSONArray jsonArray = new JSONObject(jsonStr).getJSONObject("data").getJSONArray("statuses");
-
-            if (jsonArray.length() > 0) {
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-
-                    Notice notice = new Notice();
-
-                    notice.setTitle(jsonObject.get("text").toString());
-                    notice.setSource("via @minsaude");
-
-                    notice.setDrawable(R.drawable.stub1);
-                    notice.setLink("https://twitter.com/minsaude/status/" + jsonObject.get("id_str").toString());
-
-                    noticeList.add(notice);
-                }
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return noticeList;
     }
 
     @Override

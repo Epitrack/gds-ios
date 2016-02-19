@@ -1,10 +1,13 @@
 package com.epitrack.guardioes.view.menu.profile;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.util.Log;
@@ -800,8 +803,6 @@ public class UserActivity extends BaseAppCompatActivity {
         }
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
 
@@ -858,5 +859,4 @@ public class UserActivity extends BaseAppCompatActivity {
             navigateTo(WelcomeActivity.class);
         }
     }
-
 }

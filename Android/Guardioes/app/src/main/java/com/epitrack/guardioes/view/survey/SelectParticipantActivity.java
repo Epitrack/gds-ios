@@ -60,9 +60,8 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
     @Bind(R.id.text_view_id)
     TextView textViewId;
 
-    List<User> parentList = new ArrayList<>();
+    public static List<User> parentList = new ArrayList<>();
     SingleUser singleUser = SingleUser.getInstance();
-
     private Tracker mTracker;
 
     @Override
@@ -156,46 +155,6 @@ public class SelectParticipantActivity extends BaseAppCompatActivity implements 
     }
 
     private void loadHousehold() {
-
-        parentList = new ArrayList<>();
-
-        SimpleRequester simpleRequester = new SimpleRequester();
-        simpleRequester.setUrl(Requester.API_URL + "user/household/" + singleUser.getId());
-        simpleRequester.setJsonObject(null);
-        simpleRequester.setMethod(Method.GET);
-
-        try {
-            String jsonStr = simpleRequester.execute(simpleRequester).get();
-
-            JSONObject jsonObject = new JSONObject(jsonStr);
-
-            if (jsonObject.get("error").toString() == "false") {
-
-                JSONArray jsonArray = jsonObject.getJSONArray("data");
-
-                if (jsonArray.length() > 0) {
-
-                    JSONObject jsonObjectHousehold;
-
-                    for (int i = 0; i < jsonArray.length(); i++) {
-
-                        jsonObjectHousehold = jsonArray.getJSONObject(i);
-                        parentList.add(new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
-                                /*jsonObjectHousehold.get("email").toString()*/"", jsonObjectHousehold.get("id").toString(),
-                                jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
-                                jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString()));
-                    }
-                }
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        parentList.add(new User(R.drawable.img_add_profile, "    Adicionar\nnovo membro", "", "-1", "", "", "", ""));
         recyclerView.setAdapter(new ParentAdapter(getApplicationContext(), this, parentList));
     }
 

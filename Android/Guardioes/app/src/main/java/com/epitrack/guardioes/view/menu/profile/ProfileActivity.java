@@ -1,6 +1,11 @@
 package com.epitrack.guardioes.view.menu.profile;
 
 import android.app.Fragment;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -23,6 +28,7 @@ import com.epitrack.guardioes.view.menu.help.Report;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,6 +36,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -47,6 +54,8 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
 
     private Tracker mTracker;
 
+    public static ArrayList<User> userArrayList;
+
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
@@ -59,23 +68,12 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         mTracker = application.getDefaultTracker();
         // [END shared_tracker]
 
-        if (NetworkUtility.isOnline(getApplicationContext())) {
-
-            listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
-
-        } else {
-
-            new DialogBuilder(ProfileActivity.this).load()
-                    .title(R.string.attention)
-                    .content(R.string.network_fail)
-                    .positiveText(R.string.ok)
-                    .callback(new MaterialDialog.ButtonCallback() {
-                        @Override
-                        public void onPositive(final MaterialDialog dialog) {
-                            back();
-                        }
-                    }).show();
+        if (userArrayList == null) {
+            userArrayList = loadProfiles();
         }
+
+        listView.setAdapter(new UserAdapter(this, userArrayList, this));
+
     }
 
     private void back() {
@@ -87,7 +85,9 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
         super.onResume();
         mTracker.setScreenName("List Profile Screen - " + this.getClass().getSimpleName());
         mTracker.send(new HitBuilders.ScreenViewBuilder().build());
-        listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
+        if (userArrayList == null) {
+            userArrayList = loadProfiles();
+        }
     }
 
     @Override
@@ -237,4 +237,66 @@ public class ProfileActivity extends BaseAppCompatActivity implements UserListen
             listView.setAdapter(new UserAdapter(this, new ArrayList<User>(), this));
         }
     }
+
+    private ArrayList<User> loadProfiles() {
+        ArrayList<User> userList = new ArrayList<User>();
+
+        SingleUser singleUser = SingleUser.getInstance();
+
+        userList.add(new User(R.drawable.image_avatar_small_2, singleUser.getNick(), singleUser.getEmail(), singleUser.getId(),
+                singleUser.getDob(), singleUser.getRace(), singleUser.getGender(), singleUser.getPicture()));
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setUrl(Requester.API_URL + "user/household/" + singleUser.getId());
+        simpleRequester.setJsonObject(null);
+        simpleRequester.setMethod(Method.GET);
+
+        try {
+            String jsonStr = simpleRequester.execute(simpleRequester).get();
+
+            JSONObject jsonObject = new JSONObject(jsonStr);
+
+            if (jsonObject.get("error").toString() == "false") {
+
+                JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                if (jsonArray.length() > 0) {
+
+                    JSONObject jsonObjectHousehold;
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+
+                        jsonObjectHousehold = jsonArray.getJSONObject(i);
+
+                        User user = new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
+                                "", jsonObjectHousehold.get("id").toString(),
+                                jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
+                                jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString());
+                        try {
+                            user.setRelationship(jsonObjectHousehold.get("relationship").toString());
+                        } catch (Exception e) {
+                            user.setRelationship("");
+                        }
+
+                        try {
+                            user.setEmail(jsonObjectHousehold.get("email").toString());
+                        } catch (Exception e) {
+                            user.setEmail("");
+                        }
+
+                        userList.add(user);
+                    }
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return userList;
+    }
+
 }
