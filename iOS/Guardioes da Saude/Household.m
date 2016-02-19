@@ -102,7 +102,7 @@
                                @"Padrasto",
                                @"Madrasta",
                                @"Enteado(a)",
-                               @"Conjuge",
+                               @"Cônjuge",
                                @"Outros"];
     
     
