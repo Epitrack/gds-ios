@@ -391,7 +391,6 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                 simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
             }
         }
-        //simpleRequester.setUrl(Requester.API_URL + "surveys/summary/?lon=" + locationUtility.getLongitude() + "&lat=" + locationUtility.getLatitude());
 
         try {
             String jsonStr = simpleRequester.execute(simpleRequester).get();

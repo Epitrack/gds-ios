@@ -143,10 +143,6 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
                 editor.putString("preferences_user_token", "");
                 editor.commit();
 
-                /*if (AccessToken.getCurrentAccessToken() != null) {
-                    AccessToken.setCurrentAccessToken(null);
-                }*/
-
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |
                         Intent.FLAG_ACTIVITY_NEW_TASK);
 

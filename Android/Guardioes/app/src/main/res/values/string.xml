@@ -55,7 +55,7 @@
     <string name="profile">Perfil</string>
     <string name="race">Cor/Raça</string>
     <string name="relationship">Parentesco</string>
-    <string name="rash">Exantemáica</string>
+    <string name="rash">Exantemática</string>
     <string name="register">Cadastre-se</string>
     <string name="report">Relatar erros no aplicativo</string>
     <string name="respiratory">Respiratória</string>
@@ -198,6 +198,7 @@
 
     <string name="message_use_mail">Ou use o seu email:</string>
     <string name="forgot_password">Digite seu email e siga as instruções em seu email.</string>
+    <string name="loading">Carregando…</string>
 
     # Welcome
 

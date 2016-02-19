@@ -22,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -32,13 +33,16 @@ public class UserAdapter extends ArrayAdapter<User> {
 
     private final UserListener listener;
     SingleUser singleUser = SingleUser.getInstance();
+    private ArrayList<User> userArrayList;
 
-    public UserAdapter(final Context context, final List<User> userList, final UserListener listener) {
+    public UserAdapter(final Context context, final ArrayList<User> userList, final UserListener listener) {
         super(context, 0, userList);
+
+        this.userArrayList = userList;
 
         //Miquéias Lopes
 
-        SingleUser singleUser = SingleUser.getInstance();
+        /*SingleUser singleUser = SingleUser.getInstance();
 
         userList.add(new User(R.drawable.image_avatar_small_2, singleUser.getNick(), singleUser.getEmail(), singleUser.getId(),
                 singleUser.getDob(), singleUser.getRace(), singleUser.getGender(), singleUser.getPicture()));
@@ -91,7 +95,7 @@ public class UserAdapter extends ArrayAdapter<User> {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
 
         this.listener = listener;
     }
@@ -144,7 +148,7 @@ public class UserAdapter extends ArrayAdapter<User> {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        final User user = getItem(position);
+        final User user = userArrayList.get(position); //getItem(position);
 
         if (user.getId() == singleUser.getId()) {
             viewHolder.imageTrash = (ImageView) view.findViewById(R.id.image_view_trash);

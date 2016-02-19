@@ -1,6 +1,7 @@
 package com.epitrack.guardioes.view;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -18,8 +19,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.epitrack.guardioes.R;
+import com.epitrack.guardioes.model.Notice;
 import com.epitrack.guardioes.model.SingleUser;
+import com.epitrack.guardioes.model.User;
+import com.epitrack.guardioes.request.Method;
 import com.epitrack.guardioes.request.Requester;
+import com.epitrack.guardioes.request.SimpleRequester;
 import com.epitrack.guardioes.service.AnalyticsApplication;
 import com.epitrack.guardioes.utility.BitmapUtility;
 import com.epitrack.guardioes.utility.DialogBuilder;
@@ -31,10 +36,15 @@ import com.epitrack.guardioes.view.base.BaseFragment;
 import com.epitrack.guardioes.view.diary.DiaryActivity;
 import com.epitrack.guardioes.view.menu.profile.Avatar;
 import com.epitrack.guardioes.view.menu.profile.ProfileActivity;
+import com.epitrack.guardioes.view.menu.profile.UserAdapter;
 import com.epitrack.guardioes.view.survey.SelectParticipantActivity;
 import com.epitrack.guardioes.view.tip.TipActivity;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,6 +52,9 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -202,7 +215,23 @@ public class HomeFragment extends BaseFragment {
 
         if (NetworkUtility.isOnline(getActivity().getApplication())) {
 
-            navigateTo(ProfileActivity.class);
+            final ProgressDialog progressDialog;
+            progressDialog = new ProgressDialog(getActivity(), R.style.Theme_MyProgressDialog);
+            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(30, 136, 229)));
+            progressDialog.setTitle(R.string.app_name);
+            progressDialog.setMessage("Carregando...");
+            progressDialog.show();
+
+            new Thread() {
+
+                @Override
+                public void run() {
+                    ProfileActivity.userArrayList = loadProfiles();
+                    progressDialog.dismiss();
+                    navigateTo(ProfileActivity.class);
+                }
+
+            }.start();
 
         } else {
 
@@ -223,7 +252,23 @@ public class HomeFragment extends BaseFragment {
 
         if (NetworkUtility.isOnline(getActivity().getApplication())) {
 
-            navigateTo(NoticeActivity.class);
+            final ProgressDialog progressDialog;
+            progressDialog = new ProgressDialog(getActivity(), R.style.Theme_MyProgressDialog);
+            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(30, 136, 229)));
+            progressDialog.setTitle(R.string.app_name);
+            progressDialog.setMessage("Carregando...");
+            progressDialog.show();
+
+            new Thread() {
+
+                @Override
+                public void run() {
+                    NoticeActivity.noticeList = getNoticeList();
+                    progressDialog.dismiss();
+                    navigateTo(NoticeActivity.class);
+                }
+
+            }.start();
 
         } else {
 
@@ -243,6 +288,13 @@ public class HomeFragment extends BaseFragment {
                 .build());
 
         if (NetworkUtility.isOnline(getActivity().getApplication())) {
+
+            final ProgressDialog progressDialog;
+            progressDialog = new ProgressDialog(getActivity(), R.style.Theme_MyProgressDialog);
+            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(30, 136, 229)));
+            progressDialog.setTitle(R.string.app_name);
+            progressDialog.setMessage("Carregando...");
+            progressDialog.show();
 
             navigateTo(MapSymptomActivity.class);
 
@@ -275,6 +327,13 @@ public class HomeFragment extends BaseFragment {
 
         if (NetworkUtility.isOnline(getActivity().getApplication())) {
 
+            final ProgressDialog progressDialog;
+            progressDialog = new ProgressDialog(getActivity(), R.style.Theme_MyProgressDialog);
+            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(30, 136, 229)));
+            progressDialog.setTitle(R.string.app_name);
+            progressDialog.setMessage("Carregando...");
+            progressDialog.show();
+
             navigateTo(DiaryActivity.class);
 
         } else {
@@ -297,7 +356,23 @@ public class HomeFragment extends BaseFragment {
 
         if (NetworkUtility.isOnline(getActivity().getApplication())) {
 
-            navigateTo(SelectParticipantActivity.class);
+            final ProgressDialog progressDialog;
+            progressDialog = new ProgressDialog(getActivity(), R.style.Theme_MyProgressDialog);
+            progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.rgb(30, 136, 229)));
+            progressDialog.setTitle(R.string.app_name);
+            progressDialog.setMessage("Carregando...");
+            progressDialog.show();
+
+            new Thread() {
+
+                @Override
+                public void run() {
+                    SelectParticipantActivity.parentList = loadHaousehold();
+                    progressDialog.dismiss();
+                    navigateTo(SelectParticipantActivity.class);
+                }
+
+            }.start();
 
         } else {
 
@@ -308,4 +383,146 @@ public class HomeFragment extends BaseFragment {
                     .show();
         }
     }
+
+    private ArrayList<User> loadProfiles() {
+        ArrayList<User> userList = new ArrayList<User>();
+
+        SingleUser singleUser = SingleUser.getInstance();
+
+        userList.add(new User(R.drawable.image_avatar_small_2, singleUser.getNick(), singleUser.getEmail(), singleUser.getId(),
+                singleUser.getDob(), singleUser.getRace(), singleUser.getGender(), singleUser.getPicture()));
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setUrl(Requester.API_URL + "user/household/" + singleUser.getId());
+        simpleRequester.setJsonObject(null);
+        simpleRequester.setMethod(Method.GET);
+
+        try {
+            String jsonStr = simpleRequester.execute(simpleRequester).get();
+
+            JSONObject jsonObject = new JSONObject(jsonStr);
+
+            if (jsonObject.get("error").toString() == "false") {
+
+                JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                if (jsonArray.length() > 0) {
+
+                    JSONObject jsonObjectHousehold;
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+
+                        jsonObjectHousehold = jsonArray.getJSONObject(i);
+
+                        User user = new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
+                                "", jsonObjectHousehold.get("id").toString(),
+                                jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
+                                jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString());
+                        try {
+                            user.setRelationship(jsonObjectHousehold.get("relationship").toString());
+                        } catch (Exception e) {
+                            user.setRelationship("");
+                        }
+
+                        try {
+                            user.setEmail(jsonObjectHousehold.get("email").toString());
+                        } catch (Exception e) {
+                            user.setEmail("");
+                        }
+
+                        userList.add(user);
+                    }
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return userList;
+    }
+
+    private List<Notice> getNoticeList() {
+
+        List<Notice> noticeList = new ArrayList<>();
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setMethod(Method.GET);
+        simpleRequester.setUrl(Requester.API_URL + "news/get");
+
+        try {
+            String jsonStr = simpleRequester.execute(simpleRequester).get();
+            JSONArray jsonArray = new JSONObject(jsonStr).getJSONObject("data").getJSONArray("statuses");
+
+            if (jsonArray.length() > 0) {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                    Notice notice = new Notice();
+
+                    notice.setTitle(jsonObject.get("text").toString());
+                    notice.setSource("via @minsaude");
+
+                    notice.setDrawable(R.drawable.stub1);
+                    notice.setLink("https://twitter.com/minsaude/status/" + jsonObject.get("id_str").toString());
+
+                    noticeList.add(notice);
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return noticeList;
+    }
+
+    private List<User> loadHaousehold() {
+
+        List<User> parentList = new ArrayList<>();
+
+        SimpleRequester simpleRequester = new SimpleRequester();
+        simpleRequester.setUrl(Requester.API_URL + "user/household/" + singleUser.getId());
+        simpleRequester.setJsonObject(null);
+        simpleRequester.setMethod(Method.GET);
+
+        try {
+            String jsonStr = simpleRequester.execute(simpleRequester).get();
+
+            JSONObject jsonObject = new JSONObject(jsonStr);
+
+            if (jsonObject.get("error").toString() == "false") {
+
+                JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                if (jsonArray.length() > 0) {
+
+                    JSONObject jsonObjectHousehold;
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+
+                        jsonObjectHousehold = jsonArray.getJSONObject(i);
+                        parentList.add(new User(R.drawable.image_avatar_small_8, jsonObjectHousehold.get("nick").toString(),
+                                /*jsonObjectHousehold.get("email").toString()*/"", jsonObjectHousehold.get("id").toString(),
+                                jsonObjectHousehold.get("dob").toString(), jsonObjectHousehold.get("race").toString(),
+                                jsonObjectHousehold.get("gender").toString(), jsonObjectHousehold.get("picture").toString()));
+                    }
+                }
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        parentList.add(new User(R.drawable.img_add_profile, "    Adicionar\nnovo membro", "", "-1", "", "", "", ""));
+        return parentList;
+    }
+
 }

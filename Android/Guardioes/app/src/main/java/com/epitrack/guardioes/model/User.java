@@ -5,10 +5,13 @@ import android.graphics.Bitmap;
 import org.json.JSONArray;
 
 import android.net.Uri;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 public class User {
 
     // TODO: This is for stub only.
+    private int mData;
 
     private int image;
     private String nick;
