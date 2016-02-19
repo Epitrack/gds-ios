@@ -37,6 +37,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbPercentDiareica;
 @property (weak, nonatomic) IBOutlet UILabel *lbPercentExantematica;
 @property (weak, nonatomic) IBOutlet UILabel *lbPercentRespiratoria;
+@property (weak, nonatomic) IBOutlet UIButton *btnInfo;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constViewDetails;
+
 - (IBAction)btnInfoAction:(id)sender;
 
 

@@ -390,31 +390,22 @@
                                                           action:@"button_show_details"
                                                            label:@"Show Details"
                                                            value:nil] build]];
-    
-    CABasicAnimation *animationView = [CABasicAnimation animationWithKeyPath:@"position.y"];
     showDetails = !showDetails;
     
+    [self.view layoutIfNeeded];
+    
     if (showDetails) {
-        animationView.toValue = @(([UIScreen mainScreen].bounds.size.height*.3)+(self.detailsView.frame.size.height/2));
-        [self.seach setUserInteractionEnabled:NO];
-        [UIView animateWithDuration:.25 animations:^{
-            CGRect rect = self.btnDetails.frame;
-            self.btnDetails.frame = CGRectMake(rect.origin.x, ([UIScreen mainScreen].bounds.size.height * .3)-(self.btnDetails.frame.size.height/2), rect.size.width, rect.size.height);
-        }];
+        self.constViewDetails.constant = -100;
+        [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"fab_cancel.png"] forState:UIControlStateNormal];
     }else{
-        animationView.fromValue = @(([UIScreen mainScreen].bounds.size.height*.3)+(self.detailsView.frame.size.height/2));
-        animationView.toValue = 0;
-        [self.seach setUserInteractionEnabled:YES];
-        [UIView animateWithDuration:.25 animations:^{
-            CGRect rect = self.btnDetails.frame;
-            self.btnDetails.frame = CGRectMake(rect.origin.x, self.detailsView.frame.origin.y - (self.btnDetails.frame.size.height/2), rect.size.width, rect.size.height);
-        }];
+        self.constViewDetails.constant = -423;
+        [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"fab_plus.png"] forState:UIControlStateNormal];
     }
     
-    animationView.removedOnCompletion = NO;
-    animationView.fillMode = kCAFillModeForwards;
-
-    [self.detailsView.layer addAnimation:animationView forKey:@"position.y"];
+    
+    [UIView animateWithDuration:.25 animations:^(){
+        [self.view layoutIfNeeded];
+    }];
 }
 
 -(void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
