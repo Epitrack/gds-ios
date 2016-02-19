@@ -228,6 +228,7 @@ NSString *const kNickKey = @"nickKey";
     self.fb = user.fb;
     self.gl = user.gl;
     self.photo = user.photo;
+    self.app_token = user.app_token;
 }
 
 - (void) clearUser{

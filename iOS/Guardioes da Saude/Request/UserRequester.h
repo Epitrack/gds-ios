@@ -52,7 +52,7 @@ typedef enum {
              onFail: (void(^) (NSError *error)) fail;
 
 -(void) getSymptonsOnStart: (void(^)()) onStart
-                andSuccess: (void(^)()) onSuccess
+                andSuccess: (void(^)(NSMutableArray *)) onSuccess
                 andOnError: (void(^)(NSError *)) onError;
 
 -(void) lookupWithUsertoken: (NSString *) userToken

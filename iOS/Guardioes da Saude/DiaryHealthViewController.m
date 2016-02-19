@@ -72,7 +72,6 @@ const float _kCellHeight = 100.0f;
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     CGSize screenSize = screenBound.size;
-    CGFloat screenWidth = screenSize.width;
     CGFloat screenHeight = screenSize.height;
     
     //create table view to contain ASHorizontalScrollView
@@ -83,6 +82,8 @@ const float _kCellHeight = 100.0f;
     sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     sampleTableView.alwaysBounceVertical = NO;
     [self.view addSubview:sampleTableView];
+    
+    [self loadHouseHolds];
     
     [self loadCalendar];
     
@@ -96,6 +97,20 @@ const float _kCellHeight = 100.0f;
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void) loadHouseHolds{
+    [self showProgressBar];
+    
+    [[[HouseholdRequester alloc] init] getHouseholdsByUser:user onSuccess:^(NSMutableArray *households){
+        [self hiddenProgressBar];
+        user.household = households;
+        [sampleTableView reloadData];
+    } onFail:^(NSError *error){
+        [self hiddenProgressBar];
+        UIAlertController *alert = [ViewUtil showNoConnectionAlert];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -251,63 +266,64 @@ const float _kCellHeight = 100.0f;
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        cell.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
-        cell.textLabel.textColor = [UIColor whiteColor];
+
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    
+    if (indexPath.row == 0) {
+        //sample code of how to use this scroll view
+        ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, _kCellHeight)];
+        [cell.contentView addSubview:horizontalScrollView];
+        horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
-        if (indexPath.row == 0) {
-            //sample code of how to use this scroll view
-            ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, _kCellHeight)];
-            [cell.contentView addSubview:horizontalScrollView];
-            horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        CGFloat widthScreen = [UIScreen mainScreen].bounds.size.width;
+        
+        int width = 150;
+        if (widthScreen <= 320) {
+            width = 120;
+        }
+        
+        
+        horizontalScrollView.uniformItemSize = CGSizeMake(width, 100);
+        //this must be called after changing any size or margin property of this class to get acurrate margin
+        [horizontalScrollView setItemsMarginOnce];
+        NSMutableArray *households = user.household;
+        
+        if (households.count > 0) {
             
-            CGFloat widthScreen = [UIScreen mainScreen].bounds.size.width;
-            
-            int width = 150;
-            if (widthScreen <= 320) {
-                width = 120;
-            }
-            
-            
-            horizontalScrollView.uniformItemSize = CGSizeMake(width, 100);
-            //this must be called after changing any size or margin property of this class to get acurrate margin
-            [horizontalScrollView setItemsMarginOnce];
-            NSDictionary *households = user.household;
-            
-            if (households.count > 0) {
+            for (Household *h in households) {
                 
-                for (NSDictionary *h in households) {
+                NSString *nick = h.nick;
+                NSString *picture = h.picture;
+                NSString *avatar;
+                NSString *idHousehold = h.idHousehold;
+                
+                if ([picture isEqualToString:@"0"]) {
+                    avatar = @"img_profile01.png";
+                } else {
                     
-                    NSString *nick = h[@"nick"];
-                    NSString *picture = h[@"picture"];
-                    NSString *avatar;
-                    NSString *idHousehold = h[@"id"];
-                    
-                    if ([picture isEqualToString:@"0"]) {
-                        avatar = @"img_profile01.png";
-                    } else {
-                        
-                        if (picture.length == 1) {
-                            avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
-                        } else if (picture.length == 2) {
-                            avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
-                        }
+                    if (picture.length == 1) {
+                        avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
+                    } else if (picture.length == 2) {
+                        avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
+                    }else{
+                        avatar = picture;
                     }
-                    
-                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
-                    [buttons addObject:thumb];
-                    [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
                 
-                if ([UIScreen mainScreen].bounds.size.width >= 375 ) {
-                    UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 150)];
-                    [buttons addObject:blankView];
-                }
-                
-                [horizontalScrollView addItems:buttons];
+                HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
+                [buttons addObject:thumb];
+                [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
             }
+            
+            if ([UIScreen mainScreen].bounds.size.width >= 375 ) {
+                UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 150)];
+                [buttons addObject:blankView];
+            }
+            
+            [horizontalScrollView addItems:buttons];
         }
     }
     

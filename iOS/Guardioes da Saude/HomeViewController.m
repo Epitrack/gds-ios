@@ -52,7 +52,13 @@
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     
     if ([preferences objectForKey:kUserTokenKey] != nil && !user.user_token) {
-        NSString *userToken = [preferences valueForKey:kUserTokenKey];
+        NSString *userToken;
+        
+        if (user.user_token) {
+            userToken = user.user_token;
+        }else{
+            userToken = [preferences valueForKey:kUserTokenKey];
+        }
         
         user.user_token = [preferences valueForKey:kUserTokenKey];
         user.app_token = [preferences valueForKey:kAppTokenKey];
@@ -256,9 +262,8 @@
                                OnStart:^{
                                     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                 }andOnSuccess:^{
-                                    [self loadSymptons];
                                     [self showInformations];
-                                    [self loadNotices];
+                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
                                 }andOnError:^(NSError *error){
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                                     
@@ -271,26 +276,5 @@
                                     
                                     [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                 }];
-}
-
--(void) loadSymptons{
-    [userRequester getSymptonsOnStart:^{}
-                           andSuccess:^{
-                               [MBProgressHUD hideHUDForView:self.view animated:YES];
-                           }
-                           andOnError:^(NSError *error){
-                               [MBProgressHUD hideHUDForView:self.view animated:YES];
-                               NSLog(@"Error: %@", error);
-                           }];
-}
-
-- (void) loadNotices {
-    
-    [[[NoticeRequester alloc] init] getNotices:user
-                                       onStart:^{}
-                                       onError:^(NSString * message){}
-                                     onSuccess:^(NSMutableArray *noticesRequest){
-                                         singleNotice.notices = noticesRequest;
-                                     }];
 }
 @end

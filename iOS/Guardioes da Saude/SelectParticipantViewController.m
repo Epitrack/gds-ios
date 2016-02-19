@@ -13,6 +13,8 @@
 #import "HouseholdThumbnail.h"
 #import "DateUtil.h"
 #import <Google/Analytics.h>
+#import "HouseholdRequester.h"
+#import "MBProgressHUD.h"
 @import Photos;
 
 @interface SelectParticipantViewController ()
@@ -20,7 +22,7 @@
 @end
 
 @implementation SelectParticipantViewController {
-    
+    HouseholdRequester *houseHoldRequester;
     User *user;
     NSMutableDictionary *householdsDictionary;
     NSInteger *i;
@@ -33,6 +35,7 @@ const float kCellHeight = 100.0f;
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"Participe Agora";
     user = [User getInstance];
+    houseHoldRequester = [[HouseholdRequester alloc] init];
     
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
                                 initWithTitle:@""
@@ -66,6 +69,8 @@ const float kCellHeight = 100.0f;
     
     self.txtDobMainMember.text = [NSString stringWithFormat:@"%ld Anos", (long)ageUser];
     [self loadAvatar];
+    
+    [self loadHouseHolds];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -119,61 +124,58 @@ const float kCellHeight = 100.0f;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
     
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        cell.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
-        cell.textLabel.textColor = [UIColor whiteColor];
-        cell.detailTextLabel.textColor = [UIColor whiteColor];
+    if (indexPath.row == 0) {
+        //sample code of how to use this scroll view
+        ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kCellHeight)];
+        [cell.contentView addSubview:horizontalScrollView];
+        horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
-        if (indexPath.row == 0) {
-            //sample code of how to use this scroll view
-            ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kCellHeight)];
-            [cell.contentView addSubview:horizontalScrollView];
-            horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        horizontalScrollView.uniformItemSize = CGSizeMake(120, 100);
+        //this must be called after changing any size or margin property of this class to get acurrate margin
+        [horizontalScrollView setItemsMarginOnce];
+        NSMutableArray *buttons = [NSMutableArray array];
+        NSMutableArray *households = user.household;
+        
+        if (households.count > 0) {
             
-            horizontalScrollView.uniformItemSize = CGSizeMake(120, 100);
-            //this must be called after changing any size or margin property of this class to get acurrate margin
-            [horizontalScrollView setItemsMarginOnce];
-            NSMutableArray *buttons = [NSMutableArray array];
-            NSDictionary *households = user.household;
-            
-            if (households.count > 0) {
+            for (Household *h in households) {
                 
-                for (NSDictionary *h in households) {
-                    
-                    NSString *nick = h[@"nick"];
-                    NSString *picture = h[@"picture"];
-                    NSString *avatar;
-                    NSString *idHousehold = h[@"id"];
-                    
-                    //picture = @"0";
-                    
-                    if ([picture isEqualToString:@"0"]) {
-                        avatar = @"img_profile01.png";
-                    } else {
-                        if (picture.length == 1) {
-                            avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
-                        } else if (picture.length == 2) {
-                            avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
-                        } else if (picture.length > 2) {
-                            avatar = @"img_profile01.png";
-                        }
+                NSString *nick = h.nick;
+                NSString *picture = h.picture;
+                NSString *avatar;
+                NSString *idHousehold = h.idHousehold;
+                
+                //picture = @"0";
+                
+                if ([picture isEqualToString:@"0"]) {
+                    avatar = @"img_profile01.png";
+                } else {
+                    if (picture.length == 1) {
+                        avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
+                    } else if (picture.length == 2) {
+                        avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
+                    } else if (picture.length > 2) {
+                        avatar = picture;
                     }
-                    
-                    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
-                    [buttons addObject:thumb];
-                    [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
                 }
                 
-                if (buttons.count > 0) {
-                    if ([UIScreen mainScreen].bounds.size.width >= 375 ) {
-                        UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 120, 150)];
-                        [buttons addObject:blankView];
-                    }
-                    [horizontalScrollView addItems:buttons];
+                HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
+                [buttons addObject:thumb];
+                [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
+            }
+            
+            if (buttons.count > 0) {
+                if ([UIScreen mainScreen].bounds.size.width >= 375 ) {
+                    UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 120, 150)];
+                    [buttons addObject:blankView];
                 }
+                [horizontalScrollView addItems:buttons];
             }
         }
     }
@@ -204,5 +206,16 @@ const float kCellHeight = 100.0f;
     NSLog(@"didSelectRowAtIndexPath");
 }
 
+- (void) loadHouseHolds{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [houseHoldRequester getHouseholdsByUser:user onSuccess:^(NSMutableArray *houseHolds){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        user.household = houseHolds;
+        [sampleTableView reloadData];
+    } onFail:^(NSError *error){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+}
 
 @end

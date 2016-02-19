@@ -539,6 +539,7 @@
 		CBA0E5461C5FA5EC0086315B /* img_profile17Mini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5281C5FA5EC0086315B /* img_profile17Mini@2x.png */; };
 		CBA0E5471C5FA5EC0086315B /* img_profile17Mini@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5291C5FA5EC0086315B /* img_profile17Mini@3x.png */; };
 		CBA4F47C1C73673200B6A99C /* logo_horizontal_about.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */; };
+		CBDDF5A51C77452E008853B2 /* SymptomRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDDF5A41C77452E008853B2 /* SymptomRequester.m */; };
 		CBEF9AD21C75FD8800A0B036 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */; };
 		CBEF9AD31C75FD8800A0B036 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */; };
 /* End PBXBuildFile section */
@@ -1163,6 +1164,8 @@
 		CBA0E5281C5FA5EC0086315B /* img_profile17Mini@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile17Mini@2x.png"; sourceTree = "<group>"; };
 		CBA0E5291C5FA5EC0086315B /* img_profile17Mini@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile17Mini@3x.png"; sourceTree = "<group>"; };
 		CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_horizontal_about.png; sourceTree = "<group>"; };
+		CBDDF5A31C77452E008853B2 /* SymptomRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomRequester.h; sourceTree = "<group>"; };
+		CBDDF5A41C77452E008853B2 /* SymptomRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomRequester.m; sourceTree = "<group>"; };
 		CBEF9ACF1C75FD8800A0B036 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
@@ -1954,6 +1957,8 @@
 				527782D71C0CC9FD00251BF8 /* NoticeRequester.m */,
 				CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */,
 				CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */,
+				CBDDF5A31C77452E008853B2 /* SymptomRequester.h */,
+				CBDDF5A41C77452E008853B2 /* SymptomRequester.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2639,6 +2644,7 @@
 				52EC50411BF02200002FEACE /* Household.m in Sources */,
 				522360BF1BE9176D006D0598 /* DetailMap.m in Sources */,
 				524C14311BEBE043003A6C2D /* PharmacyViewController.m in Sources */,
+				CBDDF5A51C77452E008853B2 /* SymptomRequester.m in Sources */,
 				CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */,
 				528705B91BF3744600321985 /* PhonesViewController.m in Sources */,
 				B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */,

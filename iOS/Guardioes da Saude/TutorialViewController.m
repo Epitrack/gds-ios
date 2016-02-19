@@ -38,11 +38,6 @@
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     NSString *userTokenKey = @"userTokenKey";
     
-    if ([preferences objectForKey:userTokenKey] != nil) {
-        NSString *userToken = [preferences valueForKey:userTokenKey];
-        [self authorizedAutomaticLogin:userToken];
-    }
-    
     CGSize result = [[UIScreen mainScreen] bounds].size;
     
     if (result.height < 568) {
@@ -209,59 +204,5 @@
     
     SelectTypeCreateAccoutViewController *selectTypeCreateAccoutViewController = [[SelectTypeCreateAccoutViewController alloc] init];
     [self.navigationController pushViewController:selectTypeCreateAccoutViewController animated:YES];
-}
-
-- (BOOL) authorizedAutomaticLogin:(NSString *)userToken {
-    
-    AFHTTPRequestOperationManager *manager;
-    
-    manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:user.app_token forHTTPHeaderField:@"app_token"];
-    [manager.requestSerializer setValue:userToken forHTTPHeaderField:@"user_token"];
-    [manager GET:[Url stringByAppendingString:@"/user/lookup/"]
-      parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             
-             if ([responseObject[@"error"] boolValue] == 1) {
-                 user.user_token = nil;
-             } else {
-                 NSDictionary *response = responseObject[@"data"];
-                 
-                 user.nick = response[@"nick"];
-                 user.email = response[@"email"];
-                 user.gender = response[@"gender"];
-                 user.avatarNumber = response[@"picture"];
-                 user.idUser =  response[@"id"];
-                 user.race = response[@"race"];
-                 user.dob = response[@"dob"];
-                 user.user_token = response[@"token"];
-                 user.hashtag = response[@"hashtags"];
-                 user.household = response[@"household"];
-                 user.survey = response[@"surveys"];
-                 
-                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-                 NSString *userKey = user.user_token;
-                 
-                 [preferences setValue:userKey forKey:@"userTokenKey"];
-                 BOOL didSave = [preferences synchronize];
-                 
-                 if (!didSave) {
-                     user.user_token = nil;
-                 }
-                 
-                 HomeViewController *homeViewController = [[HomeViewController alloc] init];
-                 [self.navigationController pushViewController:homeViewController animated:YES];
-             }
-             
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             NSLog(@"Error: %@", error);
-             user.user_token = nil;
-         }];
-    
-    if (user.user_token == nil) {
-        return NO;
-    } else {
-        return YES;
-    }
 }
 @end

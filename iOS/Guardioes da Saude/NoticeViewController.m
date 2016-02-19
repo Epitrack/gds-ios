@@ -9,9 +9,12 @@
 #import "NoticeViewController.h"
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
+#import "NoticeRequester.h"
 #import "Notice.h"
 #import "SingleNotice.h"
 #import <Google/Analytics.h>
+#import "MBProgressHUD.h"
+#import "ViewUtil.h"
 
 @interface NoticeViewController () {
     User *user;
@@ -45,6 +48,33 @@
     
     [self.imgHeader addSubview:overlay];
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
+    [self loadNotices];
+}
+
+- (void) loadNotices {
+    
+    [[[NoticeRequester alloc] init] getNotices:user
+                                       onStart:^{
+                                           [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                       }
+                                       onError:^(NSError * error){
+                                           [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                           
+                                           NSString *errorMsg;
+                                           if (error && error.code == -1009) {
+                                               errorMsg = kMsgConnectionError;
+                                           } else {
+                                               errorMsg = kMsgApiError;
+                                           }
+                                           
+                                           [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                                       }
+                                     onSuccess:^(NSMutableArray *noticesRequest){
+                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                         
+                                         singleNotice.notices = noticesRequest;
+                                         [self.tableViewNotice reloadData];
+                                     }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -6,6 +6,7 @@
 #import "SumaryCalendar.h"
 #import "SumaryGraph.h"
 #import "UserRequester.h"
+#import "Symptom.h"
 
 @implementation UserRequester
 
@@ -52,7 +53,6 @@
                      user.dob = paramMap[@"dob"];
                      user.user_token = response[@"token"];
                      user.hashtag = paramMap[@"hashtags"];
-                     user.household = paramMap[@"household"];
                      user.survey = paramMap[@"surveys"];
                      
                      onSuccess(user);
@@ -131,7 +131,6 @@
                  user.dob = userRequest[@"dob"];
                  user.user_token = userRequest[@"token"];
                  user.hashtag = userRequest[@"hashtags"];
-                 user.household = userRequest[@"household"];
                  user.survey = userRequest[@"surveys"];
                  
                  onSuccess(user);
@@ -384,7 +383,7 @@
 }
 
 -(void) getSymptonsOnStart: (void(^)()) onStart
-                andSuccess: (void(^)()) onSuccess
+                andSuccess: (void(^)(NSMutableArray *)) onSuccess
                 andOnError: (void(^)(NSError *)) onError{
     User *user = [User getInstance];
     
@@ -397,8 +396,17 @@
             onError(error);
           }
         success:^(AFHTTPRequestOperation * request, id response){
-            user.symptoms = response[@"data"];
-            onSuccess();
+            NSMutableArray *symptoms = [[NSMutableArray alloc] init];
+            
+            for (NSDictionary *dicSymptom in response[@"data"]) {
+                Symptom *symptom = [[Symptom alloc] init];
+                symptom.code = dicSymptom[@"code"];
+                symptom.name = dicSymptom[@"name"];
+                
+                [symptoms addObject:symptom];
+            }
+            
+            onSuccess(symptoms);
         }];
 }
 
@@ -430,7 +438,6 @@
                 user.dob = response[@"dob"];
                 user.user_token = response[@"token"];
                 user.hashtag = response[@"hashtags"];
-                user.household = response[@"household"];
                 user.survey = response[@"surveys"];
                 
                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
@@ -502,7 +509,6 @@
                 user.race = userObject[@"race"];
                 user.dob = userObject[@"dob"];
                 user.hashtag = userObject[@"hashtags"];
-                user.household = userObject[@"household"];
                 user.survey = userObject[@"surveys"];
                 
                 switch (socialType) {
