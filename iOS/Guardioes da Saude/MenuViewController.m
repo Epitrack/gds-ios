@@ -57,7 +57,10 @@
         [self.navigationController.navigationBar addGestureRecognizer:grandParentRevealController.panGestureRecognizer];
         self.navigationItem.leftBarButtonItem = revealButtonItem;
         self.navigationItem.title = title;
+
     }
+    
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
