@@ -38,9 +38,9 @@
     <string name="hyphen">-</string>
     <string name="interest">Interesses</string>
     <string name="join">Participe\nagora!</string>
-    <string name="login">Logar</string>
-    <string name="mail">Email</string>
-    <string name="mails">Emails</string>
+    <string name="login">Entrar</string>
+    <string name="mail">E-mail</string>
+    <string name="mails">E-mails</string>
     <string name="map_health">Mapa da Saúde</string>
     <string name="map_health_1">Mapa da\nSaúde</string>
     <string name="member">Membro do domicílio</string>
@@ -56,7 +56,7 @@
     <string name="race">Cor/Raça</string>
     <string name="relationship">Parentesco</string>
     <string name="rash">Exantemática</string>
-    <string name="register">Cadastre-se</string>
+    <string name="register">Cadastrar-se</string>
     <string name="report">Relatar erros no aplicativo</string>
     <string name="respiratory">Respiratória</string>
     <string name="resume">Resumo</string>
@@ -89,7 +89,7 @@
     <string name="new_user_social_media">Complete o cadastro a seguir para acessar o Guardiões da Saúde.</string>
     <string name="cadastro_sucesso">Cadastro realizado com sucesso!</string>
     <string name="user_exist">Cadastro realizado anterioremente com essa rede social ou e-mail.</string>
-    <string name="delete_profile">Deseja remover o perfil definitivamente? Essa operação é irreversível.</string>
+    <string name="delete_profile">Deseja remover o perfil definitivamente?</string>
     <string name="internet_fail">É preciso estar conectado a internet para continuar a utilizar o Guardiões da Saúde</string>
     <string name="network_fail">É necessário estar conectado para acessar esta função. Por Favor, verifique sua rede!</string>
     <string name="password_fail">A senha precisa ter pelo menos seis caracteres.</string>
@@ -178,10 +178,11 @@
     # Hint
 
     <string name="hint_birth_date">Data de nascimento ex: 01/01/1991</string>
-    <string name="hint_birth_date_dt">Dt. de nascimento</string>
-    <string name="hint_mail">Email</string>
+    <string name="hint_birth_date_dt">Nascimento</string>
+    <string name="hint_mail">E-mail</string>
     <string name="hint_nickname">Apelido</string>
     <string name="hint_password">Senha - Mínimo de 6 caracteres</string>
+    <string name="hint_password_short">Senha</string>
     <string name="hint_repeat_password">Repetir senha</string>
     <string name="hint_redefine_password">Redefinir senha</string>
     <string name="hint_country_name">Informe o nome do país que você esteve</string>
@@ -191,13 +192,13 @@
     <string name="validation_confirm_password">Senhas não conferem</string>
     <string name="validation_empty">Campo obrigatório</string>
     <string name="validation_length">Mínimo três caracteres</string>
-    <string name="validation_mail">Email inválido</string>
+    <string name="validation_mail">E-mail inválido</string>
     <string name="validation_password">Senha inválida ou com menos de 6 caracteres</string>
 
     # Message
 
-    <string name="message_use_mail">Ou use o seu email:</string>
-    <string name="forgot_password">Digite seu email e siga as instruções em seu email.</string>
+    <string name="message_use_mail">Ou use o seu e-mail:</string>
+    <string name="forgot_password">Digite seu e-mail e siga as instruções.</string>
     <string name="loading">Carregando…</string>
 
     # Welcome
@@ -292,7 +293,8 @@ Acompanhar o perfil de saúde dos participantes por meio do website www.guardioe
     <string name="message_zika">Atenção: Os sintomas informados podem estar\n relacionados ao Zika vírus. Procure a Unidade\n de Pronto Atendimento mais próxima.</string>
     <string name="message_hospital">Não deixe de procurar um serviço de saúde mais\npróximo. Continue informando diariamente como\nestá sua saúde.</string>
     <string name="message_invite_friend">Convide seus amigos para serem guardiões.</string>
-    <string name="message_thanks">Obrigado pela informação!\nAcompanhe seu histórico no Diário da Saúde</string>
+    <string name="message_thanks">Obrigado pela informação!</string>
+    <string name="message_thanks_2">Acompanhe seu histórico no Diário da Saúde</string>
     <string name="message_thanks_zika">Obrigado pela\n informação!</string>
 
     # Dialog Survey

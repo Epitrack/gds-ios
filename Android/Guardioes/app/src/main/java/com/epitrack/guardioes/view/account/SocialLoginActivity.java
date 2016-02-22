@@ -243,6 +243,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                                             try {
                                                 JSONObject jsonObject1 = jsonObjectBusiness.getJSONArray("data").getJSONObject(0);
                                                 singleUser.setFb(jsonObject1.getString("id"));
+                                                userExistSocial(jsonObject1.getString("id"), Constants.Bundle.FACEBOOK);
                                             } catch (JSONException e) {
                                                 e.printStackTrace();
                                             }
@@ -251,7 +252,7 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                             ).executeAsync();
 
 
-                            userExistSocial(loginResult.getAccessToken().getUserId(), Constants.Bundle.FACEBOOK);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -443,29 +444,44 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
 
                     jsonObject = new JSONObject(jsonStr);
 
-                    singleUser.setNick(jsonObjectUser.getString("nick").toString());
-                    singleUser.setEmail(jsonObjectUser.getString("email").toString());
-                    singleUser.setGender(jsonObjectUser.getString("gender").toString());
+                    if (jsonObject.get("error").toString() == "true") {
 
-                    try {
-                        singleUser.setPicture(jsonObjectUser.getString("picture").toString());
-                    } catch (Exception e) {
-                        singleUser.setPicture("0");
+                        new DialogBuilder(SocialLoginActivity.this).load()
+                                .title(R.string.attention)
+                                .content(jsonObject.get("message").toString())
+                                .positiveText(R.string.ok)
+                                .callback(new MaterialDialog.ButtonCallback() {
+                                    @Override
+                                    public void onPositive(final MaterialDialog dialog) {
+                                        onBackPressed();
+                                    }
+                                }).show();
+
+                    } else {
+                        singleUser.setNick(jsonObjectUser.getString("nick").toString());
+                        singleUser.setEmail(jsonObjectUser.getString("email").toString());
+                        singleUser.setGender(jsonObjectUser.getString("gender").toString());
+
+                        try {
+                            singleUser.setPicture(jsonObjectUser.getString("picture").toString());
+                        } catch (Exception e) {
+                            singleUser.setPicture("0");
+                        }
+
+                        singleUser.setId(jsonObjectUser.getString("id").toString());
+                        singleUser.setRace(jsonObjectUser.getString("race").toString());
+                        singleUser.setDob(jsonObjectUser.getString("dob").toString());
+                        singleUser.setUser_token(jsonObject.get("token").toString());
+
+                        SharedPreferences sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                        editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
+                        editor.apply();
+
+                        navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                Intent.FLAG_ACTIVITY_NEW_TASK);
                     }
-
-                    singleUser.setId(jsonObjectUser.getString("id").toString());
-                    singleUser.setRace(jsonObjectUser.getString("race").toString());
-                    singleUser.setDob(jsonObjectUser.getString("dob").toString());
-                    singleUser.setUser_token(jsonObject.get("token").toString());
-
-                    SharedPreferences sharedPreferences = getSharedPreferences(Constants.Pref.PREFS_NAME, 0);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                    editor.putString(Constants.Pref.PREFS_NAME, singleUser.getUser_token());
-                    editor.apply();
-
-                    navigateTo(HomeActivity.class, Intent.FLAG_ACTIVITY_CLEAR_TASK |
-                            Intent.FLAG_ACTIVITY_NEW_TASK);
                 } else {
                     //if (type != Constants.Bundle.FACEBOOK) {
                         Bundle dtoBundle = new Bundle();

@@ -29,6 +29,7 @@
             android:singleLine="true"
             android:text="Hospital da Restauração"
             android:textColor="@color/blue_dark"
+            android:inputType="textCapSentences"
             android:textSize="24dp"/>
 
         <TextView

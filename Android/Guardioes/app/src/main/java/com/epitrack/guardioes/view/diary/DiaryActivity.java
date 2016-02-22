@@ -338,8 +338,9 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
         ArrayList<String> xVals = new ArrayList<String>();
 
-        for (int i = 0; i < xData.length; i++)
+        for (int i = 0; i < xData.length; i++) {
             xVals.add(xData[i]);
+        }
 
         PieDataSet dataSet = new PieDataSet(yVals1, "");
         dataSet.setSliceSpace(2);
@@ -355,11 +356,12 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
 
         pieChart.setData(data);
         pieChart.invalidate();
+        pieChart.getLegend().setEnabled(false);
     }
 
     private void setDataLineChart() {
-
-        textViewFrequencyReport.setText("Frequência de envio em " + CalendarDay.today().getYear());
+        pieChart.getLegend().setEnabled(false);
+        textViewFrequencyReport.setText("Frequência de envio de relatório em " + CalendarDay.today().getYear());
 
         Map<Integer, Double> mapTotalMonth = new HashMap<Integer, Double>();
         Map<Integer, Double> mapTotalMonthTemp = new HashMap<Integer, Double>();

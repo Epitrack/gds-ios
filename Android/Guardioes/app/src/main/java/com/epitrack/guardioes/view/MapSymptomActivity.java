@@ -244,7 +244,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
     public void onSyndromes() {
 
         new DialogBuilder(MapSymptomActivity.this).load()
-                .title(R.string.attention)
+                .title(R.string.syndromes)
                 .content(R.string.syndromes_desc)
                 .positiveText(R.string.ok)
                 .show();
@@ -534,6 +534,7 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
 
         pieChart.setData(data);
         pieChart.invalidate();
+        pieChart.getLegend().setEnabled(false);
     }
 
     private MarkerOptions loadBadMarkerOption() {

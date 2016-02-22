@@ -114,29 +114,8 @@ public class SymptomActivity extends BaseAppCompatActivity {
 
                     if (isTravelLocation) {
                         isTravelLocation = false;
-                        /*new DialogBuilder(SymptomActivity.this).load()
-                                .title("Em qual país você esteve?")
-                                .positiveText(R.string.ok)
-                                .inputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
-                                .input("Ex: Estados Unidos", "", new MaterialDialog.InputCallback() {
-                                    @Override
 
-                                    public void onInput(MaterialDialog dialog, CharSequence input) {
-                                        country = input.toString();
-                                        confirmSendSymptons();
-                                        new DialogBuilder(SymptomActivity.this).load()
-                                                .title(R.string.app_name)
-                                                .content(R.string.message_thanks_zika)
-                                                .positiveText(R.string.ok)
-                                                .show();
-                                    }
-
-
-                                }).negativeText("FECHAR")
-                                .show();*/
                         AlertDialog.Builder builderSingle = new AlertDialog.Builder(SymptomActivity.this);
-                        //builderSingle.setIcon(R.drawable.icon);
-                        //builderSingle.setTitle("Em qual país você esteve?");
 
                         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                                 SymptomActivity.this,

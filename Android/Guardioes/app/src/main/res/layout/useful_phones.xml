@@ -27,11 +27,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Medium Text"
         android:gravity="center"
         android:id="@+id/text_call_desc"
-        android:textColor="@color/grey_dark"
+        android:textColor="@color/grey_light"
         android:layout_below="@+id/text_call_title"
         android:layout_marginTop="47dp"
         android:layout_alignParentRight="true"
