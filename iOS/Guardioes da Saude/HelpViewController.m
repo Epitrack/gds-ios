@@ -9,7 +9,7 @@
 #import "HelpViewController.h"
 #import "SWRevealViewController.h"
 #import "TermsViewController.h"
-#import "TutorialHelpViewController.h"
+#import "TutorialViewController.h"
 #import "ReportViewController.h"
 #import "ViewUtil.h"
 #import "Requester.h"
@@ -62,7 +62,8 @@
 
 - (IBAction)btnTutorial:(id)sender {
     
-    TutorialHelpViewController *tutorialHelpViewController = [[TutorialHelpViewController alloc] init];
+    TutorialViewController *tutorialHelpViewController = [[TutorialViewController alloc] init];
+    tutorialHelpViewController.hideButtons = YES;
     [self.navigationController pushViewController:tutorialHelpViewController animated:YES];
 }
 
