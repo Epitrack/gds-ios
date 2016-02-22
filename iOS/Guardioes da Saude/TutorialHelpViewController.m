@@ -74,7 +74,7 @@
             case 2:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[3]];
                 self.txtTitle.text = @"Dicas de Saúde";
-                self.txtDescription.text = @"Veja como se prevenir de doenças, quais são as UPAS e farmácias mais próximas de você e telefones úteis para caso de emergência.";
+                self.txtDescription.text = @"Veja como se prevenir de doenças, quais UPAS e farmácias mais próximas de você e telefones úteis para caso de emergência.";
                 self.indexTutorial += 1;
                 [self.pageController setCurrentPage:self.indexTutorial];
                 break;
