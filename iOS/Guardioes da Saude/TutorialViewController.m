@@ -35,9 +35,6 @@
     // Do any additional setup after loading the view.
     user = [User getInstance];
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    NSString *userTokenKey = @"userTokenKey";
-    
     CGSize result = [[UIScreen mainScreen] bounds].size;
     
     if (result.height < 568) {
@@ -61,6 +58,19 @@
     
     [self.imgBgTutorial addGestureRecognizer:leftSwipe];
     
+
+    self.btnEnter.hidden = self.hideButtons;
+    self.btnNewUser.hidden = self.hideButtons;
+    
+    if (self.hideButtons) {
+        self.contsPagPanel.constant = -10;
+        self.navigationItem.title = @"Tutorial";
+        self.navigationItem.hidesBackButton = NO;
+        self.imageConstraint.constant = 20;
+        [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                             forBarMetrics:UIBarMetricsDefault];
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,7 +79,7 @@
     [tracker set:kGAIScreenName value:@"Tutorial Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.navigationController setNavigationBarHidden:!self.hideButtons animated:animated];
     [super viewWillAppear:animated];
     self.revealViewController.panGestureRecognizer.enabled=NO;
 }
@@ -159,13 +169,22 @@
 }
 
 -(void) setConstraintsDefault{
+    if (self.hideButtons) {
+        self.imageConstraint.constant = 20;
+    }else{
+        self.imageConstraint.constant = 0;
+    }
     self.titleConstraint.constant = 70;
-    self.imageConstraint.constant = 0;
+    
 }
 
 -(void) setContraintCustom{
     self.titleConstraint.constant = 8;
-    self.imageConstraint.constant = -50;
+    if (self.hideButtons) {
+        self.imageConstraint.constant = -30;
+    }else{
+        self.imageConstraint.constant = -50;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -20,6 +20,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbDescription;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contsPagPanel;
+@property (weak, nonatomic) IBOutlet UIButton *btnNewUser;
+@property (weak, nonatomic) IBOutlet UIButton *btnEnter;
+
+@property BOOL hideButtons;
 
 
 @end
