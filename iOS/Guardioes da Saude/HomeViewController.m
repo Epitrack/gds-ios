@@ -22,6 +22,7 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
+#import "MenuViewController.h"
 @import Photos;
 
 @interface HomeViewController (){

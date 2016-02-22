@@ -61,6 +61,7 @@
     }
     
     [self.navigationController setNavigationBarHidden:YES];
+    [self setHomeSelected];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,6 +90,23 @@
     grandParentRevealController.bounceBackOnOverdraw = YES;
 }
 
+- (void) setHomeSelected{
+    self.imgHome.image = [UIImage imageNamed:@"iconHomeSelected"];
+    self.lbHome.textColor = [UIColor colorWithRed:32/255.f green:151/255.f blue:247/255.f alpha:1];
+    
+    self.imgProfile.image = [UIImage imageNamed:@"iconProfileDefault"];
+    self.lbProfile.textColor = [UIColor blackColor];
+    
+    self.imgAbout.image = [UIImage imageNamed:@"iconAboutDefault"];
+    self.lbAbout.textColor = [UIColor blackColor];
+    
+    self.imgHelp.image = [UIImage imageNamed:@"iconHelpDefault"];
+    self.lbHelp.textColor = [UIColor blackColor];
+    
+    self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
+    self.lbSignout.textColor = [UIColor blackColor];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -111,6 +129,8 @@
     newFrontController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
     SWRevealViewController *revealController = self.revealViewController;
     [revealController pushFrontViewController:newFrontController animated:YES];
+    
+    [self setHomeSelected];
 }
 
 - (IBAction)btnAbout:(id)sender {
@@ -125,6 +145,21 @@
     newFrontController = [[UINavigationController alloc] initWithRootViewController:aboutViewController];
     SWRevealViewController *revealController = self.revealViewController;
     [revealController pushFrontViewController:newFrontController animated:YES];
+    
+    self.imgHome.image = [UIImage imageNamed:@"iconHomeDefault"];
+    self.lbHome.textColor = [UIColor blackColor];
+    
+    self.imgProfile.image = [UIImage imageNamed:@"iconProfileDefault"];
+    self.lbProfile.textColor = [UIColor blackColor];
+    
+    self.imgAbout.image = [UIImage imageNamed:@"iconAboutSelected"];
+    self.lbAbout.textColor = [UIColor colorWithRed:32/255.f green:151/255.f blue:247/255.f alpha:1];
+    
+    self.imgHelp.image = [UIImage imageNamed:@"iconHelpDefault"];
+    self.lbHelp.textColor = [UIColor blackColor];
+    
+    self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
+    self.lbSignout.textColor = [UIColor blackColor];
 }
 
 - (IBAction)btnHelp:(id)sender {
@@ -139,6 +174,21 @@
     newFrontController = [[UINavigationController alloc] initWithRootViewController:helpViewController];
     SWRevealViewController *revealController = self.revealViewController;
     [revealController pushFrontViewController:newFrontController animated:YES];
+    
+    self.imgHome.image = [UIImage imageNamed:@"iconHomeDefault"];
+    self.lbHome.textColor = [UIColor blackColor];
+    
+    self.imgProfile.image = [UIImage imageNamed:@"iconProfileDefault"];
+    self.lbProfile.textColor = [UIColor blackColor];
+    
+    self.imgAbout.image = [UIImage imageNamed:@"iconAboutDefault"];
+    self.lbAbout.textColor = [UIColor blackColor];
+    
+    self.imgHelp.image = [UIImage imageNamed:@"iconHelpSelected"];
+    self.lbHelp.textColor = [UIColor colorWithRed:32/255.f green:151/255.f blue:247/255.f alpha:1];
+    
+    self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
+    self.lbSignout.textColor = [UIColor blackColor];
 }
 
 - (IBAction)btnProfile:(id)sender {
@@ -154,6 +204,21 @@
         newFrontController = [[UINavigationController alloc] initWithRootViewController:profileListController];
         SWRevealViewController *revealController = self.revealViewController;
         [revealController pushFrontViewController:newFrontController animated:YES];
+        
+        self.imgHome.image = [UIImage imageNamed:@"iconHomeDefault"];
+        self.lbHome.textColor = [UIColor blackColor];
+        
+        self.imgProfile.image = [UIImage imageNamed:@"iconProfileSelected"];
+        self.lbProfile.textColor = [UIColor colorWithRed:32/255.f green:151/255.f blue:247/255.f alpha:1];
+        
+        self.imgAbout.image = [UIImage imageNamed:@"iconAboutDefault"];
+        self.lbAbout.textColor = [UIColor blackColor];
+        
+        self.imgHelp.image = [UIImage imageNamed:@"iconHelpDefault"];
+        self.lbHelp.textColor = [UIColor blackColor];
+        
+        self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
+        self.lbSignout.textColor = [UIColor blackColor];
     }else{
         [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
     }
@@ -167,21 +232,41 @@
                                                            label:@"Exit"
                                                            value:nil] build]];
     
-    [[User getInstance] clearUser];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                   message:@"Tem certeza que deseja sair do aplicativo?"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *oktAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [[User getInstance] clearUser];
+                                                              
+                                                              NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                                                              
+                                                              [preferences setValue:nil forKey:kUserTokenKey];
+                                                              [preferences setValue:nil forKey:kAppTokenKey];
+                                                              [preferences setValue:nil forKey:kAvatarNumberKey];
+                                                              [preferences setValue:nil forKey:kPhotoKey];
+                                                              [preferences setValue:nil forKey:kNickKey];
+                                                              
+                                                              [preferences synchronize];
+                                                              
+                                                              TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
+                                                              newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
+                                                              SWRevealViewController *revealController = self.revealViewController;
+                                                              [revealController pushFrontViewController:newFrontController animated:YES];
+                                                              
+                                                              [self setHomeSelected];
+                                                              
+                                                          }];
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    UIAlertAction *canceltAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * action) {
+                                                          
+                                                      }];
+    [alert addAction:canceltAction];
+    [alert addAction:oktAction];
     
-    [preferences setValue:nil forKey:kUserTokenKey];
-    [preferences setValue:nil forKey:kAppTokenKey];
-    [preferences setValue:nil forKey:kAvatarNumberKey];
-    [preferences setValue:nil forKey:kPhotoKey];
-    [preferences setValue:nil forKey:kNickKey];
-    
-    [preferences synchronize];
-    
-    TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
-    newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
-    SWRevealViewController *revealController = self.revealViewController;
-    [revealController pushFrontViewController:newFrontController animated:YES];    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end
