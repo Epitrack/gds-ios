@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.SearchView;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -427,7 +428,9 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     goodPercent = (totalNoSympton / Double.parseDouble(jsonObjectData.get("total_surveys").toString()));
                 }
 
-                textViewGoodPercentage.setText((int)(goodPercent * 100) + "% Bem");
+                String htmlStringGood = "<b>" + (int) (goodPercent * 100) + "%</b> Bem";
+                textViewGoodPercentage.setText(Html.fromHtml(htmlStringGood));
+                //textViewGoodPercentage.setText((int)(goodPercent * 100) + "% Bem");
                 textViewGoodReport.setText(jsonObjectData.get("total_no_symptoms").toString() + " Relatórios");
 
                 double totalSympton = Double.parseDouble(jsonObjectData.get("total_symptoms").toString());
@@ -437,7 +440,9 @@ public class MapSymptomActivity extends AbstractBaseMapActivity implements Searc
                     badPercent = (totalSympton / Double.parseDouble(jsonObjectData.get("total_surveys").toString()));
                 }
 
-                textViewBadPercentage.setText((int)(badPercent * 100) + "% Mal");
+                String htmlStringBad = "<b>" + (int) (badPercent * 100) + "%</b> Mal";
+                textViewBadPercentage.setText(Html.fromHtml(htmlStringBad));
+                //textViewBadPercentage.setText((int)(badPercent * 100) + "% Mal");
                 textViewBadReport.setText(jsonObjectData.get("total_symptoms").toString() + " Relatórios");
 
                 JSONObject jsonObjectDiseases = jsonObjectData.getJSONObject("diseases");

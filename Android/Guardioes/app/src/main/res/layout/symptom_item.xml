@@ -13,6 +13,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="30dp"
         android:textSize="15dp"
+        android:textColor="@color/grey_light"
         android:button="@drawable/selector_check_box_blue" />
 
     <!--<TextView
