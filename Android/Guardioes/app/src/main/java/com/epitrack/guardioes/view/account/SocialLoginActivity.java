@@ -250,8 +250,9 @@ public class SocialLoginActivity extends BaseAppCompatActivity implements View.O
                                         }
                                     }
                             ).executeAsync();
-
-
+                            if (singleUser.getFb() != "") {
+                                userExistSocial(singleUser.getFb(), Constants.Bundle.FACEBOOK);
+                            }
 
                         } catch (JSONException e) {
                             e.printStackTrace();
