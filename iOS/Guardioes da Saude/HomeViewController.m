@@ -22,6 +22,7 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
+#import "MenuViewController.h"
 @import Photos;
 
 @interface HomeViewController (){
@@ -95,12 +96,6 @@
     UINavigationController *navCtr = self.navigationController;
     [navCtr setNavigationBarHidden:NO animated:NO];
     
-//    UIImage *imgTitleBar = [UIImage imageNamed:@"gdSToolbar"];
-//    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, 120, 120)];
-//    [imgView setImage:imgTitleBar];
-//    // setContent mode aspect fit
-//    [imgView setContentMode:UIViewContentModeScaleAspectFit];
-//    self.navigationItem.titleView = imgView;
     titleImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"gdSToolbar"]];
     CGSize imageSize = CGSizeMake(400, 70);
     CGFloat marginX = (self.navigationController.navigationBar.frame.size.width / 2) - (imageSize.width / 2);
