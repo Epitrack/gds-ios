@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -252,7 +253,9 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
                 goodPercent = goodCount / totalCount;
             }
 
-            textViewGoodPercentage.setText((int) (goodPercent * 100) + "% Bem");
+            String htmlStringGood = "<b>" + (int) (goodPercent * 100) + "%</b> Bem";
+            textViewGoodPercentage.setText(Html.fromHtml(htmlStringGood));
+            //textViewGoodPercentage.setText((int) (goodPercent * 100) + "% Bem");
             textViewGoodReport.setText((int) goodCount + " Relatórios");
 
             if (totalCount == 0) {
@@ -261,7 +264,9 @@ public class DiaryActivity extends BaseAppCompatActivity implements ParentListen
                 badPercent = badCount / totalCount;
             }
 
-            textViewBadPercentage.setText((int) (badPercent * 100) + "% Mal");
+            String htmlStringBad = "<b>" + (int) (badPercent * 100) + "%</b> Mal";
+            textViewBadPercentage.setText(Html.fromHtml(htmlStringBad));
+            //textViewBadPercentage.setText((int) (badPercent * 100) + "% Mal");
             textViewBadReport.setText((int) badCount + " Relatórios");
 
             //Pie Char Config
