@@ -41,7 +41,7 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i40-G2-ylt">
                     <rect key="frame" x="31" y="420" width="132" height="40"/>
-                    <state key="normal" title="Cadastrar-se" backgroundImage="button_register.png"/>
+                    <state key="normal" title="Cadastre-se" backgroundImage="button_register.png"/>
                     <connections>
                         <action selector="btnNewUser:" destination="-1" eventType="touchUpInside" id="C0o-ei-rNh"/>
                     </connections>
