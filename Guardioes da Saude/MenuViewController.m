@@ -259,13 +259,12 @@
                                                               
                                                           }];
     
-    UIAlertAction *canceltAction = [UIAlertAction actionWithTitle:@"Cancel"
+    UIAlertAction *canceltAction = [UIAlertAction actionWithTitle:@"Cancelar"
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction * action) {
-                                                          
                                                       }];
-    [alert addAction:canceltAction];
     [alert addAction:oktAction];
+    [alert addAction:canceltAction];
     
     [self presentViewController:alert animated:YES completion:nil];
 }
