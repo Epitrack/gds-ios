@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <dimen name="state_message_margin_top">60dp</dimen>
-    <dimen name="text_view_state_good_margin_top">160dp</dimen>
-    <dimen name="text_view_state_bad_margin_top">20dp</dimen>
-
-</resources>
