@@ -28,7 +28,9 @@
                         <fragment>
                             <string key="content">
 
-Por favor, leia estes termos legais de uso antes de utilizar o GUARDIÕES DA SAÚDE, fazer qualquer colaboração, acessar ou baixar qualquer informação desta aplicação.Ao acessar ou utilizar o GUARDIÕES DA SAÚDE, você aceita e concorda em cumprir os termos e condições estabelecidos neste “Termos Legais de Uso”.
+Por favor, leia estes termos legais de uso antes de utilizar o GUARDIÕES DA SAÚDE, fazer qualquer colaboração, acessar ou baixar qualquer informação desta aplicação.
+
+Ao acessar ou utilizar o GUARDIÕES DA SAÚDE, você aceita e concorda em cumprir os termos e condições estabelecidos neste “Termos Legais de Uso”.
 
 Este termo é um acordo vinculativo entre você e o GUARDIÕES DA SAÚDE, que abrange todo o seu acesso e uso dessa aplicação, o que inclui o uso de todas as informações, dados, ferramentas, produtos, serviços e outros conteúdos disponíveis por meio deste.Ao utilizar esta aplicação, você confirma que compreende e concorda com as seguintes regras dispostas:
 
@@ -254,19 +256,10 @@ O GUARDIÕES DA SAÚDE não assume responsabilidade por quaisquer prejuízos e/o
 Em hipótese alguma os profissionais envolvidos com o desenvolvimento ou gestão dessa aplicação serão responsabilizados por qualquer decisão ou ação tomada por você em base a tal conteúdo.
 
 Diante de ameaças ou qualquer outra situação de risco a vossa saúde ou integridade, procure sempre orientações validadas e atualizadas pelos serviços locais de saúde pública.
+
 </string>
                             <attributes>
                                 <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                            <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <font key="NSFont" size="15" name="HelveticaNeue"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                             </attributes>
@@ -293,7 +286,7 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
 
 </string>
                             <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <font key="NSFont" size="15" name="HelveticaNeue"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                             </attributes>
@@ -313,7 +306,7 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
 
 </string>
                             <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <font key="NSFont" size="15" name="HelveticaNeue"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                             </attributes>
@@ -332,7 +325,7 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
 	O acesso ao serviço representa a aceitação expressa e irrestrita dos Termos de Uso acima descritos. Ao concordar com esses termos você concede uma licença perpétua, isenta de royalties, licença incondicional para o GUARDIÕES DA SAÚDE, Ministério da Saúde e todas as organizações sucessoras, para publicar a sua contribuição de forma agregada, na própria aplicação, bem como divulgá-las aos serviços de vigilância em saúde pública relacionados. Você também concorda que GUARDIÕES DA SAÚDE tem o direito, mas não a obrigação, de editar ou remover qualquer contribuição a critério exclusivo da equipe do GUARDIÕES DA SAÚDE.
 </string>
                             <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <font key="NSFont" size="15" name="HelveticaNeue"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                             </attributes>
