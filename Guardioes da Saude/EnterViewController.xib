@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -44,16 +43,23 @@
                                 <constraint firstAttribute="width" secondItem="PMX-6a-HeG" secondAttribute="height" multiplier="1:1" id="PSM-Al-FqO"/>
                             </constraints>
                         </activityIndicatorView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3B-t8-oiR">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p3B-t8-oiR">
                             <rect key="frame" x="97" y="434" width="127" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="dx3-DG-ETi"/>
                                 <constraint firstAttribute="width" constant="127" id="jEm-3y-a8C"/>
                                 <constraint firstAttribute="width" secondItem="p3B-t8-oiR" secondAttribute="height" multiplier="127:28" id="w5y-I6-ANC"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <state key="normal" title="Esqueceu a senha?">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Esqueceu a senha?">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                             </state>
                             <connections>
                                 <action selector="forgotPasswordAction:" destination="-1" eventType="touchUpInside" id="Ygj-Wn-J7k"/>
