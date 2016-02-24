@@ -81,7 +81,7 @@ const float kCellHeight = 100.0f;
 }
 
 - (void) loadAvatar {
-    [user setAvatarImageAtButton:self.imgMainMember orImageView:nil onBackground:YES isSmall:NO];
+    [user setAvatarImageAtButton:self.imgMainMember orImageView:nil];
 }
 
 - (void)didReceiveMemoryWarning {

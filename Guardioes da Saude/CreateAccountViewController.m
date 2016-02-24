@@ -198,6 +198,10 @@
     [self.navigationController pushViewController:tutorialViewController animated:YES];
 }
 - (IBAction)btnBirthDateAction:(id)sender {
+    [self.pickerGender endEditing:YES];
+    [self.pickerRace endEditing:YES];
+    
+    
     RMActionControllerStyle style = RMActionControllerStyleWhite;
     
     RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {

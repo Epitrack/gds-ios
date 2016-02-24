@@ -109,7 +109,7 @@
     self.txtNameUser.text = user.nick;
     self.lblOla.hidden = NO;
     self.btnProfile.hidden = NO;
-    [user setAvatarImageAtButton:self.btnProfile orImageView:nil onBackground:NO isSmall:YES];
+    [user setAvatarImageAtButton:self.btnProfile orImageView:nil];
 }
 
 - (void)didReceiveMemoryWarning {

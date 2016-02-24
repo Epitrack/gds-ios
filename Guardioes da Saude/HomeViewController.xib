@@ -56,7 +56,7 @@
                     </variation>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notícias" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9t-CS-rTk" userLabel="Label Noticias">
-                    <rect key="frame" x="25" y="225" width="132" height="12.5"/>
+                    <rect key="frame" x="25" y="225" width="134" height="13"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="o9t-CS-rTk" secondAttribute="height" multiplier="45:7" constant="50.142857142857139" id="czA-bu-FN0"/>
                     </constraints>
@@ -68,7 +68,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Mapa da Saúde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3E-wn-XOc" userLabel="Label Mapa">
-                    <rect key="frame" x="157.5" y="216" width="137.5" height="31"/>
+                    <rect key="frame" x="159" y="216" width="136" height="31"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="E3E-wn-XOc" secondAttribute="height" multiplier="75:17" id="Bce-Ec-xdD"/>
                     </constraints>
@@ -80,7 +80,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dicas de Saúde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB7-Zb-hbF" userLabel="Label Dicas">
-                    <rect key="frame" x="37" y="443" width="114.5" height="14"/>
+                    <rect key="frame" x="37" y="442" width="115" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="PB7-Zb-hbF" secondAttribute="height" multiplier="129:16" id="y9t-b0-smZ"/>
                     </constraints>
@@ -92,7 +92,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diário da Saúde" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olw-uU-G9T" userLabel="Label Diario">
-                    <rect key="frame" x="172" y="438" width="122.5" height="26.5"/>
+                    <rect key="frame" x="172" y="438" width="123" height="27"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="olw-uU-G9T" secondAttribute="height" multiplier="23:5" id="ojL-FI-c9U"/>
                     </constraints>
@@ -104,7 +104,7 @@
                     </variation>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_noticias.png" translatesAutoresizingMaskIntoConstraints="NO" id="wMe-MA-CbT">
-                    <rect key="frame" x="63.5" y="251.5" width="47" height="47"/>
+                    <rect key="frame" x="64" y="252" width="47" height="47"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="64" y="262" width="47" height="47"/>
                     </variation>
@@ -113,7 +113,7 @@
                     </variation>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_mapadasaude.png" translatesAutoresizingMaskIntoConstraints="NO" id="45K-Xd-xDB">
-                    <rect key="frame" x="210.5" y="246.5" width="36" height="54"/>
+                    <rect key="frame" x="211" y="247" width="36" height="54"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="214" y="259" width="36" height="54"/>
                     </variation>
@@ -122,7 +122,7 @@
                     </variation>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_dicasdesaude.png" translatesAutoresizingMaskIntoConstraints="NO" id="tq5-1r-wq3">
-                    <rect key="frame" x="69.5" y="373" width="39" height="56"/>
+                    <rect key="frame" x="70" y="373" width="39" height="56"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="68" y="404" width="39" height="56"/>
                     </variation>
@@ -131,7 +131,7 @@
                     </variation>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_diariodasaude.png" translatesAutoresizingMaskIntoConstraints="NO" id="gwN-Ey-cdI">
-                    <rect key="frame" x="213" y="379" width="40.5" height="42"/>
+                    <rect key="frame" x="213" y="379" width="41" height="42"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="210" y="410" width="45" height="42"/>
                     </variation>
@@ -140,7 +140,7 @@
                     </variation>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_participeagora.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q7r-uG-iaY">
-                    <rect key="frame" x="136.5" y="300.5" width="55" height="49"/>
+                    <rect key="frame" x="137" y="301" width="55" height="49"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="133" y="319" width="55" height="49"/>
                     </variation>
@@ -158,7 +158,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1d-eP-RbX" userLabel="Button MapaSaude">
-                    <rect key="frame" x="167" y="213" width="122.5" height="110.5"/>
+                    <rect key="frame" x="167" y="213" width="123" height="111"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="O1d-eP-RbX" secondAttribute="height" multiplier="23:22" constant="7.318181818181813" id="5mW-fh-wgB"/>
                     </constraints>
@@ -182,7 +182,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNS-dT-rgh" userLabel="Button Diario">
-                    <rect key="frame" x="160" y="341" width="122.5" height="117.5"/>
+                    <rect key="frame" x="160" y="341" width="123" height="118"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="tNS-dT-rgh" secondAttribute="height" multiplier="23:19" constant="-19.368421052631589" id="UZN-w3-TlN"/>
                     </constraints>
@@ -194,7 +194,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGE-hC-oId" userLabel="Button ParticipeAgora">
-                    <rect key="frame" x="112" y="290" width="97" height="96.5"/>
+                    <rect key="frame" x="112" y="290" width="97" height="97"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="QGE-hC-oId" secondAttribute="height" multiplier="1:1" id="L2F-Pl-tvn"/>
                     </constraints>
@@ -206,7 +206,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participe Agora!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-Ta-mYq" userLabel="Label PaticipeAgora">
-                    <rect key="frame" x="125" y="351.5" width="68" height="39"/>
+                    <rect key="frame" x="125" y="352" width="68" height="39"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Hig-Ta-mYq" secondAttribute="height" multiplier="23:8" constant="-44.125" id="6of-Q5-lZI"/>
                     </constraints>
@@ -218,20 +218,24 @@
                     </variation>
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-yR-Gd4" userLabel="Button Profile">
-                    <rect key="frame" x="110" y="60" width="100" height="100"/>
+                    <rect key="frame" x="110" y="69" width="100" height="102"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="74:71" id="5Jf-t5-GZT"/>
                         <constraint firstAttribute="height" constant="71" id="GbZ-Av-CfI"/>
+                        <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="1:1" id="KyS-y5-Ksl"/>
+                        <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="13:12" constant="-11" id="eN5-N8-xVC"/>
                         <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="1:1" id="h2Q-W9-FAa"/>
                         <constraint firstAttribute="height" constant="71" id="k6H-Nd-hC9"/>
                         <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="74:71" id="sSY-1z-eoY"/>
                         <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="74:71" id="yje-uv-v1t"/>
                     </constraints>
-                    <state key="normal" image="img_profile01.png"/>
+                    <state key="normal" backgroundImage="img_profile01.png"/>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="5Jf-t5-GZT"/>
                             <exclude reference="GbZ-Av-CfI"/>
+                            <exclude reference="KyS-y5-Ksl"/>
+                            <exclude reference="h2Q-W9-FAa"/>
                             <exclude reference="k6H-Nd-hC9"/>
                             <exclude reference="sSY-1z-eoY"/>
                             <exclude reference="yje-uv-v1t"/>
@@ -267,15 +271,19 @@
                 <constraint firstItem="PB7-Zb-hbF" firstAttribute="bottom" secondItem="w3j-0Z-T9i" secondAttribute="bottom" constant="-16" id="Lww-D6-BGT"/>
                 <constraint firstItem="olw-uU-G9T" firstAttribute="trailing" secondItem="w3j-0Z-T9i" secondAttribute="trailing" id="OhF-uG-Owr"/>
                 <constraint firstItem="w9n-BB-3Se" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" id="Otf-uU-SdE"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="centerX" secondItem="Cds-EH-tEM" secondAttribute="centerX" id="PhG-Qy-k0B"/>
                 <constraint firstItem="tNS-dT-rgh" firstAttribute="bottom" secondItem="w3j-0Z-T9i" secondAttribute="bottom" constant="-14.5" id="QUj-1Y-hGA"/>
                 <constraint firstItem="Ag8-Nd-VOm" firstAttribute="top" secondItem="Ehf-QY-O6S" secondAttribute="bottom" constant="-2" id="Rua-MY-JkV"/>
                 <constraint firstItem="wMe-MA-CbT" firstAttribute="centerY" secondItem="ERT-mz-Xtg" secondAttribute="centerY" constant="5" id="TX7-se-MBB"/>
                 <constraint firstItem="QGE-hC-oId" firstAttribute="centerX" secondItem="w3j-0Z-T9i" secondAttribute="centerX" id="UOp-Mt-5w4"/>
                 <constraint firstItem="QGE-hC-oId" firstAttribute="width" secondItem="w3j-0Z-T9i" secondAttribute="height" multiplier="109:280" constant="-8.1071428571428612" id="Uf9-xm-tyO"/>
                 <constraint firstItem="O1d-eP-RbX" firstAttribute="top" secondItem="w3j-0Z-T9i" secondAttribute="top" constant="10" id="V3F-3g-e4g"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="110" id="WHL-H2-fHm"/>
                 <constraint firstItem="Hig-Ta-mYq" firstAttribute="centerX" secondItem="w3j-0Z-T9i" secondAttribute="centerX" constant="-1" id="XOb-aC-K9u"/>
                 <constraint firstItem="Ehf-QY-O6S" firstAttribute="leading" secondItem="Ag8-Nd-VOm" secondAttribute="leading" id="XW7-xo-AVI"/>
+                <constraint firstItem="Ag8-Nd-VOm" firstAttribute="top" secondItem="Dyo-yR-Gd4" secondAttribute="bottom" constant="5" id="Xjg-yW-ZCi"/>
                 <constraint firstItem="w3j-0Z-T9i" firstAttribute="top" secondItem="Dyo-yR-Gd4" secondAttribute="bottom" constant="43" id="YV6-5b-vYm"/>
+                <constraint firstItem="Ag8-Nd-VOm" firstAttribute="top" secondItem="Dyo-yR-Gd4" secondAttribute="bottom" constant="6" id="YcH-Gx-I00"/>
                 <constraint firstItem="Q7r-uG-iaY" firstAttribute="centerY" secondItem="w3j-0Z-T9i" secondAttribute="centerY" constant="-13" id="Yz8-Wn-W1i"/>
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="37:240" id="Z4y-BG-Anb"/>
                 <constraint firstItem="E3E-wn-XOc" firstAttribute="leading" secondItem="o9t-CS-rTk" secondAttribute="trailing" constant="1" id="Z8F-wy-DQ1"/>
@@ -283,7 +291,8 @@
                 <constraint firstItem="E3E-wn-XOc" firstAttribute="centerY" secondItem="o9t-CS-rTk" secondAttribute="centerY" id="a2m-jR-LFt"/>
                 <constraint firstItem="w3j-0Z-T9i" firstAttribute="top" secondItem="Ag8-Nd-VOm" secondAttribute="bottom" id="bBJ-5X-95P"/>
                 <constraint firstItem="Q7r-uG-iaY" firstAttribute="centerX" secondItem="w3j-0Z-T9i" secondAttribute="centerX" constant="4" id="epn-l6-b27"/>
-                <constraint firstAttribute="trailing" secondItem="Dyo-yR-Gd4" secondAttribute="trailing" constant="110" id="gw0-WF-6dv"/>
+                <constraint firstAttribute="trailing" secondItem="Dyo-yR-Gd4" secondAttribute="trailing" constant="110" id="gH0-Nm-5oA"/>
+                <constraint firstAttribute="trailing" secondItem="Dyo-yR-Gd4" secondAttribute="trailing" constant="100" id="gw0-WF-6dv"/>
                 <constraint firstItem="ERT-mz-Xtg" firstAttribute="top" secondItem="w3j-0Z-T9i" secondAttribute="top" constant="10" id="hTb-jI-hsR"/>
                 <constraint firstAttribute="trailing" secondItem="w3j-0Z-T9i" secondAttribute="trailing" constant="25" id="hVQ-mf-b8O"/>
                 <constraint firstItem="w9n-BB-3Se" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" id="heK-ih-nNJ"/>
@@ -291,6 +300,7 @@
                 <constraint firstItem="45K-Xd-xDB" firstAttribute="centerY" secondItem="O1d-eP-RbX" secondAttribute="centerY" constant="5" id="jZh-WN-ZtQ"/>
                 <constraint firstItem="mHY-s7-TsV" firstAttribute="leading" secondItem="w3j-0Z-T9i" secondAttribute="leading" constant="12" id="jaS-2P-eEU"/>
                 <constraint firstItem="45K-Xd-xDB" firstAttribute="centerX" secondItem="O1d-eP-RbX" secondAttribute="centerX" id="jbX-qq-AGN"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" constant="50" id="lje-9z-33i"/>
                 <constraint firstItem="o9t-CS-rTk" firstAttribute="top" secondItem="w3j-0Z-T9i" secondAttribute="top" constant="22" id="mUj-Qh-H8O"/>
                 <constraint firstAttribute="trailing" secondItem="w9n-BB-3Se" secondAttribute="trailing" id="nyr-QW-zXV"/>
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="13:48" constant="-30" id="oJO-BZ-5SJ"/>
@@ -299,15 +309,18 @@
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" constant="93" id="php-IE-Ek7"/>
                 <constraint firstItem="PB7-Zb-hbF" firstAttribute="width" secondItem="w3j-0Z-T9i" secondAttribute="height" multiplier="129:280" constant="-9.8928571428571388" id="qXW-4S-MrX"/>
                 <constraint firstItem="w9n-BB-3Se" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="2:3" id="qas-hP-jOL"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="13:48" id="qh8-51-Kbe"/>
                 <constraint firstItem="wMe-MA-CbT" firstAttribute="centerX" secondItem="ERT-mz-Xtg" secondAttribute="centerX" constant="-10" id="rB4-Yt-MGl"/>
                 <constraint firstItem="olw-uU-G9T" firstAttribute="width" secondItem="w3j-0Z-T9i" secondAttribute="height" multiplier="69:140" constant="-10.571428571428584" id="rSm-pC-eUt"/>
                 <constraint firstItem="gwN-Ey-cdI" firstAttribute="centerX" secondItem="tNS-dT-rgh" secondAttribute="centerX" constant="12" id="ru1-g4-dC4"/>
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="133" id="smA-IP-PZc"/>
                 <constraint firstItem="tq5-1r-wq3" firstAttribute="centerY" secondItem="mHY-s7-TsV" secondAttribute="centerY" id="uUU-p1-hfS"/>
                 <constraint firstItem="tNS-dT-rgh" firstAttribute="trailing" secondItem="w3j-0Z-T9i" secondAttribute="trailing" constant="-12" id="vsg-L7-Qj0"/>
-                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="110" id="w3c-Nr-R1n"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="100" id="w3c-Nr-R1n"/>
                 <constraint firstAttribute="trailing" secondItem="Dyo-yR-Gd4" secondAttribute="trailing" constant="113" id="wDd-8L-Ial"/>
                 <constraint firstItem="mHY-s7-TsV" firstAttribute="bottom" secondItem="w3j-0Z-T9i" secondAttribute="bottom" constant="-13" id="wkl-9T-zIG"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="centerY" secondItem="Cds-EH-tEM" secondAttribute="centerY" constant="-130" id="xUn-gN-pwq"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="centerX" secondItem="Cds-EH-tEM" secondAttribute="centerX" constant="-5" id="xk7-dD-i07"/>
                 <constraint firstItem="w3j-0Z-T9i" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="9:16" id="y3e-Pf-iDw"/>
                 <constraint firstItem="O1d-eP-RbX" firstAttribute="trailing" secondItem="w3j-0Z-T9i" secondAttribute="trailing" constant="-5" id="yGT-6H-lwk"/>
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="centerX" secondItem="Cds-EH-tEM" secondAttribute="centerX" id="z3g-9n-Eg3"/>
@@ -317,12 +330,24 @@
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="qas-hP-jOL"/>
+                    <exclude reference="5zM-UX-T8W"/>
                     <exclude reference="DKv-Wb-Evf"/>
                     <exclude reference="E5c-d0-Wd9"/>
+                    <exclude reference="PhG-Qy-k0B"/>
                     <exclude reference="Z4y-BG-Anb"/>
+                    <exclude reference="gw0-WF-6dv"/>
+                    <exclude reference="lje-9z-33i"/>
+                    <exclude reference="oJO-BZ-5SJ"/>
                     <exclude reference="php-IE-Ek7"/>
+                    <exclude reference="qh8-51-Kbe"/>
                     <exclude reference="smA-IP-PZc"/>
+                    <exclude reference="w3c-Nr-R1n"/>
                     <exclude reference="wDd-8L-Ial"/>
+                    <exclude reference="xUn-gN-pwq"/>
+                    <exclude reference="xk7-dD-i07"/>
+                    <exclude reference="z3g-9n-Eg3"/>
+                    <exclude reference="YcH-Gx-I00"/>
+                    <exclude reference="YV6-5b-vYm"/>
                     <exclude reference="pL4-0E-755"/>
                     <exclude reference="y3e-Pf-iDw"/>
                 </mask>

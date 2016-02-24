@@ -98,7 +98,7 @@ NSString *const kNickKey = @"nickKey";
     }
 }
 
-- (void)setAvatarImageAtButton: (UIButton *) button orImageView:(UIImageView *) imageView onBackground: (bool) onBackground isSmall: (BOOL) isSmall {
+- (void)setAvatarImageAtButton: (UIButton *) button orImageView:(UIImageView *) imageView {
     if(self.photo){
         PHFetchResult* assetResult = [PHAsset fetchAssetsWithLocalIdentifiers:@[self.photo] options:nil];
         PHAsset *asset = [assetResult firstObject];
@@ -115,23 +115,14 @@ NSString *const kNickKey = @"nickKey";
                 rect = imageView.bounds;
             }
             
-            if (isSmall) {
-                path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(rect.origin.x+5, rect.origin.y+5, rect.size.width-10, rect.size.height-10)];
-            } else {
-                path = [UIBezierPath bezierPathWithOvalInRect:rect];
-            }
+            path = [UIBezierPath bezierPathWithOvalInRect:rect];
             
             CAShapeLayer *maskLayer = [CAShapeLayer layer];
             maskLayer.path = path.CGPath;
             
             if (button) {
                 button.layer.mask = maskLayer;
-                
-                if (onBackground) {
-                    [button setBackgroundImage:photoImage forState:UIControlStateNormal];
-                } else {
-                    [button setImage:photoImage forState:UIControlStateNormal];
-                }
+                [button setBackgroundImage:photoImage forState:UIControlStateNormal];
             } else {
                 imageView.layer.mask = maskLayer;
                 [imageView setImage:photoImage];
@@ -201,11 +192,8 @@ NSString *const kNickKey = @"nickKey";
         }
         
         if (button) {
-            if (onBackground) {
-                [button setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-            }else{
-                [button setImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
-            }
+            [button setBackgroundImage:[UIImage imageNamed:avatar] forState:UIControlStateNormal];
+
         } else {
             [imageView setImage:[UIImage imageNamed:avatar]];
         }

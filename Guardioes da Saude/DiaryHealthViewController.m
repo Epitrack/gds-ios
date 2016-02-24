@@ -240,7 +240,7 @@ const float _kCellHeight = 100.0f;
                                          button.bounds.size.width/2,
                                          button.bounds.size.height/2)];
     
-    [user setAvatarImageAtButton:nil orImageView:imageView onBackground:NO isSmall:NO];
+    [user setAvatarImageAtButton:nil orImageView:imageView];
     
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(button.bounds.size.width/4, 50, button.bounds.size.width/2, button.bounds.size.height/2)];
     label.text= [user.nick componentsSeparatedByString:@" "][0];

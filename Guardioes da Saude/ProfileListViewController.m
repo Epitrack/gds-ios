@@ -58,7 +58,7 @@
     
     user = [User getInstance];
     [self.btnMainUser setTitle:user.nick forState:UIControlStateNormal];
-    [user setAvatarImageAtButton:self.imgMainUser orImageView:nil onBackground:YES isSmall:NO];
+    [user setAvatarImageAtButton:self.imgMainUser orImageView:nil];
     
     [self loadHouseholds];
 }
