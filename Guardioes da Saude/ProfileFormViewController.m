@@ -96,7 +96,13 @@
                        andRace:self.user.race];
     
     if (self.user.photo) {
-        [self setPhoto:self.user.photo];
+        [self.user requestPermissions:^(bool isAuthorazed){
+            if (isAuthorazed) {
+                [self setPhoto:self.user.photo];
+            } else {
+                [self setAvatarNumber:self.user.avatarNumber];
+            }
+        }];
     }else{
         [self setAvatarNumber:self.user.avatarNumber];
     }

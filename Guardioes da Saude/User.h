@@ -80,6 +80,7 @@ extern NSString *const kNickKey;
 - (void) setGenderBySegIndex: (long) segIndex;
 - (void) setRaceBySegIndex: (long) segIndex;
 - (void) setGenderByString: (NSString *) strGender;
+- (void)requestPermissions:(void(^)(bool)) block;
 - (void)setAvatarImageAtButton: (UIButton *) button orImageView:(UIImageView *) imageView;
 - (void) cloneUser: (User *) user;
 - (void) clearUser;
