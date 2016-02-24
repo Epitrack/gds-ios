@@ -146,6 +146,12 @@
         userCreated.platform = user.platform;
         userCreated.client = user.client;
         
+        if (!userCreated.isValidEmail) {
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"E-mail inválido!"];
+            [self presentViewController:alert animated:YES completion:nil];
+            return;
+        }
+        
         switch (self.socialNetwork) {
             case GdsFacebook:
                 userCreated.fb = self.socialNetworkId;

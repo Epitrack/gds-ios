@@ -162,6 +162,12 @@
             userCreated.platform = user.platform;
             userCreated.client = user.client;
             
+            if (!userCreated.isValidEmail) {
+                UIAlertController *alert = [ViewUtil showAlertWithMessage:@"E-mail inválido!"];
+                [self presentViewController:alert animated:YES completion:nil];
+                return;
+            }
+            
             [userRequester createAccountWithUser:userCreated andOnStart:^{
                 [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             }andOnSuccess:^(User *userResponse){

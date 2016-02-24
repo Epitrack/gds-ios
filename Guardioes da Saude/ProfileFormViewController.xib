@@ -51,11 +51,6 @@
                                 <action selector="btnSelectPicture:" destination="-1" eventType="touchUpInside" id="cs6-b8-kRI"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apelido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="stU-B6-9Lb">
-                            <rect key="frame" x="8" y="116" width="304" height="30"/>
-                            <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                        </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kad-j5-vh8" userLabel="Button Bod">
                             <rect key="frame" x="103" y="230" width="209" height="30"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -129,7 +124,7 @@
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@exemplo.com.br" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izN-6m-mbW">
                             <rect key="frame" x="8" y="306" width="304" height="30"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcD-Sb-OPF">
                             <rect key="frame" x="8" y="393" width="304" height="38"/>
@@ -150,6 +145,11 @@
                                 <action selector="btnChangePasswdAction:" destination="-1" eventType="touchUpInside" id="WL4-hl-KCq"/>
                             </connections>
                         </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apelido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="stU-B6-9Lb">
+                            <rect key="frame" x="8" y="116" width="304" height="30"/>
+                            <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
                     </subviews>
                     <constraints>
                         <constraint firstItem="izN-6m-mbW" firstAttribute="leading" secondItem="tM2-Mj-ciw" secondAttribute="leading" id="0jM-Do-8wf"/>

@@ -82,7 +82,7 @@
 
 - (void) loadEditUser{
     self.navigationItem.title = @"Editar Perfil";
-    self.txtEmail.enabled = NO;
+    self.txtEmail.enabled = YES;
     
     //Hide relationship
     [self.pickerRelationship removeFromSuperview];
@@ -280,7 +280,7 @@
     userUpdater.app_token = self.user.app_token;
     userUpdater.user_token = self.user.user_token;
     userUpdater.nick = self.txtNick.text;
-    userUpdater.email = self.user.email;
+    userUpdater.email = self.txtEmail.text;
     userUpdater.dob = [NSString stringWithFormat:@"%@", birthdate];
     [userUpdater setGenderByString:self.pickerGender.text];
     userUpdater.race = [self.pickerRace.text lowercaseString];
@@ -292,6 +292,14 @@
         UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade mínima para o usuário principal é 13 anos."];
         [self presentViewController:alert animated:YES completion:nil];
     }
+    
+    if (!userUpdater.isValidEmail) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"E-mail inválido!"];
+        [self presentViewController:alert animated:YES completion:nil];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        return;
+    }
+    
     
     [userRequester updateUser:userUpdater onSuccess:^(User *user){
         NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
