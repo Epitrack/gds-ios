@@ -73,7 +73,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.6.1)
   - ASHorizontalScrollViewForObjectiveC (~> 1.0)
-  - Charts (~> 2.1)
+  - Charts
   - DownPicker
   - Fabric
   - Google/Analytics
@@ -117,6 +117,6 @@ SPEC CHECKSUMS:
   TwitterKit: f67360ee0a5f935f053bf37015652ac157e4eb92
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
-PODFILE CHECKSUM: 7a6ba7bb95eb12caf80ef1225a968b13da93352a
+PODFILE CHECKSUM: d61ffac6cd7e68184753400aae3ea09274f54f3f
 
 COCOAPODS: 1.0.0.beta.2

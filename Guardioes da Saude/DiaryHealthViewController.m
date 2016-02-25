@@ -22,6 +22,7 @@
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
+#import "Charts/Charts-Swift.h"
 @import Photos;
 
 @import Charts;
@@ -32,7 +33,8 @@
 @property (nonatomic, weak) IBOutlet PieChartView * chartView;
 
 // Line graph
-@property (nonatomic, weak) IBOutlet JYGraphView * graphView;
+@property (weak, nonatomic) IBOutlet LineChartView *graphView;
+
 
 // Calendar
 @property (nonatomic, weak) IBOutlet JTCalendarMenuView * calendarMenuView;
@@ -51,6 +53,7 @@
     UserRequester *userRequester;
     BOOL firstTime;
     int requestsInProcess;
+
 }
 
 const float _kCellHeight = 100.0f;
@@ -365,18 +368,37 @@ const float _kCellHeight = 100.0f;
 
 - (void) loadChartLine {
     
-    self.graphView.useCurvedLine = YES;
-
+    self.graphView.descriptionText = @"";
+    self.graphView.noDataTextDescription = @"You need to provide data for the chart.";
     
-    self.graphView.tintColor = [UIColor whiteColor];
-    self.graphView.labelBackgroundColor = [UIColor whiteColor];
-    self.graphView.labelFontColor = [DiaryHealthViewController toUiColor: @"#186cb7"];
+    self.graphView.dragEnabled = NO;
+    [self.graphView setScaleEnabled:NO];
+    self.graphView.pinchZoomEnabled = NO;
+    self.graphView.drawGridBackgroundEnabled = NO;
     
-    self.graphView.strokeColor = [DiaryHealthViewController toUiColor: @"#186cb7"];
-    self.graphView.pointFillColor = [DiaryHealthViewController toUiColor: @"#186cb7"];
+    ChartYAxis *leftAxis = self.graphView.leftAxis;
+    [leftAxis removeAllLimitLines];
+    leftAxis.labelFont = [UIFont systemFontOfSize:10.f];
+    leftAxis.labelCount = 5;
+    leftAxis.valueFormatter = [[NSNumberFormatter alloc] init];
+    leftAxis.valueFormatter.negativeSuffix = @" %";
+    leftAxis.valueFormatter.positiveSuffix = @" %";
+    leftAxis.labelPosition = YAxisLabelPositionOutsideChart;
 
-    self.graphView.barColor = [UIColor clearColor];
-    self.graphView.backgroundViewColor = [UIColor whiteColor];
+    leftAxis.customAxisMax = 100.0;
+    leftAxis.customAxisMin = 0.0; // this replaces startAtZero = YES
+    
+    ChartYAxis *rightAxis = self.graphView.rightAxis;
+    rightAxis.enabled = NO;
+    
+    ChartXAxis *xAxis = self.graphView.xAxis;
+    xAxis.labelPosition = XAxisLabelPositionBottom;
+    xAxis.labelFont = [UIFont systemFontOfSize:10.f];
+    xAxis.drawGridLinesEnabled = NO;
+
+    xAxis.spaceBetweenLabels = 2.0;
+    
+    self.graphView.legend.enabled = NO;
 }
 
 - (void) loadCalendar {
@@ -433,42 +455,39 @@ const float _kCellHeight = 100.0f;
                                        
                                        self.lbFrequencyYear.text = [NSString stringWithFormat:@"Frequência %d", [DateUtil getCurrentYear]];
                                        
+                                       NSArray *xVals = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dez"];
+                                       
+                                       NSMutableArray *yVals = [[NSMutableArray alloc] init];
+                                       
                                        for (int i = 1; i <= 12; i++) {
-                                           
                                            if (![sumaryGraphMap objectForKey: [NSNumber numberWithInt: i]]) {
+                                               [yVals addObject:[[ChartDataEntry alloc] initWithValue:0 xIndex:i-1]];
+                                           }else{
+                                               SumaryGraph * sumaryGraph = [sumaryGraphMap objectForKey: [NSNumber numberWithInt: i]];
                                                
-                                               SumaryGraph * sumaryGraph = [[SumaryGraph alloc] init];
-                                               
-                                               sumaryGraph.month = i;
-                                               sumaryGraph.percent = 0;
-                                               
-                                               [sumaryGraphMap setObject: sumaryGraph forKey: [NSNumber numberWithInt: i]];
+                                               [yVals addObject: [[ChartDataEntry alloc] initWithValue:sumaryGraph.percent xIndex:i-1]];
                                            }
                                        }
                                        
-                                       NSMutableArray * valueArray = [NSMutableArray array];
+                                       LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals];
                                        
-                                       for (int i = 1; i <= sumaryGraphMap.count; i++) {
-                                           
-                                           SumaryGraph * sumaryGraph = [sumaryGraphMap objectForKey: [NSNumber numberWithInt: i]];
-                                           
-                                           [valueArray addObject: [NSNumber numberWithFloat: sumaryGraph.percent]];
-                                       }
+                                       set1.highlightEnabled = NO;
+                                       [set1 setColor:[UIColor colorWithRed:0 green:0 blue:1 alpha:1]];
+                                       [set1 setCircleColor:[UIColor colorWithRed:0 green:0 blue:1 alpha:1]];
+                                       set1.lineWidth = 1.0;
+                                       set1.circleRadius = 3.0;
+                                       set1.drawCircleHoleEnabled = NO;
+                                       set1.fillColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:0.5];
+                                       set1.drawFilledEnabled = YES;
+                                       set1.drawValuesEnabled = NO;
                                        
+                                       NSMutableArray *dataSets = [[NSMutableArray alloc] init];
+                                       [dataSets addObject:set1];
                                        
-                                       self.graphView.labelFont = [UIFont fontWithName:@"Foco-Regular" size:11.5];
-                                       self.graphView.graphWidth = self.graphView.frame.size.width;
+                                       LineChartData *data = [[LineChartData alloc] initWithXVals:xVals dataSets:dataSets];
                                        
-                                       self.graphView.graphDataLabels = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dez"];
-                                   
-                                       UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.graphView.frame.size.width, self.graphView.frame.size.height)];
-                                       [blankView setBackgroundColor: [UIColor whiteColor]];
-                                       [self.graphView addSubview:blankView];
-                                       
-                                       
-                                       self.graphView.graphData = valueArray;
-                                       [self.graphView plotGraphData];
-                                       
+                                       self.graphView.data = data;
+                                       [self.graphView animateWithXAxisDuration:2.5 easingOption:ChartEasingOptionEaseInOutQuart];
                                    }
      ];
 }
