@@ -102,7 +102,7 @@ NSUserDefaults *preferences;
     
     //TWITTER
     [Fabric with:@[[Twitter class]]];
-    [[Twitter sharedInstance] startWithConsumerKey:@"2lnE0tRTpj0VPihSOpvrT13rv" consumerSecret:@"lbcEUcgSSZrzpRDkwPoBlj0BbcWADPymMLvvFewbwTO2j426hx"];
+    [[Twitter sharedInstance] startWithConsumerKey:@"l4t5P03ZR3mbBON7HHLWhgSrS" consumerSecret:@"8Vi40vWK3s4kqViKMKPJJFO5bLsrFbvzRqhDbsy6mZQH7pkVbe"];
     [Fabric with:@[[Twitter sharedInstance]]];
     
     return YES;
