@@ -217,30 +217,12 @@
                         <rect key="frame" x="115" y="376" width="92" height="32"/>
                     </variation>
                 </label>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-yR-Gd4" userLabel="Button Profile">
-                    <rect key="frame" x="110" y="69" width="100" height="102"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-yR-Gd4" userLabel="Button Profile">
+                    <rect key="frame" x="118" y="80" width="84" height="84"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="74:71" id="5Jf-t5-GZT"/>
-                        <constraint firstAttribute="height" constant="71" id="GbZ-Av-CfI"/>
-                        <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="1:1" id="KyS-y5-Ksl"/>
-                        <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="13:12" constant="-11" id="eN5-N8-xVC"/>
-                        <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="1:1" id="h2Q-W9-FAa"/>
-                        <constraint firstAttribute="height" constant="71" id="k6H-Nd-hC9"/>
-                        <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="74:71" id="sSY-1z-eoY"/>
-                        <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="74:71" id="yje-uv-v1t"/>
+                        <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="1:1" id="Rc4-Dh-fuN"/>
                     </constraints>
                     <state key="normal" backgroundImage="img_profile01.png"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="5Jf-t5-GZT"/>
-                            <exclude reference="GbZ-Av-CfI"/>
-                            <exclude reference="KyS-y5-Ksl"/>
-                            <exclude reference="h2Q-W9-FAa"/>
-                            <exclude reference="k6H-Nd-hC9"/>
-                            <exclude reference="sSY-1z-eoY"/>
-                            <exclude reference="yje-uv-v1t"/>
-                        </mask>
-                    </variation>
                     <connections>
                         <action selector="btnProfileAction:" destination="-1" eventType="touchUpInside" id="c0A-qr-ojz"/>
                     </connections>
@@ -256,6 +238,7 @@
                 <constraint firstItem="w3j-0Z-T9i" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="25" id="9KA-gE-4NG"/>
                 <constraint firstItem="PB7-Zb-hbF" firstAttribute="leading" secondItem="w3j-0Z-T9i" secondAttribute="leading" constant="12" id="9Xv-RN-DTP"/>
                 <constraint firstItem="ERT-mz-Xtg" firstAttribute="leading" secondItem="w3j-0Z-T9i" secondAttribute="leading" constant="12" id="9al-oQ-gtl"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="centerY" secondItem="Cds-EH-tEM" secondAttribute="centerY" id="CXv-Ha-ixG"/>
                 <constraint firstItem="E3E-wn-XOc" firstAttribute="top" secondItem="w3j-0Z-T9i" secondAttribute="top" constant="13" id="Cbc-Wj-QmM"/>
                 <constraint firstItem="E3E-wn-XOc" firstAttribute="trailing" secondItem="w3j-0Z-T9i" secondAttribute="trailing" id="D8q-nq-OBa"/>
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="37:240" id="DKv-Wb-Evf"/>
@@ -268,7 +251,9 @@
                 <constraint firstItem="QGE-hC-oId" firstAttribute="centerY" secondItem="w3j-0Z-T9i" secondAttribute="centerY" id="IMo-3D-Mm8"/>
                 <constraint firstItem="o9t-CS-rTk" firstAttribute="leading" secondItem="w3j-0Z-T9i" secondAttribute="leading" id="Jru-VX-lba"/>
                 <constraint firstItem="olw-uU-G9T" firstAttribute="bottom" secondItem="w3j-0Z-T9i" secondAttribute="bottom" constant="-8.5" id="KvQ-iW-aLM"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="centerX" secondItem="Cds-EH-tEM" secondAttribute="centerX" id="Les-nb-NS5"/>
                 <constraint firstItem="PB7-Zb-hbF" firstAttribute="bottom" secondItem="w3j-0Z-T9i" secondAttribute="bottom" constant="-16" id="Lww-D6-BGT"/>
+                <constraint firstItem="Ag8-Nd-VOm" firstAttribute="top" secondItem="Dyo-yR-Gd4" secondAttribute="bottom" constant="12" id="Mh6-z4-b3D"/>
                 <constraint firstItem="olw-uU-G9T" firstAttribute="trailing" secondItem="w3j-0Z-T9i" secondAttribute="trailing" id="OhF-uG-Owr"/>
                 <constraint firstItem="w9n-BB-3Se" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" id="Otf-uU-SdE"/>
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="centerX" secondItem="Cds-EH-tEM" secondAttribute="centerX" id="PhG-Qy-k0B"/>
@@ -306,6 +291,7 @@
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="13:48" constant="-30" id="oJO-BZ-5SJ"/>
                 <constraint firstItem="ERT-mz-Xtg" firstAttribute="width" secondItem="w3j-0Z-T9i" secondAttribute="height" multiplier="27:56" constant="-10.178571428571445" id="owC-qG-MKW"/>
                 <constraint firstAttribute="bottom" secondItem="w3j-0Z-T9i" secondAttribute="bottom" constant="10" id="pL4-0E-755"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" constant="80" id="pRe-6o-AvA"/>
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" constant="93" id="php-IE-Ek7"/>
                 <constraint firstItem="PB7-Zb-hbF" firstAttribute="width" secondItem="w3j-0Z-T9i" secondAttribute="height" multiplier="129:280" constant="-9.8928571428571388" id="qXW-4S-MrX"/>
                 <constraint firstItem="w9n-BB-3Se" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="2:3" id="qas-hP-jOL"/>
@@ -331,10 +317,13 @@
                 <mask key="constraints">
                     <exclude reference="qas-hP-jOL"/>
                     <exclude reference="5zM-UX-T8W"/>
+                    <exclude reference="CXv-Ha-ixG"/>
                     <exclude reference="DKv-Wb-Evf"/>
                     <exclude reference="E5c-d0-Wd9"/>
                     <exclude reference="PhG-Qy-k0B"/>
+                    <exclude reference="WHL-H2-fHm"/>
                     <exclude reference="Z4y-BG-Anb"/>
+                    <exclude reference="gH0-Nm-5oA"/>
                     <exclude reference="gw0-WF-6dv"/>
                     <exclude reference="lje-9z-33i"/>
                     <exclude reference="oJO-BZ-5SJ"/>
@@ -346,6 +335,7 @@
                     <exclude reference="xUn-gN-pwq"/>
                     <exclude reference="xk7-dD-i07"/>
                     <exclude reference="z3g-9n-Eg3"/>
+                    <exclude reference="Xjg-yW-ZCi"/>
                     <exclude reference="YcH-Gx-I00"/>
                     <exclude reference="YV6-5b-vYm"/>
                     <exclude reference="pL4-0E-755"/>
