@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ASHorizontalScrollView.h"
-#import "PNChart.h"
 
-@interface DiaryHealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PNChartDelegate> {
+@interface DiaryHealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     
     UITableView *sampleTableView;
     
@@ -23,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbTotalReportBad;
 @property (weak, nonatomic) IBOutlet UILabel *lbFrequencyYear;
 
-@property (nonatomic) PNPieChart *pieChart;
 
 
 @end

@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PNChart.h"
 
-@interface DetailMapHealthViewController : UIViewController<PNChartDelegate>
+@interface DetailMapHealthViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *txtCity;
 @property (weak, nonatomic) IBOutlet UILabel *txtState;
 @property (weak, nonatomic) IBOutlet UILabel *txtCountParticipation;

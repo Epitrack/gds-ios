@@ -11,7 +11,6 @@ pod 'PTEHorizontalTableView'
 pod 'ASHorizontalScrollViewForObjectiveC', '~> 1.0'
 pod 'JSONModel'
 pod 'Charts'
-pod 'JYGraphView', '~> 0.1'
 pod 'JTCalendar', '~> 2.0'
 pod 'Fabric'
 pod 'TwitterKit'
@@ -22,7 +21,6 @@ pod 'Google/Analytics'
 pod 'DownPicker'
 pod 'RMDateSelectionViewController'
 pod 'MBProgressHUD', '~> 0.9.2'
-pod 'PNChart'
 
 target 'Guardioes da Saude' do
 

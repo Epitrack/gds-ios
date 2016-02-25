@@ -494,8 +494,6 @@
 		AAE38B451BFA5DD8009CD20B /* SumaryCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B441BFA5DD8009CD20B /* SumaryCalendar.m */; };
 		AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B471BFA713E009CD20B /* SumaryGraph.m */; };
 		AAE38B4B1BFA80AF009CD20B /* SumaryLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B4A1BFA80AF009CD20B /* SumaryLocation.m */; };
-		AAE38B4E1BFAA16F009CD20B /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B4D1BFAA16F009CD20B /* ChartViewController.m */; };
-		AAE38B501BFAA1D8009CD20B /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE38B4F1BFAA1D8009CD20B /* ChartViewController.xib */; };
 		B23CB178C86EEA8A7C4AF3CE /* MapPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */; };
 		B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */; };
 		CB14A0441C5A4CB0007E8070 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB14A0431C5A4CB0007E8070 /* GoogleService-Info.plist */; };
@@ -1115,9 +1113,6 @@
 		AAE38B471BFA713E009CD20B /* SumaryGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumaryGraph.m; sourceTree = "<group>"; };
 		AAE38B491BFA80AF009CD20B /* SumaryLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SumaryLocation.h; sourceTree = "<group>"; };
 		AAE38B4A1BFA80AF009CD20B /* SumaryLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumaryLocation.m; sourceTree = "<group>"; };
-		AAE38B4C1BFAA16F009CD20B /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
-		AAE38B4D1BFAA16F009CD20B /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
-		AAE38B4F1BFAA1D8009CD20B /* ChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartViewController.xib; sourceTree = "<group>"; };
 		AAE38B5E1BFBC81E009CD20B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseholdThumbnail.m; sourceTree = "<group>"; };
 		B23CB416A647D5FE2D95B7D9 /* HouseholdThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseholdThumbnail.h; sourceTree = "<group>"; };
@@ -1282,9 +1277,6 @@
 				5221A8211BED30F1006659E2 /* Survey */,
 				5221A8201BED30CC006659E2 /* MapHealth */,
 				5221A81F1BED30BE006659E2 /* Diary */,
-				AAE38B4C1BFAA16F009CD20B /* ChartViewController.h */,
-				AAE38B4D1BFAA16F009CD20B /* ChartViewController.m */,
-				AAE38B4F1BFAA1D8009CD20B /* ChartViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2135,7 +2127,6 @@
 				52E7276E1BEA93B800B46945 /* icon_facebook@2x.png in Resources */,
 				52E727C51BEA93B800B46945 /* img_profile02@2x.png in Resources */,
 				52E727881BEA93B800B46945 /* icon_logo_tutorial.png in Resources */,
-				AAE38B501BFAA1D8009CD20B /* ChartViewController.xib in Resources */,
 				528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */,
 				52E727B81BEA93B800B46945 /* icon_twitter.png in Resources */,
 				52E7271D1BEA93B800B46945 /* button_default_white@2x.png in Resources */,
@@ -2647,7 +2638,6 @@
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
 				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,
 				520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */,
-				AAE38B4E1BFAA16F009CD20B /* ChartViewController.m in Sources */,
 				520EB7191C21EF670054D818 /* ZikaViewController.m in Sources */,
 				528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */,
 				25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */,

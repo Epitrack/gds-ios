@@ -56,10 +56,7 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0.0)
   - JSONModel (1.1.2)
   - JTCalendar (2.1.4)
-  - JYGraphView (0.1.0)
   - MBProgressHUD (0.9.2)
-  - PNChart (0.8.7):
-    - UICountingLabel (~> 1.2.0)
   - PTEHorizontalTableView (1.0.0)
   - RMActionController (1.0.5)
   - RMDateSelectionViewController (2.0.3):
@@ -68,7 +65,6 @@ PODS:
     - Fabric
   - TwitterKit (1.14.6):
     - TwitterCore (= 1.14.6)
-  - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.1)
@@ -81,9 +77,7 @@ DEPENDENCIES:
   - GoogleMaps
   - JSONModel
   - JTCalendar (~> 2.0)
-  - JYGraphView (~> 0.1)
   - MBProgressHUD (~> 0.9.2)
-  - PNChart
   - PTEHorizontalTableView
   - RMDateSelectionViewController
   - TwitterCore
@@ -107,16 +101,13 @@ SPEC CHECKSUMS:
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
   JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   JTCalendar: 9b1352c7ec41cc26b19c189d6608ba48060a53d9
-  JYGraphView: 1f0e5541664acff0f43a31fee5e6bd7171236539
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
-  PNChart: c1755716bbd45386d2035b2bf2ce73e6d3f8cb22
   PTEHorizontalTableView: 2c65c4360282223628dabc664508dde922f98efd
   RMActionController: b83653e7452ed51492094d65dc82151c36443c03
   RMDateSelectionViewController: 354a0f1fe40bac01054528b7a8735f2973bbd813
   TwitterCore: 5e9b2d066ceeef53fe611c0c4436cb700f1ed620
   TwitterKit: f67360ee0a5f935f053bf37015652ac157e4eb92
-  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
-PODFILE CHECKSUM: d61ffac6cd7e68184753400aae3ea09274f54f3f
+PODFILE CHECKSUM: 0c1f74e7d502a8718a05ad9b84eb99e7248d0c86
 
 COCOAPODS: 1.0.0.beta.2

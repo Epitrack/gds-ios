@@ -11,7 +11,6 @@
 #import "User.h"
 #import "UserRequester.h"
 #import "Sumary.h"
-#import "JYGraphView.h"
 #import "SumaryGraph.h"
 #import "SumaryCalendar.h"
 #import "HouseholdRequester.h"
