@@ -436,11 +436,22 @@
 }
 
 - (IBAction)btnInfoAction:(id)sender {
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = NSTextAlignmentLeft;
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \nDiarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\nRespiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\nExantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)" preferredStyle:UIAlertControllerStyleActionSheet];
+    NSDictionary *attributes = @{NSParagraphStyleAttributeName: paragraphStyle,
+                                 NSFontAttributeName: [UIFont systemFontOfSize:15.0],
+                                 NSForegroundColorAttributeName: [UIColor grayColor]};
+    
+    NSMutableAttributedString *msg = [[NSMutableAttributedString alloc] initWithString:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)" attributes:attributes];
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Síndromes" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    [alert setValue:msg forKey:@"attributedMessage"];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
     }];
+    
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
