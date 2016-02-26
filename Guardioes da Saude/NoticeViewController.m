@@ -126,7 +126,7 @@
     cell.lbDescription.text = notice.title;
     cell.lbDate.text = [DateUtil stringFromDate:notice.date];
     cell.lbLikes.text = [NSString stringWithFormat:@"%d", [notice.favoreted intValue]];
-    cell.lbHoursAgo.text = [NSString stringWithFormat:@"%d", [notice.hoursAgo intValue]];
+    cell.lbHoursAgo.text = [NSString stringWithFormat:@"%dh", [notice.hoursAgo intValue]];
     
     return cell;
 }
