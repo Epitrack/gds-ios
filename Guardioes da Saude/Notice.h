@@ -16,5 +16,10 @@ link;
 @property(nonatomic, retain) NSString *title;
 @property(nonatomic, retain) NSString *source;
 @property(nonatomic, retain) NSString *link;
+@property(nonatomic, retain) NSNumber *favoreted;
+@property(nonatomic, retain) NSDate *date;
+@property(nonatomic, retain) NSNumber *hoursAgo;
+
+- (void) setDateTime: (NSString *) strDateTime;
 
 @end

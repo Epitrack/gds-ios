@@ -47,6 +47,8 @@
                     NSString *link = [NSString stringWithFormat: @"https://twitter.com/minsaude/status/%@", item[@"id_str"]];
                     
                     Notice *notice = [[Notice alloc] initWithName:text andSource:source andLink:link];
+                    [notice setDateTime:item[@"created_at"]];
+                    notice.favoreted = item[@"favorite_count"];
                     
                     [notices addObject:notice];
                     

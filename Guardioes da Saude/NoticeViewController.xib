@@ -19,8 +19,8 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2wf-aj-VTo">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_news.png" id="JTW-OO-G6O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+                    <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_twitternews.png" id="JTW-OO-G6O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <connections>
@@ -40,6 +40,6 @@
         </view>
     </objects>
     <resources>
-        <image name="img_news.png" width="539" height="441"/>
+        <image name="icon_twitternews.png" width="638" height="218"/>
     </resources>
 </document>

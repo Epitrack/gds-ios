@@ -545,6 +545,9 @@
 		CBA0E5471C5FA5EC0086315B /* img_profile17Mini@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5291C5FA5EC0086315B /* img_profile17Mini@3x.png */; };
 		CBA4F47C1C73673200B6A99C /* logo_horizontal_about.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */; };
 		CBDDF5A51C77452E008853B2 /* SymptomRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDDF5A41C77452E008853B2 /* SymptomRequester.m */; };
+		CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */; };
+		CBDE6B241C80CA82007418FA /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */; };
+		CBDE6B261C80E897007418FA /* icon_twitternews.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B251C80E897007418FA /* icon_twitternews.png */; };
 		CBEF9AD21C75FD8800A0B036 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */; };
 		CBEF9AD31C75FD8800A0B036 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */; };
 /* End PBXBuildFile section */
@@ -1175,6 +1178,10 @@
 		CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_horizontal_about.png; sourceTree = "<group>"; };
 		CBDDF5A31C77452E008853B2 /* SymptomRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomRequester.h; sourceTree = "<group>"; };
 		CBDDF5A41C77452E008853B2 /* SymptomRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomRequester.m; sourceTree = "<group>"; };
+		CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeTableViewCell.h; path = CellTable/NoticeTableViewCell.h; sourceTree = "<group>"; };
+		CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoticeTableViewCell.m; path = CellTable/NoticeTableViewCell.m; sourceTree = "<group>"; };
+		CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoticeTableViewCell.xib; path = CellTable/NoticeTableViewCell.xib; sourceTree = "<group>"; };
+		CBDE6B251C80E897007418FA /* icon_twitternews.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_twitternews.png; path = ../../../../Desktop/icon_twitternews.png; sourceTree = "<group>"; };
 		CBEF9ACF1C75FD8800A0B036 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
@@ -1270,6 +1277,7 @@
 		25A19BD81BC4B05700F08FA9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CBDE6B1F1C80CA29007418FA /* CellTables */,
 				5221A82C1BED34E6006659E2 /* Wellcome */,
 				5221A8241BED3172006659E2 /* Home */,
 				5221A8231BED314E006659E2 /* Notice */,
@@ -1530,6 +1538,7 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CBDE6B251C80E897007418FA /* icon_twitternews.png */,
 				520EB7101C21EF220054D818 /* buttonEmailDisable.png */,
 				520EB7111C21EF220054D818 /* buttonEmailDisable@2x.png */,
 				520EB7121C21EF220054D818 /* buttonEmailDisable@3x.png */,
@@ -1976,6 +1985,16 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		CBDE6B1F1C80CA29007418FA /* CellTables */ = {
+			isa = PBXGroup;
+			children = (
+				CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */,
+				CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */,
+				CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */,
+			);
+			name = CellTables;
+			sourceTree = "<group>";
+		};
 		CF810800BC26A068848D3B68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2385,6 +2404,7 @@
 				52D2BCA61BF12EBF007C9C09 /* img_profile08_mini@3x.png in Resources */,
 				529BE1D91BF65ECE00692EEC /* TermsViewController.xib in Resources */,
 				2548B9EA1BDEB3C80004E00F /* ThankYouForParticipatingViewController.xib in Resources */,
+				CBDE6B241C80CA82007418FA /* NoticeTableViewCell.xib in Resources */,
 				52E727CE1BEA93B800B46945 /* img_profile05@2x.png in Resources */,
 				CBA0E5391C5FA5EC0086315B /* img_profile15Mini.png in Resources */,
 				52E727841BEA93B800B46945 /* icon_logo_horizontal@3x.png in Resources */,
@@ -2514,6 +2534,7 @@
 				52D2BC8A1BF12EBF007C9C09 /* icon_pin_well@2x.png in Resources */,
 				52E727A91BEA93B800B46945 /* icon_security.png in Resources */,
 				52E7272B1BEA93B800B46945 /* icon_menu.png in Resources */,
+				CBDE6B261C80E897007418FA /* icon_twitternews.png in Resources */,
 				52E727CD1BEA93B800B46945 /* img_profile05.png in Resources */,
 				52E727151BEA93B800B46945 /* img_card.png in Resources */,
 				52558CE41C18B8EE00AF7DDF /* imgTutorial01@2x.png in Resources */,
@@ -2638,6 +2659,7 @@
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
 				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,
 				520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */,
+				CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */,
 				520EB7191C21EF670054D818 /* ZikaViewController.m in Sources */,
 				528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */,
 				25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */,

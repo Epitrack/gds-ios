@@ -15,6 +15,8 @@
 #import <Google/Analytics.h>
 #import "MBProgressHUD.h"
 #import "ViewUtil.h"
+#import "NoticeTableViewCell.h"
+#import "DateUtil.h"
 
 @interface NoticeViewController () {
     User *user;
@@ -40,15 +42,10 @@
                                 target:self
                                 action:nil];
     
-    
-    CGRect recScreen = [[UIScreen mainScreen] bounds];
-    CGRect recImg = [self.imgHeader frame];
-    UIView *overlay = [[UIView alloc] initWithFrame: CGRectMake(0, 0, recScreen.size.width, recImg.size.height)];
-    [overlay setBackgroundColor:[UIColor colorWithRed:(10/255.0) green:(88/255.0) blue:(163/255.0) alpha:0.7]];
-    
-    [self.imgHeader addSubview:overlay];
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     [self loadNotices];
+    
+    self.tableViewNotice.separatorColor = [UIColor clearColor];
 }
 
 - (void) loadNotices {
@@ -111,22 +108,25 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"cellForRowAtIndexPath");
-    static NSString *cellNoticeCacheID = @"CellNoticeCacheID";
-    UITableViewCell *cell = [self.tableViewNotice dequeueReusableCellWithIdentifier:cellNoticeCacheID];
+    static NSString *simpleTableIdentifier = @"NoticeTableViewCell";
     
-    if (cell == nil ) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellNoticeCacheID];
+    NoticeTableViewCell *cell = (NoticeTableViewCell *)[self.tableViewNotice dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NoticeTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
     Notice *notice = [singleNotice.notices objectAtIndex:indexPath.row];
     
-    UIFont *detailFont = [UIFont fontWithName: @"Arial" size: 14.0];
+    if (indexPath.row == 0) {
+        cell.imgInitTimeLine.hidden = YES;
+    }
     
-    cell.textLabel.numberOfLines = 2;
-    cell.textLabel.text = notice.title;
-    cell.detailTextLabel.textColor = [UIColor grayColor];
-    cell.detailTextLabel.font = detailFont;
-    cell.detailTextLabel.text = notice.source;
+    cell.lbDescription.text = notice.title;
+    cell.lbDate.text = [DateUtil stringFromDate:notice.date];
+    cell.lbLikes.text = [NSString stringWithFormat:@"%d", [notice.favoreted intValue]];
+    cell.lbHoursAgo.text = [NSString stringWithFormat:@"%d", [notice.hoursAgo intValue]];
     
     return cell;
 }
@@ -155,7 +155,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 161;
 }
 
 

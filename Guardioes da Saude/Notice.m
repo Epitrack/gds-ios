@@ -7,6 +7,7 @@
 //
 
 #import "Notice.h"
+#import "DateUtil.h"
 
 @implementation Notice
 
@@ -19,6 +20,25 @@
     }
     
     return self;
+}
+
+- (void)setDateTime:(NSString *)strDateTime{
+    // Date sample Fri Feb 26 18:00:25 +0000 2016
+    
+    NSDateFormatter *dateFormatter= [NSDateFormatter new];
+    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setDateFormat:@"EEE MMM dd HH:mm:ss Z yyyy"];
+    
+    self.date = [dateFormatter dateFromString:strDateTime];
+    NSDate *dateNow = [[NSDate alloc] init];
+    
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitHour
+                                                        fromDate:self.date
+                                                          toDate:dateNow
+                                                         options:NSCalendarWrapComponents];
+    
+    self.hoursAgo = [NSNumber numberWithInteger:[components hour]];
 }
 
 @end
