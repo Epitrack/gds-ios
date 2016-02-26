@@ -64,6 +64,8 @@
     [self.pickerRelationship.DownPicker setToolbarCancelButtonText:@"Cancelar"];
     [self.pickerRelationship.DownPicker setToolbarDoneButtonText:@"Selecionar"];
     
+    [self applyLayerOnPictureLayer];
+    
     if (self.operation == EDIT_USER) {
         [self loadEditUser];
     } else if (self.operation == EDIT_HOUSEHOLD){
@@ -71,6 +73,31 @@
     } else if (self.operation == ADD_HOUSEHOLD){
         [self loadAddHousehold];
     }
+}
+
+- (void) applyLayerOnPictureLayer{
+    CGSize screenSize = self.btnPicture.frame.size;
+    
+    
+    CAShapeLayer *circleLayer = [CAShapeLayer layer];
+    
+    UIBezierPath *path2 = [UIBezierPath bezierPath];
+    [path2 addArcWithCenter:CGPointMake(screenSize.width/2, screenSize.height/2) radius:50 startAngle:M_PI*.15 endAngle: M_PI*.85 clockwise:YES];
+    
+    [circleLayer setPath:[path2 CGPath]];
+    
+    CAShapeLayer *fillLayer = [CAShapeLayer layer];
+    fillLayer.path = path2.CGPath;
+    fillLayer.fillRule = kCAFillRuleEvenOdd;
+    fillLayer.fillColor = [[UIColor colorWithRed:0 green:0 blue:0 alpha:.7] CGColor];
+    fillLayer.opacity = 0.8;
+    
+    [self.btnPicture.layer addSublayer:fillLayer];
+    
+    UIImageView *imgCam = [[UIImageView alloc] initWithFrame:CGRectMake((screenSize.width/2)-((screenSize.width*.2)/2), screenSize.height*.8, screenSize.width*.2, screenSize.height*.15)];
+    imgCam.image = [UIImage imageNamed:@"icon_camera.png"];
+    [self.btnPicture addSubview:imgCam];
+
 }
 
 - (void) viewWillAppear:(BOOL)animated{
