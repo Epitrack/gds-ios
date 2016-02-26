@@ -20,7 +20,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_horizontal_about.png" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-a8-tCj">
-                            <rect key="frame" x="52" y="29" width="217" height="105"/>
+                            <rect key="frame" x="52" y="29" width="217" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="c4D-PS-bR1"/>
+                            </constraints>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2iQ-BZ-aMh">
                             <rect key="frame" x="8" y="142" width="304" height="7075"/>
@@ -343,7 +346,7 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="2iQ-BZ-aMh" secondAttribute="trailing" constant="8" id="23u-Ik-YAu"/>
-                        <constraint firstItem="2iQ-BZ-aMh" firstAttribute="top" secondItem="vSQ-a8-tCj" secondAttribute="bottom" constant="8" id="3nv-CI-Xb5"/>
+                        <constraint firstItem="2iQ-BZ-aMh" firstAttribute="top" secondItem="vSQ-a8-tCj" secondAttribute="bottom" constant="13" id="3nv-CI-Xb5"/>
                         <constraint firstItem="vSQ-a8-tCj" firstAttribute="centerX" secondItem="lUr-DF-2oL" secondAttribute="centerX" id="6NI-Eo-R1z"/>
                         <constraint firstItem="2iQ-BZ-aMh" firstAttribute="centerX" secondItem="vSQ-a8-tCj" secondAttribute="centerX" id="6Wy-ml-CoC"/>
                         <constraint firstItem="vSQ-a8-tCj" firstAttribute="width" secondItem="lUr-DF-2oL" secondAttribute="height" multiplier="217:568" id="85B-yN-MJp"/>
