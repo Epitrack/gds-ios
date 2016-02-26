@@ -92,9 +92,9 @@
                     </variation>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ru-5b-mQY">
-                    <rect key="frame" x="105" y="167" width="110" height="116"/>
+                    <rect key="frame" x="105" y="167" width="110" height="110"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="9Ru-5b-mQY" secondAttribute="height" multiplier="1:1" constant="-6" id="YZe-zg-ryd"/>
+                        <constraint firstAttribute="width" secondItem="9Ru-5b-mQY" secondAttribute="height" multiplier="1:1" id="YZe-zg-ryd"/>
                     </constraints>
                     <state key="normal" backgroundImage="img_profile01.png"/>
                     <connections>
@@ -152,7 +152,7 @@
                 <constraint firstItem="DZX-rV-oic" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" id="OR0-YY-r0P"/>
                 <constraint firstItem="9Ru-5b-mQY" firstAttribute="top" secondItem="gvy-FZ-XET" secondAttribute="bottom" constant="36" id="OqL-HQ-Etb"/>
                 <constraint firstItem="isO-eI-eTP" firstAttribute="leading" secondItem="SnQ-vz-S2d" secondAttribute="leading" constant="-6" id="S6j-wS-UXq"/>
-                <constraint firstItem="9Ru-5b-mQY" firstAttribute="centerY" secondItem="SnQ-vz-S2d" secondAttribute="centerY" multiplier="0.926" constant="2.5159999999999627" id="cWM-Xi-kBx"/>
+                <constraint firstItem="9Ru-5b-mQY" firstAttribute="centerY" secondItem="SnQ-vz-S2d" secondAttribute="centerY" multiplier="0.926" constant="-0.24000000000000909" id="cWM-Xi-kBx"/>
                 <constraint firstAttribute="bottom" secondItem="isO-eI-eTP" secondAttribute="bottom" constant="-6" id="ezM-h9-KIe"/>
                 <constraint firstItem="isO-eI-eTP" firstAttribute="centerY" secondItem="SnQ-vz-S2d" secondAttribute="centerY" constant="3" id="i9i-s0-bNq"/>
                 <constraint firstItem="gvy-FZ-XET" firstAttribute="centerX" secondItem="SnQ-vz-S2d" secondAttribute="centerX" constant="-2.5" id="kTk-xY-oWM"/>
