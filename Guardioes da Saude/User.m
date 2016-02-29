@@ -179,51 +179,79 @@ NSString *const kNickKey = @"nickKey";
         long diffYears = ([DateUtil diffInDaysDate:[DateUtil dateFromStringUS:self.dob] andDate:[NSDate new]]/360);
         
         if ([self.gender isEqualToString:@"M"]) {
-            if (diffYears > 50) {
-                if ([self.race isEqualToString:@"preto"] || [self.race isEqualToString:@"indigena"]) {
-                    self.avatarNumber = @11;
-                    avatar = @"img_profile11.png";
-                } else {
-                    self.avatarNumber = @9;
-                    avatar = @"img_profile09.png";
-                }
-            }else{
-                if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"pardo"]) {
-                    self.avatarNumber = @5;
-                    avatar = @"img_profile05.png";
-                }else if([self.race isEqualToString:@"preto"]){
-                    self.avatarNumber = @4;
-                    avatar = @"img_profile04.png";
-                }else if([self.race isEqualToString:@"indigena"]){
+            if ([self.race isEqualToString:@"preto"] ||
+                [self.race isEqualToString:@"indigena"] ||
+                [self.race isEqualToString:@"pardo"]){
+                
+                if (diffYears > 49) {
                     self.avatarNumber = @6;
                     avatar = @"img_profile06.png";
-                }else if([self.race isEqualToString:@"amarelo"]){
-                    self.avatarNumber = @7;
-                    avatar = @"img_profile07.png";
+                } else if (diffYears > 25){
+                    self.avatarNumber = @5;
+                    avatar = @"img_profile05.png";
+                }else{
+                    self.avatarNumber = @4;
+                    avatar = @"img_profile04.png";
                 }
-            }
-        } else {
-            if (diffYears > 50) {
-                if ([self.race isEqualToString:@"preto"] || [self.race isEqualToString:@"indigena"]) {
+            }else if ([self.gender isEqualToString:@"amarelo"]){
+                if (diffYears > 49) {
                     self.avatarNumber = @12;
                     avatar = @"img_profile12.png";
-                } else {
+                } else if (diffYears > 25){
+                    self.avatarNumber = @11;
+                    avatar = @"img_profile11.png";
+                }else{
                     self.avatarNumber = @10;
                     avatar = @"img_profile10.png";
                 }
-            }else{
-                if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"pardo"]) {
-                    self.avatarNumber = @8;
-                    avatar = @"img_profile08.png";
-                }else if([self.race isEqualToString:@"preto"]){
-                    self.avatarNumber = @2;
-                    avatar = @"img_profile02.png";
-                }else if([self.race isEqualToString:@"indigena"]){
-                    self.avatarNumber = @1;
-                    avatar = @"img_profile01.png";
-                }else if([self.race isEqualToString:@"amarelo"]){
+            }else if ([self.gender isEqualToString:@"branco"]){
+                if (diffYears > 49) {
+                    self.avatarNumber = @16;
+                    avatar = @"img_profile16.png";
+                } else if (diffYears > 25){
+                    self.avatarNumber = @11;
+                    avatar = @"img_profile11.png";
+                }else{
+                    self.avatarNumber = @15;
+                    avatar = @"img_profile15.png";
+                }
+            }
+        } else {
+            if ([self.race isEqualToString:@"preto"] ||
+                [self.race isEqualToString:@"indigena"] ||
+                [self.race isEqualToString:@"pardo"]){
+                
+                if (diffYears > 49) {
                     self.avatarNumber = @3;
                     avatar = @"img_profile03.png";
+                } else if (diffYears > 25){
+                    self.avatarNumber = @2;
+                    avatar = @"img_profile02.png";
+                }else{
+                    self.avatarNumber = @1;
+                    avatar = @"img_profile01.png";
+                }
+            }else if ([self.gender isEqualToString:@"amarelo"]){
+                if (diffYears > 49) {
+                    self.avatarNumber = @9;
+                    avatar = @"img_profile09.png";
+                } else if (diffYears > 25){
+                    self.avatarNumber = @8;
+                    avatar = @"img_profile08.png";
+                }else{
+                    self.avatarNumber = @7;
+                    avatar = @"img_profile07.png";
+                }
+            }else if ([self.gender isEqualToString:@"branco"]){
+                if (diffYears > 49) {
+                    self.avatarNumber = @14;
+                    avatar = @"img_profile14.png";
+                } else if (diffYears > 25){
+                    self.avatarNumber = @8;
+                    avatar = @"img_profile08.png";
+                }else{
+                    self.avatarNumber = @13;
+                    avatar = @"img_profile13.png";
                 }
             }
         }
@@ -247,7 +275,7 @@ NSString *const kNickKey = @"nickKey";
 
 - (BOOL)isValidEmail
 {
-    BOOL stricterFilter = NO; // Discussion http://blog.logichigh.com/2010/09/02/validating-an-e-mail-address/
+    BOOL stricterFilter = NO;
     NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
     NSString *laxString = @".+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*";
     NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
