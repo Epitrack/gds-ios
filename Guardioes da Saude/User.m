@@ -193,7 +193,7 @@ NSString *const kNickKey = @"nickKey";
                     self.avatarNumber = @4;
                     avatar = @"img_profile04.png";
                 }
-            }else if ([self.gender isEqualToString:@"amarelo"]){
+            }else if ([self.race isEqualToString:@"amarelo"]){
                 if (diffYears > 49) {
                     self.avatarNumber = @12;
                     avatar = @"img_profile12.png";
@@ -204,7 +204,7 @@ NSString *const kNickKey = @"nickKey";
                     self.avatarNumber = @10;
                     avatar = @"img_profile10.png";
                 }
-            }else if ([self.gender isEqualToString:@"branco"]){
+            }else if ([self.race isEqualToString:@"branco"]){
                 if (diffYears > 49) {
                     self.avatarNumber = @16;
                     avatar = @"img_profile16.png";
@@ -231,7 +231,7 @@ NSString *const kNickKey = @"nickKey";
                     self.avatarNumber = @1;
                     avatar = @"img_profile01.png";
                 }
-            }else if ([self.gender isEqualToString:@"amarelo"]){
+            }else if ([self.race isEqualToString:@"amarelo"]){
                 if (diffYears > 49) {
                     self.avatarNumber = @9;
                     avatar = @"img_profile09.png";
@@ -242,7 +242,7 @@ NSString *const kNickKey = @"nickKey";
                     self.avatarNumber = @7;
                     avatar = @"img_profile07.png";
                 }
-            }else if ([self.gender isEqualToString:@"branco"]){
+            }else if ([self.race isEqualToString:@"branco"]){
                 if (diffYears > 49) {
                     self.avatarNumber = @14;
                     avatar = @"img_profile14.png";
