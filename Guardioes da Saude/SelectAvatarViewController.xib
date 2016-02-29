@@ -7,18 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectAvatarViewController">
             <connections>
-                <outlet property="btn1" destination="uND-V7-lEl" id="KVc-pH-3w2"/>
-                <outlet property="btn10" destination="XFP-xQ-ayi" id="RVW-1G-Scp"/>
-                <outlet property="btn11" destination="wW3-eX-tzI" id="zml-fK-OnI"/>
-                <outlet property="btn12" destination="Vo6-bE-DQl" id="Ryx-HS-Pt7"/>
-                <outlet property="btn2" destination="A5B-AO-f4y" id="ooW-BA-B2e"/>
-                <outlet property="btn3" destination="TBS-xI-RzD" id="RaF-B0-Fog"/>
-                <outlet property="btn4" destination="QtI-NF-2c1" id="F6Z-70-NBf"/>
-                <outlet property="btn5" destination="I6y-aZ-iP7" id="ycX-5L-uVj"/>
-                <outlet property="btn6" destination="lTf-m2-t0L" id="fMB-1N-Qcw"/>
-                <outlet property="btn7" destination="hg9-U6-MhX" id="dFJ-bo-GsE"/>
-                <outlet property="btn8" destination="VEl-Fd-Vhd" id="dzN-mD-vMe"/>
-                <outlet property="btn9" destination="Ady-Rd-U4T" id="I6D-1U-DZR"/>
                 <outlet property="btnPhoto" destination="mcy-Ce-SAC" id="sRA-Cf-Irj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -39,45 +27,31 @@
                         <action selector="btnPhotoAction:" destination="-1" eventType="touchUpInside" id="l1A-GJ-elO"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uND-V7-lEl">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uND-V7-lEl">
                     <rect key="frame" x="8" y="78" width="66" height="66"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="uND-V7-lEl" secondAttribute="height" multiplier="1:1" id="OPa-ld-l2q"/>
                     </constraints>
                     <state key="normal" image="img_profile01.png"/>
                     <connections>
-                        <action selector="btn1Action:" destination="-1" eventType="touchUpInside" id="LXj-oF-2Fx"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="Uyr-Zw-fPf"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5B-AO-f4y">
-                    <rect key="frame" x="168" y="78" width="66" height="66"/>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTf-m2-t0L" userLabel="Btn2">
+                    <rect key="frame" x="89" y="78" width="66" height="66"/>
                     <state key="normal" image="img_profile02.png"/>
                     <connections>
-                        <action selector="btn2Action:" destination="-1" eventType="touchUpInside" id="Pq6-aN-Aaq"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="54x-ey-8pK"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6y-aZ-iP7">
-                    <rect key="frame" x="168" y="226" width="66" height="66"/>
-                    <state key="normal" image="img_profile05.png"/>
-                    <connections>
-                        <action selector="btn5Action:" destination="-1" eventType="touchUpInside" id="x1J-SO-dKx"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTf-m2-t0L">
-                    <rect key="frame" x="89" y="78" width="66" height="66"/>
-                    <state key="normal" image="img_profile06.png"/>
-                    <connections>
-                        <action selector="btn6Action:" destination="-1" eventType="touchUpInside" id="8Iv-eA-bj9"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBS-xI-RzD">
-                    <rect key="frame" x="8" y="152" width="66" height="66"/>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5B-AO-f4y" userLabel="Btn3">
+                    <rect key="frame" x="168" y="78" width="66" height="66"/>
                     <state key="normal" image="img_profile03.png"/>
                     <connections>
-                        <action selector="btn3Action:" destination="-1" eventType="touchUpInside" id="Fff-g9-anL"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="cIh-0A-YUK"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtI-NF-2c1">
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtI-NF-2c1">
                     <rect key="frame" x="242" y="78" width="66" height="66"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="QtI-NF-2c1" secondAttribute="height" multiplier="1:1" id="aaz-OV-NUd"/>
@@ -89,84 +63,91 @@
                         </mask>
                     </variation>
                     <connections>
-                        <action selector="btn4Action:" destination="-1" eventType="touchUpInside" id="1Mn-TU-jm4"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="J0M-53-Jdp"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEl-Fd-Vhd">
-                    <rect key="frame" x="168" y="152" width="66" height="66"/>
-                    <state key="normal" image="img_profile08.png"/>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBS-xI-RzD" userLabel="Btn5">
+                    <rect key="frame" x="8" y="152" width="66" height="66"/>
+                    <state key="normal" image="img_profile05.png"/>
                     <connections>
-                        <action selector="btn8Action:" destination="-1" eventType="touchUpInside" id="cP1-p0-0GP"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="LQz-31-eHZ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFP-xQ-ayi">
-                    <rect key="frame" x="8" y="368" width="66" height="66"/>
-                    <state key="normal" image="img_profile10.png"/>
-                    <connections>
-                        <action selector="btn10Action:" destination="-1" eventType="touchUpInside" id="lBI-Iv-TEe"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-U6-MhX">
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg9-U6-MhX" userLabel="Btn6">
                     <rect key="frame" x="89" y="152" width="66" height="66"/>
+                    <state key="normal" image="img_profile06.png"/>
+                    <connections>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="3Ze-mf-Jos"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEl-Fd-Vhd" userLabel="Btn7">
+                    <rect key="frame" x="168" y="152" width="66" height="66"/>
                     <state key="normal" image="img_profile07.png"/>
                     <connections>
-                        <action selector="btn7Action:" destination="-1" eventType="touchUpInside" id="j1g-jr-6Cu"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="Hf9-6t-Pre"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wW3-eX-tzI">
-                    <rect key="frame" x="168" y="300" width="66" height="66"/>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUt-Vb-JcF" userLabel="Btn8">
+                    <rect key="frame" x="242" y="152" width="66" height="66"/>
+                    <state key="normal" title="Button" image="img_profile08.png"/>
+                    <connections>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="79l-s0-J8Q"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ri-QB-W2j" userLabel="Btn9">
+                    <rect key="frame" x="8" y="226" width="66" height="66"/>
+                    <state key="normal" title="Button" image="img_profile09.png"/>
+                    <connections>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="KeW-ng-K7Z"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnp-qG-3Wf" userLabel="Btn10">
+                    <rect key="frame" x="89" y="226" width="66" height="66"/>
+                    <state key="normal" title="Button" image="img_profile10.png"/>
+                    <connections>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="lNT-Fd-MdX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6y-aZ-iP7" userLabel="Btn11">
+                    <rect key="frame" x="168" y="226" width="66" height="66"/>
                     <state key="normal" image="img_profile11.png"/>
                     <connections>
-                        <action selector="btn11Action:" destination="-1" eventType="touchUpInside" id="FlY-sF-EGA"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="mie-4S-5c7"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo6-bE-DQl">
-                    <rect key="frame" x="89" y="300" width="66" height="66"/>
-                    <state key="normal" image="img_profile12.png"/>
+                <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIY-PF-vLQ" userLabel="Btn12">
+                    <rect key="frame" x="242" y="226" width="66" height="66"/>
+                    <state key="normal" title="Button" image="img_profile12.png"/>
                     <connections>
-                        <action selector="btn12Action:" destination="-1" eventType="touchUpInside" id="VOZ-rk-uVx"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="Bmf-rx-28v"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ri-QB-W2j" userLabel="Btn13">
-                    <rect key="frame" x="8" y="226" width="66" height="66"/>
+                <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bd1-kI-CtX" userLabel="Btn13">
+                    <rect key="frame" x="8" y="300" width="66" height="66"/>
                     <state key="normal" title="Button" image="img_profile13.png"/>
                     <connections>
-                        <action selector="btn13Action:" destination="-1" eventType="touchUpInside" id="k2q-RY-ljw"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="8fy-OQ-4np"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnp-qG-3Wf" userLabel="Btn14">
-                    <rect key="frame" x="89" y="226" width="66" height="66"/>
-                    <state key="normal" title="Button" image="img_profile14.png"/>
+                <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo6-bE-DQl" userLabel="Btn14">
+                    <rect key="frame" x="89" y="300" width="66" height="66"/>
+                    <state key="normal" image="img_profile14.png"/>
                     <connections>
-                        <action selector="btn14Action:" destination="-1" eventType="touchUpInside" id="l1H-JC-qPB"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="EJP-qG-r07"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUt-Vb-JcF" userLabel="Btn15">
-                    <rect key="frame" x="242" y="152" width="66" height="66"/>
-                    <state key="normal" title="Button" image="img_profile15.png"/>
+                <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wW3-eX-tzI" userLabel="Btn15">
+                    <rect key="frame" x="168" y="300" width="66" height="66"/>
+                    <state key="normal" image="img_profile15.png"/>
                     <connections>
-                        <action selector="btn15Action:" destination="-1" eventType="touchUpInside" id="Ct7-Ua-sPY"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="YuN-z9-5l7"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bd1-kI-CtX" userLabel="Btn16">
-                    <rect key="frame" x="8" y="300" width="66" height="66"/>
-                    <state key="normal" title="Button" image="img_profile16.png"/>
-                    <connections>
-                        <action selector="btn16Action:" destination="-1" eventType="touchUpInside" id="zzu-7C-glv"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIY-PF-vLQ" userLabel="Btn17">
-                    <rect key="frame" x="242" y="226" width="66" height="66"/>
-                    <state key="normal" title="Button" image="img_profile17.png"/>
-                    <connections>
-                        <action selector="btn17Action:" destination="-1" eventType="touchUpInside" id="I4m-Yl-7dy"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Rd-U4T">
+                <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-Rd-U4T" userLabel="Btn16">
                     <rect key="frame" x="242" y="300" width="66" height="66"/>
-                    <state key="normal" image="img_profile09.png"/>
+                    <state key="normal" image="img_profile16.png"/>
                     <connections>
-                        <action selector="btn9Action:" destination="-1" eventType="touchUpInside" id="mcr-DN-QIo"/>
+                        <action selector="selectAvatarAction:" destination="-1" eventType="touchUpInside" id="fbt-TR-gF4"/>
                     </connections>
                 </button>
             </subviews>
@@ -204,17 +185,14 @@
                 <constraint firstItem="A5B-AO-f4y" firstAttribute="leading" secondItem="lTf-m2-t0L" secondAttribute="trailing" constant="13" id="Lh7-6I-zzj"/>
                 <constraint firstItem="jUt-Vb-JcF" firstAttribute="height" secondItem="VEl-Fd-Vhd" secondAttribute="height" id="Lhy-OZ-HW9"/>
                 <constraint firstItem="lTf-m2-t0L" firstAttribute="centerY" secondItem="uND-V7-lEl" secondAttribute="centerY" id="ODF-wc-EbQ"/>
-                <constraint firstItem="XFP-xQ-ayi" firstAttribute="width" secondItem="Bd1-kI-CtX" secondAttribute="width" id="OTD-86-Qd7"/>
                 <constraint firstItem="I6y-aZ-iP7" firstAttribute="centerX" secondItem="VEl-Fd-Vhd" secondAttribute="centerX" id="P4b-0Y-fhZ"/>
                 <constraint firstAttribute="bottom" secondItem="mcy-Ce-SAC" secondAttribute="bottom" constant="8" id="Pi4-7e-ypc"/>
                 <constraint firstAttribute="trailing" secondItem="QtI-NF-2c1" secondAttribute="trailing" constant="12" id="QEf-b5-Tj9"/>
                 <constraint firstItem="XIY-PF-vLQ" firstAttribute="width" secondItem="I6y-aZ-iP7" secondAttribute="width" id="TsV-9f-yBm"/>
                 <constraint firstItem="A5B-AO-f4y" firstAttribute="width" secondItem="lTf-m2-t0L" secondAttribute="width" id="U2l-CZ-eYz"/>
                 <constraint firstItem="Ady-Rd-U4T" firstAttribute="centerY" secondItem="wW3-eX-tzI" secondAttribute="centerY" id="VHG-7F-DOj"/>
-                <constraint firstItem="XFP-xQ-ayi" firstAttribute="height" secondItem="Bd1-kI-CtX" secondAttribute="height" id="W79-Re-n0d"/>
                 <constraint firstItem="QtI-NF-2c1" firstAttribute="width" secondItem="A5B-AO-f4y" secondAttribute="width" id="WP7-5a-Rta"/>
                 <constraint firstAttribute="trailing" secondItem="mcy-Ce-SAC" secondAttribute="trailing" constant="8" id="WsN-PX-BCT"/>
-                <constraint firstItem="XFP-xQ-ayi" firstAttribute="centerX" secondItem="Bd1-kI-CtX" secondAttribute="centerX" id="X44-Xv-Fr9"/>
                 <constraint firstItem="mnp-qG-3Wf" firstAttribute="width" secondItem="2ri-QB-W2j" secondAttribute="width" id="c9U-32-vl1"/>
                 <constraint firstItem="2ri-QB-W2j" firstAttribute="centerX" secondItem="TBS-xI-RzD" secondAttribute="centerX" id="d7u-GK-648"/>
                 <constraint firstItem="VEl-Fd-Vhd" firstAttribute="centerX" secondItem="A5B-AO-f4y" secondAttribute="centerX" id="dKB-h4-IC1"/>
@@ -237,7 +215,6 @@
                 <constraint firstItem="VEl-Fd-Vhd" firstAttribute="centerY" secondItem="hg9-U6-MhX" secondAttribute="centerY" id="paD-hp-8dO"/>
                 <constraint firstItem="Bd1-kI-CtX" firstAttribute="height" secondItem="2ri-QB-W2j" secondAttribute="height" id="q2A-6t-4vM"/>
                 <constraint firstItem="wW3-eX-tzI" firstAttribute="width" secondItem="Vo6-bE-DQl" secondAttribute="width" id="q3U-kD-8md"/>
-                <constraint firstItem="XFP-xQ-ayi" firstAttribute="top" secondItem="Bd1-kI-CtX" secondAttribute="bottom" constant="2" id="qhp-JX-cb2"/>
                 <constraint firstItem="XIY-PF-vLQ" firstAttribute="centerX" secondItem="jUt-Vb-JcF" secondAttribute="centerX" id="seS-63-Tax"/>
                 <constraint firstItem="A5B-AO-f4y" firstAttribute="height" secondItem="lTf-m2-t0L" secondAttribute="height" id="snY-ep-rPn"/>
                 <constraint firstItem="A5B-AO-f4y" firstAttribute="centerY" secondItem="lTf-m2-t0L" secondAttribute="centerY" id="tpU-EC-B5q"/>
@@ -259,22 +236,21 @@
     <resources>
         <image name="button_default.png" width="267" height="38"/>
         <image name="icon_camera.png" width="25" height="18"/>
-        <image name="img_profile01.png" width="130" height="130"/>
-        <image name="img_profile02.png" width="131" height="131"/>
-        <image name="img_profile03.png" width="130" height="131"/>
-        <image name="img_profile04.png" width="130" height="130"/>
-        <image name="img_profile05.png" width="129" height="130"/>
+        <image name="img_profile01.png" width="131" height="131"/>
+        <image name="img_profile02.png" width="130" height="130"/>
+        <image name="img_profile03.png" width="131" height="131"/>
+        <image name="img_profile04.png" width="131" height="131"/>
+        <image name="img_profile05.png" width="130" height="130"/>
         <image name="img_profile06.png" width="131" height="131"/>
-        <image name="img_profile07.png" width="131" height="131"/>
+        <image name="img_profile07.png" width="130" height="131"/>
         <image name="img_profile08.png" width="130" height="130"/>
-        <image name="img_profile09.png" width="131" height="131"/>
-        <image name="img_profile10.png" width="130" height="131"/>
+        <image name="img_profile09.png" width="131" height="130"/>
+        <image name="img_profile10.png" width="131" height="131"/>
         <image name="img_profile11.png" width="131" height="131"/>
-        <image name="img_profile12.png" width="131" height="131"/>
+        <image name="img_profile12.png" width="131" height="130"/>
         <image name="img_profile13.png" width="131" height="131"/>
-        <image name="img_profile14.png" width="131" height="131"/>
+        <image name="img_profile14.png" width="130" height="131"/>
         <image name="img_profile15.png" width="131" height="131"/>
-        <image name="img_profile16.png" width="131" height="130"/>
-        <image name="img_profile17.png" width="131" height="130"/>
+        <image name="img_profile16.png" width="131" height="131"/>
     </resources>
 </document>
