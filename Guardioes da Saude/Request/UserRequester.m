@@ -413,7 +413,7 @@
 -(void) lookupWithUsertoken: (NSString *) userToken
                     OnStart: (void(^)()) onStart
                andOnSuccess: (void(^)()) onSuccess
-                 andOnError: (void(^)(NSError *)) onError{
+                 andOnError: (void(^)(NSError *, int)) onError{
     User * user = [User getInstance];
     
     [self doGet:[Url stringByAppendingString:@"/user/lookup/"]
@@ -422,7 +422,8 @@
       parameter:nil
           start:onStart
           error:^(AFHTTPRequestOperation *operation, NSError *error){
-              onError(error);
+              NSLog(@"%d", (int) operation.response.statusCode);
+              onError(error, (int) operation.response.statusCode);
           }
         success:^(AFHTTPRequestOperation *operation, id responseObject){
             if ([responseObject[@"error"] boolValue] == 1) {

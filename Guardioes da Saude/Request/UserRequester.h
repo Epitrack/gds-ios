@@ -58,7 +58,7 @@ typedef enum {
 -(void) lookupWithUsertoken: (NSString *) userToken
                     OnStart: (void(^)()) onStart
                andOnSuccess: (void(^)()) onSuccess
-                 andOnError: (void(^)(NSError *)) onError;
+                 andOnError: (void(^)(NSError *, int)) onError;
 
 - (void) checkSocialLoginWithToken:(NSString *)socialToken
                          andSocial:(SocialNetwork)socialType

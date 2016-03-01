@@ -259,17 +259,36 @@
                                 }andOnSuccess:^{
                                     [self showInformations];
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                }andOnError:^(NSError *error){
+                                }andOnError:^(NSError *error, int errorCode){
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                                     
-                                    NSString *errorMsg;
-                                    if (error && error.code == -1009) {
-                                        errorMsg = kMsgConnectionError;
-                                    } else {
-                                        errorMsg = kMsgApiError;
+                                    if (errorCode == 403) {
+                                        [[User getInstance] clearUser];
+                                        
+                                        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                                        
+                                        [preferences setValue:nil forKey:kUserTokenKey];
+                                        [preferences setValue:nil forKey:kAppTokenKey];
+                                        [preferences setValue:nil forKey:kAvatarNumberKey];
+                                        [preferences setValue:nil forKey:kPhotoKey];
+                                        [preferences setValue:nil forKey:kNickKey];
+                                        
+                                        [preferences synchronize];
+                                        
+                                        TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
+                                        UIViewController *newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
+                                        SWRevealViewController *revealController = self.revealViewController;
+                                        [revealController pushFrontViewController:newFrontController animated:YES];
+                                    }else{
+                                        NSString *errorMsg;
+                                        if (error && error.code == -1009) {
+                                            errorMsg = kMsgConnectionError;
+                                        } else {
+                                            errorMsg = kMsgApiError;
+                                        }
+                                        
+                                        [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                     }
-                                    
-                                    [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                 }];
 }
 @end
