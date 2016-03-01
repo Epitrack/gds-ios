@@ -217,11 +217,12 @@
                         <rect key="frame" x="115" y="376" width="92" height="32"/>
                     </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-yR-Gd4" userLabel="Button Profile">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-yR-Gd4" userLabel="Button Profile">
                     <rect key="frame" x="118" y="80" width="84" height="84"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="1:1" id="Rc4-Dh-fuN"/>
                     </constraints>
+                    <size key="titleShadowOffset" width="15" height="24"/>
                     <state key="normal" backgroundImage="img_profile01.png"/>
                     <connections>
                         <action selector="btnProfileAction:" destination="-1" eventType="touchUpInside" id="c0A-qr-ojz"/>
@@ -353,6 +354,6 @@
         <image name="icon_noticias.png" width="47" height="47"/>
         <image name="icon_participeagora.png" width="55" height="49"/>
         <image name="img_main_menu.png" width="280" height="280"/>
-        <image name="img_profile01.png" width="130" height="130"/>
+        <image name="img_profile01.png" width="131" height="131"/>
     </resources>
 </document>

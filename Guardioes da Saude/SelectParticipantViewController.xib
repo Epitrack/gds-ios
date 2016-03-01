@@ -91,7 +91,7 @@
                         </mask>
                     </variation>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ru-5b-mQY">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ru-5b-mQY">
                     <rect key="frame" x="105" y="167" width="110" height="110"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="9Ru-5b-mQY" secondAttribute="height" multiplier="1:1" id="YZe-zg-ryd"/>
@@ -170,6 +170,6 @@
     </objects>
     <resources>
         <image name="BG_survey.png" width="321" height="568"/>
-        <image name="img_profile01.png" width="130" height="130"/>
+        <image name="img_profile01.png" width="131" height="131"/>
     </resources>
 </document>

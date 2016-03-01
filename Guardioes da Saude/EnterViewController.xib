@@ -76,7 +76,7 @@
                                 <constraint firstAttribute="height" constant="40" id="p3o-rP-keI"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                             <variation key="default">
                                 <mask key="constraints">
                                     <exclude reference="p3o-rP-keI"/>

@@ -56,7 +56,7 @@
                         <action selector="btnEditMainUser:" destination="-1" eventType="touchUpInside" id="Avk-BK-L5T"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-Tp-Nb9">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-Tp-Nb9">
                     <rect key="frame" x="8" y="108" width="65" height="65"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="65" id="Q7Z-X9-adO"/>
@@ -97,6 +97,6 @@
     </objects>
     <resources>
         <image name="button_default.png" width="267" height="38"/>
-        <image name="img_profile01.png" width="130" height="130"/>
+        <image name="img_profile01.png" width="131" height="131"/>
     </resources>
 </document>

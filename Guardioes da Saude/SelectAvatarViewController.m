@@ -16,6 +16,7 @@
 
 @interface SelectAvatarViewController () {
     BOOL showCameraBtn;
+    UIImagePickerController* picker;
 }
 
 
@@ -109,55 +110,75 @@
             [self presentViewController:alert animated:YES completion:nil];
         }else {
             // Init Picker
-            UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+            picker = [[UIImagePickerController alloc] init];
             
-            //Create camera overlay for square pictures
             CGFloat navigationBarHeight = picker.navigationBar.bounds.size.height;
             CGFloat height = picker.view.bounds.size.height - navigationBarHeight;
             CGFloat width = picker.view.bounds.size.width;
-            CGRect f = CGRectMake(0, navigationBarHeight-10, width, height);
+            CGRect f = CGRectMake(0, 0, width, height);
 
             
             UIImageView *overlayIV = [[UIImageView alloc] initWithFrame:f];
             
-            // Disable all user interaction on overlay
             [overlayIV setUserInteractionEnabled:NO];
             [overlayIV setExclusiveTouch:NO];
             [overlayIV setMultipleTouchEnabled:NO];
-            
-            // Map generated image to overlay
-            //overlayIV.image = overlayImage;
             [overlayIV.layer addSublayer:[self doMakeLayerWithDiffHeight:navigationBarHeight+navigationBarHeight]];
-            
-            // Present Picker
-    //        picker.modalPresentationStyle = UIModalPresentationCurrentContext;
             picker.delegate = self;
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
             picker.allowsEditing = YES;
             if([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
                 picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
             }
-            [picker setCameraOverlayView:overlayIV];
+            
+            UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-54, self.view.frame.size.width, 55)];
+            
+            toolBar.barStyle =  UIBarStyleBlackOpaque;
+            NSArray *items=[NSArray arrayWithObjects:
+                            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel  target:self action:@selector(cancelPicture)],
+                            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
+                            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera  target:self action:@selector(shootPicture)],
+                            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
+                            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace  target:nil action:nil],
+                            nil];
+            [toolBar setItems:items];
+            
+            UIView *cameraView=[[UIView alloc] initWithFrame:self.view.bounds];
+            [cameraView addSubview:overlayIV];
+            [cameraView addSubview:toolBar];
+            
+            picker.showsCameraControls=NO;
+            [picker setCameraOverlayView:cameraView];
             
             [self presentViewController:picker animated:YES completion:nil];
         }
     }];
 }
 
+-(void) cancelPicture{
+    [picker dismissViewControllerAnimated:NO completion:NULL];
+}
+
+-(void)shootPicture{
+    [picker takePicture];
+}
+
 - (CAShapeLayer *) doMakeLayerWithDiffHeight: (double) diffHeight{
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    
+    CGFloat previewHeight = screenSize.width + (screenSize.width / 3);
+    CGFloat totalBlack = screenSize.height - previewHeight;
+    CGFloat heightOfBlackTopAndBottom = totalBlack / 2;
     
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
     
     UIBezierPath *path2 = [UIBezierPath bezierPathWithOvalInRect:
-                           CGRectMake(0.0f, 55.0f, screenSize.width, screenSize.width)];
+                           CGRectMake(0.0f, heightOfBlackTopAndBottom, screenSize.width, screenSize.width)];
     [path2 setUsesEvenOddFillRule:YES];
     
     [circleLayer setPath:[path2 CGPath]];
     
     [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, screenSize.width, screenSize.height-(diffHeight+15)) cornerRadius:0];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, screenSize.width, previewHeight+(heightOfBlackTopAndBottom*.5)) cornerRadius:0];
     
     [path appendPath:path2];
     [path setUsesEvenOddFillRule:YES];
@@ -171,11 +192,6 @@
     return fillLayer;
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-}
-
 - (IBAction)selectAvatarAction:(id)sender {
     NSInteger tag = ((UIButton *) sender).tag;
     [self setAvatar:[NSNumber numberWithInteger:tag]];
@@ -186,7 +202,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+- (void)imagePickerController:(UIImagePickerController *)localPicker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     // GOOGLE ANALYTICS
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
@@ -194,14 +210,15 @@
                                                            label:@"Change avatar"
                                                            value:nil] build]];
     
-    UIImage *image = (UIImage *) [info objectForKey: UIImagePickerControllerEditedImage];
+    UIImage *image = (UIImage *) [info objectForKey: UIImagePickerControllerOriginalImage];
+    UIImage *imageCroped = [self imageByCroppingImage:image];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     __block NSString *url;
     
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-        PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+        PHAssetChangeRequest *assetChangeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:imageCroped];
         url = [[assetChangeRequest placeholderForCreatedAsset] localIdentifier];
     } completionHandler:^(BOOL success, NSError *error){
         if (!success) {
@@ -229,10 +246,10 @@
     double y = (refHeight - size.height) / 2.0;
     
 
-    CGRect cropRect = CGRectMake(x, y, size.width, size.width);
+    CGRect cropRect = CGRectMake(x, y, size.width, size.width*1.1);
     CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
     
-    UIImage *cropped = [UIImage imageWithCGImage:imageRef scale:0.0 orientation:UIImageOrientationRight];
+    UIImage *cropped = [UIImage imageWithCGImage:imageRef scale:0.0 orientation:image.imageOrientation];
     CGImageRelease(imageRef);
     
     return cropped;
