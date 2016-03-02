@@ -257,6 +257,8 @@
         cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
         cell.textLabel.text = symptom.name;
+        cell.textLabel.numberOfLines = 0;
+        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
         
         if ([selected containsIndex:indexPath.row]) {
             UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
