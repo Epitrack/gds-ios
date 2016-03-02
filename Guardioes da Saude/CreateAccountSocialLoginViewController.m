@@ -35,6 +35,8 @@
     user = [User getInstance];
     userRequester = [[UserRequester alloc] init];
     
+    self.navigationItem.hidesBackButton = YES;
+    
     [self.txtEmail setDelegate:self];
     [self.txtNick setDelegate:self];
     

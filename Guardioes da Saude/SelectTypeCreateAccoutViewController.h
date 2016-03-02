@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <TwitterKit/TwitterKit.h>
-#import <GoogleSignIn/GoogleSignIn.h>
 
-@interface SelectTypeCreateAccoutViewController : UIViewController <GIDSignInDelegate, GIDSignInUIDelegate>
+@interface SelectTypeCreateAccoutViewController : UIViewController
 
 - (IBAction)btnFacebookAction:(id)sender;
 - (IBAction)btnGoogleAction:(id)sender;

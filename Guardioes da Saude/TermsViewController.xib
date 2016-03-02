@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TermsViewController">
             <connections>
+                <outlet property="constScrollBottom" destination="eus-O4-07Q" id="Die-Oc-Jqm"/>
                 <outlet property="txtContent" destination="2iQ-BZ-aMh" id="cXY-Up-Shp"/>
                 <outlet property="view" destination="riV-rQ-S59" id="8Z3-h5-FC7"/>
             </connections>
@@ -17,16 +18,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lUr-DF-2oL">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_horizontal_about.png" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-a8-tCj">
-                            <rect key="frame" x="52" y="29" width="217" height="100"/>
+                            <rect key="frame" x="62" y="29" width="197" height="90"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="c4D-PS-bR1"/>
+                                <constraint firstAttribute="height" constant="90" id="c4D-PS-bR1"/>
                             </constraints>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2iQ-BZ-aMh">
-                            <rect key="frame" x="8" y="142" width="304" height="7075"/>
+                            <rect key="frame" x="8" y="129" width="304" height="7075"/>
                             <attributedString key="attributedText">
                                 <fragment content="Política de Privacidade e Termos de Uso">
                                     <attributes>
@@ -346,7 +347,7 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="2iQ-BZ-aMh" secondAttribute="trailing" constant="8" id="23u-Ik-YAu"/>
-                        <constraint firstItem="2iQ-BZ-aMh" firstAttribute="top" secondItem="vSQ-a8-tCj" secondAttribute="bottom" constant="13" id="3nv-CI-Xb5"/>
+                        <constraint firstItem="2iQ-BZ-aMh" firstAttribute="top" secondItem="vSQ-a8-tCj" secondAttribute="bottom" constant="10" id="3nv-CI-Xb5"/>
                         <constraint firstItem="vSQ-a8-tCj" firstAttribute="centerX" secondItem="lUr-DF-2oL" secondAttribute="centerX" id="6NI-Eo-R1z"/>
                         <constraint firstItem="2iQ-BZ-aMh" firstAttribute="centerX" secondItem="vSQ-a8-tCj" secondAttribute="centerX" id="6Wy-ml-CoC"/>
                         <constraint firstItem="vSQ-a8-tCj" firstAttribute="width" secondItem="lUr-DF-2oL" secondAttribute="height" multiplier="217:568" id="85B-yN-MJp"/>
@@ -361,17 +362,42 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
                         </mask>
                     </variation>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOg-ba-bRP">
+                    <rect key="frame" x="8" y="526" width="74" height="30"/>
+                    <state key="normal" title="Não aceito"/>
+                    <connections>
+                        <action selector="btnDeclineAction:" destination="-1" eventType="touchUpInside" id="mpj-a9-bXh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPN-T3-RIK">
+                    <rect key="frame" x="265" y="526" width="47" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Aceito"/>
+                    <connections>
+                        <action selector="btnAcceptAction:" destination="-1" eventType="touchUpInside" id="SrG-Qc-tZX"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="tPN-T3-RIK" firstAttribute="top" secondItem="lUr-DF-2oL" secondAttribute="bottom" constant="8" id="127-gv-Ybg"/>
                 <constraint firstItem="lUr-DF-2oL" firstAttribute="centerY" secondItem="riV-rQ-S59" secondAttribute="centerY" id="7U0-wn-s9u"/>
                 <constraint firstAttribute="trailing" secondItem="lUr-DF-2oL" secondAttribute="trailing" id="K9N-rq-JHE"/>
-                <constraint firstAttribute="bottom" secondItem="lUr-DF-2oL" secondAttribute="bottom" id="eus-O4-07Q"/>
+                <constraint firstAttribute="bottom" secondItem="lUr-DF-2oL" secondAttribute="bottom" constant="50" id="eus-O4-07Q"/>
                 <constraint firstItem="lUr-DF-2oL" firstAttribute="top" secondItem="riV-rQ-S59" secondAttribute="top" id="h6w-Su-jzg"/>
+                <constraint firstItem="lOg-ba-bRP" firstAttribute="leading" secondItem="riV-rQ-S59" secondAttribute="leading" constant="8" id="mhy-dB-0Hs"/>
+                <constraint firstAttribute="trailing" secondItem="tPN-T3-RIK" secondAttribute="trailing" constant="8" id="off-mj-d3f"/>
+                <constraint firstItem="lOg-ba-bRP" firstAttribute="top" secondItem="lUr-DF-2oL" secondAttribute="bottom" constant="8" id="puU-eA-Os9"/>
                 <constraint firstItem="lUr-DF-2oL" firstAttribute="centerX" secondItem="riV-rQ-S59" secondAttribute="centerX" id="q3O-ZB-AVX"/>
                 <constraint firstItem="lUr-DF-2oL" firstAttribute="leading" secondItem="riV-rQ-S59" secondAttribute="leading" id="sGX-hQ-2PW"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="7U0-wn-s9u"/>
+                    <exclude reference="q3O-ZB-AVX"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>
