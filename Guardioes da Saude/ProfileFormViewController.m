@@ -241,6 +241,8 @@
         fieldsValid = NO;
     } else if ([self.txtEmail.text isEqualToString:@""] && self.operation == EDIT_USER) {
         fieldsValid = NO;
+    }else if (self.operation != EDIT_USER && [self.pickerRelationship.text isEqualToString:@""]){
+        fieldsValid = NO;
     }
     
     return fieldsValid;
@@ -351,6 +353,7 @@
 
 - (void) createHousehold{
     Household *updaterHousehold = [self populateHousehold];
+
     [householdRequester createHousehold:updaterHousehold onSuccess:^(void){
         [self showSuccessMsg];
     }onFail:^(NSError *error){
