@@ -24,7 +24,6 @@
     User *user;
     UserRequester *userRequester;
     NSString *signInAuthStatus;
-    BOOL isEnabled;
 }
 
 @end
@@ -50,9 +49,6 @@
     
     user = [[User alloc] init];
     userRequester = [[UserRequester alloc] init];
-
-    isEnabled = NO;
-    [self desableButtons];
 }
 
 // Implement these methods only if the GIDSignInUIDelegate is not a subclass of
@@ -110,52 +106,6 @@ dismissViewController:(UIViewController *)viewController {
 
 #pragma mark - GIDSignInDelegate
 
-
-- (void) desableButtons {
-    // Btn Facebook
-    UIImage *bgFacebook = [UIImage imageNamed:@"buttonFacebookDesable.png"];
-    [self.btnFacebook setBackgroundImage:bgFacebook forState:UIControlStateNormal];
-    [self.btnFacebook setTitle:@"" forState:UIControlStateNormal];
-    
-    // Btn Twitter
-    UIImage *bgTwitter = [UIImage imageNamed:@"buttonTwitterDesable.png"];
-    [self.btnTwitter setBackgroundImage:bgTwitter forState:UIControlStateNormal];
-    [self.btnTwitter setTitle:@"" forState:UIControlStateNormal];
-    
-    // Btn Google
-    UIImage *bgGoogle = [UIImage imageNamed:@"buttonGoogleDesable.png"];
-    UIButton *btnGoogle = (UIButton *) self.btnGoogle;
-    [btnGoogle setBackgroundImage:bgGoogle forState:UIControlStateNormal];
-    [btnGoogle setTitle:@"" forState:UIControlStateNormal];
-    
-    // Btn Email
-    UIImage *bgEmail = [UIImage imageNamed:@"buttonEmailDisable.png"];
-    [self.btnEmail setBackgroundImage:bgEmail forState:UIControlStateNormal];
-    [self.btnEmail setTitle:@"" forState:UIControlStateNormal];
-}
-
-- (void) enableButtons {
-    //Btn Facebook
-    UIImage *bgFacebook = [UIImage imageNamed:@"button_facebook.png"];
-    [self.btnFacebook setBackgroundImage:bgFacebook forState:UIControlStateNormal];
-    [self.btnFacebook setTitle:@"Facebook" forState:UIControlStateNormal];
-    
-    //Btn Twitter
-    UIImage *bgTwitter = [UIImage imageNamed:@"button_twitter.png"];
-    [self.btnTwitter setBackgroundImage:bgTwitter forState:UIControlStateNormal];
-    [self.btnTwitter setTitle:@"Twitter" forState:UIControlStateNormal];
-    
-    //Btn Google
-    UIImage *bgGoogle = [UIImage imageNamed:@"button_google.png"];
-    [self.btnGoogle setBackgroundImage:bgGoogle forState:UIControlStateNormal];
-    [self.btnGoogle setTitle:@"Google" forState:UIControlStateNormal];
-    
-    //Btn Email
-    UIImage *bgEmail = [UIImage imageNamed:@"button_email.png"];
-    [self.btnEmail setBackgroundImage:bgEmail forState:UIControlStateNormal];
-    [self.btnEmail setTitle:@"email" forState:UIControlStateNormal];
-}
-
 - (IBAction)btnFacebookAction:(id)sender {
     [self callTermsWithSocialNetworks:GdsFacebook];
 }
@@ -184,14 +134,11 @@ dismissViewController:(UIViewController *)viewController {
                                                            label:@"Create account With Email"
                                                            value:nil] build]];
     
-    if (isEnabled) {
-        TermsViewController *termsCtrlView = [[TermsViewController alloc] init];
-        termsCtrlView.createType = EMAIL;
-        
-        [self.navigationController pushViewController:termsCtrlView animated:YES];
-    } else {
-        [self showTermsRequiredMsg];
-    }
+
+    TermsViewController *termsCtrlView = [[TermsViewController alloc] init];
+    termsCtrlView.createType = EMAIL;
+    
+    [self.navigationController pushViewController:termsCtrlView animated:YES];
 }
 
 - (IBAction)btnTermsAction:(id)sender {
@@ -204,21 +151,6 @@ dismissViewController:(UIViewController *)viewController {
     
     TermsViewController *termsViewController = [[TermsViewController alloc] init];
     [self.navigationController pushViewController:termsViewController animated:YES];
-}
-
-
-- (IBAction)btnCheckTermsAction:(id)sender {
-    UIImage *checkBoxFalse = [UIImage imageNamed:@"icon_checkbox_false.png"];
-    UIImage *checkBoxTrue = [UIImage imageNamed:@"icon_checkbok_true.png"];
-    isEnabled = !isEnabled;
-     
-    if (isEnabled) {
-        [self enableButtons];
-        [self.btnCheckTerms setImage:checkBoxTrue forState:UIControlStateNormal];
-    } else {
-        [self desableButtons];
-        [self.btnCheckTerms setImage:checkBoxFalse forState:UIControlStateNormal];
-    }
 }
 
 - (IBAction)btnInfoAction:(id)sender {

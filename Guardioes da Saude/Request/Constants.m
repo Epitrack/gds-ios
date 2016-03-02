@@ -1,6 +1,7 @@
 #import "Constants.h"
 
 NSString * const Url = @"https://api.guardioesdasaude.org";
+//NSString * const Url = @"https://rest.guardioesdasaude.org";
 
 @implementation Constants
 

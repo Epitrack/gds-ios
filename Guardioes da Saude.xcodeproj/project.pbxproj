@@ -474,6 +474,7 @@
 		CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB8610071C3B4BBF009E63DF /* myhouse.gpx */; };
 		CB8FBADA1C60E1BC00696F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB8FBADC1C60E1BC00696F17 /* Localizable.strings */; };
 		CB9387431C491AE900446842 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9387421C491AE900446842 /* ViewUtil.m */; };
+		CB9DC5831C871E57006E627C /* icon_twitternews.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9DC5821C871E57006E627C /* icon_twitternews.png */; };
 		CBA0E52A1C5FA5EC0086315B /* img_profile13.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50C1C5FA5EC0086315B /* img_profile13.png */; };
 		CBA0E52B1C5FA5EC0086315B /* img_profile13@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50D1C5FA5EC0086315B /* img_profile13@2x.png */; };
 		CBA0E52C1C5FA5EC0086315B /* img_profile13@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50E1C5FA5EC0086315B /* img_profile13@3x.png */; };
@@ -492,7 +493,6 @@
 		CBDDF5A51C77452E008853B2 /* SymptomRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDDF5A41C77452E008853B2 /* SymptomRequester.m */; };
 		CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */; };
 		CBDE6B241C80CA82007418FA /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */; };
-		CBDE6B261C80E897007418FA /* icon_twitternews.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B251C80E897007418FA /* icon_twitternews.png */; };
 		CBDE6B281C84C404007418FA /* img_profile15@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B271C84C404007418FA /* img_profile15@2x.png */; };
 		CBEF9AD21C75FD8800A0B036 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */; };
 		CBEF9AD31C75FD8800A0B036 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */; };
@@ -1052,6 +1052,7 @@
 		CB8FBAE11C60E2C900696F17 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CB9387411C491AE900446842 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtil.h; sourceTree = "<group>"; };
 		CB9387421C491AE900446842 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
+		CB9DC5821C871E57006E627C /* icon_twitternews.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_twitternews.png; sourceTree = "<group>"; };
 		CBA0E50C1C5FA5EC0086315B /* img_profile13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_profile13.png; sourceTree = "<group>"; };
 		CBA0E50D1C5FA5EC0086315B /* img_profile13@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile13@2x.png"; sourceTree = "<group>"; };
 		CBA0E50E1C5FA5EC0086315B /* img_profile13@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile13@3x.png"; sourceTree = "<group>"; };
@@ -1072,7 +1073,6 @@
 		CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeTableViewCell.h; path = CellTable/NoticeTableViewCell.h; sourceTree = "<group>"; };
 		CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoticeTableViewCell.m; path = CellTable/NoticeTableViewCell.m; sourceTree = "<group>"; };
 		CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NoticeTableViewCell.xib; path = CellTable/NoticeTableViewCell.xib; sourceTree = "<group>"; };
-		CBDE6B251C80E897007418FA /* icon_twitternews.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_twitternews.png; path = ../../../../Desktop/icon_twitternews.png; sourceTree = "<group>"; };
 		CBDE6B271C84C404007418FA /* img_profile15@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile15@2x.png"; sourceTree = "<group>"; };
 		CBEF9ACF1C75FD8800A0B036 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
@@ -1430,7 +1430,7 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				CBDE6B251C80E897007418FA /* icon_twitternews.png */,
+				CB9DC5821C871E57006E627C /* icon_twitternews.png */,
 				520EB7101C21EF220054D818 /* buttonEmailDisable.png */,
 				520EB7111C21EF220054D818 /* buttonEmailDisable@2x.png */,
 				520EB7121C21EF220054D818 /* buttonEmailDisable@3x.png */,
@@ -2004,6 +2004,7 @@
 				52E727321BEA93B800B46945 /* BG_dark@2x.png in Resources */,
 				52E6F09E1C20B18E00C88A08 /* iconPM.png in Resources */,
 				52E727BC1BEA93B800B46945 /* icon_well@2x.png in Resources */,
+				CB9DC5831C871E57006E627C /* icon_twitternews.png in Resources */,
 				52E727B91BEA93B800B46945 /* icon_twitter@2x.png in Resources */,
 				52E727AF1BEA93B800B46945 /* icon_tutorial01@3x.png in Resources */,
 				52E727DD1BEA93B800B46945 /* img_profile14@2x.png in Resources */,
@@ -2320,7 +2321,6 @@
 				52D2BC8A1BF12EBF007C9C09 /* icon_pin_well@2x.png in Resources */,
 				52E727A91BEA93B800B46945 /* icon_security.png in Resources */,
 				52E7272B1BEA93B800B46945 /* icon_menu.png in Resources */,
-				CBDE6B261C80E897007418FA /* icon_twitternews.png in Resources */,
 				52E727151BEA93B800B46945 /* img_card.png in Resources */,
 				52558CE41C18B8EE00AF7DDF /* imgTutorial01@2x.png in Resources */,
 				52E727181BEA93B800B46945 /* icon_close.png in Resources */,
