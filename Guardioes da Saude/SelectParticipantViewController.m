@@ -15,6 +15,7 @@
 #import <Google/Analytics.h>
 #import "HouseholdRequester.h"
 #import "MBProgressHUD.h"
+#import "ProfileFormViewController.h"
 @import Photos;
 
 @interface SelectParticipantViewController ()
@@ -69,8 +70,6 @@ const float kCellHeight = 100.0f;
     
     self.txtDobMainMember.text = [NSString stringWithFormat:@"%ld Anos", (long)ageUser];
     [self loadAvatar];
-    
-    [self loadHouseHolds];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -78,6 +77,8 @@ const float kCellHeight = 100.0f;
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Select Participant Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
+    [self loadHouseHolds];
 }
 
 - (void) loadAvatar {
@@ -130,54 +131,54 @@ const float kCellHeight = 100.0f;
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor whiteColor];
     
-    if (indexPath.row == 0) {
-        //sample code of how to use this scroll view
-        ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kCellHeight)];
-        [cell.contentView addSubview:horizontalScrollView];
-        horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    //sample code of how to use this scroll view
+    ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kCellHeight)];
+    [cell.contentView addSubview:horizontalScrollView];
+    horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    horizontalScrollView.uniformItemSize = CGSizeMake(120, 100);
+    //this must be called after changing any size or margin property of this class to get acurrate margin
+    [horizontalScrollView setItemsMarginOnce];
+    NSMutableArray *buttons = [NSMutableArray array];
+    NSMutableArray *households = user.household;
+    
+    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:nil frame:CGRectMake(0, 0, 150, 150) avatar:@"icon_addmember" nick:@"Novo membro"];
+    [buttons addObject:thumb];
+    [thumb.button addTarget:self action:@selector(addNewMember) forControlEvents:UIControlEventTouchUpInside];
+    
         
-        horizontalScrollView.uniformItemSize = CGSizeMake(120, 100);
-        //this must be called after changing any size or margin property of this class to get acurrate margin
-        [horizontalScrollView setItemsMarginOnce];
-        NSMutableArray *buttons = [NSMutableArray array];
-        NSMutableArray *households = user.household;
+    for (Household *h in households) {
         
-        if (households.count > 0) {
-            
-            for (Household *h in households) {
-                
-                NSString *nick = h.nick;
-                NSString *picture = h.picture;
-                NSString *avatar;
-                NSString *idHousehold = h.idHousehold;
-                
-                //picture = @"0";
-                
-                if ([picture isEqualToString:@"0"]) {
-                    avatar = @"img_profile01.png";
-                } else {
-                    if (picture.length == 1) {
-                        avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
-                    } else if (picture.length == 2) {
-                        avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
-                    } else if (picture.length > 2) {
-                        avatar = picture;
-                    }
-                }
-                
-                HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
-                [buttons addObject:thumb];
-                [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
-            }
-            
-            if (buttons.count > 0) {
-                if ([UIScreen mainScreen].bounds.size.width >= 375 ) {
-                    UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 120, 150)];
-                    [buttons addObject:blankView];
-                }
-                [horizontalScrollView addItems:buttons];
+        NSString *nick = h.nick;
+        NSString *picture = h.picture;
+        NSString *avatar;
+        NSString *idHousehold = h.idHousehold;
+        
+        //picture = @"0";
+        
+        if ([picture isEqualToString:@"0"]) {
+            avatar = @"img_profile01.png";
+        } else {
+            if (picture.length == 1) {
+                avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
+            } else if (picture.length == 2) {
+                avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
+            } else if (picture.length > 2) {
+                avatar = picture;
             }
         }
+        
+        HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
+        [buttons addObject:thumb];
+        [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    if (buttons.count > 0) {
+        if ([UIScreen mainScreen].bounds.size.width >= 375 ) {
+            UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 120, 150)];
+            [buttons addObject:blankView];
+        }
+        [horizontalScrollView addItems:buttons];
     }
     
     return cell;
@@ -216,6 +217,21 @@ const float kCellHeight = 100.0f;
     } onFail:^(NSError *error){
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
+}
+
+- (void) addNewMember{
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_edit_household"
+                                                           label:@"Edit Household"
+                                                           value:nil] build]];
+    
+    ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
+    [profileFormViewController setOperation:ADD_HOUSEHOLD];
+    
+    [self.navigationController pushViewController:profileFormViewController animated:YES];
+
 }
 
 @end

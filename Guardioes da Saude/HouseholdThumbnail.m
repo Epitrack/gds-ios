@@ -25,7 +25,7 @@
     
     NSArray *array = [nick componentsSeparatedByString:@" "];
     
-    if (array.count > 0) {
+    if (array.count > 0 && household_id != nil) {
         label.text = [array objectAtIndex:0];
     } else {
         label.text= nick;
