@@ -111,7 +111,8 @@
     NSString * url = [NSString stringWithFormat: @"%@/surveys/summary", Url];
     
     [self doGet: url
-         header: @{ @"user_token": user.user_token }
+         header: @{ @"app_token": user.app_token,
+                    @"user_token": user.user_token }
       parameter: @{ @"lat": [NSNumber numberWithDouble: latitude],
                     @"lon": [NSNumber numberWithDouble: longitude] }
           start: onStart
