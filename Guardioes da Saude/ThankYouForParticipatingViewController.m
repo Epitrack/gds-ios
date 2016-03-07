@@ -103,8 +103,7 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *faceSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [faceSheet setInitialText:@"Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org"];
-        [faceSheet addImage:[UIImage imageNamed:@"icon_logo_splash.png"]];
+        [faceSheet setInitialText:shareMsg];
         [self presentViewController:faceSheet animated:YES completion:nil];
         
         [faceSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
@@ -144,7 +143,6 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         [tweetSheet setInitialText:shareMsg];
-        [tweetSheet addImage:[UIImage imageNamed:@"icon_logo_splash.png"]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
         
         [tweetSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
