@@ -24,9 +24,14 @@ PODS:
   - Charts (2.1.6)
   - DownPicker (0.1.34)
   - Fabric (1.6.1)
+  - GGLInstanceID (1.1.6)
   - Google/Analytics (1.3.2):
     - Google/Core
     - GoogleAnalytics (~> 3.12)
+  - Google/CloudMessaging (1.3.2):
+    - GGLInstanceID (~> 1.0)
+    - Google/Core
+    - GoogleCloudMessaging (~> 1.0)
   - Google/Core (1.3.2):
     - GoogleInterchangeUtilities (~> 1.0)
     - GoogleNetworkingUtilities (~> 1.0)
@@ -41,8 +46,15 @@ PODS:
   - GoogleAuthUtilities (1.0.1):
     - GoogleNetworkingUtilities (~> 1.0)
     - GoogleSymbolUtilities (~> 1.0)
+  - GoogleCloudMessaging (1.2.0):
+    - GoogleInterchangeUtilities (~> 1.0)
+    - GoogleIPhoneUtilities (~> 1.0)
+    - GoogleSymbolUtilities (~> 1.0)
   - GoogleInterchangeUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0)
+  - GoogleIPhoneUtilities (1.2.0):
+    - GoogleSymbolUtilities (~> 1.0)
+    - GoogleUtilities (~> 1.0)
   - GoogleMaps (1.11.1)
   - GoogleNetworkingUtilities (1.0.0):
     - GoogleSymbolUtilities (~> 1.0)
@@ -73,6 +85,7 @@ DEPENDENCIES:
   - DownPicker
   - Fabric
   - Google/Analytics
+  - Google/CloudMessaging
   - Google/SignIn
   - GoogleMaps
   - JSONModel
@@ -89,11 +102,14 @@ SPEC CHECKSUMS:
   Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
   DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
   Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
+  GGLInstanceID: f92465924a9b8a48f712829d22e223653ab8dc72
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
   GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
   GoogleAppUtilities: c01c6a5671e9da8b9d690fdaec5959d6c2aac699
   GoogleAuthUtilities: 049ffd3a297cdffd271451b82fd4e75304f15ef3
+  GoogleCloudMessaging: f37ea14dd0f41d4d889c10b5559dd35bbfd9ac26
   GoogleInterchangeUtilities: d7f7174176fbcf9710f696f1acebad4dbd98ac03
+  GoogleIPhoneUtilities: 1c2996078f079d2fc54453dbd13eaf5523666550
   GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSignIn: 79929b51e6299c69f1197bbd9c7a1367d523ecd8
@@ -108,6 +124,6 @@ SPEC CHECKSUMS:
   TwitterCore: 5e9b2d066ceeef53fe611c0c4436cb700f1ed620
   TwitterKit: f67360ee0a5f935f053bf37015652ac157e4eb92
 
-PODFILE CHECKSUM: 0c1f74e7d502a8718a05ad9b84eb99e7248d0c86
+PODFILE CHECKSUM: ffb64d09968f64d57c1f2154fcadf7be18bdf8fe
 
 COCOAPODS: 1.0.0.beta.2

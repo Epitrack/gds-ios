@@ -116,6 +116,10 @@
 		<string>Foco_Std_Lt.ttf</string>
 		<string>Foco_Std_Bd.ttf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreenViewController</string>
 	<key>UIMainStoryboardFile</key>
