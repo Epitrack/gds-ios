@@ -21,11 +21,6 @@ typedef enum {
                   andOnSuccess: (void(^)(User *user)) onSuccess
                     andOnError: (void(^)(NSError *)) onError ;
 
-/*- (void) getSummary: (User *) user
-            onStart: (Start) onStart
-            onError: (Error) onError
-          onSuccess: (Success) onSuccess;*/
-
 - (void) getSummary: (User *) user
         idHousehold: (NSString *) idHousehold
             onStart: (Start) onStart

@@ -127,6 +127,9 @@ NSUserDefaults *preferences;
         if (registrationToken != nil) {
             weakSelf.registrationToken = registrationToken;
             NSLog(@"Registration Token: %@", registrationToken);
+            
+            [User getInstance].gcmToken = registrationToken;
+            
             [weakSelf subscribeToTopic];
             NSDictionary *userInfo = @{@"registrationToken":registrationToken};
             [[NSNotificationCenter defaultCenter] postNotificationName:weakSelf.registrationKey
@@ -282,68 +285,34 @@ didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSLog(@"Notification received: %@", userInfo);
-    // This works only if the app started the GCM service
     [[GCMService sharedInstance] appDidReceiveMessage:userInfo];
-    // Handle the received message
-    // ...
     
     NSString *alert = userInfo[@"gcm.notification.message"];
-    
-    
-    if (application.applicationState == UIApplicationStateActive) {
-        if (alert) {
-            UIAlertController *alert2 = [ViewUtil showAlertWithMessage:alert];
-            UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-            alertWindow.rootViewController = [[UIViewController alloc] init];
-            alertWindow.windowLevel = UIWindowLevelAlert + 1;
-            [alertWindow makeKeyAndVisible];
-            [alertWindow.rootViewController presentViewController:alert2 animated:YES completion:nil];
-        }
-    }else{
-        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-        localNotification.userInfo = userInfo;
-        localNotification.soundName = UILocalNotificationDefaultSoundName;
-        localNotification.alertBody = @"Existe uma nova mensagem";
-        localNotification.fireDate = [NSDate date];
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    }
+
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.userInfo = userInfo;
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.alertBody = alert;
+    localNotification.fireDate = [NSDate date];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
-    NSLog(@"Notification received: %@", userInfo);
-    // This works only if the app started the GCM service
     [[GCMService sharedInstance] appDidReceiveMessage:userInfo];
-    // Handle the received message
-    // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
-    // ...
     
     NSString *alert = userInfo[@"gcm.notification.message"];
     
-    
-    if (application.applicationState == UIApplicationStateActive) {
-        if (alert) {
-            UIAlertController *alert2 = [ViewUtil showAlertWithMessage:alert];
-            UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-            alertWindow.rootViewController = [[UIViewController alloc] init];
-            alertWindow.windowLevel = UIWindowLevelAlert + 1;
-            [alertWindow makeKeyAndVisible];
-            [alertWindow.rootViewController presentViewController:alert2 animated:YES completion:nil];
-        }
-    }else{
-        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-        localNotification.userInfo = userInfo;
-        localNotification.soundName = UILocalNotificationDefaultSoundName;
-        localNotification.alertBody = @"Existe uma nova mensagem";
-        localNotification.fireDate = [NSDate date];
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    }
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.userInfo = userInfo;
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.alertBody = alert;
+    localNotification.fireDate = [NSDate date];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
 - (void)onTokenRefresh{
-    // A rotation of the registration tokens is happening, so the app needs to request a new token.
-    NSLog(@"The GCM registration token needs to be changed.");
     [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
                                                         scope:kGGLInstanceIDScopeGCM
                                                       options:_registrationOptions

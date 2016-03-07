@@ -17,8 +17,14 @@
     
     NSString * url = [NSString stringWithFormat: @"%@/user/login", Url];
     
-    NSDictionary * paramMap = @{ @"email": user.email,
-                                 @"password": user.password };
+    NSMutableDictionary * paramMap = [[NSMutableDictionary alloc] init];
+    [paramMap setObject:user.email forKey:@"email"];
+    [paramMap setObject:user.password forKey:@"password"];
+    
+    NSString *gcmToken = [User getInstance].gcmToken;
+    if (gcmToken) {
+        [paramMap setObject:gcmToken forKey:@"gcm_token"];
+    }
     
     [self doPost: url
           header: nil
@@ -100,6 +106,11 @@
     
     if (user.tw) {
         [params setObject:user.tw forKey:@"tw"];
+    }
+    
+    NSString *gcmToken = [User getInstance].gcmToken;
+    if (gcmToken) {
+        [params setObject:gcmToken forKey:@"gcm_token"];
     }
     
     [self doPost:[Url stringByAppendingString:@"/user/create"]

@@ -76,6 +76,7 @@ extern NSString *const kNickKey;
 @property(nonatomic, retain) NSString *idHousehold;
 @property(nonatomic, retain) NSString *avatar;
 @property(nonatomic, retain) NSString *photo;
+@property(nonatomic, retain) NSString *gcmToken;
 
 - (void) setGenderBySegIndex: (long) segIndex;
 - (void) setRaceBySegIndex: (long) segIndex;
