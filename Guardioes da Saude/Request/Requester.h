@@ -45,4 +45,6 @@ typedef void (^ Success) (id);
 
 + (bool) isConnected;
 
+- (NSString *) getUrl;
+
 @end

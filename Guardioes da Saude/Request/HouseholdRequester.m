@@ -13,7 +13,7 @@
             onError: (Error) onError
           onSuccess: (Success) onSuccess {
     
-    NSString * url = [NSString stringWithFormat: @"%@/household/survey/summary?", Url];
+    NSString * url = [NSString stringWithFormat: @"%@/household/survey/summary?", [self getUrl]];
     
     [self doGet: url
          header: @{ @"user_token": user.user_token }
@@ -55,7 +55,7 @@
             onError: (Error) onError
           onSuccess: (Success) onSuccess {
     
-    NSString * url = [NSString stringWithFormat: @"%@/household/calendar/month?", Url];
+    NSString * url = [NSString stringWithFormat: @"%@/household/calendar/month?", [self getUrl]];
     
     NSDictionary * paramMap = @{ @"month": [NSNumber numberWithInt: month],
                                  @"year": [NSNumber numberWithInt: year],
@@ -137,7 +137,7 @@
             onError: (Error) onError
           onSuccess: (Success) onSuccess {
     
-    NSString * url = [NSString stringWithFormat: @"%@/household/calendar/year?", Url];
+    NSString * url = [NSString stringWithFormat: @"%@/household/calendar/year?", [self getUrl]];
     
     [self doGet: url
          header: @{ @"user_token": user.user_token }
@@ -192,7 +192,7 @@
                         onSuccess: (void (^)(NSMutableArray *households)) success
                            onFail: (void (^)(NSError * erro)) failure{
     NSString *idUSer = user.idUser;
-    NSString *url = [NSString stringWithFormat: @"%@/user/household/%@", Url, idUSer];
+    NSString *url = [NSString stringWithFormat: @"%@/user/household/%@", [self getUrl], idUSer];
     
     AFHTTPRequestOperationManager *manager;
     manager = [AFHTTPRequestOperationManager manager];
@@ -258,7 +258,7 @@
         [params setValue:household.email forKey:@"email"];
     }
     
-    [self doPost:[Url stringByAppendingString:@"/household/update"]
+    [self doPost:[[self getUrl] stringByAppendingString:@"/household/update"]
           header:@{@"user_token": user.user_token, @"app_token": user.app_token}
        parameter:params
            start:^(void){
@@ -290,7 +290,7 @@
         [params setValue:household.email forKey:@"email"];
     }
     
-    [self doPost:[Url stringByAppendingString:@"/household/create"]
+    [self doPost:[[self getUrl] stringByAppendingString:@"/household/create"]
           header:@{@"app_token": user.user_token}
        parameter:params
            start:^(void){
@@ -307,7 +307,7 @@
                  andOnSuccess:(void (^)())onSuccess
                    andOnError:(void (^)(NSError *))onError{
     User *user = [User getInstance];
-    NSString *url = [NSString stringWithFormat: @"%@/household/delete/%@?client=api", Url, idHousehold];
+    NSString *url = [NSString stringWithFormat: @"%@/household/delete/%@?client=api", [self getUrl], idHousehold];
     [self doGet:url
          header:@{@"user_token": user.user_token,
                   @"app_token": user.app_token}

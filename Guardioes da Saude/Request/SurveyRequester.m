@@ -38,7 +38,7 @@
     
     [params addEntriesFromDictionary:survey.symptoms];
     
-    [self doPost:[NSString stringWithFormat:@"%@/survey/create", Url]
+    [self doPost:[NSString stringWithFormat:@"%@/survey/create", [self getUrl]]
           header:@{@"app_token": user.app_token}
        parameter:params
            start:onStart
@@ -55,7 +55,7 @@
             onError: (Error) onError
           onSuccess: (Success) onSuccess {
     
-    NSString * url = [NSString stringWithFormat: @"%@/surveys/summary?", Url];
+    NSString * url = [NSString stringWithFormat: @"%@/surveys/summary?", [self getUrl]];
     
     [self doGet: url
          header: @{ @"user_token": user.user_token }
@@ -108,7 +108,7 @@
             onError: (void(^)(NSError *)) onError
           onSuccess: (void(^)(NSDictionary *)) onSuccess {
     
-    NSString * url = [NSString stringWithFormat: @"%@/surveys/summary", Url];
+    NSString * url = [NSString stringWithFormat: @"%@/surveys/summary", [self getUrl]];
     
     [self doGet: url
          header: @{ @"app_token": user.app_token,
@@ -145,7 +145,7 @@
                     onError:(void (^)(NSError *))onError{
     User *user = [User getInstance];
     
-    [self doGet:[NSString stringWithFormat:@"%@/surveys/l", Url]
+    [self doGet:[NSString stringWithFormat:@"%@/surveys/l", [self getUrl]]
           header:@{@"app_token": user.app_token,
                    @"user_token": user.user_token}
        parameter:@{@"lon": [NSString stringWithFormat:@"%f", longitude],

@@ -15,7 +15,7 @@
        onError: (Error) onError
      onSuccess: (Success) onSuccess {
     
-    NSString * url = [NSString stringWithFormat: @"%@/user/login", Url];
+    NSString * url = [NSString stringWithFormat: @"%@/user/login", [self getUrl]];
     
     NSMutableDictionary * paramMap = [[NSMutableDictionary alloc] init];
     [paramMap setObject:user.email forKey:@"email"];
@@ -113,7 +113,7 @@
         [params setObject:gcmToken forKey:@"gcm_token"];
     }
     
-    [self doPost:[Url stringByAppendingString:@"/user/create"]
+    [self doPost:[[self getUrl] stringByAppendingString:@"/user/create"]
           header:@{@"app_token": user.app_token}
        parameter:params
            start:onStart
@@ -158,9 +158,9 @@
     NSString * url;
     
     if ([idHousehold isEqualToString:@""] || [idHousehold isEqualToString:user.idUser]) {
-        url = [NSString stringWithFormat: @"%@/user/survey/summary", Url];
+        url = [NSString stringWithFormat: @"%@/user/survey/summary", [self getUrl]];
     } else {
-        url = [NSString stringWithFormat: @"%@/household/survey/summary?household_id=%@", Url, idHousehold];
+        url = [NSString stringWithFormat: @"%@/household/survey/summary?household_id=%@", [self getUrl], idHousehold];
     }
     
     [self doGet: url
@@ -206,9 +206,9 @@
     NSString * url;
     
     if ([idHousehold isEqualToString:@""] || [idHousehold isEqualToString:user.idUser]) {
-        url = [NSString stringWithFormat: @"%@/user/calendar/month?", Url];
+        url = [NSString stringWithFormat: @"%@/user/calendar/month?", [self getUrl]];
     } else {
-        url = [NSString stringWithFormat: @"%@/household/calendar/month?household_id=%@", Url, idHousehold];
+        url = [NSString stringWithFormat: @"%@/household/calendar/month?household_id=%@", [self getUrl], idHousehold];
     }
     
     NSDictionary * paramMap = @{ @"month": [NSNumber numberWithInteger: month],
@@ -296,9 +296,9 @@
     NSString * url;
     
     if ([idHousehold isEqualToString:@""] || [idHousehold isEqualToString:user.idUser]) {
-        url = [NSString stringWithFormat: @"%@/user/calendar/year?", Url];
+        url = [NSString stringWithFormat: @"%@/user/calendar/year?", [self getUrl]];
     } else {
-        url = [NSString stringWithFormat: @"%@/household/calendar/year?household_id=%@", Url, idHousehold];
+        url = [NSString stringWithFormat: @"%@/household/calendar/year?household_id=%@", [self getUrl], idHousehold];
     }
     
     [self doGet: url
@@ -371,7 +371,7 @@
     [params setValue:user.avatarNumber forKey:@"picture"];
     
     
-    [self doPost:[Url stringByAppendingString:@"/user/update"]
+    [self doPost:[[self getUrl] stringByAppendingString:@"/user/update"]
           header:@{@"user_token": user.user_token, @"app_token": user.app_token}
        parameter:params
            start:^(void){
@@ -398,7 +398,7 @@
                 andOnError: (void(^)(NSError *)) onError{
     User *user = [User getInstance];
     
-    [self doGet:[Url stringByAppendingString:@"/symptoms"]
+    [self doGet:[[self getUrl] stringByAppendingString:@"/symptoms"]
          header:@{@"app_token": user.app_token,
                   @"user_token": user.user_token}
       parameter:nil
@@ -427,7 +427,7 @@
                  andOnError: (void(^)(NSError *, int)) onError{
     User * user = [User getInstance];
     
-    [self doGet:[Url stringByAppendingString:@"/user/lookup/"]
+    [self doGet:[[self getUrl] stringByAppendingString:@"/user/lookup/"]
          header:@{@"app_token": user.app_token,
                   @"user_token": userToken}
       parameter:nil
@@ -499,7 +499,7 @@
             break;
     }
     
-    [self doGet:[Url stringByAppendingString:@"/user/get"]
+    [self doGet:[[self getUrl] stringByAppendingString:@"/user/get"]
          header:@{@"app_token": user.app_token}
       parameter:params
           start:onStart
@@ -553,7 +553,7 @@
                    andOnSuccess:(void (^)())onSuccess
                      andOnError:(void (^)(NSError *))onError{
     
-    [self doPost:[Url stringByAppendingString:@"/user/forgot-password"]
+    [self doPost:[[self getUrl] stringByAppendingString:@"/user/forgot-password"]
           header:@{}
        parameter:@{@"email":email}
            start:^{
@@ -577,7 +577,7 @@
               andOnSuccess:(void (^)())onSuccess
                 andOnError:(void (^)(NSError *))onError{
     
-    [self doPost:[Url stringByAppendingString:@"/email/log"]
+    [self doPost:[[self getUrl] stringByAppendingString:@"/email/log"]
           header:@{@"user_token": [User getInstance].user_token}
        parameter:@{@"title":title,
                    @"text": text}

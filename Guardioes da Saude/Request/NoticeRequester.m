@@ -18,7 +18,7 @@
             onError: (Error) onError
           onSuccess: (Success) onSuccess {
     
-    NSString * url = [NSString stringWithFormat: @"%@/news/get", Url];
+    NSString * url = [NSString stringWithFormat: @"%@/news/get", [self getUrl]];
     
     [self doGet: url
          header: @{ @"user_token": user.user_token }

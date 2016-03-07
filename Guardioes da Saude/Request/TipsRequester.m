@@ -16,7 +16,7 @@
 - (void)loadUpasOnStart:(void (^)())onStart andOnSuccess:(void (^)(NSArray *))onSuccess andOnError:(void(^)(NSError *))onError{
     User *user = [User getInstance];
     
-    [self doGet:[Url stringByAppendingString:@"/content/upas.json"]
+    [self doGet:[[self getUrl] stringByAppendingString:@"/content/upas.json"]
          header:@{@"app_token": user.app_token,
                   @"user_token": user.user_token}
       parameter:nil
