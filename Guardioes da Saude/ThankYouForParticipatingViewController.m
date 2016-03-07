@@ -11,8 +11,10 @@
 #import "ViewUtil.h"
 #import "EmergencyViewController.h"
 #import <Google/Analytics.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
-NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, participe você também: www.guardioesdasaude.org";
+NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, participe você também: http://www.guardioesdasaude.org";
 
 
 @interface ThankYouForParticipatingViewController (){
@@ -100,10 +102,11 @@ NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, parti
                                                            label:@"Share facebook"
                                                            value:nil] build]];
     
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         SLComposeViewController *faceSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeFacebook];
         [faceSheet setInitialText:shareMsg];
+        [faceSheet addURL:[NSURL URLWithString:@"http://www.guardioesdasaude.org"]];
         [self presentViewController:faceSheet animated:YES completion:nil];
         
         [faceSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
