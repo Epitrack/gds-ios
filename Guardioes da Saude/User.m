@@ -176,83 +176,39 @@ NSString *const kNickKey = @"nickKey";
 
 - (void) setAvatarOnButton: (UIButton *) button orImageView:(UIImageView *) imageView{
     if ([self.avatarNumber intValue] == 0 || self.avatarNumber == nil) {
-        long diffYears = ([DateUtil diffInDaysDate:[DateUtil dateFromStringUS:self.dob] andDate:[NSDate new]]/360);
-        
         if ([self.gender isEqualToString:@"M"]) {
-            if ([self.race isEqualToString:@"preto"] ||
-                [self.race isEqualToString:@"indigena"] ||
-                [self.race isEqualToString:@"pardo"]){
-                
-                if (diffYears > 49) {
-                    self.avatarNumber = @6;
-                    avatar = @"img_profile06.png";
-                } else if (diffYears > 25){
-                    self.avatarNumber = @5;
-                    avatar = @"img_profile05.png";
-                }else{
-                    self.avatarNumber = @4;
-                    avatar = @"img_profile04.png";
-                }
-            }else if ([self.race isEqualToString:@"amarelo"]){
-                if (diffYears > 49) {
-                    self.avatarNumber = @12;
-                    avatar = @"img_profile12.png";
-                } else if (diffYears > 25){
-                    self.avatarNumber = @11;
-                    avatar = @"img_profile11.png";
-                }else{
-                    self.avatarNumber = @10;
-                    avatar = @"img_profile10.png";
-                }
-            }else if ([self.race isEqualToString:@"branco"]){
-                if (diffYears > 49) {
-                    self.avatarNumber = @16;
-                    avatar = @"img_profile16.png";
-                } else if (diffYears > 25){
-                    self.avatarNumber = @11;
-                    avatar = @"img_profile11.png";
-                }else{
-                    self.avatarNumber = @15;
-                    avatar = @"img_profile15.png";
-                }
+            if ([self.race isEqualToString:@"branco"]) {
+                self.avatarNumber = @11;
+                avatar = @"img_profile11.png";
+            }else if ([self. race isEqualToString:@"preto"]){
+                self.avatarNumber = @5;
+                avatar = @"img_profile05.png";
+            }else if ([self. race isEqualToString:@"pardo"]){
+                self.avatarNumber = @4;
+                avatar = @"img_profile04.png";
+            }else if ([self. race isEqualToString:@"amarelo"]){
+                self.avatarNumber = @10;
+                avatar = @"img_profile10.png";
+            }else if ([self. race isEqualToString:@"indigena"]){
+                self.avatarNumber = @4;
+                avatar = @"img_profile04.png";
             }
         } else {
-            if ([self.race isEqualToString:@"preto"] ||
-                [self.race isEqualToString:@"indigena"] ||
-                [self.race isEqualToString:@"pardo"]){
-                
-                if (diffYears > 49) {
-                    self.avatarNumber = @3;
-                    avatar = @"img_profile03.png";
-                } else if (diffYears > 25){
-                    self.avatarNumber = @2;
-                    avatar = @"img_profile02.png";
-                }else{
-                    self.avatarNumber = @1;
-                    avatar = @"img_profile01.png";
-                }
-            }else if ([self.race isEqualToString:@"amarelo"]){
-                if (diffYears > 49) {
-                    self.avatarNumber = @9;
-                    avatar = @"img_profile09.png";
-                } else if (diffYears > 25){
-                    self.avatarNumber = @8;
-                    avatar = @"img_profile08.png";
-                }else{
-                    self.avatarNumber = @7;
-                    avatar = @"img_profile07.png";
-                }
-            }else if ([self.race isEqualToString:@"branco"]){
-                if (diffYears > 49) {
-                    self.avatarNumber = @14;
-                    avatar = @"img_profile14.png";
-                } else if (diffYears > 25){
-                    self.avatarNumber = @8;
-                    avatar = @"img_profile08.png";
-                }else{
-                    self.avatarNumber = @13;
-                    avatar = @"img_profile13.png";
-                }
+            if ([self.race isEqualToString:@"branco"]) {
+                self.avatarNumber = @8;
+                avatar = @"img_profile08.png";
+            }else if ([self. race isEqualToString:@"preto"]){
+                self.avatarNumber = @1;
+                avatar = @"img_profile01.png";
+            }else if ([self. race isEqualToString:@"pardo"]){
+                self.avatarNumber = @2;
+                avatar = @"img_profile02.png";
+            }else if ([self. race isEqualToString:@"amarelo"]){
+                self.avatarNumber = @7;
+                avatar = @"img_profile07.png";
+            }else if ([self. race isEqualToString:@"indigena"]){
+                self.avatarNumber = @8;
+                avatar = @"img_profile08.png";
             }
         }
         
