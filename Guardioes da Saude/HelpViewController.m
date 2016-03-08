@@ -134,7 +134,7 @@
         cell.textLabel.text = @"Tutorial";
     }else if (indexPath.section==1){
         cell.imageView.image = [UIImage imageNamed:@"iconTerms"];
-        cell.textLabel.text = @"Termos e política";
+        cell.textLabel.text = @"Termos e Política";
     }else {
         cell.imageView.image = [UIImage imageNamed:icons[indexPath.row]];
         cell.textLabel.text = options[indexPath.row];
