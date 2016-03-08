@@ -47,7 +47,7 @@ Este termo é um acordo vinculativo entre você e o GUARDIÕES DA SAÚDE, que ab
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -72,7 +72,7 @@ A alteração não autorizada do conteúdo deste site é expressamente proibida.
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -91,7 +91,7 @@ A utilização do aplicativo está indicada somente para indivíduos de 13 (trez
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -116,7 +116,7 @@ Ninguém pode agir em seu nome no uso do GUARDIÕES DA SAÚDE. Você é respons�
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -135,7 +135,7 @@ A equipe do GUARDIÕES DA SAÚDE não garante que esta aplicação esteja parcia
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -160,7 +160,7 @@ Assim, as informações geradas a partir dessa estratégia, podem necessariament
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -185,7 +185,7 @@ Se você tiver alguma dúvida em relação ao GUARDIÕES DA SAÚDE, não hesite 
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -206,7 +206,7 @@ Você também concorda que o GUARDIÕES DA SAÚDE tem o direito, mas não a obri
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -228,7 +228,7 @@ O GUARDIÕES DA SAÚDE, seus colaboradores e usuários, incluindo agências gove
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -247,7 +247,7 @@ Modificações dessa aplicação e dos seus Termos de Uso poderão ocorrer. A me
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -270,7 +270,7 @@ Diante de ameaças ou qualquer outra situação de risco a vossa saúde ou integ
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -297,7 +297,7 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -317,7 +317,7 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
 
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>
@@ -336,7 +336,7 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
 	O acesso ao serviço representa a aceitação expressa e irrestrita dos Termos de Uso acima descritos. Ao concordar com esses termos você concede uma licença perpétua, isenta de royalties, licença incondicional para o GUARDIÕES DA SAÚDE, Ministério da Saúde e todas as organizações sucessoras, para publicar a sua contribuição de forma agregada, na própria aplicação, bem como divulgá-las aos serviços de vigilância em saúde pública relacionados. Você também concorda que GUARDIÕES DA SAÚDE tem o direito, mas não a obrigação, de editar ou remover qualquer contribuição a critério exclusivo da equipe do GUARDIÕES DA SAÚDE.
 </string>
                                     <attributes>
-                                        <color key="NSColor" red="0.058823529411764705" green="0.29803921568627451" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <font key="NSFont" size="15" name="HelveticaNeue"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                     </attributes>

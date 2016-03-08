@@ -21,5 +21,7 @@
 @property(nonatomic, readonly, strong) NSString *gcmSenderID;
 @property(nonatomic, readonly, strong) NSDictionary *registrationOptions;
 
+- (void) setHighlithProfile;
+
 @end
 

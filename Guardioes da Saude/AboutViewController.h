@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbVersion;
 @property (weak, nonatomic) IBOutlet UILabel *lbBuild;
 @property (weak, nonatomic) IBOutlet UITextView *txtAbout;
+- (IBAction)btnAboutAction:(id)sender;
 
 @end

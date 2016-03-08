@@ -23,6 +23,7 @@
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
 #import "MenuViewController.h"
+#import "AppDelegate.h"
 @import Photos;
 
 @interface HomeViewController (){
@@ -237,6 +238,9 @@
                                                            value:nil] build]];
     
     if ([UserRequester isConnected]) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate setHighlithProfile];
+        
         ProfileListViewController *profileListView = [[ProfileListViewController alloc] init];
         [self.navigationController pushViewController:profileListView animated:YES];
     }else{

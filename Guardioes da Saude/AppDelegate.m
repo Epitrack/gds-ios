@@ -25,7 +25,9 @@
 NSString *const kPreferencesVersionKey = @"preferenceVersionKey";
 NSString *const kCurrentVersionPreferences = @"002";
 
-@interface AppDelegate ()<SWRevealViewControllerDelegate>
+@interface AppDelegate ()<SWRevealViewControllerDelegate>{
+    MenuViewController *menuViewCtrl;
+}
 @property(nonatomic, strong) void (^registrationHandler)
 (NSString *registrationToken, NSError *error);
 @property(nonatomic, assign) BOOL connectedToGCM;
@@ -53,7 +55,7 @@ NSUserDefaults *preferences;
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
 
-    MenuViewController *rearViewController = [[MenuViewController alloc] init];
+    menuViewCtrl = [[MenuViewController alloc] init];
     
     SWRevealViewController *revealController;
     
@@ -64,7 +66,7 @@ NSUserDefaults *preferences;
     if ([preferences objectForKey:kUserTokenKey] != nil) {
         HomeViewController *frontViewController = [[HomeViewController alloc] init];
         UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
-        UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
+        UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:menuViewCtrl];
         
         revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
         revealController.delegate = self;
@@ -72,7 +74,7 @@ NSUserDefaults *preferences;
     } else {
         TutorialViewController *frontViewController = [[TutorialViewController alloc] init];
         UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
-        UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:rearViewController];
+        UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:menuViewCtrl];
         
         revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
         revealController.delegate = self;
@@ -321,6 +323,10 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
 
 
 #define LogDelegates 0
+
+- (void)setHighlithProfile{
+    [menuViewCtrl setProfileSelected];
+}
 
 #if LogDelegates
 - (NSString*)stringFromFrontViewPosition:(FrontViewPosition)position {

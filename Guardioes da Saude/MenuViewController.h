@@ -25,5 +25,6 @@
 - (IBAction)btnProfile:(id)sender;
 - (IBAction)btnExit:(id)sender;
 - (void) setHomeSelected;
+- (void) setProfileSelected;
 
 @end

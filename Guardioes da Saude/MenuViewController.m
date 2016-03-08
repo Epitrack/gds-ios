@@ -204,24 +204,28 @@
         newFrontController = [[UINavigationController alloc] initWithRootViewController:profileListController];
         SWRevealViewController *revealController = self.revealViewController;
         [revealController pushFrontViewController:newFrontController animated:YES];
+        [self setProfileSelected];
         
-        self.imgHome.image = [UIImage imageNamed:@"iconHomeDefault"];
-        self.lbHome.textColor = [UIColor blackColor];
-        
-        self.imgProfile.image = [UIImage imageNamed:@"iconProfileSelected"];
-        self.lbProfile.textColor = [UIColor colorWithRed:32/255.f green:151/255.f blue:247/255.f alpha:1];
-        
-        self.imgAbout.image = [UIImage imageNamed:@"iconAboutDefault"];
-        self.lbAbout.textColor = [UIColor blackColor];
-        
-        self.imgHelp.image = [UIImage imageNamed:@"iconHelpDefault"];
-        self.lbHelp.textColor = [UIColor blackColor];
-        
-        self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
         self.lbSignout.textColor = [UIColor blackColor];
     }else{
         [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
     }
+}
+
+- (void)setProfileSelected{
+    self.imgHome.image = [UIImage imageNamed:@"iconHomeDefault"];
+    self.lbHome.textColor = [UIColor blackColor];
+    
+    self.imgProfile.image = [UIImage imageNamed:@"iconProfileSelected"];
+    self.lbProfile.textColor = [UIColor colorWithRed:32/255.f green:151/255.f blue:247/255.f alpha:1];
+    
+    self.imgAbout.image = [UIImage imageNamed:@"iconAboutDefault"];
+    self.lbAbout.textColor = [UIColor blackColor];
+    
+    self.imgHelp.image = [UIImage imageNamed:@"iconHelpDefault"];
+    self.lbHelp.textColor = [UIColor blackColor];
+    
+    self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
 }
 
 - (IBAction)btnExit:(id)sender {
@@ -268,4 +272,6 @@
     
     [self presentViewController:alert animated:YES completion:nil];
 }
+
+
 @end
