@@ -17,7 +17,9 @@
 
 @interface HelpViewController (){
     NSArray *options;
-    NSArray *icons;
+    NSArray *optionsIcons;
+    NSArray *contactUs;
+    NSArray *contactUsIcons;
 }
 
 @end
@@ -40,8 +42,12 @@
                                                                          style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
-    options = @[@"Facebook", @"Twitter", @"Relatar erros no aplicativo"];
-    icons = @[@"iconHelpFacebook", @"iconHelpTwitter", @"iconHelpRelatar"];
+    options = @[@"Tutorial", @"Termos e Políticas"];
+    //@"iconHelpRelatar"
+    optionsIcons = @[@"iconTutorial", @"iconTerms"];
+    
+    contactUs = @[@"Facebook", @"Twitter"];
+    contactUsIcons = @[@"iconHelpFacebook", @"iconHelpTwitter"];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -105,16 +111,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section==0){
-        return 1;
+        return 2;
     }else if(section==1){
-        return 1;
+        return 2;
     }else{
-        return 3;
+        return 1;
     }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if(section == 2)
+    if(section == 0)
+        return @"Opções";
+    else if (section == 1)
         return @"Entre em contato";
     else
         return @" ";
@@ -130,27 +138,27 @@
     }
     
     if (indexPath.section==0) {
-        cell.imageView.image = [UIImage imageNamed:@"iconTutorial"];
-        cell.textLabel.text = @"Tutorial";
-    }else if (indexPath.section==1){
-        cell.imageView.image = [UIImage imageNamed:@"iconTerms"];
-        cell.textLabel.text = @"Termos e Política";
-    }else {
-        cell.imageView.image = [UIImage imageNamed:icons[indexPath.row]];
+        cell.imageView.image = [UIImage imageNamed:optionsIcons[indexPath.row]];
         cell.textLabel.text = options[indexPath.row];
+    }else if (indexPath.section==1){
+        cell.imageView.image = [UIImage imageNamed:contactUsIcons[indexPath.row]];
+        cell.textLabel.text = contactUs[indexPath.row];
+    }else {
+        cell.imageView.image = [UIImage imageNamed:@"iconHelpRelatar"];
+        cell.textLabel.text = @"Relatar erros no aplicativo";
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;        
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 2) {
-        return 40;
-    }
-    
-    return 20;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    if (section == 2) {
+//        return 40;
+//    }
+//    
+//    return 20;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     int rowSelected = indexPath.row;
@@ -158,23 +166,19 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     if (indexPath.section == 0) {
-        [self btnTutorial];
-    }else if (indexPath.section == 1){
-        [self btnTerms];
-    }else{
-        switch (rowSelected) {
-            case 0:
-                [self btnFacebook];
-                break;
-            case 1:
-                [self btnTwitter];
-                break;
-            case 2:
-                [self btnReport];
-                break;
-            default:
-                break;
+        if (indexPath.row == 0) {
+            [self btnTutorial];
+        }else{
+            [self btnTerms];
         }
+    }else if (indexPath.section == 1){
+        if (indexPath.row == 0) {
+            [self btnFacebook];
+        }else{
+            [self btnTwitter];
+        }
+    }else{
+        [self btnReport];
     }
 }
 @end
