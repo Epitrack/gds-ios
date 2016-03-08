@@ -88,7 +88,7 @@
 + (NSArray *) getRelationshipArray{
     NSArray *relationships = @[@"Pai",
                                @"Mãe",
-                               @"Filho",
+                               @"Filho(a)",
                                @"Irmão(ã)",
                                @"Avô(ó)",
                                @"Neto(a)",
@@ -98,7 +98,7 @@
                                @"Bisneto(a)",
                                @"Primo(a)",
                                @"Sogro(a)",
-                               @"Genro/Nora",
+                               @"Genro / Nora",
                                @"Padrasto",
                                @"Madrasta",
                                @"Enteado(a)",
