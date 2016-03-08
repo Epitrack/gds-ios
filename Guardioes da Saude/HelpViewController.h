@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HelpViewController : UIViewController
-- (IBAction)btnTutorial:(id)sender;
-- (IBAction)btnFacebook:(id)sender;
-- (IBAction)btnTwitter:(id)sender;
-- (IBAction)btnTerms:(id)sender;
-- (IBAction)btnReport:(id)sender;
+@interface HelpViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end

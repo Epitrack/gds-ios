@@ -15,7 +15,10 @@
 #import "Requester.h"
 #import <Google/Analytics.h>
 
-@interface HelpViewController ()
+@interface HelpViewController (){
+    NSArray *options;
+    NSArray *icons;
+}
 
 @end
 
@@ -36,6 +39,9 @@
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
                                                                          style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
+    
+    options = @[@"Facebook", @"Twitter", @"Relatar erros no aplicativo"];
+    icons = @[@"iconHelpFacebook", @"iconHelpTwitter", @"iconHelpRelatar"];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -60,35 +66,115 @@
 }
 */
 
-- (IBAction)btnTutorial:(id)sender {
+- (void)btnTutorial {
     
     TutorialViewController *tutorialHelpViewController = [[TutorialViewController alloc] init];
     tutorialHelpViewController.hideButtons = YES;
     [self.navigationController pushViewController:tutorialHelpViewController animated:YES];
 }
 
-- (IBAction)btnFacebook:(id)sender {
+- (void)btnFacebook {
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/minsaude"]];
 }
 
-- (IBAction)btnTwitter:(id)sender {
+- (void)btnTwitter {
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/minsaude"]];
 }
 
-- (IBAction)btnTerms:(id)sender {
+- (void)btnTerms {
     
     TermsViewController *termsViewController = [[TermsViewController alloc] init];
     [self.navigationController pushViewController:termsViewController animated:YES];
 }
 
-- (IBAction)btnReport:(id)sender {
+- (void)btnReport {
     if([Requester isConnected]){
     ReportViewController *reportViewController = [[ReportViewController alloc] init];
     [self.navigationController pushViewController:reportViewController animated:YES];
     }else{
         [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 3;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section==0){
+        return 1;
+    }else if(section==1){
+        return 1;
+    }else{
+        return 3;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if(section == 2)
+        return @"Entre em contato";
+    else
+        return @" ";
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    if (indexPath.section==0) {
+        cell.imageView.image = [UIImage imageNamed:@"iconTutorial"];
+        cell.textLabel.text = @"Tutorial";
+    }else if (indexPath.section==1){
+        cell.imageView.image = [UIImage imageNamed:@"iconTerms"];
+        cell.textLabel.text = @"Termos e política";
+    }else {
+        cell.imageView.image = [UIImage imageNamed:icons[indexPath.row]];
+        cell.textLabel.text = options[indexPath.row];
+    }
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;        
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 2) {
+        return 40;
+    }
+    
+    return 20;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    int rowSelected = indexPath.row;
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    if (indexPath.section == 0) {
+        [self btnTutorial];
+    }else if (indexPath.section == 1){
+        [self btnTerms];
+    }else{
+        switch (rowSelected) {
+            case 0:
+                [self btnFacebook];
+                break;
+            case 1:
+                [self btnTwitter];
+                break;
+            case 2:
+                [self btnReport];
+                break;
+            default:
+                break;
+        }
     }
 }
 @end
