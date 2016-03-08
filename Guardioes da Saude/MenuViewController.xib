@@ -28,12 +28,12 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gdSLogoHorizontal" translatesAutoresizingMaskIntoConstraints="NO" id="RAP-qb-tYS">
-                            <rect key="frame" x="8" y="31" width="230" height="100"/>
+                            <rect key="frame" x="8" y="31" width="220" height="100"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.12435740922013576" green="0.59220643890647406" blue="0.97010105652109324" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="RAP-qb-tYS" secondAttribute="trailing" constant="82" id="1dK-TJ-sWN"/>
+                        <constraint firstAttribute="trailing" secondItem="RAP-qb-tYS" secondAttribute="trailing" constant="92" id="1dK-TJ-sWN"/>
                         <constraint firstAttribute="bottom" secondItem="RAP-qb-tYS" secondAttribute="bottom" constant="19" id="VfV-VM-B9C"/>
                         <constraint firstItem="RAP-qb-tYS" firstAttribute="top" secondItem="MkL-yl-8bQ" secondAttribute="top" constant="31" id="o48-p1-5G2"/>
                         <constraint firstItem="RAP-qb-tYS" firstAttribute="leading" secondItem="MkL-yl-8bQ" secondAttribute="leading" constant="8" id="o7N-4R-G8Z"/>
@@ -68,7 +68,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jd-1A-u2a">
                     <rect key="frame" x="54" y="213" width="38" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gu8-D7-aQw" userLabel="Btn Profile">
@@ -87,7 +87,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZO-eR-1Q3">
                     <rect key="frame" x="54" y="259" width="43" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFv-OI-JXw" userLabel="Btn About">
@@ -106,7 +106,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajuda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82P-XX-VEg">
                     <rect key="frame" x="54" y="305" width="42" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-ed-2aV" userLabel="Btn Help">
@@ -125,7 +125,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sair" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQl-uN-xw6">
                     <rect key="frame" x="56" y="351" width="28" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1V5-wc-Wlk" userLabel="Btn Signout">

@@ -153,12 +153,17 @@ NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
 }
 
 - (NSString *) getUrl{
+    
     if ([[NSBundle mainBundle] pathForResource:@"embedded" ofType:@"mobileprovision"]) {
         // Test flight
         return @"https://rest.guardioesdasaude.org";
     } else {
         // App Store
-        return @"https://api.guardioesdasaude.org";
+        #ifndef __OPTIMIZE__
+            return @"https://rest.guardioesdasaude.org";
+        #else
+            return @"https://api.guardioesdasaude.org";
+        #endif
     }
 }
 
