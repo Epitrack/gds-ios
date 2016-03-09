@@ -34,7 +34,8 @@
     self.navigationController.navigationBar.topItem.backBarButtonItem = btnBack;
     
     self.txtMessage.layer.borderWidth = 1.0f;
-    self.txtMessage.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.txtMessage.layer.cornerRadius = 5;
+    self.txtMessage.layer.borderColor = [[UIColor colorWithRed:204.0/255.0 green:204.0/255.0 blue:204.0/255.0 alpha:1] CGColor];
 
 }
 
