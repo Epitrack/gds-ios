@@ -14,7 +14,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
 
-NSString *const shareMsg = @"Acabei de participar do Guardiões da Saúde, participe você também: http://www.guardioesdasaude.org";
+NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org";
 
 
 @interface ThankYouForParticipatingViewController (){
