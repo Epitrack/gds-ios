@@ -320,12 +320,11 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
                                                       handler:_registrationHandler];
 }
 
-
-#define LogDelegates 0
-
 - (void)setHighlithProfile{
     [menuViewCtrl setProfileSelected];
 }
+
+#define LogDelegates 0
 
 #if LogDelegates
 - (NSString*)stringFromFrontViewPosition:(FrontViewPosition)position {
