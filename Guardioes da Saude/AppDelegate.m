@@ -91,7 +91,6 @@ NSUserDefaults *preferences;
                                                            [UIFont fontWithName:@"Foco" size:20.0], NSFontAttributeName, nil]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
 
     _registrationKey = @"onRegistrationCompleted";
     _messageKey = @"onMessageReceived";

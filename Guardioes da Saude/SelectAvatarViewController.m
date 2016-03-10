@@ -12,15 +12,13 @@
 #import "AssetsLibrary/AssetsLibrary.h"
 #import "MBProgressHUD.h"
 #import <Google/Analytics.h>
+#import <MobileCoreServices/UTCoreTypes.h>
 @import PhotosUI;
 
 @interface SelectAvatarViewController () {
     BOOL showCameraBtn;
     UIImagePickerController* picker;
 }
-
-
-
 @end
 
 @implementation SelectAvatarViewController
@@ -36,12 +34,6 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Editar Foto";
-    UIBarButtonItem *navBarButtonAppearance = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]];
-    [navBarButtonAppearance setTitleTextAttributes:@{
-                                                     NSFontAttributeName:            [UIFont systemFontOfSize:0.1],
-                                                     NSForegroundColorAttributeName: [UIColor clearColor] }
-                                          forState:UIControlStateNormal];
-    
     self.btnPhoto.hidden = !showCameraBtn;
 }
 
@@ -99,6 +91,54 @@
 
 - (IBAction)btnPhotoAction:(id)sender {
     
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                   message:@""
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+
+    UIAlertAction *cameraOption = [UIAlertAction actionWithTitle:@"Câmera"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [self showCamera];
+                                                          }];
+    [alert addAction:cameraOption];
+    
+    UIAlertAction *galeryOption = [UIAlertAction actionWithTitle:@"Galeria"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [self showGallery];
+                                                          }];
+    [alert addAction:galeryOption];
+    
+    UIAlertAction *cancelOption = [UIAlertAction actionWithTitle:@"Cancelar"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction * action) {
+                                                         }];
+    [alert addAction:cancelOption];
+    
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)showGallery{
+    [self requestPermissions:^(bool authorized){
+        if(!authorized){
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Verifique as permissões da galeria 'Fotos'."];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }else{
+            picker = [[UIImagePickerController alloc] init];
+            picker.mediaTypes = [NSArray arrayWithObjects:(NSString *) kUTTypeImage,nil];
+            [picker setSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+            [picker setDelegate:self];
+            picker.modalPresentationStyle = UIModalPresentationCurrentContext;
+           
+            [self presentViewController:picker animated:YES completion:nil];
+        }
+    }];
+}
+
+- (void)showCamera{
     [self requestPermissions:^(bool authorized){
         if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
             UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Aparelho não possui câmera."];
@@ -116,7 +156,7 @@
             CGFloat height = picker.view.bounds.size.height - navigationBarHeight;
             CGFloat width = picker.view.bounds.size.width;
             CGRect f = CGRectMake(0, 0, width, height);
-
+            
             
             UIImageView *overlayIV = [[UIImageView alloc] initWithFrame:f];
             
@@ -245,8 +285,15 @@
     double x = (refWidth - size.width) / 2.0;
     double y = (refHeight - size.height) / 2.0;
     
+    double heightWith;
+    if (size.width < size.height) {
+        heightWith = size.width;
+    } else {
+        heightWith = size.height;
+    }
+    
 
-    CGRect cropRect = CGRectMake(x, y, size.width, size.width*1.1);
+    CGRect cropRect = CGRectMake(x, y, heightWith, heightWith*1.1);
     CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
     
     UIImage *cropped = [UIImage imageWithCGImage:imageRef scale:0.0 orientation:image.imageOrientation];

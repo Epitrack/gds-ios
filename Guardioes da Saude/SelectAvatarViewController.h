@@ -16,8 +16,6 @@
 
 @property ProfileFormViewController *profileFormCtr;
 
-@property UIImagePickerController *picker;
-
 @property (weak, nonatomic) IBOutlet UIButton *btnPhoto;
 
 - (IBAction)selectAvatarAction:(id)sender;

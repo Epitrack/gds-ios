@@ -238,7 +238,7 @@
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
                                                                    message:@"Tem certeza que deseja sair do aplicativo?"
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *oktAction = [UIAlertAction actionWithTitle:@"Sim"
                                                             style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
@@ -267,8 +267,9 @@
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction * action) {
                                                       }];
-    [alert addAction:oktAction];
+
     [alert addAction:canceltAction];
+    [alert addAction:oktAction];
     
     [self presentViewController:alert animated:YES completion:nil];
 }
