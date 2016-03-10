@@ -202,6 +202,7 @@
         [symptoms addObject:[[Symptom alloc] initWithName:@"Outros" andCode:@"outros"]];
         [symptoms addObject:[[Symptom alloc] initWithName:@"Tive contato com alguém com um desses sintomas" andCode:@"hadContagiousContact"]];
         [symptoms addObject:[[Symptom alloc] initWithName:@"Procurei um serviço de saúde" andCode:@"hadHealthCare"]];
+        [symptoms addObject:[[Symptom alloc] initWithName:@"Estive fora do Brasil nos últimos 14 dias" andCode:@"hadTravelledAbroad"]];
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.tableSymptoms reloadData];
@@ -219,6 +220,8 @@
     others = [[Symptom alloc] initWithName:@"Tive contato com alguém com um desses sintomas" andCode:@"hadContagiousContact"];
     [symptoms addObject:others];
     others = [[Symptom alloc] initWithName:@"Procurei um serviço de saúde" andCode:@"hadHealthCare"];
+    [symptoms addObject:others];
+    others = [[Symptom alloc] initWithName:@"Estive fora do Brasil nos últimos 14 dias" andCode:@"hadTravelledAbroad"];
     [symptoms addObject:others];
 }
 

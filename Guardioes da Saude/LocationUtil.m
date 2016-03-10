@@ -156,10 +156,10 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
     NSMutableArray *sortedCountryArray = [[NSMutableArray alloc] init];
     
     for (NSString *countryCode in countryArray) {
-        
         NSString *displayNameString = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
-        [sortedCountryArray addObject:displayNameString];
-        
+        if (!([displayNameString isEqualToString:@"Brasil"] || [displayNameString isEqualToString:@"Brazil"])) {
+            [sortedCountryArray addObject:displayNameString];
+        }
     }
     [sortedCountryArray sortUsingSelector:@selector(localizedCompare:)];
     
