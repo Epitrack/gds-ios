@@ -22,5 +22,7 @@
 - (IBAction)btnTwitterAction:(id)sender;
 - (IBAction)iconBackAction:(id)sender;
 
+- (IBAction)btnUnlockAction:(id)sender;
+
 
 @end

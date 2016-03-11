@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "ViewUtil.h"
 #import "Requester.h"
+#import "User.h"
 #import <Google/Analytics.h>
 
 @interface AboutViewController (){
@@ -68,10 +69,12 @@
 
 - (IBAction)btnAboutAction:(id)sender {
     if (counter >= 5) {
+        counter = 0;
         Requester *requester = [[Requester alloc] init];
         
         UIAlertController *alert = [ViewUtil showAlertWithMessage:[requester getUrl]];
         [self presentViewController:alert animated:YES completion:nil];
+        
     }else{
         counter ++;
     }

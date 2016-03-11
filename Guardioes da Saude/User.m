@@ -16,6 +16,7 @@ NSString *const kUserTokenKey = @"userTokenKey";
 NSString *const kPhotoKey = @"photoKey";
 NSString *const kAvatarNumberKey = @"avatarNumberKey";
 NSString *const kNickKey = @"nickKey";
+NSString *const kIsTest = @"isTest";
 
 @implementation User
 

@@ -1,6 +1,7 @@
 // Igor Morais
 
 #import "Requester.h"
+#import "User.h"
 
 NSString * const kMsgConnectionError = @"Por favor verifique sua conexão!";
 NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
@@ -153,20 +154,11 @@ NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
 }
 
 - (NSString *) getUrl{
-    NSURL *receiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
-    NSString *receiptURLString = [receiptURL path];
-    BOOL isRunningTestFlightBeta =  ([receiptURLString rangeOfString:@"sandboxReceipt"].location != NSNotFound);
     
-    if (isRunningTestFlightBeta) {
-        // Test flight
+    if ([User getInstance].isTest) {
         return @"https://rest.guardioesdasaude.org";
-    } else {
-        // App Store
-        #ifndef __OPTIMIZE__
-            return @"https://rest.guardioesdasaude.org";
-        #else
-            return @"https://api.guardioesdasaude.org";
-        #endif
+    }else{
+        return @"https://api.guardioesdasaude.org";
     }
 }
 

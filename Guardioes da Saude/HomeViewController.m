@@ -62,6 +62,10 @@
             userToken = [preferences valueForKey:kUserTokenKey];
         }
         
+        if ([preferences objectForKey:kIsTest]) {
+            user.isTest = YES;
+        }
+        
         user.user_token = [preferences valueForKey:kUserTokenKey];
         user.app_token = [preferences valueForKey:kAppTokenKey];
         user.photo = [preferences valueForKey:kPhotoKey];

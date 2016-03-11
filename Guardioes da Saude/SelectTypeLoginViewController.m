@@ -27,6 +27,7 @@
     User *user;
     SingleNotice *singleNotice;
     UserRequester *userRequester;
+    int counter;
 }
 
 @end
@@ -294,6 +295,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                    [preferences setValue:user.user_token forKey:kUserTokenKey];
                    [preferences setValue:user.nick forKey:kNickKey];
                    [preferences setValue:user.avatarNumber forKey:kAvatarNumberKey];
+
+                   [preferences synchronize];
                    
                    [self loadNotices];
                    
@@ -320,4 +323,29 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                      }];
 }
 
+- (IBAction)btnUnlockAction:(id)sender {
+    if (counter > 5) {
+        counter = 0;
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Digite sua chave" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addTextFieldWithConfigurationHandler:nil];
+        
+        [alert addAction: [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            UITextField *txtKey = alert.textFields[0];
+            if ([txtKey.text isEqualToString:@"22063"]) {
+                [User getInstance].isTest = YES;
+                NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+                [preferences setValue:@"YES" forKey:kIsTest];
+                
+                [preferences synchronize];
+            }
+        }]];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            NSLog(@"Cancel pressed");
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }else{
+        counter++;
+    }
+}
 @end

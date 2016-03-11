@@ -16,6 +16,7 @@ extern NSString *const kUserTokenKey;
 extern NSString *const kPhotoKey;
 extern NSString *const kAvatarNumberKey;
 extern NSString *const kNickKey;
+extern NSString *const kIsTest;
 
 @interface User : JSONModel {
     NSString *nick;
@@ -45,7 +46,7 @@ extern NSString *const kNickKey;
     NSString *avatar;
     NSString *photo;
     NSString *url;
-    
+    bool isTes;
 }
 
 +(User *)getInstance;
@@ -77,6 +78,7 @@ extern NSString *const kNickKey;
 @property(nonatomic, retain) NSString *avatar;
 @property(nonatomic, retain) NSString *photo;
 @property(nonatomic, retain) NSString *gcmToken;
+@property(nonatomic, assign) bool isTest;
 
 - (void) setGenderBySegIndex: (long) segIndex;
 - (void) setRaceBySegIndex: (long) segIndex;
