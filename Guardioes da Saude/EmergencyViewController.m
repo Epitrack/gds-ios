@@ -100,7 +100,30 @@
      }];
 }
 
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
+    [self.view layoutIfNeeded];
+    
+    self.consEmergencyDetail.constant = -90.0f;
+    
+    
+    [UIView animateWithDuration:.25 animations:^(){
+        [self.view layoutIfNeeded];
+    }];
+}
 
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    [self.view layoutIfNeeded];
+    
+    self.consEmergencyDetail.constant = 0.0f;
+    
+    MKPointAnnotation *annotation = (MKPointAnnotation *)[view annotation];
+    self.lbEmergencyName.text = annotation.title;
+    self.lbEmergencyAddress.text = annotation.subtitle;
+    
+    [UIView animateWithDuration:.25 animations:^(){
+        [self.view layoutIfNeeded];
+    }];
+}
 
 
 - (void) mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
@@ -124,7 +147,7 @@
             pinView = [[MKAnnotationView alloc]
                        initWithAnnotation:annotation reuseIdentifier:defaultPinID];
         
-        pinView.canShowCallout = YES;
+        pinView.canShowCallout = NO;
         pinView.image = [UIImage imageNamed:@"icon_pin_urgency.png"];
         // Add a detail disclosure button to the callout.
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
