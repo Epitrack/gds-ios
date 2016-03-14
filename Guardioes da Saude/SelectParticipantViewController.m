@@ -142,7 +142,7 @@ const float kCellHeight = 100.0f;
     NSMutableArray *buttons = [NSMutableArray array];
     NSMutableArray *households = user.household;
     
-    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:nil frame:CGRectMake(0, 0, 150, 150) avatar:@"icon_addmember" nick:@"Novo membro"];
+    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:nil frame:CGRectMake(0, 0, 150, 150) avatar:@"icon_addmember" nick:@"Novo integrante"];
     [buttons addObject:thumb];
     [thumb.button addTarget:self action:@selector(addNewMember) forControlEvents:UIControlEventTouchUpInside];
     

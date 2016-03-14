@@ -151,7 +151,7 @@
 }
 
 - (void) loadAddHousehold{
-    self.navigationItem.title = @"Adicionar Novo Membro";
+    self.navigationItem.title = @"Adicionar Novo Integrante";
     self.btnChangePasswd.hidden = YES;
     
     self.pictureSelected = @1;

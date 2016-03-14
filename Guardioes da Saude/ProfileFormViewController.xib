@@ -128,7 +128,7 @@
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBI-sh-MgF">
                             <rect key="frame" x="8" y="344" width="304" height="38"/>
-                            <state key="normal" title="Mudar senha" backgroundImage="button_default.png">
+                            <state key="normal" title="Redefinir senha" backgroundImage="button_default.png">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
