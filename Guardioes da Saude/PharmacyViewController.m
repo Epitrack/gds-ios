@@ -120,6 +120,31 @@
     }
 }
 
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
+    [self.view layoutIfNeeded];
+    
+    self.constPharmacyDetails.constant = -90.0f;
+    
+    
+    [UIView animateWithDuration:.25 animations:^(){
+        [self.view layoutIfNeeded];
+    }];
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    [self.view layoutIfNeeded];
+    
+    self.constPharmacyDetails.constant = 0.0f;
+    
+    MKPointAnnotation *annotation = (MKPointAnnotation *)[view annotation];
+    self.lbPharmacyName.text = annotation.title;
+    self.lbPharmacyAddress.text = annotation.subtitle;
+    
+    [UIView animateWithDuration:.25 animations:^(){
+        [self.view layoutIfNeeded];
+    }];
+}
+
 -(MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation:(id <MKAnnotation>)annotation {
     MKAnnotationView *pinView = nil;
     if(annotation != mV.userLocation) {
@@ -129,7 +154,7 @@
             pinView = [[MKAnnotationView alloc]
                        initWithAnnotation:annotation reuseIdentifier:defaultPinID];
         
-        pinView.canShowCallout = YES;
+        pinView.canShowCallout = NO;
         pinView.image = [UIImage imageNamed:@"icon_pin_pharmacy.png"];
         // Add a detail disclosure button to the callout.
         UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
