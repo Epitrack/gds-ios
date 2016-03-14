@@ -110,8 +110,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Membros do domicílio" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuy-Ah-4UN">
-                    <rect key="frame" x="95" y="341" width="131" height="39"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Integrantes do domicílio" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuy-Ah-4UN">
+                    <rect key="frame" x="86" y="341" width="150" height="39"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="218:77" id="IVF-wL-rKt"/>
                         <constraint firstAttribute="width" constant="280" id="JGB-aW-u7r"/>
@@ -121,7 +121,7 @@
                         <constraint firstAttribute="height" constant="39" id="gih-Bz-uw1"/>
                         <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="140:23" id="pQX-ya-aZI"/>
                         <constraint firstAttribute="width" secondItem="fuy-Ah-4UN" secondAttribute="height" multiplier="140:23" id="sMH-pQ-aa6"/>
-                        <constraint firstAttribute="width" constant="131" id="tCy-QL-8DI"/>
+                        <constraint firstAttribute="width" constant="150" id="tCy-QL-8DI"/>
                         <constraint firstAttribute="width" constant="218" id="uTP-YL-Xez"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
