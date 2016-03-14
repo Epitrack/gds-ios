@@ -363,15 +363,16 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
                     </variation>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOg-ba-bRP">
-                    <rect key="frame" x="8" y="526" width="74" height="30"/>
+                    <rect key="frame" x="8" y="526" width="91" height="35"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <state key="normal" title="Não aceito"/>
                     <connections>
                         <action selector="btnDeclineAction:" destination="-1" eventType="touchUpInside" id="mpj-a9-bXh"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPN-T3-RIK">
-                    <rect key="frame" x="265" y="526" width="47" height="30"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <rect key="frame" x="256" y="526" width="56" height="34"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <state key="normal" title="Aceito"/>
                     <connections>
                         <action selector="btnAcceptAction:" destination="-1" eventType="touchUpInside" id="SrG-Qc-tZX"/>
