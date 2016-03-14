@@ -12,5 +12,8 @@
 
 @interface EmergencyViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (retain, nonatomic) IBOutlet MKMapView *mapEmergency;
+@property (weak, nonatomic) IBOutlet UILabel *lbEmergencyName;
+@property (weak, nonatomic) IBOutlet UILabel *lbEmergencyAddress;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *consEmergencyDetail;
 
 @end
