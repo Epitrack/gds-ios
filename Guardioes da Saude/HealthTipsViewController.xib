@@ -199,7 +199,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Telefones úteis" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="079-N1-Wbu">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Telefones Úteis" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="079-N1-Wbu">
                     <rect key="frame" x="78" y="301" width="215" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="1Cl-J6-KVy"/>
@@ -267,7 +267,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Cuidados básicos" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gw-cs-RYP">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Cuidados Básicos" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gw-cs-RYP">
                     <rect key="frame" x="78" y="443" width="215" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1Gw-cs-RYP" secondAttribute="height" multiplier="214:33" id="BAm-pY-hb4"/>

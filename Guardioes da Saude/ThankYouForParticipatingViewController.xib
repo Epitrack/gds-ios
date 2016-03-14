@@ -7,12 +7,12 @@
     <customFonts key="customFonts">
         <mutableArray key="Foco_Std_Bd.ttf">
             <string>Foco-Bold</string>
-            <string>Foco-Bold</string>
         </mutableArray>
         <mutableArray key="Foco_Std_Lt.ttf">
             <string>Foco-Light</string>
         </mutableArray>
         <mutableArray key="Foco_Std_Rg.ttf">
+            <string>Foco-Regular</string>
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
@@ -111,14 +111,14 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Convide seus amigos para serem Guardiões." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Convide seus amigos para serem Guardiões da Saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
                             <rect key="frame" x="20" y="136" width="281" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="1Xq-LP-73E"/>
                                 <constraint firstAttribute="width" secondItem="XwE-05-RnE" secondAttribute="height" multiplier="281:31" id="VwB-Lv-YIB"/>
                             </constraints>
                             <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="12"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                     </subviews>
