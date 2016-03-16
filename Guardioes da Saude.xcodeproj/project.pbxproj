@@ -69,9 +69,6 @@
 		52518A1B1C19F65F00B86D5E /* infoCopy@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52518A181C19F65F00B86D5E /* infoCopy@3x.png */; };
 		52518A1F1C19FC4800B86D5E /* ModalPrivViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52518A1D1C19FC4800B86D5E /* ModalPrivViewController.m */; };
 		52518A201C19FC4800B86D5E /* ModalPrivViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52518A1E1C19FC4800B86D5E /* ModalPrivViewController.xib */; };
-		52518A221C1A01F400B86D5E /* imgDialogTerms.png in Resources */ = {isa = PBXBuildFile; fileRef = 52518A211C1A01F400B86D5E /* imgDialogTerms.png */; };
-		52518A251C1A020200B86D5E /* imgDialogTerms@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52518A231C1A020200B86D5E /* imgDialogTerms@2x.png */; };
-		52518A261C1A020200B86D5E /* imgDialogTerms@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52518A241C1A020200B86D5E /* imgDialogTerms@3x.png */; };
 		52558CD91C18B8EE00AF7DDF /* iconBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CCD1C18B8ED00AF7DDF /* iconBack.png */; };
 		52558CDA1C18B8EE00AF7DDF /* iconBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CCE1C18B8ED00AF7DDF /* iconBack@2x.png */; };
 		52558CDB1C18B8EE00AF7DDF /* iconBack@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52558CCF1C18B8ED00AF7DDF /* iconBack@3x.png */; };
@@ -490,6 +487,7 @@
 		CBA0E5431C5FA5EC0086315B /* img_profile09@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5251C5FA5EC0086315B /* img_profile09@2x.png */; };
 		CBA0E5441C5FA5EC0086315B /* img_profile09@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5261C5FA5EC0086315B /* img_profile09@3x.png */; };
 		CBA4F47C1C73673200B6A99C /* logo_horizontal_about.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */; };
+		CBBC1E051C99905B0079A8D6 /* imgDialogTerms.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBC1E041C99905B0079A8D6 /* imgDialogTerms.png */; };
 		CBDDF5A51C77452E008853B2 /* SymptomRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDDF5A41C77452E008853B2 /* SymptomRequester.m */; };
 		CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */; };
 		CBDE6B241C80CA82007418FA /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */; };
@@ -591,9 +589,6 @@
 		52518A1C1C19FC4800B86D5E /* ModalPrivViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalPrivViewController.h; sourceTree = "<group>"; };
 		52518A1D1C19FC4800B86D5E /* ModalPrivViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalPrivViewController.m; sourceTree = "<group>"; };
 		52518A1E1C19FC4800B86D5E /* ModalPrivViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalPrivViewController.xib; sourceTree = "<group>"; };
-		52518A211C1A01F400B86D5E /* imgDialogTerms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgDialogTerms.png; sourceTree = "<group>"; };
-		52518A231C1A020200B86D5E /* imgDialogTerms@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgDialogTerms@2x.png"; sourceTree = "<group>"; };
-		52518A241C1A020200B86D5E /* imgDialogTerms@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgDialogTerms@3x.png"; sourceTree = "<group>"; };
 		52558CCD1C18B8ED00AF7DDF /* iconBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconBack.png; sourceTree = "<group>"; };
 		52558CCE1C18B8ED00AF7DDF /* iconBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBack@2x.png"; sourceTree = "<group>"; };
 		52558CCF1C18B8ED00AF7DDF /* iconBack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconBack@3x.png"; sourceTree = "<group>"; };
@@ -1068,6 +1063,7 @@
 		CBA0E5251C5FA5EC0086315B /* img_profile09@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile09@2x.png"; sourceTree = "<group>"; };
 		CBA0E5261C5FA5EC0086315B /* img_profile09@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile09@3x.png"; sourceTree = "<group>"; };
 		CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_horizontal_about.png; sourceTree = "<group>"; };
+		CBBC1E041C99905B0079A8D6 /* imgDialogTerms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgDialogTerms.png; sourceTree = "<group>"; };
 		CBDDF5A31C77452E008853B2 /* SymptomRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomRequester.h; sourceTree = "<group>"; };
 		CBDDF5A41C77452E008853B2 /* SymptomRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomRequester.m; sourceTree = "<group>"; };
 		CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeTableViewCell.h; path = CellTable/NoticeTableViewCell.h; sourceTree = "<group>"; };
@@ -1430,6 +1426,7 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CBBC1E041C99905B0079A8D6 /* imgDialogTerms.png */,
 				CB9DC5821C871E57006E627C /* icon_twitternews.png */,
 				520EB7101C21EF220054D818 /* buttonEmailDisable.png */,
 				520EB7111C21EF220054D818 /* buttonEmailDisable@2x.png */,
@@ -1459,9 +1456,6 @@
 				CB4DD11F1C6CDD52002855C2 /* img_news.png */,
 				52E6F0741C20528400C88A08 /* iconZika@2x.png */,
 				52E6F0751C20528400C88A08 /* iconZika@3x.png */,
-				52518A231C1A020200B86D5E /* imgDialogTerms@2x.png */,
-				52518A241C1A020200B86D5E /* imgDialogTerms@3x.png */,
-				52518A211C1A01F400B86D5E /* imgDialogTerms.png */,
 				52518A161C19F65F00B86D5E /* infoCopy.png */,
 				52518A171C19F65F00B86D5E /* infoCopy@2x.png */,
 				52518A181C19F65F00B86D5E /* infoCopy@3x.png */,
@@ -1945,7 +1939,6 @@
 				52E727431BEA93B800B46945 /* button_google.png in Resources */,
 				52D2BC831BF12EBF007C9C09 /* icon_pin_bad.png in Resources */,
 				52E7278C1BEA93B800B46945 /* icon_logout@2x.png in Resources */,
-				52518A221C1A01F400B86D5E /* imgDialogTerms.png in Resources */,
 				52E727071BEA93B800B46945 /* icon_tips_pharmacies@2x.png in Resources */,
 				52E727421BEA93B800B46945 /* button_facebook@3x.png in Resources */,
 				CB362B3F1C7B490000BE4F23 /* icon_logout_default.png in Resources */,
@@ -1983,7 +1976,6 @@
 				52E7271D1BEA93B800B46945 /* button_default_white@2x.png in Resources */,
 				52E727BA1BEA93B800B46945 /* icon_twitter@3x.png in Resources */,
 				52E727A11BEA93B800B46945 /* icon_problem@2x.png in Resources */,
-				52518A251C1A020200B86D5E /* imgDialogTerms@2x.png in Resources */,
 				52558CDA1C18B8EE00AF7DDF /* iconBack@2x.png in Resources */,
 				52D2BC8C1BF12EBF007C9C09 /* icon_well_dash.png in Resources */,
 				52E6F0891C209A6B00C88A08 /* DetailPhoneViewController.xib in Resources */,
@@ -2145,6 +2137,7 @@
 				52E727BD1BEA93B800B46945 /* icon_well@3x.png in Resources */,
 				52E727651BEA93B800B46945 /* icon_config@2x.png in Resources */,
 				52E727E81BEA93B800B46945 /* input_floatbox_register_email.png in Resources */,
+				CBBC1E051C99905B0079A8D6 /* imgDialogTerms.png in Resources */,
 				52E727AA1BEA93B800B46945 /* icon_security@2x.png in Resources */,
 				52E7270A1BEA93B800B46945 /* icon_tips_phones@2x.png in Resources */,
 				52E727871BEA93B800B46945 /* icon_logo_splash@3x.png in Resources */,
@@ -2217,7 +2210,6 @@
 				52E7279A1BEA93B800B46945 /* icon_pin_pharmacy.png in Resources */,
 				52E6F0A31C20B18E00C88A08 /* iconSamu@2x.png in Resources */,
 				CBA0E52C1C5FA5EC0086315B /* img_profile13@3x.png in Resources */,
-				52518A261C1A020200B86D5E /* imgDialogTerms@3x.png in Resources */,
 				52E727C41BEA93B800B46945 /* img_profile01.png in Resources */,
 				52E727D71BEA93B800B46945 /* img_profile08@2x.png in Resources */,
 				52E6F0A71C20B18E00C88A08 /* iconDefesacivil.png in Resources */,
