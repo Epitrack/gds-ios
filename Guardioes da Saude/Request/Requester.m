@@ -156,7 +156,7 @@ NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
 - (NSString *) getUrl{
     
     if ([User getInstance].isTest) {
-        return @"https://rest.guardioesdasaude.org";
+        return @"http://rest.guardioesdasaude.org";
     }else{
         return @"https://api.guardioesdasaude.org";
     }
