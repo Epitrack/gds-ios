@@ -62,7 +62,7 @@
                         <action selector="btnEnter:" destination="-1" eventType="touchUpInside" id="jiB-Yh-67Z"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4r-TU-uZK" userLabel="Label BemVindo">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="P4r-TU-uZK" userLabel="Label BemVindo">
                     <rect key="frame" x="112" y="12" width="97" height="23"/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="19"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,6 +89,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="P4r-TU-uZK" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="112" id="3LC-rX-SKn"/>
                 <constraint firstItem="b4R-zf-kwj" firstAttribute="trailing" secondItem="ctv-Wu-AJh" secondAttribute="trailing" id="8G8-Eb-E9d"/>
                 <constraint firstItem="b4R-zf-kwj" firstAttribute="leading" secondItem="ctv-Wu-AJh" secondAttribute="leading" id="CJy-YC-Wqm"/>
                 <constraint firstItem="P4r-TU-uZK" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" id="Kah-S7-2Zy"/>
@@ -104,7 +105,9 @@
                 <constraint firstItem="i40-G2-ylt" firstAttribute="top" secondItem="9KC-Jm-W5d" secondAttribute="bottom" constant="7" id="YIM-OI-7Te"/>
                 <constraint firstAttribute="bottom" secondItem="i40-G2-ylt" secondAttribute="bottom" constant="20" id="Yoz-Zk-98B"/>
                 <constraint firstItem="vdV-On-aDO" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" id="ZIZ-nC-FPU"/>
+                <constraint firstAttribute="trailing" secondItem="P4r-TU-uZK" secondAttribute="trailing" constant="111" id="Zva-0p-HsF"/>
                 <constraint firstItem="ctv-Wu-AJh" firstAttribute="width" secondItem="e6e-5v-vmX" secondAttribute="height" multiplier="43:80" constant="-35" id="aU9-cH-tfp"/>
+                <constraint firstItem="P4r-TU-uZK" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" constant="12" id="etJ-xj-t2t"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" id="mau-U2-Qlr"/>
                 <constraint firstItem="ctv-Wu-AJh" firstAttribute="top" secondItem="P4r-TU-uZK" secondAttribute="bottom" constant="70" id="muJ-9O-EL6"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="centerY" secondItem="e6e-5v-vmX" secondAttribute="centerY" id="ole-ui-fZ4"/>
@@ -114,6 +117,13 @@
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" id="xUb-15-Heb"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="3LC-rX-SKn"/>
+                    <exclude reference="Zva-0p-HsF"/>
+                    <exclude reference="etJ-xj-t2t"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>
