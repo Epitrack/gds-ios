@@ -10,6 +10,7 @@
 
 @interface ModalPrivViewController : ViewController
 - (IBAction)btnOK:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *lbDescription;
 
 
 
