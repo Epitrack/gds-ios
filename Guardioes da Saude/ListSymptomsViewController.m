@@ -198,7 +198,10 @@
     [userRequester getSymptonsOnStart:^{
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }andSuccess:^(NSMutableArray *symptomsResponse){
-        symptoms = symptomsResponse;
+        symptoms = [[NSMutableArray alloc] init];
+        
+        [symptoms addObject:[[Symptom alloc] initWithName:@"Sintomas" andCode:@"sintomas"]];
+        [symptoms addObjectsFromArray: symptomsResponse];
         [symptoms addObject:[[Symptom alloc] initWithName:@"Outros" andCode:@"outros"]];
         [symptoms addObject:[[Symptom alloc] initWithName:@"Tive contato com alguém com um desses sintomas" andCode:@"hadContagiousContact"]];
         [symptoms addObject:[[Symptom alloc] initWithName:@"Procurei um serviço de saúde" andCode:@"hadHealthCare"]];
@@ -241,7 +244,7 @@
     
     Symptom *symptom = [symptoms objectAtIndex:indexPath.row];
     
-    if ([symptom.code isEqualToString: @"outros"]) {
+    if ([symptom.code isEqualToString: @"outros"] || [symptom.code isEqualToString: @"sintomas"]) {
         cell.backgroundColor = bgCellColor;
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.font = [UIFont fontWithName:@"Foco-Bold" size:18];
@@ -296,7 +299,8 @@
             }
         }
         
-        if (indexPath.row == 13) {
+        Symptom *symptom = [symptoms objectAtIndex:indexPath.row];
+        if ([symptom.code isEqualToString: @"outros"] || [symptom.code isEqualToString: @"sintomas"]) {
             [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
             [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = nil;
         } else {

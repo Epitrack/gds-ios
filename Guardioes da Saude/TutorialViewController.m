@@ -47,7 +47,6 @@
     self.indexTutorial = 0;
     self.arrImg = @[@"icon_logo_tutorial.png", @"imgTutorial01.png", @"imgTutorial02.png", @"imgTutorial03.png"];
     
-    
     UISwipeGestureRecognizer *rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipe:)];
     
     [self.imgBgTutorial addGestureRecognizer:rightSwipe];
