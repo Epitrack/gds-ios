@@ -34,8 +34,8 @@
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="27"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-gG-CRa">
-                    <rect key="frame" x="97" y="168" width="127" height="127"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-gG-CRa">
+                    <rect key="frame" x="102" y="168" width="119" height="119"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="WFf-gG-CRa" secondAttribute="height" multiplier="1:1" id="moq-70-qlW"/>
                     </constraints>
@@ -44,15 +44,15 @@
                         <action selector="btnGood:" destination="-1" eventType="touchUpInside" id="Uce-GY-tXI"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqr-cE-vQj">
-                    <rect key="frame" x="97" y="346" width="127" height="127"/>
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqr-cE-vQj">
+                    <rect key="frame" x="102" y="338" width="119" height="119"/>
                     <state key="normal" backgroundImage="icon_bad.png"/>
                     <connections>
                         <action selector="btnBad:" destination="-1" eventType="touchUpInside" id="uft-FN-30s"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-BE-l8U">
-                    <rect key="frame" x="143" y="303" width="35" height="21"/>
+                    <rect key="frame" x="143" y="293" width="35" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="cdf-lx-2nn"/>
                     </constraints>
@@ -61,7 +61,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-jz-Pvn">
-                    <rect key="frame" x="147" y="481" width="28" height="21"/>
+                    <rect key="frame" x="148" y="460" width="28" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="vQ8-Ub-S2v"/>
                     </constraints>
@@ -70,12 +70,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Alguns sinais e sintomas serão apresentados na próxima tela caso a opção &quot;Mal&quot; seja selecionada." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFF-RR-sCW">
-                    <rect key="frame" x="14" y="516" width="298" height="39"/>
+                    <rect key="frame" x="14" y="495" width="298" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="39" id="hH3-FO-eJT"/>
+                        <constraint firstAttribute="height" constant="60" id="hH3-FO-eJT"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="12"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
