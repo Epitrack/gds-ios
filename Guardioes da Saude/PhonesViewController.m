@@ -90,7 +90,8 @@
     
     cell.tag = indexPath.row;
     cell.textLabel.text = [phones objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = @">";
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.textColor = [UIColor colorWithRed:100.0/255.0f green:100.0/255.0f blue:100.0/255.0f alpha:1];
     
     return cell;
 }
@@ -164,5 +165,9 @@
     
     DetailPhoneViewController *detailPhoneViewController = [[DetailPhoneViewController alloc] init];
     [self.navigationController pushViewController:detailPhoneViewController animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
 }
 @end

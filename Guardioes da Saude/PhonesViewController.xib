@@ -28,6 +28,7 @@
                 <tableView clipsSubviews="YES" contentMode="left" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F6F-j4-BaW">
                     <rect key="frame" x="12" y="120" width="296" height="414"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="fCe-MR-KdE"/>
                         <outlet property="delegate" destination="-1" id="22k-pj-kay"/>
