@@ -488,6 +488,10 @@
 		CBA0E5441C5FA5EC0086315B /* img_profile09@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E5261C5FA5EC0086315B /* img_profile09@3x.png */; };
 		CBA4F47C1C73673200B6A99C /* logo_horizontal_about.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */; };
 		CBBC1E051C99905B0079A8D6 /* imgDialogTerms.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBC1E041C99905B0079A8D6 /* imgDialogTerms.png */; };
+		CBBC1E0E1C9B2A580079A8D6 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC1E0C1C9B2A580079A8D6 /* SignUpViewController.xib */; };
+		CBBC1E121C9B2A860079A8D6 /* SignUpDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC1E101C9B2A860079A8D6 /* SignUpDetailsViewController.xib */; };
+		CBBC1E191C9B31FE0079A8D6 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC1E181C9B31FE0079A8D6 /* SignUpViewController.m */; };
+		CBBC1E231C9B40890079A8D6 /* SignUpDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC1E221C9B40890079A8D6 /* SignUpDetailsViewController.m */; };
 		CBDDF5A51C77452E008853B2 /* SymptomRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDDF5A41C77452E008853B2 /* SymptomRequester.m */; };
 		CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */; };
 		CBDE6B241C80CA82007418FA /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */; };
@@ -1064,6 +1068,13 @@
 		CBA0E5261C5FA5EC0086315B /* img_profile09@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile09@3x.png"; sourceTree = "<group>"; };
 		CBA4F47B1C73673200B6A99C /* logo_horizontal_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_horizontal_about.png; sourceTree = "<group>"; };
 		CBBC1E041C99905B0079A8D6 /* imgDialogTerms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgDialogTerms.png; sourceTree = "<group>"; };
+		CBBC1E0C1C9B2A580079A8D6 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		CBBC1E101C9B2A860079A8D6 /* SignUpDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpDetailsViewController.xib; sourceTree = "<group>"; };
+		CBBC1E171C9B31FE0079A8D6 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		CBBC1E181C9B31FE0079A8D6 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		CBBC1E1A1C9B33510079A8D6 /* Guardioes da Saude-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Guardioes da Saude-Bridging-Header.h"; sourceTree = "<group>"; };
+		CBBC1E211C9B40890079A8D6 /* SignUpDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpDetailsViewController.h; sourceTree = "<group>"; };
+		CBBC1E221C9B40890079A8D6 /* SignUpDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpDetailsViewController.m; sourceTree = "<group>"; };
 		CBDDF5A31C77452E008853B2 /* SymptomRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomRequester.h; sourceTree = "<group>"; };
 		CBDDF5A41C77452E008853B2 /* SymptomRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomRequester.m; sourceTree = "<group>"; };
 		CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeTableViewCell.h; path = CellTable/NoticeTableViewCell.h; sourceTree = "<group>"; };
@@ -1173,6 +1184,7 @@
 				5221A8211BED30F1006659E2 /* Survey */,
 				5221A8201BED30CC006659E2 /* MapHealth */,
 				5221A81F1BED30BE006659E2 /* Diary */,
+				CBBC1E1A1C9B33510079A8D6 /* Guardioes da Saude-Bridging-Header.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1341,6 +1353,12 @@
 				52E6F0611C1B5AA900C88A08 /* ForgotPasswordViewController.h */,
 				52E6F0621C1B5AA900C88A08 /* ForgotPasswordViewController.m */,
 				52E6F0631C1B5AA900C88A08 /* ForgotPasswordViewController.xib */,
+				CBBC1E171C9B31FE0079A8D6 /* SignUpViewController.h */,
+				CBBC1E181C9B31FE0079A8D6 /* SignUpViewController.m */,
+				CBBC1E0C1C9B2A580079A8D6 /* SignUpViewController.xib */,
+				CBBC1E211C9B40890079A8D6 /* SignUpDetailsViewController.h */,
+				CBBC1E221C9B40890079A8D6 /* SignUpDetailsViewController.m */,
+				CBBC1E101C9B2A860079A8D6 /* SignUpDetailsViewController.xib */,
 			);
 			name = Wellcome;
 			sourceTree = "<group>";
@@ -2128,6 +2146,7 @@
 				CB362B301C7B48A800BE4F23 /* icon_home_onpress.png in Resources */,
 				52E727521BEA93B800B46945 /* fab_plus.png in Resources */,
 				CBA0E5431C5FA5EC0086315B /* img_profile09@2x.png in Resources */,
+				CBBC1E0E1C9B2A580079A8D6 /* SignUpViewController.xib in Resources */,
 				52E727B51BEA93B800B46945 /* icon_tutorial03@3x.png in Resources */,
 				52E727D91BEA93B800B46945 /* img_profile16.png in Resources */,
 				52E727811BEA93B800B46945 /* icon_lock@3x.png in Resources */,
@@ -2285,6 +2304,7 @@
 				528705CB1BF3AB5F00321985 /* iconPMMini@2x.png in Resources */,
 				52EBA74F1C11DD0E0019E1FA /* buttonGoogleDesable.png in Resources */,
 				52E6F09D1C20B18E00C88A08 /* iconPM@3x.png in Resources */,
+				CBBC1E121C9B2A860079A8D6 /* SignUpDetailsViewController.xib in Resources */,
 				52E727A41BEA93B800B46945 /* icon_profile@2x.png in Resources */,
 				5215BBBD1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib in Resources */,
 				52E727351BEA93B800B46945 /* BG_light@2x.png in Resources */,
@@ -2411,6 +2431,7 @@
 				25630CF61BDF96F90047FF07 /* ListSymptomsViewController.m in Sources */,
 				527782CA1C04CEB700251BF8 /* SelectAvatarViewController.m in Sources */,
 				52E6F0881C209A6B00C88A08 /* DetailPhoneViewController.m in Sources */,
+				CBBC1E191C9B31FE0079A8D6 /* SignUpViewController.m in Sources */,
 				527782D81C0CC9FD00251BF8 /* NoticeRequester.m in Sources */,
 				52E6F06F1C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
@@ -2431,6 +2452,7 @@
 				5215BBBC1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m in Sources */,
 				CBEF9AD21C75FD8800A0B036 /* ChangePasswordViewController.m in Sources */,
 				527D033D1C15C9AB00349551 /* SingleLocation.m in Sources */,
+				CBBC1E231C9B40890079A8D6 /* SignUpDetailsViewController.m in Sources */,
 				529BE1D81BF65ECE00692EEC /* TermsViewController.m in Sources */,
 				528C8B041BB82630003CFC91 /* ViewController.m in Sources */,
 				5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "TermsViewController.h"
 #import "CreateAccountSocialLoginViewController.h"
-#import "CreateAccountViewController.h"
+#import "SignUpViewController.h"
 #import <Google/Analytics.h>
 #import "UserRequester.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -49,7 +49,6 @@
     //[signIn signInSilently];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.login"]];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.me"]];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,8 +83,8 @@
 
 - (IBAction)btnAcceptAction:(id)sender {
     if (self.createType == EMAIL) {
-        CreateAccountViewController *createAccountCtrlView = [[CreateAccountViewController alloc] init];
-        [self.navigationController pushViewController:createAccountCtrlView animated:YES];
+        SignUpViewController *signUpView = [[SignUpViewController alloc] init];
+        [self.navigationController pushViewController:signUpView animated:YES];
     }else if (self.createType == SOCIAL_NETWORK){
         switch (self.socialNetwork) {
             case GdsTwitter:
