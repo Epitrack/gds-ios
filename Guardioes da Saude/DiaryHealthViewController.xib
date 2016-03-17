@@ -185,7 +185,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbG-QR-Q67" customClass="JTCalendarMenuView">
-                            <rect key="frame" x="49" y="240" width="321" height="50"/>
+                            <rect key="frame" x="36" y="240" width="352" height="50"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="v2i-w5-618"/>
@@ -222,7 +222,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hD-wp-0Gp">
-                            <rect key="frame" x="378" y="240" width="30" height="50"/>
+                            <rect key="frame" x="388" y="240" width="30" height="50"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <state key="normal" title="&gt;">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,7 +232,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3db-2V-C6F">
-                            <rect key="frame" x="11" y="240" width="30" height="49"/>
+                            <rect key="frame" x="6" y="240" width="30" height="49"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <state key="normal" title="&lt;">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,12 +266,12 @@
                         <constraint firstItem="VcX-PZ-fM2" firstAttribute="top" secondItem="rPt-0J-hQH" secondAttribute="bottom" constant="8" id="GSI-p5-nGN"/>
                         <constraint firstItem="Ear-Mj-uUr" firstAttribute="leading" secondItem="zLc-oO-3N3" secondAttribute="leading" constant="11" id="HaG-Nq-tPM"/>
                         <constraint firstItem="hxA-Jm-Clk" firstAttribute="baseline" secondItem="ZuG-vi-trr" secondAttribute="baseline" id="IZW-hP-AoW"/>
-                        <constraint firstItem="1hD-wp-0Gp" firstAttribute="leading" secondItem="rbG-QR-Q67" secondAttribute="trailing" constant="8" id="JOo-Pu-bQM"/>
+                        <constraint firstItem="1hD-wp-0Gp" firstAttribute="leading" secondItem="rbG-QR-Q67" secondAttribute="trailing" id="JOo-Pu-bQM"/>
                         <constraint firstItem="jLD-I9-J0R" firstAttribute="leading" secondItem="Ove-rq-rDW" secondAttribute="trailing" constant="15" id="Ksp-Cj-SgI"/>
                         <constraint firstItem="GCD-SY-klR" firstAttribute="leading" secondItem="zLc-oO-3N3" secondAttribute="leading" constant="9" id="Mxl-YY-Ul8"/>
                         <constraint firstItem="Ove-rq-rDW" firstAttribute="trailing" secondItem="Ear-Mj-uUr" secondAttribute="trailing" id="NQr-oN-vWn"/>
                         <constraint firstItem="Yxh-ee-xdx" firstAttribute="baseline" secondItem="raC-I5-aBB" secondAttribute="baseline" id="OqZ-0b-brq"/>
-                        <constraint firstItem="rbG-QR-Q67" firstAttribute="leading" secondItem="3db-2V-C6F" secondAttribute="trailing" constant="8" id="Q4t-aK-D8D"/>
+                        <constraint firstItem="rbG-QR-Q67" firstAttribute="leading" secondItem="3db-2V-C6F" secondAttribute="trailing" id="Q4t-aK-D8D"/>
                         <constraint firstItem="3db-2V-C6F" firstAttribute="top" secondItem="rbG-QR-Q67" secondAttribute="top" id="Qdr-Si-7RB"/>
                         <constraint firstItem="3db-2V-C6F" firstAttribute="bottom" secondItem="rbG-QR-Q67" secondAttribute="bottom" id="Rg2-8q-nyb"/>
                         <constraint firstItem="rbG-QR-Q67" firstAttribute="leading" secondItem="zLc-oO-3N3" secondAttribute="leading" constant="16" id="S6E-ev-JvD"/>
@@ -284,7 +284,7 @@
                         <constraint firstItem="Yxh-ee-xdx" firstAttribute="leading" secondItem="raC-I5-aBB" secondAttribute="trailing" constant="2" id="aWL-vZ-dUZ"/>
                         <constraint firstItem="hxA-Jm-Clk" firstAttribute="leading" secondItem="ZuG-vi-trr" secondAttribute="trailing" constant="6" id="ap0-HA-ogd"/>
                         <constraint firstAttribute="trailing" secondItem="rbG-QR-Q67" secondAttribute="trailing" constant="16" id="b6f-nc-ccV"/>
-                        <constraint firstItem="1hD-wp-0Gp" firstAttribute="trailing" secondItem="rPt-0J-hQH" secondAttribute="trailing" id="byp-6W-42N"/>
+                        <constraint firstItem="1hD-wp-0Gp" firstAttribute="trailing" secondItem="rPt-0J-hQH" secondAttribute="trailing" constant="10" id="byp-6W-42N"/>
                         <constraint firstItem="6WL-LD-dVn" firstAttribute="centerY" secondItem="vFy-Rm-50J" secondAttribute="centerY" id="cA2-Ux-RnA"/>
                         <constraint firstAttribute="trailing" secondItem="9xj-Lm-wip" secondAttribute="trailing" constant="30" id="eRC-Ha-gJr"/>
                         <constraint firstItem="rbG-QR-Q67" firstAttribute="top" secondItem="9xj-Lm-wip" secondAttribute="bottom" constant="56" id="ehd-aH-FkJ"/>
@@ -310,7 +310,7 @@
                         <constraint firstItem="1hD-wp-0Gp" firstAttribute="top" secondItem="rPt-0J-hQH" secondAttribute="bottom" constant="1" id="yPZ-Os-7dO"/>
                         <constraint firstItem="9xj-Lm-wip" firstAttribute="top" secondItem="zLc-oO-3N3" secondAttribute="top" constant="71" id="yXl-7g-gFA"/>
                         <constraint firstItem="rbG-QR-Q67" firstAttribute="top" secondItem="j8Z-fi-u9l" secondAttribute="bottom" constant="19" id="ysu-m3-iaD"/>
-                        <constraint firstItem="3db-2V-C6F" firstAttribute="leading" secondItem="rPt-0J-hQH" secondAttribute="leading" constant="-5" id="z4o-xr-Hhu"/>
+                        <constraint firstItem="3db-2V-C6F" firstAttribute="leading" secondItem="rPt-0J-hQH" secondAttribute="leading" constant="-10" id="z4o-xr-Hhu"/>
                         <constraint firstItem="j8Z-fi-u9l" firstAttribute="top" secondItem="aE1-9f-QVD" secondAttribute="bottom" constant="35" id="zUD-xh-jpD"/>
                         <constraint firstAttribute="trailing" secondItem="rPt-0J-hQH" secondAttribute="trailing" constant="16" id="zhk-tX-Iv1"/>
                     </constraints>
