@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbTotalReportBad;
 @property (weak, nonatomic) IBOutlet UILabel *lbFrequencyYear;
 
-
+- (IBAction)btnNextMonthAction:(id)sender;
+- (IBAction)btnPreviousMonthAction:(id)sender;
 
 @end

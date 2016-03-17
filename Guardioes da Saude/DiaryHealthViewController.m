@@ -644,4 +644,11 @@ const float _kCellHeight = 100.0f;
     }
 }
 
+- (IBAction)btnNextMonthAction:(id)sender {
+    [self.calendarContentView loadNextPageWithAnimation];
+}
+
+- (IBAction)btnPreviousMonthAction:(id)sender {
+    [self.calendarContentView loadPreviousPageWithAnimation];
+}
 @end
