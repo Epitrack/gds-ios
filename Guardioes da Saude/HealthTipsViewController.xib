@@ -114,7 +114,7 @@
                         <constraint firstAttribute="width" constant="215" id="gfe-GQ-TVy"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="20"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -123,15 +123,15 @@
                     </variation>
                 </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Dengue, Zika e Chikungunya" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WA-6E-hRp">
-                    <rect key="frame" x="78" y="100" width="215" height="34"/>
+                    <rect key="frame" x="53" y="100" width="250" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0WA-6E-hRp" secondAttribute="height" multiplier="214:33" constant="-5.4848484848484702" id="3MB-6O-xgi"/>
                         <constraint firstAttribute="height" constant="34" id="UBB-qg-Mbr"/>
-                        <constraint firstAttribute="width" constant="215" id="WcN-DV-XbU"/>
+                        <constraint firstAttribute="width" constant="250" id="WcN-DV-XbU"/>
                         <constraint firstAttribute="width" constant="214" id="hcr-NR-PBa"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="20"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -177,7 +177,7 @@
                         <constraint firstAttribute="width" constant="214" id="xIC-n9-ADP"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="20"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -207,7 +207,7 @@
                         <constraint firstAttribute="width" constant="215" id="jy9-vJ-2Bp"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="20"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -240,7 +240,7 @@
                         <constraint firstAttribute="width" secondItem="Qhl-w7-7oM" secondAttribute="height" multiplier="214:33" id="PXT-6U-vKR"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="20"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -275,7 +275,7 @@
                         <constraint firstAttribute="width" constant="214" id="drD-c6-uaB"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="20"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -312,7 +312,7 @@
                         <constraint firstAttribute="width" secondItem="zrb-lO-9HD" secondAttribute="height" multiplier="214:33" id="UxE-6y-hkZ"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="20"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -380,7 +380,7 @@
                 <constraint firstItem="YUq-5V-Heq" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="WRe-72-f18"/>
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="4:71" id="XKN-gB-0c2"/>
                 <constraint firstItem="XWG-oo-b1U" firstAttribute="top" secondItem="vA2-1E-AcB" secondAttribute="top" constant="15" id="Xuu-AU-rxP"/>
-                <constraint firstItem="0WA-6E-hRp" firstAttribute="centerX" secondItem="Tjd-ah-Bt1" secondAttribute="centerX" id="Y6X-yo-iTJ"/>
+                <constraint firstItem="0WA-6E-hRp" firstAttribute="centerX" secondItem="Tjd-ah-Bt1" secondAttribute="centerX" constant="-7.5" id="Y6X-yo-iTJ"/>
                 <constraint firstItem="rCu-ca-nc3" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="YQN-YH-zMv"/>
                 <constraint firstItem="mHd-ek-5C2" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="ZUF-Hj-Hoy"/>
                 <constraint firstItem="jag-nq-GfN" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.2" id="Zrb-Yk-0hB"/>
