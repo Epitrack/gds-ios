@@ -11,6 +11,8 @@
 #import "DateUtil.h"
 #import "ViewUtil.h"
 #import "UserRequester.h"
+#import "MBprogressHUD.h"
+#import "HomeViewController.h"
 #import <Google/Analytics.h>
 
 @interface SignUpDetailsViewController (){
@@ -164,12 +166,51 @@
 }
 
 - (void)populateUser{
+    User *singleUser = [User getInstance];
     
+    self.user.nick = self.txtNick.text;
+    [self.user setGenderByString:self.txtGender.text];
+    self.user.race = [self.txtRace.text lowercaseString];
+    self.user.dob = [DateUtil stringUSFromDate:dob];
+    self.user.lon = [NSString stringWithFormat:@"%g", longitude];
+    self.user.lat = [NSString stringWithFormat:@"%g", latitude];
+    self.user.app_token = singleUser.app_token;
+    self.user.platform = singleUser.platform;
+    self.user.client = singleUser.client;
 }
 
 - (IBAction)btnSignupAction:(id)sender {
     if ([self isValid]) {
-        
+        [self populateUser];
+        [userRequester createAccountWithUser:self.user andOnStart:^{
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        }andOnSuccess:^(User *userResponse){
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            User *singleUser = [User getInstance];
+            [singleUser cloneUser:userResponse];
+            
+            NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+            [preferences setValue:singleUser.app_token forKey:kAppTokenKey];
+            [preferences setValue:singleUser.user_token forKey:kUserTokenKey];
+            [preferences setValue:singleUser.nick forKey:kNickKey];
+            [preferences setValue:singleUser.avatarNumber forKey:kAvatarNumberKey];
+            
+            [preferences synchronize];
+            
+            HomeViewController *homeViewController = [[HomeViewController alloc] init];
+            [self.navigationController pushViewController:homeViewController animated:YES];
+        }andOnError:^(NSError *error){
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            NSString *msgError;
+            if (error && error.code == -1009) {
+                msgError = kMsgConnectionError;
+            }else{
+                msgError = @"O e-mail usado já está em uso";
+            }
+            
+            [self presentViewController:[ViewUtil showAlertWithMessage:msgError] animated:YES completion:nil];
+        }];
     }
 }
 
