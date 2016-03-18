@@ -77,6 +77,16 @@
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+    
+    if (self.user.email) {
+        self.consTopNick.constant = 8.0f;
+        self.lbEmail.hidden = YES;
+        self.txtEmail.hidden = YES;
+    }
+    
+    if (self.user.nick) {
+        [self.txtNick setText:self.user.nick];
+    }
 }
 
 /*
@@ -131,6 +141,13 @@
 }
 
 - (bool)isValid{
+    
+    if (!self.user.email && [self.txtEmail.text isEqualToString:@""]) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"E-mail é um campo obrigatório"];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    
     if ([self.txtNick.text isEqualToString:@""]) {
         UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Apelido é um campo obrigatório"];
         [self presentViewController:alert animated:YES completion:nil];
@@ -177,6 +194,10 @@
     self.user.app_token = singleUser.app_token;
     self.user.platform = singleUser.platform;
     self.user.client = singleUser.client;
+    
+    if (!self.user.email) {
+        self.user.email = self.txtEmail.text;
+    }
 }
 
 - (IBAction)btnSignupAction:(id)sender {

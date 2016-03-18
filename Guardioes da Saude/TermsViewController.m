@@ -8,6 +8,7 @@
 
 #import "TermsViewController.h"
 #import "CreateAccountSocialLoginViewController.h"
+#import "SignUpDetailsViewController.h"
 #import "SignUpViewController.h"
 #import <Google/Analytics.h>
 #import "UserRequester.h"
@@ -219,13 +220,10 @@
                                             UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Não foi possível realizar o cadastro. Tente novamente em alguns minutos!"];
                                             [self presentViewController:alert animated:YES completion:nil];
                                         } else {
-                                            CreateAccountSocialLoginViewController *createAccountCrlView = [[CreateAccountSocialLoginViewController alloc] init];
-                                            createAccountCrlView.socialNetwork = self.socialNetwork;
-                                            createAccountCrlView.socialNetworkId = token;
-                                            createAccountCrlView.email = user.email;
-                                            createAccountCrlView.nick = user.nick;
+                                            SignUpDetailsViewController *signupDetailView = [[SignUpDetailsViewController alloc] init];
+                                            signupDetailView.user = user;
                                             
-                                            [self.navigationController pushViewController:createAccountCrlView animated:YES];
+                                            [self.navigationController pushViewController:signupDetailView animated:YES];
                                         }
                                     }];
 }
