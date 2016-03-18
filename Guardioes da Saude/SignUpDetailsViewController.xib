@@ -89,6 +89,9 @@
                                     <state key="normal" title="Cadastre-se" backgroundImage="button_default.png">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btnSignupAction:" destination="-1" eventType="touchUpInside" id="R8a-eR-nyF"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>

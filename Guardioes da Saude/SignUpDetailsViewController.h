@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 #import "RMDateSelectionViewController.h"
+#import <CoreLocation/CoreLocation.h>
 @import DownPicker;
 
-@interface SignUpDetailsViewController : UIViewController
+@interface SignUpDetailsViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) User *user;
 
@@ -23,4 +24,5 @@
 
 - (IBAction)btnBackAction:(id)sender;
 - (IBAction)btnDobAction:(id)sender;
+- (IBAction)btnSignupAction:(id)sender;
 @end

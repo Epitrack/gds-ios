@@ -8,6 +8,7 @@
 
 #import "SignUpViewController.h"
 #import "SignUpDetailsViewController.h"
+#import "ViewUtil.h"
 #import <Google/Analytics.h>
 
 @interface SignUpViewController (){
@@ -54,6 +55,35 @@
 
 - (BOOL) isValid{
     if ([self.txtEmail.text isEqualToString:@""]) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"E-mail é um campo obrigatório"];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    
+    if ([self.txtPassword.text isEqualToString:@""]) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Senha é um campo obrigatório"];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    
+    if ([self.txtPassword.text length] < 6) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Senha precisa ter pelo menos 6 caracteres"];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    
+    if (![self.txtConfirmPassword.text isEqualToString:self.txtPassword.text]) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A senha e a confirmação devem ser iguais"];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    
+    user = [[User alloc] init];
+    user.email = self.txtEmail.text;
+    
+    if (![user isValidEmail]) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"E-mail inválido"];
+        [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
@@ -61,7 +91,13 @@
 }
 
 - (IBAction)btnSignupAction:(id)sender {
-    SignUpDetailsViewController *signupDetailsView = [[SignUpDetailsViewController alloc] init];
-    [self.navigationController pushViewController:signupDetailsView animated:YES];
+    if ([self isValid]) {
+        user.password = self.txtPassword.text;
+        
+        SignUpDetailsViewController *signupDetailsView = [[SignUpDetailsViewController alloc] init];
+        signupDetailsView.user = user;
+        
+        [self.navigationController pushViewController:signupDetailsView animated:YES];
+    }
 }
 @end
