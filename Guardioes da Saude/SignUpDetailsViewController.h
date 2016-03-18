@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
+#import "RMDateSelectionViewController.h"
+@import DownPicker;
 
 @interface SignUpDetailsViewController : UIViewController
+
+@property (weak, nonatomic) User *user;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnDob;
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
@@ -17,4 +22,5 @@
 
 
 - (IBAction)btnBackAction:(id)sender;
+- (IBAction)btnDobAction:(id)sender;
 @end

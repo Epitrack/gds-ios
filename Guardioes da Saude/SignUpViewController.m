@@ -10,7 +10,9 @@
 #import "SignUpDetailsViewController.h"
 #import <Google/Analytics.h>
 
-@interface SignUpViewController ()
+@interface SignUpViewController (){
+    User *user;
+}
 
 @end
 
@@ -48,6 +50,14 @@
 
 - (IBAction)btnBackAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (BOOL) isValid{
+    if ([self.txtEmail.text isEqualToString:@""]) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (IBAction)btnSignupAction:(id)sender {
