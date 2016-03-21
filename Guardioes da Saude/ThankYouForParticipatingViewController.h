@@ -10,22 +10,18 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import <TwitterKit/TwitterKit.h>
+#import "SurveyMap.h"
 
 @interface ThankYouForParticipatingViewController : UIViewController<FBSDKSharingDelegate>
 
-typedef enum{
-    GOOD_SYMPTON,
-    BAD_SYMPTON,
-    ZIKA
-} ScreenType;
-
-- (id) initWithType:(ScreenType) type;
+- (id) initWithType:(SurveyType) type;
 
 - (IBAction)btnContinue:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *txtBadSurvey;
 @property (weak, nonatomic) IBOutlet UIImageView *imgCheckSurvey;
 @property (weak, nonatomic) IBOutlet UIButton *btnFacebook;
 @property (weak, nonatomic) IBOutlet UIButton *btnTwitter;
+@property (weak, nonatomic) IBOutlet UILabel *lbMessage;
 - (IBAction)btnFacebookAction:(id)sender;
 - (IBAction)btnTwitterAction:(id)sender;
 - (IBAction)btnWhatsappAction:(id)sender;

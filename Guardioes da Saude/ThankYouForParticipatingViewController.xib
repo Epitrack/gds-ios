@@ -26,6 +26,7 @@
                 <outlet property="btnTwitter" destination="ypd-vZ-RP9" id="dOb-0d-low"/>
                 <outlet property="defaultView" destination="1co-Rv-BDI" id="cTr-k9-NHJ"/>
                 <outlet property="imgCheckSurvey" destination="zIx-1e-Tfy" id="SPG-q6-HyG"/>
+                <outlet property="lbMessage" destination="Run-7A-im4" id="P9w-F1-oqf"/>
                 <outlet property="txtBadSurvey" destination="yjK-KE-wnq" id="zUh-5y-NCF"/>
                 <outlet property="view" destination="P0O-cc-Vgz" id="ypd-9p-a6b"/>
                 <outlet property="zicaView" destination="RL8-hH-Swl" id="otH-ci-aAV"/>

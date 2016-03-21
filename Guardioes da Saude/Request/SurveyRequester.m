@@ -7,7 +7,7 @@
 
 - (void)createSurvey:(SurveyMap *)survey
           andOnStart:(void (^)())onStart
-        andOnSuccess:(void (^)(bool))onSuccess
+        andOnSuccess:(void (^)(SurveyType))onSuccess
           andOnError:(void (^)(NSError *))onError{
     
     User *user = [User getInstance];
@@ -45,7 +45,15 @@
    error:^(AFHTTPRequestOperation *operation, NSError *error){
        onError(error);
     }success:^(AFHTTPRequestOperation *operation, id responseObject){
-        onSuccess([responseObject[@"exantematica"] integerValue] != 0);
+        if ([responseObject[@"exantematica"] integerValue] != 0){
+            onSuccess(EXANTEMATICA);
+        } else if ([responseObject[@"diarreica"] integerValue] != 0) {
+            onSuccess(DIARREICA);
+        } else if ([responseObject[@"respiratoria"] integerValue] != 0) {
+            onSuccess(RESPIRATORIA);
+        } else{
+            onSuccess(BAD_SYMPTOM);
+        }
     }];
 }
 

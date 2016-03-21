@@ -156,16 +156,11 @@
                                andOnStart:^{
                                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                }
-                             andOnSuccess:^(bool isZika){
+                             andOnSuccess:^(SurveyType surveyType){
                                  [MBProgressHUD hideHUDForView:self.view animated:YES];
                                  
-                                 ScreenType type = BAD_SYMPTON;
-                                 if (isZika) {
-                                     type = ZIKA;
-                                 }
-                                 
                                  user.idHousehold = @"";
-                                 ThankYouForParticipatingViewController *thanksViewCtrl = [[ThankYouForParticipatingViewController alloc] initWithType:type];
+                                 ThankYouForParticipatingViewController *thanksViewCtrl = [[ThankYouForParticipatingViewController alloc] initWithType:surveyType];
                                  [self.navigationController pushViewController:thanksViewCtrl animated:YES];
                              }
                                andOnError:^(NSError *error){
