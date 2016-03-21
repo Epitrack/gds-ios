@@ -38,6 +38,7 @@ typedef enum operation{
 @property (weak, nonatomic) IBOutlet UIDownPicker *pickerRelationship;
 @property (weak, nonatomic) IBOutlet UILabel *lbParentesco;
 @property (weak, nonatomic) IBOutlet UIButton *btnChangePasswd;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constTopEmail;
 
 - (IBAction)btnDobAction:(id)sender;
 - (IBAction)btnSelectPicture:(id)sender;

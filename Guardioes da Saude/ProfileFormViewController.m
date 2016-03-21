@@ -39,6 +39,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.btnDob.layer.cornerRadius = 4;
+    [self.btnDob.layer setBorderWidth:1.0f];
+    [self.btnDob.layer setBorderColor:[[UIColor colorWithRed:223.0/255.f green:223.0/255.0f blue:223.0/255.0f alpha:1] CGColor]];
+    
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
     
@@ -114,7 +118,7 @@
     //Hide relationship
     [self.pickerRelationship removeFromSuperview];
     self.lbParentesco.hidden = YES;
-    self.topTxtEmailContraint.constant = 8;
+    self.constTopEmail.constant = 8;
     
     [self populateFormWithNick:self.user.nick
                         andDob:self.user.dob
@@ -188,6 +192,7 @@
     
     birthdate = [DateUtil dateFromStringUS:dob];
     [self updateBirthDate];
+    [self.btnDob setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     if ([gender isEqualToString:@"M"]) {
         self.pickerGender.text = listGender[0];
@@ -467,6 +472,8 @@
     RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
         birthdate = controller.contentView.date;
         [self updateBirthDate];
+        
+        [self.btnDob setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     }];
     
     RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
