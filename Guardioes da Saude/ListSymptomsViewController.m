@@ -208,20 +208,6 @@
     } andOnError:^(NSError *error){
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
-    
-    
-    symptoms = [[NSMutableArray alloc] init];
-    
-    Symptom *others;
-    
-    others = [[Symptom alloc] initWithName:@"Outros" andCode:@"outros"];
-    [symptoms addObject:others];
-    others = [[Symptom alloc] initWithName:@"Tive contato com alguém com um desses sintomas" andCode:@"hadContagiousContact"];
-    [symptoms addObject:others];
-    others = [[Symptom alloc] initWithName:@"Procurei um serviço de saúde" andCode:@"hadHealthCare"];
-    [symptoms addObject:others];
-    others = [[Symptom alloc] initWithName:@"Estive fora do Brasil nos últimos 14 dias" andCode:@"hadTravelledAbroad"];
-    [symptoms addObject:others];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
