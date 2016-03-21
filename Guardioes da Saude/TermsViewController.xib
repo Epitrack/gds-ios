@@ -23,7 +23,7 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_horizontal_about.png" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-a8-tCj">
                             <rect key="frame" x="62" y="29" width="197" height="90"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="90" id="c4D-PS-bR1"/>
+                                <constraint firstAttribute="width" secondItem="vSQ-a8-tCj" secondAttribute="height" multiplier="197:90" id="fH7-vV-8b6"/>
                             </constraints>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2iQ-BZ-aMh">
@@ -353,11 +353,14 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
                         <constraint firstItem="vSQ-a8-tCj" firstAttribute="width" secondItem="lUr-DF-2oL" secondAttribute="height" multiplier="217:568" id="85B-yN-MJp"/>
                         <constraint firstItem="2iQ-BZ-aMh" firstAttribute="leading" secondItem="lUr-DF-2oL" secondAttribute="leading" constant="8" id="C8f-FJ-SmO"/>
                         <constraint firstAttribute="bottom" secondItem="2iQ-BZ-aMh" secondAttribute="bottom" constant="16" id="I03-cx-v6X"/>
+                        <constraint firstItem="vSQ-a8-tCj" firstAttribute="leading" secondItem="lUr-DF-2oL" secondAttribute="leading" constant="62" id="VYF-JM-yRm"/>
                         <constraint firstItem="vSQ-a8-tCj" firstAttribute="top" secondItem="lUr-DF-2oL" secondAttribute="top" constant="29" id="Xva-PT-Epp"/>
+                        <constraint firstAttribute="trailing" secondItem="vSQ-a8-tCj" secondAttribute="trailing" constant="61" id="dJv-4a-NV1"/>
                         <constraint firstAttribute="bottom" secondItem="2iQ-BZ-aMh" secondAttribute="bottom" constant="49" id="dfZ-WJ-3oF"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
+                            <exclude reference="85B-yN-MJp"/>
                             <exclude reference="dfZ-WJ-3oF"/>
                         </mask>
                     </variation>
