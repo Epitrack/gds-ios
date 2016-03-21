@@ -209,6 +209,7 @@
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.tableSymptoms reloadData];
+        [self adjustHeightOfTableview];
     } andOnError:^(NSError *error){
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
@@ -287,16 +288,25 @@
 
         cell.selectedBackgroundView = bgColorView;
         
+        [self.view layoutIfNeeded];
         
-        if (indexPath.row == 16) {
+        if (indexPath.row == (symptoms.count-1)) {
             if ([selected containsIndex:indexPath.row]) {
                 self.txtPais.text = @"";
                 self.txtPais.enabled = NO;
                 self.txtPais.hidden = YES;
+                
+                self.topConfirmationConstraint.constant = 8.0;
             } else {
                 self.txtPais.hidden = NO;
                 self.txtPais.enabled = YES;
+                
+                self.topConfirmationConstraint.constant = 30.0;
             }
+            
+            [UIView animateWithDuration:.25 animations:^(){
+                [self.view layoutIfNeeded];
+            }];
         }
         
         Symptom *symptom = [symptoms objectAtIndex:indexPath.row];
@@ -357,5 +367,17 @@
 //    UIColor *color = [UIColor colorWithRed:(0/255.0) green:(105/255.0) blue:(216/255.0) alpha:1];
     [self.tableSymptoms setSeparatorColor:color];
     self.tableSymptoms.tableFooterView = [UIView new];
+}
+
+- (void)adjustHeightOfTableview
+{
+    CGFloat height = symptoms.count * 44;
+    
+    // now set the height constraint accordingly
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.tableViewHeightConstraint.constant = height;
+        [self.view setNeedsUpdateConstraints];
+    }];
 }
 @end
