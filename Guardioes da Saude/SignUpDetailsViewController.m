@@ -167,6 +167,12 @@
         return NO;
     }
     
+    if (yearsOld > 120) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade máxima para o usuário principal é 120 anos."];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    
     if ([self.txtGender.text isEqualToString:@""]) {
         UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Sexo é um campo obrigatório"];
         [self presentViewController:alert animated:YES completion:nil];

@@ -325,6 +325,15 @@
     if((diffDay/365) < 13){
         UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade mínima para o usuário principal é 13 anos."];
         [self presentViewController:alert animated:YES completion:nil];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        return;
+    }
+    
+    if((diffDay/365) > 120){
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade máxima para o usuário principal é 120 anos."];
+        [self presentViewController:alert animated:YES completion:nil];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        return;
     }
     
     if (!userUpdater.isValidEmail) {
