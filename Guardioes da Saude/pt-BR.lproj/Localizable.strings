@@ -39,3 +39,7 @@
 // SELECT TYPE CREATE VIEW
 "select_type_create.quick_access" = "Entre rapidamente com:";
 "select_type_create.or_email" = "Ou use seu e-mail:";
+
+// MODAL PRIV VIEW
+"modal_priv.safe_description" = "Nós nos preocupamos com a sua privacidade";
+"modal_priv.description" = "• Sua participação é voluntária e anônima\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Para maiores informações, consulte os Termos de Uso";
