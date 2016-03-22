@@ -35,3 +35,7 @@
 "tutorial.health_map_description" = "Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
 "tutorial.health_tips" = "Dicas de Saúde";
 "tutorial.health_tips_description" = "Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.";
+
+// SELECT TYPE CREATE VIEW
+"select_type_create.quick_access" = "Entre rapidamente com:";
+"select_type_create.or_email" = "Ou use seu e-mail:";
