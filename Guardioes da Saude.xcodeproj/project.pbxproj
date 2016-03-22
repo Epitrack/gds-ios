@@ -489,6 +489,8 @@
 		CBBC1E191C9B31FE0079A8D6 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC1E181C9B31FE0079A8D6 /* SignUpViewController.m */; };
 		CBBC1E231C9B40890079A8D6 /* SignUpDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC1E221C9B40890079A8D6 /* SignUpDetailsViewController.m */; };
 		CBBF75E61CA192060083C85A /* GDSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBF75E51CA192060083C85A /* GDSLabel.m */; };
+		CBBF75E91CA19AF00083C85A /* GDSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBF75E81CA19AF00083C85A /* GDSTextField.m */; };
+		CBBF75EC1CA19D170083C85A /* GDSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBF75EB1CA19D170083C85A /* GDSButton.m */; };
 		CBDDF5A51C77452E008853B2 /* SymptomRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDDF5A41C77452E008853B2 /* SymptomRequester.m */; };
 		CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */; };
 		CBDE6B241C80CA82007418FA /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */; };
@@ -1068,6 +1070,10 @@
 		CBBC1E221C9B40890079A8D6 /* SignUpDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpDetailsViewController.m; sourceTree = "<group>"; };
 		CBBF75E41CA192060083C85A /* GDSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSLabel.h; sourceTree = "<group>"; };
 		CBBF75E51CA192060083C85A /* GDSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSLabel.m; sourceTree = "<group>"; };
+		CBBF75E71CA19AF00083C85A /* GDSTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSTextField.h; sourceTree = "<group>"; };
+		CBBF75E81CA19AF00083C85A /* GDSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSTextField.m; sourceTree = "<group>"; };
+		CBBF75EA1CA19D170083C85A /* GDSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSButton.h; sourceTree = "<group>"; };
+		CBBF75EB1CA19D170083C85A /* GDSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSButton.m; sourceTree = "<group>"; };
 		CBDDF5A31C77452E008853B2 /* SymptomRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomRequester.h; sourceTree = "<group>"; };
 		CBDDF5A41C77452E008853B2 /* SymptomRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomRequester.m; sourceTree = "<group>"; };
 		CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeTableViewCell.h; path = CellTable/NoticeTableViewCell.h; sourceTree = "<group>"; };
@@ -1828,6 +1834,10 @@
 			children = (
 				CBBF75E41CA192060083C85A /* GDSLabel.h */,
 				CBBF75E51CA192060083C85A /* GDSLabel.m */,
+				CBBF75E71CA19AF00083C85A /* GDSTextField.h */,
+				CBBF75E81CA19AF00083C85A /* GDSTextField.m */,
+				CBBF75EA1CA19D170083C85A /* GDSButton.h */,
+				CBBF75EB1CA19D170083C85A /* GDSButton.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -2439,6 +2449,7 @@
 				524C142C1BEBDC55003A6C2D /* VacineViewController.m in Sources */,
 				524C143B1BEBE67C003A6C2D /* PreventionViewController.m in Sources */,
 				520CD0E21BED436700F24B45 /* EnterViewController.m in Sources */,
+				CBBF75E91CA19AF00083C85A /* GDSTextField.m in Sources */,
 				525A33221BECF3BA00B62E33 /* RearViewController.m in Sources */,
 				AAE38B371BF9211D009CD20B /* Constants.m in Sources */,
 				AAE38B451BFA5DD8009CD20B /* SumaryCalendar.m in Sources */,
@@ -2466,6 +2477,7 @@
 				25630CFA1BDFA2760047FF07 /* Symptom.m in Sources */,
 				CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */,
 				AAE38B3C1BFA1CAA009CD20B /* HouseholdRequester.m in Sources */,
+				CBBF75EC1CA19D170083C85A /* GDSButton.m in Sources */,
 				527782DB1C0DD31600251BF8 /* SingleNotice.m in Sources */,
 				525648161BFBF01000FE64AE /* ProfileListViewController.m in Sources */,
 				529BE1CE1BF62C8200692EEC /* AboutViewController.m in Sources */,

@@ -9,9 +9,16 @@
 
 // HOME SCREEN
 
-"#hello" = "Hello,";
+"#hello" = "Olá,";
 "#news" = "Notícias";
 "#map_health" = "Mapa da Saúde";
 "#tips_health" = "Dicas de Saúde";
 "#join_us" = "Participe Agora!";
 "#diary_health" = "Diáro da Saúde";
+
+// ENTER VIEW
+
+"#email" = "E-mail";
+"#password" = "Senha";
+"#sign_in" = "Entrar";
+"#forgot_password" = "Esqueceu a senha?";
