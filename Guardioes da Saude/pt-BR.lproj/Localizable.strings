@@ -48,3 +48,11 @@
 "forgot_password.label" = "Digite seu email e verifique a sua caixa de entrada.";
 "forgot_password.email" = "E-mail";
 "forgot_password.send" = "Enviar";
+
+// SIGN UP VIEW
+"sign_up.lb_email" = "E-mail:";
+"sign_up.tx_email" = "E-mail";
+"sign_up.lb_password" = "Senha:";
+"sign_up.tx_password" = "Senha";
+"sign_up.confirm_password" = "Repertir Senha";
+"sign_up.next" = "Próximo";
