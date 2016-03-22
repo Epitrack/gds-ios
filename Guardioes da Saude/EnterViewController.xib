@@ -52,7 +52,7 @@
                             </constraints>
                             <state key="normal">
                                 <attributedString key="attributedTitle">
-                                    <fragment content="#forgot_password">
+                                    <fragment content="enter.forgot_password">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <font key="NSFont" size="13" name="HelveticaNeue"/>
@@ -66,12 +66,12 @@
                                 <action selector="forgotPasswordAction:" destination="-1" eventType="touchUpInside" id="Ygj-Wn-J7k"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="#password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lEZ-rN-3BF" customClass="GDSTextField">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter.password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lEZ-rN-3BF" customClass="GDSTextField">
                             <rect key="frame" x="31" y="225" width="259" height="30"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="#email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1M-kQ-Cl5" customClass="GDSTextField">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter.email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1M-kQ-Cl5" customClass="GDSTextField">
                             <rect key="frame" x="31" y="187" width="259" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="p3o-rP-keI"/>
@@ -91,7 +91,7 @@
                                 <constraint firstAttribute="width" constant="259" id="H4c-WU-PCV"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
-                            <state key="normal" title="#sign_in" backgroundImage="button_default.png">
+                            <state key="normal" title="enter.sign_in" backgroundImage="button_default.png">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <variation key="default">

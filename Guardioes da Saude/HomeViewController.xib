@@ -34,8 +34,8 @@
                         <rect key="frame" x="20" y="190" width="280" height="22"/>
                     </variation>
                 </label>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehf-QY-O6S" userLabel="Label Ola" customClass="GDSLabel">
-                    <rect key="frame" x="25" y="137" width="63" height="41"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehf-QY-O6S" userLabel="Label Ola" customClass="GDSLabel">
+                    <rect key="frame" x="25" y="105" width="112" height="73"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Ehf-QY-O6S" secondAttribute="height" multiplier="20:13" id="LVR-zj-DQJ"/>
                     </constraints>
@@ -55,7 +55,7 @@
                         <rect key="frame" x="20" y="200" width="280" height="280"/>
                     </variation>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#news" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9t-CS-rTk" userLabel="Label Noticias" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.news" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9t-CS-rTk" userLabel="Label Noticias" customClass="GDSLabel">
                     <rect key="frame" x="25" y="225" width="134" height="13"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="o9t-CS-rTk" secondAttribute="height" multiplier="45:7" constant="50.142857142857139" id="czA-bu-FN0"/>
@@ -67,7 +67,7 @@
                         <rect key="frame" x="26" y="226" width="135" height="21"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="#map_health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3E-wn-XOc" userLabel="Label Mapa" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="home.map_health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3E-wn-XOc" userLabel="Label Mapa" customClass="GDSLabel">
                     <rect key="frame" x="159" y="216" width="136" height="31"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="E3E-wn-XOc" secondAttribute="height" multiplier="75:17" id="Bce-Ec-xdD"/>
@@ -79,7 +79,7 @@
                         <rect key="frame" x="162" y="226" width="138" height="21"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#tips_health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB7-Zb-hbF" userLabel="Label Dicas" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.tips_health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB7-Zb-hbF" userLabel="Label Dicas" customClass="GDSLabel">
                     <rect key="frame" x="37" y="442" width="115" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="PB7-Zb-hbF" secondAttribute="height" multiplier="129:16" id="y9t-b0-smZ"/>
@@ -91,7 +91,7 @@
                         <rect key="frame" x="26" y="477" width="129" height="16"/>
                     </variation>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#diary_health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olw-uU-G9T" userLabel="Label Diario" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.diary_health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olw-uU-G9T" userLabel="Label Diario" customClass="GDSLabel">
                     <rect key="frame" x="172" y="438" width="123" height="27"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="olw-uU-G9T" secondAttribute="height" multiplier="23:5" id="ojL-FI-c9U"/>
@@ -205,7 +205,7 @@
                         <action selector="btnJoinNow:" destination="-1" eventType="touchUpInside" id="Het-QS-paj"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#join_us" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-Ta-mYq" userLabel="Label PaticipeAgora" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.join_us" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-Ta-mYq" userLabel="Label PaticipeAgora" customClass="GDSLabel">
                     <rect key="frame" x="125" y="352" width="68" height="39"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Hig-Ta-mYq" secondAttribute="height" multiplier="23:8" constant="-44.125" id="6of-Q5-lZI"/>

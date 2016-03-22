@@ -8,30 +8,17 @@
 
 // HOME VIEW
 
-"#hello" = "Olá,";
-"#news" = "Notícias";
-"#map_health" = "Mapa da Saúde";
-"#tips_health" = "Dicas de Saúde";
-"#join_us" = "Participe Agora!";
-"#diary_health" = "Diáro da Saúde";
+"home.hello" = "Olá,";
+"home.news" = "Notícias";
+"home.map_health" = "Mapa da Saúde";
+"home.tips_health" = "Dicas de Saúde";
+"home.join_us" = "Participe Agora!";
+"home.diary_health" = "Diáro da Saúde";
 
 // ENTER VIEW
 
-"#email" = "E-mail";
-"#password" = "Senha";
-"#sign_in" = "Entrar";
-"#forgot_password" = "Esqueceu a senha?";
+"enter.email" = "E-mail";
+"enter.password" = "Senha";
+"enter.sign_in" = "Entrar";
+"enter.forgot_password" = "Esqueceu a senha?";
 
-// Screen CreateAccountSocialNetWork
-"nick" = "Apelido";
-"CreateAccountSocialNetWork.gender" = "Sexo2";
-"race" = "Cor/Raça";
-"dob"= "Data de Nascimento";
-"email_sample" = "email@exemplo.com.br";
-"fill_in_fiealds" = "Complete o cadastro a seguir para acessar o Guardiões da Saúde.";
-"select_gender" = "Selecione seu sexo";
-"select_race" = "Selecione sua Cor/Raça";
-"select_dob" = "Selecione sua data de nascimento.";
-"fill_in_fiealds" = "Preencha todos os campos do formulário.";
-"minmum_age" = "A idade mínima para o usuário principal é 13 anos.";
-"siginup_fail" = "Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso.";
