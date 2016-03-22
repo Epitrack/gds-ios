@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PharmacyViewController">
             <connections>
+                <outlet property="constPharmacyDetails" destination="v8D-Ia-X9P" id="e65-Nd-OnS"/>
+                <outlet property="lbPharmacyAddress" destination="gpD-hH-X6T" id="m4M-uQ-fsc"/>
+                <outlet property="lbPharmacyName" destination="T6j-D0-zGx" id="zRb-hf-JU9"/>
                 <outlet property="mapPharmacy" destination="X0H-hA-mhx" id="t9z-tE-4od"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,13 +21,43 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="X0H-hA-mhx">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </mapView>
+                <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIl-oH-Mpc">
+                    <rect key="frame" x="0.0" y="568" width="320" height="90"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farmácia Guararapes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6j-D0-zGx">
+                            <rect key="frame" x="8" y="8" width="304" height="27"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <color key="textColor" red="0.098039215690000001" green="0.46274509800000002" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Agamenom Magalhães" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpD-hH-X6T">
+                            <rect key="frame" x="8" y="39" width="304" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="T6j-D0-zGx" firstAttribute="top" secondItem="AIl-oH-Mpc" secondAttribute="top" constant="8" id="Dfz-Qu-5zD"/>
+                        <constraint firstAttribute="trailing" secondItem="T6j-D0-zGx" secondAttribute="trailing" constant="8" id="nGw-Rq-6rd"/>
+                        <constraint firstAttribute="height" constant="90" id="pgk-H0-wjd"/>
+                        <constraint firstAttribute="trailing" secondItem="gpD-hH-X6T" secondAttribute="trailing" constant="8" id="qRH-tN-d1N"/>
+                        <constraint firstItem="T6j-D0-zGx" firstAttribute="leading" secondItem="AIl-oH-Mpc" secondAttribute="leading" constant="8" id="rNG-Ww-Gmo"/>
+                        <constraint firstItem="gpD-hH-X6T" firstAttribute="leading" secondItem="T6j-D0-zGx" secondAttribute="leading" id="yt7-6O-Mz5"/>
+                        <constraint firstItem="gpD-hH-X6T" firstAttribute="top" secondItem="T6j-D0-zGx" secondAttribute="bottom" constant="4" id="zu5-GF-NuJ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="X0H-hA-mhx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="F59-Di-7Pb"/>
                 <constraint firstItem="X0H-hA-mhx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OLi-gQ-f7Y"/>
+                <constraint firstItem="AIl-oH-Mpc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="X19-qv-VrP"/>
+                <constraint firstAttribute="trailing" secondItem="AIl-oH-Mpc" secondAttribute="trailing" id="kKB-97-ghy"/>
                 <constraint firstAttribute="trailing" secondItem="X0H-hA-mhx" secondAttribute="trailing" id="m3t-ag-nhg"/>
                 <constraint firstAttribute="bottom" secondItem="X0H-hA-mhx" secondAttribute="bottom" id="roa-U4-fAt"/>
+                <constraint firstAttribute="bottom" secondItem="AIl-oH-Mpc" secondAttribute="bottom" constant="-90" id="v8D-Ia-X9P"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

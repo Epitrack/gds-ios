@@ -580,7 +580,8 @@
     [self doPost:[[self getUrl] stringByAppendingString:@"/email/log"]
           header:@{@"user_token": [User getInstance].user_token}
        parameter:@{@"title":title,
-                   @"text": text}
+                   @"text": text,
+                   @"email": [User getInstance].email}
            start:onStart
            error:^(AFHTTPRequestOperation *operation, NSError *error){
                onError(error);

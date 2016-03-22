@@ -14,4 +14,7 @@
 @property (retain, nonatomic) IBOutlet MKMapView *mapPharmacy;
 @property (nonatomic, retain) MKPolyline *routeLine; //your line
 @property (nonatomic, retain) MKPolylineView *routeLineView; //overlay view
+@property (weak, nonatomic) IBOutlet UILabel *lbPharmacyName;
+@property (weak, nonatomic) IBOutlet UILabel *lbPharmacyAddress;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constPharmacyDetails;
 @end

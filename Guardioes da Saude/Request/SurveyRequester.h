@@ -6,7 +6,7 @@
 
 - (void) createSurvey:(SurveyMap *) survey
            andOnStart:(void(^)()) onStart
-         andOnSuccess:(void(^)(bool)) onSuccess
+         andOnSuccess:(void(^)(SurveyType)) onSuccess
            andOnError:(void(^)(NSError *)) onError;
 
 - (void) getSummary: (User *) user

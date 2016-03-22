@@ -18,16 +18,16 @@ NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no co
 
 
 @interface ThankYouForParticipatingViewController (){
-    ScreenType screenType;
+    SurveyType surveyType;
 }
 
 @end
 
 @implementation ThankYouForParticipatingViewController
 
-- (id)initWithType:(ScreenType)type{
+- (id)initWithType:(SurveyType)type{
     self = [super init];
-    screenType = type;
+    surveyType = type;
     
     return self;
 }
@@ -38,19 +38,29 @@ NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no co
     self.navigationItem.title = @"Guardiões da Saúde";
     self.navigationItem.hidesBackButton = YES;
     
-    switch (screenType) {
-        case GOOD_SYMPTON:
+    switch (surveyType) {
+        case GOOD_SYMPTOM:
             self.zicaView.hidden = YES;
             self.defaultView.hidden = NO;
             self.txtBadSurvey.hidden = YES;
             break;
-        case BAD_SYMPTON:
+        case BAD_SYMPTOM:
             self.zicaView.hidden = YES;
             self.defaultView.hidden = NO;
             break;
-        case ZIKA:
+        case EXANTEMATICA:
             self.zicaView.hidden = NO;
             self.defaultView.hidden = YES;
+            break;
+        case DIARREICA:
+            self.zicaView.hidden = NO;
+            self.defaultView.hidden = YES;
+            self.lbMessage.text = @"Atenção: Procure a Unidade de Pronto Atendimento mais próxima.";
+            break;
+        case RESPIRATORIA:
+            self.zicaView.hidden = NO;
+            self.defaultView.hidden = YES;
+            self.lbMessage.text = @"Atenção: Procure a Unidade de Pronto Atendimento mais próxima.";
             break;
         default:
             break;

@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum SurveyType{
+    GOOD_SYMPTOM,
+    BAD_SYMPTOM,
+    EXANTEMATICA,
+    DIARREICA,
+    RESPIRATORIA
+} SurveyType;
+
 @interface SurveyMap : NSObject
 
 - (id) initWithLatitude:(NSString *) latitude andLongitude:(NSString *) longitude andSymptom:(NSString *) isSymptom;

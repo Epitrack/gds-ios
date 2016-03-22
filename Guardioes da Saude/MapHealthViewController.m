@@ -398,7 +398,7 @@
         self.constViewDetails.constant = -100;
         [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"fab_cancel.png"] forState:UIControlStateNormal];
     }else{
-        self.constViewDetails.constant = -423;
+        self.constViewDetails.constant = -400;
         [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"fab_plus.png"] forState:UIControlStateNormal];
     }
     

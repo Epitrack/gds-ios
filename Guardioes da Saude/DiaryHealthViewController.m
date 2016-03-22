@@ -587,7 +587,7 @@ const float _kCellHeight = 100.0f;
 
 - (UIImageView *) getState: (SumaryCalendar *) sumaryCalendar {
     
-    UIImageView * view = [[UIImageView alloc] initWithFrame: CGRectMake(9, 0, 23, 23)];
+    UIImageView * view = [[UIImageView alloc] initWithFrame: CGRectMake(self.calendarContentView.bounds.size.width/29, 0, 25, 24)];
     
     if (sumaryCalendar.noSymptomAmount == 0) {
         
@@ -644,4 +644,11 @@ const float _kCellHeight = 100.0f;
     }
 }
 
+- (IBAction)btnNextMonthAction:(id)sender {
+    [self.calendarContentView loadNextPageWithAnimation];
+}
+
+- (IBAction)btnPreviousMonthAction:(id)sender {
+    [self.calendarContentView loadPreviousPageWithAnimation];
+}
 @end

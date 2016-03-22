@@ -7,12 +7,12 @@
     <customFonts key="customFonts">
         <mutableArray key="Foco_Std_Bd.ttf">
             <string>Foco-Bold</string>
-            <string>Foco-Bold</string>
         </mutableArray>
         <mutableArray key="Foco_Std_Lt.ttf">
             <string>Foco-Light</string>
         </mutableArray>
         <mutableArray key="Foco_Std_Rg.ttf">
+            <string>Foco-Regular</string>
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
@@ -26,6 +26,7 @@
                 <outlet property="btnTwitter" destination="ypd-vZ-RP9" id="dOb-0d-low"/>
                 <outlet property="defaultView" destination="1co-Rv-BDI" id="cTr-k9-NHJ"/>
                 <outlet property="imgCheckSurvey" destination="zIx-1e-Tfy" id="SPG-q6-HyG"/>
+                <outlet property="lbMessage" destination="Run-7A-im4" id="P9w-F1-oqf"/>
                 <outlet property="txtBadSurvey" destination="yjK-KE-wnq" id="zUh-5y-NCF"/>
                 <outlet property="view" destination="P0O-cc-Vgz" id="ypd-9p-a6b"/>
                 <outlet property="zicaView" destination="RL8-hH-Swl" id="otH-ci-aAV"/>
@@ -111,14 +112,14 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Convide seus amigos para serem Guardiões." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Convide seus amigos para serem Guardiões da Saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
                             <rect key="frame" x="20" y="136" width="281" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="1Xq-LP-73E"/>
                                 <constraint firstAttribute="width" secondItem="XwE-05-RnE" secondAttribute="height" multiplier="281:31" id="VwB-Lv-YIB"/>
                             </constraints>
                             <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="12"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                     </subviews>
@@ -183,7 +184,7 @@
                                 <constraint firstAttribute="width" secondItem="dz9-zT-zhS" secondAttribute="height" multiplier="70:73" id="mIr-63-y2b"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a unidade de pronto atendimento mais próxima." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Run-7A-im4">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Run-7A-im4">
                             <rect key="frame" x="30" y="177" width="255" height="72"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Run-7A-im4" secondAttribute="height" multiplier="265:43" constant="-188.72093023255815" id="Aet-LU-KAA"/>

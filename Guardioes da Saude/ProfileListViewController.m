@@ -138,26 +138,39 @@
     
     Household *household = [users objectAtIndex:indexPath.row];
     
+    UIButton *btnDelete = [[UIButton alloc] init];
+    [btnDelete setImage:[UIImage imageNamed:@"iconTrash"] forState:UIControlStateNormal];
+    [btnDelete sizeToFit];
+    btnDelete.tag = indexPath.row;
+    [btnDelete addTarget:self action:@selector(btnDeleteHouseholdAction:) forControlEvents:UIControlEventTouchDown];
+    
     cell.textLabel.text = household.nick;
     cell.imageView.image = [UIImage imageNamed:household.picture];
-    cell.detailTextLabel.text = @">";
+    cell.accessoryView = btnDelete;
     
     return cell;
 }
 
+- (void)btnDeleteHouseholdAction:(UIButton *)sender{
+    [self deleteHouseHold:sender.tag];
+}
+
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self deleteHouseHold:indexPath.row];
+}
+
+- (void) deleteHouseHold: (int) index{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Deseja remover o perfil definitivamente? Essa operação é irreversível." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"SIM" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button YES");
         
-        Household *household = [users objectAtIndex:indexPath.row];
+        Household *household = [users objectAtIndex:index];
         
         [householdeRequest deleteHouseholdWithId:household.idHousehold
                                       andOnStart:^{ [MBProgressHUD showHUDAddedTo:self.view animated:YES];}
                                     andOnSuccess:^{
                                         [self loadHouseholds];
-                                        [users removeObjectAtIndex:indexPath.row];
+                                        [users removeObjectAtIndex:index];
                                         [self.tableViewProfile reloadData];
                                     }
                                       andOnError:^(NSError *error){
@@ -172,7 +185,7 @@
                                           [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                       }];
     }];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"NÃO" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Não" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button NO");
     }];
     [alert addAction:yesAction];

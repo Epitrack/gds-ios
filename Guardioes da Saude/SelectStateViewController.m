@@ -101,10 +101,10 @@
                        andOnStart:^{
                            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                        }
-                     andOnSuccess:^(bool isZika){
+                     andOnSuccess:^(SurveyType surveyType){
                          [MBProgressHUD hideHUDForView:self.view animated:YES];
                          user.idHousehold = @"";
-                         ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] initWithType:GOOD_SYMPTON];
+                         ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] initWithType:GOOD_SYMPTOM];
                          thankYouForParticipatingViewController.txtBadSurvey.hidden = YES;
                          [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
                      }

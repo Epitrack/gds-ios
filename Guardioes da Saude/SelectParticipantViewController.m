@@ -136,13 +136,13 @@ const float kCellHeight = 100.0f;
     [cell.contentView addSubview:horizontalScrollView];
     horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    horizontalScrollView.uniformItemSize = CGSizeMake(120, 100);
+    horizontalScrollView.uniformItemSize = CGSizeMake(136, 100);
     //this must be called after changing any size or margin property of this class to get acurrate margin
     [horizontalScrollView setItemsMarginOnce];
     NSMutableArray *buttons = [NSMutableArray array];
     NSMutableArray *households = user.household;
     
-    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:nil frame:CGRectMake(0, 0, 150, 150) avatar:@"icon_addmember" nick:@"Novo membro"];
+    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:nil frame:CGRectMake(0, 0, 150, 150) avatar:@"icon_addmember" nick:@"Novo integrante"];
     [buttons addObject:thumb];
     [thumb.button addTarget:self action:@selector(addNewMember) forControlEvents:UIControlEventTouchUpInside];
     

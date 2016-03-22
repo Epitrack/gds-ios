@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view from its nib.
     userRequester = [[UserRequester alloc] init];
     
-    self.navigationItem.title = @"Mudar senha";
+    self.navigationItem.title = @"Redefinir senha";
 }
 
 - (void)didReceiveMemoryWarning {

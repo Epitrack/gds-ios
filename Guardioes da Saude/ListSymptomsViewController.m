@@ -156,16 +156,11 @@
                                andOnStart:^{
                                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                }
-                             andOnSuccess:^(bool isZika){
+                             andOnSuccess:^(SurveyType surveyType){
                                  [MBProgressHUD hideHUDForView:self.view animated:YES];
                                  
-                                 ScreenType type = BAD_SYMPTON;
-                                 if (isZika) {
-                                     type = ZIKA;
-                                 }
-                                 
                                  user.idHousehold = @"";
-                                 ThankYouForParticipatingViewController *thanksViewCtrl = [[ThankYouForParticipatingViewController alloc] initWithType:type];
+                                 ThankYouForParticipatingViewController *thanksViewCtrl = [[ThankYouForParticipatingViewController alloc] initWithType:surveyType];
                                  [self.navigationController pushViewController:thanksViewCtrl animated:YES];
                              }
                                andOnError:^(NSError *error){
@@ -198,7 +193,10 @@
     [userRequester getSymptonsOnStart:^{
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }andSuccess:^(NSMutableArray *symptomsResponse){
-        symptoms = symptomsResponse;
+        symptoms = [[NSMutableArray alloc] init];
+        
+        [symptoms addObject:[[Symptom alloc] initWithName:@"Sintomas" andCode:@"sintomas"]];
+        [symptoms addObjectsFromArray: symptomsResponse];
         [symptoms addObject:[[Symptom alloc] initWithName:@"Outros" andCode:@"outros"]];
         [symptoms addObject:[[Symptom alloc] initWithName:@"Tive contato com alguém com um desses sintomas" andCode:@"hadContagiousContact"]];
         [symptoms addObject:[[Symptom alloc] initWithName:@"Procurei um serviço de saúde" andCode:@"hadHealthCare"]];
@@ -206,23 +204,10 @@
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.tableSymptoms reloadData];
+        [self adjustHeightOfTableview];
     } andOnError:^(NSError *error){
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
-    
-    
-    symptoms = [[NSMutableArray alloc] init];
-    
-    Symptom *others;
-    
-    others = [[Symptom alloc] initWithName:@"Outros" andCode:@"outros"];
-    [symptoms addObject:others];
-    others = [[Symptom alloc] initWithName:@"Tive contato com alguém com um desses sintomas" andCode:@"hadContagiousContact"];
-    [symptoms addObject:others];
-    others = [[Symptom alloc] initWithName:@"Procurei um serviço de saúde" andCode:@"hadHealthCare"];
-    [symptoms addObject:others];
-    others = [[Symptom alloc] initWithName:@"Estive fora do Brasil nos últimos 14 dias" andCode:@"hadTravelledAbroad"];
-    [symptoms addObject:others];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -241,7 +226,7 @@
     
     Symptom *symptom = [symptoms objectAtIndex:indexPath.row];
     
-    if ([symptom.code isEqualToString: @"outros"]) {
+    if ([symptom.code isEqualToString: @"outros"] || [symptom.code isEqualToString: @"sintomas"]) {
         cell.backgroundColor = bgCellColor;
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.font = [UIFont fontWithName:@"Foco-Bold" size:18];
@@ -284,19 +269,29 @@
 
         cell.selectedBackgroundView = bgColorView;
         
+        [self.view layoutIfNeeded];
         
-        if (indexPath.row == 16) {
+        if (indexPath.row == (symptoms.count-1)) {
             if ([selected containsIndex:indexPath.row]) {
                 self.txtPais.text = @"";
                 self.txtPais.enabled = NO;
                 self.txtPais.hidden = YES;
+                
+                self.topConfirmationConstraint.constant = 8.0;
             } else {
                 self.txtPais.hidden = NO;
                 self.txtPais.enabled = YES;
+                
+                self.topConfirmationConstraint.constant = 30.0;
             }
+            
+            [UIView animateWithDuration:.25 animations:^(){
+                [self.view layoutIfNeeded];
+            }];
         }
         
-        if (indexPath.row == 13) {
+        Symptom *symptom = [symptoms objectAtIndex:indexPath.row];
+        if ([symptom.code isEqualToString: @"outros"] || [symptom.code isEqualToString: @"sintomas"]) {
             [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
             [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = nil;
         } else {
@@ -353,5 +348,17 @@
 //    UIColor *color = [UIColor colorWithRed:(0/255.0) green:(105/255.0) blue:(216/255.0) alpha:1];
     [self.tableSymptoms setSeparatorColor:color];
     self.tableSymptoms.tableFooterView = [UIView new];
+}
+
+- (void)adjustHeightOfTableview
+{
+    CGFloat height = symptoms.count * 44;
+    
+    // now set the height constraint accordingly
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        self.tableViewHeightConstraint.constant = height;
+        [self.view setNeedsUpdateConstraints];
+    }];
 }
 @end

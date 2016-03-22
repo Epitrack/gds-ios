@@ -1,21 +1,37 @@
-/* 
-  Localizable.strings
-  
+/*
+ Localizable.strings
+ 
+ 
+ Created by Douglas Queiroz on 2/2/16.
+ 
+ */
 
-  Created by Douglas Queiroz on 2/2/16.
+// HOME VIEW
+"home.hello" = "Olá,";
+"home.news" = "Notícias";
+"home.map_health" = "Mapa da Saúde";
+"home.tips_health" = "Dicas de Saúde";
+"home.join_us" = "Participe Agora!";
+"home.diary_health" = "Diáro da Saúde";
 
-*/
+// ENTER VIEW
+"enter.email" = "E-mail";
+"enter.password" = "Senha";
+"enter.sign_in" = "Entrar";
+"enter.forgot_password" = "Esqueceu a senha?";
 
-// Screen CreateAccountSocialNetWork
-"nick" = "Apelido";
-"CreateAccountSocialNetWork.gender" = "Sexo2";
-"race" = "Cor/Raça";
-"dob"= "Data de Nascimento";
-"email_sample" = "email@exemplo.com.br";
-"fill_in_fiealds" = "Complete o cadastro a seguir para acessar o Guardiões da Saúde.";
-"select_gender" = "Selecione seu sexo";
-"select_race" = "Selecione sua Cor/Raça";
-"select_dob" = "Selecione sua data de nascimento.";
-"fill_in_fiealds" = "Preencha todos os campos do formulário.";
-"minmum_age" = "A idade mínima para o usuário principal é 13 anos.";
-"siginup_fail" = "Não foi possível realizar o cadastro. Verifique se todos os campos estão preenchidos corretamente ou se o e-mail utilizado já está em uso.";
+// SELECT TYPE LOGIN VIEW
+"select_type_login.quick_access" = "Entre rapidamente com:";
+"select_type_login.or_email" = "Ou use seu e-mail:";
+
+// TUTORIAL VIEW
+"tutorial.welcome" = "Bem-vindo!";
+"tutorial.preparing" = "Preparado para se tornar um Guardião da Saúde?";
+"tutorial.sign_up" = "Cadastre-se";
+"tutorial.sign_in" = "Entrar";
+"tutorial.how_is_your_health" = "Como está sua saúde?";
+"tutorial.check_your_symptoms" = "Maque na lista os sintomas que você apresenta.";
+"tutorial.health_map" = "Mapa da Saúde";
+"tutorial.health_map_description" = "Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
+"tutorial.health_tips" = "Dicas de Saúde";
+"tutorial.health_tips_description" = "Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.";

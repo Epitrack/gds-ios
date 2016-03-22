@@ -22,5 +22,7 @@
 - (void) loadSymptoms;
 @property (weak, nonatomic) IBOutlet UIDownPicker *txtPais;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConfirmationConstraint;
 
 @end
