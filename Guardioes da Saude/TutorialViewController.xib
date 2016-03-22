@@ -39,9 +39,9 @@
                 <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="tFN-vj-bKJ">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i40-G2-ylt">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i40-G2-ylt" customClass="GDSButton">
                     <rect key="frame" x="31" y="420" width="147" height="40"/>
-                    <state key="normal" title="Cadastre-se" backgroundImage="button_register.png"/>
+                    <state key="normal" title="tutorial.sign_up" backgroundImage="button_register.png"/>
                     <connections>
                         <action selector="btnNewUser:" destination="-1" eventType="touchUpInside" id="C0o-ei-rNh"/>
                     </connections>
@@ -49,21 +49,21 @@
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="9KC-Jm-W5d">
                     <rect key="frame" x="133" y="376" width="55" height="37"/>
                 </pageControl>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOh-dH-CHU">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOh-dH-CHU" customClass="GDSButton">
                     <rect key="frame" x="199" y="420" width="90" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="wHH-I4-uVZ"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
-                    <state key="normal" title="Entrar" backgroundImage="button_enter.png">
+                    <state key="normal" title="tutorial.sign_in" backgroundImage="button_enter.png">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="btnEnter:" destination="-1" eventType="touchUpInside" id="jiB-Yh-67Z"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem-vindo!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="P4r-TU-uZK" userLabel="Label BemVindo">
-                    <rect key="frame" x="112" y="12" width="97" height="23"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tutorial.welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="P4r-TU-uZK" userLabel="Label BemVindo" customClass="GDSLabel">
+                    <rect key="frame" x="90" y="12" width="140" height="23"/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="19"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -74,8 +74,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparado para se tornar um Guardião da Saúde?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-On-aDO">
-                    <rect key="frame" x="40" y="37" width="240" height="48"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tutorial.preparing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdV-On-aDO" customClass="GDSLabel">
+                    <rect key="frame" x="40" y="61" width="240" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="240" id="zf7-Ny-xaV"/>
                     </constraints>

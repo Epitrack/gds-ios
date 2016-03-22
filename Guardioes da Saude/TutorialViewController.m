@@ -91,8 +91,8 @@
         switch (self.indexTutorial) {
             case 0:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[1]];
-                self.txtTitle.text = @"Como está sua saúde?";
-                self.txtDescription.text = @"Maque na lista os sintomas que você apresenta.";
+                self.txtTitle.text = NSLocalizedString(@"tutorial.how_is_your_health", @"");
+                self.txtDescription.text = NSLocalizedString(@"tutorial.check_your_symptoms", @"");
                 self.lbDescription.hidden = YES;
                 self.indexTutorial += 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
@@ -101,8 +101,8 @@
                 break;
             case 1:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[2]];
-                self.txtTitle.text = @"Mapa da Saúde";
-                self.txtDescription.text = @"Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
+                self.txtTitle.text = NSLocalizedString(@"tutorial.health_map", @"");
+                self.txtDescription.text = NSLocalizedString(@"tutorial.health_map_description", @"");
                 self.lbDescription.hidden = YES;
                 self.indexTutorial += 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
@@ -111,8 +111,8 @@
                 break;
             case 2:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[3]];
-                self.txtTitle.text = @"Dicas de Saúde";
-                self.txtDescription.text = @"Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.";
+                self.txtTitle.text = NSLocalizedString(@"tutorial.health_tips", @"");
+                self.txtDescription.text = NSLocalizedString(@"tutorial.health_tips_description", @"");
                 self.lbDescription.hidden = YES;
                 self.indexTutorial += 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
@@ -130,8 +130,8 @@
         switch (self.indexTutorial) {
             case 3:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[2]];
-                self.txtTitle.text = @"Mapa da Saúde";
-                self.txtDescription.text = @"Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
+                self.txtTitle.text = NSLocalizedString(@"tutorial.health_map", @"");
+                self.txtDescription.text = NSLocalizedString(@"tutorial.health_map_description", @"");
                 self.lbDescription.hidden = YES;
                 self.indexTutorial -= 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
@@ -139,8 +139,8 @@
                 break;
             case 2:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[1]];
-                self.txtTitle.text = @"Como está sua saúde?";
-                self.txtDescription.text = @"Maque na lista os sintomas que você apresenta.";
+                self.txtTitle.text = NSLocalizedString(@"tutorial.how_is_your_health", @"");
+                self.txtDescription.text = NSLocalizedString(@"tutorial.check_your_symptoms", @"");
                 self.lbDescription.hidden = YES;
                 self.indexTutorial -= 1;
                 [self.pageControl setCurrentPage:self.indexTutorial];
@@ -149,7 +149,7 @@
                 break;
             case 1:
                 self.imgTutorial.image = [UIImage imageNamed:self.arrImg[0]];
-                self.txtTitle.text = @"Bem-vindo";
+                self.txtTitle.text = NSLocalizedString(@"tutorial.welcome", @"");
                 self.txtDescription.text = @"";
                 self.lbDescription.hidden = NO;
                 self.indexTutorial -= 1;

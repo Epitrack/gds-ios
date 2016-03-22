@@ -23,3 +23,15 @@
 // SELECT TYPE LOGIN VIEW
 "select_type_login.quick_access" = "Entre rapidamente com:";
 "select_type_login.or_email" = "Ou use seu e-mail:";
+
+// TUTORIAL VIEW
+"tutorial.welcome" = "Bem-vindo!";
+"tutorial.preparing" = "Preparado para se tornar um Guardião da Saúde?";
+"tutorial.sign_up" = "Cadastre-se";
+"tutorial.sign_in" = "Entrar";
+"tutorial.how_is_your_health" = "Como está sua saúde?";
+"tutorial.check_your_symptoms" = "Maque na lista os sintomas que você apresenta.";
+"tutorial.health_map" = "Mapa da Saúde";
+"tutorial.health_map_description" = "Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
+"tutorial.health_tips" = "Dicas de Saúde";
+"tutorial.health_tips_description" = "Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.";
