@@ -33,6 +33,7 @@
 "select_type_login.user_not_found" = "Cadastro não encontrado!";
 
 // TUTORIAL VIEW
+"tutorial.tutorial" = "Tutorial";
 "tutorial.welcome" = "Bem-vindo!";
 "tutorial.preparing" = "Preparado para se tornar um Guardião da Saúde?";
 "tutorial.sign_up" = "Cadastre-se";

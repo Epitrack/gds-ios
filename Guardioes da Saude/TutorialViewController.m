@@ -62,7 +62,7 @@
     
     if (self.hideButtons) {
         self.contsPagPanel.constant = -10;
-        self.navigationItem.title = @"Tutorial";
+        self.navigationItem.title = NSLocalizedString(@"tutorial.tutorial", @"");
         self.navigationItem.hidesBackButton = NO;
         self.imageConstraint.constant = 20;
         [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
