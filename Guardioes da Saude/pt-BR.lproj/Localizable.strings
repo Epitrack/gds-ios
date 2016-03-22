@@ -6,6 +6,10 @@
  
  */
 
+// CONSTANT MSGs
+"constant.check_connection" = "Por favor verifique sua conexão!";
+"constant.comunication_error" = "Ocorreu um erro de comunição!";
+
 // HOME VIEW
 "home.hello" = "Olá,";
 "home.news" = "Notícias";
@@ -23,6 +27,10 @@
 // SELECT TYPE LOGIN VIEW
 "select_type_login.quick_access" = "Entre rapidamente com:";
 "select_type_login.or_email" = "Ou use seu e-mail:";
+"select_type_login.facebook_error" = "Erro ao logar com o facebook.";
+"select_type_login.operation_canceled" = "Operação cancelada.";
+"select_type_login.twitter_error" = "Erro ao logar com o Twitter.";
+"select_type_login.user_not_found" = "Cadastro não encontrado!";
 
 // TUTORIAL VIEW
 "tutorial.welcome" = "Bem-vindo!";

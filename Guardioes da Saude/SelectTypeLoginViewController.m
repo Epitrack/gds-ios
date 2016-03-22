@@ -168,7 +168,10 @@ didDisconnectWithUser:(GIDGoogleUser *)user
          if (error) {
              [MBProgressHUD hideHUDForView:self.view animated:YES];
              
-             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Erro ao logar com o Facebook." preferredStyle:UIAlertControllerStyleActionSheet];
+             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                            message:NSLocalizedString(@"select_type_login.facebook_error", @"")
+                                                                     preferredStyle:UIAlertControllerStyleActionSheet];
+             
              UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                  NSLog(@"You pressed button OK");
              }];
@@ -177,7 +180,9 @@ didDisconnectWithUser:(GIDGoogleUser *)user
          } else if (result.isCancelled) {
              [MBProgressHUD hideHUDForView:self.view animated:YES];
              
-             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação cancelada." preferredStyle:UIAlertControllerStyleActionSheet];
+             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                            message:NSLocalizedString(@"select_type_login.operation_canceled", @"")
+                                                                     preferredStyle:UIAlertControllerStyleActionSheet];
              UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                  NSLog(@"You pressed button OK");
              }];
@@ -228,7 +233,9 @@ didDisconnectWithUser:(GIDGoogleUser *)user
         } else {
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Erro ao logar com o Twitter." preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                           message:NSLocalizedString(@"select_type_login.twitter_error", @"")
+                                                                    preferredStyle:UIAlertControllerStyleActionSheet];
             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                 NSLog(@"You pressed button OK");
             }];
@@ -258,11 +265,11 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
                                         NSString *errorMsg;
                                         if (error && error.code == -1009) {
-                                            errorMsg = kMsgConnectionError;
+                                            errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                         } else if(error) {
-                                            errorMsg = kMsgApiError;
+                                            errorMsg = NSLocalizedString(kMsgApiError, @"");
                                         }else{
-                                            errorMsg = @"Cadastro não encontrado!";
+                                            errorMsg = NSLocalizedString(@"select_type_login.user_not_found", @"");
                                         }
                                         
                                         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
@@ -277,9 +284,9 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                      [MBProgressHUD hideHUDForView:self.view animated:YES];
                      NSString *errorMsg;
                      if (error && error.code == -1009) {
-                         errorMsg = kMsgConnectionError;
+                         errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                      } else if(error) {
-                         errorMsg = kMsgApiError;
+                         errorMsg = NSLocalizedString(kMsgApiError, @"");
                      }else{
                          errorMsg = @"Cadastro não encontrado!";
                      }
