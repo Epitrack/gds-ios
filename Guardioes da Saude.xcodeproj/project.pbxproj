@@ -26,8 +26,6 @@
 		25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A19BD61BC46CE800F08FA9 /* TutorialViewController.m */; };
 		25F3B2381BDC8C540014BC30 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25F3B2371BDC8C540014BC30 /* HomeViewController.xib */; };
 		42539894F3953B2154415BAC /* SingleHousehold.m in Sources */ = {isa = PBXBuildFile; fileRef = 42539CCCC760718C03D2A1B9 /* SingleHousehold.m */; };
-		520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */; };
-		520158FA1BE3CD9D00982856 /* DetailMapHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */; };
 		5206C4341C2C1EF4003D0C83 /* DownPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5206C4331C2C1EF4003D0C83 /* DownPicker.framework */; };
 		520CD0D51BED3DB800F24B45 /* SelectTypeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520CD0D31BED3DB800F24B45 /* SelectTypeLoginViewController.m */; };
 		520CD0D61BED3DB800F24B45 /* SelectTypeLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520CD0D41BED3DB800F24B45 /* SelectTypeLoginViewController.xib */; };
@@ -529,9 +527,6 @@
 		25F3B2371BDC8C540014BC30 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		42539B3348EBF190EF21DFD5 /* SingleHousehold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleHousehold.h; sourceTree = "<group>"; };
 		42539CCCC760718C03D2A1B9 /* SingleHousehold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleHousehold.m; sourceTree = "<group>"; };
-		520158F61BE3CD9D00982856 /* DetailMapHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMapHealthViewController.h; sourceTree = "<group>"; };
-		520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMapHealthViewController.m; sourceTree = "<group>"; };
-		520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMapHealthViewController.xib; sourceTree = "<group>"; };
 		5206C4331C2C1EF4003D0C83 /* DownPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DownPicker.framework; path = "Pods/../build/Debug-iphoneos/DownPicker.framework"; sourceTree = "<group>"; };
 		520CD0D21BED3DB800F24B45 /* SelectTypeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeLoginViewController.h; sourceTree = "<group>"; };
 		520CD0D31BED3DB800F24B45 /* SelectTypeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTypeLoginViewController.m; sourceTree = "<group>"; };
@@ -1202,9 +1197,6 @@
 		5221A8201BED30CC006659E2 /* MapHealth */ = {
 			isa = PBXGroup;
 			children = (
-				520158F61BE3CD9D00982856 /* DetailMapHealthViewController.h */,
-				520158F71BE3CD9D00982856 /* DetailMapHealthViewController.m */,
-				520158F81BE3CD9D00982856 /* DetailMapHealthViewController.xib */,
 				5250D73D1BE29B27006E8A63 /* MapHealthViewController.h */,
 				5250D73E1BE29B27006E8A63 /* MapHealthViewController.m */,
 				5250D73F1BE29B27006E8A63 /* MapHealthViewController.xib */,
@@ -2258,7 +2250,6 @@
 				52E727AB1BEA93B800B46945 /* icon_security@3x.png in Resources */,
 				52D2BC841BF12EBF007C9C09 /* icon_pin_bad@2x.png in Resources */,
 				52E727751BEA93B800B46945 /* icon_help_n_faq@3x.png in Resources */,
-				520158FA1BE3CD9D00982856 /* DetailMapHealthViewController.xib in Resources */,
 				528705C91BF3AB5F00321985 /* iconDefesacivilMini@3x.png in Resources */,
 				528705CC1BF3AB5F00321985 /* iconPMMini@3x.png in Resources */,
 				52E727891BEA93B800B46945 /* icon_logo_tutorial@2x.png in Resources */,
@@ -2467,7 +2458,6 @@
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
 				CBBF75E61CA192060083C85A /* GDSLabel.m in Sources */,
 				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,
-				520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */,
 				CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */,
 				520EB7191C21EF670054D818 /* ZikaViewController.m in Sources */,
 				528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */,

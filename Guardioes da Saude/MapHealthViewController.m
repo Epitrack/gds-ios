@@ -10,7 +10,6 @@
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
 #import "SurveyMap.h"
-#import "DetailMapHealthViewController.h"
 #import "DetailMap.h"
 #import "MapPinAnnotation.h"
 #import "LocationUtil.h"
@@ -375,12 +374,6 @@
     
     [self.pieChartView setData: data];
     [self.pieChartView setNeedsDisplay];
-}
-
-- (IBAction)showDetailMapHealth:(id)sender {
-    DetailMapHealthViewController *detailMapHealthViewController = [[DetailMapHealthViewController alloc] init];
-    [self.navigationController pushViewController:detailMapHealthViewController animated:YES];
-    
 }
 
 - (IBAction)showDetailMapPlus:(id)sender {
