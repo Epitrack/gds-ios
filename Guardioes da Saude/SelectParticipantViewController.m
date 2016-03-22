@@ -136,7 +136,7 @@ const float kCellHeight = 100.0f;
     [cell.contentView addSubview:horizontalScrollView];
     horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    horizontalScrollView.uniformItemSize = CGSizeMake(137, 100);
+    horizontalScrollView.uniformItemSize = CGSizeMake(136, 100);
     //this must be called after changing any size or margin property of this class to get acurrate margin
     [horizontalScrollView setItemsMarginOnce];
     NSMutableArray *buttons = [NSMutableArray array];
