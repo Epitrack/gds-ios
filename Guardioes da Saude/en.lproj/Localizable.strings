@@ -43,3 +43,9 @@
 // MODAL PRIV VIEW
 "modal_priv.safe_description" = "Nós nos preocupamos com a sua privacidade";
 "modal_priv.description" = "• Sua participação é voluntária e anônima\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Para maiores informações, consulte os Termos de Uso";
+
+// FORGOT PASSWORD VIEW
+"forgot_password.label" = "Digite seu email e verifique a sua caixa de entrada.";
+"forgot_password.email" = "E-mail";
+"forgot_password.send" = "Enviar";
+
