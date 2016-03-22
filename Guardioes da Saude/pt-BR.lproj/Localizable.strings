@@ -56,3 +56,17 @@
 "sign_up.tx_password" = "Senha";
 "sign_up.confirm_password" = "Repertir Senha";
 "sign_up.next" = "Próximo";
+
+// SIGN UP DETAILS VIEW
+"sign_up_details.lb_email" = "E-mail:";
+"sign_up_details.tx_email" = "E-mail";
+"sign_up_details.lb_nick" = "Apelido:";
+"sign_up_details.tx_nick" = "Apelido";
+"sign_up_details.lb_dob" = "Data de Nascimento:";
+"sign_up_details.lb_gender" = "Sexo";
+"sign_up_details.tx_gender" = "Selecione seu sexo";
+"sign_up_details.lb_race" = "Cor/Raça:";
+"sign_up_details.tx_race" = "Selecione sua Cor/Raça";
+"sign_up_details.sign_up" = "Cadastre-se";
+"sign_up_details.select" = "Selecionar";
+"sign_up_details.cancel" = "Cancelar";

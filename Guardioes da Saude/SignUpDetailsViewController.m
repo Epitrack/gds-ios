@@ -39,15 +39,14 @@
     
     // Setup down pickers
     (void)[self.txtGender initWithData:[Constants getGenders]];
-    [self.txtGender.DownPicker setToolbarCancelButtonText:@"Cancelar"];
-    [self.txtGender.DownPicker setPlaceholder:@"Selecione seu sexo"];
-    [self.txtGender.DownPicker setToolbarCancelButtonText:@"Cancelar"];
-    [self.txtGender.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    [self.txtGender.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_gender", @"")];
+    [self.txtGender.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"sign_up_details.cancel", @"")];
+    [self.txtGender.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"sign_up_details.select", @"")];
     
     (void)[self.txtRace initWithData: [Constants getRaces]];
-    [self.txtRace.DownPicker setPlaceholder:@"Seleciona Cor/Raça"];
-    [self.txtRace.DownPicker setToolbarCancelButtonText:@"Cancelar"];
-    [self.txtRace.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    [self.txtRace.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_race", @"")];
+    [self.txtRace.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"sign_up_details.cancel", @"")];
+    [self.txtRace.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"sign_up_details.select", @"")];
     
     dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
