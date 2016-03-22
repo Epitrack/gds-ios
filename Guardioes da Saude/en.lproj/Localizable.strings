@@ -20,3 +20,6 @@
 "enter.sign_in" = "Entrar";
 "enter.forgot_password" = "Esqueceu a senha?";
 
+// SELECT TYPE LOGIN VIEW
+"select_type_login.quick_access" = "Entre rapidamente com:";
+"select_type_login.or_email" = "Ou use seu e-mail:";

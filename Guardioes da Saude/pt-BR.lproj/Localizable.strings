@@ -1,13 +1,12 @@
-/* 
-  Localizable.strings
-  
-
-  Created by Douglas Queiroz on 2/2/16.
-
-*/
+/*
+ Localizable.strings
+ 
+ 
+ Created by Douglas Queiroz on 2/2/16.
+ 
+ */
 
 // HOME VIEW
-
 "home.hello" = "Olá,";
 "home.news" = "Notícias";
 "home.map_health" = "Mapa da Saúde";
@@ -16,9 +15,11 @@
 "home.diary_health" = "Diáro da Saúde";
 
 // ENTER VIEW
-
 "enter.email" = "E-mail";
 "enter.password" = "Senha";
 "enter.sign_in" = "Entrar";
 "enter.forgot_password" = "Esqueceu a senha?";
 
+// SELECT TYPE LOGIN VIEW
+"select_type_login.quick_access" = "Entre rapidamente com:";
+"select_type_login.or_email" = "Ou use seu e-mail:";
