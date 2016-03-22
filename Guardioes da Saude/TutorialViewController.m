@@ -8,7 +8,6 @@
 
 #import "TutorialViewController.h"
 #import "SelectTypeLoginViewController.h"
-#import "CreateAccountViewController.h"
 #import "SelectTypeCreateAccoutViewController.h"
 #import "SWRevealViewController.h"
 #import "User.h"

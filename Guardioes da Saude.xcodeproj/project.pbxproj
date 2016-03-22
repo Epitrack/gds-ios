@@ -41,8 +41,6 @@
 		520EB71A1C21EF670054D818 /* ZikaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520EB7181C21EF670054D818 /* ZikaViewController.xib */; };
 		5215BBBC1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215BBBA1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m */; };
 		5215BBBD1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5215BBBB1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib */; };
-		5215BBC61BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5215BBC31BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m */; };
-		5215BBC71BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5215BBC41BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib */; };
 		522360BF1BE9176D006D0598 /* DetailMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 522360BE1BE9176D006D0598 /* DetailMap.m */; };
 		524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524C141B1BEBC697003A6C2D /* NoticeViewController.m */; };
 		524C141E1BEBC697003A6C2D /* NoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524C141C1BEBC697003A6C2D /* NoticeViewController.xib */; };
@@ -135,8 +133,6 @@
 		529BE1E31BF8C68B00692EEC /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1E11BF8C68B00692EEC /* ReportViewController.xib */; };
 		529BE1E51BF8DD4100692EEC /* notice_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1E41BF8DD4100692EEC /* notice_header.png */; };
 		529BE1E81BF9053D00692EEC /* Notice.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1E71BF9053D00692EEC /* Notice.m */; };
-		52D15DD21BFBCA3E00FC31F3 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D15DD01BFBCA3E00FC31F3 /* CreateAccountViewController.m */; };
-		52D15DD31BFBCA3E00FC31F3 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D15DD11BFBCA3E00FC31F3 /* CreateAccountViewController.xib */; };
 		52D15DD71BFBCA8100FC31F3 /* DiaryHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D15DD41BFBCA8100FC31F3 /* DiaryHealthViewController.xib */; };
 		52D15DD81BFBCA8100FC31F3 /* DiaryHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D15DD51BFBCA8100FC31F3 /* DiaryHealthViewController.m */; };
 		52D2BC7A1BF12EBF007C9C09 /* BG_blur_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D2BC411BF12EBE007C9C09 /* BG_blur_menu.png */; };
@@ -551,9 +547,6 @@
 		5215BBB91BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeCreateAccoutViewController.h; sourceTree = "<group>"; };
 		5215BBBA1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTypeCreateAccoutViewController.m; sourceTree = "<group>"; };
 		5215BBBB1BFF21D900070EC4 /* SelectTypeCreateAccoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectTypeCreateAccoutViewController.xib; sourceTree = "<group>"; };
-		5215BBC31BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountSocialLoginViewController.m; sourceTree = "<group>"; };
-		5215BBC41BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountSocialLoginViewController.xib; sourceTree = "<group>"; };
-		5215BBC51BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountSocialLoginViewController.h; sourceTree = "<group>"; };
 		52199CB61C2C58310033A949 /* THCalendarDatePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = THCalendarDatePicker.framework; path = "Pods/../build/Debug-iphoneos/THCalendarDatePicker.framework"; sourceTree = "<group>"; };
 		522360BD1BE9176D006D0598 /* DetailMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailMap.h; path = "Guardioes da Saude/DetailMap.h"; sourceTree = "<group>"; };
 		522360BE1BE9176D006D0598 /* DetailMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailMap.m; path = "Guardioes da Saude/DetailMap.m"; sourceTree = "<group>"; };
@@ -681,9 +674,6 @@
 		529BE1E41BF8DD4100692EEC /* notice_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notice_header.png; sourceTree = "<group>"; };
 		529BE1E61BF9053D00692EEC /* Notice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notice.h; path = "Guardioes da Saude/Notice.h"; sourceTree = "<group>"; };
 		529BE1E71BF9053D00692EEC /* Notice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notice.m; path = "Guardioes da Saude/Notice.m"; sourceTree = "<group>"; };
-		52D15DCF1BFBCA3E00FC31F3 /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
-		52D15DD01BFBCA3E00FC31F3 /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
-		52D15DD11BFBCA3E00FC31F3 /* CreateAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
 		52D15DD41BFBCA8100FC31F3 /* DiaryHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryHealthViewController.xib; sourceTree = "<group>"; };
 		52D15DD51BFBCA8100FC31F3 /* DiaryHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryHealthViewController.m; sourceTree = "<group>"; };
 		52D15DD61BFBCA8100FC31F3 /* DiaryHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryHealthViewController.h; sourceTree = "<group>"; };
@@ -1330,12 +1320,6 @@
 		5221A82C1BED34E6006659E2 /* Wellcome */ = {
 			isa = PBXGroup;
 			children = (
-				5215BBC51BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.h */,
-				5215BBC31BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m */,
-				5215BBC41BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib */,
-				52D15DCF1BFBCA3E00FC31F3 /* CreateAccountViewController.h */,
-				52D15DD01BFBCA3E00FC31F3 /* CreateAccountViewController.m */,
-				52D15DD11BFBCA3E00FC31F3 /* CreateAccountViewController.xib */,
 				520CD0DF1BED436700F24B45 /* EnterViewController.h */,
 				520CD0E01BED436700F24B45 /* EnterViewController.m */,
 				520CD0E11BED436700F24B45 /* EnterViewController.xib */,
@@ -2114,7 +2098,6 @@
 				52E6F0991C20B18E00C88A08 /* bgWhite@3x.png in Resources */,
 				52E6F09B1C20B18E00C88A08 /* bgWhite@2x.png in Resources */,
 				52E727851BEA93B800B46945 /* icon_logo_splash.png in Resources */,
-				52D15DD31BFBCA3E00FC31F3 /* CreateAccountViewController.xib in Resources */,
 				52E727341BEA93B800B46945 /* BG_light.png in Resources */,
 				529BE1E51BF8DD4100692EEC /* notice_header.png in Resources */,
 				52E727E91BEA93B800B46945 /* input_floatbox_register_email@2x.png in Resources */,
@@ -2330,7 +2313,6 @@
 				52EBA74E1C11DD0E0019E1FA /* buttonFacebookDesable@3x.png in Resources */,
 				52E6F07D1C208E6600C88A08 /* cardList@3x.png in Resources */,
 				52EBA7541C11DD0E0019E1FA /* buttonTwitterDesable@3x.png in Resources */,
-				5215BBC71BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.xib in Resources */,
 				528705C81BF3AB5F00321985 /* iconDefesacivilMini@2x.png in Resources */,
 				52E727C11BEA93B800B46945 /* img_profile02.png in Resources */,
 				52E727461BEA93B800B46945 /* button_register.png in Resources */,
@@ -2488,7 +2470,6 @@
 				525648161BFBF01000FE64AE /* ProfileListViewController.m in Sources */,
 				529BE1CE1BF62C8200692EEC /* AboutViewController.m in Sources */,
 				52518A1F1C19FC4800B86D5E /* ModalPrivViewController.m in Sources */,
-				52D15DD21BFBCA3E00FC31F3 /* CreateAccountViewController.m in Sources */,
 				52518A141C19B6E500B86D5E /* LaunchScreenViewController.m in Sources */,
 				520CD0D51BED3DB800F24B45 /* SelectTypeLoginViewController.m in Sources */,
 				AAE38B421BFA2A09009CD20B /* Sumary.m in Sources */,
@@ -2504,7 +2485,6 @@
 				CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */,
 				528705B91BF3744600321985 /* PhonesViewController.m in Sources */,
 				B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */,
-				5215BBC61BFF36EE00070EC4 /* CreateAccountSocialLoginViewController.m in Sources */,
 				B23CB178C86EEA8A7C4AF3CE /* MapPinAnnotation.m in Sources */,
 				42539894F3953B2154415BAC /* SingleHousehold.m in Sources */,
 			);
