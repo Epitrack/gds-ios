@@ -492,6 +492,7 @@
 		CBBC1E121C9B2A860079A8D6 /* SignUpDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBC1E101C9B2A860079A8D6 /* SignUpDetailsViewController.xib */; };
 		CBBC1E191C9B31FE0079A8D6 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC1E181C9B31FE0079A8D6 /* SignUpViewController.m */; };
 		CBBC1E231C9B40890079A8D6 /* SignUpDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBC1E221C9B40890079A8D6 /* SignUpDetailsViewController.m */; };
+		CBBF75E61CA192060083C85A /* GDSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBF75E51CA192060083C85A /* GDSLabel.m */; };
 		CBDDF5A51C77452E008853B2 /* SymptomRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDDF5A41C77452E008853B2 /* SymptomRequester.m */; };
 		CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */; };
 		CBDE6B241C80CA82007418FA /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */; };
@@ -1075,6 +1076,8 @@
 		CBBC1E1A1C9B33510079A8D6 /* Guardioes da Saude-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Guardioes da Saude-Bridging-Header.h"; sourceTree = "<group>"; };
 		CBBC1E211C9B40890079A8D6 /* SignUpDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpDetailsViewController.h; sourceTree = "<group>"; };
 		CBBC1E221C9B40890079A8D6 /* SignUpDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpDetailsViewController.m; sourceTree = "<group>"; };
+		CBBF75E41CA192060083C85A /* GDSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSLabel.h; sourceTree = "<group>"; };
+		CBBF75E51CA192060083C85A /* GDSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSLabel.m; sourceTree = "<group>"; };
 		CBDDF5A31C77452E008853B2 /* SymptomRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomRequester.h; sourceTree = "<group>"; };
 		CBDDF5A41C77452E008853B2 /* SymptomRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomRequester.m; sourceTree = "<group>"; };
 		CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeTableViewCell.h; path = CellTable/NoticeTableViewCell.h; sourceTree = "<group>"; };
@@ -1176,6 +1179,7 @@
 		25A19BD81BC4B05700F08FA9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CBBF75E31CA191D10083C85A /* Components */,
 				CBDE6B1F1C80CA29007418FA /* CellTables */,
 				5221A82C1BED34E6006659E2 /* Wellcome */,
 				5221A8241BED3172006659E2 /* Home */,
@@ -1835,6 +1839,15 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		CBBF75E31CA191D10083C85A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CBBF75E41CA192060083C85A /* GDSLabel.h */,
+				CBBF75E51CA192060083C85A /* GDSLabel.m */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		CBDE6B1F1C80CA29007418FA /* CellTables */ = {
 			isa = PBXGroup;
 			children = (
@@ -2459,6 +2472,7 @@
 				529BE1E21BF8C68B00692EEC /* ReportViewController.m in Sources */,
 				529BE1E81BF9053D00692EEC /* Notice.m in Sources */,
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
+				CBBF75E61CA192060083C85A /* GDSLabel.m in Sources */,
 				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,
 				520158F91BE3CD9D00982856 /* DetailMapHealthViewController.m in Sources */,
 				CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */,

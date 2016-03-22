@@ -6,6 +6,15 @@
 
 */
 
+// HOME SCREEN
+
+"#hello" = "Hello,";
+"#news" = "Notícias";
+"#map_health" = "Mapa da Saúde";
+"#tips_health" = "Dicas de Saúde";
+"#join_us" = "Participe Agora!";
+"#diary_health" = "Diáro da Saúde";
+
 // Screen CreateAccountSocialNetWork
 "nick" = "Apelido";
 "CreateAccountSocialNetWork.gender" = "Sexo2";

@@ -5,3 +5,13 @@
   Created by Douglas Queiroz on 2/2/16.
 
 */
+
+
+// HOME SCREEN
+
+"#hello" = "Hello,";
+"#news" = "Notícias";
+"#map_health" = "Mapa da Saúde";
+"#tips_health" = "Dicas de Saúde";
+"#join_us" = "Participe Agora!";
+"#diary_health" = "Diáro da Saúde";
