@@ -57,6 +57,8 @@
 "forgot_password.label" = "Digite seu email e verifique a sua caixa de entrada.";
 "forgot_password.email" = "E-mail";
 "forgot_password.send" = "Enviar";
+"forgot_password.success" = "Email enviado com sucesso.";
+"forgot_password.user_not_found" = "E-mail não encontrado!";
 
 // SIGN UP VIEW
 "sign_up.lb_email" = "E-mail:";
@@ -65,6 +67,11 @@
 "sign_up.tx_password" = "Senha";
 "sign_up.confirm_password" = "Repertir Senha";
 "sign_up.next" = "Próximo";
+"sign_up.email_required" = "E-mail é um campo obrigatório";
+"sign_up.password_required" = "Senha é um campo obrigatório";
+"sign_up.min_char_password" = "Senha precisa ter pelo menos 6 caracteres";
+"sign_up.invalid_password_confirmation" = "A senha e a confirmação devem ser iguais";
+"sign_up.invalid_email" = "E-mail inválido";
 
 // SIGN UP DETAILS VIEW
 "sign_up_details.lb_email" = "E-mail:";
@@ -72,6 +79,7 @@
 "sign_up_details.lb_nick" = "Apelido:";
 "sign_up_details.tx_nick" = "Apelido";
 "sign_up_details.lb_dob" = "Data de Nascimento:";
+"sign_up_details.tx_dob_placeholder" = "Selecione sua data de Nascimento.";
 "sign_up_details.lb_gender" = "Sexo";
 "sign_up_details.tx_gender" = "Selecione seu sexo";
 "sign_up_details.lb_race" = "Cor/Raça:";
@@ -79,3 +87,12 @@
 "sign_up_details.sign_up" = "Cadastre-se";
 "sign_up_details.select" = "Selecionar";
 "sign_up_details.cancel" = "Cancelar";
+"sign_up_details.email_required" = "E-mail é um campo obrigatório";
+"sign_up_details.nick_required" = "Apelido é um campo obrigatório";
+"sign_up_details.dob_required" = "Data de nascimento é um campo obrigatório";
+"sign_up_details.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
+"sign_up_details.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
+"sign_up_details.gender_required" = "Sexo é um campo obrigatório";
+"sign_up_details.race_required" = "Cor/Raça é um campo obrigatório";
+"sign_up_details.email_already_used" = "O e-mail usado já está em uso";
+"sign_up_details.without_localization" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";

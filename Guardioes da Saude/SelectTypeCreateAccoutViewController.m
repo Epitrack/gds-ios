@@ -171,13 +171,4 @@ dismissViewController:(UIViewController *)viewController {
     TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
     [self.navigationController pushViewController:tutorialViewController animated:YES];
 }
-
-- (void)showTermsRequiredMsg {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Você precisa aceitar os termos de uso antes de continuar." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        NSLog(@"You pressed button OK");
-    }];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
-}
 @end

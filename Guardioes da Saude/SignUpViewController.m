@@ -55,25 +55,25 @@
 
 - (BOOL) isValid{
     if ([self.txtEmail.text isEqualToString:@""]) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"E-mail é um campo obrigatório"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up.email_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
     if ([self.txtPassword.text isEqualToString:@""]) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Senha é um campo obrigatório"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up.password_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
     if ([self.txtPassword.text length] < 6) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Senha precisa ter pelo menos 6 caracteres"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up.min_char_password", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
     if (![self.txtConfirmPassword.text isEqualToString:self.txtPassword.text]) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A senha e a confirmação devem ser iguais"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up.invalid_password_confirmation", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
@@ -82,7 +82,7 @@
     user.email = self.txtEmail.text;
     
     if (![user isValidEmail]) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"E-mail inválido"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up.invalid_email", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
