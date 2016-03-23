@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Sobre";
+    self.navigationItem.title = NSLocalizedString(@"about.title", @"");
     
     self.navigationItem.hidesBackButton = YES;
     

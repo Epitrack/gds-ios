@@ -9,6 +9,8 @@
 // CONSTANT MSGs
 "constant.check_connection" = "Por favor verifique sua conexão!";
 "constant.comunication_error" = "Ocorreu um erro de comunição!";
+"constant.yes" = "Sim";
+"constant.no" = "Não";
 
 // HOME VIEW
 "home.hello" = "Olá,";
@@ -96,3 +98,14 @@
 "sign_up_details.race_required" = "Cor/Raça é um campo obrigatório";
 "sign_up_details.email_already_used" = "O e-mail usado já está em uso";
 "sign_up_details.without_localization" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
+
+// MENU VIEW
+"menu.home" = "Início";
+"menu.profile" = "Perfil";
+"menu.about" = "Sobre";
+"menu.help" = "Ajuda";
+"menu.sign_out" = "Sair";
+"menu.are_you_sure_sign_out" = "Tem certeza que deseja sair do aplicativo?";
+
+// About VIEW
+"about.title" = "Sobre";
