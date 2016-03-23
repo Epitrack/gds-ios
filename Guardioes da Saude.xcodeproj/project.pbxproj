@@ -125,8 +125,6 @@
 		529BE1D41BF6598300692EEC /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1D21BF6598300692EEC /* HelpViewController.xib */; };
 		529BE1D81BF65ECE00692EEC /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1D61BF65ECE00692EEC /* TermsViewController.m */; };
 		529BE1D91BF65ECE00692EEC /* TermsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1D71BF65ECE00692EEC /* TermsViewController.xib */; };
-		529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */; };
-		529BE1DE1BF6696900692EEC /* TutorialHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */; };
 		529BE1E21BF8C68B00692EEC /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529BE1E01BF8C68B00692EEC /* ReportViewController.m */; };
 		529BE1E31BF8C68B00692EEC /* ReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1E11BF8C68B00692EEC /* ReportViewController.xib */; };
 		529BE1E51BF8DD4100692EEC /* notice_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 529BE1E41BF8DD4100692EEC /* notice_header.png */; };
@@ -448,6 +446,7 @@
 		AAE38B4B1BFA80AF009CD20B /* SumaryLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B4A1BFA80AF009CD20B /* SumaryLocation.m */; };
 		B23CB178C86EEA8A7C4AF3CE /* MapPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */; };
 		B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */; };
+		CB05C73B1CA3316D00B2F0D4 /* GDSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05C73A1CA3316D00B2F0D4 /* GDSTextView.m */; };
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB362B2F1C7B48A800BE4F23 /* icon_home_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */; };
 		CB362B301C7B48A800BE4F23 /* icon_home_onpress.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2E1C7B48A800BE4F23 /* icon_home_onpress.png */; };
@@ -662,9 +661,6 @@
 		529BE1D51BF65ECE00692EEC /* TermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsViewController.h; sourceTree = "<group>"; };
 		529BE1D61BF65ECE00692EEC /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
 		529BE1D71BF65ECE00692EEC /* TermsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TermsViewController.xib; sourceTree = "<group>"; };
-		529BE1DA1BF6696900692EEC /* TutorialHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialHelpViewController.h; sourceTree = "<group>"; };
-		529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialHelpViewController.m; sourceTree = "<group>"; };
-		529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialHelpViewController.xib; sourceTree = "<group>"; };
 		529BE1DF1BF8C68B00692EEC /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
 		529BE1E01BF8C68B00692EEC /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		529BE1E11BF8C68B00692EEC /* ReportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportViewController.xib; sourceTree = "<group>"; };
@@ -1016,6 +1012,8 @@
 		B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPinAnnotation.m; sourceTree = "<group>"; };
 		B23CB8937DECB07E8EB03052 /* MapPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPinAnnotation.h; sourceTree = "<group>"; };
 		B64BF5E84CA7A154D7E24D31 /* Pods_Guardioes_da_Saude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guardioes_da_Saude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB05C7391CA3316D00B2F0D4 /* GDSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSTextView.h; sourceTree = "<group>"; };
+		CB05C73A1CA3316D00B2F0D4 /* GDSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSTextView.m; sourceTree = "<group>"; };
 		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
 		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
 		CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home_default.png; sourceTree = "<group>"; };
@@ -1293,9 +1291,6 @@
 				529BE1D51BF65ECE00692EEC /* TermsViewController.h */,
 				529BE1D61BF65ECE00692EEC /* TermsViewController.m */,
 				529BE1D71BF65ECE00692EEC /* TermsViewController.xib */,
-				529BE1DA1BF6696900692EEC /* TutorialHelpViewController.h */,
-				529BE1DB1BF6696900692EEC /* TutorialHelpViewController.m */,
-				529BE1DC1BF6696900692EEC /* TutorialHelpViewController.xib */,
 				529BE1DF1BF8C68B00692EEC /* ReportViewController.h */,
 				529BE1E01BF8C68B00692EEC /* ReportViewController.m */,
 				529BE1E11BF8C68B00692EEC /* ReportViewController.xib */,
@@ -1830,6 +1825,8 @@
 				CBBF75E81CA19AF00083C85A /* GDSTextField.m */,
 				CBBF75EA1CA19D170083C85A /* GDSButton.h */,
 				CBBF75EB1CA19D170083C85A /* GDSButton.m */,
+				CB05C7391CA3316D00B2F0D4 /* GDSTextView.h */,
+				CB05C73A1CA3316D00B2F0D4 /* GDSTextView.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -2030,7 +2027,6 @@
 				52E727E11BEA93B800B46945 /* img_profile06@3x.png in Resources */,
 				52E727131BEA93B800B46945 /* icon_tips_vaccines@2x.png in Resources */,
 				524C142D1BEBDC55003A6C2D /* VacineViewController.xib in Resources */,
-				529BE1DE1BF6696900692EEC /* TutorialHelpViewController.xib in Resources */,
 				52E727781BEA93B800B46945 /* icon_home@3x.png in Resources */,
 				52E727791BEA93B800B46945 /* icon_info_blue.png in Resources */,
 				25630CF71BDF96F90047FF07 /* ListSymptomsViewController.xib in Resources */,
@@ -2432,8 +2428,8 @@
 				52E6F06F1C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
+				CB05C73B1CA3316D00B2F0D4 /* GDSTextView.m in Sources */,
 				52EBA7581C1209EF0019E1FA /* PharmacyGoogleMapsViewController.m in Sources */,
-				529BE1DD1BF6696900692EEC /* TutorialHelpViewController.m in Sources */,
 				5256481B1BFCF96100FE64AE /* ProfileFormViewController.m in Sources */,
 				52E6F0AA1C20B6AC00C88A08 /* Phones.m in Sources */,
 				2548B9E41BDEA8750004E00F /* SelectStateViewController.m in Sources */,

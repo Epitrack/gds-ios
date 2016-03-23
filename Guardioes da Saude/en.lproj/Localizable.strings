@@ -11,6 +11,7 @@
 "constant.comunication_error" = "Ocorreu um erro de comunição!";
 "constant.yes" = "Sim";
 "constant.no" = "Não";
+"constant.ok" = "OK";
 
 // HOME VIEW
 "home.hello" = "Olá,";
@@ -106,3 +107,32 @@
 "menu.help" = "Ajuda";
 "menu.sign_out" = "Sair";
 "menu.are_you_sure_sign_out" = "Tem certeza que deseja sair do aplicativo?";
+
+// About VIEW
+"about.title" = "Sobre";
+
+// HELP VIEW
+"help.tutorial" = "Tutorial";
+"help.terms" = "Termos e Políticas";
+"help.options" = "Opções";
+"help.contact_us" = "Entre em contato";
+"help.report_bug" = "Relatar errors no aplicativo";
+
+// TERMS VIEW
+"terms.title" = "Termos e Políticas";
+"terms.facebook_error" = "Erro ao logar com o Facebook.";
+"terms.operation_canceled" = "Operação cancelada.";
+"terms.social_network_in_using" = "Cadastro realizado anterioremente com essa rede social.";
+"terms.sociel_network_error" = "Não foi possível realizar o cadastro. Tente novamente em alguns minutos!";
+"terms.decline" = "Não aceito";
+"terms.i_agree" = "Aceito";
+
+// REPORT VIEW
+"report.title" = "Relatar Erros";
+"report.required_filds" = "Assunto e/ou mensagem não informados.";
+"report.success" = "Mensagem enviada com sucesso. Obrigado!";
+"report.error" = "Não foi possível enviar o e-mail. Tente novamente em alguns minutos.";
+"report.decription" = "Caso você tenha encontrado alguma dificuldade em utilizar o Guardiões da Saúde, preencha o formulário abaixo e envie sua mensagem para nossa equipe de especialistas.";
+"report.subject" = "Assunto";
+"report.describe_problem" = "Descreva o problema:";
+"report.send" = "Enviar";

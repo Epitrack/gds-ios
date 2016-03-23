@@ -42,7 +42,7 @@
                                                                          style:UIBarButtonItemStyleBordered target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
-    options = @[@"Tutorial", @"Termos e Políticas"];
+    options = @[NSLocalizedString(@"help.tutorial", @""), NSLocalizedString(@"help.terms", @"")];
     //@"iconHelpRelatar"
     optionsIcons = @[@"iconTutorial", @"iconTerms"];
     
@@ -121,9 +121,9 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0)
-        return @"Opções";
+        return NSLocalizedString(@"help.options", @"");
     else if (section == 1)
-        return @"Entre em contato";
+        return NSLocalizedString(@"help.contact_us", @"");
     else
         return @" ";
 }
@@ -145,24 +145,14 @@
         cell.textLabel.text = contactUs[indexPath.row];
     }else {
         cell.imageView.image = [UIImage imageNamed:@"iconHelpRelatar"];
-        cell.textLabel.text = @"Relatar erros no aplicativo";
+        cell.textLabel.text = NSLocalizedString(@"help.report_bug", @"");
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;        
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    if (section == 2) {
-//        return 40;
-//    }
-//    
-//    return 20;
-//}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    int rowSelected = indexPath.row;
-    
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     if (indexPath.section == 0) {
