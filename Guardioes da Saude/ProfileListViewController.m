@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Perfil";
+    self.navigationItem.title = NSLocalizedString(@"profile_list.title", @"");
     self.navigationItem.hidesBackButton = YES;
     householdeRequest = [[HouseholdRequester alloc]init];
     
@@ -159,9 +159,9 @@
     [self deleteHouseHold:indexPath.row];
 }
 
-- (void) deleteHouseHold: (int) index{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Deseja remover o perfil definitivamente? Essa operação é irreversível." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+- (void) deleteHouseHold: (NSInteger) index{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"profile_list.delete_confirmation", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.yes", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button YES");
         
         Household *household = [users objectAtIndex:index];
@@ -177,15 +177,15 @@
                                           [MBProgressHUD hideHUDForView:self.view animated:YES];
                                           NSString *errorMsg;
                                           if (error && error.code == -1009) {
-                                              errorMsg = kMsgConnectionError;
+                                              errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                           } else {
-                                              errorMsg = kMsgApiError;
+                                              errorMsg = NSLocalizedString(kMsgApiError, @"");
                                           }
                                           
                                           [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                       }];
     }];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Não" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.no", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button NO");
     }];
     [alert addAction:yesAction];
@@ -195,7 +195,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return @"Deletar";
+    return NSLocalizedString(@"constant.delete", @"");
 }
 
 - (IBAction)btnEditMainUser:(id)sender {

@@ -23,17 +23,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TBI-FJ-Mds">
-                    <rect key="frame" x="0.0" y="189" width="320" height="238"/>
+                    <rect key="frame" x="0.0" y="172" width="320" height="254"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="GCt-x9-YVY"/>
                         <outlet property="delegate" destination="-1" id="u6c-Mm-Ju4"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otx-9x-ASf">
+                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otx-9x-ASf" customClass="GDSButton">
                     <rect key="frame" x="8" y="434" width="304" height="38"/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="15"/>
-                    <state key="normal" title="Adicionar Novo Integrante" backgroundImage="button_default.png">
+                    <state key="normal" title="profile_list.add_new_member" backgroundImage="button_default.png">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -41,7 +41,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbu-Tp-Nb9">
-                    <rect key="frame" x="100" y="109" width="120" height="120"/>
+                    <rect key="frame" x="100" y="92" width="120" height="120"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="65" id="Q7Z-X9-adO"/>
                         <constraint firstAttribute="width" constant="65" id="eZC-7R-aDl"/>
@@ -58,8 +58,8 @@
                         <action selector="imgMainUserAction:" destination="-1" eventType="touchUpInside" id="NQp-yb-Ggh"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecione qual dos perfis abaixo quer editar." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQS-0L-cif">
-                    <rect key="frame" x="61" y="70" width="198" height="34"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="profile_list.select_perfil" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQS-0L-cif" customClass="GDSLabel">
+                    <rect key="frame" x="61" y="70" width="198" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="198" id="fAW-cL-t0s"/>
                     </constraints>

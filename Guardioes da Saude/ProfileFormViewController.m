@@ -54,7 +54,7 @@
     
     // Setup down pickers
     (void)[self.pickerGender initWithData:[Constants getGenders]];
-    [self.pickerGender.DownPicker setPlaceholder:@"Selecione seu sexo"];
+    [self.pickerGender.DownPicker setPlaceholder:NSLocalizedString(@"profile_form.placeholder_gender", @"")];
     [self.pickerGender.DownPicker setToolbarCancelButtonText:@"Cancelar"];
     [self.pickerGender.DownPicker setToolbarDoneButtonText:@"Selecionar"];
     

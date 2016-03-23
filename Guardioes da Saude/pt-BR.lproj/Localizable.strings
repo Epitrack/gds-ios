@@ -12,6 +12,7 @@
 "constant.yes" = "Sim";
 "constant.no" = "Não";
 "constant.ok" = "OK";
+"constant.delete" = "Deletar";
 
 // HOME VIEW
 "home.hello" = "Olá,";
@@ -136,3 +137,13 @@
 "report.subject" = "Assunto";
 "report.describe_problem" = "Descreva o problema:";
 "report.send" = "Enviar";
+
+// PROFILE LIST VIEW
+"profile_list.title" = "Perfil";
+"profile_list.delete_confirmation" = "Deseja remover o perfil definitivamente? Essa operação é irreversível.";
+"profile_list.add_new_member" = "Adicionar Novo Integrante";
+"profile_list.select_perfil" = "Selecione qual dos perfis abaixo quer editar.";
+
+// PROFILE FORM VIEW
+"profile_form.placeholder_gender" = "Selecione seu sexo";
+"profile_form.placeholder_gender" = "Selecione seu sexo";
