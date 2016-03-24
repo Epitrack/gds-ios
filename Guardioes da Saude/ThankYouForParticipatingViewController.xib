@@ -37,7 +37,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Obrigado pela informação!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pe7-h0-q1G">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="thank_you.thanks_for_information" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pe7-h0-q1G" customClass="GDSTextView">
                     <rect key="frame" x="60" y="24" width="201" height="74"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="74" id="1Mh-qr-lPR"/>
@@ -51,7 +51,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1co-Rv-BDI">
                     <rect key="frame" x="0.0" y="116" width="320" height="304"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="thank_you.look_emergency_description" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq" customClass="GDSTextView">
                             <rect key="frame" x="39" y="82" width="243" height="61"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="61" id="2cY-gZ-FTv"/>
@@ -112,7 +112,7 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Convide seus amigos para serem Guardiões da Saúde." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="thank_you.tell_your_friend" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE" customClass="GDSTextView">
                             <rect key="frame" x="20" y="136" width="281" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="1Xq-LP-73E"/>
@@ -162,13 +162,13 @@
                         </mask>
                     </variation>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0U-C0-bM8">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0U-C0-bM8" customClass="GDSButton">
                     <rect key="frame" x="31" y="428" width="259" height="37"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="a0U-C0-bM8" secondAttribute="height" multiplier="129:19" constant="8" id="DBY-wL-eic"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" title="Continuar" backgroundImage="button_default_white.png">
+                    <state key="normal" title="thank_you.continue" backgroundImage="button_default_white.png">
                         <color key="titleColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -184,7 +184,7 @@
                                 <constraint firstAttribute="width" secondItem="dz9-zT-zhS" secondAttribute="height" multiplier="70:73" id="mIr-63-y2b"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Run-7A-im4">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thank_you.zika_msg" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Run-7A-im4" customClass="GDSLabel">
                             <rect key="frame" x="30" y="177" width="255" height="72"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Run-7A-im4" secondAttribute="height" multiplier="265:43" constant="-188.72093023255815" id="Aet-LU-KAA"/>
@@ -193,7 +193,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvU-Wf-7OH">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvU-Wf-7OH" customClass="GDSButton">
                             <rect key="frame" x="30" y="282" width="260" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="LvU-Wf-7OH" secondAttribute="height" multiplier="243:38" constant="17" id="d0e-Kn-b1B"/>

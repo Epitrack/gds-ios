@@ -250,3 +250,15 @@
 "thank_you.whatsapp_not_installed" = "O Whatsapp não está instalado neste dispositivo.";
 "thank_you.thanks_shared" = "Obrigado por compartilhar!";
 "thank_you.share_fail" = "Não foi possível compartilhar sua participação.";
+"thank_you.thanks_for_information" = "Obrigado pela informação!";
+"thank_you.look_emergency_description" = "Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde.";
+"thank_you.tell_your_friend" = "Convide seus amigos para serem Guardiões da Saúde.";
+"thank_you.continue" = "Continuar";
+"thank_you.zika_msg" = "Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.";
+
+// SELECT PARTICIPANT VIEW
+"select_participant.title" = "Participe Agora";
+"select_participant.year_old" = "%ld Anos";
+"select_participant.new_member" = "Novo integrante";
+"select_participant.how_will_participate" = "Quem vai participar?";
+"select_participant.members" = "Integrantes do domicílio";

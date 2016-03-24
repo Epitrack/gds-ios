@@ -34,7 +34,7 @@ const float kCellHeight = 100.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Participe Agora";
+    self.navigationItem.title = NSLocalizedString(@"select_participant.title", @"");
     user = [User getInstance];
     houseHoldRequester = [[HouseholdRequester alloc] init];
     
@@ -68,7 +68,7 @@ const float kCellHeight = 100.0f;
     long days = [DateUtil diffInDaysDate:dateDob andDate:[[NSDate alloc] init]];
     long ageUser = days/360;
     
-    self.txtDobMainMember.text = [NSString stringWithFormat:@"%ld Anos", (long)ageUser];
+    self.txtDobMainMember.text = [NSString stringWithFormat:NSLocalizedString(@"select_participant.year_old", @""), (long)ageUser];
     [self loadAvatar];
 }
 
@@ -142,7 +142,7 @@ const float kCellHeight = 100.0f;
     NSMutableArray *buttons = [NSMutableArray array];
     NSMutableArray *households = user.household;
     
-    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:nil frame:CGRectMake(0, 0, 150, 150) avatar:@"icon_addmember" nick:@"Novo integrante"];
+    HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:nil frame:CGRectMake(0, 0, 150, 150) avatar:@"icon_addmember" nick:NSLocalizedString(@"select_participant.new_member", @"")];
     [buttons addObject:thumb];
     [thumb.button addTarget:self action:@selector(addNewMember) forControlEvents:UIControlEventTouchUpInside];
     
