@@ -430,8 +430,6 @@
 		52EBA7521C11DD0E0019E1FA /* buttonTwitterDesable.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA7491C11DD0E0019E1FA /* buttonTwitterDesable.png */; };
 		52EBA7531C11DD0E0019E1FA /* buttonTwitterDesable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA74A1C11DD0E0019E1FA /* buttonTwitterDesable@2x.png */; };
 		52EBA7541C11DD0E0019E1FA /* buttonTwitterDesable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA74B1C11DD0E0019E1FA /* buttonTwitterDesable@3x.png */; };
-		52EBA7581C1209EF0019E1FA /* PharmacyGoogleMapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EBA7561C1209EF0019E1FA /* PharmacyGoogleMapsViewController.m */; };
-		52EBA7591C1209EF0019E1FA /* PharmacyGoogleMapsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA7571C1209EF0019E1FA /* PharmacyGoogleMapsViewController.xib */; };
 		52EC0D7B1C31626800EC8908 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC0D7A1C31626800EC8908 /* DateUtil.m */; };
 		52EC50411BF02200002FEACE /* Household.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC50401BF02200002FEACE /* Household.m */; };
 		52EC50441BF026CC002FEACE /* ImageUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC50431BF026CC002FEACE /* ImageUtility.m */; };
@@ -745,9 +743,6 @@
 		52EBA7491C11DD0E0019E1FA /* buttonTwitterDesable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonTwitterDesable.png; sourceTree = "<group>"; };
 		52EBA74A1C11DD0E0019E1FA /* buttonTwitterDesable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonTwitterDesable@2x.png"; sourceTree = "<group>"; };
 		52EBA74B1C11DD0E0019E1FA /* buttonTwitterDesable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonTwitterDesable@3x.png"; sourceTree = "<group>"; };
-		52EBA7551C1209EF0019E1FA /* PharmacyGoogleMapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PharmacyGoogleMapsViewController.h; sourceTree = "<group>"; };
-		52EBA7561C1209EF0019E1FA /* PharmacyGoogleMapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PharmacyGoogleMapsViewController.m; sourceTree = "<group>"; };
-		52EBA7571C1209EF0019E1FA /* PharmacyGoogleMapsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PharmacyGoogleMapsViewController.xib; sourceTree = "<group>"; };
 		52EC0D791C31626800EC8908 /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
 		52EC0D7A1C31626800EC8908 /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		52EC503F1BF02200002FEACE /* Household.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Household.h; path = "Guardioes da Saude/Household.h"; sourceTree = "<group>"; };
@@ -1247,9 +1242,6 @@
 				528705B61BF3744600321985 /* PhonesViewController.h */,
 				528705B71BF3744600321985 /* PhonesViewController.m */,
 				528705B81BF3744600321985 /* PhonesViewController.xib */,
-				52EBA7551C1209EF0019E1FA /* PharmacyGoogleMapsViewController.h */,
-				52EBA7561C1209EF0019E1FA /* PharmacyGoogleMapsViewController.m */,
-				52EBA7571C1209EF0019E1FA /* PharmacyGoogleMapsViewController.xib */,
 				52E6F0851C209A6B00C88A08 /* DetailPhoneViewController.h */,
 				52E6F0861C209A6B00C88A08 /* DetailPhoneViewController.m */,
 				52E6F0871C209A6B00C88A08 /* DetailPhoneViewController.xib */,
@@ -2000,7 +1992,6 @@
 				52E727241BEA93B800B46945 /* BG_blur_menu@3x.png in Resources */,
 				CBEF9AD31C75FD8800A0B036 /* ChangePasswordViewController.xib in Resources */,
 				52E7271A1BEA93B800B46945 /* icon_check_survey@2x.png in Resources */,
-				52EBA7591C1209EF0019E1FA /* PharmacyGoogleMapsViewController.xib in Resources */,
 				52E727601BEA93B800B46945 /* icon_checkbok_true@3x.png in Resources */,
 				52E727041BEA93B800B46945 /* icon_tips_basiccares@2x.png in Resources */,
 				CBA0E52B1C5FA5EC0086315B /* img_profile13@2x.png in Resources */,
@@ -2429,7 +2420,6 @@
 				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				CB05C73B1CA3316D00B2F0D4 /* GDSTextView.m in Sources */,
-				52EBA7581C1209EF0019E1FA /* PharmacyGoogleMapsViewController.m in Sources */,
 				5256481B1BFCF96100FE64AE /* ProfileFormViewController.m in Sources */,
 				52E6F0AA1C20B6AC00C88A08 /* Phones.m in Sources */,
 				2548B9E41BDEA8750004E00F /* SelectStateViewController.m in Sources */,

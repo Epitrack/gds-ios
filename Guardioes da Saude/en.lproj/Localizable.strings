@@ -190,7 +190,7 @@
 "notice.title" = "Notícias";
 "notice.open_notice_confirmation" = "Deseja abrir o link da notícia?";
 
-// HEALTH TIPS
+// HEALTH TIPS VIEW
 "health_tips.zika" = "Dengue, Zika e Chikungunya";
 "health_tips.emergency" = "UPAs";
 "health_tips.vacines" = "Vacinas";
@@ -198,3 +198,23 @@
 "health_tips.pharmacy" = "Farmácias";
 "health_tips.basic_care" = "Cuidados Básicos";
 "health_tips.prevention" = "Prevenção";
+
+// PHARMACY VIEW
+"pharmacy.title" = "Farmácias";
+"pharmacy.some_isnt_showing" = "Algumas farmácias podem não ser exibidas no mapa.";
+
+// BASIC CARE VIEW
+"basic_care.title" = "Cuidados Básicos";
+
+// PREVENTION VIEW
+"prevention.title" = "Prevenção";
+
+// EMERGENCY VIEW
+"emergency.title" = "UPAs";
+
+// VACINE VIEW
+"vacine.title" = "Vacinas";
+
+// PHONES VIEW
+"phones.title" = "Telefones Úteis";
+"phones.table_title" = "Telefones Úteis";
