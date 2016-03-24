@@ -40,13 +40,13 @@
     // Setup down pickers
     (void)[self.txtGender initWithData:[Constants getGenders]];
     [self.txtGender.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_gender", @"")];
-    [self.txtGender.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"sign_up_details.cancel", @"")];
-    [self.txtGender.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"sign_up_details.select", @"")];
+    [self.txtGender.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtGender.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     (void)[self.txtRace initWithData: [Constants getRaces]];
     [self.txtRace.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_race", @"")];
-    [self.txtRace.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"sign_up_details.cancel", @"")];
-    [self.txtRace.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"sign_up_details.select", @"")];
+    [self.txtRace.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtRace.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];

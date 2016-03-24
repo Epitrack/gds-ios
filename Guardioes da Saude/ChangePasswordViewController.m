@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view from its nib.
     userRequester = [[UserRequester alloc] init];
     
-    self.navigationItem.title = @"Redefinir senha";
+    self.navigationItem.title = NSLocalizedString(@"chang_password.title", @"");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,9 +54,9 @@
         [userRequester updateUser:user
                         onSuccess:^(User *user){
                             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
-                                                                                           message:@"Senha atualizada com sucesso."
+                                                                                           message:NSLocalizedString(@"Senha atualizada com sucesso.", @"")
                                                                                     preferredStyle:UIAlertControllerStyleActionSheet];
-                            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"")
                                                                                     style:UIAlertActionStyleDefault
                                                                                   handler:^(UIAlertAction * action) {
                                                                                       [self.navigationController popViewControllerAnimated:YES];
@@ -64,7 +64,7 @@
                             [alert addAction:defaultAction];
                             [self presentViewController:alert animated:YES completion:nil];
                         } onFail:^(NSError *error){
-                            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Ocorreu um erro ao atualizar o usuário."];
+                            UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"chang_password.fail", @"")];
                             [self presentViewController:alert animated:YES completion:nil];
                         }];
     }
@@ -72,14 +72,14 @@
 
 - (BOOL) isPasswdValid: (User *) user{
     if (![user.password isEqualToString:self.txPasswdConfirmation.text]) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"As senhas não estão iguais."];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"chang_password.password_isnt_equals", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         
         return NO;
     }
     
     if (user.password.length < 6) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A senha deve ter mais de 6 caracteres."];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"chang_password.min_char_password", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         
         return NO;

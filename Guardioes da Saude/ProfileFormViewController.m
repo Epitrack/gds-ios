@@ -55,18 +55,18 @@
     // Setup down pickers
     (void)[self.pickerGender initWithData:[Constants getGenders]];
     [self.pickerGender.DownPicker setPlaceholder:NSLocalizedString(@"profile_form.placeholder_gender", @"")];
-    [self.pickerGender.DownPicker setToolbarCancelButtonText:@"Cancelar"];
-    [self.pickerGender.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    [self.pickerGender.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.pickerGender.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     (void)[self.pickerRace initWithData: [Constants getRaces]];
-    [self.pickerRace.DownPicker setPlaceholder:@"Seleciona sua cor/raça"];
-    [self.pickerRace.DownPicker setToolbarCancelButtonText:@"Cancelar"];
-    [self.pickerRace.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    [self.pickerRace.DownPicker setPlaceholder:NSLocalizedString(@"profile_form.placeholder_race", @"")];
+    [self.pickerRace.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.pickerRace.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     (void)[self.pickerRelationship initWithData:[Household getRelationshipArray]];
-    [self.pickerRelationship.DownPicker setPlaceholder:@"Selecione o parentesco"];
-    [self.pickerRelationship.DownPicker setToolbarCancelButtonText:@"Cancelar"];
-    [self.pickerRelationship.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    [self.pickerRelationship.DownPicker setPlaceholder:NSLocalizedString(@"profile_form.placeholder_relationship", @"")];
+    [self.pickerRelationship.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.pickerRelationship.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     [self applyLayerOnPictureLayer];
     
@@ -112,7 +112,7 @@
 }
 
 - (void) loadEditUser{
-    self.navigationItem.title = @"Editar Perfil";
+    self.navigationItem.title = NSLocalizedString(@"profile_form.edit_profile", @"");
     self.txtEmail.enabled = YES;
     
     //Hide relationship
@@ -140,7 +140,7 @@
 }
 
 - (void) loadEditHousehold{
-    self.navigationItem.title = @"Editar Perfil";
+    self.navigationItem.title = NSLocalizedString(@"profile_form.edit_profile", @"");
     self.btnChangePasswd.hidden = YES;
     [self populateFormToHouseholdWithNick:self.household.nick
                                    andDob:self.household.dob
@@ -155,7 +155,7 @@
 }
 
 - (void) loadAddHousehold{
-    self.navigationItem.title = @"Adicionar Novo Integrante";
+    self.navigationItem.title = NSLocalizedString(@"profile_form.add_member", @"");
     self.btnChangePasswd.hidden = YES;
     
     self.pictureSelected = @1;
@@ -273,9 +273,9 @@
     
     if (![self isFormValid]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
-                                                                       message:@"Preencha todos os campos do formulário."
+                                                                       message:NSLocalizedString(@"profile_form.fill_in_fields", @"")
                                                                 preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"")
                                                                 style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {
                     NSLog(@"You pressed button OK");
@@ -284,9 +284,9 @@
         [self presentViewController:alert animated:YES completion:nil];
     }else if(![self isDobValid]){
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
-                                                                       message:@"A data de aniversário deve ser menor que hoje."
+                                                                       message:NSLocalizedString(@"profile_form.invalid_dob", @"")
                                                                 preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"")
                                                                 style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {
                                                                   NSLog(@"You pressed button OK");
@@ -323,21 +323,21 @@
     NSInteger diffDay = [DateUtil diffInDaysDate:birthdate andDate:[NSDate date]];
     
     if((diffDay/365) < 13){
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade mínima para o usuário principal é 13 anos."];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"profile_form.min_dob", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         return;
     }
     
     if((diffDay/365) > 120){
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade máxima para o usuário principal é 120 anos."];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"profile_form.max_dob", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         return;
     }
     
     if (!userUpdater.isValidEmail) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"E-mail inválido!"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"profile_form.invalid_email", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         return;
@@ -405,8 +405,8 @@
 - (void) showSuccessMsg{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação realizada com sucesso." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"profile_form.success", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
         [self.navigationController popViewControllerAnimated:YES];
     }];
@@ -418,7 +418,7 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     NSLog(@"Error: %@", error);
-    UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Ocorreu um problema de comunicação, por favor verifique sua conexão!"];
+    UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"profile_form.fail", @"")];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
@@ -486,8 +486,8 @@
     }];
     
     RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
-    dateSelectionController.title = @"Data de nascimento";
-    dateSelectionController.message = @"Selecione sua data de nascimento.";
+    dateSelectionController.title = NSLocalizedString(@"profile_form.title_dob", @"");
+    dateSelectionController.message = NSLocalizedString(@"profile_form.msg_dob", @"");
     
     [dateSelectionController addAction:selectAction];
     
