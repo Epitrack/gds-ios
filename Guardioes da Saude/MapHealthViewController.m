@@ -53,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Mapa da Saúde";
+    self.navigationItem.title = NSLocalizedString(@"map_health.title", @"");
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
 
@@ -234,9 +234,9 @@
                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                             NSString *errorMsg;
                             if (error && error.code == -1009) {
-                                errorMsg = kMsgConnectionError;
+                                errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                             } else {
-                                errorMsg = kMsgApiError;
+                                errorMsg = NSLocalizedString(kMsgApiError, @"");
                             }
                             
                             [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
@@ -436,12 +436,12 @@
                                  NSFontAttributeName: [UIFont systemFontOfSize:15.0],
                                  NSForegroundColorAttributeName: [UIColor grayColor]};
     
-    NSMutableAttributedString *msg = [[NSMutableAttributedString alloc] initWithString:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)" attributes:attributes];
+    NSMutableAttributedString *msg = [[NSMutableAttributedString alloc] initWithString:NSLocalizedString(@"map_health.btn_info", @"") attributes:attributes];
     
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Síndromes" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"map_health.syndromes", @"") message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     [alert setValue:msg forKey:@"attributedMessage"];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
     }];
     
