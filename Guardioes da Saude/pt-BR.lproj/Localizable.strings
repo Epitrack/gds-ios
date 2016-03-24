@@ -234,6 +234,7 @@
 "list_symptoms.find_a_health_service" = "Procurei um serviço de saúde";
 "list_symptoms.traveled" = "Estive fora do Brasil nos últimos 14 dias";
 "list_symptoms.confirm" = "Confirmar";
+"list_symptoms.select_symptoms" = "Marque abaixo o que você está sentindo neste momento:";
 
 // SELECT STATE VIEW
 "select_state.title" = "Participe Agora";

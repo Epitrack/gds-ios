@@ -13,6 +13,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectStateViewController">
             <connections>
+                <outlet property="txFooter" destination="AFF-RR-sCW" id="SeL-uw-q0s"/>
+                <outlet property="txHeader" destination="7Xe-B1-oZm" id="KLe-Xl-Aga"/>
                 <outlet property="view" destination="L9N-3f-rjo" id="qb5-lC-fpi"/>
             </connections>
         </placeholder>

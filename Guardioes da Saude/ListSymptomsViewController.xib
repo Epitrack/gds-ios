@@ -17,6 +17,7 @@
                 <outlet property="tableSymptoms" destination="pzw-kU-ucB" id="xH1-h3-41B"/>
                 <outlet property="tableViewHeightConstraint" destination="jQI-1a-XZp" id="j3a-dU-8Hl"/>
                 <outlet property="topConfirmationConstraint" destination="FLw-Rt-bXq" id="g7P-5O-ZCh"/>
+                <outlet property="txHeader" destination="R19-CX-MxJ" id="0bz-Z2-jcO"/>
                 <outlet property="txtPais" destination="6lR-VV-WAG" id="HtD-3x-OGp"/>
                 <outlet property="view" destination="h7N-fR-oo8" id="5hw-PO-CmN"/>
             </connections>
@@ -30,7 +31,7 @@
                     <rect key="frame" x="-6" y="0.0" width="381" height="667"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Marque abaixo o que você está sentindo neste momento:" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R19-CX-MxJ">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="list_symptoms.select_symptoms" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R19-CX-MxJ" customClass="GDSTextView">
                     <rect key="frame" x="66" y="90" width="243" height="61"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="0lD-sf-fd7"/>

@@ -19,6 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectParticipantViewController">
             <connections>
                 <outlet property="imgMainMember" destination="9Ru-5b-mQY" id="yB3-Rc-2rG"/>
+                <outlet property="lbMembers" destination="fuy-Ah-4UN" id="pGY-FP-uvg"/>
                 <outlet property="txtDobMainMember" destination="DZX-rV-oic" id="Tua-Tt-bR8"/>
                 <outlet property="txtNameMainMember" destination="OqM-Hs-WIA" id="gio-hw-fax"/>
                 <outlet property="view" destination="SnQ-vz-S2d" id="Z1C-y6-ZkH"/>

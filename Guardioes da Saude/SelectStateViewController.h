@@ -12,5 +12,7 @@
 @interface SelectStateViewController : UIViewController <CLLocationManagerDelegate>
 - (IBAction)btnGood:(id)sender;
 - (IBAction)btnBad:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *txHeader;
+@property (weak, nonatomic) IBOutlet UITextView *txFooter;
 
 @end

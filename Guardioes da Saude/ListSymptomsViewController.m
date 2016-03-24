@@ -77,6 +77,8 @@
     [self.txtPais.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     [self setTableSeparator];
+    
+    self.txHeader.backgroundColor = [UIColor clearColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

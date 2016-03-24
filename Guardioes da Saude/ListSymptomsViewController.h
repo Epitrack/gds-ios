@@ -24,5 +24,6 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topConfirmationConstraint;
+@property (weak, nonatomic) IBOutlet UITextView *txHeader;
 
 @end

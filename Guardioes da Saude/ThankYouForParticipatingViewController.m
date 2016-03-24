@@ -36,6 +36,10 @@
     self.navigationItem.title = NSLocalizedString(@"thank_you.title", @"");
     self.navigationItem.hidesBackButton = YES;
     
+    self.txHeader.backgroundColor = [UIColor clearColor];
+    self.txSurvey.backgroundColor = [UIColor clearColor];
+    self.txTellFriends.backgroundColor = [UIColor clearColor];
+    
     switch (surveyType) {
         case GOOD_SYMPTOM:
             self.zicaView.hidden = YES;

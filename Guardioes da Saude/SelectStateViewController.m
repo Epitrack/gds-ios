@@ -54,6 +54,9 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [locationManager startUpdatingLocation];
+    
+    self.txHeader.backgroundColor = [UIColor clearColor];
+    self.txFooter.backgroundColor = [UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning {

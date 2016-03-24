@@ -70,6 +70,8 @@ const float kCellHeight = 100.0f;
     
     self.txtDobMainMember.text = [NSString stringWithFormat:NSLocalizedString(@"select_participant.year_old", @""), (long)ageUser];
     [self loadAvatar];
+    
+    self.lbMembers.backgroundColor = [UIColor clearColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated{

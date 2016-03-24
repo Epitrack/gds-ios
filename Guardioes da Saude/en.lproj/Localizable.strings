@@ -234,6 +234,7 @@
 "list_symptoms.find_a_health_service" = "Procurei um serviço de saúde";
 "list_symptoms.traveled" = "Estive fora do Brasil nos últimos 14 dias";
 "list_symptoms.confirm" = "Confirmar";
+"list_symptoms.select_symptoms" = "Marque abaixo o que você está sentindo neste momento:";
 
 // SELECT STATE VIEW
 "select_state.title" = "Participe Agora";
@@ -242,3 +243,23 @@
 "select_state.well" = "Bem";
 "select_state.bad" = "Mal";
 "select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Mal\" seja selecionada.";
+
+// THANK YOU VIEW
+"thank_you.shared_msg" = "Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org";
+"thank_you.title" = "Guardiões da Saúde";
+"thank_you.look_emergency" = "Atenção: Procure a Unidade de Pronto Atendimento mais próxima.";
+"thank_you.whatsapp_not_installed" = "O Whatsapp não está instalado neste dispositivo.";
+"thank_you.thanks_shared" = "Obrigado por compartilhar!";
+"thank_you.share_fail" = "Não foi possível compartilhar sua participação.";
+"thank_you.thanks_for_information" = "Obrigado pela informação!";
+"thank_you.look_emergency_description" = "Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde.";
+"thank_you.tell_your_friend" = "Convide seus amigos para serem Guardiões da Saúde.";
+"thank_you.continue" = "Continuar";
+"thank_you.zika_msg" = "Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.";
+
+// SELECT PARTICIPANT VIEW
+"select_participant.title" = "Participe Agora";
+"select_participant.year_old" = "%ld Anos";
+"select_participant.new_member" = "Novo integrante";
+"select_participant.how_will_participate" = "Quem vai participar?";
+"select_participant.members" = "Integrantes do domicílio";
