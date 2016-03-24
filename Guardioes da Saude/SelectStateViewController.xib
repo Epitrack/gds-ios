@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Como está sua saúde nesse  momento?" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xe-B1-oZm">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="select_state.how_is_your_health" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xe-B1-oZm" customClass="GDSTextView">
                     <rect key="frame" x="34" y="70" width="253" height="84"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="84" id="pNj-oK-bDU"/>
@@ -35,7 +35,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-gG-CRa">
-                    <rect key="frame" x="103" y="168" width="117" height="117"/>
+                    <rect key="frame" x="102" y="168" width="117" height="117"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="WFf-gG-CRa" secondAttribute="height" multiplier="1:1" id="moq-70-qlW"/>
                     </constraints>
@@ -51,8 +51,8 @@
                         <action selector="btnBad:" destination="-1" eventType="touchUpInside" id="uft-FN-30s"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-BE-l8U">
-                    <rect key="frame" x="143" y="292" width="35" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select_state.well" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-BE-l8U" customClass="GDSLabel">
+                    <rect key="frame" x="99" y="293" width="125" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="cdf-lx-2nn"/>
                     </constraints>
@@ -60,8 +60,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-jz-Pvn">
-                    <rect key="frame" x="146" y="460" width="28" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select_state.bad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-jz-Pvn" customClass="GDSLabel">
+                    <rect key="frame" x="98" y="460" width="126" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="vQ8-Ub-S2v"/>
                     </constraints>
@@ -69,7 +69,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Alguns sinais e sintomas serão apresentados na próxima tela caso a opção &quot;Mal&quot; seja selecionada." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFF-RR-sCW">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="select_state.next_step" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFF-RR-sCW" customClass="GDSTextView">
                     <rect key="frame" x="14" y="495" width="298" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="hH3-FO-eJT"/>

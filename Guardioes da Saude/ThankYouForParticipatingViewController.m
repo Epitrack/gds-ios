@@ -14,8 +14,6 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
 
-NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org";
-
 
 @interface ThankYouForParticipatingViewController (){
     SurveyType surveyType;
@@ -35,7 +33,7 @@ NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no co
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Guardiões da Saúde";
+    self.navigationItem.title = NSLocalizedString(@"thank_you.title", @"");
     self.navigationItem.hidesBackButton = YES;
     
     switch (surveyType) {
@@ -55,12 +53,12 @@ NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no co
         case DIARREICA:
             self.zicaView.hidden = NO;
             self.defaultView.hidden = YES;
-            self.lbMessage.text = @"Atenção: Procure a Unidade de Pronto Atendimento mais próxima.";
+            self.lbMessage.text = NSLocalizedString(@"thank_you.look_emergency", @"");
             break;
         case RESPIRATORIA:
             self.zicaView.hidden = NO;
             self.defaultView.hidden = YES;
-            self.lbMessage.text = @"Atenção: Procure a Unidade de Pronto Atendimento mais próxima.";
+            self.lbMessage.text = NSLocalizedString(@"thank_you.look_emergency", @"");
             break;
         default:
             break;
@@ -115,7 +113,7 @@ NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no co
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         SLComposeViewController *faceSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [faceSheet setInitialText:shareMsg];
+        [faceSheet setInitialText:NSLocalizedString(@"thank_you.shared_msg", @"")];
         [faceSheet addURL:[NSURL URLWithString:@"http://www.guardioesdasaude.org"]];
         [self presentViewController:faceSheet animated:YES completion:nil];
         
@@ -148,14 +146,14 @@ NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no co
     
     TWTRComposer *composer = [[TWTRComposer alloc] init];
     
-    [composer setText:shareMsg];
+    [composer setText:NSLocalizedString(@"thank_you.shared_msg", @"")];
     //[composer setImage:[UIImage imageNamed:@"fabric"]];
     
    
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:shareMsg];
+        [tweetSheet setInitialText:NSLocalizedString(@"thank_you.shared_msg", @"")];
         [self presentViewController:tweetSheet animated:YES completion:nil];
         
         [tweetSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
@@ -195,12 +193,12 @@ NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no co
                                                            label:@"Share Whatsapp"
                                                            value:nil] build]];
     
-    NSString * urlWhats = [NSString stringWithFormat:@"whatsapp://send?text=%@",shareMsg];
+    NSString * urlWhats = [NSString stringWithFormat:@"whatsapp://send?text=%@",NSLocalizedString(@"thank_you.shared_msg", @"")];
     NSURL * whatsappURL = [NSURL URLWithString:[urlWhats stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     if ([[UIApplication sharedApplication] canOpenURL: whatsappURL]) {
         [[UIApplication sharedApplication] openURL: whatsappURL];
     } else {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"O Whatsapp não está instalado neste dispositivo."];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"thank_you.whatsapp_not_installed", @"")];
         [self presentViewController:alert animated:YES completion:nil];
     }
 }
@@ -209,7 +207,7 @@ NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no co
     
     if (done) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:@"Obrigado por compartilhar!"
+                                                        message:NSLocalizedString(@"thank_you.thanks_shared", @"")
                                                        delegate:self
                                               cancelButtonTitle:nil
                                               otherButtonTitles:nil];
@@ -223,7 +221,7 @@ NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no co
         [self.navigationController pushViewController:homeViewController animated:YES];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:@"Não foi possível compartilhar sua participação."
+                                                        message:NSLocalizedString(@"thank_you.share_fail", @"")
                                                        delegate:self
                                               cancelButtonTitle:nil
                                               otherButtonTitles:nil];
@@ -244,7 +242,7 @@ NSString *const shareMsg = @"Eu faço minha parte, faça sua parte também no co
 - (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results {
     NSLog(@"returned back to app from facebook post");
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                    message:@"Obrigado por compartilhar!"
+                                                    message:NSLocalizedString(@"thank_you.thanks_shared", @"")
                                                    delegate:self
                                           cancelButtonTitle:nil
                                           otherButtonTitles:nil];

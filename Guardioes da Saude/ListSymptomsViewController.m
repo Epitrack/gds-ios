@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Participe Agora";
+    self.navigationItem.title = NSLocalizedString(@"list_symptoms.title", @"");
     self.txtPais.text = @"";
     self.txtPais.enabled = NO;
     self.txtPais.hidden = YES;
@@ -72,9 +72,9 @@
     [locationManager startUpdatingLocation];
     
     (void)[self.txtPais initWithData:[LocationUtil getCountries]];
-    [self.txtPais.DownPicker setPlaceholder:@"Selecione o país"];
-    [self.txtPais.DownPicker setToolbarCancelButtonText:@"Cancelar"];
-    [self.txtPais.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    [self.txtPais.DownPicker setPlaceholder:NSLocalizedString(@"list_symptoms.placeholder_country", @"")];
+    [self.txtPais.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtPais.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     [self setTableSeparator];
 }
@@ -122,12 +122,12 @@
     }
     
     if (!isTxtPaisValid) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Por favor, selecione o  pais!"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"list_symptoms.country_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
     }else if (selected.count > 0) {
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Deseja registrar suas informações?" preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"list_symptoms.allow_send", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.yes", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button YES");
             
             SurveyMap *survey = [[SurveyMap alloc] init];
@@ -167,15 +167,15 @@
                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
                                    NSString *errorMsg;
                                    if (error && error.code == -1009) {
-                                       errorMsg = kMsgConnectionError;
+                                       errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                    } else {
-                                       errorMsg = kMsgApiError;
+                                       errorMsg = NSLocalizedString(kMsgApiError, @"");
                                    }
                                    
                                    [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                }];
         }];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Não" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.no", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button NO");
         }];
         [alert addAction:yesAction];
@@ -183,7 +183,7 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     } else {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Escolha algum sintoma antes de confirmar."];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"list_symptoms.check_a_symptom", @"")];
         [self presentViewController:alert animated:YES completion:nil];
 
     }
@@ -195,12 +195,12 @@
     }andSuccess:^(NSMutableArray *symptomsResponse){
         symptoms = [[NSMutableArray alloc] init];
         
-        [symptoms addObject:[[Symptom alloc] initWithName:@"Sintomas" andCode:@"sintomas"]];
+        [symptoms addObject:[[Symptom alloc] initWithName:NSLocalizedString(@"list_symptoms.symptoms", @"") andCode:@"sintomas"]];
         [symptoms addObjectsFromArray: symptomsResponse];
-        [symptoms addObject:[[Symptom alloc] initWithName:@"Outros" andCode:@"outros"]];
-        [symptoms addObject:[[Symptom alloc] initWithName:@"Tive contato com alguém com um desses sintomas" andCode:@"hadContagiousContact"]];
-        [symptoms addObject:[[Symptom alloc] initWithName:@"Procurei um serviço de saúde" andCode:@"hadHealthCare"]];
-        [symptoms addObject:[[Symptom alloc] initWithName:@"Estive fora do Brasil nos últimos 14 dias" andCode:@"hadTravelledAbroad"]];
+        [symptoms addObject:[[Symptom alloc] initWithName:NSLocalizedString(@"list_symptoms.others", @"") andCode:@"outros"]];
+        [symptoms addObject:[[Symptom alloc] initWithName:NSLocalizedString(@"list_symptoms.had_contact_symptom", @"") andCode:@"hadContagiousContact"]];
+        [symptoms addObject:[[Symptom alloc] initWithName:NSLocalizedString(@"list_symptoms.find_a_health_service", @"") andCode:@"hadHealthCare"]];
+        [symptoms addObject:[[Symptom alloc] initWithName:NSLocalizedString(@"list_symptoms.traveled", @"") andCode:@"hadTravelledAbroad"]];
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.tableSymptoms reloadData];

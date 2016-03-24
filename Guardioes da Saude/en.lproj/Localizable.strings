@@ -218,3 +218,27 @@
 // PHONES VIEW
 "phones.title" = "Telefones Úteis";
 "phones.table_title" = "Telefones Úteis";
+
+// ZIKA VIEW
+"zika.title" = "Dengue, Zika e Chikungunya";
+
+// LIST SYMPTOMS VIEW
+"list_symptoms.title" = "Participe Agora";
+"list_symptoms.placeholder_country" = "Selecione o país";
+"list_symptoms.country_required" = "Por favor, selecione o  pais!";
+"list_symptoms.allow_send" = "Deseja registrar suas informações?";
+"list_symptoms.check_a_symptom" = "Escolha algum sintoma antes de confirmar.";
+"list_symptoms.symptoms" = "Sintomas";
+"list_symptoms.others" = "Outros";
+"list_symptoms.had_contact_symptom" = "Tive contato com alguém com um desses sintomas";
+"list_symptoms.find_a_health_service" = "Procurei um serviço de saúde";
+"list_symptoms.traveled" = "Estive fora do Brasil nos últimos 14 dias";
+"list_symptoms.confirm" = "Confirmar";
+
+// SELECT STATE VIEW
+"select_state.title" = "Participe Agora";
+"select_state.without_location" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
+"select_state.how_is_your_health" = "Como está sua saúde nesse  momento?";
+"select_state.well" = "Bem";
+"select_state.bad" = "Mal";
+"select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Mal\" seja selecionada.";
