@@ -275,3 +275,12 @@
 "map_health.exanthematic" = "Exantemática";
 "map_health.respiratory" = "Respiratória";
 "map_health.diarrheal" = "Diarreica";
+
+// DIARY HEALTH VIEW
+"diary_health.title" = "Diário da saúde";
+"diary_health.summary" = "Resumo";
+"diary_health.participation" = "Participações";
+"diary_health.well" = "Bem";
+"diary_health.bad" = "Mal";
+"diary_health.report" = "Relatórios";
+"diary_health.calendar" = "Calendário";

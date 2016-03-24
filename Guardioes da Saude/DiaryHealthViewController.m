@@ -60,7 +60,7 @@ const float _kCellHeight = 100.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Diário da Saúde";
+    self.navigationItem.title = NSLocalizedString(@"diary_health.title", @"");
     
     // We will move this to the top?
     
@@ -135,9 +135,9 @@ const float _kCellHeight = 100.0f;
                                          [self hiddenProgressBar];
                                          NSString *errorMsg;
                                          if (error && error.code == -1009) {
-                                             errorMsg = kMsgConnectionError;
+                                             errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                          } else {
-                                             errorMsg = kMsgApiError;
+                                             errorMsg = NSLocalizedString(kMsgApiError, @"");
                                          }
                                          
                                          [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
@@ -508,9 +508,9 @@ const float _kCellHeight = 100.0f;
                                          [self hiddenProgressBar];
                                          NSString *errorMsg;
                                          if (error && error.code == -1009) {
-                                             errorMsg = kMsgConnectionError;
+                                             errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                          } else {
-                                             errorMsg = kMsgApiError;
+                                             errorMsg = NSLocalizedString(kMsgApiError, @"");
                                          }
                                          
                                          [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
