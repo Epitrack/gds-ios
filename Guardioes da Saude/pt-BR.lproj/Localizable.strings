@@ -15,6 +15,7 @@
 "constant.delete" = "Deletar";
 "constant.cancel" = "Cancelar";
 "constant.select" = "Selecionar";
+"constant.no_conection" = "É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!";
 
 // HOME VIEW
 "home.hello" = "Olá,";
@@ -184,3 +185,16 @@
 "chang_password.placeholder_password" = "Redefinir senha";
 "chang_password.placeholder_password_confirmation" = "Redefinir senha";
 "chang_password.save" = "Salvar";
+
+// NOTICE VIEW
+"notice.title" = "Notícias";
+"notice.open_notice_confirmation" = "Deseja abrir o link da notícia?";
+
+// HEALTH TIPS
+"health_tips.zika" = "Dengue, Zika e Chikungunya";
+"health_tips.emergency" = "UPAs";
+"health_tips.vacines" = "Vacinas";
+"health_tips.phones" = "Telefones Úteis";
+"health_tips.pharmacy" = "Farmácias";
+"health_tips.basic_care" = "Cuidados Básicos";
+"health_tips.prevention" = "Prevenção";

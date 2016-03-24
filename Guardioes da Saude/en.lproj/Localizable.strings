@@ -15,6 +15,7 @@
 "constant.delete" = "Deletar";
 "constant.cancel" = "Cancelar";
 "constant.select" = "Selecionar";
+"constant.no_conection" = "É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!";
 
 // HOME VIEW
 "home.hello" = "Olá,";
@@ -169,3 +170,31 @@
 "profile_form.invalid_email" = "E-mail inválido!";
 "profile_form.success" = "Operação realizada com sucesso.";
 "profile_form.fail" = "Ocorreu um problema de comunicação, por favor verifique sua conexão!";
+
+// SELECT AVATAR VIEW
+"select_avatar.title" = "Editar Foto";
+"select_avatar.check_galery_permission" = "Verifique as permissões da galeria 'Fotos'.";
+"select_avatar.no_galery_permission" = "O Aplicativo não tem permissão para gravar a foto.";
+
+// CHANGE PASSWORD VIEW
+"chang_password.title" = "Redefinir senha";
+"chang_password.success" = "Senha atualizada com sucesso.";
+"chang_password.fail" = "Ocorreu um erro ao atualizar o usuário.";
+"chang_password.password_isnt_equals" = "As senhas não estão iguais.";
+"chang_password.min_char_password" = "A senha deve ter mais de 6 caracteres.";
+"chang_password.placeholder_password" = "Redefinir senha";
+"chang_password.placeholder_password_confirmation" = "Redefinir senha";
+"chang_password.save" = "Salvar";
+
+// NOTICE VIEW
+"notice.title" = "Notícias";
+"notice.open_notice_confirmation" = "Deseja abrir o link da notícia?";
+
+// HEALTH TIPS
+"health_tips.zika" = "Dengue, Zika e Chikungunya";
+"health_tips.emergency" = "UPAs";
+"health_tips.vacines" = "Vacinas";
+"health_tips.phones" = "Telefones Úteis";
+"health_tips.pharmacy" = "Farmácias";
+"health_tips.basic_care" = "Cuidados Básicos";
+"health_tips.prevention" = "Prevenção";

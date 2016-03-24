@@ -17,5 +17,12 @@
 - (IBAction)prevention:(id)sender;
 - (IBAction)phones:(id)sender;
 - (IBAction)zika:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *txZika;
+@property (weak, nonatomic) IBOutlet UITextView *txEmergency;
+@property (weak, nonatomic) IBOutlet UITextView *txVacine;
+@property (weak, nonatomic) IBOutlet UITextView *txPhones;
+@property (weak, nonatomic) IBOutlet UITextView *txPharmacy;
+@property (weak, nonatomic) IBOutlet UITextView *txBasicCare;
+@property (weak, nonatomic) IBOutlet UITextView *txPrevention;
 
 @end
