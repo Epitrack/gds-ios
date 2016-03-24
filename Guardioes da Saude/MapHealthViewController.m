@@ -256,7 +256,7 @@
                               totalNoSymptom = [summary[@"total_no_symptoms"] integerValue];
                               
                               if (totalNoSymptom > 0) {
-                                  goodPercent = (((double)totalNoSymptom / (double)totalSurvey) * 100);
+                                  goodPercent = (((double)totalNoSymptom / (double)totalSurvey) * 100.0f);
                               } else {
                                   goodPercent = 0;
                               }
@@ -264,7 +264,7 @@
                               totalWithSymptom = [summary[@"total_symptoms"] integerValue];
                               
                               if (totalWithSymptom > 0) {
-                                  badPercent = (((double)totalWithSymptom / (double)totalSurvey) * 100);
+                                  badPercent = (((double)totalWithSymptom / (double)totalSurvey) * 100.0f);
                               } else {
                                   badPercent = 0;
                               }
@@ -274,9 +274,9 @@
                               respiratoria = [diseases[@"respiratoria"] doubleValue];
                               
                               if (totalWithSymptom > 0) {
-                                  diarreica = ((diarreica * 100) / totalWithSymptom);
-                                  exantemaica = ((exantemaica * 100) / totalWithSymptom);
-                                  respiratoria = ((respiratoria * 100) / totalWithSymptom);
+                                  diarreica = ((diarreica * 100.0f) / totalWithSymptom);
+                                  exantemaica = ((exantemaica * 100.0f) / totalWithSymptom);
+                                  respiratoria = ((respiratoria * 100.0f) / totalWithSymptom);
                               }
                               
                               self.lblCity.text = city;
@@ -290,14 +290,14 @@
                               detailMap.city = city;
                               detailMap.state = state;
                               detailMap.totalSurvey = [NSString stringWithFormat:@"%d", (int)totalSurvey];
-                              detailMap.goodPercent = [NSString stringWithFormat:@"%d%%", (int)goodPercent];
-                              detailMap.badPercent = [NSString stringWithFormat:@"%d%%", (int)badPercent];
+                              detailMap.goodPercent = [NSString stringWithFormat:@"%g%%", round(goodPercent)];
+                              detailMap.badPercent = [NSString stringWithFormat:@"%g%%", round(badPercent)];
                               detailMap.totalNoSymptom = [NSString stringWithFormat:@"%d", (int)totalNoSymptom];
                               detailMap.totalWithSymptom = [NSString stringWithFormat:@"%d", (int)totalWithSymptom];
                               
-                              detailMap.diarreica = [NSString stringWithFormat:@"%.2f", diarreica];
-                              detailMap.exantemaica = [NSString stringWithFormat:@"%.2f", exantemaica];
-                              detailMap.respiratoria = [NSString stringWithFormat:@"%.2f", respiratoria];
+                              detailMap.diarreica = [NSString stringWithFormat:@"%g", round(diarreica)];
+                              detailMap.exantemaica = [NSString stringWithFormat:@"%g", round(exantemaica)];
+                              detailMap.respiratoria = [NSString stringWithFormat:@"%g", round(respiratoria)];
                               
                               [self loadDetails];
                               [self loadPieChart];
@@ -310,9 +310,9 @@
     self.txtPercentBad.text = detailMap.badPercent;
     self.txtCountGood.text = detailMap.totalNoSymptom;
     self.txtCountBad.text = detailMap.totalWithSymptom;
-    self.progressViewDiarreica.progress = ([detailMap.diarreica doubleValue]/100);
-    self.progressViewExantematica.progress = ([detailMap.exantemaica doubleValue]/100);
-    self.progessViewRespiratoria.progress = ([detailMap.respiratoria doubleValue]/100);
+    self.progressViewDiarreica.progress = ([detailMap.diarreica doubleValue]/100.0f);
+    self.progressViewExantematica.progress = ([detailMap.exantemaica doubleValue]/100.0f);
+    self.progessViewRespiratoria.progress = ([detailMap.respiratoria doubleValue]/100.0f);
     
     self.lbPercentDiareica.text = [NSString stringWithFormat:@"%g%%", [detailMap.diarreica doubleValue]];
     self.lbPercentExantematica.text = [NSString stringWithFormat:@"%g%%", [detailMap.exantemaica doubleValue]];

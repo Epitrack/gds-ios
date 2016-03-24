@@ -156,17 +156,17 @@ const float _kCellHeight = 100.0f;
     if (summary.total == 0) {
         goodPercent = 0;
     } else {
-        goodPercent = (summary.noSymptom * 100) / summary.total;
+        goodPercent = (summary.noSymptom * 100.0f) / summary.total;
     }
     
     if (summary.total == 0) {
         badPercent = 0;
     } else {
-        badPercent = (summary.symptom * 100) / summary.total;
+        badPercent = (summary.symptom * 100.0f) / summary.total;
     }
     
-    self.lbPercentGood.text = [NSString stringWithFormat:@"%g%%", goodPercent];
-    self.lbPercentBad.text = [NSString stringWithFormat:@"%g%%", badPercent];
+    self.lbPercentGood.text = [NSString stringWithFormat:@"%g%%", round(goodPercent)];
+    self.lbPercentBad.text = [NSString stringWithFormat:@"%g%%", round(badPercent)];
     
     [self populateChartWithGoodPercent:goodPercent andBadPercent:badPercent];
 }
@@ -442,9 +442,9 @@ const float _kCellHeight = 100.0f;
                                          [self hiddenProgressBar];
                                          NSString *errorMsg;
                                          if (error && error.code == -1009) {
-                                             errorMsg = kMsgConnectionError;
+                                             errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                          } else {
-                                             errorMsg = kMsgApiError;
+                                             errorMsg = NSLocalizedString(kMsgApiError, @"");
                                          }
                                          
                                          [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
