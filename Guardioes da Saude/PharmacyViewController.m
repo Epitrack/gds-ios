@@ -9,7 +9,6 @@
 #import "PharmacyViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "User.h"
-#import "PharmacyGoogleMapsViewController.h"
 #import "SingleLocation.h"
 #import "LocationUtil.h"
 #import "ViewUtil.h"
