@@ -30,6 +30,8 @@
 "enter.password" = "Senha";
 "enter.sign_in" = "Entrar";
 "enter.forgot_password" = "Esqueceu a senha?";
+"enter.email_required" = "E-mail e/ou senha não informados.";
+"enter.invalid_email_password" = "Não foi possível fazer o login. E-mail e/ou senha inválidos.";
 
 // SELECT TYPE LOGIN VIEW
 "select_type_login.quick_access" = "Entre rapidamente com:";

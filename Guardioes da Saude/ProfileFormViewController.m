@@ -478,7 +478,7 @@
     
     RMActionControllerStyle style = RMActionControllerStyleWhite;
     
-    RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
+    RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:NSLocalizedString(@"constant.select", @"") style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
         birthdate = controller.contentView.date;
         [self updateBirthDate];
         
