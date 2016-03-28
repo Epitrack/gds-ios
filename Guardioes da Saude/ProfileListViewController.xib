@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileListViewController">
             <connections>
                 <outlet property="imgMainUser" destination="Mbu-Tp-Nb9" id="bV3-0I-a4P"/>
-                <outlet property="tableViewProfile" destination="TBI-FJ-Mds" id="6p3-TX-xdL"/>
+                <outlet property="tableViewProfile" destination="9Z9-M1-KQN" id="00M-Bg-aFV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,14 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TBI-FJ-Mds">
-                    <rect key="frame" x="0.0" y="172" width="320" height="254"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="GCt-x9-YVY"/>
-                        <outlet property="delegate" destination="-1" id="u6c-Mm-Ju4"/>
-                    </connections>
-                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otx-9x-ASf" customClass="GDSButton">
                     <rect key="frame" x="8" y="434" width="304" height="38"/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="15"/>
@@ -67,23 +59,31 @@
                     <color key="textColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Z9-M1-KQN">
+                    <rect key="frame" x="0.0" y="220" width="320" height="206"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ao4-y3-cO5"/>
+                        <outlet property="delegate" destination="-1" id="khH-8f-IWK"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Otx-9x-ASf" secondAttribute="bottom" constant="8" id="3jJ-aU-E4j"/>
-                <constraint firstAttribute="trailing" secondItem="TBI-FJ-Mds" secondAttribute="trailing" id="BwW-3U-8TZ"/>
+                <constraint firstItem="Otx-9x-ASf" firstAttribute="top" secondItem="9Z9-M1-KQN" secondAttribute="bottom" constant="8" id="94F-sA-TqR"/>
                 <constraint firstItem="Mbu-Tp-Nb9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="By3-wS-9j5"/>
                 <constraint firstItem="Mbu-Tp-Nb9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Hmi-eo-jD1"/>
-                <constraint firstItem="TBI-FJ-Mds" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="J5H-ow-zja"/>
                 <constraint firstItem="MQS-0L-cif" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K67-kR-tcU"/>
+                <constraint firstItem="9Z9-M1-KQN" firstAttribute="top" secondItem="Mbu-Tp-Nb9" secondAttribute="bottom" constant="8" id="MkP-xA-LgB"/>
                 <constraint firstItem="MQS-0L-cif" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="Q8H-pU-XPw"/>
-                <constraint firstItem="TBI-FJ-Mds" firstAttribute="top" secondItem="Mbu-Tp-Nb9" secondAttribute="bottom" constant="-40" id="Vc8-nY-NEW"/>
                 <constraint firstItem="Otx-9x-ASf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Y7F-gr-zbZ"/>
                 <constraint firstItem="Mbu-Tp-Nb9" firstAttribute="leading" secondItem="MQS-0L-cif" secondAttribute="leading" id="aKO-9u-qxe"/>
                 <constraint firstItem="MQS-0L-cif" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="drs-To-BJI"/>
-                <constraint firstItem="Otx-9x-ASf" firstAttribute="top" secondItem="TBI-FJ-Mds" secondAttribute="bottom" constant="8" id="ggA-f5-aTI"/>
                 <constraint firstItem="Mbu-Tp-Nb9" firstAttribute="top" secondItem="MQS-0L-cif" secondAttribute="bottom" constant="5" id="hMD-hL-KZk"/>
                 <constraint firstAttribute="trailing" secondItem="Otx-9x-ASf" secondAttribute="trailing" constant="8" id="hPO-mB-Za0"/>
+                <constraint firstItem="9Z9-M1-KQN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kV1-5k-PfQ"/>
+                <constraint firstAttribute="trailing" secondItem="9Z9-M1-KQN" secondAttribute="trailing" id="oFh-bY-2jb"/>
                 <constraint firstAttribute="trailing" secondItem="MQS-0L-cif" secondAttribute="trailing" constant="8" id="sRJ-eZ-3cB"/>
                 <constraint firstAttribute="trailing" secondItem="Mbu-Tp-Nb9" secondAttribute="trailing" constant="100" id="t2w-Vz-CNe"/>
             </constraints>

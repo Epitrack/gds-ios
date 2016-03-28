@@ -44,7 +44,7 @@
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
                                                                          style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
-
+    [self.tableViewProfile setContentOffset:CGPointZero];
 }
 
 - (void)  viewWillAppear:(BOOL)animated{
@@ -214,17 +214,23 @@
 }
 
 - (IBAction)btnAddHousehold:(id)sender {
-    // GOOGLE ANALYTICS
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
-                                                          action:@"button_edit_household"
-                                                           label:@"Edit Household"
-                                                           value:nil] build]];
     
-    ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
-    [profileFormViewController setOperation:ADD_HOUSEHOLD];
-    
-    [self.navigationController pushViewController:profileFormViewController animated:YES];
+    if ([users count] < 10) {
+        // GOOGLE ANALYTICS
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                              action:@"button_edit_household"
+                                                               label:@"Edit Household"
+                                                               value:nil] build]];
+        
+        ProfileFormViewController *profileFormViewController = [[ProfileFormViewController alloc] init];
+        [profileFormViewController setOperation:ADD_HOUSEHOLD];
+        
+        [self.navigationController pushViewController:profileFormViewController animated:YES];
+    }else{
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Só é possível adicionar 10 membros!"];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (void) loadHouseholds {
