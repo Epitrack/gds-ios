@@ -96,8 +96,11 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     } else {
+        NSString *msgText = [self.txtMessage.text stringByAppendingString:@"\n plataforma: iOS"];
+        
          [[[UserRequester alloc] init] reportBugWithTitle:self.txtSubject.text
-                                                  andText:self.txtMessage.text andOnStart:^{
+                                                  andText:msgText
+                                               andOnStart:^{
                                                       [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                                   } andOnSuccess:^{
                                                       [MBProgressHUD hideHUDForView:self.view animated:YES];
