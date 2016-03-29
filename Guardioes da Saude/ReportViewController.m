@@ -96,7 +96,9 @@
         [self presentViewController:alert animated:YES completion:nil];
         
     } else {
-        NSString *msgText = [self.txtMessage.text stringByAppendingString:@"\n plataforma: iOS"];
+        NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+        NSString *msgText = [NSString stringWithFormat:@"%@ \nPlataforma: iOS \nVersion: %@ \nBuild: %@", self.txtMessage, version, build];
         
          [[[UserRequester alloc] init] reportBugWithTitle:self.txtSubject.text
                                                   andText:msgText
