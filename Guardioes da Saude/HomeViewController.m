@@ -290,9 +290,9 @@
                                     }else{
                                         NSString *errorMsg;
                                         if (error && error.code == -1009) {
-                                            errorMsg = kMsgConnectionError;
+                                            errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                         } else {
-                                            errorMsg = kMsgApiError;
+                                            errorMsg = NSLocalizedString(kMsgApiError, @"");
                                         }
                                         
                                         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];

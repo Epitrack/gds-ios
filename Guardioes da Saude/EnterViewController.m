@@ -100,8 +100,8 @@
     
     if (([self.txtEmail.text isEqualToString: @""]) || ([self.txtPassword.text isEqualToString: @""])) {
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"E-mail e/ou senha não informados." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"enter.email_required", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button OK");
         }];
         [alert addAction:defaultAction];
@@ -165,10 +165,10 @@
         } else {
             
             UIAlertController * alert = [UIAlertController alertControllerWithTitle: @"Guardiões da Saúde"
-                                                                            message: @"Não foi possível fazer o login. E-mail e/ou senha inválidos."
+                                                                            message: NSLocalizedString(@"enter.invalid_email_password", @"")
                                                                      preferredStyle: UIAlertControllerStyleActionSheet];
             
-            UIAlertAction * defaultAction = [UIAlertAction actionWithTitle: @"OK"
+            UIAlertAction * defaultAction = [UIAlertAction actionWithTitle: NSLocalizedString(@"constant.ok", @"")
                                                                      style: UIAlertActionStyleDefault
                                                                    handler: ^(UIAlertAction * action) {
                                                                        
@@ -188,9 +188,9 @@
         
         NSString *msgError;
         if (error && error.code == -1009) {
-            msgError = kMsgConnectionError;
+            msgError = NSLocalizedString(kMsgConnectionError, @"");
         }else{
-            msgError = @"Não foi possível fazer o login. E-mail e/ou senha inválidos.";
+            msgError = NSLocalizedString(@"enter.invalid_email_password", @"");
         }
         
         [self presentViewController:[ViewUtil showAlertWithMessage:msgError] animated:YES completion:nil];

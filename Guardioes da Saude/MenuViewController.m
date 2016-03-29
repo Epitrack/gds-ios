@@ -244,9 +244,9 @@
                                                            value:nil] build]];
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
-                                                                   message:@"Tem certeza que deseja sair do aplicativo?"
+                                                                   message:NSLocalizedString(@"menu.are_you_sure_sign_out", @"")
                                                             preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *oktAction = [UIAlertAction actionWithTitle:@"Sim"
+    UIAlertAction *oktAction = [UIAlertAction actionWithTitle: NSLocalizedString(@"constant.yes", @"")
                                                             style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               [[User getInstance] clearUser];
@@ -270,7 +270,7 @@
                                                               
                                                           }];
     
-    UIAlertAction *canceltAction = [UIAlertAction actionWithTitle:@"Não"
+    UIAlertAction *canceltAction = [UIAlertAction actionWithTitle: NSLocalizedString(@"constant.no", @"")
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction * action) {
                                                       }];

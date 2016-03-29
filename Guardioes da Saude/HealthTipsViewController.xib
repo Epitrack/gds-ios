@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -19,6 +19,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HealthTipsViewController">
             <connections>
+                <outlet property="txBasicCare" destination="1Gw-cs-RYP" id="wkf-NI-xni"/>
+                <outlet property="txEmergency" destination="Tjd-ah-Bt1" id="w1C-wh-mGi"/>
+                <outlet property="txPharmacy" destination="Qhl-w7-7oM" id="uec-sD-rP7"/>
+                <outlet property="txPhones" destination="079-N1-Wbu" id="PGQ-zl-5QK"/>
+                <outlet property="txPrevention" destination="zrb-lO-9HD" id="iQk-tP-ugW"/>
+                <outlet property="txVacine" destination="lxF-rt-Qgn" id="5lQ-Ma-CNH"/>
+                <outlet property="txZika" destination="0WA-6E-hRp" id="2BR-Kb-gTq"/>
                 <outlet property="view" destination="GaS-SR-V1f" id="neF-Jh-LLd"/>
             </connections>
         </placeholder>
@@ -106,7 +113,7 @@
                         <action selector="prevention:" destination="-1" eventType="touchUpInside" id="ST9-Ha-kfq"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="UPAs" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-ah-Bt1">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.emergency" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-ah-Bt1" customClass="GDSTextView">
                     <rect key="frame" x="78" y="162" width="215" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="FZe-l2-03G"/>
@@ -122,7 +129,7 @@
                         </mask>
                     </variation>
                 </textView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Dengue, Zika e Chikungunya" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WA-6E-hRp">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.zika" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WA-6E-hRp" customClass="GDSTextView">
                     <rect key="frame" x="53" y="100" width="250" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0WA-6E-hRp" secondAttribute="height" multiplier="214:33" constant="-5.4848484848484702" id="3MB-6O-xgi"/>
@@ -169,7 +176,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Vacinas" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxF-rt-Qgn">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.vacines" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxF-rt-Qgn" customClass="GDSTextView">
                     <rect key="frame" x="78" y="234" width="215" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="215" id="NIl-gl-zhN"/>
@@ -199,7 +206,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Telefones Úteis" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="079-N1-Wbu">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.phones" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="079-N1-Wbu" customClass="GDSTextView">
                     <rect key="frame" x="78" y="301" width="215" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="1Cl-J6-KVy"/>
@@ -232,7 +239,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Farmácias" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhl-w7-7oM">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.pharmacy" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhl-w7-7oM" customClass="GDSTextView">
                     <rect key="frame" x="78" y="372" width="215" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="1cW-IO-tJJ"/>
@@ -267,7 +274,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Cuidados Básicos" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gw-cs-RYP">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.basic_care" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gw-cs-RYP" customClass="GDSTextView">
                     <rect key="frame" x="78" y="443" width="215" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1Gw-cs-RYP" secondAttribute="height" multiplier="214:33" id="BAm-pY-hb4"/>
@@ -304,7 +311,7 @@
                         </mask>
                     </variation>
                 </imageView>
-                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Prevenção" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrb-lO-9HD">
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.prevention" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrb-lO-9HD" customClass="GDSTextView">
                     <rect key="frame" x="78" y="512" width="215" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="215" id="JWV-DM-yCG"/>

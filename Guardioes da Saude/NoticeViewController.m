@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Notícias";
+    self.navigationItem.title = NSLocalizedString(@"notice.title", @"");
     user = [User getInstance];
     singleNotice = [SingleNotice getInstance];
     
@@ -59,9 +59,9 @@
                                            
                                            NSString *errorMsg;
                                            if (error && error.code == -1009) {
-                                               errorMsg = kMsgConnectionError;
+                                               errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                            } else {
-                                               errorMsg = kMsgApiError;
+                                               errorMsg = NSLocalizedString(kMsgApiError, @"");
                                            }
                                            
                                            [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
@@ -134,8 +134,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectRowAtIndexPath");
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Deseja abrir o link da notícia?" preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"notice.open_notice_confirmation", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.yes", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button YES");
         
         Notice *openNotice = [singleNotice.notices objectAtIndex:indexPath.row];
@@ -144,7 +144,7 @@
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Não" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.no", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button NO");
     }];
     [alert addAction:yesAction];

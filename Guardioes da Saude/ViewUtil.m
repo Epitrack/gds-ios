@@ -14,7 +14,7 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
                                                                    message:message
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"")
                                                             style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
@@ -25,6 +25,6 @@
 }
 
 +(UIAlertController *)showNoConnectionAlert{
-    return [self showAlertWithMessage:@"É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!"];
+    return [self showAlertWithMessage:NSLocalizedString(@"constant.no_conection", @"")];
 }
 @end

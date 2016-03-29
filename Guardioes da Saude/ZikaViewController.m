@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Dicas de Saúde";
+    self.navigationItem.title = NSLocalizedString(@"zika.title", @"");
     
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
                                 initWithTitle:@""
@@ -30,16 +30,17 @@
     
     NSString *text = self.txtContent.text;
     
-    NSRange rangeBold = [text rangeOfString:@"aegypti"];
-    NSRange rangeBold2 = [text rangeOfString:@"aegypti,"];
+    NSRange rangeBold = [text rangeOfString:@"Aedes aegypti"];
+    NSRange rangeBold2 = [text rangeOfString:@"Aedes aegypti,"];
     
-    UIFont *fontText = [UIFont italicSystemFontOfSize:12];
+    UIFont *fontText = [UIFont italicSystemFontOfSize:15];
     NSDictionary *dictBoldText = [NSDictionary dictionaryWithObjectsAndKeys:fontText, NSFontAttributeName, nil];
 
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.txtContent.text];
     [attributedString addAttribute:NSLinkAttributeName
                              value:@"tel://136"
                              range:[[attributedString string] rangeOfString:@"136"]];
+    [attributedString setAttributedString:self.txtContent.attributedText];
     [attributedString setAttributes:dictBoldText range:rangeBold];
     [attributedString setAttributes:dictBoldText range:rangeBold2];
     

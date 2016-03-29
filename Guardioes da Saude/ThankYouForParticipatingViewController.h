@@ -28,5 +28,8 @@
 @property (weak, nonatomic) IBOutlet UIView *defaultView;
 @property (weak, nonatomic) IBOutlet UIView *zicaView;
 - (IBAction)findUPAs:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *txHeader;
+@property (weak, nonatomic) IBOutlet UITextView *txSurvey;
+@property (weak, nonatomic) IBOutlet UITextView *txTellFriends;
 
 @end

@@ -6,6 +6,17 @@
  
  */
 
+// CONSTANT MSGs
+"constant.check_connection" = "Por favor verifique sua conexão!";
+"constant.comunication_error" = "Ocorreu um erro de comunição!";
+"constant.yes" = "Sim";
+"constant.no" = "Não";
+"constant.ok" = "OK";
+"constant.delete" = "Deletar";
+"constant.cancel" = "Cancelar";
+"constant.select" = "Selecionar";
+"constant.no_conection" = "É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!";
+
 // HOME VIEW
 "home.hello" = "Olá,";
 "home.news" = "Notícias";
@@ -19,12 +30,19 @@
 "enter.password" = "Senha";
 "enter.sign_in" = "Entrar";
 "enter.forgot_password" = "Esqueceu a senha?";
+"enter.email_required" = "E-mail e/ou senha não informados.";
+"enter.invalid_email_password" = "Não foi possível fazer o login. E-mail e/ou senha inválidos.";
 
 // SELECT TYPE LOGIN VIEW
 "select_type_login.quick_access" = "Entre rapidamente com:";
 "select_type_login.or_email" = "Ou use seu e-mail:";
+"select_type_login.facebook_error" = "Erro ao logar com o facebook.";
+"select_type_login.operation_canceled" = "Operação cancelada.";
+"select_type_login.twitter_error" = "Erro ao logar com o Twitter.";
+"select_type_login.user_not_found" = "Cadastro não encontrado!";
 
 // TUTORIAL VIEW
+"tutorial.tutorial" = "Tutorial";
 "tutorial.welcome" = "Bem-vindo!";
 "tutorial.preparing" = "Preparado para se tornar um Guardião da Saúde?";
 "tutorial.sign_up" = "Cadastre-se";
@@ -35,3 +53,236 @@
 "tutorial.health_map_description" = "Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
 "tutorial.health_tips" = "Dicas de Saúde";
 "tutorial.health_tips_description" = "Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.";
+
+// SELECT TYPE CREATE VIEW
+"select_type_create.quick_access" = "Entre rapidamente com:";
+"select_type_create.or_email" = "Ou use seu e-mail:";
+
+// MODAL PRIV VIEW
+"modal_priv.safe_description" = "Nós nos preocupamos com a sua privacidade";
+"modal_priv.description" = "• Sua participação é voluntária e anônima\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Para maiores informações, consulte os Termos de Uso";
+
+// FORGOT PASSWORD VIEW
+"forgot_password.label" = "Digite seu email e verifique a sua caixa de entrada.";
+"forgot_password.email" = "E-mail";
+"forgot_password.send" = "Enviar";
+"forgot_password.success" = "Email enviado com sucesso.";
+"forgot_password.user_not_found" = "E-mail não encontrado!";
+
+// SIGN UP VIEW
+"sign_up.lb_email" = "E-mail:";
+"sign_up.tx_email" = "E-mail";
+"sign_up.lb_password" = "Senha:";
+"sign_up.tx_password" = "Senha";
+"sign_up.confirm_password" = "Repertir Senha";
+"sign_up.next" = "Próximo";
+"sign_up.email_required" = "E-mail é um campo obrigatório";
+"sign_up.password_required" = "Senha é um campo obrigatório";
+"sign_up.min_char_password" = "Senha precisa ter pelo menos 6 caracteres";
+"sign_up.invalid_password_confirmation" = "A senha e a confirmação devem ser iguais";
+"sign_up.invalid_email" = "E-mail inválido";
+
+// SIGN UP DETAILS VIEW
+"sign_up_details.lb_email" = "E-mail:";
+"sign_up_details.tx_email" = "E-mail";
+"sign_up_details.lb_nick" = "Apelido:";
+"sign_up_details.tx_nick" = "Apelido";
+"sign_up_details.lb_dob" = "Data de Nascimento:";
+"sign_up_details.tx_dob_placeholder" = "Selecione sua data de Nascimento.";
+"sign_up_details.lb_gender" = "Sexo";
+"sign_up_details.tx_gender" = "Selecione seu sexo";
+"sign_up_details.lb_race" = "Cor/Raça:";
+"sign_up_details.tx_race" = "Selecione sua Cor/Raça";
+"sign_up_details.sign_up" = "Cadastre-se";
+"sign_up_details.email_required" = "E-mail é um campo obrigatório";
+"sign_up_details.nick_required" = "Apelido é um campo obrigatório";
+"sign_up_details.dob_required" = "Data de nascimento é um campo obrigatório";
+"sign_up_details.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
+"sign_up_details.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
+"sign_up_details.gender_required" = "Sexo é um campo obrigatório";
+"sign_up_details.race_required" = "Cor/Raça é um campo obrigatório";
+"sign_up_details.email_already_used" = "O e-mail usado já está em uso";
+"sign_up_details.without_localization" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
+
+// MENU VIEW
+"menu.home" = "Início";
+"menu.profile" = "Perfil";
+"menu.about" = "Sobre";
+"menu.help" = "Ajuda";
+"menu.sign_out" = "Sair";
+"menu.are_you_sure_sign_out" = "Tem certeza que deseja sair do aplicativo?";
+
+// About VIEW
+"about.title" = "Sobre";
+
+// HELP VIEW
+"help.tutorial" = "Tutorial";
+"help.terms" = "Termos e Políticas";
+"help.options" = "Opções";
+"help.contact_us" = "Entre em contato";
+"help.report_bug" = "Relatar errors no aplicativo";
+
+// TERMS VIEW
+"terms.title" = "Termos e Políticas";
+"terms.facebook_error" = "Erro ao logar com o Facebook.";
+"terms.operation_canceled" = "Operação cancelada.";
+"terms.social_network_in_using" = "Cadastro realizado anterioremente com essa rede social.";
+"terms.sociel_network_error" = "Não foi possível realizar o cadastro. Tente novamente em alguns minutos!";
+"terms.decline" = "Não aceito";
+"terms.i_agree" = "Aceito";
+
+// REPORT VIEW
+"report.title" = "Relatar Erros";
+"report.required_filds" = "Assunto e/ou mensagem não informados.";
+"report.success" = "Mensagem enviada com sucesso. Obrigado!";
+"report.error" = "Não foi possível enviar o e-mail. Tente novamente em alguns minutos.";
+"report.decription" = "Caso você tenha encontrado alguma dificuldade em utilizar o Guardiões da Saúde, preencha o formulário abaixo e envie sua mensagem para nossa equipe de especialistas.";
+"report.subject" = "Assunto";
+"report.describe_problem" = "Descreva o problema:";
+"report.send" = "Enviar";
+
+// PROFILE LIST VIEW
+"profile_list.title" = "Perfil";
+"profile_list.delete_confirmation" = "Deseja remover o perfil definitivamente? Essa operação é irreversível.";
+"profile_list.add_new_member" = "Adicionar Novo Integrante";
+"profile_list.select_perfil" = "Selecione qual dos perfis abaixo quer editar.";
+
+// PROFILE FORM VIEW
+"profile_form.lb_nick" = "Apelido:";
+"profile_form.placeholder_nick" = "Apelido";
+"profile_form.lb_sexo" = "Sexo:";
+"profile_form.lb_dob" = "Data de nascimento:";
+"profile_form.title_dob" = "Data de nascimento";
+"profile_form.msg_dob" = "Selecione sua data de nascimento.";
+"profile_form.lb_gender" = "Sexo:";
+"profile_form.placeholder_gender" = "Selecione seu sexo";
+"profile_form.placeholder_race" = "Selecione seu Cor/Raça";
+"profile_form.lb_relationship" = "Parentesco:";
+"profile_form.placeholder_relationship" = "Selecione o parentesco";
+"profile_form.lb_email" = "E-mail:";
+"profile_form.placeholder_email" = "email@exemplo.com.br";
+"profile_form.change_password" = "Redefinir senha";
+"profile_form.save" = "Salvar";
+"profile_form.edit_profile" = "Editar Perfil";
+"profile_form.add_member" = "Adicionar Novo Integrante";
+"profile_form.fill_in_fields" = "Preencha todos os campos do formulário.";
+"profile_form.invalid_dob" = "A data de aniversário deve ser menor que hoje.";
+"profile_form.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
+"profile_form.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
+"profile_form.invalid_email" = "E-mail inválido!";
+"profile_form.success" = "Operação realizada com sucesso.";
+"profile_form.fail" = "Ocorreu um problema de comunicação, por favor verifique sua conexão!";
+
+// SELECT AVATAR VIEW
+"select_avatar.title" = "Editar Foto";
+"select_avatar.check_galery_permission" = "Verifique as permissões da galeria 'Fotos'.";
+"select_avatar.no_galery_permission" = "O Aplicativo não tem permissão para gravar a foto.";
+
+// CHANGE PASSWORD VIEW
+"chang_password.title" = "Redefinir senha";
+"chang_password.success" = "Senha atualizada com sucesso.";
+"chang_password.fail" = "Ocorreu um erro ao atualizar o usuário.";
+"chang_password.password_isnt_equals" = "As senhas não estão iguais.";
+"chang_password.min_char_password" = "A senha deve ter mais de 6 caracteres.";
+"chang_password.placeholder_password" = "Redefinir senha";
+"chang_password.placeholder_password_confirmation" = "Redefinir senha";
+"chang_password.save" = "Salvar";
+
+// NOTICE VIEW
+"notice.title" = "Notícias";
+"notice.open_notice_confirmation" = "Deseja abrir o link da notícia?";
+
+// HEALTH TIPS VIEW
+"health_tips.zika" = "Dengue, Zika e Chikungunya";
+"health_tips.emergency" = "UPAs";
+"health_tips.vacines" = "Vacinas";
+"health_tips.phones" = "Telefones Úteis";
+"health_tips.pharmacy" = "Farmácias";
+"health_tips.basic_care" = "Cuidados Básicos";
+"health_tips.prevention" = "Prevenção";
+
+// PHARMACY VIEW
+"pharmacy.title" = "Farmácias";
+"pharmacy.some_isnt_showing" = "Algumas farmácias podem não ser exibidas no mapa.";
+
+// BASIC CARE VIEW
+"basic_care.title" = "Cuidados Básicos";
+
+// PREVENTION VIEW
+"prevention.title" = "Prevenção";
+
+// EMERGENCY VIEW
+"emergency.title" = "UPAs";
+
+// VACINE VIEW
+"vacine.title" = "Vacinas";
+
+// PHONES VIEW
+"phones.title" = "Telefones Úteis";
+"phones.table_title" = "Telefones Úteis";
+
+// ZIKA VIEW
+"zika.title" = "Dengue, Zika e Chikungunya";
+
+// LIST SYMPTOMS VIEW
+"list_symptoms.title" = "Participe Agora";
+"list_symptoms.placeholder_country" = "Selecione o país";
+"list_symptoms.country_required" = "Por favor, selecione o  pais!";
+"list_symptoms.allow_send" = "Deseja registrar suas informações?";
+"list_symptoms.check_a_symptom" = "Escolha algum sintoma antes de confirmar.";
+"list_symptoms.symptoms" = "Sintomas";
+"list_symptoms.others" = "Outros";
+"list_symptoms.had_contact_symptom" = "Tive contato com alguém com um desses sintomas";
+"list_symptoms.find_a_health_service" = "Procurei um serviço de saúde";
+"list_symptoms.traveled" = "Estive fora do Brasil nos últimos 14 dias";
+"list_symptoms.confirm" = "Confirmar";
+"list_symptoms.select_symptoms" = "Marque abaixo o que você está sentindo neste momento:";
+
+// SELECT STATE VIEW
+"select_state.title" = "Participe Agora";
+"select_state.without_location" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
+"select_state.how_is_your_health" = "Como está sua saúde nesse  momento?";
+"select_state.well" = "Bem";
+"select_state.bad" = "Mal";
+"select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Mal\" seja selecionada.";
+
+// THANK YOU VIEW
+"thank_you.shared_msg" = "Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org";
+"thank_you.title" = "Guardiões da Saúde";
+"thank_you.look_emergency" = "Atenção: Procure a Unidade de Pronto Atendimento mais próxima.";
+"thank_you.whatsapp_not_installed" = "O Whatsapp não está instalado neste dispositivo.";
+"thank_you.thanks_shared" = "Obrigado por compartilhar!";
+"thank_you.share_fail" = "Não foi possível compartilhar sua participação.";
+"thank_you.thanks_for_information" = "Obrigado pela informação!";
+"thank_you.look_emergency_description" = "Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde.";
+"thank_you.tell_your_friend" = "Convide seus amigos para serem Guardiões da Saúde.";
+"thank_you.continue" = "Continuar";
+"thank_you.zika_msg" = "Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.";
+
+// SELECT PARTICIPANT VIEW
+"select_participant.title" = "Participe Agora";
+"select_participant.year_old" = "%ld Anos";
+"select_participant.new_member" = "Novo integrante";
+"select_participant.how_will_participate" = "Quem vai participar?";
+"select_participant.members" = "Integrantes do domicílio";
+
+// MAP HEALTH VIEW
+"map_health.title" = "Mapa da Saúde";
+"map_health.btn_info" = "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)";
+"map_health.syndromes" = "Síndromes";
+"map_health.well" = "Bem";
+"map_health.bad" = "Mal";
+"map_health.participations" = "Participações";
+"map_health.general" = "Geral";
+"map_health.exanthematic" = "Exantemática";
+"map_health.respiratory" = "Respiratória";
+"map_health.diarrheal" = "Diarreica";
+
+// DIARY HEALTH VIEW
+"diary_health.title" = "Diário da saúde";
+"diary_health.summary" = "Resumo";
+"diary_health.participation" = "Participações";
+"diary_health.well" = "Bem";
+"diary_health.bad" = "Mal";
+"diary_health.report" = "Relatórios";
+"diary_health.calendar" = "Calendário";

@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Editar Foto";
+    self.navigationItem.title = NSLocalizedString(@"select_avatar.title", @"");
     self.btnPhoto.hidden = !showCameraBtn;
 }
 
@@ -123,7 +123,7 @@
 - (void)showGallery{
     [self requestPermissions:^(bool authorized){
         if(!authorized){
-            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Verifique as permissões da galeria 'Fotos'."];
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"select_avatar.check_galery_permission", @"")];
             
             [self presentViewController:alert animated:YES completion:nil];
         }else{
@@ -145,7 +145,7 @@
             
             [self presentViewController:alert animated:YES completion:nil];
         } else if(!authorized){
-            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Verifique as permissões da galeria 'Fotos'."];
+            UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"select_avatar.check_galery_permission", @"")];
             
             [self presentViewController:alert animated:YES completion:nil];
         }else {
@@ -264,7 +264,7 @@
         if (!success) {
             NSLog(@"Error creating asset: %@", error);
             if (error.code == 2047) {
-                UIAlertController *alert = [ViewUtil showAlertWithMessage:@"O Aplicativo não tem permissão para gravar a foto."];
+                UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"select_avatar.no_galery_permission", @"")];
                 [self presentViewController:alert animated:YES completion:nil];
             }
         } else {

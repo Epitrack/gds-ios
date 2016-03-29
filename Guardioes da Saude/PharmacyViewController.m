@@ -9,7 +9,6 @@
 #import "PharmacyViewController.h"
 #import "AFNetworking/AFNetworking.h"
 #import "User.h"
-#import "PharmacyGoogleMapsViewController.h"
 #import "SingleLocation.h"
 #import "LocationUtil.h"
 #import "ViewUtil.h"
@@ -32,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Farmácias";
+    self.navigationItem.title = NSLocalizedString(@"pharmacy.title", @"");
     
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
                                 initWithTitle:@""
@@ -56,8 +55,8 @@
     [locationManager startUpdatingLocation];
     
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Algumas farmácias podem não ser exibidas no mapa." preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"pharmacy.some_isnt_showing", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
     }];
     [alert addAction:defaultAction];
@@ -187,9 +186,9 @@
                                [MBProgressHUD hideHUDForView:self.view animated:YES];
                                NSString *errorMsg;
                                if (error && error.code == -1009) {
-                                   errorMsg = kMsgConnectionError;
+                                   errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                } else {
-                                   errorMsg = kMsgApiError;
+                                   errorMsg = NSLocalizedString(kMsgApiError, @"");
                                }
                                
                                [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];

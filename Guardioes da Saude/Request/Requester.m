@@ -3,8 +3,8 @@
 #import "Requester.h"
 #import "User.h"
 
-NSString * const kMsgConnectionError = @"Por favor verifique sua conexão!";
-NSString * const kMsgApiError = @"Ocorreu um erro de comunição!";
+NSString * const kMsgConnectionError = @"constant.check_connection";
+NSString * const kMsgApiError = @"constant.comunication_error";
 
 @implementation Requester
 

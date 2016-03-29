@@ -43,6 +43,18 @@
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Health Tips Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
+    [self applyTranslation];
+}
+
+- (void)applyTranslation{
+    self.txZika.backgroundColor = [UIColor clearColor];
+    self.txEmergency.backgroundColor = [UIColor clearColor];
+    self.txVacine.backgroundColor = [UIColor clearColor];
+    self.txPhones.backgroundColor = [UIColor clearColor];
+    self.txPharmacy.backgroundColor = [UIColor clearColor];
+    self.txBasicCare.backgroundColor = [UIColor clearColor];
+    self.txPrevention.backgroundColor = [UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning {

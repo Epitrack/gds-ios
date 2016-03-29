@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"UPAs";
+    self.navigationItem.title = NSLocalizedString(@"emergency.title", @"");
     
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
                                 initWithTitle:@""
@@ -179,9 +179,9 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSString *errorMsg;
         if (error && error.code == -1009) {
-            errorMsg = kMsgConnectionError;
+            errorMsg = NSLocalizedString(kMsgConnectionError, @"");
         } else {
-            errorMsg = kMsgApiError;
+            errorMsg = NSLocalizedString(kMsgApiError, @"");
         }
         
         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];

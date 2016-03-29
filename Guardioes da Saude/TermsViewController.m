@@ -33,7 +33,7 @@
     user = [[User alloc] init];
     userRequester = [[UserRequester alloc] init];
     
-    self.navigationItem.title = @"Termos e Políticas";
+    self.navigationItem.title = NSLocalizedString(@"terms.title", @"");
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
     
@@ -140,8 +140,8 @@
          if (error) {
              [MBProgressHUD hideHUDForView:self.view animated:YES];
              
-             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Erro ao logar com o Facebook." preferredStyle:UIAlertControllerStyleActionSheet];
-             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"terms.facebook_error", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                  NSLog(@"You pressed button OK");
              }];
              [alert addAction:defaultAction];
@@ -149,8 +149,8 @@
          } else if (result.isCancelled) {
              [MBProgressHUD hideHUDForView:self.view animated:YES];
              
-             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Operação cancelada." preferredStyle:UIAlertControllerStyleActionSheet];
-             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"terms.operation_canceled", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                  NSLog(@"You pressed button OK");
              }];
              [alert addAction:defaultAction];
@@ -210,13 +210,13 @@
                                     }
                                 andOnSuccess:^(User *user){
                                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                                    UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Cadastro realizado anterioremente com essa rede social."];
+                                    UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"terms.social_network_in_using", @"")];
                                     [self presentViewController:alert animated:YES completion:nil];
                                 }
                                     andError:^(NSError *error){
                                         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                         if (error) {
-                                            UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Não foi possível realizar o cadastro. Tente novamente em alguns minutos!"];
+                                            UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"terms.sociel_network_error", @"")];
                                             [self presentViewController:alert animated:YES completion:nil];
                                         } else {
                                             SignUpDetailsViewController *signupDetailView = [[SignUpDetailsViewController alloc] init];

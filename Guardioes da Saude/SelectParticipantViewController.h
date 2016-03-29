@@ -17,5 +17,6 @@
 - (IBAction)btnSelectMainMember:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextView *txtDobMainMember;
 @property (strong, nonatomic) IBOutlet UITextView *txtNameMainMember;
+@property (weak, nonatomic) IBOutlet UITextView *lbMembers;
 
 @end

@@ -80,7 +80,7 @@
                         <constraint firstAttribute="width" secondItem="ovf-g5-HuC" secondAttribute="height" multiplier="53:7" id="VHf-DG-uft"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
-                    <state key="normal" title="email" backgroundImage="button_email.png">
+                    <state key="normal" title="E-mail" backgroundImage="button_email.png">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>

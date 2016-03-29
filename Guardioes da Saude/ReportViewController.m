@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Relatar Erros";
+    self.navigationItem.title = NSLocalizedString(@"report.title", @"");
     
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
                                 initWithTitle:@""
@@ -88,20 +88,25 @@
     
     if ([self.txtSubject.text isEqualToString:@""] || [self.txtMessage.text isEqualToString:@""]) {
         
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Assunto e/ou mensagem não informados." preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"report.required_filds", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             NSLog(@"You pressed button OK");
         }];
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
         
     } else {
+        NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+        NSString *msgText = [NSString stringWithFormat:@"%@ \nPlataforma: iOS \nVersion: %@ \nBuild: %@", self.txtMessage, version, build];
+        
          [[[UserRequester alloc] init] reportBugWithTitle:self.txtSubject.text
-                                                  andText:self.txtMessage.text andOnStart:^{
+                                                  andText:msgText
+                                               andOnStart:^{
                                                       [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                                   } andOnSuccess:^{
                                                       [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                                      UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Mensagem enviada com sucesso. Obrigado!"];
+                                                      UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"report.success", @"")];
                                                       [self presentViewController:alert animated:YES completion:nil];
                                                       
                                                       self.txtSubject.text = @"";
@@ -111,9 +116,9 @@
                                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
                                                    NSString *errorMsg;
                                                    if (error && error.code == -1009) {
-                                                       errorMsg = kMsgConnectionError;
+                                                       errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                                    } else {
-                                                       errorMsg = @"Não foi possível enviar o e-mail. Tente novamente em alguns minutos.";
+                                                       errorMsg = NSLocalizedString(@"report.error", @"");
                                                    }
                                                    
                                                    [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];

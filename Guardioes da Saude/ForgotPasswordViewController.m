@@ -85,18 +85,18 @@
                                                    }
                                                  andOnSuccess:^{
                                                      [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                                     UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Email enviado com sucesso."];
+                                                     UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"forgot_password.success", @"")];
                                                      [self presentViewController:alert animated:YES completion:nil];
                                                  }
                                                    andOnError:^(NSError *error){
                                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
                                                        NSString *errorMsg;
                                                        if (error && error.code == -1009) {
-                                                           errorMsg = kMsgConnectionError;
+                                                           errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                                        } else if(errorMsg){
-                                                           errorMsg = kMsgApiError;
+                                                           errorMsg = NSLocalizedString(kMsgApiError, @"");
                                                        }else{
-                                                           errorMsg = @"E-mail não encontrado!";
+                                                           errorMsg = NSLocalizedString(@"forgot_password.user_not_found", @"");
                                                        }
                                                        
                                                        [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];

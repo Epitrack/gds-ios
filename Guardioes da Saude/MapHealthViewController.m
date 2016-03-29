@@ -10,7 +10,6 @@
 #import "User.h"
 #import "AFNetworking/AFNetworking.h"
 #import "SurveyMap.h"
-#import "DetailMapHealthViewController.h"
 #import "DetailMap.h"
 #import "MapPinAnnotation.h"
 #import "LocationUtil.h"
@@ -54,7 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Mapa da Saúde";
+    self.navigationItem.title = NSLocalizedString(@"map_health.title", @"");
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
 
@@ -235,9 +234,9 @@
                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                             NSString *errorMsg;
                             if (error && error.code == -1009) {
-                                errorMsg = kMsgConnectionError;
+                                errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                             } else {
-                                errorMsg = kMsgApiError;
+                                errorMsg = NSLocalizedString(kMsgApiError, @"");
                             }
                             
                             [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
@@ -257,7 +256,7 @@
                               totalNoSymptom = [summary[@"total_no_symptoms"] integerValue];
                               
                               if (totalNoSymptom > 0) {
-                                  goodPercent = (((double)totalNoSymptom / (double)totalSurvey) * 100);
+                                  goodPercent = (((double)totalNoSymptom / (double)totalSurvey) * 100.0f);
                               } else {
                                   goodPercent = 0;
                               }
@@ -265,7 +264,7 @@
                               totalWithSymptom = [summary[@"total_symptoms"] integerValue];
                               
                               if (totalWithSymptom > 0) {
-                                  badPercent = (((double)totalWithSymptom / (double)totalSurvey) * 100);
+                                  badPercent = (((double)totalWithSymptom / (double)totalSurvey) * 100.0f);
                               } else {
                                   badPercent = 0;
                               }
@@ -275,9 +274,9 @@
                               respiratoria = [diseases[@"respiratoria"] doubleValue];
                               
                               if (totalWithSymptom > 0) {
-                                  diarreica = ((diarreica * 100) / totalWithSymptom);
-                                  exantemaica = ((exantemaica * 100) / totalWithSymptom);
-                                  respiratoria = ((respiratoria * 100) / totalWithSymptom);
+                                  diarreica = ((diarreica * 100.0f) / totalWithSymptom);
+                                  exantemaica = ((exantemaica * 100.0f) / totalWithSymptom);
+                                  respiratoria = ((respiratoria * 100.0f) / totalWithSymptom);
                               }
                               
                               self.lblCity.text = city;
@@ -291,14 +290,14 @@
                               detailMap.city = city;
                               detailMap.state = state;
                               detailMap.totalSurvey = [NSString stringWithFormat:@"%d", (int)totalSurvey];
-                              detailMap.goodPercent = [NSString stringWithFormat:@"%d%%", (int)goodPercent];
-                              detailMap.badPercent = [NSString stringWithFormat:@"%d%%", (int)badPercent];
+                              detailMap.goodPercent = [NSString stringWithFormat:@"%g%%", round(goodPercent)];
+                              detailMap.badPercent = [NSString stringWithFormat:@"%g%%", round(badPercent)];
                               detailMap.totalNoSymptom = [NSString stringWithFormat:@"%d", (int)totalNoSymptom];
                               detailMap.totalWithSymptom = [NSString stringWithFormat:@"%d", (int)totalWithSymptom];
                               
-                              detailMap.diarreica = [NSString stringWithFormat:@"%.2f", diarreica];
-                              detailMap.exantemaica = [NSString stringWithFormat:@"%.2f", exantemaica];
-                              detailMap.respiratoria = [NSString stringWithFormat:@"%.2f", respiratoria];
+                              detailMap.diarreica = [NSString stringWithFormat:@"%g", round(diarreica)];
+                              detailMap.exantemaica = [NSString stringWithFormat:@"%g", round(exantemaica)];
+                              detailMap.respiratoria = [NSString stringWithFormat:@"%g", round(respiratoria)];
                               
                               [self loadDetails];
                               [self loadPieChart];
@@ -311,9 +310,9 @@
     self.txtPercentBad.text = detailMap.badPercent;
     self.txtCountGood.text = detailMap.totalNoSymptom;
     self.txtCountBad.text = detailMap.totalWithSymptom;
-    self.progressViewDiarreica.progress = ([detailMap.diarreica doubleValue]/100);
-    self.progressViewExantematica.progress = ([detailMap.exantemaica doubleValue]/100);
-    self.progessViewRespiratoria.progress = ([detailMap.respiratoria doubleValue]/100);
+    self.progressViewDiarreica.progress = ([detailMap.diarreica doubleValue]/100.0f);
+    self.progressViewExantematica.progress = ([detailMap.exantemaica doubleValue]/100.0f);
+    self.progessViewRespiratoria.progress = ([detailMap.respiratoria doubleValue]/100.0f);
     
     self.lbPercentDiareica.text = [NSString stringWithFormat:@"%g%%", [detailMap.diarreica doubleValue]];
     self.lbPercentExantematica.text = [NSString stringWithFormat:@"%g%%", [detailMap.exantemaica doubleValue]];
@@ -377,12 +376,6 @@
     [self.pieChartView setNeedsDisplay];
 }
 
-- (IBAction)showDetailMapHealth:(id)sender {
-    DetailMapHealthViewController *detailMapHealthViewController = [[DetailMapHealthViewController alloc] init];
-    [self.navigationController pushViewController:detailMapHealthViewController animated:YES];
-    
-}
-
 - (IBAction)showDetailMapPlus:(id)sender {
     // GOOGLE ANALYTICS
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
@@ -443,12 +436,12 @@
                                  NSFontAttributeName: [UIFont systemFontOfSize:15.0],
                                  NSForegroundColorAttributeName: [UIColor grayColor]};
     
-    NSMutableAttributedString *msg = [[NSMutableAttributedString alloc] initWithString:@"As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)" attributes:attributes];
+    NSMutableAttributedString *msg = [[NSMutableAttributedString alloc] initWithString:NSLocalizedString(@"map_health.btn_info", @"") attributes:attributes];
     
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Síndromes" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"map_health.syndromes", @"") message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
     [alert setValue:msg forKey:@"attributedMessage"];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
     }];
     

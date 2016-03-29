@@ -39,15 +39,14 @@
     
     // Setup down pickers
     (void)[self.txtGender initWithData:[Constants getGenders]];
-    [self.txtGender.DownPicker setToolbarCancelButtonText:@"Cancelar"];
-    [self.txtGender.DownPicker setPlaceholder:@"Selecione seu sexo"];
-    [self.txtGender.DownPicker setToolbarCancelButtonText:@"Cancelar"];
-    [self.txtGender.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    [self.txtGender.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_gender", @"")];
+    [self.txtGender.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtGender.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     (void)[self.txtRace initWithData: [Constants getRaces]];
-    [self.txtRace.DownPicker setPlaceholder:@"Seleciona Cor/Raça"];
-    [self.txtRace.DownPicker setToolbarCancelButtonText:@"Cancelar"];
-    [self.txtRace.DownPicker setToolbarDoneButtonText:@"Selecionar"];
+    [self.txtRace.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_race", @"")];
+    [self.txtRace.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtRace.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
@@ -110,7 +109,7 @@
     
     RMActionControllerStyle style = RMActionControllerStyleWhite;
     
-    RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:@"Select" style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
+    RMAction<RMActionController<UIDatePicker *> *> *selectAction = [RMAction<RMActionController<UIDatePicker *> *> actionWithTitle:NSLocalizedString(@"constant.select", @"") style:RMActionStyleDone andHandler:^(RMActionController<UIDatePicker *> *controller) {
         dob = controller.contentView.date;
         [self updateBirthDate];
         
@@ -119,8 +118,8 @@
     }];
     
     RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
-    dateSelectionController.title = @"Data de nascimento";
-    dateSelectionController.message = @"Selecione sua data de nascimento.";
+    dateSelectionController.title = NSLocalizedString(@"sign_up_details.lb_dob", @"");
+    dateSelectionController.message = NSLocalizedString(@"sign_up_details.tx_dob_placeholder", @"");
     
     [dateSelectionController addAction:selectAction];
     
@@ -143,44 +142,44 @@
 - (bool)isValid{
     
     if (!self.user.email && [self.txtEmail.text isEqualToString:@""]) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"E-mail é um campo obrigatório"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.email_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
     if ([self.txtNick.text isEqualToString:@""]) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Apelido é um campo obrigatório"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.nick_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
     if (!dobSetted) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Data de nascimento é um campo obrigatório"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.dob_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
     NSInteger yearsOld = [DateUtil diffInDaysDate:dob andDate: [NSDate date]]/365;
     if (yearsOld < 13) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade mínima para o usuário principal é 13 anos."];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.min_dob", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
     if (yearsOld > 120) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"A idade máxima para o usuário principal é 120 anos."];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.max_dob", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
     if ([self.txtGender.text isEqualToString:@""]) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Sexo é um campo obrigatório"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.gender_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
     if ([self.txtRace.text isEqualToString:@""]) {
-        UIAlertController *alert = [ViewUtil showAlertWithMessage:@"Cor/Raça é um campo obrigatório"];
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.race_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
@@ -231,9 +230,9 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             NSString *msgError;
             if (error && error.code == -1009) {
-                msgError = kMsgConnectionError;
+                msgError = NSLocalizedString(kMsgConnectionError, @"");
             }else{
-                msgError = @"O e-mail usado já está em uso";
+                msgError = NSLocalizedString(@"sign_up_details.email_already_used", @"");
             }
             
             [self presentViewController:[ViewUtil showAlertWithMessage:msgError] animated:YES completion:nil];
@@ -245,7 +244,7 @@
 {
     NSLog(@"didFailWithError: %@", error);
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:@"Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho." preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"sign_up_details.without_localization", @"") preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button OK");
     }];
