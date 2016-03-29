@@ -34,16 +34,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = NSLocalizedString(@"profile_list.title", @"");
-    self.navigationItem.hidesBackButton = YES;
+    
     householdeRequest = [[HouseholdRequester alloc]init];
+    if (!self.showBack) {
+        self.navigationItem.hidesBackButton = YES;
+        
+        SWRevealViewController *revealController = [self revealViewController];
+        [revealController panGestureRecognizer];
+        [revealController tapGestureRecognizer];
+        
+        UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+                                                                             style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
+        self.navigationItem.leftBarButtonItem = revealButtonItem;
+    }else{
+        [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+                                                             forBarMetrics:UIBarMetricsDefault];
+    }
     
-    SWRevealViewController *revealController = [self revealViewController];
-    [revealController panGestureRecognizer];
-    [revealController tapGestureRecognizer];
-    
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
-                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
-    self.navigationItem.leftBarButtonItem = revealButtonItem;
     [self.tableViewProfile setContentOffset:CGPointZero];
 }
 

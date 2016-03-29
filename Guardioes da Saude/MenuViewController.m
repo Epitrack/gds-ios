@@ -19,7 +19,6 @@
 #import <Google/Analytics.h>
 
 @interface MenuViewController () {
-    bool startWithProfileSelected;
     UIViewController *newFrontController;
 }
 
@@ -62,11 +61,7 @@
     
     [self.navigationController setNavigationBarHidden:YES];
     
-    if (startWithProfileSelected) {
-        [self setProfileSelected];
-    } else {
-        [self setHomeSelected];
-    }
+    [self setHomeSelected];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -218,8 +213,6 @@
 }
 
 - (void)setProfileSelected{
-    startWithProfileSelected = YES;
-    
     self.imgHome.image = [UIImage imageNamed:@"iconHomeDefault"];
     self.lbHome.textColor = [UIColor blackColor];
     

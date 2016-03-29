@@ -242,10 +242,8 @@
                                                            value:nil] build]];
     
     if ([UserRequester isConnected]) {
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        [appDelegate setHighlithProfile];
-        
         ProfileListViewController *profileListView = [[ProfileListViewController alloc] init];
+        profileListView.showBack = YES;
         [self.navigationController pushViewController:profileListView animated:YES];
     }else{
         [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];

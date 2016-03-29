@@ -12,6 +12,9 @@
     
     NSMutableArray *users;
 }
+
+@property bool showBack;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableViewProfile;
 @property (weak, nonatomic) IBOutlet UIButton *btnMainUser;
 - (IBAction)btnEditMainUser:(id)sender;

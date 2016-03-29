@@ -320,10 +320,6 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
                                                       handler:_registrationHandler];
 }
 
-- (void)setHighlithProfile{
-    [menuViewCtrl setProfileSelected];
-}
-
 #define LogDelegates 0
 
 #if LogDelegates
