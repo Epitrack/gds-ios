@@ -9,11 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ASHorizontalScrollView.h"
 
-@interface DiaryHealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    
-    UITableView *sampleTableView;
-    
-}
+@interface DiaryHealthViewController : UIViewController 
 
 @property (weak, nonatomic) IBOutlet UILabel *lbTotalParticipation;
 @property (weak, nonatomic) IBOutlet UILabel *lbPercentGood;
@@ -24,5 +20,6 @@
 
 - (IBAction)btnNextMonthAction:(id)sender;
 - (IBAction)btnPreviousMonthAction:(id)sender;
+- (IBAction)btnChangePerson:(id)sender;
 
 @end
