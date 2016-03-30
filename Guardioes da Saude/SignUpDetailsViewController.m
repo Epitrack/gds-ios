@@ -42,6 +42,7 @@
     [self.txtGender.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_gender", @"")];
     [self.txtGender.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.txtGender.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    [self.txtGender.DownPicker addTarget:self action:@selector(dp_Selected:) forControlEvents:UIControlEventValueChanged];
     
     (void)[self.txtRace initWithData: [Constants getRaces]];
     [self.txtRace.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_race", @"")];
@@ -66,6 +67,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dp_Selected:(id)dp {
+    [self.txtRace becomeFirstResponder];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -103,21 +108,10 @@
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
     [self.btnDob sendActionsForControlEvents:UIControlEventTouchUpInside];
     
-    return NO;
-}
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    [self.btnDob sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
-    return NO;
-}
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    [self.btnDob sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
-    return NO;
+    return YES;
 }
 
 - (IBAction)btnDobAction:(id)sender {
@@ -134,7 +128,7 @@
         [self.btnDob setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         dobSetted = YES;
         
-        
+        [self.txtGender becomeFirstResponder];
     }];
     
     RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
