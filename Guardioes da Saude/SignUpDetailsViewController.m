@@ -42,7 +42,7 @@
     [self.txtGender.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_gender", @"")];
     [self.txtGender.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.txtGender.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
-    [self.txtGender.DownPicker addTarget:self action:@selector(dp_Selected:) forControlEvents:UIControlEventValueChanged];
+    [self.txtGender.DownPicker addTarget:self action:@selector(genderDownPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
     
     (void)[self.txtRace initWithData: [Constants getRaces]];
     [self.txtRace.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_race", @"")];
@@ -69,7 +69,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)dp_Selected:(id)dp {
+-(void)genderDownPickerDidSelected:(id)dp {
     [self.txtRace becomeFirstResponder];
 }
 
@@ -115,6 +115,8 @@
 }
 
 - (IBAction)btnDobAction:(id)sender {
+    [self.txtEmail endEditing:YES];
+    [self.txtNick endEditing:YES];
     [self.txtGender endEditing:YES];
     [self.txtRace endEditing:YES];
     

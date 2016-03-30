@@ -57,16 +57,19 @@
     [self.pickerGender.DownPicker setPlaceholder:NSLocalizedString(@"profile_form.placeholder_gender", @"")];
     [self.pickerGender.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.pickerGender.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    [self.pickerGender.DownPicker addTarget:self action:@selector(genderDownPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
     
     (void)[self.pickerRace initWithData: [Constants getRaces]];
     [self.pickerRace.DownPicker setPlaceholder:NSLocalizedString(@"profile_form.placeholder_race", @"")];
     [self.pickerRace.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.pickerRace.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    [self.pickerRace.DownPicker addTarget:self action:@selector(raceDownPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
     
     (void)[self.pickerRelationship initWithData:[Household getRelationshipArray]];
     [self.pickerRelationship.DownPicker setPlaceholder:NSLocalizedString(@"profile_form.placeholder_relationship", @"")];
     [self.pickerRelationship.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.pickerRelationship.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    [self.pickerRelationship.DownPicker addTarget:self action:@selector(relationshipDownPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
     
     [self applyLayerOnPictureLayer];
     
@@ -77,6 +80,23 @@
     } else if (self.operation == ADD_HOUSEHOLD){
         [self loadAddHousehold];
     }
+}
+
+-(void)genderDownPickerDidSelected:(id)dp {
+    [self.pickerGender resignFirstResponder];
+    [self.btnDob sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)raceDownPickerDidSelected:(id)dp {
+    if (self.operation == EDIT_USER) {
+        [self.txtEmail becomeFirstResponder];
+    } else {
+        [self.pickerRelationship becomeFirstResponder];
+    }
+}
+
+-(void)relationshipDownPickerDidSelected:(id)dp {
+    [self.txtEmail becomeFirstResponder];
 }
 
 - (void) applyLayerOnPictureLayer{
@@ -113,7 +133,7 @@
 
 - (void) loadEditUser{
     self.navigationItem.title = NSLocalizedString(@"profile_form.edit_profile", @"");
-    self.txtEmail.enabled = YES;
+    self.txtEmail.enabled = NO;
     
     //Hide relationship
     [self.pickerRelationship removeFromSuperview];
@@ -472,6 +492,8 @@
 
 
 - (IBAction)btnDobAction:(id)sender {
+    [self.txtEmail endEditing:YES];
+    [self.txtNick endEditing:YES];
     [self.pickerGender endEditing:YES];
     [self.pickerRace endEditing:YES];
     [self.pickerRelationship endEditing:YES];
@@ -483,6 +505,9 @@
         [self updateBirthDate];
         
         [self.btnDob setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
+        
+        [self.pickerRace becomeFirstResponder];
     }];
     
     RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
