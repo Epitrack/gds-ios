@@ -102,6 +102,24 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.btnDob sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    return NO;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    [self.btnDob sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    return NO;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    [self.btnDob sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    return NO;
+}
+
 - (IBAction)btnDobAction:(id)sender {
     [self.txtGender endEditing:YES];
     [self.txtRace endEditing:YES];
@@ -115,6 +133,8 @@
         
         [self.btnDob setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         dobSetted = YES;
+        
+        
     }];
     
     RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
