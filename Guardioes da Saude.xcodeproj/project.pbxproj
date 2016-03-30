@@ -492,6 +492,8 @@
 		CBDE6B281C84C404007418FA /* img_profile15@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B271C84C404007418FA /* img_profile15@2x.png */; };
 		CBEF9AD21C75FD8800A0B036 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */; };
 		CBEF9AD31C75FD8800A0B036 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */; };
+		CBFF73A61CAC662A006C617A /* ParticipantsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF73A41CAC662A006C617A /* ParticipantsListViewController.m */; };
+		CBFF73A71CAC662A006C617A /* ParticipantsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFF73A51CAC662A006C617A /* ParticipantsListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1071,6 +1073,9 @@
 		CBEF9ACF1C75FD8800A0B036 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		CBFF73A31CAC662A006C617A /* ParticipantsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticipantsListViewController.h; sourceTree = "<group>"; };
+		CBFF73A41CAC662A006C617A /* ParticipantsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParticipantsListViewController.m; sourceTree = "<group>"; };
+		CBFF73A51CAC662A006C617A /* ParticipantsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipantsListViewController.xib; sourceTree = "<group>"; };
 		DFD606A5982C329F428410B6 /* Pods-Guardioes da Saude.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guardioes da Saude.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude.debug.xcconfig"; sourceTree = "<group>"; };
 		EA543D68390B8A7751226DD2 /* Pods-Guardioes da Saude.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guardioes da Saude.release.xcconfig"; path = "Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1180,9 +1185,12 @@
 		5221A81F1BED30BE006659E2 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
-				52D15DD41BFBCA8100FC31F3 /* DiaryHealthViewController.xib */,
-				52D15DD51BFBCA8100FC31F3 /* DiaryHealthViewController.m */,
 				52D15DD61BFBCA8100FC31F3 /* DiaryHealthViewController.h */,
+				52D15DD51BFBCA8100FC31F3 /* DiaryHealthViewController.m */,
+				52D15DD41BFBCA8100FC31F3 /* DiaryHealthViewController.xib */,
+				CBFF73A31CAC662A006C617A /* ParticipantsListViewController.h */,
+				CBFF73A41CAC662A006C617A /* ParticipantsListViewController.m */,
+				CBFF73A51CAC662A006C617A /* ParticipantsListViewController.xib */,
 			);
 			name = Diary;
 			sourceTree = "<group>";
@@ -2157,6 +2165,7 @@
 				520CD0D61BED3DB800F24B45 /* SelectTypeLoginViewController.xib in Resources */,
 				52518A201C19FC4800B86D5E /* ModalPrivViewController.xib in Resources */,
 				52E727511BEA93B800B46945 /* fab_location@3x.png in Resources */,
+				CBFF73A71CAC662A006C617A /* ParticipantsListViewController.xib in Resources */,
 				52D2BC7B1BF12EBF007C9C09 /* BG_blur_menu@2x.png in Resources */,
 				52E7270D1BEA93B800B46945 /* icon_tips_prevention@2x.png in Resources */,
 				52E727C81BEA93B800B46945 /* img_profile07@2x.png in Resources */,
@@ -2396,6 +2405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52E6F0641C1B5AA900C88A08 /* ForgotPasswordViewController.m in Sources */,
+				CBFF73A61CAC662A006C617A /* ParticipantsListViewController.m in Sources */,
 				52EC0D7B1C31626800EC8908 /* DateUtil.m in Sources */,
 				52EC50441BF026CC002FEACE /* ImageUtility.m in Sources */,
 				258F14E31BCEE3CC00CE86B7 /* User.m in Sources */,
