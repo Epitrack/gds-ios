@@ -414,11 +414,11 @@
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="ZCe-sI-W6d"/>
-                            <exclude reference="4bw-2m-djY"/>
-                            <exclude reference="Rg2-8q-nyb"/>
                             <exclude reference="yXl-7g-gFA"/>
                             <exclude reference="S6E-ev-JvD"/>
                             <exclude reference="b6f-nc-ccV"/>
+                            <exclude reference="4bw-2m-djY"/>
+                            <exclude reference="Rg2-8q-nyb"/>
                             <exclude reference="yPZ-Os-7dO"/>
                         </mask>
                     </variation>
