@@ -72,19 +72,6 @@ const float _kCellHeight = 100.0f;
     
     [self loadMainUser];
     
-    CGRect screenBound = [[UIScreen mainScreen] bounds];
-    CGSize screenSize = screenBound.size;
-    CGFloat screenHeight = screenSize.height;
-    
-    //create table view to contain ASHorizontalScrollView
-    
-    sampleTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, screenHeight - 95, self.view.frame.size.width, self.view.frame.size.height)];
-    sampleTableView.delegate = self;
-    sampleTableView.dataSource = self;
-    sampleTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    sampleTableView.alwaysBounceVertical = NO;
-    [self.view addSubview:sampleTableView];
-    
     [self loadHouseHolds];
     
     [self loadCalendar];
@@ -107,7 +94,6 @@ const float _kCellHeight = 100.0f;
     [[[HouseholdRequester alloc] init] getHouseholdsByUser:user onSuccess:^(NSMutableArray *households){
         [self hiddenProgressBar];
         user.household = households;
-        [sampleTableView reloadData];
     } onFail:^(NSError *error){
         [self hiddenProgressBar];
         UIAlertController *alert = [ViewUtil showNoConnectionAlert];
@@ -256,86 +242,6 @@ const float _kCellHeight = 100.0f;
     [buttons addObject:button];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    cell.backgroundColor = [UIColor colorWithRed:(25/255.0) green:(118/255.0) blue:(211/255.0) alpha:1];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    
-    if (indexPath.row == 0) {
-        //sample code of how to use this scroll view
-        ASHorizontalScrollView *horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, _kCellHeight)];
-        [cell.contentView addSubview:horizontalScrollView];
-        horizontalScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-        CGFloat widthScreen = [UIScreen mainScreen].bounds.size.width;
-        
-        int width = 150;
-        if (widthScreen <= 320) {
-            width = 120;
-        }
-        
-        
-        horizontalScrollView.uniformItemSize = CGSizeMake(width, 100);
-        //this must be called after changing any size or margin property of this class to get acurrate margin
-        [horizontalScrollView setItemsMarginOnce];
-        NSMutableArray *households = user.household;
-        
-        if (households.count > 0) {
-            
-            for (Household *h in households) {
-                
-                NSString *nick = h.nick;
-                NSString *picture = h.picture;
-                NSString *avatar;
-                NSString *idHousehold = h.idHousehold;
-                
-                if ([picture isEqualToString:@"0"]) {
-                    avatar = @"img_profile01.png";
-                } else {
-                    
-                    if (picture.length == 1) {
-                        avatar = [NSString stringWithFormat: @"img_profile0%@.png", picture];
-                    } else if (picture.length == 2) {
-                        avatar = [NSString stringWithFormat: @"img_profile%@.png", picture];
-                    }else{
-                        avatar = picture;
-                    }
-                }
-                
-                HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
-                [buttons addObject:thumb];
-                [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
-            }
-            
-            if ([UIScreen mainScreen].bounds.size.width >= 375 ) {
-                UIView *blankView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 150)];
-                [buttons addObject:blankView];
-            }
-            
-            [horizontalScrollView addItems:buttons];
-        }
-    }
-    
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return _kCellHeight;
-}
-
 - (void) pushAction: (id)sender {
 
     UIButton *b = (UIButton *) sender;
@@ -358,11 +264,6 @@ const float _kCellHeight = 100.0f;
         
         selectedUser = @"";
     }
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSLog(@"didSelectRowAtIndexPath");
 }
 
 - (void) loadChartLine {
@@ -650,5 +551,8 @@ const float _kCellHeight = 100.0f;
 
 - (IBAction)btnPreviousMonthAction:(id)sender {
     [self.calendarContentView loadPreviousPageWithAnimation];
+}
+
+- (IBAction)btnChangePerson:(id)sender {
 }
 @end
