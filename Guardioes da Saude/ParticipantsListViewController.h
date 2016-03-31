@@ -12,4 +12,5 @@
 @interface ParticipantsListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableParticipants;
 @property DiaryHealthViewController *referenceDiaryHealthView;
+@property NSString *selectedUserId;
 @end

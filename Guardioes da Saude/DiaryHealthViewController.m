@@ -558,6 +558,7 @@ const float _kCellHeight = 100.0f;
 - (IBAction)btnChangePerson:(id)sender {
     ParticipantsListViewController *participantsListView = [[ParticipantsListViewController alloc] init];
     participantsListView.referenceDiaryHealthView = self;
+    participantsListView.selectedUserId = selectedUser;
     
     [self.navigationController pushViewController:participantsListView animated:YES];
 }

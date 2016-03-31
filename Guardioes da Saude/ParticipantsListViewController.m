@@ -60,14 +60,26 @@
     
     cell.tag = indexPath.row;
     
+    UIImageView *selecetd = [[UIImageView alloc] init];
+    selecetd.image = [UIImage imageNamed:@"icon_selectedparticipant"];
+    [selecetd sizeToFit];
+    
     if (indexPath.row == 0) {
         cell.textLabel.text = user.nick;
         [user setAvatarImageAtButton:nil orImageView:cell.imageView];
+        
+        if (!self.selectedUserId || [self.selectedUserId isEqualToString:@""]) {
+            cell.accessoryView = selecetd;
+        }
     } else {
         Household *household = [households objectAtIndex:indexPath.row - 1];
         
         cell.textLabel.text = household.nick;
         cell.imageView.image = [UIImage imageNamed:household.picture];
+        
+        if (self.selectedUserId && [self.selectedUserId isEqualToString:household.idHousehold]) {
+            cell.accessoryView = selecetd;
+        }
     }
     
     return cell;
