@@ -24,6 +24,7 @@
 #import <Google/Analytics.h>
 #import "MenuViewController.h"
 #import "AppDelegate.h"
+
 @import Photos;
 
 @interface HomeViewController (){
@@ -108,6 +109,7 @@
     titleImgView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
     [self.navigationController.navigationBar addSubview:titleImgView];
 }
+
 
 - (void) showInformations {
     

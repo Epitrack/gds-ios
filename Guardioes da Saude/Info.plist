@@ -41,11 +41,11 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1030</string>
+	<string>1031</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
-		<string>d8ff9925924fa10046e7f8eb13fcbdc1ada7b548</string>
+		<string>1fa97f5edc9d17753eaf9e6ae72bbafb5cd1693d</string>
 		<key>Kits</key>
 		<array>
 			<dict>
@@ -58,6 +58,12 @@
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
 			</dict>
 		</array>
 	</dict>

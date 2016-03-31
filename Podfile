@@ -22,6 +22,8 @@ pod 'Google/CloudMessaging'
 pod 'DownPicker'
 pod 'RMDateSelectionViewController'
 pod 'MBProgressHUD', '~> 0.9.2'
+pod 'Fabric'
+pod 'Crashlytics'
 
 target 'Guardioes da Saude' do
 

@@ -22,6 +22,8 @@ PODS:
     - AFNetworking/NSURLSession
   - ASHorizontalScrollViewForObjectiveC (1.1)
   - Charts (2.1.6)
+  - Crashlytics (3.5.0):
+    - Fabric (~> 1.6.0)
   - DownPicker (0.1.34)
   - Fabric (1.6.1)
   - GGLInstanceID (1.1.6)
@@ -82,6 +84,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.6.1)
   - ASHorizontalScrollViewForObjectiveC (~> 1.0)
   - Charts
+  - Crashlytics
   - DownPicker
   - Fabric
   - Google/Analytics
@@ -100,6 +103,7 @@ SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   ASHorizontalScrollViewForObjectiveC: 1a0b0677f27ae2780a10b7dc40cce66b511deb94
   Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
+  Crashlytics: fabfd45d0e8b8dc936c682b97e302b9a49a1c827
   DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
   Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
   GGLInstanceID: f92465924a9b8a48f712829d22e223653ab8dc72
@@ -124,6 +128,6 @@ SPEC CHECKSUMS:
   TwitterCore: 5e9b2d066ceeef53fe611c0c4436cb700f1ed620
   TwitterKit: f67360ee0a5f935f053bf37015652ac157e4eb92
 
-PODFILE CHECKSUM: ffb64d09968f64d57c1f2154fcadf7be18bdf8fe
+PODFILE CHECKSUM: 00e58b938fb52bc7efe2c146659072617a2cb640
 
 COCOAPODS: 1.0.0.beta.2

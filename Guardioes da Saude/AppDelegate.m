@@ -20,6 +20,8 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import <Google/Analytics.h>
 #import "ViewUtil.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 @import GoogleMaps;
 
 NSString *const kPreferencesVersionKey = @"preferenceVersionKey";
@@ -46,6 +48,8 @@ NSUserDefaults *preferences;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Fabric with:@[[Crashlytics class], [Twitter class]]];
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
