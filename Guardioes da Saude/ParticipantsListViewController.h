@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DiaryHealthViewController.h"
 
 @interface ParticipantsListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableParticipants;
-
+@property DiaryHealthViewController *referenceDiaryHealthView;
 @end

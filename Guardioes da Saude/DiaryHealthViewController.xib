@@ -27,12 +27,14 @@
                 <outlet property="calendarMenuView" destination="rbG-QR-Q67" id="HZi-OB-Utv"/>
                 <outlet property="chartView" destination="9xj-Lm-wip" id="FdQ-Wg-Isg"/>
                 <outlet property="graphView" destination="U9F-rp-6Vs" id="BWb-qR-JFG"/>
+                <outlet property="imgPicture" destination="hot-aK-VR0" id="vGr-Ly-0DB"/>
                 <outlet property="lbFrequencyYear" destination="VcX-PZ-fM2" id="8FV-o2-5hF"/>
                 <outlet property="lbPercentBad" destination="ZuG-vi-trr" id="KrO-wY-3ms"/>
                 <outlet property="lbPercentGood" destination="vFy-Rm-50J" id="n0G-90-1pV"/>
                 <outlet property="lbTotalParticipation" destination="Ove-rq-rDW" id="0TF-a1-vIM"/>
                 <outlet property="lbTotalReportBad" destination="aE1-9f-QVD" id="yhO-vS-hTt"/>
                 <outlet property="lbTotalReportGood" destination="raC-I5-aBB" id="k0z-bG-Gfv"/>
+                <outlet property="lbUserName" destination="oMJ-dK-DTj" id="e5h-hF-Gqn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,17 +59,6 @@
                                 </mask>
                             </variation>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvL-uo-hFA">
-                            <rect key="frame" x="341" y="8" width="67" height="70"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="67" id="9ik-f9-GJe"/>
-                            </constraints>
-                            <state key="normal" title="Button"/>
-                            <connections>
-                                <action selector="btnChangePerson:" destination="-1" eventType="touchUpInside" id="1kx-96-cYp"/>
-                            </connections>
-                        </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQk-rp-tsb">
                             <rect key="frame" x="0.0" y="86" width="424" height="1"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -325,10 +316,21 @@
                                 <action selector="btnPreviousMonthAction:" destination="-1" eventType="touchUpInside" id="bSO-VG-A5s"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvL-uo-hFA">
+                            <rect key="frame" x="341" y="15" width="53" height="56"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="53" id="9ik-f9-GJe"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="icon_selectParticipant"/>
+                            <connections>
+                                <action selector="btnChangePerson:" destination="-1" eventType="touchUpInside" id="1kx-96-cYp"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="dPV-tv-0Zj" firstAttribute="top" secondItem="Ear-Mj-uUr" secondAttribute="bottom" constant="8" id="0vN-aq-Kad"/>
-                        <constraint firstItem="qvL-uo-hFA" firstAttribute="bottom" secondItem="hot-aK-VR0" secondAttribute="bottom" id="168-wC-KjH"/>
+                        <constraint firstItem="qvL-uo-hFA" firstAttribute="bottom" secondItem="hot-aK-VR0" secondAttribute="bottom" constant="-7" id="168-wC-KjH"/>
                         <constraint firstItem="raC-I5-aBB" firstAttribute="leading" secondItem="ZuG-vi-trr" secondAttribute="leading" id="2JZ-IM-KE2"/>
                         <constraint firstItem="U9F-rp-6Vs" firstAttribute="top" secondItem="VcX-PZ-fM2" secondAttribute="bottom" constant="8" id="2Pu-uZ-mov"/>
                         <constraint firstItem="Ove-rq-rDW" firstAttribute="top" secondItem="GCD-SY-klR" secondAttribute="bottom" constant="8" id="2cG-yZ-4ai"/>
@@ -340,7 +342,7 @@
                         <constraint firstItem="VcX-PZ-fM2" firstAttribute="trailing" secondItem="rPt-0J-hQH" secondAttribute="trailing" id="4dv-KE-0Ld"/>
                         <constraint firstItem="rPt-0J-hQH" firstAttribute="centerX" secondItem="zLc-oO-3N3" secondAttribute="centerX" id="5RS-80-fy4"/>
                         <constraint firstAttribute="trailing" secondItem="GCD-SY-klR" secondAttribute="trailing" constant="30" id="5Wd-W8-ogY"/>
-                        <constraint firstAttribute="trailing" secondItem="qvL-uo-hFA" secondAttribute="trailing" constant="16" id="7O5-AZ-owI"/>
+                        <constraint firstAttribute="trailing" secondItem="qvL-uo-hFA" secondAttribute="trailing" constant="30" id="7O5-AZ-owI"/>
                         <constraint firstItem="ZuG-vi-trr" firstAttribute="top" secondItem="dPV-tv-0Zj" secondAttribute="top" id="9b4-ZS-WrJ"/>
                         <constraint firstItem="jLD-I9-J0R" firstAttribute="top" secondItem="GCD-SY-klR" secondAttribute="bottom" constant="7" id="A7s-4K-tmi"/>
                         <constraint firstItem="Yxh-ee-xdx" firstAttribute="centerY" secondItem="raC-I5-aBB" secondAttribute="centerY" id="AJX-uU-bHx"/>
@@ -370,7 +372,7 @@
                         <constraint firstItem="Ear-Mj-uUr" firstAttribute="top" secondItem="Ove-rq-rDW" secondAttribute="bottom" constant="20" id="WOP-LX-3ps"/>
                         <constraint firstItem="aE1-9f-QVD" firstAttribute="top" secondItem="ZuG-vi-trr" secondAttribute="bottom" constant="3" id="WeB-q1-7sM"/>
                         <constraint firstItem="raC-I5-aBB" firstAttribute="leading" secondItem="Ear-Mj-uUr" secondAttribute="trailing" constant="8" id="YRP-wt-eEZ"/>
-                        <constraint firstItem="qvL-uo-hFA" firstAttribute="top" secondItem="hot-aK-VR0" secondAttribute="top" id="YwC-44-tLK"/>
+                        <constraint firstItem="qvL-uo-hFA" firstAttribute="top" secondItem="hot-aK-VR0" secondAttribute="top" constant="7" id="YwC-44-tLK"/>
                         <constraint firstItem="GCD-SY-klR" firstAttribute="top" secondItem="zLc-oO-3N3" secondAttribute="top" constant="8" id="ZCe-sI-W6d"/>
                         <constraint firstItem="hxA-Jm-Clk" firstAttribute="trailing" secondItem="6WL-LD-dVn" secondAttribute="trailing" id="a6S-PF-SC5"/>
                         <constraint firstItem="Yxh-ee-xdx" firstAttribute="leading" secondItem="raC-I5-aBB" secondAttribute="trailing" constant="2" id="aWL-vZ-dUZ"/>
@@ -439,6 +441,7 @@
         <image name="ic_arrowleft" width="7" height="14"/>
         <image name="ic_arrowright" width="7" height="14"/>
         <image name="icon_bad.png" width="121" height="121"/>
+        <image name="icon_selectParticipant" width="35" height="35"/>
         <image name="icon_well.png" width="120" height="121"/>
         <image name="img_profile01.png" width="131" height="131"/>
     </resources>

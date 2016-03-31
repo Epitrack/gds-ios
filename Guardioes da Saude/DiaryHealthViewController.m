@@ -8,7 +8,6 @@
 
 #import "DiaryHealthViewController.h"
 #import "Household.h"
-#import "User.h"
 #import "UserRequester.h"
 #import "Sumary.h"
 #import "SumaryGraph.h"
@@ -22,6 +21,7 @@
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
 #import "Charts/Charts-Swift.h"
+#import "ParticipantsListViewController.h"
 @import Photos;
 
 @import Charts;
@@ -86,6 +86,8 @@ const float _kCellHeight = 100.0f;
     
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
+    [user setAvatarImageAtButton:nil orImageView:self.imgPicture];
+    self.lbUserName.text = user.nick;
 }
 
 - (void) loadHouseHolds{
@@ -554,5 +556,29 @@ const float _kCellHeight = 100.0f;
 }
 
 - (IBAction)btnChangePerson:(id)sender {
+    ParticipantsListViewController *participantsListView = [[ParticipantsListViewController alloc] init];
+    participantsListView.referenceDiaryHealthView = self;
+    
+    [self.navigationController pushViewController:participantsListView animated:YES];
+}
+
+- (void)refreshInformationToUser:(Household *)houlsehold{
+    if (houlsehold) {
+        selectedUser = houlsehold.idHousehold;
+        self.lbUserName.text = houlsehold.nick;
+        self.imgPicture.image = [UIImage imageNamed:houlsehold.picture];
+        
+        [self refreshSummaryWithUserId:houlsehold.idHousehold];
+        [self requestCalendar:houlsehold.idHousehold andDate:[NSDate date]];
+        [self requestChartLine: houlsehold.idHousehold];
+    }else{
+        selectedUser = @"";
+        self.lbUserName.text = user.nick;
+        [user setAvatarImageAtButton:nil orImageView:self.imgPicture];
+        
+        [self refreshSummaryWithUserId:@""];
+        [self requestCalendar:@"" andDate:[NSDate date]];
+        [self requestChartLine: @""];
+    }
 }
 @end
