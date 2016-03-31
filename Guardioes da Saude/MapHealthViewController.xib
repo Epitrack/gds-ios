@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -83,12 +83,12 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="7KY-Q8-dGP"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.60000002384185791" translatesAutoresizingMaskIntoConstraints="NO" id="Qab-Qo-HHM">
-                            <rect key="frame" x="8" y="346" width="305" height="2"/>
+                            <rect key="frame" x="8" y="348" width="305" height="2"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="304" id="0kl-tX-COv"/>
                             </constraints>
@@ -102,7 +102,7 @@
                             </variation>
                         </progressView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="292.800" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhi-L8-R7y" userLabel="Qt Bad">
-                            <rect key="frame" x="73" y="219" width="49" height="17"/>
+                            <rect key="frame" x="73" y="220" width="49" height="17"/>
                             <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="14"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -111,13 +111,13 @@
                             </variation>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="map_health.well" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjj-M9-hvd" customClass="GDSLabel">
-                            <rect key="frame" x="125" y="135" width="121" height="22"/>
+                            <rect key="frame" x="126" y="135" width="121" height="22"/>
                             <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="18"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5a-bu-Reh">
-                            <rect key="frame" x="279" y="289" width="34" height="17"/>
+                            <rect key="frame" x="279" y="290" width="34" height="17"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
                             <color key="textColor" red="0.073835509879999997" green="0.3219764182" blue="0.63230698529999996" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -126,7 +126,7 @@
                             </variation>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_well.png" translatesAutoresizingMaskIntoConstraints="NO" id="ynP-hY-sPl">
-                            <rect key="frame" x="8" y="130" width="57" height="56"/>
+                            <rect key="frame" x="8" y="131" width="57" height="56"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ynP-hY-sPl" secondAttribute="height" multiplier="57:56" id="pZW-6I-uFg"/>
                             </constraints>
@@ -141,10 +141,10 @@
                             </variation>
                         </label>
                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="fjf-IM-XzL">
-                            <rect key="frame" x="8" y="380" width="305" height="2"/>
+                            <rect key="frame" x="8" y="382" width="305" height="2"/>
                         </progressView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="292.800" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7q6-BQ-kmz" userLabel="Qt Good">
-                            <rect key="frame" x="73" y="158" width="52" height="18"/>
+                            <rect key="frame" x="73" y="159" width="52" height="18"/>
                             <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -156,13 +156,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_bad.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iry-Un-AVv">
-                            <rect key="frame" x="8" y="186" width="57" height="57"/>
+                            <rect key="frame" x="8" y="187" width="57" height="57"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Iry-Un-AVv" secondAttribute="height" multiplier="1:1" id="wRN-lL-7k0"/>
                             </constraints>
                         </imageView>
                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0qE-kM-tn5">
-                            <rect key="frame" x="8" y="311" width="304" height="2"/>
+                            <rect key="frame" x="8" y="312" width="304" height="2"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="304" id="jCa-22-bSW"/>
                             </constraints>
@@ -189,7 +189,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Síndromes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmO-Hu-7R3">
-                            <rect key="frame" x="8" y="267" width="62" height="17"/>
+                            <rect key="frame" x="8" y="268" width="62" height="17"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                             <color key="textColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -207,7 +207,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uds-LC-LjI">
-                            <rect key="frame" x="279" y="358" width="34" height="17"/>
+                            <rect key="frame" x="279" y="360" width="34" height="17"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
                             <color key="textColor" red="0.073835509879999997" green="0.3219764182" blue="0.63230698529999996" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -216,19 +216,19 @@
                             </variation>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="map_health.participations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEE-T6-FWG" customClass="GDSLabel">
-                            <rect key="frame" x="125" y="219" width="162" height="18"/>
+                            <rect key="frame" x="126" y="219" width="162" height="18"/>
                             <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="map_health.exanthematic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wq-3d-D1N" customClass="GDSLabel">
-                            <rect key="frame" x="8" y="321" width="183" height="21"/>
+                            <rect key="frame" x="8" y="322" width="183" height="21"/>
                             <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="map_health.respiratory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRL-q1-crK" customClass="GDSLabel">
-                            <rect key="frame" x="8" y="356" width="162" height="21"/>
+                            <rect key="frame" x="8" y="358" width="162" height="21"/>
                             <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -237,7 +237,7 @@
                             </variation>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="map_health.diarrheal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONi-QO-QmE" customClass="GDSLabel">
-                            <rect key="frame" x="8" y="287" width="150" height="21"/>
+                            <rect key="frame" x="8" y="288" width="150" height="21"/>
                             <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -246,14 +246,14 @@
                             </variation>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DlQ-A6-q9r" userLabel="View Chart" customClass="PieChartView" customModule="Charts">
-                            <rect key="frame" x="195" y="130" width="103" height="114"/>
+                            <rect key="frame" x="195" y="131" width="103" height="114"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="DlQ-A6-q9r" secondAttribute="height" multiplier="103:114" id="sjm-2o-yHa"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDX-id-6gI">
-                            <rect key="frame" x="279" y="321" width="34" height="17"/>
+                            <rect key="frame" x="279" y="322" width="34" height="17"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="14"/>
                             <color key="textColor" red="0.073835509879999997" green="0.3219764182" blue="0.63230698529999996" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
