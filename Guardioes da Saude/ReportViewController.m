@@ -98,7 +98,7 @@
     } else {
         NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
-        NSString *msgText = [NSString stringWithFormat:@"%@ \nPlataforma: iOS \nVersion: %@ \nBuild: %@", self.txtMessage, version, build];
+        NSString *msgText = [NSString stringWithFormat:@"%@ \nPlataforma: iOS \nVersion: %@ \nBuild: %@", self.txtMessage.text, version, build];
         
          [[[UserRequester alloc] init] reportBugWithTitle:self.txtSubject.text
                                                   andText:msgText

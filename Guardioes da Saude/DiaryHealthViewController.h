@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ASHorizontalScrollView.h"
+#import "User.h"
+#import "Household.h"
 
-@interface DiaryHealthViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    
-    UITableView *sampleTableView;
-    
-}
+@interface DiaryHealthViewController : UIViewController 
 
 @property (weak, nonatomic) IBOutlet UILabel *lbTotalParticipation;
 @property (weak, nonatomic) IBOutlet UILabel *lbPercentGood;
@@ -21,8 +19,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbTotalReportGood;
 @property (weak, nonatomic) IBOutlet UILabel *lbTotalReportBad;
 @property (weak, nonatomic) IBOutlet UILabel *lbFrequencyYear;
+@property (weak, nonatomic) IBOutlet UIImageView *imgPicture;
+@property (weak, nonatomic) IBOutlet UILabel *lbUserName;
 
 - (IBAction)btnNextMonthAction:(id)sender;
 - (IBAction)btnPreviousMonthAction:(id)sender;
+- (IBAction)btnChangePerson:(id)sender;
+- (void)refreshInformationToUser:(Household *)houlsehold;
 
 @end

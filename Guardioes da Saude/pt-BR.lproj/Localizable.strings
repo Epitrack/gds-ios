@@ -150,7 +150,7 @@
 // PROFILE FORM VIEW
 "profile_form.lb_nick" = "Apelido:";
 "profile_form.placeholder_nick" = "Apelido";
-"profile_form.lb_sexo" = "Sexo:";
+"profile_form.lb_race" = "Cor/Raça:";
 "profile_form.lb_dob" = "Data de nascimento:";
 "profile_form.title_dob" = "Data de nascimento";
 "profile_form.msg_dob" = "Selecione sua data de nascimento.";

@@ -24,6 +24,7 @@
 #import <Google/Analytics.h>
 #import "MenuViewController.h"
 #import "AppDelegate.h"
+
 @import Photos;
 
 @interface HomeViewController (){
@@ -108,6 +109,7 @@
     titleImgView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
     [self.navigationController.navigationBar addSubview:titleImgView];
 }
+
 
 - (void) showInformations {
     
@@ -242,10 +244,8 @@
                                                            value:nil] build]];
     
     if ([UserRequester isConnected]) {
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        [appDelegate setHighlithProfile];
-        
         ProfileListViewController *profileListView = [[ProfileListViewController alloc] init];
+        profileListView.showBack = YES;
         [self.navigationController pushViewController:profileListView animated:YES];
     }else{
         [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
