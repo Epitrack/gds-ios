@@ -229,7 +229,7 @@
         <image name="icon_diary" width="72" height="76"/>
         <image name="icon_game" width="72" height="76"/>
         <image name="icon_join" width="72" height="76"/>
-        <image name="icon_maps" width="72" height="76"/>
+        <image name="icon_maps" width="76" height="80"/>
         <image name="icon_news" width="72" height="76"/>
         <image name="icon_types" width="72" height="76"/>
         <image name="img_profile01.png" width="131" height="131"/>
