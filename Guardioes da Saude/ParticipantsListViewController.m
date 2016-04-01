@@ -25,7 +25,7 @@
     householdeRequest = [[HouseholdRequester alloc] init];
     user = [User getInstance];
     
-    self.navigationItem.title = @"Selecionar Integrante";
+    self.navigationItem.title = NSLocalizedString(@"participant_list.title", @"");
 }
 
 - (void)didReceiveMemoryWarning {

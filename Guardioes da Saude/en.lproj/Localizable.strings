@@ -286,3 +286,6 @@
 "diary_health.bad" = "Mal";
 "diary_health.report" = "Relatórios";
 "diary_health.calendar" = "Calendário";
+
+// Participants List
+"participant_list.title" = "Selecionar Integrante";
