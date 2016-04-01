@@ -114,7 +114,6 @@
 - (void) showInformations {
     
     self.txtNameUser.text = user.nick;
-    self.lblOla.hidden = NO;
     self.btnProfile.hidden = NO;
     [user setAvatarImageAtButton:self.btnProfile orImageView:nil];
 }
@@ -298,5 +297,28 @@
                                         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                     }
                                 }];
+}
+- (IBAction)btnStartAction:(id)sender {
+    [self.view layoutIfNeeded];
+    
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    
+    self.btnStartTrailingConst.constant = width/2;
+    self.btnStartLeadingConst.constant = width/2;
+    self.btnStartTopConst.constant = width/2;
+    
+    self.btnJoinTopConst.constant = 0;
+    
+    self.btnNewTopConst.constant = 80;
+    self.btnNewsLeadingConst.constant = -22;
+    
+    self.btnTipsTopConst.constant = -4;
+    self.btnTipsLeadingConst.constant = -22;
+    
+    [UIView animateWithDuration:.5 animations:^{
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL b){
+        self.btnStart.hidden = YES;
+    }];
 }
 @end

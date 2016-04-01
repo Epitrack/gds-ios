@@ -12,12 +12,19 @@
 @interface HomeViewController : UIViewController <CLLocationManagerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *txtNameUser;
 @property (weak, nonatomic) IBOutlet UIButton *btnProfile;
-- (IBAction)btnJoinNow:(id)sender;
-- (IBAction)btnMapHealth:(id)sender;
-- (IBAction)notice:(id)sender;
-- (IBAction)healthTips:(id)sender;
-- (IBAction)diaryHealth:(id)sender;
-- (IBAction)btnProfileAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *lblOla;
+@property (weak, nonatomic) IBOutlet UIButton *btnStart;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnStartTopConst;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnStartTrailingConst;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnStartLeadingConst;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnStartWithConst;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnJoinTopConst;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnNewTopConst;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnNewsLeadingConst;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnTipsLeadingConst;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnTipsTopConst;
+
+
+- (IBAction)btnProfileAction:(id)sender;
+- (IBAction)btnStartAction:(id)sender;
 @end
