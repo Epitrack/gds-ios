@@ -144,7 +144,7 @@
 // PROFILE LIST VIEW
 "profile_list.title" = "Perfil";
 "profile_list.delete_confirmation" = "Deseja remover o perfil definitivamente? Essa operação é irreversível.";
-"profile_list.add_new_member" = "Adicionar Novo Integrante";
+"profile_list.add_new_member" = "Adicionar Integrante";
 "profile_list.select_perfil" = "Selecione qual dos perfis abaixo quer editar.";
 
 // PROFILE FORM VIEW
@@ -164,7 +164,7 @@
 "profile_form.change_password" = "Redefinir senha";
 "profile_form.save" = "Salvar";
 "profile_form.edit_profile" = "Editar Perfil";
-"profile_form.add_member" = "Adicionar Novo Integrante";
+"profile_form.add_member" = "Adicionar Integrante";
 "profile_form.fill_in_fields" = "Preencha todos os campos do formulário.";
 "profile_form.invalid_dob" = "A data de aniversário deve ser menor que hoje.";
 "profile_form.min_dob" = "A idade mínima para o usuário principal é 13 anos.";

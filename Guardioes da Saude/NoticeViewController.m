@@ -146,6 +146,7 @@
     }];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.no", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button NO");
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }];
     [alert addAction:yesAction];
     [alert addAction:defaultAction];
