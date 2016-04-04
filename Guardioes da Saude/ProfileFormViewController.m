@@ -268,7 +268,10 @@
     [textField resignFirstResponder];
     [self.txtNick resignFirstResponder];
     [self.txtEmail resignFirstResponder];
-    return TRUE;
+    
+    [self.pickerGender becomeFirstResponder];
+    
+    return YES;
 }
 /*
 #pragma mark - Navigation
