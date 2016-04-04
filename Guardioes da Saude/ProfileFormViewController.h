@@ -18,7 +18,7 @@ typedef enum operation{
     ADD_HOUSEHOLD
 } Operation;
 
-@interface ProfileFormViewController : UIViewController
+@interface ProfileFormViewController : UIViewController <UITextFieldDelegate>
 
 @property User *user;
 @property Household *household;

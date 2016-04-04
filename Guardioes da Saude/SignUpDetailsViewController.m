@@ -15,6 +15,8 @@
 #import "HomeViewController.h"
 #import <Google/Analytics.h>
 
+#define MAXLENGTH 10
+
 @interface SignUpDetailsViewController (){
     NSDate *dob;
     BOOL dobSetted;
@@ -112,6 +114,22 @@
     [self.btnDob sendActionsForControlEvents:UIControlEventTouchUpInside];
     
     return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSUInteger oldLength = [textField.text length];
+    NSUInteger replacementLength = [string length];
+    NSUInteger rangeLength = range.length;
+    
+    NSUInteger newLength = oldLength - rangeLength + replacementLength;
+    
+    BOOL returnKey = [string rangeOfString: @"\n"].location != NSNotFound;
+    
+    if (newLength < oldLength) {
+        return YES;
+    } else {
+        return newLength <= MAXLENGTH || returnKey;
+    }
 }
 
 - (IBAction)btnDobAction:(id)sender {

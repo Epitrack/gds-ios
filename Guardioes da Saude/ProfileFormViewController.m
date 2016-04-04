@@ -22,6 +22,8 @@
 #import "ChangePasswordViewController.h"
 @import Photos;
 
+#define MAXLENGTH 10
+
 @interface ProfileFormViewController () {
     UserRequester *userRequester;
     HouseholdRequester *householdRequester;
@@ -48,6 +50,8 @@
     
     userRequester = [[UserRequester alloc] init];
     householdRequester = [[HouseholdRequester alloc] init];
+    
+    self.txtNick.delegate = self;
     
     listGender = [Constants getGenders];
     listRace = [Constants getRaces];
@@ -97,6 +101,22 @@
 
 -(void)relationshipDownPickerDidSelected:(id)dp {
     [self.txtEmail becomeFirstResponder];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSUInteger oldLength = [textField.text length];
+    NSUInteger replacementLength = [string length];
+    NSUInteger rangeLength = range.length;
+    
+    NSUInteger newLength = oldLength - rangeLength + replacementLength;
+    
+    BOOL returnKey = [string rangeOfString: @"\n"].location != NSNotFound;
+    
+    if (newLength < oldLength) {
+        return YES;
+    } else {
+        return newLength <= MAXLENGTH || returnKey;
+    }
 }
 
 - (void) applyLayerOnPictureLayer{
