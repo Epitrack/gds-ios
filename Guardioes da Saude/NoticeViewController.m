@@ -143,6 +143,8 @@
         url = [url stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet];
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }];
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.no", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         NSLog(@"You pressed button NO");
