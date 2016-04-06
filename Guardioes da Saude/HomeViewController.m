@@ -77,6 +77,7 @@
         
         [self authorizedAutomaticLogin:userToken];
     } else {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [self showInformations];
         [self checkLastSurvey];
     }
