@@ -44,6 +44,7 @@
     BOOL showDetails;
     SurveyRequester *surveyRequester;
     NSString *homeCity;
+    bool changeCityEnable;
     
     //Animation slide values
     CGRect startBtnRect;
@@ -160,7 +161,6 @@
         CLGeocoder* gc = [[CLGeocoder alloc] init];
         [gc reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:latitude longitude:longitude] completionHandler:^(NSArray *placemarks, NSError *error) {
             for ( CLPlacemark* place in placemarks ) {
-                NSLog(@"-----------------------2> %@", place.locality);
                 homeCity = place.locality;
             }
         }];
@@ -442,12 +442,13 @@
         CLGeocoder* gc = [[CLGeocoder alloc] init];
         [gc reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:centre.latitude longitude:centre.longitude] completionHandler:^(NSArray *placemarks, NSError *error) {
             for ( CLPlacemark* place in placemarks ) {
-                if (![homeCity isEqualToString:place.locality]) {
-                    NSLog(@"-----------------------> %@", place.locality);
+                if (![homeCity isEqualToString:place.locality] && place.locality && changeCityEnable) {
                     homeCity = place.locality;
                     latitude = centre.latitude;
                     longitude = centre.longitude;
                     [self loadSurvey];
+                }else{
+                    changeCityEnable = YES;
                 }
             }
         }];
