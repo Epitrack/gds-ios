@@ -36,6 +36,12 @@ typedef enum {
           onSuccess: (Success) onSuccess;
 
 - (void) getSummary: (User *) user
+               date: (NSDate *) data
+            onStart: (void(^)()) onStart
+          onSuccess: (void(^)(NSDictionary *)) onSuccess
+            onError: (void(^)(NSError *)) onError;
+
+- (void) getSummary: (User *) user
         idHousehold: (NSString *) idHousehold
                year: (int) year
             onStart: (Start) onStart

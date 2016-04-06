@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "User.h"
 #import "SelectParticipantViewController.h"
+#import "SelectStateViewController.h"
 #import "MapHealthViewController.h"
 #import "NoticeViewController.h"
 #import "HealthTipsViewController.h"
@@ -23,7 +24,6 @@
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
 #import "MenuViewController.h"
-#import "AppDelegate.h"
 
 @import Photos;
 
@@ -78,9 +78,8 @@
         [self authorizedAutomaticLogin:userToken];
     } else {
         [self showInformations];
+        [self checkLastSurvey];
     }
-    
-
     
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
@@ -109,7 +108,6 @@
     titleImgView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
     [self.navigationController.navigationBar addSubview:titleImgView];
 }
-
 
 - (void) showInformations {
     
@@ -267,6 +265,8 @@
                                 }andOnSuccess:^{
                                     [self showInformations];
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                    
+                                    [self checkLastSurvey];
                                 }andOnError:^(NSError *error, int errorCode){
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                                     
@@ -298,5 +298,29 @@
                                         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                     }
                                 }];
+}
+
+- (void) checkLastSurvey{
+    [userRequester getSummary:user date:[NSDate date] onStart:^{
+    
+    } onSuccess:^(NSDictionary *surveys){
+        if ([surveys count] == 0) {
+            SelectStateViewController *selectStateView = [[SelectStateViewController alloc] init];
+            [self.navigationController pushViewController:selectStateView animated:YES];
+        }
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    } onError:^(NSError *error){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        NSString *errorMsg;
+        if (error && error.code == -1009) {
+            errorMsg = NSLocalizedString(kMsgConnectionError, @"");
+        } else {
+            errorMsg = NSLocalizedString(kMsgApiError, @"");
+        }
+        
+        [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+    }];
 }
 @end
