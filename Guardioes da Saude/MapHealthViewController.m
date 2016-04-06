@@ -43,6 +43,7 @@
     DetailMap *detailMap;
     BOOL showDetails;
     SurveyRequester *surveyRequester;
+    NSString *homeCity;
     
     //Animation slide values
     CGRect startBtnRect;
@@ -62,11 +63,9 @@
     
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
-    [locationManager startMonitoringSignificantLocationChanges];
     [locationManager startUpdatingLocation];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager startUpdatingLocation];
     
     user = [User getInstance];
     detailMap = [DetailMap getInstance];
@@ -117,9 +116,9 @@
                                      [MBProgressHUD hideHUDForView:self.view animated:YES];
                                      NSString *errorMsg;
                                      if (error && error.code == -1009) {
-                                         errorMsg = kMsgConnectionError;
+                                         errorMsg = NSLocalizedString(kMsgConnectionError, @"");
                                      } else {
-                                         errorMsg = kMsgApiError;
+                                         errorMsg = NSLocalizedString(kMsgApiError, @"");
                                      }
                                      
                                      [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
@@ -156,6 +155,18 @@
     
     latitude = currentLocation.coordinate.latitude;
     longitude = currentLocation.coordinate.longitude;
+    
+    if (!homeCity) {
+        CLGeocoder* gc = [[CLGeocoder alloc] init];
+        [gc reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:latitude longitude:longitude] completionHandler:^(NSArray *placemarks, NSError *error) {
+            for ( CLPlacemark* place in placemarks ) {
+                NSLog(@"-----------------------2> %@", place.locality);
+                homeCity = place.locality;
+            }
+        }];
+    }
+    
+    [locationManager stopUpdatingLocation];
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mv viewForAnnotation:(id <MKAnnotation> ) annotation {
@@ -414,10 +425,6 @@
     [searchBar resignFirstResponder];
     
     [LocationUtil getLocationByAddress:self.seach.text onSuccess:^(NSString *lng, NSString *lat, NSString *fullNameCity){
-        longitude = [lng doubleValue];
-        latitude = [lat doubleValue];
-        [self loadSurvey];
-        
         CLLocationCoordinate2D coordenada = CLLocationCoordinate2DMake([lat doubleValue], [lng doubleValue]);
         CLLocationDistance distance = 2000;
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordenada, distance, distance);
@@ -426,6 +433,25 @@
         
     }];
     
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    CLLocationCoordinate2D centre = [self.mapHealth centerCoordinate];
+    
+    if (homeCity) {
+        CLGeocoder* gc = [[CLGeocoder alloc] init];
+        [gc reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:centre.latitude longitude:centre.longitude] completionHandler:^(NSArray *placemarks, NSError *error) {
+            for ( CLPlacemark* place in placemarks ) {
+                if (![homeCity isEqualToString:place.locality]) {
+                    NSLog(@"-----------------------> %@", place.locality);
+                    homeCity = place.locality;
+                    latitude = centre.latitude;
+                    longitude = centre.longitude;
+                    [self loadSurvey];
+                }
+            }
+        }];
+    }
 }
 
 - (IBAction)btnInfoAction:(id)sender {

@@ -93,11 +93,9 @@
     // Do any additional setup after loading the view from its nib.
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
-    [locationManager startMonitoringSignificantLocationChanges];
     [locationManager startUpdatingLocation];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager startUpdatingLocation];
     
     UINavigationController *navCtr = self.navigationController;
     [navCtr setNavigationBarHidden:NO animated:NO];
@@ -257,6 +255,8 @@
     
     user.lat = [NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude];
     user.lon = [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude];
+    
+    [locationManager stopUpdatingLocation];
 }
 
 - (void) authorizedAutomaticLogin:(NSString *)userToken {

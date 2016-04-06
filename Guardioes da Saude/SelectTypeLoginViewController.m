@@ -305,29 +305,8 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 
                    [preferences synchronize];
                    
-                   [self loadNotices];
-                   
                    [self.navigationController pushViewController: [[HomeViewController alloc] init] animated: YES];
                }];
-}
-
-- (void) loadNotices {
-    
-    [[[NoticeRequester alloc] init] getNotices:user
-                                       onStart:^{}
-                                       onError:^(NSError *error){
-                                           NSString *errorMsg;
-                                           if (error && error.code == -1009) {
-                                               errorMsg = kMsgConnectionError;
-                                           } else {
-                                               errorMsg = kMsgApiError;
-                                           }
-                                           
-                                           [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
-                                       }
-                                     onSuccess:^(NSMutableArray *noticesRequest){
-                                         singleNotice.notices = noticesRequest;
-                                     }];
 }
 
 - (IBAction)btnUnlockAction:(id)sender {
