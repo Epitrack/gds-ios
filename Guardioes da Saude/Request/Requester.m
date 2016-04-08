@@ -141,6 +141,37 @@ NSString * const kMsgApiError = @"constant.comunication_error";
      ];
 }
 
+- (void) doDelete: (NSString *) url
+           header: (NSDictionary *) headerMap
+        parameter: (id) parameter
+            start: (void (^)()) onStart
+            error: (void (^)(AFHTTPRequestOperation * request, NSError * error)) onError
+          success: (void (^)(AFHTTPRequestOperation * request, id response)) onSuccess {
+    
+    onStart();
+    
+    AFHTTPRequestOperationManager * manager = [self configRequestOperationManager];
+    
+    for (NSString * key in headerMap) {
+        
+        [manager.requestSerializer setValue: [headerMap objectForKey: key]
+                         forHTTPHeaderField: key];
+    }
+    
+    [manager DELETE: url
+       parameters: parameter
+          success: ^(AFHTTPRequestOperation * request, id response) {
+              
+              onSuccess(request, response);
+          }
+     
+          failure: ^(AFHTTPRequestOperation * request, NSError * error) {
+              
+              onError(request, error);
+          }
+     ];
+}
+
 + (bool) isConnected{
     return [AFNetworkReachabilityManager sharedManager].reachable;
 }

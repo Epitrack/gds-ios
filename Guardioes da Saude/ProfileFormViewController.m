@@ -20,6 +20,9 @@
 #import "Constants.h"
 #import <Google/Analytics.h>
 #import "ChangePasswordViewController.h"
+#import "SWRevealViewController.h"
+#import "TutorialViewController.h"
+#import "MenuViewController.h"
 @import Photos;
 
 #define MAXLENGTH 10
@@ -149,6 +152,12 @@
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Profile Form Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
+    if (self.operation != EDIT_USER) {
+        self.btnSaveBottomConst.constant = 13;
+        self.lblOr.hidden = YES;
+        self.btnDelete.hidden = YES;
+    }
 }
 
 - (void) loadEditUser{
@@ -569,4 +578,39 @@
     ChangePasswordViewController *changePasswdViewCtrl = [[ChangePasswordViewController alloc] init];\
     [self.navigationController pushViewController:changePasswdViewCtrl animated:YES];
 }
+
+- (IBAction)btnDeleteAction:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da saúde" message:NSLocalizedString(@"profile_form.delete_confirmation", @"") preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *actionYes = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.yes", @"")
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action){
+                                                         [userRequester deleteAccountUser:self.user
+                                                                                  onStart:^{
+                                                                                      [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                                                                  } onSuccess:^{
+                                                                                      [[MenuViewController getInstance] doLogout];
+                                                                                      [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                                                  } onErro:^(NSError *error){
+                                                                                      [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                                                      NSString *errorMsg;
+                                                                                      if (error && error.code == -1009) {
+                                                                                          errorMsg = NSLocalizedString(kMsgConnectionError, @"");
+                                                                                      } else {
+                                                                                          errorMsg = NSLocalizedString(kMsgApiError, @"");
+                                                                                      }
+                                                                                      
+                                                                                      [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                                                                                  }];
+                                                     }];
+    UIAlertAction *actionNo = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.no", @"")
+                                                      style:UIAlertActionStyleDefault
+                                                    handler:^(UIAlertAction *action){}];
+    
+    [alert addAction:actionYes];
+    [alert addAction:actionNo];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 @end

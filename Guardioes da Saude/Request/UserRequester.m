@@ -646,4 +646,23 @@
          }];
 }
 
+- (void) deleteAccountUser:(User *)user
+                   onStart:(void (^)())onStart
+                 onSuccess:(void (^)())onSuccess
+                    onErro:(void (^)(NSError *))onError{
+    
+    NSString *url = [[self getUrl] stringByAppendingString:@"/user/delete/"];
+    
+    [self doDelete:url
+            header:@{@"app_token": user.app_token,
+                     @"user_token": user.user_token}
+         parameter:nil
+             start:onStart
+             error:^(AFHTTPRequestOperation *operation, NSError *error){
+                 onError(error);
+             } success:^(AFHTTPRequestOperation *operation, id response){
+                 onSuccess();
+             }];
+}
+
 @end

@@ -77,4 +77,9 @@ typedef enum {
                  andOnStart:(void(^)())onStart
                andOnSuccess:(void(^)())onSuccess
                  andOnError:(void(^)(NSError *))onError;
+
+- (void) deleteAccountUser: (User *) user
+                   onStart: (void(^)()) onStart
+                 onSuccess: (void(^)()) onSuccess
+                    onErro: (void(^)(NSError *)) onError;
  @end

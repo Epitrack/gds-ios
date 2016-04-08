@@ -51,7 +51,7 @@
         while( nil != (controller = [controller revealViewController]) )
             level++;
         
-        NSString *title = [NSString stringWithFormat:@"Detail Level %d", level];
+        NSString *title = [NSString stringWithFormat:@"Detail Level %d", (int) level];
         
         [self.navigationController.navigationBar addGestureRecognizer:grandParentRevealController.panGestureRecognizer];
         self.navigationItem.leftBarButtonItem = revealButtonItem;
@@ -62,6 +62,18 @@
     [self.navigationController setNavigationBarHidden:YES];
     
     [self setHomeSelected];
+}
+
++ (MenuViewController *)getInstance {
+    
+    static MenuViewController *getInstance = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        getInstance = [[self alloc] init];
+    });
+    
+    return getInstance;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -242,25 +254,7 @@
     UIAlertAction *oktAction = [UIAlertAction actionWithTitle: NSLocalizedString(@"constant.yes", @"")
                                                             style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
-                                                              [[User getInstance] clearUser];
-                                                              
-                                                              NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-                                                              
-                                                              [preferences setValue:nil forKey:kUserTokenKey];
-                                                              [preferences setValue:nil forKey:kAppTokenKey];
-                                                              [preferences setValue:nil forKey:kAvatarNumberKey];
-                                                              [preferences setValue:nil forKey:kPhotoKey];
-                                                              [preferences setValue:nil forKey:kNickKey];
-                                                              
-                                                              [preferences synchronize];
-                                                              
-                                                              TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
-                                                              newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
-                                                              SWRevealViewController *revealController = self.revealViewController;
-                                                              [revealController pushFrontViewController:newFrontController animated:YES];
-                                                              
-                                                              [self setHomeSelected];
-                                                              
+                                                              [self doLogout];
                                                           }];
     
     UIAlertAction *canceltAction = [UIAlertAction actionWithTitle: NSLocalizedString(@"constant.no", @"")
@@ -274,5 +268,26 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+-(void)doLogout{
+    [[User getInstance] clearUser];
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    
+    [preferences setValue:nil forKey:kUserTokenKey];
+    [preferences setValue:nil forKey:kAppTokenKey];
+    [preferences setValue:nil forKey:kAvatarNumberKey];
+    [preferences setValue:nil forKey:kPhotoKey];
+    [preferences setValue:nil forKey:kNickKey];
+    
+    [preferences synchronize];
+    
+    TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
+    SWRevealViewController *revealController = self.revealViewController;
+    [revealController pushFrontViewController:newFrontController animated:YES];
+    
+    [self setHomeSelected];
+
+}
 
 @end

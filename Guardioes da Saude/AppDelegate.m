@@ -59,7 +59,7 @@ NSUserDefaults *preferences;
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
 
-    menuViewCtrl = [[MenuViewController alloc] init];
+    menuViewCtrl = [MenuViewController getInstance];
     
     SWRevealViewController *revealController;
     
