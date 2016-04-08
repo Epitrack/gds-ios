@@ -665,4 +665,29 @@
              }];
 }
 
+- (void)changePasswordWithUser: (User *)user
+                   OldPassword: (NSString *) oldPassword
+                   NewPassword: (NSString *) newPassword
+                       onStart: (void(^)()) onStart
+                     onSuccess: (void(^)()) onSuccess
+                       onError: (void(^)(NSError *error)) onError{
+    NSString *url = [[self getUrl] stringByAppendingString:@"/user/changepass/"];
+    
+    [self doPost:url
+          header:@{@"app_token": user.app_token,
+                   @"user_token": user.user_token}
+       parameter:@{@"passwd": oldPassword,
+                   @"passwdn": newPassword}
+           start:onStart
+           error:^(AFHTTPRequestOperation *operation, NSError *error){
+               if ([operation.response statusCode] == 401) {
+                   onError(nil);
+               }else{
+                   onError(error);
+               }
+           } success:^(AFHTTPRequestOperation *operation, id response){
+               onSuccess();
+           }];
+}
+
 @end

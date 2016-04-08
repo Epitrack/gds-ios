@@ -10,6 +10,7 @@
 #import "User.h"
 #import "ViewUtil.h"
 #import "UserRequester.h"
+#import "MBProgressHUD.h"
 
 @interface ChangePasswordViewController (){
     UserRequester *userRequester;
@@ -51,26 +52,45 @@
     user.password = self.txPassword.text;
     
     if ([self isPasswdValid:user]) {
-        [userRequester updateUser:user
-                        onSuccess:^(User *user){
-                            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
-                                                                                           message:NSLocalizedString(@"Senha atualizada com sucesso.", @"")
-                                                                                    preferredStyle:UIAlertControllerStyleActionSheet];
-                            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"")
-                                                                                    style:UIAlertActionStyleDefault
-                                                                                  handler:^(UIAlertAction * action) {
-                                                                                      [self.navigationController popViewControllerAnimated:YES];
-                                                                                  }];
-                            [alert addAction:defaultAction];
-                            [self presentViewController:alert animated:YES completion:nil];
-                        } onFail:^(NSError *error){
-                            UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"chang_password.fail", @"")];
-                            [self presentViewController:alert animated:YES completion:nil];
-                        }];
+        [userRequester changePasswordWithUser:user
+                                  OldPassword:self.txCurrentPassword.text
+                                  NewPassword:self.txPassword.text onStart:^{
+                                      [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                                  } onSuccess:^{
+                                      [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                      
+                                      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                                                     message:NSLocalizedString(@"chang_password.success", @"")
+                                                                                              preferredStyle:UIAlertControllerStyleActionSheet];
+                                      UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"")
+                                                                                              style:UIAlertActionStyleDefault
+                                                                                            handler:^(UIAlertAction * action) {
+                                                                                                [self.navigationController popViewControllerAnimated:YES];
+                                                                                            }];
+                                      [alert addAction:defaultAction];
+                                      [self presentViewController:alert animated:YES completion:nil];
+                                  } onError:^(NSError *error){
+                                      [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                      NSString *msgError;
+                                      if (error) {
+                                          msgError = NSLocalizedString(@"chang_password.fail", @"");
+                                      } else {
+                                          msgError = NSLocalizedString(@"chang_password.current_password_different", @"");
+                                      }
+                                      UIAlertController *alert = [ViewUtil showAlertWithMessage:msgError];
+                                      [self presentViewController:alert animated:YES completion:nil];
+                                  }];
     }
 }
 
 - (BOOL) isPasswdValid: (User *) user{
+    if ([self.txCurrentPassword.text isEqualToString:@""]) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"chang_password.current_password_required", @"")];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        return NO;
+    }
+    
     if (![user.password isEqualToString:self.txPasswdConfirmation.text]) {
         UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"chang_password.password_isnt_equals", @"")];
         [self presentViewController:alert animated:YES completion:nil];

@@ -82,4 +82,11 @@ typedef enum {
                    onStart: (void(^)()) onStart
                  onSuccess: (void(^)()) onSuccess
                     onErro: (void(^)(NSError *)) onError;
+
+- (void)changePasswordWithUser: (User *)user
+                   OldPassword: (NSString *) oldPassword
+                   NewPassword: (NSString *) newPassword
+                       onStart: (void(^)()) onStart
+                     onSuccess: (void(^)()) onSuccess
+                       onError: (void(^)(NSError *error)) onError;
  @end

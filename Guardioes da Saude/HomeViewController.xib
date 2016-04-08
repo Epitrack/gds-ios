@@ -10,7 +10,7 @@
                 <outlet property="btnProfile" destination="Dyo-yR-Gd4" id="CEY-4L-Qqk"/>
                 <outlet property="lblOla" destination="Ehf-QY-O6S" id="47B-Qw-cia"/>
                 <outlet property="txtNameUser" destination="Ag8-Nd-VOm" id="cPq-lu-KqV"/>
-                <outlet property="view" destination="Cds-EH-tEM" id="rid-2K-ECk"/>
+                <outlet property="view" destination="Cds-EH-tEM" id="855-ax-xhG"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
