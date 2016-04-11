@@ -28,5 +28,6 @@
 - (void) doLogout;
 
 + (MenuViewController *)getInstance;
+- (IBAction)btnLanguageAction:(id)sender;
 
 @end

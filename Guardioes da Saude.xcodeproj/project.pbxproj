@@ -445,6 +445,9 @@
 		B23CB178C86EEA8A7C4AF3CE /* MapPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */; };
 		B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */; };
 		CB05C73B1CA3316D00B2F0D4 /* GDSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05C73A1CA3316D00B2F0D4 /* GDSTextView.m */; };
+		CB0F7DC61CB2FBCB00C381C7 /* ChangeLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F7DC41CB2FBCB00C381C7 /* ChangeLanguageViewController.m */; };
+		CB0F7DC71CB2FBCB00C381C7 /* ChangeLanguageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0F7DC51CB2FBCB00C381C7 /* ChangeLanguageViewController.xib */; };
+		CB0F7DCA1CB3F59900C381C7 /* LocalizationSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F7DC91CB3F59900C381C7 /* LocalizationSystem.m */; };
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB362B2F1C7B48A800BE4F23 /* icon_home_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */; };
 		CB362B301C7B48A800BE4F23 /* icon_home_onpress.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2E1C7B48A800BE4F23 /* icon_home_onpress.png */; };
@@ -1011,6 +1014,11 @@
 		B64BF5E84CA7A154D7E24D31 /* Pods_Guardioes_da_Saude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guardioes_da_Saude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB05C7391CA3316D00B2F0D4 /* GDSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSTextView.h; sourceTree = "<group>"; };
 		CB05C73A1CA3316D00B2F0D4 /* GDSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSTextView.m; sourceTree = "<group>"; };
+		CB0F7DC31CB2FBCB00C381C7 /* ChangeLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeLanguageViewController.h; sourceTree = "<group>"; };
+		CB0F7DC41CB2FBCB00C381C7 /* ChangeLanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeLanguageViewController.m; sourceTree = "<group>"; };
+		CB0F7DC51CB2FBCB00C381C7 /* ChangeLanguageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeLanguageViewController.xib; sourceTree = "<group>"; };
+		CB0F7DC81CB3F59900C381C7 /* LocalizationSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationSystem.h; sourceTree = "<group>"; };
+		CB0F7DC91CB3F59900C381C7 /* LocalizationSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationSystem.m; sourceTree = "<group>"; };
 		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
 		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
 		CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home_default.png; sourceTree = "<group>"; };
@@ -1123,6 +1131,8 @@
 				CB4E686F1C39B48700563FB7 /* LocationUtil.m */,
 				CB9387411C491AE900446842 /* ViewUtil.h */,
 				CB9387421C491AE900446842 /* ViewUtil.m */,
+				CB0F7DC81CB3F59900C381C7 /* LocalizationSystem.h */,
+				CB0F7DC91CB3F59900C381C7 /* LocalizationSystem.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -1306,6 +1316,9 @@
 				CBEF9ACF1C75FD8800A0B036 /* ChangePasswordViewController.h */,
 				CBEF9AD01C75FD8800A0B036 /* ChangePasswordViewController.m */,
 				CBEF9AD11C75FD8800A0B036 /* ChangePasswordViewController.xib */,
+				CB0F7DC31CB2FBCB00C381C7 /* ChangeLanguageViewController.h */,
+				CB0F7DC41CB2FBCB00C381C7 /* ChangeLanguageViewController.m */,
+				CB0F7DC51CB2FBCB00C381C7 /* ChangeLanguageViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -2022,6 +2035,7 @@
 				528C8B091BB82630003CFC91 /* Assets.xcassets in Resources */,
 				52E727A71BEA93B800B46945 /* icon_question@2x.png in Resources */,
 				525A33271BECF5AC00B62E33 /* reveal-icon@2x.png in Resources */,
+				CB0F7DC71CB2FBCB00C381C7 /* ChangeLanguageViewController.xib in Resources */,
 				52E7279F1BEA93B800B46945 /* icon_pin_urgency@3x.png in Resources */,
 				52E6F09A1C20B18E00C88A08 /* bgWhite.png in Resources */,
 				52E727E11BEA93B800B46945 /* img_profile06@3x.png in Resources */,
@@ -2465,6 +2479,7 @@
 				5250D7401BE29B27006E8A63 /* MapHealthViewController.m in Sources */,
 				529BE1E21BF8C68B00692EEC /* ReportViewController.m in Sources */,
 				529BE1E81BF9053D00692EEC /* Notice.m in Sources */,
+				CB0F7DCA1CB3F59900C381C7 /* LocalizationSystem.m in Sources */,
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
 				CBBF75E61CA192060083C85A /* GDSLabel.m in Sources */,
 				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,
@@ -2490,6 +2505,7 @@
 				52E6F0721C1EFE8F00C88A08 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				251AD8F81BD553D3000C1B84 /* Facade.m in Sources */,
 				AAE38B391BF9211D009CD20B /* UserRequester.m in Sources */,
+				CB0F7DC61CB2FBCB00C381C7 /* ChangeLanguageViewController.m in Sources */,
 				52EC50411BF02200002FEACE /* Household.m in Sources */,
 				522360BF1BE9176D006D0598 /* DetailMap.m in Sources */,
 				524C14311BEBE043003A6C2D /* PharmacyViewController.m in Sources */,

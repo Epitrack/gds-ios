@@ -333,7 +333,7 @@
         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
     }];
 }
-     
+
 - (IBAction)btnStartAction:(id)sender {
     [self.view layoutIfNeeded];
     

@@ -16,6 +16,7 @@
 #import "TutorialViewController.h"
 #import "Requester.h"
 #import "ViewUtil.h"
+#import "ChangeLanguageViewController.h"
 #import <Google/Analytics.h>
 
 @interface MenuViewController () {
@@ -117,6 +118,19 @@
     
     self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
     self.lbSignout.textColor = [UIColor blackColor];
+}
+
+- (IBAction)btnLanguageAction:(id)sender {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_language"
+                                                           label:@"Home"
+                                                           value:nil] build]];
+    
+    ChangeLanguageViewController *changeLanguageView = [[ChangeLanguageViewController alloc] init];
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:changeLanguageView];
+    SWRevealViewController *revealController = self.revealViewController;
+    [revealController pushFrontViewController:newFrontController animated:YES];
 }
 
 /*
