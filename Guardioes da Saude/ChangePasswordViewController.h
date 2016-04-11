@@ -11,6 +11,7 @@
 @interface ChangePasswordViewController : ViewController
 @property (weak, nonatomic) IBOutlet UITextField *txPassword;
 @property (weak, nonatomic) IBOutlet UITextField *txPasswdConfirmation;
+@property (weak, nonatomic) IBOutlet UITextField *txCurrentPassword;
 
 - (IBAction)btnSaveAction:(id)sender;
 @end

@@ -25,5 +25,8 @@
 - (IBAction)btnProfile:(id)sender;
 - (IBAction)btnExit:(id)sender;
 - (void) setHomeSelected;
+- (void) doLogout;
+
++ (MenuViewController *)getInstance;
 
 @end

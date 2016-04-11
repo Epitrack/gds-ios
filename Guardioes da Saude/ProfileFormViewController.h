@@ -39,6 +39,9 @@ typedef enum operation{
 @property (weak, nonatomic) IBOutlet UILabel *lbParentesco;
 @property (weak, nonatomic) IBOutlet UIButton *btnChangePasswd;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constTopEmail;
+@property (weak, nonatomic) IBOutlet UIButton *btnDelete;
+@property (weak, nonatomic) IBOutlet UILabel *lblOr;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnSaveBottomConst;
 
 - (IBAction)btnDobAction:(id)sender;
 - (IBAction)btnSelectPicture:(id)sender;
@@ -46,5 +49,6 @@ typedef enum operation{
 - (void) setAvatarNumber: (NSNumber *) avatarNumber;
 - (void) setPhoto: (NSString *) photoUrl;
 - (IBAction)btnChangePasswdAction:(id)sender;
+- (IBAction)btnDeleteAction:(id)sender;
 
 @end

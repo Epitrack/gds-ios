@@ -433,7 +433,7 @@ const float _kCellHeight = 100.0f;
         }
         
         NSString * key = [NSString stringWithFormat: @"%d-%d-%d",
-                          [self getDay: dayView.date], [self getMonth: dayView.date], [self getYear: dayView.date]];
+                          (int) [self getDay: dayView.date], (int) [self getMonth: dayView.date], (int) [self getYear: dayView.date]];
         
         SumaryCalendar * sumaryCalendar = [self.calendarMap objectForKey: key];
         
@@ -490,7 +490,7 @@ const float _kCellHeight = 100.0f;
 
 - (UIImageView *) getState: (SumaryCalendar *) sumaryCalendar {
     
-    UIImageView * view = [[UIImageView alloc] initWithFrame: CGRectMake(self.calendarContentView.bounds.size.width/29, 0, 25, 24)];
+    UIImageView * view = [[UIImageView alloc] initWithFrame: CGRectMake(((self.calendarContentView.bounds.size.width/7)/2)-13, -2, 26, 26)];
     
     if (sumaryCalendar.noSymptomAmount == 0) {
         

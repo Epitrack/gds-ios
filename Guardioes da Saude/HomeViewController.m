@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "User.h"
 #import "SelectParticipantViewController.h"
+#import "SelectStateViewController.h"
 #import "MapHealthViewController.h"
 #import "NoticeViewController.h"
 #import "HealthTipsViewController.h"
@@ -23,7 +24,7 @@
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
 #import "MenuViewController.h"
-#import "AppDelegate.h"
+#import "DateUtil.h"
 
 @import Photos;
 
@@ -40,6 +41,7 @@
     SingleNotice *singleNotice;
     UIImage *_defaultImage;
     UserRequester *userRequester;
+    NSUserDefaults *preferences;
 }
 
 - (void)viewDidLoad {
@@ -52,7 +54,11 @@
     singleNotice = [SingleNotice getInstance];
     userRequester = [[UserRequester alloc] init];
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    preferences = [NSUserDefaults standardUserDefaults];
+    NSString *strLastJoinNotification = [preferences objectForKey:kLastJoinNotification];
+    if (strLastJoinNotification) {
+        user.lastJoinNotification = [DateUtil dateFromStringUS:strLastJoinNotification];
+    }
     
     if ([preferences objectForKey:kUserTokenKey] != nil && !user.user_token) {
         NSString *userToken;
@@ -77,10 +83,10 @@
         
         [self authorizedAutomaticLogin:userToken];
     } else {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [self showInformations];
+        [self checkLastSurvey];
     }
-    
-
     
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
@@ -93,11 +99,9 @@
     // Do any additional setup after loading the view from its nib.
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
-    [locationManager startMonitoringSignificantLocationChanges];
     [locationManager startUpdatingLocation];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager startUpdatingLocation];
     
     UINavigationController *navCtr = self.navigationController;
     [navCtr setNavigationBarHidden:NO animated:NO];
@@ -109,7 +113,6 @@
     titleImgView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
     [self.navigationController.navigationBar addSubview:titleImgView];
 }
-
 
 - (void) showInformations {
     
@@ -258,6 +261,8 @@
     
     user.lat = [NSString stringWithFormat:@"%f", currentLocation.coordinate.latitude];
     user.lon = [NSString stringWithFormat:@"%f", currentLocation.coordinate.longitude];
+    
+    [locationManager stopUpdatingLocation];
 }
 
 - (void) authorizedAutomaticLogin:(NSString *)userToken {
@@ -267,13 +272,13 @@
                                 }andOnSuccess:^{
                                     [self showInformations];
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                    
+                                    [self checkLastSurvey];
                                 }andOnError:^(NSError *error, int errorCode){
                                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                                     
                                     if (errorCode == 403) {
                                         [[User getInstance] clearUser];
-                                        
-                                        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
                                         
                                         [preferences setValue:nil forKey:kUserTokenKey];
                                         [preferences setValue:nil forKey:kAppTokenKey];
@@ -298,5 +303,35 @@
                                         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                     }
                                 }];
+}
+
+- (void) checkLastSurvey{
+    [userRequester getSummary:user date:[NSDate date] onStart:^{
+    
+    } onSuccess:^(NSDictionary *surveys){
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        
+        if ([surveys count] == 0 && (!user.lastJoinNotification || ![calendar isDateInToday:user.lastJoinNotification])) {
+            user.lastJoinNotification = [NSDate date];
+            [preferences setValue:[DateUtil stringUSFromDate:user.lastJoinNotification] forKey:kLastJoinNotification];
+            [preferences synchronize];
+            
+            SelectStateViewController *selectStateView = [[SelectStateViewController alloc] init];
+            [self.navigationController pushViewController:selectStateView animated:YES];
+        }
+        
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    } onError:^(NSError *error){
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        NSString *errorMsg;
+        if (error && error.code == -1009) {
+            errorMsg = NSLocalizedString(kMsgConnectionError, @"");
+        } else {
+            errorMsg = NSLocalizedString(kMsgApiError, @"");
+        }
+        
+        [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+    }];
 }
 @end

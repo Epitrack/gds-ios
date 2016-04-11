@@ -17,6 +17,7 @@
 
     CLLocationManager *locationManager;
     User *user;
+    MKPointAnnotation *annotationSelected;
 }
 
 @end
@@ -116,9 +117,9 @@
     
     self.consEmergencyDetail.constant = 0.0f;
     
-    MKPointAnnotation *annotation = (MKPointAnnotation *)[view annotation];
-    self.lbEmergencyName.text = annotation.title;
-    self.lbEmergencyAddress.text = annotation.subtitle;
+    annotationSelected = (MKPointAnnotation *)[view annotation];
+    self.lbEmergencyName.text = annotationSelected.title;
+    self.lbEmergencyAddress.text = annotationSelected.subtitle;
     
     [UIView animateWithDuration:.25 animations:^(){
         [self.view layoutIfNeeded];
@@ -188,4 +189,23 @@
     }];
 }
 
+- (IBAction)btnTraceRoteAction:(id)sender {
+    MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
+    
+    request.source = [MKMapItem mapItemForCurrentLocation];
+    
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(annotationSelected.coordinate.latitude, annotationSelected.coordinate.longitude) addressDictionary:nil];
+    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    [mapItem setName:annotationSelected.title];
+    [mapItem openInMapsWithLaunchOptions:nil];
+    
+    request.destination = mapItem;
+    request.requestsAlternateRoutes = YES;
+    MKDirections *directions =
+    [[MKDirections alloc] initWithRequest:request];
+    
+    [directions calculateDirectionsWithCompletionHandler:
+     ^(MKDirectionsResponse *response, NSError *error) {
+     }];
+}
 @end

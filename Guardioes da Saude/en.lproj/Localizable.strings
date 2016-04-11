@@ -74,7 +74,7 @@
 "sign_up.tx_email" = "E-mail";
 "sign_up.lb_password" = "Senha:";
 "sign_up.tx_password" = "Senha";
-"sign_up.confirm_password" = "Repertir Senha";
+"sign_up.confirm_password" = "Repetir Senha";
 "sign_up.next" = "Próximo";
 "sign_up.email_required" = "E-mail é um campo obrigatório";
 "sign_up.password_required" = "Senha é um campo obrigatório";
@@ -172,6 +172,9 @@
 "profile_form.invalid_email" = "E-mail inválido!";
 "profile_form.success" = "Operação realizada com sucesso.";
 "profile_form.fail" = "Ocorreu um problema de comunicação, por favor verifique sua conexão!";
+"profile_form.delete" = "Excluir Conta";
+"profile_form.or" = "OU";
+"profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardiões da Saúde, será necessário um novo cadastro.\nDeseja continuar?";
 
 // SELECT AVATAR VIEW
 "select_avatar.title" = "Editar Foto";
@@ -184,9 +187,14 @@
 "chang_password.fail" = "Ocorreu um erro ao atualizar o usuário.";
 "chang_password.password_isnt_equals" = "As senhas não estão iguais.";
 "chang_password.min_char_password" = "A senha deve ter mais de 6 caracteres.";
-"chang_password.placeholder_password" = "Redefinir senha";
+"chang_password.placeholder_password" = "Nova senha";
 "chang_password.placeholder_password_confirmation" = "Redefinir senha";
-"chang_password.save" = "Salvar";
+"chang_password.save" = "Redefinir senha";
+"chang_password.current_password" = "Senha Atual";
+"chang_password.new_password" = "Nova Senha";
+"chang_password.repeat_password" = "Repetir Senha";
+"chang_password.current_password_required" = "Senha atual é um campo obrigatório.";
+"chang_password.current_password_different" = "Senha atual incorreta.";
 
 // NOTICE VIEW
 "notice.title" = "Notícias";

@@ -36,6 +36,12 @@ typedef enum {
           onSuccess: (Success) onSuccess;
 
 - (void) getSummary: (User *) user
+               date: (NSDate *) data
+            onStart: (void(^)()) onStart
+          onSuccess: (void(^)(NSDictionary *)) onSuccess
+            onError: (void(^)(NSError *)) onError;
+
+- (void) getSummary: (User *) user
         idHousehold: (NSString *) idHousehold
                year: (int) year
             onStart: (Start) onStart
@@ -71,4 +77,16 @@ typedef enum {
                  andOnStart:(void(^)())onStart
                andOnSuccess:(void(^)())onSuccess
                  andOnError:(void(^)(NSError *))onError;
+
+- (void) deleteAccountUser: (User *) user
+                   onStart: (void(^)()) onStart
+                 onSuccess: (void(^)()) onSuccess
+                    onErro: (void(^)(NSError *)) onError;
+
+- (void)changePasswordWithUser: (User *)user
+                   OldPassword: (NSString *) oldPassword
+                   NewPassword: (NSString *) newPassword
+                       onStart: (void(^)()) onStart
+                     onSuccess: (void(^)()) onSuccess
+                       onError: (void(^)(NSError *error)) onError;
  @end

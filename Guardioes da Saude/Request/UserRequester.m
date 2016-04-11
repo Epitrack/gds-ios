@@ -218,12 +218,9 @@
          header: @{ @"user_token": user.user_token }
       parameter: paramMap
           start: onStart
-     
           error: ^(AFHTTPRequestOperation * request, NSError * error) {
-              
               onError(error);
           }
-     
         success: ^(AFHTTPRequestOperation * request, id response) {
             
             if ([request.response statusCode] == Ok) {
@@ -284,6 +281,60 @@
             }
         }
      ];
+}
+
+- (void)getSummary:(User *)user
+              date:(NSDate *)data
+           onStart:(void (^)())onStart
+         onSuccess:(void (^)(NSDictionary *))onSuccess
+           onError:(void (^)(NSError *))onError{
+    NSString *url = [[self getUrl] stringByAppendingString:@"/user/calendar/day?"];
+    
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:data];
+    
+    [self doGet:url
+         header:@{@"user_token": user.user_token}
+      parameter:@{@"day": [NSString stringWithFormat:@"%d", (int) [components day]],
+                  @"month": [NSString stringWithFormat:@"%d", (int) [components month]],
+                  @"year": [NSString stringWithFormat:@"%d", (int) [components year]]}
+          start:onStart
+          error:^(AFHTTPRequestOperation *operation, NSError *error){
+              onError(error);
+          }
+        success:^(AFHTTPRequestOperation *operation, id response){
+            if ([operation.response statusCode] == Ok) {
+                
+                if ([response[@"error"] boolValue]) {
+                    
+                    onError(nil);
+                    
+                } else {
+                    
+                    NSMutableDictionary * sumaryGraphMap = [NSMutableDictionary dictionary];
+                    
+                    for (NSDictionary * jsonMap in response[@"data"]) {
+                        
+                        SumaryGraph * sumaryGraph = [[SumaryGraph alloc] init];
+                        
+                        NSDictionary * sumaryJson = jsonMap[@"_id"];
+                        
+                        sumaryGraph.month = [sumaryJson[@"month"] intValue];
+                        sumaryGraph.year = [sumaryJson[@"year"] intValue];
+                        sumaryGraph.count = [jsonMap[@"count"] intValue];
+                        sumaryGraph.percent = [jsonMap[@"percent"] floatValue];
+                        
+                        [sumaryGraphMap setValue: sumaryGraph forKey: sumaryJson[@"month"]];
+                    }
+                    
+                    onSuccess(sumaryGraphMap);
+                }
+                
+            } else {
+                
+                onError(nil);
+            }
+        }];
 }
 
 - (void) getSummary: (User *) user
@@ -593,6 +644,50 @@
                  onSuccess();
              }
          }];
+}
+
+- (void) deleteAccountUser:(User *)user
+                   onStart:(void (^)())onStart
+                 onSuccess:(void (^)())onSuccess
+                    onErro:(void (^)(NSError *))onError{
+    
+    NSString *url = [[self getUrl] stringByAppendingString:@"/user/delete/"];
+    
+    [self doDelete:url
+            header:@{@"app_token": user.app_token,
+                     @"user_token": user.user_token}
+         parameter:nil
+             start:onStart
+             error:^(AFHTTPRequestOperation *operation, NSError *error){
+                 onError(error);
+             } success:^(AFHTTPRequestOperation *operation, id response){
+                 onSuccess();
+             }];
+}
+
+- (void)changePasswordWithUser: (User *)user
+                   OldPassword: (NSString *) oldPassword
+                   NewPassword: (NSString *) newPassword
+                       onStart: (void(^)()) onStart
+                     onSuccess: (void(^)()) onSuccess
+                       onError: (void(^)(NSError *error)) onError{
+    NSString *url = [[self getUrl] stringByAppendingString:@"/user/changepass/"];
+    
+    [self doPost:url
+          header:@{@"app_token": user.app_token,
+                   @"user_token": user.user_token}
+       parameter:@{@"passwd": oldPassword,
+                   @"passwdn": newPassword}
+           start:onStart
+           error:^(AFHTTPRequestOperation *operation, NSError *error){
+               if ([operation.response statusCode] == 401) {
+                   onError(nil);
+               }else{
+                   onError(error);
+               }
+           } success:^(AFHTTPRequestOperation *operation, id response){
+               onSuccess();
+           }];
 }
 
 @end

@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbEmergencyName;
 @property (weak, nonatomic) IBOutlet UILabel *lbEmergencyAddress;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *consEmergencyDetail;
+- (IBAction)btnTraceRoteAction:(id)sender;
 
 @end

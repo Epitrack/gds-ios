@@ -17,6 +17,7 @@ NSString *const kPhotoKey = @"photoKey";
 NSString *const kAvatarNumberKey = @"avatarNumberKey";
 NSString *const kNickKey = @"nickKey";
 NSString *const kIsTest = @"isTest";
+NSString *const kLastJoinNotification = @"lastJoinNotification";
 
 @implementation User
 
@@ -46,6 +47,7 @@ NSString *const kIsTest = @"isTest";
 @synthesize idHousehold;
 @synthesize avatar;
 @synthesize photo;
+@synthesize lastJoinNotification;
 
 + (User *)getInstance {
     
@@ -276,6 +278,7 @@ NSString *const kIsTest = @"isTest";
     self.fb = nil;
     self.gl = nil;
     self.photo = nil;
+    self.lastJoinNotification = nil;
 }
 
 @end

@@ -365,41 +365,63 @@ Esta isenção de responsabilidade aplica-se a todos e quaisquer danos ou preju�
                         </mask>
                     </variation>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOg-ba-bRP" customClass="GDSButton">
-                    <rect key="frame" x="8" y="526" width="116" height="35"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <state key="normal" title="terms.decline"/>
-                    <connections>
-                        <action selector="btnDeclineAction:" destination="-1" eventType="touchUpInside" id="mpj-a9-bXh"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPN-T3-RIK" customClass="GDSButton">
-                    <rect key="frame" x="193" y="526" width="119" height="34"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <state key="normal" title="terms.i_agree"/>
-                    <connections>
-                        <action selector="btnAcceptAction:" destination="-1" eventType="touchUpInside" id="SrG-Qc-tZX"/>
-                    </connections>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edd-Kj-4Nj">
+                    <rect key="frame" x="0.0" y="517" width="320" height="51"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOg-ba-bRP" customClass="GDSButton">
+                            <rect key="frame" x="8" y="8" width="116" height="35"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <state key="normal" title="terms.decline"/>
+                            <connections>
+                                <action selector="btnDeclineAction:" destination="-1" eventType="touchUpInside" id="mpj-a9-bXh"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPN-T3-RIK" customClass="GDSButton">
+                            <rect key="frame" x="193" y="9" width="119" height="34"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <state key="normal" title="terms.i_agree"/>
+                            <connections>
+                                <action selector="btnAcceptAction:" destination="-1" eventType="touchUpInside" id="SrG-Qc-tZX"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.93448572990000001" green="0.93448572990000001" blue="0.93448572990000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="51" id="FNq-zJ-k4a"/>
+                        <constraint firstAttribute="bottom" secondItem="tPN-T3-RIK" secondAttribute="bottom" constant="8" id="MAs-tU-MPn"/>
+                        <constraint firstItem="lOg-ba-bRP" firstAttribute="top" secondItem="edd-Kj-4Nj" secondAttribute="top" constant="8" id="Pfu-vF-irX"/>
+                        <constraint firstAttribute="bottom" secondItem="lOg-ba-bRP" secondAttribute="bottom" constant="8" id="Qgf-GV-3dd"/>
+                        <constraint firstItem="lOg-ba-bRP" firstAttribute="leading" secondItem="edd-Kj-4Nj" secondAttribute="leading" constant="8" id="f2e-qh-L6z"/>
+                        <constraint firstAttribute="trailing" secondItem="tPN-T3-RIK" secondAttribute="trailing" constant="8" id="xOS-zU-AIU"/>
+                        <constraint firstItem="tPN-T3-RIK" firstAttribute="top" secondItem="edd-Kj-4Nj" secondAttribute="top" constant="9" id="xOs-Fb-c3T"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="FNq-zJ-k4a"/>
+                        </mask>
+                    </variation>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="tPN-T3-RIK" firstAttribute="top" secondItem="lUr-DF-2oL" secondAttribute="bottom" constant="8" id="127-gv-Ybg"/>
                 <constraint firstItem="lUr-DF-2oL" firstAttribute="centerY" secondItem="riV-rQ-S59" secondAttribute="centerY" id="7U0-wn-s9u"/>
+                <constraint firstItem="edd-Kj-4Nj" firstAttribute="top" secondItem="lUr-DF-2oL" secondAttribute="bottom" constant="-1" id="8R1-bA-Vv0"/>
                 <constraint firstAttribute="trailing" secondItem="lUr-DF-2oL" secondAttribute="trailing" id="K9N-rq-JHE"/>
+                <constraint firstItem="edd-Kj-4Nj" firstAttribute="leading" secondItem="riV-rQ-S59" secondAttribute="leading" id="aUO-v4-AQj"/>
+                <constraint firstAttribute="bottom" secondItem="edd-Kj-4Nj" secondAttribute="bottom" id="abM-KS-1U0"/>
+                <constraint firstItem="2iQ-BZ-aMh" firstAttribute="top" secondItem="edd-Kj-4Nj" secondAttribute="bottom" constant="-439" id="dYj-7v-cl6"/>
                 <constraint firstAttribute="bottom" secondItem="lUr-DF-2oL" secondAttribute="bottom" constant="50" id="eus-O4-07Q"/>
                 <constraint firstItem="lUr-DF-2oL" firstAttribute="top" secondItem="riV-rQ-S59" secondAttribute="top" id="h6w-Su-jzg"/>
-                <constraint firstItem="lOg-ba-bRP" firstAttribute="leading" secondItem="riV-rQ-S59" secondAttribute="leading" constant="8" id="mhy-dB-0Hs"/>
-                <constraint firstAttribute="trailing" secondItem="tPN-T3-RIK" secondAttribute="trailing" constant="8" id="off-mj-d3f"/>
-                <constraint firstItem="lOg-ba-bRP" firstAttribute="top" secondItem="lUr-DF-2oL" secondAttribute="bottom" constant="8" id="puU-eA-Os9"/>
                 <constraint firstItem="lUr-DF-2oL" firstAttribute="centerX" secondItem="riV-rQ-S59" secondAttribute="centerX" id="q3O-ZB-AVX"/>
                 <constraint firstItem="lUr-DF-2oL" firstAttribute="leading" secondItem="riV-rQ-S59" secondAttribute="leading" id="sGX-hQ-2PW"/>
+                <constraint firstAttribute="trailing" secondItem="edd-Kj-4Nj" secondAttribute="trailing" id="xc0-wc-iLT"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="7U0-wn-s9u"/>
                     <exclude reference="q3O-ZB-AVX"/>
+                    <exclude reference="dYj-7v-cl6"/>
                 </mask>
             </variation>
         </view>
