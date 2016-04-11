@@ -490,7 +490,7 @@ const float _kCellHeight = 100.0f;
 
 - (UIImageView *) getState: (SumaryCalendar *) sumaryCalendar {
     
-    UIImageView * view = [[UIImageView alloc] initWithFrame: CGRectMake(self.calendarContentView.bounds.size.width/29, 0, 25, 24)];
+    UIImageView * view = [[UIImageView alloc] initWithFrame: CGRectMake(((self.calendarContentView.bounds.size.width/7)/2)-13, -2, 26, 26)];
     
     if (sumaryCalendar.noSymptomAmount == 0) {
         
