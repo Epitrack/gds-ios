@@ -24,6 +24,7 @@
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
 #import "MenuViewController.h"
+#import "DateUtil.h"
 
 @import Photos;
 
@@ -40,6 +41,7 @@
     SingleNotice *singleNotice;
     UIImage *_defaultImage;
     UserRequester *userRequester;
+    NSUserDefaults *preferences;
 }
 
 - (void)viewDidLoad {
@@ -52,7 +54,11 @@
     singleNotice = [SingleNotice getInstance];
     userRequester = [[UserRequester alloc] init];
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    preferences = [NSUserDefaults standardUserDefaults];
+    NSString *strLastJoinNotification = [preferences objectForKey:kLastJoinNotification];
+    if (strLastJoinNotification) {
+        user.lastJoinNotification = [DateUtil dateFromStringUS:strLastJoinNotification];
+    }
     
     if ([preferences objectForKey:kUserTokenKey] != nil && !user.user_token) {
         NSString *userToken;
@@ -274,8 +280,6 @@
                                     if (errorCode == 403) {
                                         [[User getInstance] clearUser];
                                         
-                                        NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-                                        
                                         [preferences setValue:nil forKey:kUserTokenKey];
                                         [preferences setValue:nil forKey:kAppTokenKey];
                                         [preferences setValue:nil forKey:kAvatarNumberKey];
@@ -305,7 +309,13 @@
     [userRequester getSummary:user date:[NSDate date] onStart:^{
     
     } onSuccess:^(NSDictionary *surveys){
-        if ([surveys count] == 0) {
+        NSCalendar* calendar = [NSCalendar currentCalendar];
+        
+        if ([surveys count] == 0 && (!user.lastJoinNotification || ![calendar isDateInToday:user.lastJoinNotification])) {
+            user.lastJoinNotification = [NSDate date];
+            [preferences setValue:[DateUtil stringUSFromDate:user.lastJoinNotification] forKey:kLastJoinNotification];
+            [preferences synchronize];
+            
             SelectStateViewController *selectStateView = [[SelectStateViewController alloc] init];
             [self.navigationController pushViewController:selectStateView animated:YES];
         }

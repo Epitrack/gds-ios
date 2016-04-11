@@ -278,6 +278,7 @@
     [preferences setValue:nil forKey:kAvatarNumberKey];
     [preferences setValue:nil forKey:kPhotoKey];
     [preferences setValue:nil forKey:kNickKey];
+    [preferences setValue:nil forKey:kLastJoinNotification];
     
     [preferences synchronize];
     
