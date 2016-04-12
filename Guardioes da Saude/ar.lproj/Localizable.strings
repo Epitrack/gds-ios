@@ -18,7 +18,7 @@
 "constant.no_conection" = "É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!";
 
 // HOME VIEW
-"home.hello" = "Olá, ";
+"home.hello" = "مرحبا, ";
 "home.news" = "Notícias";
 "home.map_health" = "Mapa da Saúde";
 "home.tips_health" = "Dicas de Saúde";

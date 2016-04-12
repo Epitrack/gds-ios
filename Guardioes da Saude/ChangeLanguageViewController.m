@@ -9,8 +9,12 @@
 #import "ChangeLanguageViewController.h"
 #import "HomeViewController.h"
 #import "LocalizationSystem.h"
+#import "AppDelegate.h"
 @interface ChangeLanguageViewController (){
     NSArray *languages;
+    NSArray *languagesDetails;
+    NSArray *languagesCode;
+    NSString *currentLanguage;
 }
 
 @end
@@ -21,9 +25,25 @@ static NSBundle *bundle = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    languages = @[@"English", @"Español", @"Fraçais", @"pyccknñ", @"简体中文", @"العربية"];
     
+    self.navigationItem.title = NSLocalizedString(@"change_language.title", @"");
+    
+    currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    
+    languages = @[@"English", @"Español", @"Fraçais", @"Protugues(Brasil)", @"pyccknñ", @"简体中文", @"العربية"];
+    languagesDetails = @[@"Inglês", @"Espanhol", @"Francês", @"Protugues(Brasil)", @"Russo", @"Cinês, Simplificado", @"Árabe"];
+    languagesCode = @[@"en", @"es", @"fr", @"pt-BR", @"ru", @"zh-Hans-CN", @"ar"];
+    
+    UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"constant.cancel", @"") style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
+    btnCancel.tintColor = [UIColor colorWithRed:1 green:180.0/255.0 blue:0 alpha:1];
+    self.navigationItem.leftBarButtonItem = btnCancel;
+    
+    self.tableLanguages.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+}
+
+- (void) cancelAction{
+    HomeViewController *homeView = [[HomeViewController alloc] init];
+    [self.navigationController pushViewController:homeView animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,10 +66,19 @@ static NSBundle *bundle = nil;
     UITableViewCell *cell = [self.tableLanguages dequeueReusableCellWithIdentifier:cellCacheID];
     
     if (cell == nil ) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellCacheID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellCacheID];
     }
     
     cell.textLabel.text = [languages objectAtIndex:indexPath.row];
+    cell.textLabel.textColor = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1];
+    cell.detailTextLabel.text = [languagesDetails objectAtIndex:indexPath.row];
+    cell.detailTextLabel.textColor = [UIColor colorWithRed:155.0/255.0 green:155.0/255.0 blue:155.0/255.0 alpha:1];
+    cell.backgroundColor = [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:242.0/255.0 alpha:1];
+    [cell setSeparatorInset:UIEdgeInsetsZero];
+    
+    if ([[languagesCode objectAtIndex:indexPath.row] isEqualToString:currentLanguage]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
     
     return cell;
 }
@@ -59,14 +88,30 @@ static NSBundle *bundle = nil;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"en", nil] forKey:@"AppleLanguages"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-
-//    [LocalizationSystem setLanguage:@"en"];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
+                                                                   message:NSLocalizedString(@"change_language.confirmation_msg", @"")
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *actionYes = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.yes", @"")
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action){
+                                                          [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:[languagesCode objectAtIndex:indexPath.row], nil] forKey:@"AppleLanguages"];
+                                                          [[NSUserDefaults standardUserDefaults] synchronize];
+                                                        
+                                                          exit(0);
+                                                      }];
     
-    HomeViewController *homeView = [[HomeViewController alloc] init];
-    [self.navigationController pushViewController:homeView animated:YES];
+    UIAlertAction *actionNo = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.no", @"")
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action){
+                                                          
+                                                      }];
+    
+    [alert addAction:actionYes];
+    [alert addAction:actionNo];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
+
 
 
 @end

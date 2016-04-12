@@ -10,6 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface HomeViewController : UIViewController <CLLocationManagerDelegate>
+
+@property NSBundle *localBundle;
 @property (strong, nonatomic) IBOutlet UILabel *txtNameUser;
 @property (weak, nonatomic) IBOutlet UIButton *btnProfile;
 @property (weak, nonatomic) IBOutlet UIButton *btnStart;

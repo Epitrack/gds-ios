@@ -115,8 +115,12 @@
 }
 
 - (void) showInformations {
+    if (self.localBundle) {
+        self.txtNameUser.text = [NSLocalizedStringFromTableInBundle(@"home.hello", nil, self.localBundle, @"") stringByAppendingString:user.nick];
+    } else {
+        self.txtNameUser.text = [NSLocalizedString(@"home.hello", @"") stringByAppendingString:user.nick];
+    }
     
-    self.txtNameUser.text = user.nick;
     self.btnProfile.hidden = NO;
     [user setAvatarImageAtButton:self.btnProfile orImageView:nil];
 }

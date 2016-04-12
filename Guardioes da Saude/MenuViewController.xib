@@ -134,8 +134,11 @@
                         <action selector="btnExit:" destination="-1" eventType="touchUpInside" id="gfj-wu-Qbe"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aII-21-ZiT">
-                    <rect key="frame" x="10" y="457" width="46" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aII-21-ZiT">
+                    <rect key="frame" x="10" y="457" width="200" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="yL4-Ww-uuK"/>
+                    </constraints>
                     <state key="normal" title="Idioma"/>
                     <connections>
                         <action selector="btnLanguageAction:" destination="-1" eventType="touchUpInside" id="idi-Gg-5Ey"/>
@@ -162,6 +165,7 @@
                 <constraint firstItem="MkL-yl-8bQ" firstAttribute="top" secondItem="brk-jf-HmE" secondAttribute="top" id="F9U-tv-RCE"/>
                 <constraint firstItem="EFv-OI-JXw" firstAttribute="top" secondItem="OE9-YS-XDF" secondAttribute="top" id="Fdl-kG-Txt"/>
                 <constraint firstItem="1V5-wc-Wlk" firstAttribute="bottom" secondItem="9hc-kA-1au" secondAttribute="bottom" id="Fsu-sl-Btr"/>
+                <constraint firstItem="aII-21-ZiT" firstAttribute="trailing" secondItem="IQl-uN-xw6" secondAttribute="trailing" id="GdZ-ZE-kpk"/>
                 <constraint firstItem="IQl-uN-xw6" firstAttribute="centerY" secondItem="9hc-kA-1au" secondAttribute="centerY" id="Gp6-nj-2Rg"/>
                 <constraint firstItem="Gu8-D7-aQw" firstAttribute="top" secondItem="fwQ-lU-be9" secondAttribute="top" id="Ibd-ee-Az6"/>
                 <constraint firstItem="Gu8-D7-aQw" firstAttribute="leading" secondItem="fwQ-lU-be9" secondAttribute="leading" id="IfR-Gb-2ka"/>
