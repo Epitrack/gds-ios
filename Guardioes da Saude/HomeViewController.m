@@ -121,6 +121,10 @@
         self.txtNameUser.text = [NSLocalizedString(@"home.hello", @"") stringByAppendingString:user.nick];
     }
     
+<<<<<<< 08f4904e026d80f4327d74ba74c14b878716c28c
+=======
+    self.txtNameUser.text = user.nick;
+>>>>>>> Creating home screen animation
     self.btnProfile.hidden = NO;
     [user setAvatarImageAtButton:self.btnProfile orImageView:nil];
 }
@@ -311,6 +315,7 @@
                                     }
                                 }];
 }
+<<<<<<< 08f4904e026d80f4327d74ba74c14b878716c28c
 
 - (void) checkLastSurvey{
     [userRequester getSummary:user date:[NSDate date] onStart:^{
@@ -339,6 +344,29 @@
         }
         
         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+=======
+- (IBAction)btnStartAction:(id)sender {
+    [self.view layoutIfNeeded];
+    
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
+    
+    self.btnStartTrailingConst.constant = width/2;
+    self.btnStartLeadingConst.constant = width/2;
+    self.btnStartTopConst.constant = width/2;
+    
+    self.btnJoinTopConst.constant = 0;
+    
+    self.btnNewTopConst.constant = 80;
+    self.btnNewsLeadingConst.constant = -22;
+    
+    self.btnTipsTopConst.constant = -4;
+    self.btnTipsLeadingConst.constant = -22;
+    
+    [UIView animateWithDuration:.5 animations:^{
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL b){
+        self.btnStart.hidden = YES;
+>>>>>>> Creating home screen animation
     }];
 }
 @end

@@ -7,7 +7,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="btnJoinTopConst" destination="Xar-rS-ePu" id="MO6-c8-0Lr"/>
+                <outlet property="btnNewTopConst" destination="OP7-hs-Ydz" id="N2l-lb-Jwq"/>
+                <outlet property="btnNewsLeadingConst" destination="pyO-N6-8Pi" id="Nfm-t5-5KD"/>
                 <outlet property="btnProfile" destination="Dyo-yR-Gd4" id="CEY-4L-Qqk"/>
+<<<<<<< 08f4904e026d80f4327d74ba74c14b878716c28c
+=======
+                <outlet property="btnStart" destination="clr-c1-R4M" id="b24-0y-30y"/>
+                <outlet property="btnStartLeadingConst" destination="tpi-e4-LZU" id="pIp-wD-Ys2"/>
+                <outlet property="btnStartTopConst" destination="pHo-gM-nOm" id="iCd-Jz-YWA"/>
+                <outlet property="btnStartTrailingConst" destination="rqV-hj-EcM" id="nsI-bW-LZi"/>
+                <outlet property="btnStartWithConst" destination="FIo-8j-JaC" id="dqt-WT-Igr"/>
+                <outlet property="btnTipsLeadingConst" destination="6zc-jA-fds" id="a9X-61-uBR"/>
+                <outlet property="btnTipsTopConst" destination="YDc-Be-XQW" id="0CD-3g-eYY"/>
+>>>>>>> Creating home screen animation
                 <outlet property="txtNameUser" destination="Ag8-Nd-VOm" id="cPq-lu-KqV"/>
                 <outlet property="view" destination="Cds-EH-tEM" id="855-ax-xhG"/>
             </connections>
@@ -21,6 +34,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
+<<<<<<< 08f4904e026d80f4327d74ba74c14b878716c28c
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="8tT-ki-6Iv">
                     <rect key="frame" x="124" y="373" width="72" height="76"/>
                     <constraints>
@@ -224,14 +238,125 @@
                 </mask>
             </variation>
             <point key="canvasLocation" x="390" y="501"/>
+=======
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-yR-Gd4" userLabel="Button Profile">
+                    <rect key="frame" x="110" y="80" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="1:1" id="i12-lG-Zk8"/>
+                    </constraints>
+                    <size key="titleShadowOffset" width="15" height="24"/>
+                    <state key="normal" backgroundImage="img_profile01.png"/>
+                    <connections>
+                        <action selector="btnProfileAction:" destination="-1" eventType="touchUpInside" id="c0A-qr-ojz"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, Aninha!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ag8-Nd-VOm" userLabel="Label Name">
+                    <rect key="frame" x="25" y="192" width="270" height="27"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="20" y="190" width="280" height="22"/>
+                    </variation>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tk-Sg-hEE">
+                    <rect key="frame" x="108" y="308" width="104" height="101"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="7tk-Sg-hEE" secondAttribute="height" multiplier="104:101" id="dAX-Fh-hgf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-66" minY="0.0" maxX="4" maxY="74"/>
+                    <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Paricipe agora!" image="icon_join">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kJ-ek-qV7">
+                    <rect key="frame" x="65" y="329" width="135" height="79"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4kJ-ek-qV7" secondAttribute="height" multiplier="135:79" id="aLk-Fl-EsX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-58" minY="0.0" maxX="70" maxY="30"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-51" maxY="0.0"/>
+                    <state key="normal" title="Noticias" image="icon_news">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lbO-Tn-hq9">
+                    <rect key="frame" x="68" y="328" width="145" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="79" id="BYa-ij-e7u"/>
+                        <constraint firstAttribute="width" secondItem="lbO-Tn-hq9" secondAttribute="height" multiplier="135:79" id="T1c-Ii-9ky"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-63" minY="23" maxX="72" maxY="26"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-119" maxY="0.0"/>
+                    <state key="normal" title="       Dicas da Saúde" image="icon_types">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="BYa-ij-e7u"/>
+                        </mask>
+                    </variation>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clr-c1-R4M">
+                    <rect key="frame" x="70" y="279" width="180" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="180" id="FIo-8j-JaC"/>
+                        <constraint firstAttribute="width" secondItem="clr-c1-R4M" secondAttribute="height" multiplier="1:1" id="dVE-rV-NYN"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="icon_game"/>
+                    <connections>
+                        <action selector="btnStartAction:" destination="-1" eventType="touchUpInside" id="BUm-pu-aza"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" constant="80" id="0MO-oI-AET"/>
+                <constraint firstAttribute="trailing" secondItem="Dyo-yR-Gd4" secondAttribute="trailing" constant="110" id="4Uv-Q6-Wb2"/>
+                <constraint firstItem="7tk-Sg-hEE" firstAttribute="leading" secondItem="lbO-Tn-hq9" secondAttribute="trailing" constant="-105" id="6zc-jA-fds"/>
+                <constraint firstAttribute="trailing" secondItem="Ag8-Nd-VOm" secondAttribute="trailing" constant="25" id="CFL-G8-w9i"/>
+                <constraint firstItem="7tk-Sg-hEE" firstAttribute="centerX" secondItem="Ag8-Nd-VOm" secondAttribute="centerX" id="DSe-It-nFj"/>
+                <constraint firstAttribute="bottom" secondItem="w9n-BB-3Se" secondAttribute="bottom" id="Kjd-uX-rt8"/>
+                <constraint firstItem="4kJ-ek-qV7" firstAttribute="top" secondItem="Ag8-Nd-VOm" secondAttribute="bottom" constant="110" id="OP7-hs-Ydz"/>
+                <constraint firstItem="w9n-BB-3Se" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" id="Rbb-F0-cET"/>
+                <constraint firstItem="7tk-Sg-hEE" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="13:71" id="TeN-oN-6iT"/>
+                <constraint firstItem="Dyo-yR-Gd4" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="110" id="Ucb-iz-Fc1"/>
+                <constraint firstItem="lbO-Tn-hq9" firstAttribute="width" secondItem="lbO-Tn-hq9" secondAttribute="height" multiplier="135:79" id="V7R-r4-YZ0"/>
+                <constraint firstItem="7tk-Sg-hEE" firstAttribute="top" secondItem="Ag8-Nd-VOm" secondAttribute="bottom" constant="89" id="Xar-rS-ePu"/>
+                <constraint firstItem="lbO-Tn-hq9" firstAttribute="top" secondItem="4kJ-ek-qV7" secondAttribute="bottom" constant="-80" id="YDc-Be-XQW"/>
+                <constraint firstAttribute="trailing" secondItem="w9n-BB-3Se" secondAttribute="trailing" id="Z3O-cw-0pp"/>
+                <constraint firstItem="w9n-BB-3Se" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" id="b6H-po-Ea3"/>
+                <constraint firstItem="Ag8-Nd-VOm" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="25" id="cHj-ZN-qra"/>
+                <constraint firstItem="w9n-BB-3Se" firstAttribute="height" secondItem="Cds-EH-tEM" secondAttribute="height" id="evF-oz-Zl7"/>
+                <constraint firstItem="w9n-BB-3Se" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="width" id="nk1-c7-dyI"/>
+                <constraint firstItem="4kJ-ek-qV7" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="135:568" id="noH-kD-hVx"/>
+                <constraint firstItem="Ag8-Nd-VOm" firstAttribute="top" secondItem="Dyo-yR-Gd4" secondAttribute="bottom" constant="12" id="pE5-9u-jYk"/>
+                <constraint firstItem="clr-c1-R4M" firstAttribute="top" secondItem="Ag8-Nd-VOm" secondAttribute="bottom" constant="60" id="pHo-gM-nOm"/>
+                <constraint firstItem="7tk-Sg-hEE" firstAttribute="leading" secondItem="4kJ-ek-qV7" secondAttribute="trailing" constant="-92" id="pyO-N6-8Pi"/>
+                <constraint firstAttribute="trailing" secondItem="clr-c1-R4M" secondAttribute="trailing" constant="70" id="rqV-hj-EcM"/>
+                <constraint firstItem="clr-c1-R4M" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="70" id="tpi-e4-LZU"/>
+                <constraint firstItem="lbO-Tn-hq9" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="145:568" id="zGx-Bc-73n"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="302" y="412"/>
+>>>>>>> Creating home screen animation
         </view>
     </objects>
     <resources>
         <image name="BG_light.png" width="321" height="569"/>
+<<<<<<< 08f4904e026d80f4327d74ba74c14b878716c28c
         <image name="icon_diary" width="72" height="76"/>
         <image name="icon_game" width="72" height="76"/>
         <image name="icon_join" width="72" height="76"/>
         <image name="icon_maps" width="76" height="80"/>
+=======
+        <image name="icon_game" width="72" height="76"/>
+        <image name="icon_join" width="72" height="76"/>
+>>>>>>> Creating home screen animation
         <image name="icon_news" width="72" height="76"/>
         <image name="icon_types" width="72" height="76"/>
         <image name="img_profile01.png" width="131" height="131"/>
