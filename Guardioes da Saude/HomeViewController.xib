@@ -128,7 +128,9 @@
                         <constraint firstAttribute="width" secondItem="lbO-Tn-hq9" secondAttribute="height" multiplier="18:19" id="f7W-Jk-BQj"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" backgroundImage="icon_types">
+                    <inset key="titleEdgeInsets" minX="-68" minY="23" maxX="81" maxY="26"/>
+                    <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="-93" maxY="0.0"/>
+                    <state key="normal" title=" Dicas da Saúde" image="icon_types">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
