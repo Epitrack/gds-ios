@@ -46,7 +46,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.navigationItem.hidesBackButton = YES;
     
     user = [User getInstance];
@@ -91,11 +91,11 @@
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
-
+    
     UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
                                                                          style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
-
+    
     // Do any additional setup after loading the view from its nib.
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
@@ -121,10 +121,6 @@
         self.txtNameUser.text = [NSLocalizedString(@"home.hello", @"") stringByAppendingString:user.nick];
     }
     
-<<<<<<< 08f4904e026d80f4327d74ba74c14b878716c28c
-=======
-    self.txtNameUser.text = user.nick;
->>>>>>> Creating home screen animation
     self.btnProfile.hidden = NO;
     [user setAvatarImageAtButton:self.btnProfile orImageView:nil];
 }
@@ -160,14 +156,13 @@
     [titleImgView removeFromSuperview];
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}/
-*/
+ #pragma mark - Navigation
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }/
+ */
 
 -(void)showMenu:(id)sender  {
     NSLog(@"menu action");
@@ -279,47 +274,46 @@
 - (void) authorizedAutomaticLogin:(NSString *)userToken {
     [userRequester lookupWithUsertoken:userToken
                                OnStart:^{
-                                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                                }andOnSuccess:^{
-                                    [self showInformations];
-                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    
-                                    [self checkLastSurvey];
-                                }andOnError:^(NSError *error, int errorCode){
-                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    
-                                    if (errorCode == 403) {
-                                        [[User getInstance] clearUser];
-                                        
-                                        [preferences setValue:nil forKey:kUserTokenKey];
-                                        [preferences setValue:nil forKey:kAppTokenKey];
-                                        [preferences setValue:nil forKey:kAvatarNumberKey];
-                                        [preferences setValue:nil forKey:kPhotoKey];
-                                        [preferences setValue:nil forKey:kNickKey];
-                                        
-                                        [preferences synchronize];
-                                        
-                                        TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
-                                        UIViewController *newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
-                                        SWRevealViewController *revealController = self.revealViewController;
-                                        [revealController pushFrontViewController:newFrontController animated:YES];
-                                    }else{
-                                        NSString *errorMsg;
-                                        if (error && error.code == -1009) {
-                                            errorMsg = NSLocalizedString(kMsgConnectionError, @"");
-                                        } else {
-                                            errorMsg = NSLocalizedString(kMsgApiError, @"");
-                                        }
-                                        
-                                        [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
-                                    }
-                                }];
+                                   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                               }andOnSuccess:^{
+                                   [self showInformations];
+                                   [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                   
+                                   [self checkLastSurvey];
+                               }andOnError:^(NSError *error, int errorCode){
+                                   [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                   
+                                   if (errorCode == 403) {
+                                       [[User getInstance] clearUser];
+                                       
+                                       [preferences setValue:nil forKey:kUserTokenKey];
+                                       [preferences setValue:nil forKey:kAppTokenKey];
+                                       [preferences setValue:nil forKey:kAvatarNumberKey];
+                                       [preferences setValue:nil forKey:kPhotoKey];
+                                       [preferences setValue:nil forKey:kNickKey];
+                                       
+                                       [preferences synchronize];
+                                       
+                                       TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
+                                       UIViewController *newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
+                                       SWRevealViewController *revealController = self.revealViewController;
+                                       [revealController pushFrontViewController:newFrontController animated:YES];
+                                   }else{
+                                       NSString *errorMsg;
+                                       if (error && error.code == -1009) {
+                                           errorMsg = NSLocalizedString(kMsgConnectionError, @"");
+                                       } else {
+                                           errorMsg = NSLocalizedString(kMsgApiError, @"");
+                                       }
+                                       
+                                       [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                                   }
+                               }];
 }
-<<<<<<< 08f4904e026d80f4327d74ba74c14b878716c28c
 
 - (void) checkLastSurvey{
     [userRequester getSummary:user date:[NSDate date] onStart:^{
-    
+        
     } onSuccess:^(NSDictionary *surveys){
         NSCalendar* calendar = [NSCalendar currentCalendar];
         
@@ -344,29 +338,6 @@
         }
         
         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
-=======
-- (IBAction)btnStartAction:(id)sender {
-    [self.view layoutIfNeeded];
-    
-    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
-    
-    self.btnStartTrailingConst.constant = width/2;
-    self.btnStartLeadingConst.constant = width/2;
-    self.btnStartTopConst.constant = width/2;
-    
-    self.btnJoinTopConst.constant = 0;
-    
-    self.btnNewTopConst.constant = 80;
-    self.btnNewsLeadingConst.constant = -22;
-    
-    self.btnTipsTopConst.constant = -4;
-    self.btnTipsLeadingConst.constant = -22;
-    
-    [UIView animateWithDuration:.5 animations:^{
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL b){
-        self.btnStart.hidden = YES;
->>>>>>> Creating home screen animation
     }];
 }
 @end
