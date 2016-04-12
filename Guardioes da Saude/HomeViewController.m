@@ -241,6 +241,10 @@
     }
 }
 
+- (IBAction)btnNewsAction:(id)sender {
+    
+}
+
 - (IBAction)btnProfileAction:(id)sender {
     // GOOGLE ANALYTICS
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
@@ -335,30 +339,6 @@
         }
         
         [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
-    }];
-}
-
-- (IBAction)btnStartAction:(id)sender {
-    [self.view layoutIfNeeded];
-    
-    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
-    
-    self.btnStartTrailingConst.constant = width/2;
-    self.btnStartLeadingConst.constant = width/2;
-    self.btnStartTopConst.constant = width/2;
-    
-    self.btnJoinTopConst.constant = 0;
-    
-    self.btnNewTopConst.constant = 80;
-    self.btnNewsLeadingConst.constant = -22;
-    
-    self.btnTipsTopConst.constant = -4;
-    self.btnTipsLeadingConst.constant = -22;
-    
-    [UIView animateWithDuration:.5 animations:^{
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL b){
-        self.btnStart.hidden = YES;
     }];
 }
 @end

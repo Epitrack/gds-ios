@@ -14,19 +14,8 @@
 @property NSBundle *localBundle;
 @property (strong, nonatomic) IBOutlet UILabel *txtNameUser;
 @property (weak, nonatomic) IBOutlet UIButton *btnProfile;
-@property (weak, nonatomic) IBOutlet UIButton *btnStart;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnStartTopConst;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnStartTrailingConst;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnStartLeadingConst;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnStartWithConst;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnJoinTopConst;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnNewTopConst;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnNewsLeadingConst;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnTipsLeadingConst;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnTipsTopConst;
-
-
+- (IBAction)btnNewsAction:(id)sender;
 - (IBAction)btnProfileAction:(id)sender;
-- (IBAction)btnStartAction:(id)sender;
+
 @end
