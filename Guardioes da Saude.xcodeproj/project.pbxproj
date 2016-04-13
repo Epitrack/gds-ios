@@ -445,6 +445,8 @@
 		B23CB178C86EEA8A7C4AF3CE /* MapPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB4EA83C0639915DF788F /* MapPinAnnotation.m */; };
 		B23CBD83A3CB3EDFC43B9136 /* HouseholdThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = B23CB03B6DF18E2712D6B01D /* HouseholdThumbnail.m */; };
 		CB05C73B1CA3316D00B2F0D4 /* GDSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05C73A1CA3316D00B2F0D4 /* GDSTextView.m */; };
+		CB08AE3A1CBEBEAC00A2FB3F /* TravelerHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB08AE381CBEBEAC00A2FB3F /* TravelerHealthViewController.m */; };
+		CB08AE3B1CBEBEAC00A2FB3F /* TravelerHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB08AE391CBEBEAC00A2FB3F /* TravelerHealthViewController.xib */; };
 		CB0F7DC61CB2FBCB00C381C7 /* ChangeLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F7DC41CB2FBCB00C381C7 /* ChangeLanguageViewController.m */; };
 		CB0F7DC71CB2FBCB00C381C7 /* ChangeLanguageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0F7DC51CB2FBCB00C381C7 /* ChangeLanguageViewController.xib */; };
 		CB0F7DCA1CB3F59900C381C7 /* LocalizationSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F7DC91CB3F59900C381C7 /* LocalizationSystem.m */; };
@@ -1014,6 +1016,9 @@
 		B64BF5E84CA7A154D7E24D31 /* Pods_Guardioes_da_Saude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guardioes_da_Saude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB05C7391CA3316D00B2F0D4 /* GDSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSTextView.h; sourceTree = "<group>"; };
 		CB05C73A1CA3316D00B2F0D4 /* GDSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSTextView.m; sourceTree = "<group>"; };
+		CB08AE371CBEBEAC00A2FB3F /* TravelerHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelerHealthViewController.h; sourceTree = "<group>"; };
+		CB08AE381CBEBEAC00A2FB3F /* TravelerHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelerHealthViewController.m; sourceTree = "<group>"; };
+		CB08AE391CBEBEAC00A2FB3F /* TravelerHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TravelerHealthViewController.xib; sourceTree = "<group>"; };
 		CB0F7DC31CB2FBCB00C381C7 /* ChangeLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeLanguageViewController.h; sourceTree = "<group>"; };
 		CB0F7DC41CB2FBCB00C381C7 /* ChangeLanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeLanguageViewController.m; sourceTree = "<group>"; };
 		CB0F7DC51CB2FBCB00C381C7 /* ChangeLanguageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeLanguageViewController.xib; sourceTree = "<group>"; };
@@ -1281,6 +1286,9 @@
 				520EB7161C21EF670054D818 /* ZikaViewController.h */,
 				520EB7171C21EF670054D818 /* ZikaViewController.m */,
 				520EB7181C21EF670054D818 /* ZikaViewController.xib */,
+				CB08AE371CBEBEAC00A2FB3F /* TravelerHealthViewController.h */,
+				CB08AE381CBEBEAC00A2FB3F /* TravelerHealthViewController.m */,
+				CB08AE391CBEBEAC00A2FB3F /* TravelerHealthViewController.xib */,
 			);
 			name = Tips;
 			sourceTree = "<group>";
@@ -1977,6 +1985,7 @@
 				52D2BC891BF12EBF007C9C09 /* icon_pin_well.png in Resources */,
 				52E727771BEA93B800B46945 /* icon_home@2x.png in Resources */,
 				52E727301BEA93B800B46945 /* button_splash@3x.png in Resources */,
+				CB08AE3B1CBEBEAC00A2FB3F /* TravelerHealthViewController.xib in Resources */,
 				52E727DA1BEA93B800B46945 /* img_profile16@2x.png in Resources */,
 				52E727D51BEA93B800B46945 /* img_profile10@3x.png in Resources */,
 				52E7279B1BEA93B800B46945 /* icon_pin_pharmacy@2x.png in Resources */,
@@ -2475,6 +2484,7 @@
 				CBBC1E191C9B31FE0079A8D6 /* SignUpViewController.m in Sources */,
 				527782D81C0CC9FD00251BF8 /* NoticeRequester.m in Sources */,
 				52E6F06F1C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				CB08AE3A1CBEBEAC00A2FB3F /* TravelerHealthViewController.m in Sources */,
 				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				CB05C73B1CA3316D00B2F0D4 /* GDSTextView.m in Sources */,

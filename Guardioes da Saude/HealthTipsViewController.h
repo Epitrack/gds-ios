@@ -17,6 +17,8 @@
 - (IBAction)prevention:(id)sender;
 - (IBAction)phones:(id)sender;
 - (IBAction)zika:(id)sender;
+- (IBAction)travelerHealth:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UITextView *txZika;
 @property (weak, nonatomic) IBOutlet UITextView *txEmergency;
 @property (weak, nonatomic) IBOutlet UITextView *txVacine;

@@ -201,6 +201,7 @@
 "notice.open_notice_confirmation" = "Deseja abrir o link da notícia?";
 
 // HEALTH TIPS VIEW
+"health_tips.title" = "Dicas de Saúde";
 "health_tips.zika" = "Dengue, Zika e Chikungunya";
 "health_tips.emergency" = "UPAs";
 "health_tips.vacines" = "Vacinas";
@@ -303,3 +304,6 @@
 // Change Language
 "change_language.confirmation_msg" = "O aplicativo precisa ser reiniciado para aplicar a mudança de idioma. Deseja continuar?";
 "change_language.title" = "Idioma";
+
+// Traveler Health
+"traveler_health.title" = "Saúde do Viajante";

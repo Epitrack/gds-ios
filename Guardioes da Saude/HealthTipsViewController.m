@@ -16,6 +16,7 @@
 #import "ZikaViewController.h"
 #import "Requester.h"
 #import "ViewUtil.h"
+#import "TravelerHealthViewController.h"
 #import <Google/Analytics.h>
 
 @interface HealthTipsViewController ()
@@ -158,5 +159,10 @@
 - (IBAction)zika:(id)sender {
     ZikaViewController *zikaViewController = [[ZikaViewController alloc] init];
     [self.navigationController pushViewController:zikaViewController animated:YES];
+}
+- (IBAction)travelerHealth:(id)sender {
+    TravelerHealthViewController *travelerHealthView = [[TravelerHealthViewController alloc] init];
+    
+    [self.navigationController pushViewController:travelerHealthView animated:YES];
 }
 @end

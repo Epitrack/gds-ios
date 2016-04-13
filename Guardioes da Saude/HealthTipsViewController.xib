@@ -63,7 +63,7 @@
                     </constraints>
                     <state key="normal" backgroundImage="img_card.png"/>
                     <connections>
-                        <action selector="emergency:" destination="-1" eventType="touchUpInside" id="9wv-yR-tez"/>
+                        <action selector="travelerHealth:" destination="-1" eventType="touchUpInside" id="Jqh-Nk-7o9"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4h-cc-1dN">
