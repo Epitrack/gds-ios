@@ -44,7 +44,7 @@
     
     options = @[NSLocalizedString(@"help.tutorial", @""), NSLocalizedString(@"help.terms", @"")];
     //@"iconHelpRelatar"
-    optionsIcons = @[@"iconTutorial", @"iconTerms"];
+    optionsIcons = @[@"icon_helptutorial", @"icon_helpprivacy"];
     
     contactUs = @[@"Facebook", @"Twitter"];
     contactUsIcons = @[@"iconHelpFacebook", @"iconHelpTwitter"];
@@ -144,7 +144,7 @@
         cell.imageView.image = [UIImage imageNamed:contactUsIcons[indexPath.row]];
         cell.textLabel.text = contactUs[indexPath.row];
     }else {
-        cell.imageView.image = [UIImage imageNamed:@"iconHelpRelatar"];
+        cell.imageView.image = [UIImage imageNamed:@"icon_helprelatar"];
         cell.textLabel.text = NSLocalizedString(@"help.report_bug", @"");
     }
     
