@@ -24,5 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *txPharmacy;
 @property (weak, nonatomic) IBOutlet UITextView *txBasicCare;
 @property (weak, nonatomic) IBOutlet UITextView *txPrevention;
+@property (weak, nonatomic) IBOutlet UITextView *txSafeSex;
+@property (weak, nonatomic) IBOutlet UITextView *txHealthTraveler;
 
 @end

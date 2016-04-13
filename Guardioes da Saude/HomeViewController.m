@@ -240,10 +240,6 @@
     }
 }
 
-- (IBAction)btnNewsAction:(id)sender {
-    
-}
-
 - (IBAction)btnProfileAction:(id)sender {
     // GOOGLE ANALYTICS
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];

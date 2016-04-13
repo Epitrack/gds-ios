@@ -37,16 +37,6 @@
                     <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hdD-FY-gj2">
-                    <rect key="frame" x="218" y="336" width="72" height="76"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="hdD-FY-gj2" secondAttribute="height" multiplier="18:19" id="YJs-OC-pLG"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" backgroundImage="icon_diary">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mapa da Saúde" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dn2-kp-1vs">
                     <rect key="frame" x="233" y="305" width="72" height="35"/>
                     <constraints>
@@ -111,6 +101,9 @@
                     <state key="normal" backgroundImage="icon_join">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btnJoinNow:" destination="-1" eventType="touchUpInside" id="93w-yh-iaH"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kJ-ek-qV7">
                     <rect key="frame" x="13" y="229" width="72" height="76"/>
@@ -122,7 +115,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="btnNewsAction:" destination="-1" eventType="touchUpInside" id="9q0-z0-wDR"/>
+                        <action selector="notice:" destination="-1" eventType="touchUpInside" id="DqN-Tw-gay"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lbO-Tn-hq9">
@@ -134,6 +127,9 @@
                     <state key="normal" backgroundImage="icon_types">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="healthTips:" destination="-1" eventType="touchUpInside" id="nmg-rs-eyo"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notícias" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS7-S1-7hn">
                     <rect key="frame" x="13" y="305" width="72" height="17"/>
@@ -147,6 +143,19 @@
                     <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hdD-FY-gj2">
+                    <rect key="frame" x="218" y="336" width="72" height="76"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="hdD-FY-gj2" secondAttribute="height" multiplier="18:19" id="YJs-OC-pLG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" backgroundImage="icon_diary">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="diaryHealth:" destination="-1" eventType="touchUpInside" id="4RT-zi-Gu2"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>

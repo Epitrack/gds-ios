@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Foco_Std_Rg.ttf">
+            <string>Foco-Regular</string>
+            <string>Foco-Regular</string>
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
             <string>Foco-Regular</string>
@@ -21,9 +23,11 @@
             <connections>
                 <outlet property="txBasicCare" destination="1Gw-cs-RYP" id="wkf-NI-xni"/>
                 <outlet property="txEmergency" destination="Tjd-ah-Bt1" id="w1C-wh-mGi"/>
+                <outlet property="txHealthTraveler" destination="Sjt-SC-yRi" id="AuX-yQ-Qbi"/>
                 <outlet property="txPharmacy" destination="Qhl-w7-7oM" id="uec-sD-rP7"/>
                 <outlet property="txPhones" destination="079-N1-Wbu" id="PGQ-zl-5QK"/>
                 <outlet property="txPrevention" destination="zrb-lO-9HD" id="iQk-tP-ugW"/>
+                <outlet property="txSafeSex" destination="ZGf-Vi-4j1" id="jRO-cO-ovQ"/>
                 <outlet property="txVacine" destination="lxF-rt-Qgn" id="5lQ-Ma-CNH"/>
                 <outlet property="txZika" destination="0WA-6E-hRp" id="2BR-Kb-gTq"/>
                 <outlet property="view" destination="GaS-SR-V1f" id="neF-Jh-LLd"/>
@@ -38,7 +42,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vA2-1E-AcB">
-                    <rect key="frame" x="13" y="83" width="295" height="108"/>
+                    <rect key="frame" x="13" y="73" width="295" height="148"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="vA2-1E-AcB" secondAttribute="height" multiplier="74:27" constant="-3.1851851851852189" id="Q66-TM-9lH"/>
                     </constraints>
@@ -53,7 +57,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUq-5V-Heq">
-                    <rect key="frame" x="12" y="150" width="296" height="109"/>
+                    <rect key="frame" x="12" y="136" width="296" height="109"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="YUq-5V-Heq" secondAttribute="height" multiplier="74:27" constant="-3.1851851851852189" id="Rkv-5G-4on"/>
                     </constraints>
@@ -62,8 +66,24 @@
                         <action selector="emergency:" destination="-1" eventType="touchUpInside" id="9wv-yR-tez"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4h-cc-1dN">
+                    <rect key="frame" x="12" y="188" width="296" height="108"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="h4h-cc-1dN" secondAttribute="height" multiplier="74:27" id="C4I-pE-fwT"/>
+                        <constraint firstAttribute="width" secondItem="h4h-cc-1dN" secondAttribute="height" multiplier="74:27" constant="-3.1851851851852189" id="gob-4a-sUN"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="img_card.png"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="gob-4a-sUN"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="zika:" destination="-1" eventType="touchUpInside" id="jbQ-iL-Rnx"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsO-Qz-4ZH">
-                    <rect key="frame" x="12" y="219" width="296" height="108"/>
+                    <rect key="frame" x="12" y="236" width="296" height="108"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="DsO-Qz-4ZH" secondAttribute="height" multiplier="74:27" id="1ct-uv-ZRe"/>
                     </constraints>
@@ -73,7 +93,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jag-nq-GfN">
-                    <rect key="frame" x="12" y="287" width="296" height="108"/>
+                    <rect key="frame" x="12" y="290" width="296" height="108"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="jag-nq-GfN" secondAttribute="height" multiplier="74:27" id="T81-s2-bKv"/>
                     </constraints>
@@ -83,7 +103,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCu-ca-nc3">
-                    <rect key="frame" x="12" y="355" width="296" height="108"/>
+                    <rect key="frame" x="12" y="344" width="296" height="108"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="rCu-ca-nc3" secondAttribute="height" multiplier="74:27" id="L6w-0A-6Cb"/>
                     </constraints>
@@ -93,7 +113,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHd-ek-5C2">
-                    <rect key="frame" x="12" y="423" width="296" height="108"/>
+                    <rect key="frame" x="12" y="398" width="296" height="108"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="mHd-ek-5C2" secondAttribute="height" multiplier="74:27" id="rd7-kw-CD1"/>
                     </constraints>
@@ -104,7 +124,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yp8-C8-QpO">
-                    <rect key="frame" x="12" y="492" width="296" height="108"/>
+                    <rect key="frame" x="12" y="453" width="296" height="108"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="yp8-C8-QpO" secondAttribute="height" multiplier="74:27" id="fW6-8L-SJB"/>
                     </constraints>
@@ -113,8 +133,18 @@
                         <action selector="prevention:" destination="-1" eventType="touchUpInside" id="ST9-Ha-kfq"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-qu-FeT">
+                    <rect key="frame" x="12" y="504" width="296" height="108"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="6Ar-qu-FeT" secondAttribute="height" multiplier="74:27" id="cQi-Fb-joM"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="img_card.png"/>
+                    <connections>
+                        <action selector="prevention:" destination="-1" eventType="touchUpInside" id="XGz-Ho-CbI"/>
+                    </connections>
+                </button>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.emergency" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-ah-Bt1" customClass="GDSTextView">
-                    <rect key="frame" x="78" y="162" width="215" height="34"/>
+                    <rect key="frame" x="78" y="148" width="215" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="FZe-l2-03G"/>
                         <constraint firstAttribute="width" secondItem="Tjd-ah-Bt1" secondAttribute="height" multiplier="214:33" constant="-5.4848484848484702" id="TwN-l3-HCe"/>
@@ -130,7 +160,7 @@
                     </variation>
                 </textView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.zika" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WA-6E-hRp" customClass="GDSTextView">
-                    <rect key="frame" x="53" y="100" width="250" height="34"/>
+                    <rect key="frame" x="53" y="90" width="250" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0WA-6E-hRp" secondAttribute="height" multiplier="214:33" constant="-5.4848484848484702" id="3MB-6O-xgi"/>
                         <constraint firstAttribute="height" constant="34" id="UBB-qg-Mbr"/>
@@ -148,13 +178,35 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_urgency.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Fi-aI-aPT">
-                    <rect key="frame" x="29" y="165" width="32" height="27"/>
+                    <rect key="frame" x="29" y="152" width="32" height="27"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8Fi-aI-aPT" secondAttribute="height" multiplier="32:27" id="7We-TT-FmG"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_urgency.png" translatesAutoresizingMaskIntoConstraints="NO" id="QpH-Ok-lx2">
+                    <rect key="frame" x="29" y="200" width="32" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="QpH-Ok-lx2" secondAttribute="height" multiplier="32:27" id="Ytb-d4-nDh"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.emergency" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjt-SC-yRi" customClass="GDSTextView">
+                    <rect key="frame" x="78" y="197" width="215" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="214" id="5CK-FB-u04"/>
+                        <constraint firstAttribute="width" constant="215" id="Ht4-lG-RSi"/>
+                        <constraint firstAttribute="width" secondItem="Sjt-SC-yRi" secondAttribute="height" multiplier="214:33" constant="-5.4848484848484702" id="pZf-C6-XHm"/>
+                    </constraints>
+                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="5CK-FB-u04"/>
+                        </mask>
+                    </variation>
+                </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconZika.png" translatesAutoresizingMaskIntoConstraints="NO" id="XWG-oo-b1U">
-                    <rect key="frame" x="31" y="98" width="29" height="36"/>
+                    <rect key="frame" x="31" y="88" width="29" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="XWG-oo-b1U" secondAttribute="height" multiplier="32:27" id="A8y-A1-9VX"/>
                     </constraints>
@@ -165,7 +217,7 @@
                     </variation>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_vaccines.png" translatesAutoresizingMaskIntoConstraints="NO" id="1sK-pv-7c3">
-                    <rect key="frame" x="39" y="236" width="13" height="30"/>
+                    <rect key="frame" x="39" y="254" width="13" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1sK-pv-7c3" secondAttribute="height" multiplier="13:30" id="1bZ-qh-JzY"/>
                         <constraint firstAttribute="width" secondItem="1sK-pv-7c3" secondAttribute="height" multiplier="32:27" id="MRq-4h-24j"/>
@@ -177,7 +229,7 @@
                     </variation>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.vacines" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxF-rt-Qgn" customClass="GDSTextView">
-                    <rect key="frame" x="78" y="234" width="215" height="34"/>
+                    <rect key="frame" x="78" y="252" width="215" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="215" id="NIl-gl-zhN"/>
                         <constraint firstAttribute="width" secondItem="lxF-rt-Qgn" secondAttribute="height" multiplier="214:33" constant="-5.4848484848484702" id="SMP-9Z-UCU"/>
@@ -193,7 +245,7 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_phones.png" translatesAutoresizingMaskIntoConstraints="NO" id="wMx-hG-e2M">
-                    <rect key="frame" x="34" y="306" width="23" height="23"/>
+                    <rect key="frame" x="34" y="308" width="23" height="23"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="wMx-hG-e2M" secondAttribute="height" multiplier="13:30" id="F0Q-OL-zd8"/>
                         <constraint firstAttribute="width" secondItem="wMx-hG-e2M" secondAttribute="height" multiplier="32:27" id="UHt-Qq-JsJ"/>
@@ -207,7 +259,7 @@
                     </variation>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.phones" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="079-N1-Wbu" customClass="GDSTextView">
-                    <rect key="frame" x="78" y="301" width="215" height="33"/>
+                    <rect key="frame" x="78" y="300" width="215" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="1Cl-J6-KVy"/>
                         <constraint firstAttribute="width" secondItem="079-N1-Wbu" secondAttribute="height" multiplier="214:33" id="6ED-HX-TGQ"/>
@@ -224,7 +276,7 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_pharmacies.png" translatesAutoresizingMaskIntoConstraints="NO" id="L8E-Of-eeP">
-                    <rect key="frame" x="33" y="376" width="25" height="25"/>
+                    <rect key="frame" x="33" y="364" width="25" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="L8E-Of-eeP" secondAttribute="height" multiplier="1:1" id="EQi-LF-jDf"/>
                         <constraint firstAttribute="width" secondItem="L8E-Of-eeP" secondAttribute="height" multiplier="1:1" id="XIX-hL-gjs"/>
@@ -240,7 +292,7 @@
                     </variation>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.pharmacy" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhl-w7-7oM" customClass="GDSTextView">
-                    <rect key="frame" x="78" y="372" width="215" height="33"/>
+                    <rect key="frame" x="78" y="357" width="215" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="214" id="1cW-IO-tJJ"/>
                         <constraint firstAttribute="width" constant="215" id="2FI-zI-WY7"/>
@@ -257,7 +309,7 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_basiccares.png" translatesAutoresizingMaskIntoConstraints="NO" id="bOK-4b-217">
-                    <rect key="frame" x="32" y="446" width="27" height="27"/>
+                    <rect key="frame" x="32" y="420" width="27" height="27"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="bOK-4b-217" secondAttribute="height" multiplier="1:1" id="4rP-BT-plC"/>
                         <constraint firstAttribute="width" secondItem="bOK-4b-217" secondAttribute="height" multiplier="32:27" id="Mxg-o1-6Ow"/>
@@ -275,7 +327,7 @@
                     </variation>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.basic_care" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gw-cs-RYP" customClass="GDSTextView">
-                    <rect key="frame" x="78" y="443" width="215" height="33"/>
+                    <rect key="frame" x="78" y="413" width="215" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1Gw-cs-RYP" secondAttribute="height" multiplier="214:33" id="BAm-pY-hb4"/>
                         <constraint firstAttribute="width" constant="215" id="Nyh-rS-OeZ"/>
@@ -292,7 +344,7 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_prevention.png" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-wB-7Pa">
-                    <rect key="frame" x="33" y="517" width="23" height="22"/>
+                    <rect key="frame" x="33" y="476" width="23" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="vpu-wB-7Pa" secondAttribute="height" multiplier="1:1" id="0pL-KT-ZZE"/>
                         <constraint firstAttribute="width" secondItem="vpu-wB-7Pa" secondAttribute="height" multiplier="1:1" id="8hx-kk-yQ0"/>
@@ -312,7 +364,7 @@
                     </variation>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.prevention" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrb-lO-9HD" customClass="GDSTextView">
-                    <rect key="frame" x="78" y="512" width="215" height="33"/>
+                    <rect key="frame" x="78" y="466" width="215" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="215" id="JWV-DM-yCG"/>
                         <constraint firstAttribute="width" constant="214" id="Lun-jB-ELj"/>
@@ -328,6 +380,43 @@
                         </mask>
                     </variation>
                 </textView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_tips_prevention.png" translatesAutoresizingMaskIntoConstraints="NO" id="zsp-Ow-ZUy">
+                    <rect key="frame" x="33" y="529" width="23" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zsp-Ow-ZUy" secondAttribute="height" multiplier="1:1" id="20N-tH-vSN"/>
+                        <constraint firstAttribute="width" secondItem="zsp-Ow-ZUy" secondAttribute="height" multiplier="23:22" id="D8k-6m-R85"/>
+                        <constraint firstAttribute="width" secondItem="zsp-Ow-ZUy" secondAttribute="height" multiplier="13:30" id="WXs-5C-xrY"/>
+                        <constraint firstAttribute="width" secondItem="zsp-Ow-ZUy" secondAttribute="height" multiplier="32:27" id="XkX-Wq-neo"/>
+                        <constraint firstAttribute="width" secondItem="zsp-Ow-ZUy" secondAttribute="height" multiplier="1:1" id="YDr-ky-5JO"/>
+                        <constraint firstAttribute="width" secondItem="zsp-Ow-ZUy" secondAttribute="height" multiplier="1:1" id="zSa-4s-Wro"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="YDr-ky-5JO"/>
+                            <exclude reference="zSa-4s-Wro"/>
+                            <exclude reference="XkX-Wq-neo"/>
+                            <exclude reference="20N-tH-vSN"/>
+                            <exclude reference="WXs-5C-xrY"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="health_tips.prevention" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGf-Vi-4j1" customClass="GDSTextView">
+                    <rect key="frame" x="78" y="518" width="215" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="215" id="Ori-Oi-kla"/>
+                        <constraint firstAttribute="width" constant="214" id="QM3-iK-C1l"/>
+                        <constraint firstAttribute="width" secondItem="ZGf-Vi-4j1" secondAttribute="height" multiplier="214:33" id="rsH-Z0-ja5"/>
+                    </constraints>
+                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="QM3-iK-C1l"/>
+                            <exclude reference="rsH-Z0-ja5"/>
+                        </mask>
+                    </variation>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -339,14 +428,16 @@
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="centerX" secondItem="YUq-5V-Heq" secondAttribute="centerX" multiplier="0.285" id="2eC-FZ-CdX"/>
                 <constraint firstItem="XWG-oo-b1U" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="0.4" id="2le-Fm-IXQ"/>
                 <constraint firstItem="rCu-ca-nc3" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="37:71" id="3D2-Dz-hnX"/>
-                <constraint firstItem="YUq-5V-Heq" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="0.72" id="3wO-Z2-CN4"/>
+                <constraint firstItem="YUq-5V-Heq" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="0.67" id="3wO-Z2-CN4"/>
                 <constraint firstItem="079-N1-Wbu" firstAttribute="width" secondItem="079-N1-Wbu" secondAttribute="height" multiplier="214:33" id="4Uc-yn-ErI"/>
-                <constraint firstItem="rCu-ca-nc3" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.44" id="5kR-NU-dsc"/>
+                <constraint firstItem="h4h-cc-1dN" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="0.85" id="520-6D-zOl"/>
+                <constraint firstItem="rCu-ca-nc3" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.4" id="5kR-NU-dsc"/>
                 <constraint firstItem="XWG-oo-b1U" firstAttribute="top" secondItem="8Fi-aI-aPT" secondAttribute="bottom" constant="78" id="6Ia-Zg-2f4"/>
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="centerY" secondItem="YUq-5V-Heq" secondAttribute="centerY" multiplier="0.84" id="6h8-bu-MD7"/>
                 <constraint firstItem="bOK-4b-217" firstAttribute="top" secondItem="mHd-ek-5C2" secondAttribute="top" multiplier="1.03" constant="10" id="7NW-ZR-Cn8"/>
                 <constraint firstItem="mHd-ek-5C2" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="37:71" id="7do-HI-SDp"/>
                 <constraint firstItem="Tjd-ah-Bt1" firstAttribute="trailing" secondItem="YUq-5V-Heq" secondAttribute="trailing" multiplier="0.95" id="9Mu-Do-4dQ"/>
+                <constraint firstItem="h4h-cc-1dN" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="37:71" id="9dn-nh-Iza"/>
                 <constraint firstItem="YUq-5V-Heq" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="width" multiplier="0.9" id="A25-Nq-7c1"/>
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="leading" secondItem="YUq-5V-Heq" secondAttribute="leading" multiplier="1.1" id="AaP-z9-Bv9"/>
                 <constraint firstItem="bOK-4b-217" firstAttribute="centerX" secondItem="8Fi-aI-aPT" secondAttribute="centerX" id="B0g-R8-QtT"/>
@@ -363,7 +454,9 @@
                 <constraint firstItem="Tjd-ah-Bt1" firstAttribute="centerY" secondItem="8Fi-aI-aPT" secondAttribute="centerY" id="GAU-AN-5rl"/>
                 <constraint firstItem="rCu-ca-nc3" firstAttribute="width" secondItem="rCu-ca-nc3" secondAttribute="height" multiplier="74:27" id="GcC-Yy-sZg"/>
                 <constraint firstItem="0WA-6E-hRp" firstAttribute="top" secondItem="vA2-1E-AcB" secondAttribute="top" constant="17" id="JWe-4s-Q2R"/>
+                <constraint firstItem="6Ar-qu-FeT" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="Jyr-tb-hIz"/>
                 <constraint firstItem="H5A-ch-b9w" firstAttribute="height" secondItem="GaS-SR-V1f" secondAttribute="height" id="KA9-ID-oCu"/>
+                <constraint firstItem="QpH-Ok-lx2" firstAttribute="top" secondItem="h4h-cc-1dN" secondAttribute="top" constant="12" id="KHg-I6-l6r"/>
                 <constraint firstItem="Qhl-w7-7oM" firstAttribute="width" secondItem="Qhl-w7-7oM" secondAttribute="height" multiplier="214:33" id="KKI-xB-TQM"/>
                 <constraint firstItem="1sK-pv-7c3" firstAttribute="centerX" secondItem="8Fi-aI-aPT" secondAttribute="centerX" id="KqL-8W-zuG"/>
                 <constraint firstItem="XWG-oo-b1U" firstAttribute="centerX" secondItem="8Fi-aI-aPT" secondAttribute="centerX" id="LAv-Kf-Nih"/>
@@ -374,43 +467,56 @@
                 <constraint firstItem="zrb-lO-9HD" firstAttribute="trailing" secondItem="H5A-ch-b9w" secondAttribute="trailing" multiplier="0.95" id="N2b-ZY-aW1"/>
                 <constraint firstItem="L8E-Of-eeP" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="25:568" id="NwF-wI-c5C"/>
                 <constraint firstItem="YUq-5V-Heq" firstAttribute="top" secondItem="Tjd-ah-Bt1" secondAttribute="top" multiplier="0.97" id="ODF-Ly-PA7"/>
-                <constraint firstItem="yp8-C8-QpO" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.92" constant="1" id="OL2-fR-ise"/>
+                <constraint firstItem="yp8-C8-QpO" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.78" constant="1" id="OL2-fR-ise"/>
+                <constraint firstItem="6Ar-qu-FeT" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.96" constant="1" id="OUC-kz-Vda"/>
                 <constraint firstItem="vA2-1E-AcB" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="PwZ-GS-NAi"/>
                 <constraint firstItem="0WA-6E-hRp" firstAttribute="trailing" secondItem="vA2-1E-AcB" secondAttribute="trailing" id="QYC-fP-A5m"/>
                 <constraint firstItem="wMx-hG-e2M" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="23:568" id="QlW-G1-dce"/>
-                <constraint firstItem="mHd-ek-5C2" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.68" id="RdE-vo-kfg"/>
+                <constraint firstItem="mHd-ek-5C2" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.59" id="RdE-vo-kfg"/>
                 <constraint firstItem="Tjd-ah-Bt1" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="107:284" id="S0v-Hk-VuI"/>
+                <constraint firstItem="ZGf-Vi-4j1" firstAttribute="width" secondItem="ZGf-Vi-4j1" secondAttribute="height" multiplier="214:33" constant="1" id="SJ4-3J-UNn"/>
+                <constraint firstItem="6Ar-qu-FeT" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="37:71" id="TSs-OG-1Vo"/>
                 <constraint firstItem="vpu-wB-7Pa" firstAttribute="width" secondItem="vpu-wB-7Pa" secondAttribute="height" multiplier="1:1" id="TfL-dN-ubr"/>
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="leading" secondItem="YUq-5V-Heq" secondAttribute="leading" id="Tnz-VS-Yoe"/>
+                <constraint firstItem="Sjt-SC-yRi" firstAttribute="centerY" secondItem="QpH-Ok-lx2" secondAttribute="centerY" id="VlY-o5-kfq"/>
+                <constraint firstItem="zsp-Ow-ZUy" firstAttribute="centerX" secondItem="8Fi-aI-aPT" secondAttribute="centerX" id="VnJ-PT-141"/>
                 <constraint firstItem="vA2-1E-AcB" firstAttribute="width" secondItem="YUq-5V-Heq" secondAttribute="height" multiplier="73:27" id="Vo5-53-Tny"/>
                 <constraint firstItem="1sK-pv-7c3" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="13:568" id="Vp6-BJ-nen"/>
                 <constraint firstItem="YUq-5V-Heq" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="WRe-72-f18"/>
+                <constraint firstItem="6Ar-qu-FeT" firstAttribute="width" secondItem="6Ar-qu-FeT" secondAttribute="height" multiplier="74:27" id="Wtj-8Q-j5C"/>
+                <constraint firstItem="Sjt-SC-yRi" firstAttribute="width" secondItem="Sjt-SC-yRi" secondAttribute="height" multiplier="214:33" constant="-5.4848484848484702" id="XIU-tV-B5T"/>
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="4:71" id="XKN-gB-0c2"/>
                 <constraint firstItem="XWG-oo-b1U" firstAttribute="top" secondItem="vA2-1E-AcB" secondAttribute="top" constant="15" id="Xuu-AU-rxP"/>
                 <constraint firstItem="0WA-6E-hRp" firstAttribute="centerX" secondItem="Tjd-ah-Bt1" secondAttribute="centerX" constant="-7.5" id="Y6X-yo-iTJ"/>
                 <constraint firstItem="rCu-ca-nc3" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="YQN-YH-zMv"/>
+                <constraint firstItem="ZGf-Vi-4j1" firstAttribute="centerY" secondItem="zsp-Ow-ZUy" secondAttribute="centerY" id="YvQ-Xw-pk3"/>
                 <constraint firstItem="mHd-ek-5C2" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="ZUF-Hj-Hoy"/>
-                <constraint firstItem="jag-nq-GfN" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.2" id="Zrb-Yk-0hB"/>
+                <constraint firstItem="jag-nq-GfN" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.21" id="Zrb-Yk-0hB"/>
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="top" secondItem="YUq-5V-Heq" secondAttribute="top" multiplier="1.03" constant="11.22999999999999" id="aZK-9W-bcx"/>
                 <constraint firstItem="lxF-rt-Qgn" firstAttribute="trailing" secondItem="DsO-Qz-4ZH" secondAttribute="trailing" multiplier="0.95" id="bDb-Su-zaW"/>
                 <constraint firstItem="079-N1-Wbu" firstAttribute="trailing" secondItem="jag-nq-GfN" secondAttribute="trailing" multiplier="0.95" id="cH6-l5-iCF"/>
+                <constraint firstItem="zsp-Ow-ZUy" firstAttribute="width" secondItem="zsp-Ow-ZUy" secondAttribute="height" multiplier="23:22" id="cJ1-zF-wfc"/>
                 <constraint firstItem="vpu-wB-7Pa" firstAttribute="top" secondItem="yp8-C8-QpO" secondAttribute="top" multiplier="1.03" constant="10" id="dBJ-A3-2Gj"/>
                 <constraint firstItem="vA2-1E-AcB" firstAttribute="width" secondItem="vA2-1E-AcB" secondAttribute="height" multiplier="74:27" constant="-3.1851851851852189" id="dYV-w6-Mgp"/>
-                <constraint firstItem="Qhl-w7-7oM" firstAttribute="centerY" secondItem="L8E-Of-eeP" secondAttribute="centerY" id="eE3-a6-e2a"/>
+                <constraint firstItem="Qhl-w7-7oM" firstAttribute="centerY" secondItem="L8E-Of-eeP" secondAttribute="centerY" multiplier="0.99" id="eE3-a6-e2a"/>
                 <constraint firstItem="L8E-Of-eeP" firstAttribute="centerX" secondItem="8Fi-aI-aPT" secondAttribute="centerX" id="f6L-Y4-mJJ"/>
                 <constraint firstItem="mHd-ek-5C2" firstAttribute="width" secondItem="mHd-ek-5C2" secondAttribute="height" multiplier="74:27" id="fFj-XI-U7x"/>
-                <constraint firstItem="DsO-Qz-4ZH" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="0.96" id="h2p-Hs-Xvt"/>
+                <constraint firstItem="DsO-Qz-4ZH" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="1.02" id="h2p-Hs-Xvt"/>
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="centerY" secondItem="YUq-5V-Heq" secondAttribute="centerY" multiplier="0.84" id="hD5-U3-Gzm"/>
+                <constraint firstItem="ZGf-Vi-4j1" firstAttribute="trailing" secondItem="6Ar-qu-FeT" secondAttribute="trailing" id="huu-Ny-BPX"/>
                 <constraint firstItem="YUq-5V-Heq" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="37:71" id="iER-Rt-vqJ"/>
+                <constraint firstItem="ZGf-Vi-4j1" firstAttribute="top" secondItem="6Ar-qu-FeT" secondAttribute="top" id="ifG-NE-i2H"/>
                 <constraint firstItem="yp8-C8-QpO" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="37:71" id="isL-7U-3DA"/>
                 <constraint firstItem="DsO-Qz-4ZH" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="37:71" id="iw6-YH-0os"/>
                 <constraint firstItem="H5A-ch-b9w" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" id="jxL-eE-oo3"/>
+                <constraint firstItem="ZGf-Vi-4j1" firstAttribute="centerY" secondItem="zsp-Ow-ZUy" secondAttribute="centerY" multiplier="0.99" id="k4L-oo-hib"/>
+                <constraint firstItem="ZGf-Vi-4j1" firstAttribute="trailing" secondItem="zrb-lO-9HD" secondAttribute="trailing" id="lXj-I1-ZGq"/>
                 <constraint firstItem="0WA-6E-hRp" firstAttribute="centerY" secondItem="Tjd-ah-Bt1" secondAttribute="centerY" multiplier="0.65" id="lbf-gp-WTE"/>
                 <constraint firstItem="1Gw-cs-RYP" firstAttribute="width" secondItem="1Gw-cs-RYP" secondAttribute="height" multiplier="214:33" id="leX-Ah-Vmc"/>
                 <constraint firstItem="zrb-lO-9HD" firstAttribute="trailing" secondItem="yp8-C8-QpO" secondAttribute="trailing" multiplier="0.95" id="m3X-Oh-tDx"/>
                 <constraint firstItem="bOK-4b-217" firstAttribute="width" secondItem="bOK-4b-217" secondAttribute="height" multiplier="1:1" id="mHl-Ac-dYu"/>
                 <constraint firstItem="1sK-pv-7c3" firstAttribute="top" secondItem="DsO-Qz-4ZH" secondAttribute="top" multiplier="1.03" constant="11.069999999999993" id="ni4-43-aPQ"/>
-                <constraint firstItem="1Gw-cs-RYP" firstAttribute="centerY" secondItem="bOK-4b-217" secondAttribute="centerY" id="noQ-TK-UId"/>
+                <constraint firstItem="1Gw-cs-RYP" firstAttribute="centerY" secondItem="bOK-4b-217" secondAttribute="centerY" multiplier="0.99" id="noQ-TK-UId"/>
                 <constraint firstItem="Qhl-w7-7oM" firstAttribute="trailing" secondItem="rCu-ca-nc3" secondAttribute="trailing" multiplier="0.95" id="oPg-0h-Ju4"/>
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="leading" secondItem="YUq-5V-Heq" secondAttribute="leading" multiplier="2.2" constant="3" id="oUR-uX-2pX"/>
                 <constraint firstItem="vA2-1E-AcB" firstAttribute="leading" secondItem="GaS-SR-V1f" secondAttribute="leading" constant="12" id="pWZ-g0-0wy"/>
@@ -423,14 +529,19 @@
                 <constraint firstItem="wMx-hG-e2M" firstAttribute="centerX" secondItem="8Fi-aI-aPT" secondAttribute="centerX" id="uPD-g7-mS1"/>
                 <constraint firstItem="0WA-6E-hRp" firstAttribute="width" secondItem="0WA-6E-hRp" secondAttribute="height" multiplier="214:33" constant="-5.4848484848484702" id="uka-H9-ALI"/>
                 <constraint firstItem="bOK-4b-217" firstAttribute="width" secondItem="GaS-SR-V1f" secondAttribute="height" multiplier="27:568" id="umT-3v-mPs"/>
-                <constraint firstItem="079-N1-Wbu" firstAttribute="centerY" secondItem="wMx-hG-e2M" secondAttribute="centerY" id="vb0-mP-ifB"/>
+                <constraint firstItem="QpH-Ok-lx2" firstAttribute="centerX" secondItem="8Fi-aI-aPT" secondAttribute="centerX" id="v4W-Lt-QNI"/>
+                <constraint firstItem="079-N1-Wbu" firstAttribute="centerY" secondItem="wMx-hG-e2M" secondAttribute="centerY" multiplier="0.99" id="vb0-mP-ifB"/>
+                <constraint firstItem="zsp-Ow-ZUy" firstAttribute="top" secondItem="6Ar-qu-FeT" secondAttribute="top" multiplier="1.03" constant="10" id="vwE-r2-v6n"/>
                 <constraint firstItem="XWG-oo-b1U" firstAttribute="leading" secondItem="vA2-1E-AcB" secondAttribute="leading" constant="18" id="w7d-bY-Qk5"/>
                 <constraint firstItem="XWG-oo-b1U" firstAttribute="top" secondItem="8Fi-aI-aPT" secondAttribute="bottom" constant="78" id="wII-71-2by"/>
+                <constraint firstItem="h4h-cc-1dN" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="x2T-Ba-5PO"/>
                 <constraint firstItem="YUq-5V-Heq" firstAttribute="leading" secondItem="8Fi-aI-aPT" secondAttribute="leading" multiplier="1.1" constant="-20" id="xZe-3B-o8U"/>
+                <constraint firstItem="Sjt-SC-yRi" firstAttribute="trailing" secondItem="Tjd-ah-Bt1" secondAttribute="trailing" id="xsm-ej-NTf"/>
+                <constraint firstItem="QpH-Ok-lx2" firstAttribute="width" secondItem="QpH-Ok-lx2" secondAttribute="height" multiplier="32:27" id="yB4-YE-GBQ"/>
                 <constraint firstItem="DsO-Qz-4ZH" firstAttribute="centerX" secondItem="GaS-SR-V1f" secondAttribute="centerX" id="yIr-ga-tjn"/>
-                <constraint firstItem="zrb-lO-9HD" firstAttribute="centerY" secondItem="vpu-wB-7Pa" secondAttribute="centerY" id="yMp-Nh-Diz"/>
+                <constraint firstItem="zrb-lO-9HD" firstAttribute="centerY" secondItem="vpu-wB-7Pa" secondAttribute="centerY" multiplier="0.99" id="yMp-Nh-Diz"/>
                 <constraint firstItem="8Fi-aI-aPT" firstAttribute="centerX" secondItem="YUq-5V-Heq" secondAttribute="centerX" multiplier="0.285" id="ybR-8E-LVb"/>
-                <constraint firstItem="vA2-1E-AcB" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="0.5" constant="-5" id="ymY-4m-IML"/>
+                <constraint firstItem="vA2-1E-AcB" firstAttribute="centerY" secondItem="GaS-SR-V1f" secondAttribute="centerY" multiplier="0.5" constant="5" id="ymY-4m-IML"/>
                 <constraint firstItem="yp8-C8-QpO" firstAttribute="width" secondItem="yp8-C8-QpO" secondAttribute="height" multiplier="74:27" id="zQi-XL-Bot"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -471,6 +582,9 @@
                     <exclude reference="zQi-XL-Bot"/>
                     <exclude reference="N2b-ZY-aW1"/>
                     <exclude reference="TfL-dN-ubr"/>
+                    <exclude reference="YvQ-Xw-pk3"/>
+                    <exclude reference="huu-Ny-BPX"/>
+                    <exclude reference="ifG-NE-i2H"/>
                 </mask>
             </variation>
         </view>

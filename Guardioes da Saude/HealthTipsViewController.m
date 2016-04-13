@@ -55,6 +55,8 @@
     self.txPharmacy.backgroundColor = [UIColor clearColor];
     self.txBasicCare.backgroundColor = [UIColor clearColor];
     self.txPrevention.backgroundColor = [UIColor clearColor];
+    self.txHealthTraveler.backgroundColor = [UIColor clearColor];
+    self.txSafeSex.backgroundColor = [UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning {
