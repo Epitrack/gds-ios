@@ -112,7 +112,13 @@ const float _kCellHeight = 100.0f;
 
 - (void) refreshSummaryWithUserId: (NSString *) userId{
     void(^onSuccess)(Sumary * sumary) = ^(Sumary * sumary){
-        [self populateLabelsWithSummary:sumary];
+        if (sumary.total == 0) {
+            self.viewNoRecord.hidden = NO;
+        } else {
+            self.viewNoRecord.hidden = YES;
+            [self populateLabelsWithSummary:sumary];
+        }
+        
         [self hiddenProgressBar];
     };
     

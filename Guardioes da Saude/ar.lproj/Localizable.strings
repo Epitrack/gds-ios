@@ -297,6 +297,8 @@
 "diary_health.bad" = "Mal";
 "diary_health.report" = "Relatórios";
 "diary_health.calendar" = "Calendário";
+"diary_health.no_record" = "Você ainda não possui participações.\nAjude a melhorar a saúde da sua comunidade!";
+"diary_health.join_now" = "Participe Agora!";
 
 // Participants List
 "participant_list.title" = "Selecionar Integrante";
