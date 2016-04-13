@@ -208,6 +208,8 @@
 "health_tips.pharmacy" = "Farmácias";
 "health_tips.basic_care" = "Cuidados Básicos";
 "health_tips.prevention" = "Prevenção";
+"health_tips.safe_sex" = "Pratique sexo de forma segura";
+"health_tips.health_traveler" = "Saúde do Viajante";
 
 // PHARMACY VIEW
 "pharmacy.title" = "Farmácias";
