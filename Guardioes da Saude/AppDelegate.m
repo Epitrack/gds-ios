@@ -89,7 +89,7 @@ NSUserDefaults *preferences;
     [self.window makeKeyAndVisible];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(30.0/255.0) green:(136.0/255.0) blue:(229.0/255.0) alpha:1]];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:1 green:180.0/255.0 blue:0 alpha:1]];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"Foco" size:20.0], NSFontAttributeName, nil]];

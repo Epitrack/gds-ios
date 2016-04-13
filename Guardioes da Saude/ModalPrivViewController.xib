@@ -22,8 +22,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TK3-x8-fGl">
                     <rect key="frame" x="20" y="102" width="280" height="364"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgDialog" translatesAutoresizingMaskIntoConstraints="NO" id="dAP-ST-oxv">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="364"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_dialog" translatesAutoresizingMaskIntoConstraints="NO" id="dAP-ST-oxv">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="327"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kd6-Rn-eeP">
                             <rect key="frame" x="0.0" y="317" width="280" height="48"/>
@@ -31,7 +31,7 @@
                                 <constraint firstAttribute="width" secondItem="kd6-Rn-eeP" secondAttribute="height" multiplier="240:41" id="Lxs-L3-CdL"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                            <state key="normal" title="OK" backgroundImage="btnDialog">
+                            <state key="normal" title="OK" backgroundImage="btn_dialog">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -49,8 +49,7 @@
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="modal_priv.description" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0E-Nu-Lns" customClass="GDSLabel">
                             <rect key="frame" x="8" y="117" width="264" height="192"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -64,9 +63,10 @@
                         <constraint firstItem="p0E-Nu-Lns" firstAttribute="top" secondItem="cbF-Rs-PjF" secondAttribute="bottom" constant="17" id="PLk-87-vQC"/>
                         <constraint firstAttribute="width" secondItem="TK3-x8-fGl" secondAttribute="height" multiplier="5:6.5" id="RTF-qZ-VGM"/>
                         <constraint firstItem="cbF-Rs-PjF" firstAttribute="centerX" secondItem="nzj-w7-k5T" secondAttribute="centerX" id="RzG-J7-jEx"/>
+                        <constraint firstItem="kd6-Rn-eeP" firstAttribute="top" secondItem="dAP-ST-oxv" secondAttribute="bottom" constant="-10" id="bwK-eo-20G"/>
                         <constraint firstAttribute="trailing" secondItem="dAP-ST-oxv" secondAttribute="trailing" id="cQG-U3-NKO"/>
                         <constraint firstItem="nzj-w7-k5T" firstAttribute="top" secondItem="TK3-x8-fGl" secondAttribute="top" constant="19" id="cau-lL-Shx"/>
-                        <constraint firstAttribute="bottom" secondItem="dAP-ST-oxv" secondAttribute="bottom" id="hpY-lz-JYP"/>
+                        <constraint firstAttribute="bottom" secondItem="dAP-ST-oxv" secondAttribute="bottom" constant="10" id="hpY-lz-JYP"/>
                         <constraint firstAttribute="bottom" secondItem="kd6-Rn-eeP" secondAttribute="bottom" constant="-1" id="knK-Tv-12d"/>
                         <constraint firstItem="kd6-Rn-eeP" firstAttribute="leading" secondItem="TK3-x8-fGl" secondAttribute="leading" id="l79-bW-dcT"/>
                         <constraint firstItem="dAP-ST-oxv" firstAttribute="centerX" secondItem="TK3-x8-fGl" secondAttribute="centerX" id="mgu-7d-MEa"/>
@@ -76,6 +76,12 @@
                         <constraint firstItem="cbF-Rs-PjF" firstAttribute="leading" secondItem="TK3-x8-fGl" secondAttribute="leading" constant="22" id="y6d-a3-MWP"/>
                         <constraint firstItem="dAP-ST-oxv" firstAttribute="leading" secondItem="TK3-x8-fGl" secondAttribute="leading" id="yQX-2O-D7i"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="AKI-2Z-595"/>
+                            <exclude reference="hpY-lz-JYP"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -93,8 +99,8 @@
     </objects>
     <resources>
         <image name="BG_blur_tutorial.png" width="320" height="568"/>
-        <image name="bgDialog" width="270" height="309"/>
-        <image name="btnDialog" width="270" height="43"/>
+        <image name="bg_dialog" width="270" height="309"/>
+        <image name="btn_dialog" width="270" height="43"/>
         <image name="iconSecurity" width="41" height="52"/>
     </resources>
 </document>

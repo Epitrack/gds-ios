@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_blur_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vnd-r1-FUg">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_forms" translatesAutoresizingMaskIntoConstraints="NO" id="Vnd-r1-FUg">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6x-qZ-OoN" customClass="TPKeyboardAvoidingScrollView">
@@ -137,7 +137,7 @@
                         <constraint firstAttribute="width" constant="79" id="V7g-tQ-zez"/>
                         <constraint firstAttribute="width" secondItem="dYF-KH-FiA" secondAttribute="height" multiplier="32:25" id="oOS-SJ-UnO"/>
                     </constraints>
-                    <state key="normal" image="iconBack.png"/>
+                    <state key="normal" image="icon_back"/>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="V7g-tQ-zez"/>
@@ -171,9 +171,9 @@
         </view>
     </objects>
     <resources>
-        <image name="BG_blur_tutorial.png" width="320" height="568"/>
+        <image name="bg_forms" width="320" height="568"/>
         <image name="button_default.png" width="267" height="38"/>
-        <image name="iconBack.png" width="25" height="25"/>
+        <image name="icon_back" width="13" height="21"/>
         <image name="icon_logo_horizontal.png" width="219" height="100"/>
     </resources>
 </document>

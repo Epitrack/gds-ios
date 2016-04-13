@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *txtNameUser;
 @property (weak, nonatomic) IBOutlet UIButton *btnProfile;
 
+- (IBAction)btnMapHealth:(id)sender;
 - (IBAction)btnNewsAction:(id)sender;
 - (IBAction)btnProfileAction:(id)sender;
 

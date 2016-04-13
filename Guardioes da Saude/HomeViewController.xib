@@ -72,6 +72,9 @@
                             <exclude reference="PXF-Ye-XEd"/>
                         </mask>
                     </variation>
+                    <connections>
+                        <action selector="btnMapHealth:" destination="-1" eventType="touchUpInside" id="50M-Ie-YsU"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dicas da Saúde" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bi-gd-jy5">
                     <rect key="frame" x="28" y="412" width="72" height="34"/>
