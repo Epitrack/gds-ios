@@ -62,7 +62,7 @@
     
     [self.navigationController setNavigationBarHidden:YES];
     
-    [self setHomeSelected];
+    //[self setHomeSelected];
 }
 
 + (MenuViewController *)getInstance {
@@ -156,7 +156,7 @@
     SWRevealViewController *revealController = self.revealViewController;
     [revealController pushFrontViewController:newFrontController animated:YES];
     
-    [self setHomeSelected];
+    //[self setHomeSelected];
 }
 
 - (IBAction)btnAbout:(id)sender {
@@ -172,20 +172,20 @@
     SWRevealViewController *revealController = self.revealViewController;
     [revealController pushFrontViewController:newFrontController animated:YES];
     
-    self.imgHome.image = [UIImage imageNamed:@"iconHomeDefault"];
-    self.lbHome.textColor = [UIColor blackColor];
-    
-    self.imgProfile.image = [UIImage imageNamed:@"iconProfileDefault"];
-    self.lbProfile.textColor = [UIColor blackColor];
-    
-    self.imgAbout.image = [UIImage imageNamed:@"iconAboutSelected"];
-    self.lbAbout.textColor = [UIColor colorWithRed:32/255.f green:151/255.f blue:247/255.f alpha:1];
-    
-    self.imgHelp.image = [UIImage imageNamed:@"iconHelpDefault"];
-    self.lbHelp.textColor = [UIColor blackColor];
-    
-    self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
-    self.lbSignout.textColor = [UIColor blackColor];
+//    self.imgHome.image = [UIImage imageNamed:@"iconHomeDefault"];
+//    self.lbHome.textColor = [UIColor blackColor];
+//    
+//    self.imgProfile.image = [UIImage imageNamed:@"iconProfileDefault"];
+//    self.lbProfile.textColor = [UIColor blackColor];
+//    
+//    self.imgAbout.image = [UIImage imageNamed:@"iconAboutSelected"];
+//    self.lbAbout.textColor = [UIColor colorWithRed:32/255.f green:151/255.f blue:247/255.f alpha:1];
+//    
+//    self.imgHelp.image = [UIImage imageNamed:@"iconHelpDefault"];
+//    self.lbHelp.textColor = [UIColor blackColor];
+//    
+//    self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
+//    self.lbSignout.textColor = [UIColor blackColor];
 }
 
 - (IBAction)btnHelp:(id)sender {
@@ -230,7 +230,7 @@
         newFrontController = [[UINavigationController alloc] initWithRootViewController:profileListController];
         SWRevealViewController *revealController = self.revealViewController;
         [revealController pushFrontViewController:newFrontController animated:YES];
-        [self setProfileSelected];
+        //[self setProfileSelected];
         
         self.lbSignout.textColor = [UIColor blackColor];
     }else{
@@ -301,7 +301,7 @@
     SWRevealViewController *revealController = self.revealViewController;
     [revealController pushFrontViewController:newFrontController animated:YES];
     
-    [self setHomeSelected];
+    //[self setHomeSelected];
 
 }
 
