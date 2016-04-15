@@ -387,11 +387,11 @@
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="YDr-ky-5JO"/>
-                            <exclude reference="zSa-4s-Wro"/>
-                            <exclude reference="XkX-Wq-neo"/>
                             <exclude reference="20N-tH-vSN"/>
                             <exclude reference="WXs-5C-xrY"/>
+                            <exclude reference="XkX-Wq-neo"/>
+                            <exclude reference="YDr-ky-5JO"/>
+                            <exclude reference="zSa-4s-Wro"/>
                         </mask>
                     </variation>
                 </imageView>
