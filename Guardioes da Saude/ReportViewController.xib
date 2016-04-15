@@ -75,7 +75,7 @@
                                         <constraint firstAttribute="width" constant="267" id="rAy-D0-pcA"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="15"/>
-                                    <state key="normal" title="report.send" backgroundImage="button_default.png">
+                                    <state key="normal" title="report.send" backgroundImage="btn_olympics">
                                         <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <variation key="default">
@@ -133,6 +133,6 @@
         </view>
     </objects>
     <resources>
-        <image name="button_default.png" width="267" height="38"/>
+        <image name="btn_olympics" width="258" height="38"/>
     </resources>
 </document>
