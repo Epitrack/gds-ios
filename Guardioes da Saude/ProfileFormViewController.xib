@@ -134,7 +134,7 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBI-sh-MgF" customClass="GDSButton">
                             <rect key="frame" x="8" y="511" width="398" height="38"/>
-                            <state key="normal" title="profile_form.change_password" backgroundImage="button_default.png">
+                            <state key="normal" title="profile_form.change_password" backgroundImage="btn_olympics">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -149,7 +149,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcD-Sb-OPF" customClass="GDSButton">
                             <rect key="frame" x="8" y="557" width="398" height="38"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="15"/>
-                            <state key="normal" title="profile_form.save" backgroundImage="button_default.png">
+                            <state key="normal" title="profile_form.save" backgroundImage="btn_olympics">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -263,7 +263,7 @@
     </objects>
     <resources>
         <image name="btn_delete" width="268" height="38"/>
-        <image name="button_default.png" width="267" height="38"/>
+        <image name="btn_olympics" width="258" height="38"/>
         <image name="img_profile01.png" width="131" height="131"/>
     </resources>
 </document>
