@@ -13,6 +13,7 @@
 #import "UserRequester.h"
 #import "MBprogressHUD.h"
 #import "HomeViewController.h"
+#import "LocationUtil.h"
 #import <Google/Analytics.h>
 
 #define MAXLENGTH 10
@@ -44,12 +45,24 @@
     [self.txtGender.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_gender", @"")];
     [self.txtGender.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.txtGender.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
-    [self.txtGender.DownPicker addTarget:self action:@selector(genderDownPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
+    [self.txtGender.DownPicker addTarget:self action:@selector(downPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
     
     (void)[self.txtRace initWithData: [Constants getRaces]];
     [self.txtRace.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_race", @"")];
     [self.txtRace.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.txtRace.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    [self.txtRace.DownPicker addTarget:self action:@selector(downPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
+    
+    (void)[self.txtCountry initWithData: [LocationUtil getCountriesWithBrazil:YES]];
+    [self.txtCountry.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_country", @"")];
+    [self.txtCountry.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtCountry.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    [self.txtCountry.DownPicker addTarget:self action:@selector(downPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
+    
+    (void)[self.txtState initWithData: [LocationUtil getStates]];
+    [self.txtState.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_state", @"")];
+    [self.txtState.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtState.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
@@ -64,6 +77,8 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [locationManager startUpdatingLocation];
+    
+    self.scrollView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,8 +86,23 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)genderDownPickerDidSelected:(id)dp {
-    [self.txtRace becomeFirstResponder];
+-(void)downPickerDidSelected:(id)dp {
+    if ([dp isEqual:self.txtGender]) {
+        [self.txtRace becomeFirstResponder];
+    }else if([dp isEqual:self.txtRace]){
+        [self.txtCountry becomeFirstResponder];
+    }else{
+        NSString *country = ((UITextField *) dp).text;
+        if ([country isEqualToString:@"Brasil"] ||
+            [country isEqualToString:@"Brazil"] ||
+            [country isEqualToString:@"Brésil"] ||
+            [country isEqualToString:@"Бразилия"] ||
+            [country isEqualToString:@"巴西"] ||
+            [country isEqualToString:@"البرازيل"]) {
+            
+            [self.txtState becomeFirstResponder];
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -95,15 +125,28 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)canBecomeFirstResponder {
+    NSString *country = self.txtCountry.text;
+    if ([country isEqualToString:@"Brasil"] ||
+        [country isEqualToString:@"Brazil"] ||
+        [country isEqualToString:@"Brésil"] ||
+        [country isEqualToString:@"Бразилия"] ||
+        [country isEqualToString:@"巴西"] ||
+        [country isEqualToString:@"البرازيل"]) {
+        
+        self.constTopButton.constant = 94;
+        self.txtState.hidden = NO;
+        self.lbState.hidden = NO;
+        
+        [self.txtState becomeFirstResponder];
+    }else{
+        self.constTopButton.constant = 30;
+        self.txtState.hidden = YES;
+        self.lbState.hidden = YES;
+    }
+    
+    return YES;
 }
-*/
 
 - (IBAction)btnBackAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

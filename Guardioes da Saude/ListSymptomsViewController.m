@@ -71,7 +71,7 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     
-    (void)[self.txtPais initWithData:[LocationUtil getCountries]];
+    (void)[self.txtPais initWithData:[LocationUtil getCountriesWithBrazil:NO]];
     [self.txtPais.DownPicker setPlaceholder:NSLocalizedString(@"list_symptoms.placeholder_country", @"")];
     [self.txtPais.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.txtPais.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];

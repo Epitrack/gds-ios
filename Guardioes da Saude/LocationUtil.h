@@ -20,5 +20,7 @@
                 andOnSuccess:(void(^)(NSArray *)) onSuccess
                   andOnError:(void(^)(NSError *)) onError;
 
-+ (NSArray *) getCountries;
++ (NSArray *) getCountriesWithBrazil: (bool) withBrazil;
+
++ (NSArray *) getStates;
 @end

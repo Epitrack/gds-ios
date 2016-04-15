@@ -149,7 +149,7 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
     
 }
 
-+ (NSArray *) getCountries{
++ (NSArray *) getCountriesWithBrazil: (bool) withBrazil{
     NSLocale *locale = [NSLocale currentLocale];
     NSArray *countryArray = [NSLocale ISOCountryCodes];
     
@@ -157,12 +157,42 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
     
     for (NSString *countryCode in countryArray) {
         NSString *displayNameString = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
-        if (!([displayNameString isEqualToString:@"Brasil"] || [displayNameString isEqualToString:@"Brazil"])) {
+        if (withBrazil || !([displayNameString isEqualToString:@"Brasil"] || [displayNameString isEqualToString:@"Brazil"])) {
             [sortedCountryArray addObject:displayNameString];
         }
     }
     [sortedCountryArray sortUsingSelector:@selector(localizedCompare:)];
     
     return sortedCountryArray;
+}
+
++ (NSArray *)getStates{
+    return @[@"Acre",
+             @"Alagoas",
+             @"Amazonas",
+             @"Amapá",
+             @"Bahia",
+             @"Ceará",
+             @"Distrito Federal",
+             @"Espírito Santo",
+             @"Goiás",
+             @"Maranhão",
+             @"Minas Gerais",
+             @"Mato Grosso do Sul",
+             @"Mato Grosso",
+             @"Pará",
+             @"Paraíba",
+             @"Pernambuco",
+             @"Piauí",
+             @"Paraná",
+             @"Rio de Janeiro",
+             @"Rio Grande do Norte",
+             @"Rondônia",
+             @"Roraima",
+             @"Rio Grande do Sul",
+             @"Santa Catarina",
+             @"Sergipe",
+             @"São Paulo",
+             @"Tocantins"];
 }
 @end

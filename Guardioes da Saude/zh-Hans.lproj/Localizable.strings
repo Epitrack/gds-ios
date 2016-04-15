@@ -103,6 +103,10 @@
 "sign_up_details.race_required" = "Cor/Raça é um campo obrigatório";
 "sign_up_details.email_already_used" = "O e-mail usado já está em uso";
 "sign_up_details.without_localization" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
+"sign_up_details.lb_country" = "País de origem:";
+"sign_up_details.tx_country" = "Selecione o país";
+"sign_up_details.lb_state" = "Estado:";
+"sign_up_details.tx_state" = "Selecione o estado";
 
 // MENU VIEW
 "menu.home" = "Início";
