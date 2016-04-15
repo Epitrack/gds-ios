@@ -77,7 +77,9 @@ static NSBundle *bundle = nil;
     [cell setSeparatorInset:UIEdgeInsetsZero];
     
     if ([[languagesCode objectAtIndex:indexPath.row] isEqualToString:currentLanguage]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        UIImageView *imgCheck = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"icon_check"]];
+        [imgCheck sizeToFit];
+        cell.accessoryView = imgCheck;
     }
     
     return cell;
