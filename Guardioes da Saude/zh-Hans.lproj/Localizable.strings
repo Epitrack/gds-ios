@@ -115,6 +115,7 @@
 "menu.help" = "Ajuda";
 "menu.sign_out" = "Sair";
 "menu.are_you_sure_sign_out" = "Tem certeza que deseja sair do aplicativo?";
+"menu.idiom" = "Idioma";
 
 // About VIEW
 "about.title" = "Sobre";
