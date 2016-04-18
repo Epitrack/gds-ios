@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Foco_Std_Bd.ttf">
@@ -229,7 +230,7 @@
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xj-Lm-wip" customClass="PieChartView" customModule="Charts">
                             <rect key="frame" x="282" y="152" width="112" height="109"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="113" id="80B-LF-t2N"/>
                                 <constraint firstAttribute="width" constant="112" id="NBc-YQ-Crt"/>
@@ -338,9 +339,12 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7h-Gh-G0h" customClass="GDSButton">
-                                    <rect key="frame" x="28" y="67" width="344" height="38"/>
+                                    <rect key="frame" x="28" y="67" width="344" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="d7h-Gh-G0h" secondAttribute="height" multiplier="172:19" constant="-63.368421052631561" id="7Qa-Ql-nJf"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <state key="normal" title="diary_health.join_now" backgroundImage="button_default.png">
+                                    <state key="normal" title="diary_health.join_now" backgroundImage="btn_joinnow">
                                         <color key="titleColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
@@ -470,7 +474,7 @@
         </view>
     </objects>
     <resources>
-        <image name="button_default.png" width="267" height="38"/>
+        <image name="btn_joinnow" width="268" height="38"/>
         <image name="ic_arrowleft" width="7" height="14"/>
         <image name="ic_arrowright" width="7" height="14"/>
         <image name="icon_bad.png" width="121" height="121"/>
