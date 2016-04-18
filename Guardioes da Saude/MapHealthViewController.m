@@ -399,10 +399,10 @@
     
     if (showDetails) {
         self.constViewDetails.constant = -100;
-        [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"fab_cancel.png"] forState:UIControlStateNormal];
+        [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"btn_fab_cancel"] forState:UIControlStateNormal];
     }else{
         self.constViewDetails.constant = -400;
-        [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"fab_plus.png"] forState:UIControlStateNormal];
+        [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"btn_fab"] forState:UIControlStateNormal];
     }
     
     
