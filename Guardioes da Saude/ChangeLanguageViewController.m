@@ -77,7 +77,7 @@ static NSBundle *bundle = nil;
     [cell setSeparatorInset:UIEdgeInsetsZero];
     
     if ([[languagesCode objectAtIndex:indexPath.row] isEqualToString:currentLanguage]) {
-        UIImageView *imgCheck = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"icon_check"]];
+        UIImageView *imgCheck = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"icon_selected"]];
         [imgCheck sizeToFit];
         cell.accessoryView = imgCheck;
     }

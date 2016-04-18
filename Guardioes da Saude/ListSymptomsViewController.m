@@ -248,7 +248,7 @@
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
         
         if ([selected containsIndex:indexPath.row]) {
-            UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+            UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checked"]];
             cell.accessoryView = checkmark;
         } else {
             UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
@@ -303,7 +303,7 @@
                 [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = checkmark;
             } else {
                 [selected addIndex:indexPath.row];
-                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checked"]];
                 [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = checkmark;
             }
         }
