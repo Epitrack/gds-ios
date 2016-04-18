@@ -91,7 +91,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQx-nB-0Om" customClass="GDSButton">
                                     <rect key="frame" x="26" y="416" width="323" height="38"/>
                                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="18"/>
-                                    <state key="normal" title="list_symptoms.confirm" backgroundImage="button_default_white.png">
+                                    <state key="normal" title="list_symptoms.confirm" backgroundImage="btn_olympics">
                                         <color key="titleColor" red="0.066666666669999999" green="0.31372549020000001" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
@@ -152,6 +152,6 @@
     </objects>
     <resources>
         <image name="BG_survey.png" width="321" height="568"/>
-        <image name="button_default_white.png" width="268" height="38"/>
+        <image name="btn_olympics" width="258" height="38"/>
     </resources>
 </document>
