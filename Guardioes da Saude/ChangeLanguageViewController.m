@@ -30,7 +30,7 @@ static NSBundle *bundle = nil;
     
     currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
     
-    languages = @[@"English", @"Español", @"Fraçais", @"Protugues(Brasil)", @"pyccknñ", @"简体中文", @"العربية"];
+    languages = @[@"English", @"Español", @"Fraçais", @"Portugues(Brasil)", @"pyccknñ", @"简体中文", @"العربية"];
     languagesDetails = @[@"Inglês", @"Espanhol", @"Francês", @"Protugues(Brasil)", @"Russo", @"Cinês, Simplificado", @"Árabe"];
     languagesCode = @[@"en", @"es", @"fr", @"pt-BR", @"ru", @"zh-Hans-CN", @"ar"];
     

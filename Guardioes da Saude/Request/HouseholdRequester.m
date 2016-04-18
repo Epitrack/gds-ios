@@ -259,7 +259,8 @@
     }
     
     [self doPost:[[self getUrl] stringByAppendingString:@"/household/update"]
-          header:@{@"user_token": user.user_token, @"app_token": user.app_token}
+          header:@{@"user_token": user.user_token,
+                   @"app_token": user.app_token}
        parameter:params
            start:^(void){
                
@@ -291,7 +292,8 @@
     }
     
     [self doPost:[[self getUrl] stringByAppendingString:@"/household/create"]
-          header:@{@"app_token": user.user_token}
+          header:@{@"user_token": user.user_token,
+                   @"app_token": user.app_token}
        parameter:params
            start:^(void){
                
