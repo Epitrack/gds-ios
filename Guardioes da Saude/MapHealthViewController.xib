@@ -350,7 +350,7 @@
                         <constraint firstAttribute="height" constant="62" id="AVG-s4-3SG"/>
                         <constraint firstAttribute="width" constant="62" id="Qrr-oj-tMa"/>
                     </constraints>
-                    <state key="normal" backgroundImage="fab_plus.png"/>
+                    <state key="normal" backgroundImage="btn_fab"/>
                     <connections>
                         <action selector="showDetailMapPlus:" destination="-1" eventType="touchUpInside" id="vff-2M-Wa6"/>
                     </connections>
@@ -375,7 +375,7 @@
         </view>
     </objects>
     <resources>
-        <image name="fab_plus.png" width="62" height="62"/>
+        <image name="btn_fab" width="62" height="62"/>
         <image name="icon_bad.png" width="121" height="121"/>
         <image name="icon_info_blue.png" width="56" height="56"/>
         <image name="icon_well.png" width="120" height="121"/>

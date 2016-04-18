@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -17,8 +18,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="w9n-BB-3Se">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_home_olympics" translatesAutoresizingMaskIntoConstraints="NO" id="w9n-BB-3Se">
+                    <rect key="frame" x="0.0" y="51" width="320" height="517"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="8tT-ki-6Iv">
@@ -85,7 +86,7 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, Aninha!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ag8-Nd-VOm" userLabel="Label Name">
                     <rect key="frame" x="25" y="182" width="270" height="27"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
@@ -98,7 +99,7 @@
                         <constraint firstAttribute="width" secondItem="7tk-Sg-hEE" secondAttribute="height" multiplier="134:150" constant="12" id="fQO-Oz-orC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" backgroundImage="icon_join">
+                    <state key="normal" backgroundImage="icon_joinnow_medal">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -156,6 +157,15 @@
                         <action selector="diaryHealth:" destination="-1" eventType="touchUpInside" id="4RT-zi-Gu2"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participe agora!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkg-Nb-LjN">
+                    <rect key="frame" x="123" y="305" width="74" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="IWg-3h-BwP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -169,6 +179,7 @@
                 <constraint firstItem="7tk-Sg-hEE" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="35:142" id="6ty-WW-LLT"/>
                 <constraint firstItem="dn2-kp-1vs" firstAttribute="leading" secondItem="wLQ-aG-BfL" secondAttribute="leading" id="7kw-8q-dkZ"/>
                 <constraint firstItem="HS7-S1-7hn" firstAttribute="leading" secondItem="4kJ-ek-qV7" secondAttribute="leading" id="ALd-Ue-mqs"/>
+                <constraint firstItem="Tkg-Nb-LjN" firstAttribute="top" secondItem="7tk-Sg-hEE" secondAttribute="bottom" constant="-68" id="Awf-xd-hYR"/>
                 <constraint firstAttribute="trailing" secondItem="Ag8-Nd-VOm" secondAttribute="trailing" constant="25" id="CFL-G8-w9i"/>
                 <constraint firstItem="HS7-S1-7hn" firstAttribute="centerX" secondItem="4kJ-ek-qV7" secondAttribute="centerX" id="Czc-1W-Hm0"/>
                 <constraint firstItem="lbO-Tn-hq9" firstAttribute="centerX" secondItem="HS7-S1-7hn" secondAttribute="centerX" constant="25.5" id="DK1-lj-gFA"/>
@@ -199,10 +210,11 @@
                 <constraint firstItem="7tk-Sg-hEE" firstAttribute="leading" secondItem="4kJ-ek-qV7" secondAttribute="trailing" constant="5" id="YZU-uK-mnj"/>
                 <constraint firstAttribute="trailing" secondItem="w9n-BB-3Se" secondAttribute="trailing" id="Z3O-cw-0pp"/>
                 <constraint firstItem="w9n-BB-3Se" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" id="b6H-po-Ea3"/>
+                <constraint firstItem="Tkg-Nb-LjN" firstAttribute="centerX" secondItem="7tk-Sg-hEE" secondAttribute="centerX" id="bD1-qM-tYT"/>
                 <constraint firstItem="Ag8-Nd-VOm" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="25" id="cHj-ZN-qra"/>
                 <constraint firstItem="wLQ-aG-BfL" firstAttribute="top" secondItem="7tk-Sg-hEE" secondAttribute="top" id="cw6-j7-IZv"/>
                 <constraint firstItem="6Bi-gd-jy5" firstAttribute="top" secondItem="lbO-Tn-hq9" secondAttribute="bottom" id="d2w-37-sca"/>
-                <constraint firstItem="w9n-BB-3Se" firstAttribute="height" secondItem="Cds-EH-tEM" secondAttribute="height" id="evF-oz-Zl7"/>
+                <constraint firstItem="w9n-BB-3Se" firstAttribute="height" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="0.91" id="evF-oz-Zl7"/>
                 <constraint firstItem="8tT-ki-6Iv" firstAttribute="top" secondItem="7tk-Sg-hEE" secondAttribute="bottom" id="fBn-xw-LfZ"/>
                 <constraint firstItem="6Bi-gd-jy5" firstAttribute="centerX" secondItem="lbO-Tn-hq9" secondAttribute="centerX" id="hbc-tK-rPc"/>
                 <constraint firstItem="7tk-Sg-hEE" firstAttribute="centerX" secondItem="Ag8-Nd-VOm" secondAttribute="centerX" id="iu1-M3-Z3J"/>
@@ -222,6 +234,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="Rbb-F0-cET"/>
                     <exclude reference="DWw-Ve-VgT"/>
                     <exclude reference="rmx-gI-ghT"/>
                     <exclude reference="Gc0-dr-X1T"/>
@@ -237,10 +250,10 @@
         </view>
     </objects>
     <resources>
-        <image name="BG_light.png" width="321" height="569"/>
+        <image name="bg_home_olympics" width="320" height="504"/>
         <image name="icon_diary" width="72" height="76"/>
         <image name="icon_game" width="72" height="76"/>
-        <image name="icon_join" width="72" height="76"/>
+        <image name="icon_joinnow_medal" width="133" height="136"/>
         <image name="icon_maps" width="76" height="80"/>
         <image name="icon_news" width="72" height="76"/>
         <image name="icon_types" width="72" height="76"/>
