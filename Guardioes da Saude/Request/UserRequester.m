@@ -164,7 +164,8 @@
     }
     
     [self doGet: url
-         header: @{ @"user_token": user.user_token }
+         header: @{@"app_token": user.app_token,
+                   @"user_token": user.user_token }
       parameter: nil
           start: onStart
      
@@ -215,7 +216,8 @@
                                  @"year": [NSNumber numberWithInteger: year] };
     
     [self doGet: url
-         header: @{ @"user_token": user.user_token }
+         header: @{@"app_token": user.app_token,
+                   @"user_token": user.user_token }
       parameter: paramMap
           start: onStart
           error: ^(AFHTTPRequestOperation * request, NSError * error) {
@@ -353,7 +355,8 @@
     }
     
     [self doGet: url
-         header: @{ @"user_token": user.user_token }
+         header: @{@"app_token": user.app_token,
+                   @"user_token": user.user_token }
       parameter: @{ @"year": [NSNumber numberWithInt: year] }
           start: onStart
      

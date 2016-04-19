@@ -22,6 +22,7 @@
 #import <Google/Analytics.h>
 #import "Charts/Charts-Swift.h"
 #import "ParticipantsListViewController.h"
+#import "SelectStateViewController.h"
 @import Photos;
 
 @import Charts;
@@ -52,6 +53,7 @@
     UserRequester *userRequester;
     BOOL firstTime;
     int requestsInProcess;
+    Household *selectedHousehold;
 
 }
 
@@ -570,6 +572,7 @@ const float _kCellHeight = 100.0f;
 }
 
 - (void)refreshInformationToUser:(Household *)houlsehold{
+    selectedHousehold = houlsehold;
     if (houlsehold) {
         selectedUser = houlsehold.idHousehold;
         self.lbUserName.text = houlsehold.nick;
@@ -587,5 +590,16 @@ const float _kCellHeight = 100.0f;
         [self requestCalendar:@"" andDate:[NSDate date]];
         [self requestChartLine: @""];
     }
+}
+
+- (IBAction)btnJoinNowAction:(id)sender {
+    SelectStateViewController *selectStateView = [[SelectStateViewController alloc] init];
+    if (selectedHousehold) {
+        selectStateView.household = selectedHousehold;
+    } else {
+        selectStateView.user = [User getInstance];
+    }
+    
+    [self.navigationController pushViewController:selectStateView animated:YES];
 }
 @end

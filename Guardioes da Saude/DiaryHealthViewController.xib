@@ -50,7 +50,7 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvL-uo-hFA">
                             <rect key="frame" x="366" y="23" width="41" height="40"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="41" id="9ik-f9-GJe"/>
                             </constraints>
@@ -61,7 +61,7 @@
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQk-rp-tsb">
                             <rect key="frame" x="0.0" y="86" width="424" height="1"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="hEr-vA-jfi"/>
                             </constraints>
@@ -347,6 +347,9 @@
                                     <state key="normal" title="diary_health.join_now" backgroundImage="btn_joinnow">
                                         <color key="titleColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btnJoinNowAction:" destination="-1" eventType="touchUpInside" id="m4K-vJ-eup"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>

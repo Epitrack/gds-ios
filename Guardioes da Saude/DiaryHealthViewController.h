@@ -27,5 +27,7 @@
 - (IBAction)btnPreviousMonthAction:(id)sender;
 - (IBAction)btnChangePerson:(id)sender;
 - (void)refreshInformationToUser:(Household *)houlsehold;
+- (IBAction)btnJoinNowAction:(id)sender;
+
 
 @end
