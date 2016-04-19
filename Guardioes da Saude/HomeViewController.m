@@ -92,8 +92,16 @@
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
     
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
-                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
+    UIBarButtonItem *revealButtonItem;
+    NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"ar"]) {
+        revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+                                                                             style:UIBarButtonItemStylePlain target:revealController action:@selector(rightRevealToggle:)];
+    }else{
+        revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+                                                                             style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
+    }
+    
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
     // Do any additional setup after loading the view from its nib.

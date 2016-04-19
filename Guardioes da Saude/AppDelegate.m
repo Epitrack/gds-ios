@@ -72,7 +72,16 @@ NSUserDefaults *preferences;
         UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
         UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:menuViewCtrl];
         
-        revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
+        NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+        if ([currentLanguage isEqualToString:@"ar"]) {
+            revealController = [[SWRevealViewController alloc] init];
+            revealController.rightViewController = rearNavigationController;
+            revealController.frontViewController = frontNavigationController;
+        } else {
+            revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
+        }
+        
+        
         revealController.delegate = self;
         self.viewController = revealController;
     } else {
