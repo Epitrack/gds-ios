@@ -109,14 +109,8 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_medal_checked" translatesAutoresizingMaskIntoConstraints="NO" id="zIx-1e-Tfy">
                             <rect key="frame" x="88" y="0.0" width="145" height="175"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="190:175" constant="-44.999999999999972" id="GOK-aV-7Cx"/>
-                                <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="169:175" id="Jct-Fk-HyJ"/>
+                                <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="29:35" id="Ggo-L7-kj2"/>
                             </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="Jct-Fk-HyJ"/>
-                                </mask>
-                            </variation>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="thank_you.tell_your_friend" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE" customClass="GDSTextView">
                             <rect key="frame" x="23" y="224" width="281" height="31"/>
@@ -157,8 +151,8 @@
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
-                            <exclude reference="4Tp-V2-kJI"/>
                             <exclude reference="Qp1-xf-5pf"/>
+                            <exclude reference="4Tp-V2-kJI"/>
                             <exclude reference="KfK-lz-HGw"/>
                             <exclude reference="oP9-oc-bBJ"/>
                             <exclude reference="DJp-Vg-pGd"/>
