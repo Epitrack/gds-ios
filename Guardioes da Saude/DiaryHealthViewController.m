@@ -255,7 +255,7 @@ const float _kCellHeight = 100.0f;
     UIButton *b = (UIButton *) sender;
     HouseholdThumbnail *thumb = (HouseholdThumbnail*) b.superview;
     if ([thumb isKindOfClass: [HouseholdThumbnail class]]) {
-        NSString *idHousehold = thumb.user_household_id;
+        NSString *idHousehold = thumb.household.idHousehold;
         selectedUser = idHousehold;
         
         [self refreshSummaryWithUserId:idHousehold];
@@ -345,7 +345,7 @@ const float _kCellHeight = 100.0f;
 
     [userRequester getSummary: [User getInstance]
                                  idHousehold: idHousehold
-                                        year: [DateUtil getCurrentYear]
+                                        year: (int) [DateUtil getCurrentYear]
                                      onStart: ^{[self showProgressBar];}
                                      onError: ^(NSError * error) {
                                          [self hiddenProgressBar];
@@ -361,7 +361,7 @@ const float _kCellHeight = 100.0f;
                                    onSuccess: ^(NSMutableDictionary * sumaryGraphMap) {
                                        [self hiddenProgressBar];
                                        
-                                       self.lbFrequencyYear.text = [NSString stringWithFormat:@"Frequência %d", [DateUtil getCurrentYear]];
+                                       self.lbFrequencyYear.text = [NSString stringWithFormat:@"Frequência %d", (int) [DateUtil getCurrentYear]];
                                        
                                        NSArray *xVals = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dez"];
                                        

@@ -5,15 +5,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import "Household.h"
 
 @interface HouseholdThumbnail : UIView
-@property(nonatomic, copy) NSString *user_household_id;
+@property(nonatomic, strong) Household *household;
 
 @property(nonatomic, strong) UIButton *button;
 
-- (id)initWithHousehold:(NSString *)household_id frame:(CGRect)frame avatar:(NSString *)avatar nick:(NSString *)nick;
+- (id)initWithHousehold:(Household *)household_id frame:(CGRect)frame avatar:(NSString *)avatar nick:(NSString *)nick;
 
-- (id)initWithHousehold:(NSString *)household_id frame:(CGRect)frame avatar:(NSString *)avatar nick:(NSString *)nick dob:(NSString *)dob;
+- (id)initWithHousehold:(Household *)household_id frame:(CGRect)frame avatar:(NSString *)avatar nick:(NSString *)nick dob:(NSString *)dob;
 
 @end

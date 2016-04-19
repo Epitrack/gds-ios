@@ -24,10 +24,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkL-yl-8bQ">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MkL-yl-8bQ">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gdSLogoHorizontal" translatesAutoresizingMaskIntoConstraints="NO" id="RAP-qb-tYS">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="gdSLogoHorizontal" translatesAutoresizingMaskIntoConstraints="NO" id="RAP-qb-tYS">
                             <rect key="frame" x="8" y="31" width="220" height="100"/>
                         </imageView>
                     </subviews>
@@ -39,114 +39,114 @@
                         <constraint firstItem="RAP-qb-tYS" firstAttribute="leading" secondItem="MkL-yl-8bQ" secondAttribute="leading" constant="8" id="o7N-4R-G8Z"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconHomeSelected" translatesAutoresizingMaskIntoConstraints="NO" id="BJ5-rr-05Y">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="iconHomeSelected" translatesAutoresizingMaskIntoConstraints="NO" id="BJ5-rr-05Y">
                     <rect key="frame" x="8" y="162" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="4uX-LQ-K97"/>
                         <constraint firstAttribute="width" constant="40" id="N9D-7A-1Qc"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu.home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5Z-Jy-G3Q" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="menu.home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5Z-Jy-G3Q" customClass="GDSLabel">
                     <rect key="frame" x="64" y="169" width="117" height="27"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FM-nD-A7o" userLabel="Btn Home">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FM-nD-A7o" userLabel="Btn Home">
                     <rect key="frame" x="8" y="162" width="312" height="40"/>
                     <connections>
                         <action selector="btnHome:" destination="-1" eventType="touchUpInside" id="A7P-fV-GPJ"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_profile" translatesAutoresizingMaskIntoConstraints="NO" id="fwQ-lU-be9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_profile" translatesAutoresizingMaskIntoConstraints="NO" id="fwQ-lU-be9">
                     <rect key="frame" x="8" y="218" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="T6W-Gl-Kwc"/>
                         <constraint firstAttribute="height" constant="40" id="XiT-IH-VJu"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu.profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jd-1A-u2a" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="menu.profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jd-1A-u2a" customClass="GDSLabel">
                     <rect key="frame" x="64" y="225" width="123" height="27"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gu8-D7-aQw" userLabel="Btn Profile">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gu8-D7-aQw" userLabel="Btn Profile">
                     <rect key="frame" x="8" y="218" width="312" height="40"/>
                     <connections>
                         <action selector="btnProfile:" destination="-1" eventType="touchUpInside" id="x00-Ex-9JR"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_about" translatesAutoresizingMaskIntoConstraints="NO" id="OE9-YS-XDF">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_about" translatesAutoresizingMaskIntoConstraints="NO" id="OE9-YS-XDF">
                     <rect key="frame" x="8" y="274" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="55i-iq-WW6"/>
                         <constraint firstAttribute="height" constant="40" id="qaQ-1n-uoT"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu.about" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZO-eR-1Q3" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="menu.about" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZO-eR-1Q3" customClass="GDSLabel">
                     <rect key="frame" x="64" y="281" width="118" height="27"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFv-OI-JXw" userLabel="Btn About">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFv-OI-JXw" userLabel="Btn About">
                     <rect key="frame" x="8" y="274" width="312" height="40"/>
                     <connections>
                         <action selector="btnAbout:" destination="-1" eventType="touchUpInside" id="2Ac-r4-QU7"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_help" translatesAutoresizingMaskIntoConstraints="NO" id="VOj-Cq-ykb">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_help" translatesAutoresizingMaskIntoConstraints="NO" id="VOj-Cq-ykb">
                     <rect key="frame" x="8" y="330" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="4yU-DP-xQb"/>
                         <constraint firstAttribute="width" constant="40" id="qDs-D2-xvG"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu.help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82P-XX-VEg" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="menu.help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82P-XX-VEg" customClass="GDSLabel">
                     <rect key="frame" x="64" y="337" width="104" height="27"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-ed-2aV" userLabel="Btn Help">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGC-ed-2aV" userLabel="Btn Help">
                     <rect key="frame" x="8" y="330" width="312" height="40"/>
                     <connections>
                         <action selector="btnHelp:" destination="-1" eventType="touchUpInside" id="icZ-Po-KRa"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_idiom" translatesAutoresizingMaskIntoConstraints="NO" id="KYb-Mx-JZ0">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_idiom" translatesAutoresizingMaskIntoConstraints="NO" id="KYb-Mx-JZ0">
                     <rect key="frame" x="8" y="386" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="mnr-vc-xf1"/>
                         <constraint firstAttribute="width" constant="40" id="oO0-0M-f2e"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu.idiom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpd-Fc-sFi" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="menu.idiom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpd-Fc-sFi" customClass="GDSLabel">
                     <rect key="frame" x="64" y="393" width="116" height="27"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18k-C8-BKO" userLabel="Btn Idiom">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18k-C8-BKO" userLabel="Btn Idiom">
                     <rect key="frame" x="8" y="386" width="312" height="40"/>
                     <connections>
                         <action selector="btnLanguageAction:" destination="-1" eventType="touchUpInside" id="aFW-6D-48c"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logout" translatesAutoresizingMaskIntoConstraints="NO" id="9hc-kA-1au">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon_logout" translatesAutoresizingMaskIntoConstraints="NO" id="9hc-kA-1au">
                     <rect key="frame" x="10" y="442" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="CGA-cT-UnR"/>
                         <constraint firstAttribute="width" constant="40" id="ufL-Or-aJ3"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="menu.sign_out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQl-uN-xw6" customClass="GDSLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="menu.sign_out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQl-uN-xw6" customClass="GDSLabel">
                     <rect key="frame" x="66" y="449" width="144" height="27"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1V5-wc-Wlk" userLabel="Btn Signout">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1V5-wc-Wlk" userLabel="Btn Signout">
                     <rect key="frame" x="10" y="442" width="310" height="40"/>
                     <connections>
                         <action selector="btnExit:" destination="-1" eventType="touchUpInside" id="gfj-wu-Qbe"/>

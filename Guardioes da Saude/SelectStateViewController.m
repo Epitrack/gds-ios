@@ -69,6 +69,19 @@
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Select State Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    
+    if (self.household) {
+        NSString *text = [NSString stringWithFormat:NSLocalizedString(@"select_state.how_is_he_she", @""), self.household.nick ];
+        NSRange rangeBold = [text rangeOfString: self.household.nick];
+        
+        NSDictionary *attributes = [(NSAttributedString *) self.txHeader.attributedText attributesAtIndex:0 effectiveRange:NULL];
+        
+        NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:text attributes:attributes]];
+        [attributedText setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:self.txHeader.font.pointSize]} range:rangeBold];
+        
+        self.txHeader.text = text;
+        self.txHeader.attributedText = attributedText;
+    }
 }
 
 /*
@@ -96,8 +109,8 @@
     survey.longitude = [NSString stringWithFormat:@"%.8f", longitude];
     survey.isSymptom = @"N";
     
-    if (![user.idHousehold isEqualToString:@""]) {
-        survey.idHousehold = user.idHousehold;
+    if (self.household) {
+        survey.idHousehold = self.household.idHousehold;
     }
     
     [surveyRequester createSurvey:survey

@@ -261,6 +261,7 @@
 "select_state.well" = "Bem";
 "select_state.bad" = "Mal";
 "select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Mal\" seja selecionada.";
+"select_state.how_is_he_she" = "Como está a saúde\nde %@ nesse momento?";
 
 // THANK YOU VIEW
 "thank_you.shared_msg" = "Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org";
