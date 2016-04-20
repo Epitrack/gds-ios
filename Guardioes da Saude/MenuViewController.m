@@ -201,20 +201,20 @@
     SWRevealViewController *revealController = self.revealViewController;
     [revealController pushFrontViewController:newFrontController animated:YES];
     
-    self.imgHome.image = [UIImage imageNamed:@"iconHomeDefault"];
-    self.lbHome.textColor = [UIColor blackColor];
-    
-    self.imgProfile.image = [UIImage imageNamed:@"iconProfileDefault"];
-    self.lbProfile.textColor = [UIColor blackColor];
-    
-    self.imgAbout.image = [UIImage imageNamed:@"iconAboutDefault"];
-    self.lbAbout.textColor = [UIColor blackColor];
-    
-    self.imgHelp.image = [UIImage imageNamed:@"iconHelpSelected"];
-    self.lbHelp.textColor = [UIColor colorWithRed:32/255.f green:151/255.f blue:247/255.f alpha:1];
-    
-    self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
-    self.lbSignout.textColor = [UIColor blackColor];
+//    self.imgHome.image = [UIImage imageNamed:@"iconHomeDefault"];
+//    self.lbHome.textColor = [UIColor blackColor];
+//    
+//    self.imgProfile.image = [UIImage imageNamed:@"iconProfileDefault"];
+//    self.lbProfile.textColor = [UIColor blackColor];
+//    
+//    self.imgAbout.image = [UIImage imageNamed:@"iconAboutDefault"];
+//    self.lbAbout.textColor = [UIColor blackColor];
+//    
+//    self.imgHelp.image = [UIImage imageNamed:@"iconHelpSelected"];
+//    self.lbHelp.textColor = [UIColor colorWithRed:32/255.f green:151/255.f blue:247/255.f alpha:1];
+//    
+//    self.imgSignout.image = [UIImage imageNamed:@"iconLogoutDefault"];
+//    self.lbSignout.textColor = [UIColor blackColor];
 }
 
 - (IBAction)btnProfile:(id)sender {
