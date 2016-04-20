@@ -21,5 +21,6 @@
 - (IBAction)healthTips:(id)sender;
 - (IBAction)diaryHealth:(id)sender;
 - (IBAction)btnProfileAction:(id)sender;
+- (IBAction)btnEnjoyAction:(id)sender;
 
 @end

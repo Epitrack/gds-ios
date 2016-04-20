@@ -25,6 +25,8 @@
 #import <Google/Analytics.h>
 #import "MenuViewController.h"
 #import "DateUtil.h"
+#import "Guardioes_da_Saude-Swift.h"
+
 
 @import Photos;
 
@@ -72,6 +74,8 @@
         if ([preferences objectForKey:kIsTest]) {
             user.isTest = YES;
         }
+        
+//        GameTutorailViewController *teste;
         
         user.user_token = [preferences valueForKey:kUserTokenKey];
         user.app_token = [preferences valueForKey:kAppTokenKey];
@@ -263,6 +267,11 @@
     }else{
         [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
     }
+}
+
+- (IBAction)btnEnjoyAction:(id)sender {
+    GameTutorialViewController *gameTutorialView = [[GameTutorialViewController alloc] init];
+    [self.navigationController pushViewController:gameTutorialView animated:YES];
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {

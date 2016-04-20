@@ -31,6 +31,9 @@
                     <state key="normal" backgroundImage="icon_game">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btnEnjoyAction:" destination="-1" eventType="touchUpInside" id="v8B-Pr-VGj"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diário da Saúde" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4X-Rf-V4g">
                     <rect key="frame" x="218" y="412" width="72" height="34"/>
