@@ -18,8 +18,6 @@
 @interface HelpViewController (){
     NSArray *options;
     NSArray *optionsIcons;
-    NSArray *contactUs;
-    NSArray *contactUsIcons;
 }
 
 @end
@@ -45,9 +43,6 @@
     options = @[NSLocalizedString(@"help.tutorial", @""), NSLocalizedString(@"help.terms", @"")];
     //@"iconHelpRelatar"
     optionsIcons = @[@"iconTutorial", @"iconTerms"];
-    
-    contactUs = @[@"Facebook", @"Twitter"];
-    contactUsIcons = @[@"iconHelpFacebook", @"iconHelpTwitter"];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -97,22 +92,20 @@
 
 - (void)btnReport {
     if([Requester isConnected]){
-    ReportViewController *reportViewController = [[ReportViewController alloc] init];
-    [self.navigationController pushViewController:reportViewController animated:YES];
+        ReportViewController *reportViewController = [[ReportViewController alloc] init];
+        [self.navigationController pushViewController:reportViewController animated:YES];
     }else{
         [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
     }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return 2;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section==0){
-        return 2;
-    }else if(section==1){
         return 2;
     }else{
         return 1;
@@ -140,9 +133,6 @@
     if (indexPath.section==0) {
         cell.imageView.image = [UIImage imageNamed:optionsIcons[indexPath.row]];
         cell.textLabel.text = options[indexPath.row];
-    }else if (indexPath.section==1){
-        cell.imageView.image = [UIImage imageNamed:contactUsIcons[indexPath.row]];
-        cell.textLabel.text = contactUs[indexPath.row];
     }else {
         cell.imageView.image = [UIImage imageNamed:@"iconHelpRelatar"];
         cell.textLabel.text = NSLocalizedString(@"help.report_bug", @"");
@@ -160,12 +150,6 @@
             [self btnTutorial];
         }else{
             [self btnTerms];
-        }
-    }else if (indexPath.section == 1){
-        if (indexPath.row == 0) {
-            [self btnFacebook];
-        }else{
-            [self btnTwitter];
         }
     }else{
         [self btnReport];
