@@ -96,7 +96,7 @@
                         <action selector="btnAbout:" destination="-1" eventType="touchUpInside" id="2Ac-r4-QU7"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconHelpDefault" translatesAutoresizingMaskIntoConstraints="NO" id="eDp-cj-TwX">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_facebook_menu" translatesAutoresizingMaskIntoConstraints="NO" id="eDp-cj-TwX">
                     <rect key="frame" x="8" y="330" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="nzz-Z6-D1O"/>
@@ -115,7 +115,7 @@
                         <action selector="btnFacebookAction:" destination="-1" eventType="touchUpInside" id="zZH-hQ-ogc"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconHelpDefault" translatesAutoresizingMaskIntoConstraints="NO" id="8fr-g0-Fqs">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_twitter_menu" translatesAutoresizingMaskIntoConstraints="NO" id="8fr-g0-Fqs">
                     <rect key="frame" x="8" y="386" width="40" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="cfb-OD-lCh"/>
@@ -265,5 +265,7 @@
         <image name="iconHomeSelected" width="24" height="24"/>
         <image name="iconLogoutDefault" width="24" height="24"/>
         <image name="iconProfileDefault" width="24" height="24"/>
+        <image name="icon_facebook_menu" width="32" height="32"/>
+        <image name="icon_twitter_menu" width="32" height="32"/>
     </resources>
 </document>
