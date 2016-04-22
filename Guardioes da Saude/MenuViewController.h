@@ -26,6 +26,8 @@
 - (IBAction)btnExit:(id)sender;
 - (void) setHomeSelected;
 - (void) doLogout;
+- (IBAction)btnFacebookAction:(id)sender;
+- (IBAction)btnTwitterAction:(id)sender;
 
 + (MenuViewController *)getInstance;
 - (IBAction)btnLanguageAction:(id)sender;

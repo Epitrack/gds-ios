@@ -305,4 +305,12 @@
 
 }
 
+- (IBAction)btnFacebookAction:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/minsaude"]];
+}
+
+- (IBAction)btnTwitterAction:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/minsaude"]];
+}
+
 @end
