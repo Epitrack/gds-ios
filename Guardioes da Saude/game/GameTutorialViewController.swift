@@ -8,43 +8,24 @@
 
 import UIKit
 
-class GameTutorialViewController: UIViewController {
-
-    @IBOutlet weak var btnAnimate: UIButton!
-    var cardView: UIView!
-    var back: UIImageView!
-    var front: UIImageView!
-    var showingBack = true
+class GameTutorialViewController: UIViewController, UIPageViewControllerDataSource {
     
+    var pageController: UIPageViewController!
+    var index = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        pageController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
+        pageController.dataSource = self
+        pageController.view.frame = self.view.bounds
+        let initialViewController = viewControllerAtIndex(0)
+        let viewControllers = [initialViewController]
+        self.pageController.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         
-        front = UIImageView(image: UIImage(named: "bgWhite.png"))
-        back = UIImageView(image: UIImage(named: "BG_blur_menu.png"))
+        addChildViewController(pageController)
+        self.view.addSubview(pageController.view)
+        pageController.didMoveToParentViewController(self)
         
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        singleTap.numberOfTapsRequired = 1
-        
-        let rect = CGRectMake(20, 20, back.image!.size.width, back.image!.size.height)
-        cardView = UIView(frame: rect)
-        cardView.addGestureRecognizer(singleTap)
-        cardView.userInteractionEnabled = true
-        cardView.addSubview(back)
-        
-        view.addSubview(cardView)
-        
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    func tapped() {
-        if (showingBack) {
-            UIView.transitionFromView(back, toView: front, duration: 1, options: UIViewAnimationOptions.TransitionCurlDown, completion: nil)
-            showingBack = false
-        } else {
-            UIView.transitionFromView(front, toView: back, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromLeft, completion: nil)
-            showingBack = true
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,12 +33,46 @@ class GameTutorialViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    override func viewWillAppear(animated: Bool) {
-      
-    }
-
-    @IBAction func animate(sender: AnyObject) {
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        if let gameTutorialItemView = viewController as? GameTutorialItemViewController {
+            index = gameTutorialItemView.index!
+        }
         
+        index += 1
+        
+        if index == 5 {
+            return nil
+        }
+        
+        return viewControllerAtIndex(index)
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        if let gameTutorialItemView = viewController as? GameTutorialItemViewController {
+            index = gameTutorialItemView.index!
+        }
+        
+        if index == 0 {
+            return nil
+        }
+        
+        index -= 1
+        
+        return viewControllerAtIndex(index)
+    }
+    
+    func viewControllerAtIndex(index: Int) -> GameTutorialItemViewController{
+        let gameTutorialView = GameTutorialItemViewController()
+        gameTutorialView.index = index
+        
+        return gameTutorialView;
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 5;
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 0;
     }
 }

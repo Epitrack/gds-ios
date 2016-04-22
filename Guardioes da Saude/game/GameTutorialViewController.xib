@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameTutorialViewController" customModule="Guardioes_da_Saude" customModuleProvider="target">
             <connections>
-                <outlet property="btnAnimate" destination="h1q-zB-sgS" id="gkm-o2-Fdx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,21 +13,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1q-zB-sgS">
-                    <rect key="frame" x="137" y="521" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="animate:" destination="-1" eventType="touchUpInside" id="OZZ-nk-n5S"/>
-                    </connections>
-                </button>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="h1q-zB-sgS" secondAttribute="bottom" constant="17" id="V6Y-sm-YHg"/>
-                <constraint firstAttribute="trailing" secondItem="h1q-zB-sgS" secondAttribute="trailing" constant="137" id="qrV-1s-9pi"/>
-                <constraint firstItem="h1q-zB-sgS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="137" id="zy6-zu-NOA"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

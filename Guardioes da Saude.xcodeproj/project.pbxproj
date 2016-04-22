@@ -465,6 +465,8 @@
 		CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* LocationUtil.m */; };
 		CB8065A01CC7EA3600CD2F7A /* GameTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80659E1CC7EA3600CD2F7A /* GameTutorialViewController.swift */; };
 		CB8065A11CC7EA3600CD2F7A /* GameTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB80659F1CC7EA3600CD2F7A /* GameTutorialViewController.xib */; };
+		CB8065E91CCAC68F00CD2F7A /* GameTutorialItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */; };
+		CB8065EA1CCAC68F00CD2F7A /* GameTutorialItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8065E81CCAC68F00CD2F7A /* GameTutorialItemViewController.xib */; };
 		CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB8610071C3B4BBF009E63DF /* myhouse.gpx */; };
 		CB8FBADA1C60E1BC00696F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB8FBADC1C60E1BC00696F17 /* Localizable.strings */; };
 		CB9387431C491AE900446842 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9387421C491AE900446842 /* ViewUtil.m */; };
@@ -1058,6 +1060,8 @@
 		CB4E686F1C39B48700563FB7 /* LocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtil.m; sourceTree = "<group>"; };
 		CB80659E1CC7EA3600CD2F7A /* GameTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTutorialViewController.swift; path = game/GameTutorialViewController.swift; sourceTree = "<group>"; };
 		CB80659F1CC7EA3600CD2F7A /* GameTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameTutorialViewController.xib; path = game/GameTutorialViewController.xib; sourceTree = "<group>"; };
+		CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTutorialItemViewController.swift; path = game/GameTutorialItemViewController.swift; sourceTree = "<group>"; };
+		CB8065E81CCAC68F00CD2F7A /* GameTutorialItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameTutorialItemViewController.xib; path = game/GameTutorialItemViewController.xib; sourceTree = "<group>"; };
 		CB8610071C3B4BBF009E63DF /* myhouse.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = myhouse.gpx; sourceTree = "<group>"; };
 		CB8FBADE1C60E1D500696F17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB8FBADF1C60E2C900696F17 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -1862,6 +1866,8 @@
 			children = (
 				CB80659E1CC7EA3600CD2F7A /* GameTutorialViewController.swift */,
 				CB80659F1CC7EA3600CD2F7A /* GameTutorialViewController.xib */,
+				CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */,
+				CB8065E81CCAC68F00CD2F7A /* GameTutorialItemViewController.xib */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -2052,6 +2058,7 @@
 				52D2BC8C1BF12EBF007C9C09 /* icon_well_dash.png in Resources */,
 				52E6F0891C209A6B00C88A08 /* DetailPhoneViewController.xib in Resources */,
 				52E727961BEA93B800B46945 /* icon_noticias@3x.png in Resources */,
+				CB8065EA1CCAC68F00CD2F7A /* GameTutorialItemViewController.xib in Resources */,
 				52E727561BEA93B800B46945 /* icon_about@2x.png in Resources */,
 				52E727C61BEA93B800B46945 /* img_profile01@3x.png in Resources */,
 				52E727241BEA93B800B46945 /* BG_blur_menu@3x.png in Resources */,
@@ -2529,6 +2536,7 @@
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
 				CBBF75E61CA192060083C85A /* GDSLabel.m in Sources */,
 				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,
+				CB8065E91CCAC68F00CD2F7A /* GameTutorialItemViewController.swift in Sources */,
 				CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */,
 				520EB7191C21EF670054D818 /* ZikaViewController.m in Sources */,
 				528C8B011BB82630003CFC91 /* AppDelegate.m in Sources */,
