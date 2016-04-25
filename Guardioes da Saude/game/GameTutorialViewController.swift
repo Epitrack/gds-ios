@@ -62,7 +62,7 @@ class GameTutorialViewController: UIViewController, UIPageViewControllerDataSour
         
         index += 1
         
-        if index == 5 {
+        if index == 6 {
             return nil
         }
         
@@ -91,7 +91,7 @@ class GameTutorialViewController: UIViewController, UIPageViewControllerDataSour
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 5;
+        return 6;
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {

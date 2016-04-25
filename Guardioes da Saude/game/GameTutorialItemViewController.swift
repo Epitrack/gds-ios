@@ -27,17 +27,17 @@ class GameTutorialItemViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         switch index {
         case 0:
-            self.lbPageNumber.text = "Bem-vindo a nossa pista de corrida! \nArraste para saber mais sobre como jogar."
+            self.lbPageNumber.text = NSLocalizedString("game_tutorial.welcome", comment: "")
         case 1:
-            self.lbPageNumber.text = "Para jogar, é preciso ter pontos de energia.\nParticipe diariamente do Guardiões\nda Saúde para ganhá-los!"
+            self.lbPageNumber.text = NSLocalizedString("game_tutorial.how_play", comment: "")
         case 2:
-            self.lbPageNumber.text = "Nossa pista de corrida é formada por\nfases. Conclua cada fase para chegar\nmais longe na corrida!"
+            self.lbPageNumber.text = NSLocalizedString("game_tutorial.rota", comment: "")
         case 3:
-            self.lbPageNumber.text = "Cada fase contém um quebra-cabeça.\nComplete-o para passar de fase."
+            self.lbPageNumber.text = NSLocalizedString("game_tutorial.fases", comment: "")
         case 4:
-            self.lbPageNumber.text = "Responda corretamente as perguntas\nsobre saúde para revelar peças."
+            self.lbPageNumber.text = NSLocalizedString("game_tutorial.correct_answer", comment: "")
         case 5:
-            self.lbPageNumber.text = "Colecione figurinhas dos esportes \nolímpicos após concluir cada fase!"
+            self.lbPageNumber.text = NSLocalizedString("game_tutorial.collect_pictures", comment: "")
         default:
             self.lbPageNumber.text = "Screen #\(self.index)"
         }

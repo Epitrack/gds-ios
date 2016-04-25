@@ -315,3 +315,12 @@
 
 // Traveler Health
 "traveler_health.title" = "Saúde do Viajante";
+
+// GAME TUTORIAL
+"game_tutorial.next" = "Próximo";
+"game_tutorial.welcome" = "Bem-vindo a nossa pista de corrida! \nArraste para saber mais sobre como jogar.";
+"game_tutorial.how_play" = "Para jogar, é preciso ter pontos de energia.\nParticipe diariamente do Guardiões\nda Saúde para ganhá-los!";
+"game_tutorial.rota" = "Nossa pista de corrida é formada por\nfases. Conclua cada fase para chegar\nmais longe na corrida!";
+"game_tutorial.fases" = "Cada fase contém um quebra-cabeça.\nComplete-o para passar de fase.";
+"game_tutorial.correct_answer" = "Responda corretamente as perguntas\nsobre saúde para revelar peças.";
+"game_tutorial.collect_pictures" = "Colecione figurinhas dos esportes \nolímpicos após concluir cada fase!";

@@ -472,6 +472,8 @@
 		CB9387431C491AE900446842 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9387421C491AE900446842 /* ViewUtil.m */; };
 		CB9DC5831C871E57006E627C /* icon_twitternews.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9DC5821C871E57006E627C /* icon_twitternews.png */; };
 		CB9DC5851C88D001006E627C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9DC5841C88D001006E627C /* GoogleService-Info.plist */; };
+		CB9F37A01CCEC726008D5ACF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9F379E1CCEC726008D5ACF /* StartViewController.swift */; };
+		CB9F37A11CCEC726008D5ACF /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9F379F1CCEC726008D5ACF /* StartViewController.xib */; };
 		CBA0E52A1C5FA5EC0086315B /* img_profile13.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50C1C5FA5EC0086315B /* img_profile13.png */; };
 		CBA0E52B1C5FA5EC0086315B /* img_profile13@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50D1C5FA5EC0086315B /* img_profile13@2x.png */; };
 		CBA0E52C1C5FA5EC0086315B /* img_profile13@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50E1C5FA5EC0086315B /* img_profile13@3x.png */; };
@@ -1071,6 +1073,8 @@
 		CB9387421C491AE900446842 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
 		CB9DC5821C871E57006E627C /* icon_twitternews.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_twitternews.png; sourceTree = "<group>"; };
 		CB9DC5841C88D001006E627C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CB9F379E1CCEC726008D5ACF /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = game/StartViewController.swift; sourceTree = "<group>"; };
+		CB9F379F1CCEC726008D5ACF /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartViewController.xib; path = game/StartViewController.xib; sourceTree = "<group>"; };
 		CBA0E50C1C5FA5EC0086315B /* img_profile13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_profile13.png; sourceTree = "<group>"; };
 		CBA0E50D1C5FA5EC0086315B /* img_profile13@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile13@2x.png"; sourceTree = "<group>"; };
 		CBA0E50E1C5FA5EC0086315B /* img_profile13@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile13@3x.png"; sourceTree = "<group>"; };
@@ -1868,6 +1872,8 @@
 				CB80659F1CC7EA3600CD2F7A /* GameTutorialViewController.xib */,
 				CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */,
 				CB8065E81CCAC68F00CD2F7A /* GameTutorialItemViewController.xib */,
+				CB9F379E1CCEC726008D5ACF /* StartViewController.swift */,
+				CB9F379F1CCEC726008D5ACF /* StartViewController.xib */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -2075,6 +2081,7 @@
 				52E7278A1BEA93B800B46945 /* icon_logo_tutorial@3x.png in Resources */,
 				52E727371BEA93B800B46945 /* button_default.png in Resources */,
 				52E727321BEA93B800B46945 /* BG_dark@2x.png in Resources */,
+				CB9F37A11CCEC726008D5ACF /* StartViewController.xib in Resources */,
 				52E6F09E1C20B18E00C88A08 /* iconPM.png in Resources */,
 				52E727BC1BEA93B800B46945 /* icon_well@2x.png in Resources */,
 				CB9DC5831C871E57006E627C /* icon_twitternews.png in Resources */,
@@ -2485,6 +2492,7 @@
 			files = (
 				52E6F0641C1B5AA900C88A08 /* ForgotPasswordViewController.m in Sources */,
 				CBFF73A61CAC662A006C617A /* ParticipantsListViewController.m in Sources */,
+				CB9F37A01CCEC726008D5ACF /* StartViewController.swift in Sources */,
 				52EC0D7B1C31626800EC8908 /* DateUtil.m in Sources */,
 				52EC50441BF026CC002FEACE /* ImageUtility.m in Sources */,
 				258F14E31BCEE3CC00CE86B7 /* User.m in Sources */,
