@@ -21,7 +21,8 @@
     NSString * url = [NSString stringWithFormat: @"%@/news/get", [self getUrl]];
     
     [self doGet: url
-         header: @{ @"user_token": user.user_token }
+         header: @{ @"user_token": user.user_token,
+                    @"app_token": user.app_token}
       parameter: nil
           start: onStart
      
