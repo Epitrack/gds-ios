@@ -12,20 +12,42 @@ class GameTutorialViewController: UIViewController, UIPageViewControllerDataSour
     
     var pageController: UIPageViewController!
     var index = 0
+    var titleBarImage: UIImageView!
 
+    @IBOutlet weak var presentationView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pageController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
         pageController.dataSource = self
-        pageController.view.frame = self.view.bounds
+        pageController.view.frame = self.presentationView.bounds
         let initialViewController = viewControllerAtIndex(0)
         let viewControllers = [initialViewController]
         self.pageController.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         
         addChildViewController(pageController)
-        self.view.addSubview(pageController.view)
+        self.presentationView.addSubview(pageController.view)
         pageController.didMoveToParentViewController(self)
         
+        let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = btnBack
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if self.titleBarImage == nil {
+            self.titleBarImage = UIImageView(image: UIImage(named: "gdSToolbar"))
+            let imgSize = CGSize(width: 400, height: 70)
+            let imgXPoint = ((self.navigationController?.navigationBar.frame.size.width)!/2) - (imgSize.width/2)
+            self.titleBarImage.frame = CGRectMake(imgXPoint, -25, imgSize.width, imgSize.height)
+        }
+        
+        self.navigationController?.navigationBar.addSubview(self.titleBarImage)
+        
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.titleBarImage.removeFromSuperview()
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,5 +96,8 @@ class GameTutorialViewController: UIViewController, UIPageViewControllerDataSour
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0;
+    }
+    @IBAction func btnNext(sender: AnyObject) {
+        
     }
 }

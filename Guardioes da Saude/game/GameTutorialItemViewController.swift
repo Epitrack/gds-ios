@@ -10,12 +10,12 @@ import UIKit
 
 class GameTutorialItemViewController: UIViewController {
     
-    var index: Int?
+    var index: Int!
     @IBOutlet weak var lbPageNumber: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.backBarButtonItem?.title = ""
         // Do any additional setup after loading the view.
     }
 
@@ -25,7 +25,22 @@ class GameTutorialItemViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.lbPageNumber.text = "Screen #\(self.index)"
+        switch index {
+        case 0:
+            self.lbPageNumber.text = "Bem-vindo a nossa pista de corrida! \nArraste para saber mais sobre como jogar."
+        case 1:
+            self.lbPageNumber.text = "Para jogar, é preciso ter pontos de energia.\nParticipe diariamente do Guardiões\nda Saúde para ganhá-los!"
+        case 2:
+            self.lbPageNumber.text = "Nossa pista de corrida é formada por\nfases. Conclua cada fase para chegar\nmais longe na corrida!"
+        case 3:
+            self.lbPageNumber.text = "Cada fase contém um quebra-cabeça.\nComplete-o para passar de fase."
+        case 4:
+            self.lbPageNumber.text = "Responda corretamente as perguntas\nsobre saúde para revelar peças."
+        case 5:
+            self.lbPageNumber.text = "Colecione figurinhas dos esportes \nolímpicos após concluir cada fase!"
+        default:
+            self.lbPageNumber.text = "Screen #\(self.index)"
+        }
     }
     
 
