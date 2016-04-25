@@ -16,7 +16,8 @@
     NSString * url = [NSString stringWithFormat: @"%@/household/survey/summary?", [self getUrl]];
     
     [self doGet: url
-         header: @{ @"user_token": user.user_token }
+         header: @{ @"user_token": user.user_token,
+                    @"app_token": user.app_token}
       parameter: @{ @"household_id": household.idHousehold }
           start: onStart
      
@@ -62,7 +63,8 @@
                                  @"household_id": household.idHousehold };
     
     [self doGet: url
-         header: @{ @"user_token": user.user_token }
+         header: @{ @"user_token": user.user_token,
+                    @"app_token": user.app_token}
       parameter: paramMap
           start: onStart
      
@@ -140,7 +142,8 @@
     NSString * url = [NSString stringWithFormat: @"%@/household/calendar/year?", [self getUrl]];
     
     [self doGet: url
-         header: @{ @"user_token": user.user_token }
+         header: @{ @"user_token": user.user_token,
+                    @"app_token": user.app_token}
       parameter: @{ @"year": [NSNumber numberWithInt: year],
                     @"household_id": household.idHousehold }
      

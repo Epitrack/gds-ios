@@ -8,7 +8,7 @@
 
 // CONSTANT MSGs
 "constant.check_connection" = "Por favor verifique sua conexão!";
-"constant.comunication_error" = "Ocorreu um erro de comunição!";
+"constant.comunication_error" = "Ocorreu um erro de comunicação!";
 "constant.yes" = "Sim";
 "constant.no" = "Não";
 "constant.ok" = "OK";
@@ -23,7 +23,7 @@
 "home.map_health" = "Mapa da Saúde";
 "home.tips_health" = "Dicas de Saúde";
 "home.join_us" = "Participe Agora!";
-"home.diary_health" = "Diáro da Saúde";
+"home.diary_health" = "Diário da Saúde";
 
 // ENTER VIEW
 "enter.email" = "E-mail";
@@ -48,7 +48,7 @@
 "tutorial.sign_up" = "Cadastre-se";
 "tutorial.sign_in" = "Entrar";
 "tutorial.how_is_your_health" = "Como está sua saúde?";
-"tutorial.check_your_symptoms" = "Maque na lista os sintomas que você apresenta.";
+"tutorial.check_your_symptoms" = "Marque na lista os sintomas que você apresenta.";
 "tutorial.health_map" = "Mapa da Saúde";
 "tutorial.health_map_description" = "Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
 "tutorial.health_tips" = "Dicas de Saúde";
@@ -63,10 +63,10 @@
 "modal_priv.description" = "• Sua participação é voluntária e anônima\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Para maiores informações, consulte os Termos de Uso";
 
 // FORGOT PASSWORD VIEW
-"forgot_password.label" = "Digite seu email e verifique a sua caixa de entrada.";
+"forgot_password.label" = "Digite seu e-mail e verifique a sua caixa de entrada.";
 "forgot_password.email" = "E-mail";
 "forgot_password.send" = "Enviar";
-"forgot_password.success" = "Email enviado com sucesso.";
+"forgot_password.success" = "E-mail enviado com sucesso.";
 "forgot_password.user_not_found" = "E-mail não encontrado!";
 
 // SIGN UP VIEW
@@ -125,13 +125,13 @@
 "help.terms" = "Termos e Políticas";
 "help.options" = "Opções";
 "help.contact_us" = "Entre em contato";
-"help.report_bug" = "Relatar errors no aplicativo";
+"help.report_bug" = "Relatar erros no aplicativo";
 
 // TERMS VIEW
 "terms.title" = "Termos e Políticas";
 "terms.facebook_error" = "Erro ao logar com o Facebook.";
 "terms.operation_canceled" = "Operação cancelada.";
-"terms.social_network_in_using" = "Cadastro realizado anterioremente com essa rede social.";
+"terms.social_network_in_using" = "Cadastro realizado anteriormente com essa rede social.";
 "terms.sociel_network_error" = "Não foi possível realizar o cadastro. Tente novamente em alguns minutos!";
 "terms.decline" = "Não aceito";
 "terms.i_agree" = "Aceito";

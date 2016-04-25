@@ -164,8 +164,8 @@
     }
     
     [self doGet: url
-         header: @{@"app_token": user.app_token,
-                   @"user_token": user.user_token }
+         header: @{ @"user_token": user.user_token,
+                    @"app_token": user.app_token}
       parameter: nil
           start: onStart
      
@@ -216,8 +216,8 @@
                                  @"year": [NSNumber numberWithInteger: year] };
     
     [self doGet: url
-         header: @{@"app_token": user.app_token,
-                   @"user_token": user.user_token }
+         header: @{ @"user_token": user.user_token,
+                    @"app_token": user.app_token}
       parameter: paramMap
           start: onStart
           error: ^(AFHTTPRequestOperation * request, NSError * error) {
@@ -296,7 +296,8 @@
     NSDateComponents* components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:data];
     
     [self doGet:url
-         header:@{@"user_token": user.user_token}
+         header:@{@"user_token": user.user_token,
+                  @"app_token": user.app_token}
       parameter:@{@"day": [NSString stringWithFormat:@"%d", (int) [components day]],
                   @"month": [NSString stringWithFormat:@"%d", (int) [components month]],
                   @"year": [NSString stringWithFormat:@"%d", (int) [components year]]}
@@ -355,8 +356,8 @@
     }
     
     [self doGet: url
-         header: @{@"app_token": user.app_token,
-                   @"user_token": user.user_token }
+         header: @{ @"user_token": user.user_token,
+                    @"app_token": user.app_token}
       parameter: @{ @"year": [NSNumber numberWithInt: year] }
           start: onStart
      
@@ -426,7 +427,8 @@
     
     
     [self doPost:[[self getUrl] stringByAppendingString:@"/user/update"]
-          header:@{@"user_token": user.user_token, @"app_token": user.app_token}
+          header:@{@"user_token": user.user_token,
+                   @"app_token": user.app_token}
        parameter:params
            start:^(void){
         
