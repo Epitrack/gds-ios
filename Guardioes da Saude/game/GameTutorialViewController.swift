@@ -12,7 +12,7 @@ class GameTutorialViewController: UIViewController, UIPageViewControllerDataSour
     
     var pageController: UIPageViewController!
     var index = 0
-    var titleBarImage: UIImageView!
+    var titleBarImage: UIImageView?
 
     @IBOutlet weak var presentationView: UIView!
     
@@ -34,20 +34,22 @@ class GameTutorialViewController: UIViewController, UIPageViewControllerDataSour
     }
     
     override func viewWillAppear(animated: Bool) {
-        if self.titleBarImage == nil {
+        if let _ = self.titleBarImage {
+            self.navigationController?.navigationBar.addSubview(self.titleBarImage!)
+        }else{
             self.titleBarImage = UIImageView(image: UIImage(named: "gdSToolbar"))
             let imgSize = CGSize(width: 400, height: 70)
             let imgXPoint = ((self.navigationController?.navigationBar.frame.size.width)!/2) - (imgSize.width/2)
-            self.titleBarImage.frame = CGRectMake(imgXPoint, -25, imgSize.width, imgSize.height)
+            self.titleBarImage?.frame = CGRectMake(imgXPoint, -25, imgSize.width, imgSize.height)
+            
+            self.navigationController?.navigationBar.addSubview(self.titleBarImage!)
         }
-        
-        self.navigationController?.navigationBar.addSubview(self.titleBarImage)
-        
-        super.viewWillAppear(animated)
     }
-    
+
     override func viewWillDisappear(animated: Bool) {
-        self.titleBarImage.removeFromSuperview()
+        if let _ = self.titleBarImage {
+            self.titleBarImage?.removeFromSuperview()
+        }
     }
 
     override func didReceiveMemoryWarning() {
