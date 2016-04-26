@@ -98,6 +98,7 @@ class GameTutorialViewController: UIViewController, UIPageViewControllerDataSour
         return 0;
     }
     @IBAction func btnNext(sender: AnyObject) {
-        
+        let startGameView = StartViewController()
+        self.navigationController?.pushViewController(startGameView, animated: true)
     }
 }

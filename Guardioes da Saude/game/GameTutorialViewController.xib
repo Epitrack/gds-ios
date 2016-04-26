@@ -16,8 +16,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_olympcis" translatesAutoresizingMaskIntoConstraints="NO" id="CnR-gv-Gcp">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_tutorial_game" translatesAutoresizingMaskIntoConstraints="NO" id="CnR-gv-Gcp">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_detailolympcis" translatesAutoresizingMaskIntoConstraints="NO" id="Wrw-Ww-8g8">
+                    <rect key="frame" x="0.0" y="60" width="320" height="71"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Wrw-Ww-8g8" secondAttribute="height" multiplier="320:71" id="2ZR-yJ-ffa"/>
+                    </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2i8-CN-xDy">
                     <rect key="frame" x="28" y="506" width="264" height="36"/>
@@ -38,6 +44,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="2i8-CN-xDy" secondAttribute="trailing" constant="28" id="3Dv-cv-XJ1"/>
+                <constraint firstItem="Wrw-Ww-8g8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="4Wd-wE-VMT"/>
                 <constraint firstItem="2i8-CN-xDy" firstAttribute="top" secondItem="mwT-zc-VWU" secondAttribute="bottom" constant="8" id="4ig-od-Qhz"/>
                 <constraint firstItem="CnR-gv-Gcp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5KR-Di-azo"/>
                 <constraint firstItem="mwT-zc-VWU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Eba-bS-LaA"/>
@@ -45,6 +52,8 @@
                 <constraint firstItem="mwT-zc-VWU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qg0-Kv-goh"/>
                 <constraint firstAttribute="bottom" secondItem="2i8-CN-xDy" secondAttribute="bottom" constant="26" id="WHr-X7-tG3"/>
                 <constraint firstAttribute="bottom" secondItem="CnR-gv-Gcp" secondAttribute="bottom" id="YaT-TT-Dfq"/>
+                <constraint firstAttribute="trailing" secondItem="Wrw-Ww-8g8" secondAttribute="trailing" id="pw9-p1-EEE"/>
+                <constraint firstItem="Wrw-Ww-8g8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rYP-Im-Odv"/>
                 <constraint firstAttribute="trailing" secondItem="mwT-zc-VWU" secondAttribute="trailing" id="udb-Dp-qbT"/>
                 <constraint firstItem="CnR-gv-Gcp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ufM-on-MbD"/>
                 <constraint firstAttribute="trailing" secondItem="CnR-gv-Gcp" secondAttribute="trailing" id="yeO-kI-KUY"/>
@@ -53,7 +62,8 @@
         </view>
     </objects>
     <resources>
-        <image name="bg_olympcis" width="320" height="568"/>
+        <image name="bg_detailolympcis" width="320" height="95"/>
+        <image name="bg_tutorial_game" width="320" height="568"/>
         <image name="btn_olympics" width="258" height="38"/>
     </resources>
 </document>
