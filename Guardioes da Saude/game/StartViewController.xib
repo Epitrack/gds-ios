@@ -24,6 +24,9 @@
                         <constraint firstAttribute="width" secondItem="pCg-mE-nDL" secondAttribute="height" multiplier="124:119" id="bhz-Pu-WDq"/>
                     </constraints>
                     <state key="normal" image="icon_ranking"/>
+                    <connections>
+                        <action selector="btnMedalAction:" destination="-1" eventType="touchUpInside" id="dNe-Eh-E62"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd9-oT-eXY">
                     <rect key="frame" x="206" y="449" width="114" height="119"/>
@@ -31,6 +34,9 @@
                         <constraint firstAttribute="width" secondItem="nd9-oT-eXY" secondAttribute="height" multiplier="114:119" id="cgZ-r0-clC"/>
                     </constraints>
                     <state key="normal" image="icon_trofeus"/>
+                    <connections>
+                        <action selector="btnTrofeuAction:" destination="-1" eventType="touchUpInside" id="YJI-W8-ewr"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_display_points" translatesAutoresizingMaskIntoConstraints="NO" id="M9t-h6-NzO">
                     <rect key="frame" x="105" y="498" width="113" height="32"/>

@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import AVFoundation
 
 class StartViewController: UIViewController {
     
     var titleBarImage: UIImageView?
+    var audioPlayer: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = btnBack
-        // Do any additional setup after loading the view.
+        
+        let path = NSBundle.mainBundle().pathForResource("effect_button", ofType: "mp3")
+        if let _ = path {
+            let url = NSURL.fileURLWithPath(path!)
+            
+            do{
+                try self.audioPlayer = AVAudioPlayer(contentsOfURL: url)
+            }catch{
+                print("asdasdasdasd")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,4 +56,21 @@ class StartViewController: UIViewController {
         }
     }
 
+    @IBAction func btnMedalAction(sender: AnyObject) {
+        self.playSoundButton()
+    }
+    
+    @IBAction func btnTrofeuAction(sender: AnyObject) {
+        self.playSoundButton()
+    }
+    
+    func playSoundButton() {
+        if let _ = self.audioPlayer {
+            if audioPlayer!.playing {
+                audioPlayer!.stop()
+                audioPlayer?.currentTime = 0
+            }
+            audioPlayer!.play()
+        }
+    }
 }

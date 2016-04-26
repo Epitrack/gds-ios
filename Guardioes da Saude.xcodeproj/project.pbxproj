@@ -474,6 +474,7 @@
 		CB9DC5851C88D001006E627C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9DC5841C88D001006E627C /* GoogleService-Info.plist */; };
 		CB9F37A01CCEC726008D5ACF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9F379E1CCEC726008D5ACF /* StartViewController.swift */; };
 		CB9F37A11CCEC726008D5ACF /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9F379F1CCEC726008D5ACF /* StartViewController.xib */; };
+		CB9F37A81CD001F3008D5ACF /* effect_button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB9F37A71CD001F3008D5ACF /* effect_button.mp3 */; };
 		CBA0E52A1C5FA5EC0086315B /* img_profile13.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50C1C5FA5EC0086315B /* img_profile13.png */; };
 		CBA0E52B1C5FA5EC0086315B /* img_profile13@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50D1C5FA5EC0086315B /* img_profile13@2x.png */; };
 		CBA0E52C1C5FA5EC0086315B /* img_profile13@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50E1C5FA5EC0086315B /* img_profile13@3x.png */; };
@@ -1075,6 +1076,7 @@
 		CB9DC5841C88D001006E627C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB9F379E1CCEC726008D5ACF /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = game/StartViewController.swift; sourceTree = "<group>"; };
 		CB9F379F1CCEC726008D5ACF /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartViewController.xib; path = game/StartViewController.xib; sourceTree = "<group>"; };
+		CB9F37A71CD001F3008D5ACF /* effect_button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = effect_button.mp3; sourceTree = "<group>"; };
 		CBA0E50C1C5FA5EC0086315B /* img_profile13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_profile13.png; sourceTree = "<group>"; };
 		CBA0E50D1C5FA5EC0086315B /* img_profile13@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile13@2x.png"; sourceTree = "<group>"; };
 		CBA0E50E1C5FA5EC0086315B /* img_profile13@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile13@3x.png"; sourceTree = "<group>"; };
@@ -1474,6 +1476,7 @@
 		8829B5381BB9D5A400F4C75A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CB9F37A71CD001F3008D5ACF /* effect_button.mp3 */,
 				CBBC1E041C99905B0079A8D6 /* imgDialogTerms.png */,
 				CB9DC5821C871E57006E627C /* icon_twitternews.png */,
 				520EB7101C21EF220054D818 /* buttonEmailDisable.png */,
@@ -2056,6 +2059,7 @@
 				52E727C51BEA93B800B46945 /* img_profile01@2x.png in Resources */,
 				52E727881BEA93B800B46945 /* icon_logo_tutorial.png in Resources */,
 				528705BA1BF3744600321985 /* PhonesViewController.xib in Resources */,
+				CB9F37A81CD001F3008D5ACF /* effect_button.mp3 in Resources */,
 				52E727B81BEA93B800B46945 /* icon_twitter.png in Resources */,
 				52E7271D1BEA93B800B46945 /* button_default_white@2x.png in Resources */,
 				52E727BA1BEA93B800B46945 /* icon_twitter@3x.png in Resources */,
