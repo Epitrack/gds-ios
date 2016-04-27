@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_barra" translatesAutoresizingMaskIntoConstraints="NO" id="7dt-ex-eDp">
-                    <rect key="frame" x="19" y="459" width="286" height="110"/>
+                    <rect key="frame" x="19" y="458.5" width="286" height="110"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCg-mE-nDL">
                     <rect key="frame" x="0.0" y="449" width="124" height="119"/>
@@ -39,10 +39,10 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_display_points" translatesAutoresizingMaskIntoConstraints="NO" id="M9t-h6-NzO">
-                    <rect key="frame" x="105" y="498" width="113" height="32"/>
+                    <rect key="frame" x="105" y="497.5" width="113" height="32"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Energias" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCA-7e-Xn7">
-                    <rect key="frame" x="105" y="507" width="113" height="17"/>
+                    <rect key="frame" x="105" y="506.5" width="113" height="17"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                     <color key="textColor" red="0.094117648899555206" green="0.42352941632270813" blue="0.71764707565307617" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
