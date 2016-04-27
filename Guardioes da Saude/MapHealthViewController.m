@@ -20,6 +20,8 @@
 #import <Google/Analytics.h>
 @import Charts;
 
+#define constDistance 15000
+
 @interface MapHealthViewController ()
 @property (nonatomic, weak) IBOutlet PieChartView * pieChartView;
 @end
@@ -145,7 +147,7 @@
 - (void) mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
     
     MKAnnotationView *v = [views objectAtIndex:0];
-    CLLocationDistance distance = 2000;
+    CLLocationDistance distance = constDistance;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([v.annotation coordinate], distance, distance);
     [self.mapHealth setRegion:region animated:YES];
 }
@@ -425,7 +427,7 @@
     
     [LocationUtil getLocationByAddress:self.seach.text onSuccess:^(NSString *lng, NSString *lat, NSString *fullNameCity){
         CLLocationCoordinate2D coordenada = CLLocationCoordinate2DMake([lat doubleValue], [lng doubleValue]);
-        CLLocationDistance distance = 2000;
+        CLLocationDistance distance = constDistance;
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordenada, distance, distance);
         [self.mapHealth setRegion:region animated:YES];
     }onFail:^(NSError *error){

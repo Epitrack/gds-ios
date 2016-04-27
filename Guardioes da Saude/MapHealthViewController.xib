@@ -59,7 +59,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8S8-Jl-wxO">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S8-Jl-wxO">
                     <rect key="frame" x="0.0" y="63" width="320" height="505"/>
                 </mapView>
                 <searchBar contentMode="redraw" placeholder="Nome da Cidade" translatesAutoresizingMaskIntoConstraints="NO" id="zon-Qs-2fy">
