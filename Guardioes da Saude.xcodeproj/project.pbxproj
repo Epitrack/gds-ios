@@ -475,6 +475,8 @@
 		CB9F37A01CCEC726008D5ACF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9F379E1CCEC726008D5ACF /* StartViewController.swift */; };
 		CB9F37A11CCEC726008D5ACF /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9F379F1CCEC726008D5ACF /* StartViewController.xib */; };
 		CB9F37A81CD001F3008D5ACF /* effect_button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB9F37A71CD001F3008D5ACF /* effect_button.mp3 */; };
+		CB9F37B51CD1452A008D5ACF /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9F37B31CD1452A008D5ACF /* LevelViewController.swift */; };
+		CB9F37B61CD1452A008D5ACF /* LevelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9F37B41CD1452A008D5ACF /* LevelViewController.xib */; };
 		CBA0E52A1C5FA5EC0086315B /* img_profile13.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50C1C5FA5EC0086315B /* img_profile13.png */; };
 		CBA0E52B1C5FA5EC0086315B /* img_profile13@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50D1C5FA5EC0086315B /* img_profile13@2x.png */; };
 		CBA0E52C1C5FA5EC0086315B /* img_profile13@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA0E50E1C5FA5EC0086315B /* img_profile13@3x.png */; };
@@ -1077,6 +1079,8 @@
 		CB9F379E1CCEC726008D5ACF /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = game/StartViewController.swift; sourceTree = "<group>"; };
 		CB9F379F1CCEC726008D5ACF /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartViewController.xib; path = game/StartViewController.xib; sourceTree = "<group>"; };
 		CB9F37A71CD001F3008D5ACF /* effect_button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = effect_button.mp3; sourceTree = "<group>"; };
+		CB9F37B31CD1452A008D5ACF /* LevelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelViewController.swift; path = game/LevelViewController.swift; sourceTree = "<group>"; };
+		CB9F37B41CD1452A008D5ACF /* LevelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LevelViewController.xib; path = game/LevelViewController.xib; sourceTree = "<group>"; };
 		CBA0E50C1C5FA5EC0086315B /* img_profile13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_profile13.png; sourceTree = "<group>"; };
 		CBA0E50D1C5FA5EC0086315B /* img_profile13@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile13@2x.png"; sourceTree = "<group>"; };
 		CBA0E50E1C5FA5EC0086315B /* img_profile13@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_profile13@3x.png"; sourceTree = "<group>"; };
@@ -1877,6 +1881,8 @@
 				CB8065E81CCAC68F00CD2F7A /* GameTutorialItemViewController.xib */,
 				CB9F379E1CCEC726008D5ACF /* StartViewController.swift */,
 				CB9F379F1CCEC726008D5ACF /* StartViewController.xib */,
+				CB9F37B31CD1452A008D5ACF /* LevelViewController.swift */,
+				CB9F37B41CD1452A008D5ACF /* LevelViewController.xib */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -2110,6 +2116,7 @@
 				52E7275A1BEA93B800B46945 /* icon_bad@3x.png in Resources */,
 				52E7274F1BEA93B800B46945 /* fab_location.png in Resources */,
 				52EBA7531C11DD0E0019E1FA /* buttonTwitterDesable@2x.png in Resources */,
+				CB9F37B61CD1452A008D5ACF /* LevelViewController.xib in Resources */,
 				CB362B371C7B48DA00BE4F23 /* icon_about_default.png in Resources */,
 				52E727A81BEA93B800B46945 /* icon_question@3x.png in Resources */,
 				52E727451BEA93B800B46945 /* button_google@3x.png in Resources */,
@@ -2505,6 +2512,7 @@
 				524C14221BEBCEE6003A6C2D /* HealthTipsViewController.m in Sources */,
 				AAE38B381BF9211D009CD20B /* Requester.m in Sources */,
 				524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */,
+				CB9F37B51CD1452A008D5ACF /* LevelViewController.swift in Sources */,
 				52DBBA711BFE6CCC00900D22 /* NewsRequester.m in Sources */,
 				AAE38B3F1BFA2425009CD20B /* SurveyRequester.m in Sources */,
 				524C14361BEBE533003A6C2D /* BasicCareViewController.m in Sources */,

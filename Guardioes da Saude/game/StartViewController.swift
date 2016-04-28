@@ -27,7 +27,7 @@ class StartViewController: UIViewController {
             do{
                 try self.audioPlayer = AVAudioPlayer(contentsOfURL: url)
             }catch{
-                print("asdasdasdasd")
+                
             }
         }
     }
@@ -62,6 +62,9 @@ class StartViewController: UIViewController {
     
     @IBAction func btnTrofeuAction(sender: AnyObject) {
         self.playSoundButton()
+        let levelView = LevelViewController()
+        self.navigationController?.pushViewController(levelView, animated: false)
+        
     }
     
     func playSoundButton() {
