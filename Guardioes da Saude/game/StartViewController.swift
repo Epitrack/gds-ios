@@ -14,11 +14,15 @@ class StartViewController: UIViewController {
     var titleBarImage: UIImageView?
     var audioPlayer: AVAudioPlayer?
     var circleLayer: CAShapeLayer!
+    var breakTime = false
 
     @IBOutlet weak var viewQuestion: UIView!
     @IBOutlet weak var viewQuestionTimer: UIView!
     @IBOutlet weak var lbTimer: UILabel!
     
+    @IBOutlet weak var btnAnswer1: UIButton!
+    @IBOutlet weak var btnAnswer2: UIButton!
+    @IBOutlet weak var btnAnswer3: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -77,9 +81,15 @@ class StartViewController: UIViewController {
         // Do the actual animation
         circleLayer.addAnimation(animation, forKey: "animateCircle")
         
+        
+        
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         dispatch_async(queue, {
             for i in 1...15 {
+                if self.breakTime {
+                    break
+                }
+                
                 dispatch_async(dispatch_get_main_queue()) {
                     self.lbTimer.text = "\(i)"
                 }
@@ -111,6 +121,13 @@ class StartViewController: UIViewController {
             self.titleBarImage?.removeFromSuperview()
         }
     }
+    
+    func resetQuestionDialog() {
+        breakTime = false
+        btnAnswer1.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
+        btnAnswer2.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
+        btnAnswer3.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
+    }
 
     @IBAction func btnMedalAction(sender: AnyObject) {
         self.playSoundButton()
@@ -131,6 +148,7 @@ class StartViewController: UIViewController {
             self.viewQuestion.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         }) { (finished: Bool) -> Void in
             self.viewQuestion.hidden = true
+            self.resetQuestionDialog()
         }
     }
     
@@ -154,5 +172,12 @@ class StartViewController: UIViewController {
             }
             audioPlayer!.play()
         }
+    }
+    @IBAction func btnAnswerAction(sender: AnyObject) {
+        btnAnswer1.setBackgroundImage(UIImage(named: "btn_correct_answer"), forState: UIControlState.Normal)
+        btnAnswer2.setBackgroundImage(UIImage(named: "btn_wrong_answer"), forState: UIControlState.Normal)
+        self.circleLayer .removeAllAnimations();
+        self.breakTime = true
+        
     }
 }

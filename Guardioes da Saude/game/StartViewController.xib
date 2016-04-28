@@ -15,6 +15,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="Guardioes_da_Saude" customModuleProvider="target">
             <connections>
+                <outlet property="btnAnswer1" destination="RAi-J1-EMD" id="8pm-iW-u6V"/>
+                <outlet property="btnAnswer2" destination="EuV-yp-dk5" id="1aT-jQ-Tk1"/>
+                <outlet property="btnAnswer3" destination="5gY-hB-icR" id="aKT-gx-3gh"/>
                 <outlet property="lbTimer" destination="AJO-AZ-mqd" id="bNC-TW-tjw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewQuestion" destination="LBT-v5-wsO" id="zOE-9U-j4D"/>
@@ -207,20 +210,29 @@
                             <state key="normal" title="Vírus" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="btnAnswerAction:" destination="-1" eventType="touchUpInside" id="uJh-db-wPD"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuV-yp-dk5">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuV-yp-dk5">
                             <rect key="frame" x="40" y="294" width="240" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
                             <state key="normal" title="Vírus" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="btnAnswerAction:" destination="-1" eventType="touchUpInside" id="xCi-3p-Hkx"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gY-hB-icR">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gY-hB-icR">
                             <rect key="frame" x="40" y="404" width="240" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
                             <state key="normal" title="Vírus" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="btnAnswerAction:" destination="-1" eventType="touchUpInside" id="yr4-d8-x0B"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9A-mi-xzQ">
                             <rect key="frame" x="129" y="87" width="63" height="63"/>
