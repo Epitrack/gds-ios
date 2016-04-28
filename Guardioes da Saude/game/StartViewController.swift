@@ -13,7 +13,12 @@ class StartViewController: UIViewController {
     
     var titleBarImage: UIImageView?
     var audioPlayer: AVAudioPlayer?
+    var circleLayer: CAShapeLayer!
 
+    @IBOutlet weak var viewQuestion: UIView!
+    @IBOutlet weak var viewQuestionTimer: UIView!
+    @IBOutlet weak var lbTimer: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +35,57 @@ class StartViewController: UIViewController {
                 
             }
         }
+        
+        // Use UIBezierPath as an easy way to create the CGPath for the layer.
+        // The path should be the entire circle.
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.viewQuestionTimer.frame.size.width / 2.0, y: self.viewQuestionTimer.frame.size.height / 2.0), radius: (self.viewQuestionTimer.frame.size.width - 10)/2, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
+        
+        // Setup the CAShapeLayer with the path, colors, and line width
+        circleLayer = CAShapeLayer()
+        circleLayer.path = circlePath.CGPath
+        circleLayer.fillColor = UIColor.clearColor().CGColor
+        circleLayer.strokeColor = UIColor(red: 239.0/255.0, green: 98.0/255.0, blue: 26.0/255.0, alpha: 1).CGColor
+        circleLayer.lineWidth = 7.0;
+        
+        // Don't draw the circle initially
+        circleLayer.strokeEnd = 0.0
+        
+        
+        // Add the circleLayer to the view's layer's sublayers
+        self.viewQuestionTimer.layer.addSublayer(circleLayer)
+        self.viewQuestionTimer.layer.cornerRadius = self.viewQuestionTimer.frame.width/2;
+    }
+    
+    func animateCircle(duration: NSTimeInterval) {
+        // We want to animate the strokeEnd property of the circleLayer
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        
+        // Set the animation duration appropriately
+        animation.duration = duration
+        
+        // Animate from 0 (no circle) to 1 (full circle)
+        animation.fromValue = 0
+        animation.toValue = 1
+        
+        // Do a linear animation (i.e. the speed of the animation stays the same)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        
+        // Set the circleLayer's strokeEnd property to 1.0 now so that it's the
+        // right value when the animation ends.
+        circleLayer.strokeEnd = 1.0
+        
+        // Do the actual animation
+        circleLayer.addAnimation(animation, forKey: "animateCircle")
+        
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        dispatch_async(queue, {
+            for i in 1...15 {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.lbTimer.text = "\(i)"
+                }
+                sleep(1)
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +123,29 @@ class StartViewController: UIViewController {
         
     }
     
+    @IBAction func btnCloseQuestion(sender: AnyObject) {
+        self.playSoundButton()
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.viewQuestion.transform = CGAffineTransformMakeScale(0.1, 0.1)
+            self.viewQuestion.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        }) { (finished: Bool) -> Void in
+            self.viewQuestion.hidden = true
+        }
+    }
+    
+    @IBAction func btnQuestionAction(sender: AnyObject) {
+        self.playSoundButton()
+        self.viewQuestion.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        self.viewQuestion.hidden = false;
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.viewQuestion.transform = CGAffineTransformIdentity
+            self.viewQuestion.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+        }) { (finished: Bool) -> Void in
+            self.animateCircle(14.0)
+        }
+    }
     func playSoundButton() {
         if let _ = self.audioPlayer {
             if audioPlayer!.playing {
