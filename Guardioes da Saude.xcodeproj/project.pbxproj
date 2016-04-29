@@ -447,6 +447,8 @@
 		CB05C73B1CA3316D00B2F0D4 /* GDSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05C73A1CA3316D00B2F0D4 /* GDSTextView.m */; };
 		CB08AE3A1CBEBEAC00A2FB3F /* TravelerHealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB08AE381CBEBEAC00A2FB3F /* TravelerHealthViewController.m */; };
 		CB08AE3B1CBEBEAC00A2FB3F /* TravelerHealthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB08AE391CBEBEAC00A2FB3F /* TravelerHealthViewController.xib */; };
+		CB0B3E051CD3F28C0001CDAE /* CongratulationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0B3E031CD3F28C0001CDAE /* CongratulationsViewController.swift */; };
+		CB0B3E061CD3F28C0001CDAE /* CongratulationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0B3E041CD3F28C0001CDAE /* CongratulationsViewController.xib */; };
 		CB0F7DC61CB2FBCB00C381C7 /* ChangeLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F7DC41CB2FBCB00C381C7 /* ChangeLanguageViewController.m */; };
 		CB0F7DC71CB2FBCB00C381C7 /* ChangeLanguageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0F7DC51CB2FBCB00C381C7 /* ChangeLanguageViewController.xib */; };
 		CB0F7DCA1CB3F59900C381C7 /* LocalizationSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F7DC91CB3F59900C381C7 /* LocalizationSystem.m */; };
@@ -1028,6 +1030,8 @@
 		CB08AE371CBEBEAC00A2FB3F /* TravelerHealthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelerHealthViewController.h; sourceTree = "<group>"; };
 		CB08AE381CBEBEAC00A2FB3F /* TravelerHealthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelerHealthViewController.m; sourceTree = "<group>"; };
 		CB08AE391CBEBEAC00A2FB3F /* TravelerHealthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TravelerHealthViewController.xib; sourceTree = "<group>"; };
+		CB0B3E031CD3F28C0001CDAE /* CongratulationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CongratulationsViewController.swift; path = game/CongratulationsViewController.swift; sourceTree = "<group>"; };
+		CB0B3E041CD3F28C0001CDAE /* CongratulationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CongratulationsViewController.xib; path = game/CongratulationsViewController.xib; sourceTree = "<group>"; };
 		CB0F7DC31CB2FBCB00C381C7 /* ChangeLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeLanguageViewController.h; sourceTree = "<group>"; };
 		CB0F7DC41CB2FBCB00C381C7 /* ChangeLanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeLanguageViewController.m; sourceTree = "<group>"; };
 		CB0F7DC51CB2FBCB00C381C7 /* ChangeLanguageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeLanguageViewController.xib; sourceTree = "<group>"; };
@@ -1883,6 +1887,8 @@
 				CB9F379F1CCEC726008D5ACF /* StartViewController.xib */,
 				CB9F37B31CD1452A008D5ACF /* LevelViewController.swift */,
 				CB9F37B41CD1452A008D5ACF /* LevelViewController.xib */,
+				CB0B3E031CD3F28C0001CDAE /* CongratulationsViewController.swift */,
+				CB0B3E041CD3F28C0001CDAE /* CongratulationsViewController.xib */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -2284,6 +2290,7 @@
 				52E727CC1BEA93B800B46945 /* img_profile05@3x.png in Resources */,
 				520EB7151C21EF220054D818 /* buttonEmailDisable@3x.png in Resources */,
 				CBA0E5441C5FA5EC0086315B /* img_profile09@3x.png in Resources */,
+				CB0B3E061CD3F28C0001CDAE /* CongratulationsViewController.xib in Resources */,
 				52E7274D1BEA93B800B46945 /* fab_cancel@2x.png in Resources */,
 				52E727051BEA93B800B46945 /* icon_tips_basiccares@3x.png in Resources */,
 				CB362B3C1C7B48EC00BE4F23 /* icon_help_onpress.png in Resources */,
@@ -2563,6 +2570,7 @@
 				25A19BD71BC46CE800F08FA9 /* TutorialViewController.m in Sources */,
 				52E6F0711C1EFE8F00C88A08 /* TPKeyboardAvoidingTableView.m in Sources */,
 				529BE1D31BF6598300692EEC /* HelpViewController.m in Sources */,
+				CB0B3E051CD3F28C0001CDAE /* CongratulationsViewController.swift in Sources */,
 				25630CFA1BDFA2760047FF07 /* Symptom.m in Sources */,
 				CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */,
 				AAE38B3C1BFA1CAA009CD20B /* HouseholdRequester.m in Sources */,
