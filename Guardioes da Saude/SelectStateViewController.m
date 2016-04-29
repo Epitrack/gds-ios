@@ -27,6 +27,7 @@
     double latitude;
     double longitude;
     SurveyRequester *surveyRequester;
+    
 }
 
 - (void)viewDidLoad {
@@ -101,40 +102,50 @@
                                                           action:@"button_good"
                                                            label:@"Good"
                                                            value:nil] build]];
-    
-    User *user = [User getInstance];
-    
-    SurveyMap *survey = [[SurveyMap alloc] init];
-    survey.latitude = [NSString stringWithFormat:@"%.8f", latitude];
-    survey.longitude = [NSString stringWithFormat:@"%.8f", longitude];
-    survey.isSymptom = @"N";
-    
-    if (self.household) {
-        survey.idHousehold = self.household.idHousehold;
-    }
-    
-    [surveyRequester createSurvey:survey
-                       andOnStart:^{
-                           [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                       }
-                     andOnSuccess:^(SurveyType surveyType){
-                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                         user.idHousehold = @"";
-                         ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] initWithType:GOOD_SYMPTOM];
-                         thankYouForParticipatingViewController.txtBadSurvey.hidden = YES;
-                         [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
-                     }
-                       andOnError:^(NSError *error){
-                           [MBProgressHUD hideHUDForView:self.view animated:YES];
-                           NSString *errorMsg;
-                           if (error && error.code == -1009) {
-                               errorMsg = NSLocalizedString(kMsgConnectionError, @"");
-                           } else {
-                               errorMsg = NSLocalizedString(kMsgApiError, @"");
+    if([CLLocationManager locationServicesEnabled] &&
+       [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied) {
+        // show the map
+        User *user = [User getInstance];
+        
+        SurveyMap *survey = [[SurveyMap alloc] init];
+        survey.latitude = [NSString stringWithFormat:@"%.8f", latitude];
+        survey.longitude = [NSString stringWithFormat:@"%.8f", longitude];
+        survey.isSymptom = @"N";
+        
+        if (![user.idHousehold isEqualToString:@""]) {
+            survey.idHousehold = user.idHousehold;
+        }
+        
+        [surveyRequester createSurvey:survey
+                           andOnStart:^{
+                               [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                            }
-                           
-                           [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
-                       }];
+                         andOnSuccess:^(SurveyType surveyType){
+                             [MBProgressHUD hideHUDForView:self.view animated:YES];
+                             user.idHousehold = @"";
+                             ThankYouForParticipatingViewController *thankYouForParticipatingViewController = [[ThankYouForParticipatingViewController alloc] initWithType:GOOD_SYMPTOM];
+                             thankYouForParticipatingViewController.txtBadSurvey.hidden = YES;
+                             [self.navigationController pushViewController:thankYouForParticipatingViewController animated:YES];
+                         }
+                           andOnError:^(NSError *error){
+                               [MBProgressHUD hideHUDForView:self.view animated:YES];
+                               NSString *errorMsg;
+                               if (error && error.code == -1009) {
+                                   errorMsg = NSLocalizedString(kMsgConnectionError, @"");
+                               } else {
+                                   errorMsg = NSLocalizedString(kMsgApiError, @"");
+                               }
+                               
+                               [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                           }];
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"select_state.without_location", @"") preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button OK");
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (IBAction)btnBad:(id)sender {
@@ -145,8 +156,22 @@
                                                            label:@"Bad"
                                                            value:nil] build]];
     
-    ListSymptomsViewController *listSymptomsViewController = [[ListSymptomsViewController alloc] init];
-    [self.navigationController pushViewController:listSymptomsViewController animated:YES];
+    if([CLLocationManager locationServicesEnabled] &&
+       [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied) {
+
+        ListSymptomsViewController *listSymptomsViewController = [[ListSymptomsViewController alloc] init];
+        listSymptomsViewController.latitude = latitude;
+        listSymptomsViewController.longitude = longitude;
+        
+        [self.navigationController pushViewController:listSymptomsViewController animated:YES];
+    }else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde" message:NSLocalizedString(@"select_state.without_location", @"") preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            NSLog(@"You pressed button OK");
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate
