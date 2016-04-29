@@ -10,13 +10,18 @@
 #import <CoreLocation/CoreLocation.h>
 @import DownPicker;
 
-@interface ListSymptomsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate> {
+@interface ListSymptomsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     
     NSMutableArray *symptoms;
     NSDictionary *symptomsTemp;
     NSMutableDictionary *symptomsSelected;
     NSMutableArray *symptomsArray;
 }
+
+@property double latitude;
+@property double longitude;
+
+
 @property (strong, nonatomic) IBOutlet UITableView *tableSymptoms;
 - (IBAction)btnConfirmSurvey:(id)sender;
 - (void) loadSymptoms;

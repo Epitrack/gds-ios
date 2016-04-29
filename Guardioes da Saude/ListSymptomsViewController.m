@@ -23,9 +23,6 @@
 
 @interface ListSymptomsViewController () {
     
-    CLLocationManager *locationManager;
-    double latitude;
-    double longitude;
     User *user;
     SurveyRequester *surveyRequester;
     NSIndexPath *oldIndexPath;
@@ -63,13 +60,6 @@
     [self.tableSymptoms setSeparatorColor:bgCellColor];
     
     symptomsSelected = [[NSMutableDictionary alloc] init];
-    
-    locationManager = [[CLLocationManager alloc] init];
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startMonitoringSignificantLocationChanges];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager startUpdatingLocation];
     
     (void)[self.txtPais initWithData:[LocationUtil getCountries]];
     [self.txtPais.DownPicker setPlaceholder:NSLocalizedString(@"list_symptoms.placeholder_country", @"")];
@@ -146,8 +136,8 @@
             }
             
             [survey setSymptoms:surveySymptoms];
-            [survey setLatitude:[NSString stringWithFormat:@"%.8f" , latitude]];
-            [survey setLongitude:[NSString stringWithFormat:@"%.8f" , longitude]];
+            [survey setLatitude:[NSString stringWithFormat:@"%.8f" , self.latitude]];
+            [survey setLongitude:[NSString stringWithFormat:@"%.8f" , self.longitude]];
             [survey setTravelLocation:self.txtPais.text];
             [survey setIsSymptom:@"Y"];
             if (![user.idHousehold isEqualToString:@""] && user.idHousehold  != nil) {
@@ -314,15 +304,6 @@
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    NSLog(@"didUpdateToLocation: %@", newLocation);
-    CLLocation *currentLocation = newLocation;
-    
-    latitude = currentLocation.coordinate.latitude;
-    longitude = currentLocation.coordinate.longitude;
-    
-}
-
 -(void)viewDidLayoutSubviews
 {
     if ([self.tableSymptoms respondsToSelector:@selector(setSeparatorInset:)]) {
@@ -347,7 +328,6 @@
 
 - (void) setTableSeparator{
     UIColor *color = [UIColor whiteColor];
-//    UIColor *color = [UIColor colorWithRed:(0/255.0) green:(105/255.0) blue:(216/255.0) alpha:1];
     [self.tableSymptoms setSeparatorColor:color];
     self.tableSymptoms.tableFooterView = [UIView new];
 }
