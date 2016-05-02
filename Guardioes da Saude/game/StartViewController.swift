@@ -173,11 +173,15 @@ class StartViewController: UIViewController {
             audioPlayer!.play()
         }
     }
-    @IBAction func btnAnswerAction(sender: AnyObject) {
-        btnAnswer1.setBackgroundImage(UIImage(named: "btn_correct_answer"), forState: UIControlState.Normal)
-        btnAnswer2.setBackgroundImage(UIImage(named: "btn_wrong_answer"), forState: UIControlState.Normal)
-        self.circleLayer .removeAllAnimations();
-        self.breakTime = true
-        
+    @IBAction func btnAnswerAction(sender: UIButton) {
+        if sender.isEqual(self.btnAnswer1) {
+            let congratulationScreen = CongratulationsViewController()
+            self.navigationController?.pushViewController(congratulationScreen, animated: true)
+        }else{
+            btnAnswer1.setBackgroundImage(UIImage(named: "btn_correct_answer"), forState: UIControlState.Normal)
+            btnAnswer2.setBackgroundImage(UIImage(named: "btn_wrong_answer"), forState: UIControlState.Normal)
+            self.circleLayer .removeAllAnimations();
+            self.breakTime = true
+        }
     }
 }
