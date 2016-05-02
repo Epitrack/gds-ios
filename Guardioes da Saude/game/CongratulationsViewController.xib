@@ -43,7 +43,7 @@
                     <rect key="frame" x="209" y="401" width="47" height="48"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_bar_congratulations" translatesAutoresizingMaskIntoConstraints="NO" id="n5o-uu-35q">
-                    <rect key="frame" x="30" y="474" width="260" height="55"/>
+                    <rect key="frame" x="40" y="474" width="240" height="55"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-Ir-5Uk">
                     <rect key="frame" x="100" y="446" width="121" height="111"/>
@@ -52,18 +52,23 @@
                     </constraints>
                     <state key="normal" image="btn_next_game" backgroundImage="btn_next_game"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAD-gz-hNy">
-                    <rect key="frame" x="244" y="487" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAD-gz-hNy">
+                    <rect key="frame" x="227" y="485" width="33" height="33"/>
+                    <state key="normal" image="btn_puzze"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkF-N1-ieg">
+                    <rect key="frame" x="60" y="485" width="30" height="34"/>
+                    <state key="normal" image="btn_repeat"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="eSg-4S-MNu" secondAttribute="trailing" id="4Zv-HQ-xfj"/>
                 <constraint firstItem="Sk7-Ir-5Uk" firstAttribute="centerY" secondItem="n5o-uu-35q" secondAttribute="centerY" id="4aN-wB-xXT"/>
-                <constraint firstItem="n5o-uu-35q" firstAttribute="leading" secondItem="sI3-kG-JJW" secondAttribute="leading" constant="10" id="7tG-Gl-bCz"/>
+                <constraint firstItem="n5o-uu-35q" firstAttribute="leading" secondItem="sI3-kG-JJW" secondAttribute="leading" constant="20" id="7tG-Gl-bCz"/>
                 <constraint firstItem="eSg-4S-MNu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ghm-uS-QSY"/>
-                <constraint firstItem="n5o-uu-35q" firstAttribute="trailing" secondItem="sI3-kG-JJW" secondAttribute="trailing" constant="-10" id="H0A-3q-y2j"/>
+                <constraint firstItem="n5o-uu-35q" firstAttribute="trailing" secondItem="sI3-kG-JJW" secondAttribute="trailing" constant="-20" id="H0A-3q-y2j"/>
+                <constraint firstItem="EkF-N1-ieg" firstAttribute="leading" secondItem="n5o-uu-35q" secondAttribute="leading" constant="20" id="HZc-G3-la4"/>
                 <constraint firstItem="6Y1-Yk-Ip1" firstAttribute="top" secondItem="sI3-kG-JJW" secondAttribute="bottom" constant="-20" id="ISC-vh-Apo"/>
                 <constraint firstItem="kKY-Rc-9Xs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Pa2-x2-l8e"/>
                 <constraint firstItem="sI3-kG-JJW" firstAttribute="top" secondItem="kKY-Rc-9Xs" secondAttribute="bottom" constant="-20" id="Pmi-mA-skh"/>
@@ -81,9 +86,10 @@
                 <constraint firstItem="AAh-b8-1on" firstAttribute="top" secondItem="sI3-kG-JJW" secondAttribute="bottom" constant="-20" id="bmt-dE-kEe"/>
                 <constraint firstItem="kKY-Rc-9Xs" firstAttribute="leading" secondItem="sI3-kG-JJW" secondAttribute="leading" id="bpA-AP-O2w"/>
                 <constraint firstItem="cgA-iZ-8uy" firstAttribute="centerX" secondItem="kKY-Rc-9Xs" secondAttribute="centerX" id="cqf-lD-Qjq"/>
-                <constraint firstItem="LAD-gz-hNy" firstAttribute="trailing" secondItem="n5o-uu-35q" secondAttribute="trailing" id="fZP-qI-6cM"/>
+                <constraint firstItem="LAD-gz-hNy" firstAttribute="trailing" secondItem="n5o-uu-35q" secondAttribute="trailing" constant="-20" id="fZP-qI-6cM"/>
                 <constraint firstItem="sI3-kG-JJW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ipM-pY-jwV"/>
                 <constraint firstItem="Sk7-Ir-5Uk" firstAttribute="centerX" secondItem="n5o-uu-35q" secondAttribute="centerX" id="jOs-N9-wwm"/>
+                <constraint firstItem="EkF-N1-ieg" firstAttribute="centerY" secondItem="n5o-uu-35q" secondAttribute="centerY" id="lwV-At-0v8"/>
                 <constraint firstItem="640-x9-EGB" firstAttribute="top" secondItem="sI3-kG-JJW" secondAttribute="bottom" constant="-45" id="mVf-zg-ysg"/>
                 <constraint firstItem="kKY-Rc-9Xs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="82" id="ocp-Bd-5cF"/>
                 <constraint firstAttribute="bottom" secondItem="eSg-4S-MNu" secondAttribute="bottom" id="ozK-K5-DXf"/>
@@ -110,6 +116,8 @@
         <image name="bg_bar_congratulations" width="212" height="55"/>
         <image name="bg_tutorial_game" width="320" height="568"/>
         <image name="btn_next_game" width="147" height="133"/>
+        <image name="btn_puzze" width="33" height="33"/>
+        <image name="btn_repeat" width="30" height="34"/>
         <image name="icon_star_1" width="44" height="45"/>
         <image name="icon_star_2" width="66" height="64"/>
         <image name="icon_star_3" width="47" height="48"/>
