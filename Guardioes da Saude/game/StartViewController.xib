@@ -20,6 +20,7 @@
                 <outlet property="btnAnswer3" destination="5gY-hB-icR" id="aKT-gx-3gh"/>
                 <outlet property="imgPt3" destination="RXu-LK-yDQ" id="gqq-55-e5I"/>
                 <outlet property="lbTimer" destination="AJO-AZ-mqd" id="bNC-TW-tjw"/>
+                <outlet property="txQuestionDescription" destination="F1A-pD-9aI" id="iQd-EG-cY5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewPt3" destination="xyQ-dx-Bw3" id="Qd4-2y-Z6o"/>
                 <outlet property="viewQuestion" destination="LBT-v5-wsO" id="zOE-9U-j4D"/>

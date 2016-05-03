@@ -499,6 +499,9 @@
 		CBBF75E61CA192060083C85A /* GDSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBF75E51CA192060083C85A /* GDSLabel.m */; };
 		CBBF75E91CA19AF00083C85A /* GDSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBF75E81CA19AF00083C85A /* GDSTextField.m */; };
 		CBBF75EC1CA19D170083C85A /* GDSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBF75EB1CA19D170083C85A /* GDSButton.m */; };
+		CBCA401A1CD9467F009606EB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA40191CD9467F009606EB /* Question.swift */; };
+		CBCA401C1CD94715009606EB /* QuestionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA401B1CD94715009606EB /* QuestionAnswer.swift */; };
+		CBCA401E1CD947C3009606EB /* QuestionRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA401D1CD947C3009606EB /* QuestionRequester.swift */; };
 		CBDDF5A51C77452E008853B2 /* SymptomRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDDF5A41C77452E008853B2 /* SymptomRequester.m */; };
 		CBDE6B231C80CA82007418FA /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */; };
 		CBDE6B241C80CA82007418FA /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */; };
@@ -1107,6 +1110,9 @@
 		CBBF75E81CA19AF00083C85A /* GDSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSTextField.m; sourceTree = "<group>"; };
 		CBBF75EA1CA19D170083C85A /* GDSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDSButton.h; sourceTree = "<group>"; };
 		CBBF75EB1CA19D170083C85A /* GDSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDSButton.m; sourceTree = "<group>"; };
+		CBCA40191CD9467F009606EB /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		CBCA401B1CD94715009606EB /* QuestionAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAnswer.swift; sourceTree = "<group>"; };
+		CBCA401D1CD947C3009606EB /* QuestionRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionRequester.swift; sourceTree = "<group>"; };
 		CBDDF5A31C77452E008853B2 /* SymptomRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomRequester.h; sourceTree = "<group>"; };
 		CBDDF5A41C77452E008853B2 /* SymptomRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomRequester.m; sourceTree = "<group>"; };
 		CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeTableViewCell.h; path = CellTable/NoticeTableViewCell.h; sourceTree = "<group>"; };
@@ -1203,6 +1209,8 @@
 				527D033C1C15C9AB00349551 /* SingleLocation.m */,
 				52E6F0A81C20B6AC00C88A08 /* Phones.h */,
 				52E6F0A91C20B6AC00C88A08 /* Phones.m */,
+				CBCA40191CD9467F009606EB /* Question.swift */,
+				CBCA401B1CD94715009606EB /* QuestionAnswer.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -1863,6 +1871,7 @@
 				CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */,
 				CBDDF5A31C77452E008853B2 /* SymptomRequester.h */,
 				CBDDF5A41C77452E008853B2 /* SymptomRequester.m */,
+				CBCA401D1CD947C3009606EB /* QuestionRequester.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2505,6 +2514,7 @@
 				52D15DD81BFBCA8100FC31F3 /* DiaryHealthViewController.m in Sources */,
 				524C14221BEBCEE6003A6C2D /* HealthTipsViewController.m in Sources */,
 				AAE38B381BF9211D009CD20B /* Requester.m in Sources */,
+				CBCA401A1CD9467F009606EB /* Question.swift in Sources */,
 				524C141D1BEBC697003A6C2D /* NoticeViewController.m in Sources */,
 				52DBBA711BFE6CCC00900D22 /* NewsRequester.m in Sources */,
 				AAE38B3F1BFA2425009CD20B /* SurveyRequester.m in Sources */,
@@ -2526,6 +2536,8 @@
 				5256481B1BFCF96100FE64AE /* ProfileFormViewController.m in Sources */,
 				52E6F0AA1C20B6AC00C88A08 /* Phones.m in Sources */,
 				2548B9E41BDEA8750004E00F /* SelectStateViewController.m in Sources */,
+				CBCA401C1CD94715009606EB /* QuestionAnswer.swift in Sources */,
+				CBCA401E1CD947C3009606EB /* QuestionRequester.swift in Sources */,
 				524C142C1BEBDC55003A6C2D /* VacineViewController.m in Sources */,
 				524C143B1BEBE67C003A6C2D /* PreventionViewController.m in Sources */,
 				520CD0E21BED436700F24B45 /* EnterViewController.m in Sources */,

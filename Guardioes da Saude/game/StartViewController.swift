@@ -15,11 +15,14 @@ class StartViewController: UIViewController {
     var audioPlayer: AVAudioPlayer?
     var circleLayer: CAShapeLayer!
     var breakTime = false
+    var currentQuestion: Question?
 
+    
     @IBOutlet weak var viewQuestion: UIView!
     @IBOutlet weak var viewQuestionTimer: UIView!
     @IBOutlet weak var lbTimer: UILabel!
     
+    @IBOutlet weak var txQuestionDescription: UILabel!
     @IBOutlet weak var btnAnswer1: UIButton!
     @IBOutlet weak var btnAnswer2: UIButton!
     @IBOutlet weak var btnAnswer3: UIButton!
@@ -44,7 +47,6 @@ class StartViewController: UIViewController {
         }
         
         circleLayer = CAShapeLayer()
-        
     }
     
     func animateCircle(duration: NSTimeInterval) {
@@ -97,11 +99,8 @@ class StartViewController: UIViewController {
         circleLayer.fillColor = UIColor.clearColor().CGColor
         circleLayer.strokeColor = UIColor(red: 239.0/255.0, green: 98.0/255.0, blue: 26.0/255.0, alpha: 1).CGColor
         circleLayer.lineWidth = 7.0;
-        
-        // Don't draw the circle initially
         circleLayer.strokeEnd = 0.0
         
-        // Add the circleLayer to the view's layer's sublayers
         self.viewQuestionTimer.layer.addSublayer(circleLayer)
         self.viewQuestionTimer.layer.cornerRadius = self.viewQuestionTimer.frame.width/2;
 
@@ -144,6 +143,11 @@ class StartViewController: UIViewController {
         self.playSoundButton()
         self.viewQuestion.transform = CGAffineTransformMakeScale(0.1, 0.1)
         self.viewQuestion.hidden = false;
+        
+        let requester = QuestionRequester()
+        self.currentQuestion = requester.getQuestion()
+        self.txQuestionDescription.text = self.currentQuestion?.question
+        self.btnAnswer1.setTitle(self.currentQuestion?.answers[0].answer, forState: <#T##UIControlState#>)
         
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.viewQuestion.transform = CGAffineTransformIdentity
