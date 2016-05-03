@@ -10,13 +10,14 @@ import UIKit
 
 class CongratulationsViewController: UIViewController {
     
+    var startViewReference: StartViewController?
+    
     var titleBarImage: UIImageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = btnBack
+        self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
     
@@ -39,6 +40,13 @@ class CongratulationsViewController: UIViewController {
         }
     }
 
+    @IBAction func btnQuestionAction(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+        if let _ = startViewReference {
+            startViewReference?.transitionQuestion()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

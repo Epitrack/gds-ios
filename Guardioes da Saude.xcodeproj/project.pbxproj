@@ -432,7 +432,6 @@
 		52EBA7541C11DD0E0019E1FA /* buttonTwitterDesable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52EBA74B1C11DD0E0019E1FA /* buttonTwitterDesable@3x.png */; };
 		52EC0D7B1C31626800EC8908 /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC0D7A1C31626800EC8908 /* DateUtil.m */; };
 		52EC50411BF02200002FEACE /* Household.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC50401BF02200002FEACE /* Household.m */; };
-		52EC50441BF026CC002FEACE /* ImageUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EC50431BF026CC002FEACE /* ImageUtility.m */; };
 		AAE38B371BF9211D009CD20B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B311BF9211D009CD20B /* Constants.m */; };
 		AAE38B381BF9211D009CD20B /* Requester.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B331BF9211D009CD20B /* Requester.m */; };
 		AAE38B391BF9211D009CD20B /* UserRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE38B361BF9211D009CD20B /* UserRequester.m */; };
@@ -765,8 +764,6 @@
 		52EC0D7A1C31626800EC8908 /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
 		52EC503F1BF02200002FEACE /* Household.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Household.h; path = "Guardioes da Saude/Household.h"; sourceTree = "<group>"; };
 		52EC50401BF02200002FEACE /* Household.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Household.m; path = "Guardioes da Saude/Household.m"; sourceTree = "<group>"; };
-		52EC50421BF026CC002FEACE /* ImageUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtility.h; sourceTree = "<group>"; };
-		52EC50431BF026CC002FEACE /* ImageUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtility.m; sourceTree = "<group>"; };
 		8829B53C1BB9D5A400F4C75A /* BG_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG_dark.png; sourceTree = "<group>"; };
 		8829B53D1BB9D5A400F4C75A /* BG_dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_dark@2x.png"; sourceTree = "<group>"; };
 		8829B53E1BB9D5A400F4C75A /* BG_dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BG_dark@3x.png"; sourceTree = "<group>"; };
@@ -1165,8 +1162,6 @@
 			children = (
 				256DBA921BD0399D0029A569 /* DTO.h */,
 				256DBA931BD0399D0029A569 /* DTO.m */,
-				52EC50421BF026CC002FEACE /* ImageUtility.h */,
-				52EC50431BF026CC002FEACE /* ImageUtility.m */,
 				52EC0D791C31626800EC8908 /* DateUtil.h */,
 				52EC0D7A1C31626800EC8908 /* DateUtil.m */,
 				CB4E686E1C39B48700563FB7 /* LocationUtil.h */,
@@ -2512,7 +2507,6 @@
 				CBFF73A61CAC662A006C617A /* ParticipantsListViewController.m in Sources */,
 				CB9F37A01CCEC726008D5ACF /* StartViewController.swift in Sources */,
 				52EC0D7B1C31626800EC8908 /* DateUtil.m in Sources */,
-				52EC50441BF026CC002FEACE /* ImageUtility.m in Sources */,
 				258F14E31BCEE3CC00CE86B7 /* User.m in Sources */,
 				5250D7441BE2ADD3006E8A63 /* SurveyMap.m in Sources */,
 				52D15DD81BFBCA8100FC31F3 /* DiaryHealthViewController.m in Sources */,

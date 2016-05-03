@@ -52,6 +52,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAD-gz-hNy">
                     <rect key="frame" x="227" y="485" width="33" height="33"/>
                     <state key="normal" image="btn_puzze"/>
+                    <connections>
+                        <action selector="btnQuestionAction:" destination="-1" eventType="touchUpInside" id="hZH-uJ-nmZ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkF-N1-ieg">
                     <rect key="frame" x="60" y="485" width="30" height="34"/>

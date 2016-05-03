@@ -23,6 +23,9 @@ class StartViewController: UIViewController {
     @IBOutlet weak var btnAnswer1: UIButton!
     @IBOutlet weak var btnAnswer2: UIButton!
     @IBOutlet weak var btnAnswer3: UIButton!
+    @IBOutlet weak var viewPt3: UIView!
+    @IBOutlet weak var imgPt3: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -164,6 +167,24 @@ class StartViewController: UIViewController {
             self.animateCircle(14.0)
         }
     }
+    
+    func transitionQuestion() {
+        let img = UIImage(named: "img_level1_pt1")
+        let imgSize = imageWithImage(img!, scaledToSize: viewPt3.bounds.size)
+        let imgPt3New = UIImageView(image: imgSize)
+        imgPt3.bounds = imgPt3.bounds
+        
+        UIView.transitionFromView(imgPt3, toView: imgPt3New, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+    }
+    
+    func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+        image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+    
     func playSoundButton() {
         if let _ = self.audioPlayer {
             if audioPlayer!.playing {
@@ -175,12 +196,24 @@ class StartViewController: UIViewController {
     }
     @IBAction func btnAnswerAction(sender: UIButton) {
         if sender.isEqual(self.btnAnswer1) {
+            self.playSoundButton()
+            
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.viewQuestion.transform = CGAffineTransformMakeScale(0.1, 0.1)
+                self.viewQuestion.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            }) { (finished: Bool) -> Void in
+                self.viewQuestion.hidden = true
+                self.resetQuestionDialog()
+            }
+            
+            
             let congratulationScreen = CongratulationsViewController()
+            congratulationScreen.startViewReference = self
             self.navigationController?.pushViewController(congratulationScreen, animated: true)
         }else{
             btnAnswer1.setBackgroundImage(UIImage(named: "btn_correct_answer"), forState: UIControlState.Normal)
             btnAnswer2.setBackgroundImage(UIImage(named: "btn_wrong_answer"), forState: UIControlState.Normal)
-            self.circleLayer .removeAllAnimations();
+            self.circleLayer.removeAllAnimations();
             self.breakTime = true
         }
     }
