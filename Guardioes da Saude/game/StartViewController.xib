@@ -210,8 +210,8 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_answer" translatesAutoresizingMaskIntoConstraints="NO" id="tyx-At-7Qb">
                             <rect key="frame" x="20" y="110" width="280" height="193"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual tipo de micro-organismo é responsável pela dengue?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1A-pD-9aI">
-                            <rect key="frame" x="20" y="110" width="280" height="193"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual tipo de micro-organismo é responsável pela dengue?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1A-pD-9aI">
+                            <rect key="frame" x="30" y="110" width="260" height="193"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="24"/>
                             <color key="textColor" red="0.094117648899555206" green="0.42352941632270813" blue="0.71764707565307617" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -224,7 +224,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAi-J1-EMD">
-                            <rect key="frame" x="40" y="349" width="240" height="47"/>
+                            <rect key="frame" x="50" y="349" width="220" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
                             <state key="normal" title="Vírus" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -234,7 +234,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuV-yp-dk5">
-                            <rect key="frame" x="40" y="294" width="240" height="47"/>
+                            <rect key="frame" x="50" y="294" width="220" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
                             <state key="normal" title="Vírus" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -244,7 +244,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gY-hB-icR">
-                            <rect key="frame" x="40" y="404" width="240" height="47"/>
+                            <rect key="frame" x="50" y="404" width="220" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
                             <state key="normal" title="Vírus" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -289,8 +289,8 @@
                         <constraint firstItem="5jJ-0t-4bf" firstAttribute="trailing" secondItem="tyx-At-7Qb" secondAttribute="trailing" constant="32" id="PG6-Vf-dxc"/>
                         <constraint firstItem="b9A-mi-xzQ" firstAttribute="centerY" secondItem="5jJ-0t-4bf" secondAttribute="centerY" id="ZYZ-N6-K2o"/>
                         <constraint firstItem="RAi-J1-EMD" firstAttribute="trailing" secondItem="EuV-yp-dk5" secondAttribute="trailing" id="cHb-3T-OTP"/>
-                        <constraint firstItem="F1A-pD-9aI" firstAttribute="leading" secondItem="tyx-At-7Qb" secondAttribute="leading" id="cbh-GV-Uq1"/>
-                        <constraint firstItem="F1A-pD-9aI" firstAttribute="trailing" secondItem="tyx-At-7Qb" secondAttribute="trailing" id="d0T-hH-fZx"/>
+                        <constraint firstItem="F1A-pD-9aI" firstAttribute="leading" secondItem="tyx-At-7Qb" secondAttribute="leading" constant="10" id="cbh-GV-Uq1"/>
+                        <constraint firstItem="F1A-pD-9aI" firstAttribute="trailing" secondItem="tyx-At-7Qb" secondAttribute="trailing" constant="-10" id="d0T-hH-fZx"/>
                         <constraint firstItem="5gY-hB-icR" firstAttribute="top" secondItem="RAi-J1-EMD" secondAttribute="bottom" constant="8" id="odf-Tk-4Ge"/>
                         <constraint firstItem="RAi-J1-EMD" firstAttribute="leading" secondItem="EuV-yp-dk5" secondAttribute="leading" id="p4H-M7-AYl"/>
                         <constraint firstItem="EuV-yp-dk5" firstAttribute="top" secondItem="F1A-pD-9aI" secondAttribute="bottom" constant="-9" id="qcU-nK-yMt"/>
