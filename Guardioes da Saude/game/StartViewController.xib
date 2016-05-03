@@ -77,9 +77,6 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUU-K9-8sI">
                             <rect key="frame" x="29" y="120" width="70" height="71"/>
-                            <connections>
-                                <action selector="btnQuestionAction:" destination="-1" eventType="touchUpInside" id="1I7-V9-t9L"/>
-                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_answer-1" translatesAutoresizingMaskIntoConstraints="NO" id="S9H-63-9Ee">
                             <rect key="frame" x="125" y="120" width="70" height="71"/>
@@ -96,12 +93,22 @@
                                         <constraint firstAttribute="width" secondItem="RXu-LK-yDQ" secondAttribute="height" multiplier="81:82" id="ODb-X0-Bxe"/>
                                     </constraints>
                                 </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiT-os-d5y">
+                                    <rect key="frame" x="0.0" y="0.0" width="70" height="71"/>
+                                    <connections>
+                                        <action selector="btnQuestionAction:" destination="-1" eventType="touchUpInside" id="VSV-zE-yFe"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="RXu-LK-yDQ" firstAttribute="height" secondItem="xyQ-dx-Bw3" secondAttribute="height" id="8Ek-et-tuQ"/>
                                 <constraint firstItem="RXu-LK-yDQ" firstAttribute="centerX" secondItem="xyQ-dx-Bw3" secondAttribute="centerX" id="8Ri-hB-2T7"/>
+                                <constraint firstItem="xiT-os-d5y" firstAttribute="height" secondItem="RXu-LK-yDQ" secondAttribute="height" id="E6i-sY-S9A"/>
                                 <constraint firstItem="RXu-LK-yDQ" firstAttribute="centerY" secondItem="xyQ-dx-Bw3" secondAttribute="centerY" id="EIT-rn-qqd"/>
+                                <constraint firstItem="xiT-os-d5y" firstAttribute="width" secondItem="RXu-LK-yDQ" secondAttribute="width" id="LXU-QG-Zrc"/>
+                                <constraint firstItem="xiT-os-d5y" firstAttribute="centerX" secondItem="RXu-LK-yDQ" secondAttribute="centerX" id="YNk-fq-Mjq"/>
                                 <constraint firstAttribute="width" secondItem="xyQ-dx-Bw3" secondAttribute="height" multiplier="70:71" id="ctp-Tn-3EQ"/>
+                                <constraint firstItem="xiT-os-d5y" firstAttribute="centerY" secondItem="RXu-LK-yDQ" secondAttribute="centerY" id="yvo-Fc-hCI"/>
                                 <constraint firstItem="RXu-LK-yDQ" firstAttribute="width" secondItem="xyQ-dx-Bw3" secondAttribute="width" id="zYh-Ug-HIw"/>
                             </constraints>
                         </view>

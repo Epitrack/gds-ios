@@ -138,9 +138,6 @@ class StartViewController: UIViewController {
     
     @IBAction func btnTrofeuAction(sender: AnyObject) {
         self.playSoundButton()
-        let levelView = LevelViewController()
-        self.navigationController?.pushViewController(levelView, animated: false)
-        
     }
     
     @IBAction func btnCloseQuestion(sender: AnyObject) {
@@ -169,7 +166,7 @@ class StartViewController: UIViewController {
     }
     
     func transitionQuestion() {
-        let img = UIImage(named: "img_level1_pt1")
+        let img = UIImage(named: "img_level1_pt1_min")
         let imgSize = imageWithImage(img!, scaledToSize: viewPt3.bounds.size)
         let imgPt3New = UIImageView(image: imgSize)
         imgPt3.bounds = imgPt3.bounds
@@ -197,24 +194,31 @@ class StartViewController: UIViewController {
     @IBAction func btnAnswerAction(sender: UIButton) {
         if sender.isEqual(self.btnAnswer1) {
             self.playSoundButton()
-            
-            UIView.animateWithDuration(0.2, animations: { () -> Void in
-                self.viewQuestion.transform = CGAffineTransformMakeScale(0.1, 0.1)
-                self.viewQuestion.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-            }) { (finished: Bool) -> Void in
-                self.viewQuestion.hidden = true
-                self.resetQuestionDialog()
-            }
-            
-            
-            let congratulationScreen = CongratulationsViewController()
-            congratulationScreen.startViewReference = self
-            self.navigationController?.pushViewController(congratulationScreen, animated: true)
-        }else{
-            btnAnswer1.setBackgroundImage(UIImage(named: "btn_correct_answer"), forState: UIControlState.Normal)
-            btnAnswer2.setBackgroundImage(UIImage(named: "btn_wrong_answer"), forState: UIControlState.Normal)
             self.circleLayer.removeAllAnimations();
             self.breakTime = true
+            sender.setBackgroundImage(UIImage(named: "btn_correct_answer"), forState: UIControlState.Normal)
+            
+            let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+            dispatch_async(queue, {
+                sleep(3)
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    UIView.animateWithDuration(0.2, animations: { () -> Void in
+                        self.viewQuestion.transform = CGAffineTransformMakeScale(0.1, 0.1)
+                        self.viewQuestion.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+                    }) { (finished: Bool) -> Void in
+                        self.viewQuestion.hidden = true
+                        self.resetQuestionDialog()
+                    }
+                    
+                    
+                    let congratulationScreen = CongratulationsViewController()
+                    congratulationScreen.startViewReference = self
+                    self.navigationController?.pushViewController(congratulationScreen, animated: true)
+                })
+            })
+        }else{
+            sender.setBackgroundImage(UIImage(named: "btn_wrong_answer"), forState: UIControlState.Normal)
         }
     }
 }
