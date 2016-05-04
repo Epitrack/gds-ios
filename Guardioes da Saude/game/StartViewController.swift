@@ -16,7 +16,7 @@ class StartViewController: UIViewController {
     var circleLayer: CAShapeLayer!
     var breakTime = false
     var currentQuestion: Question?
-//    var user = User.getInstance()
+    var user = User.getInstance()
 
     
     @IBOutlet weak var viewQuestion: UIView!
