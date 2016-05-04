@@ -20,6 +20,7 @@
                 <outlet property="btnAnswer3" destination="5gY-hB-icR" id="aKT-gx-3gh"/>
                 <outlet property="imgPt3" destination="RXu-LK-yDQ" id="gqq-55-e5I"/>
                 <outlet property="lbTimer" destination="AJO-AZ-mqd" id="bNC-TW-tjw"/>
+                <outlet property="txPoint" destination="MCA-7e-Xn7" id="r9Z-n4-vBw"/>
                 <outlet property="txQuestionDescription" destination="F1A-pD-9aI" id="iQd-EG-cY5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewPt3" destination="xyQ-dx-Bw3" id="Qd4-2y-Z6o"/>
@@ -211,7 +212,7 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_answer" translatesAutoresizingMaskIntoConstraints="NO" id="tyx-At-7Qb">
                             <rect key="frame" x="20" y="110" width="280" height="193"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual tipo de micro-organismo é responsável pela dengue?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1A-pD-9aI">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1A-pD-9aI">
                             <rect key="frame" x="30" y="110" width="260" height="193"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="24"/>
                             <color key="textColor" red="0.094117648899555206" green="0.42352941632270813" blue="0.71764707565307617" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -227,7 +228,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAi-J1-EMD">
                             <rect key="frame" x="50" y="349" width="220" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
-                            <state key="normal" title="Vírus" backgroundImage="btn_question">
+                            <state key="normal" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -237,7 +238,7 @@
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuV-yp-dk5">
                             <rect key="frame" x="50" y="294" width="220" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
-                            <state key="normal" title="Vírus" backgroundImage="btn_question">
+                            <state key="normal" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -247,7 +248,7 @@
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gY-hB-icR">
                             <rect key="frame" x="50" y="404" width="220" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
-                            <state key="normal" title="Vírus" backgroundImage="btn_question">
+                            <state key="normal" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>

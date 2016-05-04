@@ -80,6 +80,7 @@ extern NSString *const kLastJoinNotification;
 @property(nonatomic, retain) NSString *gcmToken;
 @property(nonatomic, assign) bool isTest;
 @property(nonatomic, retain) NSDate *lastJoinNotification;
+@property(nonatomic, assign) int points;
 
 - (void) setGenderBySegIndex: (long) segIndex;
 - (void) setRaceBySegIndex: (long) segIndex;

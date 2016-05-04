@@ -16,6 +16,7 @@ class StartViewController: UIViewController {
     var circleLayer: CAShapeLayer!
     var breakTime = false
     var currentQuestion: Question?
+//    var user = User.getInstance()
 
     
     @IBOutlet weak var viewQuestion: UIView!
@@ -28,6 +29,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var btnAnswer3: UIButton!
     @IBOutlet weak var viewPt3: UIView!
     @IBOutlet weak var imgPt3: UIImageView!
+    @IBOutlet weak var txPoint: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,8 @@ class StartViewController: UIViewController {
         }
         
         circleLayer = CAShapeLayer()
+//        user,point = 10
+        
     }
     
     func animateCircle(duration: NSTimeInterval) {
@@ -147,7 +151,15 @@ class StartViewController: UIViewController {
         let requester = QuestionRequester()
         self.currentQuestion = requester.getQuestion()
         self.txQuestionDescription.text = self.currentQuestion?.question
-        self.btnAnswer1.setTitle(self.currentQuestion?.answers[0].answer, forState: <#T##UIControlState#>)
+        
+        let answer1 = self.currentQuestion?.answers![0]
+        self.btnAnswer1.setTitle(answer1?.answer, forState: UIControlState.Normal)
+        
+        let answer2 = self.currentQuestion?.answers![1]
+        self.btnAnswer2.setTitle(answer2?.answer, forState: UIControlState.Normal)
+        
+        let answer3 = self.currentQuestion?.answers![2]
+        self.btnAnswer3.setTitle(answer3?.answer, forState: UIControlState.Normal)
         
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.viewQuestion.transform = CGAffineTransformIdentity
@@ -184,7 +196,11 @@ class StartViewController: UIViewController {
         }
     }
     @IBAction func btnAnswerAction(sender: UIButton) {
-        if sender.isEqual(self.btnAnswer1) {
+//        user.points--
+//        self.txPoint.text = "\(user.points) Energias"
+        
+        let answer = self.currentQuestion?.answers![sender.tag]
+        if answer!.isCorrect {
             self.playSoundButton()
             self.circleLayer.removeAllAnimations();
             self.breakTime = true
