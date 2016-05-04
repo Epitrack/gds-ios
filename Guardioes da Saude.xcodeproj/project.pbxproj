@@ -1113,7 +1113,6 @@
 		CBCA40191CD9467F009606EB /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		CBCA401B1CD94715009606EB /* QuestionAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAnswer.swift; sourceTree = "<group>"; };
 		CBCA401D1CD947C3009606EB /* QuestionRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionRequester.swift; sourceTree = "<group>"; };
-		CBCA40201CDA3424009606EB /* Guardioes_da_Saude-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Guardioes_da_Saude-Swift.h"; sourceTree = "<group>"; };
 		CBDDF5A31C77452E008853B2 /* SymptomRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomRequester.h; sourceTree = "<group>"; };
 		CBDDF5A41C77452E008853B2 /* SymptomRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomRequester.m; sourceTree = "<group>"; };
 		CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeTableViewCell.h; path = CellTable/NoticeTableViewCell.h; sourceTree = "<group>"; };
@@ -1454,7 +1453,6 @@
 				528C8B0D1BB82630003CFC91 /* Info.plist */,
 				528C8AFC1BB82630003CFC91 /* Supporting Files */,
 				AAE38B5E1BFBC81E009CD20B /* Bridging-Header.h */,
-				CBCA40201CDA3424009606EB /* Guardioes_da_Saude-Swift.h */,
 			);
 			path = "Guardioes da Saude";
 			sourceTree = "<group>";
