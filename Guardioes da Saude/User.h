@@ -6,7 +6,6 @@
 //  Copyright © 2015 epitrack. All rights reserved.
 //
 
-#import "JSONModel.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @import Photos;
@@ -19,35 +18,7 @@ extern NSString *const kNickKey;
 extern NSString *const kIsTest;
 extern NSString *const kLastJoinNotification;
 
-@interface User : JSONModel {
-    NSString *nick;
-    NSString *email;
-    NSString *password;
-    NSString *client;
-    NSString *dob;
-    NSString *gender;
-    NSString *app_token;
-    NSString *lon;
-    NSString *lat;
-    NSString *race;
-    NSString *paltform;
-    NSString *type;
-    NSString *zip;
-    NSString *idUser;
-    NSNumber *avatarNumber;
-    NSString *user_token;
-    NSString *tw;
-    NSString *fb;
-    NSString *gl;
-    NSDictionary *hashtag;
-    NSMutableArray *household;
-    NSDictionary *survey;
-    NSMutableArray *symptoms;
-    NSString *idHousehold;
-    NSString *avatar;
-    NSString *photo;
-    NSString *url;
-}
+@interface User : NSObject
 
 +(User *)getInstance;
 

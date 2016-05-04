@@ -8,6 +8,6 @@
 
 #ifndef Guardioes_da_Saude_Bridging_Header_h
 #define Guardioes_da_Saude_Bridging_Header_h
-
+#import "User.h"
 
 #endif /* Guardioes_da_Saude_Bridging_Header_h */

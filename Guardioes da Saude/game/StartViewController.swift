@@ -16,7 +16,7 @@ class StartViewController: UIViewController {
     var circleLayer: CAShapeLayer!
     var breakTime = false
     var currentQuestion: Question?
-//    var user = User.getInstance()
+    var user = User.getInstance()
 
     
     @IBOutlet weak var viewQuestion: UIView!
@@ -49,7 +49,7 @@ class StartViewController: UIViewController {
         }
         
         circleLayer = CAShapeLayer()
-//        user,point = 10
+        user.points = 10
         
     }
     
@@ -196,8 +196,8 @@ class StartViewController: UIViewController {
         }
     }
     @IBAction func btnAnswerAction(sender: UIButton) {
-//        user.points--
-//        self.txPoint.text = "\(user.points) Energias"
+        self.user.points -= 1
+        self.txPoint.text = "\(user.points) Energias"
         
         let answer = self.currentQuestion?.answers![sender.tag]
         if answer!.isCorrect {
