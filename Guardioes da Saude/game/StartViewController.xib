@@ -214,7 +214,7 @@
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1A-pD-9aI">
                             <rect key="frame" x="30" y="110" width="260" height="193"/>
-                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="24"/>
+                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="21"/>
                             <color key="textColor" red="0.094117648899555206" green="0.42352941632270813" blue="0.71764707565307617" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -227,7 +227,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAi-J1-EMD">
                             <rect key="frame" x="50" y="349" width="220" height="47"/>
-                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
+                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
                             <state key="normal" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -237,7 +237,7 @@
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuV-yp-dk5">
                             <rect key="frame" x="50" y="294" width="220" height="47"/>
-                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
+                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
                             <state key="normal" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -247,7 +247,7 @@
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gY-hB-icR">
                             <rect key="frame" x="50" y="404" width="220" height="47"/>
-                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="23"/>
+                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
                             <state key="normal" backgroundImage="btn_question">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>

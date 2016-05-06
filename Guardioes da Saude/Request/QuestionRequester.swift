@@ -9,23 +9,33 @@
 import UIKit
 
 
-class QuestionRequester {
+class QuestionRequester: Requester {
     
 
-    func getQuestion() -> Question {
-        let question = Question()
-        question.question = "Qual tipo de micro-organismo é responsável pela dengue?"
+    func getQuestion(onStart: (()-> Void), onSuccess: (([Question]) -> Void), onError: ((NSError) -> Void)) {
         
-        let answer1 = QuestionAnswer()
-        answer1.isCorrect = true
-        answer1.answer = "Vírus"
-        let answer2 = QuestionAnswer()
-        answer2.answer = "Bactéria"
-        let answer3 = QuestionAnswer()
-        answer3.answer = "Fungo"
-        
-        question.answers = [answer1, answer2, answer3]
-        
-        return question
+        doGet(getUrl()+"/game/questions/?lang=pt_BR", header: nil, parameter: nil, start: onStart, error: {operation, error in
+                onError(error)
+            }, success: {operation, response in
+                var questions: [Question] = []
+                
+                let dicResponse = response as! Dictionary<String, AnyObject>
+                let jQuestions = dicResponse["questions"] as! [Dictionary<String, AnyObject>]
+                for jQuestion in jQuestions {
+                    let question = Question()
+                    question.question = jQuestion["title"] as? String
+                    let jAlternatives = jQuestion["alternatives"] as! [Dictionary<String, AnyObject>]
+                    for jAlternative in jAlternatives{
+                        let alternative = QuestionAnswer()
+                        alternative.answer = jAlternative["option"] as? String
+                        alternative.isCorrect = jAlternative["correct"] as! Bool
+                        question.alternatives.append(alternative)
+                    }
+                    
+                    questions.append(question)
+                }
+                
+                onSuccess(questions)
+        })
     }
 }

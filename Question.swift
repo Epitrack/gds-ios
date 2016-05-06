@@ -9,6 +9,7 @@
 import UIKit
 
 class Question: NSObject {
+    var id: String?
     var question: String?
-    var answers: [QuestionAnswer]?
+    var alternatives: [QuestionAnswer] = []
 }

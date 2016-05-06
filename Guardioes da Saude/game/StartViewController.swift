@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import PKHUD
 
 class StartViewController: UIViewController {
     
@@ -51,6 +52,15 @@ class StartViewController: UIViewController {
         circleLayer = CAShapeLayer()
         user.points = 10
         
+        let questionRequest = QuestionRequester()
+        questionRequest.getQuestion({
+            HUD.show(.Progress)
+        }, onSuccess: {questions in
+            HUD.hide()
+            self.currentQuestion = questions[0]
+        }, onError: {error in
+            HUD.hide()
+        })
     }
     
     func animateCircle(duration: NSTimeInterval) {
@@ -148,18 +158,16 @@ class StartViewController: UIViewController {
         self.viewQuestion.transform = CGAffineTransformMakeScale(0.1, 0.1)
         self.viewQuestion.hidden = false;
         
-        let requester = QuestionRequester()
-        self.currentQuestion = requester.getQuestion()
         self.txQuestionDescription.text = self.currentQuestion?.question
         
-        let answer1 = self.currentQuestion?.answers![0]
-        self.btnAnswer1.setTitle(answer1?.answer, forState: UIControlState.Normal)
+        let answer1 = self.currentQuestion!.alternatives[0]
+        self.btnAnswer1.setTitle(answer1.answer, forState: UIControlState.Normal)
         
-        let answer2 = self.currentQuestion?.answers![1]
-        self.btnAnswer2.setTitle(answer2?.answer, forState: UIControlState.Normal)
+        let answer2 = self.currentQuestion!.alternatives[1]
+        self.btnAnswer2.setTitle(answer2.answer, forState: UIControlState.Normal)
         
-        let answer3 = self.currentQuestion?.answers![2]
-        self.btnAnswer3.setTitle(answer3?.answer, forState: UIControlState.Normal)
+        let answer3 = self.currentQuestion!.alternatives[2]
+        self.btnAnswer3.setTitle(answer3.answer, forState: UIControlState.Normal)
         
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.viewQuestion.transform = CGAffineTransformIdentity
@@ -199,8 +207,8 @@ class StartViewController: UIViewController {
         self.user.points -= 1
         self.txPoint.text = "\(user.points) Energias"
         
-        let answer = self.currentQuestion?.answers![sender.tag]
-        if answer!.isCorrect {
+        let answer = self.currentQuestion!.alternatives[sender.tag]
+        if answer.isCorrect {
             self.playSoundButton()
             self.circleLayer.removeAllAnimations();
             self.breakTime = true

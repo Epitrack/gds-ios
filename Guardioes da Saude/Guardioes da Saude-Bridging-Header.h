@@ -8,6 +8,9 @@
 
 #ifndef Guardioes_da_Saude_Bridging_Header_h
 #define Guardioes_da_Saude_Bridging_Header_h
+#import <AFNetworking/AFNetworking.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 #import "User.h"
+#import "Requester.h"
 
 #endif /* Guardioes_da_Saude_Bridging_Header_h */

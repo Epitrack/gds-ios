@@ -17,6 +17,7 @@ extern NSString *const kAvatarNumberKey;
 extern NSString *const kNickKey;
 extern NSString *const kIsTest;
 extern NSString *const kLastJoinNotification;
+extern NSString *const kGameTutorialReady;
 
 @interface User : NSObject
 

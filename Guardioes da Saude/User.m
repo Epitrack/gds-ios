@@ -18,6 +18,7 @@ NSString *const kAvatarNumberKey = @"avatarNumberKey";
 NSString *const kNickKey = @"nickKey";
 NSString *const kIsTest = @"isTest";
 NSString *const kLastJoinNotification = @"lastJoinNotification";
+NSString *const kGameTutorialReady = @"gameTutorialReady";
 
 @implementation User
 
@@ -221,7 +222,7 @@ NSString *const kLastJoinNotification = @"lastJoinNotification";
         [preferences synchronize];
         
     } else {
-        avatar = [NSString stringWithFormat:@"img_profile%02d.png", [self.avatarNumber integerValue]];
+        avatar = [NSString stringWithFormat:@"img_profile%02d.png", (int)[self.avatarNumber integerValue]];
     }
     
     if (button) {
@@ -230,6 +231,12 @@ NSString *const kLastJoinNotification = @"lastJoinNotification";
     } else {
         [imageView setImage:[UIImage imageNamed:avatar]];
     }
+}
+
+- (void) setGameTutorialReady{
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    [preferences setValue:@"true" forKey:kGameTutorialReady];
+    [preferences synchronize];
 }
 
 - (BOOL)isValidEmail

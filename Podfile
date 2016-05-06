@@ -24,6 +24,7 @@ pod 'RMDateSelectionViewController'
 pod 'MBProgressHUD', '~> 0.9.2'
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'PKHUD'
 
 target 'Guardioes da Saude' do
 
