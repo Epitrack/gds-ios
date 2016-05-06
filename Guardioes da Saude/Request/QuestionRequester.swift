@@ -38,4 +38,28 @@ class QuestionRequester: Requester {
                 onSuccess(questions)
         })
     }
+    
+    func getRanking(onStart: (() -> Void), onSuccess: (([RankingItem]) -> Void), onError: ((NSError) -> Void)) {
+        doGet(getUrl()+"/game/ranking/",
+              header: nil,
+              parameter: nil,
+              start: onStart,
+              error: {operation, error in
+            onError(error)
+        }, success: {operation, response in
+            let jRankingArr = response as! [Dictionary<String, AnyObject>]
+            var rankings: [RankingItem] = []
+            
+            for jRanking in jRankingArr{
+                let ranking = RankingItem()
+                ranking.country = jRanking["country"] as? String
+                ranking.position = jRanking["position"] as? Int
+                ranking.flagUrl = jRanking["flagUrl"] as? String
+                
+                rankings.append(ranking)
+            }
+            
+            onSuccess(rankings)
+        })
+    }
 }

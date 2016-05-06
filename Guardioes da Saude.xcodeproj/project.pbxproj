@@ -451,6 +451,7 @@
 		CB0F7DC61CB2FBCB00C381C7 /* ChangeLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F7DC41CB2FBCB00C381C7 /* ChangeLanguageViewController.m */; };
 		CB0F7DC71CB2FBCB00C381C7 /* ChangeLanguageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0F7DC51CB2FBCB00C381C7 /* ChangeLanguageViewController.xib */; };
 		CB0F7DCA1CB3F59900C381C7 /* LocalizationSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F7DC91CB3F59900C381C7 /* LocalizationSystem.m */; };
+		CB14AC761CDD24A500BA535C /* RankingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14AC751CDD24A500BA535C /* RankingItem.swift */; };
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB362B2F1C7B48A800BE4F23 /* icon_home_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */; };
 		CB362B301C7B48A800BE4F23 /* icon_home_onpress.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2E1C7B48A800BE4F23 /* icon_home_onpress.png */; };
@@ -1035,6 +1036,7 @@
 		CB0F7DC51CB2FBCB00C381C7 /* ChangeLanguageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeLanguageViewController.xib; sourceTree = "<group>"; };
 		CB0F7DC81CB3F59900C381C7 /* LocalizationSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationSystem.h; sourceTree = "<group>"; };
 		CB0F7DC91CB3F59900C381C7 /* LocalizationSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationSystem.m; sourceTree = "<group>"; };
+		CB14AC751CDD24A500BA535C /* RankingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingItem.swift; sourceTree = "<group>"; };
 		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
 		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
 		CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home_default.png; sourceTree = "<group>"; };
@@ -1211,6 +1213,7 @@
 				52E6F0A91C20B6AC00C88A08 /* Phones.m */,
 				CBCA40191CD9467F009606EB /* Question.swift */,
 				CBCA401B1CD94715009606EB /* QuestionAnswer.swift */,
+				CB14AC751CDD24A500BA535C /* RankingItem.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -2570,6 +2573,7 @@
 				529BE1D31BF6598300692EEC /* HelpViewController.m in Sources */,
 				CB0B3E051CD3F28C0001CDAE /* CongratulationsViewController.swift in Sources */,
 				25630CFA1BDFA2760047FF07 /* Symptom.m in Sources */,
+				CB14AC761CDD24A500BA535C /* RankingItem.swift in Sources */,
 				CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */,
 				AAE38B3C1BFA1CAA009CD20B /* HouseholdRequester.m in Sources */,
 				CBBF75EC1CA19D170083C85A /* GDSButton.m in Sources */,

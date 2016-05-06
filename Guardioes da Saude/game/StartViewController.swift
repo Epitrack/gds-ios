@@ -10,14 +10,16 @@ import UIKit
 import AVFoundation
 import PKHUD
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let questionRequest = QuestionRequester()
     var titleBarImage: UIImageView?
     var audioPlayer: AVAudioPlayer?
     var circleLayer: CAShapeLayer!
     var breakTime = false
     var currentQuestion: Question?
     var user = User.getInstance()
+    var rankingList: [RankingItem] = []
 
     
     @IBOutlet weak var viewQuestion: UIView!
@@ -31,6 +33,10 @@ class StartViewController: UIViewController {
     @IBOutlet weak var viewPt3: UIView!
     @IBOutlet weak var imgPt3: UIImageView!
     @IBOutlet weak var txPoint: UILabel!
+    @IBOutlet weak var viewRanking: UIView!
+    @IBOutlet weak var tableRanking: UITableView!
+    @IBOutlet weak var viewRankingParent: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +58,6 @@ class StartViewController: UIViewController {
         circleLayer = CAShapeLayer()
         user.points = 10
         
-        let questionRequest = QuestionRequester()
         questionRequest.getQuestion({
             HUD.show(.Progress)
         }, onSuccess: {questions in
@@ -94,6 +99,9 @@ class StartViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.viewRanking.layer.cornerRadius = 15
+        self.tableRanking.layer.cornerRadius = 15
+        
         if let _ = self.titleBarImage {
             self.navigationController?.navigationBar.addSubview(self.titleBarImage!)
         }else{
@@ -139,17 +147,55 @@ class StartViewController: UIViewController {
     
     @IBAction func btnTrofeuAction(sender: AnyObject) {
         self.playSoundButton()
+        if self.rankingList.count == 0 {
+            questionRequest.getRanking({HUD.show(.Progress)},
+            onSuccess: {rankingList in
+                HUD.hide()
+                self.rankingList = rankingList
+                self.tableRanking.reloadData()
+                
+                self.viewRankingParent.transform = CGAffineTransformMakeScale(0.1, 0.1)
+                self.viewRankingParent.hidden = false;
+                
+                UIView.animateWithDuration(0.2, animations: { () -> Void in
+                    self.viewRankingParent.transform = CGAffineTransformIdentity
+                    self.viewRankingParent.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+                }) { (finished: Bool) -> Void in
+                    self.animateCircle(14.0)
+                }
+            }, onError: {error in
+                HUD.hide()
+            })
+        }else{
+            self.viewRankingParent.transform = CGAffineTransformMakeScale(0.1, 0.1)
+            self.viewRankingParent.hidden = false;
+            
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.viewRankingParent.transform = CGAffineTransformIdentity
+                self.viewRankingParent.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+            }) { (finished: Bool) -> Void in
+                self.animateCircle(14.0)
+            }
+        }
     }
     
     @IBAction func btnCloseQuestion(sender: AnyObject) {
+        closePopUp(self.viewQuestion)
+        self.resetQuestionDialog()
+    }
+    
+    @IBAction func btnCloseRankingDialogAction(sender: AnyObject) {
+        self.closePopUp(self.viewRankingParent)
+    }
+    
+    func closePopUp(view: UIView) {
         self.playSoundButton()
         
         UIView.animateWithDuration(0.2, animations: { () -> Void in
-            self.viewQuestion.transform = CGAffineTransformMakeScale(0.1, 0.1)
-            self.viewQuestion.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            view.transform = CGAffineTransformMakeScale(0.1, 0.1)
+            view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         }) { (finished: Bool) -> Void in
-            self.viewQuestion.hidden = true
-            self.resetQuestionDialog()
+            view.hidden = true
         }
     }
     
@@ -236,5 +282,20 @@ class StartViewController: UIViewController {
         }else{
             sender.setBackgroundImage(UIImage(named: "btn_wrong_answer"), forState: UIControlState.Normal)
         }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.rankingList.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cacheId = self.rankingList[indexPath.row].country!
+        var cellView = tableView.dequeueReusableCellWithIdentifier(cacheId)
+        if cellView == nil {
+            cellView = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: cacheId)
+            cellView?.textLabel?.text = cacheId
+        }
+        
+        return cellView!
     }
 }
