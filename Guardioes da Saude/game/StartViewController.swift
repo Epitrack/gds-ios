@@ -36,6 +36,9 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var viewRanking: UIView!
     @IBOutlet weak var tableRanking: UITableView!
     @IBOutlet weak var viewRankingParent: UIView!
+    @IBOutlet weak var scrollMap: UIScrollView!
+    @IBOutlet weak var imgMap: UIImageView!
+    @IBOutlet weak var btnLevel1: UIButton!
     
     
     override func viewDidLoad() {
@@ -125,6 +128,17 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.viewQuestionTimer.layer.addSublayer(circleLayer)
         self.viewQuestionTimer.layer.cornerRadius = self.viewQuestionTimer.frame.width/2;
+        
+        
+        
+        
+        
+        UIView.animateWithDuration(1, animations: {
+            let positionScreen = UIScreen.mainScreen().bounds.size.height/4.0
+            
+            let positionY = ((self.imgMap.frame.height*1222)/1408) - (positionScreen*3)
+            self.scrollMap.contentOffset = CGPointMake(0, positionY)
+        })
 
     }
     
@@ -297,5 +311,8 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         return cellView!
+    }
+    @IBAction func btnLevel(sender: UIButton) {
+        sender.setBackgroundImage(UIImage(named: "ic_map_medal"), forState: UIControlState.Normal)
     }
 }
