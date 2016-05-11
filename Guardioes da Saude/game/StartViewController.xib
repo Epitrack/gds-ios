@@ -329,13 +329,13 @@
                             <rect key="frame" x="34" y="100" width="252" height="369"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_ranking" translatesAutoresizingMaskIntoConstraints="NO" id="w6y-qI-Ymq">
-                                    <rect key="frame" x="0.0" y="0.0" width="252" height="135"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="252" height="134.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="w6y-qI-Ymq" secondAttribute="height" multiplier="15:8" id="Ige-3M-uAc"/>
                                     </constraints>
                                 </imageView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q0b-TK-yC3">
-                                    <rect key="frame" x="0.0" y="135" width="252" height="234"/>
+                                    <rect key="frame" x="0.0" y="134.5" width="252" height="234.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <connections>
                                         <outlet property="dataSource" destination="-1" id="OhF-e8-49N"/>
@@ -343,13 +343,13 @@
                                     </connections>
                                 </tableView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontuação" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tht-zm-Sqj">
-                                    <rect key="frame" x="14" y="45" width="69" height="16"/>
+                                    <rect key="frame" x="14" y="44.5" width="69" height="16"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A pontuação é equivalente a cada fase desbloqueada por todos os usuários levando em conta sua nacionalidade." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1C-z7-dXy">
-                                    <rect key="frame" x="14" y="65" width="224" height="62"/>
+                                    <rect key="frame" x="14" y="64.5" width="224" height="62.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -584,9 +584,16 @@
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="Hc3-UJ-OgI"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djv-Ub-UFK" userLabel="Btn Level27">
+                                    <rect key="frame" x="262" y="544" width="55" height="56"/>
+                                    <state key="normal" backgroundImage="ic_map_medal"/>
+                                    <connections>
+                                        <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="BbM-9a-hwM"/>
+                                    </connections>
+                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugg-ZY-4RB" userLabel="Btn Level26">
-                                    <rect key="frame" x="267" y="586" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_pin"/>
+                                    <rect key="frame" x="266" y="586" width="55" height="56"/>
+                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="15u-vE-t5I"/>
                                     </connections>
@@ -604,9 +611,11 @@
                                 <constraint firstItem="mEU-W6-2oU" firstAttribute="width" secondItem="U40-n1-cle" secondAttribute="width" id="0S9-5s-45O"/>
                                 <constraint firstItem="SBe-7g-8dG" firstAttribute="centerX" secondItem="OOG-zl-0eE" secondAttribute="centerX" multiplier="0.56" constant="1" id="0vB-he-KPD"/>
                                 <constraint firstItem="PfI-6n-N37" firstAttribute="centerY" secondItem="OOG-zl-0eE" secondAttribute="centerY" multiplier="1.335" constant="1" id="1C3-6t-kz3"/>
+                                <constraint firstItem="djv-Ub-UFK" firstAttribute="height" secondItem="Ugg-ZY-4RB" secondAttribute="height" id="1Qj-3v-0E1"/>
                                 <constraint firstItem="zXw-hd-QY7" firstAttribute="centerY" secondItem="OOG-zl-0eE" secondAttribute="centerY" multiplier="0.925" constant="1" id="34o-HZ-Oi9"/>
-                                <constraint firstItem="Ugg-ZY-4RB" firstAttribute="centerX" secondItem="OOG-zl-0eE" secondAttribute="centerX" multiplier="1.83" constant="1" id="3o2-am-zaJ"/>
+                                <constraint firstItem="Ugg-ZY-4RB" firstAttribute="centerX" secondItem="OOG-zl-0eE" secondAttribute="centerX" multiplier="1.825" constant="1" id="3o2-am-zaJ"/>
                                 <constraint firstItem="wnW-Op-BCY" firstAttribute="centerY" secondItem="OOG-zl-0eE" secondAttribute="centerY" multiplier="1.045" constant="1" id="42m-zy-z7M"/>
+                                <constraint firstItem="djv-Ub-UFK" firstAttribute="centerX" secondItem="OOG-zl-0eE" secondAttribute="centerX" multiplier="1.8" constant="1" id="4AS-9Y-KIe"/>
                                 <constraint firstItem="zXw-hd-QY7" firstAttribute="height" secondItem="kk7-mH-7jk" secondAttribute="height" id="4NU-fS-sbn"/>
                                 <constraint firstItem="aww-pm-SJB" firstAttribute="height" secondItem="QJS-Ma-7xp" secondAttribute="height" id="4nE-y4-mWp"/>
                                 <constraint firstItem="hsH-yO-iJ0" firstAttribute="centerY" secondItem="OOG-zl-0eE" secondAttribute="centerY" multiplier="0.985" constant="1" id="5FC-iu-Zmf"/>
@@ -615,6 +624,7 @@
                                 <constraint firstItem="Ugg-ZY-4RB" firstAttribute="height" secondItem="fbd-Yp-SB1" secondAttribute="height" id="5WS-m1-n3V"/>
                                 <constraint firstItem="Jsp-4Q-zoP" firstAttribute="height" secondItem="mjK-aU-PvP" secondAttribute="height" id="5er-5x-Dz3"/>
                                 <constraint firstItem="D38-LK-5ry" firstAttribute="width" secondItem="Anc-YL-5qT" secondAttribute="width" id="6aA-Om-ily"/>
+                                <constraint firstItem="djv-Ub-UFK" firstAttribute="centerY" secondItem="OOG-zl-0eE" secondAttribute="centerY" multiplier="0.815" constant="1" id="6db-ti-NvN"/>
                                 <constraint firstItem="aww-pm-SJB" firstAttribute="centerY" secondItem="OOG-zl-0eE" secondAttribute="centerY" multiplier="1.459" constant="1" id="6p9-W4-QQD"/>
                                 <constraint firstItem="PfI-6n-N37" firstAttribute="width" secondItem="9NY-CX-Aec" secondAttribute="width" id="6y1-wX-DK5"/>
                                 <constraint firstItem="fbd-Yp-SB1" firstAttribute="centerX" secondItem="OOG-zl-0eE" secondAttribute="centerX" multiplier="1.63" constant="1" id="7Iu-BJ-q8d"/>
@@ -688,6 +698,7 @@
                                 <constraint firstItem="Anc-YL-5qT" firstAttribute="width" secondItem="D38-LK-5ry" secondAttribute="width" id="iR8-dt-ZxO"/>
                                 <constraint firstItem="fbd-Yp-SB1" firstAttribute="centerY" secondItem="OOG-zl-0eE" secondAttribute="centerY" multiplier="0.915" constant="1" id="ivd-2w-BcT"/>
                                 <constraint firstItem="Anc-YL-5qT" firstAttribute="height" secondItem="Jsp-4Q-zoP" secondAttribute="height" id="iyd-MQ-h31"/>
+                                <constraint firstItem="djv-Ub-UFK" firstAttribute="width" secondItem="Ugg-ZY-4RB" secondAttribute="width" id="iza-uQ-jRp"/>
                                 <constraint firstItem="U40-n1-cle" firstAttribute="centerY" secondItem="OOG-zl-0eE" secondAttribute="centerY" multiplier="1.55" constant="1" id="j58-23-4Je"/>
                                 <constraint firstItem="of2-f2-SCH" firstAttribute="centerX" secondItem="OOG-zl-0eE" secondAttribute="centerX" multiplier="1.82" constant="1" id="jNU-pa-V6T"/>
                                 <constraint firstItem="moM-h8-xtZ" firstAttribute="width" secondItem="R6f-TJ-B4m" secondAttribute="width" id="jx4-Mg-i0C"/>
@@ -802,7 +813,6 @@
         <image name="btn_close" width="96" height="108"/>
         <image name="btn_question" width="240" height="47"/>
         <image name="ic_map_medal" width="50" height="50"/>
-        <image name="ic_map_pin" width="50" height="50"/>
         <image name="icon_answer-1" width="81" height="82"/>
         <image name="icon_barra" width="272" height="110"/>
         <image name="icon_display_points" width="113" height="32"/>
