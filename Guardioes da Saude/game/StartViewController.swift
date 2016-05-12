@@ -20,8 +20,11 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var currentQuestion: Question?
     var user = User.getInstance()
     var rankingList: [RankingItem] = []
+    var puzzeDialog: PuzzeViewController?
+    var showingMap = true
 
     
+    @IBOutlet weak var viewPuzze: UIView!
     @IBOutlet weak var viewQuestion: UIView!
     @IBOutlet weak var viewQuestionTimer: UIView!
     @IBOutlet weak var lbTimer: UILabel!
@@ -44,8 +47,10 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem = btnBack
+        self.navigationItem.hidesBackButton = true
+        let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(handleBack(_:)))
+        btnBack.image = UIImage(named: "icon_back")
+        self.navigationItem.leftBarButtonItem = btnBack
         
         let path = NSBundle.mainBundle().pathForResource("effect_button", ofType: "mp3")
         if let _ = path {
@@ -69,6 +74,10 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }, onError: {error in
             HUD.hide()
         })
+        
+        var arrViews = self.navigationController?.viewControllers
+        arrViews!.removeAtIndex(arrViews!.count - 2)
+        self.navigationController!.viewControllers = arrViews!
     }
     
     func animateCircle(duration: NSTimeInterval) {
@@ -203,8 +212,6 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func closePopUp(view: UIView) {
-        self.playSoundButton()
-        
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             view.transform = CGAffineTransformMakeScale(0.1, 0.1)
             view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
@@ -313,6 +320,47 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cellView!
     }
     @IBAction func btnLevel(sender: UIButton) {
-        sender.setBackgroundImage(UIImage(named: "ic_map_medal"), forState: UIControlState.Normal)
+//        sender.setBackgroundImage(UIImage(named: "ic_map_medal"), forState: UIControlState.Normal)
+        if self.puzzeDialog == nil {
+            self.puzzeDialog = PuzzeViewController()
+            self.puzzeDialog!.startViewRef = self
+            self.addChildViewController(self.puzzeDialog!)
+            self.puzzeDialog!.view.frame = self.view.frame
+            self.viewPuzze.addSubview(self.puzzeDialog!.view)
+            self.puzzeDialog!.didMoveToParentViewController(self)
+        }
+        showingMap = false
+        UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn,
+                                   animations: {
+                                    self.scrollMap.bounds.origin.x = self.view.frame.width
+                                    self.viewPuzze.bounds.origin.x = self.view.frame.width
+            },completion: nil)
     }
+    
+    
+    
+    func closeDialogPuzze() {
+        if let puzzeDialog = self.puzzeDialog {
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                puzzeDialog.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
+            }) { (finished: Bool) -> Void in
+                self.viewPuzze.hidden = true
+            }
+        }
+    }
+    
+    func handleBack(sender: AnyObject) {
+        if showingMap {
+            self.navigationController?.popViewControllerAnimated(true)
+        }else{
+            showingMap = true
+            UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut,
+                                       animations: {
+                                        self.scrollMap.bounds.origin.x = 0
+                                        self.viewPuzze.bounds.origin.x = 0
+                },completion: nil)
+        }
+    }
+    
+    
 }

@@ -452,6 +452,8 @@
 		CB0F7DC71CB2FBCB00C381C7 /* ChangeLanguageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0F7DC51CB2FBCB00C381C7 /* ChangeLanguageViewController.xib */; };
 		CB0F7DCA1CB3F59900C381C7 /* LocalizationSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F7DC91CB3F59900C381C7 /* LocalizationSystem.m */; };
 		CB14AC761CDD24A500BA535C /* RankingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14AC751CDD24A500BA535C /* RankingItem.swift */; };
+		CB163F961CE4B13000ED13CC /* PuzzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB163F941CE4B13000ED13CC /* PuzzeViewController.swift */; };
+		CB163F971CE4B13000ED13CC /* PuzzeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB163F951CE4B13000ED13CC /* PuzzeViewController.xib */; };
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB362B2F1C7B48A800BE4F23 /* icon_home_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */; };
 		CB362B301C7B48A800BE4F23 /* icon_home_onpress.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2E1C7B48A800BE4F23 /* icon_home_onpress.png */; };
@@ -1037,6 +1039,8 @@
 		CB0F7DC81CB3F59900C381C7 /* LocalizationSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationSystem.h; sourceTree = "<group>"; };
 		CB0F7DC91CB3F59900C381C7 /* LocalizationSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalizationSystem.m; sourceTree = "<group>"; };
 		CB14AC751CDD24A500BA535C /* RankingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingItem.swift; sourceTree = "<group>"; };
+		CB163F941CE4B13000ED13CC /* PuzzeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzeViewController.swift; path = game/PuzzeViewController.swift; sourceTree = "<group>"; };
+		CB163F951CE4B13000ED13CC /* PuzzeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PuzzeViewController.xib; path = game/PuzzeViewController.xib; sourceTree = "<group>"; };
 		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
 		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
 		CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home_default.png; sourceTree = "<group>"; };
@@ -1890,6 +1894,8 @@
 				CB9F379F1CCEC726008D5ACF /* StartViewController.xib */,
 				CB0B3E031CD3F28C0001CDAE /* CongratulationsViewController.swift */,
 				CB0B3E041CD3F28C0001CDAE /* CongratulationsViewController.xib */,
+				CB163F941CE4B13000ED13CC /* PuzzeViewController.swift */,
+				CB163F951CE4B13000ED13CC /* PuzzeViewController.xib */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -2286,6 +2292,7 @@
 				52D2BC881BF12EBF007C9C09 /* icon_pin_userlocation@3x.png in Resources */,
 				520EB7131C21EF220054D818 /* buttonEmailDisable.png in Resources */,
 				52E7277A1BEA93B800B46945 /* icon_info_blue@2x.png in Resources */,
+				CB163F971CE4B13000ED13CC /* PuzzeViewController.xib in Resources */,
 				52E7279D1BEA93B800B46945 /* icon_pin_urgency.png in Resources */,
 				52E727CC1BEA93B800B46945 /* img_profile05@3x.png in Resources */,
 				520EB7151C21EF220054D818 /* buttonEmailDisable@3x.png in Resources */,
@@ -2529,6 +2536,7 @@
 				25630CF61BDF96F90047FF07 /* ListSymptomsViewController.m in Sources */,
 				527782CA1C04CEB700251BF8 /* SelectAvatarViewController.m in Sources */,
 				52E6F0881C209A6B00C88A08 /* DetailPhoneViewController.m in Sources */,
+				CB163F961CE4B13000ED13CC /* PuzzeViewController.swift in Sources */,
 				CBBC1E191C9B31FE0079A8D6 /* SignUpViewController.m in Sources */,
 				527782D81C0CC9FD00251BF8 /* NoticeRequester.m in Sources */,
 				52E6F06F1C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.m in Sources */,
