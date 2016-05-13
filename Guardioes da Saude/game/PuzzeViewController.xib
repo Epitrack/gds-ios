@@ -5,18 +5,11 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="Foco_Std_Bd.ttf">
-            <string>Foco-Bold</string>
-            <string>Foco-Bold</string>
-            <string>Foco-Bold</string>
-            <string>Foco-Bold</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PuzzeViewController" customModule="Guardioes_da_Saude" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewQuestion" destination="5Wo-FU-TAi" id="AfS-Uv-QJm"/>
                 <outlet property="viewQuestions" destination="B7B-UM-ow4" id="fjg-Gn-tJf"/>
             </connections>
         </placeholder>
@@ -25,94 +18,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b52-1s-CRR">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg_answer" translatesAutoresizingMaskIntoConstraints="NO" id="aUd-a8-zZY">
-                            <rect key="frame" x="20" y="110" width="280" height="193"/>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUA-IP-zhQ">
-                            <rect key="frame" x="30" y="110" width="260" height="193"/>
-                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="21"/>
-                            <color key="textColor" red="0.094117648900000003" green="0.42352941630000002" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gf1-wC-aEo">
-                            <rect key="frame" x="236" y="77" width="96" height="108"/>
-                            <state key="normal" image="btn_close"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3s-Fh-5y6">
-                            <rect key="frame" x="50" y="349" width="220" height="47"/>
-                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
-                            <state key="normal" backgroundImage="btn_question">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0V-LS-SZn">
-                            <rect key="frame" x="50" y="294" width="220" height="47"/>
-                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
-                            <state key="normal" backgroundImage="btn_question">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-QE-sAJ">
-                            <rect key="frame" x="50" y="404" width="220" height="47"/>
-                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
-                            <state key="normal" backgroundImage="btn_question">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bda-8H-hZg">
-                            <rect key="frame" x="129" y="87" width="63" height="63"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xo3-WT-Qcs">
-                                    <rect key="frame" x="27" y="21" width="8" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.93725490570000003" green="0.3843137324" blue="0.1019607857" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="bda-8H-hZg" secondAttribute="height" multiplier="71:67" constant="-3.761194029850742" id="foW-nK-hIA"/>
-                                <constraint firstItem="xo3-WT-Qcs" firstAttribute="centerX" secondItem="bda-8H-hZg" secondAttribute="centerX" id="hYl-aU-0k7"/>
-                                <constraint firstItem="xo3-WT-Qcs" firstAttribute="centerY" secondItem="bda-8H-hZg" secondAttribute="centerY" id="tEq-K6-eYi"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="ZUA-IP-zhQ" firstAttribute="trailing" secondItem="aUd-a8-zZY" secondAttribute="trailing" constant="-10" id="1G6-MB-Ota"/>
-                        <constraint firstItem="eOr-QE-sAJ" firstAttribute="trailing" secondItem="A3s-Fh-5y6" secondAttribute="trailing" id="2q2-XU-Z7q"/>
-                        <constraint firstItem="bda-8H-hZg" firstAttribute="top" secondItem="aUd-a8-zZY" secondAttribute="top" constant="-23" id="7YS-st-Uko"/>
-                        <constraint firstItem="aUd-a8-zZY" firstAttribute="top" secondItem="b52-1s-CRR" secondAttribute="top" constant="110" id="9Bj-Qn-gMQ"/>
-                        <constraint firstItem="eOr-QE-sAJ" firstAttribute="top" secondItem="A3s-Fh-5y6" secondAttribute="bottom" constant="8" id="FM8-er-SEH"/>
-                        <constraint firstItem="A3s-Fh-5y6" firstAttribute="leading" secondItem="y0V-LS-SZn" secondAttribute="leading" id="P89-vU-R3P"/>
-                        <constraint firstItem="y0V-LS-SZn" firstAttribute="top" secondItem="ZUA-IP-zhQ" secondAttribute="bottom" constant="-9" id="TuE-ok-Szl"/>
-                        <constraint firstItem="y0V-LS-SZn" firstAttribute="leading" secondItem="ZUA-IP-zhQ" secondAttribute="leading" constant="20" id="UlB-Om-v3P"/>
-                        <constraint firstItem="bda-8H-hZg" firstAttribute="top" secondItem="aUd-a8-zZY" secondAttribute="top" id="Uqb-XP-V3q"/>
-                        <constraint firstItem="A3s-Fh-5y6" firstAttribute="top" secondItem="y0V-LS-SZn" secondAttribute="bottom" constant="8" id="Wpk-Ez-pJd"/>
-                        <constraint firstItem="bda-8H-hZg" firstAttribute="width" secondItem="b52-1s-CRR" secondAttribute="height" multiplier="43:284" constant="-23" id="YAC-GX-wvo"/>
-                        <constraint firstItem="eOr-QE-sAJ" firstAttribute="leading" secondItem="A3s-Fh-5y6" secondAttribute="leading" id="aOo-kH-gua"/>
-                        <constraint firstItem="ZUA-IP-zhQ" firstAttribute="top" secondItem="aUd-a8-zZY" secondAttribute="top" id="b5P-Fd-s0x"/>
-                        <constraint firstAttribute="trailing" secondItem="aUd-a8-zZY" secondAttribute="trailing" constant="20" id="c4m-Pf-uGO"/>
-                        <constraint firstItem="A3s-Fh-5y6" firstAttribute="trailing" secondItem="y0V-LS-SZn" secondAttribute="trailing" id="d1U-fA-aGD"/>
-                        <constraint firstItem="gf1-wC-aEo" firstAttribute="trailing" secondItem="aUd-a8-zZY" secondAttribute="trailing" constant="32" id="f5m-MR-e4L"/>
-                        <constraint firstItem="gf1-wC-aEo" firstAttribute="top" secondItem="aUd-a8-zZY" secondAttribute="top" constant="-33" id="fnF-f5-gs6"/>
-                        <constraint firstItem="y0V-LS-SZn" firstAttribute="trailing" secondItem="ZUA-IP-zhQ" secondAttribute="trailing" constant="-20" id="nWu-gi-GAt"/>
-                        <constraint firstItem="bda-8H-hZg" firstAttribute="centerX" secondItem="aUd-a8-zZY" secondAttribute="centerX" id="qk9-8l-wFu"/>
-                        <constraint firstItem="ZUA-IP-zhQ" firstAttribute="leading" secondItem="aUd-a8-zZY" secondAttribute="leading" constant="10" id="v2k-Ai-fWK"/>
-                        <constraint firstItem="ZUA-IP-zhQ" firstAttribute="bottom" secondItem="aUd-a8-zZY" secondAttribute="bottom" id="vET-gy-cPL"/>
-                        <constraint firstItem="bda-8H-hZg" firstAttribute="centerY" secondItem="gf1-wC-aEo" secondAttribute="centerY" id="wUY-J6-Emz"/>
-                        <constraint firstItem="aUd-a8-zZY" firstAttribute="leading" secondItem="b52-1s-CRR" secondAttribute="leading" constant="20" id="wm4-PU-iAI"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Uqb-XP-V3q"/>
-                            <exclude reference="wUY-J6-Emz"/>
-                        </mask>
-                    </variation>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7B-UM-ow4">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
@@ -133,6 +38,9 @@
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoC-jX-Ial">
                             <rect key="frame" x="20" y="120" width="76" height="77"/>
+                            <connections>
+                                <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="vIu-U4-9Ua"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_answer-1" translatesAutoresizingMaskIntoConstraints="NO" id="TN1-yV-Akc">
                             <rect key="frame" x="122" y="120" width="76" height="77"/>
@@ -152,7 +60,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMs-j2-eI0">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
                                     <connections>
-                                        <action selector="btnQuestion3Action:" destination="-1" eventType="touchUpInside" id="CgU-1r-JQh"/>
+                                        <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="pIa-R8-2Ye"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -265,14 +173,22 @@
                         </mask>
                     </variation>
                 </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Wo-FU-TAi" userLabel="ViewQuestion">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <constraints>
                 <constraint firstItem="B7B-UM-ow4" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="DmQ-VQ-5ql"/>
                 <constraint firstAttribute="trailing" secondItem="B7B-UM-ow4" secondAttribute="trailing" id="GSs-PW-mRj"/>
                 <constraint firstItem="B7B-UM-ow4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GZu-4N-dig"/>
+                <constraint firstItem="5Wo-FU-TAi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HLe-Ht-oQe"/>
+                <constraint firstAttribute="trailing" secondItem="5Wo-FU-TAi" secondAttribute="trailing" id="LyA-Mo-JSD"/>
+                <constraint firstAttribute="bottom" secondItem="5Wo-FU-TAi" secondAttribute="bottom" id="NFZ-Kt-X6Q"/>
                 <constraint firstItem="B7B-UM-ow4" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="XbQ-1L-Z0a"/>
                 <constraint firstAttribute="bottom" secondItem="B7B-UM-ow4" secondAttribute="bottom" id="Yje-j0-Vla"/>
                 <constraint firstItem="B7B-UM-ow4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gVh-dU-JVB"/>
+                <constraint firstItem="5Wo-FU-TAi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xaB-HO-LZv"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
@@ -283,9 +199,6 @@
         </view>
     </objects>
     <resources>
-        <image name="bg_answer" width="278" height="193"/>
-        <image name="btn_close" width="96" height="108"/>
-        <image name="btn_question" width="240" height="47"/>
         <image name="icon_answer-1" width="81" height="82"/>
         <image name="icon_title_bg" width="295" height="73"/>
     </resources>

@@ -127,21 +127,21 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidAppear(animated: Bool) {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.viewQuestionTimer.frame.size.width / 2.0, y: self.viewQuestionTimer.frame.size.height / 2.0), radius: (self.viewQuestionTimer.frame.size.width - 10)/2, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
-        
-        circleLayer.path = circlePath.CGPath
-        circleLayer.fillColor = UIColor.clearColor().CGColor
-        circleLayer.strokeColor = UIColor(red: 239.0/255.0, green: 98.0/255.0, blue: 26.0/255.0, alpha: 1).CGColor
-        circleLayer.lineWidth = 7.0;
-        circleLayer.strokeEnd = 0.0
-        
-        self.viewQuestionTimer.layer.addSublayer(circleLayer)
-        self.viewQuestionTimer.layer.cornerRadius = self.viewQuestionTimer.frame.width/2;
-        
-        
-        
-        
-        
+//        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.viewQuestionTimer.frame.size.width / 2.0, y: self.viewQuestionTimer.frame.size.height / 2.0), radius: (self.viewQuestionTimer.frame.size.width - 10)/2, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
+//        
+//        circleLayer.path = circlePath.CGPath
+//        circleLayer.fillColor = UIColor.clearColor().CGColor
+//        circleLayer.strokeColor = UIColor(red: 239.0/255.0, green: 98.0/255.0, blue: 26.0/255.0, alpha: 1).CGColor
+//        circleLayer.lineWidth = 7.0;
+//        circleLayer.strokeEnd = 0.0
+//        
+//        self.viewQuestionTimer.layer.addSublayer(circleLayer)
+//        self.viewQuestionTimer.layer.cornerRadius = self.viewQuestionTimer.frame.width/2;
+//        
+//        
+//        
+//        
+//        
         UIView.animateWithDuration(1, animations: {
             let positionScreen = UIScreen.mainScreen().bounds.size.height/4.0
             
@@ -330,10 +330,13 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.puzzeDialog!.didMoveToParentViewController(self)
         }
         showingMap = false
+        self.viewPuzze.bounds.origin.x = -self.view.frame.width
+        self.viewPuzze.hidden = false
+        
         UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn,
                                    animations: {
                                     self.scrollMap.bounds.origin.x = self.view.frame.width
-                                    self.viewPuzze.bounds.origin.x = self.view.frame.width
+                                    self.viewPuzze.bounds.origin.x = 0
             },completion: nil)
     }
     
@@ -357,8 +360,8 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut,
                                        animations: {
                                         self.scrollMap.bounds.origin.x = 0
-                                        self.viewPuzze.bounds.origin.x = 0
-                },completion: nil)
+                                        self.viewPuzze.bounds.origin.x = -self.view.frame.width
+                },completion: {finshed in self.viewPuzze.hidden = true})
         }
     }
     

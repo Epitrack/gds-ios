@@ -454,6 +454,8 @@
 		CB14AC761CDD24A500BA535C /* RankingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14AC751CDD24A500BA535C /* RankingItem.swift */; };
 		CB163F961CE4B13000ED13CC /* PuzzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB163F941CE4B13000ED13CC /* PuzzeViewController.swift */; };
 		CB163F971CE4B13000ED13CC /* PuzzeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB163F951CE4B13000ED13CC /* PuzzeViewController.xib */; };
+		CB163F9A1CE63DB400ED13CC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB163F981CE63DB400ED13CC /* QuestionViewController.swift */; };
+		CB163F9B1CE63DB400ED13CC /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB163F991CE63DB400ED13CC /* QuestionViewController.xib */; };
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB362B2F1C7B48A800BE4F23 /* icon_home_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */; };
 		CB362B301C7B48A800BE4F23 /* icon_home_onpress.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2E1C7B48A800BE4F23 /* icon_home_onpress.png */; };
@@ -1041,6 +1043,8 @@
 		CB14AC751CDD24A500BA535C /* RankingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingItem.swift; sourceTree = "<group>"; };
 		CB163F941CE4B13000ED13CC /* PuzzeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PuzzeViewController.swift; path = game/PuzzeViewController.swift; sourceTree = "<group>"; };
 		CB163F951CE4B13000ED13CC /* PuzzeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PuzzeViewController.xib; path = game/PuzzeViewController.xib; sourceTree = "<group>"; };
+		CB163F981CE63DB400ED13CC /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionViewController.swift; path = game/QuestionViewController.swift; sourceTree = "<group>"; };
+		CB163F991CE63DB400ED13CC /* QuestionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionViewController.xib; path = game/QuestionViewController.xib; sourceTree = "<group>"; };
 		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
 		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
 		CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home_default.png; sourceTree = "<group>"; };
@@ -1896,6 +1900,8 @@
 				CB0B3E041CD3F28C0001CDAE /* CongratulationsViewController.xib */,
 				CB163F941CE4B13000ED13CC /* PuzzeViewController.swift */,
 				CB163F951CE4B13000ED13CC /* PuzzeViewController.xib */,
+				CB163F981CE63DB400ED13CC /* QuestionViewController.swift */,
+				CB163F991CE63DB400ED13CC /* QuestionViewController.xib */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -2341,6 +2347,7 @@
 				52E727D31BEA93B800B46945 /* img_profile10.png in Resources */,
 				527782D01C062DC100251BF8 /* gdSToolbar@2x.png in Resources */,
 				52E727D21BEA93B800B46945 /* img_profile04@3x.png in Resources */,
+				CB163F9B1CE63DB400ED13CC /* QuestionViewController.xib in Resources */,
 				52E727AB1BEA93B800B46945 /* icon_security@3x.png in Resources */,
 				52D2BC841BF12EBF007C9C09 /* icon_pin_bad@2x.png in Resources */,
 				52E727751BEA93B800B46945 /* icon_help_n_faq@3x.png in Resources */,
@@ -2553,6 +2560,7 @@
 				524C143B1BEBE67C003A6C2D /* PreventionViewController.m in Sources */,
 				520CD0E21BED436700F24B45 /* EnterViewController.m in Sources */,
 				CBBF75E91CA19AF00083C85A /* GDSTextField.m in Sources */,
+				CB163F9A1CE63DB400ED13CC /* QuestionViewController.swift in Sources */,
 				CB8065A01CC7EA3600CD2F7A /* GameTutorialViewController.swift in Sources */,
 				525A33221BECF3BA00B62E33 /* RearViewController.m in Sources */,
 				AAE38B371BF9211D009CD20B /* Constants.m in Sources */,
