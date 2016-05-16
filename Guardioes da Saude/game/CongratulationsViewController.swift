@@ -10,7 +10,7 @@ import UIKit
 
 class CongratulationsViewController: UIViewController {
     
-    var startViewReference: StartViewController?
+    var puzzeViewReference: PuzzeViewController?
     
     var titleBarImage: UIImageView?
 
@@ -42,8 +42,8 @@ class CongratulationsViewController: UIViewController {
 
     @IBAction func btnQuestionAction(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
-        if let _ = startViewReference {
-            startViewReference?.transitionQuestion()
+        if let puzzeViewReference = self.puzzeViewReference {
+            puzzeViewReference.transitionQuestion()
         }
     }
     

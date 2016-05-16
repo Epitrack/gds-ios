@@ -13,6 +13,8 @@ class PuzzeViewController: UIViewController {
     
     @IBOutlet weak var viewQuestions: UIView!
     @IBOutlet weak var viewQuestion: UIView!
+    @IBOutlet weak var viewPt3: UIView!
+    @IBOutlet weak var imgPt3: UIImageView!
     
     let questionViewCtrl = QuestionViewController()
     let questionRequest = QuestionRequester()
@@ -21,12 +23,12 @@ class PuzzeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewQuestion.addSubview(questionViewCtrl.view)
+        
         self.addChildViewController(self.questionViewCtrl)
         self.questionViewCtrl.view.frame = self.viewQuestion.frame
         self.questionViewCtrl.didMoveToParentViewController(self)
         self.questionViewCtrl.puzzeViewCtrlRef = self
-        // Do any additional setup after loading the view.
+        self.viewQuestion.addSubview(questionViewCtrl.view)
         
         self.loadQuestions()
     }
@@ -67,7 +69,7 @@ class PuzzeViewController: UIViewController {
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.questionViewCtrl.view.transform = CGAffineTransformIdentity
         }) { (finished: Bool) -> Void in
-            
+            self.questionViewCtrl.animateCircle(15)
         }
     }
     
@@ -77,5 +79,22 @@ class PuzzeViewController: UIViewController {
         }) { (finished: Bool) -> Void in
             self.viewQuestion.hidden = true
         }
+    }
+    
+    func transitionQuestion() {
+        let img = UIImage(named: "img_level1_pt1_min")
+        let imgSize = imageWithImage(img!, scaledToSize: viewPt3.bounds.size)
+        let imgPt3New = UIImageView(image: imgSize)
+        imgPt3.bounds = imgPt3.bounds
+        
+        UIView.transitionFromView(imgPt3, toView: imgPt3New, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+    }
+    
+    func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+        image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }

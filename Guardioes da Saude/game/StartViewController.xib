@@ -47,294 +47,252 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moM-h8-xtZ" userLabel="Btn Level2">
                                     <rect key="frame" x="190" y="1164" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="qgh-Rv-25L"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U40-n1-cle" userLabel="Btn Level5">
                                     <rect key="frame" x="255" y="1058" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="K7x-ft-j5V"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of2-f2-SCH" userLabel="Btn Level4">
                                     <rect key="frame" x="265" y="1100" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="WOt-ql-DOX"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxm-Cz-HGw" userLabel="Btn Level3">
                                     <rect key="frame" x="237" y="1135" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="RMD-c4-KuH"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEU-W6-2oU" userLabel="Btn Level6">
                                     <rect key="frame" x="213" y="1030" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="y7V-Nx-2HM"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8c3-eG-7bf" userLabel="Btn Level7">
                                     <rect key="frame" x="156" y="1020" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="PRu-oL-mJI"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJS-Ma-7xp" userLabel="Btn Level8">
                                     <rect key="frame" x="97" y="1009" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="wWh-bf-BHX"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aww-pm-SJB" userLabel="Btn Level9">
                                     <rect key="frame" x="43" y="995" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="2BU-Uh-5y5"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NY-CX-Aec" userLabel="Btn Level10">
                                     <rect key="frame" x="9" y="960" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="We7-ZT-BBL"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfI-6n-N37" userLabel="Btn Level11">
                                     <rect key="frame" x="19" y="908" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="LCu-Eu-yV8"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBE-lB-boz" userLabel="Btn Level12">
                                     <rect key="frame" x="70" y="887" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="5cp-ZC-7KA"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFF-Pa-DT9" userLabel="Btn Level13">
                                     <rect key="frame" x="123" y="876" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="jE3-kx-cjS"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjK-aU-PvP" userLabel="Btn Level14">
                                     <rect key="frame" x="177" y="866" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="rj3-Ly-D6z"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsp-4Q-zoP" userLabel="Btn Level15">
                                     <rect key="frame" x="228" y="848" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="FGE-yH-dP9"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGm-yn-zir" userLabel="Btn Level18">
                                     <rect key="frame" x="231" y="747" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="yTZ-8m-RqA"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D38-LK-5ry" userLabel="Btn Level17">
                                     <rect key="frame" x="262" y="778" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="Xze-ot-g3i"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anc-YL-5qT" userLabel="Btn Level16">
                                     <rect key="frame" x="259" y="817" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="c0u-oT-v6T"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnW-Op-BCY" userLabel="Btn Level19">
                                     <rect key="frame" x="28" y="705" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="lJa-Xo-dHf"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQL-K2-cg2" userLabel="Btn Level21">
                                     <rect key="frame" x="14" y="628" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="5dd-dX-Q3x"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsH-yO-iJ0" userLabel="Btn Level20">
                                     <rect key="frame" x="3" y="663" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="7dZ-Ye-xKz"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBe-7g-8dG" userLabel="Btn Level22">
                                     <rect key="frame" x="63" y="614" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="JOz-K8-Go6"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kk7-mH-7jk" userLabel="Btn Level23">
                                     <rect key="frame" x="124" y="617" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="5xb-Tn-Nl3"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXw-hd-QY7" userLabel="Btn Level24">
                                     <rect key="frame" x="177" y="621" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="Hc3-UJ-OgI"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djv-Ub-UFK" userLabel="Btn Level27">
                                     <rect key="frame" x="262" y="544" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="BbM-9a-hwM"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugg-ZY-4RB" userLabel="Btn Level26">
                                     <rect key="frame" x="266" y="586" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="15u-vE-t5I"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-Yp-SB1" userLabel="Btn Level25">
                                     <rect key="frame" x="235" y="614" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="NLN-dt-hG9"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbX-H3-6Rb" userLabel="Btn Level28">
                                     <rect key="frame" x="227" y="519" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="DpC-Pi-D7h"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXp-tR-IdE" userLabel="Btn Level29">
                                     <rect key="frame" x="177" y="512" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="WQa-UY-vRR"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHM-vD-BA4" userLabel="Btn Level30">
                                     <rect key="frame" x="126" y="511" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="Y1r-Go-PiW"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryg-Yw-qqK" userLabel="Btn Level31">
                                     <rect key="frame" x="75" y="509" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="tel-lF-1T9"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAP-5h-TlF" userLabel="Btn Level33">
                                     <rect key="frame" x="9" y="460" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="gHP-PE-EZh"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9b-Bj-27t" userLabel="Btn Level32">
                                     <rect key="frame" x="23" y="495" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="UeJ-TH-jH3"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWn-Kb-j0u" userLabel="Btn Level34">
                                     <rect key="frame" x="45" y="427" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="bJG-yH-CPJ"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byo-Sq-QTe" userLabel="Btn Level35">
                                     <rect key="frame" x="250" y="375" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="tpP-Ft-Evg"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-f6-Br7" userLabel="Btn Level36">
                                     <rect key="frame" x="261" y="319" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="RnO-82-5li"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7df-wO-CU4" userLabel="Btn Level37">
                                     <rect key="frame" x="206" y="280" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="k1s-cc-cGg"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLq-oR-6Ld" userLabel="Btn Level38">
                                     <rect key="frame" x="94" y="270" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="XYv-wN-jwe"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EV9-g7-2GU" userLabel="Btn Level39">
                                     <rect key="frame" x="18" y="252" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="tS4-IH-lMw"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCi-fy-DnS" userLabel="Btn Level40">
                                     <rect key="frame" x="30" y="200" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="hFf-II-mMf"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHr-aI-k9K" userLabel="Btn Level41">
                                     <rect key="frame" x="106" y="189" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="7V0-6o-Vk0"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c7-l7-bYY" userLabel="Btn Level42">
                                     <rect key="frame" x="233" y="133" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="qaC-0h-ndl"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjr-Pa-2Ra" userLabel="Btn Level43">
                                     <rect key="frame" x="139" y="112" width="55" height="56"/>
-                                    <state key="normal" backgroundImage="ic_map_medal"/>
                                     <connections>
                                         <action selector="btnLevel:" destination="-1" eventType="touchUpInside" id="exm-12-riT"/>
                                     </connections>
@@ -729,7 +687,6 @@
     <resources>
         <image name="bg_ranking" width="252" height="110"/>
         <image name="btn_close" width="96" height="108"/>
-        <image name="ic_map_medal" width="50" height="50"/>
         <image name="icon_barra" width="272" height="110"/>
         <image name="icon_display_points" width="113" height="32"/>
         <image name="icon_ranking" width="124" height="119"/>

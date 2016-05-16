@@ -10,6 +10,8 @@
             <string>Foco-Bold</string>
             <string>Foco-Bold</string>
             <string>Foco-Bold</string>
+            <string>Foco-Bold</string>
+            <string>Foco-Bold</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -18,8 +20,12 @@
                 <outlet property="btnAlternativeOne" destination="AX0-70-X1e" id="vls-I2-Cjq"/>
                 <outlet property="btnAlternativeThree" destination="ZRv-wP-ZwV" id="yOY-Xv-Xo9"/>
                 <outlet property="btnAlternativeTwo" destination="CVH-K1-ZBa" id="VLN-nZ-6gs"/>
+                <outlet property="imgBgDialog" destination="9Q4-6q-9oP" id="yBb-8Z-gXH"/>
                 <outlet property="lbDescription" destination="GZs-gQ-6D7" id="VQd-SF-Z1U"/>
+                <outlet property="lbTimer" destination="zDm-KE-ZYw" id="6dr-lQ-sZ5"/>
+                <outlet property="viemCorrectAnswer" destination="G86-Dk-Tca" id="QGP-jc-Z2t"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewTimer" destination="CfV-aB-Lq2" id="a2u-Df-o73"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -90,15 +96,41 @@
                                 <constraint firstAttribute="width" secondItem="CfV-aB-Lq2" secondAttribute="height" multiplier="71:67" constant="-3.761194029850742" id="txe-dz-ibf"/>
                             </constraints>
                         </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G86-Dk-Tca">
+                            <rect key="frame" x="20" y="40" width="280" height="193"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resposta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCr-W0-FXB">
+                                    <rect key="frame" x="107" y="57" width="67" height="21"/>
+                                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correta!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAg-gy-VRe">
+                                    <rect key="frame" x="83" y="78" width="115" height="38"/>
+                                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="32"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="NAg-gy-VRe" firstAttribute="top" secondItem="oCr-W0-FXB" secondAttribute="bottom" id="IBK-jB-zZm"/>
+                                <constraint firstItem="oCr-W0-FXB" firstAttribute="centerX" secondItem="G86-Dk-Tca" secondAttribute="centerX" id="eCW-Bd-PdO"/>
+                                <constraint firstItem="NAg-gy-VRe" firstAttribute="centerX" secondItem="oCr-W0-FXB" secondAttribute="centerX" id="hdA-2c-oIq"/>
+                                <constraint firstItem="oCr-W0-FXB" firstAttribute="top" secondItem="G86-Dk-Tca" secondAttribute="top" constant="57" id="x1G-5c-eQo"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="CfV-aB-Lq2" firstAttribute="top" secondItem="9Q4-6q-9oP" secondAttribute="top" id="3Dm-zC-Mjv"/>
                         <constraint firstItem="9Q4-6q-9oP" firstAttribute="top" secondItem="YKU-Gg-dTe" secondAttribute="top" constant="40" id="3Lb-6b-S0W"/>
                         <constraint firstItem="GZs-gQ-6D7" firstAttribute="top" secondItem="9Q4-6q-9oP" secondAttribute="top" id="4D0-cM-GKp"/>
+                        <constraint firstItem="G86-Dk-Tca" firstAttribute="trailing" secondItem="9Q4-6q-9oP" secondAttribute="trailing" id="4h3-1e-Yqn"/>
+                        <constraint firstItem="G86-Dk-Tca" firstAttribute="bottom" secondItem="9Q4-6q-9oP" secondAttribute="bottom" id="5JB-i8-mcS"/>
                         <constraint firstItem="ZRv-wP-ZwV" firstAttribute="trailing" secondItem="CVH-K1-ZBa" secondAttribute="trailing" id="73F-f2-bSb"/>
                         <constraint firstItem="CVH-K1-ZBa" firstAttribute="top" secondItem="AX0-70-X1e" secondAttribute="bottom" constant="8" id="7Th-ie-e8V"/>
                         <constraint firstItem="AX0-70-X1e" firstAttribute="leading" secondItem="GZs-gQ-6D7" secondAttribute="leading" constant="20" id="870-ol-qWL"/>
                         <constraint firstItem="6Ri-xn-v87" firstAttribute="trailing" secondItem="9Q4-6q-9oP" secondAttribute="trailing" constant="32" id="AyQ-8N-M8B"/>
+                        <constraint firstItem="G86-Dk-Tca" firstAttribute="leading" secondItem="9Q4-6q-9oP" secondAttribute="leading" id="Bf2-1V-lY7"/>
                         <constraint firstItem="9Q4-6q-9oP" firstAttribute="leading" secondItem="YKU-Gg-dTe" secondAttribute="leading" constant="20" id="Pec-Av-FWs"/>
                         <constraint firstItem="CfV-aB-Lq2" firstAttribute="centerY" secondItem="6Ri-xn-v87" secondAttribute="centerY" id="RiR-ja-CN0"/>
                         <constraint firstItem="CVH-K1-ZBa" firstAttribute="leading" secondItem="AX0-70-X1e" secondAttribute="leading" id="SyB-lG-jdW"/>
@@ -110,6 +142,7 @@
                         <constraint firstAttribute="trailing" secondItem="9Q4-6q-9oP" secondAttribute="trailing" constant="20" id="kif-G4-Elx"/>
                         <constraint firstItem="GZs-gQ-6D7" firstAttribute="leading" secondItem="9Q4-6q-9oP" secondAttribute="leading" constant="10" id="lml-QT-6uU"/>
                         <constraint firstItem="CfV-aB-Lq2" firstAttribute="centerX" secondItem="9Q4-6q-9oP" secondAttribute="centerX" id="mVm-g6-Ow6"/>
+                        <constraint firstItem="G86-Dk-Tca" firstAttribute="top" secondItem="9Q4-6q-9oP" secondAttribute="top" id="mxK-bm-mgr"/>
                         <constraint firstItem="GZs-gQ-6D7" firstAttribute="bottom" secondItem="9Q4-6q-9oP" secondAttribute="bottom" id="oJf-eV-CEi"/>
                         <constraint firstItem="ZRv-wP-ZwV" firstAttribute="top" secondItem="CVH-K1-ZBa" secondAttribute="bottom" constant="8" id="pgB-vj-fiW"/>
                         <constraint firstItem="AX0-70-X1e" firstAttribute="trailing" secondItem="GZs-gQ-6D7" secondAttribute="trailing" constant="-20" id="s4N-9A-fxn"/>

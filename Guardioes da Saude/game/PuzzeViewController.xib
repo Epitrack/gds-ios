@@ -8,7 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PuzzeViewController" customModule="Guardioes_da_Saude" customModuleProvider="target">
             <connections>
+                <outlet property="imgPt3" destination="XPZ-jM-Hqi" id="C5m-pz-evN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewPt3" destination="m9R-g2-RBU" id="kwl-Tf-GXb"/>
                 <outlet property="viewQuestion" destination="5Wo-FU-TAi" id="AfS-Uv-QJm"/>
                 <outlet property="viewQuestions" destination="B7B-UM-ow4" id="fjg-Gn-tJf"/>
             </connections>
@@ -175,7 +177,7 @@
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Wo-FU-TAi" userLabel="ViewQuestion">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                 </view>
             </subviews>
             <constraints>
