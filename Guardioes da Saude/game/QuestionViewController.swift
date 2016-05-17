@@ -122,4 +122,11 @@ class QuestionViewController: UIViewController {
             }
         })
     }
+//    
+//    func resetQuestionDialog() {
+//        breakTime = false
+//        btnAnswer1.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
+//        btnAnswer2.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
+//        btnAnswer3.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
+//    }
 }

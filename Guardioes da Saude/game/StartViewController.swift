@@ -22,19 +22,24 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var rankingList: [RankingItem] = []
     var puzzeDialog: PuzzeViewController?
     var showingMap = true
+    var levelMapPosition = [[121.0, 1_177.0],
+                            [190.0, 1_164.0],
+                            [237.0, 1_135.0],
+                            [265.0, 1_100.0],
+                            [255.0, 1_058.0],
+                            [213.0, 1_030.0],
+                            [156.0, 1_020.0],
+                            [97.0, 1_009.0],
+                            [43.0, 995.0],
+                            [9.0, 960.0],
+                            [19.0, 908.0],
+                            [70.0, 887.0],
+                            [123.0, 876.0],
+                            [228.0, 848.0],
+                            [259.0, 817.0]]
 
     
     @IBOutlet weak var viewPuzze: UIView!
-    @IBOutlet weak var viewQuestion: UIView!
-    @IBOutlet weak var viewQuestionTimer: UIView!
-    @IBOutlet weak var lbTimer: UILabel!
-    
-    @IBOutlet weak var txQuestionDescription: UILabel!
-    @IBOutlet weak var btnAnswer1: UIButton!
-    @IBOutlet weak var btnAnswer2: UIButton!
-    @IBOutlet weak var btnAnswer3: UIButton!
-    @IBOutlet weak var viewPt3: UIView!
-    @IBOutlet weak var imgPt3: UIImageView!
     @IBOutlet weak var txPoint: UILabel!
     @IBOutlet weak var viewRanking: UIView!
     @IBOutlet weak var tableRanking: UITableView!
@@ -103,7 +108,20 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func setLevelMap() {
+        let mapWidth = Double(self.imgMap.frame.width)
+        let mapHeight = Double(self.imgMap.frame.height)
         
+        for position in self.levelMapPosition {
+            let x = (position[0] * mapWidth)/320
+            let y = (position[1] * mapHeight)/1400
+            let width = (55*mapWidth)/320
+            let height = (55*mapHeight)/1400
+            
+            let positionRect = CGRect(x: x, y: y, width: width, height: height)
+            let button = UIButton(frame: positionRect)
+            button.setBackgroundImage(UIImage(named: "ic_map_medal"), forState: UIControlState.Normal)
+            self.scrollMap.addSubview(button)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -114,19 +132,13 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.scrollMap.contentOffset = CGPointMake(0, positionY)
         })
 
+        setLevelMap()
     }
     
     override func viewWillDisappear(animated: Bool) {
         if let _ = self.titleBarImage{
             self.titleBarImage?.removeFromSuperview()
         }
-    }
-    
-    func resetQuestionDialog() {
-        breakTime = false
-        btnAnswer1.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
-        btnAnswer2.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
-        btnAnswer3.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
     }
 
     @IBAction func btnMedalAction(sender: AnyObject) {
@@ -167,11 +179,6 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    @IBAction func btnCloseQuestion(sender: AnyObject) {
-        closePopUp(self.viewQuestion)
-        self.resetQuestionDialog()
-    }
-    
     @IBAction func btnCloseRankingDialogAction(sender: AnyObject) {
         self.closePopUp(self.viewRankingParent)
     }
@@ -183,15 +190,6 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }) { (finished: Bool) -> Void in
             view.hidden = true
         }
-    }
-    
-    func transitionQuestion() {
-        let img = UIImage(named: "img_level1_pt1_min")
-        let imgSize = imageWithImage(img!, scaledToSize: viewPt3.bounds.size)
-        let imgPt3New = UIImageView(image: imgSize)
-        imgPt3.bounds = imgPt3.bounds
-        
-        UIView.transitionFromView(imgPt3, toView: imgPt3New, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
     }
     
     func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
