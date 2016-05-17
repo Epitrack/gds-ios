@@ -64,6 +64,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         circleLayer = CAShapeLayer()
+        user.level = 1
         user.points = 10
         
         questionRequest.getQuestion({
@@ -99,6 +100,10 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             self.navigationController?.navigationBar.addSubview(self.titleBarImage!)
         }
+    }
+    
+    func setLevelMap() {
+        
     }
     
     override func viewDidAppear(animated: Bool) {

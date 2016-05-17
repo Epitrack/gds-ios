@@ -52,6 +52,8 @@ extern NSString *const kGameTutorialReady;
 @property(nonatomic, retain) NSString *gcmToken;
 @property(nonatomic, assign) bool isTest;
 @property(nonatomic, retain) NSDate *lastJoinNotification;
+@property(nonatomic, assign) int level;
+@property(nonatomic, retain) NSMutableArray *levelCorrectAnswers;
 @property(nonatomic, assign) int points;
 
 - (void) setGenderBySegIndex: (long) segIndex;

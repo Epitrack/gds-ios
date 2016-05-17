@@ -157,6 +157,7 @@
                         <constraint firstItem="v5i-NF-Rzq" firstAttribute="trailing" secondItem="m9R-g2-RBU" secondAttribute="trailing" id="e88-aT-KLA"/>
                         <constraint firstItem="LY7-Cb-sPz" firstAttribute="centerX" secondItem="Rlg-V2-sz8" secondAttribute="centerX" id="faA-dE-NGz"/>
                         <constraint firstItem="41S-rn-aBw" firstAttribute="trailing" secondItem="v5i-NF-Rzq" secondAttribute="trailing" id="gsb-rh-nat"/>
+                        <constraint firstAttribute="bottom" secondItem="41S-rn-aBw" secondAttribute="bottom" constant="20" id="k5F-oa-hnj"/>
                         <constraint firstItem="V5c-lp-VxP" firstAttribute="leading" secondItem="TN1-yV-Akc" secondAttribute="leading" id="lv4-JI-VJs"/>
                         <constraint firstItem="TN1-yV-Akc" firstAttribute="top" secondItem="TsP-cH-gzO" secondAttribute="top" id="m43-7f-Yhq"/>
                         <constraint firstItem="m9R-g2-RBU" firstAttribute="top" secondItem="Rlg-V2-sz8" secondAttribute="bottom" constant="27" id="nv1-Bj-XRH"/>
@@ -172,6 +173,7 @@
                             <exclude reference="bNg-2F-XxU"/>
                             <exclude reference="86O-lL-whM"/>
                             <exclude reference="4C4-Sy-OaP"/>
+                            <exclude reference="k5F-oa-hnj"/>
                         </mask>
                     </variation>
                 </view>
@@ -190,12 +192,16 @@
                 <constraint firstItem="B7B-UM-ow4" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="XbQ-1L-Z0a"/>
                 <constraint firstAttribute="bottom" secondItem="B7B-UM-ow4" secondAttribute="bottom" id="Yje-j0-Vla"/>
                 <constraint firstItem="B7B-UM-ow4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gVh-dU-JVB"/>
+                <constraint firstAttribute="bottom" secondItem="B7B-UM-ow4" secondAttribute="bottom" id="iL0-nj-1U4"/>
+                <constraint firstAttribute="bottom" secondItem="5Wo-FU-TAi" secondAttribute="bottom" id="m3W-LM-48X"/>
                 <constraint firstItem="5Wo-FU-TAi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xaB-HO-LZv"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="NFZ-Kt-X6Q"/>
                     <exclude reference="DmQ-VQ-5ql"/>
+                    <exclude reference="Yje-j0-Vla"/>
                 </mask>
             </variation>
         </view>
