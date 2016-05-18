@@ -74,8 +74,6 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var viewRankingParent: UIView!
     @IBOutlet weak var scrollMap: UIScrollView!
     @IBOutlet weak var imgMap: UIImageView!
-    @IBOutlet weak var btnLevel1: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +95,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         circleLayer = CAShapeLayer()
-        user.level = 43//14
+        user.level = 30//14
         user.points = 10
         
         questionRequest.getQuestion({
@@ -163,12 +161,17 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidAppear(animated: Bool) {
-        UIView.animateWithDuration(1, animations: {
-            let positionScreen = UIScreen.mainScreen().bounds.size.height/4.0
-            
-            let positionY = ((self.imgMap.frame.height*1222)/1408) - (positionScreen*3)
-            self.scrollMap.contentOffset = CGPointMake(0, positionY)
-        })
+        if self.user.level < 37 {
+            UIView.animateWithDuration(1, animations: {
+                let positionScreen = UIScreen.mainScreen().bounds.size.height/8.0
+                let indexPosition = self.levelMapPosition.count - Int(self.user.level)
+                let positionPin = CGFloat(self.levelMapPosition[indexPosition][1])
+                let heightImgMap = self.imgMap.frame.height
+                
+                let positionY = ((heightImgMap*positionPin)/1408) - (positionScreen*5)
+                self.scrollMap.contentOffset = CGPointMake(0, positionY)
+            })
+        }
 
         setLevelMap()
     }
