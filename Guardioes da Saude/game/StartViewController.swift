@@ -22,21 +22,49 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var rankingList: [RankingItem] = []
     var puzzeDialog: PuzzeViewController?
     var showingMap = true
-    var levelMapPosition = [[121.0, 1_177.0],
-                            [190.0, 1_164.0],
-                            [237.0, 1_135.0],
-                            [265.0, 1_100.0],
-                            [255.0, 1_058.0],
-                            [213.0, 1_030.0],
-                            [156.0, 1_020.0],
-                            [97.0, 1_009.0],
-                            [43.0, 995.0],
+    var levelMapPosition = [[138.0, 110.0],
+                            [233.0, 133.0],
+                            [106.0, 189.0],
+                            [30.0, 200.0],
+                            [18.0, 252.0],
+                            [94.0, 270.0],
+                            [206.0, 280.0],
+                            [261.0, 319.0],
+                            [250.0, 375.0],
+                            [45.0, 427.0],
+                            [9.0, 460.0],
+                            [23.0, 495.0],
+                            [75.0, 509.0],
+                            [126.0, 511.0],
+                            [177.0, 512.0],
+                            [227.0, 519.0],
+                            [262.0, 544.0],
+                            [266.0, 586.0],
+                            [235.0, 613.0],
+                            [177.0, 619.0],
+                            [124.0, 615.0],
+                            [63.0, 612.0],
+                            [14.0, 625.0],
+                            [2.0, 661.0],
+                            [26.0, 703.0],
+                            [231.0, 747.0],
+                            [262.0, 778.0],
+                            [259.0, 817.0],
+                            [228.0, 847.0],
+                            [176.0, 866.0],
+                            [122.0, 873.0],
+                            [70.0, 885.0],
+                            [19.0, 906.0],
                             [9.0, 960.0],
-                            [19.0, 908.0],
-                            [70.0, 887.0],
-                            [123.0, 876.0],
-                            [228.0, 848.0],
-                            [259.0, 817.0]]
+                            [43.0, 993.0],
+                            [97.0, 1_009.0],
+                            [155.0, 1_018.0],
+                            [212.0, 1_028.0],
+                            [256.0, 1_055.5],
+                            [265.0, 1_100.0],
+                            [236.0, 1_134.0],
+                            [189.0, 1_158.0],
+                            [122.0, 1_172.0]]
 
     
     @IBOutlet weak var viewPuzze: UIView!
@@ -69,7 +97,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         circleLayer = CAShapeLayer()
-        user.level = 1
+        user.level = 43//14
         user.points = 10
         
         questionRequest.getQuestion({
@@ -111,16 +139,26 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let mapWidth = Double(self.imgMap.frame.width)
         let mapHeight = Double(self.imgMap.frame.height)
         
-        for position in self.levelMapPosition {
+        let plots: Int = self.levelMapPosition.count - Int(self.user.level)
+        for index in plots...self.levelMapPosition.count-1 {
+            let position = self.levelMapPosition[index]
             let x = (position[0] * mapWidth)/320
             let y = (position[1] * mapHeight)/1400
             let width = (55*mapWidth)/320
             let height = (55*mapHeight)/1400
             
-            let positionRect = CGRect(x: x, y: y, width: width, height: height)
-            let button = UIButton(frame: positionRect)
-            button.setBackgroundImage(UIImage(named: "ic_map_medal"), forState: UIControlState.Normal)
-            self.scrollMap.addSubview(button)
+            if index == plots {
+                let positionRect = CGRect(x: x, y: y-2.5, width: width, height: height+5)
+                let button = UIButton(frame: positionRect)
+                button.setBackgroundImage(UIImage(named: "ic_map_pin"), forState: UIControlState.Normal)
+                button.addTarget(self, action: #selector(btnLevel(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+                self.scrollMap.addSubview(button)
+            }else{
+                let positionRect = CGRect(x: x, y: y, width: width, height: height)
+                let img = UIImageView(frame: positionRect)
+                img.image = UIImage(named: "ic_map_medal")
+                self.scrollMap.addSubview(img)
+            }
         }
     }
     
