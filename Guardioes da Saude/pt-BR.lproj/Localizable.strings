@@ -285,6 +285,7 @@
 "map_health.exanthematic" = "Exantemática";
 "map_health.respiratory" = "Respiratória";
 "map_health.diarrheal" = "Diarreica";
+"map_health.participations_last_days" = "%d Participações nos últimos dias";
 
 // DIARY HEALTH VIEW
 "diary_health.title" = "Diário da saúde";
