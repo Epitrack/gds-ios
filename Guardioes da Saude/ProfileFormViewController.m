@@ -615,7 +615,7 @@
 - (void) deleteAccountSuccess{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"profile_form.modal_delete_title", @"")
                                                                    message:NSLocalizedString(@"profile_form.modal_delete_body", @"")
-                                                            preferredStyle:UIAlertControllerStyleAlert];
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"")
                                                      style:UIAlertActionStyleDefault
