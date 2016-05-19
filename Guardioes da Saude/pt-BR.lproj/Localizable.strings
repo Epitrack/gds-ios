@@ -175,6 +175,8 @@
 "profile_form.delete" = "Excluir Conta";
 "profile_form.or" = "OU";
 "profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardiões da Saúde, será necessário um novo cadastro.\nDeseja continuar?";
+"profile_form.modal_delete_title" = "Desativar sua conta";
+"profile_form.modal_delete_body" = "Sua conta foi desativada com sucesso";
 
 // SELECT AVATAR VIEW
 "select_avatar.title" = "Editar Foto";

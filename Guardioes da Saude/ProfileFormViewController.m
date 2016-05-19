@@ -589,8 +589,7 @@
                                                                                   onStart:^{
                                                                                       [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                                                                   } onSuccess:^{
-                                                                                      [[MenuViewController getInstance] doLogout];
-                                                                                      [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                                                      [self deleteAccountSuccess];
                                                                                   } onErro:^(NSError *error){
                                                                                       [MBProgressHUD hideHUDForView:self.view animated:YES];
                                                                                       NSString *errorMsg;
@@ -610,6 +609,22 @@
     [alert addAction:actionYes];
     [alert addAction:actionNo];
     
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void) deleteAccountSuccess{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"profile_form.modal_delete_title", @"")
+                                                                   message:NSLocalizedString(@"profile_form.modal_delete_body", @"")
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.ok", @"")
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *action){
+        [[MenuViewController getInstance] doLogout];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
+    
+    [alert addAction:action];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
