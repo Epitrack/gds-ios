@@ -22,8 +22,8 @@ class QuestionRequester: Requester {
                 }else{
                     var questions: [Question] = []
                     
-                    let dicResponse = response as! Dictionary<String, AnyObject>
-                    let jQuestions = dicResponse["questions"] as! [Dictionary<String, AnyObject>]
+//                    let dicResponse = response as! Dictionary<String, AnyObject>
+                    let jQuestions = response as! [Dictionary<String, AnyObject>]
                     for jQuestion in jQuestions {
                         let question = Question()
                         question.question = jQuestion["title"] as? String

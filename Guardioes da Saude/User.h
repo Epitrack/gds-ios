@@ -55,6 +55,7 @@ extern NSString *const kGameTutorialReady;
 @property(nonatomic, assign) int level;
 @property(nonatomic, retain) NSMutableArray *levelCorrectAnswers;
 @property(nonatomic, assign) int points;
+@property(nonatomic, assign) BOOL isGameTutorailReady;
 
 - (void) setGenderBySegIndex: (long) segIndex;
 - (void) setRaceBySegIndex: (long) segIndex;

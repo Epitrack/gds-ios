@@ -82,6 +82,7 @@
         user.photo = [preferences valueForKey:kPhotoKey];
         user.avatarNumber = [preferences valueForKey:kAvatarNumberKey];
         user.nick = [preferences valueForKey:kNickKey];
+        user.isGameTutorailReady = ([preferences valueForKey: kGameTutorialReady] != nil);
         
         [self showInformations];
         
@@ -270,8 +271,14 @@
 }
 
 - (IBAction)btnEnjoyAction:(id)sender {
-    GameTutorialViewController *gameTutorialView = [[GameTutorialViewController alloc] init];
-    [self.navigationController pushViewController:gameTutorialView animated:YES];
+    if (user.isGameTutorailReady) {
+        StartViewController *startViewCtrl = [[StartViewController alloc] init];
+        [self.navigationController pushViewController:startViewCtrl animated:YES];
+    } else {
+        GameTutorialViewController *gameTutorialView = [[GameTutorialViewController alloc] init];
+        [self.navigationController pushViewController:gameTutorialView animated:YES];
+    }
+    
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {

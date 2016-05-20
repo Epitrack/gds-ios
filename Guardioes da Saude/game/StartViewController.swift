@@ -107,9 +107,14 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             HUD.hide()
         })
         
+        
+        // Removing from stack tutorail view
         var arrViews = self.navigationController?.viewControllers
-        arrViews!.removeAtIndex(arrViews!.count - 2)
-        self.navigationController!.viewControllers = arrViews!
+        let view = arrViews![arrViews!.count - 2]
+        if view.isEqual(GameTutorialViewController) {
+            arrViews!.removeAtIndex(arrViews!.count - 2)
+            self.navigationController!.viewControllers = arrViews!
+        }
     }
 
     override func didReceiveMemoryWarning() {
