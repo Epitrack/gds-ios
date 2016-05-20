@@ -293,7 +293,7 @@
                               
                               self.lblCity.text = city;
                               self.lblState.text = state;
-                              self.lblPaticipation.text = [NSString stringWithFormat:@"%d Participações essa semana", (int)totalSurvey];
+                              self.lblPaticipation.text = [NSString stringWithFormat:NSLocalizedString(@"map_health.participations_last_days", @""), (int)totalSurvey];
                               
                               self.lblCity.hidden = NO;
                               self.lblPaticipation.hidden = NO;
