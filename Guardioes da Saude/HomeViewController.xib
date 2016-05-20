@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -46,7 +47,7 @@
                         <rect key="frame" x="20" y="169" width="280" height="26"/>
                     </variation>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_main_menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="w3j-0Z-T9i">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_main_menu_home" translatesAutoresizingMaskIntoConstraints="NO" id="w3j-0Z-T9i">
                     <rect key="frame" x="25" y="203" width="270" height="270"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="w3j-0Z-T9i" secondAttribute="height" multiplier="38:35" constant="-23.14285714285711" id="n2E-X1-6Pa"/>
@@ -56,7 +57,7 @@
                     </variation>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.news" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9t-CS-rTk" userLabel="Label Noticias" customClass="GDSLabel">
-                    <rect key="frame" x="25" y="225" width="134" height="13"/>
+                    <rect key="frame" x="25" y="225" width="133" height="13"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="o9t-CS-rTk" secondAttribute="height" multiplier="45:7" constant="50.142857142857139" id="czA-bu-FN0"/>
                     </constraints>
@@ -80,7 +81,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.tips_health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB7-Zb-hbF" userLabel="Label Dicas" customClass="GDSLabel">
-                    <rect key="frame" x="37" y="442" width="115" height="15"/>
+                    <rect key="frame" x="37" y="442.5" width="115" height="14.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="PB7-Zb-hbF" secondAttribute="height" multiplier="129:16" id="y9t-b0-smZ"/>
                     </constraints>
@@ -92,7 +93,7 @@
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.diary_health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olw-uU-G9T" userLabel="Label Diario" customClass="GDSLabel">
-                    <rect key="frame" x="172" y="438" width="123" height="27"/>
+                    <rect key="frame" x="172" y="438.5" width="123" height="26.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="olw-uU-G9T" secondAttribute="height" multiplier="23:5" id="ojL-FI-c9U"/>
                     </constraints>
@@ -198,6 +199,7 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="QGE-hC-oId" secondAttribute="height" multiplier="1:1" id="L2F-Pl-tvn"/>
                     </constraints>
+                    <state key="normal" backgroundImage="ic_center_main_menu_home"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="106" y="305" width="109" height="109"/>
                     </variation>
@@ -206,12 +208,12 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.join_us" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-Ta-mYq" userLabel="Label PaticipeAgora" customClass="GDSLabel">
-                    <rect key="frame" x="125" y="352" width="68" height="39"/>
+                    <rect key="frame" x="125" y="348.5" width="68" height="39"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Hig-Ta-mYq" secondAttribute="height" multiplier="23:8" constant="-44.125" id="6of-Q5-lZI"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                    <color key="textColor" red="0.10588235294117647" green="0.44313725490196076" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="widthClass=compact" fixedFrame="YES">
                         <rect key="frame" x="115" y="376" width="92" height="32"/>
@@ -231,7 +233,7 @@
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="Hig-Ta-mYq" firstAttribute="top" secondItem="Q7r-uG-iaY" secondAttribute="bottom" constant="2" id="0Fp-Eq-vAc"/>
+                <constraint firstItem="Hig-Ta-mYq" firstAttribute="top" secondItem="Q7r-uG-iaY" secondAttribute="bottom" multiplier="0.99" constant="2" id="0Fp-Eq-vAc"/>
                 <constraint firstItem="O1d-eP-RbX" firstAttribute="width" secondItem="w3j-0Z-T9i" secondAttribute="height" multiplier="69:140" constant="-10.571428571428584" id="0XO-J3-9Zn"/>
                 <constraint firstItem="tq5-1r-wq3" firstAttribute="centerX" secondItem="mHY-s7-TsV" secondAttribute="centerX" constant="-8" id="2Df-fI-Emu"/>
                 <constraint firstItem="mHY-s7-TsV" firstAttribute="width" secondItem="w3j-0Z-T9i" secondAttribute="height" multiplier="27:56" constant="-10.178571428571445" id="3QJ-hx-Hb3"/>
@@ -348,12 +350,13 @@
     </objects>
     <resources>
         <image name="BG_light.png" width="321" height="569"/>
+        <image name="bg_main_menu_home" width="280" height="280"/>
+        <image name="ic_center_main_menu_home" width="115" height="114"/>
         <image name="icon_diariodasaude.png" width="45" height="42"/>
         <image name="icon_dicasdesaude.png" width="39" height="56"/>
         <image name="icon_mapadasaude.png" width="36" height="54"/>
         <image name="icon_noticias.png" width="47" height="47"/>
         <image name="icon_participeagora.png" width="55" height="49"/>
-        <image name="img_main_menu.png" width="280" height="280"/>
         <image name="img_profile01.png" width="131" height="131"/>
     </resources>
 </document>
