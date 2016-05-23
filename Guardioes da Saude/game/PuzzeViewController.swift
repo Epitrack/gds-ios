@@ -75,12 +75,13 @@ class PuzzeViewController: UIViewController {
     }
     */
 
-    @IBAction func btnPuzzePart(sender: AnyObject) {
+    @IBAction func btnPuzzePart(sender: UIButton) {
         self.questionViewCtrl.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
         self.viewQuestion.hidden = false;
         
         let diceRoll = Int(arc4random_uniform(UInt32(questions.count)))
         self.questionViewCtrl.populateQuestion(questions[diceRoll])
+        self.questionViewCtrl.part = sender.tag
         
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.questionViewCtrl.view.transform = CGAffineTransformIdentity
@@ -97,13 +98,33 @@ class PuzzeViewController: UIViewController {
         }
     }
     
-    func transitionQuestion(part: Int = 1) {
-        let img = UIImage(named: "img_level1_pt1_min")
+    func transitionQuestion(level: Int, part: Int) {
+        let img = UIImage(named: "img_lvl1_pt\(part)")
         let imgSize = imageWithImage(img!, scaledToSize: viewPt3.bounds.size)
         let imgNew = UIImageView(image: imgSize)
-        imgPt3.bounds = imgPt3.bounds
         
-        UIView.transitionFromView(imgPt3, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        switch part {
+        case 1:
+            UIView.transitionFromView(imgPt1, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        case 2:
+            UIView.transitionFromView(imgPt2, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        case 3:
+            UIView.transitionFromView(imgPt3, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        case 4:
+            UIView.transitionFromView(imgPt4, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        case 5:
+            UIView.transitionFromView(imgPt5, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        case 6:
+            UIView.transitionFromView(imgPt6, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        case 7:
+            UIView.transitionFromView(imgPt7, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        case 8:
+            UIView.transitionFromView(imgPt8, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        case 9:
+            UIView.transitionFromView(imgPt9, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        default:
+            break
+        }
     }
     
     func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{

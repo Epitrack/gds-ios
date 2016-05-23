@@ -14,6 +14,7 @@ class QuestionViewController: UIViewController {
     var circleLayer = CAShapeLayer()
     var breakTime = false
     var question: Question!
+    var part: Int!
     let user = User.getInstance()
 
     @IBOutlet weak var lbDescription: UILabel!

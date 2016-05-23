@@ -43,7 +43,7 @@ class CongratulationsViewController: UIViewController {
     @IBAction func btnQuestionAction(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
         if let puzzeViewReference = self.puzzeViewReference {
-            puzzeViewReference.transitionQuestion()
+            puzzeViewReference.transitionQuestion(1, part: 1)
         }
     }
     
