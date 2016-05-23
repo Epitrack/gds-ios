@@ -13,8 +13,24 @@ class PuzzeViewController: UIViewController {
     
     @IBOutlet weak var viewQuestions: UIView!
     @IBOutlet weak var viewQuestion: UIView!
+    @IBOutlet weak var viewPt1: UIView!
+    @IBOutlet weak var imgPt1: UIImageView!
+    @IBOutlet weak var viewPt2: UIView!
+    @IBOutlet weak var imgPt2: UIImageView!
     @IBOutlet weak var viewPt3: UIView!
     @IBOutlet weak var imgPt3: UIImageView!
+    @IBOutlet weak var viewPt4: UIView!
+    @IBOutlet weak var imgPt4: UIImageView!
+    @IBOutlet weak var viewPt5: UIView!
+    @IBOutlet weak var imgPt5: UIImageView!
+    @IBOutlet weak var viewPt6: UIView!
+    @IBOutlet weak var imgPt6: UIImageView!
+    @IBOutlet weak var viewPt7: UIView!
+    @IBOutlet weak var imgPt7: UIImageView!
+    @IBOutlet weak var viewPt8: UIView!
+    @IBOutlet weak var imgPt8: UIImageView!
+    @IBOutlet weak var viewPt9: UIView!
+    @IBOutlet weak var imgPt9: UIImageView!
     
     let questionViewCtrl = QuestionViewController()
     let questionRequest = QuestionRequester()
@@ -81,13 +97,13 @@ class PuzzeViewController: UIViewController {
         }
     }
     
-    func transitionQuestion() {
+    func transitionQuestion(part: Int = 1) {
         let img = UIImage(named: "img_level1_pt1_min")
         let imgSize = imageWithImage(img!, scaledToSize: viewPt3.bounds.size)
-        let imgPt3New = UIImageView(image: imgSize)
+        let imgNew = UIImageView(image: imgSize)
         imgPt3.bounds = imgPt3.bounds
         
-        UIView.transitionFromView(imgPt3, toView: imgPt3New, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+        UIView.transitionFromView(imgPt3, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
     }
     
     func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{

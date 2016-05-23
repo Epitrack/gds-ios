@@ -8,9 +8,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PuzzeViewController" customModule="Guardioes_da_Saude" customModuleProvider="target">
             <connections>
+                <outlet property="imgPt1" destination="TsP-cH-gzO" id="eiN-mS-d7L"/>
+                <outlet property="imgPt2" destination="TN1-yV-Akc" id="wKL-Lr-fBX"/>
                 <outlet property="imgPt3" destination="XPZ-jM-Hqi" id="C5m-pz-evN"/>
+                <outlet property="imgPt4" destination="px9-hE-pwT" id="vtb-uo-FPT"/>
+                <outlet property="imgPt5" destination="V5c-lp-VxP" id="RH8-z4-TcJ"/>
+                <outlet property="imgPt6" destination="v5i-NF-Rzq" id="ifV-2G-kA3"/>
+                <outlet property="imgPt7" destination="av4-CK-WsZ" id="bkp-Ig-Ib3"/>
+                <outlet property="imgPt8" destination="eno-E5-b6S" id="ptC-vm-MRv"/>
+                <outlet property="imgPt9" destination="41S-rn-aBw" id="H6S-xk-Ol4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewPt1" destination="FTe-ZV-R5Y" id="PZf-ii-b5X"/>
+                <outlet property="viewPt2" destination="vtk-F8-ZWN" id="SOi-EN-Se9"/>
                 <outlet property="viewPt3" destination="m9R-g2-RBU" id="kwl-Tf-GXb"/>
+                <outlet property="viewPt4" destination="0bb-Tb-vFZ" id="nun-C6-J3P"/>
+                <outlet property="viewPt5" destination="tYZ-YH-gAy" id="yi5-fV-Tgi"/>
+                <outlet property="viewPt6" destination="tqf-4H-pJm" id="2jT-33-SYW"/>
+                <outlet property="viewPt7" destination="jq7-Cd-Qfp" id="hOI-lw-i9E"/>
+                <outlet property="viewPt8" destination="gYA-vx-WXb" id="7wE-8n-oZY"/>
+                <outlet property="viewPt9" destination="WV0-IE-G0S" id="TiM-tn-DIs"/>
                 <outlet property="viewQuestion" destination="5Wo-FU-TAi" id="AfS-Uv-QJm"/>
                 <outlet property="viewQuestions" destination="B7B-UM-ow4" id="fjg-Gn-tJf"/>
             </connections>
@@ -41,8 +57,11 @@
                                         <constraint firstAttribute="width" secondItem="TsP-cH-gzO" secondAttribute="height" multiplier="81:82" id="NBj-DF-hPP"/>
                                     </constraints>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6I-jQ-mJg">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6I-jQ-mJg">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
+                                    <connections>
+                                        <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="pS4-Wj-x7G"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -63,8 +82,11 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_answer-1" translatesAutoresizingMaskIntoConstraints="NO" id="TN1-yV-Akc">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsN-1X-uOP">
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsN-1X-uOP">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
+                                    <connections>
+                                        <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="5T8-wy-4L7"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -91,7 +113,7 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_answer-1" translatesAutoresizingMaskIntoConstraints="NO" id="XPZ-jM-Hqi">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMs-j2-eI0">
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMs-j2-eI0">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
                                     <connections>
                                         <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="pIa-R8-2Ye"/>
@@ -116,8 +138,11 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_answer-1" translatesAutoresizingMaskIntoConstraints="NO" id="px9-hE-pwT">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kg8-62-kJ2">
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kg8-62-kJ2">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
+                                    <connections>
+                                        <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="Dvy-da-UGy"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -137,8 +162,11 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_answer-1" translatesAutoresizingMaskIntoConstraints="NO" id="V5c-lp-VxP">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbV-on-BES">
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbV-on-BES">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
+                                    <connections>
+                                        <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="Ns1-ce-KfQ"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -158,8 +186,11 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_answer-1" translatesAutoresizingMaskIntoConstraints="NO" id="v5i-NF-Rzq">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HA8-Ms-D8r">
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HA8-Ms-D8r">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
+                                    <connections>
+                                        <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="UAj-Jv-LFd"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -179,8 +210,11 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_answer-1" translatesAutoresizingMaskIntoConstraints="NO" id="av4-CK-WsZ">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGG-NZ-0Ee">
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGG-NZ-0Ee">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
+                                    <connections>
+                                        <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="wA5-mh-6bB"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -200,8 +234,11 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_answer-1" translatesAutoresizingMaskIntoConstraints="NO" id="eno-E5-b6S">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KM-QP-amc">
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KM-QP-amc">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
+                                    <connections>
+                                        <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="z8b-Li-vHQ"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -221,8 +258,11 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_answer-1" translatesAutoresizingMaskIntoConstraints="NO" id="41S-rn-aBw">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR6-Hy-acj">
+                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OR6-Hy-acj">
                                     <rect key="frame" x="0.0" y="0.0" width="76" height="77"/>
+                                    <connections>
+                                        <action selector="btnPuzzePart:" destination="-1" eventType="touchUpInside" id="ez3-mU-TJc"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
