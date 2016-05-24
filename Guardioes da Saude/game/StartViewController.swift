@@ -95,7 +95,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         circleLayer = CAShapeLayer()
-        user.level = 30//14
+        user.level = 1//14
         user.points = 10
         
         questionRequest.getQuestion({
@@ -307,6 +307,10 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func handleBack(sender: AnyObject) {
+        back()
+    }
+    
+    func back() {
         if showingMap {
             self.navigationController?.popViewControllerAnimated(true)
         }else{

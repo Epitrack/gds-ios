@@ -91,6 +91,8 @@ class QuestionViewController: UIViewController {
                     
                     let congratulationScreen = CongratulationsViewController()
                     congratulationScreen.puzzeViewReference = self.puzzeViewCtrlRef
+                    congratulationScreen.part = self.part
+                    congratulationScreen.level = Int(self.user.level)
                     self.navigationController?.pushViewController(congratulationScreen, animated: true)
                 })
             })
@@ -123,11 +125,13 @@ class QuestionViewController: UIViewController {
             }
         })
     }
-//    
-//    func resetQuestionDialog() {
-//        breakTime = false
-//        btnAnswer1.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
-//        btnAnswer2.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
-//        btnAnswer3.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
-//    }
+    
+    func resetView() {
+        self.viemCorrectAnswer.hidden = true;
+        self.imgBgDialog.image = UIImage(named: "bg_answer")
+        self.lbDescription.hidden = false
+        self.btnAlternativeOne.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
+        self.btnAlternativeTwo.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
+        self.btnAlternativeThree.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
+    }
 }

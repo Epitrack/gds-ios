@@ -82,6 +82,7 @@ class PuzzeViewController: UIViewController {
         let diceRoll = Int(arc4random_uniform(UInt32(questions.count)))
         self.questionViewCtrl.populateQuestion(questions[diceRoll])
         self.questionViewCtrl.part = sender.tag
+        self.questionViewCtrl.resetView();
         
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.questionViewCtrl.view.transform = CGAffineTransformIdentity

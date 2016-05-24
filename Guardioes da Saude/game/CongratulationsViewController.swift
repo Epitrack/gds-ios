@@ -11,6 +11,12 @@ import UIKit
 class CongratulationsViewController: UIViewController {
     
     var puzzeViewReference: PuzzeViewController?
+    var level: Int!
+    var part: Int?
+    
+    @IBOutlet weak var imgPuzzle: UIImageView!
+    @IBOutlet weak var viewPart: UIView!
+    @IBOutlet weak var imgLvl: UIImageView!
     
     var titleBarImage: UIImageView?
 
@@ -19,6 +25,21 @@ class CongratulationsViewController: UIViewController {
 
         self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
+        
+        if let part = self.part {
+            self.viewPart.hidden = false
+            self.imgLvl.hidden = true
+            
+            let img = UIImage(named: "img_lvl\(self.level)_pt\(part)")
+            self.imgPuzzle.image = img
+        }else{
+            self.viewPart.hidden = true
+            self.imgLvl.hidden = false
+            
+            let img = UIImage(named: "img_lvl\(self.level)")
+            self.imgLvl.image = img
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,7 +64,11 @@ class CongratulationsViewController: UIViewController {
     @IBAction func btnQuestionAction(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
         if let puzzeViewReference = self.puzzeViewReference {
-            puzzeViewReference.transitionQuestion(1, part: 1)
+            if let part = self.part {
+                puzzeViewReference.transitionQuestion(self.level, part: part)
+            }else{
+                
+            }
         }
     }
     
