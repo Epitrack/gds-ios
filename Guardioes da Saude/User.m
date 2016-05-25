@@ -68,7 +68,15 @@ NSString *const kGameTutorialReady = @"gameTutorialReady";
         client = @"api";
         app_token = @"d41d8cd98f00b204e9800998ecf8427e";
         platform = @"ios";
+        self.level = 1;
+        self.isGameTutorailReady = false;
+        self.points = 10;
+        self.puzzleMatriz = [[NSMutableArray alloc] initWithCapacity:3];
+        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:0];
+        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:1];
+        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:2];
     }
+    
     return self;
 }
 

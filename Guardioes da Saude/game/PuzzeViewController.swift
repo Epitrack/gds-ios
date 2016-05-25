@@ -32,6 +32,7 @@ class PuzzeViewController: UIViewController {
     @IBOutlet weak var viewPt9: UIView!
     @IBOutlet weak var imgPt9: UIImageView!
     
+    let user = User.getInstance()
     let questionViewCtrl = QuestionViewController()
     let questionRequest = QuestionRequester()
     var startViewRef: StartViewController!
@@ -104,25 +105,36 @@ class PuzzeViewController: UIViewController {
         let imgSize = imageWithImage(img!, scaledToSize: viewPt3.bounds.size)
         let imgNew = UIImageView(image: imgSize)
         
+        self.user.partsCompleted = self.user.partsCompleted + 1// NSNumber(integer: (self.user.partsCompleted.integerValue) + 1)
+        
         switch part {
         case 1:
             UIView.transitionFromView(imgPt1, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            (self.user.puzzleMatriz[0] as! NSMutableArray)[0] = 1
         case 2:
             UIView.transitionFromView(imgPt2, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            (self.user.puzzleMatriz[0] as! NSMutableArray)[1] = 1
         case 3:
             UIView.transitionFromView(imgPt3, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            (self.user.puzzleMatriz[0] as! NSMutableArray)[2] = 1
         case 4:
             UIView.transitionFromView(imgPt4, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            (self.user.puzzleMatriz[1] as! NSMutableArray)[0] = 1
         case 5:
             UIView.transitionFromView(imgPt5, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            (self.user.puzzleMatriz[1] as! NSMutableArray)[1] = 1
         case 6:
             UIView.transitionFromView(imgPt6, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            (self.user.puzzleMatriz[1] as! NSMutableArray)[2] = 1
         case 7:
             UIView.transitionFromView(imgPt7, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            (self.user.puzzleMatriz[2] as! NSMutableArray)[0] = 1
         case 8:
             UIView.transitionFromView(imgPt8, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            (self.user.puzzleMatriz[2] as! NSMutableArray)[1] = 1
         case 9:
             UIView.transitionFromView(imgPt9, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            (self.user.puzzleMatriz[2] as! NSMutableArray)[2] = 1
         default:
             break
         }

@@ -95,8 +95,6 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         circleLayer = CAShapeLayer()
-        user.level = 1//14
-        user.points = 10
         
         questionRequest.getQuestion({
             HUD.show(.Progress)

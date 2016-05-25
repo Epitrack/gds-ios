@@ -91,7 +91,10 @@ class QuestionViewController: UIViewController {
                     
                     let congratulationScreen = CongratulationsViewController()
                     congratulationScreen.puzzeViewReference = self.puzzeViewCtrlRef
-                    congratulationScreen.part = self.part
+
+                    if Int(self.user.partsCompleted) > 9 {
+                        congratulationScreen.part = self.part
+                    }
                     congratulationScreen.level = Int(self.user.level)
                     self.navigationController?.pushViewController(congratulationScreen, animated: true)
                 })
