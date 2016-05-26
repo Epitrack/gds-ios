@@ -11,6 +11,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "User.h"
+#import "UserRequester.h"
 #import "Requester.h"
+#import "ViewUtil.h"
 
 #endif /* Guardioes_da_Saude_Bridging_Header_h */

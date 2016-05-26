@@ -16,6 +16,8 @@ class QuestionViewController: UIViewController {
     var question: Question!
     var part: Int!
     let user = User.getInstance()
+    let userRequester = UserRequester()
+    
 
     @IBOutlet weak var lbDescription: UILabel!
     @IBOutlet weak var btnAlternativeOne: UIButton!
@@ -81,27 +83,29 @@ class QuestionViewController: UIViewController {
             self.imgBgDialog.image = UIImage(named: "bg_correct_dialog")
             self.viemCorrectAnswer.hidden = false
             self.lbDescription.hidden = true
-            
-            let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-            dispatch_async(queue, {
-                sleep(3)
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.puzzeViewCtrlRef.closeQuestionDialog()
-                    
-                    let congratulationScreen = CongratulationsViewController()
-                    congratulationScreen.puzzeViewReference = self.puzzeViewCtrlRef
 
-                    if Int(self.user.partsCompleted) < 8 {
-                        congratulationScreen.part = self.part
-                    }
-                    congratulationScreen.level = Int(self.user.level)
-                    self.navigationController?.pushViewController(congratulationScreen, animated: true)
-                })
+            
+            userRequester.updateUser(user, onSuccess: {user in
+                    self.callCongratulationScreen()
+                }, onFail: {error in
+                    ViewUtil.showAlertWithMessage(NSLocalizedString(kMsgConnectionError, comment: ""))
             })
         }else{
             sender.setBackgroundImage(UIImage(named: "btn_wrong_answer"), forState: UIControlState.Normal)
         }
+    }
+    
+    func callCongratulationScreen() {
+        self.puzzeViewCtrlRef.closeQuestionDialog()
+        
+        let congratulationScreen = CongratulationsViewController()
+        congratulationScreen.puzzeViewReference = self.puzzeViewCtrlRef
+        
+        if Int(self.user.partsCompleted) < 8 {
+            congratulationScreen.part = self.part
+        }
+        congratulationScreen.level = Int(self.user.level)
+        self.navigationController?.pushViewController(congratulationScreen, animated: true)
     }
     
     func animateCircle(duration: NSTimeInterval) {

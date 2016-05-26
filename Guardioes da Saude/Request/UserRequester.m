@@ -425,6 +425,14 @@
 
     [params setValue:user.avatarNumber forKey:@"picture"];
     
+    NSError *error;
+    NSData *jsonData2 = [NSJSONSerialization dataWithJSONObject:user.puzzleMatriz options:NSJSONWritingPrettyPrinted error:&error];
+    if (!error) {
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData2 encoding:NSUTF8StringEncoding];
+        [params setValue:jsonString forKey:@"puzzleMatriz"];
+    }
+    
+    [params setValue:[NSString stringWithFormat:@"%d", user.level] forKey:@"level"];
     
     [self doPost:[[self getUrl] stringByAppendingString:@"/user/update"]
           header:@{@"user_token": user.user_token,
