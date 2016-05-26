@@ -14,7 +14,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     let questionRequest = QuestionRequester()
     var titleBarImage: UIImageView?
-    var audioPlayer: AVAudioPlayer?
+//    var audioPlayer: AVAudioPlayer?
     var circleLayer: CAShapeLayer!
     var breakTime = false
     var currentQuestion: Question?
@@ -88,7 +88,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let url = NSURL.fileURLWithPath(path!)
             
             do{
-                try self.audioPlayer = AVAudioPlayer(contentsOfURL: url)
+//                try self.audioPlayer = AVAudioPlayer(contentsOfURL: url)
             }catch{
                 
             }
@@ -245,13 +245,13 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func playSoundButton() {
-        if let _ = self.audioPlayer {
-            if audioPlayer!.playing {
-                audioPlayer!.stop()
-                audioPlayer?.currentTime = 0
-            }
-            audioPlayer!.play()
-        }
+//        if let _ = self.audioPlayer {
+//            if audioPlayer!.playing {
+//                audioPlayer!.stop()
+//                audioPlayer?.currentTime = 0
+//            }
+//            audioPlayer!.play()
+//        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

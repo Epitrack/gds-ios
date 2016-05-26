@@ -97,6 +97,7 @@ class PuzzeViewController: UIViewController {
             self.questionViewCtrl.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
         }) { (finished: Bool) -> Void in
             self.viewQuestion.hidden = true
+            self.questionViewCtrl.breakTime = false
         }
     }
     

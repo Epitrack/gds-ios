@@ -92,7 +92,7 @@ class QuestionViewController: UIViewController {
                     let congratulationScreen = CongratulationsViewController()
                     congratulationScreen.puzzeViewReference = self.puzzeViewCtrlRef
 
-                    if Int(self.user.partsCompleted) > 9 {
+                    if Int(self.user.partsCompleted) < 8 {
                         congratulationScreen.part = self.part
                     }
                     congratulationScreen.level = Int(self.user.level)
@@ -119,12 +119,12 @@ class QuestionViewController: UIViewController {
             for i in 1...15 {
                 if self.breakTime {
                     break
+                }else{
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.lbTimer.text = "\(i)"
+                    }
+                    sleep(1)
                 }
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.lbTimer.text = "\(i)"
-                }
-                sleep(1)
             }
         })
     }
