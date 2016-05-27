@@ -426,7 +426,7 @@
     [params setValue:user.avatarNumber forKey:@"picture"];
     
     NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:user.puzzleMatriz
                                                         options:NSJSONWritingPrettyPrinted
                                                           error:&error];
     if (!error) {

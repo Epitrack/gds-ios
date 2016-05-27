@@ -72,9 +72,10 @@ NSString *const kGameTutorialReady = @"gameTutorialReady";
         self.isGameTutorailReady = false;
         self.points = 10;
         self.puzzleMatriz = [[NSMutableArray alloc] initWithCapacity:3];
-        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:0];
-        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:1];
-        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:2];
+        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@1,@1,@1,nil] atIndex:0];
+        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@1,@1,@1,nil] atIndex:1];
+        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@1,@1,@0,nil] atIndex:2];
+        self.partsCompleted = 7;
     }
     
     return self;

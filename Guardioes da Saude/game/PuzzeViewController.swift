@@ -15,22 +15,32 @@ class PuzzeViewController: UIViewController {
     @IBOutlet weak var viewQuestion: UIView!
     @IBOutlet weak var viewPt1: UIView!
     @IBOutlet weak var imgPt1: UIImageView!
+    @IBOutlet weak var btnPt1: UIButton!
     @IBOutlet weak var viewPt2: UIView!
     @IBOutlet weak var imgPt2: UIImageView!
+    @IBOutlet weak var btnPt2: UIButton!
     @IBOutlet weak var viewPt3: UIView!
     @IBOutlet weak var imgPt3: UIImageView!
+    @IBOutlet weak var btnPt3: UIButton!
     @IBOutlet weak var viewPt4: UIView!
     @IBOutlet weak var imgPt4: UIImageView!
+    @IBOutlet weak var btnPt4: UIButton!
     @IBOutlet weak var viewPt5: UIView!
     @IBOutlet weak var imgPt5: UIImageView!
+    @IBOutlet weak var btnPt5: UIButton!
     @IBOutlet weak var viewPt6: UIView!
     @IBOutlet weak var imgPt6: UIImageView!
+    @IBOutlet weak var btnPt6: UIButton!
     @IBOutlet weak var viewPt7: UIView!
     @IBOutlet weak var imgPt7: UIImageView!
+    @IBOutlet weak var btnPt7: UIButton!
     @IBOutlet weak var viewPt8: UIView!
     @IBOutlet weak var imgPt8: UIImageView!
+    @IBOutlet weak var btnPt8: UIButton!
     @IBOutlet weak var viewPt9: UIView!
     @IBOutlet weak var imgPt9: UIImageView!
+    @IBOutlet weak var btnPt9: UIButton!
+    @IBOutlet weak var imgLevel: UIImageView!
     
     let user = User.getInstance()
     let questionViewCtrl = QuestionViewController()
@@ -48,6 +58,7 @@ class PuzzeViewController: UIViewController {
         self.viewQuestion.addSubview(questionViewCtrl.view)
         
         self.loadQuestions()
+        self.loadPuzzle()
     }
     
     func loadQuestions() {
@@ -60,21 +71,54 @@ class PuzzeViewController: UIViewController {
                 HUD.hide()
         })
     }
+    
+    func loadPuzzle() {
+        for c in 0...2{
+            for l in 0...2{
+                let isResponded = (self.user.puzzleMatriz[c] as! NSMutableArray)[l]
+                if (isResponded as! Int) == 1 {
+                    let btnIndice = (c*3)+l+1;
+                    print(btnIndice)
+                    switch btnIndice {
+                    case 1:
+                        imgPt1.image = UIImage(named: "img_lvl\(user.level)_pt1")
+                        btnPt1.enabled = false
+                    case 2:
+                        imgPt2.image = UIImage(named: "img_lvl\(user.level)_pt2")
+                        btnPt2.enabled = false
+                    case 3:
+                        imgPt3.image = UIImage(named: "img_lvl\(user.level)_pt3")
+                        btnPt3.enabled = false
+                    case 4:
+                        imgPt4.image = UIImage(named: "img_lvl\(user.level)_pt4")
+                        btnPt4.enabled = false
+                    case 5:
+                        imgPt5.image = UIImage(named: "img_lvl\(user.level)_pt5")
+                        btnPt5.enabled = false
+                    case 6:
+                        imgPt6.image = UIImage(named: "img_lvl\(user.level)_pt6")
+                        btnPt6.enabled = false
+                    case 7:
+                        imgPt7.image = UIImage(named: "img_lvl\(user.level)_pt7")
+                        btnPt7.enabled = false
+                    case 8:
+                        imgPt8.image = UIImage(named: "img_lvl\(user.level)_pt8")
+                        btnPt8.enabled = false
+                    case 9:
+                        imgPt9.image = UIImage(named: "img_lvl\(user.level)_pt9")
+                        btnPt9.enabled = false
+                    default:
+                        break
+                    }
+                }
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func btnPuzzePart(sender: UIButton) {
         self.questionViewCtrl.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
@@ -102,11 +146,16 @@ class PuzzeViewController: UIViewController {
     }
     
     func transitionQuestion(level: Int, part: Int) {
+        self.user.partsCompleted = self.user.partsCompleted + 1
+        
+        if user.partsCompleted == 8 {
+            self.showImageLevel()
+            return
+        }
+        
         let img = UIImage(named: "img_lvl1_pt\(part)")
         let imgSize = imageWithImage(img!, scaledToSize: viewPt3.bounds.size)
         let imgNew = UIImageView(image: imgSize)
-        
-        self.user.partsCompleted = self.user.partsCompleted + 1// NSNumber(integer: (self.user.partsCompleted.integerValue) + 1)
         
         switch part {
         case 1:
@@ -139,6 +188,21 @@ class PuzzeViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    func showImageLevel() {
+        self.viewPt1.hidden = true
+        self.viewPt2.hidden = true
+        self.viewPt3.hidden = true
+        self.viewPt4.hidden = true
+        self.viewPt5.hidden = true
+        self.viewPt6.hidden = true
+        self.viewPt7.hidden = true
+        self.viewPt8.hidden = true
+        self.viewPt9.hidden = true
+        
+        self.imgLevel.image = UIImage(named: "img_lvl\(user.level)")
+        self.imgLevel.hidden = false
     }
     
     func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
