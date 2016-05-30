@@ -25,7 +25,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="La6-Jt-NGd">
                     <rect key="frame" x="20" y="157" width="280" height="255"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_level1_pt1" translatesAutoresizingMaskIntoConstraints="NO" id="sI3-kG-JJW">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_lvl1_pt1" translatesAutoresizingMaskIntoConstraints="NO" id="sI3-kG-JJW">
                             <rect key="frame" x="65" y="25" width="150" height="150"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="sI3-kG-JJW" secondAttribute="height" multiplier="1:1" id="QbG-Tr-wZr"/>
@@ -71,6 +71,9 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_title_bg" translatesAutoresizingMaskIntoConstraints="NO" id="kKY-Rc-9Xs">
                     <rect key="frame" x="20" y="76" width="280" height="73"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="kKY-Rc-9Xs" secondAttribute="height" multiplier="280:73" id="o60-Mf-ljf"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parabéns" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgA-iZ-8uy">
                     <rect key="frame" x="122" y="115" width="77" height="21"/>
@@ -170,7 +173,7 @@
         <image name="icon_star_2" width="66" height="64"/>
         <image name="icon_star_3" width="47" height="48"/>
         <image name="icon_title_bg" width="295" height="73"/>
-        <image name="img_level1_pt1" width="320" height="341"/>
         <image name="img_lvl1" width="320" height="327"/>
+        <image name="img_lvl1_pt1" width="81" height="81"/>
     </resources>
 </document>

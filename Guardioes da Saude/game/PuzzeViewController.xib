@@ -27,6 +27,7 @@
                 <outlet property="imgPt7" destination="av4-CK-WsZ" id="bkp-Ig-Ib3"/>
                 <outlet property="imgPt8" destination="eno-E5-b6S" id="ptC-vm-MRv"/>
                 <outlet property="imgPt9" destination="41S-rn-aBw" id="H6S-xk-Ol4"/>
+                <outlet property="lbLevel" destination="LY7-Cb-sPz" id="xDR-Mq-BSZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewPt1" destination="FTe-ZV-R5Y" id="PZf-ii-b5X"/>
                 <outlet property="viewPt2" destination="vtk-F8-ZWN" id="SOi-EN-Se9"/>
@@ -51,9 +52,12 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_title_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-V2-sz8">
                             <rect key="frame" x="20" y="20" width="280" height="73"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Rlg-V2-sz8" secondAttribute="height" multiplier="280:73" id="aKs-R5-nnZ"/>
+                            </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nível 01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LY7-Cb-sPz">
-                            <rect key="frame" x="127" y="61" width="65" height="21"/>
+                            <rect key="frame" x="127" y="58" width="65" height="21"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <color key="textColor" red="0.094117648900000003" green="0.42352941630000002" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -387,6 +391,7 @@
                         <constraint firstItem="FTe-ZV-R5Y" firstAttribute="top" secondItem="vtk-F8-ZWN" secondAttribute="bottom" constant="-77" id="hHO-f6-Azi"/>
                         <constraint firstItem="jq7-Cd-Qfp" firstAttribute="width" secondItem="0bb-Tb-vFZ" secondAttribute="width" id="lKI-Q3-XB2"/>
                         <constraint firstItem="0bb-Tb-vFZ" firstAttribute="leading" secondItem="FTe-ZV-R5Y" secondAttribute="leading" id="lNp-1y-ETU"/>
+                        <constraint firstItem="LY7-Cb-sPz" firstAttribute="centerY" secondItem="Rlg-V2-sz8" secondAttribute="centerY" multiplier="1.2" id="mlY-Ak-IaI"/>
                         <constraint firstItem="m9R-g2-RBU" firstAttribute="top" secondItem="Rlg-V2-sz8" secondAttribute="bottom" constant="27" id="nv1-Bj-XRH"/>
                         <constraint firstItem="gYA-vx-WXb" firstAttribute="width" secondItem="tYZ-YH-gAy" secondAttribute="width" id="osa-63-QJV"/>
                         <constraint firstItem="tqf-4H-pJm" firstAttribute="width" secondItem="tYZ-YH-gAy" secondAttribute="width" id="pIM-29-21O"/>
@@ -418,6 +423,7 @@
                             <exclude reference="X0N-n5-h9v"/>
                             <exclude reference="hHO-f6-Azi"/>
                             <exclude reference="viD-Mh-lBa"/>
+                            <exclude reference="TOc-QV-kxP"/>
                             <exclude reference="2ph-y4-TKG"/>
                             <exclude reference="8z6-M8-dND"/>
                             <exclude reference="QKL-ee-oC6"/>

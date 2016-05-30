@@ -11,6 +11,7 @@ import PKHUD
 
 class PuzzeViewController: UIViewController {
     
+    @IBOutlet weak var lbLevel: UILabel!
     @IBOutlet weak var viewQuestions: UIView!
     @IBOutlet weak var viewQuestion: UIView!
     @IBOutlet weak var viewPt1: UIView!
@@ -72,6 +73,7 @@ class PuzzeViewController: UIViewController {
     }
     
     func loadPuzzle() {
+        self.lbLevel.text = "Nível \(self.user.level)"
         self.hideImageLevel()
         
         for c in 0...2{
@@ -157,7 +159,7 @@ class PuzzeViewController: UIViewController {
             return
         }
         
-        let img = UIImage(named: "img_lvl1_pt\(part)")
+        let img = UIImage(named: "img_lvl\(level)_pt\(part)")
         let imgSize = imageWithImage(img!, scaledToSize: viewPt3.bounds.size)
         let imgNew = UIImageView(image: imgSize)
         
