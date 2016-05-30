@@ -11,6 +11,7 @@ import UIKit
 class CongratulationsViewController: UIViewController {
     
     var puzzeViewReference: PuzzeViewController?
+    var questionViewRef: QuestionViewController?
     var level: Int!
     var part: Int?
     var stars :Int!
@@ -76,6 +77,8 @@ class CongratulationsViewController: UIViewController {
     }
 
     @IBAction func btnQuestionAction(sender: AnyObject) {
+        self.puzzeViewReference?.viewQuestion.hidden = true
+        
         self.navigationController?.popViewControllerAnimated(true)
         if let puzzeViewReference = self.puzzeViewReference {
             if let part = self.part {
@@ -84,6 +87,17 @@ class CongratulationsViewController: UIViewController {
                 
             }
         }
+    }
+    
+    @IBAction func btnNextQuestion(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func btnRepeatQuestion(sender: AnyObject) {
+        self.questionViewRef?.resetView()
+        self.questionViewRef?.breakTime = false
+        self.questionViewRef?.animateCircle(15)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     override func didReceiveMemoryWarning() {

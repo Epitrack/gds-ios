@@ -96,6 +96,9 @@
                         <constraint firstAttribute="width" secondItem="Sk7-Ir-5Uk" secondAttribute="height" multiplier="121:111" id="oyi-Mn-q9a"/>
                     </constraints>
                     <state key="normal" image="btn_next_game" backgroundImage="btn_next_game"/>
+                    <connections>
+                        <action selector="btnNextQuestion:" destination="-1" eventType="touchUpInside" id="W2F-Zs-rHh"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAD-gz-hNy">
                     <rect key="frame" x="220" y="441" width="33" height="33"/>
@@ -107,6 +110,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkF-N1-ieg">
                     <rect key="frame" x="70" y="441" width="30" height="34"/>
                     <state key="normal" image="btn_repeat"/>
+                    <connections>
+                        <action selector="btnRepeatQuestion:" destination="-1" eventType="touchUpInside" id="gFK-50-ceK"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

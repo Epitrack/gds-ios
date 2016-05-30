@@ -100,10 +100,9 @@ class QuestionViewController: UIViewController {
     }
     
     func callCongratulationScreen() {
-        self.puzzeViewCtrlRef.closeQuestionDialog()
-        
         let congratulationScreen = CongratulationsViewController()
         congratulationScreen.puzzeViewReference = self.puzzeViewCtrlRef
+        congratulationScreen.questionViewRef = self
         congratulationScreen.stars = 3 - self.answerWrong
         
         if Int(self.user.partsCompleted) < 8 {
