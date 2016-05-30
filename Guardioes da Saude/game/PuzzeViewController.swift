@@ -58,7 +58,6 @@ class PuzzeViewController: UIViewController {
         self.viewQuestion.addSubview(questionViewCtrl.view)
         
         self.loadQuestions()
-        self.loadPuzzle()
     }
     
     func loadQuestions() {
@@ -73,6 +72,8 @@ class PuzzeViewController: UIViewController {
     }
     
     func loadPuzzle() {
+        self.hideImageLevel()
+        
         for c in 0...2{
             for l in 0...2{
                 let isResponded = (self.user.puzzleMatriz[c] as! NSMutableArray)[l]
@@ -150,6 +151,9 @@ class PuzzeViewController: UIViewController {
         
         if user.partsCompleted == 8 {
             self.showImageLevel()
+            user.level = user.level + 1
+            user.resetPuzzleMatriz()
+            self.startViewRef.setLevelMap(true)
             return
         }
         
@@ -203,6 +207,37 @@ class PuzzeViewController: UIViewController {
         
         self.imgLevel.image = UIImage(named: "img_lvl\(user.level)")
         self.imgLevel.hidden = false
+    }
+    
+    func hideImageLevel() {
+        self.viewPt1.hidden = false
+        self.imgPt1.image = UIImage(named: "icon_answer-1")
+        self.btnPt1.enabled = true
+        self.viewPt2.hidden = false
+        self.imgPt2.image = UIImage(named: "icon_answer-1")
+        self.btnPt2.enabled = true
+        self.viewPt3.hidden = false
+        self.imgPt3.image = UIImage(named: "icon_answer-1")
+        self.btnPt3.enabled = true
+        self.viewPt4.hidden = false
+        self.imgPt4.image = UIImage(named: "icon_answer-1")
+        self.btnPt4.enabled = true
+        self.viewPt5.hidden = false
+        self.imgPt5.image = UIImage(named: "icon_answer-1")
+        self.btnPt5.enabled = true
+        self.viewPt6.hidden = false
+        self.imgPt6.image = UIImage(named: "icon_answer-1")
+        self.btnPt6.enabled = true
+        self.viewPt7.hidden = false
+        self.imgPt7.image = UIImage(named: "icon_answer-1")
+        self.btnPt7.enabled = true
+        self.viewPt8.hidden = false
+        self.imgPt8.image = UIImage(named: "icon_answer-1")
+        self.btnPt8.enabled = true
+        self.viewPt9.hidden = false
+        self.imgPt9.image = UIImage(named: "icon_answer-1")
+        self.btnPt9.enabled = true
+        self.imgLevel.hidden = true
     }
     
     func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{

@@ -59,6 +59,7 @@ extern NSString *const kGameTutorialReady;
 @property(nonatomic, retain) NSMutableArray *puzzleMatriz;
 @property(nonatomic, assign) int partsCompleted;
 
+- (void) resetPuzzleMatriz;
 - (void) setGenderBySegIndex: (long) segIndex;
 - (void) setRaceBySegIndex: (long) segIndex;
 - (void) setGenderByString: (NSString *) strGender;

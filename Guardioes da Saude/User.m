@@ -81,6 +81,13 @@ NSString *const kGameTutorialReady = @"gameTutorialReady";
     return self;
 }
 
+- (void) resetPuzzleMatriz{
+    self.partsCompleted = 0;
+    [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:0];
+    [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:1];
+    [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:2];
+}
+
 - (void) setGenderBySegIndex: (long) segIndex{
     if (segIndex == 0) {
         gender = @"M";

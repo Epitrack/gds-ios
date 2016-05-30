@@ -20,9 +20,10 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var currentQuestion: Question?
     var user = User.getInstance()
     var rankingList: [RankingItem] = []
-    var puzzeDialog: PuzzeViewController?
+    var puzzeDialog = PuzzeViewController()
     var showingMap = true
-    var levelMapPosition = [[138.0, 110.0],
+    var btnPin: UIButton!
+    let levelMapPosition = [[138.0, 110.0],
                             [233.0, 133.0],
                             [106.0, 189.0],
                             [30.0, 200.0],
@@ -83,16 +84,16 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         btnBack.image = UIImage(named: "icon_back")
         self.navigationItem.leftBarButtonItem = btnBack
         
-        let path = NSBundle.mainBundle().pathForResource("effect_button", ofType: "mp3")
-        if let _ = path {
-            let url = NSURL.fileURLWithPath(path!)
-            
-            do{
+//        let path = NSBundle.mainBundle().pathForResource("effect_button", ofType: "mp3")
+//        if let _ = path {
+//            let url = NSURL.fileURLWithPath(path!)
+//            
+//            do{
 //                try self.audioPlayer = AVAudioPlayer(contentsOfURL: url)
-            }catch{
-                
-            }
-        }
+//            }catch{
+//                
+//            }
+//        }
         
         circleLayer = CAShapeLayer()
         
@@ -113,6 +114,12 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             arrViews!.removeAtIndex(arrViews!.count - 2)
             self.navigationController!.viewControllers = arrViews!
         }
+        
+        self.puzzeDialog.startViewRef = self
+        self.addChildViewController(self.puzzeDialog)
+        self.puzzeDialog.view.frame = self.view.frame
+        self.viewPuzze.addSubview(self.puzzeDialog.view)
+        self.puzzeDialog.didMoveToParentViewController(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -136,11 +143,16 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    func setLevelMap() {
+    func setLevelMap(updateLevel: Bool) {
         let mapWidth = Double(self.imgMap.frame.width)
         let mapHeight = Double(self.imgMap.frame.height)
         
         let plots: Int = self.levelMapPosition.count - Int(self.user.level)
+        
+        if updateLevel {
+            self.btnPin.removeFromSuperview()
+        }
+        
         for index in plots...self.levelMapPosition.count-1 {
             let position = self.levelMapPosition[index]
             let x = (position[0] * mapWidth)/320
@@ -150,10 +162,10 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             if index == plots {
                 let positionRect = CGRect(x: x, y: y-2.5, width: width, height: height+5)
-                let button = UIButton(frame: positionRect)
-                button.setBackgroundImage(UIImage(named: "ic_map_pin"), forState: UIControlState.Normal)
-                button.addTarget(self, action: #selector(btnLevel(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-                self.scrollMap.addSubview(button)
+                self.btnPin = UIButton(frame: positionRect)
+                self.btnPin.setBackgroundImage(UIImage(named: "ic_map_pin"), forState: UIControlState.Normal)
+                self.btnPin.addTarget(self, action: #selector(btnLevel(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+                self.scrollMap.addSubview(self.btnPin)
             }else{
                 let positionRect = CGRect(x: x, y: y, width: width, height: height)
                 let img = UIImageView(frame: positionRect)
@@ -176,7 +188,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             })
         }
 
-        setLevelMap()
+        setLevelMap(false)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -270,17 +282,10 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     @IBAction func btnLevel(sender: UIButton) {
 //        sender.setBackgroundImage(UIImage(named: "ic_map_medal"), forState: UIControlState.Normal)
-        if self.puzzeDialog == nil {
-            self.puzzeDialog = PuzzeViewController()
-            self.puzzeDialog!.startViewRef = self
-            self.addChildViewController(self.puzzeDialog!)
-            self.puzzeDialog!.view.frame = self.view.frame
-            self.viewPuzze.addSubview(self.puzzeDialog!.view)
-            self.puzzeDialog!.didMoveToParentViewController(self)
-        }
         showingMap = false
         self.viewPuzze.bounds.origin.x = -self.view.frame.width
         self.viewPuzze.hidden = false
+        self.puzzeDialog.loadPuzzle()
         
         UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn,
                                    animations: {
@@ -294,13 +299,10 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func closeDialogPuzze() {
-        if let puzzeDialog = self.puzzeDialog {
-            
-            UIView.animateWithDuration(0.2, animations: { () -> Void in
-                puzzeDialog.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
-            }) { (finished: Bool) -> Void in
-                self.viewPuzze.hidden = true
-            }
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.puzzeDialog.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        }) { (finished: Bool) -> Void in
+            self.viewPuzze.hidden = true
         }
     }
     
