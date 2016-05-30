@@ -13,10 +13,14 @@ class CongratulationsViewController: UIViewController {
     var puzzeViewReference: PuzzeViewController?
     var level: Int!
     var part: Int?
+    var stars :Int!
     
     @IBOutlet weak var imgPuzzle: UIImageView!
     @IBOutlet weak var viewPart: UIView!
     @IBOutlet weak var imgLvl: UIImageView!
+    @IBOutlet weak var imgStar1: UIImageView!
+    @IBOutlet weak var imgStar2: UIImageView!
+    @IBOutlet weak var imgStar3: UIImageView!
     
     var titleBarImage: UIImageView?
 
@@ -38,6 +42,16 @@ class CongratulationsViewController: UIViewController {
             
             let img = UIImage(named: "img_lvl\(self.level)")
             self.imgLvl.image = img
+        }
+        
+        switch self.stars {
+        case 1:
+            self.imgStar2.image = UIImage(named: "icon_unstar_2")
+            self.imgStar3.image = UIImage(named: "icon_unstar_3")
+        case 2:
+            self.imgStar3.image = UIImage(named: "icon_unstar_3")
+        default:
+            break
         }
         
     }

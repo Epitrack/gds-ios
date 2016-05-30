@@ -10,6 +10,9 @@
             <connections>
                 <outlet property="imgLvl" destination="BPY-cf-e4C" id="TfZ-KG-JwA"/>
                 <outlet property="imgPuzzle" destination="sI3-kG-JJW" id="eYa-yh-q2T"/>
+                <outlet property="imgStar1" destination="6Y1-Yk-Ip1" id="aNp-3z-oJN"/>
+                <outlet property="imgStar2" destination="640-x9-EGB" id="qmz-oY-9S1"/>
+                <outlet property="imgStar3" destination="AAh-b8-1on" id="CNO-yD-hVJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewPart" destination="La6-Jt-NGd" id="Zzc-BI-fIk"/>
             </connections>

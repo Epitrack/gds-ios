@@ -17,6 +17,7 @@ class QuestionViewController: UIViewController {
     var part: Int!
     let user = User.getInstance()
     let userRequester = UserRequester()
+    var answerWrong = 0
     
 
     @IBOutlet weak var lbDescription: UILabel!
@@ -54,6 +55,8 @@ class QuestionViewController: UIViewController {
     }
    
     func populateQuestion(question: Question) {
+        self.answerWrong = 0
+        
         self.question = question
         
         self.lbDescription.text = question.question
@@ -92,6 +95,7 @@ class QuestionViewController: UIViewController {
             })
         }else{
             sender.setBackgroundImage(UIImage(named: "btn_wrong_answer"), forState: UIControlState.Normal)
+            self.answerWrong += 1
         }
     }
     
@@ -100,6 +104,7 @@ class QuestionViewController: UIViewController {
         
         let congratulationScreen = CongratulationsViewController()
         congratulationScreen.puzzeViewReference = self.puzzeViewCtrlRef
+        congratulationScreen.stars = 3 - self.answerWrong
         
         if Int(self.user.partsCompleted) < 8 {
             congratulationScreen.part = self.part
