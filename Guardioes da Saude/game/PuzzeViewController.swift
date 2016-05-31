@@ -81,7 +81,7 @@ class PuzzeViewController: UIViewController {
                 let isResponded = (self.user.puzzleMatriz[c] as! NSMutableArray)[l]
                 if (isResponded as! Int) == 1 {
                     let btnIndice = (c*3)+l+1;
-                    print(btnIndice)
+
                     switch btnIndice {
                     case 1:
                         imgPt1.image = UIImage(named: "img_lvl\(user.level)_pt1")
@@ -124,12 +124,33 @@ class PuzzeViewController: UIViewController {
     }
 
     @IBAction func btnPuzzePart(sender: UIButton) {
+        self.showQuestion(sender.tag)
+    }
+    
+    func showNextQuestion() {
+        var partNumber = 0
+        for line in 0...2 {
+            for column in 0...2 {
+                let isAnswer = (self.user.puzzleMatriz[line] as! NSArray)[column] as! Int
+                if isAnswer == 1 {
+                    partNumber = (line * 3) + column
+                    break
+                }
+            }
+        }
+        
+        if partNumber != 0 {
+            showQuestion(partNumber)
+        }
+    }
+    
+    func showQuestion(part: Int) {
         self.questionViewCtrl.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
         self.viewQuestion.hidden = false;
         
         let diceRoll = Int(arc4random_uniform(UInt32(questions.count)))
         self.questionViewCtrl.populateQuestion(questions[diceRoll])
-        self.questionViewCtrl.part = sender.tag
+        self.questionViewCtrl.part = part
         self.questionViewCtrl.resetView();
         
         UIView.animateWithDuration(0.2, animations: { () -> Void in
@@ -144,11 +165,10 @@ class PuzzeViewController: UIViewController {
             self.questionViewCtrl.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
         }) { (finished: Bool) -> Void in
             self.viewQuestion.hidden = true
-            self.questionViewCtrl.breakTime = false
         }
     }
     
-    func transitionQuestion(level: Int, part: Int) {
+    func transitionQuestion(level: Int, part: Int, callNextQuestion: Bool = false) {
         self.user.partsCompleted = self.user.partsCompleted + 1
         
         if user.partsCompleted == 8 {
@@ -193,6 +213,10 @@ class PuzzeViewController: UIViewController {
             (self.user.puzzleMatriz[2] as! NSMutableArray)[2] = 1
         default:
             break
+        }
+        
+        if callNextQuestion {
+            showNextQuestion()
         }
     }
     

@@ -90,7 +90,16 @@ class CongratulationsViewController: UIViewController {
     }
     
     @IBAction func btnNextQuestion(sender: AnyObject) {
+        self.puzzeViewReference?.viewQuestion.hidden = true
         
+        self.navigationController?.popViewControllerAnimated(true)
+        if let puzzeViewReference = self.puzzeViewReference {
+            if let part = self.part {
+                puzzeViewReference.transitionQuestion(self.level, part: part, callNextQuestion: true)
+            }else{
+                
+            }
+        }
     }
     
     @IBAction func btnRepeatQuestion(sender: AnyObject) {

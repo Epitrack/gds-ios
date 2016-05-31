@@ -72,6 +72,7 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func btnClose(sender: AnyObject) {
+        self.breakTime = true
         puzzeViewCtrlRef.closeQuestionDialog()
     }
 
@@ -104,11 +105,9 @@ class QuestionViewController: UIViewController {
         congratulationScreen.puzzeViewReference = self.puzzeViewCtrlRef
         congratulationScreen.questionViewRef = self
         congratulationScreen.stars = 3 - self.answerWrong
-        
-        if Int(self.user.partsCompleted) < 8 {
-            congratulationScreen.part = self.part
-        }
+        congratulationScreen.part = self.part
         congratulationScreen.level = Int(self.user.level)
+        
         self.navigationController?.pushViewController(congratulationScreen, animated: true)
     }
     
@@ -116,6 +115,7 @@ class QuestionViewController: UIViewController {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.duration = duration
         animation.fromValue = 0
+        self.circleLayer.speed = 1
         animation.toValue = 1
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
@@ -126,6 +126,8 @@ class QuestionViewController: UIViewController {
         dispatch_async(queue, {
             for i in 1...15 {
                 if self.breakTime {
+                    self.circleLayer.speed = 0.0
+                    self.breakTime = false
                     break
                 }else{
                     dispatch_async(dispatch_get_main_queue()) {
