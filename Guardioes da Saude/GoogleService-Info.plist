@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>TRACKING_ID</key>
-	<string>UA-71659608-3</string>
-	<key>CLIENT_ID</key>
-	<string>997325640691-65rupglfegtkeqs5rf5n0i99sjn17938.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.997325640691-65rupglfegtkeqs5rf5n0i99sjn17938</string>
-	<key>GCM_SENDER_ID</key>
-	<string>997325640691</string>
-	<key>PLIST_VERSION</key>
-	<string>1</string>
-	<key>BUNDLE_ID</key>
-	<string>com.epitrack.gds</string>
-	<key>IS_ADS_ENABLED</key>
-	<false/>
-	<key>IS_ANALYTICS_ENABLED</key>
-	<true/>
-	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
-	<key>IS_GCM_ENABLED</key>
-	<true/>
-	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
-	<key>GOOGLE_APP_ID</key>
-	<string>1:997325640691:ios:dd46ae5370e14669</string>
-	<key>PROJECT_ID</key>
-	<string>guardioes-da-saude-analytics</string>
-</dict>
+    <dict>
+        <key>TRACKING_ID</key>
+        <string>UA-78734684-1</string>
+        <key>CLIENT_ID</key>
+        <string>761648787941-6voa82bingg7bccnnf3mq2919c2to29q.apps.googleusercontent.com</string>
+        <key>REVERSED_CLIENT_ID</key>
+        <string>com.googleusercontent.apps.761648787941-6voa82bingg7bccnnf3mq2919c2to29q</string>
+        <key>GCM_SENDER_ID</key>
+        <string>761648787941</string>
+        <key>PLIST_VERSION</key>
+        <string>1</string>
+        <key>BUNDLE_ID</key>
+        <string>com.epitrack.gds</string>
+        <key>PROJECT_ID</key>
+        <string>model-link-133020</string>
+        <key>IS_ADS_ENABLED</key>
+        <false/>
+        <key>IS_ANALYTICS_ENABLED</key>
+        <true/>
+        <key>IS_APPINVITE_ENABLED</key>
+        <false/>
+        <key>IS_GCM_ENABLED</key>
+        <true/>
+        <key>IS_SIGNIN_ENABLED</key>
+        <true/>
+        <key>GOOGLE_APP_ID</key>
+        <string>1:761648787941:ios:dd46ae5370e14669</string>
+    </dict>
 </plist>
