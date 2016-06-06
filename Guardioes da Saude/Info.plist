@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.8</string>
+	<string>1.1.9</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -36,12 +36,12 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.997325640691-65rupglfegtkeqs5rf5n0i99sjn17938</string>
+				<string>com.googleusercontent.apps.761648787941-6voa82bingg7bccnnf3mq2919c2to29q</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1043</string>
+	<string>1045</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -52,9 +52,9 @@
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>E9EqdjiPsk3esF54X9qc8LYU6</string>
+					<string>l4t5P03ZR3mbBON7HHLWhgSrS</string>
 					<key>consumerSecret</key>
-					<string>pyjiplPQZFP4h367EktqjNVP2nJfiiiSFnnsVJpQzdnE3LEppm</string>
+					<string>8Vi40vWK3s4kqViKMKPJJFO5bLsrFbvzRqhDbsy6mZQH7pkVbe</string>
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
