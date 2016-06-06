@@ -54,7 +54,7 @@ NSUserDefaults *preferences;
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
-    [GMSServices provideAPIKey:@"AIzaSyBKd0Hwx2SLZYgvE6vh2pRXjAs5JkipvqI"];
+    [GMSServices provideAPIKey:@"AIzaSyDPVnLM8mqTGc-yrvZgQ7o360qAnGyo9YU"];
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
