@@ -68,7 +68,7 @@ PODS:
   - GoogleSymbolUtilities (1.0.3)
   - GoogleUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0.0)
-  - JSONModel (1.1.2)
+  - JSONModel (1.2.0)
   - JTCalendar (2.1.4)
   - MBProgressHUD (0.9.2)
   - PKHUD (3.1.0)
@@ -121,7 +121,7 @@ SPEC CHECKSUMS:
   GoogleSignIn: 79929b51e6299c69f1197bbd9c7a1367d523ecd8
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
-  JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
+  JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
   JTCalendar: 9b1352c7ec41cc26b19c189d6608ba48060a53d9
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab

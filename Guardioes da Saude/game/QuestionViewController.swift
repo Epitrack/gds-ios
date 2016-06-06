@@ -115,7 +115,7 @@ class QuestionViewController: UIViewController {
         congratulationScreen.questionViewRef = self
         congratulationScreen.stars = 3 - self.answerWrong
         congratulationScreen.part = self.part
-        congratulationScreen.level = Int(self.user.level)
+        congratulationScreen.level = isLevelDone ? Int(self.user.level-1) : Int(self.user.level)
         congratulationScreen.isLevelDone = isLevelDone
         
         self.navigationController?.pushViewController(congratulationScreen, animated: true)

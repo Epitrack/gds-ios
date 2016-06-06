@@ -276,6 +276,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     @IBAction func btnLevel(sender: UIButton) {
 //        sender.setBackgroundImage(UIImage(named: "ic_map_medal"), forState: UIControlState.Normal)
+        
         if let puzzeDialog = self.puzzeDialog{
             puzzeDialog.removeFromParentViewController()
             puzzeDialog.view.removeFromSuperview()

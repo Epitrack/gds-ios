@@ -71,8 +71,9 @@ NSString *const kGameTutorialReady = @"gameTutorialReady";
         self.level = 1;
         self.isGameTutorailReady = false;
         self.points = 10;
-        self.puzzleMatriz = [[NSMutableArray alloc] initWithArray:@[@1, @1, @1, @1, @1, @1, @1, @1, @0]];
-        self.partsCompleted = 8;
+//        self.puzzleMatriz = [[NSMutableArray alloc] initWithArray:@[@1, @1, @1, @1, @1, @1, @1, @1, @0]];
+//        self.partsCompleted = 8;
+        [self resetPuzzleMatriz];
     }
     
     return self;
