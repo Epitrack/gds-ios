@@ -45,7 +45,7 @@
     GIDSignIn *signIn = [GIDSignIn sharedInstance];
     signIn.delegate = self;
     signIn.uiDelegate = self;
-    signIn.clientID = @"997325640691-65rupglfegtkeqs5rf5n0i99sjn17938.apps.googleusercontent.com";
+    signIn.clientID = @"761648787941-6voa82bingg7bccnnf3mq2919c2to29q.apps.googleusercontent.com";
     //[signIn signInSilently];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.login"]];
     [signIn setScopes:[NSArray arrayWithObject: @"https://www.googleapis.com/auth/plus.me"]];
