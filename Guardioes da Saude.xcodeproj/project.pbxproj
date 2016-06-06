@@ -456,6 +456,7 @@
 		CB163F971CE4B13000ED13CC /* PuzzeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB163F951CE4B13000ED13CC /* PuzzeViewController.xib */; };
 		CB163F9A1CE63DB400ED13CC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB163F981CE63DB400ED13CC /* QuestionViewController.swift */; };
 		CB163F9B1CE63DB400ED13CC /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB163F991CE63DB400ED13CC /* QuestionViewController.xib */; };
+		CB24913A1D00D97500777B09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB2491391D00D97500777B09 /* GoogleService-Info.plist */; };
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB362B2F1C7B48A800BE4F23 /* icon_home_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */; };
 		CB362B301C7B48A800BE4F23 /* icon_home_onpress.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2E1C7B48A800BE4F23 /* icon_home_onpress.png */; };
@@ -477,7 +478,6 @@
 		CB8FBADA1C60E1BC00696F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB8FBADC1C60E1BC00696F17 /* Localizable.strings */; };
 		CB9387431C491AE900446842 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9387421C491AE900446842 /* ViewUtil.m */; };
 		CB9DC5831C871E57006E627C /* icon_twitternews.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9DC5821C871E57006E627C /* icon_twitternews.png */; };
-		CB9DC5851C88D001006E627C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9DC5841C88D001006E627C /* GoogleService-Info.plist */; };
 		CB9F37A01CCEC726008D5ACF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9F379E1CCEC726008D5ACF /* StartViewController.swift */; };
 		CB9F37A11CCEC726008D5ACF /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9F379F1CCEC726008D5ACF /* StartViewController.xib */; };
 		CB9F37A81CD001F3008D5ACF /* effect_button.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CB9F37A71CD001F3008D5ACF /* effect_button.mp3 */; };
@@ -1045,6 +1045,7 @@
 		CB163F951CE4B13000ED13CC /* PuzzeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PuzzeViewController.xib; path = game/PuzzeViewController.xib; sourceTree = "<group>"; };
 		CB163F981CE63DB400ED13CC /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionViewController.swift; path = game/QuestionViewController.swift; sourceTree = "<group>"; };
 		CB163F991CE63DB400ED13CC /* QuestionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionViewController.xib; path = game/QuestionViewController.xib; sourceTree = "<group>"; };
+		CB2491391D00D97500777B09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
 		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
 		CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_home_default.png; sourceTree = "<group>"; };
@@ -1087,7 +1088,6 @@
 		CB9387411C491AE900446842 /* ViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtil.h; sourceTree = "<group>"; };
 		CB9387421C491AE900446842 /* ViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtil.m; sourceTree = "<group>"; };
 		CB9DC5821C871E57006E627C /* icon_twitternews.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_twitternews.png; sourceTree = "<group>"; };
-		CB9DC5841C88D001006E627C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB9F379E1CCEC726008D5ACF /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = game/StartViewController.swift; sourceTree = "<group>"; };
 		CB9F379F1CCEC726008D5ACF /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartViewController.xib; path = game/StartViewController.xib; sourceTree = "<group>"; };
 		CB9F37A71CD001F3008D5ACF /* effect_button.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = effect_button.mp3; sourceTree = "<group>"; };
@@ -1444,7 +1444,7 @@
 			children = (
 				CBBC1E1A1C9B33510079A8D6 /* Guardioes da Saude-Bridging-Header.h */,
 				CB8FBADC1C60E1BC00696F17 /* Localizable.strings */,
-				CB9DC5841C88D001006E627C /* GoogleService-Info.plist */,
+				CB2491391D00D97500777B09 /* GoogleService-Info.plist */,
 				CB8610071C3B4BBF009E63DF /* myhouse.gpx */,
 				52E6F0661C1EFC6800C88A08 /* TPKeyboardAvoiding */,
 				AAE38B2F1BF9211D009CD20B /* Request */,
@@ -2260,6 +2260,7 @@
 				CB362B2F1C7B48A800BE4F23 /* icon_home_default.png in Resources */,
 				52E727BF1BEA93B800B46945 /* img_main_menu@2x.png in Resources */,
 				CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */,
+				CB24913A1D00D97500777B09 /* GoogleService-Info.plist in Resources */,
 				528705CA1BF3AB5F00321985 /* iconPMMini.png in Resources */,
 				528705D11BF3C5CA00321985 /* iconSamuMini@2x.png in Resources */,
 				52E727A01BEA93B800B46945 /* icon_problem.png in Resources */,
@@ -2369,7 +2370,6 @@
 				52E727141BEA93B800B46945 /* icon_tips_vaccines@3x.png in Resources */,
 				52E727D61BEA93B800B46945 /* img_profile08.png in Resources */,
 				528C8B071BB82630003CFC91 /* Main.storyboard in Resources */,
-				CB9DC5851C88D001006E627C /* GoogleService-Info.plist in Resources */,
 				52E727061BEA93B800B46945 /* icon_tips_pharmacies.png in Resources */,
 				52E7272C1BEA93B800B46945 /* icon_menu@2x.png in Resources */,
 				52E727251BEA93B800B46945 /* BG_blur_tutorial.png in Resources */,
@@ -2766,7 +2766,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
+				PRODUCT_BUNDLE_IDENTIFIER = c;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -2794,7 +2794,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
+				PRODUCT_BUNDLE_IDENTIFIER = c;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;

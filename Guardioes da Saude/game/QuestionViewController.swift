@@ -87,10 +87,19 @@ class QuestionViewController: UIViewController {
             self.imgBgDialog.image = UIImage(named: "bg_correct_dialog")
             self.viemCorrectAnswer.hidden = false
             self.lbDescription.hidden = true
-
+            
+            self.user.partsCompleted += 1
+            self.user.puzzleMatriz[part-1] = 1
+            var isLevelDone = false
+            
+            if self.user.partsCompleted == 9  {
+                self.user.level += 1
+                self.user.resetPuzzleMatriz()
+                isLevelDone = true
+            }
             
             userRequester.updateUser(user, onSuccess: {user in
-                    self.callCongratulationScreen()
+                    self.callCongratulationScreen(isLevelDone)
                 }, onFail: {error in
                     ViewUtil.showAlertWithMessage(NSLocalizedString(kMsgConnectionError, comment: ""))
             })
@@ -100,13 +109,14 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    func callCongratulationScreen() {
+    func callCongratulationScreen(isLevelDone: Bool) {
         let congratulationScreen = CongratulationsViewController()
         congratulationScreen.puzzeViewReference = self.puzzeViewCtrlRef
         congratulationScreen.questionViewRef = self
         congratulationScreen.stars = 3 - self.answerWrong
         congratulationScreen.part = self.part
         congratulationScreen.level = Int(self.user.level)
+        congratulationScreen.isLevelDone = isLevelDone
         
         self.navigationController?.pushViewController(congratulationScreen, animated: true)
     }

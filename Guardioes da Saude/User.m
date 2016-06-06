@@ -71,11 +71,8 @@ NSString *const kGameTutorialReady = @"gameTutorialReady";
         self.level = 1;
         self.isGameTutorailReady = false;
         self.points = 10;
-        self.puzzleMatriz = [[NSMutableArray alloc] initWithCapacity:3];
-        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@1,@1,@1,nil] atIndex:0];
-        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@1,@1,@1,nil] atIndex:1];
-        [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@1,@1,@0,nil] atIndex:2];
-        self.partsCompleted = 7;
+        self.puzzleMatriz = [[NSMutableArray alloc] initWithArray:@[@1, @1, @1, @1, @1, @1, @1, @1, @0]];
+        self.partsCompleted = 8;
     }
     
     return self;
@@ -83,9 +80,7 @@ NSString *const kGameTutorialReady = @"gameTutorialReady";
 
 - (void) resetPuzzleMatriz{
     self.partsCompleted = 0;
-    [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:0];
-    [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:1];
-    [self.puzzleMatriz insertObject:[NSMutableArray arrayWithObjects:@0,@0,@0,nil] atIndex:2];
+    self.puzzleMatriz = [[NSMutableArray alloc] initWithArray:@[@0, @0, @0, @0, @0, @0, @0, @0, @0]];
 }
 
 - (void) setGenderBySegIndex: (long) segIndex{

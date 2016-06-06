@@ -57,6 +57,7 @@ class PuzzeViewController: UIViewController {
         self.questionViewCtrl.didMoveToParentViewController(self)
         self.questionViewCtrl.puzzeViewCtrlRef = self
         self.viewQuestion.addSubview(questionViewCtrl.view)
+        self.imgLevel.hidden = true
         
         self.loadQuestions()
     }
@@ -74,46 +75,43 @@ class PuzzeViewController: UIViewController {
     
     func loadPuzzle() {
         self.lbLevel.text = "Nível \(self.user.level)"
-        self.hideImageLevel()
         
-        for c in 0...2{
-            for l in 0...2{
-                let isResponded = (self.user.puzzleMatriz[c] as! NSMutableArray)[l]
-                if (isResponded as! Int) == 1 {
-                    let btnIndice = (c*3)+l+1;
-
-                    switch btnIndice {
-                    case 1:
-                        imgPt1.image = UIImage(named: "img_lvl\(user.level)_pt1")
-                        btnPt1.enabled = false
-                    case 2:
-                        imgPt2.image = UIImage(named: "img_lvl\(user.level)_pt2")
-                        btnPt2.enabled = false
-                    case 3:
-                        imgPt3.image = UIImage(named: "img_lvl\(user.level)_pt3")
-                        btnPt3.enabled = false
-                    case 4:
-                        imgPt4.image = UIImage(named: "img_lvl\(user.level)_pt4")
-                        btnPt4.enabled = false
-                    case 5:
-                        imgPt5.image = UIImage(named: "img_lvl\(user.level)_pt5")
-                        btnPt5.enabled = false
-                    case 6:
-                        imgPt6.image = UIImage(named: "img_lvl\(user.level)_pt6")
-                        btnPt6.enabled = false
-                    case 7:
-                        imgPt7.image = UIImage(named: "img_lvl\(user.level)_pt7")
-                        btnPt7.enabled = false
-                    case 8:
-                        imgPt8.image = UIImage(named: "img_lvl\(user.level)_pt8")
-                        btnPt8.enabled = false
-                    case 9:
-                        imgPt9.image = UIImage(named: "img_lvl\(user.level)_pt9")
-                        btnPt9.enabled = false
-                    default:
-                        break
-                    }
+        var index = 1
+        for part in self.user.puzzleMatriz{
+            if (part as! Int) == 1{
+                switch index {
+                case 1:
+                    imgPt1.image = UIImage(named: "img_lvl\(user.level)_pt1")
+                    btnPt1.enabled = false
+                case 2:
+                    imgPt2.image = UIImage(named: "img_lvl\(user.level)_pt2")
+                    btnPt2.enabled = false
+                case 3:
+                    imgPt3.image = UIImage(named: "img_lvl\(user.level)_pt3")
+                    btnPt3.enabled = false
+                case 4:
+                    imgPt4.image = UIImage(named: "img_lvl\(user.level)_pt4")
+                    btnPt4.enabled = false
+                case 5:
+                    imgPt5.image = UIImage(named: "img_lvl\(user.level)_pt5")
+                    btnPt5.enabled = false
+                case 6:
+                    imgPt6.image = UIImage(named: "img_lvl\(user.level)_pt6")
+                    btnPt6.enabled = false
+                case 7:
+                    imgPt7.image = UIImage(named: "img_lvl\(user.level)_pt7")
+                    btnPt7.enabled = false
+                case 8:
+                    imgPt8.image = UIImage(named: "img_lvl\(user.level)_pt8")
+                    btnPt8.enabled = false
+                case 9:
+                    imgPt9.image = UIImage(named: "img_lvl\(user.level)_pt9")
+                    btnPt9.enabled = false
+                default:
+                    break
                 }
+                
+                index += 1
             }
         }
     }
@@ -128,19 +126,13 @@ class PuzzeViewController: UIViewController {
     }
     
     func showNextQuestion() {
-        var partNumber = 0
-        for line in 0...2 {
-            for column in 0...2 {
-                let isAnswer = (self.user.puzzleMatriz[line] as! NSArray)[column] as! Int
-                if isAnswer == 1 {
-                    partNumber = (line * 3) + column
-                    break
-                }
+        var index = 0
+        for part in self.user.puzzleMatriz {
+            index += 1
+            if (part as! Int) == 0 {
+                showQuestion(index)
+                break
             }
-        }
-        
-        if partNumber != 0 {
-            showQuestion(partNumber)
         }
     }
     
@@ -168,13 +160,10 @@ class PuzzeViewController: UIViewController {
         }
     }
     
-    func transitionQuestion(level: Int, part: Int, callNextQuestion: Bool = false) {
-        self.user.partsCompleted = self.user.partsCompleted + 1
+    func transitionQuestion(level: Int, part: Int, callNextQuestion: Bool = false, isLevelDone: Bool) {
         
-        if user.partsCompleted == 8 {
+        if isLevelDone {
             self.showImageLevel()
-            user.level = user.level + 1
-            user.resetPuzzleMatriz()
             self.startViewRef.setLevelMap(true)
             return
         }
@@ -185,32 +174,23 @@ class PuzzeViewController: UIViewController {
         
         switch part {
         case 1:
-            UIView.transitionFromView(imgPt1, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-            (self.user.puzzleMatriz[0] as! NSMutableArray)[0] = 1
+            UIView.transitionFromView(self.imgPt1, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
         case 2:
-            UIView.transitionFromView(imgPt2, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-            (self.user.puzzleMatriz[0] as! NSMutableArray)[1] = 1
+            UIView.transitionFromView(self.imgPt2, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
         case 3:
-            UIView.transitionFromView(imgPt3, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-            (self.user.puzzleMatriz[0] as! NSMutableArray)[2] = 1
+            UIView.transitionFromView(self.imgPt3, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
         case 4:
-            UIView.transitionFromView(imgPt4, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-            (self.user.puzzleMatriz[1] as! NSMutableArray)[0] = 1
+            UIView.transitionFromView(self.imgPt4, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
         case 5:
-            UIView.transitionFromView(imgPt5, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-            (self.user.puzzleMatriz[1] as! NSMutableArray)[1] = 1
+            UIView.transitionFromView(self.imgPt5, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
         case 6:
-            UIView.transitionFromView(imgPt6, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-            (self.user.puzzleMatriz[1] as! NSMutableArray)[2] = 1
+            UIView.transitionFromView(self.imgPt6, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
         case 7:
-            UIView.transitionFromView(imgPt7, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-            (self.user.puzzleMatriz[2] as! NSMutableArray)[0] = 1
+            UIView.transitionFromView(self.imgPt7, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
         case 8:
-            UIView.transitionFromView(imgPt8, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-            (self.user.puzzleMatriz[2] as! NSMutableArray)[1] = 1
+            UIView.transitionFromView(self.imgPt8, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
         case 9:
-            UIView.transitionFromView(imgPt9, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-            (self.user.puzzleMatriz[2] as! NSMutableArray)[2] = 1
+            UIView.transitionFromView(self.imgPt9, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
         default:
             break
         }
@@ -231,7 +211,7 @@ class PuzzeViewController: UIViewController {
         self.viewPt8.hidden = true
         self.viewPt9.hidden = true
         
-        self.imgLevel.image = UIImage(named: "img_lvl\(user.level)")
+        self.imgLevel.image = UIImage(named: "img_lvl\(user.level-1)")
         self.imgLevel.hidden = false
     }
     

@@ -20,9 +20,9 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var currentQuestion: Question?
     var user = User.getInstance()
     var rankingList: [RankingItem] = []
-    var puzzeDialog = PuzzeViewController()
     var showingMap = true
     var btnPin: UIButton!
+    var puzzeDialog: PuzzeViewController!
     let levelMapPosition = [[138.0, 110.0],
                             [233.0, 133.0],
                             [106.0, 189.0],
@@ -114,12 +114,6 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             arrViews!.removeAtIndex(arrViews!.count - 2)
             self.navigationController!.viewControllers = arrViews!
         }
-        
-        self.puzzeDialog.startViewRef = self
-        self.addChildViewController(self.puzzeDialog)
-        self.puzzeDialog.view.frame = self.view.frame
-        self.viewPuzze.addSubview(self.puzzeDialog.view)
-        self.puzzeDialog.didMoveToParentViewController(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -282,10 +276,22 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     @IBAction func btnLevel(sender: UIButton) {
 //        sender.setBackgroundImage(UIImage(named: "ic_map_medal"), forState: UIControlState.Normal)
+        if let puzzeDialog = self.puzzeDialog{
+            puzzeDialog.removeFromParentViewController()
+            puzzeDialog.view.removeFromSuperview()
+        }
+        
+        puzzeDialog = PuzzeViewController()
+        puzzeDialog.startViewRef = self
+        self.addChildViewController(puzzeDialog)
+        puzzeDialog.view.frame = self.view.frame
+        self.viewPuzze.addSubview(puzzeDialog.view)
+        puzzeDialog.didMoveToParentViewController(self)
+        
         showingMap = false
         self.viewPuzze.bounds.origin.x = -self.view.frame.width
         self.viewPuzze.hidden = false
-        self.puzzeDialog.loadPuzzle()
+        puzzeDialog.loadPuzzle()
         
         UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn,
                                    animations: {

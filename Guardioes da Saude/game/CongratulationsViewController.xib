@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CongratulationsViewController" customModule="Guardioes_da_Saude" customModuleProvider="target">
             <connections>
+                <outlet property="btnNextQuestion" destination="Sk7-Ir-5Uk" id="FOw-fL-lu3"/>
                 <outlet property="imgLvl" destination="BPY-cf-e4C" id="TfZ-KG-JwA"/>
                 <outlet property="imgPuzzle" destination="sI3-kG-JJW" id="eYa-yh-q2T"/>
                 <outlet property="imgStar1" destination="6Y1-Yk-Ip1" id="aNp-3z-oJN"/>

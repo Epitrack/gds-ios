@@ -163,6 +163,7 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
     }
     [sortedCountryArray sortUsingSelector:@selector(localizedCompare:)];
     
+    
     return sortedCountryArray;
 }
 

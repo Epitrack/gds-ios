@@ -13,8 +13,9 @@ class CongratulationsViewController: UIViewController {
     var puzzeViewReference: PuzzeViewController?
     var questionViewRef: QuestionViewController?
     var level: Int!
-    var part: Int?
+    var part: Int!
     var stars :Int!
+    var isLevelDone = false
     
     @IBOutlet weak var imgPuzzle: UIImageView!
     @IBOutlet weak var viewPart: UIView!
@@ -22,6 +23,7 @@ class CongratulationsViewController: UIViewController {
     @IBOutlet weak var imgStar1: UIImageView!
     @IBOutlet weak var imgStar2: UIImageView!
     @IBOutlet weak var imgStar3: UIImageView!
+    @IBOutlet weak var btnNextQuestion: UIButton!
     
     var titleBarImage: UIImageView?
 
@@ -31,19 +33,12 @@ class CongratulationsViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
         
-        if let part = self.part {
-            self.viewPart.hidden = false
-            self.imgLvl.hidden = true
-            
-            let img = UIImage(named: "img_lvl\(self.level)_pt\(part)")
-            self.imgPuzzle.image = img
-        }else{
-            self.viewPart.hidden = true
-            self.imgLvl.hidden = false
-            
-            let img = UIImage(named: "img_lvl\(self.level)")
-            self.imgLvl.image = img
-        }
+        self.viewPart.hidden = false
+        self.imgLvl.hidden = true
+        let img = UIImage(named: "img_lvl\(self.level)_pt\(part)")
+        self.imgPuzzle.image = img
+        
+        self.btnNextQuestion.enabled = !isLevelDone
         
         switch self.stars {
         case 1:
@@ -82,7 +77,7 @@ class CongratulationsViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
         if let puzzeViewReference = self.puzzeViewReference {
             if let part = self.part {
-                puzzeViewReference.transitionQuestion(self.level, part: part)
+                puzzeViewReference.transitionQuestion(self.level, part: part, isLevelDone: isLevelDone)
             }else{
                 
             }
@@ -95,7 +90,7 @@ class CongratulationsViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
         if let puzzeViewReference = self.puzzeViewReference {
             if let part = self.part {
-                puzzeViewReference.transitionQuestion(self.level, part: part, callNextQuestion: true)
+                puzzeViewReference.transitionQuestion(self.level, part: part, callNextQuestion: true, isLevelDone: isLevelDone)
             }else{
                 
             }
