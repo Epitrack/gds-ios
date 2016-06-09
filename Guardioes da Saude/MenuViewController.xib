@@ -28,6 +28,13 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiU-qp-4VA">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rkf-zF-UFr">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1000" id="yjS-Dp-LTv"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkL-yl-8bQ">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                             <subviews>
@@ -137,7 +144,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKE-mC-QdE" userLabel="Btn Help">
                             <rect key="frame" x="4" y="350" width="312" height="40"/>
                             <connections>
-                                <action selector="btnHelp:" destination="-1" eventType="touchUpInside" id="zlg-s8-0lA"/>
+                                <action selector="btnFacebookAction:" destination="-1" eventType="touchUpInside" id="1Pl-lb-1ZU"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_twitter_menu" translatesAutoresizingMaskIntoConstraints="NO" id="2L8-pJ-2m8">
@@ -156,7 +163,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxu-jI-7bv" userLabel="Btn Help">
                             <rect key="frame" x="4" y="398" width="312" height="40"/>
                             <connections>
-                                <action selector="btnHelp:" destination="-1" eventType="touchUpInside" id="SYW-xH-IAf"/>
+                                <action selector="btnTwitterAction:" destination="-1" eventType="touchUpInside" id="jCG-wS-D3L"/>
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_help" translatesAutoresizingMaskIntoConstraints="NO" id="VOj-Cq-ykb">
@@ -220,9 +227,11 @@
                         <constraint firstItem="IQl-uN-xw6" firstAttribute="centerY" secondItem="9hc-kA-1au" secondAttribute="centerY" id="FKy-0G-rmF"/>
                         <constraint firstItem="b5Z-Jy-G3Q" firstAttribute="centerY" secondItem="BJ5-rr-05Y" secondAttribute="centerY" id="GIU-A8-ZKe"/>
                         <constraint firstItem="82P-XX-VEg" firstAttribute="leading" secondItem="VOj-Cq-ykb" secondAttribute="trailing" constant="8" id="GiB-D0-eh5"/>
+                        <constraint firstItem="Rkf-zF-UFr" firstAttribute="leading" secondItem="OiU-qp-4VA" secondAttribute="leading" id="HxD-T8-hMK"/>
                         <constraint firstItem="9hc-kA-1au" firstAttribute="top" secondItem="1V5-wc-Wlk" secondAttribute="top" id="I6y-tK-3zN"/>
                         <constraint firstItem="KYb-Mx-JZ0" firstAttribute="bottom" secondItem="18k-C8-BKO" secondAttribute="bottom" id="ISK-Qe-lL4"/>
                         <constraint firstItem="2Jd-1A-u2a" firstAttribute="leading" secondItem="fwQ-lU-be9" secondAttribute="trailing" constant="8" id="ITJ-xi-3eZ"/>
+                        <constraint firstItem="Rkf-zF-UFr" firstAttribute="top" secondItem="OiU-qp-4VA" secondAttribute="top" id="J4C-XB-d6p"/>
                         <constraint firstItem="Gu8-D7-aQw" firstAttribute="top" secondItem="1FM-nD-A7o" secondAttribute="bottom" constant="8" id="K14-cf-lPb"/>
                         <constraint firstItem="2Jd-1A-u2a" firstAttribute="centerY" secondItem="fwQ-lU-be9" secondAttribute="centerY" id="Oen-a2-1R1"/>
                         <constraint firstAttribute="bottom" secondItem="1V5-wc-Wlk" secondAttribute="bottom" constant="34" id="QMZ-bI-lIw"/>
@@ -283,6 +292,7 @@
                 <constraint firstAttribute="bottom" secondItem="OiU-qp-4VA" secondAttribute="bottom" id="21j-3v-HEw"/>
                 <constraint firstItem="OiU-qp-4VA" firstAttribute="width" secondItem="brk-jf-HmE" secondAttribute="width" id="55z-gT-d1p"/>
                 <constraint firstItem="OiU-qp-4VA" firstAttribute="height" secondItem="brk-jf-HmE" secondAttribute="height" id="CPM-YU-epq"/>
+                <constraint firstItem="Rkf-zF-UFr" firstAttribute="width" secondItem="brk-jf-HmE" secondAttribute="width" id="V71-Ah-9vM"/>
                 <constraint firstAttribute="bottom" secondItem="OiU-qp-4VA" secondAttribute="bottom" id="ftl-Co-YPM"/>
                 <constraint firstItem="MkL-yl-8bQ" firstAttribute="width" secondItem="brk-jf-HmE" secondAttribute="width" id="iey-hO-Y2O"/>
                 <constraint firstItem="OiU-qp-4VA" firstAttribute="leading" secondItem="brk-jf-HmE" secondAttribute="leading" id="iwn-Xz-ykW"/>
