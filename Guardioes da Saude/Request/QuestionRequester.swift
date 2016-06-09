@@ -12,9 +12,9 @@ import UIKit
 class QuestionRequester: Requester {
     
 
-    func getQuestion(onStart: (()-> Void), onSuccess: (([Question]) -> Void), onError: ((NSError?) -> Void)) {
+    func getQuestion(currentLanguage: String, onStart: (()-> Void), onSuccess: (([Question]) -> Void), onError: ((NSError?) -> Void)) {
         
-        doGet(getUrl()+"/game/questions/?lang=pt_BR", header: nil, parameter: nil, start: onStart, error: {operation, error in
+        doGet(getUrl()+"/game/questions/", header: nil, parameter: ["lang": currentLanguage], start: onStart, error: {operation, error in
                 onError(error)
             }, success: {operation, response in
                 if response.count == 0 {

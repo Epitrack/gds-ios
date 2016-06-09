@@ -97,16 +97,6 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         circleLayer = CAShapeLayer()
         
-        questionRequest.getQuestion({
-            HUD.show(.Progress)
-        }, onSuccess: {questions in
-            HUD.hide()
-            self.currentQuestion = questions[0]
-        }, onError: {error in
-            HUD.hide()
-        })
-        
-        
         // Removing from stack tutorail view
         var arrViews = self.navigationController?.viewControllers
         let view = arrViews![arrViews!.count - 2]

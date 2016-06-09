@@ -63,8 +63,16 @@ class PuzzeViewController: UIViewController {
     }
     
     func loadQuestions() {
-        questionRequest.getQuestion({
-            HUD.show(.Progress)
+        var currentLanguage = NSLocale.preferredLanguages()[0]
+        if currentLanguage == "zh-Hans-CN" {
+            currentLanguage = "ch"
+        }else if currentLanguage == "pt-BR"{
+            currentLanguage = "pt_BR"
+        }
+        
+        questionRequest.getQuestion(currentLanguage,
+            onStart: {
+                HUD.show(.Progress)
             }, onSuccess: {questions in
                 HUD.hide()
                 self.questions = questions
