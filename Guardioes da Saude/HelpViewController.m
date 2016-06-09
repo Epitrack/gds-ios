@@ -105,14 +105,12 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    return 2;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section==0){
-        return 2;
-    }else if(section==1){
         return 2;
     }else{
         return 1;
@@ -122,8 +120,6 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0)
         return NSLocalizedString(@"help.options", @"");
-    else if (section == 1)
-        return NSLocalizedString(@"help.contact_us", @"");
     else
         return @" ";
 }
@@ -140,9 +136,6 @@
     if (indexPath.section==0) {
         cell.imageView.image = [UIImage imageNamed:optionsIcons[indexPath.row]];
         cell.textLabel.text = options[indexPath.row];
-    }else if (indexPath.section==1){
-        cell.imageView.image = [UIImage imageNamed:contactUsIcons[indexPath.row]];
-        cell.textLabel.text = contactUs[indexPath.row];
     }else {
         cell.imageView.image = [UIImage imageNamed:@"icon_helprelatar"];
         cell.textLabel.text = NSLocalizedString(@"help.report_bug", @"");
@@ -160,12 +153,6 @@
             [self btnTutorial];
         }else{
             [self btnTerms];
-        }
-    }else if (indexPath.section == 1){
-        if (indexPath.row == 0) {
-            [self btnFacebook];
-        }else{
-            [self btnTwitter];
         }
     }else{
         [self btnReport];
