@@ -294,6 +294,7 @@
     [preferences setValue:nil forKey:kNickKey];
     [preferences setValue:nil forKey:kLastJoinNotification];
     [preferences setValue:nil forKey:kGameTutorialReady];
+    [preferences setValue:nil forKey:kGCMToken];
     
     [preferences synchronize];
     
