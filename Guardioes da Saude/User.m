@@ -19,6 +19,7 @@ NSString *const kNickKey = @"nickKey";
 NSString *const kIsTest = @"isTest";
 NSString *const kLastJoinNotification = @"lastJoinNotification";
 NSString *const kGameTutorialReady = @"gameTutorialReady";
+NSString *const kGCMToken = @"gcmToken";
 
 @implementation User
 

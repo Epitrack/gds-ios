@@ -18,6 +18,7 @@ extern NSString *const kNickKey;
 extern NSString *const kIsTest;
 extern NSString *const kLastJoinNotification;
 extern NSString *const kGameTutorialReady;
+extern NSString *const kGCMToken;
 
 @interface User : NSObject
 

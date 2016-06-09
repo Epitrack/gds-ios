@@ -141,6 +141,8 @@ NSUserDefaults *preferences;
         if (registrationToken != nil) {
             weakSelf.registrationToken = registrationToken;
             NSLog(@"Registration Token: %@", registrationToken);
+            [preferences setObject:registrationToken forKey:kGCMToken];
+            [preferences synchronize];
             
             [User getInstance].gcmToken = registrationToken;
             
@@ -253,10 +255,15 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [[GGLInstanceID sharedInstance] startWithConfig:instanceIDConfig];
     _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:deviceToken,
                              kGGLInstanceIDAPNSServerTypeSandboxOption:@NO};
-    [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
-                                                        scope:kGGLInstanceIDScopeGCM
-                                                      options:_registrationOptions
-                                                      handler:_registrationHandler];
+    
+    if ([preferences objectForKey:kGCMToken]) {
+        [User getInstance].gcmToken = [preferences objectForKey:kGCMToken];
+    }else{
+        [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
+                                                            scope:kGGLInstanceIDScopeGCM
+                                                          options:_registrationOptions
+                                                          handler:_registrationHandler];
+    }
     // [END get_gcm_reg_token]
 }
 
