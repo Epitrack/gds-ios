@@ -312,4 +312,19 @@ NSString *const kGCMToken = @"gcmToken";
     self.lastJoinNotification = nil;
 }
 
+- (void)setPuzzleMatrizWithResponse:(NSMutableArray *)puzzleMatriz{
+    [self resetPuzzleMatriz];
+
+    int index = 0;
+    for (NSString *strItem in puzzleMatriz) {
+        NSNumber *item = [NSNumber numberWithInteger:[strItem integerValue]];
+        [self.puzzleMatriz replaceObjectAtIndex:index withObject:item];
+        if ([item isEqual: @1]) {
+            self.partsCompleted += 1;
+        }
+        
+        index++;
+    }
+}
+
 @end

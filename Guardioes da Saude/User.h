@@ -71,5 +71,6 @@ extern NSString *const kGCMToken;
 - (BOOL) isValidEmail;
 - (void) cloneUser: (User *) user;
 - (void) clearUser;
+- (void) setPuzzleMatrizWithResponse:(NSMutableArray *)puzzleMatriz;
 
 @end

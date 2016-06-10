@@ -512,6 +512,15 @@
                 user.hashtag = response[@"hashtags"];
                 user.survey = response[@"surveys"];
                 
+                if (response[@"puzzleMatriz"]) {
+                    [user setPuzzleMatrizWithResponse:response[@"puzzleMatriz"]];
+                }
+                
+                if (response[@"level"]) {
+                    user.level = [response[@"level"] intValue];
+                }
+                
+                
                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
                 NSString *userKey = user.user_token;
                 

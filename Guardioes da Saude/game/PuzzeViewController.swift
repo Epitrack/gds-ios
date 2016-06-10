@@ -118,9 +118,9 @@ class PuzzeViewController: UIViewController {
                 default:
                     break
                 }
-                
-                index += 1
             }
+            
+            index += 1
         }
     }
 
