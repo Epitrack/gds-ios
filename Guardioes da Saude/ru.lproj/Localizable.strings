@@ -107,6 +107,12 @@
 "sign_up_details.tx_country" = "Selecione o país";
 "sign_up_details.lb_state" = "Estado:";
 "sign_up_details.tx_state" = "Selecione o estado";
+"sign_up_details.lb_perfil" = "Perfil:";
+"sign_up_details.tx_perfil" = "Selecione seu perfil";
+"sign_up_details.perfil_athlete" = "Atleta/Delegação";
+"sign_up_details.perfil_worker" = "Trabalhador/Voluntário";
+"sign_up_details.perfil_fan" = "Fã/Espectador";
+"sign_up_details.perfil_required" = "Perfil é um campo obrigatório";
 
 // MENU VIEW
 "menu.home" = "Início";

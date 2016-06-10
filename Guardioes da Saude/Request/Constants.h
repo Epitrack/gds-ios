@@ -4,4 +4,5 @@
 
 + (NSArray *) getGenders;
 + (NSArray *) getRaces;
++ (NSArray *) getPerfis;
 @end

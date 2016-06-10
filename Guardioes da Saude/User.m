@@ -10,6 +10,7 @@
 #import "DateUtil.h"
 #import "AssetsLibrary/AssetsLibrary.h"
 #import <UIKit/UIKit.h>
+#import "Constants.h"
 
 NSString *const kAppTokenKey = @"appTokenKey";
 NSString *const kUserTokenKey = @"userTokenKey";
@@ -112,6 +113,28 @@ NSString *const kGCMToken = @"gcmToken";
         gender = @"M";
     } else if ([strGender isEqualToString:@"Feminino"]) {
         gender = @"F";
+    }
+}
+
+- (void) setPerfilByString: (NSString *) strPefil{
+    NSArray *perfis = [Constants getPerfis];
+    for (int i = 0; i < perfis.count; i++) {
+        NSString *curPefil = perfis[i];
+        if ([curPefil isEqualToString:strPefil]) {
+            switch (i) {
+                case 1:
+                    self.perfil = @"";
+                    break;
+                case 2:
+                    self.perfil = @"";
+                    break;
+                case 3:
+                    self.perfil = @"";
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
 

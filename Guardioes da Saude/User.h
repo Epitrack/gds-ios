@@ -50,6 +50,7 @@ extern NSString *const kGCMToken;
 @property(nonatomic, retain) NSString *idHousehold;
 @property(nonatomic, retain) NSString *avatar;
 @property(nonatomic, retain) NSString *photo;
+@property(nonatomic, retain) NSString *perfil;
 @property(nonatomic, retain) NSString *gcmToken;
 @property(nonatomic, assign) bool isTest;
 @property(nonatomic, retain) NSDate *lastJoinNotification;

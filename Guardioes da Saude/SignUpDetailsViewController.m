@@ -64,6 +64,11 @@
     [self.txtState.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.txtState.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
+    (void)[self.txtPerfil initWithData: [Constants getPerfis]];
+    [self.txtPerfil.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_perfil", @"")];
+    [self.txtPerfil.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtPerfil.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    
     dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
     
@@ -257,6 +262,12 @@
     
     if ([self.txtRace.text isEqualToString:@""]) {
         UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.race_required", @"")];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    
+    if ([self.txtPerfil.text isEqualToString:@""]) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.perfil_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }

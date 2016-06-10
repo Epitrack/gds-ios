@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIDownPicker *txtRace;
 @property (weak, nonatomic) IBOutlet UIDownPicker *txtCountry;
 @property (weak, nonatomic) IBOutlet UIDownPicker *txtState;
+@property (weak, nonatomic) IBOutlet UIDownPicker *txtPerfil;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *consTopNick;
