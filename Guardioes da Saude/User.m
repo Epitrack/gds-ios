@@ -121,19 +121,7 @@ NSString *const kGCMToken = @"gcmToken";
     for (int i = 0; i < perfis.count; i++) {
         NSString *curPefil = perfis[i];
         if ([curPefil isEqualToString:strPefil]) {
-            switch (i) {
-                case 1:
-                    self.perfil = @"";
-                    break;
-                case 2:
-                    self.perfil = @"";
-                    break;
-                case 3:
-                    self.perfil = @"";
-                    break;
-                default:
-                    break;
-            }
+            self.perfil = [NSNumber numberWithInt:i+1];
         }
     }
 }

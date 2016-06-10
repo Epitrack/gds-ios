@@ -84,6 +84,7 @@
     [params setObject:user.dob forKey:@"dob"];
     [params setObject:user.gender forKey:@"gender"];
     [params setObject:user.app_token forKey:@"app_token"];
+    [params setObject:user.perfil forKey:@"role"];
     [params setObject:user.race forKey:@"race"];
     [params setObject:user.platform forKey:@"platform"];
     [params setObject:@"0" forKey:@"picture"];

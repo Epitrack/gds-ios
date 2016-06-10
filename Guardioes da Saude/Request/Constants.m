@@ -18,14 +18,4 @@
              NSLocalizedString(@"sign_up_details.perfil_fan", @"")];
 }
 
-+ (NSString *)getCodeofPerfil: (NSString *) perfil{
-    if ([perfil isEqualToString:NSLocalizedString(@"sign_up_details.perfil_athlete", @"")]) {
-        return @"atleta_delegacao";
-    }else if ([perfil isEqualToString:NSLocalizedString(@"sign_up_details.perfil_worker", @"")]){
-        return @"trabalhador_voluntario";
-    }else{
-        return @"fa_espectador";
-    }
-}
-
 @end
