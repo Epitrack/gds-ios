@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -53,9 +53,6 @@
                         <constraint firstAttribute="width" secondItem="7dt-ex-eDp" secondAttribute="height" multiplier="13:5" id="AKP-yS-90Z"/>
                     </constraints>
                 </imageView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dt7-qo-pQR">
-                    <rect key="frame" x="0.0" y="60" width="320" height="508"/>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCg-mE-nDL">
                     <rect key="frame" x="0.0" y="449" width="124" height="119"/>
                     <constraints>
@@ -76,6 +73,9 @@
                         <action selector="btnTrofeuAction:" destination="-1" eventType="touchUpInside" id="YJI-W8-ewr"/>
                     </connections>
                 </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dt7-qo-pQR">
+                    <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_display_points" translatesAutoresizingMaskIntoConstraints="NO" id="M9t-h6-NzO">
                     <rect key="frame" x="105" y="498" width="113" height="32"/>
                 </imageView>

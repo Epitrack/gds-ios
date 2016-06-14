@@ -104,6 +104,8 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
             arrViews!.removeAtIndex(arrViews!.count - 2)
             self.navigationController!.viewControllers = arrViews!
         }
+        
+        self.updateEnergyPoint()
     }
 
     override func didReceiveMemoryWarning() {
@@ -326,6 +328,10 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func reducePoint() {
         self.user.points -= 1
+        self.updateEnergyPoint()
+    }
+    
+    func updateEnergyPoint() {
         self.txPoint.text = "\(user.points) Energias"
     }
 }

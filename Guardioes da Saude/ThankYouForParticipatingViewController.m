@@ -9,6 +9,7 @@
 #import "ThankYouForParticipatingViewController.h"
 #import "HomeViewController.h"
 #import "ViewUtil.h"
+#import "User.h"
 #import "EmergencyViewController.h"
 #import <Google/Analytics.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -39,6 +40,8 @@
     self.txHeader.backgroundColor = [UIColor clearColor];
     self.txSurvey.backgroundColor = [UIColor clearColor];
     self.txTellFriends.backgroundColor = [UIColor clearColor];
+    
+    [User getInstance].points = 10;
     
     switch (surveyType) {
         case GOOD_SYMPTOM:

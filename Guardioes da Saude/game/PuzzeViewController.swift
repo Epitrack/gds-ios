@@ -42,6 +42,8 @@ class PuzzeViewController: UIViewController {
     @IBOutlet weak var imgPt9: UIImageView!
     @IBOutlet weak var btnPt9: UIButton!
     @IBOutlet weak var imgLevel: UIImageView!
+    @IBOutlet weak var viewLowEnergy: UIView!
+    @IBOutlet weak var dialogLowEnergy: UIView!
     
     let user = User.getInstance()
     let questionViewCtrl = QuestionViewController()
@@ -145,6 +147,13 @@ class PuzzeViewController: UIViewController {
     }
     
     func showQuestion(part: Int) {
+        
+        if user.points == 0 {
+            self.showLowEnergyDialog()
+            return
+        }
+        
+        
         self.questionViewCtrl.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
         self.viewQuestion.hidden = false;
         
@@ -260,5 +269,27 @@ class PuzzeViewController: UIViewController {
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage
+    }
+    
+    @IBAction func btnLowEnergy(sender: AnyObject) {
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.dialogLowEnergy.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        }) { (finished: Bool) -> Void in
+            self.viewLowEnergy.hidden = true
+        }
+    }
+    
+    func showLowEnergyDialog(){
+        self.viewLowEnergy.hidden = false
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.dialogLowEnergy.transform = CGAffineTransformIdentity
+        }) { (finished: Bool) -> Void in
+        }
+    }
+    
+    @IBAction func joinNow(sender: AnyObject) {
+        let selectParticipant = SelectParticipantViewController()
+        self.navigationController?.pushViewController(selectParticipant, animated: true)
     }
 }

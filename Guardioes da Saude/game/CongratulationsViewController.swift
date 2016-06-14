@@ -72,40 +72,40 @@ class CongratulationsViewController: UIViewController {
     }
 
     @IBAction func btnQuestionAction(sender: AnyObject) {
-        self.puzzeViewReference?.viewQuestion.hidden = true
-        
-        self.navigationController?.popViewControllerAnimated(true)
-        if let puzzeViewReference = self.puzzeViewReference {
-            if let part = self.part {
-                puzzeViewReference.transitionQuestion(self.level, part: part, isLevelDone: isLevelDone)
-            }else{
-                
-            }
-        }
+        self.closeDialogQuestion(self.level, part: part, isLevelDone: isLevelDone)
     }
     
     @IBAction func btnNextQuestion(sender: AnyObject) {
-        self.puzzeViewReference?.viewQuestion.hidden = true
-        
-        self.navigationController?.popViewControllerAnimated(true)
-        if let puzzeViewReference = self.puzzeViewReference {
-            if let part = self.part {
-                puzzeViewReference.transitionQuestion(self.level, part: part, callNextQuestion: true, isLevelDone: isLevelDone)
-            }else{
-                
-            }
-        }
+        self.closeDialogQuestion(self.level, part: part, callNextQuestion: true, isLevelDone: isLevelDone)
     }
     
     @IBAction func btnRepeatQuestion(sender: AnyObject) {
-        self.questionViewRef?.resetView()
-        self.questionViewRef?.breakTime = false
-        self.questionViewRef?.animateCircle(15)
-        self.navigationController?.popViewControllerAnimated(true)
+        if User.getInstance().points == 0 {
+            puzzeViewReference?.showLowEnergyDialog()
+            self.closeDialogQuestion(self.level, part: part, isLevelDone: isLevelDone)
+        }else{
+            self.questionViewRef?.resetView()
+            self.questionViewRef?.breakTime = false
+            self.questionViewRef?.animateCircle(15)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func closeDialogQuestion(level: Int, part: Int, callNextQuestion: Bool = false, isLevelDone: Bool)  {
+        self.puzzeViewReference?.viewQuestion.hidden = true
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        if let puzzeViewReference = self.puzzeViewReference {
+            if let part = self.part {
+                puzzeViewReference.transitionQuestion(level, part: part, callNextQuestion: callNextQuestion, isLevelDone: isLevelDone)
+            }else{
+                
+            }
+        }
     }
 }

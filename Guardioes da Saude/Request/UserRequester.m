@@ -428,6 +428,8 @@
     
     [params setValue:user.puzzleMatriz forKey:@"puzzleMatriz"];
     
+    [params setValue:[NSString stringWithFormat:@"%d", user.points] forKey:@"xp"];
+    
     [params setValue:[NSString stringWithFormat:@"%d", user.level] forKey:@"level"];
     
     [self doPost:[[self getUrl] stringByAppendingString:@"/user/update"]
@@ -518,6 +520,10 @@
                 
                 if (response[@"level"]) {
                     user.level = [response[@"level"] intValue];
+                }
+                
+                if (response[@"xp"]) {
+                    user.points = [response[@"xp"] intValue];
                 }
                 
                 
