@@ -2,334 +2,334 @@
  Localizable.strings
  
  
- Created by Dorglas Queiroz on 2/2/16.
+ Created by Douglas Queiroz on 2/2/16.
  
  */
 
 // CONSTANT MSGs
-"constant.check_connection" = "Please check your connection.";
-"constant.comunication_error" = "A communication error occurred.";
-"constant.yes" = "Yes";
-"constant.no" = "No";
+"constant.check_connection" = "Por favor verifique sua conexão!";
+"constant.comunication_error" = "Ocorreu um erro de comunicação!";
+"constant.yes" = "Sim";
+"constant.no" = "Não";
 "constant.ok" = "OK";
-"constant.delete" = "Delete";
-"constant.cancel" = "Cancel";
-"constant.select" = "Select";
-"constant.no_conection" = "Yor must be logged in to use this feature. Check yorr network connection.";
+"constant.delete" = "Deletar";
+"constant.cancel" = "Cancelar";
+"constant.select" = "Selecionar";
+"constant.no_conection" = "É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!";
 
 // HOME VIEW
-"home.hello" = "Hello, ";
-"home.news" = "News";
-"home.map_health" = "Health Map";
-"home.tips_health" = "Tips de Saúde";
-"home.join_us" = "Participe Augra!";
-"home.diary_health" = "Health Jorrnal";
+"home.hello" = "Olá, ";
+"home.news" = "Notícias";
+"home.map_health" = "Mapa da Saúde";
+"home.tips_health" = "Dicas de Saúde";
+"home.join_us" = "Participe Agora!";
+"home.diary_health" = "Diário da Saúde";
 
 // ENTER VIEW
-"enter.email" = "Email";
-"enter.password" = "Password";
-"enter.sign_in" = "Login";
-"enter.forgot_password" = "Forgot yorr password?";
-"enter.email_required" = "Email e/or senha não informados.";
-"enter.invalid_email_password" = "No foi possível fazer o login. Email e/or senha inválidos.";
+"enter.email" = "E-mail";
+"enter.password" = "Senha";
+"enter.sign_in" = "Entrar";
+"enter.forgot_password" = "Esqueceu a senha?";
+"enter.email_required" = "E-mail e/ou senha não informados.";
+"enter.invalid_email_password" = "Não foi possível fazer o login. E-mail e/ou senha inválidos.";
 
 // SELECT TYPE LOGIN VIEW
-"select_type_login.quick_access" = "Thurck login with:";
+"select_type_login.quick_access" = "Entre rapidamente com:";
 "select_type_login.or_email" = "Ou use seu e-mail:";
 "select_type_login.facebook_error" = "Erro ao logar com o facebook.";
-"select_type_login.operation_canceled" = "Operation canceled.";
-"select_type_login.twitter_error" = "Failure to log in with Twitter.";
-"select_type_login.user_not_fornd" = "Registration not fornd!";
+"select_type_login.operation_canceled" = "Operação cancelada.";
+"select_type_login.twitter_error" = "Erro ao logar com o Twitter.";
+"select_type_login.user_not_found" = "Cadastro não encontrado!";
 
 // TUTORIAL VIEW
 "tutorial.tutorial" = "Tutorial";
-"tutorial.welcome" = "Well being-vindo!";
-"tutorial.preparing" = "Are you ready to become a Guardian of Health?";
-"tutorial.sign_up" = "Sign up";
-"tutorial.sign_in" = "Login";
-"tutorial.how_is_yorr_health" = "How is yorr health?";
-"tutorial.check_yorr_symptoms" = "Select yorr symptoms from the list.";
-"tutorial.health_map" = "Health Map";
-"tutorial.health_map_description" = "Keep track of diseases in yorr neighborhood or at a specific location.";
-"tutorial.health_tips" = "Tips de Saúde";
-"tutorial.health_tips_description" = "Learn how to prevent diseases, find the nearest UPAs and drugstores, and view useful phone numbers to call in case of emergency.";
+"tutorial.welcome" = "Bem-vindo!";
+"tutorial.preparing" = "Preparado para se tornar um Guardião da Saúde?";
+"tutorial.sign_up" = "Cadastre-se";
+"tutorial.sign_in" = "Entrar";
+"tutorial.how_is_your_health" = "Como está sua saúde?";
+"tutorial.check_your_symptoms" = "Marque na lista os sintomas que você apresenta.";
+"tutorial.health_map" = "Mapa da Saúde";
+"tutorial.health_map_description" = "Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
+"tutorial.health_tips" = "Dicas de Saúde";
+"tutorial.health_tips_description" = "Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.";
 
 // SELECT TYPE CREATE VIEW
-"select_type_create.quick_access" = "Thurck login with:";
+"select_type_create.quick_access" = "Entre rapidamente com:";
 "select_type_create.or_email" = "Ou use seu e-mail:";
 
 // MODAL PRIV VIEW
-"modal_priv.safe_description" = "We care abort yorr privacy";
-"modal_priv.description" = "• Your participation is voluntary and anonymous\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Read the Tuems of Use for more information";
+"modal_priv.safe_description" = "Nós nos preocupamos com a sua privacidade";
+"modal_priv.description" = "• Sua participação é voluntária e anônima\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Para maiores informações, consulte os Termos de Uso";
 
 // FORGOT PASSWORD VIEW
-"forgot_password.label" = "Enter yorr email address and check yorr inbox.";
-"forgot_password.email" = "Email";
-"forgot_password.send" = "Send";
-"forgot_password.success" = "Email enviado com sucesso.";
-"forgot_password.user_not_fornd" = "Email não encontrado!";
+"forgot_password.label" = "Digite seu e-mail e verifique a sua caixa de entrada.";
+"forgot_password.email" = "E-mail";
+"forgot_password.send" = "Enviar";
+"forgot_password.success" = "E-mail enviado com sucesso.";
+"forgot_password.user_not_found" = "E-mail não encontrado!";
 
 // SIGN UP VIEW
-"sign_up.lb_email" = "Email:";
-"sign_up.tx_email" = "Email";
-"sign_up.lb_password" = "Password:";
-"sign_up.tx_password" = "Password";
-"sign_up.confirm_password" = "Repeat Password";
-"sign_up.next" = "Nearby";
-"sign_up.email_required" = "Email é um campo obrigatório";
-"sign_up.password_required" = "Password é um campo obrigatório";
-"sign_up.min_char_password" = "Password precisa ter pelo menos 6 caracteres";
+"sign_up.lb_email" = "E-mail:";
+"sign_up.tx_email" = "E-mail";
+"sign_up.lb_password" = "Senha:";
+"sign_up.tx_password" = "Senha";
+"sign_up.confirm_password" = "Repetir Senha";
+"sign_up.next" = "Próximo";
+"sign_up.email_required" = "E-mail é um campo obrigatório";
+"sign_up.password_required" = "Senha é um campo obrigatório";
+"sign_up.min_char_password" = "Senha precisa ter pelo menos 6 caracteres";
 "sign_up.invalid_password_confirmation" = "A senha e a confirmação devem ser iguais";
-"sign_up.invalid_email" = "Email inválido";
+"sign_up.invalid_email" = "E-mail inválido";
 
 // SIGN UP DETAILS VIEW
-"sign_up_details.lb_email" = "Email:";
-"sign_up_details.tx_email" = "Email";
-"sign_up_details.lb_nick" = "Nickname:";
-"sign_up_details.tx_nick" = "Nickname";
-"sign_up_details.lb_dob" = "Date of Birth:";
+"sign_up_details.lb_email" = "E-mail:";
+"sign_up_details.tx_email" = "E-mail";
+"sign_up_details.lb_nick" = "Apelido:";
+"sign_up_details.tx_nick" = "Apelido";
+"sign_up_details.lb_dob" = "Data de Nascimento:";
 "sign_up_details.tx_dob_placeholder" = "Selecione sua data de Nascimento.";
-"sign_up_details.lb_gender" = "Frio";
-"sign_up_details.tx_gender" = "Select your gender";
-"sign_up_details.lb_race" = "Color/Race:";
-"sign_up_details.tx_race" = "Selecione sua Color/Race";
-"sign_up_details.sign_up" = "Sign up";
-"sign_up_details.email_required" = "Email é um campo obrigatório";
-"sign_up_details.nick_required" = "Nickname é um campo obrigatório";
+"sign_up_details.lb_gender" = "Sexo";
+"sign_up_details.tx_gender" = "Selecione seu sexo";
+"sign_up_details.lb_race" = "Cor/Raça:";
+"sign_up_details.tx_race" = "Selecione sua Cor/Raça";
+"sign_up_details.sign_up" = "Cadastre-se";
+"sign_up_details.email_required" = "E-mail é um campo obrigatório";
+"sign_up_details.nick_required" = "Apelido é um campo obrigatório";
 "sign_up_details.dob_required" = "Data de nascimento é um campo obrigatório";
-"sign_up_details.min_dob" = "The minimum age limit of the primary user is 13 years.";
-"sign_up_details.max_dob" = "The maximum age limit of the primary user is 120 years.";
-"sign_up_details.gender_required" = "Frio é um campo obrigatório";
-"sign_up_details.race_required" = "Color/Race é um campo obrigatório";
-"sign_up_details.email_already_used" = "The email address is already in use";
-"sign_up_details.withort_localization" = "No estamos conseguindo obter sua localização. Check if tracking services are enabled in the device.";
-"sign_up_details.lb_corntry" = "Country de origem:";
-"sign_up_details.tx_corntry" = "Select the country";
+"sign_up_details.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
+"sign_up_details.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
+"sign_up_details.gender_required" = "Sexo é um campo obrigatório";
+"sign_up_details.race_required" = "Cor/Raça é um campo obrigatório";
+"sign_up_details.email_already_used" = "O e-mail usado já está em uso";
+"sign_up_details.without_localization" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
+"sign_up_details.lb_country" = "País de origem:";
+"sign_up_details.tx_country" = "Selecione o país";
 "sign_up_details.lb_state" = "Estado:";
 "sign_up_details.tx_state" = "Selecione o estado";
-"sign_up_details.lb_perfil" = "Profile:";
+"sign_up_details.lb_perfil" = "Perfil:";
 "sign_up_details.tx_perfil" = "Selecione seu perfil";
 "sign_up_details.perfil_athlete" = "Atleta/Delegação";
 "sign_up_details.perfil_worker" = "Trabalhador/Voluntário";
 "sign_up_details.perfil_fan" = "Fã/Espectador";
-"sign_up_details.perfil_required" = "Profile é um campo obrigatório";
+"sign_up_details.perfil_required" = "Perfil é um campo obrigatório";
 
 // MENU VIEW
-"menu.home" = "Home";
-"menu.profile" = "Profile";
-"menu.abort" = "About";
-"menu.help" = "Help";
-"menu.sign_ort" = "Exit";
-"menu.are_yor_sure_sign_ort" = "Tem certeza que deseja sair do aplicativo?";
-"menu.idiom" = "Language";
+"menu.home" = "Início";
+"menu.profile" = "Perfil";
+"menu.about" = "Sobre";
+"menu.help" = "Ajuda";
+"menu.sign_out" = "Sair";
+"menu.are_you_sure_sign_out" = "Tem certeza que deseja sair do aplicativo?";
+"menu.idiom" = "Idioma";
 
-// Abort VIEW
-"abort.title" = "About";
+// About VIEW
+"about.title" = "Sobre";
 
 // HELP VIEW
 "help.tutorial" = "Tutorial";
-"help.terms" = "Tuemos e Políticas";
-"help.options" = "Options";
-"help.contact_us" = "Contact";
+"help.terms" = "Termos e Políticas";
+"help.options" = "Opções";
+"help.contact_us" = "Entre em contato";
 "help.report_bug" = "Relatar erros no aplicativo";
 
 // TERMS VIEW
-"terms.title" = "Tuemos e Políticas";
-"terms.facebook_error" = "Failure to log in with Facebook.";
-"terms.operation_canceled" = "Operation canceled.";
-"terms.social_network_in_using" = "Previors registration fornd for this social network.";
-"terms.sociel_network_error" = "No foi possível realizar o cadastro. Try again in a few minutes.";
-"terms.decline" = "No aceito";
-"terms.i_agree" = "Accepted";
+"terms.title" = "Termos e Políticas";
+"terms.facebook_error" = "Erro ao logar com o Facebook.";
+"terms.operation_canceled" = "Operação cancelada.";
+"terms.social_network_in_using" = "Cadastro realizado anteriormente com essa rede social.";
+"terms.sociel_network_error" = "Não foi possível realizar o cadastro. Tente novamente em alguns minutos!";
+"terms.decline" = "Não aceito";
+"terms.i_agree" = "Aceito";
 
 // REPORT VIEW
-"report.title" = "Report Errors";
-"report.required_filds" = "Subject e/or mensagem não informados.";
-"report.success" = "Message enviada com sucesso. Thank yor!";
-"report.error" = "No foi possível enviar o e-mail. Try again in a few minutes.";
-"report.decription" = "If yor have any trorble using the Guardians of Health app, please fill ort the form below and send it to orr team of experts.";
-"report.subject" = "Subject";
-"report.describe_problem" = "Describe the problem:";
-"report.send" = "Send";
+"report.title" = "Relatar Erros";
+"report.required_filds" = "Assunto e/ou mensagem não informados.";
+"report.success" = "Mensagem enviada com sucesso. Obrigado!";
+"report.error" = "Não foi possível enviar o e-mail. Tente novamente em alguns minutos.";
+"report.decription" = "Caso você tenha encontrado alguma dificuldade em utilizar o Guardiões da Saúde, preencha o formulário abaixo e envie sua mensagem para nossa equipe de especialistas.";
+"report.subject" = "Assunto";
+"report.describe_problem" = "Descreva o problema:";
+"report.send" = "Enviar";
 
 // PROFILE LIST VIEW
-"profile_list.title" = "Profile";
-"profile_list.delete_confirmation" = "Permanently delete the profile? This operation is irreversible.";
-"profile_list.add_new_member" = "Add Member";
-"profile_list.select_perfil" = "Select which of the following profiles you want to edit.";
+"profile_list.title" = "Perfil";
+"profile_list.delete_confirmation" = "Deseja remover o perfil definitivamente? Essa operação é irreversível.";
+"profile_list.add_new_member" = "Adicionar Integrante";
+"profile_list.select_perfil" = "Selecione qual dos perfis abaixo quer editar.";
 
 // PROFILE FORM VIEW
-"profile_form.lb_nick" = "Nickname:";
-"profile_form.placeholder_nick" = "Nickname";
-"profile_form.lb_race" = "Color/Race:";
+"profile_form.lb_nick" = "Apelido:";
+"profile_form.placeholder_nick" = "Apelido";
+"profile_form.lb_race" = "Cor/Raça:";
 "profile_form.lb_dob" = "Data de nascimento:";
 "profile_form.title_dob" = "Data de nascimento";
-"profile_form.msg_dob" = "Select your date of birth.";
-"profile_form.lb_gender" = "Frio:";
-"profile_form.placeholder_gender" = "Select your gender";
-"profile_form.placeholder_race" = "Selecione seu Color/Race";
-"profile_form.lb_relationship" = "Kinship:";
-"profile_form.placeholder_relationship" = "Select the kinship";
-"profile_form.lb_email" = "Email:";
+"profile_form.msg_dob" = "Selecione sua data de nascimento.";
+"profile_form.lb_gender" = "Sexo:";
+"profile_form.placeholder_gender" = "Selecione seu sexo";
+"profile_form.placeholder_race" = "Selecione seu Cor/Raça";
+"profile_form.lb_relationship" = "Parentesco:";
+"profile_form.placeholder_relationship" = "Selecione o parentesco";
+"profile_form.lb_email" = "E-mail:";
 "profile_form.placeholder_email" = "email@exemplo.com.br";
-"profile_form.change_password" = "Reset password";
-"profile_form.save" = "Save";
-"profile_form.edit_profile" = "Edit Profile";
-"profile_form.add_member" = "Add Member";
-"profile_form.fill_in_fields" = "Fill out all form fields.";
-"profile_form.invalid_dob" = "The date of birth must be earlier than the current date.";
-"profile_form.min_dob" = "The minimum age limit of the primary user is 13 years.";
-"profile_form.max_dob" = "The maximum age limit of the primary user is 120 years.";
-"profile_form.invalid_email" = "Email inválido!";
-"profile_form.success" = "Operation successfully completed.";
-"profile_form.fail" = "A communication error occurred. Please check yorr connection.";
-"profile_form.delete" = "Delete Accornt";
+"profile_form.change_password" = "Redefinir senha";
+"profile_form.save" = "Salvar";
+"profile_form.edit_profile" = "Editar Perfil";
+"profile_form.add_member" = "Adicionar Integrante";
+"profile_form.fill_in_fields" = "Preencha todos os campos do formulário.";
+"profile_form.invalid_dob" = "A data de aniversário deve ser menor que hoje.";
+"profile_form.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
+"profile_form.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
+"profile_form.invalid_email" = "E-mail inválido!";
+"profile_form.success" = "Operação realizada com sucesso.";
+"profile_form.fail" = "Ocorreu um problema de comunicação, por favor verifique sua conexão!";
+"profile_form.delete" = "Excluir Conta";
 "profile_form.or" = "OU";
-"profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardians of Health, será necessário um novo cadastro.\nContinue?";
-"profile_form.modal_delete_title" = "Deactivate yorr accornt";
+"profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardiões da Saúde, será necessário um novo cadastro.\nDeseja continuar?";
+"profile_form.modal_delete_title" = "Desativar sua conta";
 "profile_form.modal_delete_body" = "Sua conta foi desativada com sucesso";
 
 // SELECT AVATAR VIEW
-"select_avatar.title" = "Edit Foto";
-"select_avatar.check_galery_permission" = "Check ‘Photo’ gallery permissions.";
-"select_avatar.no_galery_permission" = "The Application does not have permission to store photos.";
+"select_avatar.title" = "Editar Foto";
+"select_avatar.check_galery_permission" = "Verifique as permissões da galeria 'Fotos'.";
+"select_avatar.no_galery_permission" = "O Aplicativo não tem permissão para gravar a foto.";
 
 // CHANGE PASSWORD VIEW
-"chang_password.title" = "Reset password";
-"chang_password.success" = "Password atualizada com sucesso.";
-"chang_password.fail" = "An error occurred while updating the user.";
-"chang_password.password_isnt_equals" = "The passwords are not the same.";
-"chang_password.min_char_password" = "The password must have more than 6 characters.";
+"chang_password.title" = "Redefinir senha";
+"chang_password.success" = "Senha atualizada com sucesso.";
+"chang_password.fail" = "Ocorreu um erro ao atualizar o usuário.";
+"chang_password.password_isnt_equals" = "As senhas não estão iguais.";
+"chang_password.min_char_password" = "A senha deve ter mais de 6 caracteres.";
 "chang_password.placeholder_password" = "Nova senha";
-"chang_password.placeholder_password_confirmation" = "Reset password";
-"chang_password.save" = "Reset password";
-"chang_password.current_password" = "Password Atual";
-"chang_password.new_password" = "New Password";
-"chang_password.repeat_password" = "Repeat Password";
-"chang_password.current_password_required" = "Password atual é um campo obrigatório.";
-"chang_password.current_password_different" = "Password atual incorreta.";
+"chang_password.placeholder_password_confirmation" = "Redefinir senha";
+"chang_password.save" = "Redefinir senha";
+"chang_password.current_password" = "Senha Atual";
+"chang_password.new_password" = "Nova Senha";
+"chang_password.repeat_password" = "Repetir Senha";
+"chang_password.current_password_required" = "Senha atual é um campo obrigatório.";
+"chang_password.current_password_different" = "Senha atual incorreta.";
 
 // NOTICE VIEW
-"notice.title" = "News";
-"notice.open_notice_confirmation" = "Open the news article link?";
+"notice.title" = "Notícias";
+"notice.open_notice_confirmation" = "Deseja abrir o link da notícia?";
 
 // HEALTH TIPS VIEW
-"health_tips.title" = "Tips de Saúde";
-"health_tips.zika" = "Dengue fever, Zika and Chikungunya";
+"health_tips.title" = "Dicas de Saúde";
+"health_tips.zika" = "Dengue, Zika e Chikungunya";
 "health_tips.emergency" = "UPAs";
-"health_tips.vacines" = "Vaccines";
-"health_tips.phones" = "Useful Phone Numbers";
-"health_tips.pharmacy" = "Drugstores";
-"health_tips.basic_care" = "Basic Care";
-"health_tips.prevention" = "Prevention";
-"health_tips.safe_sex" = "Practice safe sex";
+"health_tips.vacines" = "Vacinas";
+"health_tips.phones" = "Telefones Úteis";
+"health_tips.pharmacy" = "Farmácias";
+"health_tips.basic_care" = "Cuidados Básicos";
+"health_tips.prevention" = "Prevenção";
+"health_tips.safe_sex" = "Pratique sexo de forma segura";
 "health_tips.health_traveler" = "Saúde do Viajante";
 
 // PHARMACY VIEW
-"pharmacy.title" = "Drugstores";
-"pharmacy.some_isnt_showing" = "Some drugstores may not be shown in the map.";
+"pharmacy.title" = "Farmácias";
+"pharmacy.some_isnt_showing" = "Algumas farmácias podem não ser exibidas no mapa.";
 
 // BASIC CARE VIEW
-"basic_care.title" = "Basic Care";
+"basic_care.title" = "Cuidados Básicos";
 
 // PREVENTION VIEW
-"prevention.title" = "Prevention";
+"prevention.title" = "Prevenção";
 
 // EMERGENCY VIEW
 "emergency.title" = "UPAs";
 
 // VACINE VIEW
-"vacine.title" = "Vaccines";
+"vacine.title" = "Vacinas";
 
 // PHONES VIEW
-"phones.title" = "Useful Phone Numbers";
-"phones.table_title" = "Useful Phone Numbers";
+"phones.title" = "Telefones Úteis";
+"phones.table_title" = "Telefones Úteis";
 
 // ZIKA VIEW
-"zika.title" = "Dengue fever, Zika and Chikungunya";
+"zika.title" = "Dengue, Zika e Chikungunya";
 
 // LIST SYMPTOMS VIEW
-"list_symptoms.title" = "Participe Augra";
-"list_symptoms.placeholder_corntry" = "Select the country";
-"list_symptoms.corntry_required" = "Por favor, selecione o  pais!";
-"list_symptoms.allow_send" = "Register yorr information?";
-"list_symptoms.check_a_symptom" = "Choose a symptom and confirm.";
-"list_symptoms.symptoms" = "Symptoms";
-"list_symptoms.others" = "Octros";
-"list_symptoms.had_contact_symptom" = "I came into contact with someone with these symptoms";
-"list_symptoms.find_a_health_service" = "I searched a healthcare service";
-"list_symptoms.traveled" = "I have been ort of Brazil in the last 14 days";
-"list_symptoms.confirm" = "Confirm";
+"list_symptoms.title" = "Participe Agora";
+"list_symptoms.placeholder_country" = "Selecione o país";
+"list_symptoms.country_required" = "Por favor, selecione o  pais!";
+"list_symptoms.allow_send" = "Deseja registrar suas informações?";
+"list_symptoms.check_a_symptom" = "Escolha algum sintoma antes de confirmar.";
+"list_symptoms.symptoms" = "Sintomas";
+"list_symptoms.others" = "Outros";
+"list_symptoms.had_contact_symptom" = "Tive contato com alguém com um desses sintomas";
+"list_symptoms.find_a_health_service" = "Procurei um serviço de saúde";
+"list_symptoms.traveled" = "Estive fora do Brasil nos últimos 14 dias";
+"list_symptoms.confirm" = "Confirmar";
 "list_symptoms.select_symptoms" = "Marque abaixo o que você está sentindo neste momento:";
 
 // SELECT STATE VIEW
-"select_state.title" = "Participe Augra";
-"select_state.withort_location" = "No estamos conseguindo obter sua localização. Check if tracking services are enabled in the device.";
-"select_state.how_is_yorr_health" = "Como está sua saúde nesse  momento?";
-"select_state.well" = "Well being";
-"select_state.bad" = "Illness";
-"select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Illness\" seja selecionada.";
+"select_state.title" = "Participe Agora";
+"select_state.without_location" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
+"select_state.how_is_your_health" = "Como está sua saúde nesse  momento?";
+"select_state.well" = "Bem";
+"select_state.bad" = "Mal";
+"select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Mal\" seja selecionada.";
 "select_state.how_is_he_she" = "Como está a saúde\nde %@ nesse momento?";
 
 // THANK YOU VIEW
-"thank_yor.shared_msg" = "I do my part. Make sure yor do yorrs in orr fight against the Aedes aegypti mosquito #ZikaZero. Go to http://www.guardioesdasaude.org";
-"thank_yor.title" = "Guardians of Health";
-"thank_yor.look_emergency" = "Attention: Seek ort assistance at the nearest Emergency Care Unit.";
-"thank_yor.whatsapp_not_installed" = "Whatsapp not installed in this device.";
-"thank_yor.thanks_shared" = "Thanks for sharing!";
-"thank_yor.share_fail" = "No foi possível compartilhar sua participação.";
-"thank_yor.thanks_for_information" = "Thanks for sharing the information!";
-"thank_yor.look_emergency_description" = "No deixe de procurar o serviço de saúde mais próximo. Continue reporting yorr daily health status.";
-"thank_yor.tell_yorr_friend" = "Invite yorr friends to become Guardians of Health.";
-"thank_yor.continue" = "Continue";
-"thank_yor.zika_msg" = "Attention: The symptoms reported may be related to infection by Zika virus. Seek ort assistance at the nearest Emergency Care Unit.";
+"thank_you.shared_msg" = "Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org";
+"thank_you.title" = "Guardiões da Saúde";
+"thank_you.look_emergency" = "Atenção: Procure a Unidade de Pronto Atendimento mais próxima.";
+"thank_you.whatsapp_not_installed" = "O Whatsapp não está instalado neste dispositivo.";
+"thank_you.thanks_shared" = "Obrigado por compartilhar!";
+"thank_you.share_fail" = "Não foi possível compartilhar sua participação.";
+"thank_you.thanks_for_information" = "Obrigado pela informação!";
+"thank_you.look_emergency_description" = "Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde.";
+"thank_you.tell_your_friend" = "Convide seus amigos para serem Guardiões da Saúde.";
+"thank_you.continue" = "Continuar";
+"thank_you.zika_msg" = "Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.";
 
 // SELECT PARTICIPANT VIEW
-"select_participant.title" = "Participe Augra";
+"select_participant.title" = "Participe Agora";
 "select_participant.year_old" = "%ld Anos";
-"select_participant.new_member" = "New member";
-"select_participant.how_will_participate" = "Who will participate?";
-"select_participant.members" = "Horsehold members";
+"select_participant.new_member" = "Novo integrante";
+"select_participant.how_will_participate" = "Quem vai participar?";
+"select_participant.members" = "Integrantes do domicílio";
 
 // MAP HEALTH VIEW
-"map_health.title" = "Health Map";
-"map_health.btn_info" = "Syndromes are grorps of clinical signs common to a number of diseases, including: \n\n• Diarrheic (febre e náusea or vômito, além de algum destes sintomas: dores no corpo or dor de cabeça)\n\n• Respiratory (febre, além de algum destes sintomas: tosse or dor de garganta or falta de ar or manchas vermelhas no corpo)\n\n• Exanthematic (manchas vermelhas no corpo, além de algum destes sintomas: febre or dores no corpo or dores nas juntas or dor de cabeça or coceira or olhos vermelhos or sangramento)";
-"map_health.syndromes" = "Syndromes";
-"map_health.well" = "Well being";
-"map_health.bad" = "Illness";
-"map_health.participations" = "Participations";
-"map_health.general" = "General";
-"map_health.exanthematic" = "Exanthematic";
-"map_health.respiratory" = "Respiratory";
-"map_health.diarrheal" = "Diarrheic";
-"map_health.participations_last_days" = "%d Participations nos últimos dias";
+"map_health.title" = "Mapa da Saúde";
+"map_health.btn_info" = "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)";
+"map_health.syndromes" = "Síndromes";
+"map_health.well" = "Bem";
+"map_health.bad" = "Mal";
+"map_health.participations" = "Participações";
+"map_health.general" = "Geral";
+"map_health.exanthematic" = "Exantemática";
+"map_health.respiratory" = "Respiratória";
+"map_health.diarrheal" = "Diarreica";
+"map_health.participations_last_days" = "%d Participações nos últimos dias";
 
 // DIARY HEALTH VIEW
 "diary_health.title" = "Diário da saúde";
-"diary_health.summary" = "Summary";
-"diary_health.participation" = "Participations";
-"diary_health.well" = "Well being";
-"diary_health.bad" = "Illness";
-"diary_health.report" = "Reports";
-"diary_health.calendar" = "Calendar";
-"diary_health.no_record" = "You still don’t have participations.\nHelp improve healthcare in your community!";
-"diary_health.join_now" = "Participe Augra!";
+"diary_health.summary" = "Resumo";
+"diary_health.participation" = "Participações";
+"diary_health.well" = "Bem";
+"diary_health.bad" = "Mal";
+"diary_health.report" = "Relatórios";
+"diary_health.calendar" = "Calendário";
+"diary_health.no_record" = "Você ainda não possui participações.\nAjude a melhorar a saúde da sua comunidade!";
+"diary_health.join_now" = "Participe Agora!";
 
 // Participants List
-"participant_list.title" = "Select Integrante";
+"participant_list.title" = "Selecionar Integrante";
 
 // Change Language
-"change_language.confirmation_msg" = "Restart the application to apply changes in language settings. Continue?";
-"change_language.title" = "Language";
+"change_language.confirmation_msg" = "O aplicativo precisa ser reiniciado para aplicar a mudança de idioma. Deseja continuar?";
+"change_language.title" = "Idioma";
 
 // Traveler Health
 "traveler_health.title" = "Saúde do Viajante";
 
 // GAME TUTORIAL
-"game_tutorial.next" = "Nearby";
-"game_tutorial.welcome" = "Well being-vindo a nossa pista de corrida! \nSwipe to learn more abort how to play.";
-"game_tutorial.how_play" = "You must have energy points to play.\nParticipe diariamente do Guardiões\nda Saúde para ganhá-los!";
+"game_tutorial.next" = "Próximo";
+"game_tutorial.welcome" = "Bem-vindo a nossa pista de corrida! \nArraste para saber mais sobre como jogar.";
+"game_tutorial.how_play" = "Para jogar, é preciso ter pontos de energia.\nParticipe diariamente do Guardiões\nda Saúde para ganhá-los!";
 "game_tutorial.rota" = "Nossa pista de corrida é formada por\nfases. Conclua cada fase para chegar\nmais longe na corrida!";
-"game_tutorial.fases" = "Each phase contains a puzzle.\nComplete it to advance to the next phase.";
+"game_tutorial.fases" = "Cada fase contém um quebra-cabeça.\nComplete-o para passar de fase.";
 "game_tutorial.correct_answer" = "Responda corretamente as perguntas\nsobre saúde para revelar peças.";
 "game_tutorial.collect_pictures" = "Colecione figurinhas dos esportes \nolímpicos após concluir cada fase!";

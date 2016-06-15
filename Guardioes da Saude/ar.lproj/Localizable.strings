@@ -8,111 +8,111 @@
 
 // CONSTANT MSGs
 "constant.check_connection" = "سياسة الخصوصية";
-"constant.comunication_error" = "Ocorreu um erro de comunição!";
+"constant.comunication_error" = "نشكرك على المشاركة!";
 "constant.yes" = "النوع";
 "constant.no" = "السباحة المتزامنة";
-"constant.ok" = "OK";
+"constant.ok" = "حسنا";
 "constant.delete" = "حذف";
 "constant.cancel" = "إلغاء";
 "constant.select" = "صحة المسافر";
-"constant.no_conection" = "يجب أن تكون سجلت الدخول لاستخدام هذه الميزة. Por favor, verifique sua rede!";
+"constant.no_conection" = "!يجب عليك تسجيل الدخول للوصول إلى هذه الوظيفة. يرجى التحقق من الشبكة";
 
 // HOME VIEW
-"home.hello" = "مرحبا, ";
+"home.hello" = ",مرحبا ";
 "home.news" = "يتضمن تتبع المسار لدينا عدة مراحل مختلفة.";
 "home.map_health" = "مالطا";
-"home.tips_health" = "نصائح de Saúde";
+"home.tips_health" = "نصائح صحية";
 "home.join_us" = "باراجواي";
-"home.diary_health" = "Diáro da Saúde";
+"home.diary_health" = "المجلة الصحية";
 
 // ENTER VIEW
 "enter.email" = "البريد الإلكتروني";
 "enter.password" = "حدد اللون/العرق";
 "enter.sign_in" = "تسجيل الدخول";
 "enter.forgot_password" = "هل نسيت كلمة مرورك؟";
-"enter.email_required" = "البريد الإلكتروني e/ou senha não informados.";
-"enter.invalid_email_password" = "السباحة المتزامنة foi possível fazer o login. E-mail e/ou senha inválidos.";
+"enter.email_required" = "لم يتم توفير البريد الإلكتروني و/أو كلمة المرور";
+"enter.invalid_email_password" = "حاول مرة أخرى بعد بضع دقائق. تعذر قراءة البريد الإلكتروني.";
 
 // SELECT TYPE LOGIN VIEW
-"select_type_login.quick_access" = "تسجيل الدخول سريعًا باستخدام:";
-"select_type_login.or_email" = "Ou use seu e-mail:";
-"select_type_login.facebook_error" = "Erro ao logar com o facebook.";
+"select_type_login.quick_access" = ":تسجيل الدخول سريعًا باستخدام";
+"select_type_login.or_email" = ":اطلب المساعدة في أقرب وحدة رعاية طوارئ.";
+"select_type_login.facebook_error" = "فشل تسجيل الدخول باستخدام Facebook.";
 "select_type_login.operation_canceled" = "عيون حمراء";
 "select_type_login.twitter_error" = "فشل تسجيل الدخول باستخدام Facebook.";
 "select_type_login.user_not_found" = "لم يتم العثور على التسجيل!";
 
 // TUTORIAL VIEW
 "tutorial.tutorial" = "ترينيداد وتوباغو";
-"tutorial.welcome" = "الصحة-vindo!";
+"tutorial.welcome" = "مرحبًا!";
 "tutorial.preparing" = "البرتغال";
 "tutorial.sign_up" = "تسجيل الاشتراك";
 "tutorial.sign_in" = "تسجيل الدخول";
 "tutorial.how_is_your_health" = "كيف حال صحتك؟";
-"tutorial.check_your_symptoms" = "Maque na lista os sintomas que você apresenta.";
+"tutorial.check_your_symptoms" = "مارس";
 "tutorial.health_map" = "مالطا";
 "tutorial.health_map_description" = "تابع حالة الأمراض الموجودة في الحي الخاص بك في موقع معين.";
-"tutorial.health_tips" = "نصائح de Saúde";
+"tutorial.health_tips" = "نصائح صحية";
 "tutorial.health_tips_description" = "لقاح";
 
 // SELECT TYPE CREATE VIEW
-"select_type_create.quick_access" = "تسجيل الدخول سريعًا باستخدام:";
-"select_type_create.or_email" = "Ou use seu e-mail:";
+"select_type_create.quick_access" = ":تسجيل الدخول سريعًا باستخدام";
+"select_type_create.or_email" = ":أو استخدام البريد الإلكتروني الخاص بك";
 
 // MODAL PRIV VIEW
 "modal_priv.safe_description" = "زوجة الابن";
-"modal_priv.description" = "• Sua participação é voluntária e anônima\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Para maiores informações, consulte os Termos de Uso";
+"modal_priv.description" = "• مشاركتكم طوعية وغير معروفة\n \n• البيانات المقدمة سيتم استخدامها لتعزيز مجتمع صحي\n\n• لمزيد من المعلومات، راجع شروط الاستخدام";
 
 // FORGOT PASSWORD VIEW
-"forgot_password.label" = "Digite seu email e verifique a sua caixa de entrada.";
+"forgot_password.label" = "أدخل عنوان بريدك الإلكتروني وتحقق من صندوق بريدك.";
 "forgot_password.email" = "البريد الإلكتروني";
 "forgot_password.send" = "أرسل";
-"forgot_password.success" = "Email enviado com sucesso.";
-"forgot_password.user_not_found" = "البريد الإلكتروني não encontrado!";
+"forgot_password.success" = "تم إرسال البريد الإلكتروني بنجاح.";
+"forgot_password.user_not_found" = "لم يتم العثور على البريد الإلكتروني.";
 
 // SIGN UP VIEW
 "sign_up.lb_email" = "البريد الإلكتروني:";
 "sign_up.tx_email" = "البريد الإلكتروني";
-"sign_up.lb_password" = "حدد اللون/العرق:";
+"sign_up.lb_password" = ":كلمة المرور";
 "sign_up.tx_password" = "حدد اللون/العرق";
 "sign_up.confirm_password" = "قائمة المشاركات حسب الشهر";
 "sign_up.next" = "ابن العم";
-"sign_up.email_required" = "البريد الإلكتروني é um campo obrigatório";
-"sign_up.password_required" = "حدد اللون/العرق é um campo obrigatório";
-"sign_up.min_char_password" = "حدد اللون/العرق precisa ter pelo menos 6 caracteres";
-"sign_up.invalid_password_confirmation" = "A senha e a confirmação devem ser iguais";
-"sign_up.invalid_email" = "البريد الإلكتروني inválido";
+"sign_up.email_required" = "البريد الإلكتروني حقل مطلوب";
+"sign_up.password_required" = "كلمة المرور الحالية";
+"sign_up.min_char_password" = "كلمة المرور الحالية حقل مطلوب";
+"sign_up.invalid_password_confirmation" = "يجب أن تكون كلمة المرور والتأكيد متماثلتين.";
+"sign_up.invalid_email" = "بريد إلكتروني غير صالح.";
 
 // SIGN UP DETAILS VIEW
 "sign_up_details.lb_email" = "البريد الإلكتروني:";
 "sign_up_details.tx_email" = "البريد الإلكتروني";
 "sign_up_details.lb_nick" = "الاسم المستعار:";
 "sign_up_details.tx_nick" = "الاسم المستعار";
-"sign_up_details.lb_dob" = "تاريخ الميلاد:";
-"sign_up_details.tx_dob_placeholder" = "Selecione sua data de Nascimento.";
-"sign_up_details.lb_gender" = "سيراليونo";
+"sign_up_details.lb_dob" = ":تاريخ الميلاد";
+"sign_up_details.tx_dob_placeholder" = "حدد ملف التعريف";
+"sign_up_details.lb_gender" = "صربيا";
 "sign_up_details.tx_gender" = "حدد الدولة";
 "sign_up_details.lb_race" = "اللون/العرق:";
 "sign_up_details.tx_race" = "حدد القرابة";
 "sign_up_details.sign_up" = "تسجيل الاشتراك";
-"sign_up_details.email_required" = "البريد الإلكتروني é um campo obrigatório";
-"sign_up_details.nick_required" = "الاسم المستعار é um campo obrigatório";
-"sign_up_details.dob_required" = "Data de nascimento é um campo obrigatório";
+"sign_up_details.email_required" = "البريد الإلكتروني حقل مطلوب";
+"sign_up_details.nick_required" = "الاسم المستعار حقل مطلوب";
+"sign_up_details.dob_required" = "تاريخ الميلاد حقل مطلوب";
 "sign_up_details.min_dob" = "أدنى حد عمري للمستخدم الرئيسي هو 13 عامًا.";
 "sign_up_details.max_dob" = "أقصى حد عمري للمستخدم الرئيسي هو 120 عامًا.";
-"sign_up_details.gender_required" = "سيراليونo é um campo obrigatório";
-"sign_up_details.race_required" = "اللون/العرق é um campo obrigatório";
+"sign_up_details.gender_required" = "الجنس هو حقل مطلوب";
+"sign_up_details.race_required" = "اللون/العرق حقل مطلوب";
 "sign_up_details.email_already_used" = "أعد تشغيل التطبيق لتطبيق التغييرات التي تمت في إعدادات اللغة.";
-"sign_up_details.without_localization" = "السباحة المتزامنة estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
-"sign_up_details.lb_country" = "أكتوبر de origem:";
+"sign_up_details.without_localization" = "نحن غير قادرين على الحصول على موقعك. تحقق من أن يتم تمكين الخدمات على الجهاز.";
+"sign_up_details.lb_country" = "بلد المنشأ:";
 "sign_up_details.tx_country" = "تحديد";
-"sign_up_details.lb_state" = "Estado:";
-"sign_up_details.tx_state" = "Selecione o estado";
-"sign_up_details.lb_perfil" = "شارك بفاعلية في الوقاية من الأمراض.:";
-"sign_up_details.tx_perfil" = "Selecione seu perfil";
-"sign_up_details.perfil_athlete" = "Atleta/Delegação";
-"sign_up_details.perfil_worker" = "Trabalhador/Voluntário";
-"sign_up_details.perfil_fan" = "Fã/Espectador";
-"sign_up_details.perfil_required" = "شارك بفاعلية في الوقاية من الأمراض. é um campo obrigatório";
+"sign_up_details.lb_state" = ":دولة";
+"sign_up_details.tx_state" = "اختر الدولة";
+"sign_up_details.lb_perfil" = ":البيانات الشخصية";
+"sign_up_details.tx_perfil" = "البيانات الشخصية...";
+"sign_up_details.perfil_athlete" = "رياضي / وفد";
+"sign_up_details.perfil_worker" = "عامل / متطوع";
+"sign_up_details.perfil_fan" = "مروحة / المشاهد";
+"sign_up_details.perfil_required" = "الملف هو حقل مطلوب";
 
 // MENU VIEW
 "menu.home" = "كن أحد مديري الصحة وساعد على تحسين الرعاية الصحية في مجتمعك.";
@@ -120,7 +120,7 @@
 "menu.about" = "سانت مارتن";
 "menu.help" = "تعليمات";
 "menu.sign_out" = "السبت";
-"menu.are_you_sure_sign_out" = "Tem certeza que deseja sair do aplicativo?";
+"menu.are_you_sure_sign_out" = "هل أنت متأكد أنك تريد الخروج من التطبيق؟";
 "menu.idiom" = "الهوكي الأرضي";
 
 // About VIEW
@@ -128,33 +128,33 @@
 
 // HELP VIEW
 "help.tutorial" = "ترينيداد وتوباغو";
-"help.terms" = "أرقام هواتف مفيدةmos e Políticas";
+"help.terms" = "التنس";
 "help.options" = "مرحبًا";
 "help.contact_us" = "جهة الاتصال";
-"help.report_bug" = "Relatar errors no aplicativo";
+"help.report_bug" = "الإبلاغ عن أخطاء في التطبيق";
 
 // TERMS VIEW
-"terms.title" = "أرقام هواتف مفيدةmos e Políticas";
+"terms.title" = "التنس";
 "terms.facebook_error" = "فشل تسجيل الدخول باستخدام Facebook.";
 "terms.operation_canceled" = "عيون حمراء";
-"terms.social_network_in_using" = "Cadastro realizado anterioremente com essa rede social.";
-"terms.sociel_network_error" = "السباحة المتزامنة foi possível realizar o cadastro. Tente novamente em alguns minutos!";
-"terms.decline" = "السباحة المتزامنة aceito";
+"terms.social_network_in_using" = "تم العثور على تسجيل سابق لهذه الشبكة الاجتماعية.";
+"terms.sociel_network_error" = "لم يكن من الممكن لتنفيذ هذا الأمر. يرجى المحاولة مرة أخرى في بضع دقائق";
+"terms.decline" = "ناميبيا";
 "terms.i_agree" = "مقبول";
 
 // REPORT VIEW
 "report.title" = "إعادة تعيين كلمة المرور";
-"report.required_filds" = "الموضوع e/ou mensagem não informados.";
-"report.success" = "موريتانيا enviada com sucesso. Obrigado!";
-"report.error" = "السباحة المتزامنة foi possível enviar o e-mail. Tente novamente em alguns minutos.";
-"report.decription" = "إذا كنت تواجه أي مشكلة في استخدام تطبيق "مدير الصحة"، يرجى تعبئة النموذج التالي وإرساله إلى فريق الخبراء لدينا.";
+"report.required_filds" = "لم يتم تقديم الموضوع و/أو الرسالة.";
+"report.success" = "رسالة أرسلت بنجاح. شكرا";
+"report.error" = "لا يمكن إرسال البريد الإلكتروني. يرجى المحاولة مرة أخرى في بضع دقائق.";
+"report.decription" = "إذا كنت تواجه أي مشكلة في استخدام تطبيق مدير الصحة، يرجى تعبئة النموذج التالي وإرساله إلى فريق الخبراء لدينا.";
 "report.subject" = "الموضوع";
-"report.describe_problem" = "صف المشكلة:";
+"report.describe_problem" = "وصف المشكلة";
 "report.send" = "أرسل";
 
 // PROFILE LIST VIEW
 "profile_list.title" = "شارك بفاعلية في الوقاية من الأمراض.";
-"profile_list.delete_confirmation" = "هل تريد حذف ملف التعريف بشكل دائم؟ Essa operação é irreversível.";
+"profile_list.delete_confirmation" = "كنت ترغب في إزالة البيانات الشخصية بشكل دائم؟ هذه العملية لا رجعة فيه.";
 "profile_list.add_new_member" = "إضافة عضو";
 "profile_list.select_perfil" = "حدد اللغة";
 
@@ -162,66 +162,68 @@
 "profile_form.lb_nick" = "الاسم المستعار:";
 "profile_form.placeholder_nick" = "الاسم المستعار";
 "profile_form.lb_race" = "اللون/العرق:";
-"profile_form.lb_dob" = "Data de nascimento:";
-"profile_form.title_dob" = "Data de nascimento";
-"profile_form.msg_dob" = "حدد ملف التعريف.";
-"profile_form.lb_gender" = "سيراليونo:";
+"profile_form.lb_dob" = ":تاريخ الميلاد";
+"profile_form.title_dob" = "تاريخ الميلاد";
+"profile_form.msg_dob" = "حدد تاريخ ميلادك";
+"profile_form.lb_gender" = ":جنس";
 "profile_form.placeholder_gender" = "حدد الدولة";
-"profile_form.placeholder_race" = "Selecione seu Cor/Raça";
-"profile_form.lb_relationship" = "نقدر مشاركتك!:";
+"profile_form.placeholder_race" = "اختر لونك / سباق";
+"profile_form.lb_relationship" = ":علاقة";
 "profile_form.placeholder_relationship" = "حدد عضوًا";
 "profile_form.lb_email" = "البريد الإلكتروني:";
 "profile_form.placeholder_email" = "email@exemplo.com.br";
 "profile_form.change_password" = "الخميس";
 "profile_form.save" = "سان بيير وميكلون";
-"profile_form.edit_profile" = "تحرير Perfil";
+"profile_form.edit_profile" = "تحرير ملف التعريف";
 "profile_form.add_member" = "إضافة عضو";
 "profile_form.fill_in_fields" = "بورتوريكو";
 "profile_form.invalid_dob" = "يجب أن يكون تاريخ الميلاد أقدم من التاريخ الحالي.";
 "profile_form.min_dob" = "أدنى حد عمري للمستخدم الرئيسي هو 13 عامًا.";
 "profile_form.max_dob" = "أقصى حد عمري للمستخدم الرئيسي هو 120 عامًا.";
-"profile_form.invalid_email" = "البريد الإلكتروني inválido!";
+"profile_form.invalid_email" = "بريد إلكتروني غير صالح.";
 "profile_form.success" = "عُمان";
 "profile_form.fail" = "حدث خطأ أثناء تحديث المستخدم.";
 "profile_form.delete" = "طفحي";
-"profile_form.or" = "OU";
-"profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardiões da Saúde, será necessário um novo cadastro.\nDeseja continuar?";
+"profile_form.or" = "أو";
+"profile_form.delete_confirmation" = "عندما قمت بحذف حسابك، سيتم حذف كافة الأعضاء. لإعادة الوصول-حراس الصحة، سوف تكون هناك حاجة إلى تسجيل جديد.\nالمتابعة؟";
+"profile_form.modal_delete_title" = "إلغاء تنشيط حسابك";
+"profile_form.modal_delete_body" = "تم تعطيل الحساب الخاص بك بنجاح";
 
 // SELECT AVATAR VIEW
-"select_avatar.title" = "تحرير Foto";
+"select_avatar.title" = "تحرير الصورة";
 "select_avatar.check_galery_permission" = "تحقق من حالات الرعاية الصحية القريبة منك";
 "select_avatar.no_galery_permission" = "نوفمبر";
 
 // CHANGE PASSWORD VIEW
 "chang_password.title" = "الخميس";
-"chang_password.success" = "حدد اللون/العرق atualizada com sucesso.";
+"chang_password.success" = "كلمة المرور";
 "chang_password.fail" = "نشكرك على مشاركة المعلومات!";
 "chang_password.password_isnt_equals" = "كلمات المرور غير متطابقة.";
 "chang_password.min_char_password" = "يجب أن تحتوي كلمة المرور على أكثر من 6 أحرف.";
-"chang_password.placeholder_password" = "أكمل كل مرحلة للوصول إلى مراحل أخرى في السباق!a senha";
+"chang_password.placeholder_password" = "كلمة سر جديدة";
 "chang_password.placeholder_password_confirmation" = "الخميس";
 "chang_password.save" = "الخميس";
-"chang_password.current_password" = "حدد اللون/العرق Atual";
-"chang_password.new_password" = "أكمل كل مرحلة للوصول إلى مراحل أخرى في السباق!a Senha";
+"chang_password.current_password" = "حدد تاريخ ميلادك";
+"chang_password.new_password" = "نوفمبر";
 "chang_password.repeat_password" = "قائمة المشاركات حسب الشهر";
-"chang_password.current_password_required" = "حدد اللون/العرق atual é um campo obrigatório.";
-"chang_password.current_password_different" = "حدد اللون/العرق atual incorreta.";
+"chang_password.current_password_required" = "حدد عضوًا";
+"chang_password.current_password_different" = "السنغال";
 
 // NOTICE VIEW
 "notice.title" = "يتضمن تتبع المسار لدينا عدة مراحل مختلفة.";
 "notice.open_notice_confirmation" = "هل تريد فتح رابط مقالة الأخبار؟";
 
 // HEALTH TIPS VIEW
-"health_tips.title" = "نصائح de Saúde";
+"health_tips.title" = "نصائح صحية";
 "health_tips.zika" = "حمى الضنك، وزيكا، وشيكونجونيا";
 "health_tips.emergency" = "خريطة صحية مفيدة في جيبك.";
-"health_tips.vacines" = "انقر لمعرفة المزيد.s";
+"health_tips.vacines" = "UPAs";
 "health_tips.phones" = "تايلاند";
 "health_tips.pharmacy" = "اتصل بنا";
 "health_tips.basic_care" = "الرعاية الأساسية";
 "health_tips.prevention" = "املأ جميع الحقول التالية لإضافة عضو جديد.";
 "health_tips.safe_sex" = "يرجى ملء جميع الحقول في النموذج التالي.";
-"health_tips.health_traveler" = "Saúde do Viajante";
+"health_tips.health_traveler" = "الصحة المسافرين";
 
 // PHARMACY VIEW
 "pharmacy.title" = "اتصل بنا";
@@ -237,7 +239,7 @@
 "emergency.title" = "خريطة صحية مفيدة في جيبك.";
 
 // VACINE VIEW
-"vacine.title" = "انقر لمعرفة المزيد.s";
+"vacine.title" = "UPAs";
 
 // PHONES VIEW
 "phones.title" = "تايلاند";
@@ -247,51 +249,51 @@
 "zika.title" = "حمى الضنك، وزيكا، وشيكونجونيا";
 
 // LIST SYMPTOMS VIEW
-"list_symptoms.title" = "Participe Agora";
+"list_symptoms.title" = "انضم الآن";
 "list_symptoms.placeholder_country" = "تحديد";
-"list_symptoms.country_required" = "Por favor, selecione o  pais!";
+"list_symptoms.country_required" = "الرجاء اختيار البلد!";
 "list_symptoms.allow_send" = "هل تريد تسجيل معلوماتك؟";
 "list_symptoms.check_a_symptom" = "اختر أحد الأعراض وقم بالتأكيد.";
 "list_symptoms.symptoms" = "الأعراض";
-"list_symptoms.others" = "أوros";
+"list_symptoms.others" = "أو سجل الاشتراك باستخدام بريدك الإلكتروني";
 "list_symptoms.had_contact_symptom" = "تيمور الشرقية";
 "list_symptoms.find_a_health_service" = "الوقاية";
 "list_symptoms.traveled" = "لعبة جيدة!";
 "list_symptoms.confirm" = "تأكيد";
-"list_symptoms.select_symptoms" = "بقع حمراء على الجسمque abaixo o que você está sentindo neste momento:";
+"list_symptoms.select_symptoms" = "علامة أسفل ما تشعرين به في الوقت الراهن";
 
 // SELECT STATE VIEW
-"select_state.title" = "Participe Agora";
-"select_state.without_location" = "السباحة المتزامنة estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
-"select_state.how_is_your_health" = "Como está sua saúde nesse  momento?";
+"select_state.title" = "انضم الآن";
+"select_state.without_location" = "نحن غير قادرين على الحصول على موقعك. تحقق من أن يتم تمكين الخدمات على الجهاز";
+"select_state.how_is_your_health" = "كيف صحتك الآن؟";
 "select_state.well" = "الصحة";
 "select_state.bad" = "مايو";
-"select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"مايو\" seja selecionada.";
-"select_state.how_is_he_she" = "Como está a saúde\nde %@ nesse momento?";
+"select_state.next_step" = "'سوف يتم عرض بعض العلامات والأعراض التي تظهر على الشاشة القادمة إذا تم تحديد الخيار 'الشر";
+"select_state.how_is_he_she" = "كما الصحية\nمن %@ في ذلك الوقت؟";
 
 // THANK YOU VIEW
-"thank_you.shared_msg" = "إثيوبيا Acesse: http://www.guardioesdasaude.org";
+"thank_you.shared_msg" = "أفعل من جهتي، بدورك أيضا في مكافحة البعوض الزاعجة المصرية #ZikaZero. الوصول: http://www.guardioesdasaude.org";
 "thank_you.title" = "غوادلوبي";
-"thank_you.look_emergency" = "انتبه: Procure a Unidade de Pronto Atendimento mais próxima.";
+"thank_you.look_emergency" = "ملاحظة: ابحث عن وحدة الطوارئ أقرب.";
 "thank_you.whatsapp_not_installed" = "عنوان البريد الإلكتروني قيد الاستخدام بالفعل";
 "thank_you.thanks_shared" = "تطبيق Whatsapp غير مثبت على هذا الجهاز.";
-"thank_you.share_fail" = "السباحة المتزامنة foi possível compartilhar sua participação.";
+"thank_you.share_fail" = "لم نتمكن من تتبع موقعك.";
 "thank_you.thanks_for_information" = "تطبيق مدير الصحة";
-"thank_you.look_emergency_description" = "السباحة المتزامنة deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde.";
+"thank_you.look_emergency_description" = "يجب التأكد من العثور على أقرب مرفق صحي. مواصلة تقديم تقارير يومية كيف صحتك.";
 "thank_you.tell_your_friend" = "ادع أصدقائك للاشتراك في تطبيق مدير الصحة.";
 "thank_you.continue" = "متابعة";
-"thank_you.zika_msg" = "انتبه: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.";
+"thank_you.zika_msg" = "ملاحظة: أبلغوا عن أعراض قد تكون ذات صلة فيروس زيكا. ابحث عن وحدة الطوارئ أقرب.";
 
 // SELECT PARTICIPANT VIEW
-"select_participant.title" = "Participe Agora";
-"select_participant.year_old" = "%ld Anos";
-"select_participant.new_member" = "أكمل كل مرحلة للوصول إلى مراحل أخرى في السباق!o integrante";
+"select_participant.title" = "انضم الآن";
+"select_participant.year_old" = "%ld سنوات";
+"select_participant.new_member" = "نيوزيلندا";
 "select_participant.how_will_participate" = "مجاورة";
 "select_participant.members" = "أبلغ عن الأعراض، وراقب حالات الرعاية الصحية في منطقتك، وتعرف على النصائح والأخبار الصحية.";
 
 // MAP HEALTH VIEW
 "map_health.title" = "مالطا";
-"map_health.btn_info" = "الأعراض هي مجموعة من العلامات المرضية الشائعة لعدد من الأمراض، وتشتمل على: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)";
+"map_health.btn_info" = "الأعراض هي مجموعة من العلامات المرضية الشائعة لعدد من الأمراض، وتشتمل على: \n\nالمصاب بالإسهال (يعاني من الحمى والغثيان أو القيء، فضلاً عن أي من الأعراض التالية: آلام في الجسم أو الصداع) •\n\nجمهورية الدومينيكان •\n\nطفح جلدي (بقع حمراء على الجسم، وأي من هذه الأعراض: الحمى أو آلام في الجسم أو آلام المفاصل أو الصداع أو حكة في العيون أو أحمر أو نزيف) •";
 "map_health.syndromes" = "النوع حقل مطلوب.";
 "map_health.well" = "الصحة";
 "map_health.bad" = "مايو";
@@ -300,34 +302,34 @@
 "map_health.exanthematic" = "تأكد من أنك تؤدي ما عليك القيام به في كفاحنا ضد بعوض الزاعجة المصرية #ZikaZero.";
 "map_health.respiratory" = "جمهورية أفريقيا الوسطى";
 "map_health.diarrheal" = "مصاب بالإسهار";
-"map_health.participations_last_days" = "%d Participações nos últimos dias";
+"map_health.participations_last_days" = "المشاركة في الأيام الأخيرة %d";
 
 // DIARY HEALTH VIEW
-"diary_health.title" = "Diário da saúde";
+"diary_health.title" = "يوميات من الصحة";
 "diary_health.summary" = "جمهورية التشيك";
 "diary_health.participation" = "تابع المشاركة في تطبيق مدير الصحة يوميًا وساعد في تحسين الرعاية الصحية في مجتمعك.";
 "diary_health.well" = "الصحة";
 "diary_health.bad" = "مايو";
 "diary_health.report" = "تسجيل";
 "diary_health.calendar" = "التقويم";
-"diary_health.no_record" = "فنزويلا\nAjude a melhorar a saúde da sua comunidade!";
+"diary_health.no_record" = "كنت لا تزال لا تملك حصصا.\nتساعد على تحسين صحة مجتمعك";
 "diary_health.join_now" = "باراجواي";
 
 // Participants List
-"participant_list.title" = "صحة المسافر Integrante";
+"participant_list.title" = "الاثنين";
 
 // Change Language
-"change_language.confirmation_msg" = "عضو جديد Deseja continuar?";
+"change_language.confirmation_msg" = "يجب إعادة تشغيل التطبيق لتطبيق التغيير اللغة. المتابعة؟";
 "change_language.title" = "الهوكي الأرضي";
 
 // Traveler Health
-"traveler_health.title" = "Saúde do Viajante";
+"traveler_health.title" = "الصحة المسافرين";
 
 // GAME TUTORIAL
 "game_tutorial.next" = "ابن العم";
-"game_tutorial.welcome" = "الصحة-vindo a nossa pista de corrida! \nArraste para saber mais sobre como jogar.";
-"game_tutorial.how_play" = "بنما\nParticipe diariamente do Guardiões\nda Saúde para ganhá-los!";
-"game_tutorial.rota" = "Nossa pista de corrida é formada por\nfases. Conclua cada fase para chegar\nmais longe na corrida!";
-"game_tutorial.fases" = "تحتوي كل مرحلة على لغز.\nComplete-o para passar de fase.";
-"game_tutorial.correct_answer" = "Responda corretamente as perguntas\nsobre saúde para revelar peças.";
-"game_tutorial.collect_pictures" = "Colecione figurinhas dos esportes \nolímpicos após concluir cada fase!";
+"game_tutorial.welcome" = "مرحبا بكم في مضمار السباق لدينا! \nسحب لمعرفة المزيد حول كيفية اللعب.";
+"game_tutorial.how_play" = "للعب، يجب أن يكون لديك نقاط قوة.\nتاريخ حراسة المرمى اليومية\nالصحة للفوز لهم!";
+"game_tutorial.rota" = "يتكون لدينا مسار السباق\nمراحل. استكمال كل مرحلة للحصول على\nالمزيد في السباق!";
+"game_tutorial.fases" = "تحتوي كل مرحلة على اللغز.\nاستكماله لإكمال المستوى.";
+"game_tutorial.correct_answer" = "الإجابة على الأسئلة بشكل صحيح\nالصحة للكشف عن أجزاء.";
+"game_tutorial.collect_pictures" = "جمع بطاقات التجاري الرياضة \nالأولمبية بعد الانتهاء من كل مرحلة";
