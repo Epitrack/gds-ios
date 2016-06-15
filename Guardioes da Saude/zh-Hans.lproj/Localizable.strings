@@ -7,329 +7,329 @@
  */
 
 // CONSTANT MSGs
-"constant.check_connection" = "Por favor verifique sua conexão!";
-"constant.comunication_error" = "Ocorreu um erro de comunicação!";
-"constant.yes" = "Sim";
-"constant.no" = "Não";
-"constant.ok" = "OK";
-"constant.delete" = "Deletar";
-"constant.cancel" = "Cancelar";
-"constant.select" = "Selecionar";
-"constant.no_conection" = "É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!";
+"constant.check_connection" = "隱私權原則";
+"constant.comunication_error" = "謝謝分享 ！";
+"constant.yes" = "性別";
+"constant.no" = "花樣游泳";
+"constant.ok" = "好";
+"constant.delete" = "刪除";
+"constant.cancel" = "取消";
+"constant.select" = "旅行者健康";
+"constant.no_conection" = "你必须先登录才能访问该功能。请检查您的网络！";
 
 // HOME VIEW
-"home.hello" = "Olá, ";
-"home.news" = "Notícias";
-"home.map_health" = "Mapa da Saúde";
-"home.tips_health" = "Dicas de Saúde";
-"home.join_us" = "Participe Agora!";
-"home.diary_health" = "Diário da Saúde";
+"home.hello" = "你好，";
+"home.news" = "我們的賽道有幾個不同階段。";
+"home.map_health" = "馬爾他";
+"home.tips_health" = "健康小貼士";
+"home.join_us" = "巴拉圭";
+"home.diary_health" = "健康雜誌";
 
 // ENTER VIEW
-"enter.email" = "E-mail";
-"enter.password" = "Senha";
-"enter.sign_in" = "Entrar";
-"enter.forgot_password" = "Esqueceu a senha?";
-"enter.email_required" = "E-mail e/ou senha não informados.";
-"enter.invalid_email_password" = "Não foi possível fazer o login. E-mail e/ou senha inválidos.";
+"enter.email" = "電子郵件";
+"enter.password" = "選擇膚色/種族";
+"enter.sign_in" = "登錄";
+"enter.forgot_password" = "忘記密碼？";
+"enter.email_required" = "电子邮件和/或密码不知情。";
+"enter.invalid_email_password" = "无法登录。电子邮件和/或密码无效。";
 
 // SELECT TYPE LOGIN VIEW
-"select_type_login.quick_access" = "Entre rapidamente com:";
-"select_type_login.or_email" = "Ou use seu e-mail:";
-"select_type_login.facebook_error" = "Erro ao logar com o facebook.";
-"select_type_login.operation_canceled" = "Operação cancelada.";
-"select_type_login.twitter_error" = "Erro ao logar com o Twitter.";
-"select_type_login.user_not_found" = "Cadastro não encontrado!";
+"select_type_login.quick_access" = "快速登錄:";
+"select_type_login.or_email" = "或使用您的电子邮件：";
+"select_type_login.facebook_error" = "错误登录与 Facebook。";
+"select_type_login.operation_canceled" = "充血的雙眼";
+"select_type_login.twitter_error" = "未登錄 Twitter。";
+"select_type_login.user_not_found" = "找不到註冊信息 ！";
 
 // TUTORIAL VIEW
-"tutorial.tutorial" = "Tutorial";
-"tutorial.welcome" = "Bem-vindo!";
-"tutorial.preparing" = "Preparado para se tornar um Guardião da Saúde?";
-"tutorial.sign_up" = "Cadastre-se";
-"tutorial.sign_in" = "Entrar";
-"tutorial.how_is_your_health" = "Como está sua saúde?";
-"tutorial.check_your_symptoms" = "Marque na lista os sintomas que você apresenta.";
-"tutorial.health_map" = "Mapa da Saúde";
-"tutorial.health_map_description" = "Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
-"tutorial.health_tips" = "Dicas de Saúde";
-"tutorial.health_tips_description" = "Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.";
+"tutorial.tutorial" = "特立尼達和多巴哥";
+"tutorial.welcome" = "歡迎 ！";
+"tutorial.preparing" = "葡萄牙";
+"tutorial.sign_up" = "登錄";
+"tutorial.sign_in" = "登錄";
+"tutorial.how_is_your_health" = "您的健康如何？";
+"tutorial.check_your_symptoms" = "3 月";
+"tutorial.health_map" = "馬爾他";
+"tutorial.health_map_description" = "跟蹤您的鄰居或在特定位置的疾病。";
+"tutorial.health_tips" = "健康小貼士";
+"tutorial.health_tips_description" = "疫苗";
 
 // SELECT TYPE CREATE VIEW
-"select_type_create.quick_access" = "Entre rapidamente com:";
+"select_type_create.quick_access" = "快速登錄:";
 "select_type_create.or_email" = "Ou use seu e-mail:";
 
 // MODAL PRIV VIEW
-"modal_priv.safe_description" = "Nós nos preocupamos com a sua privacidade";
-"modal_priv.description" = "• Sua participação é voluntária e anônima\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Para maiores informações, consulte os Termos de Uso";
+"modal_priv.safe_description" = "媳婦";
+"modal_priv.description" = "• 您的参与是自愿和匿名\n \n• 提供将被使用的数据，以促进一个健康的社区\n\n• 欲了解更多信息，请参阅使用条款";
 
 // FORGOT PASSWORD VIEW
-"forgot_password.label" = "Digite seu e-mail e verifique a sua caixa de entrada.";
-"forgot_password.email" = "E-mail";
-"forgot_password.send" = "Enviar";
-"forgot_password.success" = "E-mail enviado com sucesso.";
-"forgot_password.user_not_found" = "E-mail não encontrado!";
+"forgot_password.label" = "輸入您的電子郵件地址，並檢查您的收件匣。";
+"forgot_password.email" = "電子郵件";
+"forgot_password.send" = "發送";
+"forgot_password.success" = "成功發送電子郵件。";
+"forgot_password.user_not_found" = "找不到電子郵件。";
 
 // SIGN UP VIEW
-"sign_up.lb_email" = "E-mail:";
-"sign_up.tx_email" = "E-mail";
-"sign_up.lb_password" = "Senha:";
-"sign_up.tx_password" = "Senha";
-"sign_up.confirm_password" = "Repetir Senha";
-"sign_up.next" = "Próximo";
-"sign_up.email_required" = "E-mail é um campo obrigatório";
-"sign_up.password_required" = "Senha é um campo obrigatório";
-"sign_up.min_char_password" = "Senha precisa ter pelo menos 6 caracteres";
-"sign_up.invalid_password_confirmation" = "A senha e a confirmação devem ser iguais";
-"sign_up.invalid_email" = "E-mail inválido";
+"sign_up.lb_email" = "電子郵件:";
+"sign_up.tx_email" = "電子郵件";
+"sign_up.lb_password" = "選擇膚色/種族:";
+"sign_up.tx_password" = "選擇膚色/種族";
+"sign_up.confirm_password" = "每月參與清單";
+"sign_up.next" = "表親";
+"sign_up.email_required" = "電子郵件是必填欄位";
+"sign_up.password_required" = "當前密碼";
+"sign_up.min_char_password" = "當前密碼是必填欄位";
+"sign_up.invalid_password_confirmation" = "密码和确认必须相等";
+"sign_up.invalid_email" = "无效的电子邮件";
 
 // SIGN UP DETAILS VIEW
-"sign_up_details.lb_email" = "E-mail:";
-"sign_up_details.tx_email" = "E-mail";
-"sign_up_details.lb_nick" = "Apelido:";
-"sign_up_details.tx_nick" = "Apelido";
-"sign_up_details.lb_dob" = "Data de Nascimento:";
-"sign_up_details.tx_dob_placeholder" = "Selecione sua data de Nascimento.";
-"sign_up_details.lb_gender" = "Sexo";
-"sign_up_details.tx_gender" = "Selecione seu sexo";
-"sign_up_details.lb_race" = "Cor/Raça:";
-"sign_up_details.tx_race" = "Selecione sua Cor/Raça";
-"sign_up_details.sign_up" = "Cadastre-se";
-"sign_up_details.email_required" = "E-mail é um campo obrigatório";
-"sign_up_details.nick_required" = "Apelido é um campo obrigatório";
+"sign_up_details.lb_email" = "電子郵件:";
+"sign_up_details.tx_email" = "電子郵件";
+"sign_up_details.lb_nick" = "昵稱:";
+"sign_up_details.tx_nick" = "昵稱";
+"sign_up_details.lb_dob" = "出生日期:";
+"sign_up_details.tx_dob_placeholder" = "选择您的出生日期。";
+"sign_up_details.lb_gender" = "塞爾維亞";
+"sign_up_details.tx_gender" = "選擇國家/地區";
+"sign_up_details.lb_race" = "膚色/種族:";
+"sign_up_details.tx_race" = "選擇親屬";
+"sign_up_details.sign_up" = "登錄";
+"sign_up_details.email_required" = "電子郵件是必填欄位";
+"sign_up_details.nick_required" = "昵稱是必填欄位";
 "sign_up_details.dob_required" = "Data de nascimento é um campo obrigatório";
-"sign_up_details.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
-"sign_up_details.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
+"sign_up_details.min_dob" = "主使用者的最低年齡限制是 13 歲。";
+"sign_up_details.max_dob" = "主使用者的最高年齡限制是 120 歲。";
 "sign_up_details.gender_required" = "Sexo é um campo obrigatório";
-"sign_up_details.race_required" = "Cor/Raça é um campo obrigatório";
-"sign_up_details.email_already_used" = "O e-mail usado já está em uso";
-"sign_up_details.without_localization" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
-"sign_up_details.lb_country" = "País de origem:";
-"sign_up_details.tx_country" = "Selecione o país";
-"sign_up_details.lb_state" = "Estado:";
-"sign_up_details.tx_state" = "Selecione o estado";
-"sign_up_details.lb_perfil" = "Perfil:";
-"sign_up_details.tx_perfil" = "Selecione seu perfil";
-"sign_up_details.perfil_athlete" = "Atleta/Delegação";
-"sign_up_details.perfil_worker" = "Trabalhador/Voluntário";
-"sign_up_details.perfil_fan" = "Fã/Espectador";
-"sign_up_details.perfil_required" = "Perfil é um campo obrigatório";
+"sign_up_details.race_required" = "膚色/種族是必填欄位";
+"sign_up_details.email_already_used" = "重新打開應用程式以應用語言設置中的更改。";
+"sign_up_details.without_localization" = "我们无法获取您的位置。验证服务是在设备上启用。";
+"sign_up_details.lb_country" = "繼父:";
+"sign_up_details.tx_country" = "選擇";
+"sign_up_details.lb_state" = "状态：";
+"sign_up_details.tx_state" = "选择国家";
+"sign_up_details.lb_perfil" = "積極參與疾病預防。:";
+"sign_up_details.tx_perfil" = "选择您的个人资料";
+"sign_up_details.perfil_athlete" = "运动员/代表团";
+"sign_up_details.perfil_worker" = "工人/志愿者";
+"sign_up_details.perfil_fan" = "风扇/观众";
+"sign_up_details.perfil_required" = "简介为必填字段";
 
 // MENU VIEW
-"menu.home" = "Início";
-"menu.profile" = "Perfil";
-"menu.about" = "Sobre";
-"menu.help" = "Ajuda";
-"menu.sign_out" = "Sair";
-"menu.are_you_sure_sign_out" = "Tem certeza que deseja sair do aplicativo?";
-"menu.idiom" = "Idioma";
+"menu.home" = "成為一名衛士并幫助改進社區醫療服務。";
+"menu.profile" = "積極參與疾病預防。";
+"menu.about" = "聖馬丁";
+"menu.help" = "幫助";
+"menu.sign_out" = "星期六";
+"menu.are_you_sure_sign_out" = "你确定要退出应用程序？";
+"menu.idiom" = "曲棍球";
 
 // About VIEW
-"about.title" = "Sobre";
+"about.title" = "聖馬丁";
 
 // HELP VIEW
-"help.tutorial" = "Tutorial";
-"help.terms" = "Termos e Políticas";
-"help.options" = "Opções";
-"help.contact_us" = "Entre em contato";
-"help.report_bug" = "Relatar erros no aplicativo";
+"help.tutorial" = "特立尼達和多巴哥";
+"help.terms" = "網球";
+"help.options" = "您好";
+"help.contact_us" = "連絡";
+"help.report_bug" = "在应用程序中报告错误";
 
 // TERMS VIEW
-"terms.title" = "Termos e Políticas";
-"terms.facebook_error" = "Erro ao logar com o Facebook.";
-"terms.operation_canceled" = "Operação cancelada.";
-"terms.social_network_in_using" = "Cadastro realizado anteriormente com essa rede social.";
-"terms.sociel_network_error" = "Não foi possível realizar o cadastro. Tente novamente em alguns minutos!";
-"terms.decline" = "Não aceito";
-"terms.i_agree" = "Aceito";
+"terms.title" = "網球";
+"terms.facebook_error" = "未登錄 Facebook。";
+"terms.operation_canceled" = "充血的雙眼";
+"terms.social_network_in_using" = "找到了上次在這個社交網路上的註冊信息。";
+"terms.sociel_network_error" = "这是不可能进行的顺序。请在数分钟后再试！";
+"terms.decline" = "納米比亞";
+"terms.i_agree" = "已接受";
 
 // REPORT VIEW
-"report.title" = "Relatar Erros";
-"report.required_filds" = "Assunto e/ou mensagem não informados.";
-"report.success" = "Mensagem enviada com sucesso. Obrigado!";
-"report.error" = "Não foi possível enviar o e-mail. Tente novamente em alguns minutos.";
-"report.decription" = "Caso você tenha encontrado alguma dificuldade em utilizar o Guardiões da Saúde, preencha o formulário abaixo e envie sua mensagem para nossa equipe de especialistas.";
-"report.subject" = "Assunto";
-"report.describe_problem" = "Descreva o problema:";
-"report.send" = "Enviar";
+"report.title" = "重置密碼";
+"report.required_filds" = "未提供主題和/或消息。";
+"report.success" = "邮件成功发送。谢谢大家！";
+"report.error" = "无法发送电子邮件。请在数分钟后再试。";
+"report.decription" = "如果在使用健康衛士應用程式時有任何麻煩，請填寫下面的表單並將其發送給我們的專家團隊。";
+"report.subject" = "主題";
+"report.describe_problem" = "描述問題:";
+"report.send" = "發送";
 
 // PROFILE LIST VIEW
-"profile_list.title" = "Perfil";
-"profile_list.delete_confirmation" = "Deseja remover o perfil definitivamente? Essa operação é irreversível.";
-"profile_list.add_new_member" = "Adicionar Integrante";
-"profile_list.select_perfil" = "Selecione qual dos perfis abaixo quer editar.";
+"profile_list.title" = "積極參與疾病預防。";
+"profile_list.delete_confirmation" = "要永久删除的配置文件？这种操作是不可逆的。";
+"profile_list.add_new_member" = "添加成員";
+"profile_list.select_perfil" = "選擇語言";
 
 // PROFILE FORM VIEW
-"profile_form.lb_nick" = "Apelido:";
-"profile_form.placeholder_nick" = "Apelido";
-"profile_form.lb_race" = "Cor/Raça:";
-"profile_form.lb_dob" = "Data de nascimento:";
-"profile_form.title_dob" = "Data de nascimento";
-"profile_form.msg_dob" = "Selecione sua data de nascimento.";
-"profile_form.lb_gender" = "Sexo:";
-"profile_form.placeholder_gender" = "Selecione seu sexo";
-"profile_form.placeholder_race" = "Selecione seu Cor/Raça";
-"profile_form.lb_relationship" = "Parentesco:";
-"profile_form.placeholder_relationship" = "Selecione o parentesco";
-"profile_form.lb_email" = "E-mail:";
+"profile_form.lb_nick" = "昵稱:";
+"profile_form.placeholder_nick" = "昵稱";
+"profile_form.lb_race" = "膚色/種族:";
+"profile_form.lb_dob" = "出生日期：";
+"profile_form.title_dob" = "出生日期";
+"profile_form.msg_dob" = "选择您的出生日期。";
+"profile_form.lb_gender" = "塞爾維亞:";
+"profile_form.placeholder_gender" = "選擇國家/地區";
+"profile_form.placeholder_race" = "選擇親屬";
+"profile_form.lb_relationship" = "我們非常感謝您的參與 ！:";
+"profile_form.placeholder_relationship" = "選擇成員";
+"profile_form.lb_email" = "電子郵件:";
 "profile_form.placeholder_email" = "email@exemplo.com.br";
-"profile_form.change_password" = "Redefinir senha";
-"profile_form.save" = "Salvar";
-"profile_form.edit_profile" = "Editar Perfil";
-"profile_form.add_member" = "Adicionar Integrante";
-"profile_form.fill_in_fields" = "Preencha todos os campos do formulário.";
-"profile_form.invalid_dob" = "A data de aniversário deve ser menor que hoje.";
-"profile_form.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
-"profile_form.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
-"profile_form.invalid_email" = "E-mail inválido!";
-"profile_form.success" = "Operação realizada com sucesso.";
-"profile_form.fail" = "Ocorreu um problema de comunicação, por favor verifique sua conexão!";
-"profile_form.delete" = "Excluir Conta";
+"profile_form.change_password" = "星期四";
+"profile_form.save" = "聖皮爾和密克隆";
+"profile_form.edit_profile" = "編輯設定檔";
+"profile_form.add_member" = "添加成員";
+"profile_form.fill_in_fields" = "波多黎各";
+"profile_form.invalid_dob" = "出生日期必須早于當前日期。";
+"profile_form.min_dob" = "主使用者的最低年齡限制是 13 歲。";
+"profile_form.max_dob" = "主使用者的最高年齡限制是 120 歲。";
+"profile_form.invalid_email" = "無效電子郵件。";
+"profile_form.success" = "阿曼";
+"profile_form.fail" = "更新使用者時出錯。";
+"profile_form.delete" = "疹病";
 "profile_form.or" = "OU";
-"profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardiões da Saúde, será necessário um novo cadastro.\nDeseja continuar?";
-"profile_form.modal_delete_title" = "Desativar sua conta";
-"profile_form.modal_delete_body" = "Sua conta foi desativada com sucesso";
+"profile_form.delete_confirmation" = "当您删除自己的帐户，所有成员将被删除。要重新进入健康的守护者，一个新的注册是必需的。\n是否继续？";
+"profile_form.modal_delete_title" = "停用您的帳戶";
+"profile_form.modal_delete_body" = "您的帐户已经成功禁用";
 
 // SELECT AVATAR VIEW
-"select_avatar.title" = "Editar Foto";
-"select_avatar.check_galery_permission" = "Verifique as permissões da galeria 'Fotos'.";
-"select_avatar.no_galery_permission" = "O Aplicativo não tem permissão para gravar a foto.";
+"select_avatar.title" = "編輯照片";
+"select_avatar.check_galery_permission" = "查閱您附近的衛生保健條件";
+"select_avatar.no_galery_permission" = "11 月";
 
 // CHANGE PASSWORD VIEW
-"chang_password.title" = "Redefinir senha";
-"chang_password.success" = "Senha atualizada com sucesso.";
-"chang_password.fail" = "Ocorreu um erro ao atualizar o usuário.";
-"chang_password.password_isnt_equals" = "As senhas não estão iguais.";
-"chang_password.min_char_password" = "A senha deve ter mais de 6 caracteres.";
+"chang_password.title" = "星期四";
+"chang_password.success" = "密碼";
+"chang_password.fail" = "謝謝分享資訊 ！";
+"chang_password.password_isnt_equals" = "密碼不相同。";
+"chang_password.min_char_password" = "密碼必須超過 6 個字元。";
 "chang_password.placeholder_password" = "Nova senha";
-"chang_password.placeholder_password_confirmation" = "Redefinir senha";
-"chang_password.save" = "Redefinir senha";
-"chang_password.current_password" = "Senha Atual";
-"chang_password.new_password" = "Nova Senha";
-"chang_password.repeat_password" = "Repetir Senha";
-"chang_password.current_password_required" = "Senha atual é um campo obrigatório.";
-"chang_password.current_password_different" = "Senha atual incorreta.";
+"chang_password.placeholder_password_confirmation" = "星期四";
+"chang_password.save" = "星期四";
+"chang_password.current_password" = "選擇出生日期";
+"chang_password.new_password" = "11 月";
+"chang_password.repeat_password" = "每月參與清單";
+"chang_password.current_password_required" = "選擇成員";
+"chang_password.current_password_different" = "塞內加爾";
 
 // NOTICE VIEW
-"notice.title" = "Notícias";
-"notice.open_notice_confirmation" = "Deseja abrir o link da notícia?";
+"notice.title" = "我們的賽道有幾個不同階段。";
+"notice.open_notice_confirmation" = "打開新聞文章連結？";
 
 // HEALTH TIPS VIEW
-"health_tips.title" = "Dicas de Saúde";
-"health_tips.zika" = "Dengue, Zika e Chikungunya";
-"health_tips.emergency" = "UPAs";
-"health_tips.vacines" = "Vacinas";
-"health_tips.phones" = "Telefones Úteis";
-"health_tips.pharmacy" = "Farmácias";
-"health_tips.basic_care" = "Cuidados Básicos";
-"health_tips.prevention" = "Prevenção";
-"health_tips.safe_sex" = "Pratique sexo de forma segura";
+"health_tips.title" = "健康小貼士";
+"health_tips.zika" = "登革熱、寨卡 和基孔肯亞病";
+"health_tips.emergency" = "方便的袖珍型健康地圖。";
+"health_tips.vacines" = "UPA";
+"health_tips.phones" = "泰國";
+"health_tips.pharmacy" = "聯繫我們";
+"health_tips.basic_care" = "基本護理";
+"health_tips.prevention" = "填寫下面的所有欄位以添加新成員。";
+"health_tips.safe_sex" = "請填寫下面表格中的所有欄位。";
 "health_tips.health_traveler" = "Saúde do Viajante";
 
 // PHARMACY VIEW
-"pharmacy.title" = "Farmácias";
-"pharmacy.some_isnt_showing" = "Algumas farmácias podem não ser exibidas no mapa.";
+"pharmacy.title" = "聯繫我們";
+"pharmacy.some_isnt_showing" = "有些藥店可能不在地圖中顯示。";
 
 // BASIC CARE VIEW
-"basic_care.title" = "Cuidados Básicos";
+"basic_care.title" = "基本護理";
 
 // PREVENTION VIEW
-"prevention.title" = "Prevenção";
+"prevention.title" = "填寫下面的所有欄位以添加新成員。";
 
 // EMERGENCY VIEW
-"emergency.title" = "UPAs";
+"emergency.title" = "方便的袖珍型健康地圖。";
 
 // VACINE VIEW
-"vacine.title" = "Vacinas";
+"vacine.title" = "UPA";
 
 // PHONES VIEW
-"phones.title" = "Telefones Úteis";
-"phones.table_title" = "Telefones Úteis";
+"phones.title" = "泰國";
+"phones.table_title" = "泰國";
 
 // ZIKA VIEW
-"zika.title" = "Dengue, Zika e Chikungunya";
+"zika.title" = "登革熱、寨卡 和基孔肯亞病";
 
 // LIST SYMPTOMS VIEW
-"list_symptoms.title" = "Participe Agora";
-"list_symptoms.placeholder_country" = "Selecione o país";
-"list_symptoms.country_required" = "Por favor, selecione o  pais!";
-"list_symptoms.allow_send" = "Deseja registrar suas informações?";
-"list_symptoms.check_a_symptom" = "Escolha algum sintoma antes de confirmar.";
-"list_symptoms.symptoms" = "Sintomas";
-"list_symptoms.others" = "Outros";
-"list_symptoms.had_contact_symptom" = "Tive contato com alguém com um desses sintomas";
-"list_symptoms.find_a_health_service" = "Procurei um serviço de saúde";
-"list_symptoms.traveled" = "Estive fora do Brasil nos últimos 14 dias";
-"list_symptoms.confirm" = "Confirmar";
-"list_symptoms.select_symptoms" = "Marque abaixo o que você está sentindo neste momento:";
+"list_symptoms.title" = "现在加入";
+"list_symptoms.placeholder_country" = "選擇";
+"list_symptoms.country_required" = "请选择国家！";
+"list_symptoms.allow_send" = "註冊您的資訊？";
+"list_symptoms.check_a_symptom" = "選擇症狀并確認。";
+"list_symptoms.symptoms" = "綜合征";
+"list_symptoms.others" = "或使用您的電子郵件註冊";
+"list_symptoms.had_contact_symptom" = "東帝汶";
+"list_symptoms.find_a_health_service" = "預防";
+"list_symptoms.traveled" = "好成績！";
+"list_symptoms.confirm" = "確認";
+"list_symptoms.select_symptoms" = "记下你当时的感受：";
 
 // SELECT STATE VIEW
-"select_state.title" = "Participe Agora";
-"select_state.without_location" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
-"select_state.how_is_your_health" = "Como está sua saúde nesse  momento?";
-"select_state.well" = "Bem";
-"select_state.bad" = "Mal";
-"select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Mal\" seja selecionada.";
-"select_state.how_is_he_she" = "Como está a saúde\nde %@ nesse momento?";
+"select_state.title" = "现在加入";
+"select_state.without_location" = "我们无法获取您的位置。验证服务是在设备上启用。";
+"select_state.how_is_your_health" = "如何为你的健康呢？";
+"select_state.well" = "福祉";
+"select_state.bad" = "5 月";
+"select_state.next_step" = "一些迹象和症状会在下一屏幕，如果选择了邪恶的显示。";
+"select_state.how_is_he_she" = "由于健康\n当时 ％@？";
 
 // THANK YOU VIEW
-"thank_you.shared_msg" = "Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org";
-"thank_you.title" = "Guardiões da Saúde";
-"thank_you.look_emergency" = "Atenção: Procure a Unidade de Pronto Atendimento mais próxima.";
-"thank_you.whatsapp_not_installed" = "O Whatsapp não está instalado neste dispositivo.";
-"thank_you.thanks_shared" = "Obrigado por compartilhar!";
-"thank_you.share_fail" = "Não foi possível compartilhar sua participação.";
-"thank_you.thanks_for_information" = "Obrigado pela informação!";
-"thank_you.look_emergency_description" = "Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde.";
-"thank_you.tell_your_friend" = "Convide seus amigos para serem Guardiões da Saúde.";
-"thank_you.continue" = "Continuar";
-"thank_you.zika_msg" = "Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.";
+"thank_you.shared_msg" = "我做我的一部分，做你的一部分也打击蚊子埃及伊蚊 #ZikaZero。访问：http://www.guardioesdasaude.org";
+"thank_you.title" = "瓜達羅佩";
+"thank_you.look_emergency" = "注意：查找冲锋接近。";
+"thank_you.whatsapp_not_installed" = "電子郵件地址已在使用中";
+"thank_you.thanks_shared" = "Whatsapp 未安裝在此設備上。";
+"thank_you.share_fail" = "我們不能跟蹤您所在的位置。";
+"thank_you.thanks_for_information" = "健康衛士";
+"thank_you.look_emergency_description" = "一定要找到最近的卫生设施。继续报告每天是怎么你的健康。";
+"thank_you.tell_your_friend" = "邀請您的朋友成為健康衛士。";
+"thank_you.continue" = "繼續";
+"thank_you.zika_msg" = "注意：所报告的症状可能与寨卡病毒。寻找冲锋接近。";
 
 // SELECT PARTICIPANT VIEW
-"select_participant.title" = "Participe Agora";
-"select_participant.year_old" = "%ld Anos";
-"select_participant.new_member" = "Novo integrante";
-"select_participant.how_will_participate" = "Quem vai participar?";
-"select_participant.members" = "Integrantes do domicílio";
+"select_participant.title" = "现在加入";
+"select_participant.year_old" = "%ld 岁月";
+"select_participant.new_member" = "紐西蘭";
+"select_participant.how_will_participate" = "附近";
+"select_participant.members" = "報告症狀，監測您所在地區的醫療條件并閱讀健康提示和新聞。";
 
 // MAP HEALTH VIEW
-"map_health.title" = "Mapa da Saúde";
-"map_health.btn_info" = "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)";
-"map_health.syndromes" = "Síndromes";
-"map_health.well" = "Bem";
-"map_health.bad" = "Mal";
-"map_health.participations" = "Participações";
-"map_health.general" = "Geral";
-"map_health.exanthematic" = "Exantemática";
-"map_health.respiratory" = "Respiratória";
-"map_health.diarrheal" = "Diarreica";
-"map_health.participations_last_days" = "%d Participações nos últimos dias";
+"map_health.title" = "馬爾他";
+"map_health.btn_info" = "校正子是临床表现的公共集的若干疾病，包括： \n\n• 腹泻（发热，恶心或呕吐，任何这些症状：在体内或头痛痛）\n\n• 呼吸道（发热，加上所有的这些症状：咳嗽，喉痛或对人体呼吸或红色斑点急促）\n\n• 皮疹（在身上的红色斑点，而这些症状：发热或全身酸痛或关节痛或头痛，或痒或眼睛发红或出血）";
+"map_health.syndromes" = "性別是必填欄位。";
+"map_health.well" = "福祉";
+"map_health.bad" = "5 月";
+"map_health.participations" = "每天繼續參加健康衛士，幫助改進社區醫療服務。";
+"map_health.general" = "女婿";
+"map_health.exanthematic" = "請確保您在我們與埃及伊蚊 #ZikaZero 的戰斗中發揮作用。";
+"map_health.respiratory" = "中非共和國";
+"map_health.diarrheal" = "腹瀉型";
+"map_health.participations_last_days" = "%d 参加最后的日子";
 
 // DIARY HEALTH VIEW
-"diary_health.title" = "Diário da saúde";
-"diary_health.summary" = "Resumo";
-"diary_health.participation" = "Participações";
-"diary_health.well" = "Bem";
-"diary_health.bad" = "Mal";
-"diary_health.report" = "Relatórios";
-"diary_health.calendar" = "Calendário";
-"diary_health.no_record" = "Você ainda não possui participações.\nAjude a melhorar a saúde da sua comunidade!";
-"diary_health.join_now" = "Participe Agora!";
+"diary_health.title" = "健康日记";
+"diary_health.summary" = "捷克共和國";
+"diary_health.participation" = "每天繼續參加健康衛士，幫助改進社區醫療服務。";
+"diary_health.well" = "福祉";
+"diary_health.bad" = "5 月";
+"diary_health.report" = "雷吉斯特";
+"diary_health.calendar" = "日曆";
+"diary_health.no_record" = "它没有利益。\帮助提高你的社区的健康！";
+"diary_health.join_now" = "巴拉圭";
 
 // Participants List
-"participant_list.title" = "Selecionar Integrante";
+"participant_list.title" = "星期一";
 
 // Change Language
-"change_language.confirmation_msg" = "O aplicativo precisa ser reiniciado para aplicar a mudança de idioma. Deseja continuar?";
-"change_language.title" = "Idioma";
+"change_language.confirmation_msg" = "应用程序必须重新启动以应用语言更改。是否继续？";
+"change_language.title" = "曲棍球";
 
 // Traveler Health
-"traveler_health.title" = "Saúde do Viajante";
+"traveler_health.title" = "游客健康";
 
 // GAME TUTORIAL
-"game_tutorial.next" = "Próximo";
-"game_tutorial.welcome" = "Bem-vindo a nossa pista de corrida! \nArraste para saber mais sobre como jogar.";
-"game_tutorial.how_play" = "Para jogar, é preciso ter pontos de energia.\nParticipe diariamente do Guardiões\nda Saúde para ganhá-los!";
-"game_tutorial.rota" = "Nossa pista de corrida é formada por\nfases. Conclua cada fase para chegar\nmais longe na corrida!";
-"game_tutorial.fases" = "Cada fase contém um quebra-cabeça.\nComplete-o para passar de fase.";
-"game_tutorial.correct_answer" = "Responda corretamente as perguntas\nsobre saúde para revelar peças.";
-"game_tutorial.collect_pictures" = "Colecione figurinhas dos esportes \nolímpicos após concluir cada fase!";
+"game_tutorial.next" = "表親";
+"game_tutorial.welcome" = "欢迎来到我们的赛道！拖到了解如何发挥。";
+"game_tutorial.how_play" = "玩，你必须拥有电源点。直接参与健康守护者赢他们！";
+"game_tutorial.rota" = "我们的赛道由阶段。完成每个阶段在比赛中拿到\ n更多远！";
+"game_tutorial.fases" = "每个阶段都包含一个谜。完成它来完成一个级别。";
+"game_tutorial.correct_answer" = "回答正确对健康的问题，揭示部分。";
+"game_tutorial.collect_pictures" = "收集奥林匹克运动的雕像完成各个阶段之后！";
