@@ -2,334 +2,334 @@
  Localizable.strings
  
  
- Created by Douglas Queiroz on 2/2/16.
+ Created by Dилиglas Queiroz on 2/2/16.
  
  */
 
 // CONSTANT MSGs
-"constant.check_connection" = "Por favor verifique sua conexão!";
-"constant.comunication_error" = "Ocorreu um erro de comunicação!";
-"constant.yes" = "Sim";
-"constant.no" = "Não";
-"constant.ok" = "OK";
-"constant.delete" = "Deletar";
-"constant.cancel" = "Cancelar";
-"constant.select" = "Selecionar";
-"constant.no_conection" = "É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!";
+"constant.check_connection" = "Пожалуйста, проверьте соединение!";
+"constant.comunication_error" = "Произошла ошибка связи!";
+"constant.yes" = "Да";
+"constant.no" = "Нет";
+"constant.ok" = "ОК";
+"constant.delete" = "Удалить";
+"constant.cancel" = "Отменить";
+"constant.select" = "Выбрать";
+"constant.no_conection" = "Вы должны быть подключены для того, чтобы иметь доступ к этой функции. Пожалуйста, проверьте сеть!";
 
 // HOME VIEW
-"home.hello" = "Olá, ";
-"home.news" = "Notícias";
-"home.map_health" = "Mapa da Saúde";
-"home.tips_health" = "Dicas de Saúde";
-"home.join_us" = "Participe Agora!";
-"home.diary_health" = "Diário da Saúde";
+"home.hello" = "Здравствуйте, ";
+"home.news" = "Новости";
+"home.map_health" = "Карта здоровья";
+"home.tips_health" = "Советы для Здоровья";
+"home.join_us" = "Присоединяйтесь к нам сейчас!";
+"home.diary_health" = "Дневник Здоровья";
 
 // ENTER VIEW
-"enter.email" = "E-mail";
-"enter.password" = "Senha";
-"enter.sign_in" = "Entrar";
-"enter.forgot_password" = "Esqueceu a senha?";
-"enter.email_required" = "E-mail e/ou senha não informados.";
-"enter.invalid_email_password" = "Não foi possível fazer o login. E-mail e/ou senha inválidos.";
+"enter.email" = "Электронная почта";
+"enter.password" = "Пароль";
+"enter.sign_in" = "Войти";
+"enter.forgot_password" = "Забыли пароль?";
+"enter.email_required" = "Электронная почта e/или senha não informados.";
+"enter.invalid_email_password" = "Невозможно войти в систему. Электронная почта и / или неверный пароль.";
 
 // SELECT TYPE LOGIN VIEW
-"select_type_login.quick_access" = "Entre rapidamente com:";
-"select_type_login.or_email" = "Ou use seu e-mail:";
+"select_type_login.quick_access" = "Войдите быстро с:";
+"select_type_login.or_email" = "Или использовать адрес:";
 "select_type_login.facebook_error" = "Erro ao logar com o facebook.";
-"select_type_login.operation_canceled" = "Operação cancelada.";
-"select_type_login.twitter_error" = "Erro ao logar com o Twitter.";
-"select_type_login.user_not_found" = "Cadastro não encontrado!";
+"select_type_login.operation_canceled" = "Операция отменена.";
+"select_type_login.twitter_error" = "Ошибка входа через Twitter.";
+"select_type_login.user_not_fилиnd" = "Регистрация не найдена!";
 
 // TUTORIAL VIEW
-"tutorial.tutorial" = "Tutorial";
-"tutorial.welcome" = "Bem-vindo!";
-"tutorial.preparing" = "Preparado para se tornar um Guardião da Saúde?";
-"tutorial.sign_up" = "Cadastre-se";
-"tutorial.sign_in" = "Entrar";
-"tutorial.how_is_your_health" = "Como está sua saúde?";
-"tutorial.check_your_symptoms" = "Marque na lista os sintomas que você apresenta.";
-"tutorial.health_map" = "Mapa da Saúde";
-"tutorial.health_map_description" = "Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
-"tutorial.health_tips" = "Dicas de Saúde";
-"tutorial.health_tips_description" = "Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.";
+"tutorial.tutorial" = "Обучающий материал ";
+"tutorial.welcome" = "Добро пожаловать!";
+"tutorial.preparing" = "Готов стать Стражем Здоровья?";
+"tutorial.sign_up" = "Регистрация";
+"tutorial.sign_in" = "Войти";
+"tutorial.how_is_yилиr_health" = "Как ваше здоровье?";
+"tutorial.check_yилиr_symptoms" = "Проверьте список своих симптомов.";
+"tutorial.health_map" = "Карта здоровья";
+"tutorial.health_map_description" = "Следите за случаями заболеваний в вашем районе или в определенном месте.";
+"tutorial.health_tips" = "Советы для Здоровья";
+"tutorial.health_tips_description" = "Посмотрите, как предотвратить заболевания, какие Пункты Скорой Помощи находятся ближе к вам, а также полезные телефоны для экстренных случаев.";
 
 // SELECT TYPE CREATE VIEW
-"select_type_create.quick_access" = "Entre rapidamente com:";
-"select_type_create.or_email" = "Ou use seu e-mail:";
+"select_type_create.quick_access" = "Войдите быстро с:";
+"select_type_create.or_email" = "Или использовать адрес:";
 
 // MODAL PRIV VIEW
-"modal_priv.safe_description" = "Nós nos preocupamos com a sua privacidade";
-"modal_priv.description" = "• Sua participação é voluntária e anônima\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Para maiores informações, consulte os Termos de Uso";
+"modal_priv.safe_description" = "Мы заботимся о вашей конфиденциальности";
+"modal_priv.description" = "• Ваше участие является добровольным и анонимным\n \n• Данные, представленные будут использованы для содействия более здорового сообщества\n\n• Для получения дополнительной информации смотрите Условия Использования";
 
 // FORGOT PASSWORD VIEW
-"forgot_password.label" = "Digite seu e-mail e verifique a sua caixa de entrada.";
-"forgot_password.email" = "E-mail";
-"forgot_password.send" = "Enviar";
-"forgot_password.success" = "E-mail enviado com sucesso.";
-"forgot_password.user_not_found" = "E-mail não encontrado!";
+"forgot_password.label" = "Введите адрес электронной почты и проверьте свой почтовый ящик.";
+"forgot_password.email" = "Электронная почта";
+"forgot_password.send" = "Отправить ";
+"forgot_password.success" = "Письмо по электронной почте успешно отправлено.";
+"forgot_password.user_not_fилиnd" = "Электронная почта не найдена!";
 
 // SIGN UP VIEW
-"sign_up.lb_email" = "E-mail:";
-"sign_up.tx_email" = "E-mail";
-"sign_up.lb_password" = "Senha:";
-"sign_up.tx_password" = "Senha";
-"sign_up.confirm_password" = "Repetir Senha";
-"sign_up.next" = "Próximo";
-"sign_up.email_required" = "E-mail é um campo obrigatório";
-"sign_up.password_required" = "Senha é um campo obrigatório";
-"sign_up.min_char_password" = "Senha precisa ter pelo menos 6 caracteres";
-"sign_up.invalid_password_confirmation" = "A senha e a confirmação devem ser iguais";
-"sign_up.invalid_email" = "E-mail inválido";
+"sign_up.lb_email" = "Электронная почта:";
+"sign_up.tx_email" = "Электронная почта";
+"sign_up.lb_password" = "Пароль:";
+"sign_up.tx_password" = "Пароль";
+"sign_up.confirm_password" = "Повторить Пароль";
+"sign_up.next" = "Ближайшее";
+"sign_up.email_required" = "Электронная почта является обязательной ячейкой ";
+"sign_up.password_required" = "Пароль является обязательной ячейкой ";
+"sign_up.min_char_password" = "Пароль должен содержать не менее 6 символов";
+"sign_up.invalid_password_confirmation" = "Пароль и подтверждение должны быть равны";
+"sign_up.invalid_email" = "Invalid Электронная почта";
 
 // SIGN UP DETAILS VIEW
-"sign_up_details.lb_email" = "E-mail:";
-"sign_up_details.tx_email" = "E-mail";
-"sign_up_details.lb_nick" = "Apelido:";
-"sign_up_details.tx_nick" = "Apelido";
-"sign_up_details.lb_dob" = "Data de Nascimento:";
-"sign_up_details.tx_dob_placeholder" = "Selecione sua data de Nascimento.";
-"sign_up_details.lb_gender" = "Sexo";
-"sign_up_details.tx_gender" = "Selecione seu sexo";
-"sign_up_details.lb_race" = "Cor/Raça:";
-"sign_up_details.tx_race" = "Selecione sua Cor/Raça";
-"sign_up_details.sign_up" = "Cadastre-se";
-"sign_up_details.email_required" = "E-mail é um campo obrigatório";
-"sign_up_details.nick_required" = "Apelido é um campo obrigatório";
+"sign_up_details.lb_email" = "Электронная почта:";
+"sign_up_details.tx_email" = "Электронная почта";
+"sign_up_details.lb_nick" = "Фамилия:";
+"sign_up_details.tx_nick" = "Фамилия";
+"sign_up_details.lb_dob" = "Дата Рождения:";
+"sign_up_details.tx_dob_placeholder" = "Выберите дату рождения.";
+"sign_up_details.lb_gender" = "Пол";
+"sign_up_details.tx_gender" = "Выберите пол";
+"sign_up_details.lb_race" = "Цвет Кожи / Раса:";
+"sign_up_details.tx_race" = "Выберите Цвет Кожи / Расу";
+"sign_up_details.sign_up" = "Регистрация";
+"sign_up_details.email_required" = "Электронная почта является обязательной ячейкой ";
+"sign_up_details.nick_required" = "Фамилия является обязательной ячейкой";
 "sign_up_details.dob_required" = "Data de nascimento é um campo obrigatório";
-"sign_up_details.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
-"sign_up_details.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
-"sign_up_details.gender_required" = "Sexo é um campo obrigatório";
-"sign_up_details.race_required" = "Cor/Raça é um campo obrigatório";
-"sign_up_details.email_already_used" = "O e-mail usado já está em uso";
-"sign_up_details.without_localization" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
-"sign_up_details.lb_country" = "País de origem:";
-"sign_up_details.tx_country" = "Selecione o país";
-"sign_up_details.lb_state" = "Estado:";
-"sign_up_details.tx_state" = "Selecione o estado";
-"sign_up_details.lb_perfil" = "Perfil:";
-"sign_up_details.tx_perfil" = "Selecione seu perfil";
-"sign_up_details.perfil_athlete" = "Atleta/Delegação";
-"sign_up_details.perfil_worker" = "Trabalhador/Voluntário";
-"sign_up_details.perfil_fan" = "Fã/Espectador";
-"sign_up_details.perfil_required" = "Perfil é um campo obrigatório";
+"sign_up_details.min_dob" = "Минимальный возраст для основного пользователя - 13 лет.";
+"sign_up_details.max_dob" = "Максимальный возраст для основного пользователя - 120 лет.";
+"sign_up_details.gender_required" = "Секс является обязательным полем";
+"sign_up_details.race_required" = "Цвет Кожи / Раса является обязательной ячейкой";
+"sign_up_details.email_already_used" = "Электронная почта уже используется";
+"sign_up_details.withилиt_localization" = "Нет estamos conseguindo obter sua localização. Убедитесь в том, что на устройстве все службы включены.";
+"sign_up_details.lb_cилиntry" = "Страна происхождения:";
+"sign_up_details.tx_cилиntry" = "Выберите страну";
+"sign_up_details.lb_state" = "Состояние:";
+"sign_up_details.tx_state" = "Выбрать Регион";
+"sign_up_details.lb_perfil" = "Профиль:";
+"sign_up_details.tx_perfil" = "Выберите свой профиль";
+"sign_up_details.perfil_athlete" = "Спортсмен / делегация";
+"sign_up_details.perfil_worker" = "Рабочий / Доброволец";
+"sign_up_details.perfil_fan" = "Вентилятор / Зритель";
+"sign_up_details.perfil_required" = "Профиль является обязательным полем";
 
 // MENU VIEW
-"menu.home" = "Início";
-"menu.profile" = "Perfil";
-"menu.about" = "Sobre";
-"menu.help" = "Ajuda";
-"menu.sign_out" = "Sair";
-"menu.are_you_sure_sign_out" = "Tem certeza que deseja sair do aplicativo?";
-"menu.idiom" = "Idioma";
+"menu.home" = "Главная";
+"menu.profile" = "Профиль";
+"menu.abилиt" = "О";
+"menu.help" = "Помощь";
+"menu.sign_илиt" = "Выход";
+"menu.are_yили_sure_sign_илиt" = "Вы уверены, что хотите выйти из приложения?";
+"menu.idiom" = "Язык";
 
-// About VIEW
-"about.title" = "Sobre";
+// Abилиt VIEW
+"abилиt.title" = "О";
 
 // HELP VIEW
-"help.tutorial" = "Tutorial";
-"help.terms" = "Termos e Políticas";
-"help.options" = "Opções";
-"help.contact_us" = "Entre em contato";
-"help.report_bug" = "Relatar erros no aplicativo";
+"help.tutorial" = "Обучающий материал ";
+"help.terms" = "Правила и Условия";
+"help.options" = "Параметры";
+"help.contact_us" = "Свяжитесь ";
+"help.report_bug" = "Выдаст сообщение об ошибках в приложении";
 
 // TERMS VIEW
-"terms.title" = "Termos e Políticas";
-"terms.facebook_error" = "Erro ao logar com o Facebook.";
-"terms.operation_canceled" = "Operação cancelada.";
-"terms.social_network_in_using" = "Cadastro realizado anteriormente com essa rede social.";
-"terms.sociel_network_error" = "Não foi possível realizar o cadastro. Tente novamente em alguns minutos!";
-"terms.decline" = "Não aceito";
-"terms.i_agree" = "Aceito";
+"terms.title" = "Правила и Условия";
+"terms.facebook_error" = "Ошибка входа через Facebook.";
+"terms.operation_canceled" = "Операция отменена.";
+"terms.social_network_in_using" = "Ранее заполненный кадастр с этой социальной сети.";
+"terms.sociel_network_error" = "Не удалось выполнить заказ. Пожалуйста, повторите попытку через несколько минут!";
+"terms.decline" = "Не принимаю";
+"terms.i_agree" = "Принимаю";
 
 // REPORT VIEW
-"report.title" = "Relatar Erros";
-"report.required_filds" = "Assunto e/ou mensagem não informados.";
-"report.success" = "Mensagem enviada com sucesso. Obrigado!";
-"report.error" = "Não foi possível enviar o e-mail. Tente novamente em alguns minutos.";
-"report.decription" = "Caso você tenha encontrado alguma dificuldade em utilizar o Guardiões da Saúde, preencha o formulário abaixo e envie sua mensagem para nossa equipe de especialistas.";
-"report.subject" = "Assunto";
-"report.describe_problem" = "Descreva o problema:";
-"report.send" = "Enviar";
+"report.title" = "Отчёт об Ошибках";
+"report.required_filds" = "Тема и/или сообщение не были указаны.";
+"report.success" = "Сообщение успешно отправлено. Спасибо!";
+"report.error" = "Не удалось отправить электронное письмо. Пожалуйста, повторите попытку через несколько минут.";
+"report.decription" = "Если вы обнаружили какие-либо трудности с использованием Стражи здоровья, заполните форму ниже и отправить сообщение в нашу команду экспертов.";
+"report.subject" = "Тема";
+"report.describe_problem" = "Опишите проблему:";
+"report.send" = "Отправить ";
 
 // PROFILE LIST VIEW
-"profile_list.title" = "Perfil";
-"profile_list.delete_confirmation" = "Deseja remover o perfil definitivamente? Essa operação é irreversível.";
-"profile_list.add_new_member" = "Adicionar Integrante";
-"profile_list.select_perfil" = "Selecione qual dos perfis abaixo quer editar.";
+"profile_list.title" = "Профиль";
+"profile_list.delete_confirmation" = "Вы хотите навсегда удалить профиль? Эта операция необратима";
+"profile_list.add_new_member" = "Добавить Участника";
+"profile_list.select_perfil" = "Выберите, какой из профилей ниже хотите редактировать.";
 
 // PROFILE FORM VIEW
-"profile_form.lb_nick" = "Apelido:";
-"profile_form.placeholder_nick" = "Apelido";
-"profile_form.lb_race" = "Cor/Raça:";
-"profile_form.lb_dob" = "Data de nascimento:";
-"profile_form.title_dob" = "Data de nascimento";
-"profile_form.msg_dob" = "Selecione sua data de nascimento.";
-"profile_form.lb_gender" = "Sexo:";
-"profile_form.placeholder_gender" = "Selecione seu sexo";
-"profile_form.placeholder_race" = "Selecione seu Cor/Raça";
-"profile_form.lb_relationship" = "Parentesco:";
-"profile_form.placeholder_relationship" = "Selecione o parentesco";
-"profile_form.lb_email" = "E-mail:";
+"profile_form.lb_nick" = "Фамилия:";
+"profile_form.placeholder_nick" = "Фамилия";
+"profile_form.lb_race" = "Цвет Кожи / Раса:";
+"profile_form.lb_dob" = "День рождения:";
+"profile_form.title_dob" = "День рождения";
+"profile_form.msg_dob" = "Выберите дату рождения.";
+"profile_form.lb_gender" = "Пол:";
+"profile_form.placeholder_gender" = "Выберите пол";
+"profile_form.placeholder_race" = "Selecione seu Цвет Кожи / Раса";
+"profile_form.lb_relationship" = "Родство:";
+"profile_form.placeholder_relationship" = "Выберите родственные связи";
+"profile_form.lb_email" = "Электронная почта:";
 "profile_form.placeholder_email" = "email@exemplo.com.br";
-"profile_form.change_password" = "Redefinir senha";
-"profile_form.save" = "Salvar";
-"profile_form.edit_profile" = "Editar Perfil";
-"profile_form.add_member" = "Adicionar Integrante";
-"profile_form.fill_in_fields" = "Preencha todos os campos do formulário.";
-"profile_form.invalid_dob" = "A data de aniversário deve ser menor que hoje.";
-"profile_form.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
-"profile_form.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
-"profile_form.invalid_email" = "E-mail inválido!";
-"profile_form.success" = "Operação realizada com sucesso.";
-"profile_form.fail" = "Ocorreu um problema de comunicação, por favor verifique sua conexão!";
-"profile_form.delete" = "Excluir Conta";
-"profile_form.or" = "OU";
-"profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardiões da Saúde, será necessário um novo cadastro.\nDeseja continuar?";
-"profile_form.modal_delete_title" = "Desativar sua conta";
-"profile_form.modal_delete_body" = "Sua conta foi desativada com sucesso";
+"profile_form.change_password" = "Восстановление Пароля";
+"profile_form.save" = "Сохранить";
+"profile_form.edit_profile" = "Изменить Профиль";
+"profile_form.add_member" = "Добавить Участника";
+"profile_form.fill_in_fields" = "Заполните все ячейки формы.";
+"profile_form.invalid_dob" = "Дата рождения должна предшествовать сегодняшнему дню.";
+"profile_form.min_dob" = "Минимальный возраст для основного пользователя - 13 лет.";
+"profile_form.max_dob" = "Максимальный возраст для основного пользователя - 120 лет.";
+"profile_form.invalid_email" = "Не верно указана электронная почта!";
+"profile_form.success" = "Операция выполнена успешно.";
+"profile_form.fail" = "Произошла проблема связи, пожалуйста, проверьте соединение!";
+"profile_form.delete" = "Удалить Аккаунт";
+"profile_form.or" = "ИЛИ";
+"profile_form.delete_confirmation" = "При удалении учетной записи, все члены будут удалены. Для повторного доступа Стражи здоровья, будет требоваться новая регистрация. \n Продолжить?";
+"profile_form.modal_delete_title" = "Отключить свой аккаунт";
+"profile_form.modal_delete_body" = "Ваш аккаунт был успешно отключен";
 
 // SELECT AVATAR VIEW
-"select_avatar.title" = "Editar Foto";
-"select_avatar.check_galery_permission" = "Verifique as permissões da galeria 'Fotos'.";
-"select_avatar.no_galery_permission" = "O Aplicativo não tem permissão para gravar a foto.";
+"select_avatar.title" = "Изменить Фотографию";
+"select_avatar.check_galery_permission" = "Проверьте права доступа к галерее «Фотографии».";
+"select_avatar.no_galery_permission" = "Приложение не имеет право сохранить изображение.";
 
 // CHANGE PASSWORD VIEW
-"chang_password.title" = "Redefinir senha";
-"chang_password.success" = "Senha atualizada com sucesso.";
-"chang_password.fail" = "Ocorreu um erro ao atualizar o usuário.";
-"chang_password.password_isnt_equals" = "As senhas não estão iguais.";
-"chang_password.min_char_password" = "A senha deve ter mais de 6 caracteres.";
-"chang_password.placeholder_password" = "Nova senha";
-"chang_password.placeholder_password_confirmation" = "Redefinir senha";
-"chang_password.save" = "Redefinir senha";
-"chang_password.current_password" = "Senha Atual";
-"chang_password.new_password" = "Nova Senha";
-"chang_password.repeat_password" = "Repetir Senha";
-"chang_password.current_password_required" = "Senha atual é um campo obrigatório.";
-"chang_password.current_password_different" = "Senha atual incorreta.";
+"chang_password.title" = "Восстановление Пароля";
+"chang_password.success" = "Пароль успешно обновлен.";
+"chang_password.fail" = "При обновлении пользователя произошла ошибка.";
+"chang_password.password_isnt_equals" = "Пароли не совпадают.";
+"chang_password.min_char_password" = "Пароль должен быть больше 6 символов.";
+"chang_password.placeholder_password" = "Ноябa senha";
+"chang_password.placeholder_password_confirmation" = "Восстановление Пароля";
+"chang_password.save" = "Восстановление Пароля";
+"chang_password.current_password" = "Текущий Пароль";
+"chang_password.new_password" = "Новый пароль";
+"chang_password.repeat_password" = "Повторить Пароль";
+"chang_password.current_password_required" = "Текущий пароль является обязательной ячейкой.";
+"chang_password.current_password_different" = "Неверный пароль.";
 
 // NOTICE VIEW
-"notice.title" = "Notícias";
-"notice.open_notice_confirmation" = "Deseja abrir o link da notícia?";
+"notice.title" = "Новости";
+"notice.open_notice_confirmation" = "Чтобы открыть ссылку новостей?";
 
 // HEALTH TIPS VIEW
-"health_tips.title" = "Dicas de Saúde";
-"health_tips.zika" = "Dengue, Zika e Chikungunya";
-"health_tips.emergency" = "UPAs";
-"health_tips.vacines" = "Vacinas";
-"health_tips.phones" = "Telefones Úteis";
-"health_tips.pharmacy" = "Farmácias";
-"health_tips.basic_care" = "Cuidados Básicos";
-"health_tips.prevention" = "Prevenção";
-"health_tips.safe_sex" = "Pratique sexo de forma segura";
+"health_tips.title" = "Советы для Здоровья";
+"health_tips.zika" = "Денге, Чикунгунья и Зика";
+"health_tips.emergency" = "Пункты Скорой Помощи";
+"health_tips.vacines" = "Прививки";
+"health_tips.phones" = "Полезные Телефоны";
+"health_tips.pharmacy" = "Аптеки";
+"health_tips.basic_care" = "Общий Уход";
+"health_tips.prevention" = "Профилактика ";
+"health_tips.safe_sex" = "Практикуйте безопасный секс ";
 "health_tips.health_traveler" = "Saúde do Viajante";
 
 // PHARMACY VIEW
-"pharmacy.title" = "Farmácias";
-"pharmacy.some_isnt_showing" = "Algumas farmácias podem não ser exibidas no mapa.";
+"pharmacy.title" = "Аптеки";
+"pharmacy.some_isnt_showing" = "Некоторые аптеки могут не отображаться на карте.";
 
 // BASIC CARE VIEW
-"basic_care.title" = "Cuidados Básicos";
+"basic_care.title" = "Общий Уход";
 
 // PREVENTION VIEW
-"prevention.title" = "Prevenção";
+"prevention.title" = "Профилактика ";
 
 // EMERGENCY VIEW
-"emergency.title" = "UPAs";
+"emergency.title" = "Пункты Скорой Помощи";
 
 // VACINE VIEW
-"vacine.title" = "Vacinas";
+"vacine.title" = "Прививки";
 
 // PHONES VIEW
-"phones.title" = "Telefones Úteis";
-"phones.table_title" = "Telefones Úteis";
+"phones.title" = "Полезные Телефоны";
+"phones.table_title" = "Полезные Телефоны";
 
 // ZIKA VIEW
-"zika.title" = "Dengue, Zika e Chikungunya";
+"zika.title" = "Денге, Чикунгунья и Зика";
 
 // LIST SYMPTOMS VIEW
-"list_symptoms.title" = "Participe Agora";
-"list_symptoms.placeholder_country" = "Selecione o país";
-"list_symptoms.country_required" = "Por favor, selecione o  pais!";
-"list_symptoms.allow_send" = "Deseja registrar suas informações?";
-"list_symptoms.check_a_symptom" = "Escolha algum sintoma antes de confirmar.";
-"list_symptoms.symptoms" = "Sintomas";
-"list_symptoms.others" = "Outros";
-"list_symptoms.had_contact_symptom" = "Tive contato com alguém com um desses sintomas";
-"list_symptoms.find_a_health_service" = "Procurei um serviço de saúde";
-"list_symptoms.traveled" = "Estive fora do Brasil nos últimos 14 dias";
-"list_symptoms.confirm" = "Confirmar";
-"list_symptoms.select_symptoms" = "Marque abaixo o que você está sentindo neste momento:";
+"list_symptoms.title" = "Participe Авгra";
+"list_symptoms.placeholder_cилиntry" = "Выберите страну";
+"list_symptoms.cилиntry_required" = "Por favor, selecione o  pais!";
+"list_symptoms.allow_send" = "Вы хотите зарегистрировать свою информацию?";
+"list_symptoms.check_a_symptom" = "Выберите какие-либо симптомы, прежде чем подтвердить.";
+"list_symptoms.symptoms" = "Симптомы";
+"list_symptoms.others" = "Другие ";
+"list_symptoms.had_contact_symptom" = "У меня был контакт с кем-то у кого есть эти симптомы";
+"list_symptoms.find_a_health_service" = "Найти Медицинское Обслуживание";
+"list_symptoms.traveled" = "Я не был в Бразилии в течение последних 14 дней";
+"list_symptoms.confirm" = "Подтвердите";
+"list_symptoms.select_symptoms" = "Мореque abaixo o que você está sentindo neste momento:";
 
 // SELECT STATE VIEW
-"select_state.title" = "Participe Agora";
-"select_state.without_location" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
-"select_state.how_is_your_health" = "Como está sua saúde nesse  momento?";
-"select_state.well" = "Bem";
-"select_state.bad" = "Mal";
-"select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Mal\" seja selecionada.";
+"select_state.title" = "Participe Авгra";
+"select_state.withилиt_location" = "Нет estamos conseguindo obter sua localização. Убедитесь в том, что на устройстве все службы включены.";
+"select_state.how_is_yилиr_health" = "Como está sua saúde nesse  momento?";
+"select_state.well" = "Хорошо";
+"select_state.bad" = "Плохо";
+"select_state.next_step" = "Некоторые признаки и симптомы будут отображаться на следующем экране, если выбран зло.";
 "select_state.how_is_he_she" = "Como está a saúde\nde %@ nesse momento?";
 
 // THANK YOU VIEW
-"thank_you.shared_msg" = "Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org";
-"thank_you.title" = "Guardiões da Saúde";
-"thank_you.look_emergency" = "Atenção: Procure a Unidade de Pronto Atendimento mais próxima.";
-"thank_you.whatsapp_not_installed" = "O Whatsapp não está instalado neste dispositivo.";
-"thank_you.thanks_shared" = "Obrigado por compartilhar!";
-"thank_you.share_fail" = "Não foi possível compartilhar sua participação.";
-"thank_you.thanks_for_information" = "Obrigado pela informação!";
-"thank_you.look_emergency_description" = "Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde.";
-"thank_you.tell_your_friend" = "Convide seus amigos para serem Guardiões da Saúde.";
-"thank_you.continue" = "Continuar";
-"thank_you.zika_msg" = "Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.";
+"thank_yили.shared_msg" = "Я делаю это делаю, участвуй тоже в борьбе с комарами Aedes aegypti #ZikaZero. Доступ: http://www.guardioesdasaude.org";
+"thank_yили.title" = "Стражи Здоровья";
+"thank_yили.look_emergency" = "Внимание: Найдите ближайший Пункт Скорой Помощи.";
+"thank_yили.whatsapp_not_installed" = "На этом устройстве Whatsapp не установлен.";
+"thank_yили.thanks_shared" = "Спасибо за то, что поделились!";
+"thank_yили.share_fail" = "Не удалось поделиться вашим участием.";
+"thank_yили.thanks_for_information" = "Спасибо за информацию!";
+"thank_yили.look_emergency_description" = "Нет deixe de procurar o serviço de saúde mais próximo. Продолжайте сообщать ежедневно, о вашем самочувствии.";
+"thank_yили.tell_yилиr_friend" = "Пригласите своих друзей стать Стражами Здоровья.";
+"thank_yили.continue" = "Продолжить";
+"thank_yили.zika_msg" = "Внимание: Указанные симптомы могут быть связаны с вирусом Зика. Найдите ближайший Пункт Скорой Помощи.";
 
 // SELECT PARTICIPANT VIEW
-"select_participant.title" = "Participe Agora";
+"select_participant.title" = "Participe Авгra";
 "select_participant.year_old" = "%ld Anos";
-"select_participant.new_member" = "Novo integrante";
-"select_participant.how_will_participate" = "Quem vai participar?";
-"select_participant.members" = "Integrantes do domicílio";
+"select_participant.new_member" = "Новый участник";
+"select_participant.how_will_participate" = "Кто будет участвовать?";
+"select_participant.members" = "Члены семьи";
 
 // MAP HEALTH VIEW
-"map_health.title" = "Mapa da Saúde";
-"map_health.btn_info" = "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)";
-"map_health.syndromes" = "Síndromes";
-"map_health.well" = "Bem";
-"map_health.bad" = "Mal";
-"map_health.participations" = "Participações";
-"map_health.general" = "Geral";
-"map_health.exanthematic" = "Exantemática";
-"map_health.respiratory" = "Respiratória";
-"map_health.diarrheal" = "Diarreica";
-"map_health.participations_last_days" = "%d Participações nos últimos dias";
+"map_health.title" = "Карта здоровья";
+"map_health.btn_info" = "Синдромы являются общим набором клинических проявлений ряда заболеваний, в том числе: \n\n• Диарейных (лихорадка и тошнота или рвота, и любой из этих симптомов: боли в теле или головная боль) \ п \ п • Дыхательная (лихорадка, плюс любой из этих симптомов: кашель или боль в горле или затрудненное дыхание или красных пятен на корпус)\n\n• Сыпь (красные пятна на теле, и любой из этих симптомов: лихорадка или боли в теле или боли в суставах или головная боль или зуд или покраснение глаз или кровотечение)";
+"map_health.syndromes" = "Синдромы";
+"map_health.well" = "Хорошо";
+"map_health.bad" = "Плохо";
+"map_health.participations" = "Участие ";
+"map_health.general" = "Общий";
+"map_health.exanthematic" = "Сыпь";
+"map_health.respiratory" = "Респираторный";
+"map_health.diarrheal" = "Вызывающий диарею";
+"map_health.participations_last_days" = "%d Участие в последние дни";
 
 // DIARY HEALTH VIEW
-"diary_health.title" = "Diário da saúde";
-"diary_health.summary" = "Resumo";
-"diary_health.participation" = "Participações";
-"diary_health.well" = "Bem";
-"diary_health.bad" = "Mal";
-"diary_health.report" = "Relatórios";
-"diary_health.calendar" = "Calendário";
-"diary_health.no_record" = "Você ainda não possui participações.\nAjude a melhorar a saúde da sua comunidade!";
-"diary_health.join_now" = "Participe Agora!";
+"diary_health.title" = "Дневник здоровья";
+"diary_health.summary" = "Выводы";
+"diasry_health.participation" = "Участие ";
+"diary_health.well" = "Хорошо";
+"diary_health.bad" = "Плохо";
+"diary_health.report" = "Отчеты";
+"diary_health.calendar" = "Календарь";
+"diary_health.no_record" = "Вы до сих пор не участвовали.\nПомогите улучшить здоровье вашего сообщества!";
+"diary_health.join_now" = "Присоединяйтесь к нам сейчас!";
 
 // Participants List
-"participant_list.title" = "Selecionar Integrante";
+"participant_list.title" = "Выберите Участника";
 
 // Change Language
-"change_language.confirmation_msg" = "O aplicativo precisa ser reiniciado para aplicar a mudança de idioma. Deseja continuar?";
-"change_language.title" = "Idioma";
+"change_language.confirmation_msg" = "Приложение должно быть перезапущено, чтобы поменять язык. Вы хотите продолжить?";
+"change_language.title" = "Язык";
 
 // Traveler Health
-"traveler_health.title" = "Saúde do Viajante";
+"traveler_health.title" = "Здоровье туристов";
 
 // GAME TUTORIAL
-"game_tutorial.next" = "Próximo";
-"game_tutorial.welcome" = "Bem-vindo a nossa pista de corrida! \nArraste para saber mais sobre como jogar.";
-"game_tutorial.how_play" = "Para jogar, é preciso ter pontos de energia.\nParticipe diariamente do Guardiões\nda Saúde para ganhá-los!";
-"game_tutorial.rota" = "Nossa pista de corrida é formada por\nfases. Conclua cada fase para chegar\nmais longe na corrida!";
-"game_tutorial.fases" = "Cada fase contém um quebra-cabeça.\nComplete-o para passar de fase.";
-"game_tutorial.correct_answer" = "Responda corretamente as perguntas\nsobre saúde para revelar peças.";
-"game_tutorial.collect_pictures" = "Colecione figurinhas dos esportes \nolímpicos após concluir cada fase!";
+"game_tutorial.next" = "Ближайшее";
+"game_tutorial.welcome" = "Добро пожаловать на наш ипподром! \nПеретащите, чтобы узнать больше о том, как играть.";
+"game_tutorial.how_play" = "Чтобы играть, вы должны иметь заряд энергии.\nРегистрация ежедневно Хранители\nЗдоровье, чтобы выиграть их!";
+"game_tutorial.rota" = "Наша автодром формируется\nфаз. Завершите каждый этап, чтобы получить \nдальше в гонке!";
+"game_tutorial.fases" = "Каждая фаза содержит задачку. \nЗавершите, чтобы перейти к другому этапу.";
+"game_tutorial.correct_answer" = "правильно ответить на вопросы\nздоровья, чтобы выявить детали.";
+"game_tutorial.collect_pictures" = "Сбор спортивных торговые карты \nОлимпийский после завершения каждого этапа!";
