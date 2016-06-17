@@ -17,6 +17,7 @@
 #import "Requester.h"
 #import "ViewUtil.h"
 #import "TravelerHealthViewController.h"
+#import "Guardioes_da_Saude-Swift.h"
 #import <Google/Analytics.h>
 
 @interface HealthTipsViewController ()
@@ -164,5 +165,10 @@
     TravelerHealthViewController *travelerHealthView = [[TravelerHealthViewController alloc] init];
     
     [self.navigationController pushViewController:travelerHealthView animated:YES];
+}
+
+- (IBAction)btnSafeSex:(id)sender {
+    SafeSexViewController *safeSex = [[SafeSexViewController alloc] init];
+    [self.navigationController pushViewController:safeSex animated:true];
 }
 @end

@@ -472,6 +472,8 @@
 		CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* LocationUtil.m */; };
 		CB520C101D144440003A6A71 /* TrophiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB520C0E1D144440003A6A71 /* TrophiesCell.swift */; };
 		CB520C111D144440003A6A71 /* TrophiesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB520C0F1D144440003A6A71 /* TrophiesCell.xib */; };
+		CB520C141D14943D003A6A71 /* SafeSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB520C121D14943D003A6A71 /* SafeSexViewController.swift */; };
+		CB520C151D14943D003A6A71 /* SafeSexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB520C131D14943D003A6A71 /* SafeSexViewController.xib */; };
 		CB8065A01CC7EA3600CD2F7A /* GameTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80659E1CC7EA3600CD2F7A /* GameTutorialViewController.swift */; };
 		CB8065A11CC7EA3600CD2F7A /* GameTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB80659F1CC7EA3600CD2F7A /* GameTutorialViewController.xib */; };
 		CB8065E91CCAC68F00CD2F7A /* GameTutorialItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */; };
@@ -1080,6 +1082,8 @@
 		CB4E686F1C39B48700563FB7 /* LocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtil.m; sourceTree = "<group>"; };
 		CB520C0E1D144440003A6A71 /* TrophiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrophiesCell.swift; path = CellTable/TrophiesCell.swift; sourceTree = "<group>"; };
 		CB520C0F1D144440003A6A71 /* TrophiesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrophiesCell.xib; path = CellTable/TrophiesCell.xib; sourceTree = "<group>"; };
+		CB520C121D14943D003A6A71 /* SafeSexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeSexViewController.swift; sourceTree = "<group>"; };
+		CB520C131D14943D003A6A71 /* SafeSexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafeSexViewController.xib; sourceTree = "<group>"; };
 		CB80659E1CC7EA3600CD2F7A /* GameTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTutorialViewController.swift; path = game/GameTutorialViewController.swift; sourceTree = "<group>"; };
 		CB80659F1CC7EA3600CD2F7A /* GameTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameTutorialViewController.xib; path = game/GameTutorialViewController.xib; sourceTree = "<group>"; };
 		CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTutorialItemViewController.swift; path = game/GameTutorialItemViewController.swift; sourceTree = "<group>"; };
@@ -1325,6 +1329,8 @@
 				CB08AE371CBEBEAC00A2FB3F /* TravelerHealthViewController.h */,
 				CB08AE381CBEBEAC00A2FB3F /* TravelerHealthViewController.m */,
 				CB08AE391CBEBEAC00A2FB3F /* TravelerHealthViewController.xib */,
+				CB520C121D14943D003A6A71 /* SafeSexViewController.swift */,
+				CB520C131D14943D003A6A71 /* SafeSexViewController.xib */,
 			);
 			name = Tips;
 			sourceTree = "<group>";
@@ -2142,6 +2148,7 @@
 				52E7274F1BEA93B800B46945 /* fab_location.png in Resources */,
 				52EBA7531C11DD0E0019E1FA /* buttonTwitterDesable@2x.png in Resources */,
 				CB362B371C7B48DA00BE4F23 /* icon_about_default.png in Resources */,
+				CB520C151D14943D003A6A71 /* SafeSexViewController.xib in Resources */,
 				52E727A81BEA93B800B46945 /* icon_question@3x.png in Resources */,
 				52E727451BEA93B800B46945 /* button_google@3x.png in Resources */,
 				52E7273E1BEA93B800B46945 /* button_enter@2x.png in Resources */,
@@ -2585,6 +2592,7 @@
 				529BE1E21BF8C68B00692EEC /* ReportViewController.m in Sources */,
 				529BE1E81BF9053D00692EEC /* Notice.m in Sources */,
 				CB0F7DCA1CB3F59900C381C7 /* LocalizationSystem.m in Sources */,
+				CB520C141D14943D003A6A71 /* SafeSexViewController.swift in Sources */,
 				2548B9DF1BDE76380004E00F /* SelectParticipantViewController.m in Sources */,
 				CBBF75E61CA192060083C85A /* GDSLabel.m in Sources */,
 				AAE38B481BFA713E009CD20B /* SumaryGraph.m in Sources */,

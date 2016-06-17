@@ -18,6 +18,7 @@
 - (IBAction)phones:(id)sender;
 - (IBAction)zika:(id)sender;
 - (IBAction)travelerHealth:(id)sender;
+- (IBAction)btnSafeSex:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextView *txZika;
 @property (weak, nonatomic) IBOutlet UITextView *txEmergency;
