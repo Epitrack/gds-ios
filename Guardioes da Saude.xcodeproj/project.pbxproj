@@ -470,6 +470,8 @@
 		CB362B401C7B490000BE4F23 /* icon_logout_onpress.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B3E1C7B490000BE4F23 /* icon_logout_onpress.png */; };
 		CB4DD1201C6CDD52002855C2 /* img_news.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4DD11F1C6CDD52002855C2 /* img_news.png */; };
 		CB4E68701C39B48700563FB7 /* LocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4E686F1C39B48700563FB7 /* LocationUtil.m */; };
+		CB520C101D144440003A6A71 /* TrophiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB520C0E1D144440003A6A71 /* TrophiesCell.swift */; };
+		CB520C111D144440003A6A71 /* TrophiesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB520C0F1D144440003A6A71 /* TrophiesCell.xib */; };
 		CB8065A01CC7EA3600CD2F7A /* GameTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80659E1CC7EA3600CD2F7A /* GameTutorialViewController.swift */; };
 		CB8065A11CC7EA3600CD2F7A /* GameTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB80659F1CC7EA3600CD2F7A /* GameTutorialViewController.xib */; };
 		CB8065E91CCAC68F00CD2F7A /* GameTutorialItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */; };
@@ -1076,6 +1078,8 @@
 		CB4DD11F1C6CDD52002855C2 /* img_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_news.png; sourceTree = "<group>"; };
 		CB4E686E1C39B48700563FB7 /* LocationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationUtil.h; sourceTree = "<group>"; };
 		CB4E686F1C39B48700563FB7 /* LocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationUtil.m; sourceTree = "<group>"; };
+		CB520C0E1D144440003A6A71 /* TrophiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrophiesCell.swift; path = CellTable/TrophiesCell.swift; sourceTree = "<group>"; };
+		CB520C0F1D144440003A6A71 /* TrophiesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrophiesCell.xib; path = CellTable/TrophiesCell.xib; sourceTree = "<group>"; };
 		CB80659E1CC7EA3600CD2F7A /* GameTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTutorialViewController.swift; path = game/GameTutorialViewController.swift; sourceTree = "<group>"; };
 		CB80659F1CC7EA3600CD2F7A /* GameTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameTutorialViewController.xib; path = game/GameTutorialViewController.xib; sourceTree = "<group>"; };
 		CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTutorialItemViewController.swift; path = game/GameTutorialItemViewController.swift; sourceTree = "<group>"; };
@@ -1927,6 +1931,8 @@
 				CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */,
 				CBDE6B211C80CA82007418FA /* NoticeTableViewCell.m */,
 				CBDE6B221C80CA82007418FA /* NoticeTableViewCell.xib */,
+				CB520C0E1D144440003A6A71 /* TrophiesCell.swift */,
+				CB520C0F1D144440003A6A71 /* TrophiesCell.xib */,
 			);
 			name = CellTables;
 			sourceTree = "<group>";
@@ -2296,6 +2302,7 @@
 				52E727441BEA93B800B46945 /* button_google@2x.png in Resources */,
 				52E727401BEA93B800B46945 /* button_facebook.png in Resources */,
 				52E727981BEA93B800B46945 /* icon_participeagora@2x.png in Resources */,
+				CB520C111D144440003A6A71 /* TrophiesCell.xib in Resources */,
 				52D2BC881BF12EBF007C9C09 /* icon_pin_userlocation@3x.png in Resources */,
 				520EB7131C21EF220054D818 /* buttonEmailDisable.png in Resources */,
 				52E7277A1BEA93B800B46945 /* icon_info_blue@2x.png in Resources */,
@@ -2549,6 +2556,7 @@
 				52E6F06F1C1EFE8F00C88A08 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				CB08AE3A1CBEBEAC00A2FB3F /* TravelerHealthViewController.m in Sources */,
 				525A332B1BED1F8200B62E33 /* MenuViewController.m in Sources */,
+				CB520C101D144440003A6A71 /* TrophiesCell.swift in Sources */,
 				257315C01BCEF07900FDB102 /* HomeViewController.m in Sources */,
 				CB05C73B1CA3316D00B2F0D4 /* GDSTextView.m in Sources */,
 				5256481B1BFCF96100FE64AE /* ProfileFormViewController.m in Sources */,

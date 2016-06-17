@@ -66,15 +66,59 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             [236.0, 1_134.0],
                             [189.0, 1_158.0],
                             [122.0, 1_172.0]]
-
+    let levelNames = ["Arco",
+                      "Atletismo",
+                      "Badminton",
+                      "Basquetebol",
+                      "BMX",
+                      "Boxe",
+                      "Canoagem slalom",
+                      "Canoagem velocidade",
+                      "Ciclismo estrada",
+                      "Ciclismo pista",
+                      "Esgrima",
+                      "Futebol",
+                      "ginastica artistica",
+                      "Golfe",
+                      "Greco",
+                      "Handebol",
+                      "Hipismo adestramento",
+                      "Hipismo CCE",
+                      "Hipismo Saltos",
+                      "Hóquei",
+                      "Judo",
+                      "Levantamento",
+                      "Luta livre",
+                      "Maratonas aquáticas",
+                      "Mountain bike",
+                      "Nado sincronizado",
+                      "Natação",
+                      "Pentatlo",
+                      "Polo Aquático",
+                      "Remo",
+                      "Ritmica",
+                      "Rugby",
+                      "Saltos ornamentais",
+                      "Taekwondo",
+                      "Tenis",
+                      "Tenis de mesa",
+                      "Tiro esportivo",
+                      "Trampolim",
+                      "Triatlo",
+                      "Vela",
+                      "Volei de praia",
+                      "Voleibol"]
     
     @IBOutlet weak var viewPuzze: UIView!
     @IBOutlet weak var txPoint: UILabel!
     @IBOutlet weak var viewRanking: UIView!
     @IBOutlet weak var tableRanking: UITableView!
     @IBOutlet weak var viewRankingParent: UIView!
+    @IBOutlet weak var viewTropheis: UIView!
+    @IBOutlet weak var tableTropheis: UITableView!
     @IBOutlet weak var scrollMap: UIScrollView!
     @IBOutlet weak var imgMap: UIImageView!
+    @IBOutlet weak var lblRankingTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +150,8 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         self.updateEnergyPoint()
+        
+        self.tableTropheis.registerNib(UINib(nibName: "TrophiesCell", bundle: nil), forCellReuseIdentifier: "TrophiesCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,6 +162,9 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(animated: Bool) {
         self.viewRanking.layer.cornerRadius = 15
         self.tableRanking.layer.cornerRadius = 15
+        self.viewRanking.layer.cornerRadius = 15
+        self.tableRanking.layer.cornerRadius = 15
+        
         
         if let _ = self.titleBarImage {
             self.navigationController?.navigationBar.addSubview(self.titleBarImage!)
@@ -185,10 +234,16 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBAction func btnMedalAction(sender: AnyObject) {
         self.playSoundButton()
+        self.viewTropheis.hidden = false
+        self.lblRankingTitle.text = "Meus Troféus"
+        self.showDialogRanking()
     }
     
     @IBAction func btnTrofeuAction(sender: AnyObject) {
         self.playSoundButton()
+        self.viewTropheis.hidden = true
+        self.lblRankingTitle.text = "Ranking Geral"
+        
         if self.rankingList.count == 0 {
             questionRequest.getRanking({HUD.show(.Progress)},
             onSuccess: {rankingList in
@@ -196,33 +251,32 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.rankingList = rankingList
                 self.tableRanking.reloadData()
                 
-                self.viewRankingParent.transform = CGAffineTransformMakeScale(0.1, 0.1)
-                self.viewRankingParent.hidden = false;
-                
-                UIView.animateWithDuration(0.2, animations: { () -> Void in
-                    self.viewRankingParent.transform = CGAffineTransformIdentity
-                    self.viewRankingParent.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
-                }) { (finished: Bool) -> Void in
-                    
-                }
+                self.showDialogRanking()
             }, onError: {error in
                 HUD.hide()
             })
         }else{
-            self.viewRankingParent.transform = CGAffineTransformMakeScale(0.1, 0.1)
-            self.viewRankingParent.hidden = false;
+            self.showDialogRanking()
+        }
+    }
+    
+    func showDialogRanking() {
+        self.viewRanking.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        self.viewRankingParent.hidden = false;
+        
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.viewRanking.transform = CGAffineTransformIdentity
+        }) { (finished: Bool) -> Void in
             
-            UIView.animateWithDuration(0.2, animations: { () -> Void in
-                self.viewRankingParent.transform = CGAffineTransformIdentity
-                self.viewRankingParent.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
-            }) { (finished: Bool) -> Void in
-                
-            }
         }
     }
     
     @IBAction func btnCloseRankingDialogAction(sender: AnyObject) {
-        self.closePopUp(self.viewRankingParent)
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.viewRanking.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        }) { (finished: Bool) -> Void in
+            self.viewRankingParent.hidden = true
+        }
     }
     
     func closePopUp(view: UIView) {
@@ -253,18 +307,37 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.rankingList.count
+        if tableView.isEqual(tableRanking) {
+            return self.rankingList.count
+        }else{
+            return self.user.level - 1
+        }
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cacheId = self.rankingList[indexPath.row].country!
-        var cellView = tableView.dequeueReusableCellWithIdentifier(cacheId)
-        if cellView == nil {
-            cellView = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: cacheId)
-            cellView?.textLabel?.text = cacheId
+        if tableView.isEqual(self.tableRanking){
+            var country = "No name \(indexPath.row)"
+            if let listCountry = self.rankingList[indexPath.row].country{
+                country = listCountry
+            }
+            
+            let cacheId = country
+            
+            var cellView = tableView.dequeueReusableCellWithIdentifier(cacheId)
+            if cellView == nil {
+                cellView = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: cacheId)
+                cellView?.textLabel?.text = cacheId
+            }
+            
+            return cellView!
+        }else{
+            let cellView = tableView.dequeueReusableCellWithIdentifier("TrophiesCell", forIndexPath: indexPath) as! TrophiesCell
+            let image = UIImage(named: "img_lvl\(indexPath.row+1)")!
+            cellView.setInformations(image, description: self.levelNames[indexPath.row])
+            
+            return cellView
         }
-        
-        return cellView!
     }
     @IBAction func btnLevel(sender: UIButton) {
 //        sender.setBackgroundImage(UIImage(named: "ic_map_medal"), forState: UIControlState.Normal)
@@ -333,5 +406,13 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func updateEnergyPoint() {
         self.txPoint.text = "\(user.points) Energias"
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if tableView.isEqual(self.tableTropheis) {
+            return 97
+        }else{
+            return 73.5
+        }
     }
 }
