@@ -61,10 +61,10 @@ class PuzzeViewController: UIViewController {
         self.viewQuestion.addSubview(questionViewCtrl.view)
         self.imgLevel.hidden = true
         
-        self.loadQuestions()
+        self.loadQuestions(nil, onError: nil)
     }
     
-    func loadQuestions() {
+    func loadQuestions(onSuccess: (() -> Void)?, onError: (() -> Void)?) {
         var currentLanguage = NSLocale.preferredLanguages()[0]
         if currentLanguage == "zh-Hans-CN" {
             currentLanguage = "ch"
@@ -78,8 +78,16 @@ class PuzzeViewController: UIViewController {
             }, onSuccess: {questions in
                 HUD.hide()
                 self.questions = questions
+                if let onSuccess = onSuccess{
+                    onSuccess()
+                }
             }, onError: {error in
                 HUD.hide()
+                let alert = ViewUtil.showAlertWithMessage(NSLocalizedString(kMsgConnectionError, comment: ""))
+                self.presentViewController(alert, animated: true, completion: nil)
+                if let onError = onError{
+                    onError()
+                }
         })
     }
     
@@ -147,13 +155,21 @@ class PuzzeViewController: UIViewController {
     }
     
     func showQuestion(part: Int) {
-        
         if user.points == 0 {
             self.showLowEnergyDialog()
             return
         }
         
-        
+        if self.questions.count == 0 {
+            self.loadQuestions({
+                    self.showQuestion(part)
+                }, onError: nil)
+        }else{
+            self.showQuestion(part)
+        }
+    }
+    
+    func showDialogQuestion(part: Int) {
         self.questionViewCtrl.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
         self.viewQuestion.hidden = false;
         

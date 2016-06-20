@@ -271,6 +271,11 @@
 }
 
 - (IBAction)btnEnjoyAction:(id)sender {
+    if (![UserRequester isConnected]) {
+        [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+        return;
+    }
+    
     if (user.isGameTutorailReady) {
         StartViewController *startViewCtrl = [[StartViewController alloc] init];
         [self.navigationController pushViewController:startViewCtrl animated:YES];

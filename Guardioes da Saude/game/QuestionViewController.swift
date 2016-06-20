@@ -89,6 +89,8 @@ class QuestionViewController: UIViewController {
         
         let answer = self.question.alternatives[sender.tag]
         if answer.isCorrect {
+            self.enableButtons(false)
+            
             self.circleLayer.removeAllAnimations();
             self.breakTime = true
             sender.setBackgroundImage(UIImage(named: "btn_correct_answer"), forState: UIControlState.Normal)
@@ -159,11 +161,18 @@ class QuestionViewController: UIViewController {
     }
     
     func resetView() {
+        self.enableButtons(false)
         self.viemCorrectAnswer.hidden = true;
         self.imgBgDialog.image = UIImage(named: "bg_answer")
         self.lbDescription.hidden = false
         self.btnAlternativeOne.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
         self.btnAlternativeTwo.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
         self.btnAlternativeThree.setBackgroundImage(UIImage(named: "btn_question"), forState: UIControlState.Normal)
+    }
+    
+    func enableButtons(enable: Bool) {
+        self.btnAlternativeOne.enabled = enable
+        self.btnAlternativeTwo.enabled = enable
+        self.btnAlternativeThree.enabled = enable
     }
 }
