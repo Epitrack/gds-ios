@@ -79,7 +79,7 @@
                         </mask>
                     </variation>
                     <connections>
-                        <action selector="zika:" destination="-1" eventType="touchUpInside" id="jbQ-iL-Rnx"/>
+                        <action selector="emergency:" destination="-1" eventType="touchUpInside" id="YI4-fP-7hV"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsO-Qz-4ZH">
