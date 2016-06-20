@@ -61,6 +61,18 @@
                      user.hashtag = paramMap[@"hashtags"];
                      user.survey = paramMap[@"surveys"];
                      
+                     if (paramMap[@"answers"]) {
+                         [user setPuzzleMatrizWithResponse:paramMap[@"answers"]];
+                     }
+                     
+                     if (paramMap[@"level"]) {
+                         user.level = [paramMap[@"level"] intValue];
+                     }
+                     
+                     if (paramMap[@"xp"]) {
+                         user.points = [paramMap[@"xp"] intValue];
+                     }
+                     
                      onSuccess(user);
                  }
              
