@@ -112,8 +112,8 @@
         survey.longitude = [NSString stringWithFormat:@"%.8f", longitude];
         survey.isSymptom = @"N";
         
-        if (![user.idHousehold isEqualToString:@""]) {
-            survey.idHousehold = user.idHousehold;
+        if (self.household) {
+            survey.idHousehold = self.household.idUSer;
         }
         
         [surveyRequester createSurvey:survey
@@ -160,6 +160,7 @@
        [CLLocationManager authorizationStatus] != kCLAuthorizationStatusDenied) {
 
         ListSymptomsViewController *listSymptomsViewController = [[ListSymptomsViewController alloc] init];
+        listSymptomsViewController.household = self.household;
         listSymptomsViewController.latitude = latitude;
         listSymptomsViewController.longitude = longitude;
         

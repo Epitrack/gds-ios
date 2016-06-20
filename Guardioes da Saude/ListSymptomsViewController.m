@@ -140,8 +140,8 @@
             [survey setLongitude:[NSString stringWithFormat:@"%.8f" , self.longitude]];
             [survey setTravelLocation:self.txtPais.text];
             [survey setIsSymptom:@"Y"];
-            if (![user.idHousehold isEqualToString:@""] && user.idHousehold  != nil) {
-                [survey setIdHousehold:user.idHousehold];
+            if (self.household) {
+                [survey setIdHousehold: self.household.idUSer];
             }
             
             [surveyRequester createSurvey:survey
