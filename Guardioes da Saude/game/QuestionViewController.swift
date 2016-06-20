@@ -161,7 +161,7 @@ class QuestionViewController: UIViewController {
     }
     
     func resetView() {
-        self.enableButtons(false)
+        self.enableButtons(true)
         self.viemCorrectAnswer.hidden = true;
         self.imgBgDialog.image = UIImage(named: "bg_answer")
         self.lbDescription.hidden = false
