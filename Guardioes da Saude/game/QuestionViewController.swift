@@ -16,7 +16,7 @@ class QuestionViewController: UIViewController {
     var question: Question!
     var part: Int!
     let user = User.getInstance()
-    let userRequester = UserRequester()
+    let questionRequester = QuestionRequester()
     var answerWrong = 0
     
 
@@ -50,6 +50,14 @@ class QuestionViewController: UIViewController {
         circleLayer.lineWidth = 7.0;
         circleLayer.strokeEnd = 0.0
         
+        let bgCircleLayer = CAShapeLayer()
+        bgCircleLayer.path = circlePath.CGPath
+        bgCircleLayer.fillColor = UIColor.clearColor().CGColor
+        bgCircleLayer.strokeColor = UIColor(red: 1, green: 201.0/255.0, blue: 3.0/255.0, alpha: 1).CGColor
+        bgCircleLayer.lineWidth = 7.0
+        bgCircleLayer.strokeEnd = 1
+        
+        self.viewTimer.layer.addSublayer(bgCircleLayer)
         self.viewTimer.layer.addSublayer(circleLayer)
         self.viewTimer.layer.cornerRadius = self.viewTimer.frame.width/2;
     }
@@ -98,9 +106,10 @@ class QuestionViewController: UIViewController {
                 isLevelDone = true
             }
             
-            userRequester.updateUser(user, onSuccess: {user in
+            questionRequester.updateGame(question, user: self.user, onStart: {
+                }, onSuccess: {
                     self.callCongratulationScreen(isLevelDone)
-                }, onFail: {error in
+                }, onError: { error in
                     ViewUtil.showAlertWithMessage(NSLocalizedString(kMsgConnectionError, comment: ""))
             })
         }else{
@@ -134,14 +143,14 @@ class QuestionViewController: UIViewController {
         
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
         dispatch_async(queue, {
-            for i in 1...15 {
+            for i in 0...15 {
                 if self.breakTime {
                     self.circleLayer.speed = 0.0
                     self.breakTime = false
                     break
                 }else{
                     dispatch_async(dispatch_get_main_queue()) {
-                        self.lbTimer.text = "\(i)"
+                        self.lbTimer.text = "\(15-i)"
                     }
                     sleep(1)
                 }

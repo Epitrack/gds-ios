@@ -514,8 +514,8 @@
                 user.hashtag = response[@"hashtags"];
                 user.survey = response[@"surveys"];
                 
-                if (response[@"puzzleMatriz"]) {
-                    [user setPuzzleMatrizWithResponse:response[@"puzzleMatriz"]];
+                if (response[@"answers"]) {
+                    [user setPuzzleMatrizWithResponse:response[@"answers"]];
                 }
                 
                 if (response[@"level"]) {

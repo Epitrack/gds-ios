@@ -285,6 +285,7 @@ class PuzzeViewController: UIViewController {
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.dialogLowEnergy.transform = CGAffineTransformIdentity
         }) { (finished: Bool) -> Void in
+            
         }
     }
     

@@ -22,10 +22,10 @@ class QuestionRequester: Requester {
                 }else{
                     var questions: [Question] = []
                     
-//                    let dicResponse = response as! Dictionary<String, AnyObject>
                     let jQuestions = response as! [Dictionary<String, AnyObject>]
                     for jQuestion in jQuestions {
                         let question = Question()
+                        question.id = jQuestion["id"] as? String
                         question.question = jQuestion["title"] as? String
                         let jAlternatives = jQuestion["alternatives"] as! [Dictionary<String, AnyObject>]
                         for jAlternative in jAlternatives{
@@ -64,6 +64,18 @@ class QuestionRequester: Requester {
             }
             
             onSuccess(rankings)
+        })
+    }
+    
+    func updateGame(question: Question, user: User, onStart: (() -> Void), onSuccess: (() -> Void), onError: ((NSError) -> Void)) {
+        doPost(getUrl() + "/game/",
+               header: ["app_token": user.app_token, "user_token" :user.user_token],
+               parameter: ["level": String(user.level), "puzzleMatriz" : user.puzzleMatriz, "questionId": NSString(string: question.id!), "xp": String(user.points)],
+               start: onStart,
+               error: {operation, error in
+                onError(error)
+            }, success: {operation, response in
+                onSuccess()
         })
     }
 }
