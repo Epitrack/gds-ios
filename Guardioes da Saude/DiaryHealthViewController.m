@@ -319,7 +319,7 @@ const float _kCellHeight = 100.0f;
     
     self.calendarMenuView.contentRatio = .75;
     self.calendarManager.settings.weekDayFormat = JTCalendarWeekDayFormatShort;
-    self.calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"pt_Br"];
+    self.calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:[[NSLocale preferredLanguages] objectAtIndex:0]];
     
     [self.calendarManager setMenuView: self.calendarMenuView];
 
