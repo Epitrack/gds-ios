@@ -338,7 +338,7 @@
                         </mask>
                     </variation>
                 </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_condom" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-wB-7Pa">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_heart" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-wB-7Pa">
                     <rect key="frame" x="33" y="476" width="23" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="vpu-wB-7Pa" secondAttribute="height" multiplier="1:1" id="0pL-KT-ZZE"/>
@@ -375,7 +375,7 @@
                         </mask>
                     </variation>
                 </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_heart" translatesAutoresizingMaskIntoConstraints="NO" id="zsp-Ow-ZUy">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_condom" translatesAutoresizingMaskIntoConstraints="NO" id="zsp-Ow-ZUy">
                     <rect key="frame" x="33" y="529" width="23" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="zsp-Ow-ZUy" secondAttribute="height" multiplier="1:1" id="20N-tH-vSN"/>
