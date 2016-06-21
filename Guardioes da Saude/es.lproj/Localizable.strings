@@ -315,6 +315,18 @@
 "diary_health.calendar" = "Calendario";
 "diary_health.no_record" = "Usted todavía no posee participaciones.\n¡Ayude a mejorar la salud de su comunidad!";
 "diary_health.join_now" = "¡Participe Ahora!";
+"diary_health.january" = "Ene";
+"diary_health.february" = "Feb";
+"diary_health.march" = "Mar";
+"diary_health.april" = "Abr";
+"diary_health.may" = "May";
+"diary_health.june" = "Jun";
+"diary_health.july" = "Jul";
+"diary_health.august" = "Ago";
+"diary_health.september" = "Sep";
+"diary_health.octuber" = "Oct";
+"diary_health.november" = "Nov";
+"diary_health.december" = "Dic";
 
 // Participants List
 "participant_list.title" = "Seleccionar Integrante";

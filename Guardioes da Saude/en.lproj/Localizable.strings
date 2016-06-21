@@ -315,6 +315,18 @@
 "diary_health.calendar" = "Calendar";
 "diary_health.no_record" = "You still don’t have participations.\nHelp improve healthcare in your community!";
 "diary_health.join_now" = "Participate Now!";
+"diary_health.january" = "Jan";
+"diary_health.february" = "Fev";
+"diary_health.march" = "Mar";
+"diary_health.april" = "Apr";
+"diary_health.may" = "May";
+"diary_health.june" = "Jun";
+"diary_health.july" = "Jul";
+"diary_health.august" = "Aug";
+"diary_health.september" = "Sep";
+"diary_health.octuber" = "Oct";
+"diary_health.november" = "Nov";
+"diary_health.december" = "Dez";
 
 // Participants List
 "participant_list.title" = "Select Member";
