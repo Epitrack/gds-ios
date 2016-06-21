@@ -363,9 +363,20 @@ const float _kCellHeight = 100.0f;
                                    onSuccess: ^(NSMutableDictionary * sumaryGraphMap) {
                                        [self hiddenProgressBar];
                                        
-                                       self.lbFrequencyYear.text = [NSString stringWithFormat:@"Frequência %d", (int) [DateUtil getCurrentYear]];
-                                       
-                                       NSArray *xVals = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dez"];
+                                       self.lbFrequencyYear.text = [NSString stringWithFormat:NSLocalizedString(@"diary_health.frequency", @""), (int) [DateUtil getCurrentYear]];
+
+                                       NSArray *xVals = @[NSLocalizedString(@"diary_health.january", @""),
+                                                          NSLocalizedString(@"diary_health.february", @""),
+                                                          NSLocalizedString(@"diary_health.march", @""),
+                                                          NSLocalizedString(@"diary_health.april", @""),
+                                                          NSLocalizedString(@"diary_health.may", @""),
+                                                          NSLocalizedString(@"diary_health.june", @""),
+                                                          NSLocalizedString(@"diary_health.july", @""),
+                                                          NSLocalizedString(@"diary_health.august", @""),
+                                                          NSLocalizedString(@"diary_health.september", @""),
+                                                          NSLocalizedString(@"diary_health.octuber", @""),
+                                                          NSLocalizedString(@"diary_health.november", @""),
+                                                          NSLocalizedString(@"diary_health.december", @"")];
                                        
                                        NSMutableArray *yVals = [[NSMutableArray alloc] init];
                                        

@@ -315,6 +315,7 @@
 "diary_health.calendar" = "日曆";
 "diary_health.no_record" = "它没有利益。\帮助提高你的社区的健康！";
 "diary_health.join_now" = "巴拉圭";
+"diary_health.frequency" = "頻率 %d";
 "diary_health.january" = "一月";
 "diary_health.february" = "二月";
 "diary_health.march" = "三月";

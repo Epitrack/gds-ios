@@ -315,6 +315,7 @@
 "diary_health.calendar" = "التقويم";
 "diary_health.no_record" = "كنت لا تزال لا تملك حصصا.\nتساعد على تحسين صحة مجتمعك";
 "diary_health.join_now" = "باراجواي";
+"diary_health.frequency" = "تردد %d";
 "diary_health.january" = "جامايكا";
 "diary_health.february" = "فبراير";
 "diary_health.march" = "مارس";

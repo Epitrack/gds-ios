@@ -315,6 +315,7 @@
 "diary_health.calendar" = "Calendrier";
 "diary_health.no_record" = "Vous n'avez encore aucune participation\nParticipez à l’amélioration de la santé de votre collectivité !";
 "diary_health.join_now" = "Participez dès maintenant !";
+"diary_health.frequency" = "fréquence %d";
 "diary_health.january" = "Jan";
 "diary_health.february" = "Fev";
 "diary_health.march" = "Mar";

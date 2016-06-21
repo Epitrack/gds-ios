@@ -315,6 +315,7 @@
 "diary_health.calendar" = "Календарь";
 "diary_health.no_record" = "Вы до сих пор не участвовали.\nПомогите улучшить здоровье вашего сообщества!";
 "diary_health.join_now" = "Присоединяйтесь к нам сейчас!";
+"diary_health.frequency" = "частота %d";
 "diary_health.january" = "январь";
 "diary_health.february" = "февраль";
 "diary_health.march" = "март";
