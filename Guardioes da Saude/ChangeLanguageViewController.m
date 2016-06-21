@@ -31,7 +31,7 @@ static NSBundle *bundle = nil;
     currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
     
     languages = @[@"English", @"Español", @"Français", @"Portugues(Brasil)", @"pyccknñ", @"简体中文", @"العربية"];
-    languagesDetails = @[@"Inglês", @"Espanhol", @"Francês", @"Portugues(Brasil)", @"Russo", @"Chinês (Simplificado)", @"Árabe"];
+    languagesDetails = @[@"Inglês", @"Espanhol", @"Francês", @"Portugues(Brasil)", @"Russo", @"Chinês (Tradicional)", @"Árabe"];
     languagesCode = @[@"en", @"es", @"fr", @"pt-BR", @"ru", @"zh-Hans-CN", @"ar"];
     
     UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"constant.cancel", @"") style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
