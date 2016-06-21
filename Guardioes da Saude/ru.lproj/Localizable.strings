@@ -315,6 +315,18 @@
 "diary_health.calendar" = "Календарь";
 "diary_health.no_record" = "Вы до сих пор не участвовали.\nПомогите улучшить здоровье вашего сообщества!";
 "diary_health.join_now" = "Присоединяйтесь к нам сейчас!";
+"diary_health.january" = "Jan";
+"diary_health.february" = "Fev";
+"diary_health.march" = "Mar";
+"diary_health.april" = "Avr";
+"diary_health.may" = "Mai";
+"diary_health.june" = "Jun";
+"diary_health.july" = "Jul";
+"diary_health.august" = "Ago";
+"diary_health.september" = "Sep";
+"diary_health.octuber" = "Oct";
+"diary_health.november" = "Nov";
+"diary_health.december" = "Déc";
 
 // Participants List
 "participant_list.title" = "Выберите Участника";

@@ -315,6 +315,18 @@
 "diary_health.calendar" = "التقويم";
 "diary_health.no_record" = "كنت لا تزال لا تملك حصصا.\nتساعد على تحسين صحة مجتمعك";
 "diary_health.join_now" = "باراجواي";
+"diary_health.january" = "جامايكا";
+"diary_health.february" = "فبراير";
+"diary_health.march" = "مارس";
+"diary_health.april" = "أبريل";
+"diary_health.may" = "مايو";
+"diary_health.june" = "يونيو";
+"diary_health.july" = "يوليو";
+"diary_health.august" = "أغسطس";
+"diary_health.september" = "سبتمبر";
+"diary_health.octuber" = "أكتوبر";
+"diary_health.november" = "تشرين الثاني";
+"diary_health.december" = "ديسمبر";
 
 // Participants List
 "participant_list.title" = "الاثنين";

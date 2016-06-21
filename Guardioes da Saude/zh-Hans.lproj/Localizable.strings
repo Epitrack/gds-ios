@@ -315,6 +315,18 @@
 "diary_health.calendar" = "日曆";
 "diary_health.no_record" = "它没有利益。\帮助提高你的社区的健康！";
 "diary_health.join_now" = "巴拉圭";
+"diary_health.january" = "一月";
+"diary_health.february" = "二月";
+"diary_health.march" = "三月";
+"diary_health.april" = "四月";
+"diary_health.may" = "五月";
+"diary_health.june" = "六月";
+"diary_health.july" = "七月";
+"diary_health.august" = "八月";
+"diary_health.september" = "九月";
+"diary_health.octuber" = "十月";
+"diary_health.november" = "十一月";
+"diary_health.december" = "十二月";
 
 // Participants List
 "participant_list.title" = "星期一";
