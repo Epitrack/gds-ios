@@ -161,19 +161,25 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.join_us" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkg-Nb-LjN" customClass="GDSLabel">
-                    <rect key="frame" x="123" y="305" width="74" height="34"/>
+                    <rect key="frame" x="100" y="314" width="120" height="17"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="74" id="IWg-3h-BwP"/>
+                        <constraint firstAttribute="width" constant="90" id="IWg-3h-BwP"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="IWg-3h-BwP"/>
+                        </mask>
+                    </variation>
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" constant="70" id="0MO-oI-AET"/>
                 <constraint firstItem="hdD-FY-gj2" firstAttribute="top" secondItem="lbO-Tn-hq9" secondAttribute="top" id="14q-Hm-sw9"/>
+                <constraint firstItem="Tkg-Nb-LjN" firstAttribute="centerY" secondItem="7tk-Sg-hEE" secondAttribute="centerY" multiplier="1.07" id="1kh-7O-9u6"/>
                 <constraint firstItem="g4X-Rf-V4g" firstAttribute="leading" secondItem="hdD-FY-gj2" secondAttribute="leading" id="2hL-XI-vd4"/>
                 <constraint firstItem="AQD-c1-OtD" firstAttribute="leading" secondItem="8tT-ki-6Iv" secondAttribute="leading" id="3cf-wz-mei"/>
                 <constraint firstItem="lbO-Tn-hq9" firstAttribute="top" secondItem="HS7-S1-7hn" secondAttribute="bottom" constant="14" id="3lS-Ep-oUf"/>
@@ -202,7 +208,9 @@
                 <constraint firstItem="HS7-S1-7hn" firstAttribute="trailing" secondItem="4kJ-ek-qV7" secondAttribute="trailing" id="PKA-qH-L7Y"/>
                 <constraint firstItem="w9n-BB-3Se" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" id="Rbb-F0-cET"/>
                 <constraint firstItem="6Bi-gd-jy5" firstAttribute="leading" secondItem="lbO-Tn-hq9" secondAttribute="leading" id="RrM-L4-Ypf"/>
+                <constraint firstItem="Tkg-Nb-LjN" firstAttribute="leading" secondItem="7tk-Sg-hEE" secondAttribute="leading" constant="10" id="SAi-7h-Qx6"/>
                 <constraint firstItem="hdD-FY-gj2" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="9:71" id="SEQ-rx-xGA"/>
+                <constraint firstItem="Tkg-Nb-LjN" firstAttribute="trailing" secondItem="7tk-Sg-hEE" secondAttribute="trailing" constant="-10" id="SJs-sI-kCT"/>
                 <constraint firstItem="7tk-Sg-hEE" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="90" id="SZZ-aa-jM7"/>
                 <constraint firstItem="wLQ-aG-BfL" firstAttribute="width" secondItem="Cds-EH-tEM" secondAttribute="height" multiplier="9:71" id="Trq-oV-hOx"/>
                 <constraint firstItem="dn2-kp-1vs" firstAttribute="top" secondItem="wLQ-aG-BfL" secondAttribute="bottom" id="U7N-iC-ksk"/>
@@ -244,6 +252,8 @@
                     <exclude reference="HX2-3r-X01"/>
                     <exclude reference="SZZ-aa-jM7"/>
                     <exclude reference="Czc-1W-Hm0"/>
+                    <exclude reference="Awf-xd-hYR"/>
+                    <exclude reference="bD1-qM-tYT"/>
                     <exclude reference="F8N-3Y-pYy"/>
                     <exclude reference="DK1-lj-gFA"/>
                     <exclude reference="hbc-tK-rPc"/>

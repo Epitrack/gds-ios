@@ -13,6 +13,7 @@
 #import "Requester.h"
 #import "User.h"
 #import <Google/Analytics.h>
+#import "ViewUtil.h"
 
 @interface AboutViewController (){
     int counter;
@@ -37,7 +38,7 @@
                                                                          style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = revealButtonItem;
     
-//    self.txtAbout.text = NSLocalizedString(@"about.text", @"");
+    
     
     [self.txtAbout setContentOffset:CGPointZero];
     
@@ -53,22 +54,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [ViewUtil applyFont:self.txtAbout.font
+              withColor:[UIColor colorWithRed:15.0/255.0 green:76.0/255.0 blue:153.0/255.0 alpha:1]
+                 ranges:@[NSLocalizedString(@"about.subtitle1", @""),
+                         NSLocalizedString(@"about.subtitle2", @""),
+                         NSLocalizedString(@"about.subtitle3", @""),
+                         NSLocalizedString(@"about.subtitle4", @""),
+                         NSLocalizedString(@"about.subtitle5", @""),
+                         NSLocalizedString(@"about.subtitle6", @"")]
+             atTextView:self.txtAbout];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     // GOOGLE ANALYTICS
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"About Screen Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)btnAboutAction:(id)sender {
     if (counter >= 5) {

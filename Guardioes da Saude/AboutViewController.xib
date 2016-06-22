@@ -22,8 +22,9 @@
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="about.text" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="zLs-iT-GZz" customClass="GDSTextView">
                     <rect key="frame" x="8" y="229" width="304" height="331"/>
-                    <color key="textColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMz-dq-Xeo">

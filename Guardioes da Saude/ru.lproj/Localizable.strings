@@ -40,7 +40,7 @@
 "select_type_login.facebook_error" = "Erro ao logar com o facebook.";
 "select_type_login.operation_canceled" = "Операция отменена.";
 "select_type_login.twitter_error" = "Ошибка входа через Twitter.";
-"select_type_login.user_not_fилиnd" = "Регистрация не найдена!";
+"select_type_login.user_not_found" = "Регистрация не найдена!";
 
 // TUTORIAL VIEW
 "tutorial.tutorial" = "Обучающий материал ";
@@ -48,8 +48,8 @@
 "tutorial.preparing" = "Готов стать Стражем Здоровья?";
 "tutorial.sign_up" = "Регистрация";
 "tutorial.sign_in" = "Войти";
-"tutorial.how_is_yилиr_health" = "Как ваше здоровье?";
-"tutorial.check_yилиr_symptoms" = "Проверьте список своих симптомов.";
+"tutorial.how_is_your_health" = "Как ваше здоровье?";
+"tutorial.check_your_symptoms" = "Проверьте список своих симптомов.";
 "tutorial.health_map" = "Карта здоровья";
 "tutorial.health_map_description" = "Следите за случаями заболеваний в вашем районе или в определенном месте.";
 "tutorial.health_tips" = "Советы для Здоровья";
@@ -68,7 +68,7 @@
 "forgot_password.email" = "Электронная почта";
 "forgot_password.send" = "Отправить ";
 "forgot_password.success" = "Письмо по электронной почте успешно отправлено.";
-"forgot_password.user_not_fилиnd" = "Электронная почта не найдена!";
+"forgot_password.user_not_found" = "Электронная почта не найдена!";
 
 // SIGN UP VIEW
 "sign_up.lb_email" = "Электронная почта:";
@@ -103,9 +103,9 @@
 "sign_up_details.gender_required" = "Секс является обязательным полем";
 "sign_up_details.race_required" = "Цвет Кожи / Раса является обязательной ячейкой";
 "sign_up_details.email_already_used" = "Электронная почта уже используется";
-"sign_up_details.withилиt_localization" = "Нет estamos conseguindo obter sua localização. Убедитесь в том, что на устройстве все службы включены.";
-"sign_up_details.lb_cилиntry" = "Страна происхождения:";
-"sign_up_details.tx_cилиntry" = "Выберите страну";
+"sign_up_details.without_localization" = "Нет estamos conseguindo obter sua localização. Убедитесь в том, что на устройстве все службы включены.";
+"sign_up_details.lb_country" = "Страна происхождения:";
+"sign_up_details.tx_country" = "Выберите страну";
 "sign_up_details.lb_state" = "Состояние:";
 "sign_up_details.tx_state" = "Выбрать Регион";
 "sign_up_details.lb_perfil" = "Профиль:";
@@ -118,14 +118,21 @@
 // MENU VIEW
 "menu.home" = "Главная";
 "menu.profile" = "Профиль";
-"menu.abилиt" = "О";
+"menu.about" = "О";
 "menu.help" = "Помощь";
-"menu.sign_илиt" = "Выход";
-"menu.are_yили_sure_sign_илиt" = "Вы уверены, что хотите выйти из приложения?";
+"menu.sign_out" = "Выход";
+"menu.are_you_sure_sign_out" = "Вы уверены, что хотите выйти из приложения?";
 "menu.idiom" = "Язык";
 
-// Abилиt VIEW
-"abилиt.title" = "О";
+// About VIEW
+"about.title" = "О";
+"about.subtitle1" = "SOBRE O APLICATIVO “GUARDIÕES DA SAÚDE” ";
+"about.subtitle2" = "Sobre a participação voluntária";
+"about.subtitle3" = "Agradecimento";
+"about.subtitle4" = "Benefícios da participação";
+"about.subtitle5" = "Saiba mais sobre o uso do aplicativo";
+"about.subtitle6" = "Sobre a parceria";
+"about.text" = "SOBRE O APLICATIVO “GUARDIÕES DA SAÚDE” \n\nO aplicativo “Guardiões da Saúde”, desenvolvido para celulares, tablets e computadores, faz parte da iniciativa do Ministério da Saúde, em parceria com a Organização Não-Governamental Skoll Global Threats Fund, dos Estados Unidos da América, visando avaliar o potencial uso de aplicativos para dispositivos móveis como parte da estratégia de fortalecimento da capacidade de detecção de surtos e emergências em saúde pública, no âmbito do Sistema Único de Saúde (SUS), principalmente durante eventos de massa, como nos Jogos Olímpicos e Paralímpicos de 2016. \n\nEsta estratégia é a evolução do projeto realizado com a mesma instituição, denominado “Saúde na Copa” e lançado exclusivamente para o período dos jogos da Copa do Mundo FIFA Brasil 2014®, cujos resultados mostraram-se promissores e foram mantidos os interesses de ambas as instituições para a realização de uma nova estratégia para os Jogos Olímpicos e Paralímpicos em 2016. \n\nA primeira versão do aplicativo Guardiões da Saúde já está disponível para os sistemas operacionais iOS da Apple e Android da Google e também por meio do site http://guardioesdasaude.org/. \n\nInicialmente desenvolvido no idioma português, nas próximas versões, o aplicativo “Guardiões da Saúde” estará disponível também nos idiomas oficiais das Nações Unidas, sendo um instrumento complementar para orientações aos viajantes internacionais ao Brasil, principalmente com destino às sedes dos Jogos Olímpicos e Paralímpicos de 2016. \n\nA participação na iniciativa está restrita aos usuários com 13 anos ou mais de idade. Além disso, é fundamental que antes de se cadastrar, os usuários leiam e aceitem os “Termos de Uso” e preenchimento de cadastro simplificado, contendo apelido, endereço de e-mail, data de nascimento, raça/cor, sexo e senha de acesso. A participação é voluntária, sigilosa e os dados fornecidos estão protegidos no âmbito Lei nº 12.527, de 18 de novembro de 2011. \n\nOs resultados do projeto serão utilizados pela vigilância em saúde dos Estados, Municípios e Governo Federal, visando detectar e prevenir surtos e emergências em saúde pública, por meio da adoção de medidas de prevenção e controle oportunas. A divulgação dos resultados do projeto será realizada de modo agregado e anonimizado , visando descrever o perfil da condição de saúde dos voluntários, a partir das informações repassadas por meio do aplicativo. \n\nSobre a participação voluntária \n\nSua participação é voluntária e uma gentil contribuição para o aprimoramento da vigilância em saúde no Brasil. O preenchimento do formulário sobre a condição de saúde não representa consulta médica, não garante acesso diferenciado aos serviços de saúde e o usuário não receberá o contato de nenhum profissional ou serviço de saúde para obter informações, seja por e-mail ou qualquer outro meio de contato. \n\nDurante a participação, mensagens de texto poderão ser enviadas aos usuários, apenas pelo aplicativo, por meio da tecnologia Push (Push Notification), contendo orientações sobre cuidados de saúde ou orientações dos órgãos de vigilância. \n\nÉ importante destacar que caso você informe que não está se sentindo bem, é recomendável que consulte um médico de referência ou serviço de saúde mais próximo de você. Para isso, está disponível no aplicativo um atalho com pesquisa pré-configurada de serviços de saúde e farmácias mais próximos de você, com base no serviço de geolocalização do seu dispositivo móvel no Google Maps. Essa funcionalidade não faz parte do aplicativo. Por esse motivo, será direcionado ao aplicativo de mapas de seu aparelho e recomenda-se cuidado ao transitar por áreas desconhecidas e evitar zonas de risco. Para isso, procure informações junto aos órgãos governamentais locais. \n\nO aplicativo foi configurado com um conjunto de telefones úteis incluindo o do SAMU (Serviço de Atendimento Móvel de Urgência), cuja ligação é gratuita e funciona 24 horas por dia atendendo solicitações de atendimento de urgência para ocorrências de natureza traumática, clínica, pediátrica, cirúrgica, gineco-obstétrica e de saúde mental, em residências, locais de trabalho e vias públicas. \n\nBenefícios da participação \n\n•	Participar ativamente das ações de vigilância em saúde que visam à prevenção de doenças na comunidade; \n\n•	Acessar os contatos de serviços públicos úteis sem precisar alterar sua agenda de telefones; \n\n•	Acessar facilmente informações úteis sobre cuidados de saúde e medidas de prevenção contra doenças; \n\n•	Usufruir de facilidades, como a pesquisa pré-configurada por Unidades de Pronto Atendimento e farmácias próximas (20 km) no Google Maps; \n\n•	Acompanhar os resultados do projeto, por meio do website www.guardioesdasaude.org; \n\nSaiba mais sobre o uso do aplicativo \n\nO aplicativo “Guardiões da Saúde” está disponível gratuitamente para download e utilização em sistemas operacionais iOS, Android e navegadores de internet. Em várias cidades há pontos de internet para uso gratuito ou o usuário poderá utilizar o seu próprio pacote de dados contratado. \n\nInforma-se que as chamadas telefônicas para os serviços públicos de referência registrados no aplicativo necessitam de plano de telefonia contratado. Portanto, consulte sua operadora antes de utilizar essa funcionalidade. Esse serviço não funcionará sem a presença da função de telefone no aparelho. Essa informação deve ser observada, principalmente por usuários de outros países. \n\n\nSobre a parceria \n\nA iniciativa pioneira é da Secretaria de Vigilância em Saúde do Ministério da Saúde em parceria com as cidades sedes dos Jogos Olímpicos e Paralímpicos. Na parceria, a Organização Não Governamental (ONG) Skoll Global Threats Fund ficou responsável pelos custos de contratação e desenvolvimento do software, sob supervisão da Associação Brasileira de Profissionais de Epidemiologia de Campo (ProEpi), ambas são Organizações Não Governamentais, sem fins lucrativos, que atuam no aprimoramento da vigilância em saúde no Brasil e no mundo. \n\nA ProEpi é responsável por garantir que os requisitos estabelecidos pelo Ministério da Saúde e pela Skoll Global Threats Fund sejam cumpridos, conforme previsto no projeto: privacidade dos dados dos usuários, transparência e publicidade dos resultados públicos do projeto e disponibilidade do código fonte e documentação em ambiente de livre acesso para download, adequação e uso do aplicativo por serviços de saúde do Brasil e de países interessados, desde que garantida a finalidade sem fins lucrativos. \n\nAgradecimento \n\nAs instituições organizadoras agradecem a todos os voluntários, profissionais de saúde e gestores do Sistema Único de Saúde por acreditarem no projeto piloto e apoiarem essa iniciativa pioneira na saúde pública internacional. \n\nAgradecimento especial às Secretarias de Saúde dos Municípios Sedes dos Jogos Olímpicos e Paralímpicos (Belo Horizonte, Distrito Federal, Manaus, Rio de Janeiro, Salvador e São Paulo).";
 
 // HELP VIEW
 "help.tutorial" = "Обучающий материал ";
@@ -224,7 +231,7 @@
 "health_tips.basic_care" = "Общий Уход";
 "health_tips.prevention" = "Профилактика ";
 "health_tips.safe_sex" = "Практикуйте безопасный секс ";
-"health_tips.health_traveler" = "Saúde do Viajante";
+"health_tips.health_traveler" = "Здоровье путешественника";
 
 // PHARMACY VIEW
 "pharmacy.title" = "Аптеки";
@@ -250,9 +257,9 @@
 "zika.title" = "Денге, Чикунгунья и Зика";
 
 // LIST SYMPTOMS VIEW
-"list_symptoms.title" = "Participe Авгra";
+"list_symptoms.title" = "Присоединяйтесь к нам сейчас!";
 "list_symptoms.placeholder_cилиntry" = "Выберите страну";
-"list_symptoms.cилиntry_required" = "Por favor, selecione o  pais!";
+"list_symptoms.country_required" = "Пожалуйста, выберите страну!";
 "list_symptoms.allow_send" = "Вы хотите зарегистрировать свою информацию?";
 "list_symptoms.check_a_symptom" = "Выберите какие-либо симптомы, прежде чем подтвердить.";
 "list_symptoms.symptoms" = "Симптомы";
@@ -261,16 +268,16 @@
 "list_symptoms.find_a_health_service" = "Найти Медицинское Обслуживание";
 "list_symptoms.traveled" = "Я не был в Бразилии в течение последних 14 дней";
 "list_symptoms.confirm" = "Подтвердите";
-"list_symptoms.select_symptoms" = "Мореque abaixo o que você está sentindo neste momento:";
+"list_symptoms.select_symptoms" = "Отметьте то, что Вы чувствуете в то время:";
 
 // SELECT STATE VIEW
-"select_state.title" = "Participe Авгra";
-"select_state.withилиt_location" = "Нет estamos conseguindo obter sua localização. Убедитесь в том, что на устройстве все службы включены.";
-"select_state.how_is_yилиr_health" = "Como está sua saúde nesse  momento?";
+"select_state.title" = "Присоединяйтесь к нам сейчас!";
+"select_state.without_location" = "Нет estamos conseguindo obter sua localização. Убедитесь в том, что на устройстве все службы включены.";
+"select_state.how_is_your_health" = "Как вы себя чувствуете прямо сейчас?";
 "select_state.well" = "Хорошо";
 "select_state.bad" = "Плохо";
 "select_state.next_step" = "Некоторые признаки и симптомы будут отображаться на следующем экране, если выбран зло.";
-"select_state.how_is_he_she" = "Como está a saúde\nde %@ nesse momento?";
+"select_state.how_is_he_she" = "Как себя чувствует \n%@ прямо сейчас?";
 
 // THANK YOU VIEW
 "thank_yили.shared_msg" = "Я делаю это делаю, участвуй тоже в борьбе с комарами Aedes aegypti #ZikaZero. Доступ: http://www.guardioesdasaude.org";
@@ -281,12 +288,12 @@
 "thank_yили.share_fail" = "Не удалось поделиться вашим участием.";
 "thank_yили.thanks_for_information" = "Спасибо за информацию!";
 "thank_yили.look_emergency_description" = "Нет deixe de procurar o serviço de saúde mais próximo. Продолжайте сообщать ежедневно, о вашем самочувствии.";
-"thank_yили.tell_yилиr_friend" = "Пригласите своих друзей стать Стражами Здоровья.";
+"thank_yили.tell_your_friend" = "Пригласите своих друзей стать Стражами Здоровья.";
 "thank_yили.continue" = "Продолжить";
 "thank_yили.zika_msg" = "Внимание: Указанные симптомы могут быть связаны с вирусом Зика. Найдите ближайший Пункт Скорой Помощи.";
 
 // SELECT PARTICIPANT VIEW
-"select_participant.title" = "Participe Авгra";
+"select_participant.title" = "Присоединяйтесь к нам сейчас!";
 "select_participant.year_old" = "%ld Anos";
 "select_participant.new_member" = "Новый участник";
 "select_participant.how_will_participate" = "Кто будет участвовать?";
