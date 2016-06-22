@@ -173,6 +173,7 @@
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="3MB-6O-xgi"/>
+                            <exclude reference="UBB-qg-Mbr"/>
                             <exclude reference="hcr-NR-PBa"/>
                         </mask>
                     </variation>

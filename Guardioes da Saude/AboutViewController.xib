@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -20,112 +20,10 @@
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_horizontal_about.png" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-yX-hgD">
                     <rect key="frame" x="40" y="74" width="240" height="105"/>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zLs-iT-GZz">
-                    <rect key="frame" x="8" y="228" width="304" height="332"/>
-                    <attributedString key="attributedText">
-                        <fragment content="Sobre o “Guardiões da Saúde”">
-                            <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                <font key="NSOriginalFont" size="15" name="HelveticaNeue-Bold"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content">
-
-• O GUARDIÕES DA SAÚDE é um aplicativo projetado para dispositivos móveis e faz parte do projeto inovador de aprimoramento da vigilância em saúde no Sistema Único de Saúde (SUS), denominado Vigilância Participativa.
-
-• É um processo simples que conta com a participação voluntária de visitantes ou residentes no Brasil, informando sobre sua condição de saúde. O GUARDIÕES DA SAÚDE foi desenvolvido em português para ser um canal complementar de informação de saúde e de serviços aos usuários, permitindo a participação de todos. Para isso, basta ter 13 anos de idade ou mais e aceitar os Termos de Participação e Uso, informando regularmente sua condição de saúde, conforme instruções disponíveis no aplicativo.
-
-• Este projeto é uma iniciativa da Secretaria de Vigilância em Saúde, do Ministério da Saúde, em parceria com as Secretarias de Saúde das sedes dos jogos e outras instituições nacionais e internacionais.
-
-• Utilizada pela primeira vez no Brasil, a implementação da estratégia de Vigilância Participativa ocorrerá sem investimento público no desenvolvimento do software. Para isso, por meio de parceria, o aplicativo GUARDIÕES DA SAÚDE está sendo desenvolvido como software livre por meio de investimento da Skoll Global Threats Fund e apoio operacional da Training in Public Health Intervention Network (Tephinet). Ambas são Organizações não-governamentais sem fins lucrativos que atuam no aprimoramento da vigilância em saúde no mundo e em técnicas de Detecção Digital de Doenças. O desenvolvimento tecnológico do aplicativo é realizado por meio da startup Epitrack, sediada em Recife/Pernambuco.
-
-• Esta parceria também contempla o apoio técnico e a troca de experiências com outras iniciativas adotadas no mundo, como Flu Near You (flunearyou.org) e Salud Boricua (saludboricua.org), criados e administrados pela ONG HealthMap (healthmap.org) do Hospital da Criança de Boston em colaboração com a Associação Americana de Saúde Pública (apha.org) e pela Skoll Global Threats Fund (skollglobalthreats.org). Estas estratégias visam o monitoramento de síndrome gripal nos Estados Unidos da América (EUA) e Canadá e a ocorrência de dengue, leptospirose e síndrome gripal em Porto Rico.
-
-</string>
-                            <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="Saiba mais sobre a Vigilância Participativa">
-                            <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                <font key="NSOriginalFont" size="15" name="HelveticaNeue-Bold"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content">
-
-• Sua participação é uma gentil contribuição para o aprimoramento da vigilância em saúde no Brasil. No cadastro, não há registro nominal e a privacidade do e-mail está garantida. Não haverá nenhum contato do sistema de saúde com você, em decorrência da participação, e a comunicação de sua condição de saúde não significa que estará realizando uma consulta médica.
-
-• É importante destacar que caso você informe que não está se sentindo bem, é recomendável que consulte um médico de referência ou serviço de saúde mais próximo de você. Para isso, está disponível no aplicativo um atalho com pesquisa pré-configurada de serviços de saúde e farmácias mais próximos de você, com base no serviço de geolocalização do seu dispositivo móvel no Google Maps. Além disso, você dispõe dos telefones úteis incluindo o do SAMU (Serviço de Atendimento Móvel de Urgência), cuja a ligação é gratuita e funciona 24 horas por dia atendendo solicitações de atendimento de urgência para ocorrências de natureza traumática, clínica, pediátrica, cirúrgica, gineco-obstétrica e de saúde mental, em residências, locais de trabalho e vias públicas.
-
-</string>
-                            <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="Veja os benefícios de sua participação">
-                            <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                <font key="NSOriginalFont" size="15" name="HelveticaNeue-Bold"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content">
-
-• Participar ativamente das ações de vigilância em saúde que visam a prevenção de doenças na comunidade;
-
-• Acessar os contatos de serviços públicos úteis sem precisar alterar sua agenda de telefones;
-
-• Acessar facilmente informações úteis sobre cuidados de saúde;
-
-• Usufruir de facilidades como a pesquisa pré-configurada por Unidades de Pronto Atendimento e farmácias próximas (20 km) no Google Maps, sem necessidade de abrir outro aplicativo;
-
-• Acompanhar o perfil de saúde dos participantes por meio do website www.guardioesdasaude.org;
-
-</string>
-                            <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="Custo">
-                            <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                <font key="NSOriginalFont" size="15" name="HelveticaNeue-Bold"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content">
-
-• Download e participação: não há nenhum custo para obter e participar do GUARDIÕES DA SAÚDE;
-
-• Acesso aos serviços sem custo: por meio de acesso gratuito em pontos wi-fi na cidade;
-
-• Acesso aos serviços com custo: por meio de seu pacote de dados contratado;
-
-• Chamada telefônica: Os serviços públicos de referência descritos nos telefones úteis são oferecidos por meio de chamada gratuita, conforme informação do órgão responsável;</string>
-                            <attributes>
-                                <color key="NSColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="about.text" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="zLs-iT-GZz" customClass="GDSTextView">
+                    <rect key="frame" x="8" y="229" width="304" height="331"/>
+                    <color key="textColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMz-dq-Xeo">
@@ -134,14 +32,14 @@
                     <color key="textColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="b 1004" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-dU-Nq6">
-                    <rect key="frame" x="140" y="203" width="40" height="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="b 1004" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-dU-Nq6">
+                    <rect key="frame" x="140" y="204" width="40" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJw-0e-GVt">
-                    <rect key="frame" x="141" y="187" width="40" height="31"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJw-0e-GVt">
+                    <rect key="frame" x="140" y="187" width="40" height="32"/>
                     <connections>
                         <action selector="btnAboutAction:" destination="-1" eventType="touchUpInside" id="993-Uz-o8T"/>
                     </connections>

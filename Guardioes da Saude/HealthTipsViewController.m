@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Dicas de Saúde";
+    self.navigationItem.title = NSLocalizedString(@"health_tips.title", @"");
     
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
                                 initWithTitle:@""
