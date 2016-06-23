@@ -18,6 +18,7 @@
 
 @interface ThankYouForParticipatingViewController (){
     SurveyType surveyType;
+    User *user;
 }
 
 @end
@@ -41,8 +42,9 @@
     self.txSurvey.backgroundColor = [UIColor clearColor];
     self.txTellFriends.backgroundColor = [UIColor clearColor];
     
-    [User getInstance].points = 10;
-    
+    user = [User getInstance];
+    [self addGamePoint];
+    user.lastJoinNotification = [NSDate date];
     switch (surveyType) {
         case GOOD_SYMPTOM:
             self.zicaView.hidden = YES;
@@ -71,6 +73,17 @@
             break;
     }
         
+}
+
+- (void) addGamePoint{
+    NSDateComponents *otherDay = [[NSCalendar currentCalendar] components:NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:user.lastJoinNotification];
+    NSDateComponents *today = [[NSCalendar currentCalendar] components:NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+    if([today day] == [otherDay day] &&
+       [today month] == [otherDay month] &&
+       [today year] == [otherDay year] &&
+       [today era] == [otherDay era]) {
+        user.points = 10;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
