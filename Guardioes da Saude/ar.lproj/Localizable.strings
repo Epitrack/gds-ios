@@ -278,6 +278,19 @@
 "list_symptoms.traveled" = "لعبة جيدة!";
 "list_symptoms.confirm" = "تأكيد";
 "list_symptoms.select_symptoms" = "علامة أسفل ما تشعرين به في الوقت الراهن";
+"Febre" = "حمى";
+"Manchas vermelhas no corpo" = "بقع حمراء على الجسم";
+"Dor no corpo" = "آلام الجسم";
+"Dor nas juntas" = "آلام المفاصل";
+"Dor de cabeça" = "صداع";
+"Coceira" = "حكة";
+"Olhos vermelhos" = "العين الحمراء";
+"Dor de garganta" = "آلام الرقبة";
+"Tosse" = "سعال";
+"Falta de ar" = "ضيق التنفس";
+"Náusea ou Vômito" = "الغثيان أو القيء";
+"Diarreia" = "الإسهال";
+"Sangramento" = "نزيف";
 
 // SELECT STATE VIEW
 "select_state.title" = "انضم الآن";

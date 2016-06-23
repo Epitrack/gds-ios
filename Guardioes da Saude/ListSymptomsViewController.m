@@ -233,7 +233,7 @@
         cell.tag = indexPath.row;
         cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        cell.textLabel.text = symptom.name;
+        cell.textLabel.text = NSLocalizedString(symptom.name, @"");
         cell.textLabel.numberOfLines = 0;
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
         

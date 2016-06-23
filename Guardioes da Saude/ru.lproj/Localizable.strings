@@ -278,6 +278,19 @@
 "list_symptoms.traveled" = "Я не был в Бразилии в течение последних 14 дней";
 "list_symptoms.confirm" = "Подтвердите";
 "list_symptoms.select_symptoms" = "Отметьте то, что Вы чувствуете в то время:";
+"Febre" = "лихорадка";
+"Manchas vermelhas no corpo" = "красные пятна на теле";
+"Dor no corpo" = "Боль в теле";
+"Dor nas juntas" = "боль в суставах";
+"Dor de cabeça" = "головная боль";
+"Coceira" = "чесотка";
+"Olhos vermelhos" = "зур редай";
+"Dor de garganta" = "боль в шее";
+"Tosse" = "кашель";
+"Falta de ar" = "Диспноэ";
+"Náusea ou Vômito" = "Тошнота или рвота";
+"Diarreia" = "Диарея";
+"Sangramento" = "кровотечение";
 
 // SELECT STATE VIEW
 "select_state.title" = "Присоединяйтесь к нам сейчас!";

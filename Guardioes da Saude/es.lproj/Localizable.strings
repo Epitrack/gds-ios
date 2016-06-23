@@ -278,6 +278,19 @@
 "list_symptoms.traveled" = "Estuve fuera de Brasil los últimos 14 días";
 "list_symptoms.confirm" = "Confirmar";
 "list_symptoms.select_symptoms" = "Mark por lo que está sintiendo en ese momento:";
+"Febre" = "Fiebre";
+"Manchas vermelhas no corpo" = "Manchas rojas en el cuerpo";
+"Dor no corpo" = "Dolor en el cuerpo";
+"Dor nas juntas" = "Dolor en las articulaciones";
+"Dor de cabeça" = "Dolor de cabeza";
+"Coceira" = "Prurito";
+"Olhos vermelhos" = "Ojos rojos";
+"Dor de garganta" = "Dolor de garganta";
+"Tosse" = "Tos";
+"Falta de ar" = "Falta de aire";
+"Náusea ou Vômito" = "Náuseas o vómitos";
+"Diarreia" = "La diarrea";
+"Sangramento" = "Sangría";
 
 // SELECT STATE VIEW
 "select_state.title" = "Únete ahora";

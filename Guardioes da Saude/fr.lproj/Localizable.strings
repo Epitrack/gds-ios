@@ -278,6 +278,19 @@
 "list_symptoms.traveled" = "J'étais hors du Brésil dans les 14 derniers jours";
 "list_symptoms.confirm" = "Confirmer";
 "list_symptoms.select_symptoms" = "Notez ce que vous ressentez à ce moment-là:";
+"Febre" = "fièvre";
+"Manchas vermelhas no corpo" = "Taches rouges sur le corps";
+"Dor no corpo" = "La douleur du corps";
+"Dor nas juntas" = "Douleurs articulaires";
+"Dor de cabeça" = "Mal de tête";
+"Coceira" = "Démangeaison";
+"Olhos vermelhos" = "Redeye";
+"Dor de garganta" = "Douleur au cou";
+"Tosse" = "Toux";
+"Falta de ar" = "Essoufflement";
+"Náusea ou Vômito" = "Nausées ou vomissements";
+"Diarreia" = "Diarrhée";
+"Sangramento" = "Saignement";
 
 // SELECT STATE VIEW
 "select_state.title" = "Inscrivez-vous maintenant";

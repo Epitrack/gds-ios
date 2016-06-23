@@ -298,6 +298,19 @@
 "list_symptoms.traveled" = "I have been out of Brazil in the last 14 days";
 "list_symptoms.confirm" = "Confirm";
 "list_symptoms.select_symptoms" = "Mark down what you're feeling at the moment:";
+"Febre" = "Fever";
+"Manchas vermelhas no corpo" = "Red spots on the body";
+"Dor no corpo" = "Body ache";
+"Dor nas juntas" = "Joint pain";
+"Dor de cabeça" = "Headache";
+"Coceira" = "Itch";
+"Olhos vermelhos" = "Red eyes";
+"Dor de garganta" = "Sore throat";
+"Tosse" = "Cough";
+"Falta de ar" = "Breathlessness";
+"Náusea ou Vômito" = "Nausea or vomiting";
+"Diarreia" = "Diarrhea";
+"Sangramento" = "Bleeding";
 
 // SELECT STATE VIEW
 "select_state.title" = "Join Now";

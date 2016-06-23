@@ -278,6 +278,19 @@
 "list_symptoms.traveled" = "好成績！";
 "list_symptoms.confirm" = "確認";
 "list_symptoms.select_symptoms" = "记下你当时的感受：";
+"Febre" = "發燒";
+"Manchas vermelhas no corpo" = "在主體紅色斑點";
+"Dor no corpo" = "全身疼痛";
+"Dor nas juntas" = "關節疼痛";
+"Dor de cabeça" = "頭痛";
+"Coceira" = "癢";
+"Olhos vermelhos" = "紅眼";
+"Dor de garganta" = "頸部疼痛";
+"Tosse" = "咳嗽";
+"Falta de ar" = "呼吸困難";
+"Náusea ou Vômito" = "噁心或嘔吐";
+"Diarreia" = "腹瀉";
+"Sangramento" = "流血的";
 
 // SELECT STATE VIEW
 "select_state.title" = "现在加入";

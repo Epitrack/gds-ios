@@ -278,6 +278,20 @@
 "list_symptoms.traveled" = "Estive fora do Brasil nos últimos 14 dias";
 "list_symptoms.confirm" = "Confirmar";
 "list_symptoms.select_symptoms" = "Marque abaixo o que você está sentindo neste momento:";
+"Febre" = "Febre";
+"Manchas vermelhas no corpo" = "Manchas vermelhas no corpo";
+"Dor no corpo" = "Dor no corpo";
+"Dor nas juntas" = "Dor nas juntas";
+"Dor de cabeça" = "Dor de cabeça";
+"Coceira" = "Coceira";
+"Olhos vermelhos" = "Olhos vermelhos";
+"Dor de garganta" = "Dor de garganta";
+"Tosse" = "Tosse";
+"Falta de ar" = "Falta de ar";
+"Náusea ou Vômito" = "Náusea ou Vômito";
+"Diarreia" = "Diarreia";
+"Sangramento" = "Sangramento";
+
 
 // SELECT STATE VIEW
 "select_state.title" = "Participe Agora";
@@ -364,5 +378,3 @@
 "game_tutorial.fases" = "Cada fase contém um quebra-cabeça.\nComplete-o para passar de fase.";
 "game_tutorial.correct_answer" = "Responda corretamente as perguntas\nsobre saúde para revelar peças.";
 "game_tutorial.collect_pictures" = "Colecione figurinhas dos esportes \nolímpicos após concluir cada fase!";
-
-// Ministerio da Saúde Texts

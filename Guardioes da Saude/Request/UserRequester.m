@@ -487,6 +487,7 @@
                 Symptom *symptom = [[Symptom alloc] init];
                 symptom.code = dicSymptom[@"code"];
                 symptom.name = dicSymptom[@"name"];
+                NSLog(@"%@", dicSymptom[@"name"]);
                 
                 [symptoms addObject:symptom];
             }
