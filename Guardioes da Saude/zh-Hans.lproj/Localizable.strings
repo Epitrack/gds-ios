@@ -377,3 +377,14 @@
 "game_tutorial.fases" = "每个阶段都包含一个谜。完成它来完成一个级别。";
 "game_tutorial.correct_answer" = "回答正确对健康的问题，揭示部分。";
 "game_tutorial.collect_pictures" = "收集奥林匹克运动的雕像完成各个阶段之后！";
+
+// GAME
+"game.level" = "%d 級";
+"game.energy" = "%d 能量";
+"game.ranking" = "總排名";
+"game.trophies" = "我的獎杯";
+"game.congratulations" = "祝賀";
+"game.answer" = "";
+"game.correct" = "正確的答案！";
+"game.low_energy" = "你是無動力！";
+"game.low_energy_details" = "加入日用保健監護人，以恢復它！";

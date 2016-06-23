@@ -377,3 +377,14 @@
 "game_tutorial.fases" = "تحتوي كل مرحلة على اللغز.\nاستكماله لإكمال المستوى.";
 "game_tutorial.correct_answer" = "الإجابة على الأسئلة بشكل صحيح\nالصحة للكشف عن أجزاء.";
 "game_tutorial.collect_pictures" = "جمع بطاقات التجاري الرياضة \nالأولمبية بعد الانتهاء من كل مرحلة";
+
+// GAME
+"game.level" = "%d مستوى";
+"game.energy" = "%d الطاقة";
+"game.ranking" = "الترتيب العام";
+"game.trophies" = "الجوائز بلدي";
+"game.congratulations" = "تهنئة";
+"game.answer" = "الإجابة";
+"game.correct" = " الصحيحة!";
+"game.low_energy" = "كنت بدون \nكهرباء!";
+"game.low_energy_details" = "تاريخ \nاليومية \nالأوصياء الصحة لاستعادته!";

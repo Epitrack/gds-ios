@@ -377,3 +377,14 @@
 "game_tutorial.fases" = "Cada fase contiene un rompecabezas.\nCompletarla para completar el nivel.";
 "game_tutorial.correct_answer" = "Responde correctamente a las preguntas\nsobre la salud para revelar partes.";
 "game_tutorial.collect_pictures" = "Recoger figuras de los deportes \nolímpicos después de completar cada etapa!";
+
+// GAME
+"game.level" = "Nivel %d";
+"game.energy" = "%d Energía";
+"game.ranking" = "Clasificación General";
+"game.trophies" = "Mis Trofeos";
+"game.congratulations" = "Felicitaciones";
+"game.answer" = "Respuesta";
+"game.correct" = "correcta!";
+"game.low_energy" = "Usted está \nsin energía!";
+"game.low_energy_details" = "Únete diarias \nGuardianes de la Salud \npara restaurarlo!";

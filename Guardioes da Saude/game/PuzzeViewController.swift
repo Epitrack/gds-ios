@@ -93,7 +93,7 @@ class PuzzeViewController: UIViewController {
     }
     
     func loadPuzzle() {
-        self.lbLevel.text = "Nível \(self.user.level)"
+        self.lbLevel.text = String(format: NSLocalizedString("game.level", comment: ""), self.user.level)
         
         var index = 1
         for part in self.user.puzzleMatriz{

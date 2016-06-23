@@ -391,9 +391,21 @@
 
 // GAME TUTORIAL
 "game_tutorial.next" = "Nearby";
-"game_tutorial.welcome" = "Welcome to our race track!! \nWelcome to our race track!";
+"game_tutorial.welcome" = "Welcome to our race track!!";
 "game_tutorial.how_play" = "You must have energy points to play.\nParticipate in Guardians \nof Health every day to earn points!";
 "game_tutorial.rota" = "Our race track has several different \nphases. Complete each phase to get further in the race!";
 "game_tutorial.fases" = "Each phase contains a puzzle.\nComplete it to advance to the next phase.";
-"game_tutorial.correct_answer" = "Answer the healthcare questions correctly to reveal pieces.\nAnswer the healthcare questions correctly to reveal pieces.";
+"game_tutorial.correct_answer" = "Answer the healthcare questions correctly to reveal pieces.";
 "game_tutorial.collect_pictures" = "Collect Olympic sports stickers after \ncompleting each phase!";
+
+
+// GAME
+"game.level" = "Level %d";
+"game.energy" = "%d Powers";
+"game.ranking" = "Ranking";
+"game.trophies" = "My Trophies";
+"game.congratulations" = "Congratulations";
+"game.answer" = "Correct";
+"game.correct" = "Answer!";
+"game.low_energy" = "You are \nwithout power!";
+"game.low_energy_details" = "Join Daily \nHealth Guardians \nto restore it!";

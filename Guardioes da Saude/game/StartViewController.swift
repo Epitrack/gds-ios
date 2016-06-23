@@ -235,7 +235,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func btnMedalAction(sender: AnyObject) {
         self.playSoundButton()
         self.viewTropheis.hidden = true
-        self.lblRankingTitle.text = "Ranking Geral"
+        self.lblRankingTitle.text = NSLocalizedString("game.ranking", comment: "")
         
         if self.rankingList.count == 0 {
             questionRequest.getRanking({HUD.show(.Progress)},
@@ -257,7 +257,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.playSoundButton()
         self.viewTropheis.hidden = false
         self.tableTropheis.reloadData()
-        self.lblRankingTitle.text = "Meus Troféus"
+        self.lblRankingTitle.text = NSLocalizedString("game.trophies", comment: "")
         self.showDialogRanking()
     }
     
@@ -406,7 +406,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func updateEnergyPoint() {
-        self.txPoint.text = "\(user.points) Energias"
+        self.txPoint.text = String(format: NSLocalizedString("game.energy", comment: ""), user.points)
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

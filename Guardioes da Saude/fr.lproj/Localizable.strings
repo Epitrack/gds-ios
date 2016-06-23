@@ -377,3 +377,14 @@
 "game_tutorial.fases" = "Chaque étape contient un puzzle.\nMarminez pour passer à l’étape suivante";
 "game_tutorial.correct_answer" = "répondre correctement aux questions sur \nla santé pour révéler les parties.";
 "game_tutorial.collect_pictures" = "Collecter figurines de sports \nolympiques après avoir terminé chaque étape!";
+
+// GAME
+"game.level" = "Niveau %d";
+"game.energy" = "%d énergie";
+"game.ranking" = "Classement Général";
+"game.trophies" = "Mes Trophées";
+"game.congratulations" = "Félicitations";
+"game.answer" = "Bonne";
+"game.correct" = "réponse!";
+"game.low_energy" = "Vous êtes \nsans pouvoir!";
+"game.low_energy_details" = "Joignez-vous quotidiens \nGardiens de la santé \npour la restaurer!";

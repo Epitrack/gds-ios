@@ -378,3 +378,15 @@
 "game_tutorial.fases" = "Cada fase contém um quebra-cabeça.\nComplete-o para passar de fase.";
 "game_tutorial.correct_answer" = "Responda corretamente as perguntas\nsobre saúde para revelar peças.";
 "game_tutorial.collect_pictures" = "Colecione figurinhas dos esportes \nolímpicos após concluir cada fase!";
+
+// GAME
+"game.level" = "Nível %d";
+"game.energy" = "%d Energias";
+"game.ranking" = "Ranking Geral";
+"game.trophies" = "Meus Troféus";
+"game.congratulations" = "Parabéns";
+"game.answer" = "Resposta";
+"game.correct" = "correta!";
+"game.low_energy" = "Você está \nsem energia!";
+"game.low_energy_details" = "Participe diariamente \ndo Guardiões da Saúde \npara restaurá-la!";
+

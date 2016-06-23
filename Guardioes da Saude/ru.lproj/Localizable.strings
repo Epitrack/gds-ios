@@ -377,3 +377,14 @@
 "game_tutorial.fases" = "Каждая фаза содержит задачку. \nЗавершите, чтобы перейти к другому этапу.";
 "game_tutorial.correct_answer" = "правильно ответить на вопросы\nздоровья, чтобы выявить детали.";
 "game_tutorial.collect_pictures" = "Сбор спортивных торговые карты \nОлимпийский после завершения каждого этапа!";
+
+// GAME
+"game.level" = "%d -го уровня";
+"game.energy" = "%d Энергия";
+"game.ranking" = "Общая классификация";
+"game.trophies" = "Мои призы за соревнования";
+"game.congratulations" = "Поздравляю";
+"game.answer" = "Правильный";
+"game.correct" = "ответ!";
+"game.low_energy" = "Вы без \nвласти!";
+"game.low_energy_details" = "Регистрация Daily \nЗдоровье Стражам \nвосстановить его!";
