@@ -46,10 +46,11 @@ class PuzzeViewController: UIViewController {
     @IBOutlet weak var dialogLowEnergy: UIView!
     
     let user = User.getInstance()
-    let questionViewCtrl = QuestionViewController()
+    var questionViewCtrl = QuestionViewController()
     let questionRequest = QuestionRequester()
     var startViewRef: StartViewController!
     var questions: [Question] = []
+    var questionIndex: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -169,12 +170,17 @@ class PuzzeViewController: UIViewController {
         }
     }
     
+    func removeQuestion() {
+        self.questions.removeAtIndex(self.questionIndex)
+    }
+    
     func showDialogQuestion(part: Int) {
         self.questionViewCtrl.view.transform = CGAffineTransformMakeScale(0.1, 0.1)
         self.viewQuestion.hidden = false;
         
         let diceRoll = Int(arc4random_uniform(UInt32(questions.count)))
         self.questionViewCtrl.populateQuestion(questions[diceRoll])
+        self.questionIndex = diceRoll
         self.questionViewCtrl.part = part
         self.questionViewCtrl.resetView();
         

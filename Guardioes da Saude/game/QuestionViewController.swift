@@ -108,6 +108,8 @@ class QuestionViewController: UIViewController {
                 isLevelDone = true
             }
             
+            self.puzzeViewCtrlRef.removeQuestion()
+            
             questionRequester.updateGame(question, user: self.user, onStart: {
                 }, onSuccess: {
                     self.callCongratulationScreen(isLevelDone)
@@ -156,6 +158,9 @@ class QuestionViewController: UIViewController {
                     }
                     sleep(1)
                 }
+            }
+            dispatch_async(dispatch_get_main_queue()) {
+                self.puzzeViewCtrlRef.closeQuestionDialog()
             }
         })
     }
