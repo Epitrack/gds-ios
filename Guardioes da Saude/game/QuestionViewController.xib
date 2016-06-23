@@ -36,10 +36,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKU-Gg-dTe">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg_answer" translatesAutoresizingMaskIntoConstraints="NO" id="9Q4-6q-9oP">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_answer" translatesAutoresizingMaskIntoConstraints="NO" id="9Q4-6q-9oP">
                             <rect key="frame" x="20" y="40" width="280" height="193"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZs-gQ-6D7">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZs-gQ-6D7">
                             <rect key="frame" x="30" y="40" width="260" height="193"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="21"/>
                             <color key="textColor" red="0.094117648900000003" green="0.42352941630000002" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -52,7 +52,7 @@
                                 <action selector="btnClose:" destination="-1" eventType="touchUpInside" id="UGY-oX-5Qa"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AX0-70-X1e">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AX0-70-X1e">
                             <rect key="frame" x="50" y="224" width="220" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
                             <state key="normal" backgroundImage="btn_question">
@@ -62,7 +62,7 @@
                                 <action selector="btnAlternative:" destination="-1" eventType="touchUpInside" id="3pG-jU-GHn"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVH-K1-ZBa">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVH-K1-ZBa">
                             <rect key="frame" x="50" y="279" width="220" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
                             <state key="normal" backgroundImage="btn_question">
@@ -72,7 +72,7 @@
                                 <action selector="btnAlternative:" destination="-1" eventType="touchUpInside" id="rYr-Gm-Mup"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRv-wP-ZwV">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRv-wP-ZwV">
                             <rect key="frame" x="50" y="334" width="220" height="47"/>
                             <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
                             <state key="normal" backgroundImage="btn_question">
@@ -99,7 +99,7 @@
                                 <constraint firstAttribute="width" secondItem="CfV-aB-Lq2" secondAttribute="height" multiplier="71:67" constant="-3.761194029850742" id="txe-dz-ibf"/>
                             </constraints>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G86-Dk-Tca">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G86-Dk-Tca">
                             <rect key="frame" x="20" y="40" width="280" height="193"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resposta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCr-W0-FXB">

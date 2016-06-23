@@ -234,30 +234,31 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBAction func btnMedalAction(sender: AnyObject) {
         self.playSoundButton()
-        self.viewTropheis.hidden = false
-        self.lblRankingTitle.text = "Meus Troféus"
-        self.showDialogRanking()
-    }
-    
-    @IBAction func btnTrofeuAction(sender: AnyObject) {
-        self.playSoundButton()
         self.viewTropheis.hidden = true
         self.lblRankingTitle.text = "Ranking Geral"
         
         if self.rankingList.count == 0 {
             questionRequest.getRanking({HUD.show(.Progress)},
-            onSuccess: {rankingList in
-                HUD.hide()
-                self.rankingList = rankingList
-                self.tableRanking.reloadData()
-                
-                self.showDialogRanking()
-            }, onError: {error in
-                HUD.hide()
+                                       onSuccess: {rankingList in
+                                        HUD.hide()
+                                        self.rankingList = rankingList
+                                        self.tableRanking.reloadData()
+                                        
+                                        self.showDialogRanking()
+                }, onError: {error in
+                    HUD.hide()
             })
         }else{
             self.showDialogRanking()
         }
+    }
+    
+    @IBAction func btnTrofeuAction(sender: AnyObject) {
+        self.playSoundButton()
+        self.viewTropheis.hidden = false
+        self.tableTropheis.reloadData()
+        self.lblRankingTitle.text = "Meus Troféus"
+        self.showDialogRanking()
     }
     
     func showDialogRanking() {

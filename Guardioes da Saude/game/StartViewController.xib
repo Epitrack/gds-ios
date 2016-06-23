@@ -77,7 +77,7 @@
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dt7-qo-pQR">
-                    <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                    <rect key="frame" x="0.0" y="60" width="320" height="409"/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_display_points" translatesAutoresizingMaskIntoConstraints="NO" id="M9t-h6-NzO">
                     <rect key="frame" x="105" y="498" width="113" height="32"/>
@@ -287,7 +287,7 @@
                 <constraint firstItem="M9t-h6-NzO" firstAttribute="centerX" secondItem="7dt-ex-eDp" secondAttribute="centerX" constant="-5.5" id="mt9-YW-lFi"/>
                 <constraint firstItem="iiJ-8R-Whm" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="otx-0S-DwB"/>
                 <constraint firstAttribute="trailing" secondItem="LXP-V5-JwX" secondAttribute="trailing" id="rkz-FI-Gr4"/>
-                <constraint firstAttribute="bottom" secondItem="dt7-qo-pQR" secondAttribute="bottom" id="seo-lk-MKK"/>
+                <constraint firstAttribute="bottom" secondItem="dt7-qo-pQR" secondAttribute="bottom" constant="99" id="seo-lk-MKK"/>
                 <constraint firstItem="7dt-ex-eDp" firstAttribute="top" secondItem="dt7-qo-pQR" secondAttribute="bottom" constant="18" id="x4Y-VY-7nh"/>
                 <constraint firstItem="dt7-qo-pQR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="320" id="y7V-Ux-ZDT"/>
                 <constraint firstItem="MCA-7e-Xn7" firstAttribute="trailing" secondItem="M9t-h6-NzO" secondAttribute="trailing" id="zqV-vh-h6B"/>

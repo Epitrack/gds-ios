@@ -50,7 +50,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7B-UM-ow4">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="421"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_title_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-V2-sz8">
                             <rect key="frame" x="20" y="20" width="280" height="73"/>
@@ -334,6 +334,7 @@
                         <constraint firstItem="tqf-4H-pJm" firstAttribute="trailing" secondItem="m9R-g2-RBU" secondAttribute="trailing" id="8cr-99-Fqg"/>
                         <constraint firstItem="jq7-Cd-Qfp" firstAttribute="top" secondItem="0bb-Tb-vFZ" secondAttribute="bottom" constant="8" id="8cy-kY-iWY"/>
                         <constraint firstItem="vtk-F8-ZWN" firstAttribute="width" secondItem="B7B-UM-ow4" secondAttribute="width" multiplier="0.33" id="8z6-M8-dND"/>
+                        <constraint firstAttribute="bottom" secondItem="gYA-vx-WXb" secondAttribute="bottom" constant="41" id="9MC-Zb-SfL"/>
                         <constraint firstItem="tqf-4H-pJm" firstAttribute="width" secondItem="m9R-g2-RBU" secondAttribute="width" id="B7E-xh-Ou7"/>
                         <constraint firstItem="WV0-IE-G0S" firstAttribute="width" secondItem="gYA-vx-WXb" secondAttribute="width" id="BHU-8l-SlU"/>
                         <constraint firstItem="WV0-IE-G0S" firstAttribute="height" secondItem="tqf-4H-pJm" secondAttribute="height" id="BT2-yM-hcz"/>
@@ -590,6 +591,7 @@ para restaurá-la!</string>
                     <exclude reference="NFZ-Kt-X6Q"/>
                     <exclude reference="DmQ-VQ-5ql"/>
                     <exclude reference="Yje-j0-Vla"/>
+                    <exclude reference="iL0-nj-1U4"/>
                 </mask>
             </variation>
         </view>
