@@ -289,21 +289,21 @@
 "select_state.how_is_he_she" = "Как себя чувствует \n%@ прямо сейчас?";
 
 // THANK YOU VIEW
-"thank_yили.shared_msg" = "Я делаю это делаю, участвуй тоже в борьбе с комарами Aedes aegypti #ZikaZero. Доступ: http://www.guardioesdasaude.org";
-"thank_yили.title" = "Стражи Здоровья";
-"thank_yили.look_emergency" = "Внимание: Найдите ближайший Пункт Скорой Помощи.";
-"thank_yили.whatsapp_not_installed" = "На этом устройстве Whatsapp не установлен.";
-"thank_yили.thanks_shared" = "Спасибо за то, что поделились!";
-"thank_yили.share_fail" = "Не удалось поделиться вашим участием.";
-"thank_yили.thanks_for_information" = "Спасибо за информацию!";
-"thank_yили.look_emergency_description" = "Нет deixe de procurar o serviço de saúde mais próximo. Продолжайте сообщать ежедневно, о вашем самочувствии.";
-"thank_yили.tell_your_friend" = "Пригласите своих друзей стать Стражами Здоровья.";
-"thank_yили.continue" = "Продолжить";
-"thank_yили.zika_msg" = "Внимание: Указанные симптомы могут быть связаны с вирусом Зика. Найдите ближайший Пункт Скорой Помощи.";
+"thank_you.shared_msg" = "Я делаю это делаю, участвуй тоже в борьбе с комарами Aedes aegypti #ZikaZero. Доступ: http://www.guardioesdasaude.org";
+"thank_you.title" = "Стражи Здоровья";
+"thank_you.look_emergency" = "Внимание: Найдите ближайший Пункт Скорой Помощи.";
+"thank_you.whatsapp_not_installed" = "На этом устройстве Whatsapp не установлен.";
+"thank_you.thanks_shared" = "Спасибо за то, что поделились!";
+"thank_you.share_fail" = "Не удалось поделиться вашим участием.";
+"thank_you.thanks_for_information" = "Спасибо за информацию!";
+"thank_you.look_emergency_description" = "Обязательно, чтобы найти ближайшее медицинское учреждение. Продолжайте сообщать ежедневно, как ваше здоровье.";
+"thank_you.tell_your_friend" = "Пригласите своих друзей стать Стражами Здоровья.";
+"thank_you.continue" = "Продолжить";
+"thank_you.zika_msg" = "Внимание: Указанные симптомы могут быть связаны с вирусом Зика. Найдите ближайший Пункт Скорой Помощи.";
 
 // SELECT PARTICIPANT VIEW
 "select_participant.title" = "Присоединяйтесь к нам сейчас!";
-"select_participant.year_old" = "%ld Anos";
+"select_participant.year_old" = "%ld лет";
 "select_participant.new_member" = "Новый участник";
 "select_participant.how_will_participate" = "Кто будет участвовать?";
 "select_participant.members" = "Члены семьи";
@@ -320,6 +320,7 @@
 "map_health.respiratory" = "Респираторный";
 "map_health.diarrheal" = "Вызывающий диарею";
 "map_health.participations_last_days" = "%d Участие в последние дни";
+"map_health.search_city_name" = "название города";
 
 // DIARY HEALTH VIEW
 "diary_health.title" = "Дневник здоровья";

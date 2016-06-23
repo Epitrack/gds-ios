@@ -289,17 +289,17 @@
 "select_state.how_is_he_she" = "¿Cómo es la prueba \nde la %@ en este momento?";
 
 // THANK YOU VIEW
-"thank_yo.shared_msg" = "Yo hago mi parte, haga su parte también en el combate al mosquito Aedes aegypti #ZikaZero. Acceda: http://www.guardioesdasaude.org";
-"thank_yo.title" = "Guardianes de la Salud";
-"thank_yo.look_emergency" = "Atención: Busque la Unidad de Urgencias más cercana.";
-"thank_yo.whatsapp_not_installed" = "Whatsapp no está instalado en este dispositivo.";
-"thank_yo.thanks_shared" = "¡Gracias por compartir!";
-"thank_yo.share_fail" = "No fue posible compartir su participación.";
-"thank_yo.thanks_for_information" = "¡Gracias por la información!";
-"thank_yo.look_emergency_description" = "No deixe de procurar o serviço de saúde mais próximo. Continuar informando diariamente cómo está su salud.";
-"thank_yo.tellfriend" = "Invite a sus amigos a ser Guardianes de la Salud.";
-"thank_yo.continue" = "Continuar";
-"thank_yo.zika_msg" = "Nota: Los síntomas reportados pueden estar relacionados con el virus Zika. Buscar la unidad de emergencias más cercana.";
+"thank_you.shared_msg" = "Yo hago mi parte, haga su parte también en el combate al mosquito Aedes aegypti #ZikaZero. Acceda: http://www.guardioesdasaude.org";
+"thank_you.title" = "Guardianes de la Salud";
+"thank_you.look_emergency" = "Atención: Busque la Unidad de Urgencias más cercana.";
+"thank_you.whatsapp_not_installed" = "Whatsapp no está instalado en este dispositivo.";
+"thank_you.thanks_shared" = "¡Gracias por compartir!";
+"thank_you.share_fail" = "No fue posible compartir su participación.";
+"thank_you.thanks_for_information" = "¡Gracias por la información!";
+"thank_you.look_emergency_description" = "No deixe de procurar o serviço de saúde mais próximo. Continuar informando diariamente cómo está su salud.";
+"thank_you.tellfriend" = "Invite a sus amigos a ser Guardianes de la Salud.";
+"thank_you.continue" = "Continuar";
+"thank_you.zika_msg" = "Nota: Los síntomas reportados pueden estar relacionados con el virus Zika. Buscar la unidad de emergencias más cercana.";
 
 // SELECT PARTICIPANT VIEW
 "select_participant.title" = "Únete ahora";
@@ -320,6 +320,7 @@
 "map_health.respiratory" = "Respiratoria";
 "map_health.diarrheal" = "de diarrea";
 "map_health.participations_last_days" = "%d La participación en los últimos días";
+"map_health.search_city_name" = "Nombre de la Ciudad";
 
 // DIARY HEALTH VIEW
 "diary_health.title" = "Diário da saúde";

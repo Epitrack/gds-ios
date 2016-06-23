@@ -340,6 +340,7 @@
 "map_health.respiratory" = "Respiratory";
 "map_health.diarrheal" = "Diarrheic";
 "map_health.participations_last_days" = "%d Participation in last days";
+"map_health.search_city_name" = "Name of the City";
 
 // DIARY HEALTH VIEW
 "diary_health.title" = "Diary of health";

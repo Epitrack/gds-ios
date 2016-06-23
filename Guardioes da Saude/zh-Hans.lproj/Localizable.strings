@@ -320,6 +320,7 @@
 "map_health.respiratory" = "中非共和國";
 "map_health.diarrheal" = "腹瀉型";
 "map_health.participations_last_days" = "%d 参加最后的日子";
+"map_health.search_city_name" = "城市名稱";
 
 // DIARY HEALTH VIEW
 "diary_health.title" = "健康日记";

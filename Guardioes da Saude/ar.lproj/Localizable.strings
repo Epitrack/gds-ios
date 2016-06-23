@@ -320,6 +320,7 @@
 "map_health.respiratory" = "جمهورية أفريقيا الوسطى";
 "map_health.diarrheal" = "مصاب بالإسهار";
 "map_health.participations_last_days" = "المشاركة في الأيام الأخيرة %d";
+"map_health.search_city_name" = "اسم المدينة";
 
 // DIARY HEALTH VIEW
 "diary_health.title" = "يوميات من الصحة";
