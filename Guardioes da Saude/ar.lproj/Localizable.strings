@@ -233,6 +233,9 @@
 "health_tips.safe_sex" = "يرجى ملء جميع الحقول في النموذج التالي.";
 "health_tips.health_traveler" = "الصحة المسافرين";
 
+// SAFE SEX
+"safe_sex.title" = "يرجى ملء جميع الحقول في النموذج التالي.";
+
 // PHARMACY VIEW
 "pharmacy.title" = "اتصل بنا";
 "pharmacy.some_isnt_showing" = "قد لا تظهر بعض الصيدليات على الخريطة.";

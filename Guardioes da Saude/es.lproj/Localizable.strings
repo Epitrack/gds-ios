@@ -230,8 +230,11 @@
 "health_tips.pharmacy" = "Farmacias";
 "health_tips.basic_care" = "Cuidados Básicos";
 "health_tips.prevention" = "Prevención";
-"health_tips.safe_sex" = "Practique sexo de forma segura";
-"health_tips.health_traveler" = "Saúde do Viajante";
+"health_tips.safe_sex" = "Pratique en toute sécurité Sex";
+"health_tips.health_traveler" = "Santé Voyageurs";
+
+// SAFE SEX
+"safe_sex.title" = "Pratique en toute sécurité Sex";
 
 // PHARMACY VIEW
 "pharmacy.title" = "Farmacias";

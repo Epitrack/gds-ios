@@ -14,7 +14,7 @@ class SafeSexViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = NSLocalizedString("health_tips.safe_sex", comment: "")
+        self.navigationItem.title = NSLocalizedString("safe_sex.title", comment: "")
         
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
         

@@ -15,62 +15,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CHX-H6-WwD">
-                    <rect key="frame" x="0.0" y="60" width="375" height="607"/>
-                    <attributedString key="attributedText">
-                        <fragment content="Pratique sexo de forma segura">
-                            <attributes>
-                                <color key="NSColor" red="0.094117648899555206" green="0.42352941632270813" blue="0.71764707565307617" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="16" name="Times-Bold"/>
-                                <real key="NSKern" value="0.0"/>
-                                <font key="NSOriginalFont" size="16" name="Times-Bold"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                    <tabStops/>
-                                </paragraphStyle>
-                                <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content">
-
-Camisinha
-•    A camisinha é a maneira prática para se proteger contra o HIV/ aids, as hepatites virais e as infecções sexualmente transmissíveis (IST), como a sífilis e a gonorreia.
-•    Use e descarte corretamente o preservativo.
-•    Se a camisinha “estourou” ou você transou sem camisinha, pode ser necessário o uso de profilaxia pós-exposição de risco ao HIV , conhecida como PEP.
-•    PEP
-•    A PEP é um tratamento com medicamento antirretroviral que evita a infecção pelo vírus HIV, causador da aids. Está indicada para as pessoas que apresentaram exposição de risco ao HIV, como sexo ocasional, violência sexual e acidente ocupacional com material biológico.
-•    Caso seja indicado pelo médico, o tratamento de PEP dura 28 dias e deve ser iniciado em até 72 horas após o contato sexual desprotegido.
-•    Onde encontrar PEP? (Link direto para o aplicativo e/ou site)  http://pep.aids.gov.br
-Importante
-•    Todos têm direito à informação e ao atendimento sem preconceito, estigma e discriminação.
-•    No Brasil, as camisinhas feminina e masculina e o gel lubrificante são distribuídos gratuitamente em unidades de saúde, albergues, Centros de Atendimento ao Turista e outros.  Informe-se sobre os pontos de distribuição mais próximos.
-•    Se precisar de medicamentos contra o HIV (perdeu ou esqueceu), procure a unidade de saúde mais próxima, levando algum documento de identificação. Turista estrangeiro, informe-se com seu seguro de saúde (health insurance).
-Lembre-se
-•    Evite a infeção pelas hepatites virais. Se fizer tatuagens ou colocar piercing, escolha lugares com alvará/ licença sanitária expedida pela Vigilância Sanitária local. Exija essa certificação, se não estiver visível no local.
-•    Exija que o material utilizado seja esterilizado ou descartável.
-•    Não compartilhe seus objetos de uso pessoal, como alicates de cutícula, lâminas de barbear, escova de dente, agulhas e seringas com outras pessoas.
-•    Se observar qualquer sinal ou sintoma, como corrimentos ou feridas,  ou algum outro problema de saúde, procure orientação do profissional de saúde.
-Você sabia?
-•    Muitas pessoas vivem com o HIV e hepatites virais e não sabem.
-•    A única maneira de tomar conhecimento é fazendo o teste. Os testes anti-HIV e das hepatites são gratuitos e oferecidos na rede pública de saúde. Turista estrangeiro, informe-se com seu seguro de saúde (health insurance).
-•    Existe vacina para Hepatite B. Deve ser tomada em 3 doses em períodos diferentes. Informe-se onde está disponível.</string>
-                            <attributes>
-                                <color key="NSColor" red="0.094117648899555206" green="0.42352941632270813" blue="0.71764707565307617" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="16" name="Times-Roman"/>
-                                <real key="NSKern" value="0.0"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                    <tabStops/>
-                                </paragraphStyle>
-                                <color key="NSStrokeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="safe_sex.text" translatesAutoresizingMaskIntoConstraints="NO" id="CHX-H6-WwD" customClass="GDSTextView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="CHX-H6-WwD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="SGE-rl-dZj"/>
+                <constraint firstItem="CHX-H6-WwD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SGE-rl-dZj"/>
                 <constraint firstItem="CHX-H6-WwD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="X0t-s9-aOS"/>
                 <constraint firstAttribute="bottom" secondItem="CHX-H6-WwD" secondAttribute="bottom" id="exy-sq-9c1"/>
                 <constraint firstAttribute="trailing" secondItem="CHX-H6-WwD" secondAttribute="trailing" id="iXk-h0-lB4"/>

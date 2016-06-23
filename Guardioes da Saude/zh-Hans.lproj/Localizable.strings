@@ -231,7 +231,10 @@
 "health_tips.basic_care" = "基本護理";
 "health_tips.prevention" = "填寫下面的所有欄位以添加新成員。";
 "health_tips.safe_sex" = "請填寫下面表格中的所有欄位。";
-"health_tips.health_traveler" = "Saúde do Viajante";
+"health_tips.health_traveler" = "遊客健康";
+
+// SAFE SEX
+"safe_sex.title" = "請填寫下面表格中的所有欄位。";
 
 // PHARMACY VIEW
 "pharmacy.title" = "聯繫我們";

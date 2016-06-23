@@ -233,6 +233,9 @@
 "health_tips.safe_sex" = "Практикуйте безопасный секс ";
 "health_tips.health_traveler" = "Здоровье путешественника";
 
+// SAFE SEX
+"safe_sex.title" = "Практикуйте безопасный секс ";
+
 // PHARMACY VIEW
 "pharmacy.title" = "Аптеки";
 "pharmacy.some_isnt_showing" = "Некоторые аптеки могут не отображаться на карте.";

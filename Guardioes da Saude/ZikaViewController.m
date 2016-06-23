@@ -8,6 +8,7 @@
 
 #import "ZikaViewController.h"
 #import <Google/Analytics.h>
+#import "ViewUtil.h"
 
 @interface ZikaViewController ()
 

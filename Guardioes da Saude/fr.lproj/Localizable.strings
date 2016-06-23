@@ -233,6 +233,9 @@
 "health_tips.safe_sex" = "Avoir des rapports sexuels sûrs";
 "health_tips.health_traveler" = "Santé Voyageurs";
 
+// SAFE SEX
+"safe_sex.title" = "Avoir des rapports sexuels sûrs";
+
 // PHARMACY VIEW
 "pharmacy.title" = "Pharmacies";
 "pharmacy.some_isnt_showing" = "Certaines pharmacies peuvent ne pas s'afficher sur la carte.";
