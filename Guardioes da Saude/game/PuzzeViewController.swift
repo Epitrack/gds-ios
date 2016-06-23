@@ -156,7 +156,7 @@ class PuzzeViewController: UIViewController {
     }
     
     func showQuestion(part: Int) {
-        if self.user.points == 0 {
+        if self.user.points <= 0 {
             self.showLowEnergyDialog()
             return
         }

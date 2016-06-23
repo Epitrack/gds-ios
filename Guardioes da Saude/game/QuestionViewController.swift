@@ -120,7 +120,7 @@ class QuestionViewController: UIViewController {
             sender.setBackgroundImage(UIImage(named: "btn_wrong_answer"), forState: UIControlState.Normal)
             self.answerWrong += 1
             
-            if user.points == 0 {
+            if user.points <= 0 {
                 self.puzzeViewCtrlRef.closeQuestionDialog()
                 self.puzzeViewCtrlRef.showLowEnergyDialog()
             }
