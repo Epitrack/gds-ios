@@ -78,10 +78,10 @@
 - (void) addGamePoint{
     NSDateComponents *otherDay = [[NSCalendar currentCalendar] components:NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:user.lastJoinNotification];
     NSDateComponents *today = [[NSCalendar currentCalendar] components:NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
-    if([today day] == [otherDay day] &&
+    if(!([today day] == [otherDay day] &&
        [today month] == [otherDay month] &&
        [today year] == [otherDay year] &&
-       [today era] == [otherDay era]) {
+       [today era] == [otherDay era])) {
         user.points = 10;
     }
 }
