@@ -323,7 +323,7 @@
 
 // MAP HEALTH VIEW
 "map_health.title" = "Mapa de la Salud";
-"map_health.btn_info" = "Las síndromes son conjuntos de manifestaciones clínicas comunes a un número de enfermedades, entre ellas: \n\n• De diarrea (fiebre y nausea o vómito, además de alguno de estos síntomas: dolores en el cuerpo o dolor de cabeza)\n\n• Respiratoria (Fiebre, además de cualquiera de estos síntomas: tos y dolor de garganta o dificultad para respirar o manchas rojas en el cuerpo)\n\n• Exantemático (manchas rojas en el cuerpo, además de alguno de estos síntomas: fiebre o dolores en el cuerpo o dolores en las articulaciones o dolor de cabeza o comezón u ojos rojos o sangrado)";
+"map_health.btn_info" = "Las síndromes son conjuntos de manifestaciones clínicas comunes a un número de enfermedades, entre ellas: \n\n• De diarrea (fiebre y nausea o vómito, además de alguno de estos síntomas: dolores en el cuerpo o dolor de cabeza)\n\n• Respiratoria (Fiebre y tos, además de cualquiera de estos síntomas: dolor de garganta o dificultad para respirar)\n\n• Exantemático (manchas rojas en el cuerpo, además de alguno de estos síntomas: fiebre o dolores en el cuerpo o dolores en las articulaciones o dolor de cabeza o comezón u ojos rojos o sangrado)";
 "map_health.syndromes" = "Síndromes";
 "map_health.well" = "Bien";
 "map_health.bad" = "Mal";
