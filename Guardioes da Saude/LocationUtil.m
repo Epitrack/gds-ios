@@ -157,7 +157,7 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
     
     for (NSString *countryCode in countryArray) {
         NSString *displayNameString = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
-        if (withBrazil || !([displayNameString isEqualToString:@"Brasil"] || [displayNameString isEqualToString:@"Brazil"])) {
+        if (withBrazil || ![countryCode isEqualToString:@"BR"]) {
             [sortedCountryArray addObject:displayNameString];
         }
     }
@@ -165,6 +165,21 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
     
     
     return sortedCountryArray;
+}
+
++ (NSString *) getCountryInEnglish: (NSString *) countryStr{
+    NSLocale *locale = [NSLocale currentLocale];
+    NSArray *countryArray = [NSLocale ISOCountryCodes];
+    
+    for (NSString *countryCode in countryArray) {
+        NSString *displayNameString = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
+        if ([displayNameString isEqualToString:countryStr]) {
+            NSLocale *localeEnglish = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+            return [localeEnglish displayNameForKey:NSLocaleCountryCode value:countryCode];
+        }
+    }
+    
+    return @"";
 }
 
 + (NSArray *)getStates{

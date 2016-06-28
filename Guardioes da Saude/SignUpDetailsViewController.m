@@ -288,6 +288,7 @@
     self.user.app_token = singleUser.app_token;
     self.user.platform = singleUser.platform;
     self.user.client = singleUser.client;
+    self.user.country = [LocationUtil getCountryInEnglish:self.txtCountry.text];
     
     if (!self.user.email) {
         self.user.email = self.txtEmail.text;

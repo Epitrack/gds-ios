@@ -60,6 +60,7 @@ extern NSString *const kGCMToken;
 @property(nonatomic, assign) BOOL isGameTutorailReady;
 @property(nonatomic, retain) NSMutableArray *puzzleMatriz;
 @property(nonatomic, assign) int partsCompleted;
+@property(nonatomic, retain) NSString *country;
 
 - (void) resetPuzzleMatriz;
 - (void) setGenderBySegIndex: (long) segIndex;

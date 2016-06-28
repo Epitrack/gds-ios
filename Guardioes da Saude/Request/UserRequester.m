@@ -102,6 +102,8 @@
     [params setObject:@"0" forKey:@"picture"];
     [params setObject:user.lat forKey:@"lat"];
     [params setObject:user.lon forKey:@"lon"];
+    [params setObject:user.country forKey:@"country"];
+    
     
     if (user.password) {
         [params setObject:user.password forKey:@"password"];

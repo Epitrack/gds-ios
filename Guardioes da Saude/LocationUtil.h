@@ -23,4 +23,7 @@
 + (NSArray *) getCountriesWithBrazil: (bool) withBrazil;
 
 + (NSArray *) getStates;
+
++ (NSString *) getCountryInEnglish: (NSString *) countryStr;
+
 @end
