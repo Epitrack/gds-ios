@@ -141,7 +141,7 @@
             [survey setTravelLocation:self.txtPais.text];
             [survey setIsSymptom:@"Y"];
             if (self.household) {
-                [survey setIdHousehold: self.household.idUSer];
+                [survey setIdHousehold: self.household.idHousehold];
             }
             
             [surveyRequester createSurvey:survey

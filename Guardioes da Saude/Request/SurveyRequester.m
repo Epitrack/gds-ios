@@ -39,7 +39,8 @@
     [params addEntriesFromDictionary:survey.symptoms];
     
     [self doPost:[NSString stringWithFormat:@"%@/survey/create", [self getUrl]]
-          header:@{@"app_token": user.app_token}
+          header:@{@"app_token": user.app_token,
+                   @"user_token": user.user_token}
        parameter:params
            start:onStart
    error:^(AFHTTPRequestOperation *operation, NSError *error){

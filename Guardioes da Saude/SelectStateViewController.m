@@ -113,7 +113,7 @@
         survey.isSymptom = @"N";
         
         if (self.household) {
-            survey.idHousehold = self.household.idUSer;
+            survey.idHousehold = self.household.idHousehold;
         }
         
         [surveyRequester createSurvey:survey

@@ -72,9 +72,7 @@ NSString *const kGCMToken = @"gcmToken";
         platform = @"ios";
         self.level = 1;
         self.isGameTutorailReady = false;
-        self.points = 10;
-//        self.puzzleMatriz = [[NSMutableArray alloc] initWithArray:@[@1, @1, @1, @1, @1, @1, @1, @1, @0]];
-//        self.partsCompleted = 8;
+        self.points = 0;
         [self resetPuzzleMatriz];
     }
     
@@ -310,6 +308,9 @@ NSString *const kGCMToken = @"gcmToken";
     self.gl = nil;
     self.photo = nil;
     self.lastJoinNotification = nil;
+    
+    [self resetPuzzleMatriz];
+    self.points = 0;
 }
 
 - (void)setPuzzleMatrizWithResponse:(NSMutableArray *)puzzleMatriz{
