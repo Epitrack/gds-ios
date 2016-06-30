@@ -60,6 +60,9 @@
                      user.user_token = response[@"token"];
                      user.hashtag = paramMap[@"hashtags"];
                      user.survey = paramMap[@"surveys"];
+                     user.country = paramMap[@"country"];
+                     user.perfil = paramMap[@"role"];
+                     user.state = paramMap[@"state"];
                      
                      if (paramMap[@"answers"]) {
                          [user setPuzzleMatrizWithResponse:paramMap[@"answers"]];
@@ -103,6 +106,12 @@
     [params setObject:user.lat forKey:@"lat"];
     [params setObject:user.lon forKey:@"lon"];
     [params setObject:user.country forKey:@"country"];
+    
+    if (user.state) {
+        [params setObject:user.state forKey:@"state"];
+    } else {
+        [params setObject:@"" forKey:@"state"];
+    }
     
     
     if (user.password) {
@@ -437,14 +446,15 @@
         [params setValue:user.password forKey:@"password"];
     }
     
-
     [params setValue:user.avatarNumber forKey:@"picture"];
+    [params setObject:user.country forKey:@"country"];
+    [params setObject:user.perfil forKey:@"role"];
     
-    [params setValue:user.puzzleMatriz forKey:@"puzzleMatriz"];
-    
-    [params setValue:[NSString stringWithFormat:@"%d", user.points] forKey:@"xp"];
-    
-    [params setValue:[NSString stringWithFormat:@"%d", user.level] forKey:@"level"];
+    if (user.state) {
+        [params setObject:user.state forKey:@"state"];
+    } else {
+        [params setObject:@"" forKey:@"state"];
+    }
     
     [self doPost:[[self getUrl] stringByAppendingString:@"/user/update"]
           header:@{@"user_token": user.user_token,
@@ -528,6 +538,9 @@
                 user.user_token = response[@"token"];
                 user.hashtag = response[@"hashtags"];
                 user.survey = response[@"surveys"];
+                user.country = response[@"country"];
+                user.perfil = response[@"role"];
+                user.state = response[@"state"];
                 
                 if (response[@"answers"]) {
                     [user setPuzzleMatrizWithResponse:response[@"answers"]];

@@ -167,15 +167,21 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
     return sortedCountryArray;
 }
 
-+ (NSString *) getCountryInEnglish: (NSString *) countryStr{
-    NSLocale *locale = [NSLocale currentLocale];
++ (NSString *) getCountryNameToEnglish: (NSString *) countryStr{
+    return [self getCountryName:countryStr fromLocale:[NSLocale currentLocale] toLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+}
+
++ (NSString *) getCountryNameToCurrentLocale: (NSString *) countryStr{
+    return [self getCountryName:countryStr fromLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] toLocale:[NSLocale currentLocale]];
+}
+
++ (NSString *) getCountryName: (NSString *) countryStr fromLocale: (NSLocale *) fromLocale toLocale: (NSLocale *) toLocale{
     NSArray *countryArray = [NSLocale ISOCountryCodes];
     
     for (NSString *countryCode in countryArray) {
-        NSString *displayNameString = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
+        NSString *displayNameString = [fromLocale displayNameForKey:NSLocaleCountryCode value:countryCode];
         if ([displayNameString isEqualToString:countryStr]) {
-            NSLocale *localeEnglish = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-            return [localeEnglish displayNameForKey:NSLocaleCountryCode value:countryCode];
+            return [toLocale displayNameForKey:NSLocaleCountryCode value:countryCode];
         }
     }
     

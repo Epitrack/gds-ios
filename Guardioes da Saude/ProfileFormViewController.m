@@ -23,6 +23,7 @@
 #import "SWRevealViewController.h"
 #import "TutorialViewController.h"
 #import "MenuViewController.h"
+#import "LocationUtil.h"
 @import Photos;
 
 #define MAXLENGTH 10
@@ -77,6 +78,22 @@
     [self.pickerRelationship.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.pickerRelationship.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     [self.pickerRelationship.DownPicker addTarget:self action:@selector(relationshipDownPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
+    
+    (void)[self.txtCountry initWithData: [LocationUtil getCountriesWithBrazil:YES]];
+    [self.txtCountry.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_country", @"")];
+    [self.txtCountry.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtCountry.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    [self.txtCountry.DownPicker addTarget:self action:@selector(downPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
+    
+    (void)[self.txtState initWithData: [LocationUtil getStates]];
+    [self.txtState.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_state", @"")];
+    [self.txtState.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtState.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    
+    (void)[self.txtPerfil initWithData: [Constants getPerfis]];
+    [self.txtPerfil.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_perfil", @"")];
+    [self.txtPerfil.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtPerfil.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     [self applyLayerOnPictureLayer];
     
@@ -155,8 +172,15 @@
     
     if (self.operation != EDIT_USER) {
         self.btnSaveBottomConst.constant = 13;
+        self.btnChangeTopConst.constant = 13;
         self.lblOr.hidden = YES;
         self.btnDelete.hidden = YES;
+        self.lblPerfil.hidden = YES;
+        self.txtPerfil.hidden = YES;
+        self.lblCountry.hidden = YES;
+        self.txtCountry.hidden = YES;
+        self.lblState.hidden = YES;
+        self.txtState.hidden = YES;
     }
 }
 
@@ -175,6 +199,12 @@
                      andGender:self.user.gender
                        andRace:self.user.race];
     
+    self.txtPerfil.text = [Constants getPerfis][[self.user.perfil intValue] - 1];
+    NSString *country = [LocationUtil getCountryNameToCurrentLocale: self.user.country];
+    self.txtCountry.text = country;
+    [self checkCountry: self.user.country];
+    self.txtState.text = self.user.state;
+    
     if (self.user.photo) {
         [self.user requestPermissions:^(bool isAuthorazed){
             if (isAuthorazed) {
@@ -185,6 +215,30 @@
         }];
     }else{
         [self setAvatarNumber:self.user.avatarNumber];
+    }
+}
+
+-(void)downPickerDidSelected:(id)dp {
+    NSString *country = ((UITextField *) dp).text;
+    [self checkCountry:country];
+}
+
+- (void) checkCountry: (NSString *) country{
+    
+    if ([country isEqualToString:@"Brasil"] ||
+        [country isEqualToString:@"Brazil"] ||
+        [country isEqualToString:@"Brésil"] ||
+        [country isEqualToString:@"Бразилия"] ||
+        [country isEqualToString:@"巴西"] ||
+        [country isEqualToString:@"البرازيل"]) {
+        
+        self.btnChangeTopConst.constant = 230;
+        self.lblState.hidden = NO;
+        self.txtState.hidden = NO;
+    }else{
+        self.btnChangeTopConst.constant = 170;
+        self.lblState.hidden = YES;
+        self.txtState.hidden = YES;
     }
 }
 
@@ -282,15 +336,6 @@
     
     return YES;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (BOOL) isFormValid{
     BOOL fieldsValid = YES;
@@ -300,6 +345,20 @@
         fieldsValid = NO;
     }else if (self.operation != EDIT_USER && [self.pickerRelationship.text isEqualToString:@""]){
         fieldsValid = NO;
+    }else if ([self.txtCountry.text isEqualToString:@""] && self.operation == EDIT_USER){
+        fieldsValid = NO;
+    }else if ([self.txtPerfil.text isEqualToString:@""] && self.operation == EDIT_USER){
+        fieldsValid = NO;
+    }else if ([self.txtState.text isEqualToString:@""] && self.operation == EDIT_USER){
+        if ([self.txtCountry.text isEqualToString:@"Brasil"] ||
+            [self.txtCountry.text isEqualToString:@"Brazil"] ||
+            [self.txtCountry.text isEqualToString:@"Brésil"] ||
+            [self.txtCountry.text isEqualToString:@"Бразилия"] ||
+            [self.txtCountry.text isEqualToString:@"巴西"] ||
+            [self.txtCountry.text isEqualToString:@"البرازيل"]) {
+            
+            fieldsValid = NO;
+        }
     }
     
     return fieldsValid;
@@ -371,6 +430,9 @@
     [userUpdater setGenderByString:self.pickerGender.text];
     userUpdater.race = [self.pickerRace.text lowercaseString];
     userUpdater.avatarNumber = self.pictureSelected;
+    userUpdater.country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
+    userUpdater.state = self.txtState.text;
+    [userUpdater setPerfilByString: self.txtPerfil.text];
     
     NSInteger diffDay = [DateUtil diffInDaysDate:birthdate andDate:[NSDate date]];
     
@@ -408,7 +470,6 @@
             User *user = [User getInstance];
             user.avatarNumber = self.pictureSelected;
             user.photo = photo;
-
         }
         
         [self showSuccessMsg];

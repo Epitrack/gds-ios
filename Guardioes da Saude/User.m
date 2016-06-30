@@ -288,6 +288,9 @@ NSString *const kGCMToken = @"gcmToken";
     self.gl = user.gl;
     self.photo = user.photo;
     self.app_token = user.app_token;
+    self.country = user.country;
+    self.perfil = user.perfil;
+    self.state = user.state;
 }
 
 - (void) clearUser{

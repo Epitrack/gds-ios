@@ -24,6 +24,8 @@
 
 + (NSArray *) getStates;
 
-+ (NSString *) getCountryInEnglish: (NSString *) countryStr;
++ (NSString *) getCountryNameToEnglish: (NSString *) countryStr;
+
++ (NSString *) getCountryNameToCurrentLocale: (NSString *) countryStr;
 
 @end

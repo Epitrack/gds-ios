@@ -24,15 +24,21 @@ typedef enum operation{
 @property Household *household;
 @property Operation operation;
 @property (strong, nonatomic) NSNumber *pictureSelected;
+@property (nonatomic, assign) NSInteger *newMember;
+@property (nonatomic, assign) NSInteger *editProfile;
+@property (strong, nonatomic) NSString *idUser;
+@property (strong, nonatomic) NSString *idHousehold;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
 @property (weak, nonatomic) IBOutlet UIButton *btnDob;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
-@property (strong, nonatomic) NSString *idUser;
-@property (strong, nonatomic) NSString *idHousehold;
-@property (nonatomic, assign) NSInteger *newMember;
+@property (weak, nonatomic) IBOutlet UILabel *lblPerfil;
+@property (weak, nonatomic) IBOutlet UIDownPicker *txtPerfil;
+@property (weak, nonatomic) IBOutlet UILabel *lblCountry;
+@property (weak, nonatomic) IBOutlet UIDownPicker *txtCountry;
+@property (weak, nonatomic) IBOutlet UILabel *lblState;
+@property (weak, nonatomic) IBOutlet UIDownPicker *txtState;
 @property (weak, nonatomic) IBOutlet UIButton *btnPicture;
-@property (nonatomic, assign) NSInteger *editProfile;
 @property (weak, nonatomic) IBOutlet UIDownPicker *pickerRace;
 @property (weak, nonatomic) IBOutlet UIDownPicker *pickerGender;
 @property (weak, nonatomic) IBOutlet UIDownPicker *pickerRelationship;
@@ -41,6 +47,8 @@ typedef enum operation{
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constTopEmail;
 @property (weak, nonatomic) IBOutlet UIButton *btnDelete;
 @property (weak, nonatomic) IBOutlet UILabel *lblOr;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnChangeTopConst;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnSaveBottomConst;
 
 - (IBAction)btnDobAction:(id)sender;
