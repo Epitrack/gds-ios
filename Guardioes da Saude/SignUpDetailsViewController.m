@@ -195,8 +195,6 @@
         
         [self.btnDob setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         dobSetted = YES;
-        
-        [self.txtGender becomeFirstResponder];
     }];
     
     RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
