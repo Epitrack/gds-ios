@@ -103,7 +103,7 @@
 "sign_up_details.gender_required" = "Sex is a required field";
 "sign_up_details.race_required" = "Color/Race is a required field";
 "sign_up_details.email_already_used" = "The email address is already in use";
-"sign_up_details.without_localization" = "we are unable to get your location. Verify that services are enabled on the device.";
+"sign_up_details.without_localization" = "To actively contribute to health surveillance in Brazil you need to share your location.";
 "sign_up_details.lb_country" = "Country of origin:";
 "sign_up_details.tx_country" = "Select the country";
 "sign_up_details.lb_state" = "State:";

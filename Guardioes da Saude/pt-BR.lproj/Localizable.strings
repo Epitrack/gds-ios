@@ -103,7 +103,7 @@
 "sign_up_details.gender_required" = "Sexo é um campo obrigatório";
 "sign_up_details.race_required" = "Cor/Raça é um campo obrigatório";
 "sign_up_details.email_already_used" = "O e-mail usado já está em uso";
-"sign_up_details.without_localization" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
+"sign_up_details.without_localization" = "Para contribuir ativamente com a vigilância em saúde no Brasil é necessário que você compartilhe a sua localização.";
 "sign_up_details.lb_country" = "País de origem:";
 "sign_up_details.tx_country" = "Selecione o país";
 "sign_up_details.lb_state" = "Estado:";
