@@ -4,6 +4,8 @@
 
 @implementation Constants
 
+NSString *const kCurrentLanguage = @"current_language";
+
 + (NSArray *) getGenders{
     return @[@"Masculino", @"Feminino"];
 }

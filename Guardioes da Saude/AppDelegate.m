@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Constants.h"
 #import "SWRevealViewController.h"
 #import "RearViewController.h"
 #import "HomeViewController.h"
@@ -20,6 +21,7 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import <Google/Analytics.h>
 #import "ViewUtil.h"
+#import "ChangeLanguageViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 @import GoogleMaps;
@@ -85,7 +87,15 @@ NSUserDefaults *preferences;
         revealController.delegate = self;
         self.viewController = revealController;
     } else {
-        TutorialViewController *frontViewController = [[TutorialViewController alloc] init];
+        
+        UIViewController *frontViewController;
+        if ([preferences objectForKey:kCurrentLanguage]) {
+            frontViewController = [[TutorialViewController alloc] init];
+        }else{
+            frontViewController = [[ChangeLanguageViewController alloc] init];
+            ((ChangeLanguageViewController *) frontViewController).goToTutorial = YES;
+        }
+        
         UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
         UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:menuViewCtrl];
         

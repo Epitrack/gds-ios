@@ -10,5 +10,6 @@
 
 @interface ChangeLanguageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property BOOL goToTutorial;
 @property (weak, nonatomic) IBOutlet UITableView *tableLanguages;
 @end

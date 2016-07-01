@@ -10,6 +10,9 @@
 #import "HomeViewController.h"
 #import "LocalizationSystem.h"
 #import "AppDelegate.h"
+#import "Constants.h"
+#import "TutorialViewController.h"
+
 @interface ChangeLanguageViewController (){
     NSArray *languages;
     NSArray *languagesDetails;
@@ -34,9 +37,11 @@ static NSBundle *bundle = nil;
     languagesDetails = @[@"Inglês", @"Espanhol", @"Francês", @"Portugues(Brasil)", @"Russo", @"Chinês (Tradicional)", @"Árabe"];
     languagesCode = @[@"en", @"es", @"fr", @"pt-BR", @"ru", @"zh-Hans-CN", @"ar"];
     
-    UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"constant.cancel", @"") style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
-    btnCancel.tintColor = [UIColor colorWithRed:1 green:180.0/255.0 blue:0 alpha:1];
-    self.navigationItem.leftBarButtonItem = btnCancel;
+    if (!self.goToTutorial) {
+        UIBarButtonItem *btnCancel = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"constant.cancel", @"") style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
+        btnCancel.tintColor = [UIColor colorWithRed:1 green:180.0/255.0 blue:0 alpha:1];
+        self.navigationItem.leftBarButtonItem = btnCancel;
+    }
     
     self.tableLanguages.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
@@ -90,23 +95,37 @@ static NSBundle *bundle = nil;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *newLanguage = [languagesCode objectAtIndex:indexPath.row];
+    
+    if ([currentLanguage isEqualToString: newLanguage]) {
+        [self savePreference:newLanguage];
+        if (self.goToTutorial) {
+            TutorialViewController *tutorialViewCtrl = [[TutorialViewController alloc] init];
+            [self.navigationController pushViewController:tutorialViewCtrl animated:YES];
+        }else{
+            [self cancelAction];
+        }
+    } else {
+        [self changeLanguage:newLanguage];
+    }
+}
+
+- (void)changeLanguage: (NSString *) newLanguagesCode{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Guardiões da Saúde"
                                                                    message:NSLocalizedString(@"change_language.confirmation_msg", @"")
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *actionYes = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.yes", @"")
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction *action){
-                                                          [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:[languagesCode objectAtIndex:indexPath.row], nil] forKey:@"AppleLanguages"];
-                                                          [[NSUserDefaults standardUserDefaults] synchronize];
-                                                        
+                                                          [self savePreference:newLanguagesCode];
                                                           exit(0);
                                                       }];
     
     UIAlertAction *actionNo = [UIAlertAction actionWithTitle:NSLocalizedString(@"constant.no", @"")
-                                                        style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action){
-                                                          
-                                                      }];
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action){
+                                                         
+                                                     }];
     
     [alert addAction:actionYes];
     [alert addAction:actionNo];
@@ -114,6 +133,11 @@ static NSBundle *bundle = nil;
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-
+- (void)savePreference: (NSString *) newLanguagesCode{
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults] ;
+    [preferences setObject:[NSArray arrayWithObjects:newLanguagesCode, nil] forKey:@"AppleLanguages"];
+    [preferences setObject:[NSArray arrayWithObjects:newLanguagesCode, nil] forKey:kCurrentLanguage];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 @end

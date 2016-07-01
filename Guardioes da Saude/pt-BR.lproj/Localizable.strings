@@ -10,8 +10,8 @@
 "constant.check_connection" = "Por favor verifique sua conexão!";
 "constant.comunication_error" = "Ocorreu um erro de comunicação!";
 "constant.yes" = "Sim";
-"constant.no" = "Não";
-"constant.ok" = "OK";
+"constant.no" = "Não"; // Falta aki
+"constant.ok" = "OK"; // Falta aki
 "constant.delete" = "Deletar";
 "constant.cancel" = "Cancelar";
 "constant.select" = "Selecionar";
@@ -47,7 +47,7 @@
 "tutorial.welcome" = "Bem-vindo!";
 "tutorial.preparing" = "Preparado para se tornar um Guardião da Saúde?";
 "tutorial.sign_up" = "Cadastre-se";
-"tutorial.sign_in" = "Entrar";
+"tutorial.sign_in" = "Entrar"; //Parou aqui
 "tutorial.how_is_your_health" = "Como está sua saúde?";
 "tutorial.check_your_symptoms" = "Marque na lista os sintomas que você apresenta.";
 "tutorial.health_map" = "Mapa da Saúde";
