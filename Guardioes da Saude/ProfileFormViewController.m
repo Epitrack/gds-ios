@@ -172,15 +172,8 @@
     
     if (self.operation != EDIT_USER) {
         self.btnSaveBottomConst.constant = 13;
-        self.btnChangeTopConst.constant = 13;
         self.lblOr.hidden = YES;
         self.btnDelete.hidden = YES;
-        self.lblPerfil.hidden = YES;
-        self.txtPerfil.hidden = YES;
-        self.lblCountry.hidden = YES;
-        self.txtCountry.hidden = YES;
-        self.lblState.hidden = YES;
-        self.txtState.hidden = YES;
     }
 }
 
@@ -197,13 +190,10 @@
                         andDob:self.user.dob
                       andEmail:self.user.email
                      andGender:self.user.gender
-                       andRace:self.user.race];
-    
-    self.txtPerfil.text = [Constants getPerfis][[self.user.perfil intValue] - 1];
-    NSString *country = [LocationUtil getCountryNameToCurrentLocale: self.user.country];
-    self.txtCountry.text = country;
-    [self checkCountry: self.user.country];
-    self.txtState.text = self.user.state;
+                       andRace:self.user.race
+                     andPerfil:self.user.perfil
+                    andCountry:self.user.country
+                      andState:self.user.state];
     
     if (self.user.photo) {
         [self.user requestPermissions:^(bool isAuthorazed){
@@ -250,7 +240,10 @@
                                  andEmail:self.household.email
                                 andGender:self.household.gender
                                   andRace:self.household.race
-                          andRelationship:self.household.relationship];
+                          andRelationship:self.household.relationship
+                                andPerfil:self.household.perfil
+                               andCountry:self.household.country
+                                 andState:self.household.state];
     
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     f.numberStyle = NSNumberFormatterDecimalStyle;
@@ -273,7 +266,10 @@
                                 andEmail: (NSString *) email
                                andGender: (NSString *) gender
                                  andRace: (NSString *) race
-                         andRelationship: (NSString *) relationship{
+                         andRelationship: (NSString *) relationship
+                               andPerfil: (NSNumber *) perfil
+                              andCountry: (NSString *) country
+                                andState: (NSString *) state{
     self.pickerRelationship.text = [Household getRelationshipsDictonary][relationship];
 
     
@@ -281,7 +277,10 @@
                         andDob:dob
                       andEmail:email
                      andGender:gender
-                       andRace:race];
+                       andRace:race
+                     andPerfil:perfil
+                    andCountry:country
+                      andState:state];
     
 }
 
@@ -289,7 +288,10 @@
                        andDob: (NSString *) dob
                      andEmail: (NSString *) email
                     andGender: (NSString *) gender
-                      andRace: (NSString *) race{
+                      andRace: (NSString *) race
+                    andPerfil: (NSNumber *) perfil
+                   andCountry: (NSString *) country
+                     andState: (NSString *) state{
     self.txtNick.text = nick;
     self.txtEmail.text = email;
     
@@ -314,6 +316,14 @@
     } else if ([race isEqualToString:@"indigena"]) {
         self.pickerRace.text = listRace[4];
     }
+    
+    if (perfil) {
+        self.txtPerfil.text = [Constants getPerfis][[perfil intValue] - 1];
+    }
+    NSString *strCountry = [LocationUtil getCountryNameToCurrentLocale: country];
+    self.txtCountry.text = strCountry;
+    [self checkCountry: country];
+    self.txtState.text = state;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -345,11 +355,11 @@
         fieldsValid = NO;
     }else if (self.operation != EDIT_USER && [self.pickerRelationship.text isEqualToString:@""]){
         fieldsValid = NO;
-    }else if ([self.txtCountry.text isEqualToString:@""] && self.operation == EDIT_USER){
+    }else if ([self.txtCountry.text isEqualToString:@""]){
         fieldsValid = NO;
-    }else if ([self.txtPerfil.text isEqualToString:@""] && self.operation == EDIT_USER){
+    }else if ([self.txtPerfil.text isEqualToString:@""]){
         fieldsValid = NO;
-    }else if ([self.txtState.text isEqualToString:@""] && self.operation == EDIT_USER){
+    }else if ([self.txtState.text isEqualToString:@""]){
         if ([self.txtCountry.text isEqualToString:@"Brasil"] ||
             [self.txtCountry.text isEqualToString:@"Brazil"] ||
             [self.txtCountry.text isEqualToString:@"Brésil"] ||
@@ -507,6 +517,9 @@
     household.race = [self.pickerRace.text lowercaseString];
     household.picture = [self.pictureSelected stringValue];
     household.relationship = [self getRelationship];
+    household.country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
+    household.state = self.txtState.text;
+    [household setPerfilByString: self.txtPerfil.text];
     
     if (self.operation == EDIT_HOUSEHOLD) {
         household.idHousehold = self.household.idHousehold;

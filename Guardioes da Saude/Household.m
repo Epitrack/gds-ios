@@ -7,6 +7,7 @@
 //
 
 #import "Household.h"
+#import "Constants.h"
 
 @implementation Household
 
@@ -108,5 +109,15 @@
     
     
     return relationships;
+}
+
+- (void) setPerfilByString: (NSString *) strPefil{
+    NSArray *perfis = [Constants getPerfis];
+    for (int i = 0; i < perfis.count; i++) {
+        NSString *curPefil = perfis[i];
+        if ([curPefil isEqualToString:strPefil]) {
+            self.perfil = [NSNumber numberWithInt:i+1];
+        }
+    }
 }
 @end
