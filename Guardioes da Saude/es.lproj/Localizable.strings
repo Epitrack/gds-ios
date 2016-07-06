@@ -2,7 +2,7 @@
  Localizable.strings
  
  
- Created by Doglas Queiroz on 2/2/16.
+ Created by Douglas Queiroz on 2/2/16.
  
  */
 
@@ -11,7 +11,7 @@
 "constant.comunication_error" = "¡Sucedió un error de comunicación!";
 "constant.yes" = "Sí";
 "constant.no" = "No";
-"constant.ok" = "OK";
+"constant.ok" = "Ok";
 "constant.delete" = "Suprimir";
 "constant.cancel" = "Cancelar";
 "constant.select" = "Seleccionar";
@@ -24,7 +24,7 @@
 "home.tips_health" = "Consejos de Salud";
 "home.join_us" = "¡Participe Ahora!";
 "home.diary_health" = "Diario de Salud";
-"home.enjoy_yourself" = "Diviertete";
+"home.enjoy_yourself" = "Diviértase";
 
 // ENTER VIEW
 "enter.email" = "E-mail";
@@ -32,15 +32,15 @@
 "enter.sign_in" = "Entrar";
 "enter.forgot_password" = "¿Olvidó la contraseña?";
 "enter.email_required" = "E-mail y/o contraseña no informados.";
-"enter.invalid_email_password" = "No se ha podido iniciar sesión. E-mail y / o contraseña inválida.";
+"enter.invalid_email_password" = "No fue posible realizar el login. E-mail y/o contraseña inválidos.";
 
 // SELECT TYPE LOGIN VIEW
 "select_type_login.quick_access" = "Entre rápidamente con:";
-"select_type_login.or_email" = "O usar su correo electrónico:";
+"select_type_login.or_email" = "O use su e-mail:";
 "select_type_login.facebook_error" = "Error al hacer el login con Facebook.";
 "select_type_login.operation_canceled" = "Operación cancelada.";
 "select_type_login.twitter_error" = "Error al hacer el login con Twitter.";
-"select_type_login.user_not_fond" = "¡Registro no encontrado!";
+"select_type_login.user_not_found" = "¡Registro no encontrado!";
 
 // TUTORIAL VIEW
 "tutorial.tutorial" = "Tutorial";
@@ -57,18 +57,18 @@
 
 // SELECT TYPE CREATE VIEW
 "select_type_create.quick_access" = "Entre rápidamente con:";
-"select_type_create.or_email" = "O usar su correo electrónico:";
+"select_type_create.or_email" = "O use su e-mail:";
 
 // MODAL PRIV VIEW
-"modal_priv.safe_description" = "Nos preocupa su privacidad";
-"modal_priv.description" = "• Su participación es voluntaria y anónima\n \n• Los datos proporcionados serán utilizados para promover una comunidad más saludable\n\n• Para obtener más información, consulte las condiciones de uso";
+"modal_priv.safe_description" = "Nos preocupamos con su privacidad";
+"modal_priv.description" = "• Su participación es voluntaria y anónima";
 
 // FORGOT PASSWORD VIEW
 "forgot_password.label" = "Digite su e-mail y verifique su buzón de entrada.";
 "forgot_password.email" = "E-mail";
 "forgot_password.send" = "Enviar";
 "forgot_password.success" = "E-mail enviado con éxito.";
-"forgot_password.user_not_fond" = "¡E-mail no encontrado!";
+"forgot_password.user_not_found" = "¡E-mail no encontrado!";
 
 // SIGN UP VIEW
 "sign_up.lb_email" = "E-mail:";
@@ -80,14 +80,14 @@
 "sign_up.email_required" = "E-mail es un campo obligatorio";
 "sign_up.password_required" = "Contraseña es un campo obligatorio";
 "sign_up.min_char_password" = "Contraseña necesita tener por lo menos 6 caracteres";
-"sign_up.invalid_password_confirmation" = "A senha e a confirmação devem ser iguais";
-"sign_up.invalid_email" = "E-mail inválido";
+"sign_up.invalid_password_confirmation" = "La contraseña y la confirmación deben ser iguales.";
+"sign_up.invalid_email" = "¡E-mail inválido!!";
 
 // SIGN UP DETAILS VIEW
 "sign_up_details.lb_email" = "E-mail:";
 "sign_up_details.tx_email" = "E-mail";
-"sign_up_details.lb_nick" = "Mote:";
-"sign_up_details.tx_nick" = "Mote";
+"sign_up_details.lb_nick" = "Apodo:";
+"sign_up_details.tx_nick" = "Apodo";
 "sign_up_details.lb_dob" = "Fecha de Nacimiento:";
 "sign_up_details.tx_dob_placeholder" = "Seleccione su fecha de nacimiento.";
 "sign_up_details.lb_gender" = "Sexo";
@@ -96,23 +96,23 @@
 "sign_up_details.tx_race" = "Seleccione su Color/Raza";
 "sign_up_details.sign_up" = "Regístrese";
 "sign_up_details.email_required" = "E-mail es un campo obligatorio";
-"sign_up_details.nick_required" = "Mote es un campo obligatorio";
-"sign_up_details.dob_required" = "Data de nascimento é um campo obrigatório";
+"sign_up_details.nick_required" = "Apodo es un campo obligatorio";
+"sign_up_details.dob_required" = "Fecha de Nacimiento es un campo obligatorio";
 "sign_up_details.min_dob" = "La edad mínima para el usuario principal es 13 años.";
 "sign_up_details.max_dob" = "La edad máxima para el usuario principal es 120 años.";
-"sign_up_details.gender_required" = "El sexo es un campo obligatorio";
+"sign_up_details.gender_required" = "Sexo es un campo obligatorio.";
 "sign_up_details.race_required" = "Color/Raza es un campo obligatorio";
 "sign_up_details.email_already_used" = "El e-mail usado ya está en uso";
-"sign_up_details.without_localization" = "No somos capaces de obtener su ubicación. Verificar que los servicios son activados en el dispositivo.";
+"sign_up_details.without_localization" = "Para contribuir activamente a la vigilancia de la salud en Brasil tiene que compartir su ubicación.";
 "sign_up_details.lb_country" = "País de origen:";
-"sign_up_details.tx_country" = "Seleccione el país";
+"sign_up_details.tx_country" = "Por favor, ¡seleccione el país!";
 "sign_up_details.lb_state" = "Estado:";
 "sign_up_details.tx_state" = "Seleccione el estado";
 "sign_up_details.lb_perfil" = "Perfil:";
 "sign_up_details.tx_perfil" = "Seleccione su perfil";
-"sign_up_details.perfil_athlete" = "Atleta / delegación";
-"sign_up_details.perfil_worker" = "Trabajador / Voluntarios";
-"sign_up_details.perfil_fan" = "Ventilador / Espectador";
+"sign_up_details.perfil_athlete" = "Atleta / Delegación";
+"sign_up_details.perfil_worker" = "Trabajador / Voluntario";
+"sign_up_details.perfil_fan" = "Fan / Espectador";
 "sign_up_details.perfil_required" = "Perfil es un campo obligatorio";
 
 // MENU VIEW
@@ -127,11 +127,11 @@
 // About VIEW
 "about.title" = "Sobre";
 "about.subtitle1" = "SOBRE LA APLICACIÓN “GUARDIANES DE LA SALUD” ";
-"about.subtitle2" = "Sobre la participación voluntaria";
-"about.subtitle3" = "Agradecimiento";
-"about.subtitle4" = "Beneficios de la participación";
-"about.subtitle5" = "Sepa más sobre el uso de la aplicación";
-"about.subtitle6" = "Sobre la sociedad";
+"about.subtitle2" = "SOBRE LA PARTICIPACIÓN VOLUNTARIA";
+"about.subtitle3" = "AGRADECIMIENTO";
+"about.subtitle4" = "BENEFICIOS DE LA PARTICIPACIÓN";
+"about.subtitle5" = "SEPA MÁS SOBRE EL USO DE LA APLICACIÓN";
+"about.subtitle6" = "SOBRE LA SOCIEDAD";
 "about.text" = "SOBRE LA APLICACIÓN “GUARDIANES DE LA SALUD” \n\nLa aplicación “Guardianes de la Salud”, desarrollada para celulares, tablets y computadoras, forma parte de la iniciativa del Ministerio de Salud, en sociedad con la Organización No Gubernamental Skoll Global Threats Fund, de los Estados Unidos de América, contemplando evaluar el uso potencial de aplicaciones para dispositivos móviles como parte de la estrategia de fortalecimiento de la capacidad de detección de brotes y emergencias de salud pública, bajo el ámbito del Sistema Único de Salud (SUS), principalmente durante eventos masivos, como en los Juegos Olímpicos y Paralímpicos de 2016. \n\nEsta estrategia es la evolución del proyecto realizado con la misma institución, denominado “Salud en la Copa” y lanzado exclusivamente para el período de los juegos de la Copa del Mundo FIFA Brasil 2014®, cuyos resultados demostraron ser prometedores y se mantuvieron los intereses de ambas instituciones para la realización de una nueva estrategia para los Juegos Olímpicos y Paralímpicos en 2016. \n\nLa primera versión de la aplicación Guardianes de la Salud ya está disponible para los sistemas operativos iOS de Apple y Android de Google, y también mediante el sitio http://guardioesdasaude.org/. \n\nInicialmente desarrollada en portugués, las próximas versiones de la aplicación “Guardianes de la Salud” estará disponible también en los idiomas oficiales de las Naciones Unidas, siendo un instrumento complementario para orientación de los viajeros internacionales que visitan Brasil, principalmente para los que cuyo destino son las sedes de los Juegos Olímpicos y Paralímpicos de 2016. \n\nLa participación en la iniciativa está restringida a los usuarios con 13 años o más de edad. Además, es fundamental que antes de registrarse, los usuarios lean y acepten los “Términos de Uso” y el rellenado del registro simplificado, que contiene mote, dirección de e-mail, fecha de nacimiento, raza/color, sexo y contraseña de acceso. La participación es voluntaria, sigilosa y los datos proporcionados están protegidos bajo la Ley nº 12.527, de 18 de noviembre de 2011. \n\nLos resultados del proyecto serán utilizados por la vigilancia de la salud de los Estados, Municipios y Gobierno Federal, vislumbrando detectar y prevenir brotes y emergencias de salud pública, mediante la adopción de medidas de prevención y control oportunas. La divulgación de los resultados del proyecto se realizará de modo agregado y anónimo, contemplando describir el perfil de la condición de salud de los voluntarios, a partir de la información entregada mediante la aplicación. \n\nSobre la participación voluntaria \n\nSu participación es voluntaria y representa una gentil contribución para el perfeccionamiento de la vigilancia de la salud en Brasil. El rellenado del formulario sobre la condición de salud no representa una consulta médica, no garantiza acceso diferenciado a los servicios de salud y el usuario no recibirá el contacto de ningún profesional o servicio de salud para obtener información, ya sea por e-mail o por cualquier otro medio de contacto. \n\nDurante la participación, podrán ser enviados mensajes de texto a los usuarios, sólo por la aplicación, mediante la tecnología Push (Push Notification), conteniendo orientaciones sobre cuidados de salud u orientaciones sobre los órganos de vigilancia. \n\nEs importante destacar que en caso de que usted informe que no se siente bien, se recomienda que consulte a un médico de referencia o al servicio de salud más cercano a usted. Para tal fin, está disponible en la aplicación un atajo con búsqueda preconfigurada de servicios de salud y farmacias más cercanas a usted, con base en el servicio de geolocalización de su dispositivo móvil en Google Maps. Esta funcionalidad no forma parte de la aplicación. Por este motivo, será direccionado a la aplicación de mapas de su aparato y se recomienda tener cuidado al transitar por áreas desconocidas y evitar zonas de riesgo. Para tal fin, busque información en los órganos gubernamentales locales. \n\nLa aplicación fue configurada con un conjunto de teléfonos útiles incluyendo el de SAMU (Servicio de Atención Móvil de Urgencia), cuya llamada es gratuita y funciona 24 horas por día atendiendo solicitudes de atención de urgencia para ocurrencias de naturaleza traumática, clínica, pediátrica, quirúrgica, gineco-obstétrica y de salud mental, en residencias, lugares de trabajo y vías públicas. \n\nBeneficios de la participación \n\n•	Participar activamente en las acciones de vigilancia en salud que vislumbran la prevención de enfermedades en la comunidad; \n•	Acceder a los contactos de servicios públicos útiles sin necesitar alterar su agenda de teléfonos; \n•	Acceder fácilmente a información útil sobre cuidados de salud y medidas de prevención contra enfermedades; \n•	Disfrutar de facilidades, como la búsqueda preconfigurada por Unidades de Urgencias y farmacias cercanas (20 km) en Google Maps; \n•	Seguir los resultados del proyecto, mediante el website www.guardioesdasaude.org; \n\nSepa más sobre el uso de la aplicación \n\nLa aplicación “Guardianes de la Salud” está disponible gratuitamente para download y utilización en sistemas operativos iOS, Android y navegadores de Internet. En diversas ciudades existen puntos de Internet para uso gratuito o el usuario podrá utilizar su propio paquete de datos contratado. \n\nSe informa que las llamadas telefónicas para los servicios públicos de referencia registrados en la aplicación necesitan de un plan de telefonía contratado. Por lo tanto, consulte a su operadora antes de utilizar esta funcionalidad. Este servicio no funcionará sin la presencia de la función de teléfono en el aparato. Esta información debe ser observada, principalmente por usuarios de otros países. \n\nSobre la sociedad \n\nLa iniciativa pionera es de la Secretaría de Vigilancia de la Salud del Ministerio de la Salud, en sociedad con las ciudades sedes de los Juegos Olímpicos y Paralímpicos. En la sociedad, la Organización No Gubernamental (ONG) Skoll Global Threats Fund es responsable por los costos de contratación y desarrollo del software, bajo la supervisión de la Asociación Brasileña de Profesionales de Epidemiología de Campo (ProEpi), ambas son Organizaciones No Gubernamentales, sin fines de lucro, que actúan en el perfeccionamiento de la vigilancia de la salud en Brasil y en el mundo. \n\nProEpi es responsable por garantizar que los requisitos establecidos por el Ministerio de Salud y por Skoll Global Threats Fund se cumplan, conforme a lo previsto en el proyecto: privacidad de los datos de los usuarios, transparencia y publicidad de los resultados públicos del proyecto y disponibilidad del código fuente y documentación en ambiente de libre acceso para download, adecuación y uso de la aplicación por servicios de salud de Brasil y de países interesados, siempre que esté garantizada la finalidad sin fines de lucro. \n\nAgradecimiento \n\nLas instituciones organizadoras agradecen a todos los voluntarios, profesionales de salud y gestores del Sistema Único de Salud por creer en el proyecto piloto y apoyar esta iniciativa pionera en la salud pública internacional. \n\nAgradecimiento especial a las Secretarías de Salud de los Municipios Sedes de los Juegos Olímpicos y Paralímpicos (Belo Horizonte, Distrito Federal, Manaus, Río de Janeiro, Salvador y São Paulo).";
 
 // HELP VIEW
@@ -139,14 +139,14 @@
 "help.terms" = "Términos y Políticas";
 "help.options" = "Opciones";
 "help.contact_us" = "Entre en contacto";
-"help.report_bug" = "Informe de errores en la aplicación";
+"help.report_bug" = "Relatar Errores";
 
 // TERMS VIEW
 "terms.title" = "Términos y Políticas";
 "terms.facebook_error" = "Error al hacer el login con Facebook.";
 "terms.operation_canceled" = "Operación cancelada.";
 "terms.social_network_in_using" = "Registro realizado anteriormente con esa red social.";
-"terms.sociel_network_error" = "No fue posible llevar a cabo la orden. Por favor, intente nuevamente en unos minutos!";
+"terms.sociel_network_error" = "No fue posible realizar el registro. ¡Intente nuevamente en algunos minutos!";
 "terms.decline" = "No acepto";
 "terms.i_agree" = "Acepto";
 "terms.text" = "POLÍTICA DE PRIVACIDAD Y TÉRMINOS DE USO \n\nPor favor, lea estos términos legales de uso antes de emplear la aplicación “Guardianes de la Salud”, realizar cualquier colaboración, y acceder o bajar cualquier información de esta aplicación. \nAl acceder o utilizar la aplicación “Guardianes de la Salud”, usted acepta y está de acuerdo en cumplir los términos y condiciones establecidos en los “Términos de Uso”. \nEstos términos consisten en un acuerdo vinculante entre usted y la aplicación “Guardianes de la Salud”, que abarca todo su acceso y uso de esa aplicación, lo que incluye el uso de toda la información, datos, herramientas, productos, servicios y otro contenido disponible mediante la aplicación. \nAl utilizar esta aplicación, usted confirma que comprende y concuerda con las siguientes reglas dispuestas: \n1. Respeto a las leyes: \nEl usuario registrado deberá acceder a la aplicación “Guardianes de la Salud” sólo para finalidades lícitas y relacionadas a la salud; \nEl usuario está de acuerdo en utilizar la aplicación sólo para los debidos fines y en conformidad con los presentes términos y limitaciones legales, así como con cualquier política aplicable en Brasil; \nSu acceso está prohibido en territorios donde el contenido sea considerado ilegal. Aquellos que opten por acceder a este sitio desde otras localidades, lo harán a iniciativa propia y serán responsables por el cumplimiento de las leyes locales aplicables. Los materiales no deberán ser usados ni exportados incumpliendo las leyes brasileñas. Cualquier pendiente con relación a los materiales será dirimirá mediante las leyes brasileñas. \nLa alteración no autorizada del contenido de este sitio está expresamente prohibida. \n2. Restricciones de Uso: \nLa utilización de la aplicación está permitida solamente para personas con 13 (trece) años de edad o más. \n3. Responsabilidad por el Contenido: \nLas instituciones y desarrolladores de la aplicación “Guardianes de la Salud” no son responsables por el contenido de cualquier información eventualmente intercambiada por los usuarios entre sí, mediante redes sociales, o para la aplicación “Guardianes de la Salud”, sea lícita o ilícita. \nLos comentarios compartidos, por el usuario, mediante redes sociales no representan la opinión de las instituciones involucradas en el proyecto y la responsabilidad es del autor del mensaje. \nEl usuario está de acuerdo en que es el único responsable por su propia conducta y por la veracidad de la información suministrada mientras utilice el servicio y que es responsable por las consecuencias que provengan del suministro intencional de datos incorrectos. \nEl usuario está de acuerdo que, al usar la aplicación “Guardianes de la Salud”, no publicará, enviará, distribuirá ni divulgará contenido o información de carácter difamatorio, obsceno o ilícito, inclusive información de propiedad exclusiva perteneciente a otras personas o empresas, así como marcas registradas o información protegida por derechos de autor, sin la expresa autorización del propietario de esos derechos; \nNadie puede actuar a su nombre en el uso de la aplicación “Guardianes de la Salud”. Usted es responsable por el contenido que los individuos no autorizados produzcan al usar esta aplicación utilizando, con su permiso, su perfil registrado. Esta regla no se aplica a los casos de violación u otros problemas de seguridad de la aplicación. \n4. Accesibilidad al Contenido: \nEl equipo de la aplicación “Guardianes de la Salud” no garantiza que esta aplicación sea parcial o completamente funcional para el uso fuera del territorio nacional. Si usted opta por acceder a Webapp y a la aplicación desde otras localidades, usted lo hará por su propia iniciativa y su propio riesgo. Usted es responsable por el cumplimiento de las leyes locales y, en la medida en que las leyes locales sean aplicables, usted está de acuerdo específicamente en cumplir todas las leyes aplicables relativas a la transmisión de datos técnicos exportados a partir de ese lugar. \n5. Propiedad Intelectual: \nEl Ministerio de la Salud, las Secretarías de Salud involucradas e instituciones socias, son propietarios del derecho de autoría del contenido producido y presentado en esta aplicación. Esta premisa no se aplica a la información considerada como de Dominio Público o de Utilidad Pública. Todas las demás marcas comerciales, marcas de servicio, nombres y logotipos que aparecen en esa aplicación son de propiedad de sus respectivos propietarios. \nLa aplicación “Guardianes de la Salud” es un software open source cuya utilización por terceros se somete a los términos de la licencia internacional http://opensource.org/licenses/gpl-3.0 GNU General Public License, versión 3 (GPL-3.0). Los derechos de uso del contenido y de los informes generados por Webapp y por la aplicación son cedidos por los desarrolladores, en especial aquellos que provienen de los términos de la licencia http://creativecommons.org/licenses/by-nc/4.0/ Creative Commons - Atribuição-Não Comercial 4.0 Internacional http://creativecommons.org.br/as-licencas/attachment/by-nc/. \nSólo la información divulgada por los servicios de salud debe ser considerada oficial para la divulgación pública, en lo que tiene que ver con los datos relacionados a este tema. Ninguna de la información proveniente de la aplicación “Guardianes de la Salud”, a pesar del empeño del equipo en garantizar la calidad, actualidad y autenticidad de la información, deberá ser considerada oficial para divulgación pública. Los datos recolectados mediante la aplicación “Guardianes de la Salud” provienen de usuarios que voluntariamente proporcionaron la información y que pueden sufrir influencia por su capacidad de acceso a los dispositivos móviles o computadoras con especificaciones tecnológicas mínimas. \nDe esta manera, la información generada, a partir de esa estrategia, puede ser insuficiente para representar estadísticamente al padrón epidemiológico real de ese período y lugar. La información lúdica o de utilidad pública podrá presentar incorrecciones o fallas eventuales de actualización, siendo recomendada su validación por los usuarios en casos de urgencia y emergencia o de cualquier otra situación de amenaza a su salud o integridad. \n6. Leyes, Reglamentos, Derechos y Deberes: \nEs política del equipo de la aplicación “Guardianes de la Salud” cumplir todas las leyes y reglamentos aplicables y vigentes. En el caso de cualquier disposición de los presentes Términos de Uso esté en conflicto con cualquier ley o reglamento aplicable, la ley o reglamento aplicable substituirá a la disposición contraria. \nEstos Términos de Uso y el uso de la aplicación “Guardianes de la Salud” son y serán regidos e interpretados de acuerdo con las leyes internas de Brasil, sin tomar en cuenta sus reglas de conflictos de leyes. En caso de cualquier conflicto entre las leyes, reglas y reglamentos extranjeros y de Brasil, las leyes, reglas y reglamentos de Brasil deberán prevalecer. \nLa aplicación “Guardianes de la Salud” podrá, pero no está obligada, a monitorear, revisar y restringir el acceso a cualquier de sus áreas donde los usuarios transmiten información, pudiendo retirar del aire o retirar el acceso a cualesquiera de estas informaciones o comunicaciones. Si usted tiene alguna duda en relación a la aplicación “Guardianes de la Salud”, no dude en contactarnos mediante el e-mail: contato@guardioesdasaude.org \n7. Uso de las Contribuciones: \nAl enviar una contribución escrita o publicar información en la aplicación “Guardianes de la Salud”, usted concede una licencia perpetua, exenta de royalties, licencia incondicional para esta aplicación y cualquier organización sucesora, para publicar su contribución en la aplicación “Guardianes de la Salud”, así como divulgarla, de forma agregada (nunca individual) a otros medios de comunicación, y para discutir o referenciarla en cualesquiera publicaciones provenientes de la aplicación “Guardianes de la Salud”. \nUsted también está de acuerdo en que la aplicación “Guardianes de la Salud” tiene el derecho, pero no la obligación, de editar o remover cualquier contribución, o incluirla en el texto, en conjunto con otras contribuciones, a criterio exclusivo del equipo relacionado a esa aplicación. \n8. Garantía de Sigilo y Privacidad: \nSerá garantizado el sigilo y la privacidad de toda la información producida por usted en la aplicación “Guardianes de la Salud” y el acceso a la información seguirá las reglas previstas en la Ley de Acceso a la Información. \nNos reservamos el derecho de usar esta información internamente y, bajo este ámbito, su contribución estará vinculada a su e-mail y será hecha anónima para cualquier finalidad de análisis de los datos. \nInformamos también que, para atender a la finalidad principal de la aplicación, que es identificar aglomerados de individuos con síntomas, la información sobre su estado de salud será geolocalizada a través de la captura de la señal de GPS de su dispositivo\". \nLa aplicación “Guardianes de la Salud”, sus colaboradores y usuarios, incluyendo agencias gubernamentales y no gubernamentales, dependen de los usuarios para la precisión de las contribuciones. El equipo no se responsabiliza por errores o imprecisiones en cualquier sumisión. La tergiversación deliberada de información por parte de un usuario puede constituir una violación de la ley, y si es seria, será comunicada a las autoridades gubernamentales apropiadas. \n9. Actualización de la aplicación “Guardianes de la Salud”: \nPodrán haber modificaciones de esta aplicación y de sus Términos de Uso. A menos que indique lo contrario, su uso de Webapp y de la aplicación indica la aceptación integral de los Términos de Uso en esa versión vigente, cada vez que usted use la aplicación “Guardianes de la Salud”. Estén atentos a las actualizaciones y, en caso de duda, los Términos de Uso estarán siempre disponibles para acceso y concordancia o no. \n10. Responsabilidad por Acciones con base en el Contenido: \nLa aplicación “Guardianes de la Salud” no asume responsabilidad por cualquier perjuicio y/o daños a personas o bienes, en consecuencia de cualquier utilización de las ideas, contenidos, instrucciones, métodos, productos o procedimientos contenidos en esa aplicación. \nBajo ninguna hipótesis los profesionales involucrados con el desarrollo o gestión de esta aplicación serán responsabilizados por cualquier decisión o acción tomada por usted en base a dicho contenido. \nFrente a las amenazas o cualquier otra situación de riesgo para la salud o integridad de usted, busque siempre orientación validada y actualizada por parte de los servicios locales de salud pública. \n11. Responsabilidad por Problemas Tecnológicos: \nEventualmente, todo el contenido o cualquier parte de la aplicación “Guardianes de la Salud” puede no estar disponible y puede no funcionar correctamente en cualquier momento. Realizaremos esfuerzos razonables para evitar problemas tecnológicos, pero en cualquier momento pueden ocurrir en esta aplicación problemas tecnológicos de las más diversas naturalezas, tales como virus, rutinas de programación perjudiciales o problemas relacionados al aparato. \nLa Webapp y la aplicación se proporcionan \"como están\" y \"conforme estén disponibles\". Sin limitar nuestro aviso general, no garantizamos la disponibilidad, integridad, puntualidad, funcionalidad, confiabilidad, secuenciamiento o la velocidad de entrega en esta aplicación o de cualquier parte del contenido. \nLa aplicación “Guardianes de la Salud” no se responsabiliza por cualquier daño o perjuicio causado por el desempeño o falla de desempeño de toda o cualquier parte de la aplicación. La aplicación “Guardianes de la Salud” no se responsabiliza por ningún defecto, atraso o error resultante de su utilización de esta aplicación. \nLa utilización de todas las funcionalidades de la aplicación “Guardianes de la Salud” exige disponibilidad del acceso a Internet por parte del usuario, mediante wi-fi o cable de red de datos. La ausencia de ese prerrequisito puede limitar la utilización de la aplicación con todo su potencial de uso. El equipo de la aplicación “Guardianes de la Salud”, considerando este aviso, no asume ninguna responsabilidad consecuencia de esta limitación. \nEste descargo de responsabilidad se aplica a todos y a cualesquiera daños o perjuicios, incluyendo aquellos causados por cualquier falla de desempeño, error, omisión, interrupción, remoción, defecto, atraso en la operación o transmisión, virus de computadora, falla de línea de comunicación, robo, destrucción o acceso no autorizado, a alteración o uso de cualquier bien, ya sea por violación de contrato, comportamiento ilícito, negligencia o cualquier otra causa de acción. \n12. Responsabilidad por Información de Terceros: \nLa disposición a través de la Webapp y de la aplicación de links y referencias hacia otros sitios, publicaciones o recursos de información no constituye el respaldo a esos sitios o a sus recursos por parte de la aplicación “Guardianes de la Salud”, de sus agentes o representantes. El equipo de la aplicación “Guardianes de la Salud” no realiza representaciones ni aserciones en cuanto a la calidad, contenido y precisión de la información, servicios o productos que puedan suministrarse por esos recursos y, específicamente, se exenta de cualesquiera garantías, incluyendo, pero sin limitarse a, las garantías implícitas o expresas de comerciabilidad o adecuación para cualquier utilización particular, aplicación o finalidad. \n13. Consideraciones Finales \nEl acceso al servicio representa la aceptación expresa e irrestricta de los Términos de Uso arriba descritos. Al concordar con estos términos usted concede una licencia perpetua, exenta de royalties, licencia incondicional para la aplicación “Guardianes de la Salud”, Ministerio de la Salud y todas las organizaciones sucesoras, para publicar a su contribución de forma agregada, en la propia aplicación, así como divulgarlas a los servicios de vigilancia de salud pública relacionados. Usted también está de acuerdo en que la aplicación “Guardianes de la Salud” tiene el derecho, pero no la obligación, de editar o remover cualquier contribución a criterio exclusivo del equipo de la aplicación.";
@@ -154,8 +154,8 @@
 // REPORT VIEW
 "report.title" = "Relatar Errores";
 "report.required_filds" = "Asunto y/o mensaje no informados.";
-"report.success" = "Mensaje enviada com sucesso. ¡Gracias!";
-"report.error" = "No fue posible llevar a cabo la orden. Por favor, intente nuevamente en unos minutos!";
+"report.success" = "Mensaje enviado con éxito. ¡Gracias!";
+"report.error" = "No fue posible enviar el e-mail. Intente nuevamente en algunos minutos.";
 "report.decription" = "En caso de que usted haya encontrado alguna dificultad en utilizar Guardianes de la Salud, rellene el formulario de abajo y envíe su mensaje a nuestro equipo de especialistas.";
 "report.subject" = "Asunto";
 "report.describe_problem" = "Describa el problema:";
@@ -164,19 +164,19 @@
 // PROFILE LIST VIEW
 "profile_list.title" = "Perfil";
 "profile_list.delete_confirmation" = "¿Desea remover el perfil definitivamente? Esta operación es irreversible.";
-"profile_list.add_new_member" = "Agregar participante";
+"profile_list.add_new_member" = "Añadir miembro del domicilio";
 "profile_list.select_perfil" = "Seleccione cuál de los perfiles de abajo desea editar.";
 
 // PROFILE FORM VIEW
-"profile_form.lb_nick" = "Mote:";
-"profile_form.placeholder_nick" = "Mote";
+"profile_form.lb_nick" = "Apodo:";
+"profile_form.placeholder_nick" = "Apodo";
 "profile_form.lb_race" = "Color/Raza:";
-"profile_form.lb_dob" = "Fecha de nacimiento:";
-"profile_form.title_dob" = "Fecha de nacimiento";
+"profile_form.lb_dob" = "Fecha de Nacimiento:";
+"profile_form.title_dob" = "Fecha de Nacimiento";
 "profile_form.msg_dob" = "Seleccione su fecha de nacimiento.";
 "profile_form.lb_gender" = "Sexo:";
 "profile_form.placeholder_gender" = "Seleccione su sexo";
-"profile_form.placeholder_race" = "Selecione seu Color/Raza";
+"profile_form.placeholder_race" = "Seleccione su Color/Raza";
 "profile_form.lb_relationship" = "Parentesco:";
 "profile_form.placeholder_relationship" = "Seleccione el parentesco";
 "profile_form.lb_email" = "E-mail:";
@@ -184,19 +184,19 @@
 "profile_form.change_password" = "Redefinir contraseña";
 "profile_form.save" = "Guardar";
 "profile_form.edit_profile" = "Editar Perfil";
-"profile_form.add_member" = "Adicionar Integrante";
+"profile_form.add_member" = "Añadir miembro del domicilio";
 "profile_form.fill_in_fields" = "Rellene todos los campos del formulario.";
 "profile_form.invalid_dob" = "La fecha de aniversario debe ser menor que hoy.";
 "profile_form.min_dob" = "La edad mínima para el usuario principal es 13 años.";
 "profile_form.max_dob" = "La edad máxima para el usuario principal es 120 años.";
-"profile_form.invalid_email" = "¡¡E-mail inválido!";
+"profile_form.invalid_email" = "¡E-mail inválido!";
 "profile_form.success" = "Operación realizada con éxito.";
 "profile_form.fail" = "Sucedió un problema de comunicación, ¡por favor verifique su conexión!";
 "profile_form.delete" = "Excluir Cuenta";
-"profile_form.or" = "OU";
+"profile_form.or" = "o";
 "profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardianes de la Salud, será necessário um novo cadastro.\n¿Desea continuar?";
 "profile_form.modal_delete_title" = "Desactivar su cuenta";
-"profile_form.modal_delete_body" = "Sua conta foi desativada com sucesso";
+"profile_form.modal_delete_body" = "Su cuenta fue desactivada con éxito.";
 
 // SELECT AVATAR VIEW
 "select_avatar.title" = "Editar Foto";
@@ -209,7 +209,7 @@
 "chang_password.fail" = "Sucedió un error al actualizar el usuario.";
 "chang_password.password_isnt_equals" = "Las contraseñas no son iguales.";
 "chang_password.min_char_password" = "La contraseña debe tener más de 6 caracteres.";
-"chang_password.placeholder_password" = "Nova senha";
+"chang_password.placeholder_password" = "Nueva Contraseña";
 "chang_password.placeholder_password_confirmation" = "Redefinir contraseña";
 "chang_password.save" = "Redefinir contraseña";
 "chang_password.current_password" = "Contraseña Actual";
@@ -230,12 +230,12 @@
 "health_tips.phones" = "Teléfonos Útiles";
 "health_tips.pharmacy" = "Farmacias";
 "health_tips.basic_care" = "Cuidados Básicos";
-"health_tips.prevention" = "Prevención";
-"health_tips.safe_sex" = "Pratique en toute sécurité Sex";
-"health_tips.health_traveler" = "Santé Voyageurs";
+"health_tips.prevention" = "Participe activamente en la prevención de enfermedades.";
+"health_tips.safe_sex" = "Practique sexo de forma segura";
+"health_tips.health_traveler" = "Salud del viajero";
 
 // SAFE SEX
-"safe_sex.title" = "Pratique en toute sécurité Sex";
+"safe_sex.title" = "Practique sexo de forma segura";
 "safe_sex.text" = "Condón \n\n•	El condón es la manera práctica para protegerse contra VIH/ sida, las hepatitis virales y las infecciones sexualmente transmisibles (IST), como la sífilis y la gonorrea. \n•	Use y descarte correctamente el preservativo. \n•	Si el condón “se reventó” o usted tuvo sexo sin condón, puede ser necesario el uso de profilaxis post-exposición de riesgo al VIH, conocida como PEP. \n•	PEP \n•	PEP es un tratamiento con medicamento antirretroviral que evita la infección por el virus VIH, causante del sida. Es indicado para las personas que presentaron exposición de riesgo al VIH, como sexo ocasional, violencia sexual y accidente ocupacional con material biológico. \n•	En caso de que sea indicado por el médico, el tratamiento de PEP dura 28 días y debe ser iniciado en hasta 72 horas después del contacto sexual sin protección. \n\n¿Dónde encontrar PEP? (Enlace directo hacia la aplicación y/o sitio)  http://pep.aids.gov.br \n\nImportante \n•	Todos tienen derecho a la información y a la atención sin prejuicios, estigmas o discriminación.\n•	En Brasil, los condones femeninos y masculinos y el gel lubricante son distribuidos gratuitamente en unidades de salud, albergues, Centros de Atención al Turista y otros.  Infórmese sobre los puntos de distribución más cercanos. \n•	Si necesita medicamentos contra el VIH (los perdió u olvidó), busque la unidad de salud más cercana, llevando algún documento de identificación. Turista extranjero, infórmese con su seguro de salud (health insurance). \n\nRecuerde \n•	Evite la infección por hepatitis virales. Si se hace tatuajes o coloca piercing, opte por lugares con licencia sanitaria expedida por la Vigilancia Sanitaria local. Exija esa certificación, si no está visible en el local. \n•	Exija que el material utilizado esté esterilizado o sea descartable. \n•	No comparta sus objetos de uso personal, como alicates de cutícula, rastrillos, cepillo de dientes, agujas y jeringas con otras personas. \n•	Si observa cualquier señal o síntoma, como secreciones o heridas,  o algún otro problema de salud, busque orientación del profesional de salud. \n\n¿Usted sabía? \n•	Muchas personas viven con VIH y hepatitis virales y no lo saben. \n•	La única manera de enterarse es realizando la prueba. Las pruebas anti-VIH y de las hepatitis son gratuitas y se ofrecen en la red pública de salud. Turista extranjero,  infórmese con su seguro de salud (health insurance). \n•	Existe vacuna para la Hepatitis B. Debe ser tomada en 3 dosis en períodos diferentes. Infórmese dónde está disponible.";
 
 // PHARMACY VIEW
@@ -266,39 +266,40 @@
 "zika.text" = "Dengue, Zika y Chikungunya. \n\n•	Los virus de la Dengue, Zika y Chikungunya son transmitidos por el mosquito Aedes aegypti y presentan señales y síntomas parecidos. \n•	Es importante que usted busque al servicio de salud más cercano cuando presente fiebre, manchas rojas por el cuerpo, dolores en el cuerpo o dolor en las articulaciones o comezón. \n•	Intente informarse si en su barro o ciudad están presentándose casos de Dengue, Zika o Chikungunya. \n•	Si tiene alguna sospecha de Dengue, Zika o Chikungunya, tome líquidos en abundancia. \n•	La principal medida de prevención es evitar la reproducción de los mosquitos Aedes aegypti, transmisores de las tres enfermedades. \n•	Los repelentes para uso sobre la piel pueden ser utilizados por gestantes, siempre que estén debidamente registrados en ANVISA y que se sigan las instrucciones de uso descritas en el rótulo. Los productos a base de DEET, Icaridin (Picaridin), EBAAP (IR3535) son considerados seguros para ser utilizados por gestantes. \n•	Los productos a base DEET no deben ser usados en niños menores de 2 años. En niños entre 2 y 12 años, la concentración debe ser de máximo 10% y la aplicación restringirse a 3 veces por día. Para mayores de 12 años se permiten las concentraciones superiores a 10%. \n•	Los repelentes de ambiente, como aquellos de pared (aparatos eléctricos) o espirales no deben ser utilizados en lugares con poca ventilación ni bajo la presencia de personas asmáticas o con alergias respiratorias. Estos pueden ser utilizados en cualquier ambiente de casa, siempre que estén, como mínimo, a dos metros de distancia de las personas. \n\nDengue \n•	El dengue es la enfermedad más común entre las tres, siendo bien conocido por la población brasileña. \n•	No usar medicamentos a base de ácido acetilsalicílico (ej.: AAS, Aspirina entre otros) y ni antiinflamatorios, debido al incremento en el riesgo de complicaciones hemorrágicas (sangrado) en el caso de enfermedades como el dengue. \n•	Esté atento a señales que puedan indicar agravamiento del Dengue: falta de aire, mareo, dolores abdominales o sangrados. \n•	Al presentar cualquier señal o síntoma de Dengue, busque un servicio de salud inmediatamente. \n\nChikungunya \n•	Los primeros casos de infección por Chikungunya se presentaron en 2014. \n•	Al presentar cualquier señal o síntoma de Chikungunya, busque un servicio de salud inmediatamente.\n\nZika \n•	Los primeros casos de infección por el virus Zika ocurrieron en febrero de 2015. \n•	En el caso de la infección por el virus Zika, la mayor parte de las personas (más de 80%) no presenta señales ni síntomas. \n•	Las complicaciones causadas por la infección por el virus Zika son poco conocidas. Manifestaciones neurológicas (parálisis facial, debilidad en las piernas y Síndrome de Guillain-Barré), raramente, pueden ocurrir algunos días después del cuadro agudo. La infección durante la gestación puede generar malformaciones congénitas graves, en especial microcefalia. \n•	No existe tratamiento específico para la infección por el virus Zika. \n•	Al presentar cualquier señal o síntoma de del Zika, busque a un servicio de salud inmediatamente. \n\nCombata al mosquito periódicamente:\n•	Mantenga bien tapados toneles y barriles de agua. \n•	Lave semanalmente por dentro con cepillo y jabón los tanques utilizados para almacenar agua. \n•	Mantenga la caja de agua bien cerrada. Coloque también una pantalla en el tubo de escape de líquido excedente de la caja de agua. \n•	Remueva hojas, ramas y todo lo que pueda impedir que el agua de circule por las canaletas. \n•	No deje agua acumulada sobre la losa. \n•	Rellene los platos de las macetas de plantas con arena hasta el borde. \n•	Otra opción para los platos de plantas es lavarlos una vez por semana. \n•	Cambie el agua de las macetas de plantas acuáticas y lávelos con cepillo, agua y jabón una vez por semana.\n •	Coloque la basura en bolsas plásticas y mantenga la basura bien cerrada. \n•	Cierre bien las bolsas de basura y déjelas fuera del alcance de los animales. \n•	Mantenga las botellas con la boca volteada hacia abajo, evitando la acumulación de agua. \n•	Los neumáticos deben ser acondicionados en lugares cubiertos. \n•	Siempre realice el mantenimiento de piscinas o fuentes utilizando los productos químicos apropiados. \n•	Si el desagüe no es de abrir y cerrar, colocar un cedazo fino para evitar que el acceso del mosquito al agua. \n•	Coloque arena dentro de todos los espacios que puedan acumular agua. \n•	No deje agua acumulada en hojas secas y tapas de botellas. \n•	Los inodoros fuera de uso o de uso eventual deben taparse y verificarse semanalmente. \n•	Limpie siempre la bandeja del aire acondicionado para evitar la acumulación de agua. \n•	Las lonas usadas para cubrir objetos o desechos deben estar bien extendidas para evitar charcos de agua. \n\nSi tiene dudas referentes al Dengue, Zika y Chikungunya, por favor llame a Disque Salud, mediante el número 136 y digite la opción 3.";
 
 // LIST SYMPTOMS VIEW
-"list_symptoms.title" = "Únete ahora";
+"list_symptoms.title" = "¡Participe Ahora!";
 "list_symptoms.placeholder_country" = "Seleccione el país";
-"list_symptoms.country_required" = "Por favor, seleccione el país!";
+"list_symptoms.country_required" = "Por favor, ¡seleccione el país!";
 "list_symptoms.allow_send" = "¿Desea registrar su información?";
 "list_symptoms.check_a_symptom" = "Escoja algún síntoma antes de confirmar.";
 "list_symptoms.symptoms" = "Síntomas";
 "list_symptoms.others" = "Otros";
 "list_symptoms.had_contact_symptom" = "Tuve contacto con alguien que tiene uno de estos síntomas";
 "list_symptoms.find_a_health_service" = "Busqué un servicio de salud";
-"list_symptoms.traveled" = "Estuve fuera de Brasil los últimos 14 días";
+"list_symptoms.traveled" = "Estuve fuera de Brasil en los últimos 14 días";
 "list_symptoms.confirm" = "Confirmar";
-"list_symptoms.select_symptoms" = "Mark por lo que está sintiendo en ese momento:";
+"list_symptoms.select_symptoms" = "Marque abajo lo que usted está sintiendo en este momento:";
 "Febre" = "Fiebre";
-"Manchas vermelhas no corpo" = "Manchas rojas en el cuerpo";
+"Manchas vermelhas no corpo" = "Manchas vermelhas no corpo";
 "Dor no corpo" = "Dolor en el cuerpo";
 "Dor nas juntas" = "Dolor en las articulaciones";
 "Dor de cabeça" = "Dolor de cabeza";
-"Coceira" = "Prurito";
+"Coceira" = "Comezón";
 "Olhos vermelhos" = "Ojos rojos";
 "Dor de garganta" = "Dolor de garganta";
 "Tosse" = "Tos";
 "Falta de ar" = "Falta de aire";
-"Náusea ou Vômito" = "Náuseas o vómitos";
-"Diarreia" = "La diarrea";
-"Sangramento" = "Sangría";
+"Náusea ou Vômito" = "Nauseas o vómito";
+"Diarreia" = "Diarrea";
+"Sangramento" = "Sangrado";
+
 
 // SELECT STATE VIEW
-"select_state.title" = "Únete ahora";
-"select_state.without_location" = "No somos capaces de obtener su ubicación. Verificar que los servicios son activados en el dispositivo.";
-"select_state.how_is_your_health" = "¿Cómo es su salud ahora?";
+"select_state.title" = "¡Participe Ahora!";
+"select_state.without_location" = "No conseguimos obtener su localización. Verifique si los servicios están habilitados en el aparato.";
+"select_state.how_is_your_health" = "¿Cómo está su salud en este momento?";
 "select_state.well" = "Bien";
 "select_state.bad" = "Mal";
-"select_state.next_step" = "Algunos signos y síntomas se mostrarán en la siguiente pantalla si se ha seleccionado el \"mal\".";
+"select_state.next_step" = "Algunas señales y síntomas se presentarán en la próxima pantalla en caso de que la opción \"Mal\" sea seleccionada."";
 "select_state.how_is_he_she" = "¿Cómo es la prueba \nde la %@ en este momento?";
 
 // THANK YOU VIEW
@@ -309,43 +310,43 @@
 "thank_you.thanks_shared" = "¡Gracias por compartir!";
 "thank_you.share_fail" = "No fue posible compartir su participación.";
 "thank_you.thanks_for_information" = "¡Gracias por la información!";
-"thank_you.look_emergency_description" = "No deixe de procurar o serviço de saúde mais próximo. Continuar informando diariamente cómo está su salud.";
-"thank_you.tellfriend" = "Invite a sus amigos a ser Guardianes de la Salud.";
+"thank_you.look_emergency_description" = "No deje de buscar el servicio de salud más cercano.";
+"thank_you.tell_your_friend" = "Invite a sus amigos a ser Guardianes de la Salud.";
 "thank_you.continue" = "Continuar";
-"thank_you.zika_msg" = "Nota: Los síntomas reportados pueden estar relacionados con el virus Zika. Buscar la unidad de emergencias más cercana.";
+"thank_you.zika_msg" = "Atención: Los síntomas informados pueden estar relacionados al virus Zika. Busque la Unidad de Urgencias más cercana.";
 
 // SELECT PARTICIPANT VIEW
-"select_participant.title" = "Únete ahora";
+"select_participant.title" = "¡Participe Ahora!";
 "select_participant.year_old" = "%ld años";
-"select_participant.new_member" = "Nuevo miembro";
-"select_participant.how_will_participate" = "¿Jueén participará?";
+"select_participant.new_member" = "Nuevo integrante";
+"select_participant.how_will_participate" = "¿Quién participará?";
 "select_participant.members" = "Integrantes del domicilio";
 
 // MAP HEALTH VIEW
 "map_health.title" = "Mapa de la Salud";
-"map_health.btn_info" = "Las síndromes son conjuntos de manifestaciones clínicas comunes a un número de enfermedades, entre ellas: \n\n• De diarrea (fiebre y nausea o vómito, además de alguno de estos síntomas: dolores en el cuerpo o dolor de cabeza)\n\n• Respiratoria (Fiebre y tos, además de cualquiera de estos síntomas: dolor de garganta o dificultad para respirar)\n\n• Exantemático (manchas rojas en el cuerpo, además de alguno de estos síntomas: fiebre o dolores en el cuerpo o dolores en las articulaciones o dolor de cabeza o comezón u ojos rojos o sangrado)";
+"map_health.btn_info" = "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre e tosse, além de algum destes sintomas: dor de garganta ou falta de ar)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)";
 "map_health.syndromes" = "Síndromes";
 "map_health.well" = "Bien";
 "map_health.bad" = "Mal";
 "map_health.participations" = "Participaciones";
 "map_health.general" = "General";
-"map_health.exanthematic" = "Exantemático";
+"map_health.exanthematic" = "Exantemática";
 "map_health.respiratory" = "Respiratoria";
-"map_health.diarrheal" = "de diarrea";
+"map_health.diarrheal" = "Diarreica";
 "map_health.participations_last_days" = "%d La participación en los últimos días";
 "map_health.search_city_name" = "Nombre de la Ciudad";
 
 // DIARY HEALTH VIEW
-"diary_health.title" = "Diário da saúde";
+"diary_health.title" = "Diario de Salud";
 "diary_health.summary" = "Resumen";
 "diary_health.participation" = "Participaciones";
 "diary_health.well" = "Bien";
 "diary_health.bad" = "Mal";
 "diary_health.report" = "Informes";
 "diary_health.calendar" = "Calendario";
-"diary_health.no_record" = "Usted todavía no posee participaciones.\n¡Ayude a mejorar la salud de su comunidad!";
+"diary_health.no_record" = "Usted todavía no posee participaciones. ¡Ayude a mejorar la salud de su comunidad!";
 "diary_health.join_now" = "¡Participe Ahora!";
-"diary_health.frequency" = "frecuencia %d";
+"diary_health.frequency" = "Frecuencia %d";
 "diary_health.january" = "Ene";
 "diary_health.february" = "Feb";
 "diary_health.march" = "Mar";
@@ -357,7 +358,7 @@
 "diary_health.september" = "Sep";
 "diary_health.octuber" = "Oct";
 "diary_health.november" = "Nov";
-"diary_health.december" = "Dic";
+"diary_health.december" = "Diez";
 
 // Participants List
 "participant_list.title" = "Seleccionar Integrante";
@@ -371,17 +372,17 @@
 
 // GAME TUTORIAL
 "game_tutorial.next" = "Cercano";
-"game_tutorial.welcome" = "Bienvenido a nuestra pista de carreras! \nArrastre para aprender más acerca de cómo jugar.";
-"game_tutorial.how_play" = "Para jugar, usted debe tener puntos de poder.\nParticipa directamente en los guardianes de la Salud para ganar ellos!";
-"game_tutorial.rota" = "Nuestra pista de carreras consta de \nfases. Completar cada etapa para llegar \nmás lejos en la carrera!";
-"game_tutorial.fases" = "Cada fase contiene un rompecabezas.\nCompletarla para completar el nivel.";
-"game_tutorial.correct_answer" = "Responde correctamente a las preguntas\nsobre la salud para revelar partes.";
-"game_tutorial.collect_pictures" = "Recoger figuras de los deportes \nolímpicos después de completar cada etapa!";
+"game_tutorial.welcome" = "¡Bienvenido a nuestra pista de carreras! Arrastre para saber más sobre cómo jugar.";
+"game_tutorial.how_play" = "Para jugar se necesita tener puntos de energía. ¡Participe diariamente en Guardianes de la Salud para ganarlos!";
+"game_tutorial.rota" = "Nuestra pista de carreras está formada por fases. ¡Concluya cada fase para llegar más lejos en la carrera!";
+"game_tutorial.fases" = "Cada fase contiene un rompecabezas. Complételo para pasar de fase.";
+"game_tutorial.correct_answer" = "Responda correctamente a las preguntas sobre salud para revelar piezas.";
+"game_tutorial.collect_pictures" = "¡Coleccione estampitas de los deportes olímpicos después de concluir cada fase!";
 
 // GAME
 "game.level" = "Nivel %d";
-"game.energy" = "%d Energía";
-"game.ranking" = "Clasificación General";
+"game.energy" = "%d Energías";
+"game.ranking" = "Ranking General";
 "game.trophies" = "Mis Trofeos";
 "game.congratulations" = "Felicitaciones";
 "game.answer" = "Respuesta";

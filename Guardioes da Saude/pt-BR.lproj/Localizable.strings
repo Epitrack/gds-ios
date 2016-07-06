@@ -10,8 +10,8 @@
 "constant.check_connection" = "Por favor verifique sua conexão!";
 "constant.comunication_error" = "Ocorreu um erro de comunicação!";
 "constant.yes" = "Sim";
-"constant.no" = "Não"; // Falta aki
-"constant.ok" = "OK"; // Falta aki
+"constant.no" = "Não";
+"constant.ok" = "Ok";
 "constant.delete" = "Deletar";
 "constant.cancel" = "Cancelar";
 "constant.select" = "Selecionar";
@@ -36,8 +36,8 @@
 
 // SELECT TYPE LOGIN VIEW
 "select_type_login.quick_access" = "Entre rapidamente com:";
-"select_type_login.or_email" = "Ou use seu e-mail:";
-"select_type_login.facebook_error" = "Erro ao logar com o facebook.";
+"select_type_login.or_email" = "Ou use o seu e-mail:";
+"select_type_login.facebook_error" = "Erro ao logar com o Facebook.";
 "select_type_login.operation_canceled" = "Operação cancelada.";
 "select_type_login.twitter_error" = "Erro ao logar com o Twitter.";
 "select_type_login.user_not_found" = "Cadastro não encontrado!";
@@ -47,7 +47,7 @@
 "tutorial.welcome" = "Bem-vindo!";
 "tutorial.preparing" = "Preparado para se tornar um Guardião da Saúde?";
 "tutorial.sign_up" = "Cadastre-se";
-"tutorial.sign_in" = "Entrar"; //Parou aqui
+"tutorial.sign_in" = "Entrar";
 "tutorial.how_is_your_health" = "Como está sua saúde?";
 "tutorial.check_your_symptoms" = "Marque na lista os sintomas que você apresenta.";
 "tutorial.health_map" = "Mapa da Saúde";
@@ -57,11 +57,11 @@
 
 // SELECT TYPE CREATE VIEW
 "select_type_create.quick_access" = "Entre rapidamente com:";
-"select_type_create.or_email" = "Ou use seu e-mail:";
+"select_type_create.or_email" = "Ou use o seu e-mail:";
 
 // MODAL PRIV VIEW
 "modal_priv.safe_description" = "Nós nos preocupamos com a sua privacidade";
-"modal_priv.description" = "• Sua participação é voluntária e anônima\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Para maiores informações, consulte os Termos de Uso";
+"modal_priv.description" = "• Sua participação é voluntária e anônima";
 
 // FORGOT PASSWORD VIEW
 "forgot_password.label" = "Digite seu e-mail e verifique a sua caixa de entrada.";
@@ -80,8 +80,8 @@
 "sign_up.email_required" = "E-mail é um campo obrigatório";
 "sign_up.password_required" = "Senha é um campo obrigatório";
 "sign_up.min_char_password" = "Senha precisa ter pelo menos 6 caracteres";
-"sign_up.invalid_password_confirmation" = "A senha e a confirmação devem ser iguais";
-"sign_up.invalid_email" = "E-mail inválido";
+"sign_up.invalid_password_confirmation" = "A senha e a confirmação devem ser iguais.";
+"sign_up.invalid_email" = "E-mail inválido!!";
 
 // SIGN UP DETAILS VIEW
 "sign_up_details.lb_email" = "E-mail:";
@@ -89,7 +89,7 @@
 "sign_up_details.lb_nick" = "Apelido:";
 "sign_up_details.tx_nick" = "Apelido";
 "sign_up_details.lb_dob" = "Data de Nascimento:";
-"sign_up_details.tx_dob_placeholder" = "Selecione sua data de Nascimento.";
+"sign_up_details.tx_dob_placeholder" = "Selecione sua data de nascimento.";
 "sign_up_details.lb_gender" = "Sexo";
 "sign_up_details.tx_gender" = "Selecione seu sexo";
 "sign_up_details.lb_race" = "Cor/Raça:";
@@ -97,23 +97,23 @@
 "sign_up_details.sign_up" = "Cadastre-se";
 "sign_up_details.email_required" = "E-mail é um campo obrigatório";
 "sign_up_details.nick_required" = "Apelido é um campo obrigatório";
-"sign_up_details.dob_required" = "Data de nascimento é um campo obrigatório";
+"sign_up_details.dob_required" = "Data de Nascimento é um campo obrigatório";
 "sign_up_details.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
 "sign_up_details.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
-"sign_up_details.gender_required" = "Sexo é um campo obrigatório";
+"sign_up_details.gender_required" = "Sexo é um campo obrigatório.";
 "sign_up_details.race_required" = "Cor/Raça é um campo obrigatório";
 "sign_up_details.email_already_used" = "O e-mail usado já está em uso";
 "sign_up_details.without_localization" = "Para contribuir ativamente com a vigilância em saúde no Brasil é necessário que você compartilhe a sua localização.";
 "sign_up_details.lb_country" = "País de origem:";
-"sign_up_details.tx_country" = "Selecione o país";
-"sign_up_details.lb_state" = "Estado:";
-"sign_up_details.tx_state" = "Selecione o estado";
+"sign_up_details.tx_country" = "Por favor, selecione o pais!";
+"sign_up_details.lb_state" = "Estado de origem:";
+"sign_up_details.tx_state" = "Selecione o estado"; // -----------------> Não encontrado
 "sign_up_details.lb_perfil" = "Perfil:";
-"sign_up_details.tx_perfil" = "Selecione seu perfil";
-"sign_up_details.perfil_athlete" = "Atleta/Delegação";
-"sign_up_details.perfil_worker" = "Trabalhador/Voluntário";
-"sign_up_details.perfil_fan" = "Fã/Espectador";
-"sign_up_details.perfil_required" = "Perfil é um campo obrigatório";
+"sign_up_details.tx_perfil" = "Selecione seu perfil"; // -----------------> Não encontrado
+"sign_up_details.perfil_athlete" = "Atleta / Delegação";
+"sign_up_details.perfil_worker" = "Trabalhador / Voluntário";
+"sign_up_details.perfil_fan" = "Fã / Espectador";
+"sign_up_details.perfil_required" = "Perfil é um campo obrigatório"; // -----------------> Não encontrado
 
 // MENU VIEW
 "menu.home" = "Início";
@@ -121,17 +121,17 @@
 "menu.about" = "Sobre";
 "menu.help" = "Ajuda";
 "menu.sign_out" = "Sair";
-"menu.are_you_sure_sign_out" = "Tem certeza que deseja sair do aplicativo?";
+"menu.are_you_sure_sign_out" = "Tem cereza que deseja sair do aplicativo?";
 "menu.idiom" = "Idioma";
 
 // About VIEW
 "about.title" = "Sobre";
 "about.subtitle1" = "SOBRE O APLICATIVO “GUARDIÕES DA SAÚDE” ";
-"about.subtitle2" = "Sobre a participação voluntária";
-"about.subtitle3" = "Agradecimento";
-"about.subtitle4" = "Benefícios da participação";
-"about.subtitle5" = "Saiba mais sobre o uso do aplicativo";
-"about.subtitle6" = "Sobre a parceria";
+"about.subtitle2" = "SOBRE A PARTICIPAÇÃO VOLUNTÁRIA";
+"about.subtitle3" = "AGRADECIMENTO";
+"about.subtitle4" = "BENEFÍCIOS DA PARTICIPAÇÃO";
+"about.subtitle5" = "SAIBA MAIS SOBRE O USO DO APLICATIVO";
+"about.subtitle6" = "SOBRE A PARCERIA";
 "about.text" = "SOBRE O APLICATIVO “GUARDIÕES DA SAÚDE” \n\nO aplicativo “Guardiões da Saúde”, desenvolvido para celulares, tablets e computadores, faz parte da iniciativa do Ministério da Saúde, em parceria com a Organização Não-Governamental Skoll Global Threats Fund, dos Estados Unidos da América, visando avaliar o potencial uso de aplicativos para dispositivos móveis como parte da estratégia de fortalecimento da capacidade de detecção de surtos e emergências em saúde pública, no âmbito do Sistema Único de Saúde (SUS), principalmente durante eventos de massa, como nos Jogos Olímpicos e Paralímpicos de 2016. \n\nEsta estratégia é a evolução do projeto realizado com a mesma instituição, denominado “Saúde na Copa” e lançado exclusivamente para o período dos jogos da Copa do Mundo FIFA Brasil 2014®, cujos resultados mostraram-se promissores e foram mantidos os interesses de ambas as instituições para a realização de uma nova estratégia para os Jogos Olímpicos e Paralímpicos em 2016. \n\nA primeira versão do aplicativo Guardiões da Saúde já está disponível para os sistemas operacionais iOS da Apple e Android da Google e também por meio do site http://guardioesdasaude.org/. \n\nInicialmente desenvolvido no idioma português, nas próximas versões, o aplicativo “Guardiões da Saúde” estará disponível também nos idiomas oficiais das Nações Unidas, sendo um instrumento complementar para orientações aos viajantes internacionais ao Brasil, principalmente com destino às sedes dos Jogos Olímpicos e Paralímpicos de 2016. \n\nA participação na iniciativa está restrita aos usuários com 13 anos ou mais de idade. Além disso, é fundamental que antes de se cadastrar, os usuários leiam e aceitem os “Termos de Uso” e preenchimento de cadastro simplificado, contendo apelido, endereço de e-mail, data de nascimento, raça/cor, sexo e senha de acesso. A participação é voluntária, sigilosa e os dados fornecidos estão protegidos no âmbito Lei nº 12.527, de 18 de novembro de 2011. \n\nOs resultados do projeto serão utilizados pela vigilância em saúde dos Estados, Municípios e Governo Federal, visando detectar e prevenir surtos e emergências em saúde pública, por meio da adoção de medidas de prevenção e controle oportunas. A divulgação dos resultados do projeto será realizada de modo agregado e anonimizado , visando descrever o perfil da condição de saúde dos voluntários, a partir das informações repassadas por meio do aplicativo. \n\nSobre a participação voluntária \n\nSua participação é voluntária e uma gentil contribuição para o aprimoramento da vigilância em saúde no Brasil. O preenchimento do formulário sobre a condição de saúde não representa consulta médica, não garante acesso diferenciado aos serviços de saúde e o usuário não receberá o contato de nenhum profissional ou serviço de saúde para obter informações, seja por e-mail ou qualquer outro meio de contato. \n\nDurante a participação, mensagens de texto poderão ser enviadas aos usuários, apenas pelo aplicativo, por meio da tecnologia Push (Push Notification), contendo orientações sobre cuidados de saúde ou orientações dos órgãos de vigilância. \n\nÉ importante destacar que caso você informe que não está se sentindo bem, é recomendável que consulte um médico de referência ou serviço de saúde mais próximo de você. Para isso, está disponível no aplicativo um atalho com pesquisa pré-configurada de serviços de saúde e farmácias mais próximos de você, com base no serviço de geolocalização do seu dispositivo móvel no Google Maps. Essa funcionalidade não faz parte do aplicativo. Por esse motivo, será direcionado ao aplicativo de mapas de seu aparelho e recomenda-se cuidado ao transitar por áreas desconhecidas e evitar zonas de risco. Para isso, procure informações junto aos órgãos governamentais locais. \n\nO aplicativo foi configurado com um conjunto de telefones úteis incluindo o do SAMU (Serviço de Atendimento Móvel de Urgência), cuja ligação é gratuita e funciona 24 horas por dia atendendo solicitações de atendimento de urgência para ocorrências de natureza traumática, clínica, pediátrica, cirúrgica, gineco-obstétrica e de saúde mental, em residências, locais de trabalho e vias públicas. \n\nBenefícios da participação \n\n•	Participar ativamente das ações de vigilância em saúde que visam à prevenção de doenças na comunidade; \n\n•	Acessar os contatos de serviços públicos úteis sem precisar alterar sua agenda de telefones; \n\n•	Acessar facilmente informações úteis sobre cuidados de saúde e medidas de prevenção contra doenças; \n\n•	Usufruir de facilidades, como a pesquisa pré-configurada por Unidades de Pronto Atendimento e farmácias próximas (20 km) no Google Maps; \n\n•	Acompanhar os resultados do projeto, por meio do website www.guardioesdasaude.org; \n\nSaiba mais sobre o uso do aplicativo \n\nO aplicativo “Guardiões da Saúde” está disponível gratuitamente para download e utilização em sistemas operacionais iOS, Android e navegadores de internet. Em várias cidades há pontos de internet para uso gratuito ou o usuário poderá utilizar o seu próprio pacote de dados contratado. \n\nInforma-se que as chamadas telefônicas para os serviços públicos de referência registrados no aplicativo necessitam de plano de telefonia contratado. Portanto, consulte sua operadora antes de utilizar essa funcionalidade. Esse serviço não funcionará sem a presença da função de telefone no aparelho. Essa informação deve ser observada, principalmente por usuários de outros países. \n\n\nSobre a parceria \n\nA iniciativa pioneira é da Secretaria de Vigilância em Saúde do Ministério da Saúde em parceria com as cidades sedes dos Jogos Olímpicos e Paralímpicos. Na parceria, a Organização Não Governamental (ONG) Skoll Global Threats Fund ficou responsável pelos custos de contratação e desenvolvimento do software, sob supervisão da Associação Brasileira de Profissionais de Epidemiologia de Campo (ProEpi), ambas são Organizações Não Governamentais, sem fins lucrativos, que atuam no aprimoramento da vigilância em saúde no Brasil e no mundo. \n\nA ProEpi é responsável por garantir que os requisitos estabelecidos pelo Ministério da Saúde e pela Skoll Global Threats Fund sejam cumpridos, conforme previsto no projeto: privacidade dos dados dos usuários, transparência e publicidade dos resultados públicos do projeto e disponibilidade do código fonte e documentação em ambiente de livre acesso para download, adequação e uso do aplicativo por serviços de saúde do Brasil e de países interessados, desde que garantida a finalidade sem fins lucrativos. \n\nAgradecimento \n\nAs instituições organizadoras agradecem a todos os voluntários, profissionais de saúde e gestores do Sistema Único de Saúde por acreditarem no projeto piloto e apoiarem essa iniciativa pioneira na saúde pública internacional. \n\nAgradecimento especial às Secretarias de Saúde dos Municípios Sedes dos Jogos Olímpicos e Paralímpicos (Belo Horizonte, Distrito Federal, Manaus, Rio de Janeiro, Salvador e São Paulo).";
 
 // HELP VIEW
@@ -139,7 +139,7 @@
 "help.terms" = "Termos e Políticas";
 "help.options" = "Opções";
 "help.contact_us" = "Entre em contato";
-"help.report_bug" = "Relatar erros no aplicativo";
+"help.report_bug" = "Relatar Erros";
 
 // TERMS VIEW
 "terms.title" = "Termos e Políticas";
@@ -164,19 +164,19 @@
 // PROFILE LIST VIEW
 "profile_list.title" = "Perfil";
 "profile_list.delete_confirmation" = "Deseja remover o perfil definitivamente? Essa operação é irreversível.";
-"profile_list.add_new_member" = "Adicionar Integrante";
+"profile_list.add_new_member" = "Adicionar Integrante do Domicílio";
 "profile_list.select_perfil" = "Selecione qual dos perfis abaixo quer editar.";
 
 // PROFILE FORM VIEW
 "profile_form.lb_nick" = "Apelido:";
 "profile_form.placeholder_nick" = "Apelido";
 "profile_form.lb_race" = "Cor/Raça:";
-"profile_form.lb_dob" = "Data de nascimento:";
-"profile_form.title_dob" = "Data de nascimento";
+"profile_form.lb_dob" = "Data de Nascimento:";
+"profile_form.title_dob" = "Data de Nascimento";
 "profile_form.msg_dob" = "Selecione sua data de nascimento.";
 "profile_form.lb_gender" = "Sexo:";
 "profile_form.placeholder_gender" = "Selecione seu sexo";
-"profile_form.placeholder_race" = "Selecione seu Cor/Raça";
+"profile_form.placeholder_race" = "Selecione sua Cor/Raça";
 "profile_form.lb_relationship" = "Parentesco:";
 "profile_form.placeholder_relationship" = "Selecione o parentesco";
 "profile_form.lb_email" = "E-mail:";
@@ -184,7 +184,7 @@
 "profile_form.change_password" = "Redefinir senha";
 "profile_form.save" = "Salvar";
 "profile_form.edit_profile" = "Editar Perfil";
-"profile_form.add_member" = "Adicionar Integrante";
+"profile_form.add_member" = "Adicionar Integrante do Domicílio";
 "profile_form.fill_in_fields" = "Preencha todos os campos do formulário.";
 "profile_form.invalid_dob" = "A data de aniversário deve ser menor que hoje.";
 "profile_form.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
@@ -193,10 +193,10 @@
 "profile_form.success" = "Operação realizada com sucesso.";
 "profile_form.fail" = "Ocorreu um problema de comunicação, por favor verifique sua conexão!";
 "profile_form.delete" = "Excluir Conta";
-"profile_form.or" = "OU";
-"profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardiões da Saúde, será necessário um novo cadastro.\nDeseja continuar?";
+"profile_form.or" = "ou";
+"profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardiões da Saúde, será necessário um novo cadastro.\nDeseja continuar?"; // -----------------> Não encontrado
 "profile_form.modal_delete_title" = "Desativar sua conta";
-"profile_form.modal_delete_body" = "Sua conta foi desativada com sucesso";
+"profile_form.modal_delete_body" = "Sua conta foi desativada com sucesso.";
 
 // SELECT AVATAR VIEW
 "select_avatar.title" = "Editar Foto";
@@ -209,7 +209,7 @@
 "chang_password.fail" = "Ocorreu um erro ao atualizar o usuário.";
 "chang_password.password_isnt_equals" = "As senhas não estão iguais.";
 "chang_password.min_char_password" = "A senha deve ter mais de 6 caracteres.";
-"chang_password.placeholder_password" = "Nova senha";
+"chang_password.placeholder_password" = "Nova Senha";
 "chang_password.placeholder_password_confirmation" = "Redefinir senha";
 "chang_password.save" = "Redefinir senha";
 "chang_password.current_password" = "Senha Atual";
@@ -230,9 +230,9 @@
 "health_tips.phones" = "Telefones Úteis";
 "health_tips.pharmacy" = "Farmácias";
 "health_tips.basic_care" = "Cuidados Básicos";
-"health_tips.prevention" = "Prevenção";
+"health_tips.prevention" = "Participe ativamente na prevenção de doenças.";
 "health_tips.safe_sex" = "Pratique sexo de forma segura";
-"health_tips.health_traveler" = "Saúde do Viajante";
+"health_tips.health_traveler" = "Saúde do viajante";
 
 // SAFE SEX
 "safe_sex.title" = "Pratique sexo de forma segura";
@@ -266,9 +266,9 @@
 "zika.text" = "Dengue fever, Zika and Chikungunya. \n\n• Os vírus da Dengue, Zika e Chikungunya são transmitidos pelo mosquito Aedes aegypti e apresentam sinais e sintomas parecidos. \n• É importante que você procure o serviço de saúde mais próximo quando apresentar febre, manchas vermelhas pelo corpo, dores no corpo ou dor nas juntas (articulações) ou coceira. \n• Procure se informar se no seu bairro ou cidade estão acontecendo casos de Dengue, Zika ou Chikungunya. \n• A Dengue é a doença mais comum entre as três, já sendo bem conhecida pela população brasileira. \n• Os primeiros casos de infecção pelo Chikungunya ocorreram em 2014 e os de Zika em fevereiro de 2015. \n• No caso da infecção pelo vírus Zika, a maior parte das pessoas (mais de 80%) não apresenta sinais e sintomas. As que apresentam a doença não necessitam de atendimento médico e hospitalização. \n• As complicações causadas pela infecção pelo vírus Zika são pouco conhecidas. Manifestações neurológicas (paralisia facial, fraqueza nas pernas e Síndrome de Guillain-Barré) raramente podem ocorrer alguns dias depois do quadro agudo. A infecção durante a gestação pode levar a malformações congênitas graves, em especial a microcefalia. \n• Não existe tratamento específico para a infecção pelo vírus Zika. \n• Se estiver com suspeita dessas doenças, tome líquidos em abundância. \n• Não é aconselhável o uso de medicamentos à base de ácido acetilsalicílico (ex.: AAS, Aspirina entre outros) e nem de anti-inflamatórios, em função do risco aumentado de complicações hemorrágicas (sangramento) no caso de doenças como a Dengue. \n• A principal medida de prevenção é evitar a reprodução dos mosquitos Aedes aegypti, transmissores das três doenças: não deixar água parada em pratinhos de plantas, pneus, garrafas, copos ou outros recipientes ou depósitos; jogar o lixo na lixeira e tampar as caixas de água. \n• Os repelentes para uso sobre a pele podem ser utilizados por gestantes, desde que estejam devidamente registrados na ANVISA e que sejam seguidas as instruções de uso descritas no rótulo. Produtos à base de DEET, Icaridin (Picaridin), EBAAP (IR3535) são considerados seguros para serem utilizados por gestantes. \n• Produtos à base DEET não devem ser usados em crianças menores de 2 anos. Em crianças entre 2 e 12 anos, a concentração dever ser no máximo 10% e a aplicação deve se restringir a 3 vezes por dia. Para maiores de 12 anos, são permitidas as concentrações superiores a 10%. \n• Os repelentes de ambiente, como aqueles de parede (aparelhos elétricos) ou espirais não devem ser utilizados em locais com pouca ventilação nem na presença de pessoas asmáticas ou com alergias respiratórias. Estes podem ser utilizados em qualquer ambiente da casa desde que estejam, no mínimo, a 2 metros de distância das pessoas. \n• Atenção para sinais que podem indicar agravamento da Dengue: falta de ar, tontura, dores abdominais ou sangramentos. Independentemente de os sintomas anteriores terem sido sugestivos de Dengue, Zika e Chikungunya, frente a um desses sinais, procure um serviço de saúde imediatamente. \n• Para dúvidas referentes à Dengue, Zika e Chikungunya, favor ligar para o Disque Saúde, por meio do numero 136 e digitar a opção 3. ";
 
 // LIST SYMPTOMS VIEW
-"list_symptoms.title" = "Participe Agora";
+"list_symptoms.title" = "Participe Agora!";
 "list_symptoms.placeholder_country" = "Selecione o país";
-"list_symptoms.country_required" = "Por favor, selecione o  pais!";
+"list_symptoms.country_required" = "Por favor, selecione o pais!";
 "list_symptoms.allow_send" = "Deseja registrar suas informações?";
 "list_symptoms.check_a_symptom" = "Escolha algum sintoma antes de confirmar.";
 "list_symptoms.symptoms" = "Sintomas";
@@ -277,7 +277,7 @@
 "list_symptoms.find_a_health_service" = "Procurei um serviço de saúde";
 "list_symptoms.traveled" = "Estive fora do Brasil nos últimos 14 dias";
 "list_symptoms.confirm" = "Confirmar";
-"list_symptoms.select_symptoms" = "Marque abaixo o que você está sentindo neste momento:";
+"list_symptoms.select_symptoms" = "Marque abaixo oque você está sentindo nesse momento:";
 "Febre" = "Febre";
 "Manchas vermelhas no corpo" = "Manchas vermelhas no corpo";
 "Dor no corpo" = "Dor no corpo";
@@ -288,19 +288,19 @@
 "Dor de garganta" = "Dor de garganta";
 "Tosse" = "Tosse";
 "Falta de ar" = "Falta de ar";
-"Náusea ou Vômito" = "Náusea ou Vômito";
+"Náusea ou Vômito" = "Náusea ou vômito";
 "Diarreia" = "Diarreia";
 "Sangramento" = "Sangramento";
 
 
 // SELECT STATE VIEW
-"select_state.title" = "Participe Agora";
+"select_state.title" = "Participe Agora!";
 "select_state.without_location" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
-"select_state.how_is_your_health" = "Como está sua saúde nesse  momento?";
+"select_state.how_is_your_health" = "Como está sua saúde nesse momento?";
 "select_state.well" = "Bem";
 "select_state.bad" = "Mal";
 "select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Mal\" seja selecionada.";
-"select_state.how_is_he_she" = "Como está a saúde\nde %@ nesse momento?";
+"select_state.how_is_he_she" = "Como está a saúde\nde %@ nesse momento?";  // -----------------> Não encontrado
 
 // THANK YOU VIEW
 "thank_you.shared_msg" = "Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org";
@@ -310,14 +310,14 @@
 "thank_you.thanks_shared" = "Obrigado por compartilhar!";
 "thank_you.share_fail" = "Não foi possível compartilhar sua participação.";
 "thank_you.thanks_for_information" = "Obrigado pela informação!";
-"thank_you.look_emergency_description" = "Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde.";
+"thank_you.look_emergency_description" = "Não deixe de procurar o serviço de saúde mais próximo.";
 "thank_you.tell_your_friend" = "Convide seus amigos para serem Guardiões da Saúde.";
 "thank_you.continue" = "Continuar";
 "thank_you.zika_msg" = "Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.";
 
 // SELECT PARTICIPANT VIEW
-"select_participant.title" = "Participe Agora";
-"select_participant.year_old" = "%ld Anos";
+"select_participant.title" = "Participe Agora!";
+"select_participant.year_old" = "%ld anos";
 "select_participant.new_member" = "Novo integrante";
 "select_participant.how_will_participate" = "Quem vai participar?";
 "select_participant.members" = "Integrantes do domicílio";
@@ -334,17 +334,17 @@
 "map_health.respiratory" = "Respiratória";
 "map_health.diarrheal" = "Diarreica";
 "map_health.participations_last_days" = "%d Participações nos últimos dias";
-"map_health.search_city_name" = "Nome da Cidade";
+"map_health.search_city_name" = "Nome da Cidade";   // -----------------> Não encontrado
 
 // DIARY HEALTH VIEW
-"diary_health.title" = "Diário da saúde";
+"diary_health.title" = "Diário da Saúde";
 "diary_health.summary" = "Resumo";
 "diary_health.participation" = "Participações";
 "diary_health.well" = "Bem";
 "diary_health.bad" = "Mal";
 "diary_health.report" = "Relatórios";
 "diary_health.calendar" = "Calendário";
-"diary_health.no_record" = "Você ainda não possui participações.\nAjude a melhorar a saúde da sua comunidade!";
+"diary_health.no_record" = "Você ainda não possui participações. Ajude a melhorar a saúde da sua comunidade!";
 "diary_health.join_now" = "Participe Agora!";
 "diary_health.frequency" = "Frequência %d";
 "diary_health.january" = "Jan";
@@ -368,16 +368,16 @@
 "change_language.title" = "Idioma";
 
 // Traveler Health
-"traveler_health.title" = "Saúde do Viajante";
+"traveler_health.title" = "Saúde do viajante";
 
 // GAME TUTORIAL
 "game_tutorial.next" = "Próximo";
-"game_tutorial.welcome" = "Bem-vindo a nossa pista de corrida! \nArraste para saber mais sobre como jogar.";
-"game_tutorial.how_play" = "Para jogar, é preciso ter pontos de energia.\nParticipe diariamente do Guardiões\nda Saúde para ganhá-los!";
-"game_tutorial.rota" = "Nossa pista de corrida é formada por\nfases. Conclua cada fase para chegar\nmais longe na corrida!";
-"game_tutorial.fases" = "Cada fase contém um quebra-cabeça.\nComplete-o para passar de fase.";
-"game_tutorial.correct_answer" = "Responda corretamente as perguntas\nsobre saúde para revelar peças.";
-"game_tutorial.collect_pictures" = "Colecione figurinhas dos esportes \nolímpicos após concluir cada fase!";
+"game_tutorial.welcome" = "Bem-vindo a nossa pista de corrida! Arraste para saber mais sobre como jogar.";
+"game_tutorial.how_play" = "Para jogar, é preciso ter pontos de energia. Participe diariamente do Guardiões da Saúde para ganhá-los!";
+"game_tutorial.rota" = "Nossa pista de corrida é formada por fases. Conclua cada fase para chegar mais longe na corrida!";
+"game_tutorial.fases" = "Cada fase contém um quebra-cabeça. Complete-o para passar de fase.";
+"game_tutorial.correct_answer" = "Responda corretamente as perguntas sobre saúde para revelar peças.";
+"game_tutorial.collect_pictures" = "Colecione figurinhas dos esportes olímpicos após concluir cada fase!";
 
 // GAME
 "game.level" = "Nível %d";
@@ -385,8 +385,8 @@
 "game.ranking" = "Ranking Geral";
 "game.trophies" = "Meus Troféus";
 "game.congratulations" = "Parabéns";
-"game.answer" = "Resposta";
-"game.correct" = "correta!";
-"game.low_energy" = "Você está \nsem energia!";
-"game.low_energy_details" = "Participe diariamente \ndo Guardiões da Saúde \npara restaurá-la!";
+"game.answer" = "Resposta"; // -----------------> Não encontrado
+"game.correct" = "correta!"; // -----------------> Não encontrado
+"game.low_energy" = "Você está \nsem energia!"; // -----------------> Não encontrado
+"game.low_energy_details" = "Participe diariamente \ndo Guardiões da Saúde \npara restaurá-la!"; // -----------------> Não encontrado
 
