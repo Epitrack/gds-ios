@@ -299,7 +299,7 @@
 "select_state.how_is_your_health" = "¿Cómo está su salud en este momento?";
 "select_state.well" = "Bien";
 "select_state.bad" = "Mal";
-"select_state.next_step" = "Algunas señales y síntomas se presentarán en la próxima pantalla en caso de que la opción \"Mal\" sea seleccionada."";
+"select_state.next_step" = "Algunas señales y síntomas se presentarán en la próxima pantalla en caso de que la opción \"Mal\" sea seleccionada.";
 "select_state.how_is_he_she" = "¿Cómo es la prueba \nde la %@ en este momento?";
 
 // THANK YOU VIEW
