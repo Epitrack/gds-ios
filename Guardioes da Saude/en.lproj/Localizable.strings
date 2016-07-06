@@ -61,7 +61,7 @@
 
 // MODAL PRIV VIEW
 "modal_priv.safe_description" = "We care about your privacy.";
-"modal_priv.description" = "• Your participation is voluntary and anonymous";
+"modal_priv.description" = "• Your participation is voluntary and anonymous\n \n• The data provided will be used to build a healthier community.\n\n• Read the Terms of Use for more information";
 
 // FORGOT PASSWORD VIEW
 "forgot_password.label" = "Enter your email address and check your inbox.";
@@ -346,7 +346,7 @@
 
 // MAP HEALTH VIEW
 "map_health.title" = "Health Map";
-"map_health.btn_info" = "Syndromes are groups of clinical signs common to a number of diseases, including: \n\n• Diarrheic (fever and nausea or vomiting, as well as any of the following symptoms: body pains or headaches)\n\n• ReRespiratory (fever and coughing, as well as any of the following symptoms: sore throat, shortness of breath)\n\n• Exanthematic (red spots across the body, as well as any of the following symptoms: fever or body/joint pains, headache, itching, bloodshot eyes, or bleeding)";
+"map_health.btn_info" = "Syndromes are groups of clinical signs common to a number of diseases, including:: \n\n• Diarrheic (fever and nausea or vomiting, as well as any of the following symptoms: body pains or headaches) \n\n• Respiratory (fever , and some of these symptoms: cough, sore throat or shortness of breath) \n\n• Exanthematic (red spots on the body, as well as any of the following symptoms: fever or body/joint pain, headache, itching, bloodshot eyes, or bleeding) ";
 "map_health.syndromes" = "Syndromes";
 "map_health.well" = "Good";
 "map_health.bad" = "Ill";

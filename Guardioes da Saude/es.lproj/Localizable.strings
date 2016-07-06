@@ -61,7 +61,7 @@
 
 // MODAL PRIV VIEW
 "modal_priv.safe_description" = "Nos preocupamos con su privacidad";
-"modal_priv.description" = "• Su participación es voluntaria y anónima";
+"modal_priv.description" = "• Su participación es voluntaria y anónima\n \n• Los dados proporcionados serán utilizados para promover una comunidad más saludable\n\n• Para obtener más información, consulte los Términos de Uso";
 
 // FORGOT PASSWORD VIEW
 "forgot_password.label" = "Digite su e-mail y verifique su buzón de entrada.";
@@ -324,7 +324,7 @@
 
 // MAP HEALTH VIEW
 "map_health.title" = "Mapa de la Salud";
-"map_health.btn_info" = "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre e tosse, além de algum destes sintomas: dor de garganta ou falta de ar)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)";
+"map_health.btn_info" = "Las síndromes son conjuntos de manifestaciones clínicas comunes a un número de enfermedades, entre ellas:: \n\n• Diarreica (fiebre y nausea o vómito, además de alguno de estos síntomas: dolores en el cuerpo o dolor de cabeza) \n\n• Respiratorias (fiebre y tos, y algunos de estos síntomas: dolor de garganta o dificultad para respirar) \n\n• Exantemática (manchas rojas en el cuerpo, además de alguno de estos síntomas: fiebre o dolores en el cuerpo o dolores en las articulaciones o dolor de cabeza o comezón u ojos rojos o sangrado) ";
 "map_health.syndromes" = "Síndromes";
 "map_health.well" = "Bien";
 "map_health.bad" = "Mal";
