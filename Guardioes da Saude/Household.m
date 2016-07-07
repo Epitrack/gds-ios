@@ -20,7 +20,10 @@
         andPicture:(NSString *)picture
       andIdPicture:(NSString *)idPicture
     andIdHousehold:(NSString *)idHousehold
-   andRelationship:(NSString *) relationship {
+   andRelationship:(NSString *) relationship
+         andPerfil: (NSNumber *) perfil
+        andCountry: (NSString *) country
+          andState: (NSString *) state  {
     
     if (self == [super init]) {
 
@@ -34,6 +37,9 @@
         self.idPicture = idPicture;
         self.idHousehold = idHousehold;
         self.relationship = relationship;
+        self.perfil = perfil;
+        self.country = country;
+        self.state = state;
     }
     return self;
 }

@@ -229,7 +229,10 @@
                                                              andPicture:avatar
                                                            andIdPicture: picture
                                                          andIdHousehold:dicHousehold[@"id"]
-                                                        andRelationship:dicHousehold[@"relationship"]];
+                                                        andRelationship:dicHousehold[@"relationship"]
+                                                              andPerfil:dicHousehold[@"role"]
+                                                             andCountry:dicHousehold[@"country"]
+                                                               andState:dicHousehold[@"state"]];
                  [houseHolds addObject:household];
              }
              
