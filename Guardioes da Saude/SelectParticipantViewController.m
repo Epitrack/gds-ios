@@ -66,7 +66,7 @@ const float kCellHeight = 100.0f;
     
     NSDate *dateDob = [DateUtil dateFromStringUS:user.dob];
     long days = [DateUtil diffInDaysDate:dateDob andDate:[[NSDate alloc] init]];
-    long ageUser = days/360;
+    long ageUser = days/365;
     
     self.txtDobMainMember.text = [NSString stringWithFormat:NSLocalizedString(@"select_participant.year_old", @""), (long)ageUser];
     [self loadAvatar];

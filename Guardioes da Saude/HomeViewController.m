@@ -75,8 +75,6 @@
             user.isTest = YES;
         }
         
-//        GameTutorailViewController *teste;
-        
         user.user_token = [preferences valueForKey:kUserTokenKey];
         user.app_token = [preferences valueForKey:kAppTokenKey];
         user.photo = [preferences valueForKey:kPhotoKey];
