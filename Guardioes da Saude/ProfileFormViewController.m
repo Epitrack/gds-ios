@@ -99,10 +99,13 @@
     
     if (self.operation == EDIT_USER) {
         [self loadEditUser];
+        [self updateFormWith:[self.user.country isEqualToString:@"France"]];
     } else if (self.operation == EDIT_HOUSEHOLD){
         [self loadEditHousehold];
+        [self updateFormWith:[self.user.country isEqualToString:@"France"]];
     } else if (self.operation == ADD_HOUSEHOLD){
         [self loadAddHousehold];
+        [self updateFormWith:true];
     }
 }
 
@@ -184,7 +187,6 @@
     //Hide relationship
     [self.pickerRelationship removeFromSuperview];
     self.lbParentesco.hidden = YES;
-    self.constTopEmail.constant = 8;
     
     [self populateFormWithNick:self.user.nick
                         andDob:self.user.dob
@@ -214,14 +216,9 @@
 }
 
 - (void) checkCountry: (NSString *) country{
+    NSString *originalCountry = [LocationUtil getCountryNameToEnglish:country];
     
-    if ([country isEqualToString:@"Brasil"] ||
-        [country isEqualToString:@"Brazil"] ||
-        [country isEqualToString:@"Brésil"] ||
-        [country isEqualToString:@"Бразилия"] ||
-        [country isEqualToString:@"巴西"] ||
-        [country isEqualToString:@"البرازيل"]) {
-        
+    if ([country isEqualToString:@"Brazil"]) {
         self.btnChangeTopConst.constant = 230;
         self.lblState.hidden = NO;
         self.txtState.hidden = NO;
@@ -229,6 +226,12 @@
         self.btnChangeTopConst.constant = 170;
         self.lblState.hidden = YES;
         self.txtState.hidden = YES;
+    }
+    
+    if ([originalCountry isEqualToString:@"France"]) {
+        [self updateFormWith:true];
+    } else {
+        [self updateFormWith:false];
     }
 }
 
@@ -700,6 +703,30 @@
     
     [alert addAction:action];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void) updateFormWith: (BOOL) hiddenRace{
+    if (self.operation == EDIT_USER) {
+        if (hiddenRace) {
+            self.constTopEmail.constant = 8.0;
+        }else{
+            self.constTopEmail.constant = 70.0;
+        }
+    }else{
+        if (hiddenRace) {
+            self.constTopEmail.constant = 70.0;
+            self.lbRelationshipConst.constant = 8.0;
+        }else{
+            self.constTopEmail.constant = 132.0;
+            self.lbRelationshipConst.constant = 69.0;
+        }
+    }
+    
+    self.lbRace.hidden = hiddenRace;
+    self.pickerRace.hidden = hiddenRace;
+    
+    self.lbParentesco.hidden = (self.operation == EDIT_USER);
+    self.pickerRelationship.hidden = (self.operation == EDIT_USER);
 }
 
 @end

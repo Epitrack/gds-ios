@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lbEmail;
 @property (weak, nonatomic) IBOutlet UILabel *lbState;
+@property (weak, nonatomic) IBOutlet UILabel *lbRace;
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UIButton *btnDob;
 @property (weak, nonatomic) IBOutlet UITextField *txtNick;
@@ -28,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIDownPicker *txtPerfil;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *consTopLbPerfil;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *consTopNick;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constTopButton;
 

@@ -84,6 +84,8 @@
     [locationManager startUpdatingLocation];
     
     self.scrollView.delegate = self;
+    
+    [self hiddenRaceField:true];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,17 +99,25 @@
     }else if([dp isEqual:self.txtRace]){
         [self.txtCountry becomeFirstResponder];
     }else{
-        NSString *country = ((UITextField *) dp).text;
-        if ([country isEqualToString:@"Brasil"] ||
-            [country isEqualToString:@"Brazil"] ||
-            [country isEqualToString:@"Brésil"] ||
-            [country isEqualToString:@"Бразилия"] ||
-            [country isEqualToString:@"巴西"] ||
-            [country isEqualToString:@"البرازيل"]) {
+        NSString *country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
+        if ([country isEqualToString:@"Brazil"]) {
             
             [self.txtState becomeFirstResponder];
         }
+        
+        [self hiddenRaceField:[country isEqualToString:@"France"]];
     }
+}
+
+- (void) hiddenRaceField: (BOOL) hidden {
+    if (hidden) {
+        self.consTopLbPerfil.constant = 8.0;
+    } else {
+        self.consTopLbPerfil.constant = 72.0;
+    }
+    
+    self.txtRace.hidden = hidden;
+    self.lbRace.hidden = hidden;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -264,7 +274,8 @@
         return NO;
     }
     
-    if ([self.txtPerfil.text isEqualToString:@""]) {
+    NSString *country = [LocationUtil getCountryNameToEnglish:self.txtCountry.text];
+    if ([self.txtPerfil.text isEqualToString:@""] && ![country isEqualToString:@"France"]) {
         UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.perfil_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
@@ -286,8 +297,12 @@
     self.user.app_token = singleUser.app_token;
     self.user.platform = singleUser.platform;
     self.user.client = singleUser.client;
-    self.user.country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
     self.user.state = self.txtState.text;
+    
+    NSString *country = [LocationUtil getCountryNameToEnglish:self.txtCountry.text];
+    if ([country isEqualToString:@"France"]) {
+        self.user.country = @"French";
+    }
     
     if (!self.user.email) {
         self.user.email = self.txtEmail.text;

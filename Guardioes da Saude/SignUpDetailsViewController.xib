@@ -8,9 +8,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpDetailsViewController" customModule="Guardioes_da_Saude" customModuleProvider="target">
             <connections>
                 <outlet property="btnDob" destination="iIQ-6R-0sX" id="9a6-7F-fiz"/>
+                <outlet property="consTopLbPerfil" destination="quc-A8-zqc" id="utq-yX-6Pi"/>
                 <outlet property="consTopNick" destination="gyW-bk-rYf" id="8W0-P4-dLe"/>
                 <outlet property="constTopButton" destination="Jh6-80-C7l" id="G28-tU-SZz"/>
                 <outlet property="lbEmail" destination="cpw-cb-Zxp" id="WlG-vM-Ygb"/>
+                <outlet property="lbRace" destination="KHR-4i-8TG" id="N0c-gR-D6k"/>
                 <outlet property="lbState" destination="L3E-qC-zec" id="ANb-C0-fUG"/>
                 <outlet property="scrollView" destination="Ucl-et-A5E" id="47V-OW-Yld"/>
                 <outlet property="txtCountry" destination="shT-hw-vvr" id="hb4-VJ-Aqm"/>
@@ -185,6 +187,7 @@
                         <constraint firstItem="SNM-Ri-5o9" firstAttribute="top" secondItem="dA3-FT-ii4" secondAttribute="bottom" constant="8" id="b04-eF-EQz"/>
                         <constraint firstItem="jxI-YV-FzV" firstAttribute="leading" secondItem="o3u-xq-Bco" secondAttribute="leading" id="bnI-si-xGD"/>
                         <constraint firstItem="cpw-cb-Zxp" firstAttribute="leading" secondItem="Ucl-et-A5E" secondAttribute="leading" constant="20" id="eG0-qq-1xK"/>
+                        <constraint firstItem="kep-Eu-TCP" firstAttribute="leading" secondItem="o3u-xq-Bco" secondAttribute="leading" id="eQc-Xa-moe"/>
                         <constraint firstItem="AaI-mw-B1R" firstAttribute="width" secondItem="Ucl-et-A5E" secondAttribute="height" multiplier="149:368" id="egM-z7-jjp"/>
                         <constraint firstItem="Jts-r8-t3o" firstAttribute="top" secondItem="AaI-mw-B1R" secondAttribute="bottom" constant="94" id="gyW-bk-rYf"/>
                         <constraint firstItem="o3u-xq-Bco" firstAttribute="top" secondItem="jf3-jn-f1G" secondAttribute="bottom" constant="8" id="hoh-NZ-s8n"/>
@@ -196,6 +199,7 @@
                         <constraint firstItem="2Ew-gI-ca9" firstAttribute="top" secondItem="L3E-qC-zec" secondAttribute="bottom" constant="8" id="maJ-VY-OiZ"/>
                         <constraint firstItem="2Ew-gI-ca9" firstAttribute="trailing" secondItem="shT-hw-vvr" secondAttribute="trailing" id="mmZ-Y3-U1x"/>
                         <constraint firstItem="dA3-FT-ii4" firstAttribute="trailing" secondItem="jxI-YV-FzV" secondAttribute="trailing" id="nVr-iR-XSP"/>
+                        <constraint firstItem="kep-Eu-TCP" firstAttribute="top" secondItem="o3u-xq-Bco" secondAttribute="bottom" constant="72" id="quc-A8-zqc"/>
                         <constraint firstItem="1fk-6T-Jhw" firstAttribute="centerX" secondItem="Ucl-et-A5E" secondAttribute="centerX" id="r4B-eb-WeB"/>
                         <constraint firstItem="o3u-xq-Bco" firstAttribute="leading" secondItem="iIQ-6R-0sX" secondAttribute="leading" id="rH4-Bq-1hI"/>
                         <constraint firstItem="wSG-bf-LLj" firstAttribute="top" secondItem="AjP-eT-KuT" secondAttribute="bottom" constant="8" id="si0-gl-39c"/>
@@ -204,6 +208,12 @@
                         <constraint firstItem="SNM-Ri-5o9" firstAttribute="leading" secondItem="dA3-FT-ii4" secondAttribute="leading" id="yq8-IX-4nt"/>
                         <constraint firstItem="KHR-4i-8TG" firstAttribute="leading" secondItem="o3u-xq-Bco" secondAttribute="leading" id="zkx-g9-XQN"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Irg-3w-5yv"/>
+                            <exclude reference="ksj-jC-bbF"/>
+                        </mask>
+                    </variation>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bT-GV-HQN">
                     <rect key="frame" x="8" y="30" width="25" height="25"/>
