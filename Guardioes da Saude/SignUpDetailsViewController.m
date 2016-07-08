@@ -105,7 +105,7 @@
             [self.txtState becomeFirstResponder];
         }
         
-        [self hiddenRaceField:[country isEqualToString:@"France"]];
+        [self hiddenRaceField:([country isEqualToString:@"France"] || [country isEqualToString:@""])];
     }
 }
 
@@ -302,6 +302,8 @@
     NSString *country = [LocationUtil getCountryNameToEnglish:self.txtCountry.text];
     if ([country isEqualToString:@"France"]) {
         self.user.country = @"French";
+    }else{
+        self.user.country = country;
     }
     
     if (!self.user.email) {
