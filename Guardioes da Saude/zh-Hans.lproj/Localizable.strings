@@ -405,3 +405,10 @@
 "game.correct" = "正確的答案！";
 "game.low_energy" = "你是無動力！";
 "game.low_energy_details" = "加入日用保健監護人，以恢復它！";
+
+// PHONES
+"phones.police" = "軍警";
+"phones.firefighter" = "消防員";
+"phones.civil_defense" = "民防";
+"phones.call" = "呼叫";
+"phones.samu_desciption" = "緊急醫療服務";

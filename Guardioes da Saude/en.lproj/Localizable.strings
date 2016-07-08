@@ -411,3 +411,11 @@
 "game.correct" = "Answer!";
 "game.low_energy" = "You are \nwithout power!";
 "game.low_energy_details" = "Join Daily \nHealth Guardians \nto restore it!";
+
+
+// PHONES
+"phones.police" = "Military Police";
+"phones.firefighter" = "Firefighter";
+"phones.civil_defense" = "Civil Defense";
+"phones.call" = "Call";
+"phones.samu_desciption" = "Emergency Healthcare Service";

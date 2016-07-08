@@ -390,3 +390,9 @@
 "game.low_energy" = "Você está \nsem energia!"; // -----------------> Não encontrado
 "game.low_energy_details" = "Participe diariamente \ndo Guardiões da Saúde \npara restaurá-la!"; // -----------------> Não encontrado
 
+// PHONES
+"phones.police" = "Polícia Militar";
+"phones.firefighter" = "Bombeiro";
+"phones.civil_defense" = "Defesa Civil";
+"phones.call" = "Ligar";
+"phones.samu_desciption" = "Serviço de Atendimento Móvel de Urgência";

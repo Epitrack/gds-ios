@@ -388,3 +388,11 @@
 "game.correct" = " الصحيحة!";
 "game.low_energy" = "كنت بدون \nكهرباء!";
 "game.low_energy_details" = "تاريخ \nاليومية \nالأوصياء الصحة لاستعادته!";
+
+
+// PHONES
+"phones.police" = "الشرطة العسكرية";
+"phones.firefighter" = "رجل الإطفاء";
+"phones.civil_defense" = "الدفاع المدني";
+"phones.call" = "مكالمة";
+"phones.samu_desciption" = "خدمة الرعاية الصحية في حالات الطوارئ";

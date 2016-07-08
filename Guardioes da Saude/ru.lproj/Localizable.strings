@@ -388,3 +388,10 @@
 "game.correct" = "ответ!";
 "game.low_energy" = "Вы без \nвласти!";
 "game.low_energy_details" = "Регистрация Daily \nЗдоровье Стражам \nвосстановить его!";
+
+// PHONES
+"phones.police" = "Полиция";
+"phones.firefighter" = "Гражданский пожарным";
+"phones.civil_defense" = "Гражданская Защита";
+"phones.call" = "Вызов";
+"phones.samu_desciption" = "Служба скорой медицинской помощи";

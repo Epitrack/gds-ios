@@ -388,3 +388,10 @@
 "game.correct" = "réponse!";
 "game.low_energy" = "Vous êtes \nsans pouvoir!";
 "game.low_energy_details" = "Joignez-vous quotidiens \nGardiens de la santé \npour la restaurer!";
+
+// PHONES
+"phones.police" = "Police militaire";
+"phones.firefighter" = "Pompier civil";
+"phones.civil_defense" = "Défense civile";
+"phones.call" = "Appel";
+"phones.samu_desciption" = "Service de soins de santé d'urgence";
