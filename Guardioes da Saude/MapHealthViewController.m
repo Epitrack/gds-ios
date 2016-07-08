@@ -220,10 +220,9 @@
                 pin.survey_id = s.survey_id;
                 
                 if ([isSymptom isEqualToString:@"Y"]) {
-                    pin.title = @"Estou Bem :)";
-                    //pin.pin
+                    pin.title = NSLocalizedString(@"select_state.well", @"");
                 } else {
-                    pin.title = @"Estou Mal :(";
+                    pin.title = NSLocalizedString(@"select_state.bad", @"");
                 }
                 
                 [self.mapHealth addAnnotation:pin];
