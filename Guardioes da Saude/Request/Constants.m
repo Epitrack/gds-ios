@@ -7,11 +7,15 @@
 NSString *const kCurrentLanguage = @"current_language";
 
 + (NSArray *) getGenders{
-    return @[@"Masculino", @"Feminino"];
+    return @[NSLocalizedString(@"masculino", @""), NSLocalizedString(@"feminino", @"")];
 }
 
 + (NSArray *) getRaces{
-    return @[@"Branco", @"Preto", @"Pardo", @"Amarelo", @"Indigena"];
+    return @[NSLocalizedString(@"branco", @""),
+             NSLocalizedString(@"preto", @""),
+             NSLocalizedString(@"pardo", @""),
+             NSLocalizedString(@"amarelo", @""),
+             NSLocalizedString(@"indigena", @"")];
 }
 
 + (NSArray *)getPerfis{

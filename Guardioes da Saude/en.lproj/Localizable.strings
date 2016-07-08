@@ -419,3 +419,31 @@
 "phones.civil_defense" = "Civil Defense";
 "phones.call" = "Call";
 "phones.samu_desciption" = "Emergency Healthcare Service";
+
+"pai" = "Father";
+"mae" = "Mother";
+"filho" = "Son";
+"irmao" = "Brother";
+"avo" = "Grandmother/Grandfather";
+"neto" = "Grandson/Granddaughter";
+"tio" = "Uncle/Aunt";
+"sobrinho" = "Nephew/Niece";
+"bisavo" = "Great-grandmother/75";
+"bisneto" = "Great-grandson/Great-granddaughter";
+"primo" = "Cousin/Cousin";
+"sogro" = "Father-in-law/Mother-in-law";
+"genro-nora" = "Son-in-law/Daughter-in-law";
+"padrasto" = "Stepfather";
+"madrasta" = "Stepmother";
+"enteado" = "Stepson/Stepdaughter";
+"conjuge" = "Spouse";
+"outro" = "Others";
+
+"branco" = "White";
+"preto" = "Black";
+"pardo" = "Mixed";
+"amarelo" = "Yellow";
+"indigena" = "Indigenous";
+
+"masculino" = "Male";
+"feminino" = "Female";

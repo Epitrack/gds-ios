@@ -441,7 +441,7 @@
     userUpdater.email = self.txtEmail.text;
     userUpdater.dob = [NSString stringWithFormat:@"%@", birthdate];
     [userUpdater setGenderByString:self.pickerGender.text];
-    userUpdater.race = [self.pickerRace.text lowercaseString];
+    [userUpdater setRaceByStr:self.pickerRace.text];
     userUpdater.avatarNumber = self.pictureSelected;
     userUpdater.country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
     userUpdater.state = self.txtState.text;
@@ -517,7 +517,7 @@
     household.email = self.txtEmail.text;
     household.dob = [DateUtil stringUSFromDate:birthdate];
     [household setGenderByString:self.pickerGender.text];
-    household.race = [self.pickerRace.text lowercaseString];
+    [household setRaceByStr:self.pickerRace.text];
     household.picture = [self.pictureSelected stringValue];
     household.relationship = [self getRelationship];
     household.country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];

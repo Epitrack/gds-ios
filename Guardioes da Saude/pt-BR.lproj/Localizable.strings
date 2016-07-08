@@ -396,3 +396,31 @@
 "phones.civil_defense" = "Defesa Civil";
 "phones.call" = "Ligar";
 "phones.samu_desciption" = "Serviço de Atendimento Móvel de Urgência";
+
+"pai" = "Pai";
+"mae" = "Mãe";
+"filho" = "Filho";
+"irmao" = "Irmão";
+"avo" = "Avó/Avô";
+"neto" = "Neto/Neta";
+"tio" = "Tio/Tia";
+"sobrinho" = "Sobrinho/Sobrinha";
+"bisavo" = "Bisavó/75";
+"bisneto" = "Bisneto/Bisneta";
+"primo" = "Primo/Prima";
+"sogro" = "Sogro/Sogra";
+"genro-nora" = "Genro/Nora";
+"padrasto" = "Padrasto";
+"madrasta" = "Madrasta";
+"enteado" = "Enteado/Enteada";
+"conjuge" = "Cônjuge";
+"outro" = "Outros";
+
+"branco" = "Branco";
+"preto" = "Preto";
+"pardo" = "Pardo";
+"amarelo" = "Amarelo";
+"indigena" = "Indígena";
+
+"masculino" = "Masculino";
+"feminino" = "Feminino";

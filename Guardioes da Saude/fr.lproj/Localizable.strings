@@ -395,3 +395,31 @@
 "phones.civil_defense" = "Défense civile";
 "phones.call" = "Appel";
 "phones.samu_desciption" = "Service de soins de santé d'urgence";
+
+"pai" = "Père";
+"mae" = "Mère";
+"filho" = "Fils";
+"irmao" = "Frère";
+"avo" = "Grand-mère/Grand-père";
+"neto" = "Petit-fils/Petite-fille";
+"tio" = "Oncle/Tante";
+"sobrinho" = "Neveu/Nièce";
+"bisavo" = "Arrière-grand-mère/75";
+"bisneto" = "Arrière petite-fils/Arrière petite-fille";
+"primo" = "Cousin/Cousine";
+"sogro" = "Beau-père/Belle-mère";
+"genro-nora" = "Gendre/Belle-fille";
+"padrasto" = "Beau-père";
+"madrasta" = "Belle-mère";
+"enteado" = "Beau-fils/Belle-fille";
+"conjuge" = "Conjoint";
+"outro" = "Autres";
+
+"branco" = "Blanc";
+"preto" = "Noir";
+"pardo" = "Brun";
+"amarelo" = "Jaune";
+"indigena" = "Indigène";
+
+"masculino" = "Masculin";
+"feminino" = "Féminin";

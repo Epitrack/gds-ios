@@ -290,7 +290,7 @@
     self.user.nick = self.txtNick.text;
     [self.user setGenderByString:self.txtGender.text];
     [self.user setPerfilByString: self.txtPerfil.text];
-    self.user.race = [self.txtRace.text lowercaseString];
+    [self.user setRaceByStr:self.txtRace.text];
     self.user.dob = [DateUtil stringUSFromDate:dob];
     self.user.lon = [NSString stringWithFormat:@"%g", longitude];
     self.user.lat = [NSString stringWithFormat:@"%g", latitude];

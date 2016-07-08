@@ -106,11 +106,25 @@ NSString *const kGCMToken = @"gcmToken";
     }
 }
 
+- (void) setRaceByStr: (NSString *) raceStr{
+    if ([raceStr isEqualToString:NSLocalizedString(@"branco", @"")]) {
+        self.race = @"branco";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"preto", @"")]){
+        self.race = @"preto";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"pardo", @"")]){
+        self.race = @"pardo";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"amarelo", @"")]){
+        self.race = @"amarelo";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"indigena", @"")]){
+        self.race = @"indigena";
+    }
+}
+
 - (void) setGenderByString: (NSString *) strGender{
-    if ([strGender isEqualToString:@"Masculino"]) {
-        gender = @"M";
-    } else if ([strGender isEqualToString:@"Feminino"]) {
-        gender = @"F";
+    if ([strGender isEqualToString:NSLocalizedString(@"masculino", @"")]) {
+        self.gender = @"M";
+    } else if ([strGender isEqualToString:NSLocalizedString(@"feminino", @"")]) {
+        self.gender = @"F";
     }
 }
 

@@ -70,6 +70,7 @@ extern NSString *const kGCMToken;
 - (void) setPerfilByString: (NSString *) strPefil;
 - (void) requestPermissions:(void(^)(bool)) block;
 - (void) setAvatarImageAtButton: (UIButton *) button orImageView:(UIImageView *) imageView;
+- (void) setRaceByStr: (NSString *) raceStr;
 - (BOOL) isValidEmail;
 - (void) cloneUser: (User *) user;
 - (void) clearUser;

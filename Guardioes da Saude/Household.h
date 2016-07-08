@@ -29,6 +29,7 @@
 
 - (void) setGenderByString: (NSString *) strGender;
 - (void) setPerfilByString: (NSString *) strPefil;
+- (void) setRaceByStr: (NSString *) raceStr;
 
 + (NSDictionary *) getRelationshipsDictonary;
 + (NSArray *) getRelationshipArray;

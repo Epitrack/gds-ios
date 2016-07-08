@@ -412,3 +412,31 @@
 "phones.civil_defense" = "民防";
 "phones.call" = "呼叫";
 "phones.samu_desciption" = "緊急醫療服務";
+
+"pai" = "父親";
+"mae" = "母親";
+"filho" = "兒子";
+"irmao" = "兄弟";
+"avo" = "祖母/祖父";
+"neto" = "孫子/孫女";
+"tio" = "叔叔/姑媽";
+"sobrinho" = "侄子/侄女";
+"bisavo" = "曾祖母/75";
+"bisneto" = "曾孫子/曾孙女";
+"primo" = "表親/表親";
+"sogro" = "岳父/婆婆";
+"genro-nora" = "女婿/媳婦";
+"padrasto" = "繼父";
+"madrasta" = "繼母";
+"enteado" = "繼子/繼女";
+"conjuge" = "配偶";
+"outro" = "其他";
+
+"branco" = "白色";
+"preto" = "黑色";
+"pardo" = "混合";
+"amarelo" = "黃色";
+"indigena" = "土著";
+
+"masculino" = "男性";
+"feminino" = "女性";
