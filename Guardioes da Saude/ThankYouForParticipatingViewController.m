@@ -76,30 +76,10 @@
 }
 
 - (void) addGamePoint{
-    NSDateComponents *otherDay = [[NSCalendar currentCalendar] components:NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:user.lastJoinNotification];
-    NSDateComponents *today = [[NSCalendar currentCalendar] components:NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
-    if(!([today day] == [otherDay day] &&
-       [today month] == [otherDay month] &&
-       [today year] == [otherDay year] &&
-       [today era] == [otherDay era])) {
+    if(!user.doesReport) {
         user.points = 10;
     }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)viewWillAppear:(BOOL)animated {
     // GOOGLE ANALYTICS

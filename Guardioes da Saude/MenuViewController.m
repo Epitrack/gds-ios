@@ -17,6 +17,7 @@
 #import "Requester.h"
 #import "ViewUtil.h"
 #import "ChangeLanguageViewController.h"
+#import "UserRequester.h"
 #import <Google/Analytics.h>
 
 @interface MenuViewController () {
@@ -297,6 +298,9 @@
     [preferences setValue:nil forKey:kGCMToken];
     
     [preferences synchronize];
+    
+    
+    [UserRequester closeSession];
     
     TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
     newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];

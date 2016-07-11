@@ -345,8 +345,12 @@
             [preferences setValue:[DateUtil stringUSFromDate:user.lastJoinNotification] forKey:kLastJoinNotification];
             [preferences synchronize];
             
+            user.doesReport = false;
+            
             SelectStateViewController *selectStateView = [[SelectStateViewController alloc] init];
             [self.navigationController pushViewController:selectStateView animated:YES];
+        }else{
+            user.doesReport = true;
         }
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];

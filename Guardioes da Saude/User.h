@@ -62,6 +62,7 @@ extern NSString *const kGCMToken;
 @property(nonatomic, assign) int partsCompleted;
 @property(nonatomic, retain) NSString *country;
 @property(nonatomic, retain) NSString *state;
+@property(nonatomic, assign) BOOL doesReport;
 
 - (void) resetPuzzleMatriz;
 - (void) setGenderBySegIndex: (long) segIndex;

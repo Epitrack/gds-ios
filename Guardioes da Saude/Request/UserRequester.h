@@ -89,4 +89,6 @@ typedef enum {
                        onStart: (void(^)()) onStart
                      onSuccess: (void(^)()) onSuccess
                        onError: (void(^)(NSError *error)) onError;
+
++ (void)closeSession;
  @end
