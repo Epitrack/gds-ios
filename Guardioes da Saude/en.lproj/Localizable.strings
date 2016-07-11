@@ -56,7 +56,7 @@
 "tutorial.health_tips_description" = "Learn how to prevent diseases, find the nearestUPAsand drugstores, and view useful phone numbers to call in case of emergency.";
 
 // SELECT TYPE CREATE VIEW
-"select_type_create.quick_access" = "Quick login with:";
+"select_type_create.quick_access" = "Sign up quickly with:";
 "select_type_create.or_email" = "Or use your email:";
 
 // MODAL PRIV VIEW

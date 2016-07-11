@@ -56,7 +56,7 @@
 "tutorial.health_tips_description" = "Vea cómo prevenirse de enfermedades, qué UPAs y farmacias están más cerca de usted y los teléfonos útiles para casos de emergencia.";
 
 // SELECT TYPE CREATE VIEW
-"select_type_create.quick_access" = "Entre rápidamente con:";
+"select_type_create.quick_access" = "Regístrese rápidamente con:";
 "select_type_create.or_email" = "O use su e-mail:";
 
 // MODAL PRIV VIEW

@@ -56,7 +56,7 @@
 "tutorial.health_tips_description" = "Découvrez comment prévenir les maladies, quels services des urgences et pharmacies sont les plus proches de chez vous et les numéros utiles en cas d'urgence.";
 
 // SELECT TYPE CREATE VIEW
-"select_type_create.quick_access" = "Entrez rapidement avec ::";
+"select_type_create.quick_access" = "Inscrivez-vous rapidement avec :";
 "select_type_create.or_email" = "Ou use seu e-mail:";
 
 // MODAL PRIV VIEW

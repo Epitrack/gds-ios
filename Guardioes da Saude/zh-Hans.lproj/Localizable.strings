@@ -56,7 +56,7 @@
 "tutorial.health_tips_description" = "瞭解如何預防疾病，查找最近的UPA和藥店，並查看有用的電話號碼以在緊急情況下撥打。";
 
 // SELECT TYPE CREATE VIEW
-"select_type_create.quick_access" = "快速登錄:";
+"select_type_create.quick_access" = "快速登錄 ︰";
 "select_type_create.or_email" = "或使用您的電子郵件:";
 
 // MODAL PRIV VIEW

@@ -56,7 +56,7 @@
 "tutorial.health_tips_description" = "لقاح";
 
 // SELECT TYPE CREATE VIEW
-"select_type_create.quick_access" = ":تسجيل الدخول سريعًا باستخدام";
+"select_type_create.quick_access" = "تسجيل الاشتراك سريعًا باستخدام:";
 "select_type_create.or_email" = ":أو استخدام البريد الإلكتروني الخاص بك";
 
 // MODAL PRIV VIEW
