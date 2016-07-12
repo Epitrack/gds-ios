@@ -1435,6 +1435,7 @@
 			isa = PBXGroup;
 			children = (
 				528C8AFB1BB82630003CFC91 /* Guardioes da Saude */,
+				CBD02DB61D3532D900CE4331 /* UnitTest */,
 				528C8AFA1BB82630003CFC91 /* Products */,
 				CF810800BC26A068848D3B68 /* Frameworks */,
 				9D0F253A3929FB8E88E6603F /* Pods */,
@@ -1929,6 +1930,13 @@
 				CB05C73A1CA3316D00B2F0D4 /* GDSTextView.m */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		CBD02DB61D3532D900CE4331 /* UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UnitTest;
 			sourceTree = "<group>";
 		};
 		CBDE6B1F1C80CA29007418FA /* CellTables */ = {
