@@ -52,6 +52,7 @@ typedef enum operation{
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnChangeTopConst;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *btnSaveBottomConst;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lbRaceTopConst;
 
 - (IBAction)btnDobAction:(id)sender;
 - (IBAction)btnSelectPicture:(id)sender;
