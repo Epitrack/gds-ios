@@ -29,9 +29,9 @@
 @property (weak, nonatomic) IBOutlet UIDownPicker *txtPerfil;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *consTopLbPerfil;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *consTopNick;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constTopButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constTopLbRace;
 
 - (IBAction)btnBackAction:(id)sender;
 - (IBAction)btnDobAction:(id)sender;

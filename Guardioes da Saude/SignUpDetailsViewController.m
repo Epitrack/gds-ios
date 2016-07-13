@@ -85,7 +85,7 @@
     
     self.scrollView.delegate = self;
     
-    [self hiddenRaceField:true];
+    [self hiddenRaceField:true andState:true];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,23 +101,32 @@
     }else{
         NSString *country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
         if ([country isEqualToString:@"Brazil"]) {
-            
             [self.txtState becomeFirstResponder];
+            [self hiddenRaceField:false andState:false];
+        }else if ([country isEqualToString:@"France"] || [country isEqualToString:@""]){
+            [self hiddenRaceField:true andState:true];
+        }else{
+            [self hiddenRaceField:false andState:true];
         }
-        
-        [self hiddenRaceField:([country isEqualToString:@"France"] || [country isEqualToString:@""])];
     }
 }
 
-- (void) hiddenRaceField: (BOOL) hidden {
-    if (hidden) {
-        self.consTopLbPerfil.constant = 8.0;
-    } else {
-        self.consTopLbPerfil.constant = 72.0;
+- (void) hiddenRaceField: (BOOL) hiddenRace andState: (BOOL) hiddenState {
+    if (!hiddenRace && !hiddenState) {
+        self.constTopLbRace.constant = 76.0;
+        self.constTopButton.constant = 150.0;
+    }else if (!hiddenRace){
+        self.constTopLbRace.constant = 8.0;
+        self.constTopButton.constant = 94.0;
+    }else{
+        self.constTopButton.constant = 30.0;
     }
     
-    self.txtRace.hidden = hidden;
-    self.lbRace.hidden = hidden;
+    self.txtRace.hidden = hiddenRace;
+    self.lbRace.hidden = hiddenRace;
+    
+    self.lbState.hidden = hiddenState;
+    self.txtState.hidden = hiddenState;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -141,24 +150,24 @@
 }
 
 - (BOOL)canBecomeFirstResponder {
-    NSString *country = self.txtCountry.text;
-    if ([country isEqualToString:@"Brasil"] ||
-        [country isEqualToString:@"Brazil"] ||
-        [country isEqualToString:@"Brésil"] ||
-        [country isEqualToString:@"Бразилия"] ||
-        [country isEqualToString:@"巴西"] ||
-        [country isEqualToString:@"البرازيل"]) {
-        
-        self.constTopButton.constant = 94;
-        self.txtState.hidden = NO;
-        self.lbState.hidden = NO;
-        
-        [self.txtState becomeFirstResponder];
-    }else{
-        self.constTopButton.constant = 30;
-        self.txtState.hidden = YES;
-        self.lbState.hidden = YES;
-    }
+//    NSString *country = self.txtCountry.text;
+//    if ([country isEqualToString:@"Brasil"] ||
+//        [country isEqualToString:@"Brazil"] ||
+//        [country isEqualToString:@"Brésil"] ||
+//        [country isEqualToString:@"Бразилия"] ||
+//        [country isEqualToString:@"巴西"] ||
+//        [country isEqualToString:@"البرازيل"]) {
+//        
+////        self.constTopButton.constant = 94;
+//        self.txtState.hidden = NO;
+//        self.lbState.hidden = NO;
+//        
+//        [self.txtState becomeFirstResponder];
+//    }else{
+////        self.constTopButton.constant = 30;
+//        self.txtState.hidden = YES;
+//        self.lbState.hidden = YES;
+//    }
     
     return YES;
 }

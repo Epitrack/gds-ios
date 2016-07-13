@@ -8,9 +8,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpDetailsViewController" customModule="Guardioes_da_Saude" customModuleProvider="target">
             <connections>
                 <outlet property="btnDob" destination="iIQ-6R-0sX" id="9a6-7F-fiz"/>
-                <outlet property="consTopLbPerfil" destination="quc-A8-zqc" id="utq-yX-6Pi"/>
                 <outlet property="consTopNick" destination="gyW-bk-rYf" id="8W0-P4-dLe"/>
                 <outlet property="constTopButton" destination="Jh6-80-C7l" id="G28-tU-SZz"/>
+                <outlet property="constTopLbRace" destination="U8h-9l-huC" id="Qve-d3-MdM"/>
                 <outlet property="lbEmail" destination="cpw-cb-Zxp" id="WlG-vM-Ygb"/>
                 <outlet property="lbRace" destination="KHR-4i-8TG" id="N0c-gR-D6k"/>
                 <outlet property="lbState" destination="L3E-qC-zec" id="ANb-C0-fUG"/>
@@ -102,52 +102,41 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sign_up_details.lb_race" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHR-4i-8TG" customClass="GDSLabel">
-                            <rect key="frame" x="20" y="456" width="157" height="18"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jxI-YV-FzV" customClass="UIDownPicker">
-                            <rect key="frame" x="20" y="482" width="374" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sign_up_details.lb_perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kep-Eu-TCP" customClass="GDSLabel">
-                            <rect key="frame" x="20" y="520" width="163" height="18"/>
+                            <rect key="frame" x="20" y="456" width="163" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dA3-FT-ii4" customClass="UIDownPicker">
-                            <rect key="frame" x="20" y="546" width="374" height="30"/>
+                            <rect key="frame" x="20" y="482" width="374" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sign_up_details.lb_country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNM-Ri-5o9" customClass="GDSLabel">
-                            <rect key="frame" x="20" y="584" width="179" height="18"/>
+                            <rect key="frame" x="20" y="520" width="179" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="shT-hw-vvr" customClass="UIDownPicker">
-                            <rect key="frame" x="20" y="610" width="374" height="30"/>
+                            <rect key="frame" x="20" y="546" width="374" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sign_up_details.lb_state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3E-qC-zec" customClass="GDSLabel">
-                            <rect key="frame" x="20" y="648" width="161" height="18"/>
+                            <rect key="frame" x="20" y="584" width="161" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ew-gI-ca9" customClass="UIDownPicker">
-                            <rect key="frame" x="20" y="674" width="374" height="30"/>
+                            <rect key="frame" x="20" y="610" width="374" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWR-4K-nGg" customClass="GDSButton">
-                            <rect key="frame" x="30" y="670" width="354" height="38"/>
+                            <rect key="frame" x="30" y="606" width="354" height="38"/>
                             <state key="normal" title="sign_up_details.sign_up" backgroundImage="btn_olympics">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -155,16 +144,31 @@
                                 <action selector="btnSignupAction:" destination="-1" eventType="touchUpInside" id="R8a-eR-nyF"/>
                             </connections>
                         </button>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sign_up_details.lb_race" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHR-4i-8TG" customClass="GDSLabel">
+                            <rect key="frame" x="20" y="652" width="157" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jxI-YV-FzV" customClass="UIDownPicker">
+                            <rect key="frame" x="20" y="678" width="374" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                     <constraints>
                         <constraint firstItem="o3u-xq-Bco" firstAttribute="trailing" secondItem="iIQ-6R-0sX" secondAttribute="trailing" id="29f-hD-rQG"/>
+                        <constraint firstItem="jxI-YV-FzV" firstAttribute="trailing" secondItem="shT-hw-vvr" secondAttribute="trailing" id="2dY-oK-jwx"/>
                         <constraint firstItem="jxI-YV-FzV" firstAttribute="trailing" secondItem="o3u-xq-Bco" secondAttribute="trailing" id="2wC-On-Zhb"/>
                         <constraint firstItem="iIQ-6R-0sX" firstAttribute="trailing" secondItem="AjP-eT-KuT" secondAttribute="trailing" id="3eU-vW-WqV"/>
+                        <constraint firstItem="KHR-4i-8TG" firstAttribute="leading" secondItem="2Ew-gI-ca9" secondAttribute="leading" id="4vJ-BY-eWO"/>
                         <constraint firstItem="L3E-qC-zec" firstAttribute="leading" secondItem="shT-hw-vvr" secondAttribute="leading" id="5I0-xM-tB3"/>
+                        <constraint firstItem="jxI-YV-FzV" firstAttribute="leading" secondItem="KHR-4i-8TG" secondAttribute="leading" id="7bw-SI-Mcu"/>
                         <constraint firstItem="dA3-FT-ii4" firstAttribute="leading" secondItem="kep-Eu-TCP" secondAttribute="leading" id="8tP-qy-zSE"/>
                         <constraint firstItem="mWR-4K-nGg" firstAttribute="trailing" secondItem="2Ew-gI-ca9" secondAttribute="trailing" constant="-10" id="9rA-1i-6ZO"/>
                         <constraint firstItem="jf3-jn-f1G" firstAttribute="leading" secondItem="iIQ-6R-0sX" secondAttribute="leading" id="AJt-xX-Nwi"/>
                         <constraint firstItem="AjP-eT-KuT" firstAttribute="top" secondItem="Jts-r8-t3o" secondAttribute="bottom" constant="8" id="D0I-0N-d3U"/>
+                        <constraint firstItem="jxI-YV-FzV" firstAttribute="trailing" secondItem="2Ew-gI-ca9" secondAttribute="trailing" id="DDx-Ov-JR0"/>
                         <constraint firstItem="iIQ-6R-0sX" firstAttribute="top" secondItem="wSG-bf-LLj" secondAttribute="bottom" constant="8" id="E6j-y0-bM8"/>
                         <constraint firstItem="AaI-mw-B1R" firstAttribute="centerX" secondItem="Ucl-et-A5E" secondAttribute="centerX" id="FRu-2v-oQw"/>
                         <constraint firstItem="1fk-6T-Jhw" firstAttribute="leading" secondItem="cpw-cb-Zxp" secondAttribute="leading" id="FzY-Eb-Ie3"/>
@@ -181,25 +185,29 @@
                         <constraint firstItem="shT-hw-vvr" firstAttribute="leading" secondItem="SNM-Ri-5o9" secondAttribute="leading" id="S6x-hc-5iz"/>
                         <constraint firstItem="jxI-YV-FzV" firstAttribute="top" secondItem="KHR-4i-8TG" secondAttribute="bottom" constant="8" id="Sl5-9p-Jez"/>
                         <constraint firstItem="L3E-qC-zec" firstAttribute="top" secondItem="shT-hw-vvr" secondAttribute="bottom" constant="8" id="StH-O0-kHo"/>
+                        <constraint firstItem="KHR-4i-8TG" firstAttribute="top" secondItem="shT-hw-vvr" secondAttribute="bottom" constant="76" id="U8h-9l-huC"/>
                         <constraint firstItem="AjP-eT-KuT" firstAttribute="leading" secondItem="1fk-6T-Jhw" secondAttribute="leading" id="YfE-ht-3SS"/>
                         <constraint firstItem="iIQ-6R-0sX" firstAttribute="leading" secondItem="AjP-eT-KuT" secondAttribute="leading" id="ZDC-mg-XFq"/>
                         <constraint firstItem="AaI-mw-B1R" firstAttribute="top" secondItem="Ucl-et-A5E" secondAttribute="top" constant="70" id="ZSf-tO-00R"/>
                         <constraint firstItem="SNM-Ri-5o9" firstAttribute="top" secondItem="dA3-FT-ii4" secondAttribute="bottom" constant="8" id="b04-eF-EQz"/>
                         <constraint firstItem="jxI-YV-FzV" firstAttribute="leading" secondItem="o3u-xq-Bco" secondAttribute="leading" id="bnI-si-xGD"/>
+                        <constraint firstItem="KHR-4i-8TG" firstAttribute="top" secondItem="2Ew-gI-ca9" secondAttribute="bottom" constant="12" id="cmd-wm-KCY"/>
                         <constraint firstItem="cpw-cb-Zxp" firstAttribute="leading" secondItem="Ucl-et-A5E" secondAttribute="leading" constant="20" id="eG0-qq-1xK"/>
                         <constraint firstItem="kep-Eu-TCP" firstAttribute="leading" secondItem="o3u-xq-Bco" secondAttribute="leading" id="eQc-Xa-moe"/>
                         <constraint firstItem="AaI-mw-B1R" firstAttribute="width" secondItem="Ucl-et-A5E" secondAttribute="height" multiplier="149:368" id="egM-z7-jjp"/>
                         <constraint firstItem="Jts-r8-t3o" firstAttribute="top" secondItem="AaI-mw-B1R" secondAttribute="bottom" constant="94" id="gyW-bk-rYf"/>
                         <constraint firstItem="o3u-xq-Bco" firstAttribute="top" secondItem="jf3-jn-f1G" secondAttribute="bottom" constant="8" id="hoh-NZ-s8n"/>
                         <constraint firstItem="1fk-6T-Jhw" firstAttribute="top" secondItem="cpw-cb-Zxp" secondAttribute="bottom" constant="8" id="jXS-Jo-abQ"/>
+                        <constraint firstItem="dA3-FT-ii4" firstAttribute="trailing" secondItem="o3u-xq-Bco" secondAttribute="trailing" id="ja7-1w-HiD"/>
                         <constraint firstItem="shT-hw-vvr" firstAttribute="trailing" secondItem="dA3-FT-ii4" secondAttribute="trailing" id="kCk-Zw-gbA"/>
                         <constraint firstItem="kep-Eu-TCP" firstAttribute="leading" secondItem="jxI-YV-FzV" secondAttribute="leading" id="ksj-jC-bbF"/>
                         <constraint firstItem="dA3-FT-ii4" firstAttribute="top" secondItem="kep-Eu-TCP" secondAttribute="bottom" constant="8" id="l2H-VA-NRK"/>
                         <constraint firstItem="jf3-jn-f1G" firstAttribute="top" secondItem="iIQ-6R-0sX" secondAttribute="bottom" constant="8" id="leq-Vs-NCm"/>
+                        <constraint firstItem="KHR-4i-8TG" firstAttribute="leading" secondItem="shT-hw-vvr" secondAttribute="leading" id="mQR-Mg-aAY"/>
                         <constraint firstItem="2Ew-gI-ca9" firstAttribute="top" secondItem="L3E-qC-zec" secondAttribute="bottom" constant="8" id="maJ-VY-OiZ"/>
                         <constraint firstItem="2Ew-gI-ca9" firstAttribute="trailing" secondItem="shT-hw-vvr" secondAttribute="trailing" id="mmZ-Y3-U1x"/>
                         <constraint firstItem="dA3-FT-ii4" firstAttribute="trailing" secondItem="jxI-YV-FzV" secondAttribute="trailing" id="nVr-iR-XSP"/>
-                        <constraint firstItem="kep-Eu-TCP" firstAttribute="top" secondItem="o3u-xq-Bco" secondAttribute="bottom" constant="72" id="quc-A8-zqc"/>
+                        <constraint firstItem="kep-Eu-TCP" firstAttribute="top" secondItem="o3u-xq-Bco" secondAttribute="bottom" constant="8" id="quc-A8-zqc"/>
                         <constraint firstItem="1fk-6T-Jhw" firstAttribute="centerX" secondItem="Ucl-et-A5E" secondAttribute="centerX" id="r4B-eb-WeB"/>
                         <constraint firstItem="o3u-xq-Bco" firstAttribute="leading" secondItem="iIQ-6R-0sX" secondAttribute="leading" id="rH4-Bq-1hI"/>
                         <constraint firstItem="wSG-bf-LLj" firstAttribute="top" secondItem="AjP-eT-KuT" secondAttribute="bottom" constant="8" id="si0-gl-39c"/>
@@ -212,6 +220,14 @@
                         <mask key="constraints">
                             <exclude reference="Irg-3w-5yv"/>
                             <exclude reference="ksj-jC-bbF"/>
+                            <exclude reference="nVr-iR-XSP"/>
+                            <exclude reference="4vJ-BY-eWO"/>
+                            <exclude reference="Jxl-OO-PsD"/>
+                            <exclude reference="cmd-wm-KCY"/>
+                            <exclude reference="zkx-g9-XQN"/>
+                            <exclude reference="2wC-On-Zhb"/>
+                            <exclude reference="DDx-Ov-JR0"/>
+                            <exclude reference="bnI-si-xGD"/>
                         </mask>
                     </variation>
                 </scrollView>
