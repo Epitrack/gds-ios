@@ -656,9 +656,17 @@
                    andOnSuccess:(void (^)())onSuccess
                      andOnError:(void (^)(NSError *))onError{
     
+    NSString *currentLanguage = [NSLocale preferredLanguages][0];
+    if ([currentLanguage isEqualToString:@"ch"]) {
+        currentLanguage = @"ch";
+    }else if ([currentLanguage isEqualToString:@"pt-BR"]){
+        currentLanguage = @"pt_BR";
+    }
+    
     [self doPost:[[self getUrl] stringByAppendingString:@"/user/forgot-password"]
           header:@{}
-       parameter:@{@"email":email}
+       parameter:@{@"lang": currentLanguage,
+                   @"email": email}
            start:^{
                onStart();
            }
