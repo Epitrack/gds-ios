@@ -474,6 +474,9 @@
 		CB520C111D144440003A6A71 /* TrophiesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB520C0F1D144440003A6A71 /* TrophiesCell.xib */; };
 		CB520C141D14943D003A6A71 /* SafeSexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB520C121D14943D003A6A71 /* SafeSexViewController.swift */; };
 		CB520C151D14943D003A6A71 /* SafeSexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB520C131D14943D003A6A71 /* SafeSexViewController.xib */; };
+		CB5AB9351D3963CC008A8FA6 /* libGoogleConversionTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5AB9331D3963CC008A8FA6 /* libGoogleConversionTracking.a */; };
+		CB5AB9361D3963CC008A8FA6 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CB5AB9341D3963CC008A8FA6 /* README.txt */; };
+		CB5AB9381D396417008A8FA6 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5AB9371D396417008A8FA6 /* AdSupport.framework */; };
 		CB8065A01CC7EA3600CD2F7A /* GameTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB80659E1CC7EA3600CD2F7A /* GameTutorialViewController.swift */; };
 		CB8065A11CC7EA3600CD2F7A /* GameTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB80659F1CC7EA3600CD2F7A /* GameTutorialViewController.xib */; };
 		CB8065E91CCAC68F00CD2F7A /* GameTutorialItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */; };
@@ -1084,6 +1087,12 @@
 		CB520C0F1D144440003A6A71 /* TrophiesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrophiesCell.xib; path = CellTable/TrophiesCell.xib; sourceTree = "<group>"; };
 		CB520C121D14943D003A6A71 /* SafeSexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeSexViewController.swift; sourceTree = "<group>"; };
 		CB520C131D14943D003A6A71 /* SafeSexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafeSexViewController.xib; sourceTree = "<group>"; };
+		CB5AB92E1D3963CC008A8FA6 /* ACTReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTReporter.h; sourceTree = "<group>"; };
+		CB5AB9301D3963CC008A8FA6 /* GoogleConversionPing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleConversionPing.h; sourceTree = "<group>"; };
+		CB5AB9321D3963CC008A8FA6 /* DCTReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTReporter.h; sourceTree = "<group>"; };
+		CB5AB9331D3963CC008A8FA6 /* libGoogleConversionTracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleConversionTracking.a; sourceTree = "<group>"; };
+		CB5AB9341D3963CC008A8FA6 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		CB5AB9371D396417008A8FA6 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		CB80659E1CC7EA3600CD2F7A /* GameTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTutorialViewController.swift; path = game/GameTutorialViewController.swift; sourceTree = "<group>"; };
 		CB80659F1CC7EA3600CD2F7A /* GameTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameTutorialViewController.xib; path = game/GameTutorialViewController.xib; sourceTree = "<group>"; };
 		CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTutorialItemViewController.swift; path = game/GameTutorialItemViewController.swift; sourceTree = "<group>"; };
@@ -1152,7 +1161,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB5AB9381D396417008A8FA6 /* AdSupport.framework in Frameworks */,
 				5206C4341C2C1EF4003D0C83 /* DownPicker.framework in Frameworks */,
+				CB5AB9351D3963CC008A8FA6 /* libGoogleConversionTracking.a in Frameworks */,
 				527782E31C10861700251BF8 /* StoreKit.framework in Frameworks */,
 				527782E11C10860B00251BF8 /* SystemConfiguration.framework in Frameworks */,
 				2548B9EE1BDEBA310004E00F /* CoreLocation.framework in Frameworks */,
@@ -1453,6 +1464,7 @@
 		528C8AFB1BB82630003CFC91 /* Guardioes da Saude */ = {
 			isa = PBXGroup;
 			children = (
+				CB5AB92D1D3963CC008A8FA6 /* GoogleConversionTrackingSDK-iOS-3.4.0 */,
 				CBBC1E1A1C9B33510079A8D6 /* Guardioes da Saude-Bridging-Header.h */,
 				CB8FBADC1C60E1BC00696F17 /* Localizable.strings */,
 				CB2491391D00D97500777B09 /* GoogleService-Info.plist */,
@@ -1898,6 +1910,34 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		CB5AB92D1D3963CC008A8FA6 /* GoogleConversionTrackingSDK-iOS-3.4.0 */ = {
+			isa = PBXGroup;
+			children = (
+				CB5AB92E1D3963CC008A8FA6 /* ACTReporter.h */,
+				CB5AB92F1D3963CC008A8FA6 /* Deprecated */,
+				CB5AB9311D3963CC008A8FA6 /* DoubleClick */,
+				CB5AB9331D3963CC008A8FA6 /* libGoogleConversionTracking.a */,
+				CB5AB9341D3963CC008A8FA6 /* README.txt */,
+			);
+			path = "GoogleConversionTrackingSDK-iOS-3.4.0";
+			sourceTree = "<group>";
+		};
+		CB5AB92F1D3963CC008A8FA6 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				CB5AB9301D3963CC008A8FA6 /* GoogleConversionPing.h */,
+			);
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
+		CB5AB9311D3963CC008A8FA6 /* DoubleClick */ = {
+			isa = PBXGroup;
+			children = (
+				CB5AB9321D3963CC008A8FA6 /* DCTReporter.h */,
+			);
+			path = DoubleClick;
+			sourceTree = "<group>";
+		};
 		CB8065991CC7E90600CD2F7A /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -1954,6 +1994,7 @@
 		CF810800BC26A068848D3B68 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB5AB9371D396417008A8FA6 /* AdSupport.framework */,
 				52199CB61C2C58310033A949 /* THCalendarDatePicker.framework */,
 				5206C4331C2C1EF4003D0C83 /* DownPicker.framework */,
 				527782E41C10862400251BF8 /* AddressBook.framework */,
@@ -2411,6 +2452,7 @@
 				52E727E61BEA93B800B46945 /* input_floatbox_login_email@2x.png in Resources */,
 				52558CE31C18B8EE00AF7DDF /* imgTutorial01.png in Resources */,
 				52518A191C19F65F00B86D5E /* infoCopy.png in Resources */,
+				CB5AB9361D3963CC008A8FA6 /* README.txt in Resources */,
 				CBA0E5321C5FA5EC0086315B /* img_profile15@3x.png in Resources */,
 				52E727951BEA93B800B46945 /* icon_noticias@2x.png in Resources */,
 				52D2BC7C1BF12EBF007C9C09 /* BG_blur_menu@3x.png in Resources */,
@@ -2789,6 +2831,12 @@
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Guardioes",
+					da,
+					"Saude/GoogleConversionTrackingSDK-iOS-3.4.0",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2817,6 +2865,12 @@
 				INFOPLIST_FILE = "Guardioes da Saude/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Guardioes",
+					da,
+					"Saude/GoogleConversionTrackingSDK-iOS-3.4.0",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.epitrack.gds;
 				PRODUCT_NAME = "$(TARGET_NAME)";

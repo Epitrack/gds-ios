@@ -24,6 +24,7 @@
 #import "ChangeLanguageViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "ACTReporter.h"
 @import GoogleMaps;
 
 NSString *const kPreferencesVersionKey = @"preferenceVersionKey";
@@ -57,6 +58,10 @@ NSUserDefaults *preferences;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     [GMSServices provideAPIKey:@"AIzaSyDPVnLM8mqTGc-yrvZgQ7o360qAnGyo9YU"];
+    
+    // Enable automated usage reporting.
+    [ACTAutomatedUsageTracker enableAutomatedUsageReportingWithConversionID:@"878155746"];
+    [ACTConversionReporter reportWithConversionID:@"878155746" label:@"5oD7COGtkWgQ4q_eogM" value:@"0.00" isRepeatable:NO];
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;
