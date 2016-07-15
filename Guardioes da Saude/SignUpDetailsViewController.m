@@ -277,14 +277,15 @@
         return NO;
     }
     
-    if ([self.txtRace.text isEqualToString:@""]) {
+    NSString *country = [LocationUtil getCountryNameToEnglish:self.txtCountry.text];
+    if ([self.txtRace.text isEqualToString:@""]  && ![country isEqualToString:@"France"]) {
         UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.race_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     
-    NSString *country = [LocationUtil getCountryNameToEnglish:self.txtCountry.text];
-    if ([self.txtPerfil.text isEqualToString:@""] && ![country isEqualToString:@"France"]) {
+    
+    if ([self.txtPerfil.text isEqualToString:@""]) {
         UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.perfil_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
@@ -309,11 +310,7 @@
     self.user.state = self.txtState.text;
     
     NSString *country = [LocationUtil getCountryNameToEnglish:self.txtCountry.text];
-    if ([country isEqualToString:@"France"]) {
-        self.user.country = @"French";
-    }else{
-        self.user.country = country;
-    }
+    self.user.country = country;
     
     if (!self.user.email) {
         self.user.email = self.txtEmail.text;

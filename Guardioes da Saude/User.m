@@ -117,6 +117,8 @@ NSString *const kGCMToken = @"gcmToken";
         self.race = @"amarelo";
     }else if ([raceStr isEqualToString:NSLocalizedString(@"indigena", @"")]){
         self.race = @"indigena";
+    }else{
+        self.race = @"france";
     }
 }
 
@@ -217,7 +219,7 @@ NSString *const kGCMToken = @"gcmToken";
 - (void) setAvatarOnButton: (UIButton *) button orImageView:(UIImageView *) imageView{
     if ([self.avatarNumber intValue] == 0 || self.avatarNumber == nil) {
         if ([self.gender isEqualToString:@"M"]) {
-            if ([self.race isEqualToString:@"branco"]) {
+            if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"france"]) {
                 self.avatarNumber = @11;
                 avatar = @"img_profile11.png";
             }else if ([self. race isEqualToString:@"preto"]){
@@ -234,7 +236,7 @@ NSString *const kGCMToken = @"gcmToken";
                 avatar = @"img_profile04.png";
             }
         } else {
-            if ([self.race isEqualToString:@"branco"]) {
+            if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"france"]) {
                 self.avatarNumber = @8;
                 avatar = @"img_profile08.png";
             }else if ([self. race isEqualToString:@"preto"]){
