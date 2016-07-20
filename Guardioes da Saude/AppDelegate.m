@@ -192,6 +192,17 @@ NSUserDefaults *preferences;
     [[Twitter sharedInstance] startWithConsumerKey:@"l4t5P03ZR3mbBON7HHLWhgSrS" consumerSecret:@"8Vi40vWK3s4kqViKMKPJJFO5bLsrFbvzRqhDbsy6mZQH7pkVbe"];
     [Fabric with:@[[Twitter sharedInstance]]];
     
+    if (launchOptions[UIApplicationLaunchOptionsURLKey] == nil) {
+        [FBSDKAppLinkUtility fetchDeferredAppLink:^(NSURL *url, NSError *error) {
+            if (error) {
+                NSLog(@"Received error while fetching deferred app link %@", error);
+            }
+            if (url) {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        }];
+    }
+    
     return YES;
 }
 
