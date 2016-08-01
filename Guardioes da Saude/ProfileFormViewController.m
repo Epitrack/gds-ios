@@ -328,7 +328,10 @@
     NSString *strCountry = [LocationUtil getCountryNameToCurrentLocale: country];
     self.txtCountry.text = strCountry;
     [self checkCountry: country];
-    self.txtState.text = state;
+    
+    if (state){
+        self.txtState.text = state;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
