@@ -192,7 +192,7 @@
 "profile_form.invalid_email" = "E-mail inválido!";
 "profile_form.success" = "Operação realizada com sucesso.";
 "profile_form.fail" = "Ocorreu um problema de comunicação, por favor verifique sua conexão!";
-"profile_form.delete" = "Excluir Conta";
+"profile_form.delete" = "Desativar Conta";
 "profile_form.or" = "ou";
 "profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardiões da Saúde, será necessário um novo cadastro.\nDeseja continuar?"; // -----------------> Não encontrado
 "profile_form.modal_delete_title" = "Desativar sua conta";
