@@ -166,7 +166,6 @@ class QuestionViewController: UIViewController {
             }
             dispatch_async(dispatch_get_main_queue()) {
                 self.puzzeViewCtrlRef.closeQuestionDialog()
-                self.puzzeViewCtrlRef.startViewRef.reducePoint()
             }
         })
     }
