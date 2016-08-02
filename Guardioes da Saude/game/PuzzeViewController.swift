@@ -208,30 +208,33 @@ class PuzzeViewController: UIViewController {
         }
         
         let img = UIImage(named: "img_lvl\(level)_pt\(part)")
-        let imgSize = imageWithImage(img!, scaledToSize: viewPt3.bounds.size)
-        let imgNew = UIImageView(image: imgSize)
         
-        switch part {
-        case 1:
-            UIView.transitionFromView(self.imgPt1, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-        case 2:
-            UIView.transitionFromView(self.imgPt2, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-        case 3:
-            UIView.transitionFromView(self.imgPt3, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-        case 4:
-            UIView.transitionFromView(self.imgPt4, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-        case 5:
-            UIView.transitionFromView(self.imgPt5, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-        case 6:
-            UIView.transitionFromView(self.imgPt6, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-        case 7:
-            UIView.transitionFromView(self.imgPt7, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-        case 8:
-            UIView.transitionFromView(self.imgPt8, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-        case 9:
-            UIView.transitionFromView(self.imgPt9, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
-        default:
-            break
+        if let img = img {
+            let imgSize = imageWithImage(img, scaledToSize: viewPt3.bounds.size)
+            let imgNew = UIImageView(image: imgSize)
+            
+            switch part {
+            case 1:
+                UIView.transitionFromView(self.imgPt1, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            case 2:
+                UIView.transitionFromView(self.imgPt2, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            case 3:
+                UIView.transitionFromView(self.imgPt3, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            case 4:
+                UIView.transitionFromView(self.imgPt4, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            case 5:
+                UIView.transitionFromView(self.imgPt5, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            case 6:
+                UIView.transitionFromView(self.imgPt6, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            case 7:
+                UIView.transitionFromView(self.imgPt7, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            case 8:
+                UIView.transitionFromView(self.imgPt8, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            case 9:
+                UIView.transitionFromView(self.imgPt9, toView: imgNew, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            default:
+                break
+            }
         }
         
         if callNextQuestion {
