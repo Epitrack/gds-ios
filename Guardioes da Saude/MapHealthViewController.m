@@ -82,6 +82,8 @@
     startBtnRect = self.btnDetails.frame;
     
     imgFabCancel = [UIImage imageNamed:@"fab_cancel"];
+    
+    self.seach.placeholder = NSLocalizedString(@"map_health.search_city_name", @"");
 
     [self loadSurvey];
     self.seach.delegate = self;

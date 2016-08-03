@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = NSLocalizedString(@"Vacinas", @"");
+    self.navigationItem.title = NSLocalizedString(@"vacine.title", @"");
     
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
                                 initWithTitle:@""
