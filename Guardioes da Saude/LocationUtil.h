@@ -28,4 +28,8 @@
 
 + (NSString *) getCountryNameToCurrentLocale: (NSString *) countryStr;
 
++ (NSString *) getStatebyUf: (NSString *) ufStr;
+
++ (NSString *) getUfByState: (NSString *) stateStr;
+
 @end

@@ -217,4 +217,60 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
              @"São Paulo",
              @"Tocantins"];
 }
+
++ (NSArray *)getUfs{
+    return @[@"AC",
+             @"AL",
+             @"AM",
+             @"AP",
+             @"BA",
+             @"CE",
+             @"DF",
+             @"ES",
+             @"GO",
+             @"MA",
+             @"MG",
+             @"MS",
+             @"MT",
+             @"PA",
+             @"PB",
+             @"PE",
+             @"PI",
+             @"PR",
+             @"RJ",
+             @"RN",
+             @"RO",
+             @"RR",
+             @"RS",
+             @"SC",
+             @"SE",
+             @"SP",
+             @"TO"];
+}
+
++ (NSString *) getStatebyUf: (NSString *) ufStr{
+    int ufIndex;
+    NSArray *arrUfs = [self getUfs];
+    for (ufIndex = 0; ufIndex < arrUfs.count; ufIndex++) {
+        if ([ufStr isEqualToString:arrUfs[ufIndex]]) {
+            break;
+        }
+    }
+    return [self getStates][ufIndex];
+}
+
++ (NSString *) getUfByState: (NSString *) stateStr{
+    int stateIndex;
+    
+    NSArray *arrStates = [self getStates];
+    for (stateIndex = 0; stateIndex <= arrStates.count; stateIndex++) {
+        if ([stateStr isEqualToString:arrStates[stateIndex]]) {
+            break;
+        }
+    }
+    
+    NSArray *ufs = [self getUfs];
+    
+    return ufs[stateIndex];
+}
 @end

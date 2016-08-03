@@ -330,7 +330,12 @@
     [self checkCountry: country];
     
     if (state){
-        self.txtState.text = state;
+        if (state.length > 2) {
+            self.txtState.text = state;
+        } else {
+            self.txtState.text = [LocationUtil getStatebyUf:state];
+        }
+        
     }
 }
 
@@ -449,7 +454,7 @@
     [userUpdater setRaceByStr:self.pickerRace.text];
     userUpdater.avatarNumber = self.pictureSelected;
     userUpdater.country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
-    userUpdater.state = self.txtState.text;
+    userUpdater.state = [LocationUtil getUfByState:self.txtState.text];
     [userUpdater setPerfilByString: self.txtPerfil.text];
     
     NSInteger diffDay = [DateUtil diffInDaysDate:birthdate andDate:[NSDate date]];
@@ -526,7 +531,7 @@
     household.picture = [self.pictureSelected stringValue];
     household.relationship = [self getRelationship];
     household.country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
-    household.state = self.txtState.text;
+    household.state = [LocationUtil getUfByState:self.txtState.text];
     [household setPerfilByString: self.txtPerfil.text];
     
     if (self.operation == EDIT_HOUSEHOLD) {

@@ -307,7 +307,7 @@
     self.user.app_token = singleUser.app_token;
     self.user.platform = singleUser.platform;
     self.user.client = singleUser.client;
-    self.user.state = self.txtState.text;
+    self.user.state = [LocationUtil getUfByState:self.txtState.text];
     
     NSString *country = [LocationUtil getCountryNameToEnglish:self.txtCountry.text];
     self.user.country = country;
