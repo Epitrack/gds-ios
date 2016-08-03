@@ -152,6 +152,15 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.updateEnergyPoint()
         
         self.tableTropheis.registerNib(UINib(nibName: "TrophiesCell", bundle: nil), forCellReuseIdentifier: "TrophiesCell")
+        
+        let rightButton = UIBarButtonItem(image: UIImage(named: "icon_game_tutorial"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(goTutorial))
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    func goTutorial() {
+        let tutorial = GameTutorialViewController()
+        
+        self.navigationController?.pushViewController(tutorial, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

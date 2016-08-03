@@ -100,12 +100,18 @@ class GameTutorialViewController: UIViewController, UIPageViewControllerDataSour
         return 0;
     }
     @IBAction func btnNext(sender: AnyObject) {
-        let preferences = NSUserDefaults.standardUserDefaults();
-        preferences.setValue("true", forKey: kGameTutorialReady)
-        preferences.synchronize()
-        User.getInstance().isGameTutorailReady = true
-        
-        let startGameView = StartViewController()
-        self.navigationController?.pushViewController(startGameView, animated: true)
+        var arrViews = self.navigationController?.viewControllers
+        let view = arrViews![arrViews!.count - 2]
+        if view.isEqual(StartViewController) {
+            self.navigationController?.popViewControllerAnimated(true)
+        }else{
+            let preferences = NSUserDefaults.standardUserDefaults();
+            preferences.setValue("true", forKey: kGameTutorialReady)
+            preferences.synchronize()
+            User.getInstance().isGameTutorailReady = true
+            
+            let startGameView = StartViewController()
+            self.navigationController?.pushViewController(startGameView, animated: true)
+        }
     }
 }
