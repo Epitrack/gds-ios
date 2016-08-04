@@ -102,7 +102,7 @@ class GameTutorialViewController: UIViewController, UIPageViewControllerDataSour
     @IBAction func btnNext(sender: AnyObject) {
         var arrViews = self.navigationController?.viewControllers
         let view = arrViews![arrViews!.count - 2]
-        if view.isEqual(StartViewController) {
+        if let _ = view as? StartViewController {
             self.navigationController?.popViewControllerAnimated(true)
         }else{
             let preferences = NSUserDefaults.standardUserDefaults();
