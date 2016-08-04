@@ -8,6 +8,7 @@
 
 #import "ThankYouForParticipatingViewController.h"
 #import "HomeViewController.h"
+#import "UserRequester.h"
 #import "ViewUtil.h"
 #import "User.h"
 #import "EmergencyViewController.h"
@@ -78,6 +79,8 @@
 - (void) addGamePoint{
     if(!user.doesReport) {
         user.points = 10;
+        
+        [[[UserRequester alloc] init] updateUser:user onSuccess:^(User *user){} onFail:^(NSError *error){}];
     }
 }
 

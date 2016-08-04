@@ -26,6 +26,7 @@
 #import "MenuViewController.h"
 #import "DateUtil.h"
 #import "Guardioes_da_Saude-Swift.h"
+#import "LocationUtil.h"
 
 
 @import Photos;
@@ -123,6 +124,8 @@
     
     titleImgView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
     [self.navigationController.navigationBar addSubview:titleImgView];
+    
+    [LocationUtil getCountriesWithBrazil:true];
 }
 
 - (void) showInformations {
