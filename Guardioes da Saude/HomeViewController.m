@@ -163,6 +163,8 @@
     
     [self.navigationController.navigationBar addSubview:titleImgView];
     
+    [self showInformations];
+    
     [super viewWillAppear:animated];
 }
 

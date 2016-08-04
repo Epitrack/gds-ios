@@ -490,7 +490,7 @@
             
             [preferences synchronize];
 
-            User *user = [User getInstance];
+//            User *user = [User getInstance];
             user.avatarNumber = self.pictureSelected;
             user.photo = photo;
         }

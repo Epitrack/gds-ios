@@ -473,6 +473,9 @@
         sysUser.gender = user.gender;
         sysUser.race = user.race;
         sysUser.avatarNumber = user.avatarNumber;
+        sysUser.country = user.country;
+        sysUser.state = user.state;
+        sysUser.perfil = user.perfil;
         
         //Call back success
         success(user);
