@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -18,10 +18,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_medal_tutorial" translatesAutoresizingMaskIntoConstraints="NO" id="6IK-tK-EP5">
-                    <rect key="frame" x="30" y="156" width="260" height="270"/>
+                    <rect key="frame" x="30" y="158" width="260" height="268"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="6IK-tK-EP5" secondAttribute="height" multiplier="60:60.3" constant="1" id="Hyu-s7-Ddd"/>
-                        <constraint firstAttribute="width" secondItem="6IK-tK-EP5" secondAttribute="height" multiplier="260:270" id="ofu-G6-gLJ"/>
+                        <constraint firstAttribute="width" secondItem="6IK-tK-EP5" secondAttribute="height" multiplier="220:227" id="ofu-G6-gLJ"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
