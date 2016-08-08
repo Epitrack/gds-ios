@@ -19,27 +19,18 @@ class SafeSexViewController: UIViewController {
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
         
         self.navigationController!.navigationBar.topItem!.backBarButtonItem = btnBack;
+//        self.txtContent.setContentOffset(CGPointZero, animated: false)
         // Do any additional setup after loading the view.
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.txtContent.setContentOffset(CGPointZero, animated: false)
+
+    override func viewDidAppear(animated: Bool) {
+//        self.txtContent.setContentOffset(CGPointZero, animated: false)
+        ViewUtil.applyFont(self.txtContent.font, withColor: UIColor(red: 15.0/255.0, green: 76.0/255.0, blue: 153.0/255.0, alpha: 1),
+                           ranges: [NSLocalizedString("safe_sex.subtitle_1", comment: ""),
+                            NSLocalizedString("safe_sex.subtitle_2", comment: ""),
+                            NSLocalizedString("safe_sex.subtitle_3", comment: ""),
+                            NSLocalizedString("safe_sex.subtitle_4", comment: "")],
+                           atTextView: self.txtContent)
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
