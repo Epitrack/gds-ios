@@ -14,7 +14,14 @@ class SafeSexViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = NSLocalizedString("safe_sex.title", comment: "")
+//        self.navigationItem.title = NSLocalizedString("safe_sex.title", comment: "")
+        let titleLabel = UILabel(frame: CGRectMake(0,0,200,40))
+        titleLabel.text = NSLocalizedString("safe_sex.title", comment: "")
+        titleLabel.backgroundColor = UIColor.clearColor()
+        titleLabel.textColor = UIColor.whiteColor()
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.5;
+        self.navigationItem.titleView = titleLabel;
         
         let btnBack = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
         
