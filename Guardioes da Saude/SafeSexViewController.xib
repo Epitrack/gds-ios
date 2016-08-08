@@ -16,18 +16,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="safe_sex.text" translatesAutoresizingMaskIntoConstraints="NO" id="CHX-H6-WwD" customClass="GDSTextView">
-                    <rect key="frame" x="20" y="8" width="335" height="651"/>
+                    <rect key="frame" x="16" y="8" width="351" height="651"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="0.29019609093666077" green="0.29019609093666077" blue="0.29019609093666077" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="CHX-H6-WwD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="SGE-rl-dZj"/>
-                <constraint firstItem="CHX-H6-WwD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="X0t-s9-aOS"/>
+                <constraint firstItem="CHX-H6-WwD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="X0t-s9-aOS"/>
                 <constraint firstAttribute="bottom" secondItem="CHX-H6-WwD" secondAttribute="bottom" constant="8" id="exy-sq-9c1"/>
-                <constraint firstAttribute="trailing" secondItem="CHX-H6-WwD" secondAttribute="trailing" constant="20" id="iXk-h0-lB4"/>
+                <constraint firstAttribute="trailing" secondItem="CHX-H6-WwD" secondAttribute="trailing" constant="8" id="iXk-h0-lB4"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>
