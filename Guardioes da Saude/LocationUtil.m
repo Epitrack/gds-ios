@@ -260,6 +260,10 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
 }
 
 + (NSString *) getUfByState: (NSString *) stateStr{
+    if ([stateStr isEqualToString:@""]) {
+        return @"";
+    }
+    
     int stateIndex;
     
     NSArray *arrStates = [self getStates];

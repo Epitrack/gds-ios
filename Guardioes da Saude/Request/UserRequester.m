@@ -167,6 +167,7 @@
                  user.user_token = userRequest[@"token"];
                  user.hashtag = userRequest[@"hashtags"];
                  user.survey = userRequest[@"surveys"];
+                 user.doesReport = NO;
                  
                  onSuccess(user);
              }
