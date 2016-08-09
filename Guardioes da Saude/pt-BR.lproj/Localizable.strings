@@ -328,7 +328,7 @@
 
 // MAP HEALTH VIEW
 "map_health.title" = "Mapa da Saúde";
-"map_health.btn_info" = "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça) \n\n• Respiratória (febre além de algum destes sintomas: tosse, dor de garganta ou falta de ar) \n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento) ";
+"map_health.btn_info" = "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica: Diarreia apenas ou associada a qualquer sintoma \n\n• Respiratória: Tosse e Febre apenas ou associada a qualquer sintoma \n\n• Exantemática: Manchas vermelhas apenas ou associada a qualquer sintoma ";
 "map_health.syndromes" = "Síndromes";
 "map_health.well" = "Bem";
 "map_health.bad" = "Mal";

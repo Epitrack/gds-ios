@@ -327,7 +327,7 @@
 
 // MAP HEALTH VIEW
 "map_health.title" = "Carte de la Santé";
-"map_health.btn_info" = "Les syndromes sont des ensembles de signes cliniques communs à un certain nombre de maladies, comme par exemple : \n\n• Diarrhée (fièvre, des nausées ou des vomissements, et un de ces symptômes: douleurs dans le corps ou les maux de tête)\n\n• Respiratoire (fièvre, toux, plus un de ces symptômes:  maux de gorge ou de l'essoufflement)\n\n• Rash (Les taches rouges sur le corps, et un de ces symptômes: la fièvre ou des courbatures ou des douleurs articulaires ou des maux de tête ou les yeux qui piquent ou rouge ou des saignements)";
+"map_health.btn_info" = "Les syndromes sont des ensembles communs de manifestations cliniques à un certain nombre de maladies, y compris: \n\n• Diarrhée: Diarrhée seul ou associé à des symptômes\n\n• Respiratoire: la toux et de la fièvre seule ou associée à un symptôme\n\n• Eruptions: Red spots uniquement ou associés à tout symptôme";
 "map_health.syndromes" = "Syndromes";
 "map_health.well" = "Bien";
 "map_health.bad" = "Mal";

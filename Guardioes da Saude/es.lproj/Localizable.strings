@@ -328,7 +328,7 @@
 
 // MAP HEALTH VIEW
 "map_health.title" = "Mapa de la Salud";
-"map_health.btn_info" = "Las síndromes son conjuntos de manifestaciones clínicas comunes a un número de enfermedades, entre ellas:: \n\n• Diarreica (fiebre y nausea o vómito, además de alguno de estos síntomas: dolores en el cuerpo o dolor de cabeza) \n\n• Respiratorias (fiebre y tos, y algunos de estos síntomas: dolor de garganta o dificultad para respirar) \n\n• Exantemática (manchas rojas en el cuerpo, además de alguno de estos síntomas: fiebre o dolores en el cuerpo o dolores en las articulaciones o dolor de cabeza o comezón u ojos rojos o sangrado) ";
+"map_health.btn_info" = "Los síndromes son grupos de manifestaciones clínicas comunces a una serie de enfermedades, que incluyen: \n\n• Diarreica: La diarrea sola o asociada a cualquier síntoma \n\n• Respiratorio: tos y fiebre solo o asociado con cualquier síntoma \n\n• Erupción cutánea: manchas rojas o asocian únicamente con cualquier síntoma ";
 "map_health.syndromes" = "Síndromes";
 "map_health.well" = "Bien";
 "map_health.bad" = "Mal";

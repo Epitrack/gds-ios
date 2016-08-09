@@ -350,7 +350,7 @@
 
 // MAP HEALTH VIEW
 "map_health.title" = "Health Map";
-"map_health.btn_info" = "Syndromes are groups of clinical signs common to a number of diseases, including: \n\n• Diarrheic (fever and nausea or vomiting, as well as any of the following symptoms: body pains or headaches) \n\n• Respiratory (fever , and some of these symptoms: cough, sore throat or shortness of breath) \n\n• Exanthematic (red spots on the body, as well as any of the following symptoms: fever or body/joint pain, headache, itching, bloodshot eyes, or bleeding) ";
+"map_health.btn_info" = "The syndromes are common sets of clinical manifestations to a number of diseases, including: \n\n• Diarrhea: Diarrhea alone or associated with any symptom \n\n• Respiratory: Cough and fever alone or associated with any symptom \n\n• Rash: Red spots only or associated with any symptom ";
 "map_health.syndromes" = "Syndromes";
 "map_health.well" = "Good";
 "map_health.bad" = "Ill";
