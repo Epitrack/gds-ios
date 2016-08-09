@@ -128,6 +128,15 @@
     [LocationUtil getCountriesWithBrazil:true];
 }
 
+- (void) checkUpdateToken {
+    if (![preferences valueForKey: kGCMTokenUpdated]) {
+        [userRequester updateUser:user onSuccess:^(User *user){
+            [preferences setObject:@"true" forKey:kGCMTokenUpdated];
+            [preferences synchronize];
+        } onFail:^(NSError *error){}];
+    }
+}
+
 - (void) showInformations {
     if (self.localBundle) {
         self.txtNameUser.text = [NSLocalizedStringFromTableInBundle(@"home.hello", nil, self.localBundle, @"") stringByAppendingString:user.nick];
@@ -305,6 +314,7 @@
                                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                                }andOnSuccess:^{
                                    [self showInformations];
+                                   [self checkUpdateToken];
                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
                                    
                                    [self checkLastSurvey];

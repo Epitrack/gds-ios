@@ -333,6 +333,7 @@
             [preferences setValue:singleUser.user_token forKey:kUserTokenKey];
             [preferences setValue:singleUser.nick forKey:kNickKey];
             [preferences setValue:singleUser.avatarNumber forKey:kAvatarNumberKey];
+            [preferences setValue:@"true" forKey: kGCMTokenUpdated];
             
             [preferences synchronize];
             

@@ -428,6 +428,12 @@
      ];
 }
 
+- (void) updateGcmToken: (User *) user
+          onSuccess: (void(^)(User* user)) success
+             onFail: (void(^) (NSError *error)) fail{
+    
+}
+
 - (void) updateUser: (User *) user
           onSuccess: (void(^)(User* user)) success
              onFail: (void(^) (NSError *error)) fail{
@@ -455,6 +461,10 @@
         [params setObject:user.state forKey:@"state"];
     } else {
         [params setObject:@"" forKey:@"state"];
+    }
+    
+    if (user.gcmToken) {
+        [params setObject:user.gcmToken forKey:@"gcmTokens"];
     }
     
     [self doPost:[[self getUrl] stringByAppendingString:@"/user/update"]

@@ -326,7 +326,7 @@
 "select_state.well" = "Good";
 "select_state.bad" = "Ill";
 "select_state.next_step" = "Some signs and symptoms are shown in the next screen if the “Ill” option is selected.";
-"select_state.how_is_he_she" = "How is the health %@ at the moment?";
+"select_state.how_is_he_she" = "How is the health %@ at the momen?";
 
 // THANK YOU VIEW
 "thank_you.shared_msg" = "I do my part. Make sure you do yours in our fight against the Aedes aegypti mosquito #ZikaZero. Go to http://www.guardioesdasaude.org";
