@@ -249,6 +249,10 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
 }
 
 + (NSString *) getStatebyUf: (NSString *) ufStr{
+    if ([ufStr isEqualToString:@""]) {
+        return @"";
+    }
+    
     int ufIndex;
     NSArray *arrUfs = [self getUfs];
     for (ufIndex = 0; ufIndex < arrUfs.count; ufIndex++) {

@@ -56,7 +56,7 @@ NSUserDefaults *preferences;
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    [GMSServices provideAPIKey:@"AIzaSyDeEdecH1N84Mu_uGSAv3XRLRhw-urDf1Y"];
+    [GMSServices provideAPIKey:@"AIzaSyDPVnLM8mqTGc-yrvZgQ7o360qAnGyo9YU"];
     
     // Enable automated usage reporting.
     [ACTAutomatedUsageTracker enableAutomatedUsageReportingWithConversionID:@"878155746"];
