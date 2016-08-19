@@ -302,7 +302,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                    [preferences setValue:user.user_token forKey:kUserTokenKey];
                    [preferences setValue:user.nick forKey:kNickKey];
                    [preferences setValue:user.avatarNumber forKey:kAvatarNumberKey];
-                   [preferences setValue:@"true" forKey: kGCMTokenUpdated];
+                   [preferences setValue:@"1" forKey: kGCMTokenUpdated];
 
                    [preferences synchronize];
                    

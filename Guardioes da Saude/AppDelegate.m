@@ -127,22 +127,15 @@ NSUserDefaults *preferences;
     [[GGLContext sharedInstance] configureWithError:&configureError];
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     _gcmSenderID = [[[GGLContext sharedInstance] configuration] gcmSenderID];
-    // Register for remote notifications
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-        // iOS 7.1 or earlier
-        UIRemoteNotificationType allNotificationTypes =
-        (UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge);
-        [application registerForRemoteNotificationTypes:allNotificationTypes];
-    } else {
-        // iOS 8 or later
-        // [END_EXCLUDE]
-        UIUserNotificationType allNotificationTypes =
-        (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
-        UIUserNotificationSettings *settings =
-        [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }
+
+    UIUserNotificationType allNotificationTypes =
+    (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+    UIUserNotificationSettings *settings =
+    [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
+
     // [END register_for_remote_notifications]
     // [START start_gcm_service]
     GCMConfig *gcmConfig = [GCMConfig defaultConfig];
@@ -268,6 +261,15 @@ didSignInForUser:(GIDGoogleUser *)user
     return nil;
 }
 
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    if(notificationSettings.types != UIUserNotificationTypeNone) {
+        [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
+                                                            scope:kGGLInstanceIDScopeGCM
+                                                          options:_registrationOptions
+                                                          handler:_registrationHandler];
+    }
+}
+
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // [END receive_apns_token]
@@ -281,7 +283,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:deviceToken,
                              kGGLInstanceIDAPNSServerTypeSandboxOption:@NO};
     
-    if ([preferences objectForKey:kGCMToken] && [preferences objectForKey:kGCMTokenUpdated]) {
+    NSString *gcmTokenVerion = [preferences objectForKey:kGCMTokenUpdated];
+    if ([preferences objectForKey:kGCMToken] && gcmTokenVerion && [gcmTokenVerion isEqualToString:@"1"]) {
         [User getInstance].gcmToken = [preferences objectForKey:kGCMToken];
     }else{
         [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID

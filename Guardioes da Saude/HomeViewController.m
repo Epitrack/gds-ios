@@ -129,9 +129,11 @@
 }
 
 - (void) checkUpdateToken {
-    if (![preferences valueForKey: kGCMTokenUpdated]) {
+    NSString *gcmTokenVerion = [preferences valueForKey: kGCMTokenUpdated];
+    
+    if (!gcmTokenVerion || ![gcmTokenVerion isEqualToString:@"1"]) {
         [userRequester updateUser:user onSuccess:^(User *user){
-            [preferences setObject:@"true" forKey:kGCMTokenUpdated];
+            [preferences setObject:@"1" forKey:kGCMTokenUpdated];
             [preferences synchronize];
         } onFail:^(NSError *error){}];
     }
