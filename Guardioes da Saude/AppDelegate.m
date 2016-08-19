@@ -279,7 +279,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // token to enable reception of notifications
     [[GGLInstanceID sharedInstance] startWithConfig:instanceIDConfig];
     _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:deviceToken,
-                             kGGLInstanceIDAPNSServerTypeSandboxOption:@YES};
+                             kGGLInstanceIDAPNSServerTypeSandboxOption:@NO};
     
     if ([preferences objectForKey:kGCMToken] && [preferences objectForKey:kGCMTokenUpdated]) {
         [User getInstance].gcmToken = [preferences objectForKey:kGCMToken];
