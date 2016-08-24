@@ -1140,6 +1140,7 @@
 		CBCA40191CD9467F009606EB /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		CBCA401B1CD94715009606EB /* QuestionAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAnswer.swift; sourceTree = "<group>"; };
 		CBCA401D1CD947C3009606EB /* QuestionRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionRequester.swift; sourceTree = "<group>"; };
+		CBD38E7B1D677F9E001DD06B /* Guardioes da Saude.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Guardioes da Saude.entitlements"; sourceTree = "<group>"; };
 		CBDDF5A31C77452E008853B2 /* SymptomRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymptomRequester.h; sourceTree = "<group>"; };
 		CBDDF5A41C77452E008853B2 /* SymptomRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymptomRequester.m; sourceTree = "<group>"; };
 		CBDE6B201C80CA82007418FA /* NoticeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoticeTableViewCell.h; path = CellTable/NoticeTableViewCell.h; sourceTree = "<group>"; };
@@ -1465,6 +1466,7 @@
 		528C8AFB1BB82630003CFC91 /* Guardioes da Saude */ = {
 			isa = PBXGroup;
 			children = (
+				CBD38E7B1D677F9E001DD06B /* Guardioes da Saude.entitlements */,
 				CBBC1E1A1C9B33510079A8D6 /* Guardioes da Saude-Bridging-Header.h */,
 				CB8FBADC1C60E1BC00696F17 /* Localizable.strings */,
 				CB2491391D00D97500777B09 /* GoogleService-Info.plist */,
@@ -2060,6 +2062,9 @@
 								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
 								enabled = 1;
 							};
 						};
@@ -2820,6 +2825,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Guardioes da Saude/Guardioes da Saude.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -2852,6 +2858,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Guardioes da Saude/Guardioes da Saude.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
