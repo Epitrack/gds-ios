@@ -312,7 +312,7 @@
 }
 
 - (IBAction)btnFacebookAction:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/minsaude"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/appguardioesdasaude/?fref=ts"]];
 }
 
 - (IBAction)btnTwitterAction:(id)sender {
