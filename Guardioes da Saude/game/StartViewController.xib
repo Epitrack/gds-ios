@@ -88,7 +88,7 @@
                     <color key="textColor" red="0.094117648899555206" green="0.42352941632270813" blue="0.71764707565307617" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXP-V5-JwX">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXP-V5-JwX">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGR-4S-xQ2" userLabel="View Ranking">
@@ -128,7 +128,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A pontuação é equivalente a cada fase desbloqueada por todos os usuários levando em conta sua nacionalidade." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1C-z7-dXy">
-                                            <rect key="frame" x="14" y="60" width="224" height="62.5"/>
+                                            <rect key="frame" x="14" y="60" width="224" height="63"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -218,7 +218,7 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking Geral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITk-jx-hB2">
-                                    <rect key="frame" x="34" y="98" width="114" height="21"/>
+                                    <rect key="frame" x="31" y="98" width="114" height="21"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" red="0.035294117647058823" green="0.2627450980392157" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -235,6 +235,7 @@
                                 <constraint firstItem="el9-zX-9th" firstAttribute="leading" secondItem="mnD-9U-rZI" secondAttribute="leading" constant="-40" id="UE3-zR-G3G"/>
                                 <constraint firstItem="el9-zX-9th" firstAttribute="leading" secondItem="WGR-4S-xQ2" secondAttribute="leading" id="VUQ-jK-iik"/>
                                 <constraint firstItem="el9-zX-9th" firstAttribute="top" secondItem="mnD-9U-rZI" secondAttribute="top" constant="-40" id="XKo-Xp-UlY"/>
+                                <constraint firstItem="ITk-jx-hB2" firstAttribute="centerX" secondItem="el9-zX-9th" secondAttribute="centerX" multiplier="0.63" id="eRS-bc-ruX"/>
                                 <constraint firstItem="el9-zX-9th" firstAttribute="leading" secondItem="ITk-jx-hB2" secondAttribute="trailing" constant="-154" id="eXH-R0-m52"/>
                                 <constraint firstAttribute="trailing" secondItem="mnD-9U-rZI" secondAttribute="trailing" constant="34" id="l7t-o8-rUi"/>
                                 <constraint firstItem="el9-zX-9th" firstAttribute="leading" secondItem="mnD-9U-rZI" secondAttribute="leading" constant="-28" id="ltz-NV-PLw"/>
@@ -243,6 +244,7 @@
                                 <mask key="constraints">
                                     <exclude reference="5tU-ed-6H4"/>
                                     <exclude reference="VUQ-jK-iik"/>
+                                    <exclude reference="eXH-R0-m52"/>
                                     <exclude reference="ltz-NV-PLw"/>
                                 </mask>
                             </variation>
