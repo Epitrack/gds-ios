@@ -11,6 +11,7 @@
 #import "User.h"
 #import "HomeViewController.h"
 #import "AFNetworking/AFNetworking.h"
+#import "TermsViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "NoticeRequester.h"
@@ -246,8 +247,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)iconBackAction:(id)sender {
-    TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
-    [self.navigationController pushViewController:tutorialViewController animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void) checkSocialLoginWithToken:(NSString *) token andType:(SocialNetwork)type {
@@ -263,16 +263,22 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                 }
                                     andError:^(NSError *error){
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        NSString *errorMsg;
-                                        if (error && error.code == -1009) {
-                                            errorMsg = NSLocalizedString(kMsgConnectionError, @"");
-                                        } else if(error) {
-                                            errorMsg = NSLocalizedString(kMsgApiError, @"");
+                                        if (error) {
+                                            NSString *errorMsg;
+                                            if (error.code == -1009) {
+                                                errorMsg = NSLocalizedString(kMsgConnectionError, @"");
+                                            } else if(error) {
+                                                errorMsg = NSLocalizedString(kMsgApiError, @"");
+                                            }
+                                            
+                                            [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                         }else{
-                                            errorMsg = NSLocalizedString(@"select_type_login.user_not_found", @"");
+                                            TermsViewController *termsCtrlView = [[TermsViewController alloc] init];
+                                            termsCtrlView.socialNetwork = type;
+                                            termsCtrlView.createType = SOCIAL_NETWORK;
+                                            
+                                            [self.navigationController pushViewController:termsCtrlView animated:YES];
                                         }
-                                        
-                                        [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                     }];
     
     

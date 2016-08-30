@@ -12,7 +12,7 @@
 #import "RearViewController.h"
 #import "HomeViewController.h"
 #import "MenuViewController.h"
-#import "TutorialViewController.h"
+#import "SelectTypeLoginViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
@@ -94,7 +94,7 @@ NSUserDefaults *preferences;
         
         UIViewController *frontViewController;
         if ([preferences objectForKey:kCurrentLanguage]) {
-            frontViewController = [[TutorialViewController alloc] init];
+            frontViewController = [[SelectTypeLoginViewController alloc] init];
         }else{
             frontViewController = [[ChangeLanguageViewController alloc] init];
             ((ChangeLanguageViewController *) frontViewController).goToTutorial = YES;

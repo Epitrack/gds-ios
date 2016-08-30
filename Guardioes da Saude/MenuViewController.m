@@ -13,7 +13,7 @@
 #import "HelpViewController.h"
 #import "ProfileListViewController.h"
 #import "User.h"
-#import "TutorialViewController.h"
+#import "SelectTypeLoginViewController.h"
 #import "Requester.h"
 #import "ViewUtil.h"
 #import "ChangeLanguageViewController.h"
@@ -302,8 +302,8 @@
     
     [UserRequester closeSession];
     
-    TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
-    newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
+    SelectTypeLoginViewController *loginViewController = [[SelectTypeLoginViewController alloc] init];
+    newFrontController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     SWRevealViewController *revealController = self.revealViewController;
     [revealController pushFrontViewController:newFrontController animated:YES];
     

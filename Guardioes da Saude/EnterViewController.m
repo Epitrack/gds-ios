@@ -12,6 +12,7 @@
 #import "AFNetworking/AFNetworking.h"
 #import "Facade.h"
 #import "UserRequester.h"
+#import "TermsViewController.h"
 #import "SelectTypeLoginViewController.h"
 #import "ForgotPasswordViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
@@ -205,4 +206,18 @@
                               onSuccess: onSuccess];
 }
 
+- (IBAction)signupAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_create_account_email"
+                                                           label:@"Create account With Email"
+                                                           value:nil] build]];
+    
+    
+    TermsViewController *termsCtrlView = [[TermsViewController alloc] init];
+    termsCtrlView.createType = EMAIL;
+    
+    [self.navigationController pushViewController:termsCtrlView animated:YES];
+}
 @end
