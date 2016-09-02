@@ -123,8 +123,7 @@
 }
 
 - (IBAction)iconBackAction:(id)sender {
-    SelectTypeLoginViewController *selectTypeLoginViewController = [[SelectTypeLoginViewController alloc] init];
-    [self.navigationController pushViewController:selectTypeLoginViewController animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)forgotPasswordAction:(id)sender {
