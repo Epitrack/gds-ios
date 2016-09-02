@@ -11,6 +11,7 @@
 #import "User.h"
 #import "HomeViewController.h"
 #import "AFNetworking/AFNetworking.h"
+#import "TutorialViewController.h"
 #import "TermsViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
@@ -340,5 +341,12 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     }else{
         counter++;
     }
+}
+
+- (IBAction)btnTutorialAction:(id)sender {
+    TutorialViewController *tutorialVC = [[TutorialViewController alloc] init];
+    tutorialVC.hideButtons = YES;
+    tutorialVC.hideNavBar = YES;
+    [self.navigationController pushViewController:tutorialVC animated:YES];
 }
 @end

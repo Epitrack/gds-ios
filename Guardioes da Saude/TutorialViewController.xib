@@ -94,6 +94,17 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_logo_tutorial.png" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-Wu-AJh">
                     <rect key="frame" x="25" y="149" width="270" height="269"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umY-uw-dQm">
+                    <rect key="frame" x="8" y="30" width="16" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="Kff-Dx-z3F"/>
+                        <constraint firstAttribute="width" constant="16" id="ZJ3-vg-iAX"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="icon_back"/>
+                    <connections>
+                        <action selector="btnBackAction:" destination="-1" eventType="touchUpInside" id="YOt-Eb-HCS"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -122,11 +133,13 @@
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" id="mau-U2-Qlr"/>
                 <constraint firstItem="ctv-Wu-AJh" firstAttribute="top" secondItem="P4r-TU-uZK" secondAttribute="bottom" constant="70" id="muJ-9O-EL6"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="centerY" secondItem="e6e-5v-vmX" secondAttribute="centerY" id="ole-ui-fZ4"/>
+                <constraint firstItem="umY-uw-dQm" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" constant="30" id="pjT-GY-Rye"/>
                 <constraint firstAttribute="bottom" secondItem="TOh-dH-CHU" secondAttribute="bottom" constant="20" id="r2Y-lY-A3i"/>
                 <constraint firstAttribute="bottom" secondItem="tFN-vj-bKJ" secondAttribute="bottom" id="uPB-tP-QoD"/>
                 <constraint firstItem="aLZ-cu-JHE" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" id="vPT-vz-3UO"/>
                 <constraint firstItem="ctv-Wu-AJh" firstAttribute="centerX" secondItem="e6e-5v-vmX" secondAttribute="centerX" id="vR6-tj-4eX"/>
                 <constraint firstItem="tFN-vj-bKJ" firstAttribute="top" secondItem="e6e-5v-vmX" secondAttribute="top" id="xUb-15-Heb"/>
+                <constraint firstItem="umY-uw-dQm" firstAttribute="leading" secondItem="e6e-5v-vmX" secondAttribute="leading" constant="8" id="xsB-rn-ZmL"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
@@ -143,6 +156,7 @@
         <image name="bg_detailolympcis" width="320" height="95"/>
         <image name="btn_olympics" width="258" height="38"/>
         <image name="button_enter.png" width="105" height="40"/>
+        <image name="icon_back" width="13" height="21"/>
         <image name="icon_logo_tutorial.png" width="258" height="269"/>
     </resources>
 </document>
