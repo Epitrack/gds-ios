@@ -23,6 +23,7 @@
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
 #import "MBProgressHUD.h"
+#import "ModalPrivViewController.h"
 
 @interface SelectTypeLoginViewController () {
     
@@ -344,9 +345,16 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)btnTutorialAction:(id)sender {
-    TutorialViewController *tutorialVC = [[TutorialViewController alloc] init];
-    tutorialVC.hideButtons = YES;
-    tutorialVC.hideNavBar = YES;
-    [self.navigationController pushViewController:tutorialVC animated:YES];
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_information"
+                                                           label:@"See informations"
+                                                           value:nil] build]];
+    
+    ModalPrivViewController *modalPrivController = [[ModalPrivViewController alloc] init];
+    modalPrivController.modalPresentationStyle = UIModalPresentationFormSheet;
+    modalPrivController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.navigationController pushViewController:modalPrivController animated:NO];
 }
 @end
