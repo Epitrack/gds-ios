@@ -456,6 +456,8 @@
 		CB163F971CE4B13000ED13CC /* PuzzeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB163F951CE4B13000ED13CC /* PuzzeViewController.xib */; };
 		CB163F9A1CE63DB400ED13CC /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB163F981CE63DB400ED13CC /* QuestionViewController.swift */; };
 		CB163F9B1CE63DB400ED13CC /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB163F991CE63DB400ED13CC /* QuestionViewController.xib */; };
+		CB1831791D81A8D70056C85C /* libGoogleConversionTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1831771D81A8D70056C85C /* libGoogleConversionTracking.a */; };
+		CB18317A1D81A8D70056C85C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CB1831781D81A8D70056C85C /* README.txt */; };
 		CB24913A1D00D97500777B09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB2491391D00D97500777B09 /* GoogleService-Info.plist */; };
 		CB2DDC001C4ED51D004C2F87 /* TipsRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */; };
 		CB362B2F1C7B48A800BE4F23 /* icon_home_default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB362B2D1C7B48A800BE4F23 /* icon_home_default.png */; };
@@ -480,8 +482,6 @@
 		CB8065E91CCAC68F00CD2F7A /* GameTutorialItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */; };
 		CB8065EA1CCAC68F00CD2F7A /* GameTutorialItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB8065E81CCAC68F00CD2F7A /* GameTutorialItemViewController.xib */; };
 		CB8610081C3B4BBF009E63DF /* myhouse.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB8610071C3B4BBF009E63DF /* myhouse.gpx */; };
-		CB8926791D3E5E4D00C306D8 /* libGoogleConversionTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8926771D3E5E4D00C306D8 /* libGoogleConversionTracking.a */; };
-		CB89267A1D3E5E4D00C306D8 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CB8926781D3E5E4D00C306D8 /* README.txt */; };
 		CB8FBADA1C60E1BC00696F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB8FBADC1C60E1BC00696F17 /* Localizable.strings */; };
 		CB9387431C491AE900446842 /* ViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9387421C491AE900446842 /* ViewUtil.m */; };
 		CB9DC5831C871E57006E627C /* icon_twitternews.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9DC5821C871E57006E627C /* icon_twitternews.png */; };
@@ -1052,6 +1052,11 @@
 		CB163F951CE4B13000ED13CC /* PuzzeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PuzzeViewController.xib; path = game/PuzzeViewController.xib; sourceTree = "<group>"; };
 		CB163F981CE63DB400ED13CC /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionViewController.swift; path = game/QuestionViewController.swift; sourceTree = "<group>"; };
 		CB163F991CE63DB400ED13CC /* QuestionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionViewController.xib; path = game/QuestionViewController.xib; sourceTree = "<group>"; };
+		CB1831721D81A8D70056C85C /* ACTReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTReporter.h; sourceTree = "<group>"; };
+		CB1831741D81A8D70056C85C /* GoogleConversionPing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleConversionPing.h; sourceTree = "<group>"; };
+		CB1831761D81A8D70056C85C /* DCTReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTReporter.h; sourceTree = "<group>"; };
+		CB1831771D81A8D70056C85C /* libGoogleConversionTracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleConversionTracking.a; sourceTree = "<group>"; };
+		CB1831781D81A8D70056C85C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		CB2491391D00D97500777B09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB2DDBFE1C4ED51D004C2F87 /* TipsRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipsRequester.h; sourceTree = "<group>"; };
 		CB2DDBFF1C4ED51D004C2F87 /* TipsRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipsRequester.m; sourceTree = "<group>"; };
@@ -1093,11 +1098,6 @@
 		CB8065E71CCAC68F00CD2F7A /* GameTutorialItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameTutorialItemViewController.swift; path = game/GameTutorialItemViewController.swift; sourceTree = "<group>"; };
 		CB8065E81CCAC68F00CD2F7A /* GameTutorialItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GameTutorialItemViewController.xib; path = game/GameTutorialItemViewController.xib; sourceTree = "<group>"; };
 		CB8610071C3B4BBF009E63DF /* myhouse.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = myhouse.gpx; sourceTree = "<group>"; };
-		CB8926721D3E5E4D00C306D8 /* ACTReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTReporter.h; sourceTree = "<group>"; };
-		CB8926741D3E5E4D00C306D8 /* GoogleConversionPing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleConversionPing.h; sourceTree = "<group>"; };
-		CB8926761D3E5E4D00C306D8 /* DCTReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTReporter.h; sourceTree = "<group>"; };
-		CB8926771D3E5E4D00C306D8 /* libGoogleConversionTracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleConversionTracking.a; sourceTree = "<group>"; };
-		CB8926781D3E5E4D00C306D8 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		CB8FBADE1C60E1D500696F17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CB8FBADF1C60E2C900696F17 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		CB8FBAE01C60E2C900696F17 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -1167,7 +1167,7 @@
 				527782E31C10861700251BF8 /* StoreKit.framework in Frameworks */,
 				527782E11C10860B00251BF8 /* SystemConfiguration.framework in Frameworks */,
 				2548B9EE1BDEBA310004E00F /* CoreLocation.framework in Frameworks */,
-				CB8926791D3E5E4D00C306D8 /* libGoogleConversionTracking.a in Frameworks */,
+				CB1831791D81A8D70056C85C /* libGoogleConversionTracking.a in Frameworks */,
 				525E8DCC1BFE9F210020D4D6 /* FBSDKCoreKit.framework in Frameworks */,
 				525E8DCE1BFEA0ED0020D4D6 /* FBSDKLoginKit.framework in Frameworks */,
 				527782D51C089A9B00251BF8 /* FBSDKShareKit.framework in Frameworks */,
@@ -1446,7 +1446,7 @@
 		528C8AF01BB82630003CFC91 = {
 			isa = PBXGroup;
 			children = (
-				CB8926711D3E5E4D00C306D8 /* GoogleConversionTrackingSDK-iOS-3.4.0 */,
+				CB1831711D81A8D70056C85C /* GoogleConversionTrackingSDK-iOS-3.4.0 */,
 				528C8AFB1BB82630003CFC91 /* Guardioes da Saude */,
 				CBD02DB61D3532D900CE4331 /* UnitTest */,
 				528C8AFA1BB82630003CFC91 /* Products */,
@@ -1912,6 +1912,34 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		CB1831711D81A8D70056C85C /* GoogleConversionTrackingSDK-iOS-3.4.0 */ = {
+			isa = PBXGroup;
+			children = (
+				CB1831721D81A8D70056C85C /* ACTReporter.h */,
+				CB1831731D81A8D70056C85C /* Deprecated */,
+				CB1831751D81A8D70056C85C /* DoubleClick */,
+				CB1831771D81A8D70056C85C /* libGoogleConversionTracking.a */,
+				CB1831781D81A8D70056C85C /* README.txt */,
+			);
+			path = "GoogleConversionTrackingSDK-iOS-3.4.0";
+			sourceTree = "<group>";
+		};
+		CB1831731D81A8D70056C85C /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				CB1831741D81A8D70056C85C /* GoogleConversionPing.h */,
+			);
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
+		CB1831751D81A8D70056C85C /* DoubleClick */ = {
+			isa = PBXGroup;
+			children = (
+				CB1831761D81A8D70056C85C /* DCTReporter.h */,
+			);
+			path = DoubleClick;
+			sourceTree = "<group>";
+		};
 		CB8065991CC7E90600CD2F7A /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -1929,35 +1957,6 @@
 				CB163F991CE63DB400ED13CC /* QuestionViewController.xib */,
 			);
 			name = Game;
-			sourceTree = "<group>";
-		};
-		CB8926711D3E5E4D00C306D8 /* GoogleConversionTrackingSDK-iOS-3.4.0 */ = {
-			isa = PBXGroup;
-			children = (
-				CB8926721D3E5E4D00C306D8 /* ACTReporter.h */,
-				CB8926731D3E5E4D00C306D8 /* Deprecated */,
-				CB8926751D3E5E4D00C306D8 /* DoubleClick */,
-				CB8926771D3E5E4D00C306D8 /* libGoogleConversionTracking.a */,
-				CB8926781D3E5E4D00C306D8 /* README.txt */,
-			);
-			name = "GoogleConversionTrackingSDK-iOS-3.4.0";
-			path = "../../Downloads/GoogleConversionTrackingSDK-iOS-3.4.0";
-			sourceTree = "<group>";
-		};
-		CB8926731D3E5E4D00C306D8 /* Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				CB8926741D3E5E4D00C306D8 /* GoogleConversionPing.h */,
-			);
-			path = Deprecated;
-			sourceTree = "<group>";
-		};
-		CB8926751D3E5E4D00C306D8 /* DoubleClick */ = {
-			isa = PBXGroup;
-			children = (
-				CB8926761D3E5E4D00C306D8 /* DCTReporter.h */,
-			);
-			path = DoubleClick;
 			sourceTree = "<group>";
 		};
 		CBBF75E31CA191D10083C85A /* Components */ = {
@@ -2458,7 +2457,7 @@
 				52E727E61BEA93B800B46945 /* input_floatbox_login_email@2x.png in Resources */,
 				52558CE31C18B8EE00AF7DDF /* imgTutorial01.png in Resources */,
 				52518A191C19F65F00B86D5E /* infoCopy.png in Resources */,
-				CB89267A1D3E5E4D00C306D8 /* README.txt in Resources */,
+				CB18317A1D81A8D70056C85C /* README.txt in Resources */,
 				CBA0E5321C5FA5EC0086315B /* img_profile15@3x.png in Resources */,
 				52E727951BEA93B800B46945 /* icon_noticias@2x.png in Resources */,
 				52D2BC7C1BF12EBF007C9C09 /* BG_blur_menu@3x.png in Resources */,
