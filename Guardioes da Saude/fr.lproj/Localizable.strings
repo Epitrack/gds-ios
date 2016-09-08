@@ -299,7 +299,7 @@
 // SELECT STATE VIEW
 "select_state.title" = "Inscrivez-vous maintenant";
 "select_state.without_location" = "nous ne pouvons pas obtenir votre emplacement. Vérifiez que les services sont activés sur le périphérique.";
-"select_state.how_is_your_health" = "Comment est votre santé maintenant?";
+"select_state.how_is_your_health" = "Comment va votre santé en ce moment ?";
 "select_state.well" = "Bien";
 "select_state.bad" = "Mal";
 "select_state.next_step" = "Certains signes et symptômes seront affichés sur l'écran suivant si le mal est sélectionné.";

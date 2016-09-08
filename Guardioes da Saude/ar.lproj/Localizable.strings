@@ -299,7 +299,7 @@
 // SELECT STATE VIEW
 "select_state.title" = "انضم الآن";
 "select_state.without_location" = "نحن غير قادرين على الحصول على موقعك. تحقق من أن يتم تمكين الخدمات على الجهاز";
-"select_state.how_is_your_health" = "كيف صحتك الآن؟";
+"select_state.how_is_your_health" = "كيف حال صحتك في هذه اللحظة؟";
 "select_state.well" = "الصحة";
 "select_state.bad" = "مايو";
 "select_state.next_step" = "'سوف يتم عرض بعض العلامات والأعراض التي تظهر على الشاشة القادمة إذا تم تحديد الخيار 'الشر";
