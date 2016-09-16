@@ -340,7 +340,7 @@
     [self.pieChartView setDescriptionText: @""];
     [self.pieChartView setDrawCenterTextEnabled: NO];
     [self.pieChartView setDrawSliceTextEnabled: NO];
-    [self.pieChartView setHoleTransparent: NO];
+//    [self.pieChartView setHoleTransparent: NO];
     [self.pieChartView setDrawHoleEnabled: NO];
     [self.pieChartView setRotationEnabled: NO];
     self.pieChartView.legend.enabled = NO;

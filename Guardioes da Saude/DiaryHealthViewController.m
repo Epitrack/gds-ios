@@ -181,7 +181,7 @@ const float _kCellHeight = 100.0f;
     [self.chartView setDrawCenterTextEnabled: NO];
     [self.chartView setDrawSliceTextEnabled: NO];
     [self.chartView setDrawHoleEnabled: NO];
-    [self.chartView setHoleTransparent: NO];
+//    [self.chartView setHoleTransparent: NO];
     self.chartView.legend.enabled = NO;
     
     NSArray * xData = @[@"Mal", @"Bem"];
@@ -295,8 +295,8 @@ const float _kCellHeight = 100.0f;
     leftAxis.valueFormatter.positiveSuffix = @" %";
     leftAxis.labelPosition = YAxisLabelPositionOutsideChart;
 
-    leftAxis.customAxisMax = 100.0;
-    leftAxis.customAxisMin = 0.0; // this replaces startAtZero = YES
+    leftAxis.maxWidth = 100.0;
+    leftAxis.minWidth = 0.0; // this replaces startAtZero = YES
     
     ChartYAxis *rightAxis = self.graphView.rightAxis;
     rightAxis.enabled = NO;

@@ -10,7 +10,7 @@ pod 'AFNetworking', '~> 2.6.1'
 pod 'PTEHorizontalTableView'
 pod 'ASHorizontalScrollViewForObjectiveC', '~> 1.0'
 pod 'JSONModel'
-pod 'Charts'
+pod 'Charts', :git => "https://github.com/opswhisperer/Charts.git", :branch => "xcode8_swift23"
 pod 'JTCalendar', '~> 2.0'
 pod 'Fabric'
 pod 'TwitterKit'
@@ -25,6 +25,14 @@ pod 'MBProgressHUD', '~> 0.9.2'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'PKHUD'
+
+post_install do |installer|
+        installer.pods_project.targets.each do |target|
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '2.3'
+            end
+        end
+end
 
 target 'Guardioes da Saude' do
 
