@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
@@ -18,48 +19,43 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_home_olympics" translatesAutoresizingMaskIntoConstraints="NO" id="w9n-BB-3Se">
-                    <rect key="frame" x="0.0" y="51" width="320" height="517"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_home" translatesAutoresizingMaskIntoConstraints="NO" id="w9n-BB-3Se">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="8tT-ki-6Iv">
-                    <rect key="frame" x="124" y="373" width="72" height="76"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8tT-ki-6Iv" secondAttribute="height" multiplier="18:19" id="WRn-OS-uBe"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" backgroundImage="icon_game">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="btnEnjoyAction:" destination="-1" eventType="touchUpInside" id="v8B-Pr-VGj"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.diary_health" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4X-Rf-V4g" customClass="GDSLabel">
-                    <rect key="frame" x="218" y="412" width="72" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.map_health" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dn2-kp-1vs" customClass="GDSLabel">
-                    <rect key="frame" x="233" y="305" width="72" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="TdK-o7-Amb"/>
                         <constraint firstAttribute="width" constant="72" id="jq1-Ho-f6s"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLQ-aG-BfL">
-                    <rect key="frame" x="233" y="229" width="72" height="76"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="wLQ-aG-BfL" secondAttribute="height" multiplier="18:19" id="2KI-WT-JcP"/>
                         <constraint firstAttribute="width" constant="72" id="PXF-Ye-XEd"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" backgroundImage="icon_maps">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <variation key="default">
                         <mask key="constraints">
@@ -71,13 +67,11 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.tips_health" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bi-gd-jy5" customClass="GDSLabel">
-                    <rect key="frame" x="28" y="412" width="72" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyo-yR-Gd4" userLabel="Button Profile">
-                    <rect key="frame" x="110" y="70" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Dyo-yR-Gd4" secondAttribute="height" multiplier="1:1" id="i12-lG-Zk8"/>
                     </constraints>
@@ -88,85 +82,74 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, Aninha!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ag8-Nd-VOm" userLabel="Label Name">
-                    <rect key="frame" x="25" y="182" width="270" height="27"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
-                    <variation key="widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="20" y="190" width="280" height="22"/>
-                    </variation>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tk-Sg-hEE">
-                    <rect key="frame" x="90" y="229" width="140" height="144"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="7tk-Sg-hEE" secondAttribute="height" multiplier="134:150" constant="12" id="fQO-Oz-orC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" backgroundImage="icon_joinnow_medal">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="btnJoinNow:" destination="-1" eventType="touchUpInside" id="93w-yh-iaH"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kJ-ek-qV7">
-                    <rect key="frame" x="13" y="229" width="72" height="76"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="4kJ-ek-qV7" secondAttribute="height" multiplier="18:19" id="4Ov-e5-tb4"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" backgroundImage="icon_news">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="notice:" destination="-1" eventType="touchUpInside" id="DqN-Tw-gay"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lbO-Tn-hq9">
-                    <rect key="frame" x="28" y="336" width="72" height="76"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="lbO-Tn-hq9" secondAttribute="height" multiplier="18:19" id="f7W-Jk-BQj"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" backgroundImage="icon_types">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="healthTips:" destination="-1" eventType="touchUpInside" id="nmg-rs-eyo"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.news" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS7-S1-7hn" customClass="GDSLabel">
-                    <rect key="frame" x="13" y="305" width="72" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.enjoy_yourself" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQD-c1-OtD" customClass="GDSLabel">
-                    <rect key="frame" x="124" y="446" width="72" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hdD-FY-gj2">
-                    <rect key="frame" x="218" y="336" width="72" height="76"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="hdD-FY-gj2" secondAttribute="height" multiplier="18:19" id="YJs-OC-pLG"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" backgroundImage="icon_diary">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="diaryHealth:" destination="-1" eventType="touchUpInside" id="4RT-zi-Gu2"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="home.join_us" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkg-Nb-LjN" customClass="GDSLabel">
-                    <rect key="frame" x="100" y="314" width="120" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="IWg-3h-BwP"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.97254902119999997" green="0.97254902119999997" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -175,7 +158,7 @@
                     </variation>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Dyo-yR-Gd4" firstAttribute="top" secondItem="Cds-EH-tEM" secondAttribute="top" constant="70" id="0MO-oI-AET"/>
                 <constraint firstItem="hdD-FY-gj2" firstAttribute="top" secondItem="lbO-Tn-hq9" secondAttribute="top" id="14q-Hm-sw9"/>
@@ -242,7 +225,6 @@
                 <constraint firstItem="8tT-ki-6Iv" firstAttribute="centerX" secondItem="7tk-Sg-hEE" secondAttribute="centerX" id="xPj-rs-FeA"/>
                 <constraint firstItem="4kJ-ek-qV7" firstAttribute="leading" secondItem="Cds-EH-tEM" secondAttribute="leading" constant="13" id="zEs-6L-CGi"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="Rbb-F0-cET"/>
@@ -252,9 +234,9 @@
                     <exclude reference="HX2-3r-X01"/>
                     <exclude reference="SZZ-aa-jM7"/>
                     <exclude reference="Czc-1W-Hm0"/>
+                    <exclude reference="F8N-3Y-pYy"/>
                     <exclude reference="Awf-xd-hYR"/>
                     <exclude reference="bD1-qM-tYT"/>
-                    <exclude reference="F8N-3Y-pYy"/>
                     <exclude reference="DK1-lj-gFA"/>
                     <exclude reference="hbc-tK-rPc"/>
                 </mask>
@@ -263,13 +245,13 @@
         </view>
     </objects>
     <resources>
-        <image name="bg_home_olympics" width="320" height="504"/>
-        <image name="icon_diary" width="72" height="76"/>
-        <image name="icon_game" width="72" height="76"/>
-        <image name="icon_joinnow_medal" width="133" height="136"/>
-        <image name="icon_maps" width="76" height="80"/>
-        <image name="icon_news" width="72" height="76"/>
-        <image name="icon_types" width="72" height="76"/>
-        <image name="img_profile01.png" width="131" height="131"/>
+        <image name="bg_home" width="320" height="504"/>
+        <image name="icon_diary" width="71" height="75"/>
+        <image name="icon_game" width="71" height="75"/>
+        <image name="icon_joinnow_medal" width="132" height="136"/>
+        <image name="icon_maps" width="75" height="79"/>
+        <image name="icon_news" width="71" height="75"/>
+        <image name="icon_types" width="71" height="75"/>
+        <image name="img_profile01.png" width="130" height="130"/>
     </resources>
 </document>

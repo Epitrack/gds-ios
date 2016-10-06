@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Foco_Std_Bd.ttf">
+        <array key="Foco_Std_Bd.ttf">
             <string>Foco-Bold</string>
-        </mutableArray>
-        <mutableArray key="Foco_Std_Lt.ttf">
+        </array>
+        <array key="Foco_Std_Lt.ttf">
             <string>Foco-Light</string>
-        </mutableArray>
-        <mutableArray key="Foco_Std_Rg.ttf">
+        </array>
+        <array key="Foco_Std_Rg.ttf">
             <string>Foco-Regular</string>
-            <string>Foco-Regular</string>
-            <string>Foco-Regular</string>
-            <string>Foco-Regular</string>
-            <string>Foco-Regular</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThankYouForParticipatingViewController">
@@ -40,85 +37,75 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_olympcis" translatesAutoresizingMaskIntoConstraints="NO" id="aLF-R0-Zk3">
-                    <rect key="frame" x="0.0" y="-3" width="320" height="571"/>
-                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_olympcis" translatesAutoresizingMaskIntoConstraints="NO" id="aLF-R0-Zk3"/>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="thank_you.thanks_for_information" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pe7-h0-q1G" customClass="GDSTextView">
-                    <rect key="frame" x="60" y="24" width="201" height="74"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="74" id="1Mh-qr-lPR"/>
                         <constraint firstAttribute="width" constant="201" id="kjF-Va-iCI"/>
                     </constraints>
                     <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="28"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1co-Rv-BDI">
-                    <rect key="frame" x="0.0" y="116" width="320" height="392"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="thank_you.look_emergency_description" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjK-KE-wnq" customClass="GDSTextView">
-                            <rect key="frame" x="52" y="170" width="243" height="61"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="61" id="2cY-gZ-FTv"/>
                                 <constraint firstAttribute="width" secondItem="yjK-KE-wnq" secondAttribute="height" multiplier="243:61" id="829-C6-jne"/>
                             </constraints>
-                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Foco-Light" family="Foco" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqY-3s-F0Z">
-                            <rect key="frame" x="32" y="263" width="258" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="QqY-3s-F0Z" secondAttribute="height" multiplier="129:19" id="Y6L-kK-H1o"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
                             <state key="normal" title="Facebook" backgroundImage="button_facebook.png">
-                                <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
                                 <action selector="btnFacebookAction:" destination="-1" eventType="touchUpInside" id="POI-bp-3eD"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWh-ms-Kei">
-                            <rect key="frame" x="32" y="355" width="258" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="VWh-ms-Kei" secondAttribute="height" multiplier="129:19" id="sa7-Z5-ufZ"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
                             <state key="normal" backgroundImage="btn_whatsapp">
-                                <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
                                 <action selector="btnWhatsappAction:" destination="-1" eventType="touchUpInside" id="K8H-D6-LeX"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypd-vZ-RP9">
-                            <rect key="frame" x="32" y="309" width="258" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ypd-vZ-RP9" secondAttribute="height" multiplier="129:19" id="03G-Bj-GbT"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
                             <state key="normal" title="Twitter" backgroundImage="button_twitter.png">
-                                <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.30196078430000001" green="0.55294117649999996" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
                                 <action selector="btnTwitterAction:" destination="-1" eventType="touchUpInside" id="GN6-li-tcb"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_medal_checked" translatesAutoresizingMaskIntoConstraints="NO" id="zIx-1e-Tfy">
-                            <rect key="frame" x="88" y="0.0" width="145" height="175"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_thanksscreen" translatesAutoresizingMaskIntoConstraints="NO" id="zIx-1e-Tfy">
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="29:35" id="Ggo-L7-kj2"/>
+                                <constraint firstAttribute="width" secondItem="zIx-1e-Tfy" secondAttribute="height" multiplier="158:140" id="8Qt-p6-g4K"/>
                             </constraints>
                         </imageView>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="thank_you.tell_your_friend" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwE-05-RnE" customClass="GDSTextView">
-                            <rect key="frame" x="23" y="224" width="281" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="1Xq-LP-73E"/>
                                 <constraint firstAttribute="width" secondItem="XwE-05-RnE" secondAttribute="height" multiplier="281:31" id="VwB-Lv-YIB"/>
                             </constraints>
-                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="12"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -163,45 +150,40 @@
                     </variation>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0U-C0-bM8" customClass="GDSButton">
-                    <rect key="frame" x="31" y="516" width="259" height="37"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="a0U-C0-bM8" secondAttribute="height" multiplier="129:19" constant="8" id="DBY-wL-eic"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="16"/>
                     <state key="normal" title="thank_you.continue" backgroundImage="button_default_white.png">
-                        <color key="titleColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" red="0.058823529409999999" green="0.29803921570000003" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="btnContinue:" destination="-1" eventType="touchUpInside" id="qqh-Ab-mbA"/>
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RL8-hH-Swl">
-                    <rect key="frame" x="0.0" y="100" width="320" height="408"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_exclamation" translatesAutoresizingMaskIntoConstraints="NO" id="dz9-zT-zhS">
-                            <rect key="frame" x="48" y="13" width="224" height="234"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="dz9-zT-zhS" secondAttribute="height" multiplier="70:73" id="mIr-63-y2b"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thank_you.zika_msg" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Run-7A-im4" customClass="GDSLabel">
-                            <rect key="frame" x="30" y="265" width="255" height="72"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Run-7A-im4" secondAttribute="height" multiplier="265:43" constant="-188.72093023255815" id="Aet-LU-KAA"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvU-Wf-7OH" customClass="GDSButton">
-                            <rect key="frame" x="30" y="370" width="260" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="LvU-Wf-7OH" secondAttribute="height" multiplier="243:38" constant="17" id="d0e-Kn-b1B"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
                             <state key="normal" backgroundImage="btn_procurarupas">
-                                <color key="titleColor" red="0.10588235294117647" green="0.44313725490196076" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.10588235294117647" green="0.44313725490196076" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
                                 <action selector="findUPAs:" destination="-1" eventType="touchUpInside" id="bPN-1E-O4S"/>
@@ -232,7 +214,7 @@
                     </variation>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="a0U-C0-bM8" firstAttribute="leading" secondItem="P0O-cc-Vgz" secondAttribute="leading" constant="34" id="0AT-7x-4Dn"/>
                 <constraint firstItem="a0U-C0-bM8" firstAttribute="centerX" secondItem="1co-Rv-BDI" secondAttribute="centerX" id="0do-ku-6q8"/>
@@ -258,7 +240,6 @@
                 <constraint firstItem="a0U-C0-bM8" firstAttribute="top" secondItem="1co-Rv-BDI" secondAttribute="bottom" constant="8" id="wAJ-td-Sgd"/>
                 <constraint firstAttribute="bottom" secondItem="a0U-C0-bM8" secondAttribute="bottom" constant="15" id="zCn-w0-x3d"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="0AT-7x-4Dn"/>
@@ -274,10 +255,10 @@
         <image name="bg_olympcis" width="320" height="568"/>
         <image name="btn_procurarupas" width="267" height="38"/>
         <image name="btn_whatsapp" width="267" height="38"/>
-        <image name="button_default_white.png" width="268" height="38"/>
+        <image name="button_default_white.png" width="267" height="37"/>
         <image name="button_facebook.png" width="267" height="38"/>
         <image name="button_twitter.png" width="267" height="38"/>
         <image name="icon_exclamation" width="146" height="146"/>
-        <image name="icon_medal_checked" width="114" height="151"/>
+        <image name="icon_thanksscreen" width="158" height="140"/>
     </resources>
 </document>
