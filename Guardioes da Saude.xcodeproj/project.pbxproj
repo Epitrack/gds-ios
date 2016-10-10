@@ -2022,13 +2022,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 528C8B101BB82630003CFC91 /* Build configuration list for PBXNativeTarget "Guardioes da Saude" */;
 			buildPhases = (
-				28AF8E39E4B42FDBBE5D528B /* Check Pods Manifest.lock */,
+				28AF8E39E4B42FDBBE5D528B /* [CP] Check Pods Manifest.lock */,
 				528C8AF51BB82630003CFC91 /* Sources */,
 				528C8AF61BB82630003CFC91 /* Frameworks */,
 				528C8AF71BB82630003CFC91 /* Resources */,
 				5215BBB81BFEC45500070EC4 /* ShellScript */,
-				12703398CE4ADA4024FD4437 /* Embed Pods Frameworks */,
-				E5F2059927F9969E87CAF209 /* Copy Pods Resources */,
+				12703398CE4ADA4024FD4437 /* [CP] Embed Pods Frameworks */,
+				E5F2059927F9969E87CAF209 /* [CP] Copy Pods Resources */,
 				CBFF73A81CAD90B6006C617A /* ShellScript */,
 			);
 			buildRules = (
@@ -2062,6 +2062,9 @@
 								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 							com.apple.SafariKeychain = {
@@ -2514,14 +2517,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12703398CE4ADA4024FD4437 /* Embed Pods Frameworks */ = {
+		12703398CE4ADA4024FD4437 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2529,14 +2532,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Guardioes da Saude/Pods-Guardioes da Saude-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		28AF8E39E4B42FDBBE5D528B /* Check Pods Manifest.lock */ = {
+		28AF8E39E4B42FDBBE5D528B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2570,14 +2573,14 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1fa97f5edc9d17753eaf9e6ae72bbafb5cd1693d e4a95666aa29d9ba5029852a68c0fa2ea38ded01b656382e634e7d4b13cfc207";
 		};
-		E5F2059927F9969E87CAF209 /* Copy Pods Resources */ = {
+		E5F2059927F9969E87CAF209 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2829,6 +2832,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 98JM6MRC2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2863,6 +2867,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 98JM6MRC2J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
