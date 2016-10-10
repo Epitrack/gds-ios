@@ -56,11 +56,7 @@ NSUserDefaults *preferences;
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    [GMSServices provideAPIKey:@"AIzaSyDeEdecH1N84Mu_uGSAv3XRLRhw-urDf1Y"];
-    
-    // Enable automated usage reporting.
-    [ACTAutomatedUsageTracker enableAutomatedUsageReportingWithConversionID:@"878155746"];
-    [ACTConversionReporter reportWithConversionID:@"878155746" label:@"5oD7COGtkWgQ4q_eogM" value:@"0.00" isRepeatable:NO];
+    [GMSServices provideAPIKey:@"AIzaSyDPVnLM8mqTGc-yrvZgQ7o360qAnGyo9YU"];
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window = window;

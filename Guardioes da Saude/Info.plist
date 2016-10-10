@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0</string>
+	<string>1.1.9</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -49,7 +49,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1080</string>
+	<string>1045</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -60,9 +60,9 @@
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>E9EqdjiPsk3esF54X9qc8LYU6</string>
+					<string>l4t5P03ZR3mbBON7HHLWhgSrS</string>
 					<key>consumerSecret</key>
-					<string>pyjiplPQZFP4h367EktqjNVP2nJfiiiSFnnsVJpQzdnE3LEppm</string>
+					<string>8Vi40vWK3s4kqViKMKPJJFO5bLsrFbvzRqhDbsy6mZQH7pkVbe</string>
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
