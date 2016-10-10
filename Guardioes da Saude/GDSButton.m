@@ -7,6 +7,7 @@
 //
 
 #import "GDSButton.h"
+#import "LocalizationSystem.h"
 
 @implementation GDSButton
 

@@ -20,5 +20,16 @@
                 andOnSuccess:(void(^)(NSArray *)) onSuccess
                   andOnError:(void(^)(NSError *)) onError;
 
-+ (NSArray *) getCountries;
++ (NSArray *) getCountriesWithBrazil: (bool) withBrazil;
+
++ (NSArray *) getStates;
+
++ (NSString *) getCountryNameToEnglish: (NSString *) countryStr;
+
++ (NSString *) getCountryNameToCurrentLocale: (NSString *) countryStr;
+
++ (NSString *) getStatebyUf: (NSString *) ufStr;
+
++ (NSString *) getUfByState: (NSString *) stateStr;
+
 @end

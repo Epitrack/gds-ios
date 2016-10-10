@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Household.h"
 @import DownPicker;
 
 @interface ListSymptomsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
@@ -18,6 +19,7 @@
     NSMutableArray *symptomsArray;
 }
 
+@property Household *household;
 @property double latitude;
 @property double longitude;
 

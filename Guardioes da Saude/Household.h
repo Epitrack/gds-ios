@@ -19,12 +19,17 @@
         andPicture:(NSString *)picture
       andIdPicture:(NSString *)idPicture
     andIdHousehold:(NSString *)idHousehold
-   andRelationship:(NSString *) relationship;
+   andRelationship:(NSString *) relationship
+         andPerfil: (NSNumber *) perfil
+        andCountry: (NSString *) country
+          andState: (NSString *) state;
 
 - (id) initWithNick:(NSString *) nick andDob:(NSString *) dob andGender:(NSString *) gender andRace:(NSString *) race andIdUser:(NSString *) idUser
          andPicture:(NSString *) picture andIdHousehold:(NSString *) idHousehold andIdPicture:(NSString *) idPicture;
 
 - (void) setGenderByString: (NSString *) strGender;
+- (void) setPerfilByString: (NSString *) strPefil;
+- (void) setRaceByStr: (NSString *) raceStr;
 
 + (NSDictionary *) getRelationshipsDictonary;
 + (NSArray *) getRelationshipArray;
@@ -39,5 +44,8 @@
 @property(nonatomic, retain) NSString *idHousehold;
 @property(nonatomic, retain) NSString *idPicture;
 @property(nonatomic, retain) NSString *relationship;
+@property(nonatomic, retain) NSNumber *perfil;
+@property(nonatomic, retain) NSString *country;
+@property(nonatomic, retain) NSString *state;
 
 @end

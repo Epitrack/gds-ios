@@ -18,6 +18,8 @@
 @interface HelpViewController (){
     NSArray *options;
     NSArray *optionsIcons;
+    NSArray *contactUs;
+    NSArray *contactUsIcons;
 }
 
 @end
@@ -42,7 +44,10 @@
     
     options = @[NSLocalizedString(@"help.tutorial", @""), NSLocalizedString(@"help.terms", @"")];
     //@"iconHelpRelatar"
-    optionsIcons = @[@"iconTutorial", @"iconTerms"];
+    optionsIcons = @[@"icon_helptutorial", @"icon_helpprivacy"];
+    
+    contactUs = @[@"Facebook", @"Twitter"];
+    contactUsIcons = @[@"iconHelpFacebook", @"iconHelpTwitter"];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -92,8 +97,8 @@
 
 - (void)btnReport {
     if([Requester isConnected]){
-        ReportViewController *reportViewController = [[ReportViewController alloc] init];
-        [self.navigationController pushViewController:reportViewController animated:YES];
+    ReportViewController *reportViewController = [[ReportViewController alloc] init];
+    [self.navigationController pushViewController:reportViewController animated:YES];
     }else{
         [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
     }
@@ -115,8 +120,6 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0)
         return NSLocalizedString(@"help.options", @"");
-    else if (section == 1)
-        return NSLocalizedString(@"help.contact_us", @"");
     else
         return @" ";
 }
@@ -134,7 +137,7 @@
         cell.imageView.image = [UIImage imageNamed:optionsIcons[indexPath.row]];
         cell.textLabel.text = options[indexPath.row];
     }else {
-        cell.imageView.image = [UIImage imageNamed:@"iconHelpRelatar"];
+        cell.imageView.image = [UIImage imageNamed:@"icon_helprelatar"];
         cell.textLabel.text = NSLocalizedString(@"help.report_bug", @"");
     }
     

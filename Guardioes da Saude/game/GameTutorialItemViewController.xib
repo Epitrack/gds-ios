@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameTutorialItemViewController" customModule="Guardioes_da_Saude" customModuleProvider="target">
+            <connections>
+                <outlet property="imgTutorial" destination="6IK-tK-EP5" id="Ono-Vx-g5J"/>
+                <outlet property="lbPageNumber" destination="YGk-K5-Vyq" id="Uwt-RQ-aGS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_medal_tutorial" translatesAutoresizingMaskIntoConstraints="NO" id="6IK-tK-EP5">
+                    <rect key="frame" x="30" y="158" width="260" height="268"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="6IK-tK-EP5" secondAttribute="height" multiplier="60:60.3" constant="1" id="Hyu-s7-Ddd"/>
+                        <constraint firstAttribute="width" secondItem="6IK-tK-EP5" secondAttribute="height" multiplier="220:227" id="ofu-G6-gLJ"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Hyu-s7-Ddd"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGk-K5-Vyq">
+                    <rect key="frame" x="30" y="456" width="260" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="YGk-K5-Vyq" firstAttribute="trailing" secondItem="6IK-tK-EP5" secondAttribute="trailing" id="6QD-WB-8MQ"/>
+                <constraint firstAttribute="trailing" secondItem="6IK-tK-EP5" secondAttribute="trailing" constant="30" id="Med-Yt-74F"/>
+                <constraint firstAttribute="bottom" secondItem="YGk-K5-Vyq" secondAttribute="bottom" constant="8" id="XVV-ls-T3J"/>
+                <constraint firstItem="YGk-K5-Vyq" firstAttribute="top" secondItem="6IK-tK-EP5" secondAttribute="bottom" constant="30" id="uTH-i6-DBS"/>
+                <constraint firstItem="YGk-K5-Vyq" firstAttribute="leading" secondItem="6IK-tK-EP5" secondAttribute="leading" id="weS-aD-9GZ"/>
+                <constraint firstItem="6IK-tK-EP5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="xVF-6Y-vBg"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_medal_tutorial" width="283" height="260"/>
+    </resources>
+</document>

@@ -66,7 +66,7 @@ const float kCellHeight = 100.0f;
     
     NSDate *dateDob = [DateUtil dateFromStringUS:user.dob];
     long days = [DateUtil diffInDaysDate:dateDob andDate:[[NSDate alloc] init]];
-    long ageUser = days/360;
+    long ageUser = days/365;
     
     self.txtDobMainMember.text = [NSString stringWithFormat:NSLocalizedString(@"select_participant.year_old", @""), (long)ageUser];
     [self loadAvatar];
@@ -154,7 +154,6 @@ const float kCellHeight = 100.0f;
         NSString *nick = h.nick;
         NSString *picture = h.picture;
         NSString *avatar;
-        NSString *idHousehold = h.idHousehold;
         
         //picture = @"0";
         
@@ -170,7 +169,7 @@ const float kCellHeight = 100.0f;
             }
         }
         
-        HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:idHousehold frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
+        HouseholdThumbnail *thumb = [[HouseholdThumbnail alloc] initWithHousehold:h frame:CGRectMake(0, 0, 150, 150) avatar:avatar nick:nick];
         [buttons addObject:thumb];
         [thumb.button addTarget:self action:@selector(pushAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -195,11 +194,10 @@ const float kCellHeight = 100.0f;
     NSLog(@"Clicou");
     UIButton *b = (UIButton *) sender;
     HouseholdThumbnail *thumb = (HouseholdThumbnail*) b.superview;
-    NSString *idHousehold = thumb.user_household_id;
-    NSLog(@"id %@", idHousehold);
+    Household *household = thumb.household;
     
-    user.idHousehold = idHousehold;
     SelectStateViewController *selectStateViewController = [[SelectStateViewController alloc] init];
+    selectStateViewController.household = household;
     [self.navigationController pushViewController:selectStateViewController animated:YES];
     
 }

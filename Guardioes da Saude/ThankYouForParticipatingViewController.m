@@ -8,7 +8,9 @@
 
 #import "ThankYouForParticipatingViewController.h"
 #import "HomeViewController.h"
+#import "UserRequester.h"
 #import "ViewUtil.h"
+#import "User.h"
 #import "EmergencyViewController.h"
 #import <Google/Analytics.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -17,6 +19,7 @@
 
 @interface ThankYouForParticipatingViewController (){
     SurveyType surveyType;
+    User *user;
 }
 
 @end
@@ -40,6 +43,9 @@
     self.txSurvey.backgroundColor = [UIColor clearColor];
     self.txTellFriends.backgroundColor = [UIColor clearColor];
     
+    user = [User getInstance];
+    [self addGamePoint];
+    user.lastJoinNotification = [NSDate date];
     switch (surveyType) {
         case GOOD_SYMPTOM:
             self.zicaView.hidden = YES;
@@ -70,20 +76,13 @@
         
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) addGamePoint{
+    if(!user.doesReport) {
+        user.points = 10;
+        
+        [[[UserRequester alloc] init] updateUser:user onSuccess:^(User *user){} onFail:^(NSError *error){}];
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)viewWillAppear:(BOOL)animated {
     // GOOGLE ANALYTICS

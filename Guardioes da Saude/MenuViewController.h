@@ -30,5 +30,6 @@
 - (IBAction)btnTwitterAction:(id)sender;
 
 + (MenuViewController *)getInstance;
+- (IBAction)btnLanguageAction:(id)sender;
 
 @end

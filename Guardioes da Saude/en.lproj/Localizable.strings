@@ -7,296 +7,447 @@
  */
 
 // CONSTANT MSGs
-"constant.check_connection" = "Por favor verifique sua conexão!";
-"constant.comunication_error" = "Ocorreu um erro de comunicação!";
-"constant.yes" = "Sim";
-"constant.no" = "Não";
-"constant.ok" = "OK";
-"constant.delete" = "Deletar";
-"constant.cancel" = "Cancelar";
-"constant.select" = "Selecionar";
-"constant.no_conection" = "É necessário estar conectado para acessar esta função. Por favor, verifique sua rede!";
+"constant.check_connection" = "Please check your connection.";
+"constant.comunication_error" = "A communication error occurred.";
+"constant.yes" = "Yes";
+"constant.no" = "No";
+"constant.ok" = "Ok";
+"constant.delete" = "Delete";
+"constant.cancel" = "Cancel";
+"constant.select" = "Select";
+"constant.no_conection" = "You must be logged in to use this feature. Check your network connection.";
 
 // HOME VIEW
-"home.hello" = "Olá,";
-"home.news" = "Notícias";
-"home.map_health" = "Mapa da Saúde";
-"home.tips_health" = "Dicas de Saúde";
-"home.join_us" = "Participe Agora!";
-"home.diary_health" = "Diário da Saúde";
+"home.hello" = "Hello, ";
+"home.news" = "News";
+"home.map_health" = "Health Map";
+"home.tips_health" = "Health Tips";
+"home.join_us" = "Participate Now!";
+"home.diary_health" = "Health Journal";
+"home.enjoy_yourself" = "Have fun";
 
 // ENTER VIEW
-"enter.email" = "E-mail";
-"enter.password" = "Senha";
-"enter.sign_in" = "Entrar";
-"enter.forgot_password" = "Esqueceu a senha?";
-"enter.email_required" = "E-mail e/ou senha não informados.";
-"enter.invalid_email_password" = "Não foi possível fazer o login. E-mail e/ou senha inválidos.";
+"enter.email" = "Email";
+"enter.password" = "Password";
+"enter.sign_in" = "Login";
+"enter.forgot_password" = "Forgot your password?";
+"enter.email_required" = "Email and/or password not provided.";
+"enter.invalid_email_password" = "Unable to log in. Invalid email and/or password.";
 
 // SELECT TYPE LOGIN VIEW
-"select_type_login.quick_access" = "Entre rapidamente com:";
-"select_type_login.or_email" = "Ou use seu e-mail:";
-"select_type_login.facebook_error" = "Erro ao logar com o facebook.";
-"select_type_login.operation_canceled" = "Operação cancelada.";
-"select_type_login.twitter_error" = "Erro ao logar com o Twitter.";
-"select_type_login.user_not_found" = "Cadastro não encontrado!";
+"select_type_login.quick_access" = "Quick login with:";
+"select_type_login.or_email" = "Or use your email:";
+"select_type_login.facebook_error" = "Failure to log in with Facebook.";
+"select_type_login.operation_canceled" = "Operation canceled.";
+"select_type_login.twitter_error" = "Failure to log in with Twitter.";
+"select_type_login.user_not_found" = "Registration not found!";
 
 // TUTORIAL VIEW
 "tutorial.tutorial" = "Tutorial";
-"tutorial.welcome" = "Bem-vindo!";
-"tutorial.preparing" = "Preparado para se tornar um Guardião da Saúde?";
-"tutorial.sign_up" = "Cadastre-se";
-"tutorial.sign_in" = "Entrar";
-"tutorial.how_is_your_health" = "Como está sua saúde?";
-"tutorial.check_your_symptoms" = "Marque na lista os sintomas que você apresenta.";
-"tutorial.health_map" = "Mapa da Saúde";
-"tutorial.health_map_description" = "Acompanhe os casos de doenças em seu bairro ou em um determinado local.";
-"tutorial.health_tips" = "Dicas de Saúde";
-"tutorial.health_tips_description" = "Veja como se prevenir de doenças, quais UPAs e farmácias mais próximas de você e telefones úteis para caso de emergência.";
+"tutorial.welcome" = "Welcome!";
+"tutorial.preparing" = "Are you ready to become a Guardian of Health?";
+"tutorial.sign_up" = "Sign up";
+"tutorial.sign_in" = "Login";
+"tutorial.how_is_your_health" = "How is your health?";
+"tutorial.check_your_symptoms" = "Select your symptoms from the list.";
+"tutorial.health_map" = "Health Map";
+"tutorial.health_map_description" = "Keep track of diseases in your neighborhood or at a specific location.";
+"tutorial.health_tips" = "Health Tips";
+"tutorial.health_tips_description" = "Learn how to prevent diseases, find the nearestUPAsand drugstores, and view useful phone numbers to call in case of emergency.";
 
 // SELECT TYPE CREATE VIEW
-"select_type_create.quick_access" = "Entre rapidamente com:";
-"select_type_create.or_email" = "Ou use seu e-mail:";
+"select_type_create.quick_access" = "Sign up quickly with:";
+"select_type_create.or_email" = "Or use your email:";
 
 // MODAL PRIV VIEW
-"modal_priv.safe_description" = "Nós nos preocupamos com a sua privacidade";
-"modal_priv.description" = "• Sua participação é voluntária e anônima\n \n• Os  dados fornecidos serão utilizados para promover uma comunidade mais saudável\n\n• Para maiores informações, consulte os Termos de Uso";
+"modal_priv.safe_description" = "We care about your privacy.";
+"modal_priv.description" = "• Your participation is voluntary and anonymous\n \n• The data provided will be used to build a healthier community.\n\n• Read the Terms of Use for more information";
 
 // FORGOT PASSWORD VIEW
-"forgot_password.label" = "Digite seu e-mail e verifique a sua caixa de entrada.";
-"forgot_password.email" = "E-mail";
-"forgot_password.send" = "Enviar";
-"forgot_password.success" = "E-mail enviado com sucesso.";
-"forgot_password.user_not_found" = "E-mail não encontrado!";
+"forgot_password.label" = "Enter your email address and check your inbox.";
+"forgot_password.email" = "Email";
+"forgot_password.send" = "Send";
+"forgot_password.success" = "Email successfully sent.";
+"forgot_password.user_not_found" = "Email not found.";
 
 // SIGN UP VIEW
-"sign_up.lb_email" = "E-mail:";
-"sign_up.tx_email" = "E-mail";
-"sign_up.lb_password" = "Senha:";
-"sign_up.tx_password" = "Senha";
-"sign_up.confirm_password" = "Repetir Senha";
-"sign_up.next" = "Próximo";
-"sign_up.email_required" = "E-mail é um campo obrigatório";
-"sign_up.password_required" = "Senha é um campo obrigatório";
-"sign_up.min_char_password" = "Senha precisa ter pelo menos 6 caracteres";
-"sign_up.invalid_password_confirmation" = "A senha e a confirmação devem ser iguais";
-"sign_up.invalid_email" = "E-mail inválido";
+"sign_up.lb_email" = "Email:";
+"sign_up.tx_email" = "Email";
+"sign_up.lb_password" = "Password:";
+"sign_up.tx_password" = "Password";
+"sign_up.confirm_password" = "Repeat Password";
+"sign_up.next" = "Next";
+"sign_up.email_required" = "Email is a required field.";
+"sign_up.password_required" = "Password is a required field";
+"sign_up.min_char_password" = "The password must have at least 6 characters";
+"sign_up.invalid_password_confirmation" = "The password and confirmed password must be the same.";
+"sign_up.invalid_email" = "Invalid email.!";
 
 // SIGN UP DETAILS VIEW
-"sign_up_details.lb_email" = "E-mail:";
-"sign_up_details.tx_email" = "E-mail";
-"sign_up_details.lb_nick" = "Apelido:";
-"sign_up_details.tx_nick" = "Apelido";
-"sign_up_details.lb_dob" = "Data de Nascimento:";
-"sign_up_details.tx_dob_placeholder" = "Selecione sua data de Nascimento.";
-"sign_up_details.lb_gender" = "Sexo";
-"sign_up_details.tx_gender" = "Selecione seu sexo";
-"sign_up_details.lb_race" = "Cor/Raça:";
-"sign_up_details.tx_race" = "Selecione sua Cor/Raça";
-"sign_up_details.sign_up" = "Cadastre-se";
-"sign_up_details.email_required" = "E-mail é um campo obrigatório";
-"sign_up_details.nick_required" = "Apelido é um campo obrigatório";
-"sign_up_details.dob_required" = "Data de nascimento é um campo obrigatório";
-"sign_up_details.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
-"sign_up_details.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
-"sign_up_details.gender_required" = "Sexo é um campo obrigatório";
-"sign_up_details.race_required" = "Cor/Raça é um campo obrigatório";
-"sign_up_details.email_already_used" = "O e-mail usado já está em uso";
-"sign_up_details.without_localization" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
+"sign_up_details.lb_email" = "Email:";
+"sign_up_details.tx_email" = "Email";
+"sign_up_details.lb_nick" = "Nickname:";
+"sign_up_details.tx_nick" = "Nickname";
+"sign_up_details.lb_dob" = "Date of Birth:";
+"sign_up_details.tx_dob_placeholder" = "Select your date of birth.";
+"sign_up_details.lb_gender" = "Gender";
+"sign_up_details.tx_gender" = "Select your gender";
+"sign_up_details.lb_race" = "Color/Race:";
+"sign_up_details.tx_race" = "Select your Color/Race";
+"sign_up_details.sign_up" = "Sign up";
+"sign_up_details.email_required" = "Email is a required field.";
+"sign_up_details.nick_required" = "Nickname is a required field";
+"sign_up_details.dob_required" = "Date of Birth is a required field.";
+"sign_up_details.min_dob" = "The minimum age limit of the primary user is 13 years.";
+"sign_up_details.max_dob" = "The maximum age limit of the primary user is 120 years.";
+"sign_up_details.gender_required" = "Gender is a required field.";
+"sign_up_details.race_required" = "Color/Race is a required field";
+"sign_up_details.email_already_used" = "The email address is already in use.";
+"sign_up_details.without_localization" = "To actively contributeto healthsurveillance in Brazil you need to share your location.";
+"sign_up_details.lb_country" = "Country of origin:";
+"sign_up_details.tx_country" = "Please select the country.";
+"sign_up_details.lb_state" = "State:";
+"sign_up_details.tx_state" = "Select the state";
+"sign_up_details.lb_perfil" = "Profile:";
+"sign_up_details.tx_perfil" = "Select your perfil";
+"sign_up_details.perfil_athlete" = "Athlete / Delegation";
+"sign_up_details.perfil_worker" = "Worker / Volunteer";
+"sign_up_details.perfil_fan" = "Fan / Spectator";
+"sign_up_details.perfil_required" = "Perfil is a field required";
 
 // MENU VIEW
-"menu.home" = "Início";
-"menu.profile" = "Perfil";
-"menu.about" = "Sobre";
-"menu.help" = "Ajuda";
-"menu.sign_out" = "Sair";
-"menu.are_you_sure_sign_out" = "Tem certeza que deseja sair do aplicativo?";
+"menu.home" = "Home";
+"menu.profile" = "Profile";
+"menu.about" = "About";
+"menu.help" = "Help";
+"menu.sign_out" = "Exit";
+"menu.are_you_sure_sign_out" = "Are you sure you wish to exit the app?";
+"menu.idiom" = "Language";
 
 // About VIEW
-"about.title" = "Sobre";
+"about.title" = "About";
+"about.subtitle1" = "“GUARDIANS OF HEALTH” APPLICATION ";
+"about.subtitle2" = "VOLUNTARY PARTICIPATION";
+"about.subtitle3" = "ACKNOWLEDGMENTS";
+"about.subtitle4" = "BENEFITS OF PARTICIPATION";
+"about.subtitle5" = "LEARN MORE ABOUT THE APP";
+"about.subtitle6" = "ABOUT THE PARTNERSHIP";
+"about.text" = "“GUARDIANS OF HEALTH” APPLICATION \n\nDeveloped for mobiles, tablets and personal computers, the “Guardians of Health” app is part of an initiative by the Brazilian Department of Health, in partnership with the U.S.-based NGO Skoll Global Threats Fund, designed to assess the potential of mobile app use under a strategy to strengthen the detection of public health emergencies and outbreaks, within the Sistema Único de Saúde [Brazilian Unified Healthcare System] (SUS), particularly during major events, such as the 2016 Olympic and Paralympic Games. \n\nSuch strategy is a byproduct of another project held with the same organization, entitled “World Cup Healthcare”, launched exclusively during the 2014 FIFA Brazil World Cup®, which yielded promising results and kept both institutions’ interests aligned to develop a new strategy for the 2016 Olympic and Paralympic Games. \n\nThe first version of the Guardians of Health app is already available for the Apple iOS and Google Android operating systems, as well as the http://guardioesdasaude.org/ website. \n\nInitially developed in Portuguese language, subsequent versions of the “Guardians of Health” app will also be available in all of the official languages of the United Nations, provided as a supporting tool to assist foreign travelers in Brazil, particularly those traveling to the host cities of the 2016 Olympic and Paralympic Games. \n\nOnly users over the age of 13 can participate in this initiative. In addition, users must read and accept the “Terms of Use” before signing up and fill out the simplified registration form, providing a nickname, email address, date of birth, race/color, gender and password. Participation is voluntary and confidential, and all personal information disclosed is duly protected by Law No. 12.527, dated November 18, 2011. \n\nProject results will be used for health surveillance purposes across all Brazilian States and Municipalities, in order to detect and prevent public health emergencies and outbreaks by adopting proper prevention and control measures. The project’s results will be disclosed as consolidated and anonymous data, outlining volunteer healthcare profiles based on the information provided by app users. \n\nVoluntary participation \n\nYour participation is entirely voluntary and a valuable contribution towards promoting health surveillance in Brazil. Filling out his health form may not be interpreted as a medical appointment and does not ensure special access to health care services. In addition, users will never be contacted via email or any other means by any healthcare service or professional to obtain such information. \n\nText messages can be sent to participants through Push Notification technology, containing healthcare information or instructions from health surveillance agencies. \n\nIt is important to point out that you should immediately seek out the nearest healthcare service or physician if you are not feeling well. The app provides a shortcut to a preset search of healthcare services and drugstores near you, based on your mobile phone’s Google Maps geolocation service. This feature is not part of the app. Therefore, you will be redirected to your mobile phone’s map application. We recommend caution when transiting through unknown areas and avoiding areas of risk. Contact local public agencies for more information. \n\nThe app provides various of useful phone numbers, including SAMU (Emergency Mobile Healthcare Service), which is a 24/7 toll-free number providing emergency healthcare services for traumatic, clinical, pediatric, surgical, gynecological and mental health cases in households, workplaces and public roads. \n\nBenefits of participation \n\n•	Actively participating in health surveillance efforts to prevent disease outbreaks in communities; \n•	Quick access to public service contact information without every using your phonebook; \n•	Easy access to useful information on healthcare and disease prevention measures; \n•	Amenities such as a preset search of Emergency Care Units and drugstores nearby (20-km radius) in Google Maps; \n•	Following project results at the website: www.guardioesdasaude.org; \n\nLearn more about the app \n\nThe “Guardians of Health” app is free and available for iOS and Android operating systems, as well as Internet browsers. Users can choose from one of the several free Wi-Fi hotspots available in various cities or use their own mobile data packages to use the app. \nPhone calls to public services informed in the app may be subject to additional phone charges. Contact your mobile carrier for more information before using this feature. This service cannot be used if the mobile’s phone feature is disabled. This information applies particularly to foreign users. \n\nAbout the partnership \n\nThis pioneer initiative was conceived by the Healthcare Surveillance Agency of the Brazilian Health Department, in partnership with the host cities of the Olympic and Paralympic Games. Through such partnership, the Skill Global Threats Fund NGO is responsible for all contracting and software development expenses, duly supervised by the Brazilian Association of Field Epidemiology Professionals (ProEpi), both of which are non-profit Non-Governmental Organizations focused on improving health surveillance activities in Brazil and around the world. \nProEpi is responsible for ensuring that all requirements established by the Department of Health and Skoll Global Threats Fund are met, as per project specifications: confidentiality of user information, transparency and disclosure of public project results and availability of the source code and respective documentation in free-access download environments, adequacy and use of applications by healthcare services in Brazil and other countries, while preserving the non-profit nature of such endeavor. \n\nAcknowledgments \n\nThe organizing institutions would like to thank all volunteers, healthcare professionals and managers of the Brazilian Unified Healthcare System for depositing their trust in the pilot project and supporting such unprecedented initiative in the global public healthcare segment. \n\nSpecial thanks to the Departments of Health of the Host Cities of the Olympic and Paralympic Games (Belo Horizonte, Distrito Federal, Manaus, Rio de Janeiro, Salvador and São Paulo.)";
 
 // HELP VIEW
 "help.tutorial" = "Tutorial";
-"help.terms" = "Termos e Políticas";
-"help.options" = "Opções";
-"help.contact_us" = "Entre em contato";
-"help.report_bug" = "Relatar erros no aplicativo";
+"help.terms" = "Terms and Policies";
+"help.options" = "Options";
+"help.contact_us" = "Contact";
+"help.report_bug" = "Report Errors";
 
 // TERMS VIEW
-"terms.title" = "Termos e Políticas";
-"terms.facebook_error" = "Erro ao logar com o Facebook.";
-"terms.operation_canceled" = "Operação cancelada.";
-"terms.social_network_in_using" = "Cadastro realizado anteriormente com essa rede social.";
-"terms.sociel_network_error" = "Não foi possível realizar o cadastro. Tente novamente em alguns minutos!";
-"terms.decline" = "Não aceito";
-"terms.i_agree" = "Aceito";
+"terms.title" = "Terms and Policies";
+"terms.facebook_error" = "Failure to log in with Facebook.";
+"terms.operation_canceled" = "Operation canceled.";
+"terms.social_network_in_using" = "Previous registration found for this social network.";
+"terms.sociel_network_error" = "The sign-up process could not be completed. Try again in a few minutes.";
+"terms.decline" = "Not accepted";
+"terms.i_agree" = "Accepted";
+"terms.subtitle1" = "PRIVACY POLICY AND TERMS OF USE";
+"terms.subtitle2" = "1. Legal compliance:";
+"terms.subtitle3" = "2. Use Restrictions:";
+"terms.subtitle4" = "3. Content Liability:";
+"terms.subtitle5" = "4. Content Accessibility:";
+"terms.subtitle6" = "5. Intellectual Property:";
+"terms.subtitle7" = "6. Rules, Regulations, Rights and Duties:";
+"terms.subtitle8" = "7. Use of Contributions:";
+"terms.subtitle9" = "8. Assurance of Privacy and Confidentiality:";
+"terms.subtitle10" = "9. “Guardians of Health” app updates:";
+"terms.subtitle11" = "10. Liability for Actions based on Contents:";
+"terms.subtitle12" = "11. Liability for Technological Issues:";
+"terms.subtitle13" = "12. Liability for Third-Party Information:";
+"terms.subtitle14" = "13. Final Considerations";
+"terms.text" = "PRIVACY POLICY AND TERMS OF USE \n\nPlease read these legal terms of use before using the “Guardians of Health” app, making any collaboration, accessing or downloading any information from this application. \n\nBy accessing or using the “Guardians of Health” app, you automatically agree to the terms and conditions set out in the “Terms of Use” section. \n\nThis term establishes a binding agreement between you and the “Guardians of Health” application, covering all accesses and uses of this application, including the use of any information, data, tool, product and service, among other contents provided by such application. \n\nBy using this application, you automatically acknowledge and agree to the following terms and conditions: \n\n1. Legal compliance: \n\nRegistered users must only access the “Guardians of Health” app for legal and health-related purposes; \n\nUsers hereby agree to use the application only for the respective purposes and in due compliance with this term and related laws, as well as any other standards applicable in Brazil; \n\nThis application may not be accessed in territories in which its contents are considered to be illegal. Those who choose to access this site from other locations shall do so at their sole discretion, undertaking full liability for complying with applicable local laws. Application materials must not be used or exported in violation of Brazilian laws. Any pending issue regarding such materials shall be settled based upon Brazilian law. \n\nUnauthorized modifications of this site’s contents are expressly prohibited. \n\n2. Use Restrictions: \n\nThis application may only be used by individuals over the age of 13 (thirteen). \n\n3. Content Liability: \n\nThe institutions and developers of the “Guardians of Health” app may not be held liable for either legal or illegal contents of any information eventually shared among its respective users, via social networks, or provided to the “Guardians of Health” application. \n\nComments eventually shared by users in social networks do not represent the opinion of the institutions responsible for the project. Users are responsible for the contents of their respective messages and comments. \n\nThe user hereby undertakes sole liability for their own conduct and the accuracy of information provided when using this service, liable for all consequences arising from the intentional disclosure of inaccurate data. \n\nThe user hereby agrees not to publish, send, distribute or otherwise disclose contents of information of defamatory, obscene or illegal nature when using the “Guardians of Health” application, including information exclusively belonging to other individuals or corporations, as well as trademarks or copyrighted information, without express authorization by the respective owners of such rights; \n\nNo one else may use the “Guardians of Health” application on your behalf. You are responsible for all application contents generated by unauthorized users under your profile, even with your permission. This rule does not apply in case of application security breaches or other related issues. \n\n4. Content Accessibility: \n\nThe “Guardians of Health” app team does not guarantee that this application will be partially or fully functional outside of Brazilian territory. You may choose to access the Webapp and the application from foreign locations at your own risk. You are responsible for complying with local laws, specifically agreeing to abide by all applicable laws regarding the transmission of technical data exported from the respective location. \n\n5. Intellectual Property: \n\nThe Department of Health, Healthcare Agencies involved and partner institutions hold due copyrights over all contents produced and presented in this application. This premise does not apply to information classified as Public Domain or Public Utility. The copyrights of all other trademarks, brands, names and logos shown in the application are held by its respective owners. \n\nThe “Guardians of Health” app is an open-source software and its use by third parties is subject to international license terms: http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPL-3.0). All rights regarding the use of contents and reports generated by the Webapp and the application are hereby assigned by the developers, particularly those arising from the license terms: http://creativecommons.org/licenses/by-nc/4.0/ Creative Commons - Atribuição-Não Comercial 4.0 Internacional http://creativecommons.org.br/as-licencas/attachment/by-nc/. \n\nOnly specific information disclosed by healthcare services must be deemed official information for public disclosure. Despite the team’s efforts to ensure the quality, timeliness and authenticity of information, no information provided in the “Guardians of Health” application may be deemed official information for public disclosure. The data collected through the “Guardians of Health” application originates from users who voluntarily shared such information, and may be subject to changes due to such users’ ability to access mobile devices or personal computers with minimum technological specifications. \n\nTherefore, the information generated under this strategy may be insufficient to statistically portray actual epidemiological patterns in certain locations and periods of time. Recreational or public utility information provided in the application may eventually be inaccurate or outdated. Users are recommended to confirm such information in case of emergency or any other situation of risk regarding their health or integrity. \n\n6. Rules, Regulations, Rights and Duties: \n\nThe “Guardians of Health” application team regularly complies with all applicable laws and regulations. In the event any provision set out in this Term of Use conflicts with any applicable laws or regulations, the latter shall prevail over the former. \n\nThis Term of Use and the “Guardians of Health” application’s use shall be governed and interpreted as per Brazilian laws, notwithstanding eventual conflict-of-law regulations. In the event of conflicts between foreign and Brazilian regulations, rules and laws, Brazilian regulations, rules and laws shall prevail. \n\nThe “Guardians of Health” application may eventually monitor, review and restrict access to any area from which users transmit information, in addition to removing or restricting the access to such information or notifications. Please contact us at contato@guardioesdasaude.org in case of any doubts or questions regarding the “Guardians of Health” application. \n\n7. Use of Contributions: \n\nUpon submitting a written contribution or posting information in the “Guardians of Health” application, you automatically grant a permanent and royalty-free license for such application, and any successor organization, to publish such contributions in the “Guardians of Health” app, as well as disclosing such information in a consolidated manner (never identifying users) to other communication media, as well as discussing or referencing such information in any publications related to the “Guardians of Health” application. \n\nMoreover, you agree that the “Guardians of Health” application is entitled to edit, delete or add any contribution to the texts of other contributions, at the sole discretion of the application development team. \n\n8. Assurance of Privacy and Confidentiality: \n\nThe privacy and confidentiality of all information provided by users in the “Guardians of Health” application is hereby guaranteed, and any access to such information must abide by the regulations set out in the Brazilian Access to Information Act. \n\nWe reserve the right to use such information for internal purposes, in which case your contributions will be attributed to your email address and anonymized for all data analysis purposes. \n\nMoreover, in order to fulfill the primary purpose of the application, which is to identify groups of individuals with symptoms, the information regarding your health conditions shall be geolocated through your device’s GPS feature.” \n\nThe “Guardians of Health” application, its collaborators and users, including public agencies and NGOs, rely on the app’s users to ensure the accuracy and truthfulness of contributions. The team may not be held liable for errors or mistakes in any submission. False information deliberately submitted by users may constitute criminal offenses and shall be notified to competent authorities accordingly. \n\n9. “Guardians of Health” app updates: \n\nThis application and its Terms of Use are subject to changes. Except when otherwise expressly indicated, your use of the Webapp and the application automatically entails due acceptance and agreement with the respective Terms of Use every time you access the “Guardians of Health” application. Stay tuned to new updates and, in case of doubts, the Terms of Use are always available for access and agreement or rejection. \n\n10. Liability for Actions based on Contents: \n\nThe “Guardians of Health” application may not be held liable for any personal/property losses and/or damages arising from the use of any idea, content, instruction, method, product or procedure provided herein. \n\nUnder no circumstances may the professionals involved in the development or management of this application be held liable for any of your decisions or actions based on such contents. \n\nIn the event of threats or any other situation of risk regarding your health or integrity, always seek out valid and updated instructions provide by local public healthcare services. \n\n11. Liability for Technological Issues: \n\nAny content or section of the “Guardians of Health” application may be eventually unavailable or not functioning properly at any time. Despite our reasonable efforts to prevent technological issues, problems of several different natures may occur at any moment, including virus, harmful programming routines, or device-end problems. \n\nThe Webapp and application are provided “as-is” and “as-available”. Notwithstanding the general announcement, we cannot guarantee the unabridged availability, integrity, timeliness, reliability, sequencing or delivery speed of this application or any of its contents. \n\nThe “Guardians of Health” application may not be held liable for any damages or losses arising from performance or lack thereof regarding any part of this application. The “Guardians of Health” application may not be held liable for any defects, delays or errors arising from the use of this application. \n\nThe use of all “Guardians of Health” features requires users to access the Internet via Wi-Fi or cable connections. The lack of such requirement may restrict the use of the application and its entire potential. Therefore, the “Guardians of Health” application team may not be held liable for such eventual restrictions. \n\nThis disclaimer applies to all damages or losses, including those arising from any performance failure, error, omission, interruption, removal, defect, delayed operation or transmission, computer virus, communication failure, theft, destruction or unauthorized access, modification or use of any goods, either due to contractual violations, illegal activities, negligence or any other course of action. \n\n12. Liability for Third-Party Information: \n\nThe provision of links and references to other websites, publications or sources of information via the Webapp and the application does not entail any endorsement of such websites and sources by the “Guardians of Health” application, its agents or representatives. The “Guardians of Health” application team cannot attest to the quality, content and accuracy of information, services or produced eventually offered in such sources, specifically disclaiming any liability for implicit or express guarantees regarding marketability or adequacy under any private use, application or purpose. \n\n13. Final Considerations \n\nAccess to this service entails express and unabridged acceptance of the aforementioned Terms of Use. By agreeing to these terms, you hereby grant a permanent and royalty-free license for the “Guardians of Health” application, the Brazilian Department of Health and any eventually successors to publish such contributions in a consolidated manner, within the respective application, as well as disclosing such information to related public health surveillance services. Moreover, you agree that the “Guardians of Health” application is entitled to edit, or delete any of your contributions, at the sole discretion of the application development team.";
 
 // REPORT VIEW
-"report.title" = "Relatar Erros";
-"report.required_filds" = "Assunto e/ou mensagem não informados.";
-"report.success" = "Mensagem enviada com sucesso. Obrigado!";
-"report.error" = "Não foi possível enviar o e-mail. Tente novamente em alguns minutos.";
-"report.decription" = "Caso você tenha encontrado alguma dificuldade em utilizar o Guardiões da Saúde, preencha o formulário abaixo e envie sua mensagem para nossa equipe de especialistas.";
-"report.subject" = "Assunto";
-"report.describe_problem" = "Descreva o problema:";
-"report.send" = "Enviar";
+"report.title" = "Report Errors";
+"report.required_filds" = "Subject and/or message not provided.";
+"report.success" = "Message successfully sent. Thank you!";
+"report.error" = "Unable to read the email. Try again in a few minutes.";
+"report.decription" = "If you have any trouble using the Guardians of Health app, please fill out the form below and send it to our team of experts.";
+"report.subject" = "Subject";
+"report.describe_problem" = "Describe the problem:";
+"report.send" = "Send";
 
 // PROFILE LIST VIEW
-"profile_list.title" = "Perfil";
-"profile_list.delete_confirmation" = "Deseja remover o perfil definitivamente? Essa operação é irreversível.";
-"profile_list.add_new_member" = "Adicionar Integrante";
-"profile_list.select_perfil" = "Selecione qual dos perfis abaixo quer editar.";
+"profile_list.title" = "Profile";
+"profile_list.delete_confirmation" = "Permanently delete the profile? This operation is irreversible.";
+"profile_list.add_new_member" = "Add member of household";
+"profile_list.select_perfil" = "Select which of the following profiles you want to edit.";
 
 // PROFILE FORM VIEW
-"profile_form.lb_nick" = "Apelido:";
-"profile_form.placeholder_nick" = "Apelido";
-"profile_form.lb_race" = "Cor/Raça:";
-"profile_form.lb_dob" = "Data de nascimento:";
-"profile_form.title_dob" = "Data de nascimento";
-"profile_form.msg_dob" = "Selecione sua data de nascimento.";
-"profile_form.lb_gender" = "Sexo:";
-"profile_form.placeholder_gender" = "Selecione seu sexo";
-"profile_form.placeholder_race" = "Selecione seu Cor/Raça";
-"profile_form.lb_relationship" = "Parentesco:";
-"profile_form.placeholder_relationship" = "Selecione o parentesco";
-"profile_form.lb_email" = "E-mail:";
+"profile_form.lb_nick" = "Nickname:";
+"profile_form.placeholder_nick" = "Nickname";
+"profile_form.lb_race" = "Color/Race:";
+"profile_form.lb_dob" = "Date of Birth:";
+"profile_form.title_dob" = "Date of Birth";
+"profile_form.msg_dob" = "Select your date of birth.";
+"profile_form.lb_gender" = "Gender:";
+"profile_form.placeholder_gender" = "Select your gender";
+"profile_form.placeholder_race" = "Select your Color/Race";
+"profile_form.lb_relationship" = "Kinship:";
+"profile_form.placeholder_relationship" = "Select the kinship";
+"profile_form.lb_email" = "Email:";
 "profile_form.placeholder_email" = "email@exemplo.com.br";
-"profile_form.change_password" = "Redefinir senha";
-"profile_form.save" = "Salvar";
-"profile_form.edit_profile" = "Editar Perfil";
-"profile_form.add_member" = "Adicionar Integrante";
-"profile_form.fill_in_fields" = "Preencha todos os campos do formulário.";
-"profile_form.invalid_dob" = "A data de aniversário deve ser menor que hoje.";
-"profile_form.min_dob" = "A idade mínima para o usuário principal é 13 anos.";
-"profile_form.max_dob" = "A idade máxima para o usuário principal é 120 anos.";
-"profile_form.invalid_email" = "E-mail inválido!";
-"profile_form.success" = "Operação realizada com sucesso.";
-"profile_form.fail" = "Ocorreu um problema de comunicação, por favor verifique sua conexão!";
-"profile_form.delete" = "Excluir Conta";
-"profile_form.or" = "OU";
-"profile_form.delete_confirmation" = "Ao excluir sua conta, todos os integrantes serão excluídos. Para acessar novamente o Guardiões da Saúde, será necessário um novo cadastro.\nDeseja continuar?";
-"profile_form.modal_delete_title" = "Desativar sua conta";
-"profile_form.modal_delete_body" = "Sua conta foi desativada com sucesso";
+"profile_form.change_password" = "Reset password";
+"profile_form.save" = "Save";
+"profile_form.edit_profile" = "Edit Profile";
+"profile_form.add_member" = "Add member of household";
+"profile_form.fill_in_fields" = "Fill out all form fields.";
+"profile_form.invalid_dob" = "The date of birth must be earlier than the current date.";
+"profile_form.min_dob" = "The minimum age limit of the primary user is 13 years.";
+"profile_form.max_dob" = "The maximum age limit of the primary user is 120 years.";
+"profile_form.invalid_email" = "Invalid email.";
+"profile_form.success" = "Operation successfully completed.";
+"profile_form.fail" = "A communication error occurred. Please check your connection.";
+"profile_form.delete" = "Delete Account";
+"profile_form.or" = "or";
+"profile_form.delete_confirmation" = "When you delete your account, all members will be deleted. To re-access the Guardians of Health, a new registration will be required. \nDo you wish to continue?";
+"profile_form.modal_delete_title" = "Deactivate your account";
+"profile_form.modal_delete_body" = "Your account has been successfully deactivated.";
 
 // SELECT AVATAR VIEW
-"select_avatar.title" = "Editar Foto";
-"select_avatar.check_galery_permission" = "Verifique as permissões da galeria 'Fotos'.";
-"select_avatar.no_galery_permission" = "O Aplicativo não tem permissão para gravar a foto.";
+"select_avatar.title" = "Edit Photo";
+"select_avatar.check_galery_permission" = "Check ‘Photo’ gallery permissions.";
+"select_avatar.no_galery_permission" = "The application does not have permission to store photos.";
 
 // CHANGE PASSWORD VIEW
-"chang_password.title" = "Redefinir senha";
-"chang_password.success" = "Senha atualizada com sucesso.";
-"chang_password.fail" = "Ocorreu um erro ao atualizar o usuário.";
-"chang_password.password_isnt_equals" = "As senhas não estão iguais.";
-"chang_password.min_char_password" = "A senha deve ter mais de 6 caracteres.";
-"chang_password.placeholder_password" = "Nova senha";
-"chang_password.placeholder_password_confirmation" = "Redefinir senha";
-"chang_password.save" = "Redefinir senha";
-"chang_password.current_password" = "Senha Atual";
-"chang_password.new_password" = "Nova Senha";
-"chang_password.repeat_password" = "Repetir Senha";
-"chang_password.current_password_required" = "Senha atual é um campo obrigatório.";
-"chang_password.current_password_different" = "Senha atual incorreta.";
+"chang_password.title" = "Reset password";
+"chang_password.success" = "Password successfully updated.";
+"chang_password.fail" = "An error occurred while updating the user.";
+"chang_password.password_isnt_equals" = "The passwords are not the same.";
+"chang_password.min_char_password" = "The password must have more than 6 characters.";
+"chang_password.placeholder_password" = "New Password";
+"chang_password.placeholder_password_confirmation" = "Reset password";
+"chang_password.save" = "Reset password";
+"chang_password.current_password" = "Current Password";
+"chang_password.new_password" = "New Password";
+"chang_password.repeat_password" = "Repeat Password";
+"chang_password.current_password_required" = "Current password is a required field.";
+"chang_password.current_password_different" = "Incorrect current password.";
 
 // NOTICE VIEW
-"notice.title" = "Notícias";
-"notice.open_notice_confirmation" = "Deseja abrir o link da notícia?";
+"notice.title" = "News";
+"notice.open_notice_confirmation" = "Open the news article link?";
 
 // HEALTH TIPS VIEW
-"health_tips.zika" = "Dengue, Zika e Chikungunya";
-"health_tips.emergency" = "UPAs";
-"health_tips.vacines" = "Vacinas";
-"health_tips.phones" = "Telefones Úteis";
-"health_tips.pharmacy" = "Farmácias";
-"health_tips.basic_care" = "Cuidados Básicos";
-"health_tips.prevention" = "Prevenção";
+"health_tips.title" = "Health Tips";
+"health_tips.zika" = "Dengue fever, Zika and Chikungunya";
+"health_tips.emergency" = "Emergency healthcare center";
+"health_tips.vacines" = "Vaccines";
+"health_tips.phones" = "Useful Phone Numbers";
+"health_tips.pharmacy" = "Drugstores";
+"health_tips.basic_care" = "Basic Care";
+"health_tips.prevention" = "Prevention";
+"health_tips.safe_sex" = "Practice safe sex";
+"health_tips.health_traveler" = "Traveler's health";
+
+// SAFE SEX
+"safe_sex.title" = "Practice safe sex";
+"safe_sex.subtitle_1" = "Condoms";
+"safe_sex.subtitle_2" = "IMPORTANT NOTES";
+"safe_sex.subtitle_3" = "Remember";
+"safe_sex.subtitle_4" = "Did you know?";
+"safe_sex.text" = "Condom\n\n	•Condoms are the most practical method to protect against HIV/AIDS, viral hepatitis and sexually transmitted infections (STIs), such as syphilis and gonorrhea. \n•	Proper use and disposal of condoms. \n•	If the condom “breaks” or if you had unprotected sexual relations, post-exposure prophylaxis (PEP) measures are required after exposure to HIV risk. \n•	PEP \n•	PEP is a treatment with anti-HIV medication to avoid infection by the HIV virus, which causes AIDS. PEP is recommended for individuals exposed to HIV risk, such as those engaged in casual sex, sexual abuse and work accidents involving biological materials. \n•	If recommended by the doctor, the PEP treatment lasts 28 days and must be initiated within 72 hours after unprotected sexual contact. \n\nWhere can I find the PEP treatment? (Direct link to the application and/or website)  http://pep.aids.gov.br \n\nIMPORTANT NOTES\n\n•	Everyone is entitled to information and medical care without being subject to any form of prejudice or discrimination. \n•	In Brazil, male and female condoms and lubricant gels are distributed free-of-charge in all healthcare units, hostels, and Tourist Centers, among others. Find out which distribution centers are near you. \n•	If you need any HIV medication (lost or forgot), seek out the nearest healthcare unit and bring your ID document. Foreign tourists must contact their health insurance. \n\nRemember \n\n•	Avoid viral hepatitis infections. If you are looking to get tattoos or piercings, always choose establishments duly licensed and certified by the local Health Surveillance agency. Demand to see this certificate if it is now visibly shown at the establishment. \n•	Demand all materials to be duly sterilized or disposable. \n•	Do not share personal objects, such as nail cutters, razors, tooth brushes, needles and syringes with others. \n•	If you notice any sign or symptom, such as any discharges or lesions, or any other health problem, seek out medical assistance. \n\nDid you know? \n\n•	Many people live their lives without knowing that they are infected with HIV and viral hepatitis. \n•	The only way to know is by taking the test. Anti-HIV and hepatitis tests are provided free-of-charge in the public healthcare system. Foreign tourists must contact their health insurance. \n•	There is a vaccine for Hepatitis B, which must be taken in 3 doses at different times. Find out where this vaccine is available.";
+
 
 // PHARMACY VIEW
-"pharmacy.title" = "Farmácias";
-"pharmacy.some_isnt_showing" = "Algumas farmácias podem não ser exibidas no mapa.";
+"pharmacy.title" = "Drugstores";
+"pharmacy.some_isnt_showing" = "Some drugstores may not be shown on the map.";
 
 // BASIC CARE VIEW
-"basic_care.title" = "Cuidados Básicos";
+"basic_care.title" = "Basic Care";
+"basic_care.text" = "Traveler Health: \n\n•	Inform your itinerary to your doctor preferably 4 to 8 weeks before your trip. Ask for guidance on how to prevent diseases and injuries; \n•	You may have difficulty finding medications you usually take during your trip. Ask your doctor which and how much of each medication you should bring with you on your trip, including on your carry-on luggage; \n•	Carry your identification documents with you at all times, preferably in English and Portuguese, containing information on personal contacts, blood type, allergies, diabetes or other diseases that may require special care; \n•	Pregnant women must always consult their doctors before traveling, since they are subject to various risks and the trip may affect their safety and comfort. \n•	Contact the transportation company to learn more about specific rules for pregnant women before traveling. \n•	Brazil is a tropical country. Travelers are recommended to drink plenty of fluids to avoid dehydration; \n•	Wear comfortable clothes and shoes. They will protect you against sprains, insect bites and incidents involving venomous animals; \n•	Cover yourself with appropriate clothing, hats or caps and sunglasses to protect against the sun. Avoid direct exposure to sunlight between 10 a.m. and 4 p.m.; \n•	Use sunscreen with the appropriate protection factor based on your skin tone, according to the manufacturer’s instructions. This will make sure your skin is always protected, even in colder locations; \n•	Use insect repellents when necessary; \n•	Wash your hands with water and soap several times a day, especially before eating, after using public transportation, visiting markets or highly-populated areas; \n•	Driving after consuming any amount of alcoholic beverages is prohibited in Brazil.";
 
 // PREVENTION VIEW
-"prevention.title" = "Prevenção";
+"prevention.title" = "Prevention";
+"prevention.text" = "Malaria: \n•	In Brazil, Malaria transmission is concentrated in the Amazon region, which covers the states of Acre, Amapá, Amazonas, Maranhão, Mato Grosso, Pará, Rondônia, Roraima and Tocantins; \n•	Travelers visiting areas of malaria transmission must be aware that the malaria vectors are mostly active between sunset and sunrise; \n•	Use light clothes with long sleeves during extended exposure; \n•	Apply insect repellent to all exposed skin parts, as per the manufacturer’s instructions. It is not recommended to use repellents in children under the age of two without medical orientation; \n•	Travelers in areas of malaria transmission must be watchful for symptoms of the disease, such as fever, body aches and headaches; \n•	If you experience any of these symptoms, seek out the nearest specialized healthcare unit. Medical care must be ideally received within 48 hours after the appearance of the first symptoms; \n•	Brazil has a public healthcare system qualified to diagnose and treat patients in a timely and appropriate manner; \n•	Consult one of the Reference Centers for more information on malaria before traveling. \n\nPrevention of airborne diseases:\n•	Wash your hands with water and soap before meals or before touching your eyes, mouth and nose, and after coughing, sneezing or using restrooms; \n•	Sick individuals must rest, eat a balanced diet, drink more fluids and avoid indoor or crowded areas; \n•	Make sure the environment is well ventilated; \n•	Always be aware of more severe respiratory symptoms and immediately seek out medical assistance. \n\nConsume healthy foods and beverages:\n\n•	Avoid foods with questionable hygienic, preparation and packaging conditions; \n•	Prioritize foods with low sugar, fat and salt contents; \n•	Drink plenty of fluids, preferably water or juice. Avoid raw or undercooked food, especially seafood; \n•	Packaged food labels must clearly indicate the producer, expiration date and the packages must be sealed; \n•	When practicing rural tourism, always prioritize foods that do not require refrigeration or spoil in the heat; \n•	If you experience vomiting or diarrhea after ingesting foods or beverages, special attention is required to avoid dehydration. In these cases, it is recommended to ingest oral rehydration salts provided free of charge by the Unified Healthcare System, or other similar solutions. Sports drinks do not properly offset fluid losses and must never be used to treat diarrheic diseases.";
 
 // EMERGENCY VIEW
-"emergency.title" = "UPAs";
+"emergency.title" = "Emergency healthcare center";
 
 // VACINE VIEW
-"vacine.title" = "Vacinas";
+"vacine.title" = "Vaccines";
+"vacine.subtitle1" = "Vaccines";
+"vacine.subtitle3" = "Prevention of yellow fever:";
+"vacine.text" = "VACCINES \n\n• According to the World Health Organization (WHO), there is no international traveler vaccination calendar available. Specific recommendations are provided to each traveler, based on the respective countries of destiny, depending on the type, duration and time available to receive vaccines before departure. \n• Brazil requires the International Certificate of Vaccination and Prophylaxis (ICVP), as a temporary and specific measure for travelers coming from and destine to Angola and the Democratic Republic of Congo. This decision follows the recommendation of the WHO Emergency Committee, due to the active Yellow Fever outbreak taking place in these African countries. Therefore, travelers, delegations and athletes coming from these countries or who had been in transit through Angola and the Democratic Republic of Congo shall have an ICVP with vaccination date of at least 10 days prior to the travel date. \n• Make sure you have taken all of your routine vaccines, as recommended by your country of origin, since this is an effective measure to prevent several diseases. \n• Due to a recent measles outbreak in Europe, Africa and Asia, it is recommended for individuals traveling to/from these continents to take the respective vaccine prior to any trip. \n• Preparing for trips is a great opportunity to check the vaccine status of infants, children, adolescents, adults and elderly. \n• Any resident of or visitor to any Brazilian city can also receive the Influenza and Polio vaccines, which are diseases related to potential public health emergencies of international concern by the World Health Organization. \nPREVENTION OF YELLOW FEVER: \n• Take the yellow fever vaccine 10 days before visiting forest areas or practicing ecological or rural tourism to prevent against the disease. \n• Contact your doctor to help you decide whether the vaccine is required, based on your travel itinerary.";
 
 // PHONES VIEW
-"phones.title" = "Telefones Úteis";
-"phones.table_title" = "Telefones Úteis";
+"phones.title" = "Useful Phone Numbers";
+"phones.table_title" = "Useful Phone Numbers";
 
 // ZIKA VIEW
-"zika.title" = "Dengue, Zika e Chikungunya";
+"zika.title" = "Dengue fever, Zika and Chikungunya";
+"zika.subtitle1" = "Dengue fever, Zika and Chikungunya.";
+"zika.subtitle2" = "\nDengue fever";
+"zika.subtitle3" = "\n\nChikungunya";
+"zika.subtitle4" = "\nZika";
+"zika.subtitle5" = "Make sure you keep the mosquitoes away:";
+"zika.text" = "Dengue fever, Zika and Chikungunya. \n\n•	The Dengue fever, Zika and Chikungunya viruses are transmitted by the Aedes aegypti mosquito and cause similar signs and symptoms.\n•	It is very important to immediately seek out the nearest healthcare service after experiencing fever, red spots on the body, body aches, joint pains or itching. \n•	Try to find out whether there are other cases of Dengue fever, Zika or Chikungunya in your neighborhood or city. \n•	If you suspect you might have Dengue fever, Zika or Chikungunya, drink plenty of fluids. \n•	The main preventive measure is to prevent Aedes aegypti mosquitoes from breeding, since these mosquitoes transmit all three diseases. \n•	Pregnant women may only use skin insect repellents certified by ANVISA and only as instructed in the respective product label. Pregnant women can safely use DEET, Icaridin (Picaridin), and EBAAP (IR3535) products. \n•	Children under the age of 2 must not use DEET-based products. Concentration must not exceed 10% and products must not be applied more than three times a day in children between the ages of 2 and 12. Concentrations higher than 10% are permitted for children over the age of 12. \n•	Room repellents, such as electric repellents or spirals must not be used in poorly-ventilated areas or in the presence of people with asthma or respiratory allergies. Such repellents can be used in any room, provided that they are placed at least two meters away from people. \n\nDengue fever \n\n•	Dengue fever is the most common of these three diseases, with which the Brazilian population is already familiarized. \n•	Never take acetylsalicylic acid drugs (e.g. ASA, Aspirin, etc.) or anti-inflammatory drugs. These drugs could increase the risk of hemorrhage complications (bleeding) in case of diseases such as Dengue fever. \n•	Look out for signs that may indicate Dengue fever complications: shortness of breath, dizziness, abdominal pains or bleeding. \n•	Immediately seek out medical assistance after experiencing any sign or symptom of Dengue fever. \n\nChikungunya \n•	The first recorded cases of infection by Chikungunya occurred in 2014. \n•	Immediately seek out medical assistance after experiencing any sign or symptom of Chikungunya. \n\nZika \n•	The first recorded cases of infection by Zika virus occurred in 2015. \n•	Most people infected with the Zika virus (more than 80%) never show any signs or symptoms. \n•	Very little is known about the complications caused by Zika virus infections. Some neurological symptoms (facial palsy, weakness in legs and Guillain-Barré Syndrome) seldom occur a few days after the acute infection stage. Infection during pregnancy may lead to severe congenital malformations, particularly microcephaly. \n•	There is no specific treatment available for infections by Zika virus. \n•	Immediately seek out medical assistance after experiencing any sign or symptom of Zika virus infection. \n\nMake sure you keep the mosquitoes away: \n•	Always keep water barrels and recipients properly sealed. \n•	Wash the inside of water tanks with soap and brush at least once a week. \n•	Always keep water tanks properly sealed. Also place a screen in the water tank overflow pipe. \n•	Remove leaves, twigs and anything else that may obstruct water passage through gutters and chutes. \n•	Never let water accumulate in rooftops. \n•	Fill plant saucers with sand until the edge. \n•	Alternatively, wash plant saucers at least once a week. \n•	Change the water in aquatic plant pots and wash them with water, soap and brush at least once a week. \n•	Put the trash in plastic bags and keep the trash can properly sealed. \n•	Make sure all trash bags are properly closed and left out of the reach of animals. \n•	Always store empty bottles facing down to avoid any water accumulation. \n•	Tires must always be stored in sheltered locations. \n•	Make sure swimming pools and water fountains are regularly cleaned with proper chemical products. \n•	Place a screen over open drains to prevent the mosquito from accessing the water.\n •	Put sand in all recipients that may accumulate water. \n•	Never let water accumulate in fallen leaves and bottle caps. \n•	Toilets that are not used or only occasionally used must be covered and checked once a week. \n•	Always clean air conditioner trays to prevent water accumulation. \n•	Tarpaulins used to cover objects or debris must be flush and stretched to avoid any water puddles. \n\nIn case of doubts or questions regarding Dengue fever, Zika and Chikungunya, contact the Health Hotline (136) and select option 3. ";
 
 // LIST SYMPTOMS VIEW
-"list_symptoms.title" = "Participe Agora";
-"list_symptoms.placeholder_country" = "Selecione o país";
-"list_symptoms.country_required" = "Por favor, selecione o  pais!";
-"list_symptoms.allow_send" = "Deseja registrar suas informações?";
-"list_symptoms.check_a_symptom" = "Escolha algum sintoma antes de confirmar.";
-"list_symptoms.symptoms" = "Sintomas";
-"list_symptoms.others" = "Outros";
-"list_symptoms.had_contact_symptom" = "Tive contato com alguém com um desses sintomas";
-"list_symptoms.find_a_health_service" = "Procurei um serviço de saúde";
-"list_symptoms.traveled" = "Estive fora do Brasil nos últimos 14 dias";
-"list_symptoms.confirm" = "Confirmar";
-"list_symptoms.select_symptoms" = "Marque abaixo o que você está sentindo neste momento:";
+"list_symptoms.title" = "Participate Now!";
+"list_symptoms.placeholder_country" = "Select the country";
+"list_symptoms.country_required" = "Please select the country.";
+"list_symptoms.allow_send" = "Register your information?";
+"list_symptoms.check_a_symptom" = "Choose a symptom and confirm.";
+"list_symptoms.symptoms" = "Symptoms";
+"list_symptoms.others" = "Others";
+"list_symptoms.had_contact_symptom" = "I came into contact with someone with these symptoms";
+"list_symptoms.find_a_health_service" = "I visited a healthcare service";
+"list_symptoms.traveled" = "I have been out of Brazil in the last 14 days.";
+"list_symptoms.confirm" = "Confirm";
+"list_symptoms.select_symptoms" = "Check the items below that describe how you’re feeling now:";
+"Febre" = "Fever";
+"Manchas vermelhas no corpo" = "Red spots on the body";
+"Dor no corpo" = "Body aches";
+"Dor nas juntas" = "Joint pain";
+"Dor de cabeça" = "Headache";
+"Coceira" = "Itching";
+"Olhos vermelhos" = "Bloodshot eyes";
+"Dor de garganta" = "Sore throat";
+"Tosse" = "Coughing";
+"Falta de ar" = "Shortness of breath";
+"Náusea ou Vômito" = "Nausea or vomiting";
+"Diarreia" = "Diarrhea";
+"Sangramento" = "Bleeding";
+
 
 // SELECT STATE VIEW
-"select_state.title" = "Participe Agora";
-"select_state.without_location" = "Não estamos conseguindo obter sua localização. Verifique se os serviços estão habilitados no aparelho.";
-"select_state.how_is_your_health" = "Como está sua saúde nesse  momento?";
-"select_state.well" = "Bem";
-"select_state.bad" = "Mal";
-"select_state.next_step" = "Alguns sinais e sintomas serão apresentados na próxima tela caso a opção \"Mal\" seja selecionada.";
+"select_state.title" = "Participate Now!";
+"select_state.without_location" = "We were unable to track your location. Check if tracking services are enabledin yourdevice.";
+"select_state.how_is_your_health" = "How is your health now?";
+"select_state.well" = "Good";
+"select_state.bad" = "Ill";
+"select_state.next_step" = "Some signs and symptoms are shown in the next screen if the “Ill” option is selected.";
+"select_state.how_is_he_she" = "How is the health at the momen?";
 
 // THANK YOU VIEW
-"thank_you.shared_msg" = "Eu faço minha parte, faça sua parte também no combate ao mosquito Aedes aegypti #ZikaZero. Acesse: http://www.guardioesdasaude.org";
-"thank_you.title" = "Guardiões da Saúde";
-"thank_you.look_emergency" = "Atenção: Procure a Unidade de Pronto Atendimento mais próxima.";
-"thank_you.whatsapp_not_installed" = "O Whatsapp não está instalado neste dispositivo.";
-"thank_you.thanks_shared" = "Obrigado por compartilhar!";
-"thank_you.share_fail" = "Não foi possível compartilhar sua participação.";
-"thank_you.thanks_for_information" = "Obrigado pela informação!";
-"thank_you.look_emergency_description" = "Não deixe de procurar o serviço de saúde mais próximo. Continue informando diariamente como está sua saúde.";
-"thank_you.tell_your_friend" = "Convide seus amigos para serem Guardiões da Saúde.";
-"thank_you.continue" = "Continuar";
-"thank_you.zika_msg" = "Atenção: Os sintomas informados podem estar relacionados ao Zika vírus. Procure a Unidade de Pronto Atendimento mais próxima.";
+"thank_you.shared_msg" = "I do my part. Make sure you do yours in our fight against the Aedes aegypti mosquito #ZikaZero. Go to http://www.guardioesdasaude.org";
+"thank_you.title" = "Guardians of Health";
+"thank_you.look_emergency" = "Attention: Seek out healthcare at the nearest Emergency Care Unit.";
+"thank_you.whatsapp_not_installed" = "Whatsapp not installed onthis device.";
+"thank_you.thanks_shared" = "Thanks for sharing!";
+"thank_you.share_fail" = "Unable to share your participation.";
+"thank_you.thanks_for_information" = "Thanks for sharing that information!";
+"thank_you.look_emergency_description" = "Be sure to seek out the nearest healthcare service.";
+"thank_you.tell_your_friend" = "Invite your friends to join Guardians of Health.";
+"thank_you.continue" = "Continue";
+"thank_you.zika_msg" = "Attention: The symptoms reported may be related to infection by Zika virus. Seek out healthcare at the nearest Emergency Care Unit.";
 
 // SELECT PARTICIPANT VIEW
-"select_participant.title" = "Participe Agora";
-"select_participant.year_old" = "%ld Anos";
-"select_participant.new_member" = "Novo integrante";
-"select_participant.how_will_participate" = "Quem vai participar?";
-"select_participant.members" = "Integrantes do domicílio";
+"select_participant.title" = "Participate Now!";
+"select_participant.year_old" = "%ld years";
+"select_participant.new_member" = "New member";
+"select_participant.how_will_participate" = "Who will participate?";
+"select_participant.members" = "Household members";
 
 // MAP HEALTH VIEW
-"map_health.title" = "Mapa da Saúde";
-"map_health.btn_info" = "As síndromes são conjuntos de manifestações clínicas comuns a um número de doenças, entre elas: \n\n• Diarreica (febre e náusea ou vômito, além de algum destes sintomas: dores no corpo ou dor de cabeça)\n\n• Respiratória (febre, além de algum destes sintomas: tosse ou dor de garganta ou falta de ar ou manchas vermelhas no corpo)\n\n• Exantemática (manchas vermelhas no corpo, além de algum destes sintomas: febre ou dores no corpo ou dores nas juntas ou dor de cabeça ou coceira ou olhos vermelhos ou sangramento)";
-"map_health.syndromes" = "Síndromes";
-"map_health.well" = "Bem";
-"map_health.bad" = "Mal";
-"map_health.participations" = "Participações";
-"map_health.general" = "Geral";
-"map_health.exanthematic" = "Exantemática";
-"map_health.respiratory" = "Respiratória";
-"map_health.diarrheal" = "Diarreica";
-"map_health.participations_last_days" = "%d Participações nos últimos dias";
+"map_health.title" = "Health Map";
+"map_health.btn_info" = "The syndromes are common sets of clinical manifestations to a number of diseases, including: \n\n• Diarrhea: Diarrhea alone or associated with any symptom \n\n• Respiratory: Cough and fever alone or associated with any symptom \n\n• Rash: Red spots only or associated with any symptom ";
+"map_health.syndromes" = "Syndromes";
+"map_health.well" = "Good";
+"map_health.bad" = "Ill";
+"map_health.participations" = "Participations";
+"map_health.general" = "General";
+"map_health.exanthematic" = "Exanthematic";
+"map_health.respiratory" = "Respiratory";
+"map_health.diarrheal" = "Diarrheal";
+"map_health.participations_last_days" = "%d Participation in the last days";
+"map_health.search_city_name" = "Name of the City";
 
 // DIARY HEALTH VIEW
-"diary_health.title" = "Diário da saúde";
-"diary_health.summary" = "Resumo";
-"diary_health.participation" = "Participações";
-"diary_health.well" = "Bem";
-"diary_health.bad" = "Mal";
-"diary_health.report" = "Relatórios";
-"diary_health.calendar" = "Calendário";
+"diary_health.title" = "Health Journal";
+"diary_health.summary" = "Summary";
+"diary_health.participation" = "Participations";
+"diary_health.well" = "Good";
+"diary_health.bad" = "Ill";
+"diary_health.report" = "Reports";
+"diary_health.calendar" = "Calendar";
+"diary_health.no_record" = "You still don’t have participations. Help improve the health of your community!";
+"diary_health.join_now" = "Participate Now!";
+"diary_health.frequency" = "Frequency %d";
+"diary_health.january" = "Jan";
+"diary_health.february" = "Feb";
+"diary_health.march" = "Mar";
+"diary_health.april" = "Apr";
+"diary_health.may" = "May";
+"diary_health.june" = "Jun";
+"diary_health.july" = "Jul";
+"diary_health.august" = "Aug";
+"diary_health.september" = "Sep";
+"diary_health.octuber" = "Oct";
+"diary_health.november" = "Nov";
+"diary_health.december" = "Dec";
 
 // Participants List
-"participant_list.title" = "Selecionar Integrante";
+"participant_list.title" = "Select Member";
+
+// Change Language
+"change_language.confirmation_msg" = "Restart the application to apply changes in language settings. Continue?";
+"change_language.title" = "Language";
+
+// Traveler Health
+"traveler_health.title" = "Traveler's health";
+
+// GAME TUTORIAL
+"game_tutorial.next" = "Next";
+"game_tutorial.welcome" = "Welcome to our race track! Swipe to learn more about how to play.";
+"game_tutorial.how_play" = "You must have energy points to play. Participate in Guardians of Health every day to earn points!";
+"game_tutorial.rota" = "Our race track has several different phases. Complete each phase to get further in the race!";
+"game_tutorial.fases" = "Each phase contains a puzzle. Complete it to advance to the next phase.";
+"game_tutorial.correct_answer" = "Answer the health related questions correctly to reveal tiles.";
+"game_tutorial.collect_pictures" = "Collect Olympic sports stickers after completing each phase!";
+
+// GAME
+"game.level" = "Level %d";
+"game.energy" = "%d Energies";
+"game.ranking" = "General Ranking";
+"game.trophies" = "My Trophies";
+"game.congratulations" = "Congratulations";
+"game.answer" = "Correct";
+"game.correct" = "Answer!";
+"game.low_energy" = "You are \nwithout power!";
+"game.low_energy_details" = "Join Daily \nHealth Guardians \nto restore it!";
+
+
+// PHONES
+"phones.police" = "Military Police";
+"phones.firefighter" = "Firefighter";
+"phones.civil_defense" = "Civil Defense";
+"phones.call" = "Call";
+"phones.samu_desciption" = "Emergency Healthcare Service";
+
+"pai" = "Father";
+"mae" = "Mother";
+"filho" = "Son";
+"irmao" = "Brother";
+"avo" = "Grandmother/Grandfather";
+"neto" = "Grandson/Granddaughter";
+"tio" = "Uncle/Aunt";
+"sobrinho" = "Nephew/Niece";
+"bisavo" = "Great-grandmother/75";
+"bisneto" = "Great-grandson/Great-granddaughter";
+"primo" = "Cousin/Cousin";
+"sogro" = "Father-in-law/Mother-in-law";
+"genro-nora" = "Son-in-law/Daughter-in-law";
+"padrasto" = "Stepfather";
+"madrasta" = "Stepmother";
+"enteado" = "Stepson/Stepdaughter";
+"conjuge" = "Spouse";
+"outro" = "Others";
+
+"branco" = "White";
+"preto" = "Black";
+"pardo" = "Mixed";
+"amarelo" = "Yellow";
+"indigena" = "Indigenous";
+
+"masculino" = "Male";
+"feminino" = "Female";

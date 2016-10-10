@@ -82,6 +82,8 @@
     startBtnRect = self.btnDetails.frame;
     
     imgFabCancel = [UIImage imageNamed:@"fab_cancel"];
+    
+    self.seach.placeholder = NSLocalizedString(@"map_health.search_city_name", @"");
 
     [self loadSurvey];
     self.seach.delegate = self;
@@ -220,10 +222,9 @@
                 pin.survey_id = s.survey_id;
                 
                 if ([isSymptom isEqualToString:@"Y"]) {
-                    pin.title = @"Estou Bem :)";
-                    //pin.pin
+                    pin.title = NSLocalizedString(@"select_state.well", @"");
                 } else {
-                    pin.title = @"Estou Mal :(";
+                    pin.title = NSLocalizedString(@"select_state.bad", @"");
                 }
                 
                 [self.mapHealth addAnnotation:pin];
@@ -339,7 +340,7 @@
     [self.pieChartView setDescriptionText: @""];
     [self.pieChartView setDrawCenterTextEnabled: NO];
     [self.pieChartView setDrawSliceTextEnabled: NO];
-    [self.pieChartView setHoleTransparent: NO];
+//    [self.pieChartView setHoleTransparent: NO];
     [self.pieChartView setDrawHoleEnabled: NO];
     [self.pieChartView setRotationEnabled: NO];
     self.pieChartView.legend.enabled = NO;
@@ -401,10 +402,10 @@
     
     if (showDetails) {
         self.constViewDetails.constant = -100;
-        [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"fab_cancel.png"] forState:UIControlStateNormal];
+        [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"btn_fab_cancel"] forState:UIControlStateNormal];
     }else{
         self.constViewDetails.constant = -400;
-        [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"fab_plus.png"] forState:UIControlStateNormal];
+        [self.btnDetails setBackgroundImage:[UIImage imageNamed:@"btn_fab"] forState:UIControlStateNormal];
     }
     
     

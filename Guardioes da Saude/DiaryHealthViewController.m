@@ -22,6 +22,7 @@
 #import <Google/Analytics.h>
 #import "Charts/Charts-Swift.h"
 #import "ParticipantsListViewController.h"
+#import "SelectStateViewController.h"
 @import Photos;
 
 @import Charts;
@@ -52,6 +53,7 @@
     UserRequester *userRequester;
     BOOL firstTime;
     int requestsInProcess;
+    Household *selectedHousehold;
 
 }
 
@@ -112,7 +114,13 @@ const float _kCellHeight = 100.0f;
 
 - (void) refreshSummaryWithUserId: (NSString *) userId{
     void(^onSuccess)(Sumary * sumary) = ^(Sumary * sumary){
-        [self populateLabelsWithSummary:sumary];
+        if (sumary.total == 0) {
+            self.viewNoRecord.hidden = NO;
+        } else {
+            self.viewNoRecord.hidden = YES;
+            [self populateLabelsWithSummary:sumary];
+        }
+        
         [self hiddenProgressBar];
     };
     
@@ -173,7 +181,7 @@ const float _kCellHeight = 100.0f;
     [self.chartView setDrawCenterTextEnabled: NO];
     [self.chartView setDrawSliceTextEnabled: NO];
     [self.chartView setDrawHoleEnabled: NO];
-    [self.chartView setHoleTransparent: NO];
+//    [self.chartView setHoleTransparent: NO];
     self.chartView.legend.enabled = NO;
     
     NSArray * xData = @[@"Mal", @"Bem"];
@@ -249,7 +257,7 @@ const float _kCellHeight = 100.0f;
     UIButton *b = (UIButton *) sender;
     HouseholdThumbnail *thumb = (HouseholdThumbnail*) b.superview;
     if ([thumb isKindOfClass: [HouseholdThumbnail class]]) {
-        NSString *idHousehold = thumb.user_household_id;
+        NSString *idHousehold = thumb.household.idHousehold;
         selectedUser = idHousehold;
         
         [self refreshSummaryWithUserId:idHousehold];
@@ -287,8 +295,8 @@ const float _kCellHeight = 100.0f;
     leftAxis.valueFormatter.positiveSuffix = @" %";
     leftAxis.labelPosition = YAxisLabelPositionOutsideChart;
 
-    leftAxis.customAxisMax = 100.0;
-    leftAxis.customAxisMin = 0.0; // this replaces startAtZero = YES
+    leftAxis.maxWidth = 100.0;
+    leftAxis.minWidth = 0.0; // this replaces startAtZero = YES
     
     ChartYAxis *rightAxis = self.graphView.rightAxis;
     rightAxis.enabled = NO;
@@ -311,7 +319,7 @@ const float _kCellHeight = 100.0f;
     
     self.calendarMenuView.contentRatio = .75;
     self.calendarManager.settings.weekDayFormat = JTCalendarWeekDayFormatShort;
-    self.calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"pt_Br"];
+    self.calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:[[NSLocale preferredLanguages] objectAtIndex:0]];
     
     [self.calendarManager setMenuView: self.calendarMenuView];
 
@@ -339,7 +347,7 @@ const float _kCellHeight = 100.0f;
 
     [userRequester getSummary: [User getInstance]
                                  idHousehold: idHousehold
-                                        year: [DateUtil getCurrentYear]
+                                        year: (int) [DateUtil getCurrentYear]
                                      onStart: ^{[self showProgressBar];}
                                      onError: ^(NSError * error) {
                                          [self hiddenProgressBar];
@@ -355,9 +363,20 @@ const float _kCellHeight = 100.0f;
                                    onSuccess: ^(NSMutableDictionary * sumaryGraphMap) {
                                        [self hiddenProgressBar];
                                        
-                                       self.lbFrequencyYear.text = [NSString stringWithFormat:@"Frequência %d", [DateUtil getCurrentYear]];
-                                       
-                                       NSArray *xVals = @[@"Jan", @"Fev", @"Mar", @"Abr", @"Mai", @"Jun", @"Jul", @"Ago", @"Set", @"Out", @"Nov", @"Dez"];
+                                       self.lbFrequencyYear.text = [NSString stringWithFormat:NSLocalizedString(@"diary_health.frequency", @""), (int) [DateUtil getCurrentYear]];
+
+                                       NSArray *xVals = @[NSLocalizedString(@"diary_health.january", @""),
+                                                          NSLocalizedString(@"diary_health.february", @""),
+                                                          NSLocalizedString(@"diary_health.march", @""),
+                                                          NSLocalizedString(@"diary_health.april", @""),
+                                                          NSLocalizedString(@"diary_health.may", @""),
+                                                          NSLocalizedString(@"diary_health.june", @""),
+                                                          NSLocalizedString(@"diary_health.july", @""),
+                                                          NSLocalizedString(@"diary_health.august", @""),
+                                                          NSLocalizedString(@"diary_health.september", @""),
+                                                          NSLocalizedString(@"diary_health.octuber", @""),
+                                                          NSLocalizedString(@"diary_health.november", @""),
+                                                          NSLocalizedString(@"diary_health.december", @"")];
                                        
                                        NSMutableArray *yVals = [[NSMutableArray alloc] init];
                                        
@@ -564,6 +583,7 @@ const float _kCellHeight = 100.0f;
 }
 
 - (void)refreshInformationToUser:(Household *)houlsehold{
+    selectedHousehold = houlsehold;
     if (houlsehold) {
         selectedUser = houlsehold.idHousehold;
         self.lbUserName.text = houlsehold.nick;
@@ -581,5 +601,16 @@ const float _kCellHeight = 100.0f;
         [self requestCalendar:@"" andDate:[NSDate date]];
         [self requestChartLine: @""];
     }
+}
+
+- (IBAction)btnJoinNowAction:(id)sender {
+    SelectStateViewController *selectStateView = [[SelectStateViewController alloc] init];
+    if (selectedHousehold) {
+        selectStateView.household = selectedHousehold;
+    } else {
+        selectStateView.user = [User getInstance];
+    }
+    
+    [self.navigationController pushViewController:selectStateView animated:YES];
 }
 @end

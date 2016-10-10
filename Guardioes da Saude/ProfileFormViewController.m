@@ -23,6 +23,7 @@
 #import "SWRevealViewController.h"
 #import "TutorialViewController.h"
 #import "MenuViewController.h"
+#import "LocationUtil.h"
 @import Photos;
 
 #define MAXLENGTH 10
@@ -78,14 +79,33 @@
     [self.pickerRelationship.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     [self.pickerRelationship.DownPicker addTarget:self action:@selector(relationshipDownPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
     
+    (void)[self.txtCountry initWithData: [LocationUtil getCountriesWithBrazil:YES]];
+    [self.txtCountry.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_country", @"")];
+    [self.txtCountry.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtCountry.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    [self.txtCountry.DownPicker addTarget:self action:@selector(downPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
+    
+    (void)[self.txtState initWithData: [LocationUtil getStates]];
+    [self.txtState.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_state", @"")];
+    [self.txtState.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtState.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    
+    (void)[self.txtPerfil initWithData: [Constants getPerfis]];
+    [self.txtPerfil.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_perfil", @"")];
+    [self.txtPerfil.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtPerfil.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    
     [self applyLayerOnPictureLayer];
     
     if (self.operation == EDIT_USER) {
         [self loadEditUser];
+        [self updateFormWith:self.user.country];
     } else if (self.operation == EDIT_HOUSEHOLD){
         [self loadEditHousehold];
+        [self updateFormWith:self.user.country];
     } else if (self.operation == ADD_HOUSEHOLD){
         [self loadAddHousehold];
+        [self updateFormWith:@""];
     }
 }
 
@@ -167,13 +187,15 @@
     //Hide relationship
     [self.pickerRelationship removeFromSuperview];
     self.lbParentesco.hidden = YES;
-    self.constTopEmail.constant = 8;
     
     [self populateFormWithNick:self.user.nick
                         andDob:self.user.dob
                       andEmail:self.user.email
                      andGender:self.user.gender
-                       andRace:self.user.race];
+                       andRace:self.user.race
+                     andPerfil:self.user.perfil
+                    andCountry:self.user.country
+                      andState:self.user.state];
     
     if (self.user.photo) {
         [self.user requestPermissions:^(bool isAuthorazed){
@@ -188,6 +210,33 @@
     }
 }
 
+-(void)downPickerDidSelected:(id)dp {
+    NSString *country = ((UITextField *) dp).text;
+    [self checkCountry:country];
+}
+
+- (void) checkCountry: (NSString *) country{
+    NSString *originalCountry = [LocationUtil getCountryNameToEnglish:country];
+    [self updateFormWith:originalCountry];
+//    if ([originalCountry isEqualToString:@"Brazil"]) {
+//        self.btnChangeTopConst.constant = 230;
+//        self.lblState.hidden = NO;
+//        self.txtState.hidden = NO;
+//    }else if ([originalCountry isEqualToString:@"France"]) {
+//        self.btnChangeTopConst.constant = 170;
+//        self.lblState.hidden = YES;
+//        self.txtState.hidden = YES;
+//    }else{
+//        
+//    }
+//    
+//    if ([originalCountry isEqualToString:@"France"]) {
+//        [self updateFormWith:true];
+//    } else {
+//        [self updateFormWith:false];
+//    }
+}
+
 - (void) loadEditHousehold{
     self.navigationItem.title = NSLocalizedString(@"profile_form.edit_profile", @"");
     self.btnChangePasswd.hidden = YES;
@@ -196,7 +245,10 @@
                                  andEmail:self.household.email
                                 andGender:self.household.gender
                                   andRace:self.household.race
-                          andRelationship:self.household.relationship];
+                          andRelationship:self.household.relationship
+                                andPerfil:self.household.perfil
+                               andCountry:self.household.country
+                                 andState:self.household.state];
     
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     f.numberStyle = NSNumberFormatterDecimalStyle;
@@ -219,7 +271,10 @@
                                 andEmail: (NSString *) email
                                andGender: (NSString *) gender
                                  andRace: (NSString *) race
-                         andRelationship: (NSString *) relationship{
+                         andRelationship: (NSString *) relationship
+                               andPerfil: (NSNumber *) perfil
+                              andCountry: (NSString *) country
+                                andState: (NSString *) state{
     self.pickerRelationship.text = [Household getRelationshipsDictonary][relationship];
 
     
@@ -227,7 +282,10 @@
                         andDob:dob
                       andEmail:email
                      andGender:gender
-                       andRace:race];
+                       andRace:race
+                     andPerfil:perfil
+                    andCountry:country
+                      andState:state];
     
 }
 
@@ -235,7 +293,10 @@
                        andDob: (NSString *) dob
                      andEmail: (NSString *) email
                     andGender: (NSString *) gender
-                      andRace: (NSString *) race{
+                      andRace: (NSString *) race
+                    andPerfil: (NSNumber *) perfil
+                   andCountry: (NSString *) country
+                     andState: (NSString *) state{
     self.txtNick.text = nick;
     self.txtEmail.text = email;
     
@@ -260,6 +321,22 @@
     } else if ([race isEqualToString:@"indigena"]) {
         self.pickerRace.text = listRace[4];
     }
+    
+    if (perfil) {
+        self.txtPerfil.text = [Constants getPerfis][[perfil intValue] - 1];
+    }
+    NSString *strCountry = [LocationUtil getCountryNameToCurrentLocale: country];
+    self.txtCountry.text = strCountry;
+    [self checkCountry: country];
+    
+    if (state){
+        if (state.length > 2) {
+            self.txtState.text = state;
+        } else {
+            self.txtState.text = [LocationUtil getStatebyUf:state];
+        }
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -282,15 +359,6 @@
     
     return YES;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (BOOL) isFormValid{
     BOOL fieldsValid = YES;
@@ -300,6 +368,20 @@
         fieldsValid = NO;
     }else if (self.operation != EDIT_USER && [self.pickerRelationship.text isEqualToString:@""]){
         fieldsValid = NO;
+    }else if ([self.txtCountry.text isEqualToString:@""]){
+        fieldsValid = NO;
+    }else if ([self.txtPerfil.text isEqualToString:@""]){
+        fieldsValid = NO;
+    }else if ([self.txtState.text isEqualToString:@""]){
+        if ([self.txtCountry.text isEqualToString:@"Brasil"] ||
+            [self.txtCountry.text isEqualToString:@"Brazil"] ||
+            [self.txtCountry.text isEqualToString:@"Brésil"] ||
+            [self.txtCountry.text isEqualToString:@"Бразилия"] ||
+            [self.txtCountry.text isEqualToString:@"巴西"] ||
+            [self.txtCountry.text isEqualToString:@"البرازيل"]) {
+            
+            fieldsValid = NO;
+        }
     }
     
     return fieldsValid;
@@ -369,8 +451,11 @@
     userUpdater.email = self.txtEmail.text;
     userUpdater.dob = [NSString stringWithFormat:@"%@", birthdate];
     [userUpdater setGenderByString:self.pickerGender.text];
-    userUpdater.race = [self.pickerRace.text lowercaseString];
+    [userUpdater setRaceByStr:self.pickerRace.text];
     userUpdater.avatarNumber = self.pictureSelected;
+    userUpdater.country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
+    userUpdater.state = [LocationUtil getUfByState:self.txtState.text];
+    [userUpdater setPerfilByString: self.txtPerfil.text];
     
     NSInteger diffDay = [DateUtil diffInDaysDate:birthdate andDate:[NSDate date]];
     
@@ -405,10 +490,9 @@
             
             [preferences synchronize];
 
-            User *user = [User getInstance];
+//            User *user = [User getInstance];
             user.avatarNumber = self.pictureSelected;
             user.photo = photo;
-
         }
         
         [self showSuccessMsg];
@@ -443,9 +527,12 @@
     household.email = self.txtEmail.text;
     household.dob = [DateUtil stringUSFromDate:birthdate];
     [household setGenderByString:self.pickerGender.text];
-    household.race = [self.pickerRace.text lowercaseString];
+    [household setRaceByStr:self.pickerRace.text];
     household.picture = [self.pictureSelected stringValue];
     household.relationship = [self getRelationship];
+    household.country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
+    household.state = [LocationUtil getUfByState:self.txtState.text];
+    [household setPerfilByString: self.txtPerfil.text];
     
     if (self.operation == EDIT_HOUSEHOLD) {
         household.idHousehold = self.household.idHousehold;
@@ -626,6 +713,35 @@
     
     [alert addAction:action];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void) updateFormWith: (NSString *) enCountryName{
+    bool hiddenRace = ([enCountryName isEqualToString:@"France"] || [enCountryName isEqualToString:@""]);
+    self.lbRace.hidden = hiddenRace;
+    self.pickerRace.hidden = hiddenRace;
+    
+    bool showState = [enCountryName isEqualToString:@"Brazil"];
+    self.lblState.hidden = !showState;
+    self.txtState.hidden = !showState;
+    
+    if (self.operation == EDIT_USER) {
+        self.constTopEmail.constant = 8.0;
+    }else{
+        self.constTopEmail.constant = 70.0;
+    }
+    
+    if (showState) {
+        self.btnChangeTopConst.constant = 280;
+        self.lbRaceTopConst.constant = 72.0;
+    } else if (!hiddenRace){
+        self.btnChangeTopConst.constant = 230.0;
+        self.lbRaceTopConst.constant = 8.0;
+    }else {
+        self.btnChangeTopConst.constant = 170.0;
+    }
+    
+    self.lbParentesco.hidden = (self.operation == EDIT_USER);
+    self.pickerRelationship.hidden = (self.operation == EDIT_USER);
 }
 
 @end

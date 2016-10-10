@@ -61,7 +61,7 @@
     
     symptomsSelected = [[NSMutableDictionary alloc] init];
     
-    (void)[self.txtPais initWithData:[LocationUtil getCountries]];
+    (void)[self.txtPais initWithData:[LocationUtil getCountriesWithBrazil:NO]];
     [self.txtPais.DownPicker setPlaceholder:NSLocalizedString(@"list_symptoms.placeholder_country", @"")];
     [self.txtPais.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.txtPais.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
@@ -140,8 +140,8 @@
             [survey setLongitude:[NSString stringWithFormat:@"%.8f" , self.longitude]];
             [survey setTravelLocation:self.txtPais.text];
             [survey setIsSymptom:@"Y"];
-            if (![user.idHousehold isEqualToString:@""] && user.idHousehold  != nil) {
-                [survey setIdHousehold:user.idHousehold];
+            if (self.household) {
+                [survey setIdHousehold: self.household.idHousehold];
             }
             
             [surveyRequester createSurvey:survey
@@ -233,12 +233,12 @@
         cell.tag = indexPath.row;
         cell.textLabel.font = [UIFont fontWithName:@"Foco-Regular" size:14];
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        cell.textLabel.text = symptom.name;
+        cell.textLabel.text = NSLocalizedString(symptom.name, @"");
         cell.textLabel.numberOfLines = 0;
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
         
         if ([selected containsIndex:indexPath.row]) {
-            UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+            UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checked"]];
             cell.accessoryView = checkmark;
         } else {
             UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbox_false.png"]];
@@ -293,7 +293,7 @@
                 [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = checkmark;
             } else {
                 [selected addIndex:indexPath.row];
-                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checkbok_true.png"]];
+                UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_checked"]];
                 [self.tableSymptoms cellForRowAtIndexPath:indexPath].accessoryView = checkmark;
             }
         }

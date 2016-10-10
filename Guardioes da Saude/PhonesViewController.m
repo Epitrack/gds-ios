@@ -55,9 +55,9 @@
     phones = [[NSMutableArray alloc] init];
     [phones addObject:@"SUS"];
     [phones addObject:@"SAMU"];
-    [phones addObject:@"Polícia Militar"];
-    [phones addObject:@"Bombeiros"];
-    [phones addObject:@"Defesa Civil"];
+    [phones addObject:NSLocalizedString(@"phones.police", @"")];
+    [phones addObject:NSLocalizedString(@"phones.firefighter", @"")];
+    [phones addObject:NSLocalizedString(@"phones.civil_defense", @"")];
 }
 
 /*
@@ -138,26 +138,26 @@
         
         phonesLocal.lbHeader = @"SAMU";
         phonesLocal.lbBody = @"SAMU";
-        phonesLocal.lbDetailBody = @"Serviço de Atendimento Médico de Urgência";
+        phonesLocal.lbDetailBody = NSLocalizedString(@"phones.samu_desciption", @"");
         phonesLocal.lbPhone = @"192";
         phonesLocal.imgDetail = @"iconSamu.png";
     } else if (indexPath.row == 2) {
         //text = @"Ligar para a Polícia Militar";
-        phonesLocal.lbHeader = @"Polícia Militar";
-        phonesLocal.lbBody = @"Polícia Militar";
+        phonesLocal.lbHeader = NSLocalizedString(@"phones.police", @"");
+        phonesLocal.lbBody = NSLocalizedString(@"phones.police", @"");
         phonesLocal.lbDetailBody = @"";
         phonesLocal.lbPhone = @"190";
         phonesLocal.imgDetail = @"iconPM.png";
     } else if (indexPath.row == 3) {
         //text = @"Ligar para os Bombeiros";
-        phonesLocal.lbHeader = @"Bombeiros";
-        phonesLocal.lbBody = @"Bombeiros";
+        phonesLocal.lbHeader = NSLocalizedString(@"phones.firefighter", @"");
+        phonesLocal.lbBody = NSLocalizedString(@"phones.firefighter", @"");
         phonesLocal.lbDetailBody = @"";
         phonesLocal.lbPhone = @"193";
         phonesLocal.imgDetail = @"iconBombeiros.png";
     } else if (indexPath.row == 4) {
         //text = @"Ligar para a Defesa Civil";        phones.lbHeader = @"Defesa Civil";
-        phonesLocal.lbBody = @"Defesa Civil";
+        phonesLocal.lbBody = NSLocalizedString(@"phones.civil_defense", @"");
         phonesLocal.lbDetailBody = @"";
         phonesLocal.lbPhone = @"192";
         phonesLocal.imgDetail = @"iconDefesacivil.png";

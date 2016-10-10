@@ -11,6 +11,8 @@
 #import "User.h"
 #import "HomeViewController.h"
 #import "AFNetworking/AFNetworking.h"
+#import "TutorialViewController.h"
+#import "TermsViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "NoticeRequester.h"
@@ -21,6 +23,7 @@
 #import "ViewUtil.h"
 #import <Google/Analytics.h>
 #import "MBProgressHUD.h"
+#import "ModalPrivViewController.h"
 
 @interface SelectTypeLoginViewController () {
     
@@ -246,8 +249,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 }
 
 - (IBAction)iconBackAction:(id)sender {
-    TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
-    [self.navigationController pushViewController:tutorialViewController animated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void) checkSocialLoginWithToken:(NSString *) token andType:(SocialNetwork)type {
@@ -263,16 +265,22 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                                 }
                                     andError:^(NSError *error){
                                         [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                        NSString *errorMsg;
-                                        if (error && error.code == -1009) {
-                                            errorMsg = NSLocalizedString(kMsgConnectionError, @"");
-                                        } else if(error) {
-                                            errorMsg = NSLocalizedString(kMsgApiError, @"");
+                                        if (error) {
+                                            NSString *errorMsg;
+                                            if (error.code == -1009) {
+                                                errorMsg = NSLocalizedString(kMsgConnectionError, @"");
+                                            } else if(error) {
+                                                errorMsg = NSLocalizedString(kMsgApiError, @"");
+                                            }
+                                            
+                                            [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                         }else{
-                                            errorMsg = NSLocalizedString(@"select_type_login.user_not_found", @"");
+                                            TermsViewController *termsCtrlView = [[TermsViewController alloc] init];
+                                            termsCtrlView.socialNetwork = type;
+                                            termsCtrlView.createType = SOCIAL_NETWORK;
+                                            
+                                            [self.navigationController pushViewController:termsCtrlView animated:YES];
                                         }
-                                        
-                                        [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
                                     }];
     
     
@@ -302,6 +310,7 @@ didDisconnectWithUser:(GIDGoogleUser *)user
                    [preferences setValue:user.user_token forKey:kUserTokenKey];
                    [preferences setValue:user.nick forKey:kNickKey];
                    [preferences setValue:user.avatarNumber forKey:kAvatarNumberKey];
+                   [preferences setValue:@"1" forKey: kGCMTokenUpdated];
 
                    [preferences synchronize];
                    
@@ -333,5 +342,19 @@ didDisconnectWithUser:(GIDGoogleUser *)user
     }else{
         counter++;
     }
+}
+
+- (IBAction)btnTutorialAction:(id)sender {
+    // GOOGLE ANALYTICS
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_information"
+                                                           label:@"See informations"
+                                                           value:nil] build]];
+    
+    ModalPrivViewController *modalPrivController = [[ModalPrivViewController alloc] init];
+    modalPrivController.modalPresentationStyle = UIModalPresentationFormSheet;
+    modalPrivController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.navigationController pushViewController:modalPrivController animated:NO];
 }
 @end

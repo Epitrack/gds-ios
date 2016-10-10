@@ -1,7 +1,6 @@
 // Igor Morais
 
-#import "AFHTTPRequestOperationManager.h"
-
+#import <AFNetworking/AFNetworking.h>
 #import <Foundation/Foundation.h>
 
 extern NSString * const kMsgConnectionError;

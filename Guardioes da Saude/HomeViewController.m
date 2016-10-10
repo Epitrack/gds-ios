@@ -25,6 +25,9 @@
 #import <Google/Analytics.h>
 #import "MenuViewController.h"
 #import "DateUtil.h"
+#import "Guardioes_da_Saude-Swift.h"
+#import "LocationUtil.h"
+
 
 @import Photos;
 
@@ -46,7 +49,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.navigationItem.hidesBackButton = YES;
     
     user = [User getInstance];
@@ -78,6 +81,7 @@
         user.photo = [preferences valueForKey:kPhotoKey];
         user.avatarNumber = [preferences valueForKey:kAvatarNumberKey];
         user.nick = [preferences valueForKey:kNickKey];
+        user.isGameTutorailReady = ([preferences valueForKey: kGameTutorialReady] != nil);
         
         [self showInformations];
         
@@ -91,11 +95,19 @@
     SWRevealViewController *revealController = [self revealViewController];
     [revealController panGestureRecognizer];
     [revealController tapGestureRecognizer];
-
-    UIBarButtonItem *revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
-                                                                         style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
+    
+    UIBarButtonItem *revealButtonItem;
+    NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+    if ([currentLanguage isEqualToString:@"ar"]) {
+        revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+                                                                             style:UIBarButtonItemStylePlain target:revealController action:@selector(rightRevealToggle:)];
+    }else{
+        revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"reveal-icon.png"]
+                                                                             style:UIBarButtonItemStylePlain target:revealController action:@selector(revealToggle:)];
+    }
+    
     self.navigationItem.leftBarButtonItem = revealButtonItem;
-
+    
     // Do any additional setup after loading the view from its nib.
     locationManager = [[CLLocationManager alloc] init];
     [locationManager requestWhenInUseAuthorization];
@@ -112,12 +124,28 @@
     
     titleImgView.frame = CGRectMake(marginX, -25, imageSize.width, imageSize.height);
     [self.navigationController.navigationBar addSubview:titleImgView];
+    
+    [LocationUtil getCountriesWithBrazil:true];
+}
+
+- (void) checkUpdateToken {
+    NSString *gcmTokenVerion = [preferences valueForKey: kGCMTokenUpdated];
+    
+    if (!gcmTokenVerion || ![gcmTokenVerion isEqualToString:@"1"]) {
+        [userRequester updateUser:user onSuccess:^(User *user){
+            [preferences setObject:@"1" forKey:kGCMTokenUpdated];
+            [preferences synchronize];
+        } onFail:^(NSError *error){}];
+    }
 }
 
 - (void) showInformations {
+    if (self.localBundle) {
+        self.txtNameUser.text = [NSLocalizedStringFromTableInBundle(@"home.hello", nil, self.localBundle, @"") stringByAppendingString:user.nick];
+    } else {
+        self.txtNameUser.text = [NSLocalizedString(@"home.hello", @"") stringByAppendingString:user.nick];
+    }
     
-    self.txtNameUser.text = user.nick;
-    self.lblOla.hidden = NO;
     self.btnProfile.hidden = NO;
     [user setAvatarImageAtButton:self.btnProfile orImageView:nil];
 }
@@ -146,21 +174,14 @@
     
     [self.navigationController.navigationBar addSubview:titleImgView];
     
+    [self showInformations];
+    
     [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [titleImgView removeFromSuperview];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}/
-*/
 
 -(void)showMenu:(id)sender  {
     NSLog(@"menu action");
@@ -255,6 +276,22 @@
     }
 }
 
+- (IBAction)btnEnjoyAction:(id)sender {
+    if (![UserRequester isConnected]) {
+        [self presentViewController:[ViewUtil showNoConnectionAlert] animated:YES completion:nil];
+        return;
+    }
+    
+    if (user.isGameTutorailReady) {
+        StartViewController *startViewCtrl = [[StartViewController alloc] init];
+        [self.navigationController pushViewController:startViewCtrl animated:YES];
+    } else {
+        GameTutorialViewController *gameTutorialView = [[GameTutorialViewController alloc] init];
+        [self.navigationController pushViewController:gameTutorialView animated:YES];
+    }
+    
+}
+
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
@@ -268,46 +305,47 @@
 - (void) authorizedAutomaticLogin:(NSString *)userToken {
     [userRequester lookupWithUsertoken:userToken
                                OnStart:^{
-                                    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                                }andOnSuccess:^{
-                                    [self showInformations];
-                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    
-                                    [self checkLastSurvey];
-                                }andOnError:^(NSError *error, int errorCode){
-                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
-                                    
-                                    if (errorCode == 403) {
-                                        [[User getInstance] clearUser];
-                                        
-                                        [preferences setValue:nil forKey:kUserTokenKey];
-                                        [preferences setValue:nil forKey:kAppTokenKey];
-                                        [preferences setValue:nil forKey:kAvatarNumberKey];
-                                        [preferences setValue:nil forKey:kPhotoKey];
-                                        [preferences setValue:nil forKey:kNickKey];
-                                        
-                                        [preferences synchronize];
-                                        
-                                        TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
-                                        UIViewController *newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
-                                        SWRevealViewController *revealController = self.revealViewController;
-                                        [revealController pushFrontViewController:newFrontController animated:YES];
-                                    }else{
-                                        NSString *errorMsg;
-                                        if (error && error.code == -1009) {
-                                            errorMsg = NSLocalizedString(kMsgConnectionError, @"");
-                                        } else {
-                                            errorMsg = NSLocalizedString(kMsgApiError, @"");
-                                        }
-                                        
-                                        [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
-                                    }
-                                }];
+                                   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                               }andOnSuccess:^{
+                                   [self showInformations];
+                                   [self checkUpdateToken];
+                                   [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                   
+                                   [self checkLastSurvey];
+                               }andOnError:^(NSError *error, int errorCode){
+                                   [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                   
+                                   if (errorCode == 403) {
+                                       [[User getInstance] clearUser];
+                                       
+                                       [preferences setValue:nil forKey:kUserTokenKey];
+                                       [preferences setValue:nil forKey:kAppTokenKey];
+                                       [preferences setValue:nil forKey:kAvatarNumberKey];
+                                       [preferences setValue:nil forKey:kPhotoKey];
+                                       [preferences setValue:nil forKey:kNickKey];
+                                       
+                                       [preferences synchronize];
+                                       
+                                       TutorialViewController *tutorialViewController = [[TutorialViewController alloc] init];
+                                       UIViewController *newFrontController = [[UINavigationController alloc] initWithRootViewController:tutorialViewController];
+                                       SWRevealViewController *revealController = self.revealViewController;
+                                       [revealController pushFrontViewController:newFrontController animated:YES];
+                                   }else{
+                                       NSString *errorMsg;
+                                       if (error && error.code == -1009) {
+                                           errorMsg = NSLocalizedString(kMsgConnectionError, @"");
+                                       } else {
+                                           errorMsg = NSLocalizedString(kMsgApiError, @"");
+                                       }
+                                       
+                                       [self presentViewController:[ViewUtil showAlertWithMessage:errorMsg] animated:YES completion:nil];
+                                   }
+                               }];
 }
 
 - (void) checkLastSurvey{
     [userRequester getSummary:user date:[NSDate date] onStart:^{
-    
+        
     } onSuccess:^(NSDictionary *surveys){
         NSCalendar* calendar = [NSCalendar currentCalendar];
         
@@ -316,8 +354,12 @@
             [preferences setValue:[DateUtil stringUSFromDate:user.lastJoinNotification] forKey:kLastJoinNotification];
             [preferences synchronize];
             
+            user.doesReport = false;
+            
             SelectStateViewController *selectStateView = [[SelectStateViewController alloc] init];
             [self.navigationController pushViewController:selectStateView animated:YES];
+        }else{
+            user.doesReport = true;
         }
         
         [MBProgressHUD hideHUDForView:self.view animated:YES];

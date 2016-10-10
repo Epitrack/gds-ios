@@ -10,6 +10,7 @@
 #import "DateUtil.h"
 #import "AssetsLibrary/AssetsLibrary.h"
 #import <UIKit/UIKit.h>
+#import "Constants.h"
 
 NSString *const kAppTokenKey = @"appTokenKey";
 NSString *const kUserTokenKey = @"userTokenKey";
@@ -18,6 +19,9 @@ NSString *const kAvatarNumberKey = @"avatarNumberKey";
 NSString *const kNickKey = @"nickKey";
 NSString *const kIsTest = @"isTest";
 NSString *const kLastJoinNotification = @"lastJoinNotification";
+NSString *const kGameTutorialReady = @"gameTutorialReady";
+NSString *const kGCMToken = @"gcmToken";
+NSString *const kGCMTokenUpdated = @"gcmTokenUpdated";
 
 @implementation User
 
@@ -67,8 +71,18 @@ NSString *const kLastJoinNotification = @"lastJoinNotification";
         client = @"api";
         app_token = @"d41d8cd98f00b204e9800998ecf8427e";
         platform = @"ios";
+        self.level = 1;
+        self.isGameTutorailReady = false;
+        self.points = 0;
+        [self resetPuzzleMatriz];
     }
+    
     return self;
+}
+
+- (void) resetPuzzleMatriz{
+    self.partsCompleted = 0;
+    self.puzzleMatriz = [[NSMutableArray alloc] initWithArray:@[@0, @0, @0, @0, @0, @0, @0, @0, @0]];
 }
 
 - (void) setGenderBySegIndex: (long) segIndex{
@@ -93,11 +107,37 @@ NSString *const kLastJoinNotification = @"lastJoinNotification";
     }
 }
 
+- (void) setRaceByStr: (NSString *) raceStr{
+    if ([raceStr isEqualToString:NSLocalizedString(@"branco", @"")]) {
+        self.race = @"branco";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"preto", @"")]){
+        self.race = @"preto";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"pardo", @"")]){
+        self.race = @"pardo";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"amarelo", @"")]){
+        self.race = @"amarelo";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"indigena", @"")]){
+        self.race = @"indigena";
+    }else{
+        self.race = @"france";
+    }
+}
+
 - (void) setGenderByString: (NSString *) strGender{
-    if ([strGender isEqualToString:@"Masculino"]) {
-        gender = @"M";
-    } else if ([strGender isEqualToString:@"Feminino"]) {
-        gender = @"F";
+    if ([strGender isEqualToString:NSLocalizedString(@"masculino", @"")]) {
+        self.gender = @"M";
+    } else if ([strGender isEqualToString:NSLocalizedString(@"feminino", @"")]) {
+        self.gender = @"F";
+    }
+}
+
+- (void) setPerfilByString: (NSString *) strPefil{
+    NSArray *perfis = [Constants getPerfis];
+    for (int i = 0; i < perfis.count; i++) {
+        NSString *curPefil = perfis[i];
+        if ([curPefil isEqualToString:strPefil]) {
+            self.perfil = [NSNumber numberWithInt:i+1];
+        }
     }
 }
 
@@ -180,7 +220,7 @@ NSString *const kLastJoinNotification = @"lastJoinNotification";
 - (void) setAvatarOnButton: (UIButton *) button orImageView:(UIImageView *) imageView{
     if ([self.avatarNumber intValue] == 0 || self.avatarNumber == nil) {
         if ([self.gender isEqualToString:@"M"]) {
-            if ([self.race isEqualToString:@"branco"]) {
+            if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"france"]) {
                 self.avatarNumber = @11;
                 avatar = @"img_profile11.png";
             }else if ([self. race isEqualToString:@"preto"]){
@@ -197,7 +237,7 @@ NSString *const kLastJoinNotification = @"lastJoinNotification";
                 avatar = @"img_profile04.png";
             }
         } else {
-            if ([self.race isEqualToString:@"branco"]) {
+            if ([self.race isEqualToString:@"branco"] || [self.race isEqualToString:@"france"]) {
                 self.avatarNumber = @8;
                 avatar = @"img_profile08.png";
             }else if ([self. race isEqualToString:@"preto"]){
@@ -221,7 +261,7 @@ NSString *const kLastJoinNotification = @"lastJoinNotification";
         [preferences synchronize];
         
     } else {
-        avatar = [NSString stringWithFormat:@"img_profile%02d.png", [self.avatarNumber integerValue]];
+        avatar = [NSString stringWithFormat:@"img_profile%02d.png", (int)[self.avatarNumber integerValue]];
     }
     
     if (button) {
@@ -230,6 +270,12 @@ NSString *const kLastJoinNotification = @"lastJoinNotification";
     } else {
         [imageView setImage:[UIImage imageNamed:avatar]];
     }
+}
+
+- (void) setGameTutorialReady{
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    [preferences setValue:@"true" forKey:kGameTutorialReady];
+    [preferences synchronize];
 }
 
 - (BOOL)isValidEmail
@@ -259,6 +305,9 @@ NSString *const kLastJoinNotification = @"lastJoinNotification";
     self.gl = user.gl;
     self.photo = user.photo;
     self.app_token = user.app_token;
+    self.country = user.country;
+    self.perfil = user.perfil;
+    self.state = user.state;
 }
 
 - (void) clearUser{
@@ -279,6 +328,24 @@ NSString *const kLastJoinNotification = @"lastJoinNotification";
     self.gl = nil;
     self.photo = nil;
     self.lastJoinNotification = nil;
+    
+    [self resetPuzzleMatriz];
+    self.points = 0;
+}
+
+- (void)setPuzzleMatrizWithResponse:(NSMutableArray *)puzzleMatriz{
+    [self resetPuzzleMatriz];
+
+    int index = 0;
+    for (NSString *strItem in puzzleMatriz) {
+        NSNumber *item = [NSNumber numberWithInteger:[strItem integerValue]];
+        [self.puzzleMatriz replaceObjectAtIndex:index withObject:item];
+        if ([item isEqual: @1]) {
+            self.partsCompleted += 1;
+        }
+        
+        index++;
+    }
 }
 
 @end

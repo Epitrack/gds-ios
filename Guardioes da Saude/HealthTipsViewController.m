@@ -16,6 +16,8 @@
 #import "ZikaViewController.h"
 #import "Requester.h"
 #import "ViewUtil.h"
+#import "TravelerHealthViewController.h"
+#import "Guardioes_da_Saude-Swift.h"
 #import <Google/Analytics.h>
 
 @interface HealthTipsViewController ()
@@ -27,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Dicas de Saúde";
+    self.navigationItem.title = NSLocalizedString(@"health_tips.title", @"");
     
     UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
                                 initWithTitle:@""
@@ -55,6 +57,8 @@
     self.txPharmacy.backgroundColor = [UIColor clearColor];
     self.txBasicCare.backgroundColor = [UIColor clearColor];
     self.txPrevention.backgroundColor = [UIColor clearColor];
+    self.txHealthTraveler.backgroundColor = [UIColor clearColor];
+    self.txSafeSex.backgroundColor = [UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -156,5 +160,15 @@
 - (IBAction)zika:(id)sender {
     ZikaViewController *zikaViewController = [[ZikaViewController alloc] init];
     [self.navigationController pushViewController:zikaViewController animated:YES];
+}
+- (IBAction)travelerHealth:(id)sender {
+    TravelerHealthViewController *travelerHealthView = [[TravelerHealthViewController alloc] init];
+    
+    [self.navigationController pushViewController:travelerHealthView animated:YES];
+}
+
+- (IBAction)btnSafeSex:(id)sender {
+    SafeSexViewController *safeSex = [[SafeSexViewController alloc] init];
+    [self.navigationController pushViewController:safeSex animated:true];
 }
 @end

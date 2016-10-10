@@ -25,6 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnEnter;
 
 @property BOOL hideButtons;
-
+@property BOOL hideNavBar;
 
 @end

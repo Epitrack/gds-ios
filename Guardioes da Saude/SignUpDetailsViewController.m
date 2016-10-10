@@ -13,6 +13,7 @@
 #import "UserRequester.h"
 #import "MBprogressHUD.h"
 #import "HomeViewController.h"
+#import "LocationUtil.h"
 #import <Google/Analytics.h>
 
 #define MAXLENGTH 10
@@ -44,12 +45,29 @@
     [self.txtGender.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_gender", @"")];
     [self.txtGender.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.txtGender.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
-    [self.txtGender.DownPicker addTarget:self action:@selector(genderDownPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
+    [self.txtGender.DownPicker addTarget:self action:@selector(downPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
     
     (void)[self.txtRace initWithData: [Constants getRaces]];
     [self.txtRace.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_race", @"")];
     [self.txtRace.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
     [self.txtRace.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    [self.txtRace.DownPicker addTarget:self action:@selector(downPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
+    
+    (void)[self.txtCountry initWithData: [LocationUtil getCountriesWithBrazil:YES]];
+    [self.txtCountry.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_country", @"")];
+    [self.txtCountry.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtCountry.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    [self.txtCountry.DownPicker addTarget:self action:@selector(downPickerDidSelected:) forControlEvents:UIControlEventValueChanged];
+    
+    (void)[self.txtState initWithData: [LocationUtil getStates]];
+    [self.txtState.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_state", @"")];
+    [self.txtState.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtState.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
+    
+    (void)[self.txtPerfil initWithData: [Constants getPerfis]];
+    [self.txtPerfil.DownPicker setPlaceholder:NSLocalizedString(@"sign_up_details.tx_perfil", @"")];
+    [self.txtPerfil.DownPicker setToolbarCancelButtonText:NSLocalizedString(@"constant.cancel", @"")];
+    [self.txtPerfil.DownPicker setToolbarDoneButtonText:NSLocalizedString(@"constant.select", @"")];
     
     dob = [DateUtil dateFromString:@"10/10/1990"];
     [self updateBirthDate];
@@ -64,6 +82,10 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [locationManager startUpdatingLocation];
+    
+    self.scrollView.delegate = self;
+    
+    [self hiddenRaceField:true andState:true];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,8 +93,40 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)genderDownPickerDidSelected:(id)dp {
-    [self.txtRace becomeFirstResponder];
+-(void)downPickerDidSelected:(id)dp {
+    if ([dp isEqual:self.txtGender]) {
+        [self.txtRace becomeFirstResponder];
+    }else if([dp isEqual:self.txtRace]){
+        [self.txtCountry becomeFirstResponder];
+    }else{
+        NSString *country = [LocationUtil getCountryNameToEnglish: self.txtCountry.text];
+        if ([country isEqualToString:@"Brazil"]) {
+            [self.txtState becomeFirstResponder];
+            [self hiddenRaceField:false andState:false];
+        }else if ([country isEqualToString:@"France"] || [country isEqualToString:@""]){
+            [self hiddenRaceField:true andState:true];
+        }else{
+            [self hiddenRaceField:false andState:true];
+        }
+    }
+}
+
+- (void) hiddenRaceField: (BOOL) hiddenRace andState: (BOOL) hiddenState {
+    if (!hiddenRace && !hiddenState) {
+        self.constTopLbRace.constant = 76.0;
+        self.constTopButton.constant = 150.0;
+    }else if (!hiddenRace){
+        self.constTopLbRace.constant = 8.0;
+        self.constTopButton.constant = 94.0;
+    }else{
+        self.constTopButton.constant = 30.0;
+    }
+    
+    self.txtRace.hidden = hiddenRace;
+    self.lbRace.hidden = hiddenRace;
+    
+    self.lbState.hidden = hiddenState;
+    self.txtState.hidden = hiddenState;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -95,15 +149,28 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)canBecomeFirstResponder {
+//    NSString *country = self.txtCountry.text;
+//    if ([country isEqualToString:@"Brasil"] ||
+//        [country isEqualToString:@"Brazil"] ||
+//        [country isEqualToString:@"Brésil"] ||
+//        [country isEqualToString:@"Бразилия"] ||
+//        [country isEqualToString:@"巴西"] ||
+//        [country isEqualToString:@"البرازيل"]) {
+//        
+////        self.constTopButton.constant = 94;
+//        self.txtState.hidden = NO;
+//        self.lbState.hidden = NO;
+//        
+//        [self.txtState becomeFirstResponder];
+//    }else{
+////        self.constTopButton.constant = 30;
+//        self.txtState.hidden = YES;
+//        self.lbState.hidden = YES;
+//    }
+    
+    return YES;
 }
-*/
 
 - (IBAction)btnBackAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -147,8 +214,6 @@
         
         [self.btnDob setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         dobSetted = YES;
-        
-        [self.txtGender becomeFirstResponder];
     }];
     
     RMDateSelectionViewController *dateSelectionController = [RMDateSelectionViewController actionControllerWithStyle:style];
@@ -212,8 +277,16 @@
         return NO;
     }
     
-    if ([self.txtRace.text isEqualToString:@""]) {
+    NSString *country = [LocationUtil getCountryNameToEnglish:self.txtCountry.text];
+    if ([self.txtRace.text isEqualToString:@""]  && ![country isEqualToString:@"France"]) {
         UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.race_required", @"")];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
+    
+    
+    if ([self.txtPerfil.text isEqualToString:@""]) {
+        UIAlertController *alert = [ViewUtil showAlertWithMessage:NSLocalizedString(@"sign_up_details.perfil_required", @"")];
         [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
@@ -226,13 +299,18 @@
     
     self.user.nick = self.txtNick.text;
     [self.user setGenderByString:self.txtGender.text];
-    self.user.race = [self.txtRace.text lowercaseString];
+    [self.user setPerfilByString: self.txtPerfil.text];
+    [self.user setRaceByStr:self.txtRace.text];
     self.user.dob = [DateUtil stringUSFromDate:dob];
     self.user.lon = [NSString stringWithFormat:@"%g", longitude];
     self.user.lat = [NSString stringWithFormat:@"%g", latitude];
     self.user.app_token = singleUser.app_token;
     self.user.platform = singleUser.platform;
     self.user.client = singleUser.client;
+    self.user.state = [LocationUtil getUfByState:self.txtState.text];
+    
+    NSString *country = [LocationUtil getCountryNameToEnglish:self.txtCountry.text];
+    self.user.country = country;
     
     if (!self.user.email) {
         self.user.email = self.txtEmail.text;
@@ -255,6 +333,7 @@
             [preferences setValue:singleUser.user_token forKey:kUserTokenKey];
             [preferences setValue:singleUser.nick forKey:kNickKey];
             [preferences setValue:singleUser.avatarNumber forKey:kAvatarNumberKey];
+            [preferences setValue:@"1" forKey: kGCMTokenUpdated];
             
             [preferences synchronize];
             

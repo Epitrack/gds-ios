@@ -21,10 +21,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbFrequencyYear;
 @property (weak, nonatomic) IBOutlet UIImageView *imgPicture;
 @property (weak, nonatomic) IBOutlet UILabel *lbUserName;
+@property (weak, nonatomic) IBOutlet UIView *viewNoRecord;
 
 - (IBAction)btnNextMonthAction:(id)sender;
 - (IBAction)btnPreviousMonthAction:(id)sender;
 - (IBAction)btnChangePerson:(id)sender;
 - (void)refreshInformationToUser:(Household *)houlsehold;
+- (IBAction)btnJoinNowAction:(id)sender;
+
 
 @end

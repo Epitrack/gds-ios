@@ -13,5 +13,5 @@
 
 + (UIAlertController *) showAlertWithMessage: (NSString *) message;
 + (UIAlertController *) showNoConnectionAlert;
-
++ (NSMutableAttributedString *) applyFont: (UIFont *) font withColor: (UIColor *) color ranges: (NSArray *) ranges atTextView: (UITextView *) textView;
 @end

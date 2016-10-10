@@ -7,6 +7,7 @@
 //
 
 #import "Household.h"
+#import "Constants.h"
 
 @implementation Household
 
@@ -19,7 +20,10 @@
         andPicture:(NSString *)picture
       andIdPicture:(NSString *)idPicture
     andIdHousehold:(NSString *)idHousehold
-   andRelationship:(NSString *) relationship {
+   andRelationship:(NSString *) relationship
+         andPerfil: (NSNumber *) perfil
+        andCountry: (NSString *) country
+          andState: (NSString *) state  {
     
     if (self == [super init]) {
 
@@ -33,6 +37,9 @@
         self.idPicture = idPicture;
         self.idHousehold = idHousehold;
         self.relationship = relationship;
+        self.perfil = perfil;
+        self.country = country;
+        self.state = state;
     }
     return self;
 }
@@ -55,9 +62,9 @@
 }
 
 - (void) setGenderByString: (NSString *) strGender{
-    if ([strGender isEqualToString:@"Masculino"]) {
+    if ([strGender isEqualToString:NSLocalizedString(@"masculino", @"")]) {
         self.gender = @"M";
-    } else if ([strGender isEqualToString:@"Feminino"]) {
+    } else if ([strGender isEqualToString:NSLocalizedString(@"feminino", @"")]) {
         self.gender = @"F";
     }
 }
@@ -86,27 +93,51 @@
 }
 
 + (NSArray *) getRelationshipArray{
-    NSArray *relationships = @[@"Pai",
-                               @"Mãe",
-                               @"Filho(a)",
-                               @"Irmão(ã)",
-                               @"Avô(ó)",
-                               @"Neto(a)",
-                               @"Tio(a)",
-                               @"Sobrinho(a)",
-                               @"Bisavo(a)",
-                               @"Bisneto(a)",
-                               @"Primo(a)",
-                               @"Sogro(a)",
-                               @"Genro / Nora",
-                               @"Padrasto",
-                               @"Madrasta",
-                               @"Enteado(a)",
-                               @"Cônjuge",
-                               @"Outros"];
+    NSArray *relationships = @[NSLocalizedString(@"pai", @""),
+                               NSLocalizedString(@"mae", @""),
+                               NSLocalizedString(@"filho", @""),
+                               NSLocalizedString(@"irmao", @""),
+                               NSLocalizedString(@"avo", @""),
+                               NSLocalizedString(@"neto", @""),
+                               NSLocalizedString(@"tio", @""),
+                               NSLocalizedString(@"sobrinho", @""),
+                               NSLocalizedString(@"bisavo", @""),
+                               NSLocalizedString(@"bisneto", @""),
+                               NSLocalizedString(@"primo", @""),
+                               NSLocalizedString(@"sogro", @""),
+                               NSLocalizedString(@"genro-nora", @""),
+                               NSLocalizedString(@"padrasto", @""),
+                               NSLocalizedString(@"madrasta", @""),
+                               NSLocalizedString(@"enteado", @""),
+                               NSLocalizedString(@"conjuge", @""),
+                               NSLocalizedString(@"outro", @"")];
     
     
     
     return relationships;
+}
+
+- (void) setPerfilByString: (NSString *) strPefil{
+    NSArray *perfis = [Constants getPerfis];
+    for (int i = 0; i < perfis.count; i++) {
+        NSString *curPefil = perfis[i];
+        if ([curPefil isEqualToString:strPefil]) {
+            self.perfil = [NSNumber numberWithInt:i+1];
+        }
+    }
+}
+
+- (void) setRaceByStr: (NSString *) raceStr{
+    if ([raceStr isEqualToString:NSLocalizedString(@"branco", @"")]) {
+        self.race = @"branco";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"preto", @"")]){
+        self.race = @"preto";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"pardo", @"")]){
+        self.race = @"pardo";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"amarelo", @"")]){
+        self.race = @"amarelo";
+    }else if ([raceStr isEqualToString:NSLocalizedString(@"indigena", @"")]){
+        self.race = @"indigena";
+    }
 }
 @end

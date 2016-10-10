@@ -61,7 +61,7 @@
     cell.tag = indexPath.row;
     
     UIImageView *selecetd = [[UIImageView alloc] init];
-    selecetd.image = [UIImage imageNamed:@"icon_selectedparticipant"];
+    selecetd.image = [UIImage imageNamed:@"icon_selected"];
     [selecetd sizeToFit];
     
     if (indexPath.row == 0) {

@@ -149,7 +149,7 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
     
 }
 
-+ (NSArray *) getCountries{
++ (NSArray *) getCountriesWithBrazil: (bool) withBrazil{
     NSLocale *locale = [NSLocale currentLocale];
     NSArray *countryArray = [NSLocale ISOCountryCodes];
     
@@ -157,12 +157,128 @@ NSString *const googleUrl = @"https://maps.googleapis.com/maps/api";
     
     for (NSString *countryCode in countryArray) {
         NSString *displayNameString = [locale displayNameForKey:NSLocaleCountryCode value:countryCode];
-        if (!([displayNameString isEqualToString:@"Brasil"] || [displayNameString isEqualToString:@"Brazil"])) {
+        if (withBrazil || ![countryCode isEqualToString:@"BR"]) {
             [sortedCountryArray addObject:displayNameString];
         }
     }
     [sortedCountryArray sortUsingSelector:@selector(localizedCompare:)];
     
+    
     return sortedCountryArray;
+}
+
++ (NSString *) getCountryNameToEnglish: (NSString *) countryStr{
+    return [self getCountryName:countryStr fromLocale:[NSLocale currentLocale] toLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+}
+
++ (NSString *) getCountryNameToCurrentLocale: (NSString *) countryStr{
+    return [self getCountryName:countryStr fromLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] toLocale:[NSLocale currentLocale]];
+}
+
++ (NSString *) getCountryName: (NSString *) countryStr fromLocale: (NSLocale *) fromLocale toLocale: (NSLocale *) toLocale{
+    NSArray *countryArray = [NSLocale ISOCountryCodes];
+    
+    for (NSString *countryCode in countryArray) {
+        NSString *displayNameString = [fromLocale displayNameForKey:NSLocaleCountryCode value:countryCode];
+        if ([displayNameString isEqualToString:countryStr]) {
+            return [toLocale displayNameForKey:NSLocaleCountryCode value:countryCode];
+        }
+    }
+    
+    return @"";
+}
+
++ (NSArray *)getStates{
+    return @[@"Acre",
+             @"Alagoas",
+             @"Amazonas",
+             @"Amapá",
+             @"Bahia",
+             @"Ceará",
+             @"Distrito Federal",
+             @"Espírito Santo",
+             @"Goiás",
+             @"Maranhão",
+             @"Minas Gerais",
+             @"Mato Grosso do Sul",
+             @"Mato Grosso",
+             @"Pará",
+             @"Paraíba",
+             @"Pernambuco",
+             @"Piauí",
+             @"Paraná",
+             @"Rio de Janeiro",
+             @"Rio Grande do Norte",
+             @"Rondônia",
+             @"Roraima",
+             @"Rio Grande do Sul",
+             @"Santa Catarina",
+             @"Sergipe",
+             @"São Paulo",
+             @"Tocantins"];
+}
+
++ (NSArray *)getUfs{
+    return @[@"AC",
+             @"AL",
+             @"AM",
+             @"AP",
+             @"BA",
+             @"CE",
+             @"DF",
+             @"ES",
+             @"GO",
+             @"MA",
+             @"MG",
+             @"MS",
+             @"MT",
+             @"PA",
+             @"PB",
+             @"PE",
+             @"PI",
+             @"PR",
+             @"RJ",
+             @"RN",
+             @"RO",
+             @"RR",
+             @"RS",
+             @"SC",
+             @"SE",
+             @"SP",
+             @"TO"];
+}
+
++ (NSString *) getStatebyUf: (NSString *) ufStr{
+    if ([ufStr isEqualToString:@""]) {
+        return @"";
+    }
+    
+    int ufIndex;
+    NSArray *arrUfs = [self getUfs];
+    for (ufIndex = 0; ufIndex < arrUfs.count; ufIndex++) {
+        if ([ufStr isEqualToString:arrUfs[ufIndex]]) {
+            break;
+        }
+    }
+    return [self getStates][ufIndex];
+}
+
++ (NSString *) getUfByState: (NSString *) stateStr{
+    int stateIndex;
+    
+    NSArray *arrStates = [self getStates];
+    for (stateIndex = 0; stateIndex < arrStates.count; stateIndex++) {
+        if ([stateStr isEqualToString:arrStates[stateIndex]]) {
+            break;
+        }
+    }
+    
+    NSArray *ufs = [self getUfs];
+    
+    if (stateIndex < [ufs count]) {
+        return ufs[stateIndex];
+    }else{
+        return @"";
+    }
 }
 @end

@@ -6,7 +6,6 @@
 //  Copyright © 2015 epitrack. All rights reserved.
 //
 
-#import "JSONModel.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @import Photos;
@@ -18,36 +17,11 @@ extern NSString *const kAvatarNumberKey;
 extern NSString *const kNickKey;
 extern NSString *const kIsTest;
 extern NSString *const kLastJoinNotification;
+extern NSString *const kGameTutorialReady;
+extern NSString *const kGCMToken;
+extern NSString *const kGCMTokenUpdated;
 
-@interface User : JSONModel {
-    NSString *nick;
-    NSString *email;
-    NSString *password;
-    NSString *client;
-    NSString *dob;
-    NSString *gender;
-    NSString *app_token;
-    NSString *lon;
-    NSString *lat;
-    NSString *race;
-    NSString *paltform;
-    NSString *type;
-    NSString *zip;
-    NSString *idUser;
-    NSNumber *avatarNumber;
-    NSString *user_token;
-    NSString *tw;
-    NSString *fb;
-    NSString *gl;
-    NSDictionary *hashtag;
-    NSMutableArray *household;
-    NSDictionary *survey;
-    NSMutableArray *symptoms;
-    NSString *idHousehold;
-    NSString *avatar;
-    NSString *photo;
-    NSString *url;
-}
+@interface User : NSObject
 
 +(User *)getInstance;
 
@@ -77,17 +51,31 @@ extern NSString *const kLastJoinNotification;
 @property(nonatomic, retain) NSString *idHousehold;
 @property(nonatomic, retain) NSString *avatar;
 @property(nonatomic, retain) NSString *photo;
+@property(nonatomic, retain) NSNumber *perfil;
 @property(nonatomic, retain) NSString *gcmToken;
 @property(nonatomic, assign) bool isTest;
 @property(nonatomic, retain) NSDate *lastJoinNotification;
+@property(nonatomic, assign) int level;
+@property(nonatomic, retain) NSMutableArray *levelCorrectAnswers;
+@property(nonatomic, assign) int points;
+@property(nonatomic, assign) BOOL isGameTutorailReady;
+@property(nonatomic, retain) NSMutableArray *puzzleMatriz;
+@property(nonatomic, assign) int partsCompleted;
+@property(nonatomic, retain) NSString *country;
+@property(nonatomic, retain) NSString *state;
+@property(nonatomic, assign) BOOL doesReport;
 
+- (void) resetPuzzleMatriz;
 - (void) setGenderBySegIndex: (long) segIndex;
 - (void) setRaceBySegIndex: (long) segIndex;
 - (void) setGenderByString: (NSString *) strGender;
+- (void) setPerfilByString: (NSString *) strPefil;
 - (void) requestPermissions:(void(^)(bool)) block;
 - (void) setAvatarImageAtButton: (UIButton *) button orImageView:(UIImageView *) imageView;
+- (void) setRaceByStr: (NSString *) raceStr;
 - (BOOL) isValidEmail;
 - (void) cloneUser: (User *) user;
 - (void) clearUser;
+- (void) setPuzzleMatrizWithResponse:(NSMutableArray *)puzzleMatriz;
 
 @end

@@ -229,7 +229,10 @@
                                                              andPicture:avatar
                                                            andIdPicture: picture
                                                          andIdHousehold:dicHousehold[@"id"]
-                                                        andRelationship:dicHousehold[@"relationship"]];
+                                                        andRelationship:dicHousehold[@"relationship"]
+                                                              andPerfil:dicHousehold[@"role"]
+                                                             andCountry:dicHousehold[@"country"]
+                                                               andState:dicHousehold[@"state"]];
                  [houseHolds addObject:household];
              }
              
@@ -256,13 +259,22 @@
     [params setValue:household.picture forKey:@"picture"];
     [params setValue:household.idHousehold forKey:@"id"];
     [params setValue:household.relationship forKey:@"relationship"];
+    [params setObject:household.country forKey:@"country"];
+    [params setObject:household.perfil forKey:@"role"];
+    
+    if (household.state) {
+        [params setObject:household.state forKey:@"state"];
+    } else {
+        [params setObject:@"" forKey:@"state"];
+    }
     
     if (![household.email isEqualToString:@""]) {
         [params setValue:household.email forKey:@"email"];
     }
     
     [self doPost:[[self getUrl] stringByAppendingString:@"/household/update"]
-          header:@{@"user_token": user.user_token, @"app_token": user.app_token}
+          header:@{@"user_token": user.user_token,
+                   @"app_token": user.app_token}
        parameter:params
            start:^(void){
                
@@ -282,19 +294,28 @@
     [params setValue:household.nick forKey:@"nick"];
     [params setValue:user.client forKey:@"client"];
     [params setValue:household.dob forKey:@"dob"];
+    [params setObject:household.perfil forKey:@"role"];
     [params setValue:household.gender forKey:@"gender"];
     [params setValue:household.race forKey:@"race"];
     [params setValue:user.platform forKey:@"platform"];
     [params setValue:household.picture forKey:@"picture"];
     [params setValue:household.relationship forKey:@"relationship"];
     [params setValue:user.idUser forKey:@"user"];
+    [params setObject:household.country forKey:@"country"];
+    
+    if (user.state) {
+        [params setObject:household.state forKey:@"state"];
+    } else {
+        [params setObject:@"" forKey:@"state"];
+    }
     
     if (![household.email isEqualToString:@""]) {
         [params setValue:household.email forKey:@"email"];
     }
     
     [self doPost:[[self getUrl] stringByAppendingString:@"/household/create"]
-          header:@{@"app_token": user.user_token}
+          header:@{@"user_token": user.user_token,
+                   @"app_token": user.app_token}
        parameter:params
            start:^(void){
                

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Foco_Std_Bd.ttf">
+            <string>Foco-Bold</string>
+            <string>Foco-Bold</string>
+            <string>Foco-Bold</string>
+            <string>Foco-Bold</string>
+            <string>Foco-Bold</string>
+            <string>Foco-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionViewController" customModule="Guardioes_da_Saude" customModuleProvider="target">
+            <connections>
+                <outlet property="btnAlternativeOne" destination="AX0-70-X1e" id="vls-I2-Cjq"/>
+                <outlet property="btnAlternativeThree" destination="ZRv-wP-ZwV" id="yOY-Xv-Xo9"/>
+                <outlet property="btnAlternativeTwo" destination="CVH-K1-ZBa" id="VLN-nZ-6gs"/>
+                <outlet property="imgBgDialog" destination="9Q4-6q-9oP" id="yBb-8Z-gXH"/>
+                <outlet property="lbDescription" destination="GZs-gQ-6D7" id="VQd-SF-Z1U"/>
+                <outlet property="lbTimer" destination="zDm-KE-ZYw" id="6dr-lQ-sZ5"/>
+                <outlet property="viemCorrectAnswer" destination="G86-Dk-Tca" id="QGP-jc-Z2t"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewTimer" destination="CfV-aB-Lq2" id="a2u-Df-o73"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKU-Gg-dTe">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_answer" translatesAutoresizingMaskIntoConstraints="NO" id="9Q4-6q-9oP">
+                            <rect key="frame" x="20" y="40" width="280" height="193"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZs-gQ-6D7">
+                            <rect key="frame" x="30" y="40" width="260" height="193"/>
+                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="21"/>
+                            <color key="textColor" red="0.094117648900000003" green="0.42352941630000002" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ri-xn-v87">
+                            <rect key="frame" x="236" y="7" width="96" height="108"/>
+                            <state key="normal" image="btn_close"/>
+                            <connections>
+                                <action selector="btnClose:" destination="-1" eventType="touchUpInside" id="UGY-oX-5Qa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AX0-70-X1e">
+                            <rect key="frame" x="50" y="224" width="220" height="47"/>
+                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
+                            <state key="normal" backgroundImage="btn_question">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnAlternative:" destination="-1" eventType="touchUpInside" id="3pG-jU-GHn"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVH-K1-ZBa">
+                            <rect key="frame" x="50" y="279" width="220" height="47"/>
+                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
+                            <state key="normal" backgroundImage="btn_question">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnAlternative:" destination="-1" eventType="touchUpInside" id="rYr-Gm-Mup"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRv-wP-ZwV">
+                            <rect key="frame" x="50" y="334" width="220" height="47"/>
+                            <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="18"/>
+                            <state key="normal" backgroundImage="btn_question">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnAlternative:" destination="-1" eventType="touchUpInside" id="0gy-fT-pGl"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfV-aB-Lq2">
+                            <rect key="frame" x="128" y="17" width="63" height="63"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDm-KE-ZYw">
+                                    <rect key="frame" x="27" y="21" width="8" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.93725490570000003" green="0.3843137324" blue="0.1019607857" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="zDm-KE-ZYw" firstAttribute="centerX" secondItem="CfV-aB-Lq2" secondAttribute="centerX" id="cJd-Wn-6QG"/>
+                                <constraint firstItem="zDm-KE-ZYw" firstAttribute="centerY" secondItem="CfV-aB-Lq2" secondAttribute="centerY" id="f9Z-Ri-1Qc"/>
+                                <constraint firstAttribute="width" secondItem="CfV-aB-Lq2" secondAttribute="height" multiplier="71:67" constant="-3.761194029850742" id="txe-dz-ibf"/>
+                            </constraints>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G86-Dk-Tca">
+                            <rect key="frame" x="20" y="40" width="280" height="193"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="game.answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCr-W0-FXB" customClass="GDSLabel">
+                                    <rect key="frame" x="91" y="57" width="98" height="21"/>
+                                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="game.correct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAg-gy-VRe" customClass="GDSLabel">
+                                    <rect key="frame" x="47" y="78" width="186" height="38"/>
+                                    <fontDescription key="fontDescription" name="Foco-Bold" family="Foco" pointSize="32"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="NAg-gy-VRe" firstAttribute="top" secondItem="oCr-W0-FXB" secondAttribute="bottom" id="IBK-jB-zZm"/>
+                                <constraint firstItem="oCr-W0-FXB" firstAttribute="centerX" secondItem="G86-Dk-Tca" secondAttribute="centerX" id="eCW-Bd-PdO"/>
+                                <constraint firstItem="NAg-gy-VRe" firstAttribute="centerX" secondItem="oCr-W0-FXB" secondAttribute="centerX" id="hdA-2c-oIq"/>
+                                <constraint firstItem="oCr-W0-FXB" firstAttribute="top" secondItem="G86-Dk-Tca" secondAttribute="top" constant="57" id="x1G-5c-eQo"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="CfV-aB-Lq2" firstAttribute="top" secondItem="9Q4-6q-9oP" secondAttribute="top" id="3Dm-zC-Mjv"/>
+                        <constraint firstItem="9Q4-6q-9oP" firstAttribute="top" secondItem="YKU-Gg-dTe" secondAttribute="top" constant="40" id="3Lb-6b-S0W"/>
+                        <constraint firstItem="GZs-gQ-6D7" firstAttribute="top" secondItem="9Q4-6q-9oP" secondAttribute="top" id="4D0-cM-GKp"/>
+                        <constraint firstItem="G86-Dk-Tca" firstAttribute="trailing" secondItem="9Q4-6q-9oP" secondAttribute="trailing" id="4h3-1e-Yqn"/>
+                        <constraint firstItem="G86-Dk-Tca" firstAttribute="bottom" secondItem="9Q4-6q-9oP" secondAttribute="bottom" id="5JB-i8-mcS"/>
+                        <constraint firstItem="ZRv-wP-ZwV" firstAttribute="trailing" secondItem="CVH-K1-ZBa" secondAttribute="trailing" id="73F-f2-bSb"/>
+                        <constraint firstItem="CVH-K1-ZBa" firstAttribute="top" secondItem="AX0-70-X1e" secondAttribute="bottom" constant="8" id="7Th-ie-e8V"/>
+                        <constraint firstItem="AX0-70-X1e" firstAttribute="leading" secondItem="GZs-gQ-6D7" secondAttribute="leading" constant="20" id="870-ol-qWL"/>
+                        <constraint firstItem="6Ri-xn-v87" firstAttribute="trailing" secondItem="9Q4-6q-9oP" secondAttribute="trailing" constant="32" id="AyQ-8N-M8B"/>
+                        <constraint firstItem="G86-Dk-Tca" firstAttribute="leading" secondItem="9Q4-6q-9oP" secondAttribute="leading" id="Bf2-1V-lY7"/>
+                        <constraint firstItem="9Q4-6q-9oP" firstAttribute="leading" secondItem="YKU-Gg-dTe" secondAttribute="leading" constant="20" id="Pec-Av-FWs"/>
+                        <constraint firstItem="CfV-aB-Lq2" firstAttribute="centerY" secondItem="6Ri-xn-v87" secondAttribute="centerY" id="RiR-ja-CN0"/>
+                        <constraint firstItem="CVH-K1-ZBa" firstAttribute="leading" secondItem="AX0-70-X1e" secondAttribute="leading" id="SyB-lG-jdW"/>
+                        <constraint firstItem="CVH-K1-ZBa" firstAttribute="trailing" secondItem="AX0-70-X1e" secondAttribute="trailing" id="Uz4-7b-zpx"/>
+                        <constraint firstItem="ZRv-wP-ZwV" firstAttribute="leading" secondItem="CVH-K1-ZBa" secondAttribute="leading" id="bMx-fE-NaY"/>
+                        <constraint firstItem="CfV-aB-Lq2" firstAttribute="width" secondItem="YKU-Gg-dTe" secondAttribute="height" multiplier="43:284" constant="-23" id="d4p-fa-mrQ"/>
+                        <constraint firstItem="AX0-70-X1e" firstAttribute="top" secondItem="GZs-gQ-6D7" secondAttribute="bottom" constant="-9" id="fEz-QK-dko"/>
+                        <constraint firstItem="6Ri-xn-v87" firstAttribute="top" secondItem="9Q4-6q-9oP" secondAttribute="top" constant="-33" id="hnO-BR-9IK"/>
+                        <constraint firstAttribute="trailing" secondItem="9Q4-6q-9oP" secondAttribute="trailing" constant="20" id="kif-G4-Elx"/>
+                        <constraint firstItem="GZs-gQ-6D7" firstAttribute="leading" secondItem="9Q4-6q-9oP" secondAttribute="leading" constant="10" id="lml-QT-6uU"/>
+                        <constraint firstItem="CfV-aB-Lq2" firstAttribute="centerX" secondItem="9Q4-6q-9oP" secondAttribute="centerX" id="mVm-g6-Ow6"/>
+                        <constraint firstItem="G86-Dk-Tca" firstAttribute="top" secondItem="9Q4-6q-9oP" secondAttribute="top" id="mxK-bm-mgr"/>
+                        <constraint firstItem="GZs-gQ-6D7" firstAttribute="bottom" secondItem="9Q4-6q-9oP" secondAttribute="bottom" id="oJf-eV-CEi"/>
+                        <constraint firstItem="ZRv-wP-ZwV" firstAttribute="top" secondItem="CVH-K1-ZBa" secondAttribute="bottom" constant="8" id="pgB-vj-fiW"/>
+                        <constraint firstItem="AX0-70-X1e" firstAttribute="trailing" secondItem="GZs-gQ-6D7" secondAttribute="trailing" constant="-20" id="s4N-9A-fxn"/>
+                        <constraint firstItem="CfV-aB-Lq2" firstAttribute="top" secondItem="9Q4-6q-9oP" secondAttribute="top" constant="-23" id="vwB-oj-0Jn"/>
+                        <constraint firstItem="GZs-gQ-6D7" firstAttribute="trailing" secondItem="9Q4-6q-9oP" secondAttribute="trailing" constant="-10" id="wUv-D2-PFm"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="3Dm-zC-Mjv"/>
+                            <exclude reference="RiR-ja-CN0"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="YKU-Gg-dTe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5NH-Vx-fix"/>
+                <constraint firstAttribute="trailing" secondItem="YKU-Gg-dTe" secondAttribute="trailing" id="7tV-Xl-OQ9"/>
+                <constraint firstAttribute="bottom" secondItem="YKU-Gg-dTe" secondAttribute="bottom" id="TKz-hv-lGS"/>
+                <constraint firstItem="YKU-Gg-dTe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uud-wv-rc3"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_answer" width="278" height="193"/>
+        <image name="btn_close" width="96" height="108"/>
+        <image name="btn_question" width="240" height="47"/>
+    </resources>
+</document>

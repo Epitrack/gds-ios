@@ -7,11 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "Constants.h"
 #import "SWRevealViewController.h"
 #import "RearViewController.h"
 #import "HomeViewController.h"
 #import "MenuViewController.h"
-#import "TutorialViewController.h"
+#import "SelectTypeLoginViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
@@ -20,8 +21,10 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import <Google/Analytics.h>
 #import "ViewUtil.h"
+#import "ChangeLanguageViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "ACTReporter.h"
 @import GoogleMaps;
 
 NSString *const kPreferencesVersionKey = @"preferenceVersionKey";
@@ -53,7 +56,6 @@ NSUserDefaults *preferences;
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    
     [GMSServices provideAPIKey:@"AIzaSyDPVnLM8mqTGc-yrvZgQ7o360qAnGyo9YU"];
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -72,11 +74,28 @@ NSUserDefaults *preferences;
         UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
         UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:menuViewCtrl];
         
-        revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
+        NSString *currentLanguage = [[NSLocale preferredLanguages] objectAtIndex:0];
+        if ([currentLanguage isEqualToString:@"ar"]) {
+            revealController = [[SWRevealViewController alloc] init];
+            revealController.rightViewController = rearNavigationController;
+            revealController.frontViewController = frontNavigationController;
+        } else {
+            revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
+        }
+        
+        
         revealController.delegate = self;
         self.viewController = revealController;
     } else {
-        TutorialViewController *frontViewController = [[TutorialViewController alloc] init];
+        
+        UIViewController *frontViewController;
+        if ([preferences objectForKey:kCurrentLanguage]) {
+            frontViewController = [[SelectTypeLoginViewController alloc] init];
+        }else{
+            frontViewController = [[ChangeLanguageViewController alloc] init];
+            ((ChangeLanguageViewController *) frontViewController).goToTutorial = YES;
+        }
+        
         UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:frontViewController];
         UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:menuViewCtrl];
         
@@ -89,7 +108,7 @@ NSUserDefaults *preferences;
     [self.window makeKeyAndVisible];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(30.0/255.0) green:(136.0/255.0) blue:(229.0/255.0) alpha:1]];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:1 green:180.0/255.0 blue:0 alpha:1]];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"Foco" size:20.0], NSFontAttributeName, nil]];
@@ -104,22 +123,15 @@ NSUserDefaults *preferences;
     [[GGLContext sharedInstance] configureWithError:&configureError];
     NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
     _gcmSenderID = [[[GGLContext sharedInstance] configuration] gcmSenderID];
-    // Register for remote notifications
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-        // iOS 7.1 or earlier
-        UIRemoteNotificationType allNotificationTypes =
-        (UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge);
-        [application registerForRemoteNotificationTypes:allNotificationTypes];
-    } else {
-        // iOS 8 or later
-        // [END_EXCLUDE]
-        UIUserNotificationType allNotificationTypes =
-        (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
-        UIUserNotificationSettings *settings =
-        [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }
+
+    UIUserNotificationType allNotificationTypes =
+    (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+    UIUserNotificationSettings *settings =
+    [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
+
     // [END register_for_remote_notifications]
     // [START start_gcm_service]
     GCMConfig *gcmConfig = [GCMConfig defaultConfig];
@@ -132,6 +144,8 @@ NSUserDefaults *preferences;
         if (registrationToken != nil) {
             weakSelf.registrationToken = registrationToken;
             NSLog(@"Registration Token: %@", registrationToken);
+            [preferences setObject:registrationToken forKey:kGCMToken];
+            [preferences synchronize];
             
             [User getInstance].gcmToken = registrationToken;
             
@@ -165,6 +179,17 @@ NSUserDefaults *preferences;
     [Fabric with:@[[Twitter class]]];
     [[Twitter sharedInstance] startWithConsumerKey:@"l4t5P03ZR3mbBON7HHLWhgSrS" consumerSecret:@"8Vi40vWK3s4kqViKMKPJJFO5bLsrFbvzRqhDbsy6mZQH7pkVbe"];
     [Fabric with:@[[Twitter sharedInstance]]];
+    
+    if (launchOptions[UIApplicationLaunchOptionsURLKey] == nil) {
+        [FBSDKAppLinkUtility fetchDeferredAppLink:^(NSURL *url, NSError *error) {
+            if (error) {
+                NSLog(@"Received error while fetching deferred app link %@", error);
+            }
+            if (url) {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        }];
+    }
     
     return YES;
 }
@@ -232,6 +257,15 @@ didSignInForUser:(GIDGoogleUser *)user
     return nil;
 }
 
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    if(notificationSettings.types != UIUserNotificationTypeNone) {
+        [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
+                                                            scope:kGGLInstanceIDScopeGCM
+                                                          options:_registrationOptions
+                                                          handler:_registrationHandler];
+    }
+}
+
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // [END receive_apns_token]
@@ -244,10 +278,16 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [[GGLInstanceID sharedInstance] startWithConfig:instanceIDConfig];
     _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:deviceToken,
                              kGGLInstanceIDAPNSServerTypeSandboxOption:@NO};
-    [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
-                                                        scope:kGGLInstanceIDScopeGCM
-                                                      options:_registrationOptions
-                                                      handler:_registrationHandler];
+    
+    NSString *gcmTokenVerion = [preferences objectForKey:kGCMTokenUpdated];
+    if ([preferences objectForKey:kGCMToken] && gcmTokenVerion && [gcmTokenVerion isEqualToString:@"1"]) {
+        [User getInstance].gcmToken = [preferences objectForKey:kGCMToken];
+    }else{
+        [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
+                                                            scope:kGGLInstanceIDScopeGCM
+                                                          options:_registrationOptions
+                                                          handler:_registrationHandler];
+    }
     // [END get_gcm_reg_token]
 }
 

@@ -9,9 +9,9 @@
 @implementation HouseholdThumbnail {
 
 }
-- (id)initWithHousehold:(NSString *)household_id frame:(CGRect)frame avatar:(NSString *)avatar nick:(NSString *)nick {
+- (id)initWithHousehold:(Household *)household frame:(CGRect)frame avatar:(NSString *)avatar nick:(NSString *)nick {
     self = [super initWithFrame:frame];
-    self.user_household_id = household_id;
+    self.household = household;
     self.button = [[UIButton alloc] initWithFrame:frame];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:
             CGRectMake(self.button.bounds.size.width/4,
@@ -25,7 +25,7 @@
     
     NSArray *array = [nick componentsSeparatedByString:@" "];
     
-    if (array.count > 0 && household_id != nil) {
+    if (array.count > 0 && household) {
         label.text = [array objectAtIndex:0];
     } else {
         label.text= nick;
@@ -41,9 +41,9 @@
     return self;
 }
 
-- (id)initWithHousehold:(NSString *)household_id frame:(CGRect)frame avatar:(NSString *)avatar nick:(NSString *)nick dob:(NSString *)dob {
+- (id)initWithHousehold:(Household *)household frame:(CGRect)frame avatar:(NSString *)avatar nick:(NSString *)nick dob:(NSString *)dob {
     self = [super initWithFrame:frame];
-    self.user_household_id = household_id;
+    self.household = household;
     self.button = [[UIButton alloc] initWithFrame:frame];
 
     NSDateFormatter *format = [[NSDateFormatter alloc] init];

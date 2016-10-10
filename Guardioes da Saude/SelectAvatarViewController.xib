@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -22,7 +22,7 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="6Zo-6g-emd"/>
                         <constraint firstAttribute="height" constant="38" id="6ix-JO-WsC"/>
                     </constraints>
-                    <state key="normal" image="icon_camera.png" backgroundImage="button_default.png"/>
+                    <state key="normal" image="icon_camera.png" backgroundImage="btn_olympics"/>
                     <connections>
                         <action selector="btnPhotoAction:" destination="-1" eventType="touchUpInside" id="l1A-GJ-elO"/>
                     </connections>
@@ -234,7 +234,7 @@
         </view>
     </objects>
     <resources>
-        <image name="button_default.png" width="267" height="38"/>
+        <image name="btn_olympics" width="258" height="38"/>
         <image name="icon_camera.png" width="25" height="18"/>
         <image name="img_profile01.png" width="131" height="131"/>
         <image name="img_profile02.png" width="130" height="130"/>

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ASHorizontalScrollView.h"
+#import <ASHorizontalScrollViewForObjectiveC/ASHorizontalScrollView.h>
 
 @interface SelectParticipantViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     

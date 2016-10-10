@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -173,7 +173,7 @@
                             </variation>
                         </progressView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98Y-pF-xpD">
-                            <rect key="frame" x="76" y="268" width="16" height="16"/>
+                            <rect key="frame" x="152" y="268" width="16" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="98Y-pF-xpD" secondAttribute="height" multiplier="1:1" id="u9C-uu-YjT"/>
                             </constraints>
@@ -188,8 +188,8 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Síndromes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmO-Hu-7R3">
-                            <rect key="frame" x="8" y="268" width="62" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="map_health.syndromes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmO-Hu-7R3" customClass="GDSLabel">
+                            <rect key="frame" x="8" y="268" width="138" height="17"/>
                             <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="14"/>
                             <color key="textColor" red="0.1058823529" green="0.4431372549" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -350,7 +350,7 @@
                         <constraint firstAttribute="height" constant="62" id="AVG-s4-3SG"/>
                         <constraint firstAttribute="width" constant="62" id="Qrr-oj-tMa"/>
                     </constraints>
-                    <state key="normal" backgroundImage="fab_plus.png"/>
+                    <state key="normal" backgroundImage="btn_fab"/>
                     <connections>
                         <action selector="showDetailMapPlus:" destination="-1" eventType="touchUpInside" id="vff-2M-Wa6"/>
                     </connections>
@@ -375,7 +375,7 @@
         </view>
     </objects>
     <resources>
-        <image name="fab_plus.png" width="62" height="62"/>
+        <image name="btn_fab" width="62" height="62"/>
         <image name="icon_bad.png" width="121" height="121"/>
         <image name="icon_info_blue.png" width="56" height="56"/>
         <image name="icon_well.png" width="120" height="121"/>

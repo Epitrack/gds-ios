@@ -7,6 +7,7 @@
 //
 
 #import "ViewUtil.h"
+#import <UIKit/UIKit.h>
 
 @implementation ViewUtil
 
@@ -26,5 +27,22 @@
 
 +(UIAlertController *)showNoConnectionAlert{
     return [self showAlertWithMessage:NSLocalizedString(@"constant.no_conection", @"")];
+}
+
++ (NSMutableAttributedString *) applyFont: (UIFont *) font withColor: (UIColor *) color ranges: (NSArray *) ranges atTextView: (UITextView *) textView{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:textView.text];
+    NSDictionary *dictBoldText = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName,
+                                  color, NSForegroundColorAttributeName, nil];
+    
+    [attributedString setAttributedString:textView.attributedText];
+    
+    for (NSString *range in ranges) {
+        NSRange rangeBold = [textView.text rangeOfString:range];
+        [attributedString setAttributes:dictBoldText range: rangeBold];
+    }
+    
+    textView.attributedText = attributedString;
+    
+    return attributedString;
 }
 @end

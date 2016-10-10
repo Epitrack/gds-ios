@@ -17,7 +17,6 @@
 #import "Constants.h"
 
 @interface TutorialViewController () {
-    
     User *user;
 }
 @property (strong, nonatomic) IBOutlet UIPageControl *pageController;
@@ -77,7 +76,7 @@
     [tracker set:kGAIScreenName value:@"Tutorial Screen"];
     [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     
-    [self.navigationController setNavigationBarHidden:!self.hideButtons animated:animated];
+    [self.navigationController setNavigationBarHidden:self.hideNavBar animated:animated];
     [super viewWillAppear:animated];
     self.revealViewController.panGestureRecognizer.enabled=NO;
 }
@@ -185,21 +184,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)changeScreen:(id)sender {
     NSInteger index = self.pageController.currentPage;
     
@@ -221,5 +205,9 @@
     
     SelectTypeCreateAccoutViewController *selectTypeCreateAccoutViewController = [[SelectTypeCreateAccoutViewController alloc] init];
     [self.navigationController pushViewController:selectTypeCreateAccoutViewController animated:YES];
+}
+
+- (IBAction)btnBackAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:true];
 }
 @end

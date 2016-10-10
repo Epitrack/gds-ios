@@ -10,14 +10,17 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface HomeViewController : UIViewController <CLLocationManagerDelegate>
+
+@property NSBundle *localBundle;
 @property (strong, nonatomic) IBOutlet UILabel *txtNameUser;
 @property (weak, nonatomic) IBOutlet UIButton *btnProfile;
+
 - (IBAction)btnJoinNow:(id)sender;
 - (IBAction)btnMapHealth:(id)sender;
 - (IBAction)notice:(id)sender;
 - (IBAction)healthTips:(id)sender;
 - (IBAction)diaryHealth:(id)sender;
 - (IBAction)btnProfileAction:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *lblOla;
+- (IBAction)btnEnjoyAction:(id)sender;
 
 @end

@@ -60,6 +60,21 @@
                      user.user_token = response[@"token"];
                      user.hashtag = paramMap[@"hashtags"];
                      user.survey = paramMap[@"surveys"];
+                     user.country = paramMap[@"country"];
+                     user.perfil = paramMap[@"role"];
+                     user.state = paramMap[@"state"];
+                     
+                     if (paramMap[@"answers"]) {
+                         [user setPuzzleMatrizWithResponse:paramMap[@"answers"]];
+                     }
+                     
+                     if (paramMap[@"level"]) {
+                         user.level = [paramMap[@"level"] intValue];
+                     }
+                     
+                     if (paramMap[@"xp"]) {
+                         user.points = [paramMap[@"xp"] intValue];
+                     }
                      
                      onSuccess(user);
                  }
@@ -84,11 +99,20 @@
     [params setObject:user.dob forKey:@"dob"];
     [params setObject:user.gender forKey:@"gender"];
     [params setObject:user.app_token forKey:@"app_token"];
+    [params setObject:user.perfil forKey:@"role"];
     [params setObject:user.race forKey:@"race"];
     [params setObject:user.platform forKey:@"platform"];
     [params setObject:@"0" forKey:@"picture"];
     [params setObject:user.lat forKey:@"lat"];
     [params setObject:user.lon forKey:@"lon"];
+    [params setObject:user.country forKey:@"country"];
+    
+    if (user.state) {
+        [params setObject:user.state forKey:@"state"];
+    } else {
+        [params setObject:@"" forKey:@"state"];
+    }
+    
     
     if (user.password) {
         [params setObject:user.password forKey:@"password"];
@@ -143,6 +167,7 @@
                  user.user_token = userRequest[@"token"];
                  user.hashtag = userRequest[@"hashtags"];
                  user.survey = userRequest[@"surveys"];
+                 user.doesReport = NO;
                  
                  onSuccess(user);
              }
@@ -403,6 +428,12 @@
      ];
 }
 
+- (void) updateGcmToken: (User *) user
+          onSuccess: (void(^)(User* user)) success
+             onFail: (void(^) (NSError *error)) fail{
+    
+}
+
 - (void) updateUser: (User *) user
           onSuccess: (void(^)(User* user)) success
              onFail: (void(^) (NSError *error)) fail{
@@ -422,9 +453,19 @@
         [params setValue:user.password forKey:@"password"];
     }
     
-
     [params setValue:user.avatarNumber forKey:@"picture"];
+    [params setObject:user.country forKey:@"country"];
+    [params setObject:user.perfil forKey:@"role"];
     
+    if (user.state) {
+        [params setObject:user.state forKey:@"state"];
+    } else {
+        [params setObject:@"" forKey:@"state"];
+    }
+    
+    if (user.gcmToken) {
+        [params setObject:user.gcmToken forKey:@"gcmTokens"];
+    }
     
     [self doPost:[[self getUrl] stringByAppendingString:@"/user/update"]
           header:@{@"user_token": user.user_token,
@@ -443,6 +484,9 @@
         sysUser.gender = user.gender;
         sysUser.race = user.race;
         sysUser.avatarNumber = user.avatarNumber;
+        sysUser.country = user.country;
+        sysUser.state = user.state;
+        sysUser.perfil = user.perfil;
         
         //Call back success
         success(user);
@@ -469,6 +513,7 @@
                 Symptom *symptom = [[Symptom alloc] init];
                 symptom.code = dicSymptom[@"code"];
                 symptom.name = dicSymptom[@"name"];
+                NSLog(@"%@", dicSymptom[@"name"]);
                 
                 [symptoms addObject:symptom];
             }
@@ -507,6 +552,22 @@
                 user.user_token = response[@"token"];
                 user.hashtag = response[@"hashtags"];
                 user.survey = response[@"surveys"];
+                user.country = response[@"country"];
+                user.perfil = response[@"role"];
+                user.state = response[@"state"];
+                
+                if (response[@"answers"]) {
+                    [user setPuzzleMatrizWithResponse:response[@"answers"]];
+                }
+                
+                if (response[@"level"]) {
+                    user.level = [response[@"level"] intValue];
+                }
+                
+                if (response[@"xp"]) {
+                    user.points = [response[@"xp"] intValue];
+                }
+                
                 
                 NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
                 NSString *userKey = user.user_token;
@@ -609,9 +670,17 @@
                    andOnSuccess:(void (^)())onSuccess
                      andOnError:(void (^)(NSError *))onError{
     
+    NSString *currentLanguage = [NSLocale preferredLanguages][0];
+    if ([currentLanguage isEqualToString:@"ch"]) {
+        currentLanguage = @"ch";
+    }else if ([currentLanguage isEqualToString:@"pt-BR"]){
+        currentLanguage = @"pt_BR";
+    }
+    
     [self doPost:[[self getUrl] stringByAppendingString:@"/user/forgot-password"]
           header:@{}
-       parameter:@{@"email":email}
+       parameter:@{@"lang": currentLanguage,
+                   @"email": email}
            start:^{
                onStart();
            }
@@ -693,6 +762,13 @@
            } success:^(AFHTTPRequestOperation *operation, id response){
                onSuccess();
            }];
+}
+
++ (void)closeSession{
+    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+    for (NSHTTPCookie *cookie in cookies) {
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
+    }
 }
 
 @end

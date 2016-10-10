@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -28,12 +28,12 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="select_state.how_is_your_health" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xe-B1-oZm" customClass="GDSTextView">
-                    <rect key="frame" x="34" y="70" width="253" height="84"/>
+                    <rect key="frame" x="10" y="70" width="300" height="84"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="84" id="pNj-oK-bDU"/>
                     </constraints>
                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="27"/>
+                    <fontDescription key="fontDescription" name="Foco-Regular" family="Foco" pointSize="22"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-gG-CRa">
@@ -54,7 +54,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select_state.well" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-BE-l8U" customClass="GDSLabel">
-                    <rect key="frame" x="99" y="293" width="125" height="21"/>
+                    <rect key="frame" x="98" y="293" width="125" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="cdf-lx-2nn"/>
                     </constraints>
@@ -63,7 +63,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="select_state.bad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-jz-Pvn" customClass="GDSLabel">
-                    <rect key="frame" x="98" y="460" width="126" height="21"/>
+                    <rect key="frame" x="97" y="460" width="126" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="vQ8-Ub-S2v"/>
                     </constraints>
@@ -96,14 +96,14 @@
                 <constraint firstItem="WFf-gG-CRa" firstAttribute="top" secondItem="7Xe-B1-oZm" secondAttribute="bottom" constant="14" id="O6w-pt-CQc"/>
                 <constraint firstItem="r4d-sL-ACx" firstAttribute="centerY" secondItem="L9N-3f-rjo" secondAttribute="centerY" id="RsE-I1-pPr"/>
                 <constraint firstItem="vJX-BE-l8U" firstAttribute="top" secondItem="WFf-gG-CRa" secondAttribute="bottom" constant="8" id="VDy-48-uNY"/>
-                <constraint firstAttribute="trailing" secondItem="7Xe-B1-oZm" secondAttribute="trailing" constant="33" id="YOq-Vp-Zqb"/>
+                <constraint firstAttribute="trailing" secondItem="7Xe-B1-oZm" secondAttribute="trailing" constant="10" id="YOq-Vp-Zqb"/>
                 <constraint firstItem="AFF-RR-sCW" firstAttribute="leading" secondItem="L9N-3f-rjo" secondAttribute="leading" constant="14" id="aR2-Vd-VNB"/>
                 <constraint firstAttribute="bottom" secondItem="r4d-sL-ACx" secondAttribute="bottom" id="dZa-Ja-BPX"/>
                 <constraint firstAttribute="bottom" secondItem="AFF-RR-sCW" secondAttribute="bottom" constant="13" id="l84-Zd-RDx"/>
                 <constraint firstItem="vJX-BE-l8U" firstAttribute="centerX" secondItem="WFf-gG-CRa" secondAttribute="centerX" id="sEC-ao-QCr"/>
                 <constraint firstItem="JQE-jz-Pvn" firstAttribute="top" secondItem="Uqr-cE-vQj" secondAttribute="bottom" constant="8" id="svI-Tg-otm"/>
                 <constraint firstItem="r4d-sL-ACx" firstAttribute="centerX" secondItem="L9N-3f-rjo" secondAttribute="centerX" id="tsa-T0-vjY"/>
-                <constraint firstItem="7Xe-B1-oZm" firstAttribute="leading" secondItem="L9N-3f-rjo" secondAttribute="leading" constant="34" id="vAI-z6-7E8"/>
+                <constraint firstItem="7Xe-B1-oZm" firstAttribute="leading" secondItem="L9N-3f-rjo" secondAttribute="leading" constant="10" id="vAI-z6-7E8"/>
                 <constraint firstItem="AFF-RR-sCW" firstAttribute="top" secondItem="JQE-jz-Pvn" secondAttribute="bottom" constant="14" id="veN-2R-LVe"/>
                 <constraint firstItem="Uqr-cE-vQj" firstAttribute="centerX" secondItem="vJX-BE-l8U" secondAttribute="centerX" id="z52-ex-8p6"/>
             </constraints>
