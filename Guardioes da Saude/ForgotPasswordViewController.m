@@ -105,9 +105,7 @@
 }
 
 - (IBAction)iconBackAction:(id)sender {
-    
-    EnterViewController *enterViewController = [[EnterViewController alloc] init];
-    [self.navigationController pushViewController:enterViewController animated:YES];
+    [self.navigationController popViewControllerAnimated:TRUE];
     
 }
 @end
